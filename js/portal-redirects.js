@@ -11,5 +11,5 @@ if(window.location == 'https://bookrooms.formula1.com/v6/travel'){
 }
 
 if(window.location == 'https://bookrooms.formula1.com/v6/' || window.location == 'https://bookrooms.formula1.com/v6'){
-    window.location.href = "https://bookrooms.formula1.com/";
+    window.location.href = "https://bookrooms.formula1.com/v6?siteid=45246&theme=standard";
 }

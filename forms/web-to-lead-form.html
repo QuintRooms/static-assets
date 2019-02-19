@@ -8,89 +8,98 @@
 
 <body>
     <style>
-    .zf-templateWrapper {
-        max-width: 600px;
-    }
-
-    .zf-templateWrapper ul {
-        padding: 0;
-    }
-
-    .zf-templateWrapper li {
-        list-style: none;
-    }
-
-    .zf-errorMessage {
-        font: 12px Arial, Helvetica, sans-serif;
-        color: #ff0000;
-        padding-top: 5px;
-    }
-
-    .otherInfo,
-    .reservationInfo {
-        display: none;
-    }
-
-    #form {
-        padding: 8px;
-    }
-
-    #form input {
-        width: 100%;
-        padding: 8px 0 8px 6px;
-    }
-
-    #form label {
-        color: #333;
-        font-size: 15px;
-        font-weight: normal;
-        margin-bottom: 6px;
-        margin-top: 12px;
-        display: block;
-        line-height: 1em;
-    }
-
-    #form select,
-    #form textarea {
-        width: 100%;
-        padding: 8px 0 8px 6px;
-    }
-
-    #form textarea {
-        height: 75px;
-    }
-
-    #form .zf-submitColor {
-        width: 100%;
-        font-size: 15px;
-        font-family: 'Avenir';
-        background: #9c6aad;
-        border: 2px solid transparent;
-        text-transform: uppercase;
-        color: #fff;
-        transition: all .5s ease;
-        border-radius: 3px;
-        padding: 6px 16px;
-        margin-top: 18px;
-    }
-
-    #form .zf-submitColor:hover,
-    #form .zf-submitColor:active,
-    #form .zf-submitColor:focus {
-        background: transparent;
-        border: 2px solid #9c6aad;
-        color: #9c6aad;
-    }
-
-    .arrival,
-    .departure {
-        display: none;
-    }
-
-    .thankYouMessage {
-        color: #333;
-    }
-    </style>
+        .zf-templateWrapper {
+                max-width: 600px;
+            }
+        
+            .zf-templateWrapper ul {
+                padding: 0;
+            }
+        
+            .zf-templateWrapper li {
+                list-style: none;
+            }
+        
+            .zf-errorMessage {
+                font: 12px Arial, Helvetica, sans-serif;
+                color: #ff0000;
+                padding-top: 5px;
+            }
+        
+            .makeReservationInfo,
+            .changeReservationInfo,
+            .eventInfo,
+            .roomInfo {
+                display: none;
+            }
+        
+            #form {
+                padding: 8px;
+            }
+        
+            #form input {
+                width: 100%;
+                padding: 8px 0 8px 6px;
+            }
+        
+            #form label {
+                color: #333;
+                font-size: 15px;
+                font-weight: normal;
+                margin-bottom: 6px;
+                margin-top: 12px;
+                display: block;
+                line-height: 1em;
+            }
+            #form input[type="checkbox"]{
+                width: 13px;
+                float: left;
+            }
+            #form .multiAttType label{
+                margin: 10px 6px 8px 6px;
+                padding: 0;
+            }
+            #form select,
+            #form textarea {
+                width: 100%;
+                padding: 8px 0 8px 6px;
+            }
+        
+            #form textarea {
+                height: 75px;
+            }
+        
+            #form .zf-submitColor {
+                width: 100%;
+                font-size: 15px;
+                font-family: 'Avenir';
+                background: #9c6aad;
+                border: 2px solid transparent;
+                text-transform: uppercase;
+                color: #fff;
+                transition: all .5s ease;
+                border-radius: 3px;
+                padding: 6px 16px;
+                margin-top: 18px;
+            }
+        
+            #form .zf-submitColor:hover,
+            #form .zf-submitColor:active,
+            #form .zf-submitColor:focus {
+                background: transparent;
+                border: 2px solid #9c6aad;
+                color: #9c6aad;
+            }
+        
+            .arrival,
+            .departure {
+                display: none;
+            }
+        
+            .thankYouMessage {
+                color: #333;
+            }
+            </style>
     <div class="zf-templateWidth">
         <form action='https://forms.zohopublic.com/hotelsforhope/form/LandingPageGeneric/formperma/B1a0sQ20FCMb9q9yjx-mGCWGkkTKjvwf1mKHJB4uDWM/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
             <p class="thankYouMessage"> </p>
@@ -106,10 +115,13 @@
                     <ul>
                         <!---------Single Line Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-small">
-                            <label class="zf-labelName">First Name</label>
+                            <label class="zf-labelName">
+                                First Name
+                                <em class="zf-important">*</em>
+                            </label>
                             <div class="zf-tempContDiv">
                                 <span>
-                                    <input type="text" name="SingleLine" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    <input type="text" name="SingleLine" checktype="c1" value="" required maxlength="255" invlovedinsalesiq=false />
                                 </span>
                                 <p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
                             </div>
@@ -118,10 +130,13 @@
                         <!---------Single Line Ends Here---------->
                         <!---------Single Line Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-small">
-                            <label class="zf-labelName">Last Name</label>
+                            <label class="zf-labelName">
+                                Last Name
+                                <em class="zf-important">*</em>
+                            </label>
                             <div class="zf-tempContDiv">
                                 <span>
-                                    <input type="text" name="SingleLine1" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    <input type="text" name="SingleLine1" checktype="c1" required value="" maxlength="255" invlovedinsalesiq=false />
                                 </span>
                                 <p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
                             </div>
@@ -130,7 +145,7 @@
                         <!---------Single Line Ends Here---------->
                         <!---------Single Line Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-small">
-                            <label class="zf-labelName">Company</label>
+                            <label class="zf-labelName">Organization</label>
                             <div class="zf-tempContDiv">
                                 <span>
                                     <input type="text" name="SingleLine2" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
@@ -148,7 +163,7 @@
                             </label>
                             <div class="zf-tempContDiv">
                                 <span>
-                                    <input fieldType=9 invlovedinsalesiq=false type="text" maxlength="255" name="Email" checktype="c5" value="" />
+                                    <input fieldType=9 invlovedinsalesiq=false type="text" required maxlength="255" name="Email" checktype="c5" value="" />
                                 </span>
                                 <p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
                             </div>
@@ -157,10 +172,13 @@
                         <!---------Email Ends Here---------->
                         <!---------Phone Starts Here---------->
                         <li class="zf-tempFrmWrapper zf-small">
-                            <label class="zf-labelName">Phone</label>
+                            <label class="zf-labelName">
+                                Phone
+                                <em class="zf-important">*</em>
+                            </label>
                             <div class="zf-tempContDiv">
                                 <div>
-                                    <input invlovedinsalesiq=false type="text" name="PhoneNumber_countrycode" compname="PhoneNumber" checktype="c7" phoneFormat="1" maxlength="20" value="" id="international_PhoneNumber_countrycode" fieldType="11" />
+                                    <input invlovedinsalesiq=false type="text" required name="PhoneNumber_countrycode" compname="PhoneNumber" checktype="c7" phoneFormat="1" maxlength="20" value="" id="international_PhoneNumber_countrycode" fieldType="11" />
                                     <div class="zf-clearBoth"> </div>
                                 </div>
                                 <p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
@@ -175,14 +193,12 @@
                                 <em class="zf-important">*</em>
                             </label>
                             <div class="zf-tempContDiv">
-                                <select class="zf-form-sBox" name="Dropdown" checktype="c1">
-                                    <option selected="true" value="-Select-">-Select-</option>
-                                    <option value="I have an individual reservation">I have an individual reservation</option>
-                                    <option value="I have a group reservation of ten or more">I have a group reservation of ten or more</option>
-                                    <option value="I want to make a reservation">I want to make a reservation</option>
-                                    <option value="I want to make a group reservation of ten or more">I want to make a group reservation of ten or more</option>
-                                    <option value="I am an event manager with an event">I am an event manager with an event</option>
-                                    <option value="I want to partner with Hotels for Hope">I want to partner with Hotels for Hope</option>
+                                <select class="zf-form-sBox" name="Dropdown" required checktype="c1">
+                                    <option selected="true" value="">-Select-</option>
+                                    <option value="I want to make a reservation(s).">I want to make a reservation(s).</option>
+                                    <option value="I need to make a change to my reservation(s).">I need to make a change to my reservation(s).</option>
+                                    <option value="I would like more information about working with Hotels for Hope for my event.">I would like more information about working with Hotels for Hope for my event.</option>
+                                    <option value="I want to partner with Hotels for Hope.">I want to partner with Hotels for Hope.</option>
                                     <option value="Other">Other</option>
                                 </select>
                                 <p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
@@ -191,31 +207,41 @@
                         </li>
                         <!---------Dropdown Ends Here---------->
                         <!---------Number Starts Here---------->
-                        <div class="reservationInfo">
-                            <li class="zf-tempFrmWrapper zf-small">
-                                <label class="zf-labelName">If you need rooms, how many do you need per night?</label>
-                                <div class="zf-tempContDiv">
-                                    <span>
-                                        <input type="text" name="Number" checktype="c2" value="" maxlength="18" />
-                                    </span>
-                                    <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
-                                </div>
-                            </li>
-                            <!---------Number Ends Here---------->
-                            <!---------Single Line Starts Here---------->
-                            <li class="zf-tempFrmWrapper zf-small">
-                                <label class="zf-labelName">What room types? (One bed or two)</label>
-                                <div class="zf-tempContDiv">
-                                    <span>
-                                        <input type="text" name="SingleLine3" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
-                                    </span>
-                                    <p id="SingleLine3_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
-                                </div>
-                            </li>
+                        <div class="makeReservationInfo">
+                            <div class="roomInfo">
+                                <li class="zf-tempFrmWrapper zf-small">
+                                    <label class="zf-labelName">
+                                        How many do you need per night?
+                                        <em class="zf-important">*</em>
+                                    </label>
+                                    <div class="zf-tempContDiv">
+                                        <span>
+                                            <input type="text" name="Number" checktype="c2" value="" maxlength="18" />
+                                        </span>
+                                        <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                    </div>
+                                </li>
+                                <!---------Number Ends Here---------->
+                                <!---------Single Line Starts Here---------->
+                                <li class="zf-tempFrmWrapper zf-small">
+                                    <label class="zf-labelName">
+                                        What room types? (One bed or two)
+                                        <em class="zf-important">*</em>
+                                    </label>
+                                    <div class="zf-tempContDiv">
+                                        <span>
+                                            <input type="text" name="SingleLine3" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                        </span>
+                                        <p id="SingleLine3_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                    </div>
+                                </li>
+                            </div>
                             <!---------Single Line Ends Here---------->
                             <!---------Single Line Starts Here---------->
                             <li class="zf-tempFrmWrapper zf-small">
-                                <label class="zf-labelName">Which event is this for?</label>
+                                <label class="zf-labelName">
+                                    What event is this for?
+                                </label>
                                 <div class="zf-tempContDiv">
                                     <span>
                                         <input type="text" name="SingleLine4" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
@@ -227,7 +253,10 @@
                             <!---------Single Line Ends Here---------->
                             <!---------Date Starts Here---------->
                             <li class="zf-tempFrmWrapper zf-small arrivalDate">
-                                <label class="zf-labelName">Arrival Date</label>
+                                <label class="zf-labelName">
+                                    Arrival Date
+                                    <em class="zf-important">*</em>
+                                </label>
                                 <div class="zf-tempContDiv">
                                     <span>
                                         <input type="text" name="Date" class="arrival" value="" maxlength="25" />
@@ -240,7 +269,10 @@
                             <!---------Date Ends Here---------->
                             <!---------Date Starts Here---------->
                             <li class="zf-tempFrmWrapper  zf-small departureDate">
-                                <label class="zf-labelName">Departure Date</label>
+                                <label class="zf-labelName">
+                                    Departure Date
+                                    <em class="zf-important">*</em>
+                                </label>
                                 <div class="zf-tempContDiv">
                                     <span>
                                         <input type="text" name="Date1" class="departure" value="" maxlength="25" />
@@ -253,6 +285,70 @@
                             </li>
                         </div>
                         <!---------Date Ends Here---------->
+                        <div class="changeReservationInfo">
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">ARN Reference Number or Confirmation Number
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine5" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine5_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                        </div>
+                        <div class="eventInfo">
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">Name of your event
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine6" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine6_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                            <!---------Number Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Approximate number of rooms needed per night
+                                </label>
+                                <div class="zf-tempContDiv"><span> <input type="text" name="Number1" checktype="c2" value="" maxlength="18" /></span>
+                                    <p id="Number1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"></div>
+                            </li>
+                            <!---------Number Ends Here---------->
+                            <!---------Number Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Approximate number of event attendees
+                                </label>
+                                <div class="zf-tempContDiv"><span> <input type="text" name="Number2" checktype="c2" value="" maxlength="18" /></span>
+                                    <p id="Number2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"></div>
+                            </li>
+                            <!---------Number Ends Here---------->
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">Event Dates
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine9" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine9_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                        </div>
                         <!---------Multiple Line Starts Here---------->
                         <div class="otherInfo">
                             <li class="zf-tempFrmWrapper explanation">
@@ -282,8 +378,8 @@
     <!-- 'zf-templateWidth' ends  -->
     <script>
     var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
-    var zf_MandArray = ["Email", "Dropdown"];
-    var zf_FieldArray = ["SingleLine", "SingleLine1", "SingleLine2", "Email", "PhoneNumber_countrycode", "Dropdown", "Number", "SingleLine3", "SingleLine4", "Date", "Date1", "MultiLine"];
+    var zf_MandArray = ["SingleLine", "SingleLine", "Email", "Dropdown", "PhoneNumber_countrycode", "Number", "SingleLine3", "Date", "Date1", "SingeLine5", "SingleLine6", "Number1", "Number2", "SingleLine9"];
+    var zf_FieldArray = ["SingleLine", "SingleLine1", "SingleLine2", "Email", "PhoneNumber_countrycode", "Dropdown", "Number", "SingleLine3", "SingleLine4", "Date", "Date1", "MultiLine", "SingleLine5", "SingleLine6", "SingleLine7", "SingleLine8", "SingleLine9"];
     var isSalesIQIntegrationEnabled = false;
 
     // shows and hides fields depending on what was selected
@@ -291,18 +387,60 @@
         document.querySelector('select[name="Dropdown"]').onchange = changeEventHandler;
     }, false);
 
-    var reservationInfo = document.querySelector('.reservationInfo');
-    var otherInfo = document.querySelector('.otherInfo');
+    var makeReservationInfo = document.querySelector('.makeReservationInfo');
+    var changeInfo = document.querySelector('.changeReservationInfo');
+    var eventInfo = document.querySelector('.eventInfo');
+    var roomInfo = document.querySelector('.roomInfo');
+
+    function hideFields() {
+        makeReservationInfo.style.display = 'none';
+        changeInfo.style.display = 'none';
+        eventInfo.style.display = 'none';
+        roomInfo.style.display = 'none';
+    }
+
+    var makeResFields = ['Number', 'SingleLine3', 'arrivalMask', 'departureMask'];
+    var changeResFields = ['arrivalMask', 'departureMask', 'SingleLine5'];
+    var eventFields = ['SingleLine6', 'Number1', 'Number2', 'SingleLine9'];
+
+    function addRequired(array) {
+        array.forEach(function(element, index) {
+            var input = document.querySelector('input[name=' + element + ']');
+            input.setAttribute('required', true);
+        });
+    }
+
+    function removeRequired(array) {
+        array.forEach(function(element, index) {
+            var input = document.querySelector('input[name=' + element + ']');
+            input.removeAttribute('required');
+        });
+    }
 
     function changeEventHandler(event) {
-        if (event.target.value == 'I want to make a reservation' || event.target.value == 'I want to make a group reservation of ten or more') {
-            reservationInfo.style.display = 'block';
-            otherInfo.style.display = 'none';
-        } else if (event.target.value == 'Other' || event.target.value == 'I have a group reservation of ten or more' || event.target.value == 'I have an individual reservation' || event.target.value == 'I am an event manager with an event' || event.target.value == 'I want to partner with Hotels for Hope') {
-            otherInfo.style.display = 'block';
-            reservationInfo.style.display = 'none';
+        if (event.target.value == 'I want to make a reservation(s).') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(makeResFields);
+            roomInfo.style.display = 'block';
+            makeReservationInfo.style.display = 'block';
+
+        } else if (event.target.value == 'I need to make a change to my reservation(s).') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(changeResFields);
+
+            makeReservationInfo.style.display = 'block';
+            changeInfo.style.display = 'block';
+        } else if (event.target.value == 'I would like more information about working with Hotels for Hope for my event.') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(eventFields);
+            eventInfo.style.display = 'block';
         } else {
-            reservationInfo.style.display = 'none';
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+
         }
     }
 

@@ -12,17 +12,17 @@ class HotJarVirtualView {
         this.init();
     }
 
-    async init() {
-        await this.getSiteId();
-        await this.getPageName();
-        await this.getTestName();
+    init() {
+        this.getSiteId();
+        this.getPageName();
+        this.getTestName();
     };
 
-    async getSiteId() {
+    getSiteId() {
         this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content');
     }
 
-    async getPageName() {
+    getPageName() {
         let bodyClasses = document.querySelector('body');
 
         if (bodyClasses.classList.contains('SearchHotels')) {
@@ -39,7 +39,7 @@ class HotJarVirtualView {
         }
     }
 
-    async getTestName() {
+    getTestName() {
         let test_element = document.querySelector('.testName');
 
         if (test_element) {

@@ -27,15 +27,19 @@ class HotJarVirtualView {
 
         if (bodyClasses.classList.contains('SearchHotels')) {
             this.page_name = 'search-results';
+            return;
         }
         if (bodyClasses.classList.contains('SinglePropDetail')) {
             this.page_name = 'property-detail';
+            return;
         }
         if (bodyClasses.classList.contains('CheckOutForm')) {
             this.page_name = 'checkout';
+            return;
         }
         if (bodyClasses.classList.contains('ConfirmationForm')) {
             this.page_name = 'confirmation';
+            return;
         }
     }
 
@@ -44,24 +48,27 @@ class HotJarVirtualView {
 
         if (test_element) {
             this.test_name = test_element.textContent;
+            return;
         }
     }
 
     hitVirtualView() {
         if (this.page_name) {
             hj('vpv', '/' + this.page_name);
+            return;
         }
 
-        if (this.page_name) {
+        if (this.site_id && this.page_name) {
             hj('vpv', '/' + this.site_id + '/' + this.page_name);
+            return;
         }
 
         if (this.test_name) {
-            hj('vpv', '/' + this.site_id + '/' + this.page_name + this.test_name);
+            hj('vpv', '/' + this.site_id + '/' + this.page_name + '/' this.test_name);
+            return;
         }
     }
 }
 
 let hotJarVirtualView = new HotJarVirtualView();
 hotJarVirtualView.hitVirtualView();
-console.dir(hotJarVirtualView);

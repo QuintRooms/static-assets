@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .zf-templateWrapper {
+                max-width: 600px;
+            }
+        
+            .zf-templateWrapper ul {
+                padding: 0;
+            }
+        
+            .zf-templateWrapper li {
+                list-style: none;
+            }
+        
+            .zf-errorMessage {
+                font: 12px Arial, Helvetica, sans-serif;
+                color: #ff0000;
+                padding-top: 5px;
+            }
+        
+            .makeReservationInfo,
+            .changeReservationInfo,
+            .eventInfo,
+            .roomInfo {
+                display: none;
+            }
+        
+            #form {
+                padding: 8px;
+            }
+        
+            #form input {
+                width: 100%;
+                padding: 8px 0 8px 6px;
+            }
+        
+            #form label {
+                color: #333;
+                font-size: 15px;
+                font-weight: normal;
+                margin-bottom: 6px;
+                margin-top: 12px;
+                display: block;
+                line-height: 1em;
+            }
+            #form input[type="checkbox"]{
+                width: 13px;
+                float: left;
+            }
+            #form .multiAttType label{
+                margin: 10px 6px 8px 6px;
+                padding: 0;
+            }
+            #form select,
+            #form textarea {
+                width: 100%;
+                padding: 8px 0 8px 6px;
+            }
+        
+            #form textarea {
+                height: 75px;
+            }
+        
+            #form .zf-submitColor {
+                width: 100%;
+                font-size: 15px;
+                font-family: 'Avenir';
+                background: #9c6aad;
+                border: 2px solid transparent;
+                text-transform: uppercase;
+                color: #fff;
+                transition: all .5s ease;
+                border-radius: 3px;
+                padding: 6px 16px;
+                margin-top: 18px;
+            }
+        
+            #form .zf-submitColor:hover,
+            #form .zf-submitColor:active,
+            #form .zf-submitColor:focus {
+                background: transparent;
+                border: 2px solid #9c6aad;
+                color: #9c6aad;
+            }
+        
+            .arrival,
+            .departure {
+                display: none;
+            }
+        
+            .thankYouMessage {
+                color: #333;
+            }
+            </style>
+    <div class="zf-templateWidth">
+        <form action='https://forms.zohopublic.com/hotelsforhope/form/LandingPageGeneric/formperma/B1a0sQ20FCMb9q9yjx-mGCWGkkTKjvwf1mKHJB4uDWM/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
+            <p class="thankYouMessage"> </p>
+            <input type="hidden" name="zf_referrer_name" value="" />
+            <!-- To Track referrals , place the referrer name within the " " in the above hidden input field  -->
+            <input type="hidden" name="zf_redirect_url" value="" />
+            <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field  -->
+            <input type="hidden" name="zc_gad" value="" />
+            <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM  -->
+            <div class="zf-templateWrapper">
+                <!---------template Container Starts Here---------->
+                <div class="zf-subContWrap zf-topAlign">
+                    <ul>
+                        <!---------Single Line Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">
+                                First Name
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <span>
+                                    <input type="text" name="SingleLine" checktype="c1" value="" required maxlength="255" invlovedinsalesiq=false />
+                                </span>
+                                <p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Single Line Ends Here---------->
+                        <!---------Single Line Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">
+                                Last Name
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <span>
+                                    <input type="text" name="SingleLine1" checktype="c1" required value="" maxlength="255" invlovedinsalesiq=false />
+                                </span>
+                                <p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Single Line Ends Here---------->
+                        <!---------Single Line Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">Organization</label>
+                            <div class="zf-tempContDiv">
+                                <span>
+                                    <input type="text" name="SingleLine2" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                </span>
+                                <p id="SingleLine2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Single Line Ends Here---------->
+                        <!---------Email Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">
+                                Email
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <span>
+                                    <input fieldType=9 invlovedinsalesiq=false type="text" required maxlength="255" name="Email" checktype="c5" value="" />
+                                </span>
+                                <p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Email Ends Here---------->
+                        <!---------Phone Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">
+                                Phone
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <div>
+                                    <input invlovedinsalesiq=false type="text" required name="PhoneNumber_countrycode" compname="PhoneNumber" checktype="c7" phoneFormat="1" maxlength="20" value="" id="international_PhoneNumber_countrycode" fieldType="11" />
+                                    <div class="zf-clearBoth"> </div>
+                                </div>
+                                <p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Phone Ends Here---------->
+                        <!---------Dropdown Starts Here---------->
+                        <li class="zf-tempFrmWrapper zf-small">
+                            <label class="zf-labelName">
+                                What can we help you with?
+                                <em class="zf-important">*</em>
+                            </label>
+                            <div class="zf-tempContDiv">
+                                <select class="zf-form-sBox" name="Dropdown" required checktype="c1">
+                                    <option selected="true" value="">-Select-</option>
+                                    <option value="I want to make a reservation(s).">I want to make a reservation(s).</option>
+                                    <option value="I need to make a change to my reservation(s).">I need to make a change to my reservation(s).</option>
+                                    <option value="I would like more information about working with Hotels for Hope for my event.">I would like more information about working with Hotels for Hope for my event.</option>
+                                    <option value="I want to partner with Hotels for Hope.">I want to partner with Hotels for Hope.</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                            <div class="zf-clearBoth"> </div>
+                        </li>
+                        <!---------Dropdown Ends Here---------->
+                        <!---------Number Starts Here---------->
+                        <div class="makeReservationInfo">
+                            <div class="roomInfo">
+                                <li class="zf-tempFrmWrapper zf-small">
+                                    <label class="zf-labelName">
+                                        How many do you need per night?
+                                        <em class="zf-important">*</em>
+                                    </label>
+                                    <div class="zf-tempContDiv">
+                                        <span>
+                                            <input type="text" name="Number" checktype="c2" value="" maxlength="18" />
+                                        </span>
+                                        <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                    </div>
+                                </li>
+                                <!---------Number Ends Here---------->
+                                <!---------Single Line Starts Here---------->
+                                <li class="zf-tempFrmWrapper zf-small">
+                                    <label class="zf-labelName">
+                                        What room types? (One bed or two)
+                                        <em class="zf-important">*</em>
+                                    </label>
+                                    <div class="zf-tempContDiv">
+                                        <span>
+                                            <input type="text" name="SingleLine3" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                        </span>
+                                        <p id="SingleLine3_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                    </div>
+                                </li>
+                            </div>
+                            <!---------Single Line Ends Here---------->
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">
+                                    What event is this for?
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine4" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine4_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                            <!---------Date Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small arrivalDate">
+                                <label class="zf-labelName">
+                                    Arrival Date
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="Date" class="arrival" value="" maxlength="25" />
+                                        <input type="date" class="arrivalMask" name="arrivalMask" />
+                                        <div class="zf-clearBoth"> </div>
+                                        <p id="Date_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Date Ends Here---------->
+                            <!---------Date Starts Here---------->
+                            <li class="zf-tempFrmWrapper  zf-small departureDate">
+                                <label class="zf-labelName">
+                                    Departure Date
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="Date1" class="departure" value="" maxlength="25" />
+                                        <input type="date" class="departureMask" name="departureMask" />
+                                    </span>
+                                    <div class="zf-clearBoth"> </div>
+                                    <p id="Date1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                        </div>
+                        <!---------Date Ends Here---------->
+                        <div class="changeReservationInfo">
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">ARN Reference Number or Confirmation Number
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine5" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine5_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                        </div>
+                        <div class="eventInfo">
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">Name of your event
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine6" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine6_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                            <!---------Number Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Approximate number of rooms needed per night
+                                </label>
+                                <div class="zf-tempContDiv"><span> <input type="text" name="Number1" checktype="c2" value="" maxlength="18" /></span>
+                                    <p id="Number1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"></div>
+                            </li>
+                            <!---------Number Ends Here---------->
+                            <!---------Number Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Approximate number of event attendees
+                                </label>
+                                <div class="zf-tempContDiv"><span> <input type="text" name="Number2" checktype="c2" value="" maxlength="18" /></span>
+                                    <p id="Number2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"></div>
+                            </li>
+                            <!---------Number Ends Here---------->
+                            <!---------Single Line Starts Here---------->
+                            <li class="zf-tempFrmWrapper zf-small">
+                                <label class="zf-labelName">Event Dates
+                                    <em class="zf-important">*</em>
+                                </label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <input type="text" name="SingleLine9" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false />
+                                    </span>
+                                    <p id="SingleLine9_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                            <!---------Single Line Ends Here---------->
+                        </div>
+                        <!---------Multiple Line Starts Here---------->
+                        <div class="otherInfo">
+                            <li class="zf-tempFrmWrapper explanation">
+                                <label class="zf-labelName">Additional Information</label>
+                                <div class="zf-tempContDiv">
+                                    <span>
+                                        <textarea name="MultiLine" checktype="c1" maxlength="65535"> </textarea>
+                                    </span>
+                                    <p id="MultiLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                                </div>
+                                <div class="zf-clearBoth"> </div>
+                            </li>
+                        </div>
+                        <!---------Multiple Line Ends Here---------->
+                    </ul>
+                </div>
+                <!---------template Container Starts Here---------->
+                <ul>
+                    <li class="zf-fmFooter">
+                        <button class="zf-submitColor">Submit</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- 'zf-templateWrapper' ends  -->
+        </form>
+    </div>
+    <!-- 'zf-templateWidth' ends  -->
+    <script>
+    var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
+    var zf_MandArray = ["SingleLine", "SingleLine", "Email", "Dropdown", "PhoneNumber_countrycode", "Number", "SingleLine3", "Date", "Date1", "SingeLine5", "SingleLine6", "Number1", "Number2", "SingleLine9"];
+    var zf_FieldArray = ["SingleLine", "SingleLine1", "SingleLine2", "Email", "PhoneNumber_countrycode", "Dropdown", "Number", "SingleLine3", "SingleLine4", "Date", "Date1", "MultiLine", "SingleLine5", "SingleLine6", "SingleLine7", "SingleLine8", "SingleLine9"];
+    var isSalesIQIntegrationEnabled = false;
+
+    // shows and hides fields depending on what was selected
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('select[name="Dropdown"]').onchange = changeEventHandler;
+    }, false);
+
+    var makeReservationInfo = document.querySelector('.makeReservationInfo');
+    var changeInfo = document.querySelector('.changeReservationInfo');
+    var eventInfo = document.querySelector('.eventInfo');
+    var roomInfo = document.querySelector('.roomInfo');
+
+    function hideFields() {
+        makeReservationInfo.style.display = 'none';
+        changeInfo.style.display = 'none';
+        eventInfo.style.display = 'none';
+        roomInfo.style.display = 'none';
+    }
+
+    var makeResFields = ['Number', 'SingleLine3', 'arrivalMask', 'departureMask'];
+    var changeResFields = ['arrivalMask', 'departureMask', 'SingleLine5'];
+    var eventFields = ['SingleLine6', 'Number1', 'Number2', 'SingleLine9'];
+
+    function addRequired(array) {
+        array.forEach(function(element, index) {
+            var input = document.querySelector('input[name=' + element + ']');
+            input.setAttribute('required', true);
+        });
+    }
+
+    function removeRequired(array) {
+        array.forEach(function(element, index) {
+            var input = document.querySelector('input[name=' + element + ']');
+            input.removeAttribute('required');
+        });
+    }
+
+    function changeEventHandler(event) {
+        if (event.target.value == 'I want to make a reservation(s).') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(makeResFields);
+            roomInfo.style.display = 'block';
+            makeReservationInfo.style.display = 'block';
+
+        } else if (event.target.value == 'I need to make a change to my reservation(s).') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(changeResFields);
+
+            makeReservationInfo.style.display = 'block';
+            changeInfo.style.display = 'block';
+        } else if (event.target.value == 'I would like more information about working with Hotels for Hope for my event.') {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+            addRequired(eventFields);
+            eventInfo.style.display = 'block';
+        } else {
+            hideFields();
+            removeRequired(makeResFields, changeResFields, eventFields);
+
+        }
+    }
+
+
+    var arrivalDate = document.querySelector('.arrival');
+    var departureDate = document.querySelector('.departure');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.arrivalMask').onchange = updateArrivalDate;
+        document.querySelector('.departureMask').onchange = updateDepartureDate;
+    }, false);
+
+    function updateArrivalDate(event) {
+        arrivalDate.value = event.target.value;
+    }
+
+    function updateDepartureDate(event) {
+        departureDate.value = event.target.value;
+    }
+
+    function setRedirect() {
+        var url = window.location.href;
+        console.log(url);
+        var redirect = document.querySelector('input[name="zf_redirect_url"]');
+        console.log(redirect);
+
+        if (url.indexOf('#formContainer') > -1) {
+            redirect.value = url;
+        } else {
+            redirect.value = url + '#formContainer';
+        }
+    }
+    setRedirect();
+
+    function thankYouMessage() {
+        if (window.location.href.indexOf('#formContainer') > -1) {
+            var formContainer = document.querySelector('.zf-templateWidth');
+            formContainer.style.display = 'block';
+            document.querySelector('.thankYouMessage').textContent = 'Thank you, someone will be in touch shortly.';
+            document.querySelector('.zf-templateWidth').scrollIntoView();
+        }
+    }
+
+    thankYouMessage();
+
+    // $Id: $
+    function zf_ValidateAndSubmit(event) {
+        if (zf_CheckMandatory()) {
+            if (zf_ValidCheck()) {
+                if (isSalesIQIntegrationEnabled) {
+                    zf_addDataToSalesIQ();
+                }
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    function zf_CheckMandatory() {
+        for (i = 0; i < zf_MandArray.length; i++) {
+            var fieldObj = document.forms.form[zf_MandArray[i]];
+            if (fieldObj) {
+                if (fieldObj.nodeName != null) {
+                    if (fieldObj.nodeName == 'OBJECT') {
+                        if (!zf_MandatoryCheckSignature(fieldObj)) {
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    } else if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                        if (fieldObj.type == 'file') {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                        fieldObj.focus();
+                        zf_ShowErrorMsg(zf_MandArray[i]);
+                        return false;
+                    } else if (fieldObj.nodeName == 'SELECT') { // No I18N
+                        if (fieldObj.options[fieldObj.selectedIndex].value == '-Select-') {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    } else if (fieldObj.type == 'checkbox' || fieldObj.type == 'radio') {
+                        if (fieldObj.checked == false) {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    }
+                } else {
+                    var checkedValsCount = 0;
+                    var inpChoiceElems = fieldObj;
+                    for (var ii = 0; ii < inpChoiceElems.length; ii++) {
+                        if (inpChoiceElems[ii].checked === true) {
+                            checkedValsCount++;
+                        }
+                    }
+                    if (checkedValsCount == 0) {
+                        inpChoiceElems[0].focus();
+                        zf_ShowErrorMsg(zf_MandArray[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    function zf_ValidCheck() {
+        var isValid = true;
+        for (ind = 0; ind < zf_FieldArray.length; ind++) {
+            var fieldObj = document.forms.form[zf_FieldArray[ind]];
+            if (fieldObj) {
+                if (fieldObj.nodeName != null) {
+                    var checkType = fieldObj.getAttribute("checktype");
+                    if (checkType == "c2") { // No I18N
+                        if (!zf_ValidateNumber(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c3") { // No I18N
+                        if (!zf_ValidateCurrency(fieldObj) || !zf_ValidateDecimalLength(fieldObj, 10)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c4") { // No I18N
+                        if (!zf_ValidateDateFormat(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c5") { // No I18N
+                        if (!zf_ValidateEmailID(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c6") { // No I18N
+                        if (!zf_ValidateLiveUrl(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c7") { // No I18N
+                        if (!zf_ValidatePhone(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c8") { // No I18N
+                        zf_ValidateSignature(fieldObj);
+                    }
+                }
+            }
+        }
+        return isValid;
+    }
+
+    function zf_ShowErrorMsg(uniqName) {
+        var fldLinkName;
+        for (errInd = 0; errInd < zf_FieldArray.length; errInd++) {
+            fldLinkName = zf_FieldArray[errInd].split('_')[0];
+            document.getElementById(fldLinkName + "_error").style.display = 'none';
+        }
+        var linkName = uniqName.split('_')[0];
+        document.getElementById(linkName + "_error").style.display = 'block';
+    }
+
+    function zf_ValidateNumber(elem) {
+        var validChars = "-0123456789";
+        var numValue = elem.value.replace(/^\s+|\s+$/g, '');
+        if (numValue != null && !numValue == "") {
+            var strChar;
+            var result = true;
+            if (numValue.charAt(0) == "-" && numValue.length == 1) {
+                return false;
+            }
+            for (i = 0; i < numValue.length && result == true; i++) {
+                strChar = numValue.charAt(i);
+                if ((strChar == "-") && (i != 0)) {
+                    return false;
+                }
+                if (validChars.indexOf(strChar) == -1) {
+                    result = false;
+                }
+            }
+            return result;
+        } else {
+            return true;
+        }
+    }
+
+    function zf_ValidateDateFormat(inpElem) {
+        var dateValue = inpElem.value.replace(/^\s+|\s+$/g, '');
+        if (dateValue == "") {
+            return true;
+        } else {
+            return (zf_DateRegex.test(dateValue));
+        }
+    }
+
+    function zf_ValidateCurrency(elem) {
+        var validChars = "0123456789.";
+        var numValue = elem.value.replace(/^\s+|\s+$/g, '');
+        if (numValue != null && !numValue == "") {
+            var strChar;
+            var result = true;
+            for (i = 0; i < numValue.length && result == true; i++) {
+                strChar = numValue.charAt(i);
+                if (validChars.indexOf(strChar) == -1) {
+                    result = false;
+                }
+            }
+            return result;
+        } else {
+            return true;
+        }
+    }
+
+    function zf_ValidateDecimalLength(elem, decimalLen) {
+        var numValue = elem.value;
+        if (numValue.indexOf('.') >= 0) {
+            var decimalLength = numValue.substring(numValue.indexOf('.') + 1).length;
+            if (decimalLength > decimalLen) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return true;
+    }
+
+    function zf_ValidateEmailID(elem) {
+        var check = 0;
+        var emailValue = elem.value;
+        if (emailValue != null && !emailValue == "") {
+            var emailArray = emailValue.split(",");
+            for (i = 0; i < emailArray.length; i++) {
+                var emailExp = /^[\w]([\w\-.+'/]*)@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,22}$/;
+                if (!emailExp.test(emailArray[i].replace(/^\s+|\s+$/g, ''))) {
+                    check = 1;
+                }
+            }
+            if (check == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    function zf_ValidateLiveUrl(elem) {
+        var urlValue = elem.value;
+        if (urlValue !== null && typeof(urlValue) !== "undefined") {
+            urlValue = urlValue.replace(/^\s+|\s+$/g, '');
+            if (urlValue !== "") {
+                var urlregex = new RegExp("^(((((h|H)(t|T){2}(p|P)(s|S)?)|((f|F)(t|T)(p|P)))://((w|W){3}.)?)|((w|W){3}.))[a-zA-Z0-9-\\P{InBasicLatin}\\s]+(\\.[a-zA-Z0-9-:;\\?#_]+)+(/[\\x21-\\x7e\\P{InBasicLatin}\\s]*)*$");
+                return (urlregex.test(urlValue));
+            }
+        }
+        return true;
+    }
+
+    function zf_ValidatePhone(inpElem) {
+        var phoneFormat = parseInt(inpElem.getAttribute("phoneFormat"));
+        var fieldInpVal = inpElem.value.replace(/^\s+|\s+$/g, '');
+        var toReturn = true;
+        if (phoneFormat === 1) {
+            var IRexp = /^[+]*[()0-9- ]+$/;
+            if (fieldInpVal != "" && !IRexp.test(fieldInpVal)) {
+                toReturn = false;
+                return toReturn;
+            }
+            return toReturn;
+        } else if (phoneFormat === 2) {
+            var InpMaxlength = inpElem.getAttribute("maxlength");
+            var USARexp = /^[0-9]+$/;
+            if (fieldInpVal != "" && USARexp.test(fieldInpVal) && fieldInpVal.length == InpMaxlength) {
+                toReturn = true;
+            } else if (fieldInpVal == "") {
+                toReturn = true;
+            } else {
+                toReturn = false;
+            }
+            return toReturn;
+        }
+    }
+
+    function zf_ValidateSignature(objElem) {
+        var linkName = objElem.getAttribute("compname");
+        var canvasElem = document.getElementById("drawingCanvas-" + linkName);
+        var isValidSign = zf_IsSignaturePresent(objElem, linkName, canvasElem);
+        var hiddenSignInputElem = document.getElementById("hiddenSignInput-" + linkName);
+        if (isValidSign) {
+            hiddenSignInputElem.value = canvasElem.toDataURL();
+        } else {
+            hiddenSignInputElem.value = ""; // No I18N
+        }
+        return isValidSign;
+    }
+
+    function zf_MandatoryCheckSignature(objElem) {
+        var linkName = objElem.getAttribute("compname");
+        var canvasElem = document.getElementById("drawingCanvas-" + linkName);
+        var isValid = zf_IsSignaturePresent(objElem, linkName, canvasElem);
+        return isValid;
+    }
+
+    function zf_IsSignaturePresent(objElem, linkName, canvasElem) {
+        var context = canvasElem.getContext('2d'); // No I18N
+        var canvasWidth = canvasElem.width;
+        var canvasHeight = canvasElem.height;
+        var canvasData = context.getImageData(0, 0, canvasWidth, canvasHeight);
+        var signLen = canvasData.data.length;
+        var flag = false;
+        for (var index = 0; index < signLen; index++) {
+            if (!canvasData.data[index]) {
+                flag = false;
+            } else if (canvasData.data[index]) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    function zf_FocusNext(elem, event) {
+        if (event.keyCode == 9 || event.keyCode == 16) {
+            return;
+        }
+        if (event.keyCode >= 37 && event.keyCode <= 40) {
+            return;
+        }
+        var compname = elem.getAttribute("compname");
+        var inpElemName = elem.getAttribute("name");
+        if (inpElemName == compname + "_countrycode") {
+            if (elem.value.length == 3) {
+                document.getElementsByName(compname + "_first")[0].focus();
+            }
+        } else if (inpElemName == compname + "_first") {
+            if (elem.value.length == 3) {
+                document.getElementsByName(compname + "_second")[0].focus();
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

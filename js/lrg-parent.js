@@ -186,7 +186,6 @@ jQuery(document).on('ratesReadyEvent', function() {
             document.querySelector('.SearchHotels .ArnPropName div.originalPrice span').style.textAlign = 'left';
             document.querySelector('.SearchHotels .ArnPropName div.originalPrice span').style.textAlign = 'center';
             eventRateProp();
-            updateHTML('.PropLimitedAvail .ArnAvailability', '<h4>Sold Out</h4><p>More rooms available within Travel Packages</p><a class="submit" href="https://www.lollapalooza.com/tickets/#hotel-packages" target="_blank">Find Out More</a>');
         }
 
         if (window.matchMedia("(max-width: 800px)" && document.querySelector('.OptionsPricing')).matches) {

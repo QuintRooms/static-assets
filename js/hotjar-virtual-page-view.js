@@ -44,10 +44,10 @@ class HotJarVirtualView {
     }
 
     getTestName() {
-        let test_element = document.querySelector('.testName').getAttribute('data-test');
+        let test_element = document.querySelector('.testName');
 
         if (test_element) {
-            this.test_name = test_element;
+            this.test_name = test_element.getAttribute('data-test');
             return;
         }
     }

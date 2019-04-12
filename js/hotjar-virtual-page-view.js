@@ -63,7 +63,7 @@ class HotJarVirtualView {
             return;
         }
 
-        if (this.test_name) {
+        if (this.site_id && this.page_name && this.test_name) {
             hj('vpv', '/' + this.site_id + '/' + this.page_name + '/' + this.test_name);
             return;
         }

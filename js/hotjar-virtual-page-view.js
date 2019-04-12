@@ -44,29 +44,28 @@ class HotJarVirtualView {
     }
 
     getTestName() {
-        let test_element = document.querySelector('.testName');
+        let test_element = document.querySelector('.testName').getAttribute('data-test');
 
         if (test_element) {
-            this.test_name = test_element.textContent;
+            this.test_name = test_element;
             return;
         }
     }
 
     hitVirtualView() {
+        // hits hotjar for all sites
         if (this.page_name) {
             hj('vpv', '/' + this.page_name);
-            return;
         }
-
-        if (this.site_id && this.page_name) {
+        // hits hotjar when there is no test running - our control
+        if (this.site_id && this.page_name && this.test_name == null) {
             hj('vpv', '/' + this.site_id + '/' + this.page_name);
-            return;
         }
-
+        // hits hotjar when there is a test name - our experiment
         if (this.site_id && this.page_name && this.test_name) {
             hj('vpv', '/' + this.site_id + '/' + this.page_name + '/' + this.test_name);
-            return;
         }
+        return;
     }
 }
 

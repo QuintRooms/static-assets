@@ -219,6 +219,19 @@ function savingsTag() {
     }
 }
 
+// Update room description to say event name instead of 'Special Event Rate'
+function updateRoomDescription(selector, text) {
+    if (document.querySelector('.SinglePropDetail')) {
+        var original = document.querySelectorAll(selector);
+        original.forEach(function(element, index) {
+            var rateDate = document.querySelector('.ArnRateFromTo');
+            element.removeChild(rateDate);
+            var updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
+            element.innerHTML = updated;
+        });
+    }
+}
+
 jQuery(document).ready(function() {
     jQuery(".WBSupportForm .ArnSupportChatTable p:first").replaceWith("If you would like to speak with a representative, please call <b>512-691-9555</b></br>");
     jQuery(".WBSupportForm.ArnSubPage .ArnSupportChatTable tbody tr td:first-child div:nth-child(4)").replaceWith("Call Center Weekday Hours: 8:00 AM - 5:30 PM CST");

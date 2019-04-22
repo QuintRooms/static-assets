@@ -27,7 +27,7 @@ function addCustomTag(text, propId) {
 
 // runs on ratesReadyEvent
 function eventRateProp() {
-    let eventProp = document.querySelectorAll('.SearchHotels .ArnPropertyTierTwo');
+    let eventProp = document.querySelectorAll('.SearchHotels .OnSale');
     eventProp.forEach(function(element, index) {
         let percentSavings = element.querySelector('.percentSavings').textContent;
         let yourSavings = element.querySelector('.creditsValue').textContent;

@@ -170,7 +170,7 @@ jQuery(document).on('ratesReadyEvent', function() {
 
         replaceText('.ArnAcdParentLable', '- 0 Children', '');
         replaceText('.ArnAcdParentLable', 'Adults', 'Guests');
-        replaceText('.ArnAcdAdultsContainer > .ArnAcdSpan', 'Adults', 'Guests Per Room');
+        replaceText('.ArnAcdAdultsContainer > .ArnAcdSpan', 'Adults', 'Guests');
 
         updateText('.ArnShowRatesLink', 'Book Rooms');
         updateText('a.bookRoom', 'Book Rooms');

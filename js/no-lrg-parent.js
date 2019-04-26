@@ -208,7 +208,12 @@ function savingsTag() {
 jQuery(document).ready(function() {
     replaceText('.ArnAcdParentLable', '- 0 Children', '');
     replaceText('.ArnAcdParentLable', 'Adults', 'Guests');
+    // same component as above, needs super specificity for dateprompt for some reason
+    replaceText('.SimpleSearch > table > tbody > tr > td.ArnAdultsChildren > div.ArnAdultChildDropdown > div.ArnAcdParent > span.ArnAcdParentLable', '- 0 Children', '');
+    replaceText('.SimpleSearch > table > tbody > tr > td.ArnAdultsChildren > div.ArnAdultChildDropdown > div.ArnAcdParent > span.ArnAcdParentLable', 'Adults', 'Guests');
     replaceText('.ArnAcdAdultsContainer > .ArnAcdSpan', 'Adults', 'Guests');
+    replaceText('.SimpleSearch > table > tbody > tr > td.ArnAdultsChildren > div.ArnAdultChildDropdown > div.ArnAcdChild > .ArnAcdAdultsContainer > .ArnAcdSpan', 'Adults', 'Guests');
+
     jQuery(".WBSupportForm .ArnSupportChatTable p:first").replaceWith("If you would like to speak with a representative, please call <b>512-691-9555</b></br>");
     jQuery(".WBSupportForm.ArnSubPage .ArnSupportChatTable tbody tr td:first-child div:nth-child(4)").replaceWith("Call Center Weekday Hours: 8:00 AM - 5:30 PM CST");
     jQuery('.ConfirmationForm .confirmMessageContainer.desktopVersion').appendTo(jQuery('.ConfirmationForm .GuestForms').last());

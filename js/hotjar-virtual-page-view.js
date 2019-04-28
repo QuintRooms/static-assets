@@ -41,6 +41,17 @@ class HotJarVirtualView {
             this.page_name = 'confirmation';
             return;
         }
+
+        // formula 1 static pages
+        if (bodyClasses.classList.contains('bookroomsLanding')){
+            this.page_name = 'bookrooms-landing';
+            return;
+        }
+
+        if (bodyClasses.classList.contains('fowtPage')){
+            this.page_name = 'fowt-landing';
+            return;
+        }
     }
 
     getTestName() {

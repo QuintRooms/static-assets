@@ -27,7 +27,7 @@ function addCustomTag(text, propId) {
 
 // runs on ratesReadyEvent
 function eventRateProp() {
-    let eventProp = document.querySelectorAll('.SearchHotels .OnSale');
+    let eventProp = document.querySelectorAll('.SearchHotels .ArnPropertyTierTwo');
     eventProp.forEach(function(element, index) {
         let percentSavings = element.querySelector('.percentSavings').textContent;
         let yourSavings = element.querySelector('.creditsValue').textContent;
@@ -153,6 +153,29 @@ function updateRoomDescription(selector, text) {
     }
 }
 
+// runs on ratesReadyEvent
+function removeSavingsLessThan10() {
+    if (document.querySelector('.SinglePropDetail')) {
+        let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
+        savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
+        console.log(savings);
+        if (savings < 1000) {
+            document.querySelector('.bestPrice .percentSavings').style.display = 'none';
+        }
+        return false;
+    }
+    if (document.querySelector('.SearchHotels')) {
+        let savingsArr = document.querySelectorAll('.yourSavings');
+        savingsArr.forEach(function(element) {
+            let savings = element.textContent;
+            savings = savings.replace(/\D+/g, '');
+            if (savings < 1000) {
+                element.parentElement.style.display = 'none';
+            }
+        });
+    }
+}
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         roomCountThreshhold();
@@ -177,6 +200,8 @@ jQuery(document).on('ratesReadyEvent', function() {
         if (window.matchMedia("(max-width: 800px)" && document.querySelector('.OptionsPricing')).matches) {
             document.querySelector('.OptionsPricing a').textContent = 'Rooms';
         }
+
+        removeSavingsLessThan10();
 
     }, 1);
     singlePropDetailLRGTag();

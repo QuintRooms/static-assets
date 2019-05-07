@@ -27,7 +27,7 @@ function addCustomTag(text, propId) {
 
 // runs on ratesReadyEvent
 function eventRateProp() {
-    let eventProp = document.querySelectorAll('.SearchHotels .ArnPropertyTierTwo');
+    let eventProp = document.querySelectorAll('.SearchHotels .S16');
     eventProp.forEach(function(element, index) {
         let sponsoredContainer = element.querySelector('.ArnContainerSponsored');
         let containerRanked = element.querySelector('.ArnContainerRanked');
@@ -39,10 +39,9 @@ function eventRateProp() {
                 element.querySelector('.percent-off').insertAdjacentHTML('afterBegin', percentSavings);
 
             }
-            if (element.querySelector('.creditsValue')) {
+            if (element.querySelector('.credits ue')) {
                 let yourSavings = element.querySelector('.creditsValue').textContent;
                 element.querySelector('.yourSavings').insertAdjacentHTML('afterBegin', ' (Save ' + yourSavings + ')');
-
             }
         }
     });
@@ -177,7 +176,6 @@ function removeSavingsLessThan10() {
     if (document.querySelector('.SinglePropDetail')) {
         let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
         savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
-        console.log(savings);
         if (savings < 1000) {
             document.querySelector('.bestPrice .percentSavings').style.display = 'none';
         }

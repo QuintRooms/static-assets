@@ -27,14 +27,21 @@ function addCustomTag(text, propId) {
 
 // runs on ratesReadyEvent
 function eventRateProp() {
-    let eventProp = document.querySelectorAll('.SearchHotels .OnSale');
+    let eventProp = document.querySelectorAll('.SearchHotels .ArnPropertyTierTwo');
     eventProp.forEach(function(element, index) {
-        let percentSavings = element.querySelector('.percentSavings').textContent;
-        let yourSavings = element.querySelector('.creditsValue').textContent;
         let sponsoredContainer = element.querySelector('.ArnContainerSponsored');
         let containerRanked = element.querySelector('.ArnContainerRanked');
         if (sponsoredContainer || containerRanked) {
-            element.insertAdjacentHTML('afterBegin', '<div class="sash"><span class="event-rate">Exclusive Rate </span><span class="percent-off">' + percentSavings + ' <span class="yourSavings">(Save ' + yourSavings + ')</span></span></div>');
+            element.insertAdjacentHTML('afterBegin', '<div class="sash"><span class="event-rate">Exclusive Rate </span><span class="percent-off"><span class="yourSavings"></span></span></div>');
+            if (element.querySelector('.percentSavings')) {
+                let percentSavings = element.querySelector('.percentSavings').textContent;
+                element.querySelector('.percent-off').insertAdjacentHTML('afterBegin', percentSavings);
+
+            }
+            if (element.querySelector('.creditsValue')) {
+                let yourSavings = element.querySelector('.creditsValue').textContent;
+                element.querySelector('.yourSavings').insertAdjacentHTML('afterBegin', ' (Save ' + yourSavings + ')');
+            }
         }
     });
 }

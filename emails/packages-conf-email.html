@@ -298,6 +298,30 @@
 			              </td>
 			            </tr>
 			            [endif]
+			            [if:ExtraFeesPolicy]
+			            <tr>
+			              <td>
+			                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Extra Fees Policy</div>
+			                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[ExtraFeesPolicy,fallback=]</div>
+			              </td>
+			            </tr>
+			            [endif]
+			            [if:PaymentPolicy]
+			            <tr>
+			              <td>
+			                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Payment Policy</div>
+			                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[PaymentPolicy,fallback=]</div>
+			              </td>
+			            </tr>
+			            [endif]
+			            [if:CheckInSupportPolicy]
+			            <tr>
+			              <td>
+			                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Check In Support Policy</div>
+			                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[CheckInSupportPolicy,fallback=]</div>
+			              </td>
+			            </tr>
+			            [endif]
 						<tr>
 							<td style="padding-top: 5px; padding-bottom: 5px;">
 								<div class="policyTitle"  style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Important Guest Information</div>

@@ -36,6 +36,12 @@
       height: auto !important;
     }
     }
+    .roomRates > br{
+      display: none;
+    }
+    .mobileRoomRates > br{
+      display: initial;
+    }
     </style>
     </head>
   <body>
@@ -290,6 +296,7 @@
                   [elseif:siteid=51437]<img src="https://www.hotelsforhope.com/wp-content/uploads/2019/04/Logo-Exit111.png" style="height: auto; width: 250px; max-width: 100%;" alt="Exit 111 Festival Logo">
                   [elseif:siteid=51660]<img src="https://www.hotelsforhope.com/wp-content/uploads/2019/04/Logo-MBPOP.png" style="height: auto; width: 250px; max-width: 100%;" alt="Miami Beach Pop Festival Logo">
                   [elseif:siteid=51663]<img src="https://www.hotelsforhope.com/wp-content/uploads/2019/05/Logo-Rockweave.png" style="height: auto; width: 250px; max-width: 100%;" alt="Rockweave Music Festival Logo">
+                  [elseif:siteid=51439]<img src="https://www.hotelsforhope.com/wp-content/uploads/2019/05/Logo-Voodoo.png" style="height: auto; width: 250px; max-width: 100%;" alt="Voodoo Music + Arts Experience Logo">
                   [endif]
                 </td>
               </tr>
@@ -709,6 +716,10 @@
                               <td width="50%">Deposit Charged:</td>
                               <td>$[DepositCharged,fallback=]</td>
                             </tr>
+                            <tr style="vertical-align: top; font-family: Avenir;font-size: 14px; color: #939598; line-height: 30px">
+                              <td width="50%">Rate Per Night:</td>
+                              <td class="mobileRoomRates">[RoomRate,fallback=]</td>
+                          </tr>
                           </tbody>
                         </table>
                       </td>
@@ -742,6 +753,10 @@
                           <tr style="font-family: Avenir;font-size: 14px; color: #939598; line-height: 30px">
                             <td width="50%">Balance Due:</td>
                             <td>$[BalanceDue,fallback=]</td>
+                          </tr>
+                          <tr style="vertical-align: top; font-family: 'Avenir';font-size: 14px; color: #939598; line-height: 30px">
+                              <td width="50%">Rate Per Night:</td>
+                              <td class="roomRates">[RoomRate,fallback=]</td>
                           </tr>
                         </tbody>
                       </table>
@@ -792,6 +807,30 @@
               <td>
                 <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Property Policy</div>
                 <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[PropertyPolicy,fallback=]</div>
+              </td>
+            </tr>
+            [endif]
+            [if:ExtraFeesPolicy]
+            <tr>
+              <td>
+                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Extra Fees Policy</div>
+                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[ExtraFeesPolicy,fallback=]</div>
+              </td>
+            </tr>
+            [endif]
+            [if:PaymentPolicy]
+            <tr>
+              <td>
+                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Payment Policy</div>
+                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[PaymentPolicy,fallback=]</div>
+              </td>
+            </tr>
+            [endif]
+            [if:CheckInSupportPolicy]
+            <tr>
+              <td>
+                <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Check In Support Policy</div>
+                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[CheckInSupportPolicy,fallback=]</div>
               </td>
             </tr>
             [endif]

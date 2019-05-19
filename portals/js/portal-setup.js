@@ -71,7 +71,7 @@ class Portal {
     insertAssets() {
         // insert html
         if (this.page_name == 'FAQ') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq').innerHTML = data);
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq .ArnSubPage').innerHTML = data);
         }
 
         // insert scripts

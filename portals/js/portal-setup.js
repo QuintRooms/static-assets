@@ -266,7 +266,7 @@ class noLRGPortal extends Portal {
 }
 
 let portal = new LRGPortal();
-// portal.insertAssets();
+portal.insertAssets();
 portal.ieForEachPolyfill();
 portal.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 liM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 portal.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');

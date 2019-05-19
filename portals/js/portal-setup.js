@@ -1,6 +1,6 @@
 class Portal {
 
-    constructor(site_id, page_name, result) {
+    constructor(site_id, page_name) {
         this.site_id = site_id;
         this.page_name = page_name;
 
@@ -24,6 +24,7 @@ class Portal {
             this.page_name = 'search-results';
             return;
         }
+
         if (bodyClasses.classList.contains('SinglePropDetail')) {
             this.page_name = 'property-detail';
             return;
@@ -69,7 +70,7 @@ class Portal {
 
     insertAssets() {
         // insert html
-        if (this.page_name = 'FAQ') {
+        if (this.page_name == 'FAQ') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq').innerHTML = data);
         }
 
@@ -149,7 +150,7 @@ class Portal {
     }
 
     createMapButton() {
-        if (this.page_name = 'search-results') {
+        if (this.page_name == 'search-results') {
             document.querySelector('#Properties').insertAdjacentHTML('beforebegin', '<div class="openMapBtn"></div>');
             document.querySelector('.openMapBtn').addEventListener('click', this.openMap);
         }
@@ -188,7 +189,7 @@ class Portal {
     }
 
     removeSavingsLessThan10() {
-        if (this.page_name = 'property-detail') {
+        if (this.page_name == 'property-detail') {
             let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
             savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
             if (savings < 1000) {
@@ -265,7 +266,7 @@ class noLRGPortal extends Portal {
 }
 
 let portal = new LRGPortal();
-portal.insertAssets();
+// portal.insertAssets();
 portal.ieForEachPolyfill();
 portal.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 liM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 portal.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');

@@ -71,7 +71,7 @@ class Portal {
     insertAssets() {
         // insert html
         if (this.page_name == 'FAQ') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq .ArnSubPage').innerHTML = data);
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq').innerHTML = data);
         }
 
         // insert scripts
@@ -80,8 +80,8 @@ class Portal {
         document.querySelector('body').appendChild(script);
 
         // insert styles
-        this.fetchAsset('https://static.hotelsforhope.com/portals/styles/styles.css').then(data => document.querySelector('#header').insertAdjacentHTML('beforeBegin', '<style>' + data + '</style>'));
-        this.fetchAsset('https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.css').then(data => document.querySelector('#header').insertAdjacentHTML('beforeBegin', '<style>' + data + '</style>'));
+        this.fetchAsset('https://static.hotelsforhope.com/portals/styles/styles.css').then(data => document.querySelector('body').insertAdjacentHTML('afterBegin', '<style>' + data + '</style>'));
+        this.fetchAsset(this.site_id + '/' + this.site_id + '.css').then(data => document.querySelector('body').insertAdjacentHTML('afterBegin', '<style>' + data + '</style>'));
     }
 
     updateAttribute(attribute, argument, selector) {

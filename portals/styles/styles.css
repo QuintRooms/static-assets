@@ -178,9 +178,6 @@ select,
     border: 1px solid #ccc;
     z-index: 4;
     transition: all .5s ease;
-    display: inline;
-    position: relative;
-    top: 18px;
     margin-bottom: -59px;
     float: right;
 }

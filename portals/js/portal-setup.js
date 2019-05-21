@@ -194,19 +194,15 @@ class Portal {
         }
     }
 
-    openMap() {
-        if (this.page_name == 'search-results') {
-            let map = document.querySelector('.ArnRightExtraContainer');
-            let mapBtn = document.querySelector('.openMapBtn');
-            mapBtn.classList.toggle('closeMapBtn');
-            map.classList.toggle('showMap');
-        }
-    }
-
     createMapButton() {
-        if (this.page_name == 'search-results') {
-            document.querySelector('#Properties').insertAdjacentHTML('beforebegin', '<div class="openMapBtn"></div>');
-            document.querySelector('.openMapBtn').addEventListener('click', this.openMap);
+        if (this.page_name == 'search-results' && document.querySelector('.openMapBtn') == null) {
+            document.querySelector('#SortControlsContainer').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"></div>');
+            let map = document.querySelector('.ArnRightExtraContainer');
+            document.querySelector('.openMapBtn').addEventListener('click', function(){
+                let mapBtn = document.querySelector('.openMapBtn');
+                mapBtn.classList.toggle('closeMapBtn');
+                map.classList.toggle('showMap');
+            });
         }
     }
 
@@ -332,7 +328,6 @@ portal.appendToParent('.lrgTipContainer', '#theDatePrompt');
 portal.createHTML('<link rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
 portal.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
 portal.donationAmount();
-portal.createMapButton();
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -347,5 +342,6 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.collapseSearchBy('.lblRating', '#PropertyClassesContainer .ArnSearchField div');
         portal.roomCountThreshhold();
         portal.removeSavingsLessThan10();
+        portal.createMapButton();
     }, 1);
 });

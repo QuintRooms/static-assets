@@ -170,6 +170,47 @@ select,
     text-align: left;
 }
 
+.openMapBtn {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    z-index: 4;
+    transition: all .5s ease;
+    display: inline;
+    position: relative;
+    top: 18px;
+    margin-bottom: -59px;
+    float: right;
+}
+
+.openMapBtn:hover,
+.openMapBtn:focus,
+.openMapBtn:active {
+    background: #009dd9;
+    color: #fff;
+}
+
+.openMapBtn:before {
+    content: 'Open Map';
+}
+
+.closeMapBtn {
+    background: rgba(15, 15, 15, 0.8);
+    color: #fff;
+    transition: all .5s ease;
+}
+
+.closeMapBtn:before {
+    content: 'X';
+}
+
+.showMap {
+    transform: translate(0, 0) !important;
+    left: 0 !important;
+}
+
 #theMarketingOptInAjax input {
     width: 15px;
     margin-right: 4px;
@@ -597,47 +638,6 @@ select,
 
 .SearchHotels .adminMobile>.hamburger {
     float: left;
-}
-
-.openMapBtn {
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    z-index: 4;
-    transition: all .5s ease;
-    display: inline;
-    position: relative;
-    top: 18px;
-    margin-bottom: -59px;
-    float: right;
-}
-
-.openMapBtn:hover,
-.openMapBtn:focus,
-.openMapBtn:active {
-    background: #009dd9;
-    color: #fff;
-}
-
-.openMapBtn:before {
-    content: 'Open Map';
-}
-
-.closeMapBtn {
-    background: rgba(15, 15, 15, 0.8);
-    color: #fff;
-    transition: all .5s ease;
-}
-
-.closeMapBtn:before {
-    content: 'X';
-}
-
-.showMap {
-    transform: translate(0, 0) !important;
-    left: 0 !important;
 }
 
 /* Prop Detail Page */

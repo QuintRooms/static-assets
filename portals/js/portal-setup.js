@@ -329,7 +329,7 @@ portal.appendToParent('.ConfirmationForm .meetH4H.desktopVersion', '.Confirmatio
 portal.appendToParent('.ConfirmationForm .meetH4H.mobileVersion', '.ConfirmationForm .PaymentPolicies');
 portal.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
 portal.appendToParent('.lrgTipContainer', '#theDatePrompt');
-portal.createHTML('<link rel="shortcut icon" href="../images/h4h-fav.ico"', 'head', 'beforeend');
+portal.createHTML('<link rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
 portal.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
 portal.donationAmount();
 portal.createMapButton();

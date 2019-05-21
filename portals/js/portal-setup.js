@@ -42,19 +42,17 @@ class Portal {
             return;
         }
         if (bodyClasses.classList.contains('WBFaq')) {
-            this.page_name = 'FAQ';
+            this.page_name = 'faq';
             return;
         }
-    }
-
-    async fetchAsset(url) {
-        let response = await fetch(url);
-        let data = await response.text();
-
-        if (response.status != 200) {
-            throw new Error('File at path ' + url + ' not found.');
+        if (bodyClasses.classList.contains('WBTermsAndConditions')) {
+            this.page_name = 'terms-conditions';
+            return;
         }
-        return data;
+        if (bodyClasses.classList.contains('WBPrivacyPolicy')) {
+            this.page_name = 'privacy-policy';
+            return;
+        }
     }
 
     ieForEachPolyfill() {
@@ -68,20 +66,76 @@ class Portal {
         }
     }
 
+    async fetchAsset(url) {
+        let response = await fetch(url);
+        let data = await response.text();
+        return data;
+    }
+
     insertAssets() {
-        // insert html
-        if (this.page_name == 'FAQ') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html').then(data => document.querySelector('.WBFaq .ArnSubPage').innerHTML = data);
-        }
 
         // insert scripts
         let script = document.createElement('script');
         script.src = 'https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.js';
         document.querySelector('body').appendChild(script);
 
-        // insert styles
-        this.fetchAsset('https://static.hotelsforhope.com/portals/styles/styles.css').then(data => document.querySelector('#header').insertAdjacentHTML('beforeBegin', '<style>' + data + '</style>'));
-        this.fetchAsset('https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.css').then(data => document.querySelector('#header').insertAdjacentHTML('beforeBegin', '<style>' + data + '</style>'));
+        // parent stylesheet
+        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet">');
+        // child stylesheet
+        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.css');
+
+        // insert html
+        if (document.querySelector('header')) {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/header.html')
+                .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data)
+                    .catch(function() {
+                        throw new Error('File at path ' + url + ' not found.');
+                        return false;
+                    }));
+
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/supportSlider.html')
+                .then(data => document.querySelector('header').innerHTML = data)
+                .catch(function() {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
+
+        if (this.page_name == 'faq') {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html')
+                .then(data => document.querySelector('.WBFaq .ArnSubPage').innerHTML = data)
+                .catch(function() {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
+
+        if (this.page_name == 'privacy-policy') {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/privacyPolicy.html')
+                .then(data => document.querySelector('.WBPrivacyPolicy .ArnSubPage').innerHTML = data)
+                .catch(function() {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
+
+        if (this.page_name == 'terms-conditions') {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/termsAndConditions.html')
+                .then(data => document.querySelector('.WBTermsAndConditions .ArnSubPage').innerHTML = data)
+                .catch(function() {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
+
+        if (this.page_name == 'confirmation') {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/html/confirmationInfoSubHeader.html')
+                .then(data => document.querySelector('.confirmationPage').innerHTML = data)
+                .catch(function() {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
     }
 
     updateAttribute(attribute, argument, selector) {
@@ -178,11 +232,11 @@ class Portal {
 
     updateRoomDescription(selector, text) {
         if (document.querySelector('.SinglePropDetail')) {
-            var original = document.querySelectorAll(selector);
+            let original = document.querySelectorAll(selector);
             original.forEach(function(element, index) {
-                var rateDate = document.querySelector('.ArnRateFromTo');
+                let rateDate = document.querySelector('.ArnRateFromTo');
                 element.removeChild(rateDate);
-                var updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
+                let updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
                 element.innerHTML = updated;
             });
         }
@@ -191,7 +245,7 @@ class Portal {
     removeSavingsLessThan10() {
         if (this.page_name == 'property-detail') {
             let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
-            savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
+            savings = savings.replace(/[^a-zA-Z0-9]/g, "");
             if (savings < 1000) {
                 document.querySelector('.bestPrice .percentSavings').style.display = 'none';
             }

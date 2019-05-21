@@ -117,7 +117,9 @@ select,
 .WBResendOrCancelForm {
     flex-grow: 1;
 }
-
+.languageContainer{
+    display: none;
+}
 @media screen and (-ms-high-contrast: active),
 (-ms-high-contrast: none) {
     .RootBody .ArnSearchContainerMainDiv {
@@ -125,7 +127,7 @@ select,
     }
 }
 
-.SearchHotels #header.enterpriseHeader {
+.SearchHotels header.enterpriseHeader {
     z-index: 10;
 }
 
@@ -961,7 +963,7 @@ div#overlay {
     body {
         background: inherit;
     }
-	#header.enterpriseHeader .container{
+	header.enterpriseHeader .container{
 		width: 100%;
 	}
     .enterpriseHeader #logo {

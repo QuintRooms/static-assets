@@ -81,7 +81,7 @@ class Portal {
         // insert child script
         let script = document.createElement('script');
         script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
-        document.querySelector('body').appendChild(script);
+        //         document.querySelector('body').appendChild(script);
 
         // stylesheets
         document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet"><link href="https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.css" rel="stylesheet">');
@@ -90,14 +90,14 @@ class Portal {
         if (document.querySelector('header')) {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/header.html')
                 .then(data => document.querySelector('header').insertAdjacentHTML('afterBegin', data))
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
 
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/supportSlider.html')
                 .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -106,7 +106,7 @@ class Portal {
         if (this.page_name === 'faq') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/faq.html')
                 .then(data => document.querySelector('.WBFaq .ArnSubPage').innerHTML = data)
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -115,7 +115,7 @@ class Portal {
         if (this.page_name === 'privacy-policy') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/privacyPolicy.html')
                 .then(data => document.querySelector('.WBPrivacyPolicy .ArnSubPage').innerHTML = data)
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -124,7 +124,7 @@ class Portal {
         if (this.page_name === 'terms-conditions') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/termsAndConditions.html')
                 .then(data => document.querySelector('.WBTermsAndConditions .ArnSubPage').innerHTML = data)
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -133,7 +133,7 @@ class Portal {
         if (this.page_name === 'confirmation') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/confirmationInfoSubHeader.html')
                 .then(data => document.querySelector('.confirmationPage').innerHTML = data)
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -333,7 +333,7 @@ class LRGPortal extends Portal {
         if (this.page_name === 'lrg-page') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/lrgForm.html')
                 .then(data => document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = data)
-                .catch(function() {
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
@@ -341,11 +341,13 @@ class LRGPortal extends Portal {
         if (document.querySelector('#datePromptContainer')) {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/datePrompt.html')
                 .then(data => document.querySelector('#datePromptContainer').innerHTML = data)
-                .catch(function() {
+                .then(() => {
+                    Portal.prototype.appendToParent('.lrgTipContainer', '#theDatePrompt');
+                })
+                .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
-                this.appendToParent('.lrgTipContainer', '#theDatePrompt');
         }
     }
 
@@ -372,7 +374,7 @@ let portal = new Portal();
 portal.createParentPortal();
 
 jQuery(document).on('ratesReadyEvent', function() {
-    setTimeout(function(){  
+    setTimeout(function() {
         portal.ratesReadyEventMethods();
-    },1)
+    }, 1);
 });

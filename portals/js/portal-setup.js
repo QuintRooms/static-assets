@@ -81,13 +81,13 @@ class Portal {
 
         // insert scripts
         let script = document.createElement('script');
-        script.src = 'https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.js';
+        script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
         document.querySelector('body').appendChild(script);
 
         // parent stylesheet
         document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet">');
         // child stylesheet
-        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/' + this.site_id + '/' + this.site_id + '.css');
+        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.css');
 
         // insert html
         if (document.querySelector('header')) {

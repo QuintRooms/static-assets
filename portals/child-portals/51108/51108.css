@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: 'F1-Black';
-    src: url('/fonts/Formula1-Display-Black_web.woff2') format("embedded-opentype")
+    src: url('https://static.hotelsforhope.com/portals/child-portals/51108/fonts/Formula1-Display-Black_web.woff2') format("embedded-opentype")
 }
 
 @font-face {
     font-family: 'F1-Bold';
-    src: url('/fonts/Formula1-Display-Bold_web.woff2') format("embedded-opentype")
+    src: url('https://static.hotelsforhope.com/portals/child-portals/51108/fonts/Formula1-Display-Bold_web.woff2') format("embedded-opentype")
 }
 
 @font-face {
     font-family: 'F1-Regular';
-    src: url('/fonts/Formula1-Display-Regular_web.woff2') format("embedded-opentype")
+    src: url('https://static.hotelsforhope.com/portals/child-portals/51108/fonts/Formula1-Display-Regular_web.woff2') format("embedded-opentype")
 }
 
 /* latin-ext */

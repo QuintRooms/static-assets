@@ -343,7 +343,6 @@ portal.appendToParent('.lrgTipContainer', '#theDatePrompt');
 portal.createHTML('<link rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
 portal.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
 portal.donationAmount();
-portal.insertLRGForm();
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

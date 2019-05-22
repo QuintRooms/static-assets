@@ -1,0 +1,322 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'F1-Black';
+    src: url('/fonts/Formula1-Display-Black_web.woff2') format("embedded-opentype")
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('/fonts/Formula1-Display-Bold_web.woff2') format("embedded-opentype")
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('/fonts/Formula1-Display-Regular_web.woff2') format("embedded-opentype")
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGIVzY4SY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPecZTIAOhVxoMyOr9n_E7fdM3mDbRS.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPecZTIAOhVxoMyOr9n_E7fdMPmDQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGIVzY4SY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGItzYw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body.RootBody {
+    background: url(/img/f1-banner.png) no-repeat center center /cover;
+}
+
+header {
+    background: #e10600;
+}
+
+header img {
+    width: initial;
+}
+
+.lrgTip h3 {
+    font-family: 'Titillium Web';
+    font-weight: initial;
+}
+
+/* Button Colors */
+.selectedTab,
+.submit,
+.OnSale .ArnShowRatesLink,
+.ArnShowRatesLink,
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page,
+.bookRoom,
+.SearchHotels .modifySearchButton,
+.GroupHoldForm .ArnContentButtonWide,
+.GroupHoldForm .ArnContentButtonNarrow,
+.HoldRoomsForm .ArnContentButtonWide,
+.HoldRoomsForm .ArnContentButtonNarrow {
+    background: #e10600;
+    transition: all .5s ease;
+}
+
+.submit,
+.OnSale .ArnShowRatesLink,
+.ArnShowRatesLink,
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page,
+.bookRoom,
+.SearchHotels .modifySearchButton,
+.holdRoom {
+    font-family: 'Titillium Web';
+}
+
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page {
+    border: 1px solid #e10600;
+}
+
+.selectedTab,
+.ArnGoCitySearch:hover,
+.ArnGoAddressSearch:hover,
+.ArnGoLandmarkSearch:hover,
+.ArnGoAirportSearch:hover {
+    border-top: 1px solid #e10600;
+    border-bottom: 1px solid #e10600;
+
+}
+
+.SearchHotels .bottomPager .ArnPages .pagesActive {
+    color: #fff;
+    background: #e10600;
+	border: 1px solid #e10600;
+}
+
+.GroupHoldForm .ArnContentButtonWide,
+.GroupHoldForm .ArnContentButtonNarrow,
+.HoldRoomsForm .ArnContentButtonWide,
+.HoldRoomsForm .ArnContentButtonNarrow {
+    border-top: 1px solid #d6410f;
+    border-left: 1px solid #d6410f;
+    border-right: 1px solid #d6410f;
+}
+.GroupHoldForm .ArnContentButtonWide:hover, .GroupHoldForm .ArnContentButtonNarrow:hover, .HoldRoomsForm .ArnContentButtonWide:hover, .HoldRoomsForm .ArnContentButtonNarrow:hover{
+	background: #000;
+	
+}
+.submit:hover,
+.submit:active,
+.submit:focus,
+.ArnShowRatesLink:hover,
+.ArnShowRatesLink:active,
+.ArnShowRatesLink:focus,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active {
+    background: #000;
+}
+
+.holdRoom:hover,
+.holdRoom:active,
+.holdRoom:focus {
+    background: #646464;
+}
+
+.holdRoom {
+    background: #858585;
+}
+
+.hamburger:before,
+.PropertyAmenities:before {
+    border-top-color: #e10600;
+}
+
+.SearchHotels .ArnPropName div.percentSavings,
+.SinglePropDetail .bestPrice .percentSavings {
+    background: #fc0;
+    color: #000;
+}
+
+.arn-leaflet-reset-button {
+    background: #e10600;
+}
+
+.arnMapMarker {
+    background: #e10600;
+    border: #c899ff;
+}
+
+.arnMapMarker .arnMapMarkerTriangle {
+    border-top-color: #e10600;
+    transition: all .3s ease;
+}
+
+.arnMapMarker:hover,
+.highlight {
+    background: #000;
+    border: #000;
+    transition: all .3s ease;
+}
+
+.highlight>.arnMapMarkerTriangle,
+.arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: #000 transition: all .3s ease;
+}
+
+.specialEventRate,
+.hostHotel {
+    background: #e10600;
+}
+
+.throbber {
+    border-left: #e10600;
+}
+
+.SearchHotels .ArnSearchContainerMainTable {
+    top: 96px;
+}
+
+#slideit label.open:hover,
+#slideit label.open:focus,
+#slideit label.open,
+#slideit span.title {
+    background: #e10600;
+}
+
+#slideit section {
+    border-bottom: #e10600;
+}
+
+.ArnPropName div.ratingCount {
+    background: #e10600;
+}
+
+.sash {
+    background: #e10600;
+}
+
+.openMapBtn {
+    top: 114px;
+}
+
+.openMapBtn:hover,
+.openMapBtn:focus,
+.openMapBtn:active {
+    background: #e10600;
+}
+
+.ArnGoCitySearch:hover,
+.ArnGoAddressSearch:hover,
+.ArnGoLandmarkSearch:hover,
+.ArnGoAirportSearch:hover {
+    background: #e10600;
+}
+
+.HoldRoomsForm .ArnRightListContainer input {
+    width: 100%;
+    max-width: 205px;
+}
+
+@media only screen and (min-width: 800px) {
+
+    .ArnSortByName:hover,
+    .ArnSortByClass:hover,
+    .ArnSortByType:hover,
+    .ArnSortByPrice:hover,
+    .ArnSortByAvailability:hover,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByVacationRental:hover,
+    .ArnSortByDistance:hover,
+    .ArnSortByName.active,
+    .ArnSortByClass.active,
+    .ArnSortByType.active,
+    .ArnSortByPrice.active,
+    .ArnSortByAvailability.active,
+    .ArnSortByDealPercent.active,
+    .ArnSortByDealAmount.active,
+    .ArnSortByVacationRental.active,
+    .ArnSortByDistance.active {
+        border-left: 2px solid #e10600;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .SearchHotels .ArnSortByName:hover,
+    .SearchHotels .ArnSortByClass:hover,
+    .SearchHotels .ArnSortByType:hover,
+    .SearchHotels .ArnSortByPrice:hover,
+    .SearchHotels .ArnSortByAvailability:hover,
+    .SearchHotels .ArnSortByDealPercent:hover,
+    .SearchHotels .ArnSortByDealAmount:hover,
+    .SearchHotels .ArnSortByVacationRental:hover,
+    .SearchHotels .ArnSortByDistance:hover,
+    .SearchHotels .ArnSortByName.active,
+    .SearchHotels .ArnSortByClass.active,
+    .SearchHotels .ArnSortByType.active,
+    .SearchHotels .ArnSortByPrice.active,
+    .SearchHotels .ArnSortByAvailability.active,
+    .SearchHotels .ArnSortByDealPercent.active,
+    .SearchHotels .ArnSortByDealAmount.active,
+    .SearchHotels .ArnSortByVacationRental.active,
+    .SearchHotels .ArnSortByDistance.active {
+        border-top: 4px solid #e10600;
+        border-bottom: 4px solid #e10600;
+    }
+	.ArnToggleMap, .SearchHotels .filters, .SinglePropDetail.mobile .subHeader a.refineLink{
+		border-bottom: 4px solid #e10600;
+	}
+	.SearchHotels .ArnSearchContainerMainTable{
+		top: 0;
+	}
+	#theDatePrompt>img{
+		max-width: 300px;
+		margin-bottom: 36px;
+	}
+}
+#theDatePrompt .SimpleSearch{
+	display: none;
+}

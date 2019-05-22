@@ -92,14 +92,14 @@ class Portal {
         // insert html
         if (document.querySelector('header')) {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/header.html')
-                .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
+                .then(data => document.querySelector('header').insertAdjacentHTML('afterBegin', data))
                 .catch(function() {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
 
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/supportSlider.html')
-                .then(data => document.querySelector('header').innerHTML = data)
+                .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
                 .catch(function() {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;

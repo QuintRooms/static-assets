@@ -182,6 +182,7 @@ select,
     transition: all .5s ease;
     margin-bottom: -59px;
     float: right;
+    position: relative;
 }
 
 .openMapBtn:hover,
@@ -951,10 +952,6 @@ div#overlay {
 
     .SearchHotels .ArnSearchContainerMainTable {
         top: 40px;
-    }
-
-    .openMapBtn {
-        top: 57px;
     }
 
     .SinglePropDetail .ArnRateCell {
@@ -1955,11 +1952,6 @@ div#overlay {
     .adminControl,
     .ArnSortBy {
         display: none;
-    }
-
-
-    .openMapBtn {
-        top: 46px !important;
     }
 
     .SearchHotels .ArnPropName {

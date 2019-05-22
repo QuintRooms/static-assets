@@ -345,6 +345,7 @@ class LRGPortal extends Portal {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
                 });
+                this.appendToParent('.lrgTipContainer', '#theDatePrompt');
         }
     }
 

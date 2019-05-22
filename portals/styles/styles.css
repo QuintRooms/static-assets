@@ -1920,10 +1920,12 @@ div#overlay {
         display: none;
     }
 
-    .ArnSortContainer {
+    .ArnSortContainer, #SortControlsContainer {
         width: 85% !important;
     }
-
+    #SortControlsContainer{
+        margin: 0;
+    }
     .openMapBtn {
         top: 46px !important;
     }

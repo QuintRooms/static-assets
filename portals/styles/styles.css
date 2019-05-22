@@ -117,9 +117,11 @@ select,
 .WBResendOrCancelForm {
     flex-grow: 1;
 }
-.languageContainer{
+
+.languageContainer {
     display: none;
 }
+
 @media screen and (-ms-high-contrast: active),
 (-ms-high-contrast: none) {
     .RootBody .ArnSearchContainerMainDiv {
@@ -255,13 +257,15 @@ select,
 
 .ArnAcdChild {
     min-width: initial !important;
-	z-index:5;
+    z-index: 5;
 }
-@media screen and (max-width: 1240px) and (min-width: 800px){
-	.SinglePropDetail .ArnAdultsChildren{
-		overflow: visible;
-	}
+
+@media screen and (max-width: 1240px) and (min-width: 800px) {
+    .SinglePropDetail .ArnAdultsChildren {
+        overflow: visible;
+    }
 }
+
 .SearchHotels input[type="text"],
 .SearchHotels select,
 .SearchHotels .ArnAcdParent {
@@ -328,22 +332,27 @@ select,
         display: none;
     }
 }
+
 .SearchHotels .ArnPropName {
     width: 70%;
     max-width: 375px;
 }
-@media screen and (min-width: 800px) and (max-width: 1000px){
-	.SearchHotels .ArnRightListContainer{
-		width: 72%;
-		max-width: 72%;
-	}
-	.SearchHotels .ArnPropName{
-		width: 68%;
-	}
-	.ArnLeftSearchContainer{
-		font-size: 13px;
-	}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    .SearchHotels .ArnRightListContainer {
+        width: 72%;
+        max-width: 72%;
+    }
+
+    .SearchHotels .ArnPropName {
+        width: 68%;
+    }
+
+    .ArnLeftSearchContainer {
+        font-size: 13px;
+    }
 }
+
 .SearchHotels .ArnProperty {
     width: 100% !important;
 }
@@ -474,17 +483,19 @@ select,
 .SearchHotels .ArnPropName div.originalPrice .originalRateAmount::first-letter,
 .SearchHotels .originalRateContainer+.originalRateAmount:first-letter,
 .SinglePropDetail .originalRateContainer+.originalRateAmount:first-letter,
-.SinglePropDetail .bookRoomCell .ArnNightlyRate:first-letter{
+.SinglePropDetail .bookRoomCell .ArnNightlyRate:first-letter {
     font-size: .5em;
     vertical-align: super;
 }
-.searchingRates::first-letter{
+
+.searchingRates::first-letter {
     font-size: 1em !important;
 }
+
 .SearchHotels .ArnPropName div.yourRateContainer span,
 .ArnPriceCell>span,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
-.SearchHotels .ArnPriceCell > a > span{
+.SearchHotels .ArnPriceCell>a>span {
     font-size: 36px;
     letter-spacing: -1px;
     color: #79cf46;
@@ -621,6 +632,7 @@ select,
 .ArnAcdAdultsSelect option:nth-child(n + 5) {
     display: none;
 }
+
 .ArnAcdSpan {
     width: 100%;
 }
@@ -811,10 +823,10 @@ select,
 
 .SinglePropDetail .SB16 .yourRateAmount,
 .SinglePropDetail .yourRateAmount,
-.SinglePropDetail .SB16 .exclusiveRate + strong,
+.SinglePropDetail .SB16 .exclusiveRate+strong,
 .SinglePropDetail .SB20 .yourRateAmount,
-.SinglePropDetail .SB20 .exclusiveRate + strong,
-.SinglePropDetail .ArnNightlyRate strong{
+.SinglePropDetail .SB20 .exclusiveRate+strong,
+.SinglePropDetail .ArnNightlyRate strong {
     width: 100%;
     text-align: center;
     font-size: 36px;
@@ -960,9 +972,11 @@ div#overlay {
     body {
         background: inherit;
     }
-	header.enterpriseHeader .container{
-		width: 100%;
-	}
+
+    header.enterpriseHeader .container {
+        width: 100%;
+    }
+
     .enterpriseHeader #logo {
         padding-left: 5px;
     }
@@ -979,9 +993,11 @@ div#overlay {
     .SearchHotels .percentSavings {
         display: none;
     }
-	.SinglePropDetail .bestPrice .yourRateContainer{
-		margin-top: 10px;
-	}
+
+    .SinglePropDetail .bestPrice .yourRateContainer {
+        margin-top: 10px;
+    }
+
     .SearchHotels .originalRateAmount {
         font-size: 20px !important;
     }
@@ -1138,16 +1154,19 @@ div#overlay {
     .lrgTipContainer {
         width: initial;
     }
-	#mainHotelImage {
+
+    #mainHotelImage {
         height: 200px;
         object-fit: cover;
         object-position: center center;
         border: 2px solid #fff;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
-	.SearchHotels .bottomPager .ArnPages a, .SearchHotels .bottomPager .ArnPages .not_page{
-		color: #fff;
-	}
+
+    .SearchHotels .bottomPager .ArnPages a,
+    .SearchHotels .bottomPager .ArnPages .not_page {
+        color: #fff;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1331,7 +1350,7 @@ div#overlay {
     .SearchHotels .ArnPropThumb {
         display: block;
         width: 100%;
-		border-radius: 10px 10px 0 0;
+        border-radius: 10px 10px 0 0;
     }
 
     .sash {
@@ -1383,18 +1402,21 @@ div#overlay {
         position: absolute;
     }
 }
+
 /* Confirmation Page */
-.topRoomFunding span{
+.topRoomFunding span {
     color: #9C6AAD;
 }
+
 /* Event Rate Guarantee */
-.ArnSubPage{
-	padding: 0 18px;
+.ArnSubPage {
+    padding: 0 18px;
 }
-@media screen and (min-width:800px){
-	.ArnSubPage {
-		margin: 125px auto 70px;
-	}
+
+@media screen and (min-width:800px) {
+    .ArnSubPage {
+        margin: 125px auto 70px;
+    }
 }
 
 .ArnSubPage .submit {
@@ -1773,12 +1795,14 @@ div#overlay {
     .SearchHotels .filters {
         width: 50%;
     }
-	.paymentTitles{
-		display: none;
-	}
-	#theConfirmationContainer .submit{
-		font-weight: normal;
-	}
+
+    .paymentTitles {
+        display: none;
+    }
+
+    #theConfirmationContainer .submit {
+        font-weight: normal;
+    }
 }
 
 /* Tooltip */
@@ -1912,6 +1936,19 @@ div#overlay {
     }
 }
 
+@media only screen and (min-width: 800px) and (max-width: 1150px) {
+
+    .ArnSortContainer,
+    #SortControlsContainer {
+        width: 85% !important;
+    }
+
+    #SortControlsContainer {
+        margin: 0;
+    }
+
+}
+
 @media only screen and (min-width: 800px) and (max-width: 1000px) {
 
     .ArnPropImageButtons,
@@ -1920,12 +1957,7 @@ div#overlay {
         display: none;
     }
 
-    .ArnSortContainer, #SortControlsContainer {
-        width: 85% !important;
-    }
-    #SortControlsContainer{
-        margin: 0;
-    }
+
     .openMapBtn {
         top: 46px !important;
     }
@@ -1945,28 +1977,35 @@ div#overlay {
         right: 18px !important;
     }
 }
-#overlay{
-  height: 100% !important;
-} 
+
+#overlay {
+    height: 100% !important;
+}
+
 /* Removes guests per room options > 4 */
 #adults option:nth-child(n + 5) {
     display: none;
 }
+
 .ArnAdults {
     margin-top: 4px;
 }
+
 .ArnAdults span {
     font-size: 14px;
 }
+
 .ArnStayTable td.ArnAdults,
 .singlePropDetail .SimpleSearch .ArnNights,
 .SimpleSearch .ArnRooms,
 .SimpleSearch .ArnAdults {
     width: 50% !important;
 }
-.HoldRoomsForm select{
-   Width: 98%;
+
+.HoldRoomsForm select {
+    Width: 98%;
 }
+
 /* Removes current label and sets content of its container to 'Guests Per Room' */
 .ArnAdults span.titleLabel {
     display: none;
@@ -1997,8 +2036,8 @@ div#overlay {
     width: 50% !important;
 }
 
-.ArnStayTable{
-	table-layout: fixed;
+.ArnStayTable {
+    table-layout: fixed;
 }
 
 #theDatePrompt .SimpleSearch .ArnNights,
@@ -2009,13 +2048,19 @@ div#overlay {
 }
 
 @media screen and (min-width: 800px) and (max-width: 1200px) {
-	.SimpleSearch .ArnNights, .SimpleSearch .ArnRooms, .SimpleSearch .ArnAdults, .SimpleSearch .ArnChildren{
-		width: 100% !important;
-	}
-	.SimpleSearch .ArnAdults{
-		padding: 0;
-	}
+
+    .SimpleSearch .ArnNights,
+    .SimpleSearch .ArnRooms,
+    .SimpleSearch .ArnAdults,
+    .SimpleSearch .ArnChildren {
+        width: 100% !important;
+    }
+
+    .SimpleSearch .ArnAdults {
+        padding: 0;
+    }
 }
+
 @media screen and (max-width: 800px) {
     .RootBody .ArnStayTable td {
         margin: .5% !important;
@@ -2026,31 +2071,38 @@ div#overlay {
         position: relative;
         top: 2px;
     }
-	.SimpleSearch .ArnAdults{
-		padding: 0;
-	}
+
+    .SimpleSearch .ArnAdults {
+        padding: 0;
+    }
+
     .SearchHotels .ArnAdults::before {
         display: block;
     }
-	.SinglePropDetail .SimpleSearch select{
-		width: 99%;
-	}
-	.SearchHotels .titleLabel{
-		max-width: none !important;
-	}
+
+    .SinglePropDetail .SimpleSearch select {
+        width: 99%;
+    }
+
+    .SearchHotels .titleLabel {
+        max-width: none !important;
+    }
+
     #theDatePrompt .SimpleSearch .ArnAdults::before {
         display: inline;
     }
 }
 
 @media screen and (max-width:565px) {
+
     #theDatePrompt .SimpleSearch .ArnNights,
     #theDatePrompt .SimpleSearch .ArnRooms,
     #theDatePrompt .SimpleSearch .ArnAdults,
     #theDatePrompt .SimpleSearch .ArnChildren {
         width: 100% !important;
-		margin: 5px 0 0;
+        margin: 5px 0 0;
     }
+
     #theDatePrompt .SimpleSearch .ArnAdults {
         width: 100% !important;
     }

@@ -360,7 +360,5 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.roomCountThreshhold();
         portal.removeSavingsLessThan10();
         portal.createMapButton();
-        portal.searchHotelsExclusiveSash();
-        portal.singlePropExclusiveTag();
     }, 1);
 });

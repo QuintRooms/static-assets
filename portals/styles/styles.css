@@ -149,16 +149,6 @@ select,
     font-weight: normal;
 }
 
-.SearchHotels .ArnLeftSearchContainer,
-.SearchHotels .ArnRightListContainer {
-    margin-top: 0;
-}
-
-.SearchHotels .ArnSearchContainerMainTable {
-    top: 70px;
-    position: relative;
-}
-
 #SortControls {
     height: 185px;
 }
@@ -289,6 +279,11 @@ select,
         transition: all 1s ease;
         transform: translate(4000px, 0);
         z-index: 3;
+    }
+
+    .SearchHotels .ArnLeftSearchContainer,
+    .SearchHotels .ArnRightListContainer {
+        margin-top: 36px;
     }
 }
 
@@ -606,7 +601,7 @@ select,
     .checkmark {
         transform: scale(.6);
         top: 11%;
-        left: 3px;
+        left: 2px;
     }
 }
 
@@ -950,10 +945,6 @@ div#overlay {
         left: 92%;
     }
 
-    .SearchHotels .ArnSearchContainerMainTable {
-        top: 40px;
-    }
-
     .SinglePropDetail .ArnRateCell {
         width: 30%;
     }
@@ -1192,7 +1183,7 @@ div#overlay {
     }
 
     .checkmark {
-        top: 14%;
+        top: 12%;
     }
 
     .SearchHotels.mobile .ArnTripAdvisorDetails {

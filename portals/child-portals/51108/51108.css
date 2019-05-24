@@ -69,6 +69,38 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Font Overrides */
+/* Body Text */
+.SearchHotels .ArnPropName div.originalPrice,
+.SearchHotels .ArnPropName div.originalPrice:before,
+.SinglePropDetail .bestPrice .originalPrice:before,
+.SearchHotels .ArnPropName div.yourRateContainer span,
+.ArnPriceCell>span,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.SearchHotels .ArnPriceCell>a>span,
+.SearchHotels .ArnPriceCell>span:after,
+.SinglePropDetail .bestPrice .yourRateAmount:after,
+.SinglePropDetail .bestPrice .originalRateAmount,
+.SinglePropDetail .bestPrice .percentSavings,
+.SinglePropDetail legend
+{
+   font-family: 'Titillium Web', 'sans-serif';
+}
+
+/* Headings */
+.modifySearch,
+.ArnPropNameLink{
+    font-family: 'F1-Regular', 'Helvetica';
+}
+
+body,
+.ArnSubPage td,
+.ArnRoomsOnHold,
+.ArnRoomsOnHold td {
+    font-family: 'Titillium Web', 'sans-serif';
+    font-weight: 400;
+}
+
 body.RootBody {
     background: url(/img/f1-banner.png) no-repeat center center /cover;
 }
@@ -79,6 +111,7 @@ header {
 
 header img {
     width: initial;
+    max-width: 300px;
 }
 
 .lrgTip h3 {
@@ -86,7 +119,7 @@ header img {
     font-weight: initial;
 }
 
-/* Button Colors */
+/* Buttons */
 .selectedTab,
 .submit,
 .OnSale .ArnShowRatesLink,
@@ -100,7 +133,13 @@ header img {
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
     background: #e10600;
-    transition: all .5s ease;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
+    font-family: 'Titillium Web';
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    line-height: 15px;
+    text-transform: uppercase;
+    padding: 12px 15px 12px 15px !important;
 }
 
 .submit,
@@ -111,9 +150,29 @@ header img {
 .bookRoom,
 .SearchHotels .modifySearchButton,
 .holdRoom {
-    font-family: 'Titillium Web';
+    border-radius: 5px;
 }
 
+.submit:hover,
+.submit:active,
+.submit:focus,
+.ArnShowRatesLink:hover,
+.ArnShowRatesLink:active,
+.ArnShowRatesLink:focus,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active,
+.holdRoom:hover,
+.holdRoom:active,
+.holdRoom:focus,
+.GroupHoldForm .ArnContentButtonWide:hover, 
+.GroupHoldForm .ArnContentButtonNarrow:hover, 
+.HoldRoomsForm .ArnContentButtonWide:hover, 
+.HoldRoomsForm .ArnContentButtonNarrow:hover{
+    background: transparent;
+    color: #15151e !important;
+    box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+}
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
     border: 1px solid #e10600;
@@ -143,31 +202,10 @@ header img {
     border-left: 1px solid #d6410f;
     border-right: 1px solid #d6410f;
 }
-.GroupHoldForm .ArnContentButtonWide:hover, .GroupHoldForm .ArnContentButtonNarrow:hover, .HoldRoomsForm .ArnContentButtonWide:hover, .HoldRoomsForm .ArnContentButtonNarrow:hover{
-	background: #000;
-	
-}
-.submit:hover,
-.submit:active,
-.submit:focus,
-.ArnShowRatesLink:hover,
-.ArnShowRatesLink:active,
-.ArnShowRatesLink:focus,
-.bookRoom:hover,
-.bookRoom:focus,
-.bookRoom:active {
-    background: #000;
-}
 
-.holdRoom:hover,
-.holdRoom:active,
-.holdRoom:focus {
-    background: #646464;
-}
 
-.holdRoom {
-    background: #858585;
-}
+
+
 
 .hamburger:before,
 .PropertyAmenities:before {

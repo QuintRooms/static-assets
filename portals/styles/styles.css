@@ -1,56 +1,3 @@
-/* Iubenda Styles */
-
-#iubenda-cs-banner {
-    left: 0px !important;
-    position: fixed !important;
-    width: 100% !important;
-    z-index: 99999998 !important;
-}
-
-.iubenda-cs-content {
-    display: block;
-    margin: 0 auto;
-    padding: 20px;
-    width: auto;
-    font-family: Helvetica, Arial, FreeSans, sans-serif;
-    font-size: 14px;
-    background: #000;
-    color: #fff;
-}
-
-.iubenda-cs-rationale {
-    max-width: 900px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.iubenda-banner-content>p {
-    font-family: Helvetica, Arial, FreeSans, sans-serif;
-    line-height: 1.5;
-}
-
-.iubenda-cs-close-btn {
-    margin: 0;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-}
-
-.iubenda-cs-cookie-policy-lnk {
-    text-decoration: underline;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 900;
-}
-
-#menu-button {
-    display: none;
-}
-
 body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
@@ -70,10 +17,15 @@ body.WBResendOrCancelForm {
     min-height: 100vh;
 }
 
-.uppercase {
-    text-transform: uppercase;
+/* IE Only */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .RootBody .ArnSearchContainerMainDiv {
+        margin-bottom: 4vh;
+    }
 }
 
+/* Inputs */
 input {
     text-indent: 0;
 }
@@ -104,6 +56,31 @@ select,
     font-weight: initial;
 }
 
+#theMarketingOptInAjax input {
+    width: 15px;
+    margin-right: 4px;
+}
+
+#theMarketingOptInAjax label {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#theDSFormBody {
+    display: none;
+}
+
+/* Header */
+header{
+    border-bottom: none;
+}
+
+.logo img{
+    margin: 10px;
+}
+
+/* Search Results Page */
+
 .modifySearch {
     font-family: 'Nunito', 'sans-serif';
     font-weight: 300;
@@ -120,17 +97,6 @@ select,
 
 .languageContainer {
     display: none;
-}
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    .RootBody .ArnSearchContainerMainDiv {
-        margin-bottom: 4vh;
-    }
-}
-
-.SearchHotels header.enterpriseHeader {
-    z-index: 10;
 }
 
 .totalsTable .dueNowRow td,
@@ -201,20 +167,6 @@ select,
     left: 0 !important;
 }
 
-#theMarketingOptInAjax input {
-    width: 15px;
-    margin-right: 4px;
-}
-
-#theMarketingOptInAjax label {
-    font-size: 15px;
-    font-weight: 700;
-}
-
-#theDSFormBody {
-    display: none;
-}
-
 .CancelReservationAction.submit {
     margin-bottom: 5px;
 }
@@ -283,7 +235,7 @@ select,
 
     .SearchHotels .ArnLeftSearchContainer,
     .SearchHotels .ArnRightListContainer {
-        margin-top: 36px;
+        margin-top: 0;
     }
 }
 
@@ -380,7 +332,6 @@ select,
 
 .distanceLabel {
     font-size: 14px;
-    font-weight: initial;
 }
 
 .PropLimitedAvail .ArnRateCell {
@@ -959,19 +910,6 @@ div#overlay {
 @media only screen and (max-width: 800px) {
     body {
         background: inherit;
-    }
-
-    header.enterpriseHeader .container {
-        width: 100%;
-    }
-
-    .enterpriseHeader #logo {
-        padding-left: 5px;
-    }
-
-    .event-dates {
-        display: block;
-        left: 5px;
     }
 
     .openMapBtn {
@@ -2093,4 +2031,53 @@ div#overlay {
 
 .ArnChildren {
     display: none !important;
+}
+
+/* Iubenda Styles */
+
+#iubenda-cs-banner {
+    left: 0px !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 99999998 !important;
+}
+
+.iubenda-cs-content {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: auto;
+    font-family: Helvetica, Arial, FreeSans, sans-serif;
+    font-size: 14px;
+    background: #000;
+    color: #fff;
+}
+
+.iubenda-cs-rationale {
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.iubenda-banner-content>p {
+    font-family: Helvetica, Arial, FreeSans, sans-serif;
+    line-height: 1.5;
+}
+
+.iubenda-cs-close-btn {
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+}
+
+.iubenda-cs-cookie-policy-lnk {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
 }

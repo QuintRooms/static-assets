@@ -1,5 +1,6 @@
-class Portal {
+let childAssetsLoaded = false;
 
+class Portal {
     constructor(site_id, page_name) {
         this.site_id = site_id;
         this.page_name = page_name;
@@ -132,7 +133,7 @@ class Portal {
         }
     }
 
-    insertChildAssets(){
+    insertChildAssets() {
         // insert child script
         let script = document.createElement('script');
         script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
@@ -329,6 +330,10 @@ class Portal {
         this.roomCountThreshhold();
         this.removeSavingsLessThan10();
         this.createMapButton();
+        if (childAssetsLoaded === false) {
+            this.insertChildAssets();
+            childAssetsLoaded = true;
+        }
     }
 }
 

@@ -78,14 +78,6 @@ class Portal {
     }
 
     insertAssets() {
-        // insert child script
-        let script = document.createElement('script');
-        script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
-        document.querySelector('body').appendChild(script);
-
-        // stylesheets
-        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet"><link href="https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.css" rel="stylesheet">');
-
         // insert html
         if (document.querySelector('header')) {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/header.html')
@@ -140,6 +132,16 @@ class Portal {
         }
     }
 
+    insertChildAssets(){
+        // insert child script
+        let script = document.createElement('script');
+        script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
+        document.querySelector('body').appendChild(script);
+
+        // stylesheets
+        document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet"><link href="https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.css" rel="stylesheet">');
+    }
+
     updateAttribute(attribute, argument, selector) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
@@ -153,6 +155,7 @@ class Portal {
             propertyThumbnail.insertAdjacentHTML('afterbegin', '<div class="customTag">' + text + '</div>');
         }
     }
+
     updateText(selector, text) {
         let classList = document.querySelectorAll(selector);
         classList.forEach(function(element, index) {
@@ -325,6 +328,7 @@ class Portal {
         this.roomCountThreshhold();
         this.removeSavingsLessThan10();
         this.createMapButton();
+        this.insertChildAssets();
     }
 }
 

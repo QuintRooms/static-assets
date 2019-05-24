@@ -238,10 +238,6 @@ header img {
     background: #e10600;
 }
 
-.openMapBtn {
-    top: 114px;
-}
-
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {

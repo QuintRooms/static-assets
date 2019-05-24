@@ -312,6 +312,7 @@ class Portal {
         this.createHTML('<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
+        this.insertChildAssets();
     }
 
     ratesReadyEventMethods() {
@@ -328,7 +329,6 @@ class Portal {
         this.roomCountThreshhold();
         this.removeSavingsLessThan10();
         this.createMapButton();
-        this.insertChildAssets();
     }
 }
 

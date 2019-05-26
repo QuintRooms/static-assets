@@ -1,5 +1,3 @@
-let childAssetsLoaded = false;
-
 class Portal {
     constructor(site_id, page_name) {
         this.site_id = site_id;
@@ -133,8 +131,8 @@ class Portal {
         }
     }
 
-    insertChildAssets() {
-        // insert child script
+    // insert child script
+    async insertChildAssets(){
         let script = document.createElement('script');
         script.src = 'https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.js';
         document.querySelector('body').appendChild(script);
@@ -313,7 +311,6 @@ class Portal {
         this.createHTML('<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
-        this.insertChildAssets();
     }
 
     ratesReadyEventMethods() {
@@ -330,10 +327,6 @@ class Portal {
         this.roomCountThreshhold();
         this.removeSavingsLessThan10();
         this.createMapButton();
-        if (childAssetsLoaded === false) {
-            this.insertChildAssets();
-            childAssetsLoaded = true;
-        }
     }
 }
 
@@ -387,3 +380,22 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.ratesReadyEventMethods();
     }, 1);
 });
+
+let header = document.querySelector('header');
+let config = {attributes: true, childList: true, subtree: true};
+function callback(mutationsList, observer) {
+    for(var mutation of mutationsList) {
+        console.log(mutation)
+        if (mutation.addedNodes[0].className === 'logo') {
+            portal.insertChildAssets();
+            observer.disconnect();
+        }
+        else if (mutation.type == 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
+
+let observer = new MutationObserver(callback);
+observer.observe(header, config);
+

@@ -90,10 +90,130 @@
 
 /* Headings */
 .modifySearch,
-.ArnPropNameLink{
+.ArnPropNameLink,
+.event-rate,
+header a{
     font-family: 'F1-Regular', 'Helvetica';
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'F1-Regular', 'Helvetica' !important;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: 25px !important;
+    line-height: 30px !important;
+}
+
+h3,
+.ArnPropNameLink {
+    font-size: 18px;
+    line-height: 24px !important;
+    color: #15151E;
+}
+
+.font1 {
+    font-family: 'F1-Regular', 'Helvetica';
+    font-size: 25px;
+}
+
+.font2,
+.countdown,
+#theBookingPage fieldset legend,
+.theHotelName {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'F1-Regular', 'Helvetica';
+}
+
+.countdown {
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+}
+
+.theHotelName {
+    background: #15151e;
+}
+
+
+#theConfirmationContainer h4,
+#theConfirmationContainer .h4 {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ArnPropNameLink {
+    font-family: 'F1-Regular', 'Helvetica';
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.reserveHotel,
+.modifySearch {
+    font-size: 17px;
+    font-family: 'F1-Regular'
+}
+
+.ArnPrimarySearchContainer span,
+.ArnLeftListContainer #simpleSearch td,
+#theBookingPage label,
+label {
+    font-size: 13px !important;
+    letter-spacing: .5 !important;
+    line-height: 15px;
+    color: #fff;
+}
+
+.yui3-calendar-row td {
+    color: #15151e !important;
+}
+
+#theBookingPage label,
+label {
+    color: #15151e;
+}
+
+input {
+    font-size: 15px;
+}
+
+#theSmokingRoomAjax input {
+    margin: 5px 5px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+p {
+    line-height: 23px;
+    letter-spacing: .2px;
+}
+
+.ArnPropAddress,
+.distanceLabel {
+    font-size: 13px;
+}
+
+.distanceLabel {
+    font-weight: 600;
+}
 body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
@@ -108,19 +228,268 @@ body.RootBody {
 
 header {
     background: #e10600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
+.logo{
+    margin-right: 12px;
+}
+
+.navbar-nav > li > a{
+    padding: 36px 12px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.25s linear;
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus{
+    background: #15151e;
+}
 header img {
     width: initial;
     max-width: 300px;
+    float: left;
+}
+/* Top Nav */
+
+.top-menu-mobile ul li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
+.top-menu-mobile ul li a svg,
+.dynamic-nav li a svg {
+    float: right;
+    margin-right: 12px;
+    opacity: .7;
+}
+
+.dynamic-nav li a svg {
+    opacity: 1;
+}
+
+.top-menu {
+    min-height: initial;
+}
+
+.navbar {
+    border: 0 solid transparent;
+    border-radius: 0;
+    padding: 0 10px;
+}
+
+.navbar-default {
+    background: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #15151E;
+    letter-spacing: .2px;
+}
+.navbar-nav{
+    float: none;
+}
+.navbar-nav.navbar-right:last-child{
+    margin-right: 0;
+}
+
+.top-menu,
+.main-nav {
+    margin-bottom: 0;
+}
+
+.top-menu .navbar-nav>li {
+    padding: 8px;
+}
+
+.top-menu .navbar-nav>li>a {
+    padding: 2px 0 0;
+    margin: 0 6px;
+    border-bottom: 3px solid transparent;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.top-menu .navbar-nav>li:last-child>a {
+    margin-right: 0;
+}
+
+.top-menu .navbar-nav>li>a:hover,
+.top-menu .navbar-nav>li>a:active,
+.top-menu .navbar-nav>li>a:focus {
+    color: #e10600;
+    background: transparent !important;
+    border-bottom: 3px solid #e10600;
+}
+
+.top-menu .left-nav li {
+    padding: 8px 0;
+}
+
+.top-menu .left-nav li a {
+    margin: 0;
+}
+/* Mobile Toggle */
+
+.navbar-default .navbar-toggle {
+    border: none;
+    cursor: pointer;
+    float: none;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background: transparent;
+}
+
+.toggle-bar {
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 4px;
+    border-top-right-radius: 4px;
+}
+
+.top-bar {
+    width: 16px;
+}
+
+.middle-bar {
+    width: 19px;
+}
+
+.bottom-bar {
+    width: 22px;
+}
+/* Main Nav */
+
+.main-nav {
+    background: #e10600;
+}
+
+@media screen and (min-width: 770px) {
+    .main-nav .container-fluid {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.navbar-default .navbar-nav.dynamic-nav>li>a {
+    color: #fff;
+    font-family: 'F1-Regular', 'Helvetica';
+    font-weight: 400;
+    padding: 45px 18px;
+    font-size: 14px;
+    letter-spacing: .5;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-default .navbar-nav.dynamic-nav>li {
+        padding: 0;
+    }
+    .navbar-default .navbar-nav.dynamic-nav>li>a {
+        padding: 12px;
+    }
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    background: #15151e;
+    transition: all .3s ease;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: initial;
+    float: none;
+}
+
+.navbar-brand img {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 20px;
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .navbar-brand {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .main-nav .container-fluid {
+        min-height: 90px;
+        height: 90px;
+    }
+    .navbar-brand {
+        max-width: 300px;
+    }
+    .navbar-header {
+        min-height: initial;
+        padding: 16px;
+    }
+    .dynamic-nav {
+        background: #fff;
+        margin: 0;
+        z-index: 1;
+        position: relative;
+    }
+    .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
+    .navbar-default .navbar-nav.dynamic-nav>li>a:active,
+    .navbar-default .navbar-nav.dynamic-nav>li>a:focus {
+        background: #e10600;
+        color: #fff;
+        transition: all .5s ease;
+    }
+    .dynamic-nav>li>a:before {
+        height: 0;
+    }
+    .navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .main-nav .container-fluid {
+        min-height: 80px;
+        height: 80px;
+    }
+    .navbar-brand img {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100%;
+        max-width: 150px;
+    }
+}
+.navbar{
+    margin-bottom: 0;
+    border-radius: 0;
+    position: relative;
+    z-index: 4;
+    padding: 0 10px;
+}
+.navbar-default{
+    background: rgb(255, 255, 255);
+}
 .lrgTip h3 {
     font-family: 'Titillium Web';
     font-weight: initial;
 }
-
+.event-rate{
+    text-transform: uppercase;
+}
 /* Buttons */
+
 .selectedTab,
 .submit,
 .OnSale .ArnShowRatesLink,
@@ -174,6 +543,15 @@ header img {
     color: #15151e !important;
     box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
 }
+
+.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton{
+    margin: 20px 0 20px;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover{
+    color: #fff !important;
+}
+
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
     border: 1px solid #e10600;
@@ -203,10 +581,6 @@ header img {
     border-left: 1px solid #d6410f;
     border-right: 1px solid #d6410f;
 }
-
-
-
-
 
 .hamburger:before,
 .PropertyAmenities:before {
@@ -249,11 +623,16 @@ header img {
 .hostHotel {
     background: #e10600;
 }
-
-.throbber {
-    border-left: #e10600;
+.SearchHotels .reserveHotel, .SearchHotels .modifySearch{
+    padding: 18px 18px 18px 10px;
 }
-
+.SearchHotels .ArnSecondarySearchOuterContainer{
+    margin: 0;
+}
+.ArnQuadSearchContainer.ArnPrimarySearchContainer, .SearchHotels .ArnPrimarySearchOuterContainer, .SinglePropDetail .SimpleSearch {
+    background-color: RGB(21, 21, 30);
+    color: rgb(255, 255, 255) !important;
+}
 .SearchHotels .ArnSearchContainerMainTable {
     top: 96px;
 }

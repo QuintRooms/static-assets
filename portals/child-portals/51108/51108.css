@@ -289,9 +289,7 @@ header img {
     color: #15151E;
     letter-spacing: .2px;
 }
-.navbar-nav{
-    float: none;
-}
+
 .navbar-nav.navbar-right:last-child{
     margin-right: 0;
 }

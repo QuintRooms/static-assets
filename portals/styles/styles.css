@@ -71,11 +71,11 @@ select,
 }
 
 /* Header */
-header{
+header {
     border-bottom: none;
 }
 
-.logo img{
+.logo img {
     margin: 10px;
 }
 
@@ -306,7 +306,6 @@ header{
 }
 
 .SearchHotels .ArnPropName a {
-    letter-spacing: -1px;
     font-weight: initial;
 }
 
@@ -398,7 +397,6 @@ header{
 .SearchHotels .ArnPropName div.originalPrice span {
     text-decoration: none !important;
     font-size: 20px;
-    letter-spacing: -1px;
     text-align: center;
     color: #666;
 }
@@ -421,7 +419,6 @@ header{
     content: 'was ';
     text-decoration: none;
     font-size: 20px;
-    letter-spacing: -1px;
     color: #666;
     font-family: 'Nunito', 'sans-serif';
     font-weight: 300;
@@ -444,7 +441,6 @@ header{
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
 .SearchHotels .ArnPriceCell>a>span {
     font-size: 36px;
-    letter-spacing: -1px;
     color: #79cf46;
     font-family: 'Nunito', 'sans-serif';
     font-weight: 700 !important;
@@ -777,7 +773,6 @@ header{
     width: 100%;
     text-align: center;
     font-size: 36px;
-    letter-spacing: -1px;
     color: #79cf46;
     font-weight: 700;
     line-height: 1;
@@ -1093,9 +1088,21 @@ div#overlay {
     .SearchHotels .bottomPager .ArnPages .not_page {
         color: #fff;
     }
+
+    .ArnCheckInContainer {
+        max-width: 50%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
+    .SearchHotels .ArnSearchContainerMainTable {
+        table-layout: fixed;
+    }
+
+    .SearchHotels .ArnRightExtraContainer {
+        display: none;
+    }
+
     .sash {
         font-size: 13px;
     }
@@ -1133,7 +1140,7 @@ div#overlay {
     }
 
     .SearchHotels .ArnPropThumb {
-        width: 34%;
+        width: 25%;
     }
 
     .SearchHotels .ArnPropName div.originalPrice:before {
@@ -1326,6 +1333,30 @@ div#overlay {
 
     .SinglePropDetail .ArnRateCell {
         position: absolute;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .SearchHotels .ArnPropName {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .SearchHotels .ArnPropNameLink {
+        margin: 0;
+    }
+
+    .SearchHotels .ArnRateCell {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-top: -18px !important;
+    }
+
+    .SearchHotels .ArnPropName div.reviewCount {
+        position: static;
+        max-width: 100%;
     }
 }
 
@@ -1870,7 +1901,7 @@ div#overlay {
     }
 
     #SortControlsContainer,
-    .openMapBtn  {
+    .openMapBtn {
         margin-top: 24px;
     }
 
@@ -2000,6 +2031,8 @@ div#overlay {
 
     .SearchHotels .ArnAdults::before {
         display: block;
+        font-size: 13px;
+        margin: -4px 0;
     }
 
     .SinglePropDetail .SimpleSearch select {

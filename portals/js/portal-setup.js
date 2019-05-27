@@ -243,7 +243,7 @@ class Portal {
     }
 
     removeSavingsLessThan10() {
-        if (this.page_name === 'property-detail') {
+        if (this.page_name === 'property-detail' && document.querySelector('.bestPrice .originalPrice')) {
             let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
             savings = savings.replace(/[^a-zA-Z0-9]/g, "");
             if (savings < 1000) {

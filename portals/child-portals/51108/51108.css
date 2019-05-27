@@ -300,6 +300,7 @@ body.RootBody {
 .top-menu .left-nav li a {
     margin: 0;
 }
+
 /* Mobile Toggle */
 
 .navbar-default .navbar-toggle {
@@ -333,10 +334,12 @@ body.RootBody {
 .bottom-bar {
     width: 22px;
 }
+
 /* Main Nav */
-header > a{
+header>a {
     display: none;
 }
+
 .main-nav {
     background: #e10600;
 }
@@ -363,6 +366,7 @@ header > a{
     .navbar-default .navbar-nav.dynamic-nav>li {
         padding: 0;
     }
+
     .navbar-default .navbar-nav.dynamic-nav>li>a {
         padding: 12px;
     }
@@ -398,19 +402,23 @@ header > a{
         min-height: 90px;
         height: 90px;
     }
+
     .navbar-brand {
         max-width: 300px;
     }
+
     .navbar-header {
         min-height: initial;
         padding: 16px;
     }
+
     .dynamic-nav {
         background: #fff;
         margin: 0;
         z-index: 1;
         position: relative;
     }
+
     .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
     .navbar-default .navbar-nav.dynamic-nav>li>a:active,
     .navbar-default .navbar-nav.dynamic-nav>li>a:focus {
@@ -418,29 +426,36 @@ header > a{
         color: #fff;
         transition: all .5s ease;
     }
+
     .dynamic-nav>li>a:before {
         height: 0;
     }
+
     .navbar-collapse {
         padding-left: 0;
         padding-right: 0;
     }
 }
+
 @media screen and (max-width: 768px) {
     h2 {
         font-size: 22px;
         line-height: 30px;
     }
+
     h3 {
         font-size: 20px;
         line-height: 24px;
     }
+
     .dynamic-nav {
         background: #e10600;
     }
+
     .navbar-collapse {
         border-top: 0;
     }
+
     .navbar-default .navbar-nav.dynamic-nav>li>a {
         color: #fff;
         font-size: 15px;
@@ -449,21 +464,26 @@ header > a{
         margin: 20px;
         border-bottom-right-radius: 15px;
     }
+
     .navbar-default .navbar-nav.dynamic-nav>li>a:after {
         float: right;
     }
+
     .top-menu-mobile {
         background: #fff;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .top-menu-mobile .navbar-nav {
         margin: 0;
     }
+
     .top-menu-mobile ul {
         list-style: none;
         padding: 0;
     }
+
     .top-menu-mobile ul li a {
         color: #15151e;
         display: block;
@@ -473,10 +493,12 @@ header > a{
         border-bottom: 1px solid #d0d0d2;
         border-bottom-right-radius: 15px;
     }
+
     .top-menu-mobile ul li a:after {
         float: right;
         opacity: .7;
     }
+
     .navbar-default .navbar-nav>li>a:hover,
     .navbar-default .navbar-nav>li>a:focus {
         background: transparent;
@@ -488,6 +510,7 @@ header > a{
         min-height: 80px;
         height: 80px;
     }
+
     .navbar-brand img {
         position: absolute;
         top: 20px;
@@ -514,7 +537,8 @@ header > a{
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.bookRoom,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom,
 .SearchHotels .modifySearchButton,
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
@@ -535,9 +559,9 @@ header > a{
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.bookRoom,
+.SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
-.holdRoom {
+.SinglePropDetail .holdRoom {
     border-radius: 5px;
 }
 
@@ -560,6 +584,19 @@ header > a{
     background: transparent;
     color: #15151e !important;
     box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+}
+
+.SinglePropDetail .holdRoom {
+    background: #15151e;
+    color: #fff;
+}
+
+.SinglePropDetail .holdRoom:hover,
+.SinglePropDetail .holdRoom:focus,
+.SinglePropDetail .holdRoom:active {
+    background: #38383f;
+    color: #fff !important;
+    box-shadow: 0 0 0 2px transparent inset;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
@@ -608,6 +645,10 @@ header > a{
 .SinglePropDetail .bestPrice .percentSavings {
     background: #fc0;
     color: #000;
+}
+
+.SinglePropDetail .ArnPropDescription {
+    color: #fff;
 }
 
 .arn-leaflet-reset-button {

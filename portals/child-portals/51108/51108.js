@@ -4,6 +4,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function(){  
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Race Deals');
+        noLRGPortal.updateText('.exclusiveRate', 'Race Deals');
     },1);
 });
 

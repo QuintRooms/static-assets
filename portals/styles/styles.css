@@ -413,7 +413,9 @@ header {
 .originalRateAmount {
     text-decoration: none !important;
 }
-
+.arnCurrency{
+    font-size: 1em !important;
+}
 .SearchHotels .ArnPropName div.originalPrice:before,
 .SinglePropDetail .bestPrice .originalPrice:before {
     content: 'was ';
@@ -917,6 +919,10 @@ div#overlay {
 
     .SinglePropDetail .bestPrice .yourRateContainer {
         margin-top: 10px;
+    }
+
+    .SinglePropDetail .GeneralInfo p {
+        padding: 0;
     }
 
     .SearchHotels .originalRateAmount {

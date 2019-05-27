@@ -301,6 +301,10 @@ class Portal {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 liM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 
+        this.updateText('#theSubmitButton', 'Update Search');
+        this.updateText('#theOtherSubmitButton', 'Update Search');
+        this.updateText('.modifySearch', 'Update Search');
+
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
         this.appendToParent('.ConfirmationForm .meetH4H.desktopVersion', '.ConfirmationForm .GuestForms');
@@ -384,7 +388,7 @@ jQuery(document).on('ratesReadyEvent', function() {
 let header = document.querySelector('header');
 let config = {attributes: true, childList: true, subtree: true};
 function callback(mutationsList, observer) {
-    for(var mutation of mutationsList) {
+    for(let mutation of mutationsList) {
         console.log(mutation)
         if (mutation.addedNodes[0].className === 'logo') {
             portal.insertChildAssets();

@@ -1869,8 +1869,9 @@ div#overlay {
         width: 85% !important;
     }
 
-    #SortControlsContainer {
-        margin: 0;
+    #SortControlsContainer,
+    .openMapBtn  {
+        margin-top: 24px;
     }
 
 }

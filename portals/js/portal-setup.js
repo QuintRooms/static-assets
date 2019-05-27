@@ -301,8 +301,8 @@ class Portal {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 liM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 
-        this.updateText('#theSubmitButton', 'Update Search');
-        this.updateText('#theOtherSubmitButton', 'Update Search');
+        this.updateAttribute('value', 'Update Search', '#theSubmitButton');
+        this.updateAttribute('value', 'Update Search', '#theOtherSubmitButton');
         this.updateText('.modifySearch', 'Update Search');
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
@@ -386,16 +386,12 @@ jQuery(document).on('ratesReadyEvent', function() {
 });
 
 let header = document.querySelector('header');
-let config = {attributes: true, childList: true, subtree: true};
+let config = {attributes: false, childList: true, subtree: false};
 function callback(mutationsList, observer) {
     for(let mutation of mutationsList) {
-        console.log(mutation)
         if (mutation.addedNodes[0].className === 'logo') {
             portal.insertChildAssets();
             observer.disconnect();
-        }
-        else if (mutation.type == 'attributes') {
-            console.log('The ' + mutation.attributeName + ' attribute was modified.');
         }
     }
 };

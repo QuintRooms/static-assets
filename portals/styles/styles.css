@@ -413,9 +413,15 @@ header {
 .originalRateAmount {
     text-decoration: none !important;
 }
-.arnCurrency{
+
+.arnCurrency {
     font-size: 1em !important;
 }
+
+.yourRateContainer {
+    display: none !important;
+}
+
 .SearchHotels .ArnPropName div.originalPrice:before,
 .SinglePropDetail .bestPrice .originalPrice:before {
     content: 'was ';

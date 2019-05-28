@@ -114,7 +114,9 @@ h2 {
 }
 
 h3,
-.ArnPropNameLink {
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited {
     font-size: 18px;
     line-height: 24px !important;
     color: #15151E;
@@ -150,7 +152,9 @@ h3,
     font-weight: 300;
 }
 
-.ArnPropNameLink {
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited {
     font-family: 'F1-Regular', 'Helvetica';
     font-weight: normal;
     font-size: 14px;
@@ -187,6 +191,12 @@ input {
 
 #theSmokingRoomAjax input {
     margin: 5px 5px 0 0;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -388,6 +398,7 @@ header>a {
     width: 100%;
     max-width: 300px;
     margin-right: 20px;
+    margin-left: 10px;
     display: block;
 }
 
@@ -584,6 +595,10 @@ header>a {
     background: transparent;
     color: #15151e !important;
     box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+}
+
+.selectedTab {
+    text-transform: initial;
 }
 
 .SinglePropDetail .holdRoom {

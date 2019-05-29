@@ -293,15 +293,10 @@ class Portal {
 
         // Checkout form input validation
         this.updateAttribute('type', 'email', '#theEmailAddressAjax input');
-        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theZipCode1');
-        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theZipCode1');
-        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theCreditCardNumber');
-        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theCreditCardNumber');
-        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theCountryCode');
+
+        // shows numpad on ios
         this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theCountryCode');
-        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theAreaCode');
         this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theAreaCode');
-        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #thePhoneNumber');
         this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #thePhoneNumber');
 
         this.updateAttribute('value', 'Update Search', '#theSubmitButton');

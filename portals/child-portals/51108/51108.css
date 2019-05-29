@@ -367,9 +367,8 @@ header>a {
     color: #fff;
     font-family: 'F1-Regular', 'Helvetica';
     font-weight: 400;
-    padding: 45px 18px;
-    font-size: 14px;
-    letter-spacing: .5;
+    padding: 40px 18px;
+    font-size: 12px;
 }
 
 @media screen and (max-width: 767px) {
@@ -396,7 +395,7 @@ header>a {
 
 .navbar-brand img {
     width: 100%;
-    max-width: 300px;
+    max-width: 275px;
     margin-right: 20px;
     margin-left: 10px;
     display: block;
@@ -666,13 +665,23 @@ header>a {
     color: #fff;
 }
 
+
 .arn-leaflet-reset-button {
-    background: #e10600;
+    background: #15151e;
+    border: 1px solid transparent !important;
+    transition: all .2s linear;
+}
+
+.arn-leaflet-reset-button:hover,
+.arn-leaflet-reset-button:focus,
+.arn-leaflet-reset-button:active {
+    background: #38383f;
+    border: 1px solid transparent !important;
 }
 
 .arnMapMarker {
     background: #e10600;
-    border: #c899ff;
+    border: #fff;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
@@ -682,14 +691,14 @@ header>a {
 
 .arnMapMarker:hover,
 .highlight {
-    background: #000;
-    border: #000;
+    background: #e10600;
+    border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #000 transition: all .3s ease;
+    border-top-color: #15151e transition: all .3s ease;
 }
 
 .specialEventRate,
@@ -721,11 +730,21 @@ header>a {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #e10600;
+    background: #15151e;
 }
 
 #slideit section {
-    border-bottom: #e10600;
+    border-bottom: #15151e;
+}
+
+#slideit label.open:hover,
+#slideit label.open:focus {
+    color: #fff;
+}
+
+#slideit label.open:hover,
+#slideit label.open:focus {
+    background: #38383f;
 }
 
 .ArnPropName div.ratingCount {

@@ -432,11 +432,10 @@ header {
     font-weight: 300;
 }
 
-.SearchHotels .ArnPropName div.originalPrice .originalRateAmount::first-letter,
-.SearchHotels .originalRateContainer+.originalRateAmount:first-letter,
+.arnCurrency,
 .SinglePropDetail .originalRateContainer+.originalRateAmount:first-letter,
 .SinglePropDetail .bookRoomCell .ArnNightlyRate:first-letter {
-    font-size: .5em;
+    font-size: .5em !important;
     vertical-align: super;
 }
 
@@ -447,9 +446,10 @@ header {
 .SearchHotels .ArnPropName div.yourRateContainer span,
 .ArnPriceCell>span,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
-.SearchHotels .ArnPriceCell>a>span {
+.SearchHotels .ArnPriceCell>a>span,
+.ArnPriceCell a {
     font-size: 36px;
-    color: #79cf46;
+    color: #79cf46 !important;
     font-family: 'Nunito', 'sans-serif';
     font-weight: 700 !important;
 }
@@ -884,6 +884,11 @@ header {
     width: initial;
     height: initial;
     padding: 8px;
+}
+
+.arn-leaflet-reset-button,
+.arn-leaflet-search2-button {
+    height: initial;
 }
 
 div#overlay {

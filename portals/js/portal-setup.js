@@ -287,10 +287,22 @@ class Portal {
             }
         });
     }
-
     createParentPortal() {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
+
+        // Checkout form input validation
+        this.updateAttribute('type', 'email', '#theEmailAddressAjax input');
+        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theZipCode1');
+        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theZipCode1');
+        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theCreditCardNumber');
+        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theCreditCardNumber');
+        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theCountryCode');
+        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theCountryCode');
+        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #theAreaCode');
+        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theAreaCode');
+        this.updateAttribute('pattern', '[0-9]*', '.CheckOutForm #thePhoneNumber');
+        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #thePhoneNumber');
 
         this.updateAttribute('value', 'Update Search', '#theSubmitButton');
         this.updateAttribute('value', 'Update Search', '#theOtherSubmitButton');

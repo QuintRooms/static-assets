@@ -267,7 +267,7 @@ div.autocomplete {
 
 .ArnPushPageContent {
     background-color: #e8e8e8;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif");
     background-position: 12px 9px;
     background-repeat: no-repeat;
     background-size: 200px auto;
@@ -283,7 +283,7 @@ div.autocomplete {
 }
 
 #screenShotProgress.ArnPushPage {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif");
     background-position: center 5%;
     background-repeat: no-repeat;
 }
@@ -334,7 +334,7 @@ div.autocomplete {
 }
 
 .searchingRates .searchingAnimate {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/Searching_Hotels.gif");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/Searching_Hotels.gif");
     background-repeat: no-repeat;
     width: 47px;
     height: 30px;
@@ -1139,7 +1139,7 @@ header {
 
 .ArnSearchHotelsImg {
     background-color: transparent;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/arrow-down.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/arrow-down.png");
     background-position: center 40px;
     background-repeat: no-repeat;
     border: medium none;
@@ -1278,7 +1278,7 @@ div.autocomplete ul li.selected {
 .ArnCurrenciesContainer,
 .ArnSlider {
     background-color: #fff;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/dot.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/dot.png");
     background-position: 14px 12.2px;
     background-repeat: no-repeat;
     font-size: 15px;
@@ -1367,7 +1367,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 }
 
 .ArnToggleMap {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/map-bg.jpg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/map-bg.jpg");
     background-position: -5px -37px;
     background-repeat: no-repeat;
     border: 2px solid #fff;
@@ -1452,46 +1452,46 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 }
 
 .ArnSortBy {
-    xbackground-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-38.svg");
+    xbackground-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-38.svg");
     color: #999;
     text-decoration: none;
     border: none;
 }
 
 .ArnSortByName {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-32.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-32.svg");
 }
 
 .ArnSortByClass {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-12.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-12.svg");
 }
 
 .ArnSortByType {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-31.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-31.svg");
 }
 
 .ArnSortByPrice {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-25.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-25.svg");
 }
 
 .ArnSortByAvailability {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-28.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-28.svg");
 }
 
 .ArnSortByDealPercent {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/dealpercentage.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/dealpercentage.png");
 }
 
 .ArnSortByDealAmount {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/dealamount.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/dealamount.png");
 }
 
 .ArnSortByVacationRental {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-32.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-32.svg");
 }
 
 .ArnSortByDistance {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-11.svg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/icon-11.svg");
 }
 
 .ArnPropertyMap {
@@ -1559,7 +1559,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 
 .arnMapPopup .prev,
 .arnMapPopup .next {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
     position: absolute;
     left: 0;
     top: 60px;
@@ -1573,7 +1573,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 }
 
 .arnMapPopup .next {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
     left: initial;
     right: 0;
 }
@@ -2192,7 +2192,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 }
 
 .rateExplaination {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/i-logo.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/i-logo.png");
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -2680,7 +2680,7 @@ a.featuredProperty:hover {
 }
 
 .featuredContainer {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/mapbgbig.jpg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/mapbgbig.jpg");
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
@@ -2962,7 +2962,7 @@ a.featuredProperty:hover {
 
 .SinglePropDetail .ArnPropDescription {
     background-color: #eee;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/nearbyicon.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/nearbyicon.png");
     background-position: 26px 12px;
     background-repeat: no-repeat;
     color: black;
@@ -3181,7 +3181,7 @@ ol {
 
 .SinglePropDetail .control.prev {
     background-color: transparent;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
     background-repeat: no-repeat;
     border: medium none;
     box-shadow: none;
@@ -3196,7 +3196,7 @@ ol {
 
 .SinglePropDetail .control.next {
     background-color: transparent;
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
     background-repeat: no-repeat;
     border: medium none;
     box-shadow: none;
@@ -4039,7 +4039,7 @@ ol {
 /* Processing */
 
 .confirmationProcessing #theConfirmationButton {
-    background: #e9e9e9 url("/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif") no-repeat scroll 300px center / 50px auto;
+    background: #e9e9e9 url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/throbber6.gif") no-repeat scroll 300px center / 50px auto;
     color: #999;
 }
 
@@ -4314,7 +4314,7 @@ div#lightbox {
 
 .WBLoginForm,
 .WBForgotPasswordForm {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/room2.jpg");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/room2.jpg");
     background-size: cover;
 }
 
@@ -5037,7 +5037,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
 .ArnRateFiltersContainer,
 .ArnCurrenciesContainer,
 .ArnSlider {
-    background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/downblack.png");
+    background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/downblack.png");
     background-position: 27px 16px;
     background-size: 12px auto;
 }
@@ -6258,7 +6258,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     }
 
     .adminContainer span {
-        background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/user-icon.png");
+        background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/user-icon.png");
         color: white;
         padding: 0;
         display: inline-block;
@@ -11622,12 +11622,12 @@ select {
     }
 
     .ArnPropImagePrevious {
-        background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
+        background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/prev-arrow.png");
         float: left;
     }
 
     .ArnPropImageNext {
-        background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
+        background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/next-arrow.png");
         float: right;
     }
 
@@ -11748,7 +11748,7 @@ select {
     }
 
     .rateExplaination {
-        background-image: url("/appSkins/64/v6/themes/global/skins/brownstone/images/icons/i-logo.png");
+        background-image: url("//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/i-logo.png");
         background-size: 10px auto;
         margin: 0 0 0 2px;
     }

@@ -216,6 +216,47 @@ header {
 }
 
 @media only screen and (min-width:800px) {
+
+    .RootBody .ArnSearch .ArnIndividualSearchContainer span,
+    .RootBody .ArnSearch .ArnIndividualSearchContainer br {
+        display: initial;
+    }
+
+    .RootBody .ArnStayTable {
+        text-align: left;
+    }
+
+    .RootBody .ArnStayTable td.ArnRooms,
+    .RootBody .ArnStayTable td.ArnAdults {
+        display: inline-block !important;
+    }
+
+    .ArnStayTable td.ArnAdults {
+        width: 75% !important;
+    }
+
+    .RootBody .ArnStayTable select,
+    .RootBody #adults {
+        height: 48px;
+    }
+
+    .RootBody .ArnAdults {
+        width: 100% !important;
+        display: inline-block !important;
+    }
+
+    .RootBody #adults {
+        margin-top: 1px;
+    }
+
+    .RootBody .ArnRooms {
+        margin: 0 7.5px 0 0 !important;
+    }
+
+    .RootBody #theSubmitButton {
+        margin-top: 16px;
+    }
+
     .SearchHotels .ArnLeftSearchContainer {
         width: 25%;
         max-width: initial;
@@ -1995,7 +2036,7 @@ div#overlay {
 }
 
 .HoldRoomsForm select {
-    Width: 98%;
+    width: 98%;
 }
 
 /* Removes current label and sets content of its container to 'Guests Per Room' */
@@ -2127,46 +2168,9 @@ body.WBResendOrCancelForm {
 
 .RootBody .ArnSearchHolderBoth {
     background: transparent;
+    width: 24%;
 }
 
-.RootBody .ArnSearch .ArnIndividualSearchContainer span,
-.RootBody .ArnSearch .ArnIndividualSearchContainer br {
-    display: initial;
-}
-
-.RootBody .ArnStayTable {
-    text-align: left;
-}
-
-.RootBody .ArnStayTable td.ArnRooms,
-.RootBody .ArnStayTable td.ArnAdults, {
-    display: inline-block !important;
-}
-.ArnStayTable td.ArnAdults{
-    width: 75% !important;
-}
-.RootBody .ArnStayTable select,
-.RootBody #adults {
-    height: 48px;
-}
-
-.RootBody .ArnAdults {
-    margin-left: 7.5px !important;
-    width: 100% !important;
-    display: inline-block !important;
-}
-
-.RootBody #adults {
-    margin-top: 1px;
-}
-
-.RootBody .ArnRooms {
-    margin: 0 7.5px 0 0 !important;
-}
-
-.RootBody #theSubmitButton{
-    width: initial;
-}
 /* Iubenda Styles */
 
 #iubenda-cs-banner {

@@ -6,50 +6,6 @@ body,
     font-weight: 400;
 }
 
-body.RootBody {
-    background-size: cover !important;
-}
-
-body.RootBody,
-body.WBResendOrCancelForm {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* IE Only */
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    .RootBody .ArnSearchContainerMainDiv {
-        margin-bottom: 4vh;
-    }
-}
-
-.RootBody .ArnSearchHolderBoth {
-    background: transparent;
-}
-
-.RootBody .ArnSearch .ArnIndividualSearchContainer span,
-.RootBody .ArnSearch .ArnIndividualSearchContainer br {
-    display: initial;
-}
-
-.RootBody .ArnStayTable {
-    text-align: left;
-}
-
-.RootBody .ArnStayTable select,
-.RootBody #adults {
-    height: 48px;
-}
-
-.RootBody #adults {
-    margin-top: 1px;
-}
-
-.RootBody .ArnRooms {
-    margin: 0 7.5px 0 0 !important;
-}
 
 /* Inputs */
 input {
@@ -246,6 +202,10 @@ header {
 @media screen and (max-width: 1240px) and (min-width: 800px) {
     .SinglePropDetail .ArnAdultsChildren {
         overflow: visible;
+    }
+
+    .RootBody #theSubmitButton {
+        width: 13%;
     }
 }
 
@@ -2146,6 +2106,67 @@ div#overlay {
     display: none !important;
 }
 
+body.RootBody {
+    background-size: cover !important;
+}
+
+body.RootBody,
+body.WBResendOrCancelForm {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* IE Only */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .RootBody .ArnSearchContainerMainDiv {
+        margin-bottom: 4vh;
+    }
+}
+
+.RootBody .ArnSearchHolderBoth {
+    background: transparent;
+}
+
+.RootBody .ArnSearch .ArnIndividualSearchContainer span,
+.RootBody .ArnSearch .ArnIndividualSearchContainer br {
+    display: initial;
+}
+
+.RootBody .ArnStayTable {
+    text-align: left;
+}
+
+.RootBody .ArnStayTable td.ArnRooms,
+.RootBody .ArnStayTable td.ArnAdults, {
+    display: inline-block !important;
+}
+.ArnStayTable td.ArnAdults{
+    width: 75% !important;
+}
+.RootBody .ArnStayTable select,
+.RootBody #adults {
+    height: 48px;
+}
+
+.RootBody .ArnAdults {
+    margin-left: 7.5px !important;
+    width: 100% !important;
+    display: inline-block !important;
+}
+
+.RootBody #adults {
+    margin-top: 1px;
+}
+
+.RootBody .ArnRooms {
+    margin: 0 7.5px 0 0 !important;
+}
+
+.RootBody #theSubmitButton{
+    width: initial;
+}
 /* Iubenda Styles */
 
 #iubenda-cs-banner {

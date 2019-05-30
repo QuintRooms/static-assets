@@ -2204,6 +2204,45 @@ div#overlay {
     #theDatePrompt .SimpleSearch .ArnAdults::before {
         display: inline;
     }
+
+    #theBookingPage {
+        padding: 0 8px;
+    }
+
+    #theReservationFormContainer>table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    #theBookingPage fieldset.WBGuestFormFields {
+        padding: 50px 0 15px;
+    }
+
+    .hotelBox {
+        padding: 15px 0;
+    }
+
+    .theHotelName {
+        padding: 15px 0 7.5px;
+    }
+
+    .checkOutSummaryTable th,
+    .checkoutReview {
+        padding: 0;
+    }
+
+    .checkoutPrice {
+        margin: 0;
+    }
+
+    .totalsTable .balanceDueRow td {
+        white-space: initial;
+        font-size: 18px;
+    }
+
+    #thePhoneNumberAjax input {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:565px) {

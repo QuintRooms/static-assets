@@ -140,6 +140,10 @@ h3,
     font-family: 'F1-Regular', 'Helvetica';
 }
 
+.arnCurrency {
+    font-size: .5em !important;
+}
+
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;
@@ -853,5 +857,9 @@ header>a {
     .SearchHotels .ArnGoAirportSearch:hover {
         border-bottom: 1px solid #e10600;
         background: #e10600;
+    }
+
+    .arnCurrency {
+        vertical-align: initial;
     }
 }

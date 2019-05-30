@@ -503,12 +503,6 @@ header {
     width: 100% !important;
 }
 
-.yourRateAmount::first-letter,
-.ArnPriceCell>span::first-letter {
-    font-size: .5em;
-    vertical-align: super;
-}
-
 .SearchHotels .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink {
     padding: 8px 20px !important;
@@ -1352,7 +1346,7 @@ div#overlay {
     }
 
     .SearchHotels .OnSale .ArnRateCell {
-        top: 202px;
+        top: 215px;
     }
 
     .SearchHotels.mobile .roomCount {

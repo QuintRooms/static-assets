@@ -25,6 +25,32 @@ body.WBResendOrCancelForm {
     }
 }
 
+.RootBody .ArnSearchHolderBoth {
+    background: transparent;
+}
+
+.RootBody .ArnSearch .ArnIndividualSearchContainer span,
+.RootBody .ArnSearch .ArnIndividualSearchContainer br {
+    display: initial;
+}
+
+.RootBody .ArnStayTable {
+    text-align: left;
+}
+
+.RootBody .ArnStayTable select,
+.RootBody #adults {
+    height: 48px;
+}
+
+.RootBody #adults {
+    margin-top: 1px;
+}
+
+.RootBody .ArnRooms {
+    margin: 0 7.5px 0 0 !important;
+}
+
 /* Inputs */
 input {
     text-indent: 0;
@@ -45,7 +71,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-    padding-left: 6px;
+    padding-left: 6px !important;
 }
 
 input,
@@ -56,14 +82,28 @@ select,
     font-weight: initial;
 }
 
+.hurryBook,
+.secureBooking {
+    display: none;
+}
+
 #theMarketingOptInAjax input {
     width: 15px;
     margin-right: 4px;
 }
 
-#theMarketingOptInAjax label {
+#theMarketingOptInAjax label,
+.confirmationAgreement {
     font-size: 15px;
     font-weight: 700;
+}
+
+.confirmationAgreement {
+    display: block;
+}
+
+#confirmCheckBox {
+    margin-right: 4px;
 }
 
 #theDSFormBody {
@@ -237,6 +277,11 @@ header {
     .SearchHotels .ArnRightListContainer {
         margin-top: 0;
     }
+
+    .ArnSubPage .submit {
+        max-width: 250px;
+    }
+
 }
 
 @media only screen and (min-width:1000px) {
@@ -1108,6 +1153,20 @@ div#overlay {
     .ArnCheckInContainer {
         max-width: 50%;
     }
+
+    #theConfirmationContainer div {
+        padding: 0;
+    }
+
+    #theConfirmationContainer+div {
+        padding: 15px;
+    }
+
+    #theConfirmCheckboxesAjax {
+        margin: 24px 0;
+    }
+
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -1394,10 +1453,10 @@ div#overlay {
     .ArnSubPage {
         margin: 125px auto 70px;
     }
-}
 
-.ArnSubPage .submit {
-    max-width: 250px;
+    .CheckOutForm .ArnSubPage {
+        margin-top: 42px;
+    }
 }
 
 .WBRateGuaranteeForm p {

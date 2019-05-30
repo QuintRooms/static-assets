@@ -91,16 +91,20 @@
 /* Headings */
 .modifySearch,
 .ArnPropNameLink,
-.event-rate {
-    font-family: 'F1-Regular', 'Helvetica';
-}
-
+.event-rate,
+.OnSale .totalsTable .balanceDueRow td,
 h1,
 h2,
 h3,
 h4,
 h5 {
     font-family: 'F1-Regular', 'Helvetica' !important;
+}
+
+.detailsTitle,
+#theBookingPage fieldset.WBGuestFormFields legend {
+    font-family: 'F1-Bold';
+    letter-spacing: initial;
 }
 
 h1 {
@@ -136,16 +140,6 @@ h3,
     font-family: 'F1-Regular', 'Helvetica';
 }
 
-.countdown {
-    margin: 10px 0 20px 0;
-    font-size: 18px;
-}
-
-.theHotelName {
-    background: #15151e;
-}
-
-
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;
@@ -169,7 +163,8 @@ h3,
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,
-label {
+label,
+.confirmationAgreement {
     font-size: 13px !important;
     letter-spacing: .5 !important;
     line-height: 15px;
@@ -181,7 +176,8 @@ label {
 }
 
 #theBookingPage label,
-label {
+label,
+.confirmationAgreement {
     color: #15151e;
 }
 
@@ -565,6 +561,7 @@ header>a {
 }
 
 .submit,
+#theConfirmationContainer .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
@@ -749,6 +746,10 @@ header>a {
 
 .ArnPropName div.ratingCount {
     background: #e10600;
+}
+
+.exclusiveRate {
+    display: none;
 }
 
 .sash {

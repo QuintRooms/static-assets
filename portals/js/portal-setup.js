@@ -299,7 +299,7 @@ class Portal {
         this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theAreaCode');
         this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #thePhoneNumber');
 
-        this.updateAttribute('value', 'Update Search', '#theSubmitButton');
+        this.updateAttribute('value', 'Update Search', '.RootBody #theSubmitButton');
         this.updateAttribute('value', 'Update Search', '#theOtherSubmitButton');
         this.updateText('.modifySearch', 'Update Search');
 

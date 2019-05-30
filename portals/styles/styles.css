@@ -171,6 +171,10 @@ header {
     margin-bottom: 5px;
 }
 
+.ModifyReservationAction.submit {
+    margin: 0 0 0 5px;
+}
+
 .SearchHotels .ArnProperty:hover {
     box-shadow: 2px 2px 2px 0px #ccc;
 }
@@ -1179,6 +1183,9 @@ div#overlay {
         margin: 24px 0;
     }
 
+    .ModifyReservationAction.submit {
+        margin: 5px 0;
+    }
 
 }
 
@@ -1251,6 +1258,15 @@ div#overlay {
     /*Hide sales iq on mobile*/
     .zsiq_floatmain {
         display: none !important;
+    }
+
+    .ArnSubPage {
+        padding: 0 8px;
+        width: 100%;
+    }
+
+    .ArnSubPage .submit {
+        width: 100% !important;
     }
 }
 
@@ -1394,34 +1410,11 @@ div#overlay {
         width: 95%;
     }
 
-    /*.SearchHotels .ArnPropName {
-        width: 34%;
-    }
-
-    .SearchHotels .ArnPropThumb {
-        width: 33%;
-    }
-
-    .ArnPropNameLink,
-    .ArnPropNameLink:active,
-    .ArnPropNameLink:visited {
-        font-size: 15px;
-    }*/
-
     .SinglePropDetail .ArnPropNameLink,
     .SinglePropDetail .ArnPropNameLink:active,
     .SinglePropDetail .ArnPropNameLink:visited {
         font-size: 17px;
     }
-
-    /*
-    .SearchHotels .originalRateAmount {
-        display: inline !important;
-    }
-
-    .SearchHotels .ArnPropName div {
-        font-size: 12px;
-    }*/
 
     .svg-container {
         width: 45px;
@@ -1491,10 +1484,6 @@ div#overlay {
 
 .eventRateGuarantee p {
     display: block;
-}
-
-.WBRateGuaranteeForm>h1 {
-    display: none;
 }
 
 .eventRateGuarantee h1 {

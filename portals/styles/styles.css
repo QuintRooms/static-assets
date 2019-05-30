@@ -862,6 +862,10 @@ header {
     fill: #79cf46;
 }
 
+.SinglePropDetail .bestPrice a.showRoomsLink {
+    display: none !important;
+}
+
 .SinglePropDetail .ArnPropertyMapInner {
     height: 500px !important;
     z-index: 8;

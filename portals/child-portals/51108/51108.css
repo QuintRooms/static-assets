@@ -524,9 +524,9 @@ header>a {
     .navbar-brand img {
         position: absolute;
         top: 20px;
-        right: 20px;
+        right: 0;
         width: 100%;
-        max-width: 150px;
+        max-width: 175px;
     }
 }
 

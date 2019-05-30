@@ -165,7 +165,7 @@ select {
 }
 
 .submit {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     border: medium none;
     color: #ffffff;
     font-size: 16px;
@@ -1115,7 +1115,7 @@ header {
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     margin: 0 0 100px;
     padding: 0;
     width: 100%;
@@ -1223,7 +1223,7 @@ header {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer {
     color: #fff;
     padding: 10px 10px 0;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
 }
 
 div.autocomplete {
@@ -1402,7 +1402,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 .ArnSortByVacationRental,
 .ArnSortByDistance {
     background-position: 25px 20px;
-    /*color: #009dd9;*/
+    color: transparent;
     padding: 15px 27px;
     text-indent: 20px;
     width: auto;
@@ -1995,7 +1995,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 
 .SearchDestination .bookRoom:link,
 .SearchDestination .bookRoom:visited {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     color: #ffffff;
     font-size: 15px;
     padding: 4px 14px;
@@ -2230,7 +2230,7 @@ x.GroupHoldForm.IE .ArnRightListContainer {
 }
 
 .ArnShowRatesLink {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     color: #ffffff !important;
     font-size: 16px;
     padding: 4px 10px;
@@ -2840,7 +2840,7 @@ a.featuredProperty:hover {
 }
 
 .SinglePropDetail .SimpleSearch {
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     color: white;
     height: 298px;
     padding-top: 80px;
@@ -3040,7 +3040,7 @@ ol {
 
 .SinglePropDetail .ArnPropName {
     background-color: #f8f8f8;
-    /*border-top: 2px solid #009dd9;*/
+    border-top: 2px solid transparent;
     min-height: 147px;
     left: 0;
     top: 0;
@@ -3322,7 +3322,7 @@ ol {
 
 .SinglePropDetail .bookRoom,
 .SinglePropDetail .holdRoom {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     border: medium none;
     color: #ffffff;
     font-weight: 500;
@@ -3489,7 +3489,7 @@ ol {
 
 .GroupHoldForm #bookRoomButton input,
 .HoldRoomsForm #bookRoomButton input {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     border: medium none;
     color: #ffffff;
     display: block;
@@ -7038,7 +7038,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     /* Root Page */
 
     .RootBody #fader {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         height: 620px;
     }
 
@@ -7191,7 +7191,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     }
 
     .OnSale .ArnShowRatesLink {
-        /*background: #009dd9 none repeat scroll 0 0;*/
+        background: transparent none repeat scroll 0 0;
         width: 100%;
         display: block;
         text-align: center;
@@ -7219,7 +7219,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
         top: 62px;
         right: 5px;
         color: white;
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         border-radius: 16px;
         padding: 10px 10px;
         font-size: 14px;
@@ -7247,7 +7247,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
 
     .SearchDestination .bookRoom:link,
     .SearchDestination .bookRoom:visited {
-        /*background: #009dd9 none repeat scroll 0 0;*/
+        background: transparent none repeat scroll 0 0;
         transition: background 0.2s linear 0s;
         border-radius: 18px;
     }
@@ -7696,7 +7696,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     }
 
     .SearchHotels .modifySearchButton {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         color: white;
         display: block;
         width: 145px;
@@ -7798,7 +7798,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     }
 
     .RootBody .ArnSearchContainerMainDiv {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
     }
 
     .RootBody {
@@ -8115,7 +8115,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
 
 .ArnCondoPromotion .bookRoom:link,
 .ArnCondoPromotion .bookRoom:visited {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     color: #ffffff;
     font-size: 15px;
     padding: 4px 14px;
@@ -8811,7 +8811,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     color: #fff;
     font-weight: 500;
     position: relative;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     z-index: 9;
     margin: -20px auto 28px;
     display: block;
@@ -8834,7 +8834,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     color: #fff;
     font-weight: 500;
     position: relative;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     z-index: 9;
     margin: -20px auto 28px;
 }
@@ -8887,7 +8887,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     font-size: 16px;
     bottom: 4px;
     width: 210px;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     z-index: 10;
     position: absolute;
     color: white;
@@ -9628,7 +9628,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
 }
 
 .CheckoutMode-WBCheckoutFormWizard #theBookingPage .bookRoom {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     border: medium none;
     color: #ffffff;
     font-weight: 500;
@@ -9859,7 +9859,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     line-height: 1em;
     color: #fff;
     font-weight: 500;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     z-index: 9;
     cursor: pointer;
     transition: all 0.5s;
@@ -9872,7 +9872,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
 
 .CheckoutMode-WBCheckoutFormWizard .ShareDealAnchor:hover {
     color: #fff;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
 }
 
 .CheckoutMode-WBCheckoutFormWizard .ShareDealContainer {
@@ -9880,7 +9880,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     padding: 12px 12px 20px;
     color: #fff;
     font-weight: 500;
-    /*background-color: #009dd9;*/
+    background-color: transparent;
     z-index: 9;
     bottom: 0px;
     width: 255px;
@@ -9912,7 +9912,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     width: 180px;
     margin: 5px auto 0;
     display: block;
-    /*color: #009dd9;*/
+    color: transparent;
     padding: 3px 10px 4px;
     border-radius: 20px;
 }
@@ -10566,7 +10566,7 @@ x#theWBValidatedRegistrationForm div:nth-last-child(2),
     border-top: 0.3em solid rgba(0, 0, 0, .2);
     border-right: .3em solid rgba(0, 0, 0, .2);
     border-bottom: .3em solid rgba(0, 0, 0, .2);
-    /*border-left: .3em solid #009dd9;*/
+    border-left: .3em solid transparent;
     -webkit-animation: spin 1s linear infinite;
     -moz-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
@@ -11420,7 +11420,7 @@ select {
 
     .hamburger:before {
         border-color: rgba(204, 204, 204, 0);
-        /*border-top-color: #009dd9;*/
+        border-top-color: transparent;
         border-width: 9px;
         margin-left: -9px;
     }
@@ -11463,22 +11463,22 @@ select {
     .ArnGoAddressSearch:hover,
     .ArnGoLandmarkSearch:hover,
     .ArnGoAirportSearch:hover {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         color: white;
-        /*border-top: 1px solid #009dd9;*/
-        /*border-bottom: 1px solid #009dd9;*/
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
     }
 
     .selectedTab {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         text-decoration: none;
-        /*border-top: 1px solid #009dd9;*/
-        /*border-bottom: 1px solid #009dd9;*/
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
         color: white !important;
     }
 
     .selectedTab:hover {
-        /*background-color: #009dd9;*/
+        background-color: transparent;
         color: white;
     }
 
@@ -11850,8 +11850,8 @@ select {
     .SearchHotels .bottomPager .ArnPages a,
     .SearchHotels .bottomPager .ArnPages .pagesActive,
     .SearchHotels .bottomPager .ArnPages .not_page {
-        /*background-color: #009dd9;*/
-        /*border: 1px solid #009dd9;*/
+        background-color: transparent;
+        border: 1px solid transparent;
         color: white;
         display: inline-block;
         font-family: "Lato", sans-serif;
@@ -11868,7 +11868,7 @@ select {
 
     .SearchHotels .bottomPager .ArnPages .pagesActive {
         background-color: white;
-        /*border: 1px solid #009dd9;*/
+        border: 1px solid transparent;
         color: #5389ec;
     }
 
@@ -12774,7 +12774,7 @@ select {
 }
 
 .ArnShowRatesLink {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     font-size: 14px;
     padding: 4px 10px;
     font-weight: 500;
@@ -12783,7 +12783,7 @@ select {
 
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink {
-    /*background: #009dd9 none repeat scroll 0 0;*/
+    background: transparent none repeat scroll 0 0;
     line-height: 1.2em !important;
     padding: 5px 8px 7px !important;
     display: inline-block;
@@ -12852,7 +12852,7 @@ select {
     #SortControlsContainer .hamburger:before {
         border-color: rgba(204, 204, 204, 0);
         border-top-color: rgba(204, 204, 204, 0);
-        /*border-top-color: #009dd9;*/
+        border-top-color: transparent;
         border-width: 9px;
         margin-left: -9px;
     }
@@ -12921,12 +12921,12 @@ select {
     }
 
     .SearchHotels .filters {
-        /*border-bottom: 4px solid #009dd9;*/
+        border-bottom: 4px solid transparent;
         border-top: 1px solid #ccc;
     }
 
     .ArnToggleMap {
-        /*border-bottom: 4px solid #009dd9 !important;*/
+        border-bottom: 4px solid transparent !important;
         border-top: 1px solid #ccc !important;
     }
 
@@ -13010,13 +13010,13 @@ select {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        /*background-color: #009dd9;*/
-        /*border-bottom: 1px solid #009dd9;*/
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
     }
 
     .SearchHotels .selectedTab {
-        /*background-color: #009dd9;*/
-        /*border-bottom: 1px solid #009dd9;*/
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
         color: white;
     }
 
@@ -13093,8 +13093,8 @@ select {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
         background-color: #fff;
-        /*border-top: 4px solid #009dd9;*/
-        /*border-bottom: 4px solid #009dd9;*/
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
     }
 
     .SearchHotels .ArnSortBy,
@@ -13368,7 +13368,7 @@ select {
     .featuredContainer {
         background-image: none;
         padding: 15px 0;
-        /*background-color: #009dd9;*/
+        background-color: transparent;
     }
 
     .featuredPropertiesContainerContent h1 {
@@ -13399,7 +13399,7 @@ select {
 
     .SinglePropDetail.mobile .subHeader a.refineLink {
         border-top: 1px solid #CCC;
-        /*border-bottom: 4px solid #009dd9;*/
+        border-bottom: 4px solid transparent;
     }
 
     .SinglePropDetail .ArnLeftListContainer {
@@ -14344,7 +14344,7 @@ select {
     border-top: .3em solid rgba(0, 0, 0, .2);
     border-right: .3em solid rgba(0, 0, 0, .2);
     border-bottom: .3em solid rgba(0, 0, 0, .2);
-    /*border-left: .3em solid #009dd9;*/
+    border-left: .3em solid transparent;
     -webkit-animation: spin 1s linear infinite;
     -moz-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;

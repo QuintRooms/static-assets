@@ -963,6 +963,15 @@ div#overlay {
         background: inherit;
     }
 
+    .arnPrice {
+        letter-spacing: -2px;
+    }
+
+    .arnCurrency {
+        font-size: .5em !important;
+        vertical-align: super;
+    }
+
     .openMapBtn {
         display: none;
     }
@@ -1009,7 +1018,6 @@ div#overlay {
 
     .SearchHotels .ArnRateCell {
         bottom: 6px;
-        max-width: 130px;
     }
 
     .SearchHotels .ArnPropThumb {
@@ -1210,7 +1218,7 @@ div#overlay {
     }
 
     .SearchHotels .ArnRateCell {
-        max-width: 137px;
+        /*max-width: 137px;*/
     }
 
     .SearchHotels .ArnPropThumb {
@@ -1236,6 +1244,11 @@ div#overlay {
 }
 
 @media only screen and (max-width: 565px) {
+    .arnUnit {
+        font-size: 1em !important;
+        font-weight: normal !important;
+    }
+
     .SinglePropDetail .bestPrice {
         line-height: 1;
     }
@@ -1319,41 +1332,6 @@ div#overlay {
 }
 
 @media only screen and (max-width: 500px) {
-    .SearchHotels .ArnPropName {
-        width: 34%;
-    }
-
-    .SearchHotels .ArnPropThumb {
-        width: 33%;
-    }
-
-    .ArnPropNameLink,
-    .ArnPropNameLink:active,
-    .ArnPropNameLink:visited {
-        font-size: 15px;
-    }
-
-    .SinglePropDetail .ArnPropNameLink,
-    .SinglePropDetail .ArnPropNameLink:active,
-    .SinglePropDetail .ArnPropNameLink:visited {
-        font-size: 17px;
-    }
-
-    .SearchHotels .originalRateAmount {
-        display: inline !important;
-    }
-
-    .SearchHotels .ArnPropName div {
-        font-size: 12px;
-    }
-
-    .svg-container {
-        width: 45px;
-        height: 45px;
-    }
-}
-
-@media only screen and (max-width: 420px) {
     .SearchHotels .ArnPropThumb {
         display: block;
         width: 100%;
@@ -1404,6 +1382,44 @@ div#overlay {
     .roomCount {
         width: 95%;
     }
+
+    /*.SearchHotels .ArnPropName {
+        width: 34%;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        width: 33%;
+    }
+
+    .ArnPropNameLink,
+    .ArnPropNameLink:active,
+    .ArnPropNameLink:visited {
+        font-size: 15px;
+    }*/
+
+    .SinglePropDetail .ArnPropNameLink,
+    .SinglePropDetail .ArnPropNameLink:active,
+    .SinglePropDetail .ArnPropNameLink:visited {
+        font-size: 17px;
+    }
+
+    /*
+    .SearchHotels .originalRateAmount {
+        display: inline !important;
+    }
+
+    .SearchHotels .ArnPropName div {
+        font-size: 12px;
+    }*/
+
+    .svg-container {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
 
     .SinglePropDetail .ArnPropDescription {
         text-align: center;
@@ -2116,6 +2132,11 @@ div#overlay {
 
     .RootBody .ArnStayTable td {
         display: inline-block;
+    }
+
+    .SearchHotels .ArnCheckOutContainer {
+        display: inline-block !important;
+        width: 49%;
     }
 
     .RootBody .ArnCheckOutContainer {

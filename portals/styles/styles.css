@@ -203,10 +203,6 @@ header {
     .SinglePropDetail .ArnAdultsChildren {
         overflow: visible;
     }
-
-    .RootBody #theSubmitButton {
-        width: 13%;
-    }
 }
 
 .SearchHotels input[type="text"],
@@ -229,6 +225,7 @@ header {
     .RootBody .ArnStayTable td.ArnRooms,
     .RootBody .ArnStayTable td.ArnAdults {
         display: inline-block !important;
+        width: 47% !important;
     }
 
     .ArnStayTable td.ArnAdults {
@@ -254,7 +251,8 @@ header {
     }
 
     .RootBody #theSubmitButton {
-        margin-top: 16px;
+        margin-top: 15px;
+        height: 49px;
     }
 
     .SearchHotels .ArnLeftSearchContainer {
@@ -2095,9 +2093,37 @@ div#overlay {
 }
 
 @media screen and (max-width: 800px) {
-    .RootBody .ArnStayTable td {
-        margin: .5% !important;
+    .RootBody #city {
+        width: 100%;
+    }
+
+    .RootBody .ArnSearch .ArnIndividualSearchContainer span,
+    .RootBody .ArnSearch .ArnIndividualSearchContainer br {
+        display: initial;
+    }
+
+    .RootBody .ArnCheckInContainer,
+    .RootBody .ArnCheckOutContainer,
+    .RootBody .ArnRooms,
+    .RootBody .ArnAdults {
         width: 49% !important;
+    }
+
+    .RootBody .ArnCheckInContainer,
+    .RootBody .ArnRooms {
+        margin-right: 1% !important;
+    }
+
+    .RootBody .ArnStayTable td {
+        display: inline-block;
+    }
+
+    .RootBody .ArnCheckOutContainer {
+        width: 50% !important;
+    }
+
+    .RootBody .titleLabel {
+        max-width: none;
     }
 
     .RootBody #adults {
@@ -2113,6 +2139,12 @@ div#overlay {
         display: block;
         font-size: 13px;
         margin: -4px 0;
+    }
+
+    .RootBody .ArnAdults::before {
+        display: block;
+        height: 19px;
+        font-size: 13px;
     }
 
     .SinglePropDetail .SimpleSearch select {
@@ -2168,7 +2200,7 @@ body.WBResendOrCancelForm {
 
 .RootBody .ArnSearchHolderBoth {
     background: transparent;
-    width: 24%;
+    margin: 0;
 }
 
 /* Iubenda Styles */

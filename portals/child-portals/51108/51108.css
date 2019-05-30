@@ -163,7 +163,10 @@ h3,
     font-size: 17px;
     font-family: 'F1-Regular'
 }
-
+.SearchHotels .ArnPriceCell>span:after,
+.SinglePropDetail .bestPrice .yourRateAmount:after {
+    content: 'per stay';
+}
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,

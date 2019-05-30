@@ -460,6 +460,7 @@ header {
 
 .arnCurrency {
     font-size: 1em !important;
+    vertical-align: super;
 }
 
 .SearchHotels .yourRateContainer {
@@ -638,6 +639,13 @@ header {
 }
 
 /* Prop Detail Page */
+.SinglePropDetail .ArnSearchHotelsImg {
+    top: 0;
+}
+
+.ArnSearchHotelsImg {
+    background-image: none;
+}
 
 .SinglePropDetail .PropertyAmenities {
     position: relative;
@@ -1234,6 +1242,11 @@ div#overlay {
 
     #theDatePrompt {
         position: absolute;
+    }
+
+    /*Hide sales iq on mobile*/
+    .zsiq_floatmain {
+        display: none !important;
     }
 }
 
@@ -1962,6 +1975,12 @@ div#overlay {
     color: #fff;
 }
 
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .pagesActive,
+.SearchHotels .bottomPager .ArnPages .not_page {
+    height: initial;
+}
+
 /* Safari Hack 
 
 @media not all and (min-resolution:.001dpcm) {
@@ -2041,6 +2060,14 @@ div#overlay {
 .SimpleSearch .ArnRooms,
 .SimpleSearch .ArnAdults {
     width: 50% !important;
+}
+
+.SimpleSearch .ArnCheckInDate {
+    width: 140px !important;
+}
+
+.SimpleSearch .ArnCheckOutDate {
+    width: 135px !important;
 }
 
 .HoldRoomsForm select {

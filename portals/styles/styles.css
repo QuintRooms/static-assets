@@ -6,6 +6,10 @@ body,
     font-weight: 400;
 }
 
+.pushContainer img,
+.throbber {
+    filter: grayscale(100%);
+}
 
 /* Inputs */
 input {

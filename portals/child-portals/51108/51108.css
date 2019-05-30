@@ -554,7 +554,7 @@ header>a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #e10600;
+    background: #e10600 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-family: 'Titillium Web';
     font-weight: 600 !important;
@@ -646,9 +646,9 @@ header>a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #d6410f;
-    border-left: 1px solid #d6410f;
-    border-right: 1px solid #d6410f;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
 
 .hamburger:before,

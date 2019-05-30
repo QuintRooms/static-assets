@@ -3,8 +3,7 @@ let noLRGPortal = new NoLRGPortal();
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function(){  
         noLRGPortal.ratesReadyEventMethods();
-        noLRGPortal.updateText('.event-rate', 'Race Deals');
-        noLRGPortal.updateText('.exclusiveRate', 'Race Deals');
+        noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
     },1);
 });
 

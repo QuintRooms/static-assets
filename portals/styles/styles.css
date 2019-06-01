@@ -2003,14 +2003,6 @@ div#overlay {
     }
 }
 */
-/* Ie Hack */
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    .ArnLeftSearchContainer {
-        float: left;
-    }
-}
 
 @media only screen and (min-width: 800px) and (max-width: 1150px) {
 

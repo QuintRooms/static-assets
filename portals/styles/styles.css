@@ -227,7 +227,7 @@ header {
 
     .RootBody .ArnSearch .ArnIndividualSearchContainer span,
     .RootBody .ArnSearch .ArnIndividualSearchContainer br {
-        display: initial;
+        display: inline-block;
     }
 
     .RootBody .ArnStayTable {

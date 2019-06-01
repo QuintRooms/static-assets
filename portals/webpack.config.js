@@ -6,6 +6,7 @@ module.exports = {
         filename: '[name].js',
         path: __dirname + '/dist'
     },
+    devtool: 'sourc-emap',
     module: {
         rules: [{
             test: /\.(js)$/,

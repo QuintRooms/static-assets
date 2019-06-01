@@ -131,12 +131,6 @@ export default class Portal {
         }
     }
 
-    // insert child script
-    async insertChildAssets() {
-        // stylesheets
-        // document.querySelector('header').insertAdjacentHTML('beforeBegin', '<link href="https://static.hotelsforhope.com/portals/styles/styles.css" rel="stylesheet"><link href="https://static.hotelsforhope.com/portals/child-portals/' + this.site_id + '/' + this.site_id + '.css" rel="stylesheet">');
-    }
-
     updateAttribute(attribute, argument, selector) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
@@ -382,18 +376,3 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.ratesReadyEventMethods();
     }, 1);
 });
-
-let header = document.querySelector('header');
-let config = { attributes: false, childList: true, subtree: false };
-
-function callback(mutationsList, observer) {
-    for (let mutation of mutationsList) {
-        if (mutation.addedNodes[0].className === 'logo') {
-            portal.insertChildAssets();
-            observer.disconnect();
-        }
-    }
-};
-
-let observer = new MutationObserver(callback);
-observer.observe(header, config);

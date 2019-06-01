@@ -702,7 +702,8 @@ header>a {
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e transition: all .3s ease;
+    border-top-color: #15151e; 
+    transition: all .3s ease;
 }
 
 .specialEventRate,

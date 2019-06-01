@@ -490,7 +490,7 @@ header {
 }
 
 .SinglePropDetail .originalRateContainer+.originalRateAmount:first-letter,
-.SinglePropDetail .bookRoomCell .ArnNightlyRate:first-letter {
+.SinglePropDetail .bookRoomCell .ArnNightlyRate strong:first-letter {
     font-size: .5em !important;
     vertical-align: super;
 }

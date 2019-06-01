@@ -1577,6 +1577,12 @@ div#overlay {
     text-decoration: none;
 }
 
+#slideit svg {
+    max-width: 24px;
+    float: left;
+    margin-right: 8px;
+}
+
 #slideit label {
     cursor: pointer;
 }
@@ -1675,7 +1681,7 @@ div#overlay {
 /***** Social links *****/
 
 #slideit .links a {
-    color: #bbb;
+    color: #555;
     font-size: 19px;
     display: block;
     margin-bottom: 10px;

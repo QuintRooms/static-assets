@@ -1,4 +1,4 @@
-import Portal from '/js/portal-setup.js';
+import Portal from '../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 

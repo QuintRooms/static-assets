@@ -35,11 +35,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 12px;
+    padding: 6px 12px;
 }
 
 header a {
-    color: #fff;
+    color: #444;
 }
 
 #language {

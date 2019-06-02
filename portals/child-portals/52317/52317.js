@@ -17,7 +17,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('src', 'https://static.hotelsforhope.com/portals/child-portals/52317/images/logo.png', '.logo img');
+                noLRGPortal.updateAttribute('src', 'https://static.hotelsforhope.com/portals/child-portals/52317/images/logo-dark.png', '.logo img');
                 noLRGPortal.updateAttribute('href', 'https://www.bahraingp.com/', '.logo');
                 observer.disconnect();
             }

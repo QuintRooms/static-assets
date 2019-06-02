@@ -17,6 +17,7 @@ body {
     color: #15151E;
     line-height: 1.4;
 }
+
 .ArnSubPage td {
     font-family: 'Futura-Book', 'Helvetica';
     font-size: 15px !important;
@@ -27,12 +28,20 @@ body {
 body.RootBody {
     background: url(https://static.hotelsforhope.com/portals/child-portals/52317/images/banner.jpg) no-repeat center center /cover !important;
 }
-header{
-    background: #C40000;
+
+header {
+    background: #fff;
+    border-bottom: 3px solid #c40800;
 }
-.logo img{
+
+#language {
+    display: block;
+}
+
+.logo img {
     max-width: 150px;
 }
+
 .SearchHotels .ArnPropName a {
     letter-spacing: initial !important;
 }
@@ -41,9 +50,11 @@ header{
     font-family: 'Futura-Bold';
     font-weight: initial !important;
 }
-.arnCurrency{
+
+.arnCurrency {
     vertical-align: initial;
 }
+
 /* Button Colors */
 .selectedTab,
 .submit,

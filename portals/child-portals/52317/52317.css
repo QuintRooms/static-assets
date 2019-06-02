@@ -41,7 +41,9 @@ header{
     font-family: 'Futura-Bold';
     font-weight: initial !important;
 }
-
+.arnCurrency{
+    vertical-align: initial;
+}
 /* Button Colors */
 .selectedTab,
 .submit,

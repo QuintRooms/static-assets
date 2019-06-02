@@ -17,9 +17,9 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('src', 'https://static.hotelsforhope.com/portals/child-portals/52317/images/logo-dark.png', '.logo img');
-                noLRGPortal.updateAttribute('href', 'https://www.bahraingp.com/', '.logo');
-                noLRGPortal.createHTML('<a href="https://events.hotelsforhope.com/v6/support?siteId=52317" target="_blank">Contact Us</a>', '#language', 'beforeBegin');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/52317/images/logo-dark.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://www.bahraingp.com/', 'href');
+                noLRGPortal.createHTML('#language', '<a href="https://events.hotelsforhope.com/v6/support?siteId=52317" target="_blank">Contact Us</a>', 'beforeBegin');
                 observer.disconnect();
             }
         }

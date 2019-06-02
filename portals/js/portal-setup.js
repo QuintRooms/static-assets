@@ -131,7 +131,7 @@ export default class Portal {
         }
     }
 
-    updateAttribute(attribute, argument, selector) {
+    updateAttribute(selector, argument, attribute) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
             element.setAttribute(attribute, argument);
@@ -161,7 +161,7 @@ export default class Portal {
         }
     }
 
-    createHTML(html, parentToAppendTo, location) {
+    createHTML(parentToAppendTo, html, location) {
         let parent = document.querySelector(parentToAppendTo);
         if (parent) {
             parent.insertAdjacentHTML(location, html);
@@ -283,15 +283,15 @@ export default class Portal {
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 
         // Checkout form input validation
-        this.updateAttribute('type', 'email', '#theEmailAddressAjax input');
+        this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 
         // shows numpad on ios
-        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theCountryCode');
-        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #theAreaCode');
-        this.updateAttribute('inputmode', 'numeric', '.CheckOutForm #thePhoneNumber');
+        this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
+        this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+        this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
 
-        this.updateAttribute('value', 'Update Search', '.SearchHotels #theSubmitButton');
-        this.updateAttribute('value', 'Update Search', '#theOtherSubmitButton');
+        this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
+        this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
         this.updateText('.modifySearch', 'Update Search');
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
@@ -301,7 +301,7 @@ export default class Portal {
         this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
         this.appendToParent('.lrgTipContainer', '#theDatePrompt');
 
-        this.createHTML('<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'head', 'beforeend');
+        this.createHTML('head', '<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
     }
@@ -353,7 +353,7 @@ class LRGPortal extends Portal {
     createLRGPortal() {
         this.insertLRGAssets();
         this.updateText('.WBRateGuaranteeForm > h1', 'Meet the Lowest Rate Guarantee');
-        this.updateAttribute('href', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + this.site_id + '&theme=standard', '.tooltipLink');
+        this.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + this.site_id + '&theme=standard', 'href');
     }
 
     ratesReadyEventMethods() {

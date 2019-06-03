@@ -21,7 +21,6 @@ export default class Portal {
         return this.site_id;
     }
 
-
     /**
      *@description gets page name using css classes from body tag
      */
@@ -81,7 +80,6 @@ export default class Portal {
         }
     }
 
-
     /**
      *@description fetches content from specified url
      *@param string url - url to fetch
@@ -91,7 +89,6 @@ export default class Portal {
         let data = await response.text();
         return data;
     }
-
 
     /**
      *@description inserts fetched content from fetchAsset()
@@ -150,7 +147,6 @@ export default class Portal {
                 });
         }
     }
-
 
     /**
      *@description updates an attribute tag of a specified selector

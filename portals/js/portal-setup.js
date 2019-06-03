@@ -12,11 +12,19 @@ export default class Portal {
         this.ieForEachPolyfill();
     };
 
+
+    /**
+     *@description gets site id from siteId meta tag
+     */
     getSiteId() {
         this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content');
         return this.site_id;
     }
 
+
+    /**
+     *@description gets page name using css classes from body tag
+     */
     getPageName() {
         let bodyClasses = document.querySelector('body');
 
@@ -59,6 +67,9 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description forEach polyfill for internet explorer
+     */
     ieForEachPolyfill() {
         if ('NodeList' in window && !NodeList.prototype.forEach) {
             NodeList.prototype.forEach = function(callback, thisArg) {
@@ -70,12 +81,21 @@ export default class Portal {
         }
     }
 
+
+    /**
+     *@description fetches content from specified url
+     *@param string url - url to fetch
+     */
     async fetchAsset(url) {
         let response = await fetch(url);
         let data = await response.text();
         return data;
     }
 
+
+    /**
+     *@description inserts fetched content from fetchAsset()
+     */
     insertAssets() {
         // insert html
         if (document.querySelector('header')) {
@@ -131,6 +151,13 @@ export default class Portal {
         }
     }
 
+
+    /**
+     *@description updates an attribute tag of a specified selector
+     *@param string selector - selector to update
+     *@param string argument - value to update
+     *@param string attribute - which attribute to update
+     */
     updateAttribute(selector, argument, attribute) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
@@ -138,6 +165,11 @@ export default class Portal {
         });
     }
 
+    /**
+     *@description creates custom tag in a properties image
+     *@param string text - text of tag
+     *@param int propId - property id to add the tag to
+     */
     addCustomTag(text, propId) {
         if (document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag')) {} else if (document.querySelector('#theArnProperty' + propId)) {
             let propertyThumbnail = document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb');
@@ -145,6 +177,11 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description updates text of specified selector
+     *@param string selector - selector to update text
+     *@param string text - text to update
+     */
     updateText(selector, text) {
         let classList = document.querySelectorAll(selector);
         classList.forEach(function(element, index) {
@@ -152,6 +189,11 @@ export default class Portal {
         });
     }
 
+    /**
+     *@description updates innerHTML of selector
+     *@param string selector - selector to update
+     *@param string html - html to add
+     */
     updateHTML(selector, html) {
         let classList = document.querySelectorAll(selector);
         if (classList) {
@@ -161,6 +203,12 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description creates html and inserts into specified location
+     *@param string parentToAppendTo - selector to put new html
+     *@param string html - html to add to parent
+     *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
+     */
     createHTML(parentToAppendTo, html, location) {
         let parent = document.querySelector(parentToAppendTo);
         if (parent) {
@@ -168,6 +216,11 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description moves a child element into a parent element
+     *@param string childSelector - selector to move into parent
+     *@param string parentSelector - selector to move child element into
+     */
     appendToParent(childSelector, parentSelector) {
         let childElement = document.querySelector(childSelector);
         let parentElement = document.querySelector(parentSelector);
@@ -177,6 +230,11 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description adds accordion effect to element
+     *@param string openElement - element holding the click event
+     *@param string contentElement - element to hide
+     */
     accordion(openElement, contentElement) {
         let content = document.querySelector(contentElement);
         let open = document.querySelector(openElement);
@@ -188,6 +246,9 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description creates a button that opens and closes the map
+     */
     createMapButton() {
         if (this.page_name === 'search-results' && document.querySelector('.openMapBtn') === null) {
             document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"></div>');
@@ -200,16 +261,25 @@ export default class Portal {
         }
     }
 
-    roomCountThreshhold() {
+    /**
+     *@description sets threshhold for when to display rooms remaining text on each property
+     *@param int thresshold - minimum number before rooms remaining will be displayed
+     */
+    roomCountThreshhold(thresshold) {
         let count = document.querySelectorAll('.roomCount strong');
         count.forEach(function(element, index) {
             let number = element.textContent;
-            if (number > 5) {
+            if (number > thresshold) {
                 element.parentNode.style.display = 'none';
             }
         });
     }
 
+    /**
+     *@description collapses search options by default
+     *@param string openSelector - DOM selector for element to be opened
+     *@param string collapsedSelector - DOM selector to collapse
+     */
     collapseSearchBy(openSelector, collapsedSelector) {
         if (this.page_name === 'search-results') {
             let arr = document.querySelectorAll(collapsedSelector);
@@ -220,6 +290,11 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description adds a tag for each contracted property on the searchHotels page
+     *@param string selector - DOM selector
+     *@param string text - text to display - usually 'Event Name Exclusive Rate'
+     */
     updateRoomDescription(selector, text) {
         if (document.querySelector('.SinglePropDetail')) {
             let original = document.querySelectorAll(selector);
@@ -232,6 +307,9 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description removes sash and tag from their respective pages if savings is less than $10
+     */
     removeSavingsLessThan10() {
         if (this.page_name === 'property-detail' && document.querySelector('.bestPrice .originalPrice')) {
             let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
@@ -253,6 +331,9 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description shows how much a user donated to charity on checkout page - should refactor to allow selector and text as arguments
+     */
     donationAmount() {
         if (document.querySelector('.ConfirmationForm')) {
             let nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
@@ -260,6 +341,10 @@ export default class Portal {
         }
     }
 
+    /**
+     *@description adds a tag for each contracted property on the searchHotels page
+     *@param string sashHTML - the html for the sash - should probably refacator to only need the text as the paramter
+     */
     searchHotelsExclusiveSash(sashHTML) {
         let eventProp = document.querySelectorAll('.SearchHotels .S16');
         eventProp.forEach(function(element, index) {
@@ -269,6 +354,10 @@ export default class Portal {
         });
     }
 
+    /**
+     *@description adds a tag for each contracted room on the singlePropDetail page
+     *@param string tagHTML - the html for the tag - should probably refacator to only need the text as the paramter
+     */
     singlePropExclusiveTag(tagHTML) {
         let singlePropLRG = document.querySelectorAll('.SinglePropDetail .SB16 .ArnNightlyRate');
         singlePropLRG.forEach(function(element) {
@@ -277,7 +366,7 @@ export default class Portal {
             }
         });
     }
-
+    
     createParentPortal() {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
@@ -318,7 +407,7 @@ export default class Portal {
         this.collapseSearchBy('.lblPropertyType', '#PropertyTypesContainer .ArnSearchField div');
         this.collapseSearchBy('.lblRating', '#PropertyClassesContainer .ArnSearchField div');
 
-        this.roomCountThreshhold();
+        this.roomCountThreshhold(5);
         this.removeSavingsLessThan10();
         this.createMapButton();
 

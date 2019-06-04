@@ -1,3 +1,6 @@
+header{
+    border-bottom: 3px solid #C40000;
+}
 .arnCurrency {
     font-size: .5em !important;
 }
@@ -54,29 +57,6 @@ input {
     margin: 5px 5px 0 0;
 }
 
-@media screen and (min-width: 768px) {
-    .navbar-nav.navbar-right:last-child {
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    h2 {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    h3 {
-        font-size: 20px;
-        line-height: 24px;
-    }
-}
-
-p {
-    line-height: 23px;
-    letter-spacing: .2px;
-}
-
 .ArnPropAddress,
 .distanceLabel {
     font-size: 13px;
@@ -90,8 +70,6 @@ p {
 body.RootBody {
     background: url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover !important;
 }
-
-
 
 .lrgTip h3 {
     font-family: 'Titillium Web';

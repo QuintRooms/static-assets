@@ -366,6 +366,14 @@ export default class Portal {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
 
+        // open footer links in new tab
+        this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
+
         // Checkout form input validation
         this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 
@@ -457,7 +465,7 @@ class CUGPortal extends Portal {
     insertLRGAssets() {
         if (this.page_name === 'WBValidatedRegistrationForm') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html')
-            .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
+                .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;

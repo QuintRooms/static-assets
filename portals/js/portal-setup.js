@@ -453,10 +453,10 @@ class NoLRGPortal extends Portal {
     }
 }
 
-class CUG extends Portal {
+class CUGPortal extends Portal {
     insertLRGAssets() {
         if (this.page_name === 'WBValidatedRegistrationForm') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html');
+            this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html')
             .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');

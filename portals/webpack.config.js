@@ -27,5 +27,5 @@ module.exports = {
             cssProcessorOptions: { preset: ['default', { discardComments: { removeAll: true } }], },
             canPrint: false,
         }),
-    ],
+    ]
 };

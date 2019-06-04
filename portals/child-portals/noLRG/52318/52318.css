@@ -313,3 +313,63 @@ header a {
         margin-bottom: 36px;
     }
 }
+
+/* Language Dropdown */
+#language {
+    display: none;
+}
+
+.languageMask {
+    position: relative;
+    right: 36px;
+    top: 24px;
+    float: right;
+}
+
+.languageMask img {
+    max-width: 24px;
+}
+
+.languageMask svg {
+    transform: rotate(90deg);
+    position: absolute;
+    right: -24px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.languageText {
+    font-size: 15px;
+}
+
+.country {
+    padding: 6px 0;
+}
+
+.country:hover {
+    cursor: pointer;
+}
+
+.languageDropdown {
+    opacity: 0;
+    background: #fff;
+    transition: all .3s ease;
+    pointer-events: none;
+    position: absolute;
+    width: 200px;
+    padding: 8px 0;
+    box-shadow: 1px 0 1px #ccc;
+}
+
+.showDropdown {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.languageDropdown .flag {
+    margin-left: 8px;
+}
+
+.languageDropdown .country:hover {
+    background: #f1f1f1;
+}

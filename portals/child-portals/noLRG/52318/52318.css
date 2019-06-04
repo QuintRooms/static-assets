@@ -1,12 +1,12 @@
 /* Fonts */
 @font-face {
     font-family: 'Futura-Book';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/FuturaStd-Book.ttf") format("truetype");
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Book.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Futura-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/FuturaStd-Bold.ttf") format("truetype");
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Bold.ttf") format("truetype");
 }
 
 body {

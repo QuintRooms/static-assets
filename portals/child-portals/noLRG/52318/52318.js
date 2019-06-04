@@ -10,11 +10,6 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 1);
 });
 
-function showLanguageDropdown() {
-    let languageDropdown = document.querySelector('.languageDropdown');
-    languageDropdown.classList.toggle('showDropdown');
-}
-
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);
     let config = { attributes: false, childList: true, subtree: false };
@@ -42,7 +37,14 @@ function waitForElementToLoad(elementWaitingFor) {
                         <path d="M4 10 L9 5.7 4.5 1" />
                     </svg>
                 `, 'beforeBegin');
+
+                function showLanguageDropdown() {
+                    let languageDropdown = document.querySelector('.languageDropdown');
+                    languageDropdown.classList.toggle('showDropdown');
+                }
+
                 showLanguageDropdown();
+                
                 observer.disconnect();
             }
         }

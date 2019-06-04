@@ -12,7 +12,13 @@ body,
 }
 
 /* Inputs */
-input {
+input,
+.RootBody #adults,
+.RootBody #kids,
+.RootBody #lengthOfStay,
+.RootBody .ArnRadiusContainer select,
+.RootBody .ArnRooms select,
+.RootBody input {
     text-indent: 0;
 }
 

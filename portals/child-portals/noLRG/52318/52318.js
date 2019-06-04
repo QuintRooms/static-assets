@@ -10,6 +10,11 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 1);
 });
 
+function showLanguageDropdown() {
+    let languageDropdown = document.querySelector('.languageDropdown');
+    languageDropdown.classList.toggle('showDropdown');
+}
+
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);
     let config = { attributes: false, childList: true, subtree: false };
@@ -32,10 +37,12 @@ function waitForElementToLoad(elementWaitingFor) {
                                 <span class="languageText">Tiếng Việt (Vietnamese)</span>
                             </div>
                         </div>
-                        <svg xmlns="http://www.w3.org/#15151E/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="i-chevron-right" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="#15151E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                            <path d="M4 10 L9 5.7 4.5 1" /></svg>
                     </div>
+                    <svg xmlns="http://www.w3.org/#15151E/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="i-chevron-right" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="#15151E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                        <path d="M4 10 L9 5.7 4.5 1" />
+                    </svg>
                 `, 'beforeBegin');
+                showLanguageDropdown();
                 observer.disconnect();
             }
         }
@@ -45,6 +52,3 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
-
-
-        

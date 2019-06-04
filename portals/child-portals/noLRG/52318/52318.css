@@ -320,21 +320,16 @@ header a {
 }
 
 .languageMask {
-    position: relative;
-    right: 36px;
-    top: 24px;
-    float: right;
+    margin-left: 24px;
 }
 
 .languageMask img {
     max-width: 24px;
 }
 
-.languageMask svg {
+.languageMask+svg {
     transform: rotate(90deg);
-    position: absolute;
-    right: -24px;
-    top: 10px;
+    margin-left: 8px;
     cursor: pointer;
 }
 

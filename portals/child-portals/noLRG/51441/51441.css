@@ -42,10 +42,6 @@ header a {
     color: #444;
 }
 
-.RootBody header {
-    border-color: #fff;
-}
-
 #language {
     display: none;
 }

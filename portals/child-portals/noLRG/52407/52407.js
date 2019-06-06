@@ -2,7 +2,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'Belgian Grand Prix Rooms');
+noLRGPortal.updateText('title', 'Dutch Grand Prix Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Dutch Grand Prix Exclusive Rate');
 
 

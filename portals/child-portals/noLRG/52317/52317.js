@@ -2,7 +2,7 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-updateText('title', 'Bahrain International Circuit Rooms');
+noLRGPortal.updateText('title', 'Bahrain International Circuit Rooms');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

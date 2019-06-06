@@ -2,7 +2,7 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-updateText('title', 'Room Steals');
+cugPortal.updateText('title', 'Room Steals');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

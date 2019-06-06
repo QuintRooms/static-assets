@@ -2,7 +2,7 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-updateText('title', 'Music City Food + Wine Rooms');
+noLRGPortal.updateText('title', 'Music City Food + Wine Rooms');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

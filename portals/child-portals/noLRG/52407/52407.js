@@ -2,7 +2,7 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-updateText('title', 'Belgian Grand Prix Rooms');
+noLRGPortal.updateText('title', 'Belgian Grand Prix Rooms');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

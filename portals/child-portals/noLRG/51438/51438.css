@@ -28,7 +28,7 @@ header {
     border-bottom: 3px solid #ff4e63;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 6px 12px;
 }
 
@@ -37,12 +37,7 @@ header a {
 }
 
 #language {
-    position: static;
-    display: block;
-}
-
-.logo {
-    margin-right: auto;
+    display: none;
 }
 
 .logo img {

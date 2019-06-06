@@ -228,6 +228,11 @@ header {
     display: none;
 }
 
+.ArnRateCancelAnchor {
+    display: block;
+    text-align: center;
+}
+
 .ArnAcdChild {
     min-width: initial !important;
     z-index: 5;
@@ -1916,12 +1921,13 @@ div#overlay {
 /* Hold Rooms */
 
 @media only screen and (max-width: 800px) {
-    .HoldRoomsForm .filters {
-        width: 100%;
-    }
 
     .SearchHotels .filters {
         width: 50%;
+    }
+
+    .HoldRoomsForm .filters {
+        width: 100%;
     }
 
     .paymentTitles {

@@ -993,15 +993,6 @@ div#overlay {
         background: inherit;
     }
 
-    .arnPrice {
-        letter-spacing: -2px;
-    }
-
-    .arnCurrency {
-        font-size: .5em !important;
-        vertical-align: super;
-    }
-
     .openMapBtn {
         display: none;
     }

@@ -222,10 +222,6 @@ header a {
     background: #a53d2e !important;
 }
 
-.openMapBtn {
-    top: 114px !important;
-}
-
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {

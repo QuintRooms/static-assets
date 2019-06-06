@@ -2,7 +2,8 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-document.title = 'Bahrain International Circuit Rooms';
+updateText('title', 'Music City Food + Wine Rooms');
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();

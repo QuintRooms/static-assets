@@ -2,7 +2,8 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-document.title = 'Bahrain International Circuit Rooms';
+updateText('title', 'Belgian Grand Prix Rooms');
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();

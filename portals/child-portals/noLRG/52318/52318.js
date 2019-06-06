@@ -2,7 +2,8 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-document.title = 'Hanoi Street Circuit Rooms';
+updateText('title', 'Hanoi Street Circuit Rooms');
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();

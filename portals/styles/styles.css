@@ -1033,6 +1033,10 @@ div#overlay {
         background: inherit;
     }
 
+    .RootBody {
+        background-image: none;
+    }
+
     .openMapBtn {
         display: none;
     }

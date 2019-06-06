@@ -107,6 +107,7 @@ header {
     #language {
         background: transparent;
         margin-left: 8px;
+        max-width: 115px;
     }
 }
 

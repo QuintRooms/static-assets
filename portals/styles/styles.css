@@ -101,6 +101,12 @@ header {
     flex-grow: 1;
 }
 
+@media screen and (max-width: 565px) {
+    #language {
+        background: transparent;
+    }
+}
+
 .languageContainer {
     display: none;
 }

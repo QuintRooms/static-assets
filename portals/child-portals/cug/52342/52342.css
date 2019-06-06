@@ -1,6 +1,11 @@
-header{
+header {
     border-bottom: 3px solid #C40000;
 }
+
+.logo img {
+    max-width: 150px;
+}
+
 .arnCurrency {
     font-size: .5em !important;
 }

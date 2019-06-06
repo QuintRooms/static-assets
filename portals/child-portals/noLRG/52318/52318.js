@@ -1,8 +1,9 @@
-import Portal from '../../../js/portal-setup.js';
+import NoLRGPortal from '../../../js/portal-setup.js';
 
-let noLRGPortal = new Portal();
+let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Hanoi Street Circuit Rooms');
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Hanoi Street Circuit Exclusive Rate');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

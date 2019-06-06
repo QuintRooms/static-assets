@@ -673,6 +673,12 @@ header {
     top: 0;
 }
 
+.SinglePropDetail .ArnNoDates {
+    margin-top: 30px;
+    display: block;
+    line-height: 1;
+}
+
 .ArnSearchHotelsImg {
     background-image: none;
 }

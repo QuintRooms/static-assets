@@ -309,3 +309,9 @@ header a {
         margin-bottom: 36px;
     }
 }
+
+@media only screen and (max-width: 565px) {
+    .logo+a {
+        display: none;
+    }
+}

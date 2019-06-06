@@ -1,12 +1,12 @@
 /* Fonts */
 @font-face {
     font-family: 'Futura-Book';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/52318/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/52318/FuturaStd-Book.ttf") format("truetype");
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Book.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Futura-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/52318/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/52318/FuturaStd-Bold.ttf") format("truetype");
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/fonts/FuturaStd-Bold.ttf") format("truetype");
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/52318/images/banner.png) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52318/images/banner.png) no-repeat center center /cover !important;
 }
 
 header {
@@ -45,7 +45,6 @@ header a {
 #language {
     position: static;
     display: block;
-    margin-left: 24px;
 }
 
 .logo {
@@ -55,6 +54,7 @@ header a {
 .logo img {
     max-width: 150px;
     margin: 0;
+    width: 100%;
 }
 
 .SearchHotels .ArnPropName a {
@@ -228,10 +228,6 @@ header a {
     background: #C40000 !important;
 }
 
-.openMapBtn {
-    top: 114px !important;
-}
-
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
@@ -311,5 +307,11 @@ header a {
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .logo + a{
+        display: none;
     }
 }

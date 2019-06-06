@@ -2,7 +2,7 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-noLRGPortal.updateText('title', 'Hanoi Street Circuit Rooms');
+noLRGPortal.updateText('title', 'Music City Food + Wine Rooms');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -19,8 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.bahraingp.com/', 'href');
-                noLRGPortal.createHTML('#language', '<a href="https://events.hotelsforhope.com/v6/support?siteId=' + noLRGPortal.site_id + '" target="_blank">Contact Us</a>', 'beforeBegin');
+                noLRGPortal.updateAttribute('.logo', 'https://www.musiccityfoodandwinefestival.com/', 'href');
                 observer.disconnect();
             }
         }

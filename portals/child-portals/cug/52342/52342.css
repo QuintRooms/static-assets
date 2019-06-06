@@ -1,3 +1,11 @@
+header {
+    border-bottom: 3px solid #C40000;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
 .arnCurrency {
     font-size: .5em !important;
 }
@@ -19,10 +27,12 @@
 .modifySearch {
     font-size: 17px;
 }
+
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
     content: 'per night';
 }
+
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,
@@ -52,29 +62,6 @@ input {
     margin: 5px 5px 0 0;
 }
 
-@media screen and (min-width: 768px) {
-    .navbar-nav.navbar-right:last-child {
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    h2 {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    h3 {
-        font-size: 20px;
-        line-height: 24px;
-    }
-}
-
-p {
-    line-height: 23px;
-    letter-spacing: .2px;
-}
-
 .ArnPropAddress,
 .distanceLabel {
     font-size: 13px;
@@ -86,299 +73,7 @@ p {
 
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/52342/images/banner.png) no-repeat center center /cover !important;
-}
-
-/* Top Nav */
-
-.top-menu-mobile ul li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-.top-menu-mobile ul li a svg,
-.dynamic-nav li a svg {
-    float: right;
-    margin-right: 12px;
-    opacity: .7;
-}
-
-.dynamic-nav li a svg {
-    opacity: 1;
-}
-
-.top-menu {
-    min-height: initial;
-}
-
-.navbar {
-    border: 0 solid transparent;
-    border-radius: 0;
-}
-
-.navbar-default {
-    background: transparent;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #15151E;
-    letter-spacing: .2px;
-}
-
-.top-menu,
-.main-nav {
-    margin-bottom: 0;
-}
-
-.top-menu .navbar-nav>li {
-    padding: 8px;
-}
-
-.top-menu .navbar-nav>li>a {
-    padding: 2px 0 0;
-    margin: 0 6px;
-    border-bottom: 3px solid transparent;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.top-menu .navbar-nav>li:last-child>a {
-    margin-right: 0;
-}
-
-.top-menu .navbar-nav>li>a:hover,
-.top-menu .navbar-nav>li>a:active,
-.top-menu .navbar-nav>li>a:focus {
-    color: #C40000;
-    background: transparent !important;
-    border-bottom: 3px solid #C40000;
-}
-
-.top-menu .left-nav li {
-    padding: 8px 0;
-}
-
-.top-menu .left-nav li a {
-    margin: 0;
-}
-
-/* Mobile Toggle */
-
-.navbar-default .navbar-toggle {
-    border: none;
-    cursor: pointer;
-    float: none;
-}
-
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background: transparent;
-}
-
-.toggle-bar {
-    display: block;
-    height: 2px;
-    background-color: #fff;
-    position: relative;
-    margin-top: 4px;
-    border-top-right-radius: 4px;
-}
-
-.top-bar {
-    width: 16px;
-}
-
-.middle-bar {
-    width: 19px;
-}
-
-.bottom-bar {
-    width: 22px;
-}
-
-/* Main Nav */
-header>a {
-    display: none;
-}
-
-.main-nav {
-    background: #C40000;
-}
-
-@media screen and (min-width: 770px) {
-    .main-nav .container-fluid {
-        display: flex;
-        justify-content: flex-start;
-        align-content: center;
-        align-items: center;
-    }
-}
-
-.navbar-default .navbar-nav.dynamic-nav>li>a {
-    color: #fff;
-    font-weight: 400;
-    padding: 40px 18px;
-    font-size: 12px;
-}
-
-@media screen and (max-width: 767px) {
-    .navbar-default .navbar-nav.dynamic-nav>li {
-        padding: 0;
-    }
-
-    .navbar-default .navbar-nav.dynamic-nav>li>a {
-        padding: 12px;
-    }
-}
-
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li>a:focus {
-    background: #15151e;
-    transition: all .3s ease;
-}
-
-.navbar-brand {
-    padding: 0 15px;
-    height: initial;
-    float: none;
-}
-
-.navbar-brand img {
-    width: 100%;
-    max-width: 275px;
-    margin-right: 20px;
-    margin-left: 10px;
-    display: block;
-}
-
-@media screen and (max-width: 850px) {
-    .navbar-brand {
-        max-width: 250px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .main-nav .container-fluid {
-        min-height: 90px;
-        height: 90px;
-    }
-
-    .navbar-brand {
-        max-width: 300px;
-    }
-
-    .navbar-header {
-        min-height: initial;
-        padding: 16px;
-    }
-
-    .dynamic-nav {
-        background: #fff;
-        margin: 0;
-        z-index: 1;
-        position: relative;
-    }
-
-    .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
-    .navbar-default .navbar-nav.dynamic-nav>li>a:active,
-    .navbar-default .navbar-nav.dynamic-nav>li>a:focus {
-        background: #C40000;
-        color: #fff;
-        transition: all .5s ease;
-    }
-
-    .dynamic-nav>li>a:before {
-        height: 0;
-    }
-
-    .navbar-collapse {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    h2 {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    h3 {
-        font-size: 20px;
-        line-height: 24px;
-    }
-
-    .dynamic-nav {
-        background: #C40000;
-    }
-
-    .navbar-collapse {
-        border-top: 0;
-    }
-
-    .navbar-default .navbar-nav.dynamic-nav>li>a {
-        color: #fff;
-        font-size: 15px;
-        border-right: 1px solid #f08380;
-        border-bottom: 1px solid #f08380;
-        margin: 20px;
-        border-bottom-right-radius: 15px;
-    }
-
-    .navbar-default .navbar-nav.dynamic-nav>li>a:after {
-        float: right;
-    }
-
-    .top-menu-mobile {
-        background: #fff;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .top-menu-mobile .navbar-nav {
-        margin: 0;
-    }
-
-    .top-menu-mobile ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .top-menu-mobile ul li a {
-        color: #15151e;
-        display: block;
-        font-size: 15px;
-        margin: 20px;
-        border-right: 1px solid #d0d0d2;
-        border-bottom: 1px solid #d0d0d2;
-        border-bottom-right-radius: 15px;
-    }
-
-    .top-menu-mobile ul li a:after {
-        float: right;
-        opacity: .7;
-    }
-
-    .navbar-default .navbar-nav>li>a:hover,
-    .navbar-default .navbar-nav>li>a:focus {
-        background: transparent;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    .main-nav .container-fluid {
-        min-height: 80px;
-        height: 80px;
-    }
-
-    .navbar-brand img {
-        position: absolute;
-        top: 25px;
-        right: 0;
-        width: 100%;
-        max-width: 175px;
-    }
+    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 .lrgTip h3 {
@@ -550,7 +245,7 @@ header>a {
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e; 
+    border-top-color: #15151e;
     transition: all .3s ease;
 }
 

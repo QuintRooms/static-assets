@@ -12,7 +12,13 @@ body,
 }
 
 /* Inputs */
-input {
+input,
+.RootBody #adults,
+.RootBody #kids,
+.RootBody #lengthOfStay,
+.RootBody .ArnRadiusContainer select,
+.RootBody .ArnRooms select,
+.RootBody input {
     text-indent: 0;
 }
 
@@ -75,6 +81,10 @@ header {
     border-bottom: none;
 }
 
+#language {
+    margin-left: 24px;
+}
+
 .logo img {
     margin: 10px;
 }
@@ -93,6 +103,14 @@ header {
 .RootBody .ArnSearchContainerMainDiv,
 .WBResendOrCancelForm {
     flex-grow: 1;
+}
+
+@media screen and (max-width: 565px) {
+    #language {
+        background: transparent;
+        margin-left: 8px;
+        max-width: 115px;
+    }
 }
 
 .languageContainer {
@@ -655,6 +673,12 @@ header {
     top: 0;
 }
 
+.SinglePropDetail .ArnNoDates {
+    margin-top: 30px;
+    display: block;
+    line-height: 1;
+}
+
 .ArnSearchHotelsImg {
     background-image: none;
 }
@@ -957,6 +981,30 @@ div#overlay {
     opacity: .9 !important;
 }
 
+/* Limited Availability */
+
+.PropLimitedAvail .ArnAvailability {
+    width: 175px;
+    border-color: transparent;
+    color: #ff3737;
+}
+
+.PropLimitedAvail .ArnAvailability h4 {
+    margin: 4px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.PropLimitedAvail .ArnAvailability a {
+    padding: 8px 20px;
+}
+
+.PropLimitedAvail .ArnAvailability a:hover,
+.PropLimitedAvail .ArnAvailability a:active,
+.PropLimitedAvail .ArnAvailability a:focus {
+    color: #fff;
+}
+
 @media only screen and (max-width: 1000px) {
 
     .hamburger:before,
@@ -979,15 +1027,6 @@ div#overlay {
 @media only screen and (max-width: 800px) {
     body {
         background: inherit;
-    }
-
-    .arnPrice {
-        letter-spacing: -2px;
-    }
-
-    .arnCurrency {
-        font-size: .5em !important;
-        vertical-align: super;
     }
 
     .openMapBtn {
@@ -1044,7 +1083,7 @@ div#overlay {
     }
 
     .SearchHotels .ArnPropName {
-        width: 45%;
+        width: 40%;
     }
 
     .SearchHotels .ArnPropName div.originalPrice:before {
@@ -1387,7 +1426,7 @@ div#overlay {
     }
 
     .SearchHotels .OnSale .ArnRateCell {
-        top: 215px;
+        top: initial;
     }
 
     .SearchHotels.mobile .roomCount {
@@ -1475,6 +1514,15 @@ div#overlay {
         font-weight: 700;
         font-size: 18px;
     }
+
+    .PropLimitedAvail .ArnAvailability {
+        width: 100%;
+    }
+
+    .SinglePropDetail .ArnAvailability,
+    .SinglePropDetail .ArnLimitedAvail {
+        position: static;
+    }
 }
 
 /* Confirmation Page */
@@ -1488,10 +1536,6 @@ div#overlay {
 }
 
 @media screen and (min-width:800px) {
-    .ArnSubPage {
-        margin: 125px auto 70px;
-    }
-
     .CheckOutForm .ArnSubPage {
         margin-top: 42px;
     }
@@ -1950,30 +1994,6 @@ div#overlay {
     display: none;
 }
 
-/* Limited Availability */
-
-.PropLimitedAvail .ArnAvailability {
-    width: 175px;
-    border-color: transparent;
-    color: #ff3737;
-}
-
-.PropLimitedAvail .ArnAvailability h4 {
-    margin: 4px 0;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.PropLimitedAvail .ArnAvailability a {
-    padding: 8px 20px;
-}
-
-.PropLimitedAvail .ArnAvailability a:hover,
-.PropLimitedAvail .ArnAvailability a:active,
-.PropLimitedAvail .ArnAvailability a:focus {
-    color: #fff;
-}
-
 .savingsContainer .buttonContainer img {
     display: none;
 }
@@ -2180,7 +2200,7 @@ div#overlay {
 
     .RootBody #adults {
         position: relative;
-        top: 2px;
+        top: 4px;
     }
 
     .SimpleSearch .ArnAdults {

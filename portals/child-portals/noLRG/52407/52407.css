@@ -26,7 +26,7 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52317/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52407/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 header {
@@ -52,7 +52,7 @@ header a {
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 250px;
     margin: 0;
     width: 100%;
 }
@@ -307,11 +307,5 @@ header a {
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
-    }
-}
-
-@media only screen and (max-width: 565px) {
-    .logo + a{
-        display: none;
     }
 }

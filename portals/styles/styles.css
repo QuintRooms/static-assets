@@ -1536,10 +1536,6 @@ div#overlay {
 }
 
 @media screen and (min-width:800px) {
-    .ArnSubPage {
-        margin: 125px auto 70px;
-    }
-
     .CheckOutForm .ArnSubPage {
         margin-top: 42px;
     }

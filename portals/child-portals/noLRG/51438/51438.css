@@ -7,6 +7,7 @@ body {
     background: #fff;
     color: #15151E;
     line-height: 1.4;
+    background-image: none;
 }
 
 .ArnSubPage td {
@@ -20,7 +21,6 @@ body.RootBody {
     background: #232526;  
     background: -webkit-linear-gradient(to right, #414345, #232526); 
     background: linear-gradient(to right, #414345, #232526);
-    background-image: none;
 }
 
 header {
@@ -90,7 +90,7 @@ header a {
 .bookRoom,
 .SearchHotels .modifySearchButton,
 .holdRoom {
-    font-family: 'Futura-Book' !important;
+    font-family: 'PT Sans' !important;
 }
 
 .SearchHotels .bottomPager .ArnPages a,

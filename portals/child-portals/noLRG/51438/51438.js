@@ -2,7 +2,7 @@ import Portal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new Portal();
 
-noLRGPortal.updateText('title', 'Metarama Gaming + Music Festival');
+noLRGPortal.updateText('title', 'Metarama Festival');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

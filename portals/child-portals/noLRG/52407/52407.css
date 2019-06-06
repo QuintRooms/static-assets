@@ -55,6 +55,7 @@ header a {
 .logo img {
     max-width: 250px;
     margin: 0;
+    width: 100%;
 }
 
 .SearchHotels .ArnPropName a {

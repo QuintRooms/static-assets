@@ -80,9 +80,11 @@ select,
 header {
     border-bottom: none;
 }
-#language{
+
+#language {
     margin-left: 24px;
 }
+
 .logo img {
     margin: 10px;
 }
@@ -973,6 +975,30 @@ div#overlay {
     opacity: .9 !important;
 }
 
+/* Limited Availability */
+
+.PropLimitedAvail .ArnAvailability {
+    width: 175px;
+    border-color: transparent;
+    color: #ff3737;
+}
+
+.PropLimitedAvail .ArnAvailability h4 {
+    margin: 4px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.PropLimitedAvail .ArnAvailability a {
+    padding: 8px 20px;
+}
+
+.PropLimitedAvail .ArnAvailability a:hover,
+.PropLimitedAvail .ArnAvailability a:active,
+.PropLimitedAvail .ArnAvailability a:focus {
+    color: #fff;
+}
+
 @media only screen and (max-width: 1000px) {
 
     .hamburger:before,
@@ -1482,6 +1508,15 @@ div#overlay {
         font-weight: 700;
         font-size: 18px;
     }
+
+    .PropLimitedAvail .ArnAvailability {
+        width: 100%;
+    }
+
+    .SinglePropDetail .ArnAvailability,
+    .SinglePropDetail .ArnLimitedAvail {
+        position: static;
+    }
 }
 
 /* Confirmation Page */
@@ -1955,30 +1990,6 @@ div#overlay {
     cursor: pointer;
     color: #aaa;
     display: none;
-}
-
-/* Limited Availability */
-
-.PropLimitedAvail .ArnAvailability {
-    width: 175px;
-    border-color: transparent;
-    color: #ff3737;
-}
-
-.PropLimitedAvail .ArnAvailability h4 {
-    margin: 4px 0;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.PropLimitedAvail .ArnAvailability a {
-    padding: 8px 20px;
-}
-
-.PropLimitedAvail .ArnAvailability a:hover,
-.PropLimitedAvail .ArnAvailability a:active,
-.PropLimitedAvail .ArnAvailability a:focus {
-    color: #fff;
 }
 
 .savingsContainer .buttonContainer img {

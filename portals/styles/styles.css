@@ -80,7 +80,9 @@ select,
 header {
     border-bottom: none;
 }
-
+#language{
+    margin-left: 24px;
+}
 .logo img {
     margin: 10px;
 }

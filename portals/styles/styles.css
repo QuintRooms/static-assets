@@ -115,6 +115,13 @@ header {
         margin-left: 8px;
         max-width: 115px;
     }
+
+    .SinglePropDetail .PropLimitedAvail .ArnAvailability {
+        position: static;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 8px;
+    }
 }
 
 .languageContainer {

@@ -251,6 +251,11 @@ header {
 }
 
 @media only screen and (min-width:800px) {
+    .pb-h4h {
+        float: right;
+        height: 0;
+        margin: -12px 12px 0 0;
+    }
 
     .RootBody .ArnSearch .ArnIndividualSearchContainer span,
     .RootBody .ArnSearch .ArnIndividualSearchContainer br {
@@ -1031,12 +1036,21 @@ div#overlay {
     .SinglePropDetail .ArnTripAdvisorDetails {
         width: 70%;
     }
+
+    .pb-h4h {
+        float: none;
+        height: initial;
+        position: relative;
+        top: 20px;
+    }
+
 }
 
 @media only screen and (max-width: 800px) {
     body {
         background: inherit;
     }
+
 
     .RootBody {
         background-image: none;

@@ -47,6 +47,10 @@ header a {
     display: block;
 }
 
+select#language {
+    background: #fff;
+}
+
 .logo {
     margin-right: auto;
 }

@@ -141,15 +141,6 @@ export default class Portal {
                     return false;
                 });
         }
-
-        if (this.page_name === 'confirmation') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/html/confirmationInfoSubHeader.html')
-                .then(data => document.querySelector('.confirmationPage').innerHTML = data)
-                .catch(() => {
-                    throw new Error('File at path ' + url + ' not found.');
-                    return false;
-                });
-        }
     }
 
     /**
@@ -396,6 +387,8 @@ export default class Portal {
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
         this.appendToParent('.ConfirmationForm .meetH4H.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.ConfirmationForm .meetH4H.mobileVersion', '.ConfirmationForm .PaymentPolicies');
+        this.appendToParent('.confirmationContainer', '.GuestForms');
+
         this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
         this.appendToParent('.lrgTipContainer', '#theDatePrompt');
         this.createHTML('.ArnSupportLinks.ArnSupportBottom', '<a class="pb-h4h" href="https://www.hotelsforhope.com/" target="_blank"><img src="//media.travsrv.com/appSkins/52342/v6/themes/standard/images/PBH4H.png"></a>', 'beforeend');
@@ -410,7 +403,7 @@ export default class Portal {
         this.updateText('a.bookRoom', 'Book Rooms');
         this.updateText('a.holdRoom', 'Hold Rooms');
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
-        
+
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');
         this.collapseSearchBy('.lblCurrency', '.lblCurrency + select');
         this.collapseSearchBy('.lblAmenities', '#AmentitiesContainer .ArnSearchField div');

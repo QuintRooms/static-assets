@@ -881,7 +881,7 @@ header {
 .SinglePropDetail .SB20 .yourRateAmount,
 .SinglePropDetail .SB20 .exclusiveRate+strong,
 .SinglePropDetail .ArnNightlyRate strong,
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td {
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td.bookRoomCell .ArnNightlyRate {
     width: 100%;
     text-align: center;
     font-size: 36px;

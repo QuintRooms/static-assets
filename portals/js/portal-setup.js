@@ -63,6 +63,11 @@ export default class Portal {
             this.page_name = 'lrg-page';
             return;
         }
+
+        if (bodyClasses.classList.contains('WBValidatedRegistrationForm')) {
+            this.page_name = 'cug-registration';
+            return;
+        }
     }
 
     /**
@@ -463,16 +468,8 @@ class NoLRGPortal extends Portal {
 }
 
 class CUGPortal extends Portal {
-    insertLRGAssets() {
-        if (this.page_name === 'WBValidatedRegistrationForm') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html')
-                .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
-                .catch(() => {
-                    throw new Error('File at path ' + url + ' not found.');
-                    return false;
-                });
-        }
-    }
+
+
 }
 
 let portal = new Portal();

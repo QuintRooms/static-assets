@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700&display=swap');
+
+/*Cug Specific */
+#theWBLoginForm h2 {
+    display: none;
+}
+
+.WBLoginFormActions .submit,
+.WBForgotPasswordFormActions .submit {
+    display: block;
+    margin: 0 auto;
+}
+
+.WBForgotPasswordFormActions .CancelAction {
+    text-align: center;
+    display: block;
+}
+
+.WBValidatedRegistrationForm .SSFormBody {
+    border: none;
+}
+
 header {
     border-bottom: 3px solid #C40000;
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 150px !important;
 }
 
 .arnCurrency {
@@ -405,4 +427,208 @@ body.RootBody {
         border-bottom: 1px solid #C40000;
         background: #C40000;
     }
+}
+
+/* Registration Page */
+.WBValidatedRegistrationForm header {
+    border-bottom: none;
+    background: transparent;
+    height: 0;
+}
+
+.WBValidatedRegistrationForm header img {
+    margin: 50px;
+}
+
+.WBValidatedRegistrationForm .ArnSubPage {
+    margin: 0;
+    padding: 0;
+}
+
+.jumbotron {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover;
+    padding-top: 220px;
+}
+
+nav {
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.logo {
+    margin-right: 12px;
+}
+
+.logo img {
+    max-width: 300px;
+    width: 100%;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h3,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron p,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
+    color: #fff;
+    line-height: 1.4;
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 700;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1 {
+    font-size: 62px;
+}
+
+.btn-primary {
+    background: #e10600;
+    box-shadow: none;
+    border-color: #e10600;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: black;
+    border-color: none;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 400;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
+    list-style: none;
+    line-height: 2;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 200;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.diag-bg {
+    background: #fff;
+    flex: 1;
+    max-width: 2px;
+    height: 450px;
+    margin: 24px auto 0 auto;
+}
+
+.form-container h2 {
+    font-family: 'Nunito Sans', 'Helvetica';
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works {
+    padding-bottom: 48px;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works li,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
+    color: #000;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1 {
+    margin-bottom: 18px;
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 700;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p {
+    font-family: 'Nunito Sans', 'Helvetica';
+    margin: auto;
+    max-width: 80%;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works img {
+    display: block;
+    max-width: 125px;
+    margin: 36px auto 8px auto;
+}
+
+.steps {
+    position: relative;
+}
+
+.steps h3 {
+    width: 33.333%;
+    margin: 0 15px;
+}
+
+.steps fieldset {
+    position: absolute;
+    width: 330px;
+    left: -165px;
+    top: -6px;
+}
+
+@media screen and (max-width: 1200px) {
+    .steps fieldset {
+        width: 260px;
+        left: -130px;
+    }
+}
+
+.WBValidatedRegistrationForm .steps fieldset legend {
+    border-bottom: 2px dashed #7d7e81 !important;
+}
+
+@media screen and (min-width: 767px) {
+    .col-md-12.flex {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .flex {
+        display: flex;
+    }
+}
+
+#greet {
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 700;
+}
+
+#subGreet {
+    font-family: 'Nunito Sans', 'Helvetica';
+    font-weight: 200;
+    font-size: 1em;
+}
+
+.step {
+    width: 35px;
+    color: #7d7e81;
+    padding: 4px;
+    font-size: 19px;
+    display: block;
+    background: #a7a9ac;
+    border: 3px solid #6d6e71;
+    border-radius: 100%;
+    margin: 12px auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.col-md-4 img {
+    padding-bottom: 10px;
+    height: 97px;
 }

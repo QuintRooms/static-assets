@@ -251,11 +251,6 @@ header {
 }
 
 @media only screen and (min-width:800px) {
-    .pb-h4h {
-        float: right;
-        height: 0;
-        margin: -12px 12px 0 0;
-    }
 
     .RootBody .ArnSearch .ArnIndividualSearchContainer span,
     .RootBody .ArnSearch .ArnIndividualSearchContainer br {
@@ -343,6 +338,12 @@ header {
         transition: all 1s ease;
         transform: translate(4000px, 0);
         z-index: 3;
+    }
+
+    .ArnSupportLinks.ArnSupportBottom a.pb-h4h {
+        float: right;
+        height: 0;
+        margin: -12px 12px 0 0;
     }
 }
 
@@ -1037,11 +1038,12 @@ div#overlay {
         width: 70%;
     }
 
-    .pb-h4h {
+    .ArnSupportLinks.ArnSupportBottom a.pb-h4h {
         float: none;
         height: initial;
         position: relative;
         top: 20px;
+        display: block;
     }
 
 }

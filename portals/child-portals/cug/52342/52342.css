@@ -75,10 +75,6 @@ header {
     max-width: 150px !important;
 }
 
-.arnCurrency {
-    font-size: .5em !important;
-}
-
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;

@@ -39,7 +39,7 @@ header {
 }
 
 header a {
-    color: #444;
+    color: #fff;
 }
 
 #language {
@@ -52,7 +52,7 @@ header a {
 }
 
 .logo img {
-    max-width: 250px;
+    max-width: 450px;
     margin: 0;
     width: 100%;
 }

@@ -409,8 +409,8 @@ export default class Portal {
         this.updateText('.ArnShowRatesLink', 'Book Rooms');
         this.updateText('a.bookRoom', 'Book Rooms');
         this.updateText('a.holdRoom', 'Hold Rooms');
-        this.updateAttribute('target', '_blank', '.SearchHotels .ArnShowRatesLink');
-
+        this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
+        
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');
         this.collapseSearchBy('.lblCurrency', '.lblCurrency + select');
         this.collapseSearchBy('.lblAmenities', '#AmentitiesContainer .ArnSearchField div');

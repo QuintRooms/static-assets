@@ -392,9 +392,9 @@ export default class Portal {
         this.appendToParent('.ConfirmationForm .meetH4H.mobileVersion', '.ConfirmationForm .PaymentPolicies');
         this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
         this.appendToParent('.lrgTipContainer', '#theDatePrompt');
-        this.createHTML('head', '<a class="pb-h4h" href="https://www.hotelsforhope.com/" target="_blank"><img src="//media.travsrv.com/appSkins/52342/v6/themes/standard/images/PBH4H.png"></a>', 'beforeend');
+        this.createHTML('.ArnSupportLinks.ArnSupportBottom', '<a class="pb-h4h" href="https://www.hotelsforhope.com/" target="_blank"><img src="//media.travsrv.com/appSkins/52342/v6/themes/standard/images/PBH4H.png"></a>', 'beforeend');
         this.appendToParent('.pb-h4h', '.ArnSupportLinks.ArnSupportBottom');
-        this.createHTML('.ArnSupportLinks.ArnSupportBottom', '<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'beforeend');
+        this.createHTML('head', '<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
     }

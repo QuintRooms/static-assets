@@ -880,14 +880,17 @@ header {
 .SinglePropDetail .SB16 .exclusiveRate+strong,
 .SinglePropDetail .SB20 .yourRateAmount,
 .SinglePropDetail .SB20 .exclusiveRate+strong,
-.SinglePropDetail .ArnNightlyRate strong,
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td.bookRoomCell .ArnNightlyRate {
+.SinglePropDetail .ArnNightlyRate strong {
     width: 100%;
     text-align: center;
     font-size: 36px;
     color: #79cf46;
     font-weight: normal !important;
     line-height: 1;
+}
+
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td.bookRoomCell .ArnNightlyRate {
+    text-align: center;
 }
 
 .exclusiveRate {

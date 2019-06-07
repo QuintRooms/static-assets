@@ -42,14 +42,6 @@ header a {
     color: #444;
 }
 
-header .logo {
-    display: none;
-}
-
-header .logo ~ .logo {
-    display: block;
-}
-
 #language {
     display: none;
 }

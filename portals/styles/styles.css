@@ -2230,7 +2230,6 @@ div#overlay {
 
     .RootBody #adults {
         position: relative;
-        top: 2px;
     }
 
     .SimpleSearch .ArnAdults {
@@ -2245,7 +2244,6 @@ div#overlay {
 
     .RootBody .ArnAdults::before {
         display: block;
-        height: 19px;
         font-size: 13px;
     }
 
@@ -2305,8 +2303,7 @@ div#overlay {
 
     #theDatePrompt .SimpleSearch .ArnNights,
     #theDatePrompt .SimpleSearch .ArnRooms,
-    #theDatePrompt .SimpleSearch .ArnAdults,
-    #theDatePrompt .SimpleSearch .ArnChildren {
+    #theDatePrompt .SimpleSearch .ArnAdults {
         width: 100% !important;
         margin: 5px 0 0;
     }

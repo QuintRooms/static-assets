@@ -389,7 +389,8 @@ export default class Portal {
 
         this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
         this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
-        this.updateText('.modifySearch', 'Update Search');
+        this.updateText('.SearchHotels .modifySearch', 'Update Search');
+        this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
@@ -468,8 +469,16 @@ class NoLRGPortal extends Portal {
 }
 
 class CUGPortal extends Portal {
-
-
+    insertCUGAssets() {
+        if (this.page_name === 'cug-registration') {
+            this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html')
+                .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
+                .catch(() => {
+                    throw new Error('File at path ' + url + ' not found.');
+                    return false;
+                });
+        }
+    }
 }
 
 let portal = new Portal();

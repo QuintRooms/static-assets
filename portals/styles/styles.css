@@ -1355,7 +1355,12 @@ div#overlay {
 
 @media only screen and (max-width: 565px) {
     .arnUnit {
-        font-size: 1em !important;
+        font-size: 18px !important;
+        font-weight: normal !important;
+    }
+
+    .arnCurrency {
+        font-size: 18px !important;
         font-weight: normal !important;
     }
 

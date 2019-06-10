@@ -555,10 +555,10 @@ header {
     width: 100% !important;
 }
 
-.SearchHotels .OnSale .ArnShowRatesLink,
-.ArnShowRatesLink {
+.ArnShowRatesLink,
+.ArnShowRatesLink,
+.OnSale .ArnShowRatesLink {
     padding: 8px 20px !important;
-    font-size: 17px;
 }
 
 .SearchHotels .ArnPriceCell>span:after,
@@ -690,6 +690,29 @@ header {
 }
 
 /* Prop Detail Page */
+.SinglePropDetail .ArnRightListContainer,
+.SinglePropDetail .ArnLeftListContainer {
+    border: none;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+    border-right: 1px solid #ccc
+}
+
+.SinglePropDetail .ArnSearchContainerMainTable {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc;
+    overflow: hidden;
+}
+
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom {
+    max-width: 150px;
+    margin: 8px auto;
+    padding: 8px 20px;
+}
+
 .SinglePropDetail .ArnSearchHotelsImg {
     top: 0;
 }
@@ -1570,6 +1593,13 @@ div#overlay {
 }
 
 /* Confirmation Page */
+#inventoryNotice,
+#theStayPolicies,
+#theRoomOneAjax,
+#theConfirmationContainer {
+    border-radius: 5px;
+}
+
 .topRoomFunding span {
     color: #9C6AAD;
 }
@@ -1962,7 +1992,7 @@ div#overlay {
     }
 
     .paymentTitles {
-        display: none;
+        display: none !important;
     }
 
     #theConfirmationContainer .submit {

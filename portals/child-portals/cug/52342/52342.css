@@ -1,6 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
 
 /*Cug Specific */
+.RootPage #city,
+.RootPage .ArnCheckInDate,
+.RootPage .ArnCheckOutDate {
+    text-indent: 32px;
+}
+
 .leaflet-top {
     top: 175px;
 }
@@ -8,6 +20,10 @@
 #AdminControlsContainer {
     z-index: 10;
     position: relative;
+}
+
+#commands form {
+    padding: 13px;
 }
 
 #commands form .logoutCommand.submit {
@@ -31,6 +47,7 @@
 .WBForgotPasswordFormActions .submit {
     display: block;
     margin: 0 auto;
+    border-radius: 50px;
 }
 
 .WBForgotPasswordFormActions .CancelAction {
@@ -65,14 +82,41 @@
 .WBLoginForm .ArnSupportLinks.ArnSupportBottom {
     z-index: 9;
     position: relative;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0;
 }
 
-header {
-    border-bottom: 3px solid #C40000;
+body,
+.ArnSubPage td,
+.ArnRoomsOnHold,
+.ArnRoomsOnHold td {
+    font-family: 'Montserrat', 'Helvetica';
 }
 
-.logo img {
-    max-width: 150px !important;
+#AdminControlsContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+header .room-steals {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.room-steals {
+    color: #fff;
+    font-size: 20px;
+    align-self: center;
+    order: -1;
+    padding-left: 10px;
+    transition: all .5s ease;
+}
+
+.logo {
+    display: none;
 }
 
 #theConfirmationContainer h4,
@@ -90,7 +134,11 @@ header {
 
 .reserveHotel,
 .modifySearch {
-    font-size: 17px;
+    font-size: 15px;
+}
+
+.SearchHotels .ArnAdults::before {
+    font-size: 13px;
 }
 
 .SearchHotels .ArnPriceCell>span:after,
@@ -119,8 +167,32 @@ label,
     color: #15151e;
 }
 
-input {
+input,
+.uneditable-input,
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea,
+.RootBody #adults,
+.RootBody #kids,
+.RootBody #lengthOfStay,
+.RootBody .ArnRadiusContainer select,
+.RootBody .ArnRooms select,
+.RootBody input {
     font-size: 15px;
+    border-radius: 5px;
 }
 
 #theSmokingRoomAjax input {
@@ -136,12 +208,48 @@ input {
     font-weight: 600;
 }
 
+body.RootBody {
+    background: #C40000;
+    background: -moz-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: -webkit-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: -o-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C40000', endColorstr='#f05252', GradientType=1);
+}
 
-body.RootBody,
-.WBForgotPasswordForm,
-.WBLoginForm {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover !important;
-    background-size: cover !important;
+.RootBody .ArnSearchContainerMainDiv {
+    background-color: transparent;
+}
+
+body.WBLoginForm,
+body.WBForgotPasswordForm {
+    display: grid;
+    grid-template-rows: 45px 1fr auto;
+    min-height: 100%;
+}
+
+header {
+    background: #333;
+    grid-row-start: 1;
+}
+
+.WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
+.WBLoginFormContainer.ArnSubPage .SSFormBody {
+    margin: 5% auto;
+}
+
+.WBForgotPasswordFormContainer.ArnSubPage,
+.WBForgotPasswordFormInform,
+.WBLoginFormContainer.ArnSubPage {
+    position: static;
+    background: transparent;
+    grid-row-start: 2;
+    background: #C40000;
+    background: -moz-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: -webkit-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: -o-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    background: linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C40000', endColorstr='#f05252', GradientType=1);
 }
 
 .lrgTip h3 {
@@ -152,8 +260,21 @@ body.RootBody,
     text-transform: uppercase;
 }
 
-/* Buttons */
+.hamburger:after,
+.hamburger:before {
+    left: 225px;
+}
 
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+
+    #SortControlsContainer .hamburger::after,
+    #SortControlsContainer .hamburger::before {
+        left: 225px;
+    }
+}
+
+/* Buttons */
+#theSubmitButton,
 .selectedTab,
 .submit,
 .OnSale .ArnShowRatesLink,
@@ -169,7 +290,7 @@ body.RootBody,
 .HoldRoomsForm .ArnContentButtonNarrow {
     background: #C40000;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
-    font-size: 13px !important;
+    font-size: 13px;
     line-height: 15px;
 }
 
@@ -177,12 +298,10 @@ body.RootBody,
 #theConfirmationContainer .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
-.SearchHotels .bottomPager .ArnPages a,
-.SearchHotels .bottomPager .ArnPages .not_page,
 .SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 .submit:hover,
@@ -204,6 +323,18 @@ body.RootBody,
     background: transparent !important;
     color: #15151e !important;
     box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+}
+
+#theSubmitButton:hover,
+#theSubmitButton:focus,
+#theSubmitButton:active {
+    background: #8a0202;
+    color: #fff !important;
+    box-shadow: 0 0 0 2px transparent inset;
+}
+
+.RootBody #theSubmitButton {
+    font-size: 17px;
 }
 
 .selectedTab {
@@ -388,6 +519,10 @@ body.RootBody,
     max-width: 205px;
 }
 
+.pb-h4h {
+    display: none !important;
+}
+
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
         border-top-color: #C40000;
@@ -515,7 +650,7 @@ nav {
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
     color: #fff;
     line-height: 1.4;
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 700;
 }
 
@@ -537,7 +672,7 @@ nav {
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 400;
 }
 
@@ -562,7 +697,7 @@ ul {
 }
 
 .form-container h2 {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
 }
 
 .uppercase {
@@ -582,18 +717,18 @@ ul {
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1 {
     margin-bottom: 18px;
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 700;
     font-size: 50px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 700;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     margin: auto;
     max-width: 80%;
 }
@@ -643,12 +778,12 @@ ul {
 }
 
 #greet {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 700;
 }
 
 #subGreet {
-    font-family: 'Nunito Sans', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-weight: 200;
     font-size: 1em;
 }
@@ -672,4 +807,27 @@ ul {
 .col-md-4 img {
     padding-bottom: 10px;
     height: 97px;
+}
+
+@media only screen and (max-width: 800px) {
+    #AdminControlsContainer {
+        display: block;
+    }
+
+    .adminContainer {
+        margin-left: auto;
+        margin-right: 10px;
+        height: 0;
+        padding: 6px 0 0 0;
+    }
+
+    .adminContainer span {
+        position: relative;
+        top: -32px;
+    }
+
+    .adminMobile {
+        height: 0;
+        width: 100%;
+    }
 }

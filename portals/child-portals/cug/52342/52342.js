@@ -3,7 +3,6 @@ import CUGPortal from '../../../js/portal-setup.js';
 let cugPortal = new CUGPortal();
 
 cugPortal.updateText('title', 'Room Steals');
-// cugPortal.insertCUGAssets();
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -19,8 +18,12 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cugPortal.updateAttribute('.logo img', 'http://placehold.jp/C40000/ffffff/150x100.jpg', 'src');
-                cugPortal.updateAttribute('.logo', '#', 'href');
+                if (document.querySelector('#AdminControlsContainer')) {
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>');
+                } else {
+                    cugPortal.createHTML('header', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>', 'afterBegin');
+                }
+
                 observer.disconnect();
             }
         }

@@ -138,6 +138,10 @@ header {
     display: none;
 }
 
+.SearchHotels .ArnPropName {
+    background: transparent;
+}
+
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
@@ -159,6 +163,10 @@ header {
 }
 
 .arn-leaflet-search2-button {
+    display: none !important;
+}
+
+.noPrice {
     display: none !important;
 }
 
@@ -1164,7 +1172,7 @@ div#overlay {
     .SearchHotels .ArnRateButton,
     .SearchHotels .OnSale .ArnRateButton {
         width: initial;
-        max-width: 120px;
+        max-width: 150px;
         margin: 5px auto !important;
     }
 

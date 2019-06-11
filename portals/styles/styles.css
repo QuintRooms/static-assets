@@ -19,8 +19,9 @@ body,
 input,
 .RootBody #adults,
 .RootBody #kids,
-.RootBody #lengthOfStay,
 .RootBody .ArnRadiusContainer select,
+.RootBody #lengthOfStay,
+
 .RootBody .ArnRooms select,
 .RootBody input {
     text-indent: 0;
@@ -155,6 +156,10 @@ header {
 
 .adminMobile>.hamburger {
     text-align: left;
+}
+
+.arn-leaflet-search2-button {
+    display: none !important;
 }
 
 .openMapBtn {

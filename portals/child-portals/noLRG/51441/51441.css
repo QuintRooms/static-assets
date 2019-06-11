@@ -86,9 +86,9 @@ header a {
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.bookRoom,
+.SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
-.holdRoom {
+.SinglePropDetail .holdRoom {
     font-family: 'Futura-Book' !important;
     border: 2px solid #a53d2e;
 

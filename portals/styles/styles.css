@@ -491,7 +491,6 @@ header {
     border-radius: 3px;
     padding: 0 4px;
     overflow: hidden;
-    max-width: 27px;
 }
 
 .SearchHotels .ArnPropName div.reviewCount {

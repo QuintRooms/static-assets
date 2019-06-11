@@ -21,7 +21,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 if (document.querySelector('#AdminControlsContainer')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>');
                 } else {
-                    cugPortal.createHTML('header', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>', 'afterBegin');
+                    cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
 
                 observer.disconnect();

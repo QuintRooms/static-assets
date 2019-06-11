@@ -87,6 +87,11 @@ body {
     margin: 0;
 }
 
+.ArnSupportBottom .lowRateLink,
+.ArnSupportBottom .lowRateLink+.dvd {
+    display: none;
+}
+
 body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
@@ -209,12 +214,12 @@ textarea,
 }
 
 body.RootBody {
-    background: #C40000;
-    background: -moz-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: -webkit-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: -o-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C40000', endColorstr='#f05252', GradientType=1);
+    background: #665fee;
+    background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#665fee', endColorstr='#27c2de', GradientType=1);
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -244,12 +249,12 @@ header {
     position: static;
     background: transparent;
     grid-row-start: 2;
-    background: #C40000;
-    background: -moz-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: -webkit-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: -o-linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    background: linear-gradient(45deg, #C40000 0%, #f05252 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C40000', endColorstr='#f05252', GradientType=1);
+    background: #665fee;
+    background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    background: linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#665fee', endColorstr='#27c2de', GradientType=1);
 }
 
 .lrgTip h3 {
@@ -288,7 +293,7 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #C40000;
+    background: #007bff;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
@@ -320,17 +325,15 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: transparent !important;
-    color: #15151e !important;
-    box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+    background: #0069d9 !important;
+    color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #8a0202;
+    background: #0069d9;
     color: #fff !important;
-    box-shadow: 0 0 0 2px transparent inset;
 }
 
 .RootBody #theSubmitButton {
@@ -364,7 +367,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #C40000;
+    border: 1px solid #007bff;
 }
 
 .selectedTab,
@@ -372,14 +375,14 @@ header {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid #C40000;
+    border-bottom: 1px solid #007bff;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff;
-    background: #C40000;
-    border: 1px solid #C40000;
+    background: #007bff;
+    border: 1px solid #007bff;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -393,7 +396,7 @@ header {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #C40000;
+    border-top-color: #007bff;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -406,6 +409,21 @@ header {
     color: #fff;
 }
 
+.SinglePropDetail .PropertyLinks .OptionsPricing a img {
+    left: -180px;
+}
+
+.SinglePropDetail .PropertyLinks .Details a img {
+    left: 165px;
+}
+
+.SinglePropDetail .PropertyLinks .Map a img {
+    left: -115px;
+}
+
+.SinglePropDetail .PropertyLinks .Reviews a img {
+    left: -142px;
+}
 
 .arn-leaflet-reset-button {
     background: #15151e;
@@ -421,31 +439,41 @@ header {
 }
 
 .arnMapMarker {
-    background: #C40000;
+    background: #007bff;
     border: #fff;
 }
 
+.arnMapMarker.highlight {
+    background: #0062cc;
+    border: 1px solid #0062cc;
+    z-index: 8001;
+}
+
+.arnMapMarker.highlight .arnMapMarkerTriangle {
+    border-top-color: #0062cc;
+}
+
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #C40000;
+    border-top-color: #007bff;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #C40000;
+    background: #007bff;
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e;
+    border-top-color: #007bff;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #C40000;
+    background: #007bff;
 }
 
 .SearchHotels .reserveHotel,
@@ -490,7 +518,7 @@ header {
 }
 
 .ArnPropName div.ratingCount {
-    background: #C40000;
+    background: #007bff;
 }
 
 .exclusiveRate {
@@ -498,20 +526,24 @@ header {
 }
 
 .sash {
-    background: #C40000;
+    background: #007bff;
+}
+
+.SearchHotels .percentSavings {
+    display: block !important;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #C40000;
+    background: #007bff;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #C40000;
+    background: #007bff;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -525,7 +557,7 @@ header {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: #C40000;
+        border-top-color: #007bff;
     }
 }
 
@@ -549,11 +581,15 @@ header {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #C40000;
+        border-left: 2px solid #007bff;
     }
 }
 
 @media only screen and (max-width: 800px) {
+    .SearchHotels .percentSavings {
+        left: initial;
+        right: 45px;
+    }
 
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
@@ -578,14 +614,14 @@ header {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid #C40000;
-        border-bottom: 4px solid #C40000 !important;
+        border-top: 4px solid #007bff;
+        border-bottom: 4px solid #007bff !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #C40000;
+        border-bottom: 4px solid #007bff;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -600,8 +636,18 @@ header {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #C40000;
-        background: #C40000;
+        border-bottom: 1px solid #007bff;
+        background: #007bff;
+    }
+    .adminContainer span{
+        background: #007bff;
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 800px) {
+    .SearchHotels .percentSavings {
+        left: initial;
+        right: 45px;
     }
 }
 
@@ -659,9 +705,9 @@ nav {
 }
 
 .btn-primary {
-    background: #e10600;
+    background: #007bff;
     box-shadow: none;
-    border-color: #e10600;
+    border-color: #007bff;
 }
 
 .btn-primary:hover {

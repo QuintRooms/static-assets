@@ -90,6 +90,8 @@ header a {
 .SearchHotels .modifySearchButton,
 .holdRoom {
     font-family: 'Futura-Book' !important;
+    border: 2px solid #fff;
+
 }
 
 .SearchHotels .bottomPager .ArnPages a,
@@ -139,7 +141,9 @@ header a {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #ac8d45 !important;
+    background: #fff !important;
+    border: 2px solid #a53d2e !important;
+    color: #a53d2e !important;
 }
 
 .holdRoom:hover,
@@ -179,14 +183,15 @@ header a {
 
 .arnMapMarker:hover,
 .highlight {
-    background: #ac8d45 !important;
-    border: #ac8d45 !important;
+    background: #a53d2e !important;
+    border: #a53d2e !important;
     transition: all .3s ease;
+    z-index: 8001;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #ac8d45 !important;
+    border-top-color: #a53d2e !important;
     transition: all .3s ease;
 }
 

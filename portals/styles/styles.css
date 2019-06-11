@@ -166,6 +166,10 @@ header {
     display: none !important;
 }
 
+.arnMapMarker.highlight {
+    z-index: 8001;
+}
+
 .noPrice {
     display: none !important;
 }

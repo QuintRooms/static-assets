@@ -1611,6 +1611,10 @@ div#overlay {
     .SinglePropDetail .ArnLimitedAvail {
         position: static;
     }
+
+    .SearchHotels.mobile .roomCount {
+        text-align: center !important;
+    }
 }
 
 /* Confirmation Page */
@@ -2362,6 +2366,14 @@ div#overlay {
 
     #thePhoneNumberAjax input {
         width: 100%;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        margin: 0;
+    }
+
+    .SearchHotels .ArnPropThumb img {
+        border-top-right-radius: 10px;
     }
 }
 

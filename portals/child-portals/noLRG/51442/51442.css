@@ -18,12 +18,17 @@ body {
     color: #15151E;
 }
 
-/*body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/banner.jpg) no-repeat center center /cover !important;
-}*/
+body.RootBody {
+    background: #0b1a46;
+    background: -moz-linear-gradient(45deg, #0b1a46 0%, #4560af 100%) !important;
+    background: -webkit-linear-gradient(45deg, #0b1a46 0%, #4560af 100%) !important;
+    background: -o-linear-gradient(45deg, #0b1a46 0%, #4560af 100%) !important;
+    background: linear-gradient(45deg, #0b1a46 0%, #4560af 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b1a46', endColorstr='#4560af', GradientType=1);
+}
 
 header {
-    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/header-bg.png');
+    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/header-bg.png') no-repeat center center /cover;
     border-bottom: 3px solid #0b1a46;
     display: flex;
     align-items: center;
@@ -31,14 +36,24 @@ header {
     padding: 6px 12px;
 }
 
-.header-info span{
+.header-info {
+    border-top: 5px dotted #0b1a46;
+    border-bottom: 5px dotted #0b1a46;
+    padding: 8px 28px;
+    line-height: 1;
+}
+
+.header-info span {
     display: block;
     text-align: center;
+    color: #fff;
+    font-size: 24px;
     font-family: 'Devine', 'serif';
 }
 
 header a {
     color: #444;
+    margin: 0 10%;
 }
 
 #language {
@@ -55,7 +70,6 @@ header a {
 }
 
 .lrgTip h3 {
-    font-family: 'Futura-Bold';
     font-weight: initial !important;
 }
 
@@ -88,7 +102,6 @@ header a {
 .SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
-    font-family: 'Futura-Book' !important;
     border: 2px solid #0b1a46;
 
 }
@@ -269,6 +282,9 @@ header a {
 }
 
 @media only screen and (max-width: 800px) {
+    .header-info {
+        display: none;
+    }
 
     .SearchHotels .ArnSortByName:hover,
     .SearchHotels .ArnSortByClass:hover,

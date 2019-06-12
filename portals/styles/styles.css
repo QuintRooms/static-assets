@@ -1181,7 +1181,12 @@ div#overlay {
 
     .SearchHotels .roomCount {
         font-size: 13px !important;
+        margin-bottom: 12px;
         /*position: static;*/
+    }
+
+    .ArnIconContainer {
+        display: none !important;
     }
 
     .SearchHotels .ArnGoCitySearch:hover,

@@ -21,6 +21,8 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.inningsfestival.com/', 'href');
+                noLRGPortal.createHTML('header', '<span class="header-info"><span>Feb. 29th-Mar. 1st</span><span>2020</span></span>', 'afterBegin');
+                noLRGPortal.createHTML('header', '<span class="header-info"><span>Tempe Beach Park</span><span>&amp; Arts Park</span></span>', 'beforeEnd');
                 observer.disconnect();
             }
         }

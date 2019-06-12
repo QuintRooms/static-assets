@@ -1519,7 +1519,7 @@ div#overlay {
 
     .SearchHotels.mobile .roomCount {
         width: 100%;
-        text-align: center !important;
+        text-align: left !important;
     }
 
     .OnSale .yourRateAmount {
@@ -1586,7 +1586,7 @@ div#overlay {
         position: static;
         width: 100%;
         max-width: 100%;
-        margin-top: -18px !important;
+        margin-top: -8px !important;
     }
 
     .SearchHotels .ArnPropName div.reviewCount {

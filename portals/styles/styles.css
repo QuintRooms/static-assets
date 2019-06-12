@@ -1181,7 +1181,7 @@ div#overlay {
 
     .SearchHotels .roomCount {
         font-size: 13px !important;
-        margin-bottom: 12px;
+        margin-bottom: 12px !important;
         /*position: static;*/
     }
 

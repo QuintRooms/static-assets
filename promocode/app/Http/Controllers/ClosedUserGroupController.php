@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \Log;
+use \BadMethodCallException;
 use App\ClosedUserGroupApi;
 use Illuminate\Http\Request;
 
@@ -10,16 +11,39 @@ class ClosedUserGroupController extends Controller
     public function call(Request $request)
     {
         $method = $request->get('method');
-        $params = $request->all();
-        unset($params['method']);
-        try {
-            $response = ClosedUserGroupApi::$method($params);
-            return response($response->params, $response->code);
-        } catch (\BadMethodCallException $e) {
-            \Log::info($e);
-            return response([$params, 'error message goes here'], 403);
+
+        if ($method === null) {
+            return response([
+                'params' => $request->all(),
+                'error' => ['Bad Request -- Your request is invalid (at line '.__LINE__.').']
+            ], 400);
         }
 
-        return response([$params, 'success message goes here'], 200);
+        try {
+
+            $response = ClosedUserGroupApi::$method($request->except('method'));
+
+            return response([
+                'params' => $request->all(),
+                'response' => [
+                    'token' => $response['token'],
+                ],
+            ], $response['code']);
+
+        } catch (BadMethodCallException $e) {
+
+            Log::info($e->getMessage());
+
+            return response([
+                'params' => $request->all(),
+                'error' => ['Bad Request -- Your request is invalid (at line '.__LINE__.').']
+            ], 400);
+
+        }
+
+        return response([
+            'params' => $request->all(),
+            'response' => 'Yay!'
+        ], 200);
     }
 }

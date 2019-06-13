@@ -926,6 +926,7 @@ header {
     color: #79cf46;
     font-weight: normal !important;
     line-height: 1;
+    display: block;
 }
 
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td.bookRoomCell .ArnNightlyRate {

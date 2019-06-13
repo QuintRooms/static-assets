@@ -291,9 +291,11 @@ export default class Portal {
             let original = document.querySelectorAll(selector);
             original.forEach(function(element, index) {
                 let rateDate = document.querySelector('.ArnRateFromTo');
-                element.removeChild(rateDate);
-                let updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
-                element.innerHTML = updated;
+                if(rateDate){
+                    element.removeChild(rateDate);
+                    let updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
+                    element.innerHTML = updated;
+                }
             });
         }
     }

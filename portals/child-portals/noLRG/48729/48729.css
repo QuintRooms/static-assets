@@ -1,12 +1,12 @@
 /* Fonts */
 @font-face {
     font-family: 'Futura-Book';
-    src: url('https://media.travsrv.com/appSkins/48729/v6/themes/standard/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/48729/v6/themes/standard/FuturaStd-Book.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Book.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Futura-Bold';
-    src: url('https://media.travsrv.com/appSkins/48729/v6/themes/standard/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/48729/v6/themes/standard/FuturaStd-Bold.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Bold.ttf") format("truetype");
 }
 
 body {

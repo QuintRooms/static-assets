@@ -507,6 +507,10 @@ header>a {
     border-radius: 5px;
 }
 
+.getButton {
+    filter: invert(1);
+}
+
 .submit:hover,
 .submit:active,
 .submit:focus,

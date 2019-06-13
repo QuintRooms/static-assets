@@ -892,8 +892,9 @@ header {
     font-weight: 300;
 }
 
-.SinglePropDetail .bookRoomCell .percentSavings {
-    display: none;
+.SinglePropDetail .bookRoomCell .percentSavings,
+.SinglePropDetail.mobile .bookRoomCell .percentSavings {
+    display: none !important;
 }
 
 .SinglePropDetail .SB16 .originalRateContainer,

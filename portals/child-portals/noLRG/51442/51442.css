@@ -136,6 +136,11 @@ header a {
     border-right: 1px solid #ac8d45 !important;
 }
 
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom {
+    border-color: #858585;
+}
+
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,

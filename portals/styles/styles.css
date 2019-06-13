@@ -1206,6 +1206,10 @@ div#overlay {
         padding: 8px 0;
     }
 
+    .SinglePropDetail .rateRow .percentSavings {
+        display: none !important;
+    }
+
     .SinglePropDetail .PropertyAmenities {
         padding: 10px;
     }
@@ -1379,7 +1383,7 @@ div#overlay {
     }
 
     .SinglePropDetail .ArnPropName {
-        padding: 0;
+        padding: 6px;
     }
 
     #theDatePrompt {
@@ -1425,7 +1429,7 @@ div#overlay {
     }
 
     .SinglePropDetail .OnSale .bestPrice .yourRateAmount {
-        font-size: 28px !important;
+        font-size: 21px !important;
     }
 
     .SinglePropDetail .originalRateAmount,

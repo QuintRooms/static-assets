@@ -595,6 +595,10 @@ header {
     color: #000;
 }
 
+.ArnRateCell span.arnUnit {
+    font-size: 35px !important;
+}
+
 .SinglePropDetail .ArnPropDescription {
     color: #fff;
 }
@@ -613,18 +617,21 @@ header {
     border: 1px solid transparent !important;
 }
 
+.SearchHotels .geoButton {
+    filter: invert(1);
+}
+
 .arnMapMarker {
     background: #ffc20e;
     border: #fff;
 }
 
 .arnMapMarker.highlight {
+    background: #ffc20e !important;
     border-color: #ffc20e !important;
-    background: #ffc20e;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    background: #ffc20e;
     border-top-color: #ffc20e !important;
 }
 
@@ -642,7 +649,7 @@ header {
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e;
+    border-top-color: #ffc20e;
     transition: all .3s ease;
 }
 
@@ -702,6 +709,14 @@ header {
 
 .sash {
     background: #ffc20e;
+}
+
+div.autocomplete ul li.selected {
+    background-color: #ffc20e !important;
+}
+
+input#theSubmitButton:hover {
+    color: white !important;
 }
 
 .openMapBtn:hover,

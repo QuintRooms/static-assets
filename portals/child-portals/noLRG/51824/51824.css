@@ -505,6 +505,10 @@ header {
     border-radius: 5px;
 }
 
+#theConfirmationButton:hover {
+    color: #000 !important;
+}
+
 .getButton {
     filter: invert(1);
 }
@@ -523,11 +527,38 @@ header {
 .holdRoom:focus,
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
-.HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
     background: transparent !important;
-    color: #15151e !important;
+    color: #fff !important;
     box-shadow: 0 0 0 2px rgb(255, 185, 14) inset;
+}
+
+.HoldRoomsForm .ArnContentButtonWide:hover {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: 0 0 0 2px rgb(255, 185, 14) inset;
+}
+
+.HoldRoomsForm .ArnContentButtonNarrow:hover {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: 0 0 0 2px rgb(255, 185, 14) inset;
+}
+
+.HoldRoomsForm .ArnRightListContainer input:hover {
+    color: #000 !important;
+}
+
+#theOtherSubmitButton:hover {
+    color: #000 !important;
+}
+
+.ArnShowRatesLink:hover {
+    color: #000 !important;
+}
+
+.bookRoom:hover {
+    color: #000 !important;
 }
 
 .selectedTab {
@@ -543,7 +574,7 @@ header {
 .SinglePropDetail .holdRoom:focus,
 .SinglePropDetail .holdRoom:active {
     background: #38383f;
-    color: #fff !important;
+    color: #000 !important;
     box-shadow: 0 0 0 2px transparent inset;
 }
 

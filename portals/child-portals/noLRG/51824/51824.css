@@ -11,9 +11,7 @@
 .SinglePropDetail .bestPrice .yourRateAmount:after,
 .SinglePropDetail .bestPrice .originalRateAmount,
 .SinglePropDetail .bestPrice .percentSavings,
-.SinglePropDetail legend {
-    font-family: 'Titillium Web', 'sans-serif';
-}
+.SinglePropDetail legend {}
 
 /* Headings */
 .modifySearch,
@@ -24,13 +22,10 @@ h1,
 h2,
 h3,
 h4,
-h5 {
-    font-family: 'F1-Regular', 'Helvetica' !important;
-}
+h5 {}
 
 .detailsTitle,
 #theBookingPage fieldset.WBGuestFormFields legend {
-    font-family: 'F1-Bold';
     letter-spacing: initial;
 }
 
@@ -54,7 +49,6 @@ h3,
 }
 
 .font1 {
-    font-family: 'F1-Regular', 'Helvetica';
     font-size: 25px;
 }
 
@@ -64,7 +58,6 @@ h3,
 .theHotelName {
     font-size: 18px;
     font-weight: 300;
-    font-family: 'F1-Regular', 'Helvetica';
 }
 
 .arnCurrency {
@@ -81,7 +74,6 @@ h3,
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
-    font-family: 'F1-Regular', 'Helvetica';
     font-weight: normal;
     font-size: 14px;
 }
@@ -89,12 +81,13 @@ h3,
 .reserveHotel,
 .modifySearch {
     font-size: 17px;
-    font-family: 'F1-Regular'
 }
+
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
     content: 'per stay';
 }
+
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,
@@ -160,12 +153,12 @@ body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
 .ArnRoomsOnHold td {
-    font-family: 'Titillium Web', 'sans-serif';
     font-weight: 400;
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/banner.png) no-repeat center center /cover !important;
+    background: rgb(51, 51, 51);
+    background: linear-gradient(90deg, rgba(51, 51, 51, 1) 0%, rgba(75, 75, 75, 1) 47%, rgba(52, 52, 52, 1) 100%) no-repeat center center /cover !important;
 }
 
 /* Top Nav */
@@ -229,9 +222,9 @@ body.RootBody {
 .top-menu .navbar-nav>li>a:hover,
 .top-menu .navbar-nav>li>a:active,
 .top-menu .navbar-nav>li>a:focus {
-    color: #e10600;
+    color: #ffc20e;
     background: transparent !important;
-    border-bottom: 3px solid #e10600;
+    border-bottom: 3px solid #ffc20e;
 }
 
 .top-menu .left-nav li {
@@ -277,12 +270,9 @@ body.RootBody {
 }
 
 /* Main Nav */
-header>a {
-    display: none;
-}
 
 .main-nav {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 @media screen and (min-width: 770px) {
@@ -296,7 +286,6 @@ header>a {
 
 .navbar-default .navbar-nav.dynamic-nav>li>a {
     color: #fff;
-    font-family: 'F1-Regular', 'Helvetica';
     font-weight: 400;
     padding: 40px 18px;
     font-size: 12px;
@@ -332,6 +321,17 @@ header>a {
     display: block;
 }
 
+.logo img {
+    margin: auto;
+    width: 15rem;
+    filter: invert(1);
+    display: block;
+}
+
+header {
+    background: #000;
+}
+
 @media screen and (max-width: 850px) {
     .navbar-brand {
         max-width: 250px;
@@ -363,7 +363,7 @@ header>a {
     .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
     .navbar-default .navbar-nav.dynamic-nav>li>a:active,
     .navbar-default .navbar-nav.dynamic-nav>li>a:focus {
-        background: #e10600;
+        background: #ffc20e;
         color: #fff;
         transition: all .5s ease;
     }
@@ -390,7 +390,7 @@ header>a {
     }
 
     .dynamic-nav {
-        background: #e10600;
+        background: #ffc20e;
     }
 
     .navbar-collapse {
@@ -400,8 +400,8 @@ header>a {
     .navbar-default .navbar-nav.dynamic-nav>li>a {
         color: #fff;
         font-size: 15px;
-        border-right: 1px solid #f08380;
-        border-bottom: 1px solid #f08380;
+        border-right: 1px solid #ffc20e;
+        border-bottom: 1px solid #ffc20e;
         margin: 20px;
         border-bottom-right-radius: 15px;
     }
@@ -462,7 +462,6 @@ header>a {
 }
 
 .lrgTip h3 {
-    font-family: 'Titillium Web';
     font-weight: initial;
 }
 
@@ -485,9 +484,8 @@ header>a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #e10600 !important;
+    background: #ffc20e !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
-    font-family: 'Titillium Web';
     font-weight: 600 !important;
     font-size: 13px !important;
     line-height: 15px;
@@ -529,7 +527,7 @@ header>a {
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
     background: transparent !important;
     color: #15151e !important;
-    box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
+    box-shadow: 0 0 0 2px rgb(255, 185, 14) inset;
 }
 
 .selectedTab {
@@ -559,7 +557,7 @@ header>a {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #e10600;
+    border: 1px solid #ffc20e;
 }
 
 .selectedTab,
@@ -567,14 +565,14 @@ header>a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid #e10600;
+    border-bottom: 1px solid #ffc20e;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff;
-    background: #e10600;
-    border: 1px solid #e10600;
+    background: #ffc20e;
+    border: 1px solid #ffc20e;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -588,7 +586,7 @@ header>a {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #e10600;
+    border-top-color: #ffc20e;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -616,31 +614,41 @@ header>a {
 }
 
 .arnMapMarker {
-    background: #e10600;
+    background: #ffc20e;
     border: #fff;
 }
 
+.arnMapMarker.highlight {
+    border-color: #ffc20e !important;
+    background: #ffc20e;
+}
+
+.arnMapMarker.highlight .arnMapMarkerTriangle {
+    background: #ffc20e;
+    border-top-color: #ffc20e !important;
+}
+
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #e10600;
+    border-top-color: #ffc20e;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #e10600;
+    background: #ffc20e;
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e; 
+    border-top-color: #15151e;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 .SearchHotels .reserveHotel,
@@ -685,7 +693,7 @@ header>a {
 }
 
 .ArnPropName div.ratingCount {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 .exclusiveRate {
@@ -693,20 +701,20 @@ header>a {
 }
 
 .sash {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #e10600;
+    background: #ffc20e;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -716,7 +724,7 @@ header>a {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: #e10600;
+        border-top-color: #ffc20e;
     }
 }
 
@@ -740,7 +748,7 @@ header>a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #e10600;
+        border-left: 2px solid #ffc20e;
     }
 }
 
@@ -769,14 +777,14 @@ header>a {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid #e10600;
-        border-bottom: 4px solid #e10600 !important;
+        border-top: 4px solid #ffc20e;
+        border-bottom: 4px solid #ffc20e !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #e10600;
+        border-bottom: 4px solid #ffc20e;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -791,7 +799,7 @@ header>a {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #e10600;
-        background: #e10600;
+        border-bottom: 1px solid #ffc20e;
+        background: #ffc20e;
     }
 }

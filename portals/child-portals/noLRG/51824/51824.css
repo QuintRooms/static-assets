@@ -322,9 +322,8 @@ body.RootBody {
 }
 
 .logo img {
-    margin: auto;
-    width: 15rem;
-    filter: invert(1);
+    margin: 10px auto;
+    width: 150px;
     display: block;
 }
 

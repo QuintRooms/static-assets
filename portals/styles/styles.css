@@ -230,11 +230,11 @@ header {
     margin: 0 0 0 5px;
 }
 
-.customTag{
-    background: rgba(0,0,0, .75);
+.customTag {
+    background: rgba(0, 0, 0, .75);
     position: absolute;
     bottom: 0;
-    width: inherit;
+    width: 100%;
     color: #fff;
     font-size: 15px;
     text-align: center;
@@ -541,9 +541,7 @@ header {
     text-decoration: none !important;
 }
 
-.arnCurrency {
-    font-size: 1em !important;
-}
+
 
 .SearchHotels .yourRateContainer {
     display: none !important;
@@ -1132,6 +1130,10 @@ div#overlay {
         display: none;
     }
 
+    .customTag {
+        width: inherit;
+    }
+
     .SinglePropDetail .bestPrice .yourRateContainer {
         margin-top: 10px;
     }
@@ -1519,6 +1521,7 @@ div#overlay {
         display: block;
         width: 100%;
         border-radius: 10px 10px 0 0;
+        position: relative;
     }
 
     .sash {

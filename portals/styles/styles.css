@@ -542,7 +542,7 @@ header {
 }
 
 .arnCurrency {
-    vertical-align: super;
+    font-size: 1em !important;
 }
 
 .SearchHotels .yourRateContainer {

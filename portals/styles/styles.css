@@ -6,6 +6,11 @@ body,
     font-weight: 400;
 }
 
+body.WBConfirmedBooking {
+    font-family: 'Nunito', 'sans-serif' !important;
+
+}
+
 .RootBody .reserveHotel {
     color: #fff;
 }

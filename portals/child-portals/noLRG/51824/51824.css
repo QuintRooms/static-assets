@@ -817,3 +817,9 @@ input#theSubmitButton:hover {
         background: #ffc20e;
     }
 }
+.cancellationAndChanges + strong,
+.cancellationAndChanges + strong + ul,
+.cancellationAndChanges + strong + ul + strong,
+.cancellationAndChanges + strong + ul + strong + ul{
+    display: none;
+}

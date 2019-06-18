@@ -541,7 +541,9 @@ header {
     text-decoration: none !important;
 }
 
-
+.arnCurrency {
+    vertical-align: super;
+}
 
 .SearchHotels .yourRateContainer {
     display: none !important;

@@ -3,7 +3,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Inc 5000 Conference');
-noLRGPortal.updateRoomDescription('.RoomDescription', '');
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Inc. 5000 Exclusive Rate');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

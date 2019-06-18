@@ -21,7 +21,6 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.inc.com/inc5000/index.html', 'href');
-                noLRGPortal.createHTML('#language', '<a href="https://events.hotelsforhope.com/v6/support?siteId=' + noLRGPortal.site_id + '" target="_blank">Contact Us</a>', 'beforeBegin');
                 observer.disconnect();
             }
         }

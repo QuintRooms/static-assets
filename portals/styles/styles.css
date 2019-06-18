@@ -230,6 +230,16 @@ header {
     margin: 0 0 0 5px;
 }
 
+.customTag{
+    background: rgba(0,0,0, .75);
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
 .SearchHotels .ArnProperty:hover {
     box-shadow: 2px 2px 2px 0px #ccc;
 }

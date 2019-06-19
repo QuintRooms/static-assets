@@ -9,7 +9,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
-        noLRGPortal.addCustomTag('Closest To Festival', '577');
+        noLRGPortal.addCustomTag('Closest To Festival', 577);
     }, 1);
 });
 

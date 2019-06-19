@@ -1,0 +1,122 @@
+body>img {
+    display: inherit;
+}
+
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited {
+    font-weight: 300;
+    font-size: inherit;
+}
+
+.creditsValue,
+.yourRateAmount,
+.originalRateAmount {
+    text-align: right;
+}
+
+.eliteRateContainer+.yourRateAmount {
+    text-align: right !important;
+}
+
+.ArnNightlyRate .yourRateContainer .yourRateAmount {
+    text-align: center !important;
+}
+
+.ArnPropertyTierTwo .ArnNightlyRate .yourRateContainer .yourRateAmount {
+    text-align: right !important;
+    width: initial !important;
+}
+
+.ArnNightlyRate strong {
+    display: block;
+}
+
+.WBSupportFormActions .submit {
+    margin-top: 20px;
+}
+
+#theBookingPage.ConfirmationPage .SuccessList,
+#theBookingPage.ConfirmationPage .PaymentPolicies {
+    display: block !important;
+}
+
+#theBookingPage fieldset legend {
+    font-size: 17px;
+}
+
+.perStay {
+    font-weight: bold;
+}
+
+.PropLimitedAvail .perStay {
+    display: none;
+}
+
+.ArnAvailability {
+    display: none;
+}
+
+.stayDates {
+    font-size: .9em;
+}
+
+@media screen and (min-width: 800px) {
+    .SearchHotels .ArnContainer {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        display: inline;
+        float: left;
+    }
+
+    .SearchHotels .ArnPropName {
+        display: inline;
+        position: static;
+        width: 50%;
+        margin-left: 12px;
+    }
+
+    .SearchHotels .ArnRateCell {
+        position: static;
+        display: inline;
+        justify-self: flex-end;
+        margin-right: 24px;
+        margin-top: 18px !important;
+
+    }
+}
+
+#theCouponFieldset {
+    display: none;
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .SearchHotels .ArnRateCell {
+        top: 45px;
+    }
+
+    .SearchHotels .ArnPropName {
+        width: 45% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnPropName {
+        width: 50%;
+    }
+
+    .zsiq_floatmain {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .SearchHotels .ArnPropName {
+        text-align: center;
+        width: 100%
+    }
+}

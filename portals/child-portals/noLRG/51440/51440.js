@@ -21,6 +21,8 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.austinfoodandwinefestival.com/', 'href');
+                noLRGPortal.createHTML('header', '<span class="header-info"><span>APRIL 26-28, 2019</span></span>', 'afterBegin');
+                noLRGPortal.createHTML('header', '<span class="header-info"><span>AUSTIN, TEXAS</span></span>', 'beforeEnd');
                 observer.disconnect();
             }
         }

@@ -1,20 +1,20 @@
 /* Fonts */
 @font-face {
-    font-family: 'Futura-Book';
-    src: url('https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Book.ttf") format("truetype");
+   font-family: 'Square Serif Medium';
+   src: url('/appSkins/46419/v6/themes/standard/squareserif-medium.eot?#iefix') format("embedded-opentype"),
+        url("/appSkins/46419/v6/themes/standard/squareserif-medium.ttf") format("truetype");
 }
-
 @font-face {
-    font-family: 'Futura-Bold';
-    src: url('https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/51658/v6/themes/standard/FuturaStd-Bold.ttf") format("truetype");
+   font-family: 'Square Serif Book';
+   src: url('/appSkins/46419/v6/themes/standard/squareserif-book.eot?#iefix') format("embedded-opentype"),
+        url("/appSkins/46419/v6/themes/standard/squareserif-book.ttf") format("truetype");
 }
 
 body {
+    background-image: url(/appSkins/46419/v6/themes/standard/images/afw-bg.jpg);
     font-family: 'Futura-Book', 'Helvetica';
     font-size: 17px !important;
-    background-image: url("/appSkins/46419/v6/themes/standard/images/afw-bg.jpg"); 
     font-weight: 300;
-    background: #fff;
     color: #15151E;
     line-height: 1.4;
 }
@@ -27,20 +27,48 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/banner.jpg) no-repeat center center /cover !important;
+    background-size: initial !important;
+}
+
+.RootBody .ArnSearchContainerMainDiv {
+    background: transparent !important;
+    padding-top: 15rem;
+}
+
+.RootBody .reserveHotel {
+    color: #1a1a1a !important;
+    font-family: "Square Serif Medium";
+}
+
+.modifySearch {
+    color: #1a1a1a !important;
+    font-family: "Square Serif Medium";
 }
 
 header {
-    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/header-bg.jpg');
-    border-bottom: 3px solid #ab8d45;
+    background: #fff !important;
+    border-bottom: 3px solid #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 12px;
+    padding: 28px 12px;
+}
+
+.header-info {
+    padding: 8px 28px;
+    line-height: 1;
+}
+
+.header-info span {
+    display: block;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 24px;
+    font-family: "Square Serif Medium";
 }
 
 header a {
-    color: #444;
+    color: #1a1a1a;
 }
 
 #language {
@@ -78,7 +106,7 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
     transition: all .5s ease;
 }
 
@@ -91,13 +119,13 @@ header a {
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
     font-family: 'Futura-Book' !important;
-    border: 2px solid #a53d2e;
+    border: 2px solid #1a1a1a;
 
 }
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #a53d2e !important;
+    border: 1px solid #1a1a1a !important;
 }
 
 .selectedTab,
@@ -105,8 +133,8 @@ header a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #a53d2e !important;
-    border-bottom: 1px solid #a53d2e !important;
+    border-top: 1px solid #1a1a1a !important;
+    border-bottom: 1px solid #1a1a1a !important;
 
 }
 
@@ -143,8 +171,8 @@ header a {
 .bookRoom:focus,
 .bookRoom:active {
     background: #fff !important;
-    border: 2px solid #a53d2e !important;
-    color: #a53d2e !important;
+    border: 2px solid #1a1a1a !important;
+    color: #1a1a1a !important;
 }
 
 .holdRoom:hover,
@@ -159,7 +187,7 @@ header a {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #a53d2e !important;
+    border-top-color: #1a1a1a !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -169,40 +197,40 @@ header a {
 }
 
 .arn-leaflet-reset-button {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .arnMapMarker {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
     border: #c899ff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #a53d2e !important;
+    border-top-color: #1a1a1a !important;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #a53d2e !important;
-    border: #a53d2e !important;
+    background: #1a1a1a !important;
+    border: #1a1a1a !important;
     transition: all .3s ease;
     z-index: 8001;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #a53d2e !important;
+    border-top-color: #1a1a1a !important;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .throbber {
-    border-left: #a53d2e !important;
+    border-left: #1a1a1a !important;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -213,32 +241,32 @@ header a {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 #slideit section {
-    border-bottom: #a53d2e !important;
+    border-bottom: #1a1a1a !important;
 }
 
 .ArnPropName div.ratingCount {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .sash {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #a53d2e !important;
+    background: #1a1a1a !important;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -266,7 +294,7 @@ header a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #a53d2e !important;
+        border-left: 2px solid #1a1a1a !important;
     }
 }
 
@@ -290,14 +318,14 @@ header a {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #a53d2e !important;
-        border-bottom: 4px solid #a53d2e !important;
+        border-top: 4px solid #1a1a1a !important;
+        border-bottom: 4px solid #1a1a1a !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #a53d2e !important;
+        border-bottom: 4px solid #1a1a1a !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -307,5 +335,13 @@ header a {
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
+    }
+
+    .RootBody {
+        background-image: url(/appSkins/46419/v6/themes/standard/images/afw-bg.jpg) !important;
+    }
+
+    .header-info span {
+        display: none;
     }
 }

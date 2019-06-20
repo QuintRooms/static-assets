@@ -1,13 +1,11 @@
 /* Fonts */
 @font-face {
    font-family: 'Square Serif Medium';
-   src: url('/appSkins/46419/v6/themes/standard/squareserif-medium.eot?#iefix') format("embedded-opentype"),
-        url("/appSkins/46419/v6/themes/standard/squareserif-medium.ttf") format("truetype");
+   src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-medium.ttf") format("truetype");
 }
 @font-face {
    font-family: 'Square Serif Book';
-   src: url('/appSkins/46419/v6/themes/standard/squareserif-book.eot?#iefix') format("embedded-opentype"),
-        url("/appSkins/46419/v6/themes/standard/squareserif-book.ttf") format("truetype");
+   src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-book.ttf") format("truetype");
 }
 
 body {
@@ -274,6 +272,10 @@ header a {
     max-width: 205px !important;
 }
 
+.SinglePropDetail {
+    background: initial !important;
+}
+
 @media only screen and (min-width: 800px) {
 
     .ArnSortByName:hover,
@@ -343,5 +345,9 @@ header a {
 
     .header-info span {
         display: none;
+    }
+
+    .ArnPriceCell span {
+        font-size: 25px !important;
     }
 }

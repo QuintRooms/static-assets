@@ -163,10 +163,12 @@ h3,
     font-size: 17px;
     font-family: 'F1-Regular'
 }
+
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
     content: 'per stay';
 }
+
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,
@@ -702,7 +704,7 @@ header>a {
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #15151e; 
+    border-top-color: #15151e;
     transition: all .3s ease;
 }
 
@@ -862,4 +864,43 @@ header>a {
         border-bottom: 1px solid #e10600;
         background: #e10600;
     }
+}
+
+/* Border Radius Adjustments */
+
+input,
+.uneditable-input,
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea,
+.RootBody #adults,
+.RootBody #kids,
+.RootBody #lengthOfStay,
+.RootBody .ArnRadiusContainer select,
+.RootBody .ArnRooms select,
+.RootBody input {
+    border-radius: 5px;
+}
+
+.submit,
+#theConfirmationContainer .submit,
+.OnSale .ArnShowRatesLink,
+.ArnShowRatesLink,
+.SinglePropDetail .bookRoom,
+.SearchHotels .modifySearchButton,
+.SinglePropDetail .holdRoom {
+    border-radius: 50px;
 }

@@ -1571,10 +1571,32 @@ div#overlay {
         width: 95%;
     }
 
+    .SinglePropDetail .ArnPropName {
+        text-align: center;
+    }
+
     .SinglePropDetail .ArnPropNameLink,
     .SinglePropDetail .ArnPropNameLink:active,
     .SinglePropDetail .ArnPropNameLink:visited {
         font-size: 17px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .SinglePropDetail .ArnPropName div.ratingCount{
+        position: relative;
+        top: 24px;
+    }
+    .SinglePropDetail .ArnRateCell{
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin: 18px 0;
+    }
+
+    .SinglePropDetail .ArnPropNameLink,
+    .SinglePropDetail .ArnPropAddress,
+    .SinglePropDetail .ArnTripAdvisorDetails {
+        width: 100%;
     }
 
     .svg-container {
@@ -1590,10 +1612,6 @@ div#overlay {
 
     .SinglePropDetail .ArnPropDescription {
         text-align: center;
-    }
-
-    .SinglePropDetail .ArnRateCell {
-        position: absolute;
     }
 }
 
@@ -1620,15 +1638,11 @@ div#overlay {
         max-width: 100%;
     }
 
-    .SearchHotels .ArnAvailability {
-        bottom: 0;
-    }
-
     .ArnAvailability {
         width: 100%;
         text-align: center;
         right: 0;
-        bottom: 15px;
+        bottom: 0;
         font-weight: 700;
         font-size: 18px;
     }
@@ -1661,7 +1675,7 @@ div#overlay {
 
 /* Event Rate Guarantee */
 .ArnSubPage {
-    padding: 0 18px;
+    padding: 0 8px;
 }
 
 @media screen and (min-width:800px) {

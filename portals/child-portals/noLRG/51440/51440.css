@@ -9,8 +9,7 @@
 }
 
 body {
-    background-image: url(/appSkins/46419/v6/themes/standard/images/afw-bg.jpg);
-    font-family: 'Futura-Book', 'Helvetica';
+    background-image: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/images/afw-bg.jpg");
     font-size: 17px !important;
     font-weight: 300;
     color: #15151E;
@@ -18,7 +17,6 @@ body {
 }
 
 .ArnSubPage td {
-    font-family: 'Futura-Book', 'Helvetica';
     font-size: 15px !important;
     font-weight: 300;
     color: #15151E;
@@ -179,6 +177,10 @@ header a {
     background: #646464 !important;
 }
 
+div.autocomplete ul li.selected {
+    background-color: #1a1a1a !important;
+}
+
 .holdRoom {
     background: #858585 !important;
 }
@@ -272,9 +274,7 @@ header a {
     max-width: 205px !important;
 }
 
-.SinglePropDetail {
-    background: initial !important;
-}
+
 
 @media only screen and (min-width: 800px) {
 
@@ -334,13 +334,17 @@ header a {
         top: 0 !important;
     }
 
+    .SearchHotels {
+        background-image: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/images/afw-bg.jpg") !important;
+    }
+
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
     }
 
     .RootBody {
-        background-image: url(/appSkins/46419/v6/themes/standard/images/afw-bg.jpg) !important;
+        background-image: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/images/afw-bg.jpg") !important;
     }
 
     .header-info span {

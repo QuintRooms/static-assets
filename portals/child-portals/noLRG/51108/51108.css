@@ -898,5 +898,5 @@ textarea,
 .SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
-    border-radius: 50px;
+    border-radius: 5px;
 }

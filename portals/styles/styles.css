@@ -1620,6 +1620,10 @@ div#overlay {
         max-width: 100%;
     }
 
+    .SearchHotels .ArnAvailability {
+        bottom: 0;
+    }
+
     .ArnAvailability {
         width: 100%;
         text-align: center;

@@ -140,10 +140,6 @@ h3,
     font-family: 'F1-Regular', 'Helvetica';
 }
 
-.arnCurrency {
-    font-size: .5em !important;
-}
-
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;
@@ -892,7 +888,7 @@ textarea,
 .RootBody .ArnRadiusContainer select,
 .RootBody .ArnRooms select,
 .RootBody input {
-    border-radius: 5px;
+    border-radius: 5px !important;
 }
 
 .submit,

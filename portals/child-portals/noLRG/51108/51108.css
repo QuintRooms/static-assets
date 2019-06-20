@@ -428,6 +428,7 @@ header>a {
         margin: 0;
         z-index: 1;
         position: relative;
+        float: none !important;
     }
 
     .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
@@ -859,6 +860,14 @@ header>a {
     .SearchHotels .ArnGoAirportSearch:hover {
         border-bottom: 1px solid #e10600;
         background: #e10600;
+    }
+
+    .SinglePropDetail .SimpleSearch .ArnCheckInDate {
+        width: 99% !important;
+    }
+
+    .SinglePropDetail .SimpleSearch .ArnCheckOutDate {
+        width: 100% !important;
     }
 }
 

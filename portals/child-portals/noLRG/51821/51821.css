@@ -237,7 +237,7 @@ header a {
 }
 
 /* Ad Unit */
-.ad-unit {
+.ad-unit img {
     display: block;
     margin: 24px auto;
 }

@@ -75,7 +75,6 @@ class Event {
 
         let interval = 200;
         let promise = Promise.resolve();
-        console.log(self.params);
         self.params.forEach(function(param) {
             promise = promise.then(function() {
                 let url = 'https://distance.hotelsforhope.com?from_lat=' + param[0][0] + '&from_long=' + param[0][1] + '&to_lat=' + param[1][0] + '&to_long=' + param[1][1];
@@ -84,7 +83,6 @@ class Event {
                     let data = response.json();
                     return data;
                 }).then((data) => {
-                    console.log('test');
                     distanceElement.forEach(function(element) {
                         let parent = element.closest('.ArnProperty');
                         if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
@@ -105,11 +103,6 @@ class Event {
                     setTimeout(resolve, interval);
                 });
             });
-        });
-
-        promise.then(function() {
-            console.log('Request loop finished.');
-
         });
     }
 }

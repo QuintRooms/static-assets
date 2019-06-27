@@ -14,9 +14,6 @@ class Event {
         this.getFromLatLong();
         this.getVenueName();
         this.getUnit();
-        this.getPropertyLatLong().then(() => {
-            this.updateDistance();
-        });
     }
 
     getFromLatLong() {
@@ -30,6 +27,8 @@ class Event {
         if (this.from_long) {
             this.from_long = this.from_long.getAttribute('content');
         }
+
+        document.querySelector('.SearchHotels .loader').setAttribute('class', 'off');
     }
 
     async getPropertyLatLong(params) {
@@ -61,13 +60,13 @@ class Event {
     }
 
     getUnit() {
-        let initialUnits = document.querySelector('.units').textContent;
+        let units = document.querySelector('.units').textContent;
 
-        if (initialUnits.includes('miles')) {
+        if (units.includes('miles')) {
             this.unit = 'miles';
         }
 
-        if (initialUnits.includes('kilometers')) {
+        if (units.includes('kilometers')) {
             this.unit = 'kilometers';
         }
     }
@@ -78,19 +77,18 @@ class Event {
 
         let interval = 200;
         let promise = Promise.resolve();
-
+        console.log(self.params);
         self.params.forEach(function(param) {
             promise = promise.then(function() {
                 let url = 'https://distance.hotelsforhope.com?from_lat=' + param[0][0] + '&from_long=' + param[0][1] + '&to_lat=' + param[1][0] + '&to_long=' + param[1][1];
 
                 let response = fetch(url).then((response) => {
                     let data = response.json();
-                    console.log(data);
                     return data;
                 }).then((data) => {
+                    console.log('test');
                     distanceElement.forEach(function(element) {
                         let parent = element.closest('.ArnProperty');
-
                         if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
                             if (self.unit == 'miles') {
                                 element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
@@ -113,8 +111,15 @@ class Event {
 
         promise.then(function() {
             console.log('Request loop finished.');
+
         });
     }
 }
-
 let event = new Event();
+
+jQuery(document).on("ratesReadyEvent", function() {
+    event.params = [];
+    event.getPropertyLatLong().then(() => {
+        event.updateDistance();
+    });
+});

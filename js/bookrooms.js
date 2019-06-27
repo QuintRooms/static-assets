@@ -114,13 +114,12 @@ function addExternalScript(url) {
 }
 
 if (jQuery('body').hasClass('SearchHotels')) {
-    // addExternalScript('https://static.hotelsforhope.com/js/calculate-distance.js');
+    addExternalScript('https://static.hotelsforhope.com/js/calculate-distance.js');
 }
 
 jQuery(document).on("ratesReadyEvent", function() {
     addPerStayToPrice();
     showDatesInListing();
-
 });
 
 // google tag manager script to load hotjar

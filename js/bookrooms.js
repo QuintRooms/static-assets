@@ -102,9 +102,11 @@ function showDatesInListing() {
 }
 
 function addExternalScript(url) {
-    let script = document.createElement('script');
-    script.setAttribute('src', url);
-    document.head.appendChild(script);
+    if (document.querySelector('script[src=url]')) {
+        let script = document.createElement('script');
+        script.setAttribute('src', url);
+        document.head.appendChild(script);
+    }
 }
 
 jQuery(document).on("ratesReadyEvent", function() {

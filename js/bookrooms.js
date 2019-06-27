@@ -116,7 +116,7 @@ function addExternalScript(url) {
 jQuery(document).on("ratesReadyEvent", function() {
     addPerStayToPrice();
     showDatesInListing();
-    addExternalScript('https://static.hotelsforhope.com/js/calculate-distance.js');
+    // addExternalScript('https://static.hotelsforhope.com/js/calculate-distance.js');
 });
 
 // google tag manager script to load hotjar

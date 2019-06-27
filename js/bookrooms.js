@@ -101,9 +101,23 @@ function showDatesInListing() {
     }
 }
 
+function addExternalScript(url) {
+    if (!document.querySelector('#distance-calculation')) {
+        console.log('script not created');
+        let script = document.createElement('script');
+        script.setAttribute('src', url);
+        script.setAttribute('id', 'distance-calculation')
+        document.head.appendChild(script);
+
+        return;
+    }
+    return false;
+}
+
 jQuery(document).on("ratesReadyEvent", function() {
     addPerStayToPrice();
     showDatesInListing();
+    addExternalScript();
 });
 
 // google tag manager script to load hotjar

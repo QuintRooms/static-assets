@@ -87,10 +87,14 @@ class Event {
                         let parent = element.closest('.ArnProperty');
                         if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
                             if (self.unit == 'miles') {
+                                data['mi'] = parseFloat(data['mi']);
+                                data['mi'] = data['mi'].toFixed(1);
                                 element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
                             }
 
                             if (self.unit == 'kilometers') {
+                                data['km'] = parseFloat(data['km']);
+                                data['km'] = data['km'].toFixed(1);
                                 element.textContent = data['km'] + ' ' + self.unit + ' to ' + self.venueName;
                             }
                         }

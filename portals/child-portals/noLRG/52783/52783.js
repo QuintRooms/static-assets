@@ -30,3 +30,6 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+// Custom Banner Ad
+noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad-unit" href="https://farmaid.org"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/ad-unit.jpg"></a>', 'beforeEnd');

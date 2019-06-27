@@ -27,8 +27,6 @@ class Event {
         if (this.from_long) {
             this.from_long = this.from_long.getAttribute('content');
         }
-
-        document.querySelector('.SearchHotels .loader').setAttribute('class', 'off');
     }
 
     async getPropertyLatLong(params) {

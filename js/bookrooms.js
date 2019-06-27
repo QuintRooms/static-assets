@@ -103,7 +103,6 @@ function showDatesInListing() {
 
 function addExternalScript(url) {
     if (!document.querySelector('#distance-calculation')) {
-        console.log('script not created');
         let script = document.createElement('script');
         script.setAttribute('src', url);
         script.setAttribute('id', 'distance-calculation')
@@ -117,7 +116,7 @@ function addExternalScript(url) {
 jQuery(document).on("ratesReadyEvent", function() {
     addPerStayToPrice();
     showDatesInListing();
-    addExternalScript();
+    addExternalScript('https://static.hotelsforhope.com/js/calculate-distance.js');
 });
 
 // google tag manager script to load hotjar

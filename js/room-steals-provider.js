@@ -55,7 +55,6 @@ class RoomStealsNavigation {
             .then(response => response.json())
             .then(response => this.data = response)
             .catch(() => {
-            	console.log(response);
                 throw new Error('Post not performed.');
             });
     }
@@ -113,6 +112,7 @@ class RoomStealsNavigation {
                 this.memberPartner = this.memberPartner['partner'];
             })
             .catch(() => {
+                document.querySelector('#commands .profileCommand').style.display = 'block !important';
                 throw new Error('Member not received.');
             });
     }

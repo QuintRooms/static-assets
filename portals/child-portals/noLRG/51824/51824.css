@@ -54,7 +54,7 @@ h3,
 
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
-    content: 'per stay';
+    content: 'per night';
 }
 
 .ArnPrimarySearchContainer span,

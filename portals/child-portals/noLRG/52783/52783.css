@@ -236,7 +236,17 @@ header a {
     max-width: 205px !important;
 }
 
+/* Ad Unit */
+.ad-unit img {
+    display: block;
+    margin: 24px auto;
+}
+
+
 @media only screen and (min-width: 800px) {
+    .ad-unit {
+        display: none;
+    }
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,

@@ -24,7 +24,7 @@ class RoomStealsNavigation {
         this.getAdminToken().then(() => {
             this.getMemberPartner().then(() => {
                 this.updateNavigation();
-            });
+            }).catch(() => {});
         });
     }
 
@@ -55,6 +55,7 @@ class RoomStealsNavigation {
             .then(response => response.json())
             .then(response => this.data = response)
             .catch(() => {
+            	console.log(response);
                 throw new Error('Post not performed.');
             });
     }
@@ -133,13 +134,12 @@ class RoomStealsNavigation {
      */
     updateNavigation() {
         let profileAnchor = document.querySelector('#commands .profileCommand');
-        profileAnchor.style.display = 'none';
         Object.keys(this.partnersJSON['partners'][this.memberPartner]['nav']['primary']).forEach(key => {
             profileAnchor.insertAdjacentHTML('beforeBegin', '<a href="' + this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key] + '">' + key + '</a>');
         });
     }
 }
 
-if(document.querySelector('.MemberAuthenticated')){
-	let roomStealsNavigation = new RoomStealsNavigation();
+if (document.querySelector('.MemberAuthenticated')) {
+    let roomStealsNavigation = new RoomStealsNavigation();
 }

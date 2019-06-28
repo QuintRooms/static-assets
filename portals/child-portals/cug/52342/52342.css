@@ -43,6 +43,10 @@ body {
     display: none;
 }
 
+#commands .profileCommand {
+    display: none;
+}
+
 .WBLoginFormActions .submit,
 .WBForgotPasswordFormActions .submit {
     display: block;
@@ -639,7 +643,8 @@ header {
         border-bottom: 1px solid #007bff;
         background: #007bff;
     }
-    .adminContainer span{
+
+    .adminContainer span {
         background-color: #007bff;
     }
 }

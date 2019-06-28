@@ -1,4 +1,4 @@
-class RoomStealsNavigation {
+class Test {
 
     constructor(adminToken, email, firstName, lastName, partnersJSON, memberName, memberPartner, data) {
         this.adminToken = adminToken;
@@ -24,7 +24,9 @@ class RoomStealsNavigation {
         this.getAdminToken().then(() => {
             this.getMemberPartner().then(() => {
                 this.updateNavigation();
-            }).catch(() => {});
+            }).catch(() => {
+
+            });
         });
     }
 
@@ -89,6 +91,9 @@ class RoomStealsNavigation {
         this.lastName = document.querySelector('meta[name="lastName"]').getAttribute('content');
         this.firstName = document.querySelector('meta[name="firstName"]').getAttribute('content');
         this.email = document.querySelector('meta[name="email"]').getAttribute('content');
+        // this.lastName = 'Nate';
+        // this.firstName = 'Ritter';
+        // this.email = 'nate@perfectspace.com';
 
         this.memberName = {
             "Names": [{
@@ -112,7 +117,7 @@ class RoomStealsNavigation {
                 this.memberPartner = this.memberPartner['partner'];
             })
             .catch(() => {
-                document.querySelector('#commands .profileCommand').style.display = 'block !important';
+                document.querySelector('#commands .profileCommand').style.display = 'inline-block';
                 throw new Error('Member not received.');
             });
     }
@@ -140,6 +145,6 @@ class RoomStealsNavigation {
     }
 }
 
-if (document.querySelector('.MemberAuthenticated')) {
-    let roomStealsNavigation = new RoomStealsNavigation();
+if(document.querySelector('.MemberAuthenticated')){
+	let test = new Test();
 }

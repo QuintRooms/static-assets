@@ -33,3 +33,7 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+let script = document.createElement('script');
+script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
+document.head.appendChild(script);

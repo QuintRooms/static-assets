@@ -1,4 +1,4 @@
-class Test {
+class RoomStealsNavigation {
 
     constructor(adminToken, email, firstName, lastName, partnersJSON, memberName, memberPartner, data) {
         this.adminToken = adminToken;
@@ -146,5 +146,5 @@ class Test {
 }
 
 if(document.querySelector('.MemberAuthenticated')){
-	let test = new Test();
+	let roomStealsNavigation = new RoomStealsNavigation();
 }

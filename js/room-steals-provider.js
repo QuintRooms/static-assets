@@ -1,6 +1,6 @@
 class RoomStealsNavigation {
 
-    constructor(adminToken, email, firstName, lastName, partnersJSON, memberName, memberPartner, data) {
+    constructor(adminToken, email, firstName, lastName, partnerURL, partnersJSON, memberName, memberPartner, data) {
         this.adminToken = adminToken;
         this.domain = 'https://api.travsrv.com/';
         this.username = 'h4h';
@@ -11,6 +11,7 @@ class RoomStealsNavigation {
         this.firstName = firstName;
         this.lastName = lastName;
         this.memberName = memberName;
+        this.partnerURL = partnerURL;
         this.memberPartner = memberPartner;
         this.partnersJSON = partnersJSON;
         this.data = data;
@@ -23,8 +24,8 @@ class RoomStealsNavigation {
         this.getMemberName();
         this.getAdminToken().then(() => {
             this.getMemberPartner().then(() => {
-                this.updateNavigation();
                 this.checkLogin();
+                this.updateNavigation();
             }).catch(() => {
 
             });
@@ -92,10 +93,6 @@ class RoomStealsNavigation {
         this.lastName = document.querySelector('meta[name="lastName"]').getAttribute('content');
         this.firstName = document.querySelector('meta[name="firstName"]').getAttribute('content');
         this.email = document.querySelector('meta[name="email"]').getAttribute('content');
-        // this.lastName = 'Nate';
-        // this.firstName = 'Ritter';
-        // this.email = 'nate@perfectspace.com';
-
         this.memberName = {
             "Names": [{
                 "ReferralId": this.email,
@@ -116,6 +113,12 @@ class RoomStealsNavigation {
             .then(data => {
                 this.memberPartner = JSON.parse(this.data['AdditionalInfo']);
                 this.memberPartner = this.memberPartner['partner'];
+                Object.keys(this.partnersJSON['partners'][this.memberPartner]['nav']['primary']).forEach(key => {
+                    if (this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key].includes(this.memberPartner)) {
+                        this.partnerURL = this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key];
+                    }
+                });
+
             })
             .catch(() => {
                 document.querySelector('#commands .profileCommand').style.display = 'inline-block';
@@ -146,9 +149,13 @@ class RoomStealsNavigation {
     }
 
     checkLogin() {
-        localStorage.setItem('isLoggedIn', 'false');
-        var retrievedObject = localStorage.getItem('isLoggedIn');
-        console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        let logoutButton = document.querySelector('.logoutCommand');
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            localStorage.setItem('loggedOut', 'true');
+            window.location.href = this.partnerURL;
+            console.log(this.partnerURL);
+        });
     }
 }
 

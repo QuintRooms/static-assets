@@ -211,4 +211,4 @@ function addTabsToRootPageSearch(arrayOfTabs) {
     document.querySelector('.tab:first-child').classList.add('active');
 }
 
-addTabsToRootPageSearch(tabs);
+addTabsToRootPageSearch(tabs); 

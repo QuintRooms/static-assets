@@ -15,7 +15,7 @@ module.exports = {
         51821: './src/51821.js',
         51824: './src/51824.js',
         51440: './src/51440.js',
-        52783: './src/52780.js',
+        52780: './src/52780.js',
         52783: './src/52783.js'
     },
     output: {
@@ -38,4 +38,4 @@ module.exports = {
             canPrint: false,
         }),
     ]
-};
+}; 

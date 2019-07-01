@@ -306,7 +306,7 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #007bff;
+    background: #ff4c44;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
@@ -338,14 +338,14 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #0069d9 !important;
+    background: #e2332b !important;
     color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #0069d9;
+    background: #e2332b;
     color: #fff !important;
 }
 
@@ -380,7 +380,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #007bff;
+    border: 1px solid #ff4c44;
 }
 
 .selectedTab,
@@ -388,14 +388,14 @@ header {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid #007bff;
+    border-bottom: 1px solid #ff4c44;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: #ff4c44;
+    border: 1px solid #ff4c44;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -409,7 +409,7 @@ header {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #007bff;
+    border-top-color: #ff4c44;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -452,7 +452,7 @@ header {
 }
 
 .arnMapMarker {
-    background: #007bff;
+    background: #ff4c44;
     border: #fff;
 }
 
@@ -467,26 +467,26 @@ header {
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #007bff;
+    border-top-color: #ff4c44;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #007bff;
+    background: #ff4c44;
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #007bff;
+    border-top-color: #ff4c44;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #007bff;
+    background: #ff4c44;
 }
 
 .SearchHotels .reserveHotel,
@@ -531,7 +531,7 @@ header {
 }
 
 .ArnPropName div.ratingCount {
-    background: #007bff;
+    background: #ff4c44;
 }
 
 .exclusiveRate {
@@ -539,7 +539,7 @@ header {
 }
 
 .sash {
-    background: #007bff;
+    background: #ff4c44;
 }
 
 .SearchHotels .percentSavings {
@@ -549,14 +549,14 @@ header {
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #007bff;
+    background: #ff4c44;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #007bff;
+    background: #ff4c44;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -570,7 +570,7 @@ header {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: #007bff;
+        border-top-color: #ff4c44;
     }
 }
 
@@ -594,7 +594,7 @@ header {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #007bff;
+        border-left: 2px solid #ff4c44;
     }
 }
 
@@ -627,14 +627,14 @@ header {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid #007bff;
-        border-bottom: 4px solid #007bff !important;
+        border-top: 4px solid #ff4c44;
+        border-bottom: 4px solid #ff4c44 !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #007bff;
+        border-bottom: 4px solid #ff4c44;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -649,12 +649,12 @@ header {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #007bff;
-        background: #007bff;
+        border-bottom: 1px solid #ff4c44;
+        background: #ff4c44;
     }
 
     .adminContainer span {
-        background-color: #007bff;
+        background-color: #ff4c44;
     }
 }
 
@@ -719,9 +719,9 @@ nav {
 }
 
 .btn-primary {
-    background: #007bff;
+    background: #ff4c44;
     box-shadow: none;
-    border-color: #007bff;
+    border-color: #ff4c44;
 }
 
 .btn-primary:hover {
@@ -1029,7 +1029,7 @@ ul#imgList {
 .event-slider li:hover {
     transition: 0.2s;
     filter: grayscale(0);
-}
+}  
 
 .event-slider main {
     display: flex;
@@ -1116,7 +1116,7 @@ ul#imgList {
 }
 .event-form .submit{
     margin-top: 12px;
-    background: #007bff;
+    background: #ff4c44;
 }
 /* Rootpage C3 Travel Plus */
 .travel-plus p{

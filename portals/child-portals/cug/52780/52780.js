@@ -19,7 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 if (document.querySelector('#AdminControlsContainer')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="c3-travels" href="https://roomsteals.com">C3 Travels</a>');
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="c3-travels" href="https://events.hotelsforhope.com/v6/?siteid=52780">C3 Travels</a>');
                 } else {
                     cugPortal.createHTML('header', '<a class="c3-travels" href="https://hotels.roomsteals.com">C3 Travels</a>', 'afterBegin');
                 }
@@ -51,9 +51,9 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
     document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
 }
 
-async function eventSlider() {
+function eventSlider() {
     let sliderContainer = `
-        <section class="event-slider" id="events">
+        <section class="event-slider" id="event-slider">
             <h1 class="text-center">C3 Events</h1>
             <div class="scroll-arrow" id="scroll-left">
                 <main>
@@ -79,14 +79,20 @@ async function eventSlider() {
     searchContainer.insertAdjacentHTML('afterend', sliderContainer);
 
     eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
+
     eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
+
     eventSlidesTemplate('Metarama Gaming + Music Festival', 'Oct 19 - 20', 'October 20 2019', 'Las Vegas, NV', 'http://events.hotelsforhope.com/group-event?id=34746', 'https://www.metaramafestival.com/wp-www-metaramafestival-com/wp/wp-content/uploads/2019/06/meta19-websitebillboards-halfwidth-1-b9c73675.jpg');
-    eventSlidesTemplate('Exit 111', 'Oct 11 - 13', 'October 13 2019', 'Manchester, TN', 'http://events.hotelsforhope.com/group-event?id=34724', 'https://www.exit111festival.com/wp-www-exit111festival-com/wp/wp-contentuploads/2019/04/vipbillboard480-410eb5d6.png');
+
+    eventSlidesTemplate('Exit 111', 'Oct 11 - 13', 'October 13 2019', 'Manchester, TN', 'http://events.hotelsforhope.com/group-event?id=34724', 'https://www.exit111festival.com/wp-www-exit111festival-com/wp/wp-content/uploads/2019/04/vipbillboard480-410eb5d6.png');
     eventSlidesTemplate('Austin City Limits', 'Oct 4 - 6 & Oct 11 - 13', 'October 13 2019', 'Austin, TX', 'https://aclfestival.hotelsforhope.com/group-event?id=31785', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/acl.jpg');
+
     eventSlidesTemplate('Music City Food + Wine', 'Sept 20 - 22', 'September 22 2019', 'Nashville, TN', 'http://events.hotelsforhope.com/group-event?id=32013', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/banner.jpg');
+
     eventSlidesTemplate('Lollapalooza', 'Aug 1 - 4', 'August 4 2019', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=29598', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
 
-    let slideWidth = document.querySelector('.festival-container').offsetWidth + 10.667;
+    let slideWidth = document.querySelector('.festival-container').offsetWidth + 43;
+    console.log(slideWidth);
     let imgList = document.getElementById('imgList');
     let scrollRight = document.getElementById('scroll-right');
     let scrollLeft = document.getElementById('scroll-left');
@@ -211,4 +217,4 @@ function addTabsToRootPageSearch(arrayOfTabs) {
     document.querySelector('.tab:first-child').classList.add('active');
 }
 
-addTabsToRootPageSearch(tabs); 
+addTabsToRootPageSearch(tabs);

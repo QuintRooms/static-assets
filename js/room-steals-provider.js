@@ -24,6 +24,7 @@ class RoomStealsNavigation {
         this.getAdminToken().then(() => {
             this.getMemberPartner().then(() => {
                 this.updateNavigation();
+                this.checkLogin();
             }).catch(() => {
 
             });
@@ -143,8 +144,14 @@ class RoomStealsNavigation {
             profileAnchor.insertAdjacentHTML('beforeBegin', '<a href="' + this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key] + '">' + key + '</a>');
         });
     }
+
+    checkLogin() {
+        localStorage.setItem('isLoggedIn', 'false');
+        var retrievedObject = localStorage.getItem('isLoggedIn');
+        console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    }
 }
 
-if(document.querySelector('.MemberAuthenticated')){
-	let roomStealsNavigation = new RoomStealsNavigation();
+if (document.querySelector('.MemberAuthenticated')) {
+    let roomStealsNavigation = new RoomStealsNavigation();
 }

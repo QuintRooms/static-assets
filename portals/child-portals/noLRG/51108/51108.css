@@ -871,6 +871,13 @@ header>a {
     }
 }
 
+@media only screen and (max-width: 800px) {
+    .SearchHotels .bottomPager .ArnPages a{
+        padding: 3px 6px !important;
+        margin: .5px;
+    }
+}
+
 /* Border Radius Adjustments */
 
 input,

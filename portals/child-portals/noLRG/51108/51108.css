@@ -934,7 +934,7 @@ footer img {
     background: inherit !important;
     color: #fff !important;
     border-top: none !important;
-    padding-top: 0 !important;
+    padding: 18px 0!important;
 }
 
 .ArnSupportLinks.ArnSupportBottom a {
@@ -950,10 +950,6 @@ footer img {
     .SearchHotels .bottomPager .ArnPages a {
         padding: 3px 6px !important;
         margin: .5px;
-    }
-
-    .ArnSupportLinks.ArnSupportBottom {
-        padding: 18px 0 !important;
     }
 
     footer {

@@ -16,7 +16,7 @@ noLRGPortal.createHTML('footer', '<script><!-- zoho chat script -->var $zoho=$zo
 
 noLRGPortal.createHTML('.ArnSearchContainerMainTable', `<footer><div class="container"><div class="row">
                 <div class="col-md-5 col-sm-6 col-xs-12 footer-logo">
-                	<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/f1-h4h-lockup.png" alt="F1 and Hotels for Hope Logo">
+                	<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/` + noLRGPortal.site_id + `/images/f1-h4h-lockup.png" alt="F1 and Hotels for Hope Logo">
 					<p>The F1 logo, FORMULA 1, F1, GRAND PRIX and related marks are trademarks of Formula One Licensing BV, a Formula 1 company. All rights reserved.</p>
             	</div>
                 <div class="col-md-7 col-sm-6 col-xs-12 copyright"></div>

@@ -871,13 +871,6 @@ header>a {
     }
 }
 
-@media only screen and (max-width: 800px) {
-    .SearchHotels .bottomPager .ArnPages a{
-        padding: 3px 6px !important;
-        margin: .5px;
-    }
-}
-
 /* Border Radius Adjustments */
 
 input,
@@ -924,14 +917,16 @@ footer {
     color: #fff;
     position: relative;
     z-index: 3;
+    margin-top: 24px;
 }
 
 footer p {
-    margin-bottom: 0;
-    margin-top: 12px;
+    margin-bottom: 0 !important;
+    margin-top: 12px !important;
+    font-size: 11px !important;
 }
 
-footer img{
+footer img {
     margin-bottom: 12px;
 }
 
@@ -948,4 +943,24 @@ footer img{
 
 .pb-h4h {
     display: none !important;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .SearchHotels .bottomPager .ArnPages a {
+        padding: 3px 6px !important;
+        margin: .5px;
+    }
+
+    .ArnSupportLinks.ArnSupportBottom {
+        padding: 18px 0;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .ArnSubPage {
+        padding: 0;
+    }
 }

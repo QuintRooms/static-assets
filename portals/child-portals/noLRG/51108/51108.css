@@ -912,7 +912,7 @@ textarea,
 
 /* F1 Footer */
 footer {
-    width: 100%;
+    width: 100% !important;
     background: #14151e;
     color: #fff;
     position: relative;
@@ -929,16 +929,16 @@ footer img{
 }
 
 .ArnSupportLinks.ArnSupportBottom {
-    background: inherit;
-    color: #fff;
-    border-top: none;
-    padding-top: 0;
+    background: inherit !important;
+    color: #fff !important;
+    border-top: none !important;
+    padding-top: 0 !important;
 }
 
 .ArnSupportLinks.ArnSupportBottom a {
-    color: #fff;
+    color: #fff !important;
 }
 
 .pb-h4h {
-    display: none;
+    display: none !important;
 }

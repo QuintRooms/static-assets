@@ -911,6 +911,9 @@ textarea,
 }
 
 /* F1 Footer */
+.SearchHotels .footer{
+    padding: 0 !important;
+}
 footer {
     width: 100% !important;
     background: #14151e;

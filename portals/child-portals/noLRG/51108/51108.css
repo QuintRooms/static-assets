@@ -953,7 +953,7 @@ footer img {
     }
 
     .ArnSupportLinks.ArnSupportBottom {
-        padding: 18px 0;
+        padding: 18px 0 !important;
     }
 
     footer {

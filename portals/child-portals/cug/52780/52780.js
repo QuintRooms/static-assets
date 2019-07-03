@@ -18,10 +18,13 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                if (document.querySelector('#AdminControlsContainer')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="logo" href="https://events.hotelsforhope.com/v6/?siteid=52780"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52780/images/logo.png" alt="C3 Logo"></a>');
-                } else {
-                    cugPortal.createHTML('header', '<a class="c3-travels" href="https://hotels.roomsteals.com">C3 Travels</a>', 'afterBegin');
+
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + noLRGPortal.site_id, 'href');
+                document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', '.logo');
+
+                if (document.querySelector('.MemberAuthenticated')) {
+                    document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', '.logo');
                 }
 
                 observer.disconnect();
@@ -51,6 +54,8 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
     document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
 }
 
+
+
 function eventSlider() {
     let sliderContainer = `
         <section class="event-slider" id="event-slider">
@@ -75,7 +80,7 @@ function eventSlider() {
         </section>
     `;
 
-    let searchContainer = document.querySelector('.ArnSearchContainerMainDiv');
+    let searchContainer = document.querySelector('.RootBody .ArnSearchContainerMainDiv');
     searchContainer.insertAdjacentHTML('afterend', sliderContainer);
 
     eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');

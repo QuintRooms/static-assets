@@ -688,6 +688,9 @@ nav {
     width: 100%;
     padding: 13px 25px;
     border-radius: 0 0 2px 2px;
+    background: #c6c7c6;
+    margin: 0;
+    position: absolute;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
@@ -1120,4 +1123,18 @@ ul#imgList {
 .travel-plus p {
     color: #fff;
     text-align: center;
+    font-size: 1rem;
 }
+ /*Back to Top*/
+ #backToTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+ }
+ #backToTop svg{
+    width: 40px;
+    background: #ff4c44;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+ }

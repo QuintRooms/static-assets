@@ -892,10 +892,6 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
-    .RootBody .ArnSearchContainerMainDiv {
-        margin: 105px 15px 15px !important;
-    }
-
     #AdminControlsContainer {
         display: block;
     }

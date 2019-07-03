@@ -99,7 +99,7 @@ function eventSlider() {
 
         eventSlidesTemplate('Lollapalooza', 'Aug 1 - 4', 'August 4 2019', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=29598', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
 
-        let slideWidth = document.querySelector('.festival-container').offsetWidth;
+        let slideWidth = document.querySelector('.festival-container').offsetWidth + 10;
         let imgList = document.getElementById('imgList');
         let scrollRight = document.getElementById('scroll-right');
         let scrollLeft = document.getElementById('scroll-left');

@@ -16,9 +16,9 @@ body {
 }
 
 /*Cug Specific */
-.RootPage #city,
-.RootPage .ArnCheckInDate,
-.RootPage .ArnCheckOutDate {
+.RootBody #city,
+.RootBody .ArnCheckInDate,
+.RootBody .ArnCheckOutDate {
     text-indent: 32px;
 }
 
@@ -892,8 +892,7 @@ ul {
 }
 
 .RootBody h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     color: #fff;
     font-weight: 300;
 }
@@ -910,11 +909,11 @@ ul {
     margin-top: 0;
 }
 
-.alternate-bg h1{
+.alternate-bg h1 {
     color: #333;
 }
 
-.alternate-bg p{
+.alternate-bg p {
     color: #333;
 }
 
@@ -1079,13 +1078,16 @@ ul#imgList {
     }
 }
 
-/* Rootpage Custom Content */
-.RootPage section {
-    margin: 48px 0;
-    padding: 24px 0;
+/* RootBody Custom Content */
+.RootBody section {
+    padding: 90px 0 180px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Rootpage Search Tabs */
+/* RootBody Search Tabs */
 
 .tab {
     color: #fff;
@@ -1118,9 +1120,9 @@ ul#imgList {
     color: #fff;
 }
 
-/* Rootpage Event Form */
+/* RootBody Event Form */
 .event-form label {
-    color: #333;
+    color: #fff;
 }
 
 .event-form input {
@@ -1132,9 +1134,8 @@ ul#imgList {
     background: #ff4c44;
 }
 
-/* Rootpage C3 Travel Plus */
+/* RootBody C3 Travel Plus */
 .travel-plus p {
-    color: #fff;
     text-align: center;
     font-size: 1rem;
 }

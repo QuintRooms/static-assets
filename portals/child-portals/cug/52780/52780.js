@@ -19,8 +19,8 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
 
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + noLRGPortal.site_id, 'href');
+                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
                 document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', '.logo');
 
                 if (document.querySelector('.MemberAuthenticated')) {
@@ -53,8 +53,6 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
     `;
     document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
 }
-
-
 
 function eventSlider() {
     let sliderContainer = `

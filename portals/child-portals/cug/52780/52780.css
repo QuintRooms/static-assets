@@ -1200,6 +1200,7 @@ ul#imgList {
 
     .RootBody .ArnSearchContainerMainDiv {
         margin: initial !important;
+        padding: 42px 12px !important;
         min-height: initial;
         height: initial;
     }

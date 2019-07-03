@@ -892,6 +892,10 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
+    .RootBody .ArnSearchContainerMainDiv {
+        margin: 105px 15px 15px !important;
+    }
+
     #AdminControlsContainer {
         display: block;
     }
@@ -899,13 +903,14 @@ ul {
     .adminContainer {
         margin-left: auto;
         margin-right: 10px;
-        height: 0;
+        height: 99px;
         padding: 6px 0 0 0;
     }
 
     .adminContainer span {
-        position: relative;
-        top: -32px;
+        width: 36px;
+        height: 36px;
+        background-size: 16px auto;
     }
 
     .adminMobile {
@@ -1180,4 +1185,32 @@ ul#imgList {
     background: #ff4c44;
     border-radius: 5px;
     padding: 10px 10px 0 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody .ArnSearchContainerMainDiv {
+        align-items: initial;
+    }
+
+    .tab {
+        padding: 8px;
+        width: 24.2%;
+    }
+
+    .tab svg {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .tab {
+        width: 100%;
+        border-bottom: 1px solid #b7b7b7;
+    }
+
+    .tab svg {
+        width: 24px;
+        height: 24px;
+        margin-bottom: -6px;
+    }
 }

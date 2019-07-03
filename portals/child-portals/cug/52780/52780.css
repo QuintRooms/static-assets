@@ -125,10 +125,6 @@ header .room-steals {
     transition: all .5s ease;
 }
 
-.logo {
-    display: none;
-}
-
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;
@@ -685,10 +681,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 36px;
-}
-
-.logo {
-    margin-right: 12px;
 }
 
 .logo img {

@@ -56,7 +56,7 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
 
 function eventSlider() {
     let sliderContainer = `
-        <section class="event-slider" id="event-slider">
+        <section class="event-slider alternate-bg" id="event-slider">
             <h1 class="text-center">C3 Events</h1>
             <div class="scroll-arrow" id="scroll-left">
                 <main>
@@ -138,7 +138,7 @@ function eventSlider() {
 eventSlider();
 
 async function createEventForm() {
-    document.querySelector('.event-slider').insertAdjacentHTML('afterEnd', '<section class="event-form-container alternate-bg" id="event-form-container"><h1 class="text-center">Travel Form Placeholder</h1>');
+    document.querySelector('.event-slider').insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Travel Form Placeholder</h1>');
     let eventForm = document.querySelector('.event-form-container');
 
     eventForm.querySelector('h1').insertAdjacentHTML('afterEnd', `
@@ -166,7 +166,7 @@ createEventForm().then(() => {
 });
 
 function createC3TravelPlus() {
-    document.querySelector('.event-form-container').insertAdjacentHTML('afterEnd', '<section class="travel-plus" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
+    document.querySelector('.event-form-container').insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
     let travelPlus = document.querySelector('.travel-plus');
 
     travelPlus.querySelector('h1').insertAdjacentHTML('afterEnd', `

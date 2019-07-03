@@ -910,6 +910,14 @@ ul {
     margin-top: 0;
 }
 
+.alternate-bg h1{
+    color: #333;
+}
+
+.alternate-bg p{
+    color: #333;
+}
+
 /* Slider Styles */
 
 .event-deals {
@@ -1111,10 +1119,6 @@ ul#imgList {
 }
 
 /* Rootpage Event Form */
-.event-form-container h1 {
-    color: #333;
-}
-
 .event-form label {
     color: #333;
 }

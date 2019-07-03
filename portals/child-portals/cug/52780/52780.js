@@ -79,59 +79,62 @@ function eventSlider() {
     `;
 
     let searchContainer = document.querySelector('.RootBody .ArnSearchContainerMainDiv');
-    searchContainer.insertAdjacentHTML('afterend', sliderContainer);
+    if (searchContainer) {
 
-    eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1 2020', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
+        searchContainer.insertAdjacentHTML('afterend', sliderContainer);
 
-    eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
+        eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1 2020', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
 
-    eventSlidesTemplate('Metarama Gaming + Music Festival', 'Oct 19 - 20', 'October 20 2019', 'Las Vegas, NV', 'http://events.hotelsforhope.com/group-event?id=34746', 'https://www.metaramafestival.com/wp-www-metaramafestival-com/wp/wp-content/uploads/2019/06/meta19-websitebillboards-halfwidth-1-b9c73675.jpg');
+        eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
 
-    eventSlidesTemplate('Exit 111', 'Oct 11 - 13', 'October 13 2019', 'Manchester, TN', 'http://events.hotelsforhope.com/group-event?id=34724', 'https://www.exit111festival.com/wp-www-exit111festival-com/wp/wp-content/uploads/2019/04/vipbillboard480-410eb5d6.png');
-    eventSlidesTemplate('Austin City Limits', 'Oct 4 - 6 & Oct 11 - 13', 'October 13 2019', 'Austin, TX', 'https://aclfestival.hotelsforhope.com/group-event?id=31785', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/acl.jpg');
+        eventSlidesTemplate('Metarama Gaming + Music Festival', 'Oct 19 - 20', 'October 20 2019', 'Las Vegas, NV', 'http://events.hotelsforhope.com/group-event?id=34746', 'https://www.metaramafestival.com/wp-www-metaramafestival-com/wp/wp-content/uploads/2019/06/meta19-websitebillboards-halfwidth-1-b9c73675.jpg');
 
-    eventSlidesTemplate('Music City Food + Wine', 'Sept 20 - 22', 'September 22 2019', 'Nashville, TN', 'http://events.hotelsforhope.com/group-event?id=32013', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/banner.jpg');
+        eventSlidesTemplate('Exit 111', 'Oct 11 - 13', 'October 13 2019', 'Manchester, TN', 'http://events.hotelsforhope.com/group-event?id=34724', 'https://www.exit111festival.com/wp-www-exit111festival-com/wp/wp-content/uploads/2019/04/vipbillboard480-410eb5d6.png');
+        eventSlidesTemplate('Austin City Limits', 'Oct 4 - 6 & Oct 11 - 13', 'October 13 2019', 'Austin, TX', 'https://aclfestival.hotelsforhope.com/group-event?id=31785', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/acl.jpg');
 
-    eventSlidesTemplate('Lollapalooza', 'Aug 1 - 4', 'August 4 2019', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=29598', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
+        eventSlidesTemplate('Music City Food + Wine', 'Sept 20 - 22', 'September 22 2019', 'Nashville, TN', 'http://events.hotelsforhope.com/group-event?id=32013', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/banner.jpg');
 
-    let slideWidth = document.querySelector('.festival-container').offsetWidth + 43;
-    let imgList = document.getElementById('imgList');
-    let scrollRight = document.getElementById('scroll-right');
-    let scrollLeft = document.getElementById('scroll-left');
+        eventSlidesTemplate('Lollapalooza', 'Aug 1 - 4', 'August 4 2019', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=29598', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
 
-    scrollRight.addEventListener('click', (event) => {
-        imgList.scrollBy(slideWidth, 0);
-    });
+        let slideWidth = document.querySelector('.festival-container').offsetWidth + 43;
+        let imgList = document.getElementById('imgList');
+        let scrollRight = document.getElementById('scroll-right');
+        let scrollLeft = document.getElementById('scroll-left');
 
-    scrollLeft.addEventListener('click', (event) => {
-        imgList.scrollBy(-slideWidth, 0);
-    });
+        scrollRight.addEventListener('click', (event) => {
+            imgList.scrollBy(slideWidth, 0);
+        });
 
-    let dates = document.querySelectorAll('.date');
-    dates.forEach(function(element, index) {
+        scrollLeft.addEventListener('click', (event) => {
+            imgList.scrollBy(-slideWidth, 0);
+        });
 
-        let endDate = element.getAttribute('data-endDate');
-        let today = new Date();
-        let parent = element.closest('li');
-        endDate = new Date(endDate);
+        let dates = document.querySelectorAll('.date');
+        dates.forEach(function(element, index) {
 
-        if (endDate < today) {
-            parent.style.display = 'none';
-        }
+            let endDate = element.getAttribute('data-endDate');
+            let today = new Date();
+            let parent = element.closest('li');
+            endDate = new Date(endDate);
 
-        // last loop
-        if (index == dates.length - 1) {
             if (endDate < today) {
-                let slider = document.querySelector('.event-slider');
-                let eventDeals = document.querySelector('.event-deals');
-                let featuredDestinations = document.querySelector('.featuredDestinationsContainer');
-                slider.style.display = 'none';
-                eventDeals.style.display = 'none';
-                featuredDestinations.style.display = 'block';
-
+                parent.style.display = 'none';
             }
-        }
-    });
+
+            // last loop
+            if (index == dates.length - 1) {
+                if (endDate < today) {
+                    let slider = document.querySelector('.event-slider');
+                    let eventDeals = document.querySelector('.event-deals');
+                    let featuredDestinations = document.querySelector('.featuredDestinationsContainer');
+                    slider.style.display = 'none';
+                    eventDeals.style.display = 'none';
+                    featuredDestinations.style.display = 'block';
+
+                }
+            }
+        });
+    }
 }
 
 eventSlider();

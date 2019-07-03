@@ -384,6 +384,8 @@ header {
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
     border: 1px solid #ff4c44;
+    border-radius: 5px;
+    margin-bottom: 24px;
 }
 
 .selectedTab,

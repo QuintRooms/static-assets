@@ -60,7 +60,7 @@ body {
 .WBForgotPasswordFormActions .submit {
     display: block;
     margin: 0 auto;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 .WBForgotPasswordFormActions .CancelAction {
@@ -112,6 +112,10 @@ body,
     font-family: 'Montserrat', 'Helvetica';
 }
 
+.ArnSubPage{
+    position: relative;
+    top: 55px;
+}
 #AdminControlsContainer {
     display: flex;
     flex-direction: row;
@@ -457,13 +461,13 @@ header {
 }
 
 .arnMapMarker.highlight {
-    background: #0062cc;
-    border: 1px solid #0062cc;
+    background: #e2332b ;
+    border: 1px solid #e2332b ;
     z-index: 8001;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: #0062cc;
+    border-top-color: #e2332b ;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {

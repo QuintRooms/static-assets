@@ -81,7 +81,7 @@ function eventSlider() {
     let searchContainer = document.querySelector('.RootBody .ArnSearchContainerMainDiv');
     searchContainer.insertAdjacentHTML('afterend', sliderContainer);
 
-    eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
+    eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1 2020', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
 
     eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
 

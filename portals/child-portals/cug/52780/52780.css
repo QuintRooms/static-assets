@@ -23,7 +23,7 @@ body {
 }
 
 .leaflet-top {
-    top: 175px;
+    top: 100px;
 }
 
 #AdminControlsContainer {
@@ -119,18 +119,10 @@ body,
     justify-content: space-between;
 }
 
-header .room-steals {
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.room-steals {
-    color: #fff;
-    font-size: 20px;
-    align-self: center;
-    order: -1;
-    padding-left: 10px;
-    transition: all .5s ease;
+header {
+    position: absolute;
+    top: 0;
+    z-index: 10;
 }
 
 #theConfirmationContainer h4,
@@ -374,6 +366,16 @@ header {
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {
     color: #fff !important;
+}
+
+.SearchHotels .ArnLeftSearchContainer{
+    top: 55px;
+    position: relative;
+}
+
+.SearchHotels #Properties{
+    top: 40px;
+    position: relative;
 }
 
 .SearchHotels .bottomPager .ArnPages a,
@@ -984,7 +986,7 @@ ul {
     font-size: 34px;
     transition: 0.2s;
     position: absolute;
-    top: 65%;
+    top: 50%;
     background: rgba(0, 0, 0, .6);
     z-index: 1;
 }
@@ -1123,6 +1125,10 @@ ul#imgList {
 /* RootBody Event Form */
 .event-form label {
     color: #fff;
+    font-size: 17px !important;
+    font-weight: 300;
+    margin-top: 12px;
+
 }
 
 .event-form input {

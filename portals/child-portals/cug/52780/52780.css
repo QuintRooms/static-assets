@@ -8,7 +8,7 @@ body {
 
 }
 
-.RootBody .ArnSearchContainerMainDiv{
+.RootBody .ArnSearchContainerMainDiv {
     height: 100vh;
     min-height: 100vh;
     padding: 0;
@@ -46,14 +46,6 @@ body {
 #commands form .logoutCommand.submit:focus {
     box-shadow: none;
     color: #fff !important;
-}
-
-#theWBLoginForm h2 {
-    display: none;
-}
-
-#commands .profileCommand {
-    display: none;
 }
 
 .WBLoginFormActions .submit,
@@ -700,8 +692,10 @@ nav {
 }
 
 .logo img {
-    max-width: 300px;
+    max-width: 99px;
     width: 100%;
+    padding: 13px 25px;
+    border-radius: 0 0 2px 2px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
@@ -900,16 +894,18 @@ ul {
     font-weight: 300;
 }
 
-.RootBody .ArnSearchContainerMainTable{
+.RootBody .ArnSearchContainerMainTable {
     margin: 0 auto;
 }
-.alternate-bg{
+
+.alternate-bg {
     background: #fff;
 }
 
-.alternate-bg + section{
+.alternate-bg+section {
     margin-top: 0;
 }
+
 /* Slider Styles */
 
 .event-deals {
@@ -1034,7 +1030,7 @@ ul#imgList {
 .event-slider li:hover {
     transition: 0.2s;
     filter: grayscale(0);
-}  
+}
 
 .event-slider main {
     display: flex;
@@ -1072,10 +1068,11 @@ ul#imgList {
 }
 
 /* Rootpage Custom Content */
-.RootPage section{
+.RootPage section {
     margin: 48px 0;
     padding: 24px 0;
 }
+
 /* Rootpage Search Tabs */
 
 .tab {
@@ -1110,21 +1107,25 @@ ul#imgList {
 }
 
 /* Rootpage Event Form */
-.event-form-container h1{
+.event-form-container h1 {
     color: #333;
 }
-.event-form label{
+
+.event-form label {
     color: #333;
 }
-.event-form input{
+
+.event-form input {
     background: #ececec;
 }
-.event-form .submit{
+
+.event-form .submit {
     margin-top: 12px;
     background: #ff4c44;
 }
+
 /* Rootpage C3 Travel Plus */
-.travel-plus p{
+.travel-plus p {
     color: #fff;
     text-align: center;
 }

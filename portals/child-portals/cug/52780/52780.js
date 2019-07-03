@@ -19,7 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 if (document.querySelector('#AdminControlsContainer')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="c3-travels" href="https://events.hotelsforhope.com/v6/?siteid=52780"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo.png" alt="C3 Logo"></a>');
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="c3-travels" href="https://events.hotelsforhope.com/v6/?siteid=52780"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52780/images/logo.png" alt="C3 Logo"></a>');
                 } else {
                     cugPortal.createHTML('header', '<a class="c3-travels" href="https://hotels.roomsteals.com">C3 Travels</a>', 'afterBegin');
                 }

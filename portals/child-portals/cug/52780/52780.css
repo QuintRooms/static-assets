@@ -14,11 +14,6 @@ body {
 }
 
 /*Cug Specific */
-.RootBody #city,
-.RootBody .ArnCheckInDate,
-.RootBody .ArnCheckOutDate {
-    text-indent: 32px;
-}
 
 .leaflet-top {
     top: 100px;

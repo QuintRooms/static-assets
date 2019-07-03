@@ -21,10 +21,13 @@ function waitForElementToLoad(elementWaitingFor) {
 
                 cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
-                document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', '.logo');
+
+                let logo = document.querySelector('.logo');
+
+                document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
 
                 if (document.querySelector('.MemberAuthenticated')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', '.logo');
+                    document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
                 }
 
                 observer.disconnect();

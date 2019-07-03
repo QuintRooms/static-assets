@@ -31,6 +31,14 @@ body {
     position: relative;
 }
 
+.RootBody #AdminControlsContainer {
+    z-index: 0;
+}
+
+#commands {
+    width: 100%;
+}
+
 #commands form {
     padding: 13px;
 }
@@ -237,6 +245,7 @@ body.WBForgotPasswordForm {
 
 header {
     background: #333;
+    position: absolute;
     grid-row-start: 1;
 }
 
@@ -1125,16 +1134,18 @@ ul#imgList {
     text-align: center;
     font-size: 1rem;
 }
- /*Back to Top*/
- #backToTop{
+
+/*Back to Top*/
+#backToTop {
     position: fixed;
     bottom: 50px;
     right: 50px;
     display: none;
- }
- #backToTop svg{
+}
+
+#backToTop svg {
     width: 40px;
     background: #ff4c44;
     border-radius: 5px;
     padding: 10px 10px 0 10px;
- }
+}

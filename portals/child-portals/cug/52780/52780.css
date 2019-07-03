@@ -111,10 +111,11 @@ body,
     font-family: 'Montserrat', 'Helvetica';
 }
 
-.ArnSubPage{
+.ArnSubPage {
     position: relative;
     top: 55px;
 }
+
 #AdminControlsContainer {
     display: flex;
     flex-direction: row;
@@ -371,12 +372,12 @@ header {
     color: #fff !important;
 }
 
-.SearchHotels .ArnLeftSearchContainer{
+.SearchHotels .ArnLeftSearchContainer {
     top: 55px;
     position: relative;
 }
 
-.SearchHotels #Properties{
+.SearchHotels #Properties {
     top: 40px;
     position: relative;
 }
@@ -462,13 +463,13 @@ header {
 }
 
 .arnMapMarker.highlight {
-    background: #e2332b ;
-    border: 1px solid #e2332b ;
+    background: #e2332b;
+    border: 1px solid #e2332b;
     z-index: 8001;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: #e2332b ;
+    border-top-color: #e2332b;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
@@ -607,6 +608,11 @@ header {
     .SearchHotels .percentSavings {
         left: initial;
         right: 45px;
+        background: #fc0;
+    }
+
+    .SearchHotels .geoButton {
+        filter: invert;
     }
 
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
@@ -660,6 +666,16 @@ header {
 
     .adminContainer span {
         background-color: #ff4c44;
+    }
+
+    .SearchHotels .ArnPagerContainer {
+        margin: 20px 0 70px 0;
+    }
+
+    .bottomPager .ArnPages .pagesActive,
+    .bottomPager .ArnPages .pagesPrev,
+    .bottomPager .ArnPages a {
+        padding: 5px;
     }
 }
 

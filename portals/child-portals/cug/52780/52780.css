@@ -1203,6 +1203,10 @@ ul#imgList {
 }
 
 @media screen and (max-width: 565px) {
+    .RootBody .ArnSearchContainerMainDiv {
+        margin: initial !important;
+    }
+
     .tab {
         width: 100%;
         border-bottom: 1px solid #b7b7b7;
@@ -1212,5 +1216,9 @@ ul#imgList {
         width: 24px;
         height: 24px;
         margin-bottom: -6px;
+    }
+
+    .geoButton {
+        display: none;
     }
 }

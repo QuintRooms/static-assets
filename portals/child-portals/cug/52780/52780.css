@@ -237,6 +237,7 @@ body.RootBody {
 
 .RootBody .ArnSearchContainerMainDiv {
     background-color: transparent;
+    display: flex;
 }
 
 body.WBLoginForm,
@@ -682,7 +683,7 @@ header {
 }
 
 .jumbotron {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52780/images/banner.jpg) no-repeat center center /cover;
     padding-top: 220px;
 }
 
@@ -897,6 +898,10 @@ ul {
     margin-bottom: 20px;
     color: #fff;
     font-weight: 300;
+}
+
+.RootBody .ArnSearchContainerMainTable{
+    margin: 0 auto;
 }
 .alternate-bg{
     background: #fff;

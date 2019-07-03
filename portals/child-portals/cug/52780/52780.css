@@ -1194,10 +1194,14 @@ ul#imgList {
 }
 
 @media screen and (max-width: 565px) {
+    .RootBody .ArnLeftSearchContainer {
+        max-height: none;
+    }
+
     .RootBody .ArnSearchContainerMainDiv {
         margin: initial !important;
-        min-height: none;
-        height: inital;
+        min-height: initial;
+        height: initial;
     }
 
     .tab {

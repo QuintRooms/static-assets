@@ -227,8 +227,8 @@ function addTabsToRootPageSearch(arrayOfTabs) {
                 </a>
         `);
             }
+            document.querySelector('.tab:first-child').classList.add('active');
         });
-        document.querySelector('.tab:first-child').classList.add('active');
     }
 }
 

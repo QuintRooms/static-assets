@@ -212,7 +212,9 @@ let tabs = [{
 
 function addTabsToRootPageSearch(arrayOfTabs) {
     let searchWidget = document.querySelector('.RootBody .ArnPrimarySearchContainer');
-    searchWidget.insertAdjacentHTML('beforeBegin', '<div class="tab-container"></div>');
+    if (searchWidget) {
+        searchWidget.insertAdjacentHTML('beforeBegin', '<div class="tab-container"></div>');
+    }
 
     arrayOfTabs.forEach(function(tab) {
         let tabContainer = document.querySelector('.tab-container');

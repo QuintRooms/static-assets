@@ -142,7 +142,7 @@ function eventSlider() {
     }
 }
 
-eventSlider();
+
 
 async function createEventForm() {
     document.querySelector('.event-slider').insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
@@ -168,9 +168,6 @@ async function createEventForm() {
         </div>
     `);
 }
-createEventForm().then(() => {
-    createC3TravelPlus();
-});
 
 function createC3TravelPlus() {
     document.querySelector('.event-form-container').insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
@@ -231,5 +228,10 @@ function addTabsToRootPageSearch(arrayOfTabs) {
         });
     }
 }
-
-addTabsToRootPageSearch(tabs);
+if (document.querySelector('.RootBody')) {
+    createEventForm().then(() => {
+        createC3TravelPlus();
+    });
+    addTabsToRootPageSearch(tabs);
+    eventSlider();
+}

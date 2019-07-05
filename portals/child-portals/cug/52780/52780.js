@@ -149,7 +149,7 @@ function eventSlider() {
 
 
 async function createEventForm() {
-   let sliderEl = document.querySelector('.event-slider');
+    let sliderEl = document.querySelector('.event-slider');
     if (sliderEl) {
         sliderEl.insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
 
@@ -239,7 +239,9 @@ function addTabsToRootPageSearch(arrayOfTabs) {
 }
 if (document.querySelector('.RootBody')) {
     createEventForm().then(() => {
-        createC3TravelPlus();
+        setTimeout(function() {
+            createC3TravelPlus();
+        }, 2000)
     });
     addTabsToRootPageSearch(tabs);
     eventSlider();

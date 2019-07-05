@@ -23,8 +23,10 @@ function waitForElementToLoad(elementWaitingFor) {
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
 
                 let logo = document.querySelector('.logo');
-
-                document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
+                let adminControls = document.querySelector('#AdminControlsContainer');
+                if (adminControls) {
+                    adminControls.insertAdjacentElement('afterBegin', logo);
+                }
 
                 if (document.querySelector('.MemberAuthenticated')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);

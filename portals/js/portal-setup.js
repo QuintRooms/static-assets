@@ -1,7 +1,8 @@
 export default class Portal {
-    constructor(site_id, page_name) {
+    constructor(site_id, page_name, language) {
         this.site_id = site_id;
         this.page_name = page_name;
+        this.language = language;
 
         this.init();
     }
@@ -9,6 +10,9 @@ export default class Portal {
     init() {
         this.getSiteId();
         this.getPageName();
+        this.getLanguage().then(() => {
+            // this.translateText();
+        });
         this.ieForEachPolyfill();
     };
 
@@ -23,6 +27,7 @@ export default class Portal {
     /**
      *@description gets page name using css classes from body tag
      */
+    
     getPageName() {
         let bodyClasses = document.querySelector('body');
 

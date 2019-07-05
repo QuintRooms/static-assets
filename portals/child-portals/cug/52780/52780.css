@@ -47,7 +47,7 @@ body {
 #commands form .logoutCommand.submit:focus {
     box-shadow: none;
     color: #fff !important;
-    background: transparent;
+    background: transparent !important;
 }
 
 .WBLoginFormActions .submit,

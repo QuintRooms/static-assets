@@ -63,7 +63,7 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
     }
 }
 
-function eventSlider() {
+async function eventSlider() {
     let sliderContainer = `
         <section class="event-slider alternate-bg" id="event-slider">
             <h1 class="text-center">C3 Events</h1>
@@ -242,9 +242,11 @@ function addTabsToRootPageSearch(arrayOfTabs) {
     }
 }
 
-createEventForm().then(() => {
-    createC3TravelPlus();
-});
+
 
 addTabsToRootPageSearch(tabs);
-eventSlider();
+eventSlider().then(() => {
+    createEventForm().then(() => {
+        createC3TravelPlus();
+    });
+});

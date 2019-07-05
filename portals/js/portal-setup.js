@@ -1,7 +1,8 @@
 export default class Portal {
-    constructor(site_id, page_name) {
+    constructor(site_id, page_name, language) {
         this.site_id = site_id;
         this.page_name = page_name;
+        this.language = language;
 
         this.init();
     }
@@ -9,6 +10,9 @@ export default class Portal {
     init() {
         this.getSiteId();
         this.getPageName();
+        this.getLanguage().then(() => {
+            // this.translateText();
+        });
         this.ieForEachPolyfill();
     };
 
@@ -23,6 +27,7 @@ export default class Portal {
     /**
      *@description gets page name using css classes from body tag
      */
+    
     getPageName() {
         let bodyClasses = document.querySelector('body');
 
@@ -61,6 +66,11 @@ export default class Portal {
         }
         if (bodyClasses.classList.contains('WBRateGuaranteeForm2')) {
             this.page_name = 'lrg-page';
+            return;
+        }
+
+        if (bodyClasses.classList.contains('WBValidatedRegistrationForm')) {
+            this.page_name = 'cug-registration';
             return;
         }
     }
@@ -131,15 +141,6 @@ export default class Portal {
         if (this.page_name === 'terms-conditions') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/termsAndConditions.html')
                 .then(data => document.querySelector('.WBTermsAndConditions .ArnSubPage').innerHTML = data)
-                .catch(() => {
-                    throw new Error('File at path ' + url + ' not found.');
-                    return false;
-                });
-        }
-
-        if (this.page_name === 'confirmation') {
-            this.fetchAsset('https://static.hotelsforhope.com/portals/html/confirmationInfoSubHeader.html')
-                .then(data => document.querySelector('.confirmationPage').innerHTML = data)
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
@@ -294,8 +295,6 @@ export default class Portal {
         if (document.querySelector('.SinglePropDetail')) {
             let original = document.querySelectorAll(selector);
             original.forEach(function(element, index) {
-                let rateDate = document.querySelector('.ArnRateFromTo');
-                element.removeChild(rateDate);
                 let updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
                 element.innerHTML = updated;
             });
@@ -384,15 +383,19 @@ export default class Portal {
 
         this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
         this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
-        this.updateText('.modifySearch', 'Update Search');
+        this.updateText('.SearchHotels .modifySearch', 'Update Search');
+        this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
         this.appendToParent('.ConfirmationForm .meetH4H.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.ConfirmationForm .meetH4H.mobileVersion', '.ConfirmationForm .PaymentPolicies');
+        this.appendToParent('.confirmationContainer', '.GuestForms');
+
         this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
         this.appendToParent('.lrgTipContainer', '#theDatePrompt');
-
+        this.createHTML('.ArnSupportLinks.ArnSupportBottom', '<a class="pb-h4h" href="https://www.hotelsforhope.com/" target="_blank"><img src="//media.travsrv.com/appSkins/52342/v6/themes/standard/images/PBH4H.png"></a>', 'beforeend');
+        this.appendToParent('.pb-h4h', '.ArnSupportLinks.ArnSupportBottom');
         this.createHTML('head', '<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
@@ -402,7 +405,7 @@ export default class Portal {
         this.updateText('.ArnShowRatesLink', 'Book Rooms');
         this.updateText('a.bookRoom', 'Book Rooms');
         this.updateText('a.holdRoom', 'Hold Rooms');
-        this.updateAttribute('target', '_blank', '.SearchHotels .ArnShowRatesLink');
+        this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
 
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');
         this.collapseSearchBy('.lblCurrency', '.lblCurrency + select');
@@ -462,8 +465,8 @@ class NoLRGPortal extends Portal {
 }
 
 class CUGPortal extends Portal {
-    insertLRGAssets() {
-        if (this.page_name === 'WBValidatedRegistrationForm') {
+    insertCUGAssets() {
+        if (this.page_name === 'cug-registration') {
             this.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/' + this.site_id + 'html/registration.html')
                 .then(data => document.querySelector('.WBValidatedRegistrationFormContainer').innerHTML = data)
                 .catch(() => {

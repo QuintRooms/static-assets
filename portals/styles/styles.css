@@ -6,6 +6,15 @@ body,
     font-weight: 400;
 }
 
+body.WBConfirmedBooking {
+    font-family: 'Nunito', 'sans-serif' !important;
+
+}
+
+.RootBody .reserveHotel {
+    color: #fff;
+}
+
 .pushContainer img,
 .throbber {
     filter: grayscale(100%);
@@ -15,8 +24,9 @@ body,
 input,
 .RootBody #adults,
 .RootBody #kids,
-.RootBody #lengthOfStay,
 .RootBody .ArnRadiusContainer select,
+.RootBody #lengthOfStay,
+
 .RootBody .ArnRooms select,
 .RootBody input {
     text-indent: 0;
@@ -111,6 +121,13 @@ header {
         margin-left: 8px;
         max-width: 115px;
     }
+
+    .SinglePropDetail .PropLimitedAvail .ArnAvailability {
+        position: static;
+        text-align: left;
+        padding: 0;
+        margin: 8px 0;
+    }
 }
 
 .languageContainer {
@@ -124,6 +141,10 @@ header {
 
 .ArnPagerResult h3 {
     display: none;
+}
+
+.SearchHotels .ArnPropName {
+    background: transparent;
 }
 
 .ArnPropNameLink,
@@ -144,6 +165,18 @@ header {
 
 .adminMobile>.hamburger {
     text-align: left;
+}
+
+.arn-leaflet-search2-button {
+    display: none !important;
+}
+
+.arnMapMarker.highlight {
+    z-index: 8001;
+}
+
+.noPrice {
+    display: none !important;
 }
 
 .openMapBtn {
@@ -197,6 +230,16 @@ header {
     margin: 0 0 0 5px;
 }
 
+.customTag {
+    background: rgba(0, 0, 0, .75);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
 .SearchHotels .ArnProperty:hover {
     box-shadow: 2px 2px 2px 0px #ccc;
 }
@@ -222,6 +265,11 @@ header {
 .SearchHotels .percentSavings,
 .SinglePropDetail .memberSavings {
     display: none;
+}
+
+.ArnRateCancelAnchor {
+    display: block;
+    text-align: center;
 }
 
 .ArnAcdChild {
@@ -329,6 +377,12 @@ header {
         transition: all 1s ease;
         transform: translate(4000px, 0);
         z-index: 3;
+    }
+
+    .ArnSupportLinks.ArnSupportBottom a.pb-h4h {
+        float: right;
+        height: 0;
+        margin: -12px 12px 0 0;
     }
 }
 
@@ -452,7 +506,6 @@ header {
     border-radius: 3px;
     padding: 0 4px;
     overflow: hidden;
-    max-width: 27px;
 }
 
 .SearchHotels .ArnPropName div.reviewCount {
@@ -490,7 +543,6 @@ header {
 
 .arnCurrency {
     font-size: 1em !important;
-    vertical-align: super;
 }
 
 .SearchHotels .yourRateContainer {
@@ -534,10 +586,10 @@ header {
     width: 100% !important;
 }
 
-.SearchHotels .OnSale .ArnShowRatesLink,
-.ArnShowRatesLink {
+.ArnShowRatesLink,
+.ArnShowRatesLink,
+.OnSale .ArnShowRatesLink {
     padding: 8px 20px !important;
-    font-size: 17px;
 }
 
 .SearchHotels .ArnPriceCell>span:after,
@@ -669,6 +721,29 @@ header {
 }
 
 /* Prop Detail Page */
+.SinglePropDetail .ArnRightListContainer,
+.SinglePropDetail .ArnLeftListContainer {
+    border: none;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+    border-right: 1px solid #ccc
+}
+
+.SinglePropDetail .ArnSearchContainerMainTable {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc;
+    overflow: hidden;
+}
+
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom {
+    max-width: 150px;
+    margin: 8px auto;
+    padding: 8px 20px;
+}
+
 .SinglePropDetail .ArnSearchHotelsImg {
     top: 0;
 }
@@ -832,8 +907,9 @@ header {
     font-weight: 300;
 }
 
-.SinglePropDetail .bookRoomCell .percentSavings {
-    display: none;
+.SinglePropDetail .bookRoomCell .percentSavings,
+.SinglePropDetail.mobile .bookRoomCell .percentSavings {
+    display: none !important;
 }
 
 .SinglePropDetail .SB16 .originalRateContainer,
@@ -865,6 +941,11 @@ header {
     color: #79cf46;
     font-weight: normal !important;
     line-height: 1;
+    display: block;
+}
+
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td.bookRoomCell .ArnNightlyRate {
+    text-align: center;
 }
 
 .exclusiveRate {
@@ -1022,11 +1103,25 @@ div#overlay {
     .SinglePropDetail .ArnTripAdvisorDetails {
         width: 70%;
     }
+
+    .ArnSupportLinks.ArnSupportBottom a.pb-h4h {
+        float: none;
+        height: initial;
+        position: relative;
+        top: 20px;
+        display: block;
+    }
+
 }
 
 @media only screen and (max-width: 800px) {
     body {
         background: inherit;
+    }
+
+
+    .RootBody {
+        background-image: none;
     }
 
     .openMapBtn {
@@ -1035,6 +1130,10 @@ div#overlay {
 
     .SearchHotels .percentSavings {
         display: none;
+    }
+
+    .customTag {
+        width: inherit;
     }
 
     .SinglePropDetail .bestPrice .yourRateContainer {
@@ -1097,13 +1196,18 @@ div#overlay {
     .SearchHotels .ArnRateButton,
     .SearchHotels .OnSale .ArnRateButton {
         width: initial;
-        max-width: 120px;
+        max-width: 150px;
         margin: 5px auto !important;
     }
 
     .SearchHotels .roomCount {
         font-size: 13px !important;
+        margin-bottom: 12px !important;
         /*position: static;*/
+    }
+
+    .ArnIconContainer {
+        display: none !important;
     }
 
     .SearchHotels .ArnGoCitySearch:hover,
@@ -1113,13 +1217,17 @@ div#overlay {
     }
 
     .SinglePropDetail .ArnPropName {
-        padding: 0 10px 32px 10px;
+        padding: 10px 10px 32px 10px;
         min-height: 140px;
     }
 
     .SinglePropDetail .OnSale .bestPrice .yourRateAmount {
         font-size: 36px !important;
         padding: 8px 0;
+    }
+
+    .SinglePropDetail .rateRow .percentSavings {
+        display: none !important;
     }
 
     .SinglePropDetail .PropertyAmenities {
@@ -1295,7 +1403,7 @@ div#overlay {
     }
 
     .SinglePropDetail .ArnPropName {
-        padding: 0;
+        padding: 6px;
     }
 
     #theDatePrompt {
@@ -1319,7 +1427,12 @@ div#overlay {
 
 @media only screen and (max-width: 565px) {
     .arnUnit {
-        font-size: 1em !important;
+        font-size: 18px !important;
+        font-weight: normal !important;
+    }
+
+    .arnCurrency {
+        font-size: 18px !important;
         font-weight: normal !important;
     }
 
@@ -1336,7 +1449,7 @@ div#overlay {
     }
 
     .SinglePropDetail .OnSale .bestPrice .yourRateAmount {
-        font-size: 28px !important;
+        font-size: 21px !important;
     }
 
     .SinglePropDetail .originalRateAmount,
@@ -1410,6 +1523,7 @@ div#overlay {
         display: block;
         width: 100%;
         border-radius: 10px 10px 0 0;
+        position: relative;
     }
 
     .sash {
@@ -1431,7 +1545,7 @@ div#overlay {
 
     .SearchHotels.mobile .roomCount {
         width: 100%;
-        text-align: center !important;
+        text-align: left !important;
     }
 
     .OnSale .yourRateAmount {
@@ -1457,10 +1571,32 @@ div#overlay {
         width: 95%;
     }
 
+    .SinglePropDetail .ArnPropName {
+        text-align: center;
+    }
+
     .SinglePropDetail .ArnPropNameLink,
     .SinglePropDetail .ArnPropNameLink:active,
     .SinglePropDetail .ArnPropNameLink:visited {
         font-size: 17px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .SinglePropDetail .ArnPropName div.ratingCount{
+        position: relative;
+        top: 24px;
+    }
+    .SinglePropDetail .ArnRateCell{
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin: 18px 0;
+    }
+
+    .SinglePropDetail .ArnPropNameLink,
+    .SinglePropDetail .ArnPropAddress,
+    .SinglePropDetail .ArnTripAdvisorDetails {
+        width: 100%;
     }
 
     .svg-container {
@@ -1476,10 +1612,6 @@ div#overlay {
 
     .SinglePropDetail .ArnPropDescription {
         text-align: center;
-    }
-
-    .SinglePropDetail .ArnRateCell {
-        position: absolute;
     }
 }
 
@@ -1498,7 +1630,7 @@ div#overlay {
         position: static;
         width: 100%;
         max-width: 100%;
-        margin-top: -18px !important;
+        margin-top: -8px !important;
     }
 
     .SearchHotels .ArnPropName div.reviewCount {
@@ -1510,7 +1642,7 @@ div#overlay {
         width: 100%;
         text-align: center;
         right: 0;
-        bottom: 15px;
+        bottom: 0;
         font-weight: 700;
         font-size: 18px;
     }
@@ -1523,16 +1655,27 @@ div#overlay {
     .SinglePropDetail .ArnLimitedAvail {
         position: static;
     }
+
+    .SearchHotels.mobile .roomCount {
+        text-align: center !important;
+    }
 }
 
 /* Confirmation Page */
+#inventoryNotice,
+#theStayPolicies,
+#theRoomOneAjax,
+#theConfirmationContainer {
+    border-radius: 5px;
+}
+
 .topRoomFunding span {
     color: #9C6AAD;
 }
 
 /* Event Rate Guarantee */
 .ArnSubPage {
-    padding: 0 18px;
+    padding: 0 8px;
 }
 
 @media screen and (min-width:800px) {
@@ -1908,16 +2051,17 @@ div#overlay {
 /* Hold Rooms */
 
 @media only screen and (max-width: 800px) {
-    .HoldRoomsForm .filters {
-        width: 100%;
-    }
 
     .SearchHotels .filters {
         width: 50%;
     }
 
+    .HoldRoomsForm .filters {
+        width: 100%;
+    }
+
     .paymentTitles {
-        display: none;
+        display: none !important;
     }
 
     #theConfirmationContainer .submit {
@@ -2200,7 +2344,6 @@ div#overlay {
 
     .RootBody #adults {
         position: relative;
-        top: 4px;
     }
 
     .SimpleSearch .ArnAdults {
@@ -2215,7 +2358,6 @@ div#overlay {
 
     .RootBody .ArnAdults::before {
         display: block;
-        height: 19px;
         font-size: 13px;
     }
 
@@ -2269,14 +2411,21 @@ div#overlay {
     #thePhoneNumberAjax input {
         width: 100%;
     }
+
+    .SearchHotels .ArnPropThumb {
+        margin: 0;
+    }
+
+    .SearchHotels .ArnPropThumb img {
+        border-top-right-radius: 10px;
+    }
 }
 
 @media screen and (max-width:565px) {
 
     #theDatePrompt .SimpleSearch .ArnNights,
     #theDatePrompt .SimpleSearch .ArnRooms,
-    #theDatePrompt .SimpleSearch .ArnAdults,
-    #theDatePrompt .SimpleSearch .ArnChildren {
+    #theDatePrompt .SimpleSearch .ArnAdults {
         width: 100% !important;
         margin: 5px 0 0;
     }
@@ -2343,6 +2492,10 @@ body.WBResendOrCancelForm {
 .iubenda-banner-content>p {
     font-family: Helvetica, Arial, FreeSans, sans-serif;
     line-height: 1.5;
+}
+
+.ArnRooms span {
+    margin: 0 !important;
 }
 
 .iubenda-cs-close-btn {

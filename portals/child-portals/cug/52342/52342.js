@@ -18,8 +18,12 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cugPortal.updateAttribute('.logo img', 'http://placehold.jp/C40000/ffffff/150x100.jpg', 'src');
-                cugPortal.updateAttribute('.logo', '#', 'href');
+                if (document.querySelector('#AdminControlsContainer')) {
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>');
+                } else {
+                    cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
+                }
+
                 observer.disconnect();
             }
         }
@@ -29,3 +33,7 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+let script = document.createElement('script');
+script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
+// document.head.appendChild(script);

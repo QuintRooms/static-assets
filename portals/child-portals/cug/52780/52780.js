@@ -27,7 +27,9 @@ function waitForElementToLoad(elementWaitingFor) {
                 if (adminControls) {
                     adminControls.insertAdjacentElement('afterBegin', logo);
                 }
-
+                if(! document.querySelector('.MemberAuthenticated')){
+                    document.querySelector('header').style.position = 'relative';
+                }
                 if (document.querySelector('.MemberAuthenticated')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
                 }

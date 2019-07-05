@@ -23,13 +23,9 @@ function waitForElementToLoad(elementWaitingFor) {
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
 
                 let logo = document.querySelector('.logo');
-                let adminControls = document.querySelector('#AdminControlsContainer');
-                if (adminControls) {
-                    adminControls.insertAdjacentElement('afterBegin', logo);
-                }
-                if (!document.querySelector('.MemberAuthenticated')) {
-                    document.querySelector('header').style.position = 'relative';
-                }
+
+                document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
+
                 if (document.querySelector('.MemberAuthenticated')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', logo);
                 }
@@ -58,9 +54,7 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
             </div>
         </li>
     `;
-    if (slideTemplate) {
-        document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
-    }
+    document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
 }
 
 function eventSlider() {
@@ -146,17 +140,13 @@ function eventSlider() {
     }
 }
 
-
+eventSlider();
 
 async function createEventForm() {
-    let sliderEl = document.querySelector('.event-slider');
-    if (sliderEl) {
-        sliderEl.insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
-
-    }
+    document.querySelector('.event-slider').insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
     let eventForm = document.querySelector('.event-form-container');
-    if (eventForm) {
-        eventForm.querySelector('h1').insertAdjacentHTML('afterEnd', `
+
+    eventForm.querySelector('h1').insertAdjacentHTML('afterEnd', `
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -175,7 +165,6 @@ async function createEventForm() {
             </div>
         </div>
     `);
-    }
 }
 
 function createC3TravelPlus() {
@@ -218,31 +207,23 @@ let tabs = [{
 
 function addTabsToRootPageSearch(arrayOfTabs) {
     let searchWidget = document.querySelector('.RootBody .ArnPrimarySearchContainer');
-    if (searchWidget) {
-        searchWidget.insertAdjacentHTML('beforeBegin', '<div class="tab-container"></div>');
-    }
-    if (arrayOfTabs) {
-        arrayOfTabs.forEach(function(tab) {
-            let tabContainer = document.querySelector('.tab-container');
-            if (tabContainer) {
+    searchWidget.insertAdjacentHTML('beforeBegin', '<div class="tab-container"></div>');
 
-                tabContainer.insertAdjacentHTML('afterBegin', `
+    arrayOfTabs.forEach(function(tab) {
+        let tabContainer = document.querySelector('.tab-container');
+        tabContainer.insertAdjacentHTML('afterBegin', `
                 <a href="` + tab['url'] + `" class="tab">
                     <span class="tab-icon">` + tab['icon'] + `</span>
                     <span class="tab-label">` + tab['label'] + `</span>
                 </a>
         `);
-            }
-            document.querySelector('.tab:first-child').classList.add('active');
-        });
-    }
+    });
+
+    document.querySelector('.tab:first-child').classList.add('active');
 }
 if (document.querySelector('.RootBody')) {
-    createEventForm().then(() => {
-        setTimeout(function() {
-            createC3TravelPlus();
-        }, 2000)
-    });
     addTabsToRootPageSearch(tabs);
-    eventSlider();
+    createEventForm().then(() => {
+        createC3TravelPlus();
+    });
 }

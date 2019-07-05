@@ -27,7 +27,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 if (adminControls) {
                     adminControls.insertAdjacentElement('afterBegin', logo);
                 }
-                if(! document.querySelector('.MemberAuthenticated')){
+                if (!document.querySelector('.MemberAuthenticated')) {
                     document.querySelector('header').style.position = 'relative';
                 }
                 if (document.querySelector('.MemberAuthenticated')) {
@@ -149,10 +149,14 @@ function eventSlider() {
 
 
 async function createEventForm() {
-    document.querySelector('.event-slider').insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
-    let eventForm = document.querySelector('.event-form-container');
+    sliderEl = document.querySelctor('.event-slider');
+    if (sliderEl) {
+        sliderEl.insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
 
-    eventForm.querySelector('h1').insertAdjacentHTML('afterEnd', `
+    }
+    let eventForm = document.querySelector('.event-form-container');
+    if (eventForm) {
+        eventForm.querySelector('h1').insertAdjacentHTML('afterEnd', `
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -171,6 +175,7 @@ async function createEventForm() {
             </div>
         </div>
     `);
+    }
 }
 
 function createC3TravelPlus() {

@@ -149,7 +149,7 @@ function eventSlider() {
 
 
 async function createEventForm() {
-    let sliderEl = document.querySelector('.event-slider');
+   let sliderEl = document.querySelector('.event-slider');
     if (sliderEl) {
         sliderEl.insertAdjacentHTML('afterEnd', '<section class="event-form-container" id="event-form-container"><h1 class="text-center">Hotel Request</h1>');
 
@@ -179,13 +179,10 @@ async function createEventForm() {
 }
 
 function createC3TravelPlus() {
-    let eventFormContainer = document.querySelector('.event-form-container');
-    if (eventFormContainer) {
+    document.querySelector('.event-form-container').insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
+    let travelPlus = document.querySelector('.travel-plus');
 
-        eventFormContainer.insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
-        let travelPlus = document.querySelector('.travel-plus');
-
-        travelPlus.querySelector('h1').insertAdjacentHTML('afterEnd', `
+    travelPlus.querySelector('h1').insertAdjacentHTML('afterEnd', `
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -194,7 +191,6 @@ function createC3TravelPlus() {
             </div>
         </div>
     `);
-    }
 }
 
 let tabs = [{
@@ -241,13 +237,10 @@ function addTabsToRootPageSearch(arrayOfTabs) {
         });
     }
 }
-setTimeout(function() {
+if (document.querySelector('.RootBody')) {
     createEventForm().then(() => {
         createC3TravelPlus();
     });
-}, 2000)
-
-addTabsToRootPageSearch(tabs);
-eventSlider().then(() => {
-
-});
+    addTabsToRootPageSearch(tabs);
+    eventSlider();
+}

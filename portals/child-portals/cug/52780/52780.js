@@ -179,10 +179,13 @@ async function createEventForm() {
 }
 
 function createC3TravelPlus() {
-    document.querySelector('.event-form-container').insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
-    let travelPlus = document.querySelector('.travel-plus');
+    let eventFormContainer = document.querySelector('.event-form-container');
+    if (eventFormContainer) {
 
-    travelPlus.querySelector('h1').insertAdjacentHTML('afterEnd', `
+        eventFormContainer.insertAdjacentHTML('afterEnd', '<section class="travel-plus alternate-bg" id="travel-plus"><h1 class="text-center">C3 Travel Plus</h1>');
+        let travelPlus = document.querySelector('.travel-plus');
+
+        travelPlus.querySelector('h1').insertAdjacentHTML('afterEnd', `
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -191,6 +194,7 @@ function createC3TravelPlus() {
             </div>
         </div>
     `);
+    }
 }
 
 let tabs = [{

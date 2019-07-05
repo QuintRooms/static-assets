@@ -234,7 +234,6 @@ body.WBForgotPasswordForm {
 
 header {
     background: #333;
-    position: absolute;
     grid-row-start: 1;
 }
 

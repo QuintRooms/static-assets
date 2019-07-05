@@ -218,12 +218,15 @@ function addTabsToRootPageSearch(arrayOfTabs) {
     if (arrayOfTabs) {
         arrayOfTabs.forEach(function(tab) {
             let tabContainer = document.querySelector('.tab-container');
-            tabContainer.insertAdjacentHTML('afterBegin', `
+            if (tabContainer) {
+
+                tabContainer.insertAdjacentHTML('afterBegin', `
                 <a href="` + tab['url'] + `" class="tab">
                     <span class="tab-icon">` + tab['icon'] + `</span>
                     <span class="tab-label">` + tab['label'] + `</span>
                 </a>
         `);
+            }
         });
         document.querySelector('.tab:first-child').classList.add('active');
     }

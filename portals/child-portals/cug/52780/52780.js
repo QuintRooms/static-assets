@@ -241,10 +241,10 @@ function addTabsToRootPageSearch(arrayOfTabs) {
         });
     }
 }
-if (document.querySelector('.RootBody')) {
-    createEventForm().then(() => {
-        createC3TravelPlus();
-    });
-    addTabsToRootPageSearch(tabs);
-    eventSlider();
-}
+
+createEventForm().then(() => {
+    createC3TravelPlus();
+});
+
+addTabsToRootPageSearch(tabs);
+eventSlider();

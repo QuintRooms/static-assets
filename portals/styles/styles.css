@@ -2217,9 +2217,9 @@ div#overlay {
 }
 
 /* Removes guests per room options > 4 */
-#adults option:nth-child(n + 5) {
+/*#adults option:nth-child(n + 5) {
     display: none;
-}
+}*/
 
 .ArnAdults {
     margin-top: 4px;
@@ -2248,27 +2248,13 @@ div#overlay {
     width: 98%;
 }
 
-/* Removes current label and sets content of its container to 'Guests Per Room' */
-.ArnAdults span.titleLabel {
-    display: none;
-}
-
 .SinglePropDetail .ArnAdults {
     margin-top: 0;
     padding-right: 0;
 }
 
-.ArnAdults::before {
-    content: 'Guests Per Room:';
-    display: inline-block;
-}
-
 .SearchHotels .ArnStayTable td.ArnRooms {
     width: 50%;
-}
-
-.SearchHotels td.ArnAdults>span {
-    display: none !important;
 }
 
 .SimpleSearch .ArnNights,

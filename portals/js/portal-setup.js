@@ -10,9 +10,9 @@ export default class Portal {
     init() {
         this.getSiteId();
         this.getPageName();
-        this.getLanguage().then(() => {
-            // this.translateText();
-        });
+        // this.getLanguage().then(() => {
+        //     this.translateText();
+        // });
         this.ieForEachPolyfill();
     };
 
@@ -27,7 +27,7 @@ export default class Portal {
     /**
      *@description gets page name using css classes from body tag
      */
-    
+
     getPageName() {
         let bodyClasses = document.querySelector('body');
 
@@ -361,6 +361,34 @@ export default class Portal {
         });
     }
 
+    restrictMaxAdults() {
+        let adultsLabel = document.querySelector('.ArnAdults .titleLabel');
+        let adultsInput = document.querySelector('#adults');
+        let roomsInput = document.querySelector('#rooms');
+        let options = document.querySelectorAll('#adults option');
+        let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+
+        if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
+            adultsLabel.textContent = 'Adults:';
+            
+            options.forEach(function(element, index) {
+                if (index >= 4) {
+                    element.remove();
+                }
+            });
+        }
+
+        if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
+            adultsLabel.textContent = 'Total Adults:';
+
+            options.forEach(function(element, index) {
+                if (index >= maxAdults) {
+                    element.remove();
+                }
+            });
+        }
+    }
+
     createParentPortal() {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
@@ -419,6 +447,7 @@ export default class Portal {
 
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate">Exclusive Rate</span></div>');
         this.singlePropExclusiveTag('<div class="exclusiveRate">Exclusive Rate</div>');
+        this.restrictMaxAdults();
     }
 }
 

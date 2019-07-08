@@ -54,6 +54,7 @@ function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL,
             </div>
         </li>
     `;
+    if(slideTemplate);
     document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
 }
 

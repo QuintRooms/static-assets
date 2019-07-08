@@ -1,8 +1,9 @@
 export default class Portal {
-    constructor(site_id, page_name, language) {
+    constructor(site_id, page_name, language, translations) {
         this.site_id = site_id;
         this.page_name = page_name;
         this.language = language;
+        this.translations = translations;
 
         this.init();
     }
@@ -10,9 +11,7 @@ export default class Portal {
     init() {
         this.getSiteId();
         this.getPageName();
-        this.getLanguage().then(() => {
-            // this.translateText();
-        });
+        this.getLanguage();
         this.ieForEachPolyfill();
     };
 
@@ -27,7 +26,7 @@ export default class Portal {
     /**
      *@description gets page name using css classes from body tag
      */
-    
+
     getPageName() {
         let bodyClasses = document.querySelector('body');
 
@@ -76,6 +75,146 @@ export default class Portal {
     }
 
     /**
+     *@description gets site id from siteId meta tag
+     */
+    async getLanguage() {
+        this.language = document.querySelector('meta[name="theme"]').getAttribute('content');
+        return this.language;
+    }
+
+    translateText() {
+        // this.fetchAsset('https://static.hotelsforhope.com/portals/js/translations');
+        this.translations = {
+            "standard": {
+                "f1-policy": "The F1 logo, FORMULA 1, F1, GRAND PRIX and related marks are trade marks of Formula One Licensing BV, a Formula 1 company. All rights reserved.",
+                "per stay": "per stay",
+                "per night": "per night",
+                "support": "Support",
+                "exclusive rates": "Exclusive Rates",
+                "email us": "Email Us"
+            },
+            "german": {
+                "f1-policy": "Das F1-Logo, FORMULA 1, F1, GRAND PRIX, und damit verbundene Marken sind Handelsmarken der Formula One Licensing BV, ein Unternehmen der Formula 1. Alle Rechte vorbehalten.",
+                "per stay": "pro Aufenthalt",
+                "per night": " pro Nacht",
+                "update search": "Suche aktualisieren",
+                "support": "Unterstützung",
+                "exclusive rates": "Exklusive Preise",
+                "book rooms": "Zimmer buchen",
+                "email us": "Email"
+            },
+            "french": {
+                "f1-policy": "Le logo F1, FORMULA 1, F1, GRAND PRIX et les marques associées, sont des marques déposées de Formula One Licensing BV, une société de Formula 1. Tous droits réservés.",
+                "per stay": "par séjour",
+                "per night": "par nuit",
+                "update search": "Mettre à jour la recherche",
+                "support": "Soutien",
+                "exclusive rates": "Tarifs exclusifs",
+                "book rooms": "Réserver des chambres",
+                "email us": "Email"
+            },
+            "mandarin": {
+                "f1-policy": "F1标识、FORMULA 1、F1、GRAND PRIX和相关标志是Formula One Licensing BV（一家Formula 1公司）的商标。版权所有。",
+                "per stay": "每次入住",
+                "per night": "每晚",
+                "update search": "更新搜索",
+                "support": "支持",
+                "exclusive rates": "独家价格",
+                "book rooms": "预订房间",
+                "email us": "電子郵件"
+            },
+            "tw_mandarin": {
+                "f1-policy": "F1標誌,公式1,F1,大獎賽和相關標誌是一級方程式牌BV的商標,一級方程式公司。保留擁有權利。",
+                "per stay": "每次入住",
+                "per night": "每晚",
+                "update search": "更新搜索",
+                "support": "支持",
+                "exclusive rates": "獨家價格",
+                "book rooms": "預訂房間",
+                "email us": "电子邮件"
+            },
+            "indonesian": {
+                "f1-policy": "Logo F1, FORMULA 1, F1, GRAND PRIX dan merek terkait adalah merek dagang dari Formula One Licensing BV, sebuah perusahaan Formula 1. Seluruh hak cipta.",
+                "per stay": "per menginap",
+                "per night": "per malam",
+                "update search": "Perbarui Pencarian",
+                "support": "支持",
+                "exclusive rates": "Tarif Eksklusif",
+                "book rooms": "Ruang Pesan",
+                "email us": "E-mail"
+            },
+            "portuguese": {
+                "f1-policy": "O logótipo F1, FORMULA 1, F1, GRAND PRIX e marcas relacionadas são marcas registadas da Formula One Licensing BV, uma empresa Formula 1. Todos os direitos reservados.",
+                "per stay": "por estadia",
+                "per night": "por noite",
+                "update search": "Atualizar pesquisa",
+                "support": "Apoio, suporte",
+                "exclusive rates": "Tarifas Exclusivas",
+                "book rooms": "Quartos de livros",
+                "email us": "o email"
+            },
+            "spanish": {
+                "f1-policy": "El logo F1, FORMULA 1, F1, GRAND PRIX y las marcas relacionadas son marcas comerciales de Formula One Licensing BV, una empresa de Formula 1. Todos los derechos reservados.",
+                "per stay": "por estancia",
+                "per night": "por noche",
+                "update search": "Actualizar búsqueda",
+                "support": "Apoyo",
+                "exclusive rates": "Tarifas exclusivas",
+                "book rooms": "Reservar habitaciones",
+                "email us": "correo electrónico"
+            },
+            "thai": {
+                "f1-policy": "โลโก้ F1, FORMULA 1, F1, GRAND PRIX และเครื่องหมายที่เกี่ยวข้องเป็นเครื่องหมายการค้าของ Formula One Licensing BV ซึ่งเป็น บริษัท ฟอร์มูล่าวัน 1 สงวนลิขสิทธิ์.",
+                "per stay": "ต่อการเข้าพัก",
+                "per night": "ต่อคืน",
+                "update search": "ปรับปรุงการค้นหา",
+                "support": "สนับสนุน",
+                "exclusive rates": "ราคาพิเศษ",
+                "book rooms": "จองห้องพัก",
+                "email us": "อีเมล"
+            },
+            "vietnamese": {
+                "f1-policy": "Nhãn hiệu F1, FORMULA 1, F1, GRAND PRIX và những ký hiệu liên quan là những thương hiệu cho Formula One Licensing BV, một công ty Formula 1. Mọi bản quyền lưu trữ",
+                "per stay": "mỗi lần lưu trú",
+                "per night": "mỗi đêm",
+                "update search": "Cập nhật tìm kiếm",
+                "support": "Ủng hộ",
+                "exclusive rates": "Giá độc quyền",
+                "book rooms": "Phòng sách",
+                "email us": "Email"
+            }
+        };
+
+        let f1Policy = document.querySelector('.f1-policy');
+        let emailUs = document.querySelector('#slideit .tw');
+        let support = [
+            document.querySelector('#slideit .title'),
+            document.querySelector('#slideit .open')
+        ];
+        let exclusiveRates = document.querySelectorAll('.sash .event-rate');
+
+        // let guestsPerRoom = document.querySelector('.ArnAdults::before');
+        // let perStay = document.querySelector();
+        // let perNight = document.querySelector();
+
+        Object.keys(this.translations).forEach(key => {
+            if (this.language == key) {
+                if (f1Policy) {
+                    f1Policy.textContent = this.translations[key]['f1-policy'];
+                }
+
+                if (emailUs) {
+                    emailUs.textContent = this.translations[key]['email us'];
+                }
+
+                if (support) {
+                    support.textContent = this.translations[key]['support'];
+                }
+            }
+        });
+    }
+
+    /**
      *@description forEach polyfill for internet explorer
      */
     ieForEachPolyfill() {
@@ -114,6 +253,10 @@ export default class Portal {
 
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/supportSlider.html')
                 .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
+                .then(() => {
+                    this.updateAttribute('.tw', 'https://events.hotelsforhope.com/v6/support?siteId=' + this.site_id, 'href');
+                    this.translateText();
+                })
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
@@ -381,10 +524,12 @@ export default class Portal {
         this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
         this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
 
-        this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
-        this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
-        this.updateText('.SearchHotels .modifySearch', 'Update Search');
-        this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
+        if (this.language == 'standard') {
+            this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
+            this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
+            this.updateText('.SearchHotels .modifySearch', 'Update Search');
+            this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
+        }
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
@@ -402,9 +547,11 @@ export default class Portal {
     }
 
     ratesReadyEventMethods() {
-        this.updateText('.ArnShowRatesLink', 'Book Rooms');
-        this.updateText('a.bookRoom', 'Book Rooms');
-        this.updateText('a.holdRoom', 'Hold Rooms');
+        if (this.language == 'standard') {
+            this.updateText('.ArnShowRatesLink', 'Book Rooms');
+            this.updateText('a.bookRoom', 'Book Rooms');
+            this.updateText('a.holdRoom', 'Hold Rooms');
+        }
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
 
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');

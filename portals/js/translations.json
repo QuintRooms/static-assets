@@ -20,8 +20,8 @@
         "exclusive rates": "Exklusive Preise",
         "book rooms": "Zimmer buchen",
         "email us": "Email",
-        "races": "",
-        "contact us": ""
+        "races": "Rennen",
+        "contact us": "Kontaktiere uns"
     },
     "french":
     {
@@ -33,8 +33,8 @@
         "exclusive rates": "Tarifs exclusifs",
         "book rooms": "Réserver des chambres",
         "email us": "Email",
-        "races": "",
-        "contact us": ""
+        "races": "races",
+        "contact us": "Contactez nous"
     },
     "mandarin":
     {
@@ -46,8 +46,8 @@
         "exclusive rates": "独家价格",
         "book rooms": "预订房间",
         "email us": "電子郵件",
-        "races": "",
-        "contact us": ""
+        "races": "比赛",
+        "contact us": "联系我们"
     },
     "tw_mandarin":
     {
@@ -59,8 +59,8 @@
         "exclusive rates": "獨家價格",
         "book rooms": "預訂房間",
         "email us": "电子邮件",
-        "races": "",
-        "contact us": ""
+        "races": "比賽",
+        "contact us": "聯繫我們"
     },
     "indonesian":
     {
@@ -72,8 +72,8 @@
         "exclusive rates": "Tarif Eksklusif",
         "book rooms": "Ruang Pesan",
         "email us": "E-mail",
-        "races": "",
-        "contact us": ""
+        "races": "balapan",
+        "contact us": "Hubungi kami"
     },
     "portuguese":
     {
@@ -85,8 +85,8 @@
         "exclusive rates": "Tarifas Exclusivas",
         "book rooms": "Quartos de livros",
         "email us": "o email",
-        "races": "",
-        "contact us": ""
+        "races": "corridas",
+        "contact us": "Contate-Nos"
     },
     "spanish":
     {
@@ -98,8 +98,8 @@
         "exclusive rates": "Tarifas exclusivas",
         "book rooms": "Reservar habitaciones",
         "email us": "correo electrónico",
-        "races": "",
-        "contact us": ""
+        "races": "carreras",
+        "contact us": "Contáctenos"
     },
     "thai":
     {
@@ -111,8 +111,8 @@
         "exclusive rates": "ราคาพิเศษ",
         "book rooms": "จองห้องพัก",
         "email us": "อีเมล",
-        "races": "",
-        "contact us": ""
+        "races": "การแข่งขัน",
+        "contact us": "ติดต่อเรา"
     },
     "vietnamese":
     {
@@ -124,7 +124,7 @@
         "exclusive rates": "Giá độc quyền",
         "book rooms": "Phòng sách",
         "email us": "Email",
-        "races": "",
-        "contact us": ""
+        "races": "chủng tộc",
+        "contact us": "Liên hệ chúng tôi"
     }
 }

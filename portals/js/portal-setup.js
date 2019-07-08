@@ -83,38 +83,39 @@ export default class Portal {
     }
 
     async translateText() {
-
         let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
         this.translations = await response.json()
-            .then(data => {
-                this.translations = data;
-                console.log(Object.keys(data));
-            })
             .then((data) => {
+                this.translations = data;
+
                 let f1Policy = document.querySelector('.f1-policy');
-                let emailUs = document.querySelector('#slideit .tw');
-                // let support = [
-                //     document.querySelector('#slideit .title'),
-                //     document.querySelector('#slideit .open')
-                // ];
-                let support = document.querySelector('#slideit > label');
+                let emailUs = document.querySelector('#slideit .tw span');
+                let support = [
+                    document.querySelector('#slideit > section > span'),
+                    document.querySelector('#slideit > label')
+                ];
                 let exclusiveRates = document.querySelectorAll('.sash .event-rate');
 
                 // let perStay = document.querySelector();
                 // let perNight = document.querySelector();
                 Object.keys(this.translations).forEach(key => {
                     if (this.language == key) {
-                        // if (f1Policy) {
-                        //     f1Policy.textContent = this.translations[key]['f1-policy'];
-                        // }
-
-                        // if (emailUs) {
-                        //     emailUs.textContent = this.translations[key]['email us'];
-                        // }
-
-                        if (support) {
-                            support.textContent = this.translations[key]['support'];
+                        if (f1Policy) {
+                            f1Policy.textContent = this.translations[key]['f1-policy'];
                         }
+
+                        if (emailUs) {
+                            emailUs.textContent = this.translations[key]['email us'];
+                        }
+
+                        support.forEach(element => {
+                            if (element) {
+                                console.log(this.translations);
+                                console.log(this.translations[key]);
+                                console.log(this.translations[key]['support']);
+                                element.textContent = this.translations[key]['support'];
+                            }
+                        });
                     }
                 });
             });

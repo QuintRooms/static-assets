@@ -665,6 +665,12 @@ header>a {
     border-right: 1px solid #fff;
 }
 
+.SearchHotels .hamburger:after,
+.SearchHotels .hamburger:before {
+    left: 95% !important;
+
+}
+
 .hamburger:before,
 .PropertyAmenities:before {
     border-top-color: #e10600;

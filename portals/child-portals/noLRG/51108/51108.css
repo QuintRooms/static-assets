@@ -351,6 +351,10 @@ header>a {
     display: none;
 }
 
+#language {
+    height: 25px;
+}
+
 .main-nav {
     background: #e10600;
 }
@@ -911,9 +915,10 @@ textarea,
 }
 
 /* F1 Footer */
-.SearchHotels footer{
+.SearchHotels footer {
     padding: 0 !important;
 }
+
 footer {
     width: 100% !important;
     background: #14151e;
@@ -937,7 +942,7 @@ footer img {
     background: inherit !important;
     color: #fff !important;
     border-top: none !important;
-    padding: 18px 0!important;
+    padding: 18px 0 !important;
 }
 
 .ArnSupportLinks.ArnSupportBottom a {

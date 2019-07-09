@@ -7,8 +7,9 @@
         "support": "Support",
         "exclusive rates": "Exclusive Rates",
         "email us": "Email Us",
-        "races": "",
-        "contact us": ""
+        "races": "Races",
+        "contact us": "Contact Us",
+        "marketing opt in": "I want to receive the latest information by email from H4H including event reminders, relevant news, surveys, offers, and promotions."
     },
     "german":
     {
@@ -21,7 +22,8 @@
         "book rooms": "Zimmer buchen",
         "email us": "Email",
         "races": "Rennen",
-        "contact us": "Kontaktiere uns"
+        "contact us": "Kontaktiere uns",
+        "marketing opt in": "Ich möchte die neuesten Informationen per E-Mail von F1® erhalten, einschließlich relevanter Nachrichten, Umfragen, Angebote und Werbeaktionen."
     },
     "french":
     {
@@ -33,8 +35,9 @@
         "exclusive rates": "Tarifs exclusifs",
         "book rooms": "Réserver des chambres",
         "email us": "Email",
-        "races": "races",
-        "contact us": "Contactez nous"
+        "races": "les courses",
+        "contact us": "Contactez nous",
+        "marketing opt in": "Je souhaite recevoir les dernières informations par courrier électronique de la part de F1®, notamment des actualités, enquêtes, offres et promotions pertinentes."
     },
     "mandarin":
     {
@@ -47,7 +50,8 @@
         "book rooms": "预订房间",
         "email us": "電子郵件",
         "races": "比赛",
-        "contact us": "联系我们"
+        "contact us": "联系我们",
+        "marketing opt in": "我希望通过F1®的电子邮件收到最新信息，包括相关新闻，调查，优惠和促销活动。"
     },
     "tw_mandarin":
     {
@@ -60,7 +64,8 @@
         "book rooms": "預訂房間",
         "email us": "电子邮件",
         "races": "比賽",
-        "contact us": "聯繫我們"
+        "contact us": "聯繫我們",
+        "marketing opt in": "我希望通過F1®的電子郵件收到最新信息，包括相關新聞，調查，優惠和促銷活動。"
     },
     "indonesian":
     {
@@ -73,7 +78,8 @@
         "book rooms": "Ruang Pesan",
         "email us": "E-mail",
         "races": "balapan",
-        "contact us": "Hubungi kami"
+        "contact us": "Hubungi kami",
+        "marketing opt in": "Saya ingin menerima informasi terbaru melalui email dari F1® termasuk berita, survei, penawaran, dan promosi yang relevan."
     },
     "portuguese":
     {
@@ -86,7 +92,8 @@
         "book rooms": "Quartos de livros",
         "email us": "o email",
         "races": "corridas",
-        "contact us": "Contate-Nos"
+        "contact us": "Contate-Nos",
+        "marketing opt in": "Quero receber as informações mais recentes por e-mail da F1®, incluindo notícias relevantes, pesquisas, ofertas e promoções."
     },
     "spanish":
     {
@@ -99,7 +106,8 @@
         "book rooms": "Reservar habitaciones",
         "email us": "correo electrónico",
         "races": "carreras",
-        "contact us": "Contáctenos"
+        "contact us": "Contáctenos",
+        "marketing opt in": "Quiero recibir la información más reciente por correo electrónico de F1® que incluye noticias relevantes, encuestas, ofertas y promociones."
     },
     "thai":
     {
@@ -112,7 +120,8 @@
         "book rooms": "จองห้องพัก",
         "email us": "อีเมล",
         "races": "การแข่งขัน",
-        "contact us": "ติดต่อเรา"
+        "contact us": "ติดต่อเรา",
+        "marketing opt in": "ฉันต้องการรับข้อมูลล่าสุดทางอีเมลจากF1®รวมถึงข่าวที่เกี่ยวข้องแบบสำรวจข้อเสนอและโปรโมชั่น"
     },
     "vietnamese":
     {
@@ -125,6 +134,7 @@
         "book rooms": "Phòng sách",
         "email us": "Email",
         "races": "chủng tộc",
-        "contact us": "Liên hệ chúng tôi"
+        "contact us": "Liên hệ chúng tôi",
+        "marketing opt in": "Tôi muốn nhận thông tin mới nhất qua email từ F1® bao gồm các tin tức, khảo sát, ưu đãi và khuyến mãi có liên quan."
     }
 }

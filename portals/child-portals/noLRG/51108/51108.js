@@ -5,9 +5,15 @@ let noLRGPortal = new NoLRGPortal();
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
-        noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+        noLRGPortal.translateText('.event-rate', 'exclusive rates');
+
+        document.querySelector('footer .container').insertAdjacentElement('beforeBegin', document.querySelector('.ArnSupportLinks.ArnSupportBottom'));
     }, 1);
 });
+noLRGPortal.translateText('.f1-policy', 'f1-policy');
+noLRGPortal.translateText('#races', 'races');
+noLRGPortal.translateText('#contactUs', 'contact us');
+noLRGPortal.translateText('#theMarketingOptInAjax label', 'marketing opt in');
 
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Formula 1 Exclusive Rate');
 noLRGPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/favicon.png', 'href');
@@ -23,3 +29,23 @@ noLRGPortal.createHTML('body', `<footer><div class="container"><div class="row">
             </div></footer></div>`, 'beforeEnd');
 
 document.querySelector('footer .container').insertAdjacentElement('beforeBegin', document.querySelector('.ArnSupportLinks.ArnSupportBottom'));
+
+function waitForElementToLoad(elementWaitingFor) {
+    let element = document.querySelector(elementWaitingFor);
+    let config = { attributes: false, childList: true, subtree: false };
+
+    function callback(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                noLRGPortal.translateText('#slideit > label', 'support');
+                noLRGPortal.translateText('#slideit > section > span', 'support');
+                noLRGPortal.translateText('#slideit .tw div', 'email us');
+                observer.disconnect();
+            }
+        }
+    }
+    let observer = new MutationObserver(callback);
+    observer.observe(element, config);
+};
+
+waitForElementToLoad('header');

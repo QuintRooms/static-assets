@@ -87,40 +87,12 @@ export default class Portal {
         this.translations = await response.json()
             .then((data) => {
                 this.translations = data;
-
-                let f1Policy = document.querySelector('.f1-policy');
-                let emailUs = document.querySelector('#slideit .tw div');
-                let support = [
-                    document.querySelector('#slideit > section > span'),
-                    document.querySelector('#slideit > label')
-                ];
-                let exclusiveRates = document.querySelectorAll('.sash .event-rate');
-                let races = document.querySelector('#races');
-                let contactUs = document.querySelector('#contactUs');
-
-                // let perStay = document.querySelector();
-                // let perNight = document.querySelector();
+                let el = document.querySelectorAll(selector);
                 Object.keys(this.translations).forEach(key => {
                     if (this.language == key) {
-                        if (f1Policy) {
-                            f1Policy.textContent = this.translations[key]['f1-policy'];
-                        }
-
-                        if (emailUs) {
-                            emailUs.textContent = this.translations[key]['email us'];
-                        }
-
-                        if (races) {
-                            races.textContent = this.translations[key]['races'];
-                        }
-
-                        if (contactUs) {
-                            contactUs.textContent = this.translations[key]['contact us'];
-                        }
-
-                        support.forEach(element => {
+                        el.forEach(element => {
                             if (element) {
-                                element.textContent = this.translations[key]['support'];
+                                element.textContent = this.translations[key][keyToTranslate];
                             }
                         });
                     }
@@ -169,7 +141,6 @@ export default class Portal {
                 .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
                 .then(() => {
                     this.updateAttribute('.tw', 'https://events.hotelsforhope.com/v6/support?siteId=' + this.site_id, 'href');
-                    this.translateText();
                 })
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');

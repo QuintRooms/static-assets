@@ -1,8 +1,9 @@
 export default class Portal {
-    constructor(site_id, page_name, language) {
+    constructor(site_id, page_name, language, translations) {
         this.site_id = site_id;
         this.page_name = page_name;
         this.language = language;
+        this.translations = translations;
 
         this.init();
     }
@@ -10,9 +11,7 @@ export default class Portal {
     init() {
         this.getSiteId();
         this.getPageName();
-        // this.getLanguage().then(() => {
-        //     this.translateText();
-        // });
+        this.getLanguage();
         this.ieForEachPolyfill();
     };
 
@@ -76,6 +75,37 @@ export default class Portal {
     }
 
     /**
+     *@description gets site id from siteId meta tag
+     */
+    async getLanguage() {
+        this.language = document.querySelector('meta[name="theme"]').getAttribute('content');
+        return this.language;
+    }
+
+    /**
+     * @description translates text of specific selector from translations.json
+     * @param  string selector element to update text content of
+     * @param  string keyToTranslate key within translations.json to use
+     */
+    async translateText(selector, keyToTranslate) {
+        let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
+        this.translations = await response.json()
+            .then((data) => {
+                this.translations = data;
+                let el = document.querySelectorAll(selector);
+                Object.keys(this.translations).forEach(key => {
+                    if (this.language == key) {
+                        el.forEach(element => {
+                            if (element) {
+                                element.textContent = this.translations[key][keyToTranslate];
+                            }
+                        });
+                    }
+                });
+            });
+    }
+
+    /**
      *@description forEach polyfill for internet explorer
      */
     ieForEachPolyfill() {
@@ -114,6 +144,9 @@ export default class Portal {
 
             this.fetchAsset('https://static.hotelsforhope.com/portals/html/supportSlider.html')
                 .then(data => document.querySelector('header').insertAdjacentHTML('afterEnd', data))
+                .then(() => {
+                    this.updateAttribute('.tw', 'https://events.hotelsforhope.com/v6/support?siteId=' + this.site_id, 'href');
+                })
                 .catch(() => {
                     throw new Error('File at path ' + url + ' not found.');
                     return false;
@@ -370,7 +403,7 @@ export default class Portal {
 
         if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
             adultsLabel.textContent = 'Adults:';
-            
+
             options.forEach(function(element, index) {
                 if (index >= 4) {
                     element.remove();
@@ -409,10 +442,12 @@ export default class Portal {
         this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
         this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
 
-        this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
-        this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
-        this.updateText('.SearchHotels .modifySearch', 'Update Search');
-        this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
+        if (this.language == 'standard') {
+            this.updateAttribute('.SearchHotels #theSubmitButton', 'Update Search', 'value', );
+            this.updateAttribute('#theOtherSubmitButton', 'Update Search', 'value');
+            this.updateText('.SearchHotels .modifySearch', 'Update Search');
+            this.updateText('.SinglePropDetail .modifySearch', 'Update Search');
+        }
 
         this.appendToParent('.ConfirmationForm .confirmMessageContainer.desktopVersion', '.ConfirmationForm .GuestForms');
         this.appendToParent('.confirmMessageContainer.mobileVersion', '.ConfirmationForm .PaymentPolicies');
@@ -430,9 +465,11 @@ export default class Portal {
     }
 
     ratesReadyEventMethods() {
-        this.updateText('.ArnShowRatesLink', 'Book Rooms');
-        this.updateText('a.bookRoom', 'Book Rooms');
-        this.updateText('a.holdRoom', 'Hold Rooms');
+        if (this.language == 'standard') {
+            this.updateText('.ArnShowRatesLink', 'Book Rooms');
+            this.updateText('a.bookRoom', 'Book Rooms');
+            this.updateText('a.holdRoom', 'Hold Rooms');
+        }
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
 
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');

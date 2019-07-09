@@ -165,6 +165,14 @@ h3,
     content: 'per stay';
 }
 
+.SearchHotels .ArnSearchHotelsImg {
+    height: initial;
+}
+
+.SearchHotels .ArnSearchHotelsImg+br {
+    display: none;
+}
+
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,
@@ -349,6 +357,10 @@ body.RootBody {
 /* Main Nav */
 header>a {
     display: none;
+}
+
+#language {
+    height: 25px;
 }
 
 .main-nav {
@@ -809,6 +821,11 @@ header>a {
     .ArnSortByDistance.active {
         border-left: 2px solid #e10600;
     }
+
+    .SinglePropDetail .modifySearch,
+    .SinglePropDetail .reserveHotel {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -869,6 +886,11 @@ header>a {
     .SinglePropDetail .SimpleSearch .ArnCheckOutDate {
         width: 100% !important;
     }
+
+    #language {
+        height: initial;
+        margin-left: 0;
+    }
 }
 
 /* Border Radius Adjustments */
@@ -911,9 +933,10 @@ textarea,
 }
 
 /* F1 Footer */
-.SearchHotels footer{
+.SearchHotels footer {
     padding: 0 !important;
 }
+
 footer {
     width: 100% !important;
     background: #14151e;
@@ -937,7 +960,7 @@ footer img {
     background: inherit !important;
     color: #fff !important;
     border-top: none !important;
-    padding: 18px 0!important;
+    padding: 18px 0 !important;
 }
 
 .ArnSupportLinks.ArnSupportBottom a {

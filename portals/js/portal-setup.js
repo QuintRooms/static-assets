@@ -82,19 +82,21 @@ export default class Portal {
         return this.language;
     }
 
-    async translateText() {
+    async translateText(selector, keyToTranslate) {
         let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
         this.translations = await response.json()
             .then((data) => {
                 this.translations = data;
 
                 let f1Policy = document.querySelector('.f1-policy');
-                let emailUs = document.querySelector('#slideit .tw span');
+                let emailUs = document.querySelector('#slideit .tw div');
                 let support = [
                     document.querySelector('#slideit > section > span'),
                     document.querySelector('#slideit > label')
                 ];
                 let exclusiveRates = document.querySelectorAll('.sash .event-rate');
+                let races = document.querySelector('#races');
+                let contactUs = document.querySelector('#contactUs');
 
                 // let perStay = document.querySelector();
                 // let perNight = document.querySelector();
@@ -108,11 +110,16 @@ export default class Portal {
                             emailUs.textContent = this.translations[key]['email us'];
                         }
 
+                        if (races) {
+                            races.textContent = this.translations[key]['races'];
+                        }
+
+                        if (contactUs) {
+                            contactUs.textContent = this.translations[key]['contact us'];
+                        }
+
                         support.forEach(element => {
                             if (element) {
-                                console.log(this.translations);
-                                console.log(this.translations[key]);
-                                console.log(this.translations[key]['support']);
                                 element.textContent = this.translations[key]['support'];
                             }
                         });

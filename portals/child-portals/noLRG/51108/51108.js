@@ -6,13 +6,18 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.translateText('.event-rate', 'exclusive rates');
+        noLRGPortal.translateText('.SearchHotels .PropLimitedAvail .ArnAvailability', 'no availability');
+        noLRGPortal.translateText('#HotelNameContainer', 'hotel name');
+        noLRGPortal.translateText('.ArnAdults span', 'adults');
 
         document.querySelector('footer .container').insertAdjacentElement('beforeBegin', document.querySelector('.ArnSupportLinks.ArnSupportBottom'));
     }, 1);
 });
+
 noLRGPortal.translateText('.f1-policy', 'f1-policy');
 noLRGPortal.translateText('#races', 'races');
 noLRGPortal.translateText('#contactUs', 'contact us');
+noLRGPortal.translateText('.openMapBtn', 'open map');
 noLRGPortal.translateText('#theMarketingOptInAjax label', 'marketing opt in');
 
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Formula 1 Exclusive Rate');

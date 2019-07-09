@@ -1678,6 +1678,10 @@ div#overlay {
     padding: 0 8px;
 }
 
+.ArnSubPage .checkbox{
+    margin-top: 0;
+}
+
 @media screen and (min-width:800px) {
     .CheckOutForm .ArnSubPage {
         margin-top: 42px;

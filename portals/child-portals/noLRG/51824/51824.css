@@ -545,3 +545,7 @@ input#theSubmitButton:hover {
 .cancellationAndChanges+strong+ul+strong+ul {
     display: none;
 }
+
+.ArnSubPage .checkbox{
+    margin-top: -2px;
+}

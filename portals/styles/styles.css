@@ -1582,11 +1582,13 @@ div#overlay {
         width: 100%;
         max-width: 100%;
     }
-    .SinglePropDetail .ArnPropName div.ratingCount{
+
+    .SinglePropDetail .ArnPropName div.ratingCount {
         position: relative;
         top: 24px;
     }
-    .SinglePropDetail .ArnRateCell{
+
+    .SinglePropDetail .ArnRateCell {
         position: static;
         width: 100%;
         max-width: 100%;
@@ -1936,14 +1938,14 @@ div#overlay {
     color: #ffffff;
     background-color: #009dd9;
     border-color: #ffffff;
-    width: 100px;
+    min-width: 100px;
     max-width: inherit;
     top: -85px;
     right: -101px;
     left: auto;
     bottom: auto;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 10px 4px;
     text-transform: uppercase;
     z-index: 1;
 }
@@ -1972,7 +1974,7 @@ div#overlay {
 }
 
 #slideit input#close-item:checked~label.open {
-    right: -34px;
+    right: -40px;
 }
 
 #slideit label.close {
@@ -2221,10 +2223,6 @@ div#overlay {
 }
 
 /* Removes guests per room options > 4 */
-/*#adults option:nth-child(n + 5) {
-    display: none;
-}*/
-
 .ArnAdults {
     margin-top: 4px;
 }

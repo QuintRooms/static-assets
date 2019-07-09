@@ -7,7 +7,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.translateText('.event-rate', 'exclusive rates');
         noLRGPortal.translateText('.SearchHotels .PropLimitedAvail .ArnAvailability', 'no availability');
-        noLRGPortal.translateText('#HotelNameContainer', 'hotel name');
+        noLRGPortal.translateText('#HotelNameContainer span', 'hotel name');
         noLRGPortal.translateText('.ArnAdults span', 'adults');
 
         document.querySelector('footer .container').insertAdjacentElement('beforeBegin', document.querySelector('.ArnSupportLinks.ArnSupportBottom'));

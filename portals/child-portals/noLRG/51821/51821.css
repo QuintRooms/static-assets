@@ -104,8 +104,6 @@ header a {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff !important;
-    background: #2d78a5 !important;
     border: 1px solid #2d78a5 !important;
 }
 

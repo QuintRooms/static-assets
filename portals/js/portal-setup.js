@@ -99,6 +99,9 @@ export default class Portal {
                             if (element) {
                                 element.textContent = this.translations[key][keyToTranslate];
                             }
+                            // if (element.querySelector('[data-value]')) {
+                            //     element.setAttribute('data-value', this.translations[key][keyToTranslate]);
+                            // }
                         });
                     }
                 });

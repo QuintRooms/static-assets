@@ -1222,6 +1222,7 @@ ul#imgList {
 
 .RootBody .ArnSecondarySearchOuterContainer {
     display: flex !important;
+    margin-top: 8px;
     color: #fff;
 }
 
@@ -1265,4 +1266,31 @@ ul#imgList {
 
 .RootBody .ArnSearchField div+div {
     margin-bottom: 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody #theOtherSubmitButton {
+        display: block !important;
+        align-self: flex-end;
+        position: absolute;
+        right: 12px;
+    }
+
+    .RootBody #theSubmitButton {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .RootBody .ArnSecondarySearchOuterContainer {
+        display: none;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        display: none !important;
+    }
+
+    .RootBody #theSubmitButton {
+        display: block !important;
+    }
 }

@@ -205,7 +205,7 @@ async function createHotelRequestForm() {
  * @description validates and paginates hotel request form
  * @return void
  */
-function hotelRequestFormValidation() {
+async function hotelRequestFormValidation() {
     let next = document.querySelector('#form-pagebreak-next_86');
     let back = document.querySelector('#form-pagebreak-back_86');
     let form = document.querySelector('.jotform-form');

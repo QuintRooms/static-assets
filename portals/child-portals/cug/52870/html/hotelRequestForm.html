@@ -36,8 +36,14 @@ label {
     font-family: 'Montserrat', sans-serif;
 }
 
-input {
-    border: 1px solid #ccc;
+input,
+select,
+textarea {
+    border: 1px solid #ccc !important;
+}
+
+input[type="file"] {
+    border: none !important;
 }
 
 .form-all {
@@ -254,9 +260,6 @@ input {
                                         <div data-wrapper-react="true">
                                             <span class="form-sub-label-container" style="vertical-align:top">
                                                 <input type="tel" id="input_8_area" name="q8_phoneNumber8[area]" class="form-textbox validate[required]" size="6" value="" data-component="areaCode" aria-labelledby="label_8 sublabel_8_area" required="" />
-                                                <span class="phone-separate" aria-hidden="true">
-                                                    -
-                                                </span>
                                                 <label class="form-sub-label" for="input_8_area" id="sublabel_8_area" style="min-height:13px"> Area Code </label>
                                             </span>
                                             <span class="form-sub-label-container" style="vertical-align:top">

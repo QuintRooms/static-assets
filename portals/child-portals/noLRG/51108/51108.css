@@ -163,6 +163,7 @@ h3,
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
     content: 'per stay';
+    /*content: attr(data-value);*/
 }
 
 .SearchHotels .ArnSearchHotelsImg {
@@ -567,7 +568,8 @@ header>a {
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
-.HoldRoomsForm .ArnContentButtonNarrow {
+.HoldRoomsForm .ArnContentButtonNarrow,
+.SearchHotels .bottomPager .ArnPages .pagesActive {
     background: #e10600 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-family: 'Titillium Web';
@@ -651,9 +653,10 @@ header>a {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff;
-    background: #e10600;
+    color: #15151e;
     border: 1px solid #e10600;
+    border-radius: 5px;
+    background: transparent !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,

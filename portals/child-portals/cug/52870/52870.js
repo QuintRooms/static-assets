@@ -240,8 +240,16 @@ async function hotelRequestFormValidation() {
         }
     }
 }
+
+function appendAdvancedFiltersToMainSearch() {
+    let advancedFilters = document.querySelector('.RootBody .ArnSecondarySearchOuterContainer');
+    let search = document.querySelector('.RootBody .ArnPrimarySearchContainer');
+    search.insertAdjacentElement('beforeEnd', advancedFilters);
+}
+
 if (document.querySelector('.RootBody')) {
     addTabsToRootPageSearch(tabs);
+    appendAdvancedFiltersToMainSearch();
     createHotelRequestForm()
         .then(() => {
             hotelRequestFormValidation();

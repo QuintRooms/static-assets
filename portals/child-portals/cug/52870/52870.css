@@ -1217,3 +1217,40 @@ ul#imgList {
         display: none;
     }
 }
+
+/* RootBody Advanced Search Filters */
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    display: block !important;
+    color: #fff;
+}
+
+.RootBody #CitiesNearbyContainer,
+.RootBody #theOtherSubmitButton,
+.RootBody #RateFiltersContainer {
+    display: none;
+}
+
+.RootBody .lblAmenities,
+.RootBody .lblCurrency,
+.RootBody .lblHotelSize,
+.RootBody .lblNearbyCities,
+.RootBody .lblPropertyType,
+.RootBody .lblRateTypes,
+.RootBody .lblRating,
+.RootBody .lblSortByPrice {
+    font-weight: bold;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer,
+.RootBody .ArnAmentitiesContainer,
+.RootBody .ArnCitiesNearbyContainer,
+.RootBody .ArnCurrenciesContainer,
+.RootBody .ArnHotelSizeContainer,
+.RootBody .ArnPriceContainer,
+.RootBody .ArnPropertyClassesContainer,
+.RootBody .ArnPropertyTypesContainer,
+.RootBody .ArnRateFiltersContainer,
+.RootBody .ArnSlider {
+    background: transparent;
+}

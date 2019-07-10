@@ -1119,7 +1119,6 @@ div#overlay {
         background: inherit;
     }
 
-
     .RootBody {
         background-image: none;
     }
@@ -1214,6 +1213,10 @@ div#overlay {
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
         color: #fff;
+    }
+
+    .RootBody .ArnPrimarySearchContainer span{
+        display: block;
     }
 
     .SinglePropDetail .ArnPropName {

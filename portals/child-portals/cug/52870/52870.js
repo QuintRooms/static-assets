@@ -193,8 +193,9 @@ function addTabsToRootPageSearch(arrayOfTabs) {
  * @description fetches hotelRequestForm html and inserts it into the body
  * @return data html
  */
-function createHotelRequestForm() {
-    cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html')
+async function createHotelRequestForm() {
+    let response = await fetch('https://static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html');
+    let data = await response.text()
         .then((data) => {
             document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
         });

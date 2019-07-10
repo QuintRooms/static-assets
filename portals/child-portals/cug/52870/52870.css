@@ -1221,7 +1221,7 @@ ul#imgList {
 /* RootBody Advanced Search Filters */
 
 .RootBody .ArnSecondarySearchOuterContainer {
-    display: block !important;
+    display: flex !important;
     color: #fff;
 }
 
@@ -1253,4 +1253,16 @@ ul#imgList {
 .RootBody .ArnRateFiltersContainer,
 .RootBody .ArnSlider {
     background: transparent;
+    border-top: none;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer .checkbox {
+    margin: 0 !important;
+    width: 25px;
+    height: inherit;
+    float: left;
+}
+
+.RootBody .ArnSearchField div+div {
+    margin-bottom: 8px;
 }

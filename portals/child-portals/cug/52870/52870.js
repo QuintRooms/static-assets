@@ -189,14 +189,60 @@ function addTabsToRootPageSearch(arrayOfTabs) {
     document.querySelector('#hotelRequestTab').setAttribute('data-target', '#hotelFormModal');
 }
 
-function createHotelRequestForm(){
+/**
+ * @description fetches hotelRequestForm html and inserts it into the body
+ * @return data html
+ */
+function createHotelRequestForm() {
     cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html')
-    .then((data) => {
-        document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
-    });
+        .then((data) => {
+            document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
+        });
 }
 
+/**
+ * @description validates and paginates hotel request form
+ * @return void
+ */
+function hotelRequestFormValidation() {
+    let next = document.querySelector('#form-pagebreak-next_86');
+    let back = document.querySelector('#form-pagebreak-back_86');
+    let form = document.querySelector('.jotform-form');
+    let firstPage = document.querySelector('.jotform-form ul.form-section:first-child');
+    let secondPage = document.querySelector('.jotform-form ul.form-section:nth-child(2)');
+    let inputsToRequire = [
+        document.querySelector('#input_11_0_0'),
+        document.querySelector('#input_11_1_0'),
+        document.querySelector('#input_11_2_0'),
+        document.querySelector('#input_11_3_0')
+    ];
+
+    if (form) {
+        next.onclick = () => {
+            if (form.reportValidity()) {
+                firstPage.style.display = 'none';
+                secondPage.style.display = 'block';
+                next.style.display = 'none';
+                inputsToRequire.forEach((element) => {
+                    element.setAttribute('required', true);
+                });
+            }
+        }
+        back.onclick = () => {
+            firstPage.style.display = 'block';
+            secondPage.style.display = 'none';
+            next.style.display = 'block';
+
+            inputsToRequire.forEach((element) => {
+                element.removeAttribute('required', false);
+            });
+        }
+    }
+}
 if (document.querySelector('.RootBody')) {
     addTabsToRootPageSearch(tabs);
-    createHotelRequestForm();
+    createHotelRequestForm()
+        .then(() => {
+            hotelRequestFormValidation();
+        });
 }

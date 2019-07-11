@@ -50,6 +50,8 @@ if (document.querySelector('.input-div')) {
     arnStyles.parentNode.removeChild(arnStyles);
     let ArnSupportLinks = document.querySelector('.ArnSupportLinks');
     ArnSupportLinks.style.display = 'none';
+    let ArnSupportBottom = document.querySelector('.ArnSupportBottom');
+    ArnSupportBottom.style.display = 'none';
     let subHeaderContainer = document.querySelector('.subHeaderContainer');
     subHeaderContainer.style.display = 'none';
     let ArnSubPage = document.querySelector('.ArnSubPage');

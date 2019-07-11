@@ -193,8 +193,9 @@ function addTabsToRootPageSearch(arrayOfTabs) {
  * @description fetches hotelRequestForm html and inserts it into the body
  * @return data html
  */
-function createHotelRequestForm() {
-    cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html')
+async function createHotelRequestForm() {
+    let response = await fetch('https://dev-static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html');
+    let data = await response.text()
         .then((data) => {
             document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
         });
@@ -204,7 +205,7 @@ function createHotelRequestForm() {
  * @description validates and paginates hotel request form
  * @return void
  */
-function hotelRequestFormValidation() {
+async function hotelRequestFormValidation() {
     let next = document.querySelector('#form-pagebreak-next_86');
     let back = document.querySelector('#form-pagebreak-back_86');
     let form = document.querySelector('.jotform-form');
@@ -216,6 +217,9 @@ function hotelRequestFormValidation() {
         document.querySelector('#input_11_2_0'),
         document.querySelector('#input_11_3_0')
     ];
+
+    document.querySelector('#c3-email').textContent = 'c3travel@hotelsforhope.com';
+    document.querySelector('#c3-email').setAttribute('href', 'mailto:c3travel@hotelsforhope.com');
 
     if (form) {
         next.onclick = () => {
@@ -239,10 +243,23 @@ function hotelRequestFormValidation() {
         }
     }
 }
+
+function appendAdvancedFiltersToMainSearch() {
+    let advancedFilters = document.querySelector('.RootBody .ArnSecondarySearchOuterContainer');
+    let search = document.querySelector('.RootBody .ArnPrimarySearchContainer');
+    search.insertAdjacentElement('beforeEnd', advancedFilters);
+}
+
 if (document.querySelector('.RootBody')) {
     addTabsToRootPageSearch(tabs);
+    appendAdvancedFiltersToMainSearch();
     createHotelRequestForm()
         .then(() => {
             hotelRequestFormValidation();
         });
+}
+
+window.onload = function() {
+    cugPortal.updateText('.RootBody .modifySearch', 'C3 Travel, whether you\'re travelling for personal stay or business, we\'ve got you covered');
+    cugPortal.updateAttribute('#travelPlusTab', '_blank', 'target');
 }

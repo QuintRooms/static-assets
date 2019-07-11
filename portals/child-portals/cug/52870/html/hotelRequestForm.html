@@ -28,16 +28,16 @@
     padding: 0 !important;
 }
 
-label {
+.jotform-form label {
     display: block;
     font-weight: normal;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px !important;
 }
 
-input,
-select,
-textarea {
+.jotform-form input,
+.jotform-form select,
+.jotform-form textarea {
     border: 1px solid #ccc !important;
 }
 
@@ -170,6 +170,24 @@ input[type="file"] {
 .page-section+ul {
     list-style: none;
 }
+
+.first_name,
+.last_name {
+    width: 48.5%;
+}
+
+@media screen and (max-width: 585px) {
+    .first_name,
+    .last_name {
+        width: 100%;
+    }
+    .first_name{
+        margin-bottom: 18px;
+    }
+    .form-line{
+        margin: 18px 0;
+    }
+}
 </style>
 <div class="modal fade" tabindex="-1" role="dialog" id="hotelFormModal">
     <div class="modal-dialog" role="document">
@@ -199,19 +217,10 @@ input[type="file"] {
                         <input type="hidden" name="formID" value="91817174077160" />
                         <div role="main" class="form-all">
                             <ul class="form-section page-section">
-                                <li id="cid_1" class="form-input-wide" data-type="control_head">
-                                    <div class="form-header-group ">
-                                        <div class="header-text httac htvam">
-                                            <div id="subHeader_1" class="form-subHeader">
-                                                Heading out on tour and need accommodations managed?
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="form-line jf-required" data-type="control_fullname" id="id_5">
                                     <div id="cid_5" class="form-input jf-required">
                                         <div data-wrapper-react="true">
-                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                            <span class="form-sub-label-container first_name" style="vertical-align:top;">
                                                 <label for="first_5" id="sublabel_5_first" style="min-height:13px"> First Name
                                                     <span class="form-required">
                                                         *
@@ -219,7 +228,7 @@ input[type="file"] {
                                                 </label>
                                                 <input type="text" id="first_5" name="q5_contactName[first]" class="form-textbox validate[required]" size="10" value="" data-component="first" aria-labelledby="label_5 sublabel_5_first" required="" />
                                             </span>
-                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                            <span class="form-sub-label-container last_name" style="vertical-align:top; width: 48%;">
                                                 <label for="last_5" id="sublabel_5_last" style="min-height:13px"> Last Name
                                                     <span class="form-required">
                                                         *
@@ -290,15 +299,6 @@ input[type="file"] {
                                 </li>
                             </ul>
                             <ul class="form-section page-section" style="display:none;">
-                                <li id="cid_79" class="form-input-wide" data-type="control_head">
-                                    <div class="form-header-group ">
-                                        <div class="header-text httac htvam">
-                                            <h3 id="header_79" class="form-header" data-component="header">
-                                                Hotel Room Info
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="form-line jf-required" data-type="control_matrix" id="id_11">
                                     <label class="form-label form-label-top" id="label_11" for="input_11">
                                         How Many Rooms do you Typically Require?
@@ -373,7 +373,7 @@ input[type="file"] {
                                 <li class="form-line" data-type="control_text" id="id_84">
                                     <div id="cid_84" class="form-input-wide">
                                         <div id="text_84" class="form-html" data-component="text">
-                                            <p>Our team will reach out within 24-28hrs to secure your tour's accommodations. Any questions in the interim:<br /><br /><a href="mailto:c3travel@hotelsforhope.com" target="_blank" rel="nofollow">c3travel@hotelsforhope.com</a></p>
+                                            <p>Our team will reach out within 24-28hrs to secure your tour's accommodations. Any questions in the interim:<br /><br /><a id="c3-email" href="mailto:c3travel@hotelsforhope.com" target="_blank" rel="nofollow">c3travel@hotelsforhope.com</a></p>
                                             <p>(512) 691-9555</p>
                                         </div>
                                     </div>

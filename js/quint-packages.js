@@ -1,4 +1,4 @@
-if (querySelector('.input-div')) {
+if (document.querySelector('.input-div')) {
 
     window.smoothScroll = function (target, stadium) {
 

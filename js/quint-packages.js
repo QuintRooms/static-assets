@@ -54,7 +54,7 @@ if (document.querySelector('.ArnProperty')) {
     localStorage.setItem('package', package);
     jQuery(document).on('ratesReadyEvent', function () {
         setTimeout(function () {
-            if (document.querySelector('.budgetTag')) {
+            if (!document.querySelector('.budgetTag')) {
                 updateTier(package);
             }
         }, 1);

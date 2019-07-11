@@ -194,7 +194,7 @@ function addTabsToRootPageSearch(arrayOfTabs) {
  * @return data html
  */
 async function createHotelRequestForm() {
-    let response = await fetch('https://static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html');
+    let response = await fetch('https://dev-static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html');
     let data = await response.text()
         .then((data) => {
             document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
@@ -248,7 +248,7 @@ function appendAdvancedFiltersToMainSearch() {
 }
 
 if (document.querySelector('.RootBody')) {
-    cugPortal.updateText('.modifySearch', 'C3 Travel, whether your travelling for personal stay or business, we\'ve got you covered');
+    cugPortal.updateText('.modifySearch', 'C3 Travel, whether you\'re travelling for personal stay or business, we\'ve got you covered');
     addTabsToRootPageSearch(tabs);
     appendAdvancedFiltersToMainSearch();
     createHotelRequestForm()

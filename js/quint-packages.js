@@ -1,6 +1,6 @@
 if (document.querySelector('.input-div')) {
 
-    window.smoothScroll = function (target, stadium) {
+    window.smoothScroll = function(target, stadium) {
 
         document.getElementById('packageSelection').value = stadium;
         var scrollContainer = target;
@@ -16,11 +16,11 @@ if (document.querySelector('.input-div')) {
             targetY += target.offsetTop;
         } while (target = target.offsetParent);
 
-        scroll = function (c, a, b, i) {
+        scroll = function(c, a, b, i) {
             i++;
             if (i > 30) return;
             c.scrollTop = a + (b - a) / 30 * i;
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll(c, a, b, i);
             }, 20);
         }
@@ -34,11 +34,17 @@ if (document.querySelector('.input-div')) {
     function buildURL(input) {
         let goButton = document.querySelector('#goButton');
         let finalURL;
-        input.addEventListener("change", function () {
+        input.addEventListener("change", function() {
             finalURL = stadium.value + '&package=' + package.value;
             goButton.href = finalURL;
             console.log(finalURL);
         });
+    }
+
+    let arnStyles = document.querySelector('#arn-styles');
+    if (arnStyles) {
+        arnStyles.disabled = true;
+        arnStyles.parentNode.removeChild(arnStyles);
     }
 
     buildURL(package);
@@ -60,8 +66,8 @@ if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
     localStorage.setItem('package', package);
-    jQuery(document).on('ratesReadyEvent', function () {
-        setTimeout(function () {
+    jQuery(document).on('ratesReadyEvent', function() {
+        setTimeout(function() {
             if (!document.querySelector('.budgetTag')) {
                 updateTier(package);
             }
@@ -79,7 +85,7 @@ function updateTier(tier) {
         limit = 250;
     }
 
-    list.forEach(function (element) {
+    list.forEach(function(element) {
         price = element.querySelector('.arnUnit');
         if (price) {
             price = price.textContent;

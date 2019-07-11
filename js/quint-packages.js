@@ -52,6 +52,8 @@ if (document.querySelector('.input-div')) {
     ArnSupportLinks.style.display = 'none';
     let subHeaderContainer = document.querySelector('.subHeaderContainer');
     subHeaderContainer.style.display = 'none';
+    let ArnSubPage = document.querySelector('.ArnSubPage');
+    ArnSubPage.style.padding = '0';
 }
 
 

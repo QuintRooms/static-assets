@@ -1264,7 +1264,7 @@ ul#imgList {
     float: left;
 }
 
-.RootBody .ArnSearchField div+div {
+.RootBody .ArnSearchField div {
     margin-bottom: 8px;
 }
 
@@ -1281,9 +1281,16 @@ ul#imgList {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 565px) {
+    .RootBody .RootBody .ArnSearchContainerMainDiv {
+        height: 100vh;
+        min-height: 100vh;
+        align-items: center;
+
+    }
+
     .RootBody .ArnSecondarySearchOuterContainer {
-        display: none;
+        display: none !important;
     }
 
     .RootBody #theOtherSubmitButton {
@@ -1292,5 +1299,9 @@ ul#imgList {
 
     .RootBody #theSubmitButton {
         display: block !important;
+    }
+
+    .RootBody .ArnPrimarySearchContainer span {
+        margin: 0;
     }
 }

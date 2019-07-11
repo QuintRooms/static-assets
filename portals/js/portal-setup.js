@@ -402,8 +402,8 @@ export default class Portal {
         let adultsInput = document.querySelector('#adults');
         let roomsInput = document.querySelector('#rooms');
         let options = document.querySelectorAll('#adults option');
-        let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
         if (roomsInput) {
+        let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
             if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
                 adultsLabel.textContent = 'Adults:';
 

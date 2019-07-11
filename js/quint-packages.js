@@ -72,20 +72,24 @@ function updateTier(tier) {
     }
 
     list.forEach(function (element) {
-        price = element.querySelector('.arnUnit').textContent;
-        price = parseFloat(price);
-        var divTag = document.createElement("div");
-        divTag.setAttribute('class', 'budgetTag');
-        divTag.setAttribute('style', 'color: white; padding-top: 7px; font-weight: 500; text-align: center; height: 30px;');
-        if (limit < price) {
-            element.querySelector('.arnCurrency').style.color = 'red';
-            element.querySelector('.arnUnit').style.color = 'red';
-            divTag.style.backgroundColor = '#bf4848';
-            divTag.innerHTML = '$' + Math.trunc(price - limit) + ' over budget';
-        } else {
-            divTag.innerHTML = '$' + Math.trunc(limit - price) + ' under budget';
-            divTag.style.backgroundColor = '#04800d';
+        price = element.querySelector('.arnUnit');
+        if (price) {
+            price = price.textContent;
+
+            price = parseFloat(price);
+            var divTag = document.createElement("div");
+            divTag.setAttribute('class', 'budgetTag');
+            divTag.setAttribute('style', 'color: white; padding-top: 7px; font-weight: 500; text-align: center; height: 30px;');
+            if (limit < price) {
+                element.querySelector('.arnCurrency').style.color = 'red';
+                element.querySelector('.arnUnit').style.color = 'red';
+                divTag.style.backgroundColor = '#bf4848';
+                divTag.innerHTML = '$' + Math.trunc(price - limit) + ' over budget';
+            } else {
+                divTag.innerHTML = '$' + Math.trunc(limit - price) + ' under budget';
+                divTag.style.backgroundColor = '#04800d';
+            }
+            element.querySelector('.ArnPropThumb').insertAdjacentElement('afterbegin', divTag);
         }
-        element.querySelector('.ArnPropThumb').insertAdjacentElement('afterbegin', divTag)
     });
 }

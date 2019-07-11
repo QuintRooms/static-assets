@@ -52,8 +52,11 @@ if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
     localStorage.setItem('package', package);
-
-    updateTier(package);
+    jQuery(document).on('ratesReadyEvent', function() {
+        setTimeout(function() {
+            updateTier(package);
+        }, 1);
+    });
 }
 
 function updateTier(tier) {

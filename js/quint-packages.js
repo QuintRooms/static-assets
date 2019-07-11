@@ -47,13 +47,14 @@ if (document.querySelector('.input-div')) {
     buildURL(stadium);
 
     let arnStyles = document.querySelector('link[href="https://static.hotelsforhope.com/portals/styles/arn-styles.css"]')
-    arnStyles.disabled = true;
     arnStyles.parentNode.removeChild(arnStyles);
     let ArnSupportLinks = document.querySelector('.ArnSupportLinks');
     ArnSupportLinks.style.display = 'none';
     let subHeaderContainer = document.querySelector('.subHeaderContainer');
     subHeaderContainer.style.display = 'none';
 }
+
+
 
 if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));

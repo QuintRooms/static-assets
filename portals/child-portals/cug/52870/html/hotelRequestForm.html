@@ -170,6 +170,24 @@ input[type="file"] {
 .page-section+ul {
     list-style: none;
 }
+
+.first_name,
+.last_name {
+    width: 48.5%;
+}
+
+@media screen and (max-width: 585px) {
+    .first_name,
+    .last_name {
+        width: 100%;
+    }
+    .first_name{
+        margin-bottom: 18px;
+    }
+    .form-line{
+        margin: 18px 0;
+    }
+}
 </style>
 <div class="modal fade" tabindex="-1" role="dialog" id="hotelFormModal">
     <div class="modal-dialog" role="document">
@@ -199,19 +217,10 @@ input[type="file"] {
                         <input type="hidden" name="formID" value="91817174077160" />
                         <div role="main" class="form-all">
                             <ul class="form-section page-section">
-                                <li id="cid_1" class="form-input-wide" data-type="control_head">
-                                    <div class="form-header-group ">
-                                        <div class="header-text httac htvam">
-                                            <div id="subHeader_1" class="form-subHeader">
-                                                Heading out on tour and need accommodations managed?
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="form-line jf-required" data-type="control_fullname" id="id_5">
                                     <div id="cid_5" class="form-input jf-required">
                                         <div data-wrapper-react="true">
-                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                            <span class="form-sub-label-container first_name" style="vertical-align:top;">
                                                 <label for="first_5" id="sublabel_5_first" style="min-height:13px"> First Name
                                                     <span class="form-required">
                                                         *
@@ -219,7 +228,7 @@ input[type="file"] {
                                                 </label>
                                                 <input type="text" id="first_5" name="q5_contactName[first]" class="form-textbox validate[required]" size="10" value="" data-component="first" aria-labelledby="label_5 sublabel_5_first" required="" />
                                             </span>
-                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                            <span class="form-sub-label-container last_name" style="vertical-align:top; width: 48%;">
                                                 <label for="last_5" id="sublabel_5_last" style="min-height:13px"> Last Name
                                                     <span class="form-required">
                                                         *

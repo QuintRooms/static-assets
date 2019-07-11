@@ -52,9 +52,11 @@ if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
     localStorage.setItem('package', package);
-    jQuery(document).on('ratesReadyEvent', function() {
-        setTimeout(function() {
-            updateTier(package);
+    jQuery(document).on('ratesReadyEvent', function () {
+        setTimeout(function () {
+            if (document.querySelector('.budgetTag')) {
+                updateTier(package);
+            }
         }, 1);
     });
 }
@@ -73,6 +75,7 @@ function updateTier(tier) {
         price = element.querySelector('.arnUnit').textContent;
         price = parseFloat(price);
         var divTag = document.createElement("div");
+        divTag.setAttribute('class', 'budgetTag');
         divTag.setAttribute('style', 'color: white; padding-top: 7px; font-weight: 500; text-align: center; height: 30px;');
         if (limit < price) {
             element.querySelector('.arnCurrency').style.color = 'red';

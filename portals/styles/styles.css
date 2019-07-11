@@ -218,6 +218,10 @@ header {
     left: 0 !important;
 }
 
+.ArnNoPropertyResults  .openMapBtn {
+    display: none;
+}
+
 .HoldRoomsForm .openMapBtn {
     display: none !important;
 }
@@ -1936,7 +1940,7 @@ div#overlay {
 
 #slideit label.open {
     font-family: inherit;
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: 400;
     color: #ffffff;
     background-color: #009dd9;
@@ -1977,7 +1981,7 @@ div#overlay {
 }
 
 #slideit input#close-item:checked~label.open {
-    right: -40px;
+    right: -34px;
 }
 
 #slideit label.close {

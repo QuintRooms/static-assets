@@ -248,11 +248,14 @@ function appendAdvancedFiltersToMainSearch() {
 }
 
 if (document.querySelector('.RootBody')) {
-    cugPortal.updateText('.modifySearch', 'C3 Travel, whether you\'re travelling for personal stay or business, we\'ve got you covered');
     addTabsToRootPageSearch(tabs);
     appendAdvancedFiltersToMainSearch();
     createHotelRequestForm()
         .then(() => {
             hotelRequestFormValidation();
         });
+}
+
+window.onload = function() {
+    cugPortal.updateText('.RootBody .modifySearch', 'C3 Travel, whether you\'re travelling for personal stay or business, we\'ve got you covered');
 }

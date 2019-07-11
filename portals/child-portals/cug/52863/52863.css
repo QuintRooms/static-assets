@@ -110,24 +110,6 @@ body,
     justify-content: space-between;
 }
 
-header .room-steals {
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.room-steals {
-    color: #fff;
-    font-size: 20px;
-    align-self: center;
-    order: -1;
-    padding-left: 10px;
-    transition: all .5s ease;
-}
-
-.logo {
-    display: none;
-}
-
 #theConfirmationContainer h4,
 #theConfirmationContainer .h4 {
     font-size: 14px;
@@ -690,8 +672,9 @@ nav {
 }
 
 .logo img {
-    max-width: 300px;
+    max-width: 250px;
     width: 100%;
+    padding: 12px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,

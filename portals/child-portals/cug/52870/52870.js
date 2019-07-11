@@ -218,6 +218,9 @@ async function hotelRequestFormValidation() {
         document.querySelector('#input_11_3_0')
     ];
 
+    document.querySelector('#c3-email').textContent = 'c3travel@hotelsforhope.com';
+    document.querySelector('#c3-email').setAttribute('href', 'mailto:c3travel@hotelsforhope.com');
+
     if (form) {
         next.onclick = () => {
             if (form.reportValidity()) {
@@ -237,9 +240,6 @@ async function hotelRequestFormValidation() {
             inputsToRequire.forEach((element) => {
                 element.removeAttribute('required', false);
             });
-
-            document.querySelector('#c3-email').textContent = 'c3travel@hotelsforhope.com';
-            document.querySelector('#c3-email').setAttribute('href', 'mailto:c3travel@hotelsforhope.com');
         }
     }
 }

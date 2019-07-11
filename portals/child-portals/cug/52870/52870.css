@@ -520,6 +520,17 @@ header {
     color: #fff;
 }
 
+#slideit label.close {
+    background: #333;
+    opacity: 1;
+    right: 0;
+}
+
+#slideit label.close:hover,
+#slideit label.close:focus {
+    background: #333;
+}
+
 #slideit label.open:hover,
 #slideit label.open:focus {
     background: #38383f;
@@ -1093,10 +1104,6 @@ ul#imgList {
 /* RootBody Custom Content */
 .RootBody section {
     padding: 90px 0 180px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* RootBody Search Tabs */

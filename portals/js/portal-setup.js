@@ -403,26 +403,37 @@ export default class Portal {
         let roomsInput = document.querySelector('#rooms');
         let options = document.querySelectorAll('#adults option');
         if (roomsInput) {
-        let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
-            if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
-                adultsLabel.textContent = 'Adults:';
+            let initialAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+            options.forEach(function(element, index) {
+                if (index >= initialAdults) {
+                    element.style.display = 'none';
+                }
+            });
 
-                options.forEach(function(element, index) {
-                    if (index >= 4) {
-                        element.remove();
-                    }
-                });
-            }
+            roomsInput.addEventListener('change', function() {
+                let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
 
-            if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
-                adultsLabel.textContent = 'Total Adults:';
+                if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
+                    adultsLabel.textContent = 'Adults:';
 
-                options.forEach(function(element, index) {
-                    if (index >= maxAdults) {
-                        element.remove();
-                    }
-                });
-            }
+                    options.forEach(function(element, index) {
+                        element.style.display = 'block';
+                        if (index >= 4) {
+                            element.style.display = 'none';
+                        }
+                    });
+                }
+
+                if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
+                    adultsLabel.textContent = 'Total Adults:';
+                    options.forEach(function(element, index) {
+                        element.style.display = 'block';
+                        if (index >= maxAdults) {
+                            element.style.display = 'none';
+                        }
+                    });
+                }
+            })
         }
     }
 

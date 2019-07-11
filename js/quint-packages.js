@@ -28,8 +28,6 @@ if (document.querySelector('.input-div')) {
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
 
-
-
     let stadium = document.querySelector("#stadiumSelection");
     let package = document.querySelector('#packageSelection');
 
@@ -46,8 +44,6 @@ if (document.querySelector('.input-div')) {
     buildURL(package);
     buildURL(stadium);
 
-    let arnStyles = document.querySelector('link[href="https://static.hotelsforhope.com/portals/styles/arn-styles.css"]')
-    arnStyles.parentNode.removeChild(arnStyles);
     let ArnSupportLinks = document.querySelector('.ArnSupportLinks');
     ArnSupportLinks.style.display = 'none';
     let ArnSupportBottom = document.querySelector('.ArnSupportBottom');

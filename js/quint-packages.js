@@ -24,20 +24,22 @@ if (document.querySelector('.input-div')) {
                 scroll(c, a, b, i);
             }, 20);
         }
-        // start scrolling
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
 
-    let stadium = document.querySelector("#stadiumSelection");
+
+    let stadium = document.querySelector('#stadiumSelection');
     let package = document.querySelector('#packageSelection');
+  
 
     function buildURL(input) {
         let goButton = document.querySelector('#goButton');
         let finalURL;
-        input.addEventListener("change", function() {
+        finalURL = stadium.value + '&package=' + package.value;
+        goButton.href = finalURL;
+        input.addEventListener("change", function () {
             finalURL = stadium.value + '&package=' + package.value;
             goButton.href = finalURL;
-            console.log(finalURL);
         });
     }
 
@@ -77,7 +79,6 @@ if (document.querySelector('.ArnProperty')) {
 
 function updateTier(tier) {
     let list = document.querySelectorAll('.ArnProperty');
-    let price;
     let limit;
     if (tier === 'LowerLevel') {
         limit = 400;
@@ -90,7 +91,6 @@ function updateTier(tier) {
         if (price) {
             price = price.textContent;
             price = parseFloat(price);
-            var divTag = document.createElement("div");
             divTag.setAttribute('class', 'budgetTag');
             divTag.setAttribute('style', 'color: white; position: relative; padding-top: 7px; font-weight: 500; text-align: center; height: 30px;');
             if (limit < price) {
@@ -106,3 +106,5 @@ function updateTier(tier) {
         }
     });
 }
+            var divTag = document.createElement("div");
+    let price;

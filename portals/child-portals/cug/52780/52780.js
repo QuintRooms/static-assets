@@ -2,7 +2,7 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-cugPortal.updateText('title', 'C3 Travels');
+cugPortal.updateText('title', 'C3 Travel Plus');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

@@ -120,6 +120,8 @@ body,
 
 header {
     z-index: 10;
+    background: #333;
+    height: 99px;
 }
 
 #theConfirmationContainer h4,
@@ -365,12 +367,7 @@ header {
 }
 
 .SearchHotels .ArnLeftSearchContainer {
-    top: 55px;
-    position: relative;
-}
-
-.SearchHotels #Properties {
-    top: 40px;
+    top: 24px;
     position: relative;
 }
 
@@ -521,6 +518,17 @@ header {
 #slideit label.open:hover,
 #slideit label.open:focus {
     color: #fff;
+}
+
+#slideit label.close {
+    background: #333;
+    opacity: 1;
+    right: 0;
+}
+
+#slideit label.close:hover,
+#slideit label.close:focus {
+    background: #333;
 }
 
 #slideit label.open:hover,
@@ -695,7 +703,7 @@ header {
 }
 
 .jumbotron {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52780/images/banner.jpg) no-repeat center center /cover;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52870/images/banner.jpg) no-repeat center center /cover;
     padding-top: 220px;
 }
 
@@ -714,7 +722,6 @@ nav {
     border-radius: 0 0 2px 2px;
     background: #c6c7c6;
     margin: 0;
-    position: absolute;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
@@ -1097,10 +1104,6 @@ ul#imgList {
 /* RootBody Custom Content */
 .RootBody section {
     padding: 90px 0 180px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* RootBody Search Tabs */
@@ -1215,5 +1218,93 @@ ul#imgList {
 
     .geoButton {
         display: none;
+    }
+}
+
+/* RootBody Advanced Search Filters */
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    display: flex !important;
+    margin-top: 8px;
+    color: #fff;
+}
+
+.RootBody #CitiesNearbyContainer,
+.RootBody #theOtherSubmitButton,
+.RootBody #RateFiltersContainer {
+    display: none;
+}
+
+.RootBody .lblAmenities,
+.RootBody .lblCurrency,
+.RootBody .lblHotelSize,
+.RootBody .lblNearbyCities,
+.RootBody .lblPropertyType,
+.RootBody .lblRateTypes,
+.RootBody .lblRating,
+.RootBody .lblSortByPrice {
+    font-weight: bold;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer,
+.RootBody .ArnAmentitiesContainer,
+.RootBody .ArnCitiesNearbyContainer,
+.RootBody .ArnCurrenciesContainer,
+.RootBody .ArnHotelSizeContainer,
+.RootBody .ArnPriceContainer,
+.RootBody .ArnPropertyClassesContainer,
+.RootBody .ArnPropertyTypesContainer,
+.RootBody .ArnRateFiltersContainer,
+.RootBody .ArnSlider {
+    background: transparent;
+    border-top: none;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer .checkbox {
+    margin: 0 !important;
+    width: 25px;
+    height: inherit;
+    float: left;
+}
+
+.RootBody .ArnSearchField div {
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody #theOtherSubmitButton {
+        display: block !important;
+        align-self: flex-end;
+        position: absolute;
+        right: 12px;
+    }
+
+    .RootBody #theSubmitButton {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .RootBody .RootBody .ArnSearchContainerMainDiv {
+        height: 100vh;
+        min-height: 100vh;
+        align-items: center;
+
+    }
+
+    .RootBody .ArnSecondarySearchOuterContainer {
+        display: none !important;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        display: none !important;
+    }
+
+    .RootBody #theSubmitButton {
+        display: block !important;
+    }
+
+    .RootBody .ArnPrimarySearchContainer span {
+        margin: 0;
     }
 }

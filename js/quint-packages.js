@@ -24,20 +24,22 @@ if (document.querySelector('.input-div')) {
                 scroll(c, a, b, i);
             }, 20);
         }
-        // start scrolling
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
 
-    let stadium = document.querySelector("#stadiumSelection");
+
+    let stadium = document.querySelector('#stadiumSelection');
     let package = document.querySelector('#packageSelection');
+  
 
     function buildURL(input) {
         let goButton = document.querySelector('#goButton');
         let finalURL;
-        input.addEventListener("change", function() {
+        finalURL = stadium.value + '&package=' + package.value;
+        goButton.href = finalURL;
+        input.addEventListener("change", function () {
             finalURL = stadium.value + '&package=' + package.value;
             goButton.href = finalURL;
-            console.log(finalURL);
         });
     }
 

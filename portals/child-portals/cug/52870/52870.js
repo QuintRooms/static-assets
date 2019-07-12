@@ -265,4 +265,4 @@ window.onload = function() {
 }
 
 
-console.log('dev autodeploy test');
+console.log('dev autodeploy test dos');

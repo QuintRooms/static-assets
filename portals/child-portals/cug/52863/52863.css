@@ -869,3 +869,20 @@ ul {
         width: 100%;
     }
 }
+
+.SearchHotels .ArnPropName div.ArnPropClass {
+    display: inline !important;
+    margin: 2px 0 0 2% !important;
+    padding: 4px;
+    border-radius: 3px;
+    color: #555559;
+    font-weight: 600;
+    font-size: 13px;
+    background: #ffcc02;
+    position: relative;
+    top: 5px;
+}
+
+.SearchHotels .roomCount {
+    margin-top: 12px !important;
+}

@@ -1,39 +1,41 @@
 if (document.querySelector('.input-div')) {
 
-    function setPackage(stadium) {
-        document.querySelector('#packageSelection').value = stadium;
+    let stadiumSelect = document.querySelector('#stadiumSelection');
+    let upperLevel = document.querySelector('#upper-level');
+    let lowerLevel = document.querySelector('#lower-level');
+    let submit = document.querySelector('#goButton');
+    let package;
+    let stadium = stadiumSelect[stadiumSelect.selectedIndex].value;
+    let stars;
 
-        if (stadium === 'UpperLevel') {
-            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(62, 84, 2)';
-            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(84, 104, 29)';
-            document.querySelector('.ULcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
-            document.querySelector('.LLcard').style.border = 'none';
+    upperLevel.addEventListener('click', function() {
+        package = upperLevel.dataset.package;
+        stars = '&propertyclasses=2%20Stars,3%20Stars';
+        this.parentNode.classList.add('activePackage');
+        lowerLevel.parentNode.classList.remove('activePackage');
+    });
 
-        } else {
-            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(62, 84, 2)';
-            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(84, 104, 29)';
-            document.querySelector('.LLcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
-            document.querySelector('.ULcard').style.border = 'none';
+    lowerLevel.addEventListener('click', function() {
+        package = lowerLevel.dataset.package;
+        stars = '&propertyclasses=3%20Stars,4%20Stars,5%20Stars';
+        this.parentNode.classList.add('activePackage');
+        upperLevel.parentNode.classList.remove('activePackage');
+
+    });
+
+    stadiumSelect.addEventListener('change', function() {
+        stadium = this.value;
+    });
+
+    submit.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(stadium && package != undefined){
+            window.open(stadium + '&package=' + package + stars, '_blank');
+            return;
         }
+        alert('Please select both a stadium and a package.');
+    });
 
-        buildURL(package);
-        buildURL(stadium);
-    }
-
-    let stadium = document.querySelector('#stadiumSelection');
-    let package = document.querySelector('#packageSelection');
-
-
-    function buildURL(input) {
-        let goButton = document.querySelector('#goButton');
-        let finalURL;
-        finalURL = stadium.value + '&package=' + package.value;
-        goButton.href = finalURL;
-        input.addEventListener("change", function () {
-            finalURL = stadium.value + '&package=' + package.value;
-            goButton.href = finalURL;
-        });
-    }
 
     let arnStyles = document.querySelector('#arn-styles');
     if (arnStyles) {
@@ -41,17 +43,10 @@ if (document.querySelector('.input-div')) {
         arnStyles.parentNode.removeChild(arnStyles);
     }
 
-    buildURL(package);
-    buildURL(stadium);
-
-    let ArnSupportLinks = document.querySelector('.ArnSupportLinks');
-    ArnSupportLinks.style.display = 'none';
-    let ArnSupportBottom = document.querySelector('.ArnSupportBottom');
-    ArnSupportBottom.style.display = 'none';
-    let subHeaderContainer = document.querySelector('.subHeaderContainer');
-    subHeaderContainer.style.display = 'none';
-    let ArnSubPage = document.querySelector('.ArnSubPage');
-    ArnSubPage.style.padding = '0';
+    document.querySelector('.ArnSupportLinks').style.display = 'none';
+    document.querySelector('.ArnSupportBottom').style.display = 'none';
+    document.querySelector('.subHeaderContainer').style.display = 'none';
+    document.querySelector('.ArnSubPage').style.padding = '0';
 }
 
 
@@ -60,8 +55,8 @@ if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
     localStorage.setItem('package', package);
-    jQuery(document).on('ratesReadyEvent', function () {
-        setTimeout(function () {
+    jQuery(document).on('ratesReadyEvent', function() {
+        setTimeout(function() {
             if (!document.querySelector('.budgetTag')) {
                 updateTier(package);
             }
@@ -79,7 +74,7 @@ function updateTier(tier) {
         limit = 250 / 2;
     }
 
-    list.forEach(function (element) {
+    list.forEach(function(element) {
         price = element.querySelector('.arnUnit');
         if (price) {
             price = price.textContent;

@@ -6,13 +6,13 @@ if (document.querySelector('.input-div')) {
         if(stadium === 'UpperLevel') {
             document.querySelector('.ULbtn').style.backgroundColor = 'rgb(62, 84, 2)';
             document.querySelector('.LLbtn').style.backgroundColor = 'rgb(84, 104, 29)';
-            document.querySelector('.ULcard').style.border = '3px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.ULcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
             document.querySelector('.LLcard').style.border = 'none';
 
         } else {
             document.querySelector('.LLbtn').style.backgroundColor = 'rgb(62, 84, 2)';
             document.querySelector('.ULbtn').style.backgroundColor = 'rgb(84, 104, 29)';
-            document.querySelector('.LLcard').style.border = '3px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.LLcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
             document.querySelector('.ULcard').style.border = 'none';
         }
 

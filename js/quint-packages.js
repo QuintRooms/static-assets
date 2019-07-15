@@ -3,7 +3,7 @@ if (document.querySelector('.input-div')) {
     function setPackage(stadium) {
         document.querySelector('#packageSelection').value = stadium;
 
-        if(stadium === 'UpperLevel') {
+        if (stadium === 'UpperLevel') {
             document.querySelector('.ULbtn').style.backgroundColor = 'rgb(62, 84, 2)';
             document.querySelector('.LLbtn').style.backgroundColor = 'rgb(84, 104, 29)';
             document.querySelector('.ULcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
@@ -16,7 +16,8 @@ if (document.querySelector('.input-div')) {
             document.querySelector('.ULcard').style.border = 'none';
         }
 
-        
+        buildURL(package);
+        buildURL(stadium);
     }
 
     let stadium = document.querySelector('#stadiumSelection');

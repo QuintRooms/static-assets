@@ -27,7 +27,7 @@ if (document.querySelector('.input-div')) {
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
     
-    console.log('test2');
+    console.log('test22');
 
     let stadium = document.querySelector('#stadiumSelection');
     let package = document.querySelector('#packageSelection');

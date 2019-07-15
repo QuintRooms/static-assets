@@ -186,6 +186,10 @@ textarea,
     border-radius: 5px;
 }
 
+.ArnRateCancelAnchor {
+    font-weight: bold !important;
+}
+
 #theSmokingRoomAjax input {
     margin: 5px 5px 0 0;
 }

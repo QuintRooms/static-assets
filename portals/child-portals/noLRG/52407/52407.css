@@ -224,6 +224,12 @@ select#language {
     border-bottom: #C40000 !important;
 }
 
+#slideit label.open:hover,
+#slideit label.open:focus {
+    background: #b20a0a !important;
+    color: #fff;
+}
+
 .ArnPropName div.ratingCount {
     background: #C40000 !important;
 }

@@ -1,36 +1,27 @@
 if (document.querySelector('.input-div')) {
 
-    window.smoothScroll = function(target, stadium) {
+    function setPackage(stadium) {
+        document.querySelector('#packageSelection').value = stadium;
 
-        document.getElementById('packageSelection').value = stadium;
-        var scrollContainer = target;
-        do { //find scroll container
-            scrollContainer = scrollContainer.parentNode;
-            if (!scrollContainer) return;
-            scrollContainer.scrollTop += 1;
-        } while (scrollContainer.scrollTop == 0);
+        if(stadium === 'UpperLevel') {
+            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(62, 84, 2)';
+            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(84, 104, 29)';
+            document.querySelector('.ULcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.LLcard').style.border = 'none';
 
-        var targetY = 0;
-        do { //find the top of target relatively to the container
-            if (target == scrollContainer) break;
-            targetY += target.offsetTop;
-        } while (target = target.offsetParent);
-
-        scroll = function(c, a, b, i) {
-            i++;
-            if (i > 30) return;
-            c.scrollTop = a + (b - a) / 30 * i;
-            setTimeout(function() {
-                scroll(c, a, b, i);
-            }, 20);
+        } else {
+            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(62, 84, 2)';
+            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(84, 104, 29)';
+            document.querySelector('.LLcard').style.border = '1px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.ULcard').style.border = 'none';
         }
-        scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-    }
 
+        
+    }
 
     let stadium = document.querySelector('#stadiumSelection');
     let package = document.querySelector('#packageSelection');
-  
+
 
     function buildURL(input) {
         let goButton = document.querySelector('#goButton');
@@ -68,8 +59,8 @@ if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
     localStorage.setItem('package', package);
-    jQuery(document).on('ratesReadyEvent', function() {
-        setTimeout(function() {
+    jQuery(document).on('ratesReadyEvent', function () {
+        setTimeout(function () {
             if (!document.querySelector('.budgetTag')) {
                 updateTier(package);
             }
@@ -79,6 +70,7 @@ if (document.querySelector('.ArnProperty')) {
 
 function updateTier(tier) {
     let list = document.querySelectorAll('.ArnProperty');
+    let price;
     let limit;
     if (tier === 'LowerLevel') {
         limit = 400;
@@ -86,11 +78,12 @@ function updateTier(tier) {
         limit = 250;
     }
 
-    list.forEach(function(element) {
+    list.forEach(function (element) {
         price = element.querySelector('.arnUnit');
         if (price) {
             price = price.textContent;
             price = parseFloat(price);
+            var divTag = document.createElement("div");
             divTag.setAttribute('class', 'budgetTag');
             divTag.setAttribute('style', 'color: white; position: relative; padding-top: 7px; font-weight: 500; text-align: center; height: 30px;');
             if (limit < price) {
@@ -106,5 +99,3 @@ function updateTier(tier) {
         }
     });
 }
-            var divTag = document.createElement("div");
-    let price;

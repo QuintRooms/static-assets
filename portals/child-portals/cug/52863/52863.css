@@ -884,5 +884,5 @@ ul {
 }
 
 .SearchHotels .roomCount {
-    margin-top: 12px;
+    margin-top: 12px !important;
 }

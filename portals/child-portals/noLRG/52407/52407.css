@@ -318,4 +318,20 @@ select#language {
     .logo+a {
         display: none;
     }
+
+    #language {
+        max-width: 100px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .logo {
+        width: 200px;
+        overflow: hidden;
+    }
+
+    .logo img {
+        max-width: 250px;
+        width: 250px;
+    }
 }

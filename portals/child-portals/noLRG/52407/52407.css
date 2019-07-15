@@ -250,6 +250,12 @@ select#language {
     max-width: 205px !important;
 }
 
+.SinglePropDetail .originalRateContainer+.originalRateAmount:first-letter,
+.SinglePropDetail .bookRoomCell .ArnNightlyRate strong:first-letter {
+    font-size: 1em !important;
+    vertical-align: initial;
+}
+
 @media only screen and (min-width: 800px) {
 
     .ArnSortByName:hover,

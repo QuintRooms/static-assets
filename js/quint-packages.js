@@ -74,9 +74,9 @@ function updateTier(tier) {
     let price;
     let limit;
     if (tier === 'LowerLevel') {
-        limit = 400;
+        limit = 400 / 2;
     } else {
-        limit = 250;
+        limit = 250 / 2;
     }
 
     list.forEach(function (element) {

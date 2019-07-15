@@ -1,10 +1,23 @@
 if (document.querySelector('.input-div')) {
 
     function setPackage(stadium) {
-        document.getElementById('packageSelection').value = stadium;
-    }
+        document.querySelector('#packageSelection').value = stadium;
 
-    console.log('test22');
+        if(stadium === 'UpperLevel') {
+            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(62, 84, 2)';
+            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(84, 104, 29)';
+            document.querySelector('.ULcard').style.border = '3px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.LLcard').style.border = 'none';
+
+        } else {
+            document.querySelector('.LLbtn').style.backgroundColor = 'rgb(62, 84, 2)';
+            document.querySelector('.ULbtn').style.backgroundColor = 'rgb(84, 104, 29)';
+            document.querySelector('.LLcard').style.border = '3px solid rgba(255, 255, 255, 0.68)';
+            document.querySelector('.ULcard').style.border = 'none';
+        }
+
+        
+    }
 
     let stadium = document.querySelector('#stadiumSelection');
     let package = document.querySelector('#packageSelection');

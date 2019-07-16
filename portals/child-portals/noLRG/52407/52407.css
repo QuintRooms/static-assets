@@ -70,6 +70,10 @@ select#language {
     font-weight: initial !important;
 }
 
+.lrgTipContainer {
+    background: #15151e;
+}
+
 .arnCurrency {
     vertical-align: initial;
 }
@@ -341,6 +345,10 @@ select#language {
     .SinglePropDetail .OnSale .bookRoomCell .yourRateAmount {
         font-size: 24px !important;
     }
+    #theDatePrompt>img{
+        margin-bottom: 0;
+        max-width: 350px;
+    }
 }
 
 @media only screen and (max-width: 565px) {
@@ -350,6 +358,10 @@ select#language {
 
     #language {
         max-width: 100px;
+    }
+
+    #theDatePrompt p {
+        margin-left: 0;
     }
 }
 

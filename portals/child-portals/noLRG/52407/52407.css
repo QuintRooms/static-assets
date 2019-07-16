@@ -42,6 +42,10 @@ header a {
     color: #fff;
 }
 
+header a+a {
+    margin-left: 18px;
+}
+
 #language {
     position: static;
     display: block;

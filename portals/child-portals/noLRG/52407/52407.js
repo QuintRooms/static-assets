@@ -4,7 +4,7 @@ let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Dutch Grand Prix Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Dutch Grand Prix Exclusive Rate');
-noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and it\'s partners.');
+noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

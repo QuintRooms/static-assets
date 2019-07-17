@@ -56,7 +56,7 @@ header a+a {
 #language option[value="portuguese"],
 #language option[value="mandarin"],
 #language option[value="spanish"],
-#language option[value="thai"] {
+#language option[value="thai"]{
     display: none;
 }
 
@@ -85,6 +85,10 @@ select#language {
 
 .lrgTipContainer {
     background: #15151e;
+}
+
+.lrgTipContainer p{
+    font-size: 1.6rem;
 }
 
 .arnCurrency {

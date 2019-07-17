@@ -20,7 +20,8 @@ module.exports = {
         52866: './src/52866.js',
         52867: './src/52867.js',    
         52863: './src/52863.js',      
-        52870: './src/52870.js'
+        52870: './src/52870.js',        
+        52918: './src/52918.js'
     },
     output: {
         filename: '[name].js',

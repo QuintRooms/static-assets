@@ -405,6 +405,7 @@ export default class Portal {
         if (roomsInput) {
             let initialAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
             options.forEach(function(element, index) {
+                element.style.display = 'block';
                 if (index >= initialAdults) {
                     element.style.display = 'none';
                 }

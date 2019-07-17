@@ -87,6 +87,10 @@ select#language {
     background: #15151e;
 }
 
+.lrgTipContainer p{
+    font-size: 1.6rem;
+}
+
 .arnCurrency {
     vertical-align: initial;
 }

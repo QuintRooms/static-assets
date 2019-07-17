@@ -43,12 +43,12 @@ class HotJarVirtualView {
         }
 
         // formula 1 static pages
-        if (bodyClasses.classList.contains('bookroomsLanding')){
+        if (bodyClasses.classList.contains('bookroomsLanding')) {
             this.page_name = 'bookrooms-landing';
             return;
         }
 
-        if (bodyClasses.classList.contains('fowtPage')){
+        if (bodyClasses.classList.contains('fowtPage')) {
             this.page_name = 'fowt-landing';
             return;
         }
@@ -81,4 +81,8 @@ class HotJarVirtualView {
 }
 
 let hotJarVirtualView = new HotJarVirtualView();
-hotJarVirtualView.hitVirtualView();
+if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent)) {
+
+} else {
+    hotJarVirtualView.hitVirtualView();
+}

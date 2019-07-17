@@ -407,6 +407,8 @@ export default class Portal {
             options.forEach(function(element, index) {
                 element.style.display = 'block';
                 if (index >= initialAdults) {
+                    console.log('index: ' + index);
+                    console.log('element: ' + element);
                     element.style.display = 'none';
                 }
             });
@@ -568,6 +570,6 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 1);
 });
 
-        setTimeout(function() {
-            portal.restrictMaxAdults();
-        }, 2000);
+setTimeout(function() {
+    portal.restrictMaxAdults();
+}, 2000);

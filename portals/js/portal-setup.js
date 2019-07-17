@@ -397,46 +397,47 @@ export default class Portal {
         });
     }
 
-    restrictMaxAdults() {
-        let adultsLabel = document.querySelector('.ArnAdults .titleLabel');
-        let adultsInput = document.querySelector('#adults');
-        let roomsInput = document.querySelector('#rooms');
-        let options = document.querySelectorAll('#adults option');
-        if (roomsInput) {
-            let initialAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
-            options.forEach(function(element, index) {
-                element.style.display = 'block';
-                if (index >= initialAdults) {
-                    console.log('index: ' + index);
-                    console.log('element: ' + element);
-                    element.style.display = 'none';
-                }
-            });
+    restrictMaxAdults(searchContainer) {
+        let el = document.querySelector(searchContainer);
+        if (el) {
+            let adultsLabel = el.querySelector('.ArnAdults .titleLabel');
+            let adultsInput = el.querySelector('#adults');
+            let roomsInput = el.querySelector('#rooms');
+            let options = el.querySelectorAll('#adults option');
+            if (roomsInput) {
+                options.forEach(function(element, index) {
+                    let initialAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+                    element.style.display = 'block';
+                    if (index >= initialAdults) {
+                        element.style.display = 'none';
+                    }
+                });
 
-            roomsInput.addEventListener('change', function() {
-                let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+                roomsInput.addEventListener('change', function() {
+                    let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
 
-                if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
-                    adultsLabel.textContent = 'Adults:';
+                    if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
+                        adultsLabel.textContent = 'Adults:';
 
-                    options.forEach(function(element, index) {
-                        element.style.display = 'block';
-                        if (index >= 4) {
-                            element.style.display = 'none';
-                        }
-                    });
-                }
+                        options.forEach(function(element, index) {
+                            element.style.display = 'block';
+                            if (index >= 4) {
+                                element.style.display = 'none';
+                            }
+                        });
+                    }
 
-                if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
-                    adultsLabel.textContent = 'Total Adults:';
-                    options.forEach(function(element, index) {
-                        element.style.display = 'block';
-                        if (index >= maxAdults) {
-                            element.style.display = 'none';
-                        }
-                    });
-                }
-            })
+                    if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
+                        adultsLabel.textContent = 'Total Adults:';
+                        options.forEach(function(element, index) {
+                            element.style.display = 'block';
+                            if (index >= maxAdults) {
+                                element.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            }
         }
     }
 
@@ -503,6 +504,8 @@ export default class Portal {
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate">Exclusive Rate</span></div>');
         this.singlePropExclusiveTag('<div class="exclusiveRate">Exclusive Rate</div>');
 
+        this.restrictMaxAdults('.ArnPrimarySearchContainer');
+        this.restrictMaxAdults('.SimpleSearch');
     }
 }
 
@@ -569,7 +572,3 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.ratesReadyEventMethods();
     }, 1);
 });
-
-setTimeout(function() {
-    portal.restrictMaxAdults();
-}, 2000);

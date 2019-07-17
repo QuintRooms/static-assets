@@ -500,9 +500,7 @@ export default class Portal {
 
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate">Exclusive Rate</span></div>');
         this.singlePropExclusiveTag('<div class="exclusiveRate">Exclusive Rate</div>');
-        setTimeout(function() {
-            this.restrictMaxAdults();
-        }, 2000);
+
     }
 }
 
@@ -569,3 +567,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.ratesReadyEventMethods();
     }, 1);
 });
+
+        setTimeout(function() {
+            portal.restrictMaxAdults();
+        }, 2000);

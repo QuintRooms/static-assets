@@ -51,6 +51,15 @@ header a+a {
     display: block;
 }
 
+#language option[value="german"],
+#language option[value="indonesia"],
+#language option[value="portuguese"],
+#language option[value="mandarin"],
+#language option[value="spanish"],
+#language option[value="thai"] {
+    display: none;
+}
+
 select#language {
     background: #fff;
 }
@@ -349,7 +358,8 @@ select#language {
     .SinglePropDetail .OnSale .bookRoomCell .yourRateAmount {
         font-size: 24px !important;
     }
-    #theDatePrompt>img{
+
+    #theDatePrompt>img {
         margin-bottom: 0;
         max-width: 350px;
     }

@@ -51,11 +51,11 @@ header a+a {
     display: block;
 }
 
-#language option[value="german"]
-#language option[value="indonesia"]
-#language option[value="portuguese"]
-#language option[value="manderin"]
-#language option[value="spanish"]
+#language option[value="german"],
+#language option[value="indonesia"],
+#language option[value="portuguese"],
+#language option[value="mandarin"],
+#language option[value="spanish"],
 #language option[value="thai"]{
     display: none;
 }

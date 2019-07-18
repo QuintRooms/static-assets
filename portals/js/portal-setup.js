@@ -283,12 +283,21 @@ export default class Portal {
      */
     createMapButton() {
         if (this.page_name === 'search-results' && document.querySelector('.openMapBtn') === null) {
-            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"></div>');
+            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"><span class="translateMe">Open Map</span></div>');
             let map = document.querySelector('.ArnRightExtraContainer');
             document.querySelector('.openMapBtn').addEventListener('click', function() {
                 let mapBtn = document.querySelector('.openMapBtn');
                 mapBtn.classList.toggle('closeMapBtn');
                 map.classList.toggle('showMap');
+
+                if(document.querySelector('.closeMapBtn')){
+                    this.textContent = 'X';
+                    return;
+                }
+
+                if(document.querySelector('.openMapBtn')){
+                    this.innerHTML = '<span class="translateMe">Open Map</span>';
+                }
             });
         }
     }
@@ -441,6 +450,18 @@ export default class Portal {
         }
     }
 
+    addPerNightToPrice(page, selector) {
+        let pageElement = document.querySelector(page);
+        if (pageElement) {
+            let price = document.querySelectorAll(selector);
+            price.forEach(function(element) {
+                let parent = element.parentNode
+                if(!parent.querySelector('.perNight'))
+                element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
+            });
+        }
+    }
+
     createParentPortal() {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
@@ -506,6 +527,9 @@ export default class Portal {
 
         this.restrictMaxAdults('.ArnPrimarySearchContainer');
         this.restrictMaxAdults('.SimpleSearch');
+
+        this.addPerNightToPrice('.SearchHotels', '.arnPrice');
+        this.addPerNightToPrice('.SinglePropDetail', '.bestPrice .yourRateAmount');
     }
 }
 

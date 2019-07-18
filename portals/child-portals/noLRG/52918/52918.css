@@ -139,9 +139,7 @@ select#language {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff !important;
-    background: #189183 !important;
-    border: 1px solid #189183 !important;
+    color: #333 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -281,6 +279,10 @@ select#language {
 .SinglePropDetail .bookRoomCell .ArnNightlyRate strong:first-letter {
     font-size: 1em !important;
     vertical-align: initial;
+}
+
+.SinglePropDetail .yourRateAmount {
+    font-size: 24px !important;
 }
 
 @media only screen and (min-width: 800px) {

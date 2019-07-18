@@ -160,7 +160,7 @@ header {
 
 .hamburger:after,
 .hamburger:before {
-    left: 196px;
+    left: 95% !important;
 }
 
 .adminMobile>.hamburger {

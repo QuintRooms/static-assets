@@ -139,9 +139,7 @@ select#language {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff !important;
-    background: #189183 !important;
-    border: 1px solid #189183 !important;
+    color: #333 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,

@@ -150,6 +150,10 @@ header .room-steals {
     font-size: 13px;
 }
 
+.perNight {
+    display: none;
+}
+
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,

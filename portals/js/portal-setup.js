@@ -283,12 +283,21 @@ export default class Portal {
      */
     createMapButton() {
         if (this.page_name === 'search-results' && document.querySelector('.openMapBtn') === null) {
-            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"></div>');
+            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"><span class="translateMe">Open Map</span></div>');
             let map = document.querySelector('.ArnRightExtraContainer');
             document.querySelector('.openMapBtn').addEventListener('click', function() {
                 let mapBtn = document.querySelector('.openMapBtn');
                 mapBtn.classList.toggle('closeMapBtn');
                 map.classList.toggle('showMap');
+
+                if(document.querySelector('.closeMapBtn')){
+                    this.textContent = 'X';
+                    return;
+                }
+
+                if(document.querySelector('.openMapBtn')){
+                    this.innerHTML = '<span class="translateMe">Open Map</span>';
+                }
             });
         }
     }
@@ -446,12 +455,12 @@ export default class Portal {
         if (pageElement) {
             let price = document.querySelectorAll(selector);
             price.forEach(function(element) {
-                element.insertAdjacentHTML('afterEnd', '<span class="translateMe">per night</span>');
+                let parent = element.parentNode
+                if(!parent.querySelector('.perNight'))
+                element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
             });
         }
     }
-
-
 
     createParentPortal() {
         this.insertAssets();

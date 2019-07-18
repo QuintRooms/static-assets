@@ -199,18 +199,10 @@ header {
     color: #fff;
 }
 
-.openMapBtn:before {
-    content: 'Open Map';
-}
-
 .closeMapBtn {
     background: rgba(15, 15, 15, 0.8);
     color: #fff;
     transition: all .5s ease;
-}
-
-.closeMapBtn:before {
-    content: 'X';
 }
 
 .showMap {
@@ -578,7 +570,7 @@ header {
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
 .SearchHotels .ArnPriceCell>a>span,
 .ArnPriceCell a {
-    font-size: 36px;
+    font-size: 24px;
     color: #79cf46 !important;
     font-family: 'Nunito', 'sans-serif';
     font-weight: normal !important;
@@ -596,8 +588,7 @@ header {
     padding: 8px 20px !important;
 }
 
-.SearchHotels .ArnPriceCell>span:after,
-.SinglePropDetail .bestPrice .yourRateAmount:after {
+.perNight {
     content: 'per night';
     display: block;
     font-size: 14px;

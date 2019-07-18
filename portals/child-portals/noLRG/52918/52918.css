@@ -283,6 +283,10 @@ select#language {
     vertical-align: initial;
 }
 
+.SinglePropDetail .yourRateAmount {
+    font-size: 24px !important;
+}
+
 @media only screen and (min-width: 800px) {
 
     .ArnSortByName:hover,

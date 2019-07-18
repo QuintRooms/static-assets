@@ -501,8 +501,8 @@ export default class Portal {
         this.removeSavingsLessThan10();
         this.createMapButton();
 
-        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate">Exclusive Rate</span></div>');
-        this.singlePropExclusiveTag('<div class="exclusiveRate">Exclusive Rate</div>');
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>');
+        this.singlePropExclusiveTag('<div class="exclusiveRate"><span class="translateMe">Exclusive Rate</span></div>');
 
         this.restrictMaxAdults('.ArnPrimarySearchContainer');
         this.restrictMaxAdults('.SimpleSearch');

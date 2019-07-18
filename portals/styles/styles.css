@@ -1903,21 +1903,6 @@ div#overlay {
     font-weight: normal;
 }
 
-#slideit .links a span {
-    background: #ddd;
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
-    margin-right: 6px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-
 #slideit a.fb:hover span {
     background: #3b5998;
 }

@@ -210,7 +210,7 @@ header {
     left: 0 !important;
 }
 
-.ArnNoPropertyResults  .openMapBtn {
+.ArnNoPropertyResults .openMapBtn {
     display: none;
 }
 
@@ -1209,7 +1209,7 @@ div#overlay {
         color: #fff;
     }
 
-    .RootBody .ArnPrimarySearchContainer span{
+    .RootBody .ArnPrimarySearchContainer span {
         display: block;
     }
 
@@ -1677,7 +1677,7 @@ div#overlay {
     padding: 0 8px;
 }
 
-.ArnSubPage .checkbox{
+.ArnSubPage .checkbox {
     margin-top: 0;
 }
 

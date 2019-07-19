@@ -150,9 +150,8 @@ header .room-steals {
     font-size: 13px;
 }
 
-.SearchHotels .ArnPriceCell>span:after,
-.SinglePropDetail .bestPrice .yourRateAmount:after {
-    content: 'per night';
+.perNight {
+    display: none;
 }
 
 .ArnPrimarySearchContainer span,
@@ -590,18 +589,6 @@ header {
 }
 
 @media only screen and (max-width: 800px) {
-    .SearchHotels .percentSavings {
-        left: initial;
-        right: 0;
-        width: 100%;
-        top: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-radius: 10px;
-        z-index: 1;
-        background: #ffcc00;
-    }
-
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
     }
@@ -888,4 +875,25 @@ ul {
         height: 0;
         width: 100%;
     }
+
+    .SearchHotels .geoButton {
+        filter: invert(1);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .SearchHotels .percentSavings {
+        left: initial;
+        right: 0 !important;
+        width: 100%;
+        top: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        z-index: 1;
+        color: #000;
+        background: #ffcc00;
+    }
+
 }

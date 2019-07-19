@@ -9,8 +9,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.translateText('.SearchHotels .PropLimitedAvail .ArnAvailability', 'no availability');
         noLRGPortal.translateText('#HotelNameContainer span', 'hotel name');
         noLRGPortal.translateText('.ArnAdults span', 'adults');
-        // noLRGPortal.updateAttribute('.SearchHotels .ArnPriceCell>span', 'per stay', 'data-value');
-        // noLRGPortal.translateText('.SearchHotels .ArnPriceCell>span', 'per stay');
+
         document.querySelector('footer .container').insertAdjacentElement('beforeBegin', document.querySelector('.ArnSupportLinks.ArnSupportBottom'));
     }, 1);
 });

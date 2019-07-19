@@ -99,9 +99,6 @@ export default class Portal {
                             if (element) {
                                 element.textContent = this.translations[key][keyToTranslate];
                             }
-                            // if (element.querySelector('[data-value]')) {
-                            //     element.setAttribute('data-value', this.translations[key][keyToTranslate]);
-                            // }
                         });
                     }
                 });
@@ -283,7 +280,7 @@ export default class Portal {
      */
     createMapButton() {
         if (this.page_name === 'search-results' && document.querySelector('.openMapBtn') === null) {
-            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn"><span class="translateMe">Open Map</span></div>');
+            document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn">Open Map</div>');
             let map = document.querySelector('.ArnRightExtraContainer');
             document.querySelector('.openMapBtn').addEventListener('click', function() {
                 let mapBtn = document.querySelector('.openMapBtn');
@@ -293,10 +290,6 @@ export default class Portal {
                 if(document.querySelector('.closeMapBtn')){
                     this.textContent = 'X';
                     return;
-                }
-
-                if(document.querySelector('.openMapBtn')){
-                    this.innerHTML = '<span class="translateMe">Open Map</span>';
                 }
             });
         }

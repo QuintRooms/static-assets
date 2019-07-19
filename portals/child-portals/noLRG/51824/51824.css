@@ -52,11 +52,6 @@ h3,
     font-size: 17px;
 }
 
-.SearchHotels .ArnPriceCell>span:after,
-.SinglePropDetail .bestPrice .yourRateAmount:after {
-    content: 'per night';
-}
-
 .ArnPrimarySearchContainer span,
 .ArnLeftListContainer #simpleSearch td,
 #theBookingPage label,

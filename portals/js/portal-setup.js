@@ -88,7 +88,7 @@ export default class Portal {
      * @param  string keyToTranslate key within translations.json to use
      */
     async translateText(selector, keyToTranslate) {
-        let response = await fetch('https://dev-static.hotelsforhope.com/portals/js/translations.json');
+        let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
         this.translations = await response.json()
             .then((data) => {
                 this.translations = data;

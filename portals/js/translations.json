@@ -24,7 +24,8 @@
         "impact": "You made an impact",
         "thank you": "Thank You",
         "congrats": "Congrats",
-        "learn more": "Learn More"
+        "learn more": "Learn More",
+        "date prompt": "By default, hotel options are displayed for the weekend of May 7th-10th, 2020.  Formula 1®, and the FIA, have not confirmed these dates.  Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA's ratified 2020 F1® Calendar."
     },
     "german":
     {
@@ -222,6 +223,7 @@
         "impact": "Je hebt een impact gemaakt",
         "thank you": "Dank je",
         "congrats": "Proficiat",
-        "learn more": "Kom meer te weten"
+        "learn more": "Kom meer te weten",
+        "date prompt": "Standaard worden hotelopties weergegeven voor het weekend van 7-10 mei 2020. Formula 1® en de FIA ​​hebben deze datums niet bevestigd. Boek gerust met vertrouwen, want annuleringen / wijzigingen zijn toegestaan ​​afhankelijk van de geratificeerde FIA 2020 F1®-kalender."
     }
 }

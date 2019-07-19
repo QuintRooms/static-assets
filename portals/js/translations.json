@@ -9,13 +9,12 @@
         "email us": "Email Us",
         "races": "Races",
         "contact us": "Contact Us",
-        "marketing opt in": "I want to receive the latest information by email from H4H including event reminders, relevant news, surveys, offers, and promotions.",
+        "marketing opt in": "Opt in to receive communication from the event and its partners.",
         "open map": "Open Map",
         "adults": "Adults:",
         "total adults": "Total Adults:",
-        "hotel name": "Hotel Name:" ,
+        "hotel name": "Hotel Name:",
         "no availability": "No Availability"
-
     },
     "german":
     {
@@ -187,6 +186,23 @@
         "total adults": "成年人總數:",
         "hotel name": "酒店名稱:",
         "no availability": "無可用性"
-
+    },
+    "dutch":
+    {
+        "f1-policy": "Het F1-logo, FORMULA 1, F1, GRAND PRIX en aanverwante merken zijn handelsmerken van Formula One Licensing BV, een Formule 1-bedrijf. Alle rechten voorbehouden.",
+        "per stay": "per verblijf",
+        "per night": "per nacht",
+        "support": "Ondersteuning",
+        "exclusive rates": "Exclusieve tarieven",
+        "email us": "Email ons",
+        "races": "races",
+        "contact us": "Neem contact met ons op",
+        "marketing opt in": "Meld u aan voor de communicatie van het evenement en zijn partners.",
+        "open map": "Open kaart",
+        "adults": "volwassenen:",
+        "total adults": "Totaal aantal volwassenen:",
+        "hotel name": "Hotel naam:",
+        "no availability": "Geen beschikbaarheid",
+        "group request": "Groepsverzoek"
     }
 }

@@ -38,17 +38,48 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.circuitzandvoort.nl/en/', 'href');
-                noLRGPortal.createHTML('#language', '<a class="hidden-xs" href="https://form.jotform.com/91966384058167" target="_blank"><span id="groupRequest">Group Request</span></a> <a class="hidden-xs" href="https://events.hotelsforhope.com/v6/support?siteId=' + noLRGPortal.site_id + '" target="_blank"><span id="contactUs">Contact Us</span></a>', 'beforeBegin');
-
+                noLRGPortal.updateHTML('header', `
+                    <a class="logo" href="https://www.circuitzandvoort.nl/en/" target="_blank">
+                        <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/52918/images/logo.png" alt="Logo">
+                    </a>
+                    <div class="navCollapse" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
+                        <span class="toggle-bar top-bar"></span> 
+                        <span class="toggle-bar middle-bar"></span> 
+                        <span class="toggle-bar bottom-bar"></span>
+                    </div>
+                    <span class="mobileNav">
+                        <li>
+                            <a ref="https://form.jotform.com/91966384058167" target="_blank"><span id="groupRequest">Group Request</span></a>
+                        </li>
+                        <li>
+                            <a ref="https://events.hotelsforhope.com/v6/support?siteId=52918" target="_blank"><span id="contactUs">Contact Us</span></a>
+                        </li>
+                        <li>
+                            <div id="language" class="languageContainer">
+                                <div id=":0.targetLanguage" style="display: inline;">
+                                    <select id="language" class="goog-te-combo" onchange="arnChangeTheme(this.value)">
+                                        <option class="translateMe" selected="">Select Language</option>
+                                        <option value="standard">English (United States)</option>
+                                        <option value="dutch">Nederlands (Dutch)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                    </span>
+                    `);
                 noLRGPortal.translateText('#slideit > label', 'support');
                 noLRGPortal.translateText('#slideit > section > span', 'support');
                 noLRGPortal.translateText('#slideit .tw div', 'email us');
 
-                if (window.matchMedia('(max-width: 565px)').matches) {
-                    noLRGPortal.updateText('#language .translateMe', 'Language');
+                function openMobileNav() {
+                    let navCollapse = document.querySelector('.navCollapse');
+                    if (navCollapse) {
+                        navCollapse.addEventListener('click', function() {
+                            document.querySelector('.mobileNav').classList.toggle('showNav');
+                        });
+                    }
                 }
+                openMobileNav();
 
                 observer.disconnect();
             }

@@ -20,6 +20,7 @@ noLRGPortal.translateText('.confirmationContainer .thankYou', 'thank you');
 noLRGPortal.translateText('.confirmationContainer .congratsText', 'congrats');
 noLRGPortal.translateText('.confirmationContainer .impact', 'impact');
 noLRGPortal.translateText('.confirmationContainer .learnMore', 'use support form');
+noLRGPortal.translateText('.lrgTip', 'date prompt');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

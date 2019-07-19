@@ -457,7 +457,7 @@ export default class Portal {
 
     createParentPortal() {
         this.insertAssets();
-        this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p>If you would like to speak with a representative, please call <strong>512-691-9555.</strong></p><strong>Phone Center Hours</strong><ul><li>Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li> Call Center Weekend Hours: Closed</li></ul><p>Or, please use the form below, and one of our consultants will respond promptly.</p>');
+        this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p><span id="speakToRep">If you would like to speak with a representative, please call</span> <strong>512-691-9555.</strong></p><strong id="phoneCenterHours">Phone Center Hours</strong><ul><li id="weekdayHours">Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li id="weekendHours"> Call Center Weekend Hours: Closed</li>/ul><p id="useForm">Or, please use the form below, and one of our consultants will respond promptly.</p>');
 
         // open footer links in new tab
         this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');

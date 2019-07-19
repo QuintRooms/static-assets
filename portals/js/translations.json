@@ -14,7 +14,17 @@
         "adults": "Adults:",
         "total adults": "Total Adults:",
         "hotel name": "Hotel Name:",
-        "no availability": "No Availability"
+        "no availability": "No Availability",
+        "group request": "Group Request",
+        "speak to rep": "If you would like to speak with a representative, please call",
+        "phone center hours": "Phone Center Hours",
+        "weeday hours": "Call Center Weekday Hours: 8:00 AM - 5:30 PM CST",
+        "weekend hours": "Call Center Weekend Hours: Closed",
+        "use support form": "Or, please use the form below, and one of our consultants will respond promptly.",
+        "impact": "You made an impact",
+        "thank you": "Thank You",
+        "congrats": "Congrats",
+        "learn more": "Learn More"
     },
     "german":
     {
@@ -203,6 +213,15 @@
         "total adults": "Totaal aantal volwassenen:",
         "hotel name": "Hotel naam:",
         "no availability": "Geen beschikbaarheid",
-        "group request": "Groepsverzoek"
+        "group request": "Groepsverzoek",
+        "speak to rep": "Als u met een vertegenwoordiger wilt spreken, kunt u bellen",
+        "phone center hours": "Openingstijden telefooncentrale",
+        "weeday hours": "Callcenter Openingstijden op werkdagen: 08:00 - 17:30 uur CST",
+        "weekend hours": "Weekenduren van het callcenter: gesloten",
+        "use support form": "Of gebruik het onderstaande formulier en een van onze consultants reageert snel.",
+        "impact": "Je hebt een impact gemaakt",
+        "thank you": "Dank je",
+        "congrats": "Proficiat",
+        "learn more": "Kom meer te weten"
     }
 }

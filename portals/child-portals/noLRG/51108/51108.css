@@ -163,7 +163,13 @@ h3,
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after {
     content: 'per stay';
-    /*content: attr(data-value);*/
+    display: block;
+    font-size: 14px !important;
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 400 !important;
+    color: #333;
+    margin: 5px 0 0 2%;
+    text-align: center;
 }
 
 .SearchHotels .ArnSearchHotelsImg {

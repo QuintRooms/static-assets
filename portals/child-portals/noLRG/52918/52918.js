@@ -6,6 +6,21 @@ noLRGPortal.updateText('title', 'Dutch Grand Prix Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Dutch Grand Prix Exclusive Rate');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
+noLRGPortal.translateText('#groupRequest', 'group request');
+noLRGPortal.translateText('#contactUs', 'contact us');
+noLRGPortal.translateText('#theMarketingOptInAjax label', 'marketing opt in');
+
+noLRGPortal.translateText('#speakToRep', 'speak to rep');
+noLRGPortal.translateText('#phoneCenterHours', 'phone center hours');
+noLRGPortal.translateText('#weekdayHours', 'weekday hours');
+noLRGPortal.translateText('#weekendHours', 'weekend hours');
+noLRGPortal.translateText('#useForm', 'use support form');
+
+noLRGPortal.translateText('.confirmationContainer .thankYou', 'thank you');
+noLRGPortal.translateText('.confirmationContainer .congratsText', 'congrats');
+noLRGPortal.translateText('.confirmationContainer .impact', 'impact');
+noLRGPortal.translateText('.confirmationContainer .learnMore', 'use support form');
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
@@ -14,10 +29,6 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.translateText('.openMapBtn', 'open map');
     }, 1);
 });
-
-noLRGPortal.translateText('#groupRequest', 'group request');
-noLRGPortal.translateText('#contactUs', 'contact us');
-noLRGPortal.translateText('#theMarketingOptInAjax label', 'marketing opt in');
 
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);

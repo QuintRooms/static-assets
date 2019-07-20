@@ -3,6 +3,8 @@ import CUGPortal from '../../../js/portal-setup.js';
 let cugPortal = new CUGPortal();
 
 cugPortal.updateText('title', 'Room Steals');
+noLRGPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/favicon.png', 'href');
+
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

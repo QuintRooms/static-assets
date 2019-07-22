@@ -128,8 +128,9 @@ body.RootBody {
 .logo img {
   margin: 0 auto;
   padding: 5px 0;
-  width: 135px;
+  width: 450px;
   display: block;
+  max-width: 90%;
 }
 
 header {
@@ -193,7 +194,7 @@ header {
 }
 
 #theConfirmationButton:hover {
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .getButton {
@@ -216,6 +217,12 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
   background: #2c328d !important;
+  color: #fff !important;
+}
+
+.bookRoom:hover,
+.bookRoom:active,
+.bookRoom:focus {
   color: #fff !important;
 }
 
@@ -244,12 +251,6 @@ header {
   color: #000 !important;
 }
 
-.bookRoom:hover,
-.bookRoom:active,
-.bookRoom:focus {
-  color: #000 !important;
-}
-
 .selectedTab {
   text-transform: initial;
 }
@@ -269,6 +270,10 @@ header {
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
   margin: 20px 0 20px;
+}
+
+.RootBody .ArnPrimarySearchContainer span {
+  margin: 0 !important;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {

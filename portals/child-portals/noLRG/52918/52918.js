@@ -28,6 +28,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.updateText('.event-rate', 'Official Hotel');
         noLRGPortal.translateText('.perNight', 'per night');
         noLRGPortal.translateText('.openMapBtn', 'open map');
+        // noLRGPortal.translateText('.customTag', 'train access');
 
         noLRGPortal.addCustomTag('Train Access', 24832);
         noLRGPortal.addCustomTag('Train Access', 276769);
@@ -62,7 +63,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateHTML('header', `
-                    <a class="logo" href="https://www.circuitzandvoort.nl/en/" target="_blank">
+                    <a class="logo" href="http://www.dutchgp.com/" target="_blank">
                         <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/52918/images/logo.png" alt="Logo">
                     </a>
                     <div class="navCollapse" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">

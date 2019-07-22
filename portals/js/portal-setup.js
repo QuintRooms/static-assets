@@ -200,7 +200,7 @@ export default class Portal {
      *@param int propId - property id to add the tag to
      */
     addCustomTag(text, propId) {
-        if (document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag')) {} else if (document.querySelector('#theArnProperty' + propId)) {
+        if (! document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag') && document.querySelector('#theArnProperty' + propId)) {
             let propertyThumbnail = document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb');
             propertyThumbnail.insertAdjacentHTML('afterbegin', '<div class="customTag">' + text + '</div>');
         }

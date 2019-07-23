@@ -26,7 +26,7 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52407/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52918/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 header {
@@ -36,6 +36,7 @@ header {
     align-items: center;
     justify-content: flex-end;
     padding: 6px 12px;
+    z-index: 9999;
 }
 
 header a {
@@ -44,6 +45,120 @@ header a {
 
 header a+a {
     margin-left: 18px;
+}
+
+header p {
+    color: #fff;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+    max-width: 550px;
+}
+
+#currentPropDisclaimer {
+    padding: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.mobileNav {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.mobileNav li {
+    list-style: none;
+    transition: all .5s ease;
+}
+
+.mobileNav li:hover,
+.mobileNav li:active,
+.mobileNav:focus {
+    cursor: pointer;
+}
+
+.mobileNav li a {
+    transition: all .5s ease;
+    margin-left: 18px;
+}
+
+.navCollapse {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        display: block;
+    }
+
+    .mobileNav {
+        display: block;
+        height: 0;
+        transform: translate(0, -400px);
+        z-index: 9999;
+        position: relative;
+        background: #000;
+    }
+
+    .showNav {
+        transition: all .5s ease;
+        transform: translate(0, 0);
+        height: initial;
+    }
+
+    .mobileNav li {
+        padding: 8px;
+        border-top: 1px solid #232323;
+    }
+
+    .mobileNav li a {
+        color: #fff
+    }
+
+    .mobileNav li:hover,
+    .mobileNav li:active,
+    .mobileNav:focus {
+        cursor: pointer;
+        background: #f3f3f3;
+    }
+
+
+    .mobileNav li:hover a,
+    .mobileNav li:active a,
+    .mobileNav:focus a {
+        color: #333;
+    }
+
+    header a+a {
+        margin-left: 0;
+    }
+
+    #language {
+        margin-left: 0;
+    }
+
+    .navCollapse {
+        background: #f3f3f3;
+        display: block;
+        width: 35px;
+        float: right;
+        border-radius: 5px;
+        position: absolute;
+        top: 30px;
+        right: 12px;
+    }
+
+    .navCollapse:hover {
+        cursor: pointer;
+    }
+
+    .navCollapse span {
+        background: #585858;
+        display: block;
+        height: 3px;
+        margin: 6px;
+    }
 }
 
 #language {
@@ -56,7 +171,7 @@ header a+a {
 #language option[value="portuguese"],
 #language option[value="mandarin"],
 #language option[value="spanish"],
-#language option[value="thai"]{
+#language option[value="thai"] {
     display: none;
 }
 
@@ -69,7 +184,7 @@ select#language {
 }
 
 .logo img {
-    max-width: 450px;
+    max-width: 275px;
     margin: 0;
     width: 100%;
 }
@@ -87,9 +202,10 @@ select#language {
     background: #15151e;
 }
 
-.lrgTipContainer p{
+.lrgTipContainer p {
     font-size: 1.6rem;
 }
+
 
 .arnCurrency {
     vertical-align: initial;
@@ -139,9 +255,7 @@ select#language {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff !important;
-    background: #189183 !important;
-    border: 1px solid #189183 !important;
+    color: #333 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -283,6 +397,14 @@ select#language {
     vertical-align: initial;
 }
 
+.SinglePropDetail .yourRateAmount {
+    font-size: 24px !important;
+}
+
+#theDatePrompt {
+    top: 20% !important;
+}
+
 @media only screen and (min-width: 800px) {
 
     .ArnSortByName:hover,
@@ -339,10 +461,20 @@ select#language {
         border-bottom: 4px solid #C40000 !important;
     }
 
+
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
         border-bottom: 4px solid #C40000 !important;
+    }
+
+    .SearchHotels .filters,
+    .ArnToggleMap,
+    .ArnToggleMap:active,
+    .ArnToggleMap:focus,
+    .ArnToggleMap:hover,
+    .ArnToggleMap:visited {
+        width: 50% !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -364,8 +496,13 @@ select#language {
     }
 
     #theDatePrompt>img {
-        margin-bottom: 0;
         max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    header p {
+        display: none;
     }
 }
 
@@ -374,12 +511,16 @@ select#language {
         display: none;
     }
 
-    #language {
-        max-width: 100px;
-    }
-
     #theDatePrompt p {
         margin-left: 0;
+    }
+
+    #theDatePrompt>img {
+        margin-bottom: 0;
+    }
+
+    #language {
+        max-width: 150px;
     }
 }
 
@@ -390,7 +531,11 @@ select#language {
     }
 
     .logo img {
-        max-width: 230px;
-        width: 230px;
+        max-width: 80%;
+        width: 80%;
+    }
+
+    .navCollapse {
+        top: 12px;
     }
 }

@@ -47,6 +47,20 @@ header a+a {
     margin-left: 18px;
 }
 
+header p {
+    color: #fff;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+    max-width: 550px;
+}
+
+#currentPropDisclaimer {
+    padding: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
 .mobileNav {
     display: flex;
     align-items: center;
@@ -170,7 +184,7 @@ select#language {
 }
 
 .logo img {
-    max-width: 450px;
+    max-width: 275px;
     margin: 0;
     width: 100%;
 }
@@ -191,6 +205,7 @@ select#language {
 .lrgTipContainer p {
     font-size: 1.6rem;
 }
+
 
 .arnCurrency {
     vertical-align: initial;
@@ -446,14 +461,19 @@ select#language {
         border-bottom: 4px solid #C40000 !important;
     }
 
+
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
         border-bottom: 4px solid #C40000 !important;
     }
 
-    .SearchHotels .filters {
-        height: 62px;
+    .SearchHotels .filters,
+    .ArnToggleMap,
+    .ArnToggleMap:active,
+    .ArnToggleMap:focus,
+    .ArnToggleMap:hover,
+    .ArnToggleMap:visited {
         width: 50% !important;
     }
 
@@ -476,8 +496,13 @@ select#language {
     }
 
     #theDatePrompt>img {
-        margin-bottom: 0;
         max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    header p {
+        display: none;
     }
 }
 
@@ -488,6 +513,10 @@ select#language {
 
     #theDatePrompt p {
         margin-left: 0;
+    }
+
+    #theDatePrompt>img {
+        margin-bottom: 0;
     }
 
     #language {
@@ -502,11 +531,12 @@ select#language {
     }
 
     .logo img {
-        max-width: 250px;
-        width: 250px;
+        max-width: 80%;
+        width: 80%;
     }
 
     .navCollapse {
         top: 12px;
     }
 }
+

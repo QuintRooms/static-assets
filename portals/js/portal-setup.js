@@ -88,7 +88,7 @@ export default class Portal {
      * @param  string keyToTranslate key within translations.json to use
      */
     async translateText(selector, keyToTranslate) {
-        let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
+        let response = await fetch('https://dev-static.hotelsforhope.com/portals/js/translations.json');
         this.translations = await response.json()
             .then((data) => {
                 this.translations = data;
@@ -377,8 +377,8 @@ export default class Portal {
      *@description adds a tag for each contracted property on the searchHotels page
      *@param string sashHTML - the html for the sash - should probably refacator to only need the text as the paramter
      */
-    searchHotelsExclusiveSash(sashHTML) {
-        let eventProp = document.querySelectorAll('.SearchHotels .S16');
+    searchHotelsExclusiveSash(sashHTML, selector) {
+        let eventProp = document.querySelectorAll(selector);
         eventProp.forEach(function(element, index) {
             if (element && element.querySelector('.sash') === null) {
                 element.insertAdjacentHTML('afterBegin', sashHTML);
@@ -515,7 +515,9 @@ export default class Portal {
         this.removeSavingsLessThan10();
         this.createMapButton();
 
-        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>');
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S16');         
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S20');        
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S33');
         this.singlePropExclusiveTag('<div class="exclusiveRate"><span class="translateMe">Exclusive Rate</span></div>');
 
         this.restrictMaxAdults('.ArnPrimarySearchContainer');

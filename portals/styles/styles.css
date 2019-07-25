@@ -2565,7 +2565,8 @@ body.WBResendOrCancelForm {
         overflow: initial;
     }
 
-    .SearchHotels.WK.mobile #lightbox {
+/*    .SearchHotels.WK.mobile #lightbox {
         overflow: scroll;
-    }
+    }*/
 }
+

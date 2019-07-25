@@ -2547,15 +2547,25 @@ body.WBResendOrCancelForm {
         text-align: center !important;
     }
 
-    .SearchHotels .ArnAvailabilityWaitList{
+    .SearchHotels .ArnAvailabilityWaitList {
         bottom: 30px;
         width: 40%;
     }
 }
 
 @media screen and (max-width: 365px) {
-    .SearchHotels .ArnAvailabilityWaitList{
+    .SearchHotels .ArnAvailabilityWaitList {
         bottom: 30px;
         width: 100%;
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .SearchHotels.WK #lightbox {
+        overflow: initial;
+    }
+
+    .SearchHotels.WK.mobile #lightbox {
+        overflow: scroll;
     }
 }

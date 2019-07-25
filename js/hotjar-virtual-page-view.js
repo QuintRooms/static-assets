@@ -1,9 +1,5 @@
 class HotJarVirtualView {
 
-    site_id;
-    page_name;
-    test_name;
-
     constructor(site_id, page_name, test_name) {
         this.site_id = site_id;
         this.page_name = page_name;

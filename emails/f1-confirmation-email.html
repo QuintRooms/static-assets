@@ -213,10 +213,13 @@
                               <td width="50%">Deposit Charged:</td>
                               <td>[DepositCharged,fallback=] [Currency, fallback=]</td>
                             </tr>
+                            [if:Currency=USD]
                             <tr style="vertical-align: top; font-family: 'Avenir';font-size: 14px; color: #939598; line-height: 30px">
                               <td width="50%">Rate Per Night:</td>
                               <td class="mobileRoomRates">[RoomRate,fallback=]</td>
                             </tr>
+                            [else]
+                            [endif]
                           </tbody>
                         </table>
                       </td>
@@ -251,10 +254,13 @@
                             <td width="50%">Balance Due:</td>
                             <td>[BalanceDue,fallback=] [Currency, fallback=]</td>
                           </tr>
+                          [if:Currency=USD]
                           <tr style="vertical-align: top; font-family: 'Avenir';font-size: 14px; color: #939598; line-height: 30px">
                               <td width="50%">Rate Per Night:</td>
                               <td class="roomRates">[RoomRate,fallback=]</td>
                           </tr>
+                          [else]
+                          [endif]
                         </tbody>
                       </table>
                     </td>

@@ -35,3 +35,5 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');

@@ -3,6 +3,7 @@ const cssnano = require("cssnano");
 
 module.exports = {
     entry: {
+        39624: './src/39624.js',
         48729: './src/48729.js',
         51108: './src/51108.js',
         52317: './src/52317.js',

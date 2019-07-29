@@ -160,18 +160,6 @@ h3,
     font-family: 'F1-Regular'
 }
 
-.SearchHotels .ArnPriceCell>span:after,
-.SinglePropDetail .bestPrice .yourRateAmount:after {
-    content: 'per stay';
-    display: block;
-    font-size: 14px !important;
-    font-family: 'Nunito', 'sans-serif';
-    font-weight: 400 !important;
-    color: #333;
-    margin: 5px 0 0 2%;
-    text-align: center;
-}
-
 .SearchHotels .ArnSearchHotelsImg {
     height: initial;
 }
@@ -999,5 +987,84 @@ footer img {
 
     .ArnSubPage {
         padding: 0;
+    }
+}
+
+.stayDates {
+    color: #15151e;
+    font-size: 13px !important;
+}
+
+
+.SearchHotels .ArnRateCell {
+    position: static !important;
+    width: initial;
+}
+
+.SearchHotels .ArnContainer {
+    display: flex;
+}
+
+.SearchHotels .ArnPropImageButtons {
+    top: 75px;
+}
+
+.SearchHotels .ArnPropThumb,
+.SearchHotels .ArnPropThumb img {
+    height: initial !important;
+    min-height: initial !important;
+    max-height: 160px !important;
+}
+
+@media screen and (max-width: 500px) {
+    .SearchHotels .ArnContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .SearchHotels .ArnPropName {
+        width: 100%;
+    }
+
+    .SearchHotels .ArnPropNameLink {
+        margin: 0;
+    }
+
+    .SearchHotels .ArnRateCell {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px !important;
+    }
+
+    .SearchHotels .ArnPropName div.reviewCount {
+        position: static;
+        max-width: 100%;
+        margin: 5px 0 !important;
+    }
+
+    .SearchHotels.mobile .roomCount {
+        text-align: center !important;
+    }
+
+    .SearchHotels .ArnProperty {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SearchHotels .perNight {
+        margin-top: -12px;
+    }
+
+    .arnUnit,
+    .arnCurrency {
+        font-size: 24px !important;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    .SearchHotels .ArnPropName {
+        margin-bottom: 0;
     }
 }

@@ -58,14 +58,18 @@ class Event {
     }
 
     getUnit() {
-        let units = document.querySelector('.units').textContent;
+        let units = document.querySelector('.units');
+        
+        if(units){
+            units = units.textContent;
 
-        if (units.includes('miles')) {
-            this.unit = 'miles';
-        }
+            if (units.includes('miles')) {
+                this.unit = 'miles';
+            }
 
-        if (units.includes('kilometers')) {
-            this.unit = 'kilometers';
+            if (units.includes('kilometers')) {
+                this.unit = 'kilometers';
+            }
         }
     }
 

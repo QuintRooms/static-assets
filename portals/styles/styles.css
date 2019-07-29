@@ -558,16 +558,6 @@ header {
     font-weight: 300;
 }
 
-.SinglePropDetail .originalRateContainer+.originalRateAmount:first-letter,
-.SinglePropDetail .bookRoomCell .ArnNightlyRate strong:first-letter {
-    font-size: .5em !important;
-    vertical-align: super;
-}
-
-.searchingRates::first-letter {
-    font-size: 1em !important;
-}
-
 .SearchHotels .ArnPropName div.yourRateContainer span,
 .ArnPriceCell>span,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
@@ -597,7 +587,7 @@ header {
     font-family: 'Nunito', 'sans-serif';
     font-weight: 400 !important;
     color: #333;
-    margin: 5px 0 0 2%;
+    margin: 5px 0 5px 0;
     text-align: center;
 }
 

@@ -190,7 +190,9 @@ export default class Portal {
     updateAttribute(selector, argument, attribute) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
-            element.setAttribute(attribute, argument);
+            if(element){
+                element.setAttribute(attribute, argument);
+            }
         });
     }
 
@@ -214,7 +216,9 @@ export default class Portal {
     updateText(selector, text) {
         let classList = document.querySelectorAll(selector);
         classList.forEach(function(element, index) {
-            element.textContent = text;
+            if(element){
+                element.textContent = text;
+            }
         });
     }
 

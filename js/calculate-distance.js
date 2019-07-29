@@ -121,4 +121,4 @@ jQuery(document).on("ratesReadyEvent", function() {
     event.getPropertyLatLong().then(() => {
         event.updateDistance();
     });
-});
+}); 

@@ -679,6 +679,10 @@ header>a {
     color: #000;
 }
 
+.SearchHotels .ArnPropName {
+    width: 52%;
+}
+
 .SinglePropDetail .ArnPropDescription {
     color: #fff;
 }
@@ -794,6 +798,25 @@ header>a {
 .HoldRoomsForm .ArnRightListContainer input {
     width: 100%;
     max-width: 205px;
+}
+
+@media screen and (min-width: 800px) {
+
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb .ArnImageLink {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        width: 22%;
+    }
+
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb img {
+        height: unset !important;
+        min-height: unset !important;
+    }
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
@@ -974,6 +997,15 @@ footer img {
     display: none !important;
 }
 
+@media only screen and (min-width: 500px) and (max-width: 1150px) {
+    .SearchHotels .ArnPropThumb {
+        width: 20%;
+    }
+
+    .SearchHotels .ArnPropName {
+        width: 55%;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     .SearchHotels .bottomPager .ArnPages a {
@@ -987,6 +1019,11 @@ footer img {
 
     .ArnSubPage {
         padding: 0;
+    }
+
+    .perNight {
+        line-height: 1;
+        margin: -5px 0 5px 0;
     }
 }
 
@@ -1009,13 +1046,6 @@ footer img {
     top: 75px;
 }
 
-.SearchHotels .ArnPropThumb,
-.SearchHotels .ArnPropThumb img {
-    height: initial !important;
-    min-height: initial !important;
-    max-height: 160px !important;
-}
-
 @media screen and (max-width: 500px) {
     .SearchHotels .ArnContainer {
         flex-direction: column;
@@ -1024,6 +1054,7 @@ footer img {
 
     .SearchHotels .ArnPropName {
         width: 100%;
+        line-height: 1;
     }
 
     .SearchHotels .ArnPropNameLink {
@@ -1052,15 +1083,10 @@ footer img {
         flex-direction: column;
     }
 
-    .SearchHotels .perNight {
-        margin-top: -12px;
-    }
-
     .arnUnit,
     .arnCurrency {
         font-size: 24px !important;
     }
-
 }
 
 @media screen and (max-width: 420px) {

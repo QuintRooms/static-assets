@@ -54,13 +54,13 @@ class Event {
     }
 
     getVenueName() {
-        this.venueName = document.querySelector('meta[name="SearchLocation"]').getAttribute('content');
+        this.venueName = document.querySelector('meta[name="SearchLocation"]');
     }
 
     getUnit() {
         let units = document.querySelector('.units');
-        
-        if(units){
+
+        if (units) {
             units = units.textContent;
 
             if (units.includes('miles')) {
@@ -87,22 +87,24 @@ class Event {
                     let data = response.json();
                     return data;
                 }).then((data) => {
-                    distanceElement.forEach(function(element) {
-                        let parent = element.closest('.ArnProperty');
-                        if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
-                            if (self.unit == 'miles') {
-                                data['mi'] = parseFloat(data['mi']);
-                                data['mi'] = data['mi'].toFixed(1);
-                                element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
-                            }
+                    if (distanceElement) {
+                        distanceElement.forEach(function(element) {
+                            let parent = element.closest('.ArnProperty');
+                            if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
+                                if (self.unit == 'miles') {
+                                    data['mi'] = parseFloat(data['mi']);
+                                    data['mi'] = data['mi'].toFixed(1);
+                                    element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
+                                }
 
-                            if (self.unit == 'kilometers') {
-                                data['km'] = parseFloat(data['km']);
-                                data['km'] = data['km'].toFixed(1);
-                                element.textContent = data['km'] + ' ' + self.unit + ' to ' + self.venueName;
+                                if (self.unit == 'kilometers') {
+                                    data['km'] = parseFloat(data['km']);
+                                    data['km'] = data['km'].toFixed(1);
+                                    element.textContent = data['km'] + ' ' + self.unit + ' to ' + self.venueName;
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }).catch(() => {
                     console.log('There was an error trying to make your request');
                 });
@@ -121,4 +123,4 @@ jQuery(document).on("ratesReadyEvent", function() {
     event.getPropertyLatLong().then(() => {
         event.updateDistance();
     });
-}); 
+});

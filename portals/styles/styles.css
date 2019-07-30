@@ -558,10 +558,6 @@ header {
     font-weight: 300;
 }
 
-.searchingRates::first-letter {
-    font-size: 1em !important;
-}
-
 .SearchHotels .ArnPropName div.yourRateContainer span,
 .ArnPriceCell>span,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,

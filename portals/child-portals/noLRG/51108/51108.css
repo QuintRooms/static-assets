@@ -1036,6 +1036,7 @@ footer img {
 
 .SearchHotels .ArnRateCell {
     position: static !important;
+    align-self: center;
     width: initial;
 }
 

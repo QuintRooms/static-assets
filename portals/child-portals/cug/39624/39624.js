@@ -39,3 +39,49 @@ waitForElementToLoad('header');
 let script = document.createElement('script');
 script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
 document.head.appendChild(script);
+
+function moveSearch() {
+
+    // search stuff
+    let searchContainer = document.querySelector('.ArnQuadSearchContainer');
+    document.querySelector('.ArnSearchContainerMainDiv').insertAdjacentElement('afterBegin', searchContainer);
+    let cityInput = document.querySelector('#city');
+    document.querySelector('#CitySearchContainer').textContent = 'City';
+    let checkIn = document.querySelector('#theCheckIn');
+    let checkOut = document.querySelector('#theCheckOut');
+    let rooms = document.querySelector('#rooms');
+    let adults = document.querySelector('#adults');
+    let sort = document.querySelector('#SortControlsContainer');
+
+    // property stuff
+    let propertyContainer = document.querySelector('#currentPropertyPage');
+    let properties = propertyContainer.querySelectorAll('.ArnProperty');
+
+    properties.forEach(function(element) {
+        if (element.querySelector('.arnUnit')) {
+            let price = element.querySelector('.arnUnit').textContent;
+            let unitPrice = price.split('.')[0];
+            price = unitPrice;
+        }
+    });
+
+
+    document.querySelector('body').insertAdjacentHTML('beforeEnd', `
+        <style>
+            .ArnPropNameLink{
+                font-size: 18px;
+            }
+            .SearchHotels .ArnRateCell{
+                position: static;
+            }
+            .SearchHotels .ArnPropAddress{
+                display: none;
+            }
+            .SearchHotels .ArnPropAddress, .ArnGoCitySearch, .ArnGoLandmarkSearch, .ArnGoAirportSearch, .ArnSearchHotelsImg, .ArnSearchHotelsImg + b, .ArnSecondarySearchOuterContainer, #HotelNameContainer{
+                display: none;
+            }
+
+        </style>
+
+    `);
+}

@@ -55,6 +55,9 @@ class Event {
 
     getVenueName() {
         this.venueName = document.querySelector('meta[name="SearchLocation"]');
+        if(this.venueName){
+            this.venueName = this.venueName.getAttribute('content')
+        }
     }
 
     getUnit() {

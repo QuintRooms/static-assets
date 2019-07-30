@@ -34,28 +34,30 @@ class Event {
         let property = document.querySelectorAll('.ArnProperty');
 
         property.forEach(function(element, index) {
-            let to_lat = element.getAttribute('latitude');
-            to_lat = parseFloat(to_lat);
-            to_lat = to_lat.toFixed(4);
-            element.setAttribute('latitude', to_lat);
+            if (element) {
+                let to_lat = element.getAttribute('latitude');
+                to_lat = parseFloat(to_lat);
+                to_lat = to_lat.toFixed(4);
+                element.setAttribute('latitude', to_lat);
 
-            let to_long = element.getAttribute('longitude');
-            to_long = parseFloat(to_long);
-            to_long = to_long.toFixed(4);
-            element.setAttribute('longitude', to_long);
+                let to_long = element.getAttribute('longitude');
+                to_long = parseFloat(to_long);
+                to_long = to_long.toFixed(4);
+                element.setAttribute('longitude', to_long);
 
-            if (to_lat && to_long) {
-                self.params.push([
-                    [self.from_lat, self.from_long],
-                    [to_lat, to_long]
-                ]);
+                if (to_lat && to_long) {
+                    self.params.push([
+                        [self.from_lat, self.from_long],
+                        [to_lat, to_long]
+                    ]);
+                }
             }
         });
     }
 
     getVenueName() {
         this.venueName = document.querySelector('meta[name="SearchLocation"]');
-        if(this.venueName){
+        if (this.venueName) {
             this.venueName = this.venueName.getAttribute('content')
         }
     }
@@ -124,6 +126,8 @@ let event = new Event();
 jQuery(document).on("ratesReadyEvent", function() {
     event.params = [];
     event.getPropertyLatLong().then(() => {
-        event.updateDistance();
+        if (event.from_lat != null && event.from_long != null) {
+            event.updateDistance();
+        }
     });
 });

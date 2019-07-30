@@ -800,7 +800,13 @@ header>a {
     max-width: 205px;
 }
 
-@media screen and (min-width: 800px) {
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+    #SortControlsContainer .hamburger:before {
+        border-top-color: #e10600;
+    }
+}
+
+@media only screen and (min-width: 800px) {
 
     .SearchHotels .ArnPropThumb,
     .SearchHotels .ArnPropThumb .ArnImageLink {
@@ -814,18 +820,9 @@ header>a {
 
     .SearchHotels .ArnPropThumb,
     .SearchHotels .ArnPropThumb img {
-        height: unset !important;
-        min-height: unset !important;
+        height: 200px !important;
+        min-height: 200px !important;
     }
-}
-
-@media only screen and (max-width: 1000px) and (min-width: 800px) {
-    #SortControlsContainer .hamburger:before {
-        border-top-color: #e10600;
-    }
-}
-
-@media only screen and (min-width: 800px) {
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
@@ -916,6 +913,10 @@ header>a {
     #language {
         height: initial;
         margin-left: 0;
+    }
+
+    .SearchHotels .roomCount {
+        text-align: center;
     }
 }
 

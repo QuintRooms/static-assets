@@ -1094,4 +1094,7 @@ footer img {
     .SearchHotels .ArnPropName {
         margin-bottom: 0;
     }
+    .ArnPropThumb img{
+        margin: 0;
+    }
 }

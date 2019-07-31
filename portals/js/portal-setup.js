@@ -373,7 +373,10 @@ export default class Portal {
     donationAmount() {
         if (document.querySelector('.ConfirmationForm')) {
             let nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
+
+            if(document.querySelector('.topRoomFunding') && nights != null){
             document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ ' + nights * 2 + ' donation</span> to <span>RoomFunding</span>.  And that\'s at no cost to you.</p>';
+            }
         }
     }
 

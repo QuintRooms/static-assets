@@ -4,6 +4,8 @@ let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Lollapalooza Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Lollapalooza Exclusive Rate');
+noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
+
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -25,7 +27,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.lollapalooza.com/', 'href');
-                createHTML('.logo', '<span class="event-dates">August 1-4, 2019 - Grant Park, Chicago</span>', 'afterEnd');
+                noLRGPortal.createHTML('.logo', '<span class="event-dates">Jul 30 - Aug 2, 2020 - Grant Park, Chicago</span>', 'afterEnd');
                 observer.disconnect();
             }
         }

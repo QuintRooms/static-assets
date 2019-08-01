@@ -11,14 +11,14 @@
 
 @font-face {
     font-family: 'Ovink-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Bold.eot?#iefix') format("embedded-opentype"),
-        url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Bold.ttf") format("truetype");
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Bold.eot?#iefix') format("embedded-opentype"),
+        url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Ovink-Medium';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Medium.eot?#iefix') format("embedded-opentype"),
-        url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Medium.ttf") format("truetype");
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Medium.eot?#iefix') format("embedded-opentype"),
+        url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52975/fonts//Ovink-Medium.ttf") format("truetype");
 }
 
 body {
@@ -43,11 +43,11 @@ body.RootBody {
 
 header {
     background: #7018d7;
-    border-bottom: 3px solid #fff;
+    border-bottom: 2px solid #fff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 6px 12px;
+    padding: 24px 18px;
 }
 
 header a {
@@ -60,7 +60,7 @@ header a {
 
 .logo img {
     max-width: 200px;
-    margin: 0;
+    margin: 0 12px 0 0;
 }
 
 .event-dates{
@@ -107,8 +107,6 @@ header a {
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
     font-family: 'Futura-Book' !important;
-    border: 2px solid #00af9a;
-
 }
 
 .SearchHotels .bottomPager .ArnPages a,
@@ -136,16 +134,16 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #ac8d45 !important;
-    border-left: 1px solid #ac8d45 !important;
-    border-right: 1px solid #ac8d45 !important;
+    border-top: 1px solid #fff !important;
+    border-left: 1px solid #fff !important;
+    border-right: 1px solid #fff !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #ac8d45 !important;
+    background: #00af9a !important;
 
 }
 
@@ -159,7 +157,6 @@ header a {
 .bookRoom:focus,
 .bookRoom:active {
     background: #008d7c  !important;
-    border: 2px solid #008d7c  !important;
     color: #fff !important;
 }
 

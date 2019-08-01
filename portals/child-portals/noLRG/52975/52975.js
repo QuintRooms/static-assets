@@ -25,7 +25,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.lollapalooza.com/', 'href');
                 noLRGPortal.createHTML('.logo', '<span class="event-dates">Jul 30 - Aug 2, 2020 - Grant Park, Chicago</span>', 'afterEnd');
                 observer.disconnect();
@@ -36,4 +36,4 @@ function waitForElementToLoad(elementWaitingFor) {
     observer.observe(element, config);
 };
 
-waitForElementToLoad('header');
+waitForElementToLoad('header');  

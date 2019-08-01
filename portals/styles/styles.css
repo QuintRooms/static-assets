@@ -93,6 +93,10 @@ header {
 
 #language {
     margin-left: 24px;
+    display: none;
+}
+.SearchHotels #language, .RootBody #language{
+    display: block;
 }
 
 .logo img {

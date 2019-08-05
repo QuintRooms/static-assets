@@ -109,7 +109,7 @@ p {
 
 @font-face {
   font-family: "Muli";
-  src: "./fonts/Muli-Regular.ttf";
+  src: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52974/fonts/Muli-Regular.ttf);
 }
 
 body,
@@ -127,7 +127,7 @@ body.RootBody {
 
 .logo img {
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 20px;
   width: 450px;
   display: block;
   max-width: 90%;
@@ -234,7 +234,7 @@ span.event-rate {
 }
 
 .HoldRoomsForm .ArnContentButtonWide:hover {
-  background: #e3a44d !important;
+  background: #9a1920 !important;
   color: #fff !important;
 }
 
@@ -308,7 +308,7 @@ span.event-rate {
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
   border-bottom: 1px solid #9a1920;
-  color: black !important;
+  color: #fff !important;
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
@@ -363,27 +363,27 @@ span.event-rate {
 }
 
 .arnMapMarker {
-  background: #e3a44d;
-  border: #e3a44d;
+  background: #9a1920;
+  border: #9a1920;
 }
 
 .arnMapMarker.highlight {
-  background: #e3a44d !important;
-  border-color: #e3a44d !important;
+  background: #9a1920 !important;
+  border-color: #9a1920 !important;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-  border-top-color: #e3a44d !important;
+  border-top-color: #9a1920 !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-  border-top-color: #e3a44d;
+  border-top-color: #9a1920;
   transition: all 0.3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-  background: #e3a44d;
+  background: #9a1920;
   border: #fff;
   transition: all 0.3s ease;
 }
@@ -411,7 +411,7 @@ span.event-rate {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-  background-color: #e3a44d;
+  background-color: #221e20;
   color: rgb(255, 255, 255) !important;
 }
 
@@ -441,11 +441,15 @@ span.event-rate {
 }
 
 .ArnPropName div.ratingCount {
-  background: #e3a44d;
+  background: #38383f;
 }
 
 .exclusiveRate {
   display: none;
+}
+
+.arnCurrency {
+  font-size: 1.3em !important;
 }
 
 .sash {
@@ -454,7 +458,7 @@ span.event-rate {
 
 div.autocomplete ul li.selected {
   background-color: #9a1920 !important;
-  color: #000 !important;
+  color: #fff !important;
 }
 
 input#theSubmitButton:hover {

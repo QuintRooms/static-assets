@@ -109,7 +109,7 @@ p {
 
 @font-face {
   font-family: "Muli";
-  src: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52974/fonts/Muli-Regular.ttf);
+  src: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52974/fonts/Muli-Regular.ttf);
 }
 
 body,
@@ -121,7 +121,7 @@ body,
 }
 
 body.RootBody {
-  background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/52974/images/banner.jpeg)
+  background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52974/images/banner.jpeg)
     no-repeat center center / cover !important;
 }
 

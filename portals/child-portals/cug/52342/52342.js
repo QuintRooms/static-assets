@@ -4,7 +4,7 @@ let cugPortal = new CUGPortal();
 
 cugPortal.updateText('title', 'Room Steals');
 cugPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.png', 'href');
-noLRGPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the latest information by email from Room Steals including event reminders, relevant news, surveys, offers, and promotions.');
+cugPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the latest information by email from Room Steals including event reminders, relevant news, surveys, offers, and promotions.');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

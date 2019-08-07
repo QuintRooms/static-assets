@@ -40,6 +40,7 @@ let script = document.createElement('script');
 script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
 document.head.appendChild(script);
 
-if(document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')){
+if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
     window.location.href = 'https://roomsteals.com/login';
+    document.querySelector('body').style.display = 'none';
 }

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Brought';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.eot?#iefix') format('embedded-opentype'),
-        url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.eot?#iefix') format('embedded-opentype'),
+        url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.ttf') format('truetype');
 }
 
 /* Font Updates */
@@ -132,7 +132,7 @@ body,
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/images/banner.jpeg) no-repeat center center / cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51663/images/banner.jpeg) no-repeat center center / cover !important;
 }
 
 .logo img {
@@ -144,7 +144,7 @@ body.RootBody {
 }
 
 header {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/images/header.png);
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51663/images/header.png);
     border-bottom: 4px solid #2e315d;
 }
 

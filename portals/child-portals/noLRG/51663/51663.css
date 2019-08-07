@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Brought';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.eot?#iefix') format("embedded-opentype"),
+        url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/fonts/Brought.ttf') format("truetype");
+}
+
+/* Font Updates */
+.modifySearch,
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited,
+#legend,
+ {
+    font-family: 'Brought', 'Nunito', 'sans-serif';
+    font-weight: 300;
+}
+
 .detailsTitle,
 #theBookingPage fieldset.WBGuestFormFields legend {
     letter-spacing: initial;
@@ -120,7 +137,7 @@ body.RootBody {
 
 .logo img {
     margin: 0 auto;
-    padding: 5px 0;
+    padding: 24px 0;
     width: 800px;
     display: block;
     max-width: 100%;
@@ -128,6 +145,7 @@ body.RootBody {
 
 header {
     background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51663/images/header.png);
+    border-bottom: 4px solid #2e315d;
 }
 
 @media screen and (max-width: 768px) {
@@ -342,7 +360,7 @@ span.event-rate {
 }
 
 .arn-leaflet-reset-button {
-    background: #15151e;
+    background: #2e315d;
     border: 1px solid transparent !important;
     transition: all 0.2s linear;
 }
@@ -576,6 +594,9 @@ input#theSubmitButton:hover {
     color: white !important;
 }
 
-#slideit label.open:hover, #slideit label.open:focus, #slideit label.open, #slideit span.title{
+#slideit label.open:hover,
+#slideit label.open:focus,
+#slideit label.open,
+#slideit span.title {
     background: #2e315d;
 }

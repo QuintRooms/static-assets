@@ -922,6 +922,7 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
+
     .SinglePropDetail .ArnPropNameLink,
     .SinglePropDetail .ArnPropNameLink:active,
     .SinglePropDetail .ArnPropNameLink:visited {
@@ -938,5 +939,9 @@ ul {
 
     .SinglePropDetail .ArnPropName div.ratingCount {
         top: 6px;
+    }
+
+    .SinglePropDetail .bestPrice .yourRateContainer {
+        margin-top: 8px;
     }
 }

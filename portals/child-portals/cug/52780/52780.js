@@ -256,3 +256,5 @@ if (document.querySelector('.RootBody')) {
 window.onload = function() {
     cugPortal.updateText('.RootBody .modifySearch', 'C3 Travel, whether you\'re travelling for personal stay or business, we\'ve got you covered');
 }
+
+cugPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');

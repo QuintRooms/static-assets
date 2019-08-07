@@ -33,3 +33,5 @@ waitForElementToLoad('header');
 
 // Custom Banner Ad
 noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad-unit" target="_blank" href="https://farmaid.org"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/ad-unit.jpg"></a>', 'beforeEnd');
+
+noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');

@@ -86,6 +86,7 @@ input {
         font-size: 22px;
         line-height: 30px;
     }
+
     h3 {
         font-size: 20px;
         line-height: 24px;
@@ -120,7 +121,7 @@ body.RootBody {
 .logo img {
     margin: 0 auto;
     padding: 5px 0;
-    width: 100px;
+    width: 800px;
     display: block;
     max-width: 100%;
 }
@@ -134,6 +135,7 @@ header {
         font-size: 22px;
         line-height: 30px;
     }
+
     h3 {
         font-size: 20px;
         line-height: 24px;
@@ -480,6 +482,7 @@ input#theSubmitButton:hover {
 }
 
 @media only screen and (min-width: 800px) {
+
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
     .ArnSortByType:hover,
@@ -506,9 +509,11 @@ input#theSubmitButton:hover {
     .ad-unit {
         display: none;
     }
+
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
     }
+
     .SearchHotels .ArnSortByName:hover,
     .SearchHotels .ArnSortByClass:hover,
     .SearchHotels .ArnSortByType:hover,
@@ -531,18 +536,22 @@ input#theSubmitButton:hover {
         border-top: 4px solid #e3a44d;
         border-bottom: 4px solid #e3a44d !important;
     }
+
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
         border-bottom: 4px solid #e3a44d;
     }
+
     .SearchHotels .ArnSearchContainerMainTable {
         top: 0;
     }
+
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
     }
+
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
@@ -565,4 +574,8 @@ input#theSubmitButton:hover {
 .ArnGoCitySearch.selectedTab {
     background: #2e315d !important;
     color: white !important;
+}
+
+#slideit label.open:hover, #slideit label.open:focus, #slideit label.open, #slideit span.title{
+    background: #2e315d;
 }

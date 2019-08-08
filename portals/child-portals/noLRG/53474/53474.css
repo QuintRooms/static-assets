@@ -107,11 +107,6 @@ p {
   font-weight: 600;
 }
 
-@font-face {
-  font-family: "Grota";
-  src: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53474/fonts/GrotaSansAltRd-Black.otf);
-}
-
 body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
@@ -397,13 +392,6 @@ span.event-rate {
   transition: all 0.3s ease;
 }
 
-.ArnPropNameLink,
-.ArnContentGeneralInfo legend,
-.modifySearch,
-.QualifiedRates legend {
-  font-family: "Grota";
-}
-
 .specialEventRate,
 .hostHotel {
   background: #00a3df;
@@ -433,11 +421,11 @@ span.event-rate {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-  background: #04539e;
+  background: #00a3df;
 }
 
 #slideit section {
-  border-bottom: #04539e;
+  border-bottom: #00a3df;
 }
 
 #slideit label.open:hover,
@@ -447,11 +435,11 @@ span.event-rate {
 
 #slideit label.open:hover,
 #slideit label.open:focus {
-  background: #38383f;
+  background: #04539e;
 }
 
 .ArnPropName div.ratingCount {
-  background: #38383f;
+  background: #04539e;
 }
 
 .exclusiveRate {

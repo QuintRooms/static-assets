@@ -353,7 +353,7 @@ span.event-rate {
 }
 
 .arn-leaflet-reset-button {
-  background: #04539e;
+  background: #ff1d52;
   border: 1px solid transparent !important;
   transition: all 0.2s linear;
 }
@@ -361,7 +361,7 @@ span.event-rate {
 .arn-leaflet-reset-button:hover,
 .arn-leaflet-reset-button:focus,
 .arn-leaflet-reset-button:active {
-  background: #38383f;
+  background: #dc0a3c;
   border: 1px solid transparent !important;
 }
 

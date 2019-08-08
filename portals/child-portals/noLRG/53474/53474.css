@@ -397,7 +397,7 @@ span.event-rate {
   transition: all 0.3s ease;
 }
 
-.ArnPropName span,
+.ArnPropNameLink,
 .ArnContentGeneralInfo legend,
 .modifySearch,
 .QualifiedRates legend {

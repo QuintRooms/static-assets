@@ -25,6 +25,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51662/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://lifeisbeautiful.com', 'href');
+                document.querySelector('header').insertAdjacentHTML('beforeEnd', '<h2>Artists & Vendors</h2>');
                 observer.disconnect();
             }
         }

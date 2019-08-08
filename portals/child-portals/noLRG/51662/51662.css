@@ -356,6 +356,11 @@ span.event-rate {
   background: #ff1d52;
   border: 1px solid transparent !important;
   transition: all 0.2s linear;
+  top: 1rem;
+}
+
+.arn-leaflet-control-zoom {
+  top: 12rem;
 }
 
 .arn-leaflet-reset-button:hover,

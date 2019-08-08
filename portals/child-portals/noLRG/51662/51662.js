@@ -2,13 +2,13 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'Music City Food + Wine Rooms');
-noLRGPortal.updateRoomDescription('.RoomDescription', 'Music City Food + Wine Exclusive Rate');
+noLRGPortal.updateRoomDescription('.RoomDescription', "Life is Beautiful Exclusive Rate");
 
 jQuery(document).on('ratesReadyEvent', function () {
     setTimeout(function () {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+        noLRGPortal.addCustomTag('Host Hotel', 41188);
     }, 1);
 });
 
@@ -23,8 +23,8 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/' + '51662' + '/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.musiccityfoodandwinefestival.com/', 'href');
+                noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51662/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://lifeisbeautiful.com', 'href');
                 observer.disconnect();
             }
         }
@@ -34,3 +34,5 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');

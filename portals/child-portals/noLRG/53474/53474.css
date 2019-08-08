@@ -117,7 +117,6 @@ body,
 .ArnRoomsOnHold,
 .ArnRoomsOnHold td {
   font-weight: 400;
-  font-family: "Grota";
 }
 
 body.RootBody {
@@ -169,6 +168,14 @@ span.event-rate {
 .ad-unit img {
   display: block;
   margin: 24px auto;
+}
+
+.modifySearch {
+  font-family: "Grota" !important;
+}
+
+.QualifiedRates legend {
+  font-family: "Grota" !important;
 }
 
 /* Buttons */
@@ -227,7 +234,7 @@ span.event-rate {
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-  background: #77160c !important;
+  background: #0587b7 !important;
   color: #fff !important;
 }
 

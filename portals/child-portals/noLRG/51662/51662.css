@@ -226,7 +226,7 @@ span.event-rate {
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-  background: #0587b7 !important;
+  background: #dc0a3c !important;
   color: #fff !important;
 }
 
@@ -366,34 +366,34 @@ span.event-rate {
 }
 
 .arnMapMarker {
-  background: #04539e;
-  border: #04539e;
+  background: #ff1d52;
+  border: #ff1d52;
 }
 
 .arnMapMarker.highlight {
-  background: #04539e !important;
-  border-color: #04539e !important;
+  background: #ff1d52 !important;
+  border-color: #ff1d52 !important;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-  border-top-color: #04539e !important;
+  border-top-color: #ff1d52 !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-  border-top-color: #04539e;
+  border-top-color: #ff1d52;
   transition: all 0.3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-  background: #04539e;
+  background: #ff1d52;
   border: #fff;
   transition: all 0.3s ease;
 }
 
 .highlight > .arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #04539e;
+  border-top-color: #ff1d52;
   transition: all 0.3s ease;
 }
 
@@ -414,7 +414,7 @@ span.event-rate {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-  background-color: #04539e;
+  background-color: #23232d;
   color: rgb(255, 255, 255) !important;
 }
 

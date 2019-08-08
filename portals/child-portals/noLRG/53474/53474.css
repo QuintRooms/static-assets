@@ -135,7 +135,7 @@ header {
   background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53474/images/header-bg.png) !important;
   width: 100%;
   margin: 0;
-  padding: 40px 0 0 0;
+  padding: 35px 0;
   text-align: center;
   position: relative;
 }
@@ -168,14 +168,6 @@ span.event-rate {
 .ad-unit img {
   display: block;
   margin: 24px auto;
-}
-
-.modifySearch {
-  font-family: "Grota" !important;
-}
-
-.QualifiedRates legend {
-  font-family: "Grota" !important;
 }
 
 /* Buttons */
@@ -374,35 +366,42 @@ span.event-rate {
 }
 
 .arnMapMarker {
-  background: #00a3df;
-  border: #00a3df;
+  background: #04539e;
+  border: #04539e;
 }
 
 .arnMapMarker.highlight {
-  background: #00a3df !important;
-  border-color: #00a3df !important;
+  background: #04539e !important;
+  border-color: #04539e !important;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-  border-top-color: #00a3df !important;
+  border-top-color: #04539e !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-  border-top-color: #00a3df;
+  border-top-color: #04539e;
   transition: all 0.3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-  background: #00a3df;
+  background: #04539e;
   border: #fff;
   transition: all 0.3s ease;
 }
 
 .highlight > .arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #00a3df;
+  border-top-color: #04539e;
   transition: all 0.3s ease;
+}
+
+.ArnPropName span,
+.ArnContentGeneralInfo legend,
+.modifySearch,
+.QualifiedRates legend {
+  font-family: "Grota";
 }
 
 .specialEventRate,

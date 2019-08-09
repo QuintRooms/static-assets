@@ -342,7 +342,14 @@
             <tr>
               <td>
                 <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Reservation Modification</div>
-                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">To cancel a reservation, <a href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteid,fallback=39560]">click here</a>. For further assistance or if you have questions about your reservation, contact F1® Rooms Powered by Hotels for Hope at +1 512-691-9555 or <a href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at +[HotelPhone,fallback=]</div>
+                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">To cancel a reservation, <a href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteid,fallback=39560]">click here</a>. For further assistance or if you have questions about your reservation, contact F1® Rooms Powered by Hotels for Hope at +1 512-691-9555 or 
+
+                [if:siteid=52918]
+                  <a href="mailto:dutchgpsupport@hotelsforhope.com">dutchgpsupport@hotelsforhope.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at +[HotelPhone,fallback=]</div>
+                [else]
+                  <a href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at +[HotelPhone,fallback=]</div>
+                [endif]
+
               </td>
             </tr>
             <tr>
@@ -358,7 +365,12 @@
                     <span style="margin-top:5px">4029 South Capital of Texas Hwy, Suite 111</span></br>
                     <span style="margin-top:5px">Austin, Texas 78704</span>
                   </div>
-                  <div class="email" style="margin-top: 5px;">reservations@hotelsforhope.com</div>
+
+                  [if:siteid=52918]
+                    <div class="email" style="margin-top: 5px;">dutchgpsupport@hotelsforhope.com</div>
+                  [else]
+                    <div class="email" style="margin-top: 5px;">reservations@hotelsforhope.com</div>
+                  [endif]
                   <div class="phone" style="margin-top: 5px;">+1 512.691.9555</div>
                 </td>
                 <td style="text-align: right" valign="top">

@@ -881,3 +881,7 @@ ul {
 .SearchHotels .roomCount {
     margin-top: 12px !important;
 }
+
+.memberRating {
+    display: none;
+}

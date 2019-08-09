@@ -44,3 +44,5 @@ if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotP
     window.location.href = 'https://roomsteals.com/login';
     document.querySelector('body').style.display = 'none';
 }
+
+cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');

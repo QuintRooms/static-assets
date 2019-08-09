@@ -2,8 +2,6 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-cugPortal.updateText('title', 'Quint NFL');
-
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();

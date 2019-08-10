@@ -947,6 +947,8 @@ ul {
 }
 
 .supportLink,
-.supportLink+.dvd {
+.supportLink+.dvd,
+#slideit {
     display: none;
 }
+

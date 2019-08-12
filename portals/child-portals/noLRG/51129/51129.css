@@ -115,14 +115,14 @@ body,
 }
 
 body.RootBody {
-  background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/images/banner.jpg)
+  background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51229/images/banner.jpg)
     no-repeat center center / cover !important;
 }
 
 .logo img {
   margin: 0 auto 2rem auto;
   width: 350px;
-  display: block;
+  display: none;
   max-width: 90%;
 }
 
@@ -135,7 +135,7 @@ header {
     no-repeat center center / cover !important;
   width: 100%;
   margin: 0;
-  padding: 35px 0 5px 0;
+  padding: 75px 0 5px 0;
   text-align: center;
   position: relative;
   border-bottom: 3px solid #222;

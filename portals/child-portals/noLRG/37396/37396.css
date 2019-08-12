@@ -584,3 +584,9 @@ input#theSubmitButton:hover {
 .ArnSubPage .checkbox {
   margin-top: -2px;
 }
+
+.side-banner {
+  position: fixed;
+  top: 0;
+  transform: scale(90%);
+}

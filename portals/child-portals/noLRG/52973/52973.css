@@ -605,3 +605,7 @@ input#theSubmitButton:hover {
         width: 100% !important;
     }
 }
+
+.arn-green-marker-icon{
+  z-index: 9999;
+}

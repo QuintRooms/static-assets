@@ -596,3 +596,11 @@ input#theSubmitButton:hover {
     max-width: 350px;
     margin: 12px auto;
 }
+
+@media screen and (max-width: 600px) {
+
+    #theDatePrompt .SimpleSearch .ArnCheckInDate,
+    #theDatePrompt .SimpleSearch .ArnCheckOutDate {
+        width: 100% !important;
+    }
+}

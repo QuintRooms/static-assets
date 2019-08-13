@@ -589,11 +589,19 @@ input#theSubmitButton:hover {
 }
 
 #theDatePrompt .SimpleSearch .rowOne td span,
-#theDatePrompt .SimpleSearch .rowOne td{
-  color: #fff;
+#theDatePrompt .SimpleSearch .rowOne td {
+    color: #fff;
 }
 
 #theDatePrompt>img {
     max-width: 350px;
     margin: 12px auto;
+}
+
+@media screen and (max-width: 600px) {
+
+    #theDatePrompt .SimpleSearch .ArnCheckInDate,
+    #theDatePrompt .SimpleSearch .ArnCheckOutDate {
+        width: 100% !important;
+    }
 }

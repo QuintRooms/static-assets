@@ -36,3 +36,7 @@ function waitForElementToLoad(elementWaitingFor) {
 waitForElementToLoad('header');
 
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
+
+if(document.querySelector('#theDatePrompt')){
+    document.querySelector('#theDatePrompt').insertAdjacentHTML('afterBegin', '<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/52974/images/logo.png">');
+}

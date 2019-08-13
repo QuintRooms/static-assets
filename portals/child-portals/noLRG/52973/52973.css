@@ -581,3 +581,19 @@ input#theSubmitButton:hover {
 .ArnSubPage .checkbox {
     margin-top: -2px;
 }
+
+#theDatePrompt {
+    background: #38383f;
+    padding: 18px;
+    width: 100%;
+}
+
+#theDatePrompt .SimpleSearch .rowOne td span,
+#theDatePrompt .SimpleSearch .rowOne td{
+  color: #fff;
+}
+
+#theDatePrompt>img {
+    max-width: 350px;
+    margin: 12px auto;
+}

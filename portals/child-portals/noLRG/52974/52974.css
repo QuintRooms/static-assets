@@ -344,6 +344,10 @@ span.event-rate {
   color: #fff;
 }
 
+.leaflet-top{
+  top: 185px;
+}
+
 .arn-leaflet-reset-button {
   background: #15151e;
   border: 1px solid transparent !important;

@@ -25,8 +25,9 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.barrett-jackson.com/', 'href');
-                document.querySelector('body').insertAdjacentHTML('beforeEnd', '<a href="" class="side-banner"><img src="https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/images/leftbanner.jpg"></a>');
+                document.querySelector('body').insertAdjacentHTML('beforeEnd', '<a href="https://www.grandcanyon.org/" class="side-banner"><img src="https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/images/leftbanner.jpg"></a>');
                 observer.disconnect();
+
             }
         }
     }

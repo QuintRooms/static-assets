@@ -163,10 +163,12 @@ function updateRoomDescription(selector, text) {
 // runs on ratesReadyEvent
 function removeSavingsLessThan10() {
     if (document.querySelector('.SinglePropDetail')) {
-        let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
-        savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
-        if (savings < 1000) {
-            document.querySelector('.bestPrice .percentSavings').style.display = 'none';
+        if (document.querySelector('.bestPrice .originalPrice')) {
+            let savings = document.querySelector('.bestPrice .originalPrice').getAttribute('amount');
+            savings = savings.replace(/[^a-zA-Z0-9 ]/g, "");
+            if (savings < 1000) {
+                document.querySelector('.bestPrice .percentSavings').style.display = 'none';
+            }
         }
         return false;
     }

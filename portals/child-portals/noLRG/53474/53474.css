@@ -352,6 +352,10 @@ header {
     border: 1px solid transparent !important;
 }
 
+.leaflet-top{
+    top: 205px;
+}
+
 .SearchHotels .geoButton {
     filter: invert(1);
 }

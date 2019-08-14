@@ -2555,3 +2555,6 @@ body.WBResendOrCancelForm {
     }*/
 }
 
+.arn-green-marker-icon{
+  z-index: 9999 !important;
+}

@@ -40,3 +40,10 @@ noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive commun
 if(document.querySelector('#theDatePrompt')){
     document.querySelector('#theDatePrompt').insertAdjacentHTML('afterBegin', '<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/52973/images/logo.png">');
 }
+
+// if(document.querySelector('.RootBody') && document.querySelector('#city')){
+//     document.querySelector('#city').value = 'LaGrange, GA';
+//     document.querySelector('#geoLongitudeId').value = '-85.032512';
+//     document.querySelector('#geoLatitudeId').value = '33.044822';
+// }
+// document.querySelector('#searchForm').setAttribute('action', 'https://events.hotelsforhope.com/v6?currency=USD&type=geo&siteid=52973&longitude=-85.032512&latitude=33.044822&radius=100&map&locationlabel=Sweetland+Ampitheatre&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles');

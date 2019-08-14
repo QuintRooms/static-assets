@@ -495,10 +495,6 @@ input#theSubmitButton:hover {
   #SortControlsContainer .hamburger:before {
     border-top-color: #c8102e;
   }
-
-  .side-banner {
-    display: none;
-  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -526,6 +522,10 @@ input#theSubmitButton:hover {
 
 @media only screen and (max-width: 800px) {
   .ad-unit {
+    display: none;
+  }
+
+  .side-banner {
     display: none;
   }
 

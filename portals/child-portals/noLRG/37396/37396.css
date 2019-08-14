@@ -603,5 +603,5 @@ input#theSubmitButton:hover {
 
 .ArnLeftSearchContainer {
   z-index: 2;
-  position: relative;
+  position: relative !important;
 }

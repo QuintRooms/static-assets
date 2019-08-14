@@ -133,7 +133,7 @@ header {
   background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/51660/images/header-bg.jpg) !important;
   width: 100%;
   margin: 0;
-  padding: 35px 0 5px 0;
+  padding: 35px 0;
   text-align: center;
   position: relative;
 }
@@ -225,7 +225,7 @@ span.event-rate {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
   background: #f17a99 !important;
-  color: #fff !important;
+  color: #ffffff !important;
 }
 
 .bookRoom:hover,
@@ -288,14 +288,20 @@ span.event-rate {
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
   margin: 20px 0 20px;
+  border: 1px solid white;
+}
+
+.submit {
+  border: 1px solid white;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover,
+.submit:hover {
+  border: 0 !important;
 }
 
 .RootBody .ArnPrimarySearchContainer span {
   margin: 0 !important;
-}
-
-.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {
-  color: #fff !important;
 }
 
 .SearchHotels .bottomPager .ArnPages a,

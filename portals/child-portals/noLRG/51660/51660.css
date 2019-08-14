@@ -225,7 +225,7 @@ span.event-rate {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
   background: #f17a99 !important;
-  color: #000 !important;
+  color: #ffffff !important;
 }
 
 .bookRoom:hover,
@@ -291,7 +291,12 @@ span.event-rate {
   border: 1px solid white;
 }
 
-.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {
+.submit {
+  border: 1px solid white;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover,
+.submit {
   border: 0 !important;
 }
 

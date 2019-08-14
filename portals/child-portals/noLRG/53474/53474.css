@@ -155,10 +155,6 @@ header {
     text-transform: uppercase;
 }
 
-span.event-rate {
-    color: #000 !important;
-}
-
 /* Ad Unit */
 .ad img {
     display: block;
@@ -354,6 +350,10 @@ span.event-rate {
 .arn-leaflet-reset-button:active {
     background: #38383f;
     border: 1px solid transparent !important;
+}
+
+.leaflet-top{
+    top: 205px;
 }
 
 .SearchHotels .geoButton {

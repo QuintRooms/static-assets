@@ -155,10 +155,6 @@ header {
     text-transform: uppercase;
 }
 
-span.event-rate {
-    color: #000 !important;
-}
-
 /* Ad Unit */
 .ad img {
     display: block;

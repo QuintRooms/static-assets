@@ -38,4 +38,4 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 // Custom Banner Ad
-noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad-unit" target="_blank" href="http://rocktheocean.com/"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/'+ noLRGPortal.site_id +'/images/ad.png"></a>', 'beforeEnd');
+noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad" target="_blank" href="http://rocktheocean.com/"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/'+ noLRGPortal.site_id +'/images/ad.png"></a>', 'beforeEnd');

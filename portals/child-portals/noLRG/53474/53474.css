@@ -452,6 +452,7 @@ span.event-rate {
 
 .sash {
     background: #00a3df;
+    color: #fff;
 }
 
 div.autocomplete ul li.selected {

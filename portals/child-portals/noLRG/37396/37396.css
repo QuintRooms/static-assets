@@ -590,7 +590,7 @@ input#theSubmitButton:hover {
   position: fixed;
   top: 0;
   transform: scale(0.9);
-  z-index: 0;
+  z-index: 1;
 }
 
 .RootBody .side-banner {
@@ -599,4 +599,9 @@ input#theSubmitButton:hover {
 
 .RootBody .ArnSearchContainerMainDiv {
   padding: 0 !important;
+}
+
+.ArnLeftSearchContainer {
+  z-index: 2;
+  position: relative;
 }

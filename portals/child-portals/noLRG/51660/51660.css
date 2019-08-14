@@ -296,7 +296,7 @@ span.event-rate {
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover,
-.submit {
+.submit:hover {
   border: 0 !important;
 }
 

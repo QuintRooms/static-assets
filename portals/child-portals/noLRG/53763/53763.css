@@ -1,19 +1,32 @@
+/* Fonts */
+@font-face {
+    font-family: 'Futura-Book';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Futura-Bold';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.ttf") format("truetype");
+}
+
 body {
     font-size: 17px !important;
     font-weight: 300;
     background: #fff;
     color: #15151E;
     line-height: 1.4;
+    font-family: 'Futura-Book', 'Helvetica';
 }
 
 .ArnSubPage td {
     font-size: 15px !important;
     font-weight: 300;
     color: #15151E;
+    font-family: 'Futura-Book', 'Helvetica';
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 header {
@@ -62,7 +75,7 @@ header a {
     transition: all .5s ease;
 }
 
-/*.submit,
+.submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
@@ -71,7 +84,7 @@ header a {
 .SearchHotels .modifySearchButton,
 .holdRoom {
     font-family: 'Futura-Book' !important;
-}*/
+}
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {

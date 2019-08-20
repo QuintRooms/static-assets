@@ -25,13 +25,41 @@ body {
     font-family: 'Futura-Book', 'Helvetica';
 }
 
+.SearchHotels .ArnPropName div.originalPrice,
+.SearchHotels .ArnPropName div.originalPrice:before,
+.SinglePropDetail .bestPrice .originalPrice:before,
+.SearchHotels .ArnPropName div.yourRateContainer span,
+.ArnPriceCell>span,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.SearchHotels .ArnPriceCell>a>span,
+.SearchHotels .ArnPriceCell>span:after,
+.SinglePropDetail .bestPrice .yourRateAmount:after,
+.SinglePropDetail .bestPrice .originalRateAmount,
+.SinglePropDetail .bestPrice .percentSavings,
+.SinglePropDetail legend {
+    font-family: 'Futura-Book', 'Helvetica';
+}
+
+/* Headings */
+.modifySearch,
+.ArnPropNameLink,
+.event-rate,
+.OnSale .totalsTable .balanceDueRow td,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Futura-Bold', 'Helvetica';
+}
+
 body.RootBody {
     background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 header {
     background: #fff;
-    border-bottom: 3px solid #0967c4;
+    border-bottom: 3px solid #4b9e46;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +99,7 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
     transition: all .5s ease;
 }
 
@@ -88,7 +116,7 @@ header a {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #0967c4 !important;
+    border: 1px solid #4b9e46 !important;
 }
 
 .selectedTab,
@@ -96,29 +124,29 @@ header a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #0967c4 !important;
-    border-bottom: 1px solid #0967c4 !important;
+    border-top: 1px solid #4b9e46 !important;
+    border-bottom: 1px solid #4b9e46 !important;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    border: 1px solid #0967c4 !important;
+    border: 1px solid #4b9e46 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #225a7b !important;
-    border-left: 1px solid #225a7b !important;
-    border-right: 1px solid #225a7b !important;
+    border-top: 1px solid #54632b !important;
+    border-left: 1px solid #54632b !important;
+    border-right: 1px solid #54632b !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #225a7b !important;
+    background: #54632b !important;
 
 }
 
@@ -131,7 +159,7 @@ header a {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #225a7b !important;
+    background: #54632b !important;
 }
 
 .holdRoom:hover,
@@ -146,7 +174,7 @@ header a {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #0967c4 !important;
+    border-top-color: #4b9e46 !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -156,39 +184,39 @@ header a {
 }
 
 .arn-leaflet-reset-button {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 .arnMapMarker {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
     border: #c899ff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #0967c4 !important;
+    border-top-color: #4b9e46 !important;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #225a7b !important;
-    border: #225a7b !important;
+    background: #54632b !important;
+    border: #54632b !important;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #225a7b !important;
+    border-top-color: #54632b !important;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 .throbber {
-    border-left: #0967c4 !important;
+    border-left: #4b9e46 !important;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -199,32 +227,32 @@ header a {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 #slideit section {
-    border-bottom: #0967c4 !important;
+    border-bottom: #4b9e46 !important;
 }
 
 .ArnPropName div.ratingCount {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 .sash {
-    background: #0967c4;
+    background: #4b9e46;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #0967c4 !important;
+    background: #4b9e46 !important;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -258,7 +286,7 @@ header a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #0967c4 !important;
+        border-left: 2px solid #4b9e46 !important;
     }
 }
 
@@ -285,14 +313,14 @@ header a {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #0967c4 !important;
-        border-bottom: 4px solid #0967c4 !important;
+        border-top: 4px solid #4b9e46 !important;
+        border-bottom: 4px solid #4b9e46 !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #0967c4 !important;
+        border-bottom: 4px solid #4b9e46 !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {

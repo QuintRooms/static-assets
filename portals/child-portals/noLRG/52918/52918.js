@@ -23,7 +23,6 @@ noLRGPortal.translateText('.confirmationContainer .thankYou', 'thank you');
 noLRGPortal.translateText('.confirmationContainer .congratsText', 'congrats');
 noLRGPortal.translateText('.confirmationContainer .impact', 'impact');
 noLRGPortal.translateText('.confirmationContainer .learnMore', 'use support form');
-noLRGPortal.translateText('.lrgTip', 'date prompt');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -73,15 +72,6 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.addCustomTag('Train Access', 441274);
         noLRGPortal.addCustomTag('Train Access', 1155863);
         noLRGPortal.translateText('.customTag', 'train access');
-
-        // if (window.matchMedia('(max-width: 565px)').matches) {
-        //     if (!document.querySelector('#currentPropDisclaimer')) {
-        //         document.querySelector('#currentPropertyPage').insertAdjacentHTML('afterBegin', '<p id="currentPropDisclaimer">By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-        //     }
-        // }
-
-        noLRGPortal.translateText('#currentPropDisclaimer', 'date prompt');
-
     }, 1);
 });
 
@@ -121,10 +111,6 @@ function waitForElementToLoad(elementWaitingFor) {
                         </li>
                     </span>
                     `);
-
-                // if (!document.querySelector('#theDatePrompt')) {
-                //     document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-                // }
 
                 noLRGPortal.translateText('#slideit > label', 'support');
                 noLRGPortal.translateText('#slideit > section > span', 'support');
@@ -175,45 +161,3 @@ if (noLRGPortal.language == 'dutch') {
             </style>
         `);
 }
-
-// function updateWaitListText() {
-//     let checkInValue = document.querySelector('#theCheckIn').value;
-//     let checkOutValue = document.querySelector('#theCheckOut').value;
-//     let checkInDate = moment(checkInValue, 'DD/MM/YYYY');
-
-//     let checkOutDate = moment(checkOutValue, 'DD/MM/YYYY');
-//     let nights = moment.duration(checkOutDate.diff(checkInDate)).asDays();
-//     let rooms = document.querySelector('#rooms');
-//     rooms = rooms[rooms.selectedIndex].textContent;
-
-//     if (rooms > 1) {
-//         rooms += ' rooms';
-//     } else {
-//         rooms += ' room';
-//     }
-
-//     if (nights > 1) {
-//         nights += ' nights';
-//     } else {
-//         nights += ' night';
-//     }
-
-//     let waitListBtns = document.querySelectorAll('.WBWaitListFormOpenLink');
-//     waitListBtns.forEach(function(element) {
-//         element.addEventListener('click', () => {
-//             let propContainer = element.closest('.ArnProperty');
-//             let property = propContainer.querySelector('.ArnPropNameLink span').textContent;
-//             let text = propContainer.querySelector('.WBWaitListFormFields .beforeFields');
-
-//             text.innerHTML = '<p>Please enter your email below to be added to the waiting list for <strong>' + property + '</strong> for <strong>' + rooms + '</strong> beginning ' + checkInValue + ' for <strong>' + nights + '</strong>.</p>';
-//         });
-//     });
-// }
-
-updateWaitListText();
-
-// if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-//     if (document.querySelector('#theDatePrompt')) {
-//         window.location.href = 'https://events.hotelsforhope.com/v6?currency=EUR&type=geo&siteid=52918&longitude=4.5344808&latitude=52.3842476&radius=100&checkin=7/5/2020&nights=4&properties=x207450,x17258,x48520,x475355,x376805,x663849,x179939,x377110,x484162,x18997,x199659,x410192,x739616,x32238,x239319,x284789,x234002,x5916,x9654,x360867,x3415520,x31992,x228776,x420792,x276769,x24832,x441274,x32240,x237482,x2786168,x181412,x234784,x801928,x172363,x1701460,x1155863,x739616,x34167,x224220,x1985366,x224621,x3341285,x199667,x1629992,x545746,x651049,x482391,x179855,x48519,x179601,x179640,x199659&map&locationlabel=Circuit+Park+Zandvoort&cid=GROUP-EVENT-EMAIL&pageSize=10&useKilometers&adults=1';
-//     }
-// }

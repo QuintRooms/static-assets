@@ -1,0 +1,352 @@
+/* Fonts */
+@font-face {
+    font-family: 'Futura-Book';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Futura-Bold';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.ttf") format("truetype");
+}
+
+body {
+    font-size: 17px !important;
+    font-weight: 300;
+    background: #fff;
+    color: #15151E;
+    line-height: 1.4;
+    font-family: 'Futura-Book', 'Helvetica';
+}
+
+.ArnSubPage td {
+    font-size: 15px !important;
+    font-weight: 300;
+    color: #15151E;
+    font-family: 'Futura-Book', 'Helvetica';
+}
+
+.SearchHotels .ArnPropName div.originalPrice,
+.SearchHotels .ArnPropName div.originalPrice:before,
+.SinglePropDetail .bestPrice .originalPrice:before,
+.SearchHotels .ArnPropName div.yourRateContainer span,
+.ArnPriceCell>span,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.SearchHotels .ArnPriceCell>a>span,
+.SearchHotels .ArnPriceCell>span:after,
+.SinglePropDetail .bestPrice .yourRateAmount:after,
+.SinglePropDetail .bestPrice .originalRateAmount,
+.SinglePropDetail .bestPrice .percentSavings,
+.SinglePropDetail legend {
+    font-family: 'Futura-Book', 'Helvetica';
+}
+
+/* Headings */
+.modifySearch,
+.ArnPropNameLink,
+.event-rate,
+.OnSale .totalsTable .balanceDueRow td,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Futura-Bold', 'Helvetica';
+}
+
+body.RootBody {
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/banner.jpg) no-repeat center center /cover !important;
+}
+
+header {
+    background: #fff;
+    border-bottom: 3px solid #4b9e46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+}
+
+header a {
+    color: #444;
+}
+
+#language {
+    display: none;
+}
+
+.logo img {
+    margin: 0;
+}
+
+.SearchHotels .ArnPropName a {
+    letter-spacing: initial !important;
+}
+
+.lrgTip h3 {
+    font-weight: initial !important;
+}
+
+/* Button Colors */
+.selectedTab,
+.submit,
+.OnSale .ArnShowRatesLink,
+.ArnShowRatesLink,
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page,
+.bookRoom,
+.SearchHotels .modifySearchButton,
+.GroupHoldForm .ArnContentButtonWide,
+.GroupHoldForm .ArnContentButtonNarrow,
+.HoldRoomsForm .ArnContentButtonWide,
+.HoldRoomsForm .ArnContentButtonNarrow {
+    background: #4b9e46 !important;
+    transition: all .5s ease;
+}
+
+.submit,
+.OnSale .ArnShowRatesLink,
+.ArnShowRatesLink,
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page,
+.bookRoom,
+.SearchHotels .modifySearchButton,
+.holdRoom {
+    font-family: 'Futura-Book' !important;
+}
+
+.SearchHotels .bottomPager .ArnPages a,
+.SearchHotels .bottomPager .ArnPages .not_page {
+    border: 1px solid #4b9e46 !important;
+}
+
+.selectedTab,
+.ArnGoCitySearch:hover,
+.ArnGoAddressSearch:hover,
+.ArnGoLandmarkSearch:hover,
+.ArnGoAirportSearch:hover {
+    border-top: 1px solid #4b9e46 !important;
+    border-bottom: 1px solid #4b9e46 !important;
+
+}
+
+.SearchHotels .bottomPager .ArnPages .pagesActive {
+    border: 1px solid #4b9e46 !important;
+}
+
+.GroupHoldForm .ArnContentButtonWide,
+.GroupHoldForm .ArnContentButtonNarrow,
+.HoldRoomsForm .ArnContentButtonWide,
+.HoldRoomsForm .ArnContentButtonNarrow {
+    border-top: 1px solid #54632b !important;
+    border-left: 1px solid #54632b !important;
+    border-right: 1px solid #54632b !important;
+}
+
+.GroupHoldForm .ArnContentButtonWide:hover,
+.GroupHoldForm .ArnContentButtonNarrow:hover,
+.HoldRoomsForm .ArnContentButtonWide:hover,
+.HoldRoomsForm .ArnContentButtonNarrow:hover {
+    background: #54632b !important;
+
+}
+
+.submit:hover,
+.submit:active,
+.submit:focus,
+.ArnShowRatesLink:hover,
+.ArnShowRatesLink:active,
+.ArnShowRatesLink:focus,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active {
+    background: #54632b !important;
+}
+
+.holdRoom:hover,
+.holdRoom:active,
+.holdRoom:focus {
+    background: #646464 !important;
+}
+
+.holdRoom {
+    background: #858585 !important;
+}
+
+.hamburger:before,
+.PropertyAmenities:before {
+    border-top-color: #4b9e46 !important;
+}
+
+.SearchHotels .ArnPropName div.percentSavings,
+.SinglePropDetail .bestPrice .percentSavings {
+    background: #fc0 !important;
+    color: #000 !important;
+}
+
+.arn-leaflet-reset-button {
+    background: #4b9e46 !important;
+}
+
+.arnMapMarker {
+    background: #4b9e46 !important;
+    border: #c899ff !important;
+}
+
+.arnMapMarker .arnMapMarkerTriangle {
+    border-top-color: #4b9e46 !important;
+    transition: all .3s ease;
+}
+
+.arnMapMarker:hover,
+.highlight {
+    background: #54632b !important;
+    border: #54632b !important;
+    transition: all .3s ease;
+}
+
+.highlight>.arnMapMarkerTriangle,
+.arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: #54632b !important;
+    transition: all .3s ease;
+}
+
+.specialEventRate,
+.hostHotel {
+    background: #4b9e46 !important;
+}
+
+.throbber {
+    border-left: #4b9e46 !important;
+}
+
+.SearchHotels .ArnSearchContainerMainTable {
+    top: 96px !important;
+}
+
+#slideit label.open:hover,
+#slideit label.open:focus,
+#slideit label.open,
+#slideit span.title {
+    background: #4b9e46 !important;
+}
+
+#slideit section {
+    border-bottom: #4b9e46 !important;
+}
+
+.ArnPropName div.ratingCount {
+    background: #4b9e46 !important;
+}
+
+.sash {
+    background: #4b9e46;
+}
+
+.openMapBtn:hover,
+.openMapBtn:focus,
+.openMapBtn:active {
+    background: #4b9e46 !important;
+}
+
+.ArnGoCitySearch:hover,
+.ArnGoAddressSearch:hover,
+.ArnGoLandmarkSearch:hover,
+.ArnGoAirportSearch:hover {
+    background: #4b9e46 !important;
+}
+
+.HoldRoomsForm .ArnRightListContainer input {
+    width: 100% !important;
+    max-width: 205px !important;
+}
+
+/* Ad Unit */
+.ad-unit img {
+    display: block;
+    margin: 24px auto;
+}
+
+@media only screen and (min-width: 800px) {
+
+    .ArnSortByName:hover,
+    .ArnSortByClass:hover,
+    .ArnSortByType:hover,
+    .ArnSortByPrice:hover,
+    .ArnSortByAvailability:hover,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByVacationRental:hover,
+    .ArnSortByDistance:hover,
+    .ArnSortByName.active,
+    .ArnSortByClass.active,
+    .ArnSortByType.active,
+    .ArnSortByPrice.active,
+    .ArnSortByAvailability.active,
+    .ArnSortByDealPercent.active,
+    .ArnSortByDealAmount.active,
+    .ArnSortByVacationRental.active,
+    .ArnSortByDistance.active {
+        border-left: 2px solid #4b9e46 !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ad-unit {
+        display: none;
+    }
+
+    .SearchHotels .ArnSortByName:hover,
+    .SearchHotels .ArnSortByClass:hover,
+    .SearchHotels .ArnSortByType:hover,
+    .SearchHotels .ArnSortByPrice:hover,
+    .SearchHotels .ArnSortByAvailability:hover,
+    .SearchHotels .ArnSortByDealPercent:hover,
+    .SearchHotels .ArnSortByDealAmount:hover,
+    .SearchHotels .ArnSortByVacationRental:hover,
+    .SearchHotels .ArnSortByDistance:hover,
+    .SearchHotels .ArnSortByName.active,
+    .SearchHotels .ArnSortByClass.active,
+    .SearchHotels .ArnSortByType.active,
+    .SearchHotels .ArnSortByPrice.active,
+    .SearchHotels .ArnSortByAvailability.active,
+    .SearchHotels .ArnSortByDealPercent.active,
+    .SearchHotels .ArnSortByDealAmount.active,
+    .SearchHotels .ArnSortByVacationRental.active,
+    .SearchHotels .ArnSortByDistance.active {
+        border-top: 4px solid #4b9e46 !important;
+        border-bottom: 4px solid #4b9e46 !important;
+    }
+
+    .ArnToggleMap,
+    .SearchHotels .filters,
+    .SinglePropDetail.mobile .subHeader a.refineLink {
+        border-bottom: 4px solid #4b9e46 !important;
+    }
+
+    .SearchHotels .ArnSearchContainerMainTable {
+        top: 0 !important;
+    }
+
+    #theDatePrompt>img {
+        max-width: 300px;
+        margin-bottom: 36px;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .logo+a {
+        display: none;
+    }
+}
+
+#adults option:nth-child(n + 5) {
+    display: block !important;
+}
+
+#adults option:nth-child(n + 7) {
+    display: none !important;
+}
+
+.geoButton{
+    display: none;
+}

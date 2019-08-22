@@ -2538,6 +2538,19 @@ body.WBResendOrCancelForm {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .SearchHotels .ArnAvailabilityWaitList {
+        order: 1;
+        width: 100% !important;
+        position: static;
+        background: #f1f3f5;
+    }
+
+    .SearchHotels .PropLimitedAvail .ArnAvailabilityWaitList a {
+        max-width: 200px;
+    }
+}
+
 @media screen and (max-width: 365px) {
     .SearchHotels .ArnAvailabilityWaitList {
         bottom: 30px;
@@ -2550,11 +2563,11 @@ body.WBResendOrCancelForm {
         overflow: initial;
     }
 
-/*    .SearchHotels.WK.mobile #lightbox {
+    /*    .SearchHotels.WK.mobile #lightbox {
         overflow: scroll;
     }*/
 }
 
-.arn-green-marker-icon{
-  z-index: 9999 !important;
+.arn-green-marker-icon {
+    z-index: 9999 !important;
 }

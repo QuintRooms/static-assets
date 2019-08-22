@@ -122,9 +122,9 @@ function waitForElementToLoad(elementWaitingFor) {
                     </span>
                     `);
 
-                if (!document.querySelector('#theDatePrompt')) {
-                    document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-                }
+                // if (!document.querySelector('#theDatePrompt')) {
+                //     document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
+                // }
 
                 noLRGPortal.translateText('#slideit > label', 'support');
                 noLRGPortal.translateText('#slideit > section > span', 'support');

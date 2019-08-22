@@ -1,12 +1,12 @@
 /* Fonts */
 @font-face {
     font-family: 'Futura-Book';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.ttf") format("truetype");
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Book.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Futura-Bold';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.ttf") format("truetype");
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.ttf") format("truetype");
 }
 
 body {
@@ -345,4 +345,8 @@ header a {
 
 #adults option:nth-child(n + 7) {
     display: none !important;
+}
+
+.geoButton{
+    display: none;
 }

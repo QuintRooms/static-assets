@@ -455,7 +455,7 @@ export default class Portal {
         if (pageElement) {
             let price = document.querySelectorAll(selector);
             price.forEach(function(element) {
-                let parent = element.parentNode
+                let parent = element.parentNode;
                 if(!parent.querySelector('.perNight'))
                 element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
             });

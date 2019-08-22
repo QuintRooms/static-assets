@@ -6,7 +6,6 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.translateText('.event-rate', 'exclusive rates');
-        noLRGPortal.translateText('.SearchHotels .PropLimitedAvail .ArnAvailability', 'no availability');
         noLRGPortal.translateText('#HotelNameContainer span', 'hotel name');
         noLRGPortal.translateText('.ArnAdults span', 'adults');
         noLRGPortal.updateText('.perNight', 'per stay');

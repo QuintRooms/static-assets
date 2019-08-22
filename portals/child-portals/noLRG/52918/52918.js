@@ -1,7 +1,7 @@
 import NoLRGPortal from '../../../js/portal-setup.js';
 
-var moment = require('moment');
-moment().format();
+// var moment = require('moment');
+// moment().format();
 
 let noLRGPortal = new NoLRGPortal();
 
@@ -122,9 +122,9 @@ function waitForElementToLoad(elementWaitingFor) {
                     </span>
                     `);
 
-                if (!document.querySelector('#theDatePrompt')) {
-                    document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-                }
+                // if (!document.querySelector('#theDatePrompt')) {
+                //     document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
+                // }
 
                 noLRGPortal.translateText('#slideit > label', 'support');
                 noLRGPortal.translateText('#slideit > section > span', 'support');
@@ -176,39 +176,39 @@ if (noLRGPortal.language == 'dutch') {
         `);
 }
 
-function updateWaitListText() {
-    let checkInValue = document.querySelector('#theCheckIn').value;
-    let checkOutValue = document.querySelector('#theCheckOut').value;
-    let checkInDate = moment(checkInValue, 'DD/MM/YYYY');
+// function updateWaitListText() {
+//     let checkInValue = document.querySelector('#theCheckIn').value;
+//     let checkOutValue = document.querySelector('#theCheckOut').value;
+//     let checkInDate = moment(checkInValue, 'DD/MM/YYYY');
 
-    let checkOutDate = moment(checkOutValue, 'DD/MM/YYYY');
-    let nights = moment.duration(checkOutDate.diff(checkInDate)).asDays();
-    let rooms = document.querySelector('#rooms');
-    rooms = rooms[rooms.selectedIndex].textContent;
+//     let checkOutDate = moment(checkOutValue, 'DD/MM/YYYY');
+//     let nights = moment.duration(checkOutDate.diff(checkInDate)).asDays();
+//     let rooms = document.querySelector('#rooms');
+//     rooms = rooms[rooms.selectedIndex].textContent;
 
-    if (rooms > 1) {
-        rooms += ' rooms';
-    } else {
-        rooms += ' room';
-    }
+//     if (rooms > 1) {
+//         rooms += ' rooms';
+//     } else {
+//         rooms += ' room';
+//     }
 
-    if (nights > 1) {
-        nights += ' nights';
-    } else {
-        nights += ' night';
-    }
+//     if (nights > 1) {
+//         nights += ' nights';
+//     } else {
+//         nights += ' night';
+//     }
 
-    let waitListBtns = document.querySelectorAll('.WBWaitListFormOpenLink');
-    waitListBtns.forEach(function(element) {
-        element.addEventListener('click', () => {
-            let propContainer = element.closest('.ArnProperty');
-            let property = propContainer.querySelector('.ArnPropNameLink span').textContent;
-            let text = propContainer.querySelector('.WBWaitListFormFields .beforeFields');
+//     let waitListBtns = document.querySelectorAll('.WBWaitListFormOpenLink');
+//     waitListBtns.forEach(function(element) {
+//         element.addEventListener('click', () => {
+//             let propContainer = element.closest('.ArnProperty');
+//             let property = propContainer.querySelector('.ArnPropNameLink span').textContent;
+//             let text = propContainer.querySelector('.WBWaitListFormFields .beforeFields');
 
-            text.innerHTML = '<p>Please enter your email below to be added to the waiting list for <strong>' + property + '</strong> for <strong>' + rooms + '</strong> beginning ' + checkInValue + ' for <strong>' + nights + '</strong>.</p>';
-        });
-    });
-}
+//             text.innerHTML = '<p>Please enter your email below to be added to the waiting list for <strong>' + property + '</strong> for <strong>' + rooms + '</strong> beginning ' + checkInValue + ' for <strong>' + nights + '</strong>.</p>';
+//         });
+//     });
+// }
 
 updateWaitListText();
 

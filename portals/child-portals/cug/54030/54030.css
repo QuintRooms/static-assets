@@ -293,7 +293,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/54030/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/54030/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -614,6 +614,11 @@ header {
 
 .sash {
     background: #00B0B9;
+    margin-top: -1px;
+}
+
+.event-rate {
+    text-transform: unset;
 }
 
 .SearchHotels .percentSavings {

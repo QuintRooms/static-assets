@@ -8,6 +8,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
+        cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.ArnProperty:first-child');
     }, 1);
 });
 

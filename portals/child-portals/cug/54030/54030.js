@@ -18,8 +18,8 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cugPortal/' + cugPortalPortal.site_id + '/images/logo.png', 'src');
-                cugPortalPortal.updateAttribute('.logo', 'https://www.communitybrands.com/', 'href');
+                cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateAttribute('.logo', 'https://www.communitybrands.com/', 'href');
 
                 observer.disconnect();
             }

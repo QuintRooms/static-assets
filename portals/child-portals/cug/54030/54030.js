@@ -19,7 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/54030/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://www.communitybrands.com/', 'href');
 
                 observer.disconnect();

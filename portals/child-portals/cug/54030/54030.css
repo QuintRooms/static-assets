@@ -1021,9 +1021,3 @@ ul {
         margin-top: 8px;
     }
 }
-
-.supportLink,
-.supportLink+.dvd,
-#slideit {
-    display: none;
-}

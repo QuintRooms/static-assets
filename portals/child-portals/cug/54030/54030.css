@@ -11,8 +11,7 @@ body,
 .ArnSubPage td,
 .ArnRoomsOnHold,
 .ArnRoomsOnHold td {
-    font-family: 'Roboto', 'Helvetica';
-    font-weight: 400;
+    font-family: 'Roboto', 'Arial';
 }
 
 .SearchHotels .ArnPropName div.originalPrice,
@@ -27,7 +26,7 @@ body,
 .SinglePropDetail .bestPrice .originalRateAmount,
 .SinglePropDetail .bestPrice .percentSavings,
 .SinglePropDetail legend {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
 }
 
 /* Headings */
@@ -40,7 +39,16 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Roboto', 'Helvetica' !important;
+    font-family: 'Roboto', 'Arial' !important;
+}
+
+.RootBody .modifySearch {
+    font-weight: 400;
+}
+
+.reserveHotel {
+    text-transform: capitalize;
+    font-weight: 100 !important;
 }
 
 .detailsTitle,
@@ -59,17 +67,16 @@ h2 {
     line-height: 30px !important;
 }
 
-h3,
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
-    font-size: 18px;
+    font-size: 19px !important;
     line-height: 24px !important;
-    color: #15151E;
+    color: #222;
 }
 
 .font1 {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-size: 25px;
 }
 
@@ -79,7 +86,7 @@ h3,
 .theHotelName {
     font-size: 18px;
     font-weight: 300;
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
 }
 
 #theConfirmationContainer h4,
@@ -91,7 +98,7 @@ h3,
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: normal;
     font-size: 14px;
 }
@@ -133,9 +140,9 @@ h3,
     display: none;
 }
 
-#commands .profileCommand {
+/*#commands .profileCommand {
     display: none;
-}
+}*/
 
 .WBLoginFormActions .submit,
 .WBForgotPasswordFormActions .submit {
@@ -193,18 +200,8 @@ h3,
     justify-content: space-between;
 }
 
-header .room-steals {
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.room-steals {
-    color: #fff;
-    font-size: 20px;
-    align-self: center;
-    order: -1;
-    padding-left: 10px;
-    transition: all .5s ease;
+.logo img {
+    max-width: 200px;
 }
 
 #theConfirmationContainer h4,
@@ -245,13 +242,13 @@ label,
 }
 
 .yui3-calendar-row td {
-    color: #15151e !important;
+    color: #222 !important;
 }
 
 #theBookingPage label,
 label,
 .confirmationAgreement {
-    color: #15151e;
+    color: #222;
 }
 
 input,
@@ -296,12 +293,7 @@ textarea,
 }
 
 body.RootBody {
-    background: #665fee;
-    background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#665fee', endColorstr='#27c2de', GradientType=1);
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/54030/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -316,8 +308,9 @@ body.WBForgotPasswordForm {
 }
 
 header {
-    background: #333;
+    background: #fff;
     grid-row-start: 1;
+    border-bottom: 2px solid #5B6770;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -331,12 +324,7 @@ header {
     position: static;
     background: transparent;
     grid-row-start: 2;
-    background: #665fee;
-    background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    background: linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#665fee', endColorstr='#27c2de', GradientType=1);
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/54030/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 .lrgTip h3 {
@@ -375,7 +363,7 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #007bff;
+    background: #00B0B9;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
@@ -407,14 +395,14 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #0069d9 !important;
+    background: #008C95 !important;
     color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #0069d9;
+    background: #008C95;
     color: #fff !important;
 }
 
@@ -427,7 +415,7 @@ header {
 }
 
 .SinglePropDetail .holdRoom {
-    background: #15151e;
+    background: #222;
     color: #fff;
 }
 
@@ -449,7 +437,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #007bff;
+    border: 1px solid #00B0B9;
 }
 
 .selectedTab,
@@ -457,14 +445,14 @@ header {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid #007bff;
+    border-bottom: 1px solid #00B0B9;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: #00B0B9;
+    border: 1px solid #00B0B9;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -478,13 +466,18 @@ header {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #007bff;
+    border-top-color: #00B0B9;
+}
+
+.propertiesNearbyLink {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
 .SinglePropDetail .bestPrice .percentSavings {
-    background: #fc0;
-    color: #000;
+    background: #FDDA24;
+    color: #222;
 }
 
 .SinglePropDetail .ArnPropDescription {
@@ -508,7 +501,7 @@ header {
 }
 
 .arn-leaflet-reset-button {
-    background: #15151e;
+    background: #5B6770;
     border: 1px solid transparent !important;
     transition: all .2s linear;
 }
@@ -516,46 +509,46 @@ header {
 .arn-leaflet-reset-button:hover,
 .arn-leaflet-reset-button:focus,
 .arn-leaflet-reset-button:active {
-    background: #38383f;
+    background: #5B6770;
     border: 1px solid transparent !important;
 }
 
 .arnMapMarker {
-    background: #007bff;
-    border: #fff;
+    background: #00B0B9;
+    border: 1px solid #fff;
 }
 
 .arnMapMarker.highlight {
-    background: #0062cc;
-    border: 1px solid #0062cc;
+    background: #008C95;
+    border: 1px solid #008C95;
     z-index: 8001;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: #0062cc;
+    border-top-color: #008C95;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #007bff;
+    border-top-color: #00B0B9;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #007bff;
+    background: #00B0B9;
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #007bff;
+    border-top-color: #00B0B9;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #007bff;
+    background: #00B0B9;
 }
 
 .SearchHotels .reserveHotel,
@@ -570,7 +563,7 @@ header {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-    background-color: RGB(21, 21, 30);
+    background: #5B6770;
     color: rgb(255, 255, 255) !important;
 }
 
@@ -578,15 +571,27 @@ header {
     top: 96px;
 }
 
+#batchSize,
+.lblAmenities,
+.lblCurrency,
+.lblHotelSize,
+.lblNearbyCities,
+.lblPropertyType,
+.lblRateTypes,
+.lblRating,
+.lblSortByPrice {
+    text-transform: unset;
+}
+
 #slideit label.open:hover,
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #15151e;
+    background: #222;
 }
 
 #slideit section {
-    border-bottom: #15151e;
+    border-bottom: #222;
 }
 
 #slideit label.open:hover,
@@ -600,7 +605,7 @@ header {
 }
 
 .ArnPropName div.ratingCount {
-    background: #007bff;
+    background: #00B0B9;
 }
 
 .exclusiveRate {
@@ -608,24 +613,25 @@ header {
 }
 
 .sash {
-    background: #007bff;
+    background: #00B0B9;
 }
 
 .SearchHotels .percentSavings {
     display: block !important;
+    font-weight: normal;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #007bff;
+    background: #00B0B9;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #007bff;
+    background: #00B0B9;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -639,7 +645,7 @@ header {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: #007bff;
+        border-top-color: #00B0B9;
     }
 }
 
@@ -663,7 +669,7 @@ header {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #007bff;
+        border-left: 2px solid #00B0B9;
     }
 }
 
@@ -691,14 +697,14 @@ header {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid #007bff;
-        border-bottom: 4px solid #007bff !important;
+        border-top: 4px solid #00B0B9;
+        border-bottom: 4px solid #00B0B9 !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #007bff;
+        border-bottom: 4px solid #00B0B9;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -713,12 +719,12 @@ header {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #007bff;
-        background: #007bff;
+        border-bottom: 1px solid #00B0B9;
+        background: #00B0B9;
     }
 
     .adminContainer span {
-        background-color: #007bff;
+        background-color: #00B0B9;
     }
 }
 
@@ -745,11 +751,6 @@ header {
     padding: 0;
 }
 
-.jumbotron {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/banner.jpg) no-repeat center center /cover;
-    padding-top: 220px;
-}
-
 nav {
     padding: 18px;
     display: flex;
@@ -765,7 +766,7 @@ nav {
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
     color: #fff;
     line-height: 1.4;
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 700;
 }
 
@@ -774,9 +775,9 @@ nav {
 }
 
 .btn-primary {
-    background: #007bff;
+    background: #00B0B9;
     box-shadow: none;
-    border-color: #007bff;
+    border-color: #00B0B9;
 }
 
 .btn-primary:hover {
@@ -787,7 +788,7 @@ nav {
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 400;
 }
 
@@ -812,7 +813,7 @@ ul {
 }
 
 .form-container h2 {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
 }
 
 .uppercase {
@@ -832,18 +833,18 @@ ul {
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1 {
     margin-bottom: 18px;
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 700;
     font-size: 50px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 700;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     margin: auto;
     max-width: 80%;
 }
@@ -893,12 +894,12 @@ ul {
 }
 
 #greet {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 700;
 }
 
 #subGreet {
-    font-family: 'Roboto', 'Helvetica';
+    font-family: 'Roboto', 'Arial';
     font-weight: 200;
     font-size: 1em;
 }

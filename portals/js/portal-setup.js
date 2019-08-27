@@ -293,7 +293,8 @@ export default class Portal {
 
                 if(document.querySelector('.closeMapBtn')){
                     this.textContent = 'X';
-                    return;
+                }else{
+                    this.textContent = 'Open Map';
                 }
             });
         }
@@ -337,7 +338,7 @@ export default class Portal {
         if (document.querySelector('.SinglePropDetail')) {
             let original = document.querySelectorAll(selector);
             original.forEach(function(element, index) {
-                let updated = element.innerHTML.replace('Special Event Rate', '<span style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
+                let updated = element.innerHTML.replace('Special Event Rate', '<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
                 element.innerHTML = updated;
             });
         }

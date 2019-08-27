@@ -58,7 +58,7 @@ body.RootBody {
 }
 
 header {
-    background: #fff;
+    background: linear-gradient(rgba(75, 158, 70, .80), rgba(75, 158, 70, .80)), url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/header-bg.jpg) no-repeat top center /cover;
     border-bottom: 3px solid #4b9e46;
     display: flex;
     align-items: center;
@@ -76,6 +76,7 @@ header a {
 
 .logo img {
     margin: 0;
+    max-width: 400px;
 }
 
 .SearchHotels .ArnPropName a {
@@ -185,6 +186,10 @@ header a {
 
 .arn-leaflet-reset-button {
     background: #4b9e46 !important;
+}
+
+.leaflet-top {
+    top: 200px;
 }
 
 .arnMapMarker {

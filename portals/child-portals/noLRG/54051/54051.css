@@ -638,7 +638,7 @@ header {
 .tooltipContainer p {
     position: relative;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
 }
 
 @media screen and (max-width: 1500px) {
@@ -1021,6 +1021,10 @@ ul {
     .SinglePropDetail .bestPrice .yourRateContainer {
         margin-top: 60px;
         font-weight: 700;
+    }
+
+    .ArnRateCell {
+        z-index: 1;
     }
 }
 

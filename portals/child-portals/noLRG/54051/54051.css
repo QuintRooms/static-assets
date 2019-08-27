@@ -188,11 +188,6 @@ h2 {
     margin: 0;
 }
 
-.ArnSupportBottom .lowRateLink,
-.ArnSupportBottom .lowRateLink+.dvd {
-    display: none;
-}
-
 #AdminControlsContainer {
     display: flex;
     flex-direction: row;
@@ -331,8 +326,8 @@ header {
     font-weight: initial;
 }
 
-.event-rate {
-    text-transform: uppercase;
+#exclusive-event-rate {
+    font-weight: normal !important;
 }
 
 .hamburger:after,
@@ -478,6 +473,7 @@ header {
 .SinglePropDetail .bestPrice .percentSavings {
     background: #FDDA24;
     color: #222;
+    display: none !important;
 }
 
 .SinglePropDetail .ArnPropDescription {
@@ -615,14 +611,45 @@ header {
 .sash {
     background: #00B0B9;
     margin-top: -1px;
+    justify-content: flex-end;
+}
+
+.svg-container {
+    left: unset;
+    margin-left: 24px;
+    top: -9px;
+    margin-left: -75px;
+}
+
+.lrgContainer {
+    margin-left: 12px;
+}
+
+.hoverTooltip {
+    margin-left: 12px;
+    top: 0;
 }
 
 .event-rate {
     text-transform: unset;
+    left: -72px;
+}
+
+.tooltipContainer p {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+@media screen and (max-width: 1500px) {
+    .SearchHotels .svg-container {
+        top: -1px;
+        margin-left: -36px;
+    }
 }
 
 .SearchHotels .percentSavings {
-    display: block !important;
+    /*display: block !important;*/
     font-weight: normal;
 }
 
@@ -975,12 +1002,12 @@ ul {
 }
 
 .percentSavings {
-    display: initial !important;
+    display: none !important;
 }
 
 .SinglePropDetail .bookRoomCell .percentSavings,
 .SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: inline-block !important;
+    /*display: inline-block !important;*/
     max-width: 75px;
     margin: 0px auto 8px auto;
     border: none;
@@ -1019,5 +1046,17 @@ ul {
 
     .SinglePropDetail .bestPrice .yourRateContainer {
         margin-top: 8px;
+    }
+}
+
+/* Ad Unit */
+.ad-unit img {
+    display: block;
+    margin: 24px auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .ad-unit {
+        display: none;
     }
 }

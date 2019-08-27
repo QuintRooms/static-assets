@@ -7,8 +7,11 @@ cugPortal.updateText('title', 'Community Brands Rooms');
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();
-        cugPortal.updateText('.event-rate', 'Exclusive Rates');
-        cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.ArnProperty:first-child');
+        cugPortal.updateText('.event-rate', 'Exclusive Rate');
+        // cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Host Hotel</span></span></div>', '.SearchHotels .S16');         
+        // cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Host Hotel</span></span></div>', '.SearchHotels .S20');        
+        // cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Host Hotel</span></span></div>', '.SearchHotels .S33');    
+        cugPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Host Hotel</span></span></div>', '.ArnProperty#theArnProperty20578');    
     }, 1);
 });
 

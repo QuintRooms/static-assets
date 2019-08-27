@@ -293,7 +293,8 @@ export default class Portal {
 
                 if(document.querySelector('.closeMapBtn')){
                     this.textContent = 'X';
-                    return;
+                }else{
+                    this.textContent = 'Open Map';
                 }
             });
         }

@@ -26,8 +26,8 @@ function waitForElementToLoad(elementWaitingFor) {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
 
-                if(document.querySelector('.profileCommand')){
-                    document.querySelector('.profileCommand').insertAdjacentHTML('beforeBegin', '<a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
+                if(document.querySelector('.ArnSupportBottom .cancelLink')){
+                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
                 }
 
                 observer.disconnect();

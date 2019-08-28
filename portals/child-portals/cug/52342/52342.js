@@ -26,6 +26,10 @@ function waitForElementToLoad(elementWaitingFor) {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
 
+                if(document.querySelector('.profileCommand')){
+                    document.querySelector('.profileCommand').insertAdjacentHTML('beforeBegin', '<a href="">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
+                }
+
                 observer.disconnect();
             }
         }

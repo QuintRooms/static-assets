@@ -27,7 +27,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 }
 
                 if(document.querySelector('.profileCommand')){
-                    document.querySelector('.profileCommand').insertAdjacentHTML('beforeBegin', '<a href="">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
+                    document.querySelector('.profileCommand').insertAdjacentHTML('beforeBegin', '<a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
                 }
 
                 observer.disconnect();

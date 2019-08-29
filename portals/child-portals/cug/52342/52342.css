@@ -96,7 +96,14 @@ body {
 }
 
 .ArnSupportBottom .lowRateLink,
-.ArnSupportBottom .lowRateLink+.dvd {
+.ArnSupportBottom .lowRateLink+.dvd,
+.searchLink,
+.searchLink+.dvd,
+.faqLink,
+.faqLink+.dvd,
+.cancelLink,
+.cancelLink+.dvd,
+.privacyLink+.dvd+.no-brand {
     display: none;
 }
 

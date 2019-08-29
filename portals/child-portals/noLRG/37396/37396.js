@@ -4,19 +4,23 @@ let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateRoomDescription('.RoomDescription', "Barrett-Jackson Rooms");
 
-jQuery(document).on('ratesReadyEvent', function () {
-    setTimeout(function () {
+jQuery(document).on('ratesReadyEvent', function() {
+    setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
         noLRGPortal.addCustomTag('Host Hotel', 41188);
 
-        if(noLrgPortal.site_id == 37396){
+        if (noLRGPortal.site_id == 37396) {
             noLRGPortal.addCustomTag('Free Tram to Mandalay Bay', 564);
             noLRGPortal.addCustomTag('Free Tram to Mandalay Bay', 22619);
         }
 
-        if(noLRGPortal.site_id == 37395){
+        if (noLRGPortal.site_id == 37395) {
             noLRGPortal.addCustomTag('Shuttle to Mohegan Sun', 191384);
+        }
+
+        if (noLRGPortal.site_id == 49551) {
+    addCustomTag('<div style="border-bottom: 1px solid rgba(255, 255, 255, .4);">Host Hotel</div><div>Complimentary Shuttle</div>', 20);
         }
 
     }, 1);

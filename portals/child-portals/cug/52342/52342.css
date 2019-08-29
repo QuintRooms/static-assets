@@ -103,7 +103,8 @@ body {
 .faqLink+.dvd,
 .cancelLink,
 .cancelLink+.dvd,
-.privacyLink+.dvd+.no-brand {
+.cookie-policy-link,
+.cookie-policy-link+.dvd {
     display: none;
 }
 

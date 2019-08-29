@@ -58,16 +58,20 @@ body.RootBody {
 }
 
 header {
-    background: linear-gradient(rgba(75, 158, 70, .80), rgba(75, 158, 70, .80)), url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/header-bg.jpg) no-repeat top center /cover;
-    border-bottom: 3px solid #4b9e46;
+    background: #fff;
+    border-bottom: 3px solid #4C9C2E;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 6px 12px;
 }
 
 header a {
     color: #444;
+}
+
+.event-dates {
+    font-family: 'Futura-Bold', 'Helvetica';
+    margin-left: 18px;
 }
 
 #language {
@@ -100,7 +104,7 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
     transition: all .5s ease;
 }
 
@@ -117,7 +121,7 @@ header a {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #4b9e46 !important;
+    border: 1px solid #4C9C2E !important;
 }
 
 .selectedTab,
@@ -125,13 +129,13 @@ header a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #4b9e46 !important;
-    border-bottom: 1px solid #4b9e46 !important;
+    border-top: 1px solid #4C9C2E !important;
+    border-bottom: 1px solid #4C9C2E !important;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    border: 1px solid #4b9e46 !important;
+    border: 1px solid #4C9C2E !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -175,7 +179,7 @@ header a {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #4b9e46 !important;
+    border-top-color: #4C9C2E !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -185,7 +189,7 @@ header a {
 }
 
 .arn-leaflet-reset-button {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 .leaflet-top {
@@ -193,12 +197,12 @@ header a {
 }
 
 .arnMapMarker {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
     border: #c899ff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #4b9e46 !important;
+    border-top-color: #4C9C2E !important;
     transition: all .3s ease;
 }
 
@@ -217,11 +221,11 @@ header a {
 
 .specialEventRate,
 .hostHotel {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 .throbber {
-    border-left: #4b9e46 !important;
+    border-left: #4C9C2E !important;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -232,32 +236,32 @@ header a {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 #slideit section {
-    border-bottom: #4b9e46 !important;
+    border-bottom: #4C9C2E !important;
 }
 
 .ArnPropName div.ratingCount {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 .sash {
-    background: #4b9e46;
+    background: #4C9C2E;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #4b9e46 !important;
+    background: #4C9C2E !important;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -291,7 +295,7 @@ header a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #4b9e46 !important;
+        border-left: 2px solid #4C9C2E !important;
     }
 }
 
@@ -318,14 +322,14 @@ header a {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #4b9e46 !important;
-        border-bottom: 4px solid #4b9e46 !important;
+        border-top: 4px solid #4C9C2E !important;
+        border-bottom: 4px solid #4C9C2E !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #4b9e46 !important;
+        border-bottom: 4px solid #4C9C2E !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -335,6 +339,17 @@ header a {
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
+    }
+}
+
+@media only screen and (max-width: 600) {
+    header {
+        flex-direction: column;
+    }
+
+    .event-dates {
+        margin-left: 0;
+        margin-top: 24px;
     }
 }
 

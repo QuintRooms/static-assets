@@ -104,8 +104,9 @@ body {
 .cancelLink,
 .cancelLink+.dvd,
 .cookie-policy-link,
-.cookie-policy-link+.dvd {
-    display: none;
+.cookie-policy-link+.dvd,
+.privacyLink+.dvd+.no-brand {
+    display: none !important;
 }
 
 body,

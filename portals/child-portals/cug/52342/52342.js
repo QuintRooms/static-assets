@@ -26,9 +26,11 @@ function waitForElementToLoad(elementWaitingFor) {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
 
-                if(document.querySelector('.ArnSupportBottom .cancelLink')){
-                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>')
+                if (document.querySelector('.ArnSupportBottom .cancelLink')) {
+                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>');
                 }
+                cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');
+                cugPortal.updateAttribute('.privacyLink', 'https://roomsteals.com/privacy', 'href');
 
                 observer.disconnect();
             }
@@ -48,9 +50,6 @@ if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotP
     window.location.href = 'https://roomsteals.com/login';
     document.querySelector('body').style.display = 'none';
 }
-
-cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');
-cugPortal.updateAttribute('.privacyLink', 'https://roomsteals.com/privacy', 'href');
 
 if (cugPortal.page_name === 'privacy-policy') {
     cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52342/html/privacyPolicy.html')

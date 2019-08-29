@@ -9,6 +9,16 @@ jQuery(document).on('ratesReadyEvent', function () {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
         noLRGPortal.addCustomTag('Host Hotel', 41188);
+
+        if(noLrgPortal.site_id == 37396){
+            noLRGPortal.addCustomTag('Free Tram to Mandalay Bay', 564);
+            noLRGPortal.addCustomTag('Free Tram to Mandalay Bay', 22619);
+        }
+
+        if(noLRGPortal.site_id == 37395){
+            noLRGPortal.addCustomTag('Shuttle to Mohegan Sun', 191384);
+        }
+
     }, 1);
 });
 

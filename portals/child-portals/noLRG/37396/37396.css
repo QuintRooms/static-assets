@@ -463,8 +463,8 @@ span.event-rate {
     background: #c8102e;
 }
 
-.event-rate {
-    color: #fff;
+span.event-rate {
+    color: #fff !important;
 }
 
 div.autocomplete ul li.selected {

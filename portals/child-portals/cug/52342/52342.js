@@ -50,7 +50,7 @@ if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotP
 }
 
 cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');
-cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/privacy', 'href');
+cugPortal.updateAttribute('.privacyLink', 'https://roomsteals.com/privacy', 'href');
 
 if (cugPortal.page_name === 'privacy-policy') {
     cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52342/html/privacyPolicy.html')

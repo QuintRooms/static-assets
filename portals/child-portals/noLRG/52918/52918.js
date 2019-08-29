@@ -74,11 +74,11 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.translateText('.customTag', 'train access');
 
 
-        if (window.matchMedia('(max-width: 565px)').matches) {
-            if (!document.querySelector('#currentPropDisclaimer')) {
-                document.querySelector('#currentPropertyPage').insertAdjacentHTML('afterBegin', '<p id="currentPropDisclaimer">By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-            }
-        }
+        // if (window.matchMedia('(max-width: 565px)').matches) {
+        //     if (!document.querySelector('#currentPropDisclaimer')) {
+        //         document.querySelector('#currentPropertyPage').insertAdjacentHTML('afterBegin', '<p id="currentPropDisclaimer">By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
+        //     }
+        // }
 
     }, 1);
 });
@@ -125,9 +125,9 @@ function waitForElementToLoad(elementWaitingFor) {
                 noLRGPortal.translateText('#slideit .tw div', 'email us');
                 noLRGPortal.translateText('header p', 'date prompt');
 
-                if (!document.querySelector('#theDatePrompt')) {
-                    document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
-                }
+                // if (!document.querySelector('#theDatePrompt')) {
+                //     document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<p>By default, hotel options are displayed for the weekend of May 7th-10th, 2020. Formula 1®, and the FIA, have not confirmed these dates. Feel free to book with confidence as cancellations/modifications are allowed dependent on the FIA\'s ratified 2020 F1® Calendar.</p>');
+                // }
 
                 function openMobileNav() {
                     let navCollapse = document.querySelector('.navCollapse');

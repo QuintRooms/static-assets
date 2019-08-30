@@ -2,9 +2,8 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'Farm Aid Rooms');
+// noLRGPortal.updateText('title', 'Farm Aid Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Special Olympics of Texas Rates');
-
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();

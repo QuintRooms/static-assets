@@ -844,6 +844,15 @@ ul {
     padding-bottom: 10px;
     height: 97px;
 }
+@media only screen and (max-width: 565px) {
+    #theQuickCheckIn{
+        width: 100% !important;
+    }
+
+    #theQuickCheckOut{
+        width: 100% !important;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     #AdminControlsContainer {
@@ -898,5 +907,5 @@ ul {
 
 #theDatePrompt img {
     max-width: 100px;
-    margin: 24px;
+    margin: 24px auto;
 }

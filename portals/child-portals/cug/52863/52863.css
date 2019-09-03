@@ -18,7 +18,7 @@ body {
 }
 
 #AdminControlsContainer {
-    z-index: 10;
+    z-index: 11;
     position: absolute;
     right: 0;
 }
@@ -45,10 +45,6 @@ body {
 }
 
 #theWBLoginForm h2 {
-    display: none;
-}
-
-#commands .profileCommand {
     display: none;
 }
 

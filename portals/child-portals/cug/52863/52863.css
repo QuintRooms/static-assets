@@ -18,8 +18,13 @@ body {
 }
 
 #AdminControlsContainer {
-    z-index: 10;
-    position: relative;
+    z-index: 11;
+    position: absolute;
+    right: 0;
+}
+
+#commands {
+    width: 100%;
 }
 
 #commands form {
@@ -40,10 +45,6 @@ body {
 }
 
 #theWBLoginForm h2 {
-    display: none;
-}
-
-#commands .profileCommand {
     display: none;
 }
 
@@ -221,6 +222,8 @@ body.WBForgotPasswordForm {
 header {
     background: #333;
     grid-row-start: 1;
+    min-height: 80px;
+    z-index: 10;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -671,9 +674,9 @@ nav {
 }
 
 .logo img {
-    max-width: 250px;
+    max-width: 100px;
     width: 100%;
-    padding: 12px;
+    padding: 6px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
@@ -841,6 +844,15 @@ ul {
     padding-bottom: 10px;
     height: 97px;
 }
+@media only screen and (max-width: 565px) {
+    #theQuickCheckIn{
+        width: 100% !important;
+    }
+
+    #theQuickCheckOut{
+        width: 100% !important;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     #AdminControlsContainer {
@@ -884,4 +896,16 @@ ul {
 
 .memberRating {
     display: none;
+}
+
+#theDatePrompt {
+    background: #333;
+    color: #fff;
+    padding: 24px;
+    width: 800px;
+}
+
+#theDatePrompt img {
+    max-width: 100px;
+    margin: 24px auto;
 }

@@ -73,12 +73,11 @@ function updateTier(tier) {
     let checkOut = new Date(document.querySelector('#theCheckOut').value);
     let timeDiff = checkOut.getTime() - checkIn.getTime();
     let dayDiff = timeDiff / (1000 * 3600 * 24);
-    console.log(dayDiff);
 
     if (tier === 'LowerLevel') {
-        limit = 400 / dayDiff;
+        limit = 400 / 2;
     } else {
-        limit = 250 / dayDiff;
+        limit = 250 / 2;
     }
 
     list.forEach(function(element) {

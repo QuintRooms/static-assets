@@ -50,7 +50,6 @@ if (document.querySelector('.input-div')) {
 }
 
 
-
 if (document.querySelector('.ArnProperty')) {
     let params = new URLSearchParams(document.location.search.substring(1));
     let package = params.get('package');
@@ -75,9 +74,9 @@ function updateTier(tier) {
     let dayDiff = timeDiff / (1000 * 3600 * 24);
 
     if (tier === 'LowerLevel') {
-        limit = 400 / 2;
+        limit = 400 / dayDiff;
     } else {
-        limit = 250 / 2;
+        limit = 250 / dayDiff;
     }
 
     list.forEach(function(element) {
@@ -92,9 +91,9 @@ function updateTier(tier) {
                 element.querySelector('.arnCurrency').style.color = 'red';
                 element.querySelector('.arnUnit').style.color = 'red';
                 divTag.style.backgroundColor = '#bf4848';
-                divTag.innerHTML = '$' + Math.trunc(price - limit) + ' over budget';
+                divTag.innerHTML = 'Each night is $' + Math.trunc(price - limit) + ' over budget';
             } else {
-                divTag.innerHTML = '$' + Math.trunc(limit - price) + ' under budget';
+                divTag.innerHTML = 'Each night is $' + Math.trunc(limit - price) + ' under budget';
                 divTag.style.backgroundColor = '#04800d';
             }
             element.querySelector('.ArnPropThumb').insertAdjacentElement('afterbegin', divTag);

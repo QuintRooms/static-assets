@@ -19,7 +19,12 @@ body {
 
 #AdminControlsContainer {
     z-index: 10;
-    position: relative;
+    position: absolute;
+    right: 0;
+}
+
+#commands{
+    width: 100%;
 }
 
 #commands form {
@@ -671,9 +676,9 @@ nav {
 }
 
 .logo img {
-    max-width: 250px;
+    max-width: 100px;
     width: 100%;
-    padding: 12px;
+    padding: 6px;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,

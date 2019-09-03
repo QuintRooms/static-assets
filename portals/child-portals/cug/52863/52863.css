@@ -23,7 +23,7 @@ body {
     right: 0;
 }
 
-#commands{
+#commands {
     width: 100%;
 }
 
@@ -887,4 +887,16 @@ ul {
 
 .memberRating {
     display: none;
+}
+
+#theDatePrompt {
+    background: #333;
+    color: #fff;
+    padding: 24px;
+    width: 800px;
+}
+
+#theDatePrompt img {
+    max-width: 100px;
+    margin: 24px;
 }

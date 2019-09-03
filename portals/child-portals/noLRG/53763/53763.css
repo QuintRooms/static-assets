@@ -80,6 +80,7 @@ header a {
 
 .logo img {
     margin: 0;
+    max-width: 250px;
 }
 
 .SearchHotels .ArnPropName a {

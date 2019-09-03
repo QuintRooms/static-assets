@@ -227,6 +227,7 @@ header {
     background: #333;
     grid-row-start: 1;
     min-height: 80px;
+    z-index: 10;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,

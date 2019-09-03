@@ -19,7 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo-full.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://youraustinmarathon.com/', 'href');
                 document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<span class="event-dates">Feb 14-16, 2020 - Downtown Austin, TX</span>');
                 observer.disconnect();

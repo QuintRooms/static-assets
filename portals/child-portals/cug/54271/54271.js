@@ -2,7 +2,7 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-cugPortal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.png', 'href');
+cugPortal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.ico', 'href');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

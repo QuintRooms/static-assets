@@ -27,3 +27,17 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+function redirectIfNotAuthenticated() {
+    if (document.querySelector('.MemberNotAuthenticated') && document.querySelector('.indexPage')) {
+        window.location.href = 'https://events.hotelsforhope.com/v6/login?siteid=52863';
+    }
+
+    if (document.querySelector('.RootBody')) {
+        setTimeout(function(){
+            window.location.href = 'https://events.hotelsforhope.com/v6/index?siteid=52863';
+        }, 500);
+    }
+}
+
+redirectIfNotAuthenticated();

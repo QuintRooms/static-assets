@@ -206,6 +206,7 @@ body.RootBody {
     background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
     background: linear-gradient(45deg, #665fee 0%, #27c2de 100%) !important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#665fee', endColorstr='#27c2de', GradientType=1);
+    display: none;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -909,4 +910,30 @@ ul {
 #theDatePrompt img {
     max-width: 100px;
     margin: 24px auto;
+}
+
+#theDatePrompt .ArnRooms,
+#theDatePrompt .ArnAdults {
+    display: none;
+}
+
+#theDatePrompt #theQuickCheckIn{
+    margin-bottom: 6px;
+}
+
+#theDatePrompt .SimpleSearch .CheckIn,
+#theDatePrompt .SimpleSearch .CheckOut {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#theDatePrompt .SimpleSearch .ArnCheckInDate,
+#theDatePrompt .SimpleSearch .ArnCheckOutDate {
+    width: 100% !important;
+}
+
+#theDatePrompt .SimpleSearch .CheckRates{
+    width: 50%;
+    margin: 18px auto 0 auto;
 }

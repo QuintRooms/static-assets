@@ -844,12 +844,13 @@ ul {
     padding-bottom: 10px;
     height: 97px;
 }
+
 @media only screen and (max-width: 565px) {
-    #theQuickCheckIn{
+    #theQuickCheckIn {
         width: 100% !important;
     }
 
-    #theQuickCheckOut{
+    #theQuickCheckOut {
         width: 100% !important;
     }
 }

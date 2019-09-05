@@ -2,7 +2,7 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-cugPortal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.ico', 'href');
+cugPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.ico', 'href');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -18,7 +18,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
 
                 observer.disconnect();

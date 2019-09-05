@@ -500,6 +500,10 @@ header {
     color: #000;
 }
 
+.SearchHotels .ArnPropName div.percentSavings {
+    margin: 8px auto;
+}
+
 .SinglePropDetail .ArnPropDescription {
     color: #fff;
 }
@@ -1015,7 +1019,8 @@ ul {
         margin-top: 60px;
         font-weight: 700;
     }
-    .logo img{
+
+    .logo img {
         max-width: 225px;
     }
 }

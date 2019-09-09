@@ -401,6 +401,11 @@ header {
     border: 1px solid #007bff;
 }
 
+.pagesNext,
+.pagesPrev {
+    color: #333;
+}
+
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,

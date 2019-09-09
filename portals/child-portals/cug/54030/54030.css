@@ -193,13 +193,6 @@ h2 {
     display: none;
 }
 
-#AdminControlsContainer {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
-
 .logo img {
     max-width: 200px;
 }

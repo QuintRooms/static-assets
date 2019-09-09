@@ -98,7 +98,7 @@ function updateCheckoutVerbiage(selector, text) {
     document.querySelector(selector).textContent = text;
 }
 if (document.body.classList.contains('CheckOutForm')) {
-    updateCheckoutVerbiage('.confirmationAgreement label', 'I agree to the policies above and the terms and conditions found on this website.');
+    updateCheckoutVerbiage('.confirmationAgreement', 'I agree to the policies above and the terms and conditions found on this website.');
 }
 
 // set ordinal

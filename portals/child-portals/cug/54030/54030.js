@@ -34,8 +34,3 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
-
-// if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
-//     window.location.href = 'https://www.communitybrands.com/';
-//     document.querySelector('body').style.display = 'none';
-// }

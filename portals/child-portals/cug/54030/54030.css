@@ -1014,3 +1014,47 @@ ul {
         margin-top: 8px;
     }
 }
+
+.WBProfileListMessage {
+    min-width: 350px;
+}
+
+.WBProfileListMessage input[type="text"] {
+    border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 800px) {
+    .WBProfileList #lightbox {
+        width: 100%;
+    }
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    display: flex !important;
+    background: rgba(0, 0, 0, .75);
+    padding: 15px 15px 14px;
+}
+
+.RootBody #CitiesNearbyContainer,
+.RootBody #theOtherSubmitButton {
+    display: none;
+}
+
+.RootBody .ArnAmentitiesContainer,
+.RootBody .ArnCitiesNearbyContainer,
+.RootBody .ArnCurrenciesContainer,
+.RootBody .ArnHotelSizeContainer,
+.RootBody .ArnPriceContainer,
+.RootBody .ArnPropertyClassesContainer,
+.RootBody .ArnPropertyTypesContainer,
+.RootBody .ArnRateFiltersContainer,
+.RootBody .ArnSlider {
+    background: transparent;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody .ArnSecondarySearchOuterContainer {
+        display: none !important;
+    }
+}

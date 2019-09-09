@@ -836,14 +836,13 @@
               </td>
             </tr>
             [endif]
-            [if:ExtraFeesPolicy]
             <tr>
               <td>
                 <div class="policyTitle" style="font-family: Avenir; color: #6D6E71; font-size: 14px; font-weight: bold;">Extra Fees Policy</div>
-                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[ExtraFeesPolicy,fallback=]&nbsp;Please note that tax rates are subject to change as required by applicable state and/or city laws in effect at the time of guest stay.</div>
+                <div class="policyBody" style="font-family: Avenir; color: #939598; font-size: 14px;">[if:ExtraFeesPolicy][ExtraFeesPolicy,fallback=]&nbsp;            
+                [endif] Please note that tax rates are subject to change as required by applicable state and/or city laws in effect at the time of guest stay.</div>
               </td>
             </tr>
-            [endif]
             [if:PaymentPolicy]
             <tr>
               <td>

@@ -634,3 +634,7 @@ input#theSubmitButton:hover {
     z-index: 2;
     position: relative !important;
 }
+
+.SearchHotels .PropLimitedAvail .ArnPropName{
+    background: transparent !important;
+}

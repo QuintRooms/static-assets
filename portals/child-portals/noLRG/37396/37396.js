@@ -55,7 +55,7 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 function addHiltonTags() {
-    let hiltonPropIds = [236618, 16, 31, 21, 12937, 267891, 257288, 1220075, 1268837, 175722, 65, 188905, 16460, 16343, 12715, 71, 16797, 16417, 277232, 16454, 16470, 165275, 182101, 659056, 3349002, 50725, 282039, 16523, 1269346, 1367176, 1239970, 272052, 188634, 3469078, 378245, 3309155, 277416, 2302525, 3167140, 16837, 859570, 215220, 2048227];
+    let hiltonPropIds = [236618, 16, 31, 21, 12937, 267891, 257288, 1220075, 1268837, 175722, 65, 188905, 16460, 16343, 12715, 71, 16797, 16417, 277232, 16454, 16470, 165275, 182101, 659056, 3349002, 50725, 282039, 16523, 1269346, 1367176, 1239970, 272052, 188634, 3469078, 378245, 3309155, 277416, 2302525, 3167140, 16837, 859570, 215220, 2048227, 13770, 13499, 67,20050, 20252, 415537, 6, 619759, 24, 446580, 25, 3349688, 2048225,1243044, 1758007, 851719, 20132, 180778, 244634, 20130, 277730, 277731, 187648,20133, 20164, 262395, 19706, 3011273,16452, 220004, 2048226, 3468713];
 
     hiltonPropIds.forEach(function(prop) {
         if (document.querySelector('#theArnProperty' + prop)) {
@@ -72,3 +72,14 @@ function addHiltonTags() {
         }
     });
 }
+
+function getPropIds() {
+    let props = document.querySelectorAll('.propId');
+    let propIds = [];
+    props.forEach(function(prop) {
+        propIds.push(prop.textContent);
+    });
+    console.log(propIds);
+}
+
+// getPropIds();

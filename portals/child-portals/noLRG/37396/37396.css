@@ -300,8 +300,20 @@ span.event-rate {
 }
 
 .SearchHotels .bottomPager .ArnPages a,
-.SearchHotels .bottomPager .ArnPages .not_page {
+.SearchHotels .bottomPager .ArnPages .not_page,
+.SearchHotels .bottomPager .ArnPages .pagesActive {
     border: 1px solid #c8102e;
+    padding: 6px 8px !important;
+    line-height: 15px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.SearchHotels .bottomPager .ArnPages .pagesActive {
+    background: transparent;
+    color: #333;
 }
 
 .selectedTab,
@@ -311,12 +323,6 @@ span.event-rate {
 .ArnGoAirportSearch:hover {
     border-bottom: 1px solid #c8102e;
     color: #fff !important;
-}
-
-.SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff;
-    background: #c8102e;
-    border: 1px solid #c8102e;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -582,6 +588,19 @@ input#theSubmitButton:hover {
     .SearchHotels .ArnGoAirportSearch:hover {
         border-bottom: 1px solid #c8102e;
         background: #c8102e;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .SearchHotels .bottomPager .ArnPages a {
+        padding: 6px !important;
+        font-size: 12px !important;
+        margin: 0;
+    }
+    .pagesPrev,
+    .pagesNext{
+        padding: 0 !important;
+        font-size: 10px !important;
     }
 }
 

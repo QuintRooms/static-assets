@@ -10,18 +10,18 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
 
         // Mansfield
-        if (noLRGPortal.site_id == 53324 && noLRGPortal.page_name == 'search-results') {
-            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 style="margin-left:15px;">Fieldhouse USA Mansfield</h4>');
+        if (noLRGPortal.site_id == 53324 && noLRGPortal.page_name == 'search-results' && !document.querySelector('#venue')) {
+            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 id="venue" style="margin-left:15px;">Fieldhouse USA Mansfield</h4>');
         }
 
         // Frisco
-        if (noLRGPortal.site_id == 53323 && noLRGPortal.page_name == 'search-results') {
-            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 style="margin-left:15px;">Fieldhouse USA Frisco</h4>');
+        if (noLRGPortal.site_id == 53323 && noLRGPortal.page_name == 'search-results' && !document.querySelector('#venue')) {
+            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 id="venue" style="margin-left:15px;">Fieldhouse USA Frisco</h4>');
         }
 
         // Grapevine
-        if (noLRGPortal.site_id == 53322 && noLRGPortal.page_name == 'search-results') {
-            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 style="margin-left:15px;">Fieldhouse USA Grapevine</h4>');
+        if (noLRGPortal.site_id == 53322 && noLRGPortal.page_name == 'search-results' && !document.querySelector('#venue')) {
+            document.querySelector('#currentPropertyPage').insertAdjacentHTML('beforeBegin', '<h4 id="venue" style="margin-left:15px;">Fieldhouse USA Grapevine</h4>');
         }
     }, 1);
 });

@@ -4,7 +4,7 @@ let cugPortal = new CUGPortal();
 
 cugPortal.updateText('title', 'Room Steals');
 cugPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.png', 'href');
-
+cugPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the latest information by email from Room Steals including event reminders, relevant news, surveys, offers, and promotions.');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -21,10 +21,16 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 if (document.querySelector('#AdminControlsContainer')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com">Room Steals</a>');
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com/home">Room Steals</a>');
                 } else {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
+
+                if (document.querySelector('.ArnSupportBottom .cancelLink')) {
+                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>');
+                }
+                cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');
+                cugPortal.updateAttribute('.privacyLink', 'https://roomsteals.com/privacy', 'href');
 
                 observer.disconnect();
             }
@@ -40,48 +46,16 @@ let script = document.createElement('script');
 script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
 document.head.appendChild(script);
 
-function moveSearch() {
+if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
+    window.location.href = 'https://roomsteals.com/login';
+    document.querySelector('body').style.display = 'none';
+}
 
-    // search stuff
-    let searchContainer = document.querySelector('.ArnQuadSearchContainer');
-    document.querySelector('.ArnSearchContainerMainDiv').insertAdjacentElement('afterBegin', searchContainer);
-    let cityInput = document.querySelector('#city');
-    document.querySelector('#CitySearchContainer').textContent = 'City';
-    let checkIn = document.querySelector('#theCheckIn');
-    let checkOut = document.querySelector('#theCheckOut');
-    let rooms = document.querySelector('#rooms');
-    let adults = document.querySelector('#adults');
-    let sort = document.querySelector('#SortControlsContainer');
-
-    // property stuff
-    let propertyContainer = document.querySelector('#currentPropertyPage');
-    let properties = propertyContainer.querySelectorAll('.ArnProperty');
-
-    properties.forEach(function(element) {
-        if (element.querySelector('.arnUnit')) {
-            let price = element.querySelector('.arnUnit').textContent;
-            let unitPrice = price.split('.')[0];
-            price = unitPrice;
-        }
-    });
-
-
-    document.querySelector('body').insertAdjacentHTML('beforeEnd', `
-        <style>
-            .ArnPropNameLink{
-                font-size: 18px;
-            }
-            .SearchHotels .ArnRateCell{
-                position: static;
-            }
-            .SearchHotels .ArnPropAddress{
-                display: none;
-            }
-            .SearchHotels .ArnPropAddress, .ArnGoCitySearch, .ArnGoLandmarkSearch, .ArnGoAirportSearch, .ArnSearchHotelsImg, .ArnSearchHotelsImg + b, .ArnSecondarySearchOuterContainer, #HotelNameContainer{
-                display: none;
-            }
-
-        </style>
-
-    `);
+if (cugPortal.page_name === 'privacy-policy') {
+    cugPortal.fetchAsset('https://static.hotelsforhope.com/portals/child-portals/cug/52342/html/privacyPolicy.html')
+        .then(data => document.querySelector('.WBPrivacyPolicy .ArnSubPage').innerHTML = data)
+        .catch(() => {
+            throw new Error('File at path ' + url + ' not found.');
+            return false;
+        });
 }

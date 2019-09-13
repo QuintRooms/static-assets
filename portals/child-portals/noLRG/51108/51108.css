@@ -606,7 +606,10 @@ header>a {
     color: #15151e !important;
     box-shadow: 0 0 0 2px rgb(225, 6, 0) inset;
 }
-
+.SearchHotels .bottomPager .ArnPages .pagesActive{
+    background: #15151e !important;
+    border: 1px solid #15151e;
+}
 .selectedTab {
     text-transform: initial;
 }

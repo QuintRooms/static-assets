@@ -28,7 +28,7 @@ body.RootBody {
 }
 
 header {
-    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/header-bg.png') no-repeat center center /cover;
+    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/header-bg.jpg') no-repeat center center /cover;
     border-bottom: 3px solid #0b1a46;
     display: flex;
     align-items: center;
@@ -37,8 +37,6 @@ header {
 }
 
 .header-info {
-    border-top: 5px dotted #0b1a46;
-    border-bottom: 5px dotted #0b1a46;
     padding: 8px 28px;
     line-height: 1;
 }
@@ -46,7 +44,7 @@ header {
 .header-info span {
     display: block;
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 24px;
     font-family: 'Devine', 'serif';
 }

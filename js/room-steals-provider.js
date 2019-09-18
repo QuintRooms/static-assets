@@ -105,25 +105,16 @@ class RoomStealsNavigation {
     }
 
     /**
-     *@description fetches names, referralid, firstname, lastname, and email
+     *@description gets partners url from memberMetaTag
      *@return json of member data
      */
-    getMemberPartner() {
-        return this.postRequest(this.domain + 'MemberAPI.aspx?siteid=' + this.siteID + '&token=' + this.adminToken + '&memberData=' + this.encodeString(this.memberName))
-            .then(data => {
-                this.memberPartner = JSON.parse(this.data['AdditionalInfo']);
-                this.memberPartner = this.memberPartner['partner'];
-                Object.keys(this.partnersJSON['partners'][this.memberPartner]['nav']['primary']).forEach(key => {
-                    if (this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key].includes(this.memberPartner)) {
-                        this.partnerURL = this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key];
-                    }
-                });
-
-            })
-            .catch(() => {
-                document.querySelector('#commands .profileCommand').style.display = 'inline-block';
-                throw new Error('Member not received.');
-            });
+    async getMemberPartner() {
+        let memberMetaTag = await document.querySelector('meta[name="memberMetaTag"]');
+        if (memberMetaTag) {
+            memberMetaTag = JSON.parse(memberMetaTag.getAttribute('content'));
+            let additionalInfo = JSON.parse(memberMetaTag['AdditionalInfo']);
+            return this.memberPartner = additionalInfo['partner'];
+        }
     }
     /**
      *@description list of partners from https://roomsteals.com/js/partners.json
@@ -153,8 +144,7 @@ class RoomStealsNavigation {
         logoutButton.addEventListener('click', (event) => {
             event.preventDefault();
             localStorage.setItem('loggedOut', 'true');
-            window.location.href = this.partnerURL;
-            console.log(this.partnerURL);
+            window.location.href = 'https://' + this.memberPartner;
         });
     }
 }

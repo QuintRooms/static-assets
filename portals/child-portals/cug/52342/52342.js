@@ -22,6 +22,11 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 if (document.querySelector('#AdminControlsContainer')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com/home">Room Steals</a>');
+
+                    let script = document.createElement('script');
+                    script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
+                    document.head.appendChild(script);
+                    
                 } else {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
@@ -42,9 +47,7 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-let script = document.createElement('script');
-script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
-document.head.appendChild(script);
+
 
 if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
     window.location.href = 'https://roomsteals.com/login';

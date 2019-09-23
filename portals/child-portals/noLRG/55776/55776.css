@@ -30,7 +30,7 @@ body.RootBody {
 }
 
 header {
-    background: #2d78a5 url('https://static.hotelsforhope.com/portals/child-portals/noLRG/51821/images/pattern.png') repeat;
+    background: #000;
     border-bottom: 3px solid #fff;
     display: flex;
     align-items: center;
@@ -47,8 +47,8 @@ header a {
 }
 
 .logo img {
-    max-width: 150px;
-    margin: 0;
+    margin: 12px;
+    max-width: 600px;
 }
 
 .SearchHotels .ArnPropName a {

@@ -28,11 +28,23 @@ function waitForElementToLoad(elementWaitingFor) {
                     adminControls.insertAdjacentElement('afterBegin', logo);
                     adminControls.insertAdjacentHTML('afterEnd', `
                         <ul class="partner-nav">
-                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52780" target="_blank">C3 Travel</a>
-                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52916" target="_blank">C3 MGMT Travel</a>
-                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52870" target="_blank">FGT Travel</a>
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52780" target="_blank" id="c3_travel">C3 Travel</a>
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52916" target="_blank" id="mgmt_travel">C3 MGMT Travel</a>
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52870" target="_blank" id="fgt_travel">FGT Travel</a>
                         </ul>
                         `);
+
+                    if (cugPortal.site_id == 52780) {
+                        document.querySelector('#c3_travel').classList.add('active');
+                    }
+
+                    if (cugPortal.site_id == 52870) {
+                        document.querySelector('#fgt_travel').classList.add('active');
+                    }
+
+                    if (cugPortal.site_id == 52916) {
+                        document.querySelector('#mgmt_travel').classList.add('active');
+                    }
                 }
 
                 if (document.querySelector('.MemberAuthenticated')) {

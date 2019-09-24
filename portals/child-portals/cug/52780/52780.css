@@ -362,7 +362,7 @@ body.WBValidatedRegistrationForm {
 }
 
 .SearchHotels .ArnLeftSearchContainer {
-    top: 24px;
+    top: 44px;
     position: relative;
 }
 
@@ -874,11 +874,18 @@ ul {
         width: 36px;
         height: 36px;
         background-size: 16px auto;
+        position: relative;
+        top: 24px;
     }
 
     .adminMobile {
         height: 0;
         width: 100%;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
     }
 }
 
@@ -1052,6 +1059,14 @@ ul#imgList {
 }
 
 /* Partner Nav */
+.partner-nav {
+    display: none;
+}
+
+.RootBody .partner-nav {
+    display: block;
+}
+
 .partner-nav {
     width: 100%;
     text-align: right;

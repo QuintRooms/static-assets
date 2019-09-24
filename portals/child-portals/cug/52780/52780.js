@@ -103,6 +103,8 @@ function eventSlider() {
 
         searchContainer.insertAdjacentHTML('afterend', sliderContainer);
 
+        eventSlidesTemplate('Lollapalooza', 'Jul 30 - Aug 2', 'August 2 2020', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=35879', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
+
         eventSlidesTemplate('Innings Festival', 'Feb 29 - Mar 1, 2020', 'March 1 2020', 'Tempe, AZ', 'http://events.hotelsforhope.com/group-event?id=35043', 'https://cdn-1-www.inningsfestival.com/wp/wp-content/themes/forte-child/img/INF-Web-Footer-01.svg');
 
         eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
@@ -111,8 +113,6 @@ function eventSlider() {
         eventSlidesTemplate('Austin City Limits', 'Oct 4 - 6 & Oct 11 - 13', 'October 13 2019', 'Austin, TX', 'https://aclfestival.hotelsforhope.com/group-event?id=31785', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/acl.jpg');
 
         eventSlidesTemplate('Music City Food + Wine', 'Sept 20 - 22', 'September 22 2019', 'Nashville, TN', 'http://events.hotelsforhope.com/group-event?id=32013', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51441/images/banner.jpg');
-
-        eventSlidesTemplate('Lollapalooza', 'Aug 1 - 4', 'August 4 2019', 'Grant Park, Chicago', 'http://lollapalooza.hotelsforhope.com/group-event?id=29598', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/lolla.jpg');
 
         let slideWidth = document.querySelector('.festival-container').offsetWidth + 10;
         let imgList = document.getElementById('imgList');

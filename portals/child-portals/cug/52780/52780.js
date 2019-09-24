@@ -2,7 +2,7 @@ import CUGPortal from '../../../js/portal-setup.js';
 
 let cugPortal = new CUGPortal();
 
-cugPortal.updateText('title', 'C3 Travel Plus');
+cugPortal.updateText('title', 'C3 Travel');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -18,14 +18,21 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-
-                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateText('.CreateAnAccountAction', 'Register');
+                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/52780/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
 
                 let logo = document.querySelector('.logo');
                 let adminControls = document.querySelector('#AdminControlsContainer');
                 if (adminControls) {
                     adminControls.insertAdjacentElement('afterBegin', logo);
+                    adminControls.insertAdjacentHTML('afterEnd', `
+                        <ul class="partner-nav">
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52780" target="_blank">C3 Travel</a>
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52916" target="_blank">C3 MGMT Travel</a>
+                            <li><a href="https://events.hotelsforhope.com/v6/?siteid=52870" target="_blank">FGT Travel</a>
+                        </ul>
+                        `);
                 }
 
                 if (document.querySelector('.MemberAuthenticated')) {
@@ -44,24 +51,31 @@ waitForElementToLoad('header');
 
 function eventSlidesTemplate(eventName, dateRange, endDate, location, portalURL, backgroundImage) {
     let slideTemplate = `
-        <li class="slide">
-            <div class="festival-container">
-                <a href="` + portalURL + `" target="_blank">
-                        <div class="festival" style="background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url(` + backgroundImage + `) no-repeat center center /cover">
-                            <h4 class="date" data-endDate="` + endDate + `">` + dateRange + `</h4>
-                            <h3 class="name">` + eventName + `</h3>
-                            <h4 class="location">` + location + `</h4>
-                        </div>
-                    </a>
-            </div>
-        </li>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <li class="slide">
+                <div class="festival-container">
+                    <a href="` + portalURL + `" target="_blank">
+                            <div class="festival" style="background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url(` + backgroundImage + `) no-repeat center center /cover">
+                                <h4 class="date" data-endDate="` + endDate + `">` + dateRange + `</h4>
+                                <h3 class="name">` + eventName + `</h3>
+                                <h4 class="location">` + location + `</h4>
+                            </div>
+                        </a>
+                </div>
+            </li>
+        </div>
     `;
-    if (slideTemplate);
-    document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
+    if (slideTemplate) {
+        document.querySelector('#imgList').insertAdjacentHTML('afterBegin', slideTemplate);
+    }
 }
 
 function eventSlider() {
     let sliderContainer = `
+        <section>
+            <h1>Traveling in a Group?</h1>
+            <button class="group-travel-btn" data-toggle="modal" data-target="#hotelFormModal">Group Hotel Request</button>
+        </section>
         <section class="event-slider alternate-bg" id="event-slider">
             <h1 class="text-center">C3 Events</h1>
             <div class="scroll-arrow" id="scroll-left">
@@ -93,8 +107,6 @@ function eventSlider() {
 
         eventSlidesTemplate('Voodoo Music + Arts Experience', 'Oct 25 - 27', 'October 27 2019', 'City Park, New Orleans', 'http://events.hotelsforhope.com/group-event?id=34747', 'https://media.travsrv.com/appSkins/51439/v6/themes/standard/images/voodoo-bg.jpg');
 
-        eventSlidesTemplate('Metarama Gaming + Music Festival', 'Oct 19 - 20', 'October 20 2019', 'Las Vegas, NV', 'http://events.hotelsforhope.com/group-event?id=34746', 'https://www.metaramafestival.com/wp-www-metaramafestival-com/wp/wp-content/uploads/2019/06/meta19-websitebillboards-halfwidth-1-b9c73675.jpg');
-
         eventSlidesTemplate('Exit 111', 'Oct 11 - 13', 'October 13 2019', 'Manchester, TN', 'http://events.hotelsforhope.com/group-event?id=34724', 'https://www.exit111festival.com/wp-www-exit111festival-com/wp/wp-content/uploads/2019/04/vipbillboard480-410eb5d6.png');
         eventSlidesTemplate('Austin City Limits', 'Oct 4 - 6 & Oct 11 - 13', 'October 13 2019', 'Austin, TX', 'https://aclfestival.hotelsforhope.com/group-event?id=31785', 'https://media.travsrv.com/appSkins/48167/v6/themes/standard/images/acl.jpg');
 
@@ -120,7 +132,7 @@ function eventSlider() {
 
             let endDate = element.getAttribute('data-endDate');
             let today = new Date();
-            let parent = element.closest('li');
+            let parent = element.closest('.col-md-4');
             endDate = new Date(endDate);
 
             if (endDate < today) {
@@ -158,7 +170,7 @@ let tabs = [{
         'id': 'eventSliderTab'
     },
     {
-        'label': 'Hotel Request',
+        'label': 'Group Hotel Request',
         'icon': '<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="wpforms" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-wpforms fa-w-18 fa-2x"><path fill="currentColor" d="M448 75.2v361.7c0 24.3-19 43.2-43.2 43.2H43.2C19.3 480 0 461.4 0 436.8V75.2C0 51.1 18.8 32 43.2 32h361.7c24 0 43.1 18.8 43.1 43.2zm-37.3 361.6V75.2c0-3-2.6-5.8-5.8-5.8h-9.3L285.3 144 224 94.1 162.8 144 52.5 69.3h-9.3c-3.2 0-5.8 2.8-5.8 5.8v361.7c0 3 2.6 5.8 5.8 5.8h361.7c3.2.1 5.8-2.7 5.8-5.8zM150.2 186v37H76.7v-37h73.5zm0 74.4v37.3H76.7v-37.3h73.5zm11.1-147.3l54-43.7H96.8l64.5 43.7zm210 72.9v37h-196v-37h196zm0 74.4v37.3h-196v-37.3h196zm-84.6-147.3l64.5-43.7H232.8l53.9 43.7zM371.3 335v37.3h-99.4V335h99.4z" class=""></path></svg>',
         'url': '#event-form-container',
         'id': 'hotelRequestTab'
@@ -188,7 +200,7 @@ function addTabsToRootPageSearch(arrayOfTabs) {
  * @return data html
  */
 async function createHotelRequestForm() {
-    let response = await fetch('https://dev-static.hotelsforhope.com/portals/child-portals/cug/52870/html/hotelRequestForm.html');
+    let response = await fetch('https://static.hotelsforhope.com/portals/child-portals/cug/52780/html/hotelRequestForm.html');
     let data = await response.text()
         .then((data) => {
             document.querySelector('body').insertAdjacentHTML('beforeEnd', data);
@@ -249,7 +261,7 @@ if (document.querySelector('.RootBody')) {
     appendAdvancedFiltersToMainSearch();
     createHotelRequestForm()
         .then(() => {
-            hotelRequestFormValidation();
+            // hotelRequestFormValidation();
         });
 }
 

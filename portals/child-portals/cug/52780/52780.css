@@ -62,9 +62,9 @@ body {
     display: block;
 }
 
-.WBValidatedRegistrationForm .SSFormBody {
+/*.WBValidatedRegistrationForm .SSFormBody {
     border: none;
-}
+}*/
 
 .WBLoginFormContainer.ArnSubPage #theWBLoginForm .submit {
     max-width: none;
@@ -72,11 +72,6 @@ body {
 
 .WBLoginFormContainer.ArnSubPage #theWBLoginForm .formField.checkbox {
     margin: 6px 0 0;
-}
-
-.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
-.loginDivider {
-    display: none;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,
@@ -121,7 +116,11 @@ body,
 header {
     z-index: 10;
     background: #333;
-    height: 99px;
+    height: 45px;
+}
+
+.MemberAuthenticated header {
+    display: none;
 }
 
 #theConfirmationContainer h4,
@@ -241,7 +240,8 @@ header {
 
 .WBForgotPasswordFormContainer.ArnSubPage,
 .WBForgotPasswordFormInform,
-.WBLoginFormContainer.ArnSubPage {
+.WBLoginFormContainer.ArnSubPage,
+body.WBValidatedRegistrationForm {
     position: static;
     background: transparent;
     grid-row-start: 2;
@@ -682,24 +682,20 @@ header {
 }
 
 /* Registration Page */
-.WBValidatedRegistrationForm header {
-    border-bottom: none;
-    background: transparent;
-    height: 0;
+#theWBValidatedRegistrationFormBody {
+    border: none;
 }
 
-.WBValidatedRegistrationForm header img {
-    margin: 50px;
+.WBValidatedRegistrationFormContainer.ArnSubPage {
+    background: #fff !important;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 18px 18px 18px;
 }
 
-.WBValidatedRegistrationForm .ArnSubPage {
+.registrationText {
     margin: 0;
-    padding: 0;
-}
-
-.jumbotron {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), color-stop(100%, rgba(56, 56, 56, 0.83)), to(rgba(8, 8, 8, 0.68))), url(https://static.hotelsforhope.com/portals/child-portals/cug/52870/images/banner.jpg) no-repeat center center /cover;
-    padding-top: 220px;
+    padding: 24px 0;
 }
 
 nav {
@@ -719,21 +715,6 @@ nav {
     margin: 0;
 }
 
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h3,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron p,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    color: #fff;
-    line-height: 1.4;
-    font-family: 'Montserrat', 'Helvetica';
-    font-weight: 700;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1 {
-    font-size: 62px;
-}
-
 .btn-primary {
     background: #ff4c44;
     box-shadow: none;
@@ -750,14 +731,6 @@ nav {
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
     font-family: 'Montserrat', 'Helvetica';
     font-weight: 400;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    list-style: none;
-    line-height: 2;
-    font-size: 1.2em;
-    color: #fff;
-    font-weight: 200;
 }
 
 ul {
@@ -838,10 +811,10 @@ ul {
     }
 }
 
-.WBValidatedRegistrationForm .steps fieldset legend {
+/*.WBValidatedRegistrationForm .steps fieldset legend {
     border-bottom: 2px dashed #7d7e81 !important;
 }
-
+*/
 @media screen and (min-width: 767px) {
     .col-md-12.flex {
         flex-direction: row;
@@ -909,32 +882,6 @@ ul {
     }
 }
 
-.RootBody h1 {
-    margin-bottom: 36px;
-    color: #fff;
-    font-weight: 300;
-}
-
-.RootBody .ArnSearchContainerMainTable {
-    margin: 0 auto;
-}
-
-.alternate-bg {
-    background: #fff;
-}
-
-.alternate-bg+section {
-    margin-top: 0;
-}
-
-.alternate-bg h1 {
-    color: #333;
-}
-
-.alternate-bg p {
-    color: #333;
-}
-
 /* Slider Styles */
 
 .event-deals {
@@ -992,7 +939,7 @@ ul {
 }
 
 .scroll-arrow {
-    display: inline-block;
+    display: none;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
@@ -1038,6 +985,14 @@ ul#imgList {
     margin-bottom: 0;
 }
 
+#imgList .col-md-4 {
+    padding: 15px;
+}
+
+.col-xs-12 .festival {
+    min-height: 170px;
+}
+
 .event-slider ul::-webkit-scrollbar {
     display: none;
 }
@@ -1053,7 +1008,7 @@ ul#imgList {
 
 .event-slider li,
 .event-slider img {
-    width: 25%;
+    width: 100%;
 }
 
 .event-slider li:hover {
@@ -1084,7 +1039,7 @@ ul#imgList {
 
     .event-slider li,
     .event-slider img {
-        width: 50%;
+        width: 100%;
     }
 }
 
@@ -1096,10 +1051,100 @@ ul#imgList {
     }
 }
 
+/* Partner Nav */
+.partner-nav {
+    width: 100%;
+    text-align: right;
+    margin: 12px 0;
+}
+
+.partner-nav li {
+    display: inline;
+}
+
+.partner-nav a {
+    color: #fff;
+    font-size: 17px;
+    padding: 8px 0;
+    margin: 0 13px;
+    position: relative;
+}
+
+.partner-nav li a:hover {
+    background: transparent !important;
+}
+
+.partner-nav li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 6px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.partner-nav li a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
 /* RootBody Custom Content */
 .RootBody section {
     padding: 90px 0 180px 0;
+    color: #333;
+    text-align: center;
+    background: #fff;
 }
+
+.RootBody h1 {
+    margin-bottom: 36px;
+    color: #333;
+    font-weight: 300;
+}
+
+.group-travel-btn {
+    background: #ff4c44;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 17px;
+    border-radius: 5px;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
+}
+
+.group-travel-btn:hover,
+.group-travel-btn:active,
+.group-travel-btn:focus {
+    background: #e2332b;
+}
+
+.RootBody .ArnSearchContainerMainTable {
+    margin: 0 auto;
+}
+
+.RootBody section.alternate-bg {
+    background: #498ee7;
+}
+
+.alternate-bg+section {
+    margin-top: 0;
+}
+
+.alternate-bg h1 {
+    color: #fff;
+}
+
+.alternate-bg p {
+    color: #fff;
+}
+
 
 /* RootBody Search Tabs */
 
@@ -1111,7 +1156,7 @@ ul#imgList {
     justify-content: center;
     align-items: center;
     padding: 12px;
-    width: 125px;
+    width: 200px;
 }
 
 .tab.active {
@@ -1180,7 +1225,7 @@ ul#imgList {
 
     .tab {
         padding: 8px;
-        width: 24.2%;
+        width: 32.89%;
     }
 
     .tab svg {

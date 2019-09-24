@@ -1089,7 +1089,8 @@ ul#imgList {
     background: transparent !important;
 }
 
-.partner-nav li a:before {
+.partner-nav li a:before,
+.partner-nav li a.active:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -1104,7 +1105,8 @@ ul#imgList {
     transition: all 0.3s ease-in-out 0s;
 }
 
-.partner-nav li a:hover:before {
+.partner-nav li a:hover:before,
+.partner-nav li a.active:before {
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);

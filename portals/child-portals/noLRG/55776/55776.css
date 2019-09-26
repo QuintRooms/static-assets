@@ -257,7 +257,7 @@ header a {
     font-family: 'Druk-Medium' !important;
 }
 
-.SinglePropDetail .submit{
+.SinglePropDetail .submit {
     margin: 15px 0 0 0;
 }
 
@@ -671,6 +671,25 @@ select,
 }
 
 @media only screen and (max-width: 800px) {
+    .SearchHotels .ArnLeftSearchContainer {
+        border-bottom: none;
+    }
+
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        border: 1px solid #ff48c5;
+    }
+
+    .SearchHotels .ArnGoAirportSearch,
+    .SearchHotels .ArnGoCitySearch,
+    .SearchHotels .ArnGoLandmarkSearch {
+        border-right: 1px solid #ff48c5;
+        border-bottom: 1px solid #ff48c5;
+    }
+
+    .ArnHotelNameContainer span {
+        color: #fff;
+    }
+
     .SinglePropDetail {
         background: #000;
     }
@@ -686,6 +705,10 @@ select,
 
     .ad-unit {
         display: none;
+    }
+
+    .SearchHotels .ArnPropName div.reviewCount {
+        margin-left: 0 !important;
     }
 
     .SearchHotels .ArnSortByName:hover,
@@ -839,6 +862,11 @@ select,
 
     .SinglePropDetail .ArnLeftListContainer {
         border-right: none;
+    }
+
+    .PropertyAmenities:before,
+    .PropertyAmenities:after {
+        top: 8px !important;
     }
 }
 

@@ -257,6 +257,10 @@ header a {
     font-family: 'Druk-Medium' !important;
 }
 
+.SinglePropDetail .submit{
+    margin: 15px 0 0 0;
+}
+
 .SinglePropDetail .ArnPropName div.ArnTripAdvisorDetails {
     width: 200px;
 }

@@ -9,9 +9,10 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+        noLRGPortal.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.ArnPropertyTierTwo');
     }, 1);
 });
-
+ 
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);
     let config = { attributes: false, childList: true, subtree: false };

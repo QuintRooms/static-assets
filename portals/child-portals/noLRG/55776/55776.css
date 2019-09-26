@@ -232,9 +232,9 @@ header a {
 
 .SearchHotels .adminMobile>.hamburger {
     border-bottom: 1px solid #ff48c5 !important;
-    padding-left: 0;
-    border-radius: 0;
-    font-size: 11px;
+    padding-left: 0 !important;
+    border-radius: 0 !important;
+    font-size: 11px !important;
 }
 
 #SortControls {
@@ -469,20 +469,20 @@ input[type=file] {
     color: #fff;
 }
 
+.PropLimitedAvail .ArnContainer,
+.SearchHotels .PropLimitedAvail .ArnPropName {
+    background: #000;
+}
+
 .ArnPropNameLink {
     color: #54f343 !important;
     font-size: 16px !important;
-    font-family: 'Druk-Wide';
-    letter-spacing: 1px !important;
-}
-
-.SearchHotels .ArnSecondarySearchOuterContainer {
-    padding: 0;
+    font-family: 'Druk-Medium';
 }
 
 .ArnSecondarySearchOuterContainer span {
     color: #000;
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .ArnSearchField {
@@ -521,7 +521,7 @@ input[type=file] {
 
 .SearchHotels .ArnIndividualSearchContainer a {
     color: #000;
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .SinglePropDetail .ArnRateFromTo {
@@ -647,6 +647,9 @@ select,
 }
 
 @media only screen and (min-width: 800px) {
+    .SearchHotels .ArnSecondarySearchOuterContainer{
+        padding: 0 15px;
+    }
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
@@ -668,6 +671,18 @@ select,
     .ArnSortByDistance.active {
         border-left: 2px solid #ff48c5 !important;
     }
+
+    .ArnGoAddressSearch,
+    .ArnGoAddressSearch:hover,
+    .ArnGoAirportSearch,
+    .ArnGoAirportSearch:hover,
+    .ArnGoCitySearch,
+    .ArnGoCitySearch:hover,
+    .ArnGoLandmarkSearch,
+    .ArnGoLandmarkSearch:hover {
+        border-top: 1px solid #ff48c5;
+        border-bottom: 1px solid #ff48c5;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -675,15 +690,23 @@ select,
         border-bottom: none;
     }
 
+    .SearchHotels .ArnRightListContainer {
+        border-left: none;
+    }
+
     .SearchHotels .ArnPrimarySearchOuterContainer {
-        border: 1px solid #ff48c5;
+        border: none;
     }
 
     .SearchHotels .ArnGoAirportSearch,
     .SearchHotels .ArnGoCitySearch,
     .SearchHotels .ArnGoLandmarkSearch {
-        border-right: 1px solid #ff48c5 !important;
-        border-bottom: 1px solid #ff48c5;
+        border-right: none !important;
+        border: 1px solid #ff48c5;
+    }
+
+    .SearchHotels .ArnGoCitySearch {
+        border-left: none;
     }
 
     .ArnHotelNameContainer span {
@@ -912,4 +935,22 @@ select,
 
 .yui3-calendar-grid td {
     color: #000 !important;
+}
+
+/* Date Prompt */
+#theDatePrompt {
+    background: #000;
+    padding: 18px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid #ff48c5;
+}
+
+#theDatePrompt>img {
+    max-width: 500px;
+}
+
+#theDatePrompt .SimpleSearch .ArnCheckInDate,
+#theDatePrompt .SimpleSearch .ArnCheckOutDate {
+    width: 100% !important;
 }

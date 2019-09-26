@@ -682,7 +682,7 @@ select,
     .SearchHotels .ArnGoAirportSearch,
     .SearchHotels .ArnGoCitySearch,
     .SearchHotels .ArnGoLandmarkSearch {
-        border-right: 1px solid #ff48c5;
+        border-right: 1px solid #ff48c5 !important;
         border-bottom: 1px solid #ff48c5;
     }
 

@@ -710,10 +710,6 @@ select,
         border-bottom: 4px solid #f2fb18 !important;
     }
 
-    .SinglePropDetail .ArnPropName div.ArnTripAdvisorDetails {
-        text-align: center;
-    }
-
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {

@@ -14,19 +14,6 @@ body {
 }
 
 /*Cug Specific */
-#validPassCode {
-    width: 100%;
-}
-
-#thePersonalInfoGroup label {
-    display: block !important;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    margin-bottom: 0 !important;
-}
 
 .leaflet-top {
     top: 100px;

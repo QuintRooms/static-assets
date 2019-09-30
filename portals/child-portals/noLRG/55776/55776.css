@@ -65,7 +65,6 @@ body.RootBody {
 
 header {
     background: #000;
-    border-bottom: 3px solid #ff48c5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +95,7 @@ header a {
 
 .logo img {
     margin: 12px;
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
 }
 
@@ -363,7 +362,7 @@ legend {
 }
 
 .leaflet-top {
-    top: 169px;
+    top: 230px;
 }
 
 .arnMapMarker {
@@ -510,8 +509,17 @@ input[type=file] {
     background: #f2fb18;
 }
 
+.SearchHotels .ArnPropName {
+    line-height: 1.4;
+}
+
+.distanceLabel {
+    font-weight: normal;
+    font-size: 11px !important;
+}
+
 .SinglePropDetail .propertiesNearbyLink,
-.ArnPropDescription {
+.SinglePropDetail .ArnPropDescription {
     display: none !important;
 }
 
@@ -647,7 +655,7 @@ select,
 }
 
 @media only screen and (min-width: 800px) {
-    .SearchHotels .ArnSecondarySearchOuterContainer{
+    .SearchHotels .ArnSecondarySearchOuterContainer {
         padding: 0 15px;
     }
 

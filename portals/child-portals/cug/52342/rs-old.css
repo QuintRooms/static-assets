@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
+<style>@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
 
 * {
     font-family: 'Montserrat', 'Helvetica' !important;
@@ -223,24 +223,6 @@ header {
 
 .SearchHotels .PropLimitedAvail .ArnRateCell {
     background: transparent;
-}
-
-.SinglePropDetail .PropLimitedAvail .OptionsPricing a {
-    cursor: default;
-    background: #a9a9a9;
-    color: #515164;
-}
-
-.SinglePropDetail .PropLimitedAvail .OptionsPricing a:hover,
-.SinglePropDetail .PropLimitedAvail .OptionsPricing a:active,
-.SinglePropDetail .PropLimitedAvail .OptionsPricing a:focus {
-    background: #a9a9a9;
-    color: #515164;
-}
-
-.SinglePropDetail .ArnAvailability,
-.SinglePropDetail .ArnLimitedAvail {
-    border: none;
 }
 
 .reserveHotel,
@@ -607,20 +589,14 @@ header {
     display: none;
 }
 
-.SearchHotels .ArnPropName div.ArnPropClass,
 .ArnPropName div.ArnPropClass {
     display: block !important;
 }
 
-.SearchHotels .ArnPropName div.ArnPropClass {
-    margin: 0 0 0 2%;
+/*.SearchHotels .ArnPropName div.ArnPropClass {
+    margin: 0 0 0 2% !important;
 }
-
-.imageDisclaimer,
-.noImagesFound {
-    display: none !important;
-}
-
+*/
 .ArnLimitedAvail {
     display: block;
 }
@@ -942,6 +918,12 @@ header {
 
 @media only screen and (min-width: 800px) {
 
+    .noImagesFound {
+        width: 76%;
+        margin: 8px auto 0;
+        padding: 5px;
+    }
+
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
     .ArnSortByType:hover,
@@ -970,6 +952,13 @@ header {
         max-width: 150px;
         width: 100%;
     }
+
+    .noImagesFound {
+        margin: 0;
+        padding: 12px 8px;
+        width: 100%;
+    }
+
 
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
@@ -1295,9 +1284,6 @@ legend {
     max-width: unset;
 }
 
-.SinglePropDetail .ArnContentGeneralInfo {
-    border-bottom: 1px solid #fff;
-}
 
 @media only screen and (max-width: 800px) {
     #AdminControlsContainer {
@@ -1449,10 +1435,6 @@ legend {
         top: 27px;
     }
 
-    .SinglePropDetail .PropertyAmenities {
-        padding: 12px 0;
-    }
-
     #theConfirmationContainer .submit {
         font-size: 17px;
         padding: 12px 0;
@@ -1488,17 +1470,6 @@ legend {
     .SearchHotels .bottomPager .ArnPages .not_page {
         padding: 4px 8px;
     }
-}
-
-@media only screen and (max-width: 565px) {
-    .SinglePropDetail .PropLimitedAvail .ArnAvailability {
-        width: 100%;
-    }
-
-    .SinglePropDetail .ArnLimitedAvail {
-        text-align: center;
-    }
-
 }
 
 @media only screen and (max-width: 500px) {
@@ -1601,13 +1572,6 @@ legend {
     .SinglePropDetail .ArnPropNameLink:visited {
         margin-top: 30px;
     }
-
-    .SinglePropDetail .PropLimitedAvail .ArnPropNameLink,
-    .SinglePropDetail .PropLimitedAvail .ArnPropNameLink:active,
-    .SinglePropDetail .PropLimitedAvail .ArnPropNameLink:visited {
-        margin-top: 0;
-    }
-
 
     .SinglePropDetail .ArnRateCell {
         margin: 0;
@@ -1882,3 +1846,5 @@ legend {
         width: 100% !important;
     }
 }
+
+</style>

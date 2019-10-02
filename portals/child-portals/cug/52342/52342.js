@@ -10,6 +10,10 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
+        document.querySelectorAll(".ArnPropClass").forEach(function(n) { var r = n.textContent,
+                t = r.replace(/\D/g, ""),
+                e = '<svg height="25" width="23" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
+            1 == t && (n.innerHTML = e), 2 == t && (n.innerHTML = e + e), 3 == t && (n.innerHTML = e + e + e), 4 == t && (n.innerHTML = e + e + e + e), 5 == t && (n.innerHTML = e + e + e + e + e) })
     }, 1);
 });
 
@@ -26,13 +30,13 @@ function waitForElementToLoad(elementWaitingFor) {
                     let script = document.createElement('script');
                     script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
                     document.head.appendChild(script);
-                    
+
                 } else {
                     cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com">Room Steals</a>', 'afterBegin');
                 }
 
                 if (document.querySelector('.ArnSupportBottom .cancelLink')) {
-                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program &nbsp; <i class="fa fa-external-link"></i></a>');
+                    document.querySelector('.ArnSupportBottom .cancelLink').insertAdjacentHTML('afterEnd', '<span class="dvd"> | </span><a target="_blank" href="https://roomsteals.getrewardful.com/signup">Affiliate Program</a>');
                 }
                 cugPortal.updateAttribute('.termsLink', 'https://roomsteals.com/terms', 'href');
                 cugPortal.updateAttribute('.privacyLink', 'https://roomsteals.com/privacy', 'href');

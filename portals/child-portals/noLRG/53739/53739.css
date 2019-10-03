@@ -429,6 +429,9 @@ a.ArnGoAdvancedSearch+p {
         max-width: 300px;
         margin-bottom: 36px;
     }
+    select#language{
+        background: #fff !important;
+    }
 }
 
 @media only screen and (max-width: 565px) {

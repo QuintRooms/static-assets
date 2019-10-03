@@ -301,13 +301,25 @@ a.ArnGoAdvancedSearch+p {
     max-width: 205px !important;
 }
 
+@media only screen and (min-width: 800px) and (max-width: 1240px) {
+
+    .SimpleSearch .ArnCheckInDate,
+    .SimpleSearch .ArnCheckOutDate {
+        width: 100% !important;
+    }
+}
+
 @media only screen and (min-width: 800px) {
     .SearchHotels .ArnSecondarySearchOuterContainer {
         border-top: none;
     }
 
     .SearchHotels .adminMobile>.hamburger {
-        z-index: 2;
+        z-index: 3;
+    }
+
+    .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
+        margin: 20px 0 20px;
     }
 
     .ArnAmentitiesContainer,
@@ -322,14 +334,39 @@ a.ArnGoAdvancedSearch+p {
         border-bottom: 1px solid #ffe68b;
     }
 
+    .PropertyLinks img {
+        display: none;
+    }
+
     .SearchHotels .ArnIndividualSearchContainer a {
         color: #fff;
+    }
+
+    #simpleSearch td {
+        color: #fff;
+    }
+
+    .SearchHotels .ArnSearchField span {
+        color: #fff;
+    }
+
+    .SinglePropDetail .SimpleSearch {
+        background: #93040c;
+    }
+
+    .SinglePropDetail .ArnPropDescription {
+        color: #fff !important;
+    }
+
+    .SinglePropDetail .propertiesNearbyLink {
+        text-decoration: underline !important;
+        color: #fff !important;
     }
 
     #SortControls {
         height: 165px;
         top: 55px;
-        z-index: 1;
+        z-index: 3;
         padding: 0;
         border-left: 0;
         border-bottom: 0;
@@ -429,7 +466,8 @@ a.ArnGoAdvancedSearch+p {
         max-width: 300px;
         margin-bottom: 36px;
     }
-    select#language{
+
+    select#language {
         background: #fff !important;
     }
 }

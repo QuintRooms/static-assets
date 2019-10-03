@@ -1,16 +1,9 @@
 /* Fonts */
-@font-face {
-    font-family: 'Futura-Book';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52867/fonts/FuturaStd-Book.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52867/fonts/FuturaStd-Book.ttf") format("truetype");
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
 
-@font-face {
-    font-family: 'Futura-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/52867/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/portals/child-portals/noLRG/52867/fonts/FuturaStd-Bold.ttf") format("truetype");
-}
 
 body {
-    font-family: 'Futura-Book', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-size: 17px !important;
     font-weight: 300;
     background: #fff;
@@ -19,27 +12,65 @@ body {
 }
 
 .ArnSubPage td {
-    font-family: 'Futura-Book', 'Helvetica';
+    font-family: 'Montserrat', 'Helvetica';
     font-size: 15px !important;
     font-weight: 300;
     color: #15151E;
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/52867/images/banner.png) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53739/images/banner.jpg) no-repeat center center /cover !important;
 }
 
 header {
-    background: #fff;
-    border-bottom: 3px solid #c40800;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53739/images/header-bg.png) no-repeat center center /cover;
+    border-bottom: 3px solid #fff;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 6px 12px;
+    padding: 8px 12px;
 }
 
-header a {
-    color: #444;
+header a:not(.logo) {
+    margin: 0 18px !important;
+    line-height: 1.4;
+    padding: 0;
+    color: #fff;
+    font-weight: 400;
+}
+
+header a:not(.logo) {
+    position: relative;
+    color: #fff;
+    color: #fff;
+    text-decoration: none;
+    /*margin: 0 12px;*/
+    font-weight: 500;
+}
+
+header a:not(.logo) {
+    background: transparent !important;
+}
+
+header a:not(.logo):before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+header a:not(.logo):hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 #language {
@@ -47,23 +78,28 @@ header a {
     display: block;
 }
 
+#language option {
+    display: none;
+}
+
+#language option[value="translateMe"],
+#language option[value="standard"],
+#language option[value="vietnamese"] {
+    display: block;
+}
+
 .logo {
-    margin-right: auto;
+    margin-right: auto !important;
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 100px;
     margin: 0;
     width: 100%;
 }
 
 .SearchHotels .ArnPropName a {
     letter-spacing: initial !important;
-}
-
-.lrgTip h3 {
-    font-family: 'Futura-Bold';
-    font-weight: initial !important;
 }
 
 .arnCurrency {
@@ -83,8 +119,9 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #C40000 !important;
-    transition: all .5s ease;
+    background: #ffcb0e !important;
+    transition: all .3s ease-out;
+    color: #000 !important;
 }
 
 .submit,
@@ -95,12 +132,13 @@ header a {
 .bookRoom,
 .SearchHotels .modifySearchButton,
 .holdRoom {
-    font-family: 'Futura-Book' !important;
+    font-family: 'Montserrat' !important;
+    border-radius: 5px;
 }
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #C40000 !important;
+    border: 1px solid #ffcb0e !important;
 }
 
 .selectedTab,
@@ -108,32 +146,34 @@ header a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #C40000 !important;
-    border-bottom: 1px solid #C40000 !important;
+    border-top: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important;
+    color: #000;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff !important;
-    background: #b20a0a !important;
-    border: 1px solid #b20a0a !important;
+    background: #cd0f15 !important;
+    border: 1px solid #cd0f15 !important;
+    border-radius: 5px;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #b20a0a !important;
-    border-left: 1px solid #b20a0a !important;
-    border-right: 1px solid #b20a0a !important;
+    border-top: 1px solid #cd0f15 !important;
+    border-left: 1px solid #cd0f15 !important;
+    border-right: 1px solid #cd0f15 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #b20a0a !important;
-
+    background: #f3c419 !important;
+    color: #000 !important;
 }
 
 .submit:hover,
@@ -145,7 +185,7 @@ header a {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #b20a0a !important;
+    background: #f3c419 !important;
 }
 
 .holdRoom:hover,
@@ -158,87 +198,102 @@ header a {
     background: #858585 !important;
 }
 
+.hamburger:after,
+.hamburger:before {
+    top: 20px;
+}
+
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #C40000 !important;
+    border-top-color: #93040c !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
 .SinglePropDetail .bestPrice .percentSavings {
-    background: #fc0 !important;
+    background: #f3c419 !important;
     color: #000 !important;
 }
 
 .arn-leaflet-reset-button {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 .arnMapMarker {
-    background: #C40000 !important;
+    background: #93040c !important;
     border: #c899ff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #C40000 !important;
+    border-top-color: #93040c !important;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #b20a0a !important;
-    border: #b20a0a !important;
+    background: #cd0f15 !important;
+    border: #cd0f15 !important;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #b20a0a !important;
+    border-top-color: #cd0f15 !important;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 .throbber {
-    border-left: #C40000 !important;
+    border-left: #93040c !important;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
     top: 96px !important;
 }
 
+.SearchHotels .ArnPrimarySearchContainer,
+.SinglePropDetail .ArnPrimarySearchContainer {
+    background: #93040c;
+    color: #fff !important;
+}
+
+a.ArnGoAdvancedSearch+p {
+    display: none;
+}
+
 #slideit label.open:hover,
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 #slideit section {
-    border-bottom: #C40000 !important;
+    border-bottom: #93040c !important;
 }
 
 .ArnPropName div.ratingCount {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 .sash {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #C40000 !important;
+    background: #93040c !important;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #C40000 !important;
+    background: #ffcb0e !important;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -247,6 +302,67 @@ header a {
 }
 
 @media only screen and (min-width: 800px) {
+    .SearchHotels .ArnSecondarySearchOuterContainer {
+        border-top: none;
+    }
+
+    .SearchHotels .adminMobile>.hamburger {
+        z-index: 2;
+    }
+
+    .ArnAmentitiesContainer,
+    .ArnCitiesNearbyContainer,
+    .ArnCurrenciesContainer,
+    .ArnHotelSizeContainer,
+    .ArnPriceContainer,
+    .ArnPropertyClassesContainer,
+    .ArnPropertyTypesContainer {
+        background: #93040c;
+        padding: 10px;
+        border-bottom: 1px solid #ffe68b;
+    }
+
+    .SearchHotels .ArnIndividualSearchContainer a {
+        color: #fff;
+    }
+
+    #SortControls {
+        height: 165px;
+        top: 55px;
+        z-index: 1;
+        padding: 0;
+        border-left: 0;
+        border-bottom: 0;
+        border-radius: 5px;
+    }
+
+    div#theSortContainer a:first-child {
+        border-radius: 5px 5px 0 0;
+    }
+
+    #theSortContainer .ArnSortByPrice {
+        border-bottom: 1px solid #ccc;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .ArnSortByClass,
+    .ArnSortByClass,
+    .ArnSortByDealAmount,
+    .ArnSortByDealAmount,
+    .ArnSortByDealPercent,
+    .ArnSortByDealPercent,
+    .ArnSortByDistance,
+    .ArnSortByDistance,
+    .ArnSortByPrice,
+    .ArnSortByPrice,
+    .ArnSortByType,
+    .ArnSortByType,
+    .ArnSortByVacationRental,
+    .ArnSortByVacationRental {
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        border-right: 0;
+    }
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
@@ -266,7 +382,12 @@ header a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #C40000 !important;
+        border-left: 2px solid #93040c !important;
+        border-right: 1px solid #ccc !important;
+    }
+
+    .ArnSortByVacationRental {
+        display: none !important;
     }
 }
 
@@ -290,14 +411,14 @@ header a {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #C40000 !important;
-        border-bottom: 4px solid #C40000 !important;
+        border-top: 4px solid #93040c !important;
+        border-bottom: 4px solid #93040c !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #C40000 !important;
+        border-bottom: 4px solid #93040c !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -311,7 +432,7 @@ header a {
 }
 
 @media only screen and (max-width: 565px) {
-    .logo + a{
+    .logo+a {
         display: none;
     }
 }

@@ -4,6 +4,7 @@ let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Formula 1 Vietnam Grand Prix Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Formula 1 Vietnam Grand Prix Exclusive Rate');
+noLRGPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/favicon.png', 'href');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

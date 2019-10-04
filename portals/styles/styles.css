@@ -2405,6 +2405,10 @@ div#overlay {
     .SearchHotels .ArnPropThumb img {
         border-top-right-radius: 10px;
     }
+
+    .SearchHotels .ArnRateCell {
+        position: absolute !important;
+    }
 }
 
 @media screen and (max-width:565px) {
@@ -2563,6 +2567,10 @@ body.WBResendOrCancelForm {
     .SearchHotels .ArnAvailabilityWaitList {
         bottom: 30px;
         width: 100%;
+    }
+
+    .SearchHotels .ArnRateCell {
+        position: static !important;
     }
 }
 

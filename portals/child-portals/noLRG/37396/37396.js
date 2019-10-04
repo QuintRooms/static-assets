@@ -21,7 +21,7 @@ jQuery(document).on('ratesReadyEvent', function() {
 
         if (noLRGPortal.site_id == 49551) {
             noLRGPortal.addCustomTag('<div style="border-bottom: 1px solid rgba(255, 255, 255, .4);">Host Hotel</div><div>Complimentary Shuttle</div>', 20);
-            noLRGPortal.addCustomTag('<div>Hilton Hotel</div><div>Complimentary Shuttle</div>', 16460);
+            noLRGPortal.addCustomTag('<div style="border-bottom: 1px solid rgba(255, 255, 255, .4);">Hilton Hotel</div><div>Complimentary Shuttle</div>', 16460);
             addHiltonTags();
             noLRGPortal.updateText('.event-rate', 'Exclusive Barrett-Jackson Rates');
         }

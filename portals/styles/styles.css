@@ -2405,6 +2405,10 @@ div#overlay {
     .SearchHotels .ArnPropThumb img {
         border-top-right-radius: 10px;
     }
+
+    .SearchHotels .ArnRateCell{
+        position: absolute !important;
+    }
 }
 
 @media screen and (max-width:565px) {

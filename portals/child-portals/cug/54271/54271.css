@@ -115,6 +115,12 @@ body {
 
 /*Cug Specific */
 
+.points{
+    color: #fff;
+    font-size: 17px;
+    border-bottom: 1px solid #fff;
+}
+
 .leaflet-top {
     top: 175px;
 }
@@ -331,6 +337,10 @@ body.WBForgotPasswordForm {
 header {
     background: #15151e;
     grid-row-start: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -543,13 +553,13 @@ header {
 }
 
 .arnMapMarker.highlight {
-    background: #0062cc;
-    border: 1px solid #0062cc;
+    background: #15151e;
+    border: 1px solid #15151e;
     z-index: 8001;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: #0062cc;
+    border-top-color: #15151e;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
@@ -786,6 +796,7 @@ nav {
 .logo img {
     max-width: 300px;
     width: 100%;
+    padding: 0;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,

@@ -20,7 +20,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
-
+                // showUsersPoints();
                 observer.disconnect();
             }
         }
@@ -30,3 +30,13 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+function showUsersPoints(){
+    let userMeta = document.querySelector('meta[name="memberMetaTag"]');
+    if(userMeta){
+        let metaContent = userMeta.getAttribute('content');
+        metaContent = JSON.parse(metaContent)
+        let points = metaContent.Points;
+        document.querySelector('header').insertAdjacentHTML('beforeEnd', '<div class="points">' + points + ' Points</div>');
+    }
+}

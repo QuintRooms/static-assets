@@ -243,6 +243,7 @@ header a {
 
 #SortControls {
     padding-top: 0;
+    height: 150px;
 }
 
 #exclusive-event-rate {
@@ -671,6 +672,10 @@ select,
 .SearchHotels .ArnSortByVacationRental,
 .SearchHotels .ArnSortByDistance {
     font-size: 11px;
+}
+
+.ArnSortByVacationRental {
+    display: none !important;
 }
 
 @media only screen and (min-width: 800px) {

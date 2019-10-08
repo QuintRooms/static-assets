@@ -99,7 +99,7 @@ header a {
 
 .logo img {
     margin: 12px;
-    max-width: 600px;
+    max-width: 375px;
     width: 100%;
 }
 
@@ -369,7 +369,7 @@ legend {
 }
 
 .leaflet-top {
-    top: 225px;
+    top: 275px;
 }
 
 .arnMapMarker {

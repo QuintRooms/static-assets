@@ -704,8 +704,8 @@ header {
     background: #faaf17;
     border: 1px solid #faaf17;
     border-radius: 5px;
-    padding: 4px;
-    line-height: .9;
+    line-height: 15px;
+    font-size: 13px;
 }
 
 .pagesNext,

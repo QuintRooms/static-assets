@@ -1,5 +1,3 @@
-/*#31447F*/
-
 * {
     font-family: 'Montserrat', 'Helvetica' !important;
 }
@@ -18,7 +16,7 @@ body {
 }
 
 .leaflet-top {
-    top: 175px;
+    top: 67px;
 }
 
 #AdminControlsContainer {
@@ -180,6 +178,7 @@ body,
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
+    height: 60px;
 }
 
 header .room-steals {
@@ -200,8 +199,8 @@ header {
     transition: all .5s ease;
 }
 
-.logo img {
-    max-width: 150px;
+.room-steals img {
+    height: 44px;
 }
 
 #theConfirmationContainer h4,
@@ -219,6 +218,10 @@ header {
 .ArnPropNameLink:visited {
     font-weight: 700 !important;
     font-size: 17px;
+}
+
+.ArnAvailability .ArnLimitedAvail {
+    display: none;
 }
 
 .SearchHotels .PropLimitedAvail .ArnRateCell {

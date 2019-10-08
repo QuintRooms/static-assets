@@ -8,12 +8,15 @@ cugPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the late
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
+        removePercentSavingsUnderThreshhold(5);
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
-        document.querySelectorAll(".ArnPropClass").forEach(function(n) { var r = n.textContent,
+        document.querySelectorAll(".ArnPropClass").forEach(function(n) {
+            var r = n.textContent,
                 t = r.replace(/\D/g, ""),
                 e = '<svg height="25" width="23" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
-            1 == t && (n.innerHTML = e), 2 == t && (n.innerHTML = e + e), 3 == t && (n.innerHTML = e + e + e), 4 == t && (n.innerHTML = e + e + e + e), 5 == t && (n.innerHTML = e + e + e + e + e) })
+            1 == t && (n.innerHTML = e), 2 == t && (n.innerHTML = e + e), 3 == t && (n.innerHTML = e + e + e), 4 == t && (n.innerHTML = e + e + e + e), 5 == t && (n.innerHTML = e + e + e + e + e)
+        })
     }, 1);
 });
 
@@ -65,4 +68,19 @@ if (cugPortal.page_name === 'privacy-policy') {
             throw new Error('File at path ' + url + ' not found.');
             return false;
         });
+}
+
+function removePercentSavingsUnderThreshhold(threshhold) {
+    if (cugPortal.page_name === 'search-results' || cugPortal.page_name === 'property-detail') {
+        let percentArr = document.querySelectorAll('.percentSavings');
+        percentArr.forEach(function(element) {
+            let percent = element.textContent;
+            percent = percent.replace(/\D+/g, '');
+            console.log(percent)
+            if (percent < threshhold) {
+                console.log(element)
+                element.style.visibility = 'hidden';
+            }
+        });
+    }
 }

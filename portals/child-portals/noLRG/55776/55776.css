@@ -21,6 +21,10 @@
     border-radius: 100% !important;
 }
 
+.SinglePropDetail .exclusiveRate {
+    display: none;
+}
+
 body {
     font-weight: 300;
     background: #000;
@@ -65,7 +69,6 @@ body.RootBody {
 
 header {
     background: #000;
-    border-bottom: 3px solid #ff48c5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,7 +243,10 @@ header a {
 #SortControls {
     padding-top: 0;
 }
-
+#exclusive-event-rate{
+    color: #ff48c5 !important;
+    font-size: 1em !important;
+}
 .arnPrice,
 .SinglePropDetail .SB16 .yourRateAmount,
 .SinglePropDetail .yourRateAmount,
@@ -363,7 +369,7 @@ legend {
 }
 
 .leaflet-top {
-    top: 169px;
+    top: 225px;
 }
 
 .arnMapMarker {
@@ -628,6 +634,24 @@ select,
     font-size: 11px;
 }
 
+.distanceLabel {
+    font-weight: normal;
+    font-size: 11px !important;
+}
+
+.SearchHotels .ArnPropDescription {
+    display: block !important;
+}
+
+.SinglePropDetail .propertiesNearbyLink,
+.SinglePropDetail .ArnPropDescription {
+    display: none !important;
+}
+
+.SearchHotels .ArnPropName {
+    line-height: 1.4;
+}
+
 /* Ad Unit */
 .ad-unit img {
     display: block;
@@ -647,7 +671,7 @@ select,
 }
 
 @media only screen and (min-width: 800px) {
-    .SearchHotels .ArnSecondarySearchOuterContainer{
+    .SearchHotels .ArnSecondarySearchOuterContainer {
         padding: 0 15px;
     }
 

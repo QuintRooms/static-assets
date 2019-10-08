@@ -700,14 +700,16 @@ header {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff;
-    background: #23305a;
-    border: 1px solid #23305a;
+    color: #23305a;
+    background: #faaf17;
+    border: 1px solid #faaf17;
+    border-radius: 5px;
+    padding: 0;
 }
 
 .pagesNext,
 .pagesPrev {
-    color: #333;
+    color: #fff;
 }
 
 .GroupHoldForm .ArnContentButtonWide,

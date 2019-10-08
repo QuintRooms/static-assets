@@ -73,6 +73,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 6px 12px;
+    border-bottom: 1px solid #ff48c5;
 }
 
 header a {
@@ -99,7 +100,7 @@ header a {
 
 .logo img {
     margin: 12px;
-    max-width: 375px;
+    max-width: 450px;
     width: 100%;
 }
 
@@ -243,10 +244,12 @@ header a {
 #SortControls {
     padding-top: 0;
 }
-#exclusive-event-rate{
+
+#exclusive-event-rate {
     color: #ff48c5 !important;
     font-size: 1em !important;
 }
+
 .arnPrice,
 .SinglePropDetail .SB16 .yourRateAmount,
 .SinglePropDetail .yourRateAmount,
@@ -673,6 +676,10 @@ select,
 @media only screen and (min-width: 800px) {
     .SearchHotels .ArnSecondarySearchOuterContainer {
         padding: 0 15px;
+    }
+
+    #SortControlsContainer {
+        margin: 12px 0 0;
     }
 
     .ArnSortByName:hover,

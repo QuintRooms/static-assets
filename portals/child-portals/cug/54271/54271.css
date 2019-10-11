@@ -115,10 +115,14 @@ body {
 
 /*Cug Specific */
 
-.points{
+#user_lipoints {
     color: #fff;
     font-size: 17px;
-    border-bottom: 1px solid #fff;
+    list-style: none;
+}
+
+.MemberNotAuthenticated #user_lipoints {
+    display: none;
 }
 
 .leaflet-top {
@@ -187,24 +191,23 @@ body {
     margin: 6px 0 0;
 }
 
-.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
-.loginDivider {
-    display: none;
-}
 
 .WBForgotPasswordFormContainer.ArnSubPage,
 .WBForgotPasswordFormInform,
-.WBLoginFormContainer.ArnSubPage {
+.WBLoginFormContainer.ArnSubPage,
+.WBValidatedRegistrationForm.ArnSubPage {
     overflow: initial;
 }
 
 .WBForgotPasswordForm .ArnSupportLinks.ArnSupportBottom,
-.WBLoginForm .ArnSupportLinks.ArnSupportBottom {
+.WBLoginForm .ArnSupportLinks.ArnSupportBottom,
+.WBValidatedRegistrationForm .ArnSupportLinks.ArnSupportBottom {
     z-index: 9;
     position: relative;
     grid-row-start: 3;
     grid-row-end: 4;
     margin: 0;
+    display: block !important
 }
 
 .ArnSupportLinks.ArnSupportBottom {
@@ -328,7 +331,8 @@ body.RootBody {
 }
 
 body.WBLoginForm,
-body.WBForgotPasswordForm {
+body.WBForgotPasswordForm,
+body.WBValidatedRegistrationForm {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100%;
@@ -350,13 +354,57 @@ header {
 
 .WBForgotPasswordFormContainer.ArnSubPage,
 .WBForgotPasswordFormInform,
-.WBLoginFormContainer.ArnSubPage {
+.WBLoginFormContainer.ArnSubPage,
+.WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/54271/images/banner.png);
+    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/54271/images/banner.png) !important;
     grid-row-start: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+/* Registration */
+
+.MemberAuthenticated.WBValidatedRegistrationForm #AdminControlsContainer {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.MemberAuthenticated.WBValidatedRegistrationForm header {
+    margin-top: 45px;
+}
+
+.WBValidatedRegistrationForm .ArnSubPage {
+    margin: 0;
+    max-width: 100%;
+}
+
+#theWBValidatedRegistrationFormBody {
+    background: #fff;
+    padding: 50px !important;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+#theWBValidatedRegistrationFormBody label {
+    display: block !important;
+    margin-top: 0 !important;
+}
+
+.WBValidatedRegistrationForm #thePersonalInfoGroup legend {
+    display: block !important;
+    font-size: 36px;
+    font-family: 'F1-Regular', 'Helvetica';
+    font-weight: 500;
+    color: #15151e;
+}
+
+.registrationText,
+.registrationText h1 {
+    color: #fff;
 }
 
 .lrgTip h3 {
@@ -765,22 +813,6 @@ header {
     }
 }
 
-/* Registration Page */
-.WBValidatedRegistrationForm header {
-    border-bottom: none;
-    background: transparent;
-    height: 0;
-}
-
-.WBValidatedRegistrationForm header img {
-    margin: 50px;
-}
-
-.WBValidatedRegistrationForm .ArnSubPage {
-    margin: 0;
-    padding: 0;
-}
-
 nav {
     padding: 18px;
     display: flex;
@@ -1069,4 +1101,98 @@ ul {
 
 #theMarketingOptInAjax {
     display: none;
+}
+
+@media screen and (min-width: 800px) {
+    .ArnPropImageButtons {
+        top: 80px;
+    }
+
+    .SearchHotels .ArnRateCell {
+        height: 100%;
+        bottom: 0;
+        right: 0 !important;
+    }
+
+    .SearchHotels .percentSavings {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        border-radius: 0 5px 0 5px !important;
+    }
+
+    .SearchHotels .ArnPriceCell {
+        margin-top: 24px !important;
+    }
+}
+
+@media screen and (min-width: 500px) {
+
+    .SearchHotels .ArnPropThumb {
+        width: 27%;
+    }
+
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb img {
+        height: unset;
+        min-height: 0;
+    }
+}
+
+.ArnPropName div.memberSavings,
+.SinglePropDetail .memberSavings {
+    font-style: unset !important;
+    display: block !important;
+    margin: 6px 0 !important;
+    position: static !important;
+}
+
+.SinglePropDetail .memberSavings {
+    text-align: center;
+    border-bottom: none !important;
+}
+
+.SinglePropDetail .creditsValue,
+.SinglePropDetail .creditsLabel {
+    display: inline;
+    width: unset !important;
+}
+
+.SinglePropDetail .creditsLabel {
+    margin-right: 3px;
+}
+
+.originalPrice {
+    display: block !important;
+}
+
+div.originalPrice span,
+.SearchHotels .ArnPropName div.originalPrice span {
+    text-decoration: line-through !important;
+}
+
+.SearchHotels .arnPrice {
+    order: 1;
+}
+
+.originalPrice:before {
+    display: none;
+}
+
+.ArnPriceCell .mainRate {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+.originalRateContainer,
+.bestPrice .originalRateAmount {
+    display: none !important;
+}
+
+.SinglePropDetail .originalRateAmount {
+    text-align: center;
 }

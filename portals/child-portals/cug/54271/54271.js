@@ -8,6 +8,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
+        cugPortal.updateText('.creditsLabel', 'Points Applied:');
     }, 1);
 });
 
@@ -20,7 +21,11 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
-                // showUsersPoints();
+                cugPortal.updateText('#user_points_text_2', 'Your Points');
+                if (document.querySelector('#commands')) {
+                    document.querySelector('#commands').insertAdjacentHTML('afterBegin', '<a href="https://events.hotelsforhope.com/v6/register?siteid=54271&addPromoCode">Add Points</a>');
+                }
+                cugPortal.updateText('.CreateAnAccountAction', 'Register');
                 observer.disconnect();
             }
         }
@@ -31,12 +36,3 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-function showUsersPoints(){
-    let userMeta = document.querySelector('meta[name="memberMetaTag"]');
-    if(userMeta){
-        let metaContent = userMeta.getAttribute('content');
-        metaContent = JSON.parse(metaContent)
-        let points = metaContent.Points;
-        document.querySelector('header').insertAdjacentHTML('beforeEnd', '<div class="points">' + points + ' Points</div>');
-    }
-}

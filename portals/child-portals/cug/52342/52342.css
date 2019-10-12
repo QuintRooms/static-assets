@@ -971,12 +971,6 @@ header {
 }
 
 @media only screen and (max-width: 800px) {
-
-    .room-steals img {
-        max-width: 150px;
-        width: 100%;
-    }
-
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
     }
@@ -1554,6 +1548,10 @@ legend {
         overflow: visible;
         order: 2;
         max-width: 125px;
+    }
+
+    .SearchHotels.mobile .roomCount{
+        text-align: center !important;
     }
 
     .perNight {

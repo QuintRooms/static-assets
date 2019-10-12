@@ -1540,7 +1540,7 @@ legend {
     }
 
     .SearchHotels .ArnRateCell {
-        position: static;
+        position: static !important;
         width: 100% !important;
     }
 

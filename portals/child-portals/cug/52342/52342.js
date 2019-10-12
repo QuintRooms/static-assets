@@ -28,14 +28,14 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 if (document.querySelector('#AdminControlsContainer')) {
-                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="https://roomsteals.com/home"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>');
+                    document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="#"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>');
 
                     let script = document.createElement('script');
                     script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
                     document.head.appendChild(script);
 
                 } else {
-                    cugPortal.createHTML('header', '<a class="room-steals" href="https://hotels.roomsteals.com"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>', 'afterBegin');
+                    cugPortal.createHTML('header', '<a class="room-steals" href="#"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>', 'afterBegin');
                 }
 
                 if (document.querySelector('.ArnSupportBottom .cancelLink')) {

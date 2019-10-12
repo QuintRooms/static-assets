@@ -137,6 +137,13 @@ class RoomStealsNavigation {
         Object.keys(this.partnersJSON['partners'][this.memberPartner]['nav']['primary']).forEach(key => {
             profileAnchor.insertAdjacentHTML('beforeBegin', '<a href="' + this.partnersJSON['partners'][this.memberPartner]['nav']['primary'][key] + '">' + key + '</a>');
         });
+
+        if (this.memberPartner = 'roomsteals.com') {
+            if (document.querySelector('.room-steals')) {
+                document.querySelector('.room-steals').setAttribute('href', 'https://' + this.memberPartner + '/home');
+                return false;
+            }
+        }
     }
 
     checkLogin() {
@@ -144,7 +151,7 @@ class RoomStealsNavigation {
         logoutButton.addEventListener('click', (event) => {
             event.preventDefault();
             localStorage.setItem('loggedOut', 'true');
-            window.location.href = 'https://' + this.memberPartner;
+            window.location.href = 'https://' + this.memberPartner + '/home';
         });
     }
 }

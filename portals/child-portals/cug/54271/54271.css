@@ -114,6 +114,9 @@ body {
 
 
 /*Cug Specific */
+.errors {
+    display: block;
+}
 
 #user_lipoints {
     color: #fff;
@@ -174,9 +177,11 @@ body {
 #unavailableUser {
     width: 100%;
 }
-#unavailableUser a{
+
+#unavailableUser a {
     margin-left: 3px;
 }
+
 .WBValidatedRegistrationForm input[type="text"],
 .WBValidatedRegistrationForm input[type="email"],
 .WBValidatedRegistrationForm input[type="password"] {

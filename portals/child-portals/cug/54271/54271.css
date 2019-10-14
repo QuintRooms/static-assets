@@ -119,6 +119,7 @@ body {
     color: #fff;
     font-size: 17px;
     list-style: none;
+    order: 2;
 }
 
 .MemberNotAuthenticated #user_lipoints {
@@ -165,6 +166,16 @@ body {
 
 #theWBLoginForm h2 {
     display: none;
+}
+
+#validPassCode {
+    width: 100%;
+}
+
+.WBValidatedRegistrationForm input[type="text"],
+.WBValidatedRegistrationForm input[type="email"],
+.WBValidatedRegistrationForm input[type="password"] {
+    margin-bottom: 0 !important;
 }
 
 .WBLoginFormActions .submit,
@@ -366,6 +377,7 @@ header {
 
 /* Registration */
 
+.MemberAuthenticated.WBForgotPasswordForm #AdminControlsContainer,
 .MemberAuthenticated.WBValidatedRegistrationForm #AdminControlsContainer {
     width: 100%;
     position: absolute;
@@ -391,7 +403,6 @@ header {
 
 #theWBValidatedRegistrationFormBody label {
     display: block !important;
-    margin-top: 0 !important;
 }
 
 .WBValidatedRegistrationForm #thePersonalInfoGroup legend {
@@ -740,9 +751,33 @@ header {
     .ArnSortByDistance.active {
         border-left: 2px solid #e10600;
     }
+
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb img {
+        height: 200px;
+        min-height: 0;
+        max-height: 200px;
+    }
 }
 
 @media only screen and (max-width: 800px) {
+    .SearchHotels .ArnProperty {
+        min-height: unset;
+    }
+
+    .arnPrice+.perNight {
+        display: none !important;
+    }
+
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb img {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        overflow: unset;
+    }
+
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop .submit {
         bottom: initial;
     }
@@ -804,12 +839,19 @@ header {
         width: 30px;
         margin: 0 0 0 3%;
     }
+
+    .SearchHotels .percentSavings {
+        background: #fc0;
+        color: #15151e;
+    }
 }
 
 @media only screen and (min-width: 420px) and (max-width: 800px) {
     .SearchHotels .percentSavings {
         left: initial;
-        right: 45px;
+        right: 0;
+        top: 0;
+        border-radius: 0 5px 0 5px;
     }
 }
 
@@ -1022,6 +1064,69 @@ ul {
     .SearchHotels .geoButton {
         filter: invert(1);
     }
+
+    .SearchHotels .ArnPropName div.yourRateContainer span,
+    .ArnPriceCell>span,
+    .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+    .SearchHotels .ArnPriceCell>a>span,
+    .ArnPriceCell a {
+        font-family: inherit !important;
+    }
+
+    .ArnPriceCell {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SearchHotels .otherPrice+a {
+        order: 3;
+    }
+
+    .SinglePropDetail .bestPrice .yourRateContainer {
+        margin-top: 60px;
+        font-weight: 700;
+    }
+
+    .logo img {
+        max-width: 225px;
+    }
+
+    .SearchHotels .ArnPropName div.memberSavings {
+        display: block !important;
+        margin: 0 0 6px 0 !important;
+    }
+
+    .SearchHotels .ArnPropName div.memberSavings span {
+        display: inline;
+    }
+
+    .SearchHotels .ArnPropName div.memberSavings .creditsLabel {
+        margin-right: 3px;
+    }
+
+    #user_lipoints {
+        position: absolute;
+        right: 8px;
+        bottom: 0;
+    }
+
+    .mobile-toggle {
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 4px 12px;
+        font-size: 17px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top: -12px;
+    }
+
+    .show-menu {
+        display: block !important;
+        position: absolute;
+        top: 81px;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1039,36 +1144,22 @@ ul {
         background: #ffcc00;
     }
 
-}
-
-.percentSavings {
-    display: initial !important;
-}
-
-.SinglePropDetail .bookRoomCell .percentSavings,
-.SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: inline-block !important;
-    max-width: 75px;
-    margin: 0px auto 8px auto;
-    border: none;
-    background: #ffcc00;
-    color: #333;
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-
-@media only screen and (max-width: 800px) {
-    .SinglePropDetail .bestPrice .yourRateContainer {
-        margin-top: 60px;
-        font-weight: 700;
+    .SearchHotels .ArnPropName div.memberSavings {
+        margin: 0 !important;
     }
 
-    .logo img {
-        max-width: 225px;
+    div.originalPrice span,
+    .SearchHotels .ArnPropName div.originalPrice span {
+        font-size: 17px !important;
     }
-}
 
-@media only screen and (max-width: 500px) {
+    .SearchHotels .ArnPropName div.memberSavings {
+        margin: 0 !important;
+    }
+
+    .SearchHotels .ArnRateCell {
+        bottom: 0;
+    }
 
     .SinglePropDetail .ArnPropNameLink,
     .SinglePropDetail .ArnPropNameLink:active,
@@ -1090,6 +1181,16 @@ ul {
 
     .SinglePropDetail .bestPrice .yourRateContainer {
         margin-top: 8px;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        margin-bottom: 8px;
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .adminContainer {
+        padding: 0;
     }
 }
 
@@ -1130,17 +1231,27 @@ ul {
 }
 
 @media screen and (min-width: 500px) {
-
     .SearchHotels .ArnPropThumb {
         width: 27%;
     }
-
-    .SearchHotels .ArnPropThumb,
-    .SearchHotels .ArnPropThumb img {
-        height: unset;
-        min-height: 0;
-    }
 }
+
+.percentSavings {
+    display: initial !important;
+}
+
+.SinglePropDetail .bookRoomCell .percentSavings,
+.SinglePropDetail.mobile .bookRoomCell .percentSavings {
+    display: inline-block !important;
+    max-width: 75px;
+    margin: 0px auto 8px auto;
+    border: none;
+    background: #ffcc00;
+    color: #333;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
 
 .ArnPropName div.memberSavings,
 .SinglePropDetail .memberSavings {
@@ -1172,6 +1283,7 @@ ul {
 div.originalPrice span,
 .SearchHotels .ArnPropName div.originalPrice span {
     text-decoration: line-through !important;
+    line-height: 1;
 }
 
 .SearchHotels .arnPrice {

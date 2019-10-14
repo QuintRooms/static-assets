@@ -168,10 +168,15 @@ body {
     display: none;
 }
 
-#validPassCode {
+#validPassCode,
+#invalidPassCode,
+#availableUser,
+#unavailableUser {
     width: 100%;
 }
-
+#unavailableUser a{
+    margin-left: 3px;
+}
 .WBValidatedRegistrationForm input[type="text"],
 .WBValidatedRegistrationForm input[type="email"],
 .WBValidatedRegistrationForm input[type="password"] {

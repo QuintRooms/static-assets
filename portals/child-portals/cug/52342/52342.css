@@ -965,8 +965,8 @@ header {
     .ArnSortByDealPercent.active,
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
-    .ArnSortByDistance.active {
-        border-left: 2px solid #23305a;
+    .ArnSortByDistance.active{
+        border-left: 2px solid #23305a !important;
     }
 }
 

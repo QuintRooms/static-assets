@@ -37,6 +37,7 @@ module.exports = {
         54051: './src/54051.js',
         54271: './src/54271.js',
         55776: './src/55776.js',
+        56719: './src/56719.js',
     },
     output: {
         filename: '[name].js',

@@ -1902,10 +1902,16 @@ legend {
     }
 }
 
-.ArnRateCell {
-    right: 4px !important;
+.SearchHotels .ArnRateCell {
+    right: 4px;
 }
 
 .SearchHotels .ArnPropName div.percentSavings {
     right: -4px;
+}
+
+@media screen and (max-width: 800px) {
+    .SearchHotels .ArnRateCell {
+        right: 0;
+    }
 }

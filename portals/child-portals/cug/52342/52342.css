@@ -1915,3 +1915,10 @@ legend {
         right: 0;
     }
 }
+
+.SinglePropDetail .ArnNightlyRate strong{
+    display: inline !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+}

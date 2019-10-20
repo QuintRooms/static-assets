@@ -1914,11 +1914,26 @@ legend {
     .SearchHotels .ArnRateCell {
         right: 0;
     }
+
+    .SearchHotels .ArnPropThumb {
+        min-height: 200px;
+    }
+
+    .SearchHotels .creditsLabel {
+        margin: 0 !important;
+    }
 }
 
-.SinglePropDetail .ArnNightlyRate strong{
+.SinglePropDetail .ArnNightlyRate strong {
     display: inline !important;
     color: inherit !important;
     font-size: inherit !important;
     font-weight: inherit !important;
+}
+
+@media screen and (max-width: 60px) {
+
+    .arnPrice+.perNight {
+        display: none !important;
+    }
 }

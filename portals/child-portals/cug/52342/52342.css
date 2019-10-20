@@ -569,6 +569,7 @@ header {
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
+    letter-spacing: initial;
 }
 
 .submit,
@@ -676,7 +677,7 @@ header {
 }
 
 .ArnPropThumb img {
-    height: 200px;
+    height: 225px;
 }
 
 .ArnGoAddressSearch,
@@ -1574,6 +1575,7 @@ legend {
     .SearchHotels .ArnPropThumb,
     .SearchHotels .ArnPropThumb img {
         height: 160px;
+        width: 100%;
     }
 
     .SearchHotels .bottomPager .ArnPages a,
@@ -1898,4 +1900,12 @@ legend {
     .SinglePropDetail .SimpleSearch .ArnCheckOutDate {
         width: 100% !important;
     }
+}
+
+.ArnRateCell {
+    margin-right: -4px !important;
+}
+
+.SearchHotels .ArnPropName div.percentSavings {
+    right: -4px;
 }

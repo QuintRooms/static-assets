@@ -1903,9 +1903,9 @@ legend {
 }
 
 .ArnRateCell {
-    margin-right: -4px !important;
+    margin-left: -4px !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings {
-    right: -4px;
+    left: -4px;
 }

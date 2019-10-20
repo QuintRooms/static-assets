@@ -222,6 +222,18 @@ header {
     font-size: 17px;
 }
 
+.SearchHotels .ArnPropThumb {
+    width: 25%;
+}
+
+.SearchHotels .ArnRateCell {
+    width: 27% !important;
+}
+
+.SearchHotels .ArnPropName {
+    width: 48%;
+}
+
 .ArnAvailability .ArnLimitedAvail {
     display: none;
 }
@@ -967,7 +979,7 @@ header {
     .ArnSortByDealPercent.active,
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
-    .ArnSortByDistance.active{
+    .ArnSortByDistance.active {
         border-left: 2px solid #23305a !important;
     }
 }
@@ -1293,7 +1305,6 @@ legend {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 23% !important;
     max-width: unset;
 }
 
@@ -1552,7 +1563,7 @@ legend {
         max-width: 125px;
     }
 
-    .SearchHotels.mobile .roomCount{
+    .SearchHotels.mobile .roomCount {
         text-align: center !important;
     }
 

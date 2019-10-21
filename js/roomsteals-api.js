@@ -190,6 +190,7 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                         roomStealsModel.setRoomStealsUser()
                             .then(() => {
                                 roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                                roomStealsModel.showCustomerSavingsOnSinglePropPage();
                             });
                     });
             });
@@ -201,7 +202,6 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                 roomStealsModel.checkIsRoomStealsTrialUser()
                     .then(() => {
                         roomStealsModel.showCustomerSavingsOnSearchResultsPage();
-                        roomStealsModel.showCustomerSavingsOnSinglePropPage();
                     });
                 clearInterval(interval);
             }

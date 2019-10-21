@@ -96,16 +96,16 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #225a7b !important;
-    border-left: 1px solid #225a7b !important;
-    border-right: 1px solid #225a7b !important;
+    border-top: 1px solid #0b4d8e !important;
+    border-left: 1px solid #0b4d8e !important;
+    border-right: 1px solid #0b4d8e !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #225a7b !important;
+    background: #0b4d8e !important;
 
 }
 
@@ -118,7 +118,7 @@ header a {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #225a7b !important;
+    background: #0b4d8e !important;
 }
 
 .holdRoom:hover,
@@ -158,14 +158,14 @@ header a {
 
 .arnMapMarker:hover,
 .highlight {
-    background: #225a7b !important;
-    border: #225a7b !important;
+    background: #0b4d8e !important;
+    border: #0b4d8e !important;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #225a7b !important;
+    border-top-color: #0b4d8e !important;
     transition: all .3s ease;
 }
 
@@ -304,4 +304,8 @@ header a {
 
 #adults option:nth-child(n + 7) {
     display: none !important;
+}
+
+.exclusiveRate{
+    display: none;
 }

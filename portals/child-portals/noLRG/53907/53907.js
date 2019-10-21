@@ -2,8 +2,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'Dell Technologies Match Play Rooms');
-noLRGPortal.updateRoomDescription('.RoomDescription', 'Dell Technologies Match Play Exclusive Rates');
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Dell Technologies Match Play Exclusive Rate');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

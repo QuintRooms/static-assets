@@ -602,6 +602,17 @@ header {
     color: #23305a !important;
 }
 
+.ArnShowRatesLink,
+.ArnShowRatesLink,
+.OnSale .ArnShowRatesLink {
+    padding: 8px 12px !important;
+}
+
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom {
+    max-width: 180px;
+}
+
 #theSubmitButton {
     background: transparent;
     color: #fff;
@@ -1404,7 +1415,7 @@ legend {
 
     .SearchHotels .percentSavings {
         background: #faaf18;
-        width: 23% !important;
+        width: 27% !important;
         top: 0;
         margin-top: 0 !important;
         padding: 7px;
@@ -1501,6 +1512,12 @@ legend {
     .SearchHotels .bottomPager .ArnPages a,
     .SearchHotels .bottomPager .ArnPages .not_page {
         padding: 4px 8px;
+    }
+
+    .SearchHotels .creditsLabel {
+        position: relative;
+        bottom: -6px;
+        border-radius: 5px 0 5px 0 !important;
     }
 }
 
@@ -1915,8 +1932,9 @@ legend {
         right: 0;
     }
 
-    .SearchHotels .ArnPropThumb {
-        min-height: 200px;
+    .SearchHotels .ArnPropThumb,
+    .SearchHotels .ArnPropThumb img {
+        min-height: 200px !important;
     }
 
     .SearchHotels .creditsLabel {
@@ -1931,9 +1949,18 @@ legend {
     font-weight: inherit !important;
 }
 
-@media screen and (max-width: 60px) {
-
+@media screen and (max-width: 600px) {
     .arnPrice+.perNight {
         display: none !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .SearchHotels .creditsLabel {
+        position: static;
+        border-radius: 5px !important;
+        margin: 4px auto 12px auto !important;
+        max-width: 300px;
+        padding: 6px;
     }
 }

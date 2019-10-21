@@ -8,9 +8,9 @@ cugPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the late
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
-        // let script = document.createElement('script');
-        // script.setAttribute('src', 'https://static.hotelsforhope.com/js/roomsteals-api.js');
-        // document.head.appendChild(script);
+        let script = document.createElement('script');
+        script.setAttribute('src', 'https://static.hotelsforhope.com/js/roomsteals-api.js');
+        document.head.appendChild(script);
 
         removePercentSavingsUnderThreshhold(5);
         cugPortal.ratesReadyEventMethods();

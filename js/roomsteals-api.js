@@ -187,7 +187,10 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
             .then(() => {
                 roomStealsModel.getRoomStealsAPIData()
                     .then(() => {
-                        roomStealsModel.setRoomStealsUser();
+                        roomStealsModel.setRoomStealsUser()
+                            .then(() => {
+                                roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                            });
                     });
             });
     });
@@ -197,7 +200,6 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
             if (document.querySelector('.pollingFinished')) {
                 roomStealsModel.checkIsRoomStealsTrialUser()
                     .then(() => {
-                        roomStealsModel.showSubscribeNowButtonsForTrialUsers();
                         roomStealsModel.showCustomerSavingsOnSearchResultsPage();
                         roomStealsModel.showCustomerSavingsOnSinglePropPage();
                     });

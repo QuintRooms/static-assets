@@ -164,7 +164,7 @@ class RoomStealsModel {
                                     prop_saving.style.cssText += single_prop_savings_styles;
                                 });
                             }
-                            element.insertAdjacentHTML('beforeEnd', '<style>.bestPrice .creditsLabel{display: none !important;}.SinglePropDetail .bookRoomCell .memberSavings{ border-bottom: none;} .ArnNightlyRate{display: flex; flex-direction: column;} .memberSavings{order: 2;}</style>')
+                            element.insertAdjacentHTML('beforeEnd', '<style>.bestPrice .creditsLabel{display: none !important;}.SinglePropDetail .bookRoomCell .memberSavings{ border-bottom: none;} .ArnNightlyRate{display: flex; flex-direction: column;} .memberSavings{order: 2;}</style>');
                             adjusted_savings = adjusted_savings.toString().slice(0, -2);
                             label.innerHTML = `With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!`;
                         }
@@ -189,8 +189,12 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                     .then(() => {
                         roomStealsModel.setRoomStealsUser()
                             .then(() => {
-                                roomStealsModel.showSubscribeNowButtonsForTrialUsers();
-                                roomStealsModel.showCustomerSavingsOnSinglePropPage();
+                                roomStealsModel.checkIsRoomStealsTrialUser()
+                                    .then(() => {
+                                        roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                                        roomStealsModel.showCustomerSavingsOnSinglePropPage();
+                                    });
+
                             });
                     });
             });

@@ -8,7 +8,7 @@ noLRGPortal.updateRoomDescription('.RoomDescription', 'Innings Fest Exclusive Ra
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
-        noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+        noLRGPortal.updateText('.event-rate', 'Exclusive Festival Rates');
     }, 1);
 });
 

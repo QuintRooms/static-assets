@@ -355,3 +355,7 @@ div.autocomplete ul li.selected {
         font-size: 25px !important;
     }
 }
+
+.roomCount{
+    display: none;
+}

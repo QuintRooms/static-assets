@@ -187,16 +187,24 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
             .then(() => {
                 roomStealsModel.getRoomStealsAPIData()
                     .then(() => {
-                        roomStealsModel.setRoomStealsUser()
-                            .then(() => {
-                                roomStealsModel.checkIsRoomStealsTrialUser()
-                                    .then(() => {
-                                        roomStealsModel.showSubscribeNowButtonsForTrialUsers();
-                                        roomStealsModel.showCustomerSavingsOnSearchResultsPage();
-                                        roomStealsModel.showCustomerSavingsOnSinglePropPage();
-                                    });
-                            });
+                        roomStealsModel.setRoomStealsUser();
                     });
             });
     });
+
+    function pollingFinished() {
+        let interval = setInterval(function() {
+            if (document.querySelector('.pollingFinished')) {
+                roomStealsModel.checkIsRoomStealsTrialUser()
+                    .then(() => {
+                        roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                        roomStealsModel.showCustomerSavingsOnSearchResultsPage();
+                        roomStealsModel.showCustomerSavingsOnSinglePropPage();
+                    });
+                clearInterval(interval);
+            }
+        }, 500);
+    }
+    pollingFinished();
+
 }

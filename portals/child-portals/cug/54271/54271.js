@@ -9,6 +9,10 @@ jQuery(document).on('ratesReadyEvent', function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
         cugPortal.updateText('.creditsLabel', 'Points Applied:');
+
+        if (document.querySelector('.SearchHotels')) {
+            removeCurrencyFromCredits();
+        }
     }, 1);
 });
 
@@ -26,8 +30,8 @@ function waitForElementToLoad(elementWaitingFor) {
                     document.querySelector('#commands').insertAdjacentHTML('afterBegin', '<a href="https://events.hotelsforhope.com/v6/register?siteid=54271&addPromoCode">Add Points</a>');
 
                     document.querySelector('header').insertAdjacentHTML('beforeEnd', '<div class="mobile-toggle">Menu</div>');
-                    if(document.querySelector('.mobile-toggle')){
-                        document.querySelector('.mobile-toggle').addEventListener('click', function(){
+                    if (document.querySelector('.mobile-toggle')) {
+                        document.querySelector('.mobile-toggle').addEventListener('click', function() {
                             document.querySelector('#AdminControls').classList.toggle('show-menu');
                         });
                     }
@@ -43,3 +47,19 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+
+
+function removeCurrencyFromCredits() {
+    let credits = document.querySelectorAll('.creditsValue');
+    if (credits) {
+
+        credits.forEach(function(credit) {
+            credit.textContent = credit.textContent.split(" ")[0];
+        });
+    }
+}
+
+if (document.querySelector('.SearchHotels')) {
+    removeCurrencyFromCredits();
+}

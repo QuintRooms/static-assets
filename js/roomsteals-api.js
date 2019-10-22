@@ -74,7 +74,7 @@ class RoomStealsModel {
                 let book_now_btns = document.querySelectorAll('.ArnRateButton');
                 if (book_now_btns) {
                     book_now_btns.forEach(btn => {
-                        btn.innerHTML = `<a class="ArnShowRatesLink" href="${this.subscribe_url}">Subscribe to Book</a>`;
+                        btn.textContent = 'See More';
                     });
                 }
             }
@@ -101,19 +101,6 @@ class RoomStealsModel {
             let day_difference = Math.ceil(time_difference / (1000 * 60 * 60 * 24));
             this.room_nights = day_difference;
             return this.room_nights;
-        }
-    }
-
-    showCustomerSavingsOnSearchResultsPage() {
-        if (this.is_room_steals_trial_user === true) {
-            if (document.querySelector('.SearchHotels')) {
-                let book_now_btns = document.querySelectorAll('.ArnShowRatesLink');
-                if(book_now_btns){
-                    book_now_btns.forEach(function(btn){
-                        btn.textContent = 'See More';
-                    })
-                }
-            }
         }
     }
 
@@ -171,7 +158,6 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                                 roomStealsModel.checkIsRoomStealsTrialUser()
                                     .then(() => {
                                         roomStealsModel.showSubscribeNowButtonsForTrialUsers();
-                                        roomStealsModel.showCustomerSavingsOnSearchResultsPage();
                                         roomStealsModel.showCustomerSavingsOnSinglePropPage();
                                     });
                             });

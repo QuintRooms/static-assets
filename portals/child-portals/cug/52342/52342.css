@@ -1942,13 +1942,6 @@ legend {
     }
 }
 
-.SinglePropDetail .ArnNightlyRate strong {
-    display: inline !important;
-    color: inherit !important;
-    font-size: inherit !important;
-    font-weight: inherit !important;
-}
-
 @media screen and (max-width: 600px) {
     .arnPrice+.perNight {
         display: none !important;

@@ -6,11 +6,18 @@ cugPortal.updateText('title', 'Room Steals');
 cugPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/favicon.png', 'href');
 cugPortal.updateText('#theMarketingOptInAjax label', 'I want to receive the latest information by email from Room Steals including event reminders, relevant news, surveys, offers, and promotions.');
 
+let ratesReadyCount = 0;
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         removePercentSavingsUnderThreshhold(5);
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
+
+        if (ratesReadyCount === 0) {
+            seeMoreRoomsClick();
+            i++;
+        }
+        
         document.querySelectorAll(".ArnPropClass").forEach(function(n) {
             var r = n.textContent,
                 t = r.replace(/\D/g, ""),
@@ -86,3 +93,9 @@ function removePercentSavingsUnderThreshhold(threshhold) {
 let script = document.createElement('script');
 script.setAttribute('src', 'https://static.hotelsforhope.com/js/roomsteals-api.js');
 document.head.appendChild(script);
+
+function seeMoreRoomsClick() {
+    if (document.querySelector('.SinglePropDetail') && document.querySelector('#moreRatesLink')) {
+        document.querySelector('#moreRatesLink').click();
+    }
+}

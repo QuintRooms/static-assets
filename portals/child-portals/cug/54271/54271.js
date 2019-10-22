@@ -56,10 +56,7 @@ function removeCurrencyFromCredits() {
 
         credits.forEach(function(credit) {
             credit.textContent = credit.textContent.split(" ")[0];
+            console.log('test')
         });
     }
-}
-
-if (document.querySelector('.SearchHotels')) {
-    removeCurrencyFromCredits();
 }

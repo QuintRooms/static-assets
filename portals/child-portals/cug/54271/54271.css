@@ -114,6 +114,14 @@ body {
 
 
 /*Cug Specific */
+.IsAgent.addPromocode header {
+    margin-top: 88px !important;
+}
+
+.IsAgent #userCommands {
+    width: 100%;
+}
+
 .errors {
     display: block;
 }
@@ -136,6 +144,7 @@ body {
 #AdminControlsContainer {
     z-index: 10;
     position: relative;
+    height: initial;
 }
 
 #commands {
@@ -740,6 +749,9 @@ header {
 }
 
 @media only screen and (min-width: 800px) {
+    .mobile-toggle {
+        display: none;
+    }
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
@@ -1317,4 +1329,34 @@ div.originalPrice span,
 
 .SinglePropDetail .originalRateAmount {
     text-align: center;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    display: flex !important;
+    background: rgba(0, 0, 0, .75);
+    padding: 15px 15px 14px;
+}
+
+.RootBody #CitiesNearbyContainer,
+.RootBody #theOtherSubmitButton {
+    display: none;
+}
+
+.RootBody .ArnAmentitiesContainer,
+.RootBody .ArnCitiesNearbyContainer,
+.RootBody .ArnCurrenciesContainer,
+.RootBody .ArnHotelSizeContainer,
+.RootBody .ArnPriceContainer,
+.RootBody .ArnPropertyClassesContainer,
+.RootBody .ArnPropertyTypesContainer,
+.RootBody .ArnRateFiltersContainer,
+.RootBody .ArnSlider {
+    background: transparent;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody .ArnSecondarySearchOuterContainer {
+        display: none !important;
+    }
 }

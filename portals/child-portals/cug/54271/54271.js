@@ -10,7 +10,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
         cugPortal.updateText('.creditsLabel', 'Points Applied:');
 
-        if (document.querySelector('.SearchHotels')) {
+        if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
             removeCurrencyFromCredits();
         }
     }, 1);

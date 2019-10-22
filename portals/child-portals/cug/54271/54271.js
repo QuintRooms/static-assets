@@ -48,18 +48,11 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-
-
 function removeCurrencyFromCredits() {
     let credits = document.querySelectorAll('.creditsValue');
     if (credits) {
-
         credits.forEach(function(credit) {
             credit.textContent = credit.textContent.split(" ")[0];
         });
     }
-}
-
-if (document.querySelector('.SearchHotels')) {
-    removeCurrencyFromCredits();
 }

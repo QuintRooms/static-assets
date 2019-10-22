@@ -74,7 +74,7 @@ class RoomStealsModel {
                 let book_now_btns = document.querySelectorAll('.ArnRateButton');
                 if (book_now_btns) {
                     book_now_btns.forEach(btn => {
-                        btn.textContent = 'See More';
+                        btn.querySelector('.ArnShowRatesLink').textContent = 'See More';
                     });
                 }
             }

@@ -116,11 +116,14 @@ class RoomStealsModel {
                         let savings_int = savings.textContent.replace(/\D+/g, '');
                         let adjusted_savings = (savings_int * this.room_nights) - 5900;
                         if (adjusted_savings > 500) {
+                            let element_styles = 'display: block !important';
                             element.style.cssText += element_styles;
                             savings.style.display = 'none';
                             let label_styles = 'max-width: 250px; display: block; font-style: initial; text-align: center; width: 100%; margin: 8px auto; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px';
                             label.style.cssText += label_styles;
 
+                            element_styles = 'display: block !important; position: static !important;';
+                            element.style.cssText += element_styles;
                             let single_prop_savings = document.querySelectorAll('.creditsLabel strong');
                             if (single_prop_savings) {
                                 single_prop_savings.forEach(function(prop_saving) {

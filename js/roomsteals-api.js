@@ -66,7 +66,6 @@ class RoomStealsModel {
         } else {
             this.is_room_steals_trial_user = false;
         }
-        console.log(this.is_room_steals_trial_user)
     }
 
     showSubscribeNowButtonsForTrialUsers() {

@@ -127,7 +127,7 @@ class RoomStealsModel {
                             let single_prop_savings = document.querySelectorAll('.creditsLabel strong');
                             if (single_prop_savings) {
                                 single_prop_savings.forEach(function(prop_saving) {
-                                    let single_prop_savings_styles = 'display: inline !important; color: inherit !important; font-size: inherit !important; font-weight: inherit !important;';
+                                    let single_prop_savings_styles = 'display: inline !important; color: inherit !important; font-size: inherit !important; font-weight: bold !important;';
                                     prop_saving.style.cssText += single_prop_savings_styles;
                                 });
                             }

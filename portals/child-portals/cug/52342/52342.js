@@ -13,10 +13,10 @@ jQuery(document).on('ratesReadyEvent', function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
 
-        if (ratesReadyCount === 0) {
-            seeMoreRoomsClick();
-            i++;
-        }
+        // if (ratesReadyCount === 0) {
+        //     seeMoreRoomsClick();
+        //     ratesReadyCount++;
+        // }
         
         document.querySelectorAll(".ArnPropClass").forEach(function(n) {
             var r = n.textContent,

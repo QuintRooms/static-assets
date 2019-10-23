@@ -66,6 +66,7 @@ class RoomStealsModel {
         } else {
             this.is_room_steals_trial_user = false;
         }
+        console.log(this.is_room_steals_trial_user)
     }
 
     showSubscribeNowButtonsForTrialUsers() {
@@ -164,7 +165,7 @@ class RoomStealsModel {
                                     prop_saving.style.cssText += single_prop_savings_styles;
                                 });
                             }
-                            element.insertAdjacentHTML('beforeEnd', '<style>.SinglePropDetail .ArnNightlyRate strong {display: inline !important;color: inherit !important;font-size: inherit !important;font-weight: inherit !important;}.bestPrice .creditsLabel{display: none !important;}.SinglePropDetail .bookRoomCell .memberSavings{ border-bottom: none;} .ArnNightlyRate{display: flex; flex-direction: column;} .memberSavings{order: 2;}</style>')
+                            element.insertAdjacentHTML('beforeEnd', '<style>.bestPrice .creditsLabel{display: none !important;}.SinglePropDetail .bookRoomCell .memberSavings{ border-bottom: none;} .ArnNightlyRate{display: flex; flex-direction: column;} .memberSavings{order: 2;}</style>')
                             adjusted_savings = adjusted_savings.toString().slice(0, -2);
                             label.innerHTML = `With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!`;
                         }

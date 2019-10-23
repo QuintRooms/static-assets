@@ -75,7 +75,7 @@ class RoomStealsModel {
                 let book_now_btns = document.querySelectorAll('.ArnRateButton');
                 if (book_now_btns) {
                     book_now_btns.forEach(btn => {
-                        btn.innerHTML = `<a class="ArnShowRatesLink" href="${this.subscribe_url}">Subscribe to Book</a>`;
+                        btn.querySelector('.ArnShowRatesLink').textContent = 'Show More';
                     });
                 }
             }
@@ -105,40 +105,6 @@ class RoomStealsModel {
         }
     }
 
-    showCustomerSavingsOnSearchResultsPage() {
-        if (this.is_room_steals_trial_user === true) {
-            if (document.querySelector('.SearchHotels')) {
-                let prop_container = document.querySelectorAll('.ArnContainer');
-                prop_container.forEach((prop) => {
-                    let savings = prop.querySelector('.creditsValue');
-                    let label = prop.querySelector('.creditsLabel');
-                    let member_savings_container = prop.querySelector('.memberSavings');
-                    let subscribe_btn = prop.querySelector('.ArnRateButton');
-                    if (savings) {
-                        let savings_int = savings.textContent.replace(/\D+/g, '');
-                        let adjusted_savings = (savings_int * this.room_nights) - 5900;
-                        if (adjusted_savings > 500) {
-                            member_savings_container.style.display = 'block';
-                            let prop_styles = 'display: block !important';
-                            prop.style.cssText += prop_styles;
-                            savings.style.display = 'none';
-                            let label_styles = 'display: block !important; font-style: initial; text-align: center; width: 100%; margin: 12px 0 -12px 0; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px';
-                            label.style.cssText += label_styles;
-                            if (document.querySelector('.SearchHotels')) {
-                                prop.insertAdjacentHTML('beforeEnd', '<style>.ArnPropThumb{min-height:225px !important; .SearchHotels .creditsLabel{margin: 8px 0 !important;} .perNight{display: none !important;}</style>');
-                            }
-
-                            adjusted_savings = adjusted_savings.toString().slice(0, -2);
-                            label.innerHTML = `With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!`;
-                            subscribe_btn.insertAdjacentElement('afterEnd', label);
-
-                        }
-                    }
-                });
-            }
-        }
-    }
-
     showCustomerSavingsOnSinglePropPage() {
         if (this.is_room_steals_trial_user === true) {
             if (document.querySelector('.SinglePropDetail')) {
@@ -150,14 +116,11 @@ class RoomStealsModel {
                         let savings_int = savings.textContent.replace(/\D+/g, '');
                         let adjusted_savings = (savings_int * this.room_nights) - 5900;
                         if (adjusted_savings > 500) {
-                            let element_styles = 'display: block !important';
                             element.style.cssText += element_styles;
                             savings.style.display = 'none';
                             let label_styles = 'max-width: 250px; display: block; font-style: initial; text-align: center; width: 100%; margin: 8px auto; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px';
                             label.style.cssText += label_styles;
 
-                            element_styles = 'display: block !important; position: static !important;';
-                            element.style.cssText += element_styles;
                             let single_prop_savings = document.querySelectorAll('.creditsLabel strong');
                             if (single_prop_savings) {
                                 single_prop_savings.forEach(function(prop_saving) {
@@ -193,7 +156,6 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                                 roomStealsModel.checkIsRoomStealsTrialUser()
                                     .then(() => {
                                         roomStealsModel.showSubscribeNowButtonsForTrialUsers();
-                                        roomStealsModel.showCustomerSavingsOnSearchResultsPage();
                                         roomStealsModel.showCustomerSavingsOnSinglePropPage();
                                     });
                             });

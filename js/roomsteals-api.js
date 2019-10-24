@@ -118,7 +118,7 @@ class RoomStealsModel {
                         if (adjusted_savings > 500) {
 
                             adjusted_savings = adjusted_savings.toString().slice(0, -2);
-                            if (!document.querySelector('.savings-tag')) {
+                            if (!element.querySelector('.savings-tag')) {
                                 btn.insertAdjacentHTML('afterEnd', `<div class="savings-tag">With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!</div><style>.savings-tag{max-width: 250px; display: block; font-style: initial; text-align: center; width: 100%; margin: 0 auto !important; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px; font-weight:normal;position:relative; top: 12px;}@media screen and (max-width:800px){.savings-tag{top: 6px;}}@media screen and (max-width:500px){.savings-tag{top: 0;}}</style>`);
                             }
                         }

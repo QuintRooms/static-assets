@@ -104,6 +104,28 @@ class RoomStealsModel {
         }
     }
 
+    showCustomerSavingsOnSearchResults() {
+        if (this.is_room_steals_trial_user === true) {
+            if (document.querySelector('.SearchHotels')) {
+                let member_savings = document.querySelectorAll('.ArnContainer');
+                member_savings.forEach((element) => {
+                    let savings = element.querySelector('.creditsValue');
+                    let label = element.querySelector('.creditsLabel');
+                    let btn = element.querySelector('.ArnRateButton');
+                    if (savings) {
+                        let savings_int = savings.textContent.replace(/\D+/g, '');
+                        let adjusted_savings = (savings_int * this.room_nights) - 5900;
+                        if (adjusted_savings > 500) {
+
+                            adjusted_savings = adjusted_savings.toString().slice(0, -2);
+                            btn.insertAdjacentHTML('afterEnd', `<div class="savings-tag">With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!</div><style>.savings-tag{max-width: 250px; display: block; font-style: initial; text-align: center; width: 100%; margin: 0 auto !important; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px; font-weight:normal;position:relative; top: 12px;}@media screen and (max-width:800px){.savings-tag{top: 6px;}}@media screen and (max-width:500px){.savings-tag{top: 0;}}</style>`);
+                        }
+                    }
+                });
+            }
+        }
+    }
+
     showCustomerSavingsOnSinglePropPage() {
         if (this.is_room_steals_trial_user === true) {
             if (document.querySelector('.SinglePropDetail')) {
@@ -159,6 +181,7 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                                     .then(() => {
                                         roomStealsModel.showSubscribeNowButtonsForTrialUsers();
                                         roomStealsModel.showCustomerSavingsOnSinglePropPage();
+                                        roomStealsModel.showCustomerSavingsOnSearchResults();
                                     });
                             });
                     });

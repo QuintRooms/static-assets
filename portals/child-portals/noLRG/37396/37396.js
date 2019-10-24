@@ -26,7 +26,6 @@ jQuery(document).on('ratesReadyEvent', function() {
             noLRGPortal.updateText('.event-rate', 'Exclusive Barrett-Jackson Rates');
         }
 
-
         if (noLRGPortal.site_id == 49552) {
             noLRGPortal.addCustomTag('<div>New Marriott Open 2020</div>', 3486114);
             noLRGPortal.updateText('.event-rate', 'Exclusive Barrett-Jackson Rates');

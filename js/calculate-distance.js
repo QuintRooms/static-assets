@@ -81,44 +81,44 @@ class Event {
     async updateDistance() {
         let self = this;
         let distanceElement = document.querySelectorAll('.distanceLabel');
+        if (distanceElement) {
+            let interval = 200;
+            let promise = Promise.resolve();
+            self.params.forEach(function(param) {
+                promise = promise.then(function() {
+                    let url = 'https://distance.hotelsforhope.com?from_lat=' + param[0][0] + '&from_long=' + param[0][1] + '&to_lat=' + param[1][0] + '&to_long=' + param[1][1];
+                    let response = fetch(url).then((response) => {
+                        let data = response.json();
+                        return data;
+                    }).then((data) => {
+                        if (distanceElement) {
+                            distanceElement.forEach(function(element) {
+                                let parent = element.closest('.ArnProperty');
+                                if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
+                                    if (self.unit == 'miles') {
+                                        data['mi'] = parseFloat(data['mi']);
+                                        data['mi'] = data['mi'].toFixed(1);
+                                        element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
+                                    }
 
-        let interval = 200;
-        let promise = Promise.resolve();
-        self.params.forEach(function(param) {
-            promise = promise.then(function() {
-                let url = 'https://distance.hotelsforhope.com?from_lat=' + param[0][0] + '&from_long=' + param[0][1] + '&to_lat=' + param[1][0] + '&to_long=' + param[1][1];
-
-                let response = fetch(url).then((response) => {
-                    let data = response.json();
-                    return data;
-                }).then((data) => {
-                    if (distanceElement) {
-                        distanceElement.forEach(function(element) {
-                            let parent = element.closest('.ArnProperty');
-                            if (data['to_lat'] == parent.getAttribute('latitude') && data['to_long'] == parent.getAttribute('longitude')) {
-                                if (self.unit == 'miles') {
-                                    data['mi'] = parseFloat(data['mi']);
-                                    data['mi'] = data['mi'].toFixed(1);
-                                    element.textContent = data['mi'] + ' ' + self.unit + ' to ' + self.venueName;
+                                    if (self.unit == 'kilometers') {
+                                        data['km'] = parseFloat(data['km']);
+                                        data['km'] = data['km'].toFixed(1);
+                                        element.textContent = data['km'] + ' ' + self.unit + ' to ' + self.venueName;
+                                    }
                                 }
+                            });
+                        }
+                    }).catch(() => {
+                        console.log('There was an error trying to make your request');
+                    });
 
-                                if (self.unit == 'kilometers') {
-                                    data['km'] = parseFloat(data['km']);
-                                    data['km'] = data['km'].toFixed(1);
-                                    element.textContent = data['km'] + ' ' + self.unit + ' to ' + self.venueName;
-                                }
-                            }
-                        });
-                    }
-                }).catch(() => {
-                    console.log('There was an error trying to make your request');
-                });
-
-                return new Promise(function(resolve) {
-                    setTimeout(resolve, interval);
+                    return new Promise(function(resolve) {
+                        setTimeout(resolve, interval);
+                    });
                 });
             });
-        });
+        }
     }
 }
 let event = new Event();

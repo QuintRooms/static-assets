@@ -25,17 +25,18 @@ body {
     color: #15151E;
 }
 
-body.RootBody {
+body.RootBody,
+body.indexPage {
     background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/56837/images/banner.png) no-repeat center center /cover !important;
 }
 
 header {
-    background: #2d78a5 url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56837/images/pattern.png') repeat;
-    border-bottom: 3px solid #fff;
+    background: #fff;
+    border-bottom: 3px solid #005a7e;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 6px 12px;
+    justify-content: flex-start;
+    padding: 18px 12px;
 }
 
 header a {
@@ -47,7 +48,7 @@ header a {
 }
 
 .logo img {
-    max-width: 150px;
+    width: 200px;
     margin: 0;
 }
 
@@ -319,4 +320,20 @@ header a {
 
 #adults option:nth-child(n + 7) {
     display: none !important;
+}
+
+.landing-page h3,
+.landing-page h4,
+.landing-page h5 {
+    color: #fff;
+}
+
+.landing-page span svg {
+    transform: rotate(90deg);
+}
+
+.landing-page .race a {
+    color: #fff;
+    text-decoration: underline;
+    padding-left: 18px;
 }

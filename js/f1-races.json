@@ -1,5 +1,23 @@
 [
     {
+        "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2020",
+        "location": "Melbourne, Australia",
+        "dates": "13 - 15 Mar",
+        "hide_race_date": "3/15/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36932",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/australia.jpg",
+        "year": 2020,
+        "properties": [
+        {
+            "name": "Crown Metropol",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=544028&checkin=3/11/2020&nights=1"
+        },
+        {
+            "name": "Crowne Plaza Melbourne",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=201426&checkin=3/11/2020&nights=1"
+        }]
+    },
+    {
         "event_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2020",
         "location": "Sakhir, Bahrain",
         "dates": "20 - 22 Mar",
@@ -9,12 +27,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Le Meridien City Centre Bahrain",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=406555&checkin=3/25/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "The Ritz Carlton Bahrain",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=52601&checkin=3/25/2020&nights=1"
         }]
     },
     {
@@ -27,12 +45,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Meliá Hanoi",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=29897&checkin=4/1/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Sofitel Legend Metropole Hanoi",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=223220&checkin=4/1/2020&nights=1"
         }]
     },
     {
@@ -45,12 +63,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
 
@@ -64,12 +82,20 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Novotel Schipol Airport",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=663849&checkin=4/29/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Corendon Village Hotel",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=2786168&checkin=4/29/2020&nights=1"
+        },
+        {
+            "name": "Intercontinental Amstel Amsterdam",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=739616&checkin=4/29/2020&nights=1"
+        },
+        {
+            "name": "Doubletree Centraal Station",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=377110&checkin=4/29/2020&nights=1"
         }]
     },
 
@@ -83,12 +109,8 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
-        },
-        {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Fairmont Rey Juan Carlos I",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=23873&checkin=5/6/2020&nights=1"
         }]
     },
     {
@@ -101,12 +123,20 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Mercure Nice Centre Notre Dame",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=234895&checkin=5/20/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Columbus Monte-Carlo",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=34021&checkin=5/20/2020&nights=1"
+        },
+        {
+            "name": "Hyatt Regency Nice",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=176114&checkin=5/20/2020&nights=1"
+        },
+        {
+            "name": "Le Meridien Nice",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=24665&checkin=5/20/2020&nights=1"
         }]
     },
     {
@@ -119,12 +149,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
 
@@ -138,12 +168,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Fairmont The Queen Elizabeth Montreal",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=15002&checkin=6/3/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Holiday Inn Hotel & Suites Montreal Centre-ville Ouest",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1250634&checkin=6/3/2020&nights=1"
         }]
     },
     {
@@ -156,12 +186,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -174,12 +204,16 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Lend Hotel",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1278151&checkin=7/1/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "NH Graz City",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1987707&checkin=7/1/2020&nights=1"
+        },
+        {
+            "name": "Schlossberghotel Das Kunsthotel",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=201366&checkin=7/1/2020&nights=1"
         }]
     },
     {
@@ -192,12 +226,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "Hilton Northampton",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=19336&checkin=7/15/2020&nights=1"
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "Northampton Marriott",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=739037&checkin=7/15/2020&nights=1"
         }]
     },
     {
@@ -210,12 +244,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -228,16 +262,16 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
-        "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2020",
+        "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D'ITALIA 2020",
         "location": "Monza, Italy",
         "dates": "04 - 06 Sep",
         "hide_race_date": "9/6/2020",
@@ -246,12 +280,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -264,12 +298,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -282,12 +316,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -300,12 +334,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -318,12 +352,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -336,12 +370,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -354,12 +388,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     },
     {
@@ -372,12 +406,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "Hyatt Regency Phoenix",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20657&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         },
         {
-            "name": "Hyatt Regency Lexington",
-            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20659&checkin=11/1/2019&nights=3"
+            "name": "",
+            "url": ""
         }]
     }
 ]

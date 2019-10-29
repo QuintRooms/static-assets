@@ -30,7 +30,42 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-// Custom Banner Ad
-noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad-unit" target="_blank" href="https://farmaid.org"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/ad-unit.jpg"></a>', 'beforeEnd');
-
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
+
+async function setupF1Races() {
+    let landing_page_container = document.querySelector('.landing-page');
+    let response = await fetch('https://static.hotelsforhope.com/js/f1-races.json');
+    let today = new Date();
+    let races = await response.json()
+        .then((races) => {
+            Object.keys(races).forEach(race => {
+                let end_date = new Date(races[race]['hide_race_date']);
+                if (races[race]['year'] === 2020 && today < end_date) {
+                    landing_page_container.insertAdjacentHTML('beforeEnd', `
+                        <div class="race" data-target="#properties-${race}" data-toggle="collapse"  aria-expanded="true" aria-controls="properties-${race}">
+                            <h3>${races[race]['event_name']}
+                                <span class="pull-right">
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="12px" viewBox="0 0 50 80" xml:space="preserve">
+                                        <polyline fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                                    </svg>
+                                </span>
+                            </h3>
+                            <div class="collapse" id="properties-${race}"></div>
+                        </div>
+                    `);
+                    races[race]['properties'].forEach(function(element) {
+                        if (element.name != '') {
+                            document.querySelector(`#properties-${race}`).insertAdjacentHTML('beforeEnd', `
+                            <a style="display: block;" target="_blank" href="${element.url}">${element.name}</a>
+                        `);
+
+                        }
+                    });
+                }
+            });
+        });
+}
+
+if (document.querySelector('.landing-page')) {
+    setupF1Races();
+}

@@ -1,20 +1,20 @@
 /* Fonts */
 @font-face {
     font-family: 'F1-Black';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
-        url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Black_web.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
+        url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Black_web.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'F1-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
-        url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Bold_web.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
+        url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Bold_web.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'F1-Regular';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
-        url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Regular_web.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
+        url('https://static.hotelsforhope.com/portals/child-portals/noLRG/56719/fonts/Formula1-Display-Regular_web.ttf') format('truetype');
 }
 
 /* latin-ext */
@@ -131,6 +131,10 @@ body {
     font-size: 17px;
     list-style: none;
     order: 2;
+}
+
+.MemberNotAuthenticated #user_lipoints {
+    display: none;
 }
 
 .leaflet-top {
@@ -349,7 +353,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/56719/images/banner.png);
+    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/54271/images/banner.png);
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -383,7 +387,7 @@ header {
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/56719/images/banner.png) !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/54271/images/banner.png) !important;
     grid-row-start: 2;
     display: flex;
     flex-direction: column;
@@ -1252,12 +1256,6 @@ ul {
     .SearchHotels .ArnPropThumb {
         width: 27%;
     }
-
-    .SearchHotels .ArnRateCell{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 }
 
 .percentSavings {
@@ -1276,8 +1274,46 @@ ul {
     border-radius: 5px;
 }
 
+
+.ArnPropName div.memberSavings,
+.SinglePropDetail .memberSavings {
+    font-style: unset !important;
+    display: block !important;
+    margin: 6px 0 !important;
+    position: static !important;
+}
+
+.SinglePropDetail .memberSavings {
+    text-align: center;
+    border-bottom: none !important;
+}
+
+.SinglePropDetail .creditsValue,
+.SinglePropDetail .creditsLabel {
+    display: inline;
+    width: unset !important;
+}
+
+.SinglePropDetail .creditsLabel {
+    margin-right: 3px;
+}
+
+.originalPrice {
+    display: block !important;
+}
+
+div.originalPrice span,
+.SearchHotels .ArnPropName div.originalPrice span {
+    text-decoration: line-through !important;
+    line-height: 1;
+}
+
 .SearchHotels .arnPrice {
     order: 1;
+}
+
+.originalPrice:before {
+    display: none;
 }
 
 .ArnPriceCell .mainRate {

@@ -7,6 +7,8 @@ cugPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         cugPortal.ratesReadyEventMethods();
+        cugPortal.updateText('.event-rate', 'Exclusive Rates');
+        cugPortal.updateText('.creditsLabel', 'Points Applied:');
     }, 1);
 });
 
@@ -21,7 +23,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
                 cugPortal.updateText('#user_points_text_2', 'Points');
                 if (document.querySelector('#commands')) {
-                    // document.querySelector('#commands').insertAdjacentHTML('afterBegin', '<a href="https://events.hotelsforhope.com/v6/register?siteid=54271&addPromoCode">Add Points</a>');
+                    document.querySelector('#commands').insertAdjacentHTML('afterBegin', '<a href="https://events.hotelsforhope.com/v6/register?siteid=54271&addPromoCode">Add Points</a>');
 
                     document.querySelector('header').insertAdjacentHTML('beforeEnd', '<div class="mobile-toggle">Menu</div>');
                     if(document.querySelector('.mobile-toggle')){

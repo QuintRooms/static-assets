@@ -1,390 +1,392 @@
-{
-    "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2019",
-    "location": "Melbourne, Australia",
-    "dates": "14 - 17 Mar",
-    "hide_race_date": "3/18/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30237",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/australia.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2019",
-    "location": "Sakhir, Bahrain",
-    "dates": "29 - 31 Mar",
-    "hide_race_date": "4/1/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30238",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/bahrain.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2019",
-    "location": "Shanghai, China",
-    "dates": "12 - 14 Apr",
-    "hide_race_date": "4/15/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30239",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/china.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 AZERBAIJAN GRAND PRIX 2019",
-    "location": "Baku, Azerbaijan",
-    "dates": "26 - 28 Apr",
-    "hide_race_date": "4/29/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30240",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/azerbaijan.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAN PREMIO DE ESPAÑA 2019",
-    "location": "Catalunya, Spain",
-    "dates": "10 - 12 May",
-    "hide_race_date": "5/13/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30241",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/spain.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAND PRIX DE MONACO 2019",
-    "location": "Monte-Carlo, Monaco",
-    "dates": "23 - 26 May",
-    "hide_race_date": "5/27/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30242",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/monaco.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAND PRIX DU CANADA 2019",
-    "location": "Montréal, Canada",
-    "dates": "07 - 09 Jun",
-    "hide_race_date": "6/10/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30243",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/canada.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAND PRIX DE FRANCE 2019",
-    "location": "Le Castellet, France",
-    "dates": "21 - 23 Jun",
-    "hide_race_date": "6/24/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30244",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/france.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 MYWORLD GROßER PREIS VON ÖSTERREICH 2019",
-    "location": "Spielberg, Austria",
-    "dates": "28 - 30 Jun",
-    "hide_race_date": "7/1/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30245",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/austria.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 ROLEX BRITISH GRAND PRIX 2019",
-    "location": "Silverstone, England",
-    "dates": "11 - 14 Jul",
-    "hide_race_date": "7/15/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30246",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/britain.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 MERCEDES-BENZ GROßER PREIS VON DEUTSCHLAND 2019",
-    "location": "Hockenheim, Germany",
-    "dates": "26 - 28 Jul",
-    "hide_race_date": "7/29/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30247",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/germany.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 ROLEX MAGYAR NAGYDÍJ 2019",
-    "location": "Budapest, Hungary",
-    "dates": "02 - 04 Aug",
-    "hide_race_date": "8/5/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30248",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/hungary.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 JOHNNIE WALKER BELGIAN GRAND PRIX 2019",
-    "location": "Spa-Francorchamps, Belgium",
-    "dates": "30 Aug - 01 Sep",
-    "hide_race_date": "9/2/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30301",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/belgium.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2019",
-    "location": "Monza, Italy",
-    "dates": "06 - 08 Sep",
-    "hide_race_date": "9/9/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30302",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/italy.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2019",
-    "location": "Marina Bay, Singapore",
-    "dates": "20 - 22 Sep",
-    "hide_race_date": "9/23/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30303",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/singapore.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 VTB RUSSIAN GRAND PRIX 2019",
-    "location": "Sochi, Russia",
-    "dates": "27 - 29 Sep",
-    "hide_race_date": "9/30/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30304",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/russia.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 JAPANESE GRAND PRIX 2019",
-    "location": "Suzuka, Japan",
-    "dates": "11 - 13 Oct",
-    "hide_race_date": "10/14/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30305",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/japan.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 GRAN PREMIO DE MÉXICO 2019",
-    "location": "Mexico City, Mexico",
-    "dates": "25 - 27 Oct",
-    "hide_race_date": "10/28/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30307",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/mexico.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 UNITED STATES GRAND PRIX 2019",
-    "location": "Austin, Texas",
-    "dates": "01 - 03 Nov",
-    "hide_race_date": "11/4/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30306",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/us.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 HEINEKEN GRANDE PRÊMIO DO BRASIL 2019",
-    "location": "São Paulo, Brazil",
-    "dates": "15 - 17 Nov",
-    "hide_race_date": "11/18/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30362",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/brazil.jpg",
-    "year": 2019
-},
-{
-    "event_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2019",
-    "location": "Yas Island, Abu Dhabi",
-    "dates": "29 Nov - 01 Dec",
-    "hide_race_date": "12/2/2019",
-    "url": "https://bookrooms.formula1.com/group-event?id=30342",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/abu.jpg",
-    "year": 2019
-}
-{
-    "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2020",
-    "location": "Melbourne, Australia",
-    "dates": "13 - 15 Mar",
-    "hide_race_date": "3/15/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36932",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/australia.jpg",
-    "year": 2020,
-},
-{
-    "event_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2020",
-    "location": "Sakhir, Bahrain",
-    "dates": "20 - 22 Mar",
-    "hide_race_date": "3/20/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36294",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/bahrain.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 VIETNAMESE GRAND PRIX 2020",
-    "location": "Hanoi, Vietnam",
-    "dates": "03- 05 Apr",
-    "hide_race_date": "4/5/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36361",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/vietnam.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2020",
-    "location": "Shanghai, China",
-    "dates": "17 - 19 Apr",
-    "hide_race_date": "4/19/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36960",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/china.jpg",
-    "year": 2020
-},
+[
+    {
+        "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2019",
+        "location": "Melbourne, Australia",
+        "dates": "14 - 17 Mar",
+        "hide_race_date": "3/18/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30237",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/australia.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2019",
+        "location": "Sakhir, Bahrain",
+        "dates": "29 - 31 Mar",
+        "hide_race_date": "4/1/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30238",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/bahrain.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2019",
+        "location": "Shanghai, China",
+        "dates": "12 - 14 Apr",
+        "hide_race_date": "4/15/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30239",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/china.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 AZERBAIJAN GRAND PRIX 2019",
+        "location": "Baku, Azerbaijan",
+        "dates": "26 - 28 Apr",
+        "hide_race_date": "4/29/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30240",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/azerbaijan.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO DE ESPAÑA 2019",
+        "location": "Catalunya, Spain",
+        "dates": "10 - 12 May",
+        "hide_race_date": "5/13/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30241",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/spain.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DE MONACO 2019",
+        "location": "Monte-Carlo, Monaco",
+        "dates": "23 - 26 May",
+        "hide_race_date": "5/27/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30242",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/monaco.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DU CANADA 2019",
+        "location": "Montréal, Canada",
+        "dates": "07 - 09 Jun",
+        "hide_race_date": "6/10/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30243",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/canada.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DE FRANCE 2019",
+        "location": "Le Castellet, France",
+        "dates": "21 - 23 Jun",
+        "hide_race_date": "6/24/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30244",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/france.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 MYWORLD GROßER PREIS VON ÖSTERREICH 2019",
+        "location": "Spielberg, Austria",
+        "dates": "28 - 30 Jun",
+        "hide_race_date": "7/1/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30245",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/austria.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 ROLEX BRITISH GRAND PRIX 2019",
+        "location": "Silverstone, England",
+        "dates": "11 - 14 Jul",
+        "hide_race_date": "7/15/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30246",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/britain.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 MERCEDES-BENZ GROßER PREIS VON DEUTSCHLAND 2019",
+        "location": "Hockenheim, Germany",
+        "dates": "26 - 28 Jul",
+        "hide_race_date": "7/29/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30247",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/germany.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 ROLEX MAGYAR NAGYDÍJ 2019",
+        "location": "Budapest, Hungary",
+        "dates": "02 - 04 Aug",
+        "hide_race_date": "8/5/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30248",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/hungary.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 JOHNNIE WALKER BELGIAN GRAND PRIX 2019",
+        "location": "Spa-Francorchamps, Belgium",
+        "dates": "30 Aug - 01 Sep",
+        "hide_race_date": "9/2/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30301",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/belgium.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2019",
+        "location": "Monza, Italy",
+        "dates": "06 - 08 Sep",
+        "hide_race_date": "9/9/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30302",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/italy.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2019",
+        "location": "Marina Bay, Singapore",
+        "dates": "20 - 22 Sep",
+        "hide_race_date": "9/23/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30303",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/singapore.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 VTB RUSSIAN GRAND PRIX 2019",
+        "location": "Sochi, Russia",
+        "dates": "27 - 29 Sep",
+        "hide_race_date": "9/30/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30304",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/russia.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 JAPANESE GRAND PRIX 2019",
+        "location": "Suzuka, Japan",
+        "dates": "11 - 13 Oct",
+        "hide_race_date": "10/14/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30305",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/japan.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO DE MÉXICO 2019",
+        "location": "Mexico City, Mexico",
+        "dates": "25 - 27 Oct",
+        "hide_race_date": "10/28/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30307",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/mexico.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 UNITED STATES GRAND PRIX 2019",
+        "location": "Austin, Texas",
+        "dates": "01 - 03 Nov",
+        "hide_race_date": "11/4/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30306",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/us.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 HEINEKEN GRANDE PRÊMIO DO BRASIL 2019",
+        "location": "São Paulo, Brazil",
+        "dates": "15 - 17 Nov",
+        "hide_race_date": "11/18/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30362",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/brazil.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2019",
+        "location": "Yas Island, Abu Dhabi",
+        "dates": "29 Nov - 01 Dec",
+        "hide_race_date": "12/2/2019",
+        "url": "https://bookrooms.formula1.com/group-event?id=30342",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/abu.jpg",
+        "year": 2019
+    },
+    {
+        "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2020",
+        "location": "Melbourne, Australia",
+        "dates": "13 - 15 Mar",
+        "hide_race_date": "3/15/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36932",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/australia.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2020",
+        "location": "Sakhir, Bahrain",
+        "dates": "20 - 22 Mar",
+        "hide_race_date": "3/20/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36294",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/bahrain.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 VIETNAMESE GRAND PRIX 2020",
+        "location": "Hanoi, Vietnam",
+        "dates": "03- 05 Apr",
+        "hide_race_date": "4/5/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36361",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/vietnam.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2020",
+        "location": "Shanghai, China",
+        "dates": "17 - 19 Apr",
+        "hide_race_date": "4/19/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36960",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/china.jpg",
+        "year": 2020
+    },
 
-{
-    "event_name": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2020",
-    "location": "Zandvoort, Netherlands",
-    "dates": "1 - 3 May",
-    "hide_race_date": "5/3/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=35763",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/dutch.jpg",
-    "year": 2020
-},
+    {
+        "event_name": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2020",
+        "location": "Zandvoort, Netherlands",
+        "dates": "1 - 3 May",
+        "hide_race_date": "5/3/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=35763",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/dutch.jpg",
+        "year": 2020
+    },
 
-{
-    "event_name": "FORMULA 1 GRAN PREMIO DE ESPAÑA 2020",
-    "location": "Catalunya, Spain",
-    "dates": "08 - 10 May",
-    "hide_race_date": "5/10/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36962",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/spain.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 GRAND PRIX DE MONACO 2020",
-    "location": "Monte-Carlo, Monaco",
-    "dates": "21 - 24 May",
-    "hide_race_date": "5/24/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36963",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/monaco.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 AZERBAIJAN GRAND PRIX 2020",
-    "location": "Baku, Azerbaijan",
-    "dates": "05 - 07 Jun",
-    "hide_race_date": "6/7/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36961",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/azerbaijan.jpg",
-    "year": 2020
-},
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO DE ESPAÑA 2020",
+        "location": "Catalunya, Spain",
+        "dates": "08 - 10 May",
+        "hide_race_date": "5/10/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36962",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/spain.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DE MONACO 2020",
+        "location": "Monte-Carlo, Monaco",
+        "dates": "21 - 24 May",
+        "hide_race_date": "5/24/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36963",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/monaco.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 AZERBAIJAN GRAND PRIX 2020",
+        "location": "Baku, Azerbaijan",
+        "dates": "05 - 07 Jun",
+        "hide_race_date": "6/7/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36961",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/azerbaijan.jpg",
+        "year": 2020
+    },
 
-{
-    "event_name": "FORMULA 1 GRAND PRIX DU CANADA 2020",
-    "location": "Montréal, Canada",
-    "dates": "12 - 14 Jun",
-    "hide_race_date": "6/14/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36964",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/canada.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 GRAND PRIX DE FRANCE 2020",
-    "location": "Le Castellet, France",
-    "dates": "26 - 28 Jun",
-    "hide_race_date": "6/28/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36965",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/france.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 MYWORLD GROßER PREIS VON ÖSTERREICH 2020",
-    "location": "Spielberg, Austria",
-    "dates": "03 - 05 Jul",
-    "hide_race_date": "7/5/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36966",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/austria.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 ROLEX BRITISH GRAND PRIX 2020",
-    "location": "Silverstone, England",
-    "dates": "17 - 19 Jul",
-    "hide_race_date": "7/19/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36967",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/britain.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 ROLEX MAGYAR NAGYDÍJ 2020",
-    "location": "Budapest, Hungary",
-    "dates": "31 Jul - 02 Aug",
-    "hide_race_date": "8/2/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36968",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/hungary.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 JOHNNIE WALKER BELGIAN GRAND PRIX 2020",
-    "location": "Spa-Francorchamps, Belgium",
-    "dates": "28 - 30 Aug",
-    "hide_race_date": "8/30/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36969",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/belgium.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2020",
-    "location": "Monza, Italy",
-    "dates": "04 - 06 Sep",
-    "hide_race_date": "9/6/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36970",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/italy.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2020",
-    "location": "Marina Bay, Singapore",
-    "dates": "18 - 20 Sep",
-    "hide_race_date": "9/20/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36971",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/singapore.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 VTB RUSSIAN GRAND PRIX 2020",
-    "location": "Sochi, Russia",
-    "dates": "25 - 27 Sep",
-    "hide_race_date": "9/27/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36972",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/russia.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 JAPANESE GRAND PRIX 2020",
-    "location": "Suzuka, Japan",
-    "dates": "09 - 11 Oct",
-    "hide_race_date": "10/11/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36973",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/japan.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 UNITED STATES GRAND PRIX 2020",
-    "location": "Austin, Texas",
-    "dates": "23 - 25 Oct",
-    "hide_race_date": "10/25/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36974",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/us.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 GRAN PREMIO DE MÉXICO 2020",
-    "location": "Mexico City, Mexico",
-    "dates": "30 Oct - 01 Nov",
-    "hide_race_date": "11/1/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36975",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/mexico.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 HEINEKEN GRANDE PRÊMIO DO BRASIL 2020",
-    "location": "São Paulo, Brazil",
-    "dates": "13 - 15 Nov",
-    "hide_race_date": "11/15/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36976",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/brazil.jpg",
-    "year": 2020
-},
-{
-    "event_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2020",
-    "location": "Yas Island, Abu Dhabi",
-    "dates": "27 - 29 Nov",
-    "hide_race_date": "11/29/2020",
-    "url": "https://bookrooms.formula1.com/group-event?id=36977",
-    "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/abu.jpg",
-    "year": 2020
-}
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DU CANADA 2020",
+        "location": "Montréal, Canada",
+        "dates": "12 - 14 Jun",
+        "hide_race_date": "6/14/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36964",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/canada.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 GRAND PRIX DE FRANCE 2020",
+        "location": "Le Castellet, France",
+        "dates": "26 - 28 Jun",
+        "hide_race_date": "6/28/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36965",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/france.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 MYWORLD GROßER PREIS VON ÖSTERREICH 2020",
+        "location": "Spielberg, Austria",
+        "dates": "03 - 05 Jul",
+        "hide_race_date": "7/5/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36966",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/austria.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 ROLEX BRITISH GRAND PRIX 2020",
+        "location": "Silverstone, England",
+        "dates": "17 - 19 Jul",
+        "hide_race_date": "7/19/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36967",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/britain.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 ROLEX MAGYAR NAGYDÍJ 2020",
+        "location": "Budapest, Hungary",
+        "dates": "31 Jul - 02 Aug",
+        "hide_race_date": "8/2/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36968",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/hungary.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 JOHNNIE WALKER BELGIAN GRAND PRIX 2020",
+        "location": "Spa-Francorchamps, Belgium",
+        "dates": "28 - 30 Aug",
+        "hide_race_date": "8/30/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36969",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/belgium.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2020",
+        "location": "Monza, Italy",
+        "dates": "04 - 06 Sep",
+        "hide_race_date": "9/6/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36970",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/italy.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2020",
+        "location": "Marina Bay, Singapore",
+        "dates": "18 - 20 Sep",
+        "hide_race_date": "9/20/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36971",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/singapore.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 VTB RUSSIAN GRAND PRIX 2020",
+        "location": "Sochi, Russia",
+        "dates": "25 - 27 Sep",
+        "hide_race_date": "9/27/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36972",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/russia.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 JAPANESE GRAND PRIX 2020",
+        "location": "Suzuka, Japan",
+        "dates": "09 - 11 Oct",
+        "hide_race_date": "10/11/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36973",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/japan.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 UNITED STATES GRAND PRIX 2020",
+        "location": "Austin, Texas",
+        "dates": "23 - 25 Oct",
+        "hide_race_date": "10/25/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36974",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/us.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 GRAN PREMIO DE MÉXICO 2020",
+        "location": "Mexico City, Mexico",
+        "dates": "30 Oct - 01 Nov",
+        "hide_race_date": "11/1/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36975",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/mexico.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 HEINEKEN GRANDE PRÊMIO DO BRASIL 2020",
+        "location": "São Paulo, Brazil",
+        "dates": "13 - 15 Nov",
+        "hide_race_date": "11/15/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36976",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/brazil.jpg",
+        "year": 2020
+    },
+    {
+        "event_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2020",
+        "location": "Yas Island, Abu Dhabi",
+        "dates": "27 - 29 Nov",
+        "hide_race_date": "11/29/2020",
+        "url": "https://bookrooms.formula1.com/group-event?id=36977",
+        "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/abu.jpg",
+        "year": 2020
+    }
+]

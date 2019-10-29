@@ -7,7 +7,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36294",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/bahrain.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 VIETNAMESE GRAND PRIX 2020",
@@ -17,7 +21,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36361",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/vietnam.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2020",
@@ -27,7 +35,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36960",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/china.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
 
     {
@@ -38,7 +50,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=35763",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/dutch.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
 
     {
@@ -49,7 +65,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36962",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/spain.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 GRAND PRIX DE MONACO 2020",
@@ -59,7 +79,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36963",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/monaco.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 AZERBAIJAN GRAND PRIX 2020",
@@ -69,7 +93,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36961",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/azerbaijan.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
 
     {
@@ -80,7 +108,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36964",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/canada.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 GRAND PRIX DE FRANCE 2020",
@@ -90,7 +122,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36965",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/france.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 MYWORLD GROßER PREIS VON ÖSTERREICH 2020",
@@ -100,7 +136,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36966",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/austria.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 ROLEX BRITISH GRAND PRIX 2020",
@@ -110,7 +150,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36967",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/britain.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 ROLEX MAGYAR NAGYDÍJ 2020",
@@ -120,7 +164,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36968",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/hungary.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 JOHNNIE WALKER BELGIAN GRAND PRIX 2020",
@@ -130,7 +178,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36969",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/belgium.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 GRAN PREMIO HEINEKEN D\"ITALIA 2020",
@@ -140,7 +192,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36970",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/italy.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2020",
@@ -150,7 +206,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36971",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/singapore.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 VTB RUSSIAN GRAND PRIX 2020",
@@ -160,7 +220,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36972",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/russia.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 JAPANESE GRAND PRIX 2020",
@@ -170,7 +234,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36973",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/japan.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 UNITED STATES GRAND PRIX 2020",
@@ -180,7 +248,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36974",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/us.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 GRAN PREMIO DE MÉXICO 2020",
@@ -190,7 +262,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36975",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/mexico.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 HEINEKEN GRANDE PRÊMIO DO BRASIL 2020",
@@ -200,7 +276,11 @@
         "url": "https://bookrooms.formula1.com/group-event?id=36976",
         "background_image": "https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/races/brazil.jpg",
         "year": 2020,
-        "properties": []
+        "properties": [
+        {
+            "name": "",
+            "url": ""
+        }]
     },
     {
         "event_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2020",

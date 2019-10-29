@@ -56,3 +56,4 @@ function removeCurrencyFromCredits() {
         });
     }
 }
+removeCurrencyFromCredits();

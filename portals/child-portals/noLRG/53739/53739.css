@@ -1,20 +1,21 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700&display=swap');
 
 
 body {
     font-family: 'Montserrat', 'Helvetica';
     font-size: 17px !important;
-    font-weight: 300;
+    font-weight: 500;
     background: #fff;
     color: #15151E;
     line-height: 1.4;
 }
 
-.ArnSubPage td {
+.ArnSubPage td,
+.ArnSubPage {
     font-family: 'Montserrat', 'Helvetica';
     font-size: 15px !important;
-    font-weight: 300;
+    font-weight: 500;
     color: #15151E;
 }
 
@@ -344,6 +345,10 @@ a.ArnGoAdvancedSearch+p {
 
     #simpleSearch td {
         color: #fff;
+    }
+
+    .yui3-skin-sam .yui3-calendar-day {
+        color: inherit !important
     }
 
     .SearchHotels .ArnSearchField span {

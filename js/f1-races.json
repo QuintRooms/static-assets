@@ -1,5 +1,6 @@
 {
-    "year_2019": [
+    "year": 2019,
+    "race_data": [
     {
         "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2019",
         "location": "Melbourne, Australia",
@@ -170,7 +171,8 @@
     }]
 },
 {
-    "year_2020": [
+    "year": 2020,
+    "race_data": [
         {
             "event_name": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2020",
             "location": "Melbourne, Australia",

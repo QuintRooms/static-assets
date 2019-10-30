@@ -9,7 +9,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         noLRGPortal.translateText('#HotelNameContainer span', 'hotel name');
         noLRGPortal.translateText('.ArnAdults span', 'adults');
         noLRGPortal.updateText('.perNight', 'per stay');
-        
+
         updatedPropertyContainer();
         showDatesInListing();
 
@@ -58,8 +58,10 @@ function waitForElementToLoad(elementWaitingFor) {
                 noLRGPortal.translateText('#slideit .tw div', 'email us');
                 updateFOWTHeader();
 
-                if(noLRGPortal.site_id === 54492){
+                if (noLRGPortal.site_id == 54492) {
                     noLRGPortal.updateAttribute('.navbar-brand img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/f1_logo.png', 'src');
+                    document.querySelector('.navbar-brand img').style.maxWidth = '130px';
+                    document.querySelector('body').insertAdjacentHTML('beforeEnd', '<style>.navbar-brand img{max-width: 130px;}@media screen and (min-width: 767px){.navbar-default .navbar-nav.dynamic-nav>li>a{padding: 28px 18px;}}</style>');
                 }
 
                 observer.disconnect();
@@ -149,10 +151,10 @@ function updatedPropertyContainer() {
         let propertyContainers = document.querySelectorAll('.ArnProperty');
 
         propertyContainers.forEach(function(element) {
-           let rateCell = element.querySelector('.ArnRateCell');
-           let propertyInfo = element.querySelector('.ArnPropName');
+            let rateCell = element.querySelector('.ArnRateCell');
+            let propertyInfo = element.querySelector('.ArnPropName');
 
-           propertyInfo.insertAdjacentElement('afterEnd', rateCell);
+            propertyInfo.insertAdjacentElement('afterEnd', rateCell);
 
         });
     }

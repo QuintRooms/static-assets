@@ -57,6 +57,11 @@ function waitForElementToLoad(elementWaitingFor) {
                 noLRGPortal.translateText('#slideit > section > span', 'support');
                 noLRGPortal.translateText('#slideit .tw div', 'email us');
                 updateFOWTHeader();
+
+                if(noLRGPortal.site_id === 54492){
+                    noLRGPortal.updateAttribute('.navbar-brand', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/f1_logo.png');
+                }
+                
                 observer.disconnect();
             }
         }

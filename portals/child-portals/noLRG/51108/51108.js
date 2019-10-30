@@ -59,7 +59,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 updateFOWTHeader();
 
                 if(noLRGPortal.site_id === 54492){
-                    noLRGPortal.updateAttribute('.navbar-brand img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/f1_logo.png');
+                    noLRGPortal.updateAttribute('.navbar-brand img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/f1_logo.png', 'src');
                 }
 
                 observer.disconnect();

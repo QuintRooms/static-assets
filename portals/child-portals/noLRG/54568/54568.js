@@ -8,6 +8,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+        noLRGPortal.addCustomTag('Host Hotel', 20472);
     }, 1);
 });
 

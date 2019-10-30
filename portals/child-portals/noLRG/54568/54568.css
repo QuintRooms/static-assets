@@ -303,3 +303,8 @@ header a {
 .exclusiveRate {
     display: none;
 }
+
+.customTag{
+    font-size: 19px;
+    padding: 2px;
+}

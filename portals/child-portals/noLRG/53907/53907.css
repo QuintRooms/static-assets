@@ -17,8 +17,7 @@ body.RootBody {
 }
 
 header {
-    background: #fff;
-    border-bottom: 3px solid #0967c4;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/pattern.jpg) repeat center center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,7 +202,7 @@ header a {
 }
 
 .sash {
-    background: #0967c4;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/pattern.jpg);
 }
 
 .openMapBtn:hover,
@@ -317,14 +316,31 @@ header a {
     padding: 18px;
     max-width: 800px;
     width: 100%;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/billboard-bg.jpg) no-repeat center center /cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#theDatePrompt .SimpleSearch,
+#theDatePrompt .ArnAdults span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #theDatePrompt>img {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 350px;
+    width: 100%;
+    margin: 36px auto;
 }
 
 #theDatePrompt .SimpleSearch .ArnCheckInDate,
 #theDatePrompt .SimpleSearch .ArnCheckOutDate {
     width: 100% !important;
+}
+
+#theDatePrompt .submit {
+    background: rgba(0, 0, 0, 0.9) !important;
 }

@@ -190,7 +190,7 @@ export default class Portal {
     updateAttribute(selector, argument, attribute) {
         let arr = document.querySelectorAll(selector);
         arr.forEach(function(element, index) {
-            if(element){
+            if (element) {
                 element.setAttribute(attribute, argument);
             }
         });
@@ -202,7 +202,7 @@ export default class Portal {
      *@param int propId - property id to add the tag to
      */
     addCustomTag(text, propId) {
-        if (! document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag') && document.querySelector('#theArnProperty' + propId)) {
+        if (!document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag') && document.querySelector('#theArnProperty' + propId)) {
             let propertyThumbnail = document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb');
             propertyThumbnail.insertAdjacentHTML('afterbegin', '<div class="customTag">' + text + '</div>');
         }
@@ -216,7 +216,7 @@ export default class Portal {
     updateText(selector, text) {
         let classList = document.querySelectorAll(selector);
         classList.forEach(function(element, index) {
-            if(element){
+            if (element) {
                 element.textContent = text;
             }
         });
@@ -291,9 +291,9 @@ export default class Portal {
                 mapBtn.classList.toggle('closeMapBtn');
                 map.classList.toggle('showMap');
 
-                if(document.querySelector('.closeMapBtn')){
+                if (document.querySelector('.closeMapBtn')) {
                     this.textContent = 'X';
-                }else{
+                } else {
                     this.textContent = 'Open Map';
                 }
             });
@@ -375,8 +375,8 @@ export default class Portal {
         if (document.querySelector('.ConfirmationForm')) {
             let nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
 
-            if(document.querySelector('.topRoomFunding') && nights != null){
-            document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ ' + nights * 2 + ' donation</span> to <span>RoomFunding</span>.  And that\'s at no cost to you.</p>';
+            if (document.querySelector('.topRoomFunding') && nights != null) {
+                document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ ' + nights * 2 + ' donation</span> to <span>RoomFunding</span>.  And that\'s at no cost to you.</p>';
             }
         }
     }
@@ -457,9 +457,18 @@ export default class Portal {
             let price = document.querySelectorAll(selector);
             price.forEach(function(element) {
                 let parent = element.parentNode;
-                if(!parent.querySelector('.perNight'))
-                element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
+                if (!parent.querySelector('.perNight'))
+                    element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
             });
+        }
+    }
+
+    updateDepositPolicy() {
+        if (document.querySelector('.CheckOutForm')) {
+            let depositPolicy = document.querySelector('#theDepositPolicies li');
+            if (depositPolicy && depositPolicy.textContent == 'Deposit required. See Payment Policy above.') {
+                depositPolicy.textContent = 'No deposit required. Total amount due at hotel.';
+            }
         }
     }
 
@@ -503,6 +512,8 @@ export default class Portal {
         this.createHTML('head', '<link id="favicon" rel="shortcut icon" href="https://static.hotelsforhope.com/portals/images/h4h-fav.ico">', 'beforeend');
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
+        this.updateDepositPolicy();
+
     }
 
     ratesReadyEventMethods() {
@@ -523,8 +534,8 @@ export default class Portal {
         this.removeSavingsLessThan10();
         this.createMapButton();
 
-        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S16');         
-        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S20');        
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S16');
+        this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S20');
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S33');
         this.singlePropExclusiveTag('<div class="exclusiveRate"><span class="translateMe">Exclusive Rate</span></div>');
 

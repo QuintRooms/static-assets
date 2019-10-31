@@ -19,7 +19,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.svg', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.farmaid.org/', 'href');
+                noLRGPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + noLRGPortal.site_id, 'href');
                 observer.disconnect();
             }
         }

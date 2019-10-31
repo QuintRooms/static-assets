@@ -3,6 +3,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Dell Technologies Match Play Exclusive Rate');
+noLRGPortal.updateAttribute('.meetH4H.desktopVersion img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/billboard-no-logo.jpg', 'src');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -29,3 +30,4 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+

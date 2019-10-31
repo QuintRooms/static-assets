@@ -344,3 +344,11 @@ header a {
 #theDatePrompt .submit {
     background: rgba(0, 0, 0, 0.9) !important;
 }
+
+.meetH4H .h4hContainer {
+    display: none;
+}
+
+.meetH4H.mobileVersion {
+    display: none;
+}

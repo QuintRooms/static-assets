@@ -466,9 +466,10 @@ export default class Portal {
     updateDepositPolicy() {
         if (document.querySelector('.CheckOutForm')) {
             let depositPolicy = document.querySelector('#theDepositPolicies li');
-            if (depositPolicy && depositPolicy.textContent == 'Deposit required. See Payment Policy above.' || depositPolicy.textContent == 'Deposit required. See Payment Policy.') {
-                console.log('test')
-                depositPolicy.textContent = 'No deposit required. Total amount due at hotel.';
+            if (depositPolicy) {
+                if (depositPolicy.textContent == 'Deposit required. See Payment Policy above.' || depositPolicy.textContent == 'Deposit required. See Payment Policy.') {
+                    depositPolicy.textContent = 'No deposit required. Total amount due at hotel.';
+                }
             }
         }
     }

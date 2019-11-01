@@ -23,21 +23,14 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.png', 'src');
+                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/images/logo.svg', 'src');
                 cugPortal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=' + cugPortal.site_id, 'href');
-                cugPortal.updateText('#user_points_text_2', 'Points');
-                if (document.querySelector('#commands')) {
-                    document.querySelector('#commands').insertAdjacentHTML('afterBegin', '<a href="https://events.hotelsforhope.com/v6/register?siteid=54271&addPromoCode">Add Points</a>');
 
-                    document.querySelector('header').insertAdjacentHTML('beforeEnd', '<div class="mobile-toggle">Menu</div>');
-                    if (document.querySelector('.mobile-toggle')) {
-                        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-                            document.querySelector('#AdminControls').classList.toggle('show-menu');
-                        });
-                    }
+                if (document.querySelector('#commands')) {
+                    document.querySelector('header').style.display = 'none';
+                    document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'));
                 }
                 cugPortal.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value');
-                cugPortal.updateText('.CreateAnAccountAction', 'Register');
                 observer.disconnect();
             }
         }
@@ -56,4 +49,4 @@ function removeCurrencyFromCredits() {
         });
     }
 }
-removeCurrencyFromCredits();
+// removeCurrencyFromCredits();

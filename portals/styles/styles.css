@@ -78,7 +78,8 @@ select,
     display: block;
 }
 
-#confirmCheckBox {
+#confirmCheckBox,
+.ArnSubPage .checkbox {
     margin-right: 4px;
 }
 

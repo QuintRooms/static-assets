@@ -42,6 +42,10 @@
     .mobileRoomRates > br{
       display: initial;
     }
+    .desktopAdContent,
+    .mobileAdContent{
+    	background: #9c6AAD;
+    }
     </style>
     </head>
   <body>
@@ -380,6 +384,11 @@
                     <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:730px;height: 410px;">
                     <v:fill type="tile" src="https://i8.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/conf-email-bg-nascar_67.jpg" color="#9c6aad" size="100%, 100%"/>
                     <v:textbox inset="0,0,0,0">
+                [elseif:siteid=53907]<td background="https://static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/billboard-bg.jpg" style="padding: 0;background-size: cover; background-position: center top;" width="100%" colspan=2>
+                    <!--[if gte mso 9]>
+                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:730px;height: 410px;">
+                    <v:fill type="tile" src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53907/images/billboard-bg.jpg" color="#9c6aad" size="100%, 100%"/>
+                    <v:textbox inset="0,0,0,0">
                 [elseif:division=Golf]<td background="https://i9.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/conf-email-bg-golf_68.jpg" style="padding: 0;background-size: cover; background-position: center top;" width="100%" colspan=2>
                     <!--[if gte mso 9]>
                     <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:730px;height: 410px;">
@@ -460,9 +469,9 @@
               <tr>
               <td class="adContentContainer" width="50%" style="padding-right: 2px;">
                 [if:Savings=True]
-                <table class="adContent desktopAdContent" width="100%" height="50" style="background-color: #9C6AAD;">
-                  <tr style="background-color: #9C6AAD;">
-                    <td height="200" style="background-color: #9C6AAD;padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
+                <table class="adContent desktopAdContent" width="100%" height="50">
+                  <tr>
+                    <td height="200" style="padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
                       <img style="max-width: 75px;" src="https://i2.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/landing-page-dollar_71.png" width="75">
                       <div class="savingsText" style="font-size: 24px;">
                         <span class="lightFont capitalFont" style="font-weight: 300; text-transform: uppercase;">You Saved</span>
@@ -473,14 +482,14 @@
                   </tr>
                   <tr>
                     <td valign="bottom">
-                      <div style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:block;text-decoration:none;">Nothing</div>
+                      <div style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:block;text-decoration:none;">&nbsp;</div>
                     </td>
                   </tr>
                 </table>
                 [else]
-                <table class="adContent desktopAdContent" width="100%" height="50" style="background-color: #9C6AAD;">
-                  <tr style="background-color: #9C6AAD;">
-                    <td height="200" style="background-color: #9C6AAD;padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
+                <table class="adContent desktopAdContent" width="100%" height="50">
+                  <tr>
+                    <td height="200" style="padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
                       <img style="max-width: 75px;" src="https://i4.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/perks-bed_73.png" width="75">
                       <div class="savingsText" style="font-size: 24px;">
                         <span class="lightFont capitalFont" style="font-weight: 300; text-transform: uppercase;">Need</span>
@@ -497,9 +506,9 @@
                 [endif]
                 <div class="mobileAdContent" style="display: none;">
                   [if:Savings=True]
-                  <table class="adContent" width="100%" height="50" style="display: none;background-color: #9C6AAD;">
-                    <tr style="background-color: #9C6AAD;">
-                      <td height="200" style="background-color: #9C6AAD;padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
+                  <table class="adContent" width="100%" height="50" style="display: none;">
+                    <tr>
+                      <td height="200" style="padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
                         <img style="max-width: 75px;" src="https://i2.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/landing-page-dollar_71.png" width="75">
                         <div class="savingsText" style="font-size: 24px;">
                           <span class="lightFont capitalFont" style="font-weight: 300; text-transform: uppercase;">You Saved</span>
@@ -510,7 +519,7 @@
                     </tr>
                     <tr>
                       <td valign="bottom">
-                        <div class="bookRoomLink" style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:none;text-decoration:none;">Nothing</div>
+                        <div class="bookRoomLink" style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:none;text-decoration:none;">&nbsp;</div>
                       </td>
                     </tr>
                   </table>
@@ -584,16 +593,16 @@
                     </tr>
                     <tr>
                       <td valign="bottom">
-                        <div class="bookRoomLink" style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:none;text-decoration:none;">Nothing</div>
+                        <div class="bookRoomLink" style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:none;text-decoration:none;">&nbsp;</div>
                       </td>
                     </tr>
                   </table>
                 </div>
               </td>
               <td class="adContentContainer rightAdContainer" width="50%" style="padding-left: 2px;">
-                <table class="adContent desktopAdContent" width="100%" height="50" style="background-color: #9C6AAD;">
+                <table class="adContent desktopAdContent" width="100%" height="50">
                     <tr>
-                    <td height="200" style="background-color: #9C6AAD; padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
+                    <td height="200" style="padding: 20px 10px; color: #fff; font-family: Avenir;" valign="top">
                       <img style="max-width: 75px;" src="https://i6.createsend1.com/ti/i/0A/FFB/1BB/062022/csimport/landing-page-key-card_75.png" width="75">
                       <div class="RFText">
                         <span class="boldFont capitalFont" style="font-weight: bold; text-transform: uppercase; font-size: 24px;">$[EstimatedCharitable,fallback=] Donated</span><br>
@@ -641,7 +650,7 @@
                   </tr>
                   <tr>
                     <td valign="bottom">
-                      <div style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:block;text-decoration:none;">Nothing</div>
+                      <div style="color:#9c6AAD;padding-bottom:10px;padding-right:10px;display:block;text-decoration:none;">&nbsp;</div>
                     </td>
                   </tr>
                 </table>

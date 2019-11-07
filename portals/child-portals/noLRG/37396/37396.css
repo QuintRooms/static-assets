@@ -531,7 +531,7 @@ input#theSubmitButton:hover {
 
 @media only screen and (max-width: 1050px) {
     .side-banner {
-        display: none;
+        display: none !important;
     }
 }
 

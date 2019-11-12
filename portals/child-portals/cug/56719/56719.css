@@ -1,5 +1,13 @@
 /* Fonts */
 @font-face {
+    font-family: 'nav_icons';
+    src: url(//d3tw2v68rmxuj7.cloudfront.net/qng/icons/nav_icons-7580b0fe048a1ea461c1b86d24de323fe18260c158563a8055a17812434716d6.eot);
+    src: url(//d3tw2v68rmxuj7.cloudfront.net/qng/icons/nav_icons-7580b0fe048a1ea461c1b86d24de323fe18260c158563a8055a17812434716d6.eot?#iefix) format("embedded-opentype"), url(//d3tw2v68rmxuj7.cloudfront.net/qng/icons/nav_icons-bc7d98d50886361ac7109ed632bfdad5530eaba67ea59c394d17b6877120e255.woff) format("woff"), url(//d3tw2v68rmxuj7.cloudfront.net/qng/icons/nav_icons-a39b3bbe7266a3636baa842f39b09ac63a1aee8fbfb8c3e05e72867178b23496.ttf) format("truetype"), url(//d3tw2v68rmxuj7.cloudfront.net/qng/icons/nav_icons-9eca34fc157862c151ae80d21a1189c63d284a2c61524ce077f7b98e466a2dfe.svg#nav_icons) format("svg");
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
     font-family: 'F1-Black';
     src: url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
         url('https://static.hotelsforhope.com/portals/child-portals/cug/56719/fonts/Formula1-Display-Black_web.ttf') format('truetype');
@@ -71,6 +79,192 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'), url(https://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGIVzY4SY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'), url(https://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGItzYw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+[class*='icon-']::before {
+    display: inline-block;
+    font-family: 'nav_icons';
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1
+}
+
+.icon-account::before {
+    content: '\0041'
+}
+
+.icon-language::before {
+    content: '\0042'
+}
+
+.icon-hamburger::before {
+    content: '\0043'
+}
+
+.icon-basket::before {
+    content: '\0044'
+}
+
+.icon-cart::before {
+    content: '\0045'
+}
+
+.icon-search::before {
+    content: '\0046'
+}
+
+.icon-phone::before {
+    content: '\0047'
+}
+
+.icon-left-arrow::before {
+    content: '\0048'
+}
+
+.icon-right-arrow::before {
+    content: '\0049'
+}
+
+.icon-down-arrow::before {
+    content: '\004a'
+}
+
+.MemberNotAuthenticated .icon-account {
+    display: none;
+}
+
+.icon-account {
+    color: #fff;
+    float: right;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-account {
+    list-style: none;
+}
+
+.user-account li {
+    padding: 32px 18px;
+    position: relative;
+}
+
+.profile-container {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: #fff;
+    opacity: 0;
+    transition: all .4s ease;
+    width: 175px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.show-profile {
+    opacity: 1;
+    pointer-events: initial !important;
+}
+
+#commands {
+    float: none;
+    text-align: left;
+    width: 100%;
+}
+
+#commands a,
+#commands form .logoutCommand.submit {
+    color: #15151e;
+    padding: 8px !important;
+    width: 100%;
+    text-align: left;
+    line-height: 23.8px;
+    border-bottom: 1px solid #ccc;
+    transition: all .3s ease;
+}
+
+.profileCommand {
+    border-radius: 5px 5px 0 0;
+}
+
+.logoutCommand,
+#commands form {
+    border-radius: 0 0 5px 5px;
+}
+
+#commands a:hover,
+#commands form .logoutCommand.submit:hover,
+#commands form:hover #commands a:active,
+#commands form .logoutCommand.submit:active,
+#commands form:active,
+#commands a:focus,
+#commands form .logoutCommand.submit:focus,
+#commands form:focus {
+    color: #fff;
+    padding: 8px !important;
+    line-height: 23.8px;
+    background: #15151e;
+}
+
+#commands form .logoutCommand.submit:hover,
+#commands form .logoutCommand.submit:active,
+#commands form .logoutCommand.submit:focus {
+    line-height: 23.8px !important;
+}
+
+#commands form {
+    width: 100%;
+}
+
+#commands form:hover {
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 800px) {
+    .user-account {
+        position: absolute;
+        top: -22px;
+        right: 0;
+    }
+
+    #commands {
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    #commands form {
+        border-top: none;
+    }
+
+    #commands a,
+    #userCommands a {
+        border-top: none;
+    }
+
+    .adminContainer {
+        display: none;
+    }
+}
+
 /* Font Overrides */
 /* Body Text */
 .SearchHotels .ArnPropName div.originalPrice,
@@ -102,18 +296,47 @@ h5 {
 }
 
 .detailsTitle,
-#theBookingPage fieldset.WBGuestFormFields legend {
-    font-family: 'F1-Bold';
+#theBookingPage fieldset.WBGuestFormFields legend,
+.ArnPropNameLink {
+    font-family: 'F1-Bold' !important;
     letter-spacing: initial;
 }
 
 html,
 body {
-    height: 100%;
+    background: #f7f4f1;
 }
 
+.SearchHotels #searchForm,
+.ArnLeftSearchContainer,
+.SearchHotels .modifySearch,
+.SinglePropDetail .modifySearch,
+.ArnGoAddressSearch,
+.ArnGoAddressSearch:hover,
+.ArnGoAirportSearch,
+.ArnGoAirportSearch:hover,
+.ArnGoCitySearch,
+.ArnGoCitySearch:hover,
+.ArnGoLandmarkSearch,
+.ArnGoLandmarkSearch:hover,
+.ArnAmentitiesContainer,
+.ArnCitiesNearbyContainer,
+.ArnCurrenciesContainer,
+.ArnHotelSizeContainer,
+.ArnPriceContainer,
+.ArnPropertyClassesContainer,
+.ArnPropertyTypesContainer,
+.ArnRateFiltersContainer,
+.ArnSlider {
+    background: #f7f4f1;
+}
 
 /*Cug Specific */
+.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
+.ForgotPasswordAction+.loginDivider {
+    display: none;
+}
+
 .IsAgent.addPromocode header {
     margin-top: 88px !important;
 }
@@ -141,15 +364,6 @@ body {
     z-index: 10;
     position: relative;
     height: initial;
-}
-
-#commands {
-    width: 100%;
-    background: #e10b00;
-}
-
-#commands a {
-    padding: 11px 12px;
 }
 
 #commands form {
@@ -225,19 +439,13 @@ body {
     overflow: initial;
 }
 
-.WBForgotPasswordForm .ArnSupportLinks.ArnSupportBottom,
-.WBLoginForm .ArnSupportLinks.ArnSupportBottom,
-.WBValidatedRegistrationForm .ArnSupportLinks.ArnSupportBottom {
-    z-index: 9;
-    position: relative;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    margin: 0;
-    display: block !important
+.ArnSupportBottom {
+    display: none !important;
 }
 
 .ArnSupportLinks.ArnSupportBottom {
     background: #15151e;
+    display: none !important;
 }
 
 .ArnSupportBottom .lowRateLink,
@@ -265,9 +473,56 @@ body,
     font-size: 14px;
 }
 
+.RootBody .reserveHotel,
+.RootBody .modifySearch {
+    color: #15151e;
+}
+
+.SearchHotels .modifySearch,
+.SinglePropDetail .modifySearch {
+    font-family: 'F1-Bold' !important;
+    font-size: 14px;
+}
+
+.SearchHotels .modifySearch {
+    border-radius: 10px 10px 0 0;
+}
+
+.SearchHotels .PropLimitedAvail .ArnRateCell {
+    background: transparent;
+}
+
+.SearchHotels .ArnLeftSearchContainer {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 1150px) {
+    .SearchHotels .ArnLeftSearchContainer {
+        width: 22%;
+    }
+}
+
+.RootBody .reserveHotel {
+    font-family: 'F1-Bold';
+    text-transform: capitalize;
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.RootBody .modifySearch {
+    font-family: 'Titillium Web' !important;
+    font-weight: 400;
+}
+
 .reserveHotel,
 .modifySearch {
     font-size: 15px;
+}
+
+.SearchHotels .ArnRightListContainer {
+    border-left: none;
 }
 
 .SearchHotels .ArnSearchHotelsImg {
@@ -280,10 +535,6 @@ body,
 
 .SearchHotels .ArnAdults::before {
     font-size: 13px;
-}
-
-.perNight {
-    display: none;
 }
 
 .ArnPrimarySearchContainer span,
@@ -349,28 +600,16 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/56719/images/banner.png);
+    background: #f7f4f1;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
     background-color: transparent;
+    padding: 42px !important;
 }
 
-body.WBLoginForm,
-body.WBForgotPasswordForm,
-body.WBValidatedRegistrationForm {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100%;
-}
-
-header {
-    background: #15151e;
-    grid-row-start: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
+.RootBody .ArnSearchContainerMainTable {
+    margin: 0 auto;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -383,7 +622,7 @@ header {
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/56719/images/banner.png) !important;
+    background: #f7f4f1 !important;
     grid-row-start: 2;
     display: flex;
     flex-direction: column;
@@ -397,10 +636,6 @@ header {
     width: 100%;
     position: absolute;
     top: 0;
-}
-
-.MemberAuthenticated.WBValidatedRegistrationForm header {
-    margin-top: 45px;
 }
 
 .WBValidatedRegistrationForm .ArnSubPage {
@@ -441,17 +676,18 @@ header {
     text-transform: uppercase;
 }
 
-.hamburger:after,
-.hamburger:before {
-    left: 225px;
+.hamburger {
+    padding: 2px 43px 2px 20px !important;
+    border-radius: 5px !important;
+    border: 1px solid #e10600 !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    background: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23e10600%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23e10600%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat 89% center;
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 800px) {
-
-    #SortControlsContainer .hamburger::after,
-    #SortControlsContainer .hamburger::before {
-        left: 225px;
-    }
+.hamburger:after,
+.hamburger:before {
+    display: none;
 }
 
 /* Buttons */
@@ -473,6 +709,7 @@ header {
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
+    text-transform: uppercase;
 }
 
 .submit,
@@ -512,8 +749,71 @@ header {
     color: #fff !important;
 }
 
+#theSubmitButton,
+#theOtherSubmitButton {
+    height: unset;
+    padding: 6px;
+    position: relative;
+}
+
+#theSubmitButton+i,
+#theOtherSubmitButton+i {
+    position: relative;
+    top: -45px;
+    left: 74%;
+    font-size: 11px;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+
+    #theSubmitButton+i,
+    #theOtherSubmitButton+i {
+        left: 80%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    #theSubmitButton+i,
+    #theOtherSubmitButton+i {
+        left: 85%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #theSubmitButton+i,
+    #theOtherSubmitButton+i {
+        display: none;
+    }
+}
+
+#theOtherSubmitButton+i {
+    color: #e10600;
+    top: -37px;
+}
+
 .RootBody #theSubmitButton {
     font-size: 17px;
+}
+
+.RootBody #theSubmitButton+i {
+    top: -25px;
+    left: 97%;
+}
+
+@media screen and (max-width: 960px) {
+    .RootBody #theSubmitButton+i {
+        top: -25px;
+        left: 98%;
+    }
+}
+
+.ArnShowRatesLink,
+.ArnShowRatesLink,
+.OnSale .ArnShowRatesLink {
+    padding: 10px 12px !important;
 }
 
 .selectedTab {
@@ -533,6 +833,10 @@ header {
     box-shadow: 0 0 0 2px transparent inset;
 }
 
+.SinglePropDetail .PropertyLinks img {
+    display: none;
+}
+
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
     margin: 20px 0 20px;
 }
@@ -541,11 +845,15 @@ header {
     color: #fff !important;
 }
 
+.SearchHotels .bottomPager .ArnPages a[accesskey] {
+    background: #e10600;
+}
+
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
     border: 1px solid #e10600;
     border-radius: 5px;
-    padding: 3px 4px;
+    padding: 8px 4px;
     margin-left: -1px;
 }
 
@@ -555,13 +863,25 @@ header {
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
     border-bottom: 1px solid #e10600;
+}
 
+.SearchHotels .selectedTab,
+.SearchHotels .ArnGoCitySearch:hover,
+.SearchHotels .ArnGoAddressSearch:hover,
+.SearchHotels .ArnGoLandmarkSearch:hover,
+.SearchHotels .ArnGoAirportSearch:hover,
+.SearchHotels .ArnGoCitySearch,
+.SearchHotels .ArnGoAddressSearch,
+.SearchHotels .ArnGoLandmarkSearch,
+.SearchHotels .ArnGoAirportSearch {
+    padding: 6px !important;
+    font-size: 14px !important;
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff;
-    background: #e10600;
-    border: 1px solid #e10600;
+    color: #15151e;
+    background: transparent;
+    border: none;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -573,15 +893,22 @@ header {
     border-right: 1px solid #fff;
 }
 
+.roomCount {
+    display: none;
+}
+
 .hamburger:before,
 .PropertyAmenities:before {
     border-top-color: #e10600;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
-.SinglePropDetail .bestPrice .percentSavings {
+.SinglePropDetail .bestPrice .percentSavings,
+.SinglePropDetail .bookRoomCell .percentSavings,
+.SinglePropDetail.mobile .bookRoomCell .percentSavings {
     background: #fc0;
     color: #000;
+    display: none !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings {
@@ -661,7 +988,11 @@ header {
 
 .SearchHotels .reserveHotel,
 .SearchHotels .modifySearch {
-    padding: 18px 18px 18px 10px;
+    padding: 10px 18px 10px 10px;
+}
+
+.SearchHotels #searchForm {
+    border-radius: 0 0 10px 10px;
 }
 
 .SearchHotels .ArnSecondarySearchOuterContainer {
@@ -673,6 +1004,19 @@ header {
 .SinglePropDetail .SimpleSearch {
     background-color: RGB(21, 21, 30);
     color: rgb(255, 255, 255) !important;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer {
+    border-radius: 10px 10px 0 0;
+}
+
+@media screen and (max-width: 800px) {
+
+    .SearchHotels .ArnPrimarySearchOuterContainer,
+    .SearchHotels .ArnLeftSearchContainer {
+        border-radius: 0;
+        border: none;
+    }
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -712,8 +1056,12 @@ header {
     background: #e10600;
 }
 
-.SearchHotels .percentSavings {
-    display: block !important;
+.openMapBtn {
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #e10600;
+    border-radius: 5px;
+    padding: 2px 12px;
 }
 
 .openMapBtn:hover,
@@ -738,6 +1086,61 @@ header {
     display: none !important;
 }
 
+.stayDates,
+.perNight {
+    color: #15151e !important;
+    font-family: 'Titillium Web';
+}
+
+#SortControls {
+    top: 31px;
+    padding: 0;
+    height: 166px;
+}
+
+@media screen and (min-width: 800px) {
+    .navbar-header {
+        width: 100%;
+        max-width: 325px;
+    }
+
+    .ArnSortByAvailability.active,
+    .ArnSortByAvailability:hover,
+    .ArnSortByClass.active,
+    .ArnSortByClass:hover,
+    .ArnSortByDealAmount.active,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByDealPercent.active,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDistance.active,
+    .ArnSortByDistance:hover,
+    .ArnSortByName.active,
+    .ArnSortByName:hover,
+    .ArnSortByPrice.active,
+    .ArnSortByPrice:hover,
+    .ArnSortByType.active,
+    .ArnSortByType:hover,
+    .ArnSortByVacationRental.active,
+    .ArnSortByVacationRental:hover,
+    .ArnSortByClass,
+    .ArnSortByClass:hover,
+    .ArnSortByDealAmount,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByDealPercent,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDistance,
+    .ArnSortByDistance:hover,
+    .ArnSortByPrice,
+    .ArnSortByPrice:hover,
+    .ArnSortByType,
+    .ArnSortByType:hover,
+    .ArnSortByVacationRental,
+    .ArnSortByVacationRental:hover,
+    .ArnSortContainer a.active:hover {
+        padding: 4px 0 4px 20px;
+    }
+}
+
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
         border-top-color: #e10600;
@@ -747,6 +1150,10 @@ header {
 @media only screen and (min-width: 800px) {
     .mobile-toggle {
         display: none;
+    }
+
+    .stayDates {
+        margin-top: 8px !important;
     }
 
     .ArnSortByName:hover,
@@ -779,12 +1186,13 @@ header {
 }
 
 @media only screen and (max-width: 800px) {
-    .SearchHotels .ArnProperty {
-        min-height: unset;
+
+    .RootBody #theSubmitButton {
+        width: unset !important;
     }
 
-    .arnPrice+.perNight {
-        display: none !important;
+    .SearchHotels .ArnProperty {
+        min-height: unset;
     }
 
     .SearchHotels .ArnPropThumb,
@@ -838,11 +1246,17 @@ header {
         margin-bottom: 36px;
     }
 
+    .SearchHotels .ArnGoAirportSearch,
+    .SearchHotels .ArnGoCitySearch,
+    .SearchHotels .ArnGoLandmarkSearch {
+        border-right: 1px solid transparent !important;
+    }
+
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #e10600;
-        background: #e10600;
+        border-bottom: none;
+        background: transparent;
     }
 
     .adminContainer span {
@@ -874,10 +1288,6 @@ header {
 }
 
 nav {
-    padding: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 36px;
 }
 
@@ -886,8 +1296,8 @@ nav {
 }
 
 .logo img {
-    max-width: 300px;
     width: 100%;
+    max-width: 385px;
     padding: 0;
 }
 
@@ -1109,19 +1519,6 @@ ul {
         max-width: 225px;
     }
 
-    .SearchHotels .ArnPropName div.memberSavings {
-        display: block !important;
-        margin: 0 0 6px 0 !important;
-    }
-
-    .SearchHotels .ArnPropName div.memberSavings span {
-        display: inline;
-    }
-
-    .SearchHotels .ArnPropName div.memberSavings .creditsLabel {
-        margin-right: 3px;
-    }
-
     #user_lipoints {
         position: absolute;
         right: 8px;
@@ -1162,17 +1559,9 @@ ul {
         background: #ffcc00;
     }
 
-    .SearchHotels .ArnPropName div.memberSavings {
-        margin: 0 !important;
-    }
-
     div.originalPrice span,
     .SearchHotels .ArnPropName div.originalPrice span {
         font-size: 17px !important;
-    }
-
-    .SearchHotels .ArnPropName div.memberSavings {
-        margin: 0 !important;
     }
 
     .SearchHotels .ArnRateCell {
@@ -1244,7 +1633,7 @@ ul {
     }
 
     .SearchHotels .ArnPriceCell {
-        margin-top: 24px !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -1253,31 +1642,41 @@ ul {
         width: 27%;
     }
 
-    .SearchHotels .ArnRateCell{
+    .SearchHotels .ArnRateCell {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 }
 
-.percentSavings {
-    display: initial !important;
-}
-
-.SinglePropDetail .bookRoomCell .percentSavings,
-.SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: inline-block !important;
-    max-width: 75px;
-    margin: 0px auto 8px auto;
-    border: none;
-    background: #ffcc00;
-    color: #333;
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-
 .SearchHotels .arnPrice {
-    order: 1;
+    order: 0;
+}
+
+.SearchHotels .lblAmenities,
+.SearchHotels .lblCurrency,
+.SearchHotels .lblHotelSize,
+.SearchHotels .lblNearbyCities,
+.SearchHotels .lblPropertyType,
+.SearchHotels .lblRateTypes,
+.SearchHotels .lblRating,
+.SearchHotels .lblSortByPrice {
+    text-transform: capitalize;
+}
+
+.SearchHotels input[type="text"],
+.SearchHotels select,
+.SearchHotels .ArnAcdParent {
+    font-size: 14px;
+    border-radius: 0;
+    height: unset;
+    padding: 4px 8px;
+}
+
+#theOtherSubmitButton {
+    background: #fff;
+    border: 1px solid #e10600;
+    color: #15151e;
 }
 
 .ArnPriceCell .mainRate {
@@ -1295,10 +1694,36 @@ ul {
     text-align: center;
 }
 
+
+.ArnAmentitiesContainer,
+.ArnCitiesNearbyContainer,
+.ArnCurrenciesContainer,
+.ArnHotelSizeContainer,
+.ArnPriceContainer,
+.ArnPropertyClassesContainer,
+.ArnPropertyTypesContainer,
+.ArnRateFiltersContainer,
+.ArnSlider {
+    font-size: 13px;
+    padding: 6px 0;
+}
+
+.RootPage .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.RootBody .ArnPrimarySearchContainer span {
+    color: #15151e;
+    font-weight: 700;
+    font-size: 13px !important;
+}
+
 .RootBody .ArnSecondarySearchOuterContainer {
     display: flex !important;
-    background: rgba(0, 0, 0, .75);
-    padding: 15px 15px 14px;
+    background: #fff;
+    padding: 0 15px 14px;
+    border-radius: 0 0 10px 10px;
 }
 
 .RootBody #CitiesNearbyContainer,
@@ -1316,11 +1741,735 @@ ul {
 .RootBody .ArnRateFiltersContainer,
 .RootBody .ArnSlider {
     background: transparent;
-    color: #fff;
+    color: #15151e;
+    font-weight: 400;
+}
+
+.RootBody .lblAmenities,
+.RootBody .lblCurrency,
+.RootBody .lblHotelSize,
+.RootBody .lblNearbyCities,
+.RootBody .lblPropertyType,
+.RootBody .lblRateTypes,
+.RootBody .lblRating,
+.RootBody .lblSortByPrice {
+    text-transform: capitalize;
+    cursor: unset;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 14px !important;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer .checkbox {
+    width: 14px;
+}
+
+.RootBody input,
+.RootBody select {
+    border-radius: 0 !important;
+    height: unset !important;
+    padding: 4px 8px !important;
+    margin-top: 8px !important;
+    border: 1px solid #ccc !important;
+    font-size: 14px !important;
+}
+
+.RootBody input {
+    background-image: none !important;
+}
+
+.RootPage #city,
+.RootPage .ArnCheckInDate,
+.RootPage .ArnCheckOutDate,
+.RootPage #rooms,
+.RootPage #adults,
+.lblCurrency+select {
+    text-indent: 0;
+    height: 33px !important;
+
+}
+
+.RootBody .ArnSecondarySearchOuterContainer span {
+    margin-top: 6px !important;
+    font-weight: 400
+}
+
+.RootBody #theSubmitButton {
+    margin-top: 23px !important;
+    padding: 8px !important;
+    border: 1px solid #e10600 !important;
+    font-weight: 100;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    border-radius: 5px !important;
+    width: 12% !important;
+}
+
+@media screen and (min-width: 800px) {
+    .RootBody .ArnSearchHolderBoth {
+        width: 24%;
+    }
 }
 
 @media screen and (max-width: 800px) {
     .RootBody .ArnSecondarySearchOuterContainer {
         display: none !important;
+    }
+
+    .RootBody #theSubmitButton {
+        width: unset !important;
+    }
+
+    .RootBody .ArnPrimarySearchContainer span {
+        margin-top: 0;
+    }
+}
+
+/* Top Nav */
+
+.top-menu-mobile ul li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.top-menu-mobile ul li a svg,
+.dynamic-nav li a svg {
+    float: right;
+    margin-right: 12px;
+    opacity: .7;
+}
+
+.dynamic-nav li a svg {
+    opacity: 1;
+}
+
+.top-menu {
+    min-height: initial;
+}
+
+.navbar {
+    border: 0 solid transparent;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #15151E;
+    letter-spacing: .2px;
+}
+
+.top-menu,
+.main-nav {
+    margin-bottom: 0;
+}
+
+.top-menu .navbar-nav>li {
+    padding: 8px;
+}
+
+.top-menu .navbar-nav>li>a {
+    padding: 2px 0 0;
+    margin: 0 6px;
+    border-bottom: 3px solid transparent;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.top-menu .navbar-nav>li:last-child>a {
+    margin-right: 0;
+}
+
+.top-menu .navbar-nav>li>a:hover,
+.top-menu .navbar-nav>li>a:active,
+.top-menu .navbar-nav>li>a:focus {
+    color: #e10600;
+    background: transparent !important;
+    border-bottom: 3px solid #e10600;
+}
+
+.top-menu .left-nav li {
+    padding: 8px 0;
+}
+
+.top-menu .left-nav li a {
+    margin: 0;
+}
+
+/* Mobile Toggle */
+
+.navbar-default .navbar-toggle {
+    border: none;
+    cursor: pointer;
+    float: none;
+    margin-top: 0;
+    padding: 0 10px;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background: transparent;
+}
+
+.toggle-bar {
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 4px;
+    border-top-right-radius: 4px;
+}
+
+.top-bar {
+    width: 16px;
+}
+
+.middle-bar {
+    width: 19px;
+}
+
+.bottom-bar {
+    width: 22px;
+}
+
+/* Main Nav */
+header>a {
+    display: none;
+}
+
+#language {
+    display: none;
+}
+
+.main-nav {
+    background: #e10600;
+}
+
+.navbar-header {
+    position: relative;
+    top: 6px;
+    margin-right: 18px !important;
+}
+
+@media screen and (min-width: 770px) {
+    .main-nav .container-fluid {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.navbar-default .navbar-nav.dynamic-nav>li>a {
+    color: #fff;
+    font-family: 'F1-Regular', 'Helvetica';
+    font-weight: 400;
+    padding: 32px 18px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-default .navbar-nav.dynamic-nav>li {
+        padding: 0;
+    }
+
+    .navbar-default .navbar-nav.dynamic-nav>li>a {
+        padding: 12px;
+    }
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    background: #15151e;
+    transition: all .3s ease;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: initial;
+    float: none;
+    width: 100%;
+
+}
+
+@media screen and (max-width: 800px) {
+    .navbar-brand {
+        padding: 0;
+        margin-left: 8px;
+    }
+
+    .navbar-header {
+        margin-right: 0 !important;
+    }
+}
+
+.navbar-brand img {
+    width: 100%;
+    max-width: 325px;
+    margin-right: 20px;
+    margin-left: 10px;
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .navbar-brand {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .main-nav .container-fluid {
+        min-height: 90px;
+        height: 90px;
+    }
+
+    .navbar-brand {
+        max-width: 300px;
+    }
+
+    .navbar-header {
+        min-height: initial;
+        padding: 8px;
+    }
+
+    .dynamic-nav {
+        background: #fff;
+        margin: 0;
+        z-index: 1;
+        position: relative;
+        float: none !important;
+    }
+
+    .navbar-default .navbar-nav.dynamic-nav>li>a:hover,
+    .navbar-default .navbar-nav.dynamic-nav>li>a:active,
+    .navbar-default .navbar-nav.dynamic-nav>li>a:focus {
+        background: #e10600;
+        color: #fff;
+        transition: all .5s ease;
+    }
+
+    .dynamic-nav>li>a:before {
+        height: 0;
+    }
+
+    .navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dynamic-nav {
+        background: #e10600;
+    }
+
+    .navbar-collapse {
+        border-top: 0;
+    }
+
+    .navbar-default .navbar-nav.dynamic-nav>li>a {
+        color: #fff;
+        font-size: 15px;
+        border-right: 1px solid #f08380;
+        border-bottom: 1px solid #f08380;
+        margin: 20px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .navbar-default .navbar-nav.dynamic-nav>li>a:after {
+        float: right;
+    }
+
+    .top-menu-mobile {
+        background: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .top-menu-mobile .navbar-nav {
+        margin: 0;
+    }
+
+    .top-menu-mobile ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .top-menu-mobile ul li a {
+        color: #15151e;
+        display: block;
+        font-size: 15px;
+        margin: 20px;
+        border-right: 1px solid #d0d0d2;
+        border-bottom: 1px solid #d0d0d2;
+        border-bottom-right-radius: 15px;
+    }
+
+    .top-menu-mobile ul li a:after {
+        float: right;
+        opacity: .7;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+        background: transparent;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .main-nav .container-fluid {
+        min-height: 80px;
+        height: 80px;
+    }
+
+    .navbar-brand img {
+        width: 100%;
+        max-width: 200px;
+        margin-right: 0;
+    }
+}
+
+/* Footer */
+footer {
+    width: 100% !important;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 20;
+}
+
+.footer-top {
+    background: #38383f;
+    padding: 10px 0;
+}
+
+.footer-top p {
+    color: #fff;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+    max-width: 105px;
+    float: left;
+    margin: 4px 0;
+}
+
+.footer-top ul {
+    margin: 0;
+}
+
+.footer-top ul li {
+    display: inline;
+    list-style: none;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.app-store {
+    width: 135px;
+    height: 40px;
+}
+
+.social {
+    float: right;
+}
+
+.social a {
+    border: 1px solid #15151e;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: block;
+    float: left;
+    text-align: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.social a:hover,
+.social a:focus,
+.social a:active {
+    background: #15151e;
+    outline: none;
+}
+
+.social i {
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+    background: #15151e !important;
+    color: #949498;
+    padding-top: 32px;
+}
+
+footer p {
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+}
+
+footer h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+footer img {
+    width: 100%;
+    max-width: 225px;
+    margin-bottom: 8px;
+}
+
+ul.footer-nav {
+    padding-left: 0;
+    margin-top: 5px;
+    margin-right: 0;
+    padding-right: 10px;
+}
+
+footer li {
+    list-style: none;
+    padding: 4px 0;
+}
+
+footer a {
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+}
+
+footer a:hover,
+footer a:active,
+footer a:focus {
+    text-decoration: none;
+}
+
+footer a:hover span,
+footer a:active span,
+footer a:focus span {
+    color: #fff;
+    border-bottom: 2px solid #e10600;
+}
+
+.policy-links {
+    padding-left: 0;
+}
+
+.policy-links li,
+.policy-links li a p {
+    display: inline;
+    padding-right: 8px;
+}
+
+.policy-links a {
+    display: inline;
+}
+
+.f1-border {
+    border-right: 10px solid #38383f;
+    border-bottom: 10px solid #38383f;
+    border-bottom-right-radius: 25px;
+    padding-bottom: 130px;
+    margin-right: -8px;
+    margin-bottom: 10px;
+}
+
+hr.f1-divider {
+    background: #38383f;
+    border: 0;
+    margin: 15px auto;
+    width: 100%;
+    height: 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-top {
+        text-align: center;
+    }
+
+    .footer-top .col-xs-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer-top p {
+        max-width: initial;
+        float: none;
+
+    }
+
+    .footer-top ul {
+        padding: 0;
+    }
+
+    .footer-top ul li:last-child {
+        margin-right: 0;
+    }
+
+    .app-store {
+        width: 120px;
+        height: 36px;
+    }
+
+    hr.f1-divider {
+        background: #15151e;
+        margin-bottom: 15px 0;
+    }
+
+    .social {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .social a {
+        display: inline-block;
+        float: none;
+    }
+
+    .footer-nav li {
+        border-bottom: 1px solid #38383f;
+    }
+
+    .policy-links li {
+        display: block;
+        border-bottom: 1px solid #38383f;
+    }
+
+    .policies .f1-divider {
+        display: none;
+    }
+
+    .f1-border-top-right-bottom {
+        padding-right: 10px;
+    }
+
+}
+
+/* slide it fixed to bottom */
+#slideit input#close-item:checked~label.open,
+#slideit input#open-item:checked~label.open {
+    bottom: -6px;
+    top: unset;
+    right: 8px;
+    transform: rotateX(45deg);
+    border-radius: 5px 5px 0 0;
+    border: none;
+}
+
+#slideit input#open-item:checked~label.open {
+    bottom: -36px;
+}
+
+#slideit input#open-item:checked~section {
+    bottom: 200px;
+    top: unset;
+}
+
+#slideit input#close-item:checked~section {
+    top: unset;
+    bottom: -200px;
+}
+
+#slideit label.open {
+    min-width: 135px;
+    text-transform: initial;
+}
+
+#slideit label.open:hover,
+#slideit label.open:focus,
+#slideit label.open,
+#slideit span.title {
+    background: #e10600;
+}
+
+.panel-default {
+    border: none;
+    border-bottom: 1px solid #38383f;
+}
+
+.panel-default>.panel-heading {
+    background: #15151e;
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel-title a {
+    font-family: 'F1-Regular';
+    font-weight: normal;
+    color: #fff;
+    font-size: 13px;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    background: #15151e;
+    border-top-color: #38383f;
+    padding: 0;
+}
+
+footer .panel-body p {
+    padding: 6px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #38383f;
+}
+
+footer .panel-body p a {
+    font-size: 11px;
+    font-weight: 400;
+    padding-left: 25px;
+}
+
+footer .panel-body p a:hover {
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .f1-border {
+        padding-bottom: initial;
+        padding-right: 12px;
+    }
+
+    footer .container {
+        max-width: 576px;
+    }
+
+    .panel-title a {
+        text-transform: capitalize;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .SearchHotels .ArnSearchContainerMainTable>tbody>tr {
+        display: flex;
+    }
+
+    .SearchHotels .ArnProperty {
+        width: 96% !important;
+    }
+
+    .SearchHotels .ArnRightExtraContainer {
+        width: 29%;
+        position: sticky;
+        right: 0;
+        left: unset;
+        transform: unset;
+        height: 100vh;
+        margin-left: 15px;
     }
 }

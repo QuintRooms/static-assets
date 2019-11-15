@@ -373,3 +373,7 @@ div.autocomplete ul li.selected {
 .WBRateGuaranteeForm>h1 {
     display: none;
 }
+
+.zsFormClass {
+    background: transparent !important;
+}

@@ -339,3 +339,7 @@ header a {
     color: #333;
     font-weight: 300;
 }
+
+.SinglePropDetail .tooltipContainer {
+    left: -34px;
+}

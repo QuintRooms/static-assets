@@ -1,11 +1,12 @@
 /* Fonts */
 @font-face {
-   font-family: 'Square Serif Medium';
-   src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-medium.ttf") format("truetype");
+    font-family: 'Square Serif Medium';
+    src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-medium.ttf") format("truetype");
 }
+
 @font-face {
-   font-family: 'Square Serif Book';
-   src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-book.ttf") format("truetype");
+    font-family: 'Square Serif Book';
+    src: url("https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/fonts/squareserif-book.ttf") format("truetype");
 }
 
 body {
@@ -356,6 +357,19 @@ div.autocomplete ul li.selected {
     }
 }
 
-.roomCount{
+.roomCount {
+    display: none;
+}
+
+.SinglePropDetail .exclusiveRate {
+    color: #333;
+    font-weight: 300;
+}
+
+.SinglePropDetail .tooltipContainer {
+    left: -34px;
+}
+
+.WBRateGuaranteeForm>h1 {
     display: none;
 }

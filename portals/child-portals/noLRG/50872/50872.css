@@ -9,6 +9,15 @@
 }
 
 .SinglePropDetail .exclusiveRate {
+    color: #333;
+    font-weight: 300;
+}
+
+.zsFormClass {
+    background: transparent !important;
+}
+
+.WBRateGuaranteeForm>h1 {
     display: none;
 }
 
@@ -924,4 +933,8 @@ input[type=file] {
     .SinglePropDetail {
         margin: 0;
     }
+}
+
+.hoverTooltip {
+    border-radius: 100% !important;
 }

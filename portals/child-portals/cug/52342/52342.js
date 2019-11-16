@@ -10,6 +10,8 @@ let ratesReadyCount = 0;
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         removePercentSavingsUnderThreshhold(5);
+        showRatesPerLabel();
+        
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
 
@@ -17,7 +19,7 @@ jQuery(document).on('ratesReadyEvent', function() {
             seeMoreRoomsClick();
             ratesReadyCount++;
         }
-        
+
         document.querySelectorAll(".ArnPropClass").forEach(function(n) {
             var r = n.textContent,
                 t = r.replace(/\D/g, ""),
@@ -98,4 +100,15 @@ function seeMoreRoomsClick() {
     if (document.querySelector('.SinglePropDetail') && document.querySelector('#moreRatesLink')) {
         document.querySelector('#moreRatesLink').click();
     }
+}
+
+function showRatesPerLabel() {
+    let theme_meta = document.querySelector('meta[name="theme"]');
+    if (theme_meta) {
+        let theme = theme_meta.getAttribute('content');
+        if (theme === 'international') {
+            cugPortal.updateText('.perNight', 'per stay');
+        }
+    }
+    return false;
 }

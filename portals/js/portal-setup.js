@@ -539,7 +539,7 @@ export default class Portal {
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S16');
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S20');
         this.searchHotelsExclusiveSash('<div class="sash"><span class="event-rate"><span class="translateMe">Exclusive Rate</span></span></div>', '.SearchHotels .S33');
-        this.singlePropExclusiveTag('<div class="exclusiveRate"><span class="translateMe">Exclusive Rate</span></div>');
+        // this.singlePropExclusiveTag('<div class="exclusiveRate"><span class="translateMe">Exclusive Rate</span></div>');
 
         this.restrictMaxAdults('.ArnPrimarySearchContainer');
         this.restrictMaxAdults('.SimpleSearch');

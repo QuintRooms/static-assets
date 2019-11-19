@@ -993,6 +993,6 @@ input[type=file] {
 }
 
 .arnCurrency{
-    font-size: .5em;
-    vertical-align: top;
+    font-size: .5em !important;
+    vertical-align: top !important;
 }

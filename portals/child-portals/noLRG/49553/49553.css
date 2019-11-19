@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed|Passion+One:400,700&display=swap');
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+@font-face {
+    font-family: 'Detroit 5';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/fonts/detroit_5.eot?#iefix') format('embedded-opentype'),
+        url('https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/fonts/detroit_5.ttf') format('truetype');
+}
 
 * {
     border-radius: 0 !important;
@@ -27,15 +34,15 @@
 
 body {
     font-weight: 300;
-    background: #EEEBCD;
+    background: #fff;
     color: #332F2D;
     line-height: 1.6;
-    font-family: 'Cabin Condensed' !important;
+    font-family: 'PT Sans' !important;
 }
 
 .ArnSubPage td {
     color: #332F2D;
-    font-family: 'Cabin Condensed' !important;
+    font-family: 'PT Sans' !important;
 }
 
 .faq strong {
@@ -48,17 +55,33 @@ body.RootBody {
 }
 
 header {
-    background: #EEEBCD;
+    background: #de4344;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 6px 12px;
-    border-bottom: 3px solid #EF4740;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 3px solid #333333;
+}
+
+header p {
+    font-family: 'Detroit 5';
+    font-size: 17px;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+
+.branding-left,
+.branding-right {
+    max-width: 375px;
+    min-width: 375px;
+    min-height: 160px;
+    max-height: 160px;
 }
 
 .SearchHotels .ArnSupportLinks.ArnSupportBottom {
     color: #332F2D;
-    background: #EEEBCD;
+    background: #fff;
 }
 
 .SearchHotels .ArnSupportLinks.ArnSupportBottom a {
@@ -75,9 +98,21 @@ header {
 }
 
 .logo img {
-    margin: 12px;
-    max-width: 450px;
+    margin: 0;
     width: 100%;
+    min-width: 600px;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .branding-left,
+    .branding-right {
+        display: none;
+    }
+
+    header {
+        justify-content: center;
+    }
 }
 
 .pushContainer span {
@@ -97,10 +132,10 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #519393 !important;
+    background: #de4344 !important;
     transition: all .3s ease;
     color: #fff !important;
-    font-family: 'Passion One' !important;
+    font-family: 'Detroit 5' !important;
 }
 
 .submit,
@@ -111,20 +146,21 @@ header {
 .bookRoom,
 .SearchHotels .modifySearchButton,
 .holdRoom {
-    font-family: 'Passion One' !important;
+    font-family: 'Detroit 5' !important;
 }
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #519393 !important;
+    border: 1px solid #de4344 !important;
 }
 
 .ArnGoAddressSearch,
 .ArnGoAirportSearch,
 .ArnGoCitySearch,
 .ArnGoLandmarkSearch {
-    background: #EF4740 !important;
+    background: #333 !important;
     color: #fff !important;
+    font-family: 'Detroit 5';
 }
 
 .selectedTab,
@@ -132,16 +168,16 @@ header {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #EF4740 !important;
-    border-bottom: 1px solid #EF4740 !important;
+    border-top: 1px solid #333 !important;
+    border-bottom: 1px solid #333 !important;
     color: #fff !important;
-    background: #f6716c !important;
+    background: #5c5c5c !important;
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     border: none;
     background: transparent;
-    font-family: 'Passion One';
+    font-family: 'Detroit 5';
     color: #fff;
     position: relative;
     top: 1px;
@@ -151,16 +187,16 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #EF4740 !important;
-    border-left: 1px solid #EF4740 !important;
-    border-right: 1px solid #EF4740 !important;
+    border-top: 1px solid #333 !important;
+    border-left: 1px solid #333 !important;
+    border-right: 1px solid #333 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #EF4740 !important;
+    background: #333 !important;
 
 }
 
@@ -173,7 +209,7 @@ header {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #3b7575 !important;
+    background: #bf2a2b !important;
 }
 
 .holdRoom:hover,
@@ -196,17 +232,17 @@ header {
 }
 
 .hamburger:after {
-    border-top-color: #EEEBCD;
+    border-top-color: #fff;
 }
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #EF4740 !important;
+    border-top-color: #333 !important;
     top: 24px;
 }
 
 .SearchHotels .adminMobile>.hamburger {
-    border-bottom: 1px solid #EF4740 !important;
+    border-bottom: 1px solid #333 !important;
     padding-left: 0 !important;
     border-radius: 0 !important;
 }
@@ -217,7 +253,7 @@ header {
 }
 
 #exclusive-event-rate {
-    color: #EF4740 !important;
+    color: #333 !important;
     font-size: 1em !important;
 }
 
@@ -234,7 +270,7 @@ header {
 .SearchHotels .ArnPriceCell>a>span,
 .ArnPriceCell a {
     color: #332F2D !important;
-    font-family: 'Passion One' !important;
+    font-family: 'Detroit 5' !important;
 }
 
 .SinglePropDetail .submit {
@@ -271,15 +307,15 @@ header {
 
 .perNight {
     color: #332F2D;
-    font-family: 'Cabin Condensed';
+    font-family: 'PT Sans';
 }
 
 .ArnSearchContainerMainDiv {
-    background: #EEEBCD;
+    background: #fff;
 }
 
 .SinglePropDetail .ArnSearchContainerMainTable {
-    box-shadow: 0 0 0 1px #EF4740;
+    box-shadow: 0 0 0 1px #333;
     border-radius: 0;
 }
 
@@ -287,16 +323,16 @@ header {
 .SinglePropDetail .reserveHotel,
 .SinglePropDetail .rateRow,
 .SinglePropDetail .ArnRateTableHeader {
-    border-bottom: 1px solid #EF4740;
+    border-bottom: 1px solid #333;
 }
 
 .SinglePropDetail .ArnLeftListContainer {
-    border-right: 1px solid #EF4740;
-    background: #EEEBCD;
+    border-right: 1px solid #333;
+    background: #fff;
 }
 
 .SearchHotels .ArnRightListContainer {
-    border-left: 1px solid #EF4740;
+    border-left: 1px solid #333;
 }
 
 .SinglePropDetail .ArnRateTableHeader th {
@@ -305,8 +341,8 @@ header {
 
 .SearchHotels .ArnPropName div.percentSavings,
 .SinglePropDetail .bestPrice .percentSavings {
-    background: #519393 !important;
-    color: #332F2D !important;
+    background: #de4344 !important;
+    color: #fff !important;
 }
 
 .SinglePropDetail .ArnPropName,
@@ -314,20 +350,20 @@ header {
 .SinglePropDetail .ArnContentGeneralInfo,
 .SinglePropDetail .rateRow,
 .SinglePropDetail .ArnRateTableHeader {
-    background: #eeebcd !important;
+    background: #fff !important;
 }
 
 .PropertyAmenities:after {
-    border-top-color: #eeebcd;
+    border-top-color: #fff;
 }
 
 .SinglePropDetail .PropertyAmenities legend {
-    background: #EEEBCD;
+    background: #fff;
     color: #332F2D;
 }
 
 legend {
-    font-family: 'Passion One' !important;
+    font-family: 'Detroit 5' !important;
 }
 
 .ArnPropDescription {
@@ -335,7 +371,7 @@ legend {
 }
 
 .arn-leaflet-reset-button {
-    background: #519393 !important;
+    background: #de4344 !important;
     color: #fff !important;
 }
 
@@ -344,26 +380,26 @@ legend {
 }
 
 .arnMapMarker {
-    background: #EF4740 !important;
-    border-color: #332F2D !important;
-    color: #332F2D !important;
+    background: #333 !important;
+    border-color: #fff !important;
+    color: #fff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #EF4740 !important;
+    border-top-color: #333 !important;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #EF4740 !important;
+    background: #333 !important;
     border: #332F2D !important;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #EF4740 !important;
+    border-top-color: #333 !important;
     transition: all .3s ease;
 }
 
@@ -372,7 +408,7 @@ legend {
 .arn-leaflet-reset-button,
 .arnMapPopup .rate,
 .arnMapPopup .ArnTripAdvisorDetails .reviewCount {
-    font-family: 'Cabin Condensed';
+    font-family: 'PT Sans';
 }
 
 #theAjaxPaymentPolicies,
@@ -397,7 +433,7 @@ input[type=file] {
 
 .specialEventRate,
 .hostHotel {
-    background: #519393 !important;
+    background: #de4344 !important;
 }
 
 .recommendedProperty {
@@ -406,11 +442,11 @@ input[type=file] {
 }
 
 .throbber {
-    border-left: #EF4740 !important;
+    border-left: #333 !important;
 }
 
 .SearchHotels .ArnLeftSearchContainer {
-    background: #EEEBCD;
+    background: #fff;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -423,18 +459,18 @@ input[type=file] {
 }
 
 .SearchHotels .ArnContainer {
-    border: 1px solid #EF4740;
+    border: 1px solid #333;
     padding: 2px;
     transition: all .3s ease-in;
 }
 
 .SearchHotels .ArnContainer:hover {
-    box-shadow: 1px 1px 5px 0px #EF4740;
+    box-shadow: 1px 1px 5px 0px #333;
 }
 
 .SearchHotels .ArnProperty,
 .SearchHotels .ArnProperty:hover {
-    background: #EEEBCD;
+    background: #fff;
 }
 
 .SearchHotels .ArnProperty:hover {
@@ -447,12 +483,12 @@ input[type=file] {
 
 .PropLimitedAvail .ArnContainer,
 .SearchHotels .PropLimitedAvail .ArnPropName {
-    background: #EEEBCD;
+    background: #fff;
 }
 
 .ArnPropNameLink {
     color: #332F2D !important;
-    font-family: 'Passion One';
+    font-family: 'Detroit 5';
 }
 
 .ArnSecondarySearchOuterContainer span {
@@ -469,8 +505,12 @@ input[type=file] {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .modifySearch {
-    background: #EEEBCD;
-    font-family: 'Cabin Condensed';
+    background: #fff;
+    font-family: 'PT Sans';
+}
+
+.modifySearch {
+    font-family: 'Detroit 5';
 }
 
 .ArnAmentitiesContainer,
@@ -480,7 +520,7 @@ input[type=file] {
 .ArnPriceContainer,
 .ArnPropertyClassesContainer,
 .ArnPropertyTypesContainer {
-    background: #EF4740;
+    background: #333;
 }
 
 .SinglePropDetail .propertiesNearbyLink,
@@ -513,14 +553,14 @@ input[type=file] {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #EF4740 !important;
-    color: #332F2D;
-    border-color: #EF4740;
+    background: #333 !important;
+    color: #fff;
+    border-color: #333;
     border: 1px solid #332F2D;
 }
 
 #slideit section {
-    border-bottom: #EF4740 !important;
+    border-bottom: #333 !important;
 }
 
 #slideit span.title {
@@ -538,7 +578,7 @@ input[type=file] {
 }
 
 .ArnPropName div.ratingCount {
-    background: #EF4740 !important;
+    background: #333 !important;
     color: #fff;
     border-radius: 0;
 }
@@ -554,20 +594,20 @@ input[type=file] {
 }
 
 .sash {
-    background: #EF4740 !important;
+    background: #333 !important;
     color: #fff;
 }
 
 .openMapBtn {
-    border: 1px solid #EF4740;
+    border: 1px solid #333;
     border-radius: 0;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #EF4740 !important;
-    color: #333;
+    background: #333 !important;
+    color: #fff;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -586,10 +626,6 @@ input[type=file] {
 .SinglePropDetail .propertiesNearbyLink,
 .SinglePropDetail .ArnPropDescription {
     display: none !important;
-}
-
-.SearchHotels .ArnPropName {
-    line-height: 1.4;
 }
 
 .SearchHotels .ArnSortByName,
@@ -633,7 +669,7 @@ input[type=file] {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #EF4740 !important;
+        border-left: 2px solid #333 !important;
     }
 
     .ArnGoAddressSearch,
@@ -644,8 +680,8 @@ input[type=file] {
     .ArnGoCitySearch:hover,
     .ArnGoLandmarkSearch,
     .ArnGoLandmarkSearch:hover {
-        border-top: 1px solid #EF4740;
-        border-bottom: 1px solid #EF4740;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
     }
 }
 
@@ -655,11 +691,24 @@ input[type=file] {
     }
 
     #HotelNameContainer {
-        background: #EF4740;
+        background: #333;
     }
 
     #HotelNameContainer span {
         color: #fff !important;
+    }
+
+    .ArnAmentitiesContainer,
+    .ArnCitiesNearbyContainer,
+    .ArnCurrenciesContainer,
+    .ArnHotelNameContainer,
+    .ArnHotelSizeContainer,
+    .ArnPriceContainer,
+    .ArnPropertyClassesContainer,
+    .ArnPropertyTypesContainer,
+    .ArnRateFiltersContainer,
+    .ArnSlider {
+        color: #fff;
     }
 
     .SearchHotels .subHeader .ArnSecondarySearchOuterContainerTop a {
@@ -682,7 +731,7 @@ input[type=file] {
     .SearchHotels .ArnGoCitySearch,
     .SearchHotels .ArnGoLandmarkSearch {
         border-right: none !important;
-        border: 1px solid #EF4740;
+        border: 1px solid #333;
     }
 
     .SearchHotels .ArnGoCitySearch {
@@ -694,7 +743,7 @@ input[type=file] {
     }
 
     .SinglePropDetail {
-        background: #EEEBCD;
+        background: #fff;
     }
 
     .SinglePropDetail.mobile .subHeader a.refineLink {
@@ -732,14 +781,14 @@ input[type=file] {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #EF4740 !important;
-        border-bottom: 4px solid #EF4740 !important;
+        border-top: 4px solid #333 !important;
+        border-bottom: 4px solid #333 !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #EF4740 !important;
+        border-bottom: 4px solid #333 !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -747,12 +796,12 @@ input[type=file] {
     }
 
     .SinglePropDetail .PropertyLinks a {
-        background: #EF4740;
-        color: #332F2D !important;
+        background: #333;
+        color: #fff !important;
     }
 
     .SinglePropDetail .PropertyLinks a:hover {
-        background: #f6716c;
+        background: #5c5c5c;
     }
 
     #theDatePrompt>img {
@@ -766,7 +815,7 @@ input[type=file] {
     .ArnToggleMap:focus,
     .ArnToggleMap:hover,
     .ArnToggleMap:visited {
-        background: #EF4740 !important;
+        background: #333 !important;
         color: #fff !important;
     }
 
@@ -775,11 +824,11 @@ input[type=file] {
     }
 
     .SearchHotels .filters {
-        border-top-color: #EF4740;
+        border-top-color: #333;
     }
 
     .SearchHotels .subHeader .refineLink {
-        background: #EEEBCD;
+        background: #fff;
         color: #332F2D;
     }
 
@@ -801,10 +850,10 @@ input[type=file] {
     .SearchHotels .ArnSortByPrice:hover,
     .SearchHotels .ArnSortByType,
     .SearchHotels .ArnSortByType:hover {
-        background: #EEEBCD;
+        background: #fff;
         color: #332F2D;
-        border-top: 4px solid #EF4740;
-        border-bottom: 4px solid #EF4740;
+        border-top: 4px solid #333;
+        border-bottom: 4px solid #333;
     }
 
     .SearchHotels .ArnSortByAvailability.active,
@@ -825,21 +874,21 @@ input[type=file] {
     .SearchHotels .ArnSortByType:hover,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByVacationRental:hover {
-        background: #EF4740 !important;
+        background: #333 !important;
         color: #fff;
     }
 
     .arnCurrency,
     .arnUnit {
         color: #332F2D !important;
-        font-family: 'Cabin Condensed' !important;
+        font-family: 'PT Sans' !important;
         font-size: 15px !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        background: #EEEBCD;
+        background: #fff;
         color: #332F2D;
     }
 
@@ -858,12 +907,12 @@ input[type=file] {
     }
 
     .SinglePropDetail legend {
-        background: #EEEBCD;
+        background: #fff;
         color: #332F2D;
     }
 
     .SinglePropDetail.mobile .ArnLeftListContainer {
-        border-bottom: 1px solid #EF4740;
+        border-bottom: 1px solid #333;
     }
 
     .SinglePropDetail .ArnLeftListContainer {
@@ -917,11 +966,11 @@ input[type=file] {
 
 /* Date Prompt */
 #theDatePrompt {
-    background: #EEEBCD;
+    background: #fff;
     padding: 18px;
     max-width: 800px;
     width: 100%;
-    border: 1px solid #EF4740;
+    border: 1px solid #333;
 }
 
 #theDatePrompt>img {

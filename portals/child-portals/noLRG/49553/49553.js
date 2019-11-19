@@ -21,8 +21,10 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo-horizontal.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.shakykneesfestival.com/', 'href');
+                noLRGPortal.updateHTML('header', '<img class="branding-left" src="https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/images/left.svg" alt="Shaky Knees Branding"><div><a class="logo" href="https://www.shakykneesfestival.com/" target="_blank"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/images/logo.png" alt="Logo"></a><p>May 1-3, 2020 • Atlanta, GA • Central Park</p></div><img class="branding-right" src="https://static.hotelsforhope.com/portals/child-portals/noLRG/49553/images/right.svg" alt="Shaky Knees Branding">');
+
                 observer.disconnect();
             }
         }

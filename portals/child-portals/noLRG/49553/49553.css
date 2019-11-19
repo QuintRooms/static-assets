@@ -991,3 +991,8 @@ input[type=file] {
 .hoverTooltip {
     border-radius: 100% !important;
 }
+
+.arnCurrency{
+    font-size: .5em;
+    vertical-align: top;
+}

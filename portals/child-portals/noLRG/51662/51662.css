@@ -126,7 +126,8 @@ body.RootBody {
 .logo img {
     margin: 0 auto;
     display: block;
-    max-width: 100%;
+    max-width: 90%;
+    width: 640px;
 }
 
 header h2 {

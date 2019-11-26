@@ -27,12 +27,15 @@ function waitForElementToLoad(elementWaitingFor) {
                 lrgPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/52975/images/logo.png', 'src');
                 lrgPortal.updateAttribute('.logo', 'https://www.lollapalooza.com/', 'href');
                 lrgPortal.createHTML('.logo', '<span class="event-dates">Jul 30 - Aug 2, 2020 - Grant Park, Chicago</span>', 'afterEnd');
-
-                if(lrgPortal.site_id === 52976){
-                    if(document.querySelector('header')){
-                        document.querySelector('header').insertAdjacentHTML('beforeEnd', '<p class="hidden-xs" style="font-family: Ovink-Bold; position: absolute; right: 8px; color: #fff">Production</p>');
+                
+                setTimeout(function() {
+                    if (lrgPortal.site_id === 52976) {
+                        if (document.querySelector('header')) {
+                            document.querySelector('header').insertAdjacentHTML('beforeEnd', '<p class="hidden-xs" style="font-family: Ovink-Bold; position: absolute; right: 8px; color: #fff">Production</p>');
+                        }
                     }
-                }
+                }, 500);
+                
                 observer.disconnect();
             }
         }
@@ -41,4 +44,4 @@ function waitForElementToLoad(elementWaitingFor) {
     observer.observe(element, config);
 };
 
-waitForElementToLoad('header');  
+waitForElementToLoad('header');

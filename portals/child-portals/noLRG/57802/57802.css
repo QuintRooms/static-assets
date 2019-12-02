@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap');
+
 body {
     font-family: 'Open Sans', 'Helvetica';
     font-size: 17px !important;
@@ -28,21 +29,33 @@ header {
     padding: 6px 12px;
 }
 
+.modifySearch,
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited,
+legend,
+.theHotelName,
+.ArnNightlyRate strong,
+.ArnPriceCell a,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.yourRateAmount {
+    font-family: 'Oswald' !important;
+}
+
 #language {
     display: none;
 }
 
 .logo img {
     max-width: 150px;
-    margin: 0;
+    margin: 12px;
 }
 
 .SearchHotels .ArnPropName a {
     letter-spacing: initial !important;
 }
 
-/* Button Colors */
-.selectedTab,
+/* Buttons */
 .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
@@ -56,6 +69,8 @@ header {
 .HoldRoomsForm .ArnContentButtonNarrow {
     background: #da2128 !important;
     transition: all .5s ease;
+    border-radius: 10px !important;
+
 }
 
 .submit,
@@ -67,6 +82,8 @@ header {
 .SearchHotels .modifySearchButton,
 .holdRoom {
     font-family: 'Oswald' !important;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 .SearchHotels .bottomPager .ArnPages a,
@@ -81,11 +98,13 @@ header {
 .ArnGoAirportSearch:hover {
     border-top: 1px solid #112753 !important;
     border-bottom: 1px solid #112753 !important;
+    background: #112753 !important;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    border: 1px solid #112753 !important;
+    border: none !important;
+    color: #112753;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -140,6 +159,10 @@ header {
 
 .arn-leaflet-reset-button {
     background: #112753 !important;
+}
+
+.leaflet-top {
+    top: 190px;
 }
 
 .arnMapMarker {
@@ -197,6 +220,14 @@ header {
     background: #da2128;
 }
 
+.arnPrice {
+    font-family: 'Oswald' !important;
+}
+
+.perNight {
+    font-family: 'Open Sans' !important;
+}
+
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
@@ -215,13 +246,11 @@ header {
     max-width: 205px !important;
 }
 
-/* Ad Unit */
-.ad-unit img {
-    display: block;
-    margin: 24px auto;
-}
-
 @media only screen and (min-width: 800px) {
+    #SortControls {
+        padding: 0;
+        top: 53px;
+    }
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
@@ -248,6 +277,15 @@ header {
 @media only screen and (max-width: 800px) {
     .ad-unit {
         display: none;
+    }
+
+    .bottomPager .ArnPages .pagesActive,
+    .bottomPager .ArnPages .pagesPrev,
+    .bottomPager .ArnPages a {
+        padding: 2px 5px;
+        font-size: 13px !important;
+        text-transform: capitalize !important;
+
     }
 
     .SearchHotels .ArnSortByName:hover,

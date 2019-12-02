@@ -2,8 +2,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'Hall of Fame Rooms');
-noLRGPortal.updateRoomDescription('.RoomDescription', 'Hall of Fame Exclusive Rates');
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Pro Football Hall of Fame Exclusive Rates');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

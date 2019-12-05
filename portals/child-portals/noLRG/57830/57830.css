@@ -127,9 +127,9 @@ legend,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    border-top: 1px solid #fb48ed !important;
-    border-left: 1px solid #fb48ed !important;
-    border-right: 1px solid #fb48ed !important;
+    border-top: 1px solid #270a79 !important;
+    border-left: 1px solid #270a79 !important;
+    border-right: 1px solid #270a79 !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide:hover,
@@ -271,6 +271,10 @@ legend,
 }
 
 @media only screen and (min-width: 800px) {
+    .ArnSubPage .submit {
+        max-width: unset;
+    }
+
     #SortControls {
         padding: 0;
         top: 53px;

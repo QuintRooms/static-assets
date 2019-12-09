@@ -29,7 +29,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         }
 
         if (noLRGPortal.site_id == 49552) {
-            noLRGPortal.addCustomTag('<div>New Marriott Open 2020</div>', 3486114);
+            noLRGPortal.addCustomTag('<div>Marriott Oceanfront Open Feb 2020</div>', 3486114);
             noLRGPortal.updateText('.event-rate', 'Exclusive Barrett-Jackson Rates');
         }
 

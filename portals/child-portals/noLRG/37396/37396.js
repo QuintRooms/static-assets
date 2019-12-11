@@ -81,6 +81,8 @@ function addHiltonTags() {
     });
 }
 
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/37396/37396.css">');
+
 function getPropIds() {
     let props = document.querySelectorAll('.propId');
     let propIds = [];

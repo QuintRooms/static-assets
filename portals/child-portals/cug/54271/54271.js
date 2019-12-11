@@ -56,3 +56,5 @@ function removeCurrencyFromCredits() {
         });
     }
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/' + cugPortal.site_id + '.css">');

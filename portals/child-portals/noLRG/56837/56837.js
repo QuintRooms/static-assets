@@ -69,3 +69,5 @@ async function setupF1Races() {
 if (document.querySelector('.landing-page')) {
     setupF1Races();
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');

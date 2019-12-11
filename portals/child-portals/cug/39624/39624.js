@@ -59,3 +59,5 @@ if (cugPortal.page_name === 'privacy-policy') {
             return false;
         });
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52342/52342.css">');

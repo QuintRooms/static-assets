@@ -40,3 +40,5 @@ noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive commun
 if(document.querySelector('#theDatePrompt')){
     document.querySelector('#theDatePrompt').insertAdjacentHTML('afterBegin', '<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/52974/images/logo.png">');
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');

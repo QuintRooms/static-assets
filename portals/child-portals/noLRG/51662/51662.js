@@ -44,3 +44,5 @@ noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive commun
 
 // Custom Banner Ad
 noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad-unit" target="_blank" href="http://roomfunding.com/projects/detail/help-all-students-succeed"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51662/images/ad.png"></a>', 'beforeEnd');
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/51662/51662.css">');

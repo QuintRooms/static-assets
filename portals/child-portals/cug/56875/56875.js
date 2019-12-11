@@ -9,10 +9,6 @@ jQuery(document).on('ratesReadyEvent', function() {
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
         cugPortal.updateText('.creditsLabel', 'Points Applied:');
-
-        if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
-            removeCurrencyFromCredits();
-        }
     }, 1);
 });
 
@@ -31,6 +27,9 @@ function waitForElementToLoad(elementWaitingFor) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'));
                 }
                 cugPortal.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value');
+                cugPortal.updateText('.CreateAnAccountAction', 'Register');
+                cugPortal.updateText('#theUserNameAjax label', 'Email');
+
                 observer.disconnect();
             }
         }
@@ -40,13 +39,3 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
-
-function removeCurrencyFromCredits() {
-    let credits = document.querySelectorAll('.creditsValue');
-    if (credits) {
-        credits.forEach(function(credit) {
-            credit.textContent = credit.textContent.split(" ")[0];
-        });
-    }
-}
-// removeCurrencyFromCredits();

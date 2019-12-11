@@ -265,3 +265,5 @@ window.onload = function() {
 }
 
 cugPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/' + cugPortal.site_id + '.css">');

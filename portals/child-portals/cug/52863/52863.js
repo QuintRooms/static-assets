@@ -41,3 +41,5 @@ function redirectIfNotAuthenticated() {
 }
 
 redirectIfNotAuthenticated();
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52863/52863.css">');

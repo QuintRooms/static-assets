@@ -1,8 +1,5 @@
 import NoLRGPortal from '../../../js/portal-setup.js';
 
-// var moment = require('moment');
-// moment().format();
-
 let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Dutch Grand Prix Rooms');
@@ -173,3 +170,5 @@ if (noLRGPortal.language == 'dutch') {
             </style>
         `);
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/52918/52918.css">');

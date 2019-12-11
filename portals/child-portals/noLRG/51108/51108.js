@@ -159,3 +159,5 @@ function updatedPropertyContainer() {
         });
     }
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/51108.css">');

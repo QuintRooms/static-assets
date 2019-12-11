@@ -359,3 +359,6 @@ if (document.querySelector('.SearchHotels .ArnSearchContainerMainDiv')) {
     document.querySelector('.SearchHotels .ArnSearchContainerMainDiv').classList.add('container');
     document.querySelector('.SearchHotels .ArnSearchContainerMainDiv').classList.remove('ArnSearchContainerMainDiv');
 }
+
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/' + cugPortal.site_id + '/' + cugPortal.site_id + '.css">');

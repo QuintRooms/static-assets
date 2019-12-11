@@ -31,3 +31,4 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');

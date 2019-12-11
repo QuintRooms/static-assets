@@ -211,6 +211,15 @@ body {
     width: 100%;
 }
 
+#validPassCode,
+#invalidPassCode {
+    display: none !important;
+}
+
+.invalidPassCode input {
+    box-shadow: 0px 0px 3px 1px #ff0a0a !important;
+}
+
 #unavailableUser a {
     margin-left: 3px;
 }
@@ -573,8 +582,8 @@ header {
 .SearchHotels .bottomPager .ArnPages .not_page {
     border: 1px solid #00a498;
     border-radius: 5px;
-    padding: 3px 4px;
-    margin-left: -1px;
+    padding: 3px 3px;
+    font-size: 14px !important;
 }
 
 .selectedTab,
@@ -583,13 +592,16 @@ header {
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
     border-bottom: 1px solid #00a498;
-
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #fff;
-    background: #00a498;
+    color: #333;
+    background: transparent;
     border: 1px solid #00a498;
+    border-radius: 5px;
+    font-size: 14px !important;
+    padding: 3px 4px;
+    line-height: 1.2;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -1280,6 +1292,10 @@ ul {
 }
 
 @media screen and (min-width: 800px) {
+    .RootBody .ArnSearchContainerMainDiv {
+        padding: 0;
+    }
+
     .ArnPropImageButtons {
         top: 80px;
     }
@@ -1415,7 +1431,6 @@ div.originalPrice span,
     }
 }
 
-.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
-.ForgotPasswordAction+.loginDivider {
-    display: none;
+.SearchHotels .PropLimitedAvail .ArnRateCell {
+    background: transparent;
 }

@@ -60,3 +60,5 @@ rateGuaranteePage();
 if (document.querySelector('.WBRateGuaranteeForm')) {
     loadExternalHTML('/appSkins/' + noLRGPortal.site_id + '/v6/themes/standard/LRGForm.html', '.WBRateGuaranteeForm2', 'theWBRateGuaranteeForm2Body');
 }
+
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/54051/54051.css">');

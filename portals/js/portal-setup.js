@@ -179,6 +179,8 @@ export default class Portal {
                     return false;
                 });
         }
+
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/styles/styles.css">');
     }
 
     /**
@@ -474,6 +476,26 @@ export default class Portal {
         }
     }
 
+    hidePropertyThumbnailArrowIfNoPropertyThumbnails() {
+        if (this.page_name === 'search-results') {
+            let thumbnails = document.querySelectorAll('.ArnImageLink img');
+            thumbnails.forEach(function(thumbnail) {
+                if (thumbnail) {
+                    let url = thumbnail.getAttribute('src');
+                    if (url.includes('no_image_300.gif')) {
+                        let thumbnailParent = thumbnail.parentNode;
+                        if (thumbnailParent) {
+                            let arrows = thumbnailParent.previousSibling;
+                            if (arrows && arrows.classList.contains('ArnPropImageButtons')) {
+                                arrows.style.display = 'none';
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
     createParentPortal() {
         this.insertAssets();
         this.updateHTML('.WBSupportForm .ArnSupportChatTable tr td', '<p><span id="speakToRep">If you would like to speak with a representative, please call</span> <strong>+1 512-691-9555.</strong></p><strong id="phoneCenterHours">Phone Center Hours</strong><ul><li id="weekdayHours">Call Center Weekday Hours: 8:00 AM - 5:30 PM CST</li><li id="weekendHours"> Call Center Weekend Hours: Closed</li></ul><p id="useForm">Or, please use the form below, and one of our consultants will respond promptly.</p>');
@@ -524,6 +546,9 @@ export default class Portal {
             this.updateText('a.bookRoom', 'Book Rooms');
             this.updateText('a.holdRoom', 'Hold Rooms');
         }
+        
+        this.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
 
         this.collapseSearchBy('.lblNearbyCities', '.lblNearbyCities + select');

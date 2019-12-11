@@ -1,11 +1,95 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap');
 
+/* Elements with Colored BG */
+body,
+.SearchHotels .ArnSupportLinks.ArnSupportBottom,
+.ArnGoAddressSearch,
+.ArnGoAirportSearch,
+.ArnGoCitySearch,
+.ArnGoLandmarkSearch,
+.ArnSearchContainerMainDiv,
+.SinglePropDetail .ArnLeftListContainer,
+.SinglePropDetail .ArnPropName,
+.SinglePropDetail .SimpleSearch,
+.SinglePropDetail .ArnContentGeneralInfo,
+.SinglePropDetail .rateRow,
+.SinglePropDetail .ArnRateTableHeader,
+.SearchHotels .ArnLeftSearchContainer,
+.SearchHotels .ArnProperty,
+.SearchHotels .ArnProperty:hover,
+.PropLimitedAvail .ArnContainer,
+.SearchHotels .PropLimitedAvail .ArnPropName,
+.SearchHotels #searchForm,
+.ArnRateFiltersContainer,
+.ArnSlider,
+.ArnQuadSearchContainer.ArnPrimarySearchContainer,
+.SearchHotels .ArnPrimarySearchOuterContainer,
+.modifySearch {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .SinglePropDetail,
+    .SearchHotels .subHeader .refineLink,
+    .SearchHotels .ArnSortBy,
+    .SearchHotels .ArnSortBy:hover,
+    .SearchHotels .ArnSortByClass,
+    .SearchHotels .ArnSortByClass:hover,
+    .SearchHotels .ArnSortByDealAmount,
+    .SearchHotels .ArnSortByDealAmount:hover,
+    .SearchHotels .ArnSortByDealPercent,
+    .SearchHotels .ArnSortByDealPercent:hover,
+    .SearchHotels .ArnSortByDistance,
+    .SearchHotels .ArnSortByDistance:hover,
+    .SearchHotels .ArnSortByPrice,
+    .SearchHotels .ArnSortByPrice:hover,
+    .SearchHotels .ArnSortByType,
+    .SearchHotels .ArnSortByType:hover,
+    .SearchHotels .ArnSortByAvailability.active,
+    .SearchHotels .ArnSortByAvailability:hover,
+    .SearchHotels .ArnSortByClass.active,
+    .SearchHotels .ArnSortByClass:hover,
+    .SearchHotels .ArnSortByDealAmount.active,
+    .SearchHotels .ArnSortByDealAmount:hover,
+    .SearchHotels .ArnSortByDealPercent.active,
+    .SearchHotels .ArnSortByDealPercent:hover,
+    .SearchHotels .ArnSortByDistance.active,
+    .SearchHotels .ArnSortByDistance:hover,
+    .SearchHotels .ArnSortByName.active,
+    .SearchHotels .ArnSortByName:hover,
+    .SearchHotels .ArnSortByPrice.active,
+    .SearchHotels .ArnSortByPrice:hover,
+    .SearchHotels .ArnSortByType.active,
+    .SearchHotels .ArnSortByType:hover,
+    .SearchHotels .ArnSortByVacationRental.active,
+    .SearchHotels .ArnSortByVacationRental:hover,
+    .ArnToggleMap,
+    .SearchHotels .filters,
+    .SinglePropDetail.mobile .subHeader a.refineLink,
+    .SinglePropDetail legend {
+        background: #000 !important;
+        color: #fff !important;
+    }
+}
+
+.arnMapMarker,
+.arnMapMarker:hover,
+.highlight {
+    border-color: #000;
+}
+
+.hamburger:after {
+    border-top-color: #000;
+}
+
 body {
     font-family: 'Open Sans', 'Helvetica';
     font-size: 17px !important;
     font-weight: 300;
-    background: #fff;
-    color: #333;
+    background: #000;
+    color: #fff;
     line-height: 1.4;
 }
 

@@ -537,7 +537,6 @@ export default class Portal {
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
         this.updateDepositPolicy();
-
     }
 
     ratesReadyEventMethods() {
@@ -546,7 +545,7 @@ export default class Portal {
             this.updateText('a.bookRoom', 'Book Rooms');
             this.updateText('a.holdRoom', 'Hold Rooms');
         }
-        
+
         this.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
@@ -637,3 +636,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         portal.ratesReadyEventMethods();
     }, 1);
 });
+
+window.onload = function() {
+    portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+}

@@ -28,47 +28,47 @@ export default class Portal {
      */
 
     getPageName() {
-        let bodyClasses = document.querySelector('body');
+        let body_classes = document.querySelector('body');
 
-        if (bodyClasses.classList.contains('SearchHotels')) {
+        if (body_classes.classList.contains('SearchHotels')) {
             this.page_name = 'search-results';
             return;
         }
 
-        if (bodyClasses.classList.contains('SinglePropDetail')) {
+        if (body_classes.classList.contains('SinglePropDetail')) {
             this.page_name = 'property-detail';
             return;
         }
-        if (bodyClasses.classList.contains('CheckOutForm')) {
+        if (body_classes.classList.contains('CheckOutForm')) {
             this.page_name = 'checkout';
             return;
         }
-        if (bodyClasses.classList.contains('ConfirmationForm')) {
+        if (body_classes.classList.contains('ConfirmationForm')) {
             this.page_name = 'confirmation';
             return;
         }
-        if (bodyClasses.classList.contains('RootBody')) {
+        if (body_classes.classList.contains('RootBody')) {
             this.page_name = 'landing-page';
             return;
         }
-        if (bodyClasses.classList.contains('WBFaq')) {
+        if (body_classes.classList.contains('WBFaq')) {
             this.page_name = 'faq';
             return;
         }
-        if (bodyClasses.classList.contains('WBTermsAndConditions')) {
+        if (body_classes.classList.contains('WBTermsAndConditions')) {
             this.page_name = 'terms-conditions';
             return;
         }
-        if (bodyClasses.classList.contains('WBPrivacyPolicy')) {
+        if (body_classes.classList.contains('WBPrivacyPolicy')) {
             this.page_name = 'privacy-policy';
             return;
         }
-        if (bodyClasses.classList.contains('WBRateGuaranteeForm2')) {
+        if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
             this.page_name = 'lrg-page';
             return;
         }
 
-        if (bodyClasses.classList.contains('WBValidatedRegistrationForm')) {
+        if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
             this.page_name = 'cug-registration';
             return;
         }
@@ -85,9 +85,9 @@ export default class Portal {
     /**
      * @description translates text of specific selector from translations.json
      * @param  string selector element to update text content of
-     * @param  string keyToTranslate key within translations.json to use
+     * @param  string key_to_translate key within translations.json to use
      */
-    async translateText(selector, keyToTranslate) {
+    async translateText(selector, key_to_translate) {
         let response = await fetch('https://static.hotelsforhope.com/portals/js/translations.json');
         this.translations = await response.json()
             .then((data) => {
@@ -97,7 +97,7 @@ export default class Portal {
                     if (this.language == key) {
                         el.forEach(element => {
                             if (element) {
-                                element.textContent = this.translations[key][keyToTranslate];
+                                element.textContent = this.translations[key][key_to_translate];
                             }
                         });
                     }
@@ -205,8 +205,8 @@ export default class Portal {
      */
     addCustomTag(text, propId) {
         if (!document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb > .customTag') && document.querySelector('#theArnProperty' + propId)) {
-            let propertyThumbnail = document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb');
-            propertyThumbnail.insertAdjacentHTML('afterbegin', '<div class="customTag">' + text + '</div>');
+            let property_thumbnail = document.querySelector('#theArnProperty' + propId + ' .ArnPropThumb');
+            property_thumbnail.insertAdjacentHTML('afterbegin', '<div class="customTag">' + text + '</div>');
         }
     }
 
@@ -216,8 +216,8 @@ export default class Portal {
      *@param string text - text to update
      */
     updateText(selector, text) {
-        let classList = document.querySelectorAll(selector);
-        classList.forEach(function(element, index) {
+        let class_list = document.querySelectorAll(selector);
+        class_list.forEach(function(element, index) {
             if (element) {
                 element.textContent = text;
             }
@@ -230,9 +230,9 @@ export default class Portal {
      *@param string html - html to add
      */
     updateHTML(selector, html) {
-        let classList = document.querySelectorAll(selector);
-        if (classList) {
-            classList.forEach(function(element, index) {
+        let class_list = document.querySelectorAll(selector);
+        if (class_list) {
+            class_list.forEach(function(element, index) {
                 element.innerHTML = html;
             });
         }
@@ -240,12 +240,12 @@ export default class Portal {
 
     /**
      *@description creates html and inserts into specified location
-     *@param string parentToAppendTo - selector to put new html
+     *@param string parent_to_append_to - selector to put new html
      *@param string html - html to add to parent
      *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
      */
-    createHTML(parentToAppendTo, html, location) {
-        let parent = document.querySelector(parentToAppendTo);
+    createHTML(parent_to_append_to, html, location) {
+        let parent = document.querySelector(parent_to_append_to);
         if (parent) {
             parent.insertAdjacentHTML(location, html);
         }
@@ -253,11 +253,11 @@ export default class Portal {
 
     /**
      *@description moves a child element into a parent element
-     *@param string childSelector - selector to move into parent
+     *@param string child_selector - selector to move into parent
      *@param string parentSelector - selector to move child element into
      */
-    appendToParent(childSelector, parentSelector) {
-        let childElement = document.querySelector(childSelector);
+    appendToParent(child_selector, parentSelector) {
+        let childElement = document.querySelector(child_selector);
         let parentElement = document.querySelector(parentSelector);
 
         if (childElement && parentElement) {
@@ -267,12 +267,12 @@ export default class Portal {
 
     /**
      *@description adds accordion effect to element
-     *@param string openElement - element holding the click event
-     *@param string contentElement - element to hide
+     *@param string open_element - element holding the click event
+     *@param string content_element - element to hide
      */
-    accordion(openElement, contentElement) {
-        let content = document.querySelector(contentElement);
-        let open = document.querySelector(openElement);
+    accordion(open_element, content_element) {
+        let content = document.querySelector(content_element);
+        let open = document.querySelector(open_element);
         if (open && content) {
             content.classList.add('hideAccordion');
             open.addEventListener('click', function() {
@@ -289,8 +289,8 @@ export default class Portal {
             document.querySelector('#Properties').insertAdjacentHTML('beforeBegin', '<div class="openMapBtn">Open Map</div>');
             let map = document.querySelector('.ArnRightExtraContainer');
             document.querySelector('.openMapBtn').addEventListener('click', function() {
-                let mapBtn = document.querySelector('.openMapBtn');
-                mapBtn.classList.toggle('closeMapBtn');
+                let map_btn = document.querySelector('.openMapBtn');
+                map_btn.classList.toggle('closeMapBtn');
                 map.classList.toggle('showMap');
 
                 if (document.querySelector('.closeMapBtn')) {
@@ -304,13 +304,13 @@ export default class Portal {
 
     /**
      *@description sets threshhold for when to display rooms remaining text on each property
-     *@param int thresshold - minimum number before rooms remaining will be displayed
+     *@param int threshhold - minimum number before rooms remaining will be displayed
      */
-    roomCountThreshhold(thresshold) {
+    roomCountThreshhold(threshhold) {
         let count = document.querySelectorAll('.roomCount strong');
         count.forEach(function(element, index) {
             let number = element.textContent;
-            if (number > thresshold) {
+            if (number > threshhold) {
                 element.parentNode.style.display = 'none';
             }
         });
@@ -318,16 +318,16 @@ export default class Portal {
 
     /**
      *@description collapses search options by default
-     *@param string openSelector - DOM selector for element to be opened
-     *@param string collapsedSelector - DOM selector to collapse
+     *@param string open_selector - DOM selector for element to be opened
+     *@param string collapsed_selector - DOM selector to collapse
      */
-    collapseSearchBy(openSelector, collapsedSelector) {
+    collapseSearchBy(open_selector, collapsed_selector) {
         if (this.page_name === 'search-results') {
-            let arr = document.querySelectorAll(collapsedSelector);
+            let arr = document.querySelectorAll(collapsed_selector);
             arr.forEach(function(element, index) {
                 element.style.display = 'none';
             });
-            document.querySelector(openSelector).style.display = 'block';
+            document.querySelector(open_selector).style.display = 'block';
         }
     }
 
@@ -359,8 +359,8 @@ export default class Portal {
             return false;
         }
         if (this.page_name === 'search-results') {
-            let savingsArr = document.querySelectorAll('.yourSavings');
-            savingsArr.forEach(function(element) {
+            let savings_arr = document.querySelectorAll('.yourSavings');
+            savings_arr.forEach(function(element) {
                 let savings = element.textContent;
                 savings = savings.replace(/\D+/g, '');
                 if (savings < 1000) {
@@ -385,13 +385,13 @@ export default class Portal {
 
     /**
      *@description adds a tag for each contracted property on the searchHotels page
-     *@param string sashHTML - the html for the sash - should probably refacator to only need the text as the paramter
+     *@param string sash_html - the html for the sash - should probably refacator to only need the text as the paramter
      */
-    searchHotelsExclusiveSash(sashHTML, selector) {
-        let eventProp = document.querySelectorAll(selector);
-        eventProp.forEach(function(element, index) {
+    searchHotelsExclusiveSash(sash_html, selector) {
+        let event_prop = document.querySelectorAll(selector);
+        event_prop.forEach(function(element, index) {
             if (element && element.querySelector('.sash') === null) {
-                element.insertAdjacentHTML('afterBegin', sashHTML);
+                element.insertAdjacentHTML('afterBegin', sash_html);
             }
         });
     }
@@ -401,35 +401,35 @@ export default class Portal {
      *@param string tagHTML - the html for the tag - should probably refacator to only need the text as the paramter
      */
     singlePropExclusiveTag(tagHTML) {
-        let singlePropLRG = document.querySelectorAll('.SinglePropDetail .SB16 .ArnNightlyRate');
-        singlePropLRG.forEach(function(element) {
+        let single_prop_lrg = document.querySelectorAll('.SinglePropDetail .SB16 .ArnNightlyRate');
+        single_prop_lrg.forEach(function(element) {
             if (element && element.querySelector('.exclusiveRate') === null) {
                 element.insertAdjacentHTML('afterbegin', tagHTML);
             }
         });
     }
 
-    restrictMaxAdults(searchContainer) {
-        let el = document.querySelector(searchContainer);
+    restrictMaxAdults(search_container) {
+        let el = document.querySelector(search_container);
         if (el) {
-            let adultsLabel = el.querySelector('.ArnAdults .titleLabel');
-            let adultsInput = el.querySelector('#adults');
-            let roomsInput = el.querySelector('#rooms');
+            let adults_label = el.querySelector('.ArnAdults .titleLabel');
+            let adults_input = el.querySelector('#adults');
+            let rooms_input = el.querySelector('#rooms');
             let options = el.querySelectorAll('#adults option');
-            if (roomsInput) {
+            if (rooms_input) {
                 options.forEach(function(element, index) {
-                    let initialAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+                    let initialAdults = rooms_input[rooms_input.selectedIndex].textContent * 4;
                     element.style.display = 'block';
                     if (index >= initialAdults) {
                         element.style.display = 'none';
                     }
                 });
 
-                roomsInput.addEventListener('change', function() {
-                    let maxAdults = roomsInput[roomsInput.selectedIndex].textContent * 4;
+                rooms_input.addEventListener('change', function() {
+                    let maxAdults = rooms_input[rooms_input.selectedIndex].textContent * 4;
 
-                    if (roomsInput[roomsInput.selectedIndex].textContent == 1) {
-                        adultsLabel.textContent = 'Adults:';
+                    if (rooms_input[rooms_input.selectedIndex].textContent == 1) {
+                        adults_label.textContent = 'Adults:';
 
                         options.forEach(function(element, index) {
                             element.style.display = 'block';
@@ -439,8 +439,8 @@ export default class Portal {
                         });
                     }
 
-                    if (roomsInput[roomsInput.selectedIndex].textContent > 1) {
-                        adultsLabel.textContent = 'Total Adults:';
+                    if (rooms_input[rooms_input.selectedIndex].textContent > 1) {
+                        adults_label.textContent = 'Total Adults:';
                         options.forEach(function(element, index) {
                             element.style.display = 'block';
                             if (index >= maxAdults) {
@@ -454,8 +454,8 @@ export default class Portal {
     }
 
     addPerNightToPrice(page, selector) {
-        let pageElement = document.querySelector(page);
-        if (pageElement) {
+        let page_element = document.querySelector(page);
+        if (page_element) {
             let price = document.querySelectorAll(selector);
             price.forEach(function(element) {
                 let parent = element.parentNode;
@@ -467,12 +467,26 @@ export default class Portal {
 
     updateDepositPolicy() {
         if (document.querySelector('.CheckOutForm')) {
-            let depositPolicy = document.querySelector('#theDepositPolicies li');
-            if (depositPolicy) {
-                if (depositPolicy.textContent == 'Deposit required. See Payment Policy above.' || depositPolicy.textContent == 'Deposit required. See Payment Policy.') {
-                    depositPolicy.textContent = 'No deposit required. Total amount due at hotel.';
+            let deposit_policy = document.querySelector('#theDepositPolicies li');
+            if (deposit_policy) {
+                if (deposit_policy.textContent == 'Deposit required. See Payment Policy above.' || deposit_policy.textContent == 'Deposit required. See Payment Policy.') {
+                    deposit_policy.textContent = 'No deposit required. Total amount due at hotel.';
                 }
             }
+        }
+    }
+
+    updateBookingFeeLanguage(){
+        if(document.querySelector('.CheckOutForm')){
+            let due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
+            if(due_now){
+
+                if((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')){
+                    console.log('test')
+                    due_now.insertAdjacentHTML('beforeEnd', ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>');
+                }
+            }
+            return;
         }
     }
 
@@ -483,9 +497,9 @@ export default class Portal {
                 if (thumbnail) {
                     let url = thumbnail.getAttribute('src');
                     if (url.includes('no_image_300.gif')) {
-                        let thumbnailParent = thumbnail.parentNode;
-                        if (thumbnailParent) {
-                            let arrows = thumbnailParent.previousSibling;
+                        let thumbnail_parent = thumbnail.parentNode;
+                        if (thumbnail_parent) {
+                            let arrows = thumbnail_parent.previousSibling;
                             if (arrows && arrows.classList.contains('ArnPropImageButtons')) {
                                 arrows.style.display = 'none';
                             }
@@ -537,6 +551,7 @@ export default class Portal {
         this.accordion('.PropertyAmenities legend', '.ArnAmenityContainer');
         this.donationAmount();
         this.updateDepositPolicy();
+        this.updateBookingFeeLanguage();
     }
 
     ratesReadyEventMethods() {

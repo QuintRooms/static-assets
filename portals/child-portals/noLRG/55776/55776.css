@@ -989,3 +989,9 @@ select,
 #theDatePrompt .SimpleSearch .ArnCheckOutDate {
     width: 100% !important;
 }
+
+#theBookingPage.ConfirmationPage .WBGuestFormConfirmed td,
+#theBookingPage.ConfirmationPage .returnResultsInfo,
+#theBookingPage.ConfirmationPage .supportInfo {
+    color: #000;
+}

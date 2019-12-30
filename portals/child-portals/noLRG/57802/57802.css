@@ -424,6 +424,7 @@ legend,
     display: none !important;
 }
 
-.RootBody .ArnSearchContainerMainDiv {
+.RootBody .ArnSearchContainerMainDiv,
+.RootBody .modifySearch {
     background: transparent !important;
 }

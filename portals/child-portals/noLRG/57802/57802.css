@@ -428,3 +428,7 @@ legend,
 .RootBody .modifySearch {
     background: transparent !important;
 }
+
+.pushContainer span{
+    color: #000;
+}

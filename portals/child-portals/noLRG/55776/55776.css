@@ -344,7 +344,8 @@ header a {
 .SinglePropDetail .SimpleSearch,
 .SinglePropDetail .ArnContentGeneralInfo,
 .SinglePropDetail .rateRow,
-.SinglePropDetail .ArnRateTableHeader {
+.SinglePropDetail .ArnRateTableHeader,
+.HoldRoomsForm .ArnContentContainer {
     background: #000 !important;
 }
 
@@ -992,6 +993,7 @@ select,
 
 #theBookingPage.ConfirmationPage .WBGuestFormConfirmed td,
 #theBookingPage.ConfirmationPage .returnResultsInfo,
-#theBookingPage.ConfirmationPage .supportInfo {
+#theBookingPage.ConfirmationPage .supportInfo,
+.WBGuestFormConfirmed .FormFields {
     color: #000;
 }

@@ -63,12 +63,8 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
-        },
-        {
-            "name": "",
-            "url": ""
+            "name": "Hyatt on the Bund",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=244721&checkin=5/15/2020&nights=1"
         }]
     },
 
@@ -111,6 +107,14 @@
         {
             "name": "Fairmont Rey Juan Carlos I",
             "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=23873&checkin=5/6/2020&nights=1"
+        },
+        {
+            "name": "Hotel Arts Barcelona",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=28145&checkin=5/6/2020&nights=1"
+        },
+        {
+            "name": "Renaissance Barcelona",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=194160&checkin=5/6/2020&nights=1"
         }]
     },
     {
@@ -186,12 +190,12 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "AC Hotel Marseille Velodrome",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=763780&checkin=6/17/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "Hotel Rousse",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1611117&checkin=6/3/2020&nights=1"
         }]
     },
     {
@@ -230,6 +234,10 @@
             "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=19336&checkin=7/15/2020&nights=1"
         },
         {
+            "name": "Whittlebury Hall",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=468601&checkin=7/15/2020&nights=1"
+        },
+        {
             "name": "Northampton Marriott",
             "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=739037&checkin=7/15/2020&nights=1"
         }]
@@ -244,12 +252,16 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "Intercontinental Budapest",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=739862&checkin=7/29/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "Mercure Budapest City Center",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=230681&checkin=7/29/2020&nights=1"
+        },
+        {
+            "name": "Kempinski Hotel Cornivus Budapest",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=21421&checkin=7/29/2020&nights=1"
         }]
     },
     {
@@ -262,12 +274,20 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "Hotel De La Source",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=646542&checkin=8/26/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "Hôtel La Reine",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=790737&checkin=8/26/2020&nights=1"
+        },
+        {
+            "name": "Domaine Des Hautes Fagnes",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=969261&checkin=8/26/2020&nights=1"
+        },
+        {
+            "name": "Radisson Blu Palace",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=181804&checkin=8/26/2020&nights=1"
         }]
     },
     {
@@ -280,12 +300,16 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "Hilton Milan",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=18984&checkin=9/2/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "NYX Milan",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1167327&checkin=9/2/2020&nights=1"
+        },
+        {
+            "name": "Westin Palace Milan",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=35525&checkin=9/2/2020&nights=1"
         }]
     },
     {
@@ -352,12 +376,20 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "DoubleTree by Hilton Hotel Austin Northwest Arboretum",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=16955&checkin=10/21/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "JW Marriott Austin",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=594296&checkin=10/21/2020&nights=1"
+        },
+        {
+            "name": "Renaissance Austin Hotel",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=2607&checkin=10/21/2020&nights=1"
+        },
+        {
+            "name": "Omni Austin Hotel Downtown",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=25293&checkin=10/21/2020&nights=1"
         }]
     },
     {
@@ -370,12 +402,20 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "Sofitel Mexico City Reforma",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=3387136&checkin=10/28/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "Hotel Carlota",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=693415&checkin=10/28/2020&nights=1"
+        },
+        {
+            "name": "InterContinental Presidente",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=20647&checkin=10/28/2020&nights=1"
+        },
+        {
+            "name": "Mexico City Marriott Reforma Hotel",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=258197&checkin=10/28/2020&nights=1"
         }]
     },
     {
@@ -406,12 +446,16 @@
         "year": 2020,
         "properties": [
         {
-            "name": "",
-            "url": ""
+            "name": "Marriott Al Forsan",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=1258650&checkin=11/25/2020&nights=1"
         },
         {
-            "name": "",
-            "url": ""
+            "name": "Aloft Abu Dhabi",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=288125&checkin=11/25/2020&nights=1"
+        },
+        {
+            "name": "W Abu Dhabi - Yas Island",
+            "url": "https://events.hotelsforhope.com/v6?siteid=56837&type=property&property=307133&checkin=11/25/2020&nights=1"
         }]
     }
 ]

@@ -1,5 +1,5 @@
 class RoomStealsModel {
-    constructor(member_meta_data, additional_info_data, partner, referral_id, room_steals_api_data, partner_model, user_plan, subscribe_url, is_room_steals_trial_user, room_nights) {
+    constructor(member_meta_data, additional_info_data, partner, referral_id, room_steals_api_data, partner_model, user_plan, subscribe_url, is_room_steals_trial_user, room_nights, property_url) {
         this.api_token = 'NWJzBYUfpAmNXtJzayXGfxE2owHVPQ5fWxkvPSNMdMp3FKPpDs0TBWyvqrUa';
         this.member_meta_data = member_meta_data;
         this.additional_info_data = additional_info_data;
@@ -11,6 +11,7 @@ class RoomStealsModel {
         this.subscribe_url = subscribe_url;
         this.is_room_steals_trial_user = is_room_steals_trial_user;
         this.room_nights = room_nights;
+        this.property_url = property_url;
     }
 
     /**
@@ -81,9 +82,10 @@ class RoomStealsModel {
             if (document.querySelector('.SinglePropDetail')) {
                 let book_now_btns = document.querySelectorAll('.bookRoom');
                 if (book_now_btns) {
+                    console.log(this.property_url)
                     book_now_btns.forEach(btn => {
                         btn.text = 'Subscribe to Book';
-                        btn.setAttribute('href', this.subscribe_url);
+                        btn.setAttribute('href', this.subscribe_url + `?return_to=${this.property_url}`);
                     });
                 }
             }
@@ -163,6 +165,20 @@ class RoomStealsModel {
             }
         }
     }
+
+   async setPropertyURL() {
+        if (document.querySelector('.SinglePropDetail')) {
+            let property_id = document.querySelector('meta[name="aPropertyId"]');
+            let check_in = document.querySelector('meta[name="checkIn"]');
+
+            if (property_id && check_in) {
+                property_id = property_id.getAttribute('content');
+                check_in = check_in.getAttribute('content');
+            }
+
+            this.property_url = await encodeURI(`https://hotels.roomsteals.com/v6?siteid=52342&type=property&property=${property_id}&checkin=${check_in}&nights=${this.room_nights}`);
+        }
+    }
 }
 
 if (document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
@@ -181,7 +197,11 @@ if (document.querySelector('.MemberAuthenticated') && document.querySelector('.S
                             .then(() => {
                                 roomStealsModel.checkIsRoomStealsTrialUser()
                                     .then(() => {
-                                        roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                                        roomStealsModel.setPropertyURL()
+                                            .then(() => {
+                                                roomStealsModel.showSubscribeNowButtonsForTrialUsers();
+                                            });
+
                                         roomStealsModel.showCustomerSavingsOnSinglePropPage();
                                         roomStealsModel.showCustomerSavingsOnSearchResults();
                                     });

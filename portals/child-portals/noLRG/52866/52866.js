@@ -4,6 +4,7 @@ let noLRGPortal = new NoLRGPortal();
 
 noLRGPortal.updateText('title', 'Bahrain International Circuit Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Bahrain International Circuit Exclusive Rate');
+noLRGPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/favicon.png', 'href');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {

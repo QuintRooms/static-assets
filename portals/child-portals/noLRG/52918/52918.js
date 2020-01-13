@@ -5,6 +5,7 @@ let noLRGPortal = new NoLRGPortal();
 noLRGPortal.updateText('title', 'Dutch Grand Prix Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'Dutch Grand Prix Exclusive Rate');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
+noLRGPortal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51108/images/favicon.png', 'href');
 
 noLRGPortal.translateText('#groupRequest', 'group request');
 noLRGPortal.translateText('#contactUs', 'contact us');

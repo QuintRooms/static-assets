@@ -650,22 +650,17 @@ portal.createParentPortal();
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         portal.ratesReadyEventMethods();
+
+        if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels') && !document.querySelector('.leaflet-control-scale-line') && window.ArnMap) {
+            L.control.scale().addTo(window.ArnMap);
+            return;
+        }
+        
     }, 1);
     setTimeout(function() {
         portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
     }, 500);
 });
-
-let interval = setInterval(() => {
-    if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels')) {
-        setTimeout(() => {
-            L.control.scale().addTo(window.ArnMap);
-        }, 1);
-
-        clearInterval(interval);
-    }
-}, 50);
-
 // window.onload = function() {
 //     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 // }

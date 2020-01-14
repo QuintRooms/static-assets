@@ -647,17 +647,17 @@ class CUGPortal extends Portal {
 let portal = new Portal();
 portal.createParentPortal();
 
-jQuery(document).on('ratesReadyEvent', function() {
-    setTimeout(function() {
+jQuery(document).on('ratesReadyEvent', () => {
+    setTimeout(() => {
         portal.ratesReadyEventMethods();
 
         if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels') && !document.querySelector('.leaflet-control-scale-line') && window.ArnMap) {
             L.control.scale().addTo(window.ArnMap);
             return;
         }
-        
+
     }, 1);
-    setTimeout(function() {
+    setTimeout(() => {
         portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
     }, 500);
 });

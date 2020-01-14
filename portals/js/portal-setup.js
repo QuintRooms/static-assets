@@ -476,12 +476,12 @@ export default class Portal {
         }
     }
 
-    updateBookingFeeLanguage(){
-        if(document.querySelector('.CheckOutForm')){
+    updateBookingFeeLanguage() {
+        if (document.querySelector('.CheckOutForm')) {
             let due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
-            if(due_now){
+            if (due_now) {
 
-                if((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')){
+                if ((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')) {
                     console.log('test')
                     due_now.insertAdjacentHTML('beforeEnd', ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>');
                 }
@@ -499,6 +499,7 @@ export default class Portal {
                     if (url.includes('no_image_300.gif')) {
                         let thumbnail_parent = thumbnail.parentNode;
                         if (thumbnail_parent) {
+                            thumbnail_parent.classList.add("no-images");
                             let arrows = thumbnail_parent.previousSibling;
                             if (arrows && arrows.classList.contains('ArnPropImageButtons')) {
                                 arrows.style.display = 'none';
@@ -561,7 +562,7 @@ export default class Portal {
             this.updateText('a.holdRoom', 'Hold Rooms');
         }
 
-        this.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+        // this.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 
         this.updateAttribute('.SearchHotels .ArnShowRatesLink', '_blank', 'target');
 
@@ -649,9 +650,15 @@ portal.createParentPortal();
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         portal.ratesReadyEventMethods();
+        if (portal.page_name == 'search-results') {
+            L.control.scale().addTo(window.ArnMap);
+        }
     }, 1);
+    setTimeout(function() {
+        portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+    }, 500);
 });
 
-window.onload = function() {
-    portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
-}
+// window.onload = function() {
+//     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+// }

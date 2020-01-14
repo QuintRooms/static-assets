@@ -650,15 +650,21 @@ portal.createParentPortal();
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         portal.ratesReadyEventMethods();
-        if (portal.page_name == 'search-results') {
-            L.control.scale().addTo(window.ArnMap);
-        }
     }, 1);
     setTimeout(function() {
         portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
     }, 500);
 });
 
+if (document.querySelector('.pollingFinished') && portal.page_name == 'search-results') {
+    let interval = setInterval(function() {
+        setTimeout(() => {
+            L.control.scale().addTo(window.ArnMap);
+        }, 1)
+
+        clearInterval(interval);
+    }, 50);
+}
 // window.onload = function() {
 //     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 // }

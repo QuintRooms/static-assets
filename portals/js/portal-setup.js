@@ -656,15 +656,18 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 500);
 });
 
-if (document.querySelector('.pollingFinished') && portal.page_name == 'search-results') {
-    let interval = setInterval(function() {
-        setTimeout(() => {
-            L.control.scale().addTo(window.ArnMap);
-        }, 1)
+function pollingFinished() {
+    let interval = setInterval(() => {
+        if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels')) {
+            setTimeout(() => {
+                L.control.scale().addTo(window.ArnMap);
+            }, 1);
 
-        clearInterval(interval);
-    }, 50);
+            clearInterval(interval);
+        }
+    }, 50)
 }
-// window.onload = function() {
+pollingFinished();
+ // window.onload = function() {
 //     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 // }

@@ -651,16 +651,12 @@ jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
         portal.ratesReadyEventMethods();
 
-        if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels') && !document.querySelector('.leaflet-control-scale-line') && window.ArnMap) {
-            L.control.scale().addTo(window.ArnMap);
-            return;
-        }
-
     }, 1);
     setTimeout(() => {
         portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
     }, 500);
 });
-// window.onload = function() {
-//     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
-// }
+
+jQuery('#theBody').on("arnMapLoadedEvent", () => {
+    L.control.scale().addTo(window.ArnMap);
+});

@@ -656,18 +656,16 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 500);
 });
 
-function pollingFinished() {
-    let interval = setInterval(() => {
-        if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels')) {
-            setTimeout(() => {
-                L.control.scale().addTo(window.ArnMap);
-            }, 1);
+let interval = setInterval(() => {
+    if (document.querySelector('.pollingFinished') && document.querySelector('.SearchHotels')) {
+        setTimeout(() => {
+            L.control.scale().addTo(window.ArnMap);
+        }, 1);
 
-            clearInterval(interval);
-        }
-    }, 50)
-}
-pollingFinished();
- // window.onload = function() {
+        clearInterval(interval);
+    }
+}, 50);
+
+// window.onload = function() {
 //     portal.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
 // }

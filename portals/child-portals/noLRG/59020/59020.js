@@ -2,7 +2,7 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateRoomDescription('.RoomDescription', 'Firefly Exclusive Rates');
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Texas Book Festival Exclusive Rates');
 
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
@@ -18,8 +18,8 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://fireflyfestival.com/', 'href');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59020/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://www.texasbookfestival.org/', 'href');
                 observer.disconnect();
             }
         }

@@ -753,6 +753,7 @@ header {
 .SinglePropDetail .bestPrice .percentSavings {
     background: #faaf18;
     padding: 8px !important;
+    display: none !important;
 }
 
 .SinglePropDetail .modifySearch {
@@ -765,6 +766,7 @@ header {
     top: -4px;
     font-weight: 500;
     border-radius: 0 5px 0 5px;
+    display: none !important;
 }
 
 .SinglePropDetail .ArnPropDescription {
@@ -925,7 +927,7 @@ header {
 }
 
 .SearchHotels .percentSavings {
-    display: block !important;
+    display: none !important;
 }
 
 .openMapBtn:hover,
@@ -1050,6 +1052,7 @@ header {
 @media only screen and (min-width: 420px) and (max-width: 800px) {
     .SearchHotels .percentSavings {
         left: initial;
+        display: none !important;
         right: 45px;
     }
 }
@@ -1299,10 +1302,11 @@ legend {
     margin-top: 3px !important;
     right: 0;
     border-radius: 0 10px 0 10px !important;
+    display: none !important;
 }
 
 .percentSavings {
-    display: initial !important;
+    display: none !important;
     background: #faaf18;
     color: #23305a !important;
     width: 100% !important;
@@ -1415,6 +1419,7 @@ legend {
         top: 0;
         margin-top: 0 !important;
         padding: 7px;
+        display: none !important;
     }
 
     .SearchHotels .ArnPropThumb img {
@@ -1558,6 +1563,7 @@ legend {
         z-index: 1;
         color: #000;
         background: #faaf18;
+        display: none !important;
     }
 
     .SearchHotels .ArnRateCell {
@@ -1609,7 +1615,7 @@ legend {
 
 .SinglePropDetail .bookRoomCell .percentSavings,
 .SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: inline-block !important;
+    display: none !important;
     max-width: 75px;
     margin: 0px auto 8px auto;
     border: none;
@@ -1921,6 +1927,7 @@ legend {
 
 .SearchHotels .ArnPropName div.percentSavings {
     right: -4px;
+    display: none !important;
 }
 
 @media screen and (max-width: 800px) {

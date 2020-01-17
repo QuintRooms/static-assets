@@ -13,7 +13,7 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/banner.png) no-repeat center center /cover !important;
 }
 
 header {
@@ -34,7 +34,7 @@ header a {
 }
 
 .logo img {
-    max-width: 350px;
+    max-width: 300px;
     margin: 0;
 }
 

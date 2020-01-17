@@ -203,7 +203,7 @@ header a {
 }
 
 .sash {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/59020/images/pattern.jpg);
+    background: #F96122;
 }
 
 .openMapBtn:hover,
@@ -343,7 +343,7 @@ header a {
 }
 
 #theDatePrompt .submit {
-    background: rgba(0, 0, 0, 0.9) !important;
+    background: #F96122 !important;
 }
 
 .meetH4H .h4hContainer {

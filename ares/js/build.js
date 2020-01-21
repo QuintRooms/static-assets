@@ -18,7 +18,7 @@ export default class BasePortal {
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                this.createHTML('body', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'afterBegin');
+                this.createHTML('head', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'beforeEnd');
 
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
@@ -286,4 +286,44 @@ export default class BasePortal {
             }
         });
     }
+
+    createImageSlider() {
+        if (!document.querySelector('.SinglePropDetail') || !document.querySelector('.ArnPhotoContainer>tbody>tr>td:nth-child(1)')) {
+            return;
+        }
+
+        document.querySelector('.propThumbs').removeChild(document.querySelector('.thumbScroller'));
+        let slider_container = document.querySelector('.ArnPhotoContainer');
+        let images_container = document.querySelector('.ArnPhotoContainer > tbody > tr > td:nth-child(1)');
+        let current_image = 0;
+        let prop_thumbs = document.querySelectorAll('.propThumbs div');
+        let thumb_count = prop_thumbs.length;
+
+        let svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        slider_container.insertAdjacentHTML('beforeEnd', `<div class="image-arrow arrow-left">${svg_arrow}</div><div class="image-arrow arrow-right">${svg_arrow}</div>`);
+
+        let left_arrow = slider_container.querySelector('.arrow-left');
+        let right_arrow = slider_container.querySelector('.arrow-right');
+
+        left_arrow.addEventListener('click', () => {
+
+            if (current_image == 0) {
+                current_image = thumb_count;
+            }
+
+            current_image -= 1;
+            prop_thumbs[current_image].click();
+
+        });
+
+        right_arrow.addEventListener('click', () => {
+
+            current_image += 1;
+            if (current_image == thumb_count) {
+                current_image = 0;
+            }
+            prop_thumbs[current_image].click();
+        });
+    }
+
 }

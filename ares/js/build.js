@@ -31,6 +31,7 @@ export default class BasePortal {
 
                 this.updateRoomDescription();
                 this.createImageSlider();
+                this.createStarIcons();
             });
         });
     }
@@ -327,4 +328,30 @@ export default class BasePortal {
         });
     }
 
+    createStarIcons() {
+        let star_elements = document.querySelectorAll('.ArnPropClass');
+        star_elements.forEach(function(star) {
+            let number_of_stars = star.textContent;
+            let num = number_of_stars.replace(/\D/g, "");
+            let star_svg = '<svg height="25" width="23" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
+
+            switch (num) {
+                case 1:
+                    star.innerHTML = star_svg;
+                    break;
+                case 2:
+                    star.innerHTML = star_svg + star_svg;
+                    break;
+                case 3:
+                    star.innerHTML = star_svg + star_svg + star_svg;
+                    break;
+                case 4:
+                    star.innerHTML = star_svg + star_svg + star_svg + star_svg;
+                    break;
+                case 5:
+                    star.innerHTML = star_svg + star_svg + star_svg +  + star_svg;
+                    break;
+            }
+        });
+    }
 }

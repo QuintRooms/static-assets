@@ -19,6 +19,8 @@ export default class BasePortal {
         this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
         this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
 
+        this.createHTML('body', `<link id="favicon" rel="shortcut icon" href="${site_config_json['fav_icon_url']}">`, 'afterBegin');
+
         // Checkout form input validation
         this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 
@@ -53,6 +55,7 @@ export default class BasePortal {
             console.log('could not get site config');
         }
     }
+
     /**
      *@description gets page name using css classes from body tag
      */

@@ -1,0 +1,2366 @@
+<style>
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Helvetica' !important;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', 'Helvetica' !important;
+    font-size: 14px !important;
+}
+
+.ArnSubPage {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    font-family: 'Montserrat', 'Helvetica';
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    padding: 8px 6px !important;
+    border-radius: 5px !important;
+    border: none !important;
+    height: unset !important;
+    border: 1px solid #e0e0e0 !important;
+    margin-bottom: 6px;
+}
+
+textarea {
+    border: 1px solid #e0e0e0 !important;
+}
+
+.ArnSupportTop,
+.adminControl,
+.adminMobile,
+.subHeaderContainer,
+.reserveHotel,
+.modifySearch,
+#searchForm p,
+.ArnGoAddressSearch,
+.ArnGoDestinationSearch,
+.ArnGoAdvancedSearch,
+.topPager,
+.ArnSortByVacationRental,
+.ArnSortByName,
+#CitySearchContainer span br,
+.ArnChildren,
+.ArnSearchHotelsImg+br,
+#ajaxStatus,
+#RateFiltersContainer,
+.ArnAvailability,
+.PropertyLinks img,
+.ArnPagerResult,
+.ArnPushPageContent,
+#theArnPushPage,
+.show-search-container {
+    display: none;
+}
+
+.SinglePropDetail .bestPrice {
+    font-size: 0;
+}
+
+/* Header Start */
+#AdminControlsContainer {
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    border-bottom: 3px solid #9c6aad;
+}
+
+#commands {
+    display: flex;
+}
+
+#commands a,
+#commands button {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+#commands button {
+    background: transparent;
+    border: none;
+    font-family: 'Montserrat', 'Helvetica';
+    font-size: 15px;
+    padding: 0;
+    cursor: pointer;
+}
+
+#commands a:before,
+#commands button:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#commands a:hover:before,
+#commands button:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Header End */
+
+/* Mobile Menu Start */
+.hamburger .line {
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    display: none;
+    margin: 4px 12px 4px 12px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+#hamburger.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
+}
+
+#hamburger.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-5px) rotate(-45deg);
+    -ms-transform: translateY(-5px) rotate(-45deg);
+    -o-transform: translateY(-5px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+@media screen and (max-width: 800px) {
+
+    .logo img {
+        width: 125px;
+    }
+
+    .hamburger .line {
+        display: block;
+    }
+
+    #commands {
+        flex-direction: column;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease;
+        transform: translateY(-130px);
+        width: 100%;
+        box-shadow: 0 1px 2px 0 #ccc;
+        position: absolute;
+    }
+
+    #commands.active {
+        transform: translateY(100px);
+        opacity: 1;
+        z-index: 1;
+        width: 100%;
+        background: #fff;
+        transition: all .5s ease;
+    }
+
+    #commands a,
+    #commands button {
+        margin: 0;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        padding: 12px;
+        transition: all .4s ease;
+    }
+
+    #commands a:hover,
+    #commands a:active,
+    #commands a:focus,
+    #commands button:hover,
+    #commands button:active,
+    #commands button:focus {
+        background: #9c6aad;
+        color: #fff;
+    }
+
+    #commands a:before,
+    #commands button:before {
+        content: unset;
+    }
+}
+
+/* Mobile Menu End */
+/* Calendar and Map Start */
+.yui3-skin-sam .yui3-calendar-day:hover {
+    background: #9c6aad !important;
+}
+
+.arn-leaflet-reset-button {
+    background: #9c6aad;
+    height: unset;
+}
+
+.SearchHotels .ArnPropertyMapInner {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: calc(48% - 125px) !important;
+    height: 100% !important;
+    z-index: 8;
+}
+
+.leaflet-top {
+    top: 140px;
+}
+
+.arnMapMarker,
+.arnMapMarker:hover {
+    background: #9c6aad;
+    border: 1px solid #444f74;
+}
+
+.arnMapMarkerTriangle,
+.arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: #9c6aad;
+}
+
+.noPrice {
+    display: none;
+}
+
+#arnCloseAnchorId svg {
+    width: 15px;
+    position: relative;
+    top: 2px;
+}
+
+/*Calendar and Map End */
+/* Sort Container Start */
+#arnToggleMapDiv {
+    display: none;
+}
+
+.ArnSortContainer {
+    margin-bottom: 18px;
+}
+
+.sort {
+    padding: 8px;
+    display: inline-block;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 7;
+    background: #fff;
+    border: 1px solid #9c6aad;
+    color: #9c6aad;
+}
+
+.ArnSortBy {
+    width: 200px;
+}
+
+.arrow {
+    transform: rotate(90deg);
+    width: 14px;
+    height: 14px;
+    float: right;
+    position: relative;
+    top: 4px;
+    transition: all .3s ease;
+}
+
+#sort-wrapper {
+    position: relative;
+}
+
+#sort-wrapper a {
+    width: 200px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 9px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 6px 0;
+    position: absolute;
+    z-index: 6;
+    top: -44px;
+    transition: all .4s ease;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.50);
+}
+
+#sort-wrapper a:hover,
+#sort-wrapper a:focus,
+#sort-wrapper a:active,
+#sort-wrapper.sort-open .active {
+    background: #faaf18;
+    color: #333;
+}
+
+.sort-open {
+    display: block !important;
+    position: absolute;
+    width: 204px;
+}
+
+.sort-open a:first-child {
+    transform: translateY(42px) !important;
+}
+
+.sort-open a:nth-child(2) {
+    transform: translateY(calc(42px * 2)) !important;
+}
+
+.sort-open a:nth-child(3) {
+    transform: translateY(calc(42px * 3)) !important;
+}
+
+.sort-open a:nth-child(4) {
+    transform: translateY(calc(42px * 4 + 6px)) !important;
+}
+
+.sort-open a:nth-child(5) {
+    transform: translateY(calc(42px * 5 + 12px)) !important;
+}
+
+.sort svg {
+    width: 14px;
+    position: relative;
+    top: 2px;
+}
+
+/* Sort Container End*/
+/* Search Container Start */
+#searching {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#searching h2 {
+    width: 49px;
+    height: 49px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 0;
+}
+
+#searching h2:before {
+    content: '';
+    width: 49px;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    opacity: 0.1;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    border-radius: 50%;
+    animation: shadow 0.58s linear infinite;
+    -o-animation: shadow 0.58s linear infinite;
+    -ms-animation: shadow 0.58s linear infinite;
+    -webkit-animation: shadow 0.58s linear infinite;
+    -moz-animation: shadow 0.58s linear infinite;
+}
+
+#searching h2:after {
+    content: '';
+    width: 49px;
+    height: 49px;
+    background: #9c6aad;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    animation: cssload-animate 0.58s linear infinite;
+    -o-animation: cssload-animate 0.58s linear infinite;
+    -ms-animation: cssload-animate 0.58s linear infinite;
+    -webkit-animation: cssload-animate 0.58s linear infinite;
+    -moz-animation: cssload-animate 0.58s linear infinite;
+}
+
+
+
+@keyframes cssload-animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 39px;
+    }
+
+    75% {
+        transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@-o-keyframes cssload-animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        -o-transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        -o-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 39px;
+    }
+
+    75% {
+        -o-transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        -o-transform: translateY(0) rotate(90deg);
+    }
+}
+
+@-ms-keyframes cssload-animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        -ms-transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        -ms-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 39px;
+    }
+
+    75% {
+        -ms-transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        -ms-transform: translateY(0) rotate(90deg);
+    }
+}
+
+@-webkit-keyframes cssload-animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        -webkit-transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        -webkit-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 39px;
+    }
+
+    75% {
+        -webkit-transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotate(90deg);
+    }
+}
+
+@-moz-keyframes cssload-animate {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        -moz-transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        -moz-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 39px;
+    }
+
+    75% {
+        -moz-transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        -moz-transform: translateY(0) rotate(90deg);
+    }
+}
+
+@keyframes shadow {
+
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1);
+    }
+}
+
+@-o-keyframes shadow {
+
+    0%,
+    100% {
+        -o-transform: scale(1, 1);
+    }
+
+    50% {
+        -o-transform: scale(1.2, 1);
+    }
+}
+
+@-ms-keyframes shadow {
+
+    0%,
+    100% {
+        -ms-transform: scale(1, 1);
+    }
+
+    50% {
+        -ms-transform: scale(1.2, 1);
+    }
+}
+
+@-webkit-keyframes shadow {
+
+    0%,
+    100% {
+        -webkit-transform: scale(1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2, 1);
+    }
+}
+
+@-moz-keyframes shadow {
+
+    0%,
+    100% {
+        -moz-transform: scale(1, 1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2, 1);
+    }
+}
+
+#searching img,
+#searching input {
+    display: none;
+}
+
+/*#searching input {
+    background: #9c6aad;
+    border: none;
+    color: #fff;
+    padding: 8px 32px;
+    border-radius: 5px;
+    line-height: 1;
+}*/
+
+.ArnSearchContainerMainTable {
+    width: 100%;
+    display: block;
+}
+
+.ArnLeftSearchContainer,
+.ArnLeftListContainer {
+    width: 225px;
+    display: block;
+}
+
+.ArnRightListContainer {
+    width: 100%;
+    padding-top: 47px;
+}
+
+.ArnSearchHeader {
+    padding: 12px;
+    font-size: 19px;
+}
+
+#search-wrapper {
+    display: flex;
+    justify-content: space-around;
+    background: #9c6aad;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+}
+
+#search-wrapper a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 6px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #fff;
+    transition: all .3s ease-out;
+}
+
+#search-wrapper a:last-child {
+    border-right: none;
+    border-top-right-radius: 5px;
+}
+
+#search-wrapper .selectedTab,
+#search-wrapper a:hover,
+#search-wrapper a:active,
+#search-wrapper a:focus {
+    background: #fff;
+    color: #333;
+}
+
+.ArnPrimarySearchContainer,
+.SimpleSearch {
+    background: #9c6aad;
+    border-top: 1px solid #fff;
+    padding: 12px;
+    color: #fff;
+    border-bottom-right-radius: 5px;
+}
+
+.ArnPrimarySearchContainer input,
+.ArnPrimarySearchContainer select,
+.SimpleSearch input,
+.SimpleSearch select {
+    border: none;
+    padding: 8px 6px;
+    font-size: 15px;
+}
+
+div.autocomplete {
+    color: #333;
+    font-size: 17px;
+}
+
+div.autocomplete ul li.selected {
+    background: #faaf18 !important;
+}
+
+.SearchHotels #city,
+.SearchHotels #pointOfInterest,
+.SearchHotels #airports,
+.SearchHotels .ArnStayTable,
+.SearchHotels #theCheckIn,
+.SearchHotels #theCheckOut,
+.SearchHotels #rooms,
+.SearchHotels #adults,
+.SearchHotels #hotelName {
+    width: 100%;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+.SearchHotels #CheckInContainer,
+.SearchHotels #CheckOutContainer,
+.SearchHotels .ArnRooms,
+.SearchHotels .ArnAdults {
+    width: 48%;
+}
+
+.SearchHotels #CheckInContainer {
+    float: left;
+    margin-right: 2%;
+}
+
+.SearchHotels .ArnRooms {
+    display: inline-block;
+    width: 92%;
+}
+
+.SearchHotels .ArnAdults {
+    margin-left: 4%;
+}
+
+.SearchHotels #CheckOutContainer {
+    display: inline-block;
+    margin-left: 2%;
+}
+
+.SearchHotels #theSubmitButton,
+.CheckRates .submit {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: all .3s ease-out;
+}
+
+.SearchHotels #theSubmitButton:hover,
+.SearchHotels #theSubmitButton:focus,
+.SearchHotels #theSubmitButton:active {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #9c6aad;
+
+}
+
+.ArnPropClass {
+    display: inline;
+}
+
+.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+    display: flex !important;
+}
+
+@media screen and (max-width: 800px) {
+    #arnCloseAnchorId {
+        padding: 8px;
+    }
+
+    .SearchHotels #search-wrapper,
+    .SearchHotels .ArnSecondarySearchOuterContainer,
+    .SearchHotels #HotelNameContainer,
+    .SearchHotels .ArnSearchHeader,
+    .SearchHotels .subHeaderContainer .translateMe {
+        display: none;
+    }
+
+    .SearchHotels .ArnLeftSearchContainer {
+        width: 100%;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .SearchHotels .ArnRightListContainer {
+        padding-top: 0;
+    }
+
+    .SearchHotels .ArnPrimarySearchContainer {
+        display: none;
+    }
+
+    .show-search-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 18px;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    .search-info span {
+        font-size: 12px;
+    }
+
+    .show-search-container h3 {
+        margin: 0;
+    }
+
+    .show-search-container svg {
+        margin-right: 18px;
+    }
+
+    .adults-count {
+        margin-left: 8px;
+    }
+
+    .SearchHotels .show-search {
+        display: block;
+    }
+
+    .SearchHotels .ArnSearchHeader {
+        z-index: 9;
+        position: relative;
+        background: #fff;
+    }
+
+    .sort {
+        width: 125px;
+        text-align: center;
+    }
+
+    .ArnSortBy {
+        width: 125px;
+    }
+
+    #sort-wrapper a {
+        width: 125px;
+    }
+
+    #sort-wrapper a:first-child {
+        width: 123px;
+    }
+
+    #sort-wrapper a:nth-child(2) {
+        width: 121px;
+    }
+
+    #sort-wrapper a:nth-child(3) {
+        width: 119px;
+    }
+
+    #sort-wrapper a:nth-child(4) {
+        width: 117px;
+    }
+
+    #sort-wrapper a:last-child {
+        width: 115px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnTripAdvisorDetails.HasReviews {
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    /* Mobile Sort and Filter Start*/
+    .sort-filter-container {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 9;
+        background: #fff;
+        display: none;
+        overflow: scroll;
+    }
+
+    .mobile-sort-container,
+    .mobile-filter-container {
+        padding: 12px;
+    }
+
+    .mobile-sort-container h4,
+    .mobile-filter-container h4 {
+        margin-bottom: 0;
+    }
+
+    .show-sort-filter {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sort-wrapper {
+        position: static;
+        display: none;
+        width: unset;
+    }
+
+    #sort-wrapper a {
+        position: initial;
+        width: unset !important;
+        padding: unset;
+        box-shadow: unset;
+        transform: unset !important;
+        margin: 18px 0 18px 42px;
+        display: flex !important;
+        align-items: center;
+    }
+
+    #sort-wrapper a:before {
+        background: transparent;
+        border: 2px solid #9c6aad;
+        position: absolute;
+        left: 24px;
+        content: '';
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        transition: all .4s ease;
+    }
+
+    #sort-wrapper a.active-filter:before {
+        background: #9c6aad;
+    }
+
+    #sort-wrapper a:hover,
+    #sort-wrapper a:focus,
+    #sort-wrapper a:active,
+    #sort-wrapper.sort-open .active {
+        background: unset;
+    }
+
+    #sort-wrapper .accordion svg {
+        display: none;
+    }
+
+    #sort-wrapper a div {
+        pointer-events: none;
+    }
+
+    .sort-filter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .sort-filter-header h3 {
+        margin: 0;
+    }
+
+    .sort-filter-close {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .sort-filter-close svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Search Container End */
+
+/* Single Prop Page Start */
+.SinglePropDetail .ArnPropThumb,
+.SinglePropDetail .PropertyImages legend,
+.SinglePropDetail .ArnProperty>legend,
+.SinglePropDetail .ArnPropClass,
+.SinglePropDetail .PropertyLinks,
+.SinglePropDetail .SearchActions,
+.SinglePropDetail .imageDisclaimer,
+.reportProblemLink {
+    display: none;
+}
+
+.SinglePropDetail .SimpleSearch {
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+    width: 250px;
+}
+
+.SinglePropDetail .ArnLeftListContainer>span.translateMe {
+    display: block;
+    padding: 12px;
+    font-size: 19px;
+}
+
+.SinglePropDetail #thePropertyImages {
+    padding: 0;
+    position: relative;
+}
+
+legend {
+    font-size: 17px;
+    font-weight: 500;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+.SinglePropDetail .ArnPropName {
+    text-align: center;
+}
+
+.SinglePropDetail .ArnPropName .ArnPropNameLink span {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.SinglePropDetail .ArnMildText>div {
+    font-size: 0;
+}
+
+.SinglePropDetail .ArnMildText>div img {
+    text-align: center;
+    height: 400px;
+}
+
+.SinglePropDetail fieldset {
+    border: none;
+}
+
+.SinglePropDetail .ArnProperty {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 18px;
+}
+
+.SinglePropDetail .ArnSearchContainerMainTable>tbody>tr {
+    display: flex;
+    flex-direction: row;
+}
+
+.SinglePropDetail .ArnAmenityContainer tbody tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.SinglePropDetail .rowOne {
+    display: flex;
+    flex-direction: column;
+}
+
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:first-child {
+    width: 75%;
+    padding-right: 5%;
+}
+
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+}
+
+.SinglePropDetail .RoomTypeHeader {
+    display: none;
+}
+
+.SinglePropDetail table {
+    width: 100%;
+}
+
+.SinglePropDetail .RoomDescriptionHeader {
+    text-align: left;
+}
+
+.SinglePropDetail .rateRow {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    margin: 18px 0;
+    position: relative;
+}
+
+.SinglePropDetail .ArnRateTableHeader {
+    padding: 8px;
+    background: #f3f3f3;
+}
+
+.SinglePropDetail .RateCalendarPopupAnchor {
+    float: left;
+    font-size: 13px;
+    color: #9b6aad;
+}
+
+.SinglePropDetail .ArnNightlyRate {
+    font-size: 0;
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    display: block;
+    font-size: 19px;
+}
+
+.SinglePropDetail .ArnRateCalendar {
+    background: rgba(255, 255, 255, .8);
+    color: #333;
+    text-align: center;
+}
+
+.SinglePropDetail .ArnRateCalendar tr:first-child {
+    background: #eee;
+}
+
+.SinglePropDetail .ArnRateCalendar td {
+    padding: 4px;
+}
+
+.SinglePropDetail .RateCalendarPopupContents.arnPopupContents {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.SinglePropDetail .RateCalendarPopupContainer.arnPopupContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 6, 6, .85);
+}
+
+.SinglePropDetail .RateCalendarPopupClose.arnPopupClose {
+    position: absolute;
+    right: 0;
+    padding: 8px;
+    color: rgba(238, 238, 238, .75);
+    line-height: 1;
+    font-size: 19px;
+    font-weight: 100;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.SinglePropDetail .ArnRateCancelPolicyContainer {
+    min-width: 200px;
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    right: 6px;
+    border-radius: 5px;
+}
+
+.SinglePropDetail .ArnRateCancelAnchor {
+    font-size: 13px;
+    color: #9b6aad;
+}
+
+.SinglePropDetail #moreRatesLink {
+    float: right;
+    margin-right: 8px;
+    color: #9b6aad;
+    font-weight: 700;
+}
+
+.SinglePropDetail .ArnRateCancelPolicyContainer .close {
+    position: absolute;
+    line-height: 1;
+    right: 0;
+    padding: 8px;
+    z-index: 2;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.SinglePropDetail .ArnRateCancelPolicy {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    background: #fff;
+    padding: 12px;
+    z-index: 1;
+    box-shadow: 0 0 2px 2px #ccc;
+    font-size: 12px;
+}
+
+.SinglePropDetail .bookRoom {
+    margin: 8px auto;
+}
+
+.SinglePropDetail .ArnPropertyMapInner {
+    height: 300px !important;
+} 
+
+.PropertyAmenities {
+    padding: 0;
+    margin: 0;
+}
+
+.PropertyAmenities legend {
+    padding: 0;
+    width: initial;
+    text-align: center;
+}
+
+.SinglePropDetail .ArnTripAdvisorDetails.HasReviews {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.ArnTripAdvisorDetails.HasReviews img {
+    display: none;
+}
+
+.ArnTripAdvisorDetails.HasReviews .reviewCount {
+    order: 1;
+}
+
+.ArnTripAdvisorDetails.HasReviews .ratingCount {
+    order: 0;
+    background: #9c6aad;
+    color: #fff;
+    padding: 0 4px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+
+/* Amenities Start */
+#thePropertyAmenities {
+    position: relative;
+    overflow: hidden;
+}
+
+#thePropertyAmenities legend {
+    z-index: 9;
+    position: relative;
+    cursor: pointer;
+    background: #fff;
+}
+
+#thePropertyAmenities svg {
+    margin-left: 8px;
+}
+
+.ArnAmenityContainer {
+    opacity: 0;
+}
+
+/* Amenities End */
+/* Single Prop Search */
+.SinglePropDetail #theCheckIn,
+.SinglePropDetail #theCheckOut,
+.SinglePropDetail #rooms,
+.SinglePropDetail #adults {
+    margin-bottom: 4px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Single Prop Page End */
+.SinglePropDetail #theCheckIn,
+.SinglePropDetail #theCheckOut,
+.SinglePropDetail #rooms,
+.SinglePropDetail #adults {
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .SinglePropDetail .ArnSearchContainerMainTable {
+        overflow-x: hidden;
+    }
+
+    .SinglePropDetail .ArnPropName,
+    .SinglePropDetail .ArnRateCell {
+        padding: 8px 0;
+    }
+
+    .SinglePropDetail table {
+        border-spacing: 0;
+    }
+
+    .SinglePropDetail .ArnLeftListContainer {
+        display: none;
+    }
+
+    .SinglePropDetail .ArnProperty {
+        border: none;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .SinglePropDetail .ArnMildText>div img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .SinglePropDetail .PropertyLinks {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .SinglePropDetail .PropertyLinks ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .SinglePropDetail .PropertyLinks ul li a {
+        padding: 12px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .SinglePropDetail #thePropertyImages {
+        position: static;
+        margin: 0;
+    }
+
+    .ArnPhotoContainer>tbody>tr>td:nth-child(1) {
+        width: 100vw;
+    }
+
+    .ArnPhotoContainer>tbody>tr>td:nth-child(1)>div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+    .SinglePropDetail .RateRowHeader,
+    .arnPopupAnchor {
+        display: none;
+    }
+
+    .SinglePropDetail .ArnContentGeneralInfo tbody>tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:first-child {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2) {
+        width: 100%;
+    }
+
+    .SinglePropDetail .bookRoom {
+        max-width: 200px;
+    }
+
+    .SinglePropDetail .ArnNightlyRate {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .SinglePropDetail .PropertyLinks ul li a {
+        padding: 12px 6px;
+        font-size: 12px;
+    }
+}
+
+/* Single Prop Page End */
+
+/* Secondary Search Container Start*/
+.ArnSecondarySearchOuterContainer {
+    padding: 12px;
+}
+
+#batchSize,
+.lblAmenities,
+.lblCurrency,
+.lblHotelSize,
+.lblNearbyCities,
+.lblPropertyType,
+.lblRateTypes,
+.lblRating,
+.lblSortByPrice {
+    cursor: pointer;
+}
+
+.ArnSearchField {
+    border-bottom: 1px solid #9c6aad;
+    padding: 3px 0;
+}
+
+.ArnSearchField a {
+    width: 100%;
+    display: block;
+    padding: 6px 0;
+}
+
+.ArnSecondarySearchOuterContainer span {
+    font-size: 15px;
+    position: relative;
+    top: -3px;
+}
+
+.ArnSecondarySearchOuterContainer select {
+    border: 1px solid #9c6aad;
+    border-radius: 5px;
+    width: 100%;
+    padding: 6px;
+}
+
+.ArnSecondarySearchOuterContainer input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+#theOtherSubmitButton {
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px 6px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: #9c6aad;
+    border: 1px solid #9c6aad;
+    transition: all .3s ease-out;
+}
+
+#theOtherSubmitButton:hover,
+#theOtherSubmitButton:focus,
+#theOtherSubmitButton:active {
+    background: #9c6aad;
+    color: #fff;
+}
+
+.ArnSortByDealAmount,
+.ArnSortByPrice,
+.ArnSortByDealPercent {
+    display: block !important;
+}
+
+/* Secondary Search Container End */
+
+/* Properties Container */
+.ArnPropImageNext,
+.ArnPropImagePrevious,
+.ArnPropDescription,
+.ArnIconContainer,
+.ArnPropPopularity,
+.ArnPropType,
+.originalPrice,
+.memberSavings,
+.memberRating,
+.memberSavingsPercent,
+.saveWrap,
+.yourRateContainer,
+.rateExplainationDetails,
+.ArnPropNumber {
+    display: none;
+}
+
+#Properties {
+    margin: 0 18px;
+}
+
+#currentPropertyPage {
+    position: relative;
+    width: 52%;
+}
+
+.SearchHotels .ArnContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+    box-shadow: 0px 1px 2px #ccc;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 5px;
+}
+
+.SearchHotels .ArnPropThumb {
+    width: 25%;
+    overflow: hidden;
+    border-radius: 5px 0 0 5px;
+    display: inherit;
+}
+
+.SearchHotels .ArnPropThumb img {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+}
+
+.ArnImageLink {
+    height: 0;
+}
+
+.SearchHotels .roomCount {
+    display: none;
+}
+
+.SearchHotels .ArnPropName {
+    width: 50%;
+}
+
+.ArnPropName,
+.ArnRateCell {
+    padding: 8px;
+    line-height: 1.6rem;
+}
+
+.ArnPropNameLink {
+    text-decoration: none;
+}
+
+.ArnPropNameLink span {
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+}
+
+.ArnRateCell {
+    text-align: center;
+    width: 25%;
+}
+
+.percentSavings {
+    display: inline-block;
+    background: #faaf18;
+    color: #333;
+    padding: 2px 6px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.arnPrice {
+    display: block;
+    margin: 12px auto;
+}
+
+.ArnPriceCell {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.ArnShowRatesLink,
+.bookRoom {
+    background: #9c6aad;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 6px 12px;
+    display: block;
+    text-align: center;
+    border: 1px solid #9c6aad;
+    transition: all .4s ease;
+}
+
+.ArnShowRatesLink:hover,
+.bookRoom:hover,
+.ArnShowRatesLink:active,
+.bookRoom:active,
+.ArnShowRatesLink:focus,
+.bookRoom:focus {
+    background: transparent;
+    border-color: #9c6aad;
+    color: #333;
+}
+
+@media screen and (max-width: 1105px) {
+    .SearchHotels .ArnPropertyMapInner {
+        transform: translateX(100%);
+        transition: all .3s ease-in;
+        z-index: 8 !important;
+        width: 100% !important;
+    }
+
+    .closeMap {
+        z-index: 9;
+        position: relative;
+        background: #9c6aad;
+        color: #fff !important;
+    }
+
+    .showMap {
+        transform: translateX(0) !important;
+        width: 100% !important;
+        z-index: 7;
+        transition: all .3s ease-in;
+    }
+
+    #currentPropertyPage {
+        width: 100%;
+    }
+
+    .SearchHotels #arnToggleMapDiv {
+        display: block;
+        text-align: right;
+    }
+
+    #arnOpenAnchorId {
+        display: none;
+    }
+
+    #arnCloseAnchorId {
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        color: #9c6aad;
+        border: 1px solid #9c6aad;
+        transition: all .3s ease-out;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    #arnCloseAnchorId:hover,
+    #arnCloseAnchorId:focus,
+    #arnCloseAnchorId:active {
+        background: #9c6aad;
+        color: #fff;
+    }
+
+    .ArnSortBy {
+        float: left;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ArnSearchContainerMainTable>tbody>tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ArnLeftSearchContainer {
+        display: block !important;
+    }
+}
+
+/* Mobile Sort and Filter End*/
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        width: 100%;
+        display: block;
+        height: 175px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .SearchHotels .ArnPropName,
+    .SearchHotels .ArnRateCell {
+        line-height: 1.4;
+        width: initial;
+    }
+
+    .SearchHotels .arnPrice {
+        margin: 0;
+    }
+}
+
+/* Property Detail Page */
+.PropertyLinks ul li {
+    list-style: none;
+}
+
+.PropertyLinks ul li {
+    display: inline;
+}
+
+/* Accordion */
+
+.accordion {
+    transition: 0.4s;
+    padding: 6px 0
+}
+
+.ArnSearchField {
+    padding: 0 6px;
+    max-height: 0;
+    overflow: hidden !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.lblAmenities+.panel {
+    padding: 115px 0;
+}
+
+.lblPropertyType+.panel {
+    padding: 90px 0 120px 0;
+}
+
+.lblNearbyCities+.panel,
+.lblCurrency+.panel {
+    padding: 20px 0 36px 0;
+}
+
+.lblRating+.panel {
+    padding: 65px 0;
+}
+
+.lblRating+.ArnSearchField div {
+    position: relative;
+    top: -65px;
+}
+
+.lblAmenities+.ArnSearchField div,
+.lblPropertyType+.ArnSearchField div {
+    position: relative;
+    top: -112px;
+}
+
+.lblPropertyType+.ArnSearchField div {
+    position: relative;
+    top: -90px;
+}
+
+.lblNearbyCities+.ArnSearchField select,
+.lblCurrency+.ArnSearchField select {
+    position: relative;
+    top: -15px;
+}
+
+/* Pagination */
+.ArnPages a {
+    border-color: #ccc;
+    color: #333;
+    display: inline-block;
+    min-width: 25px;
+    text-align: center;
+}
+
+/* Footer */
+.ArnSupportLinks {
+    width: 100% !important;
+    padding: 24px 0;
+    margin: 24px auto 0 auto !important;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    z-index: 9;
+    position: relative;
+}
+
+.ArnSupportLinks a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Loader */
+.ArnPushPageContent {
+    background-image: none;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    height: initial;
+    height: auto;
+    left: 50%;
+    margin-left: -250px;
+    position: fixed;
+    top: 50px;
+    width: 500px;
+    z-index: 10000;
+    padding: 50px;
+}
+
+.throbber {
+    margin: 0 auto;
+    font-size: 15px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: .3em solid rgba(0, 0, 0, .2);
+    border-right: .3em solid rgba(0, 0, 0, .2);
+    border-bottom: .3em solid rgba(0, 0, 0, .2);
+    border-left: .3em solid transparent;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    filter: grayscale(100%);
+}
+
+.pushContainer {
+    background-color: transparent;
+    border-top: none;
+    border-radius: 20px;
+    max-width: 100%;
+    margin: 25px auto 0;
+    font-size: 24px;
+    text-align: center;
+    display: block !important;
+    padding: 10px 20px;
+    width: initial;
+    width: auto;
+}
+
+.ArnPushPageContent .pushContainer img {
+    top: 94px;
+    filter: grayscale(100%);
+}
+
+/* Prop Photos Start */
+.ArnPhotoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ArnPhotoContainer>tbody>tr>td:nth-child(1) {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ArnPhotoContainer>tbody>tr>td:nth-child(1)>div {
+    display: block;
+    margin: 0 auto;
+}
+
+.propThumbs {
+    display: none;
+}
+
+.image-arrow {
+    background: rgba(0, 0, 0, .85);
+    z-index: 9999;
+    position: absolute;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.image-arrow svg {
+    top: 2px;
+}
+
+.arrow-left {
+    left: 1px;
+    transform: rotate(90deg);
+}
+
+.arrow-right {
+    right: 1px;
+    transform: rotate(-90deg);
+}
+
+/* Prop Photos End */
+
+.flip-svg {
+    transform: rotate(-90deg);
+    transition: all .4s ease;
+}
+
+/* Checkout Start */
+#theReservationFormContainer {
+    margin: 36px 0 0 0;
+}
+
+#theBookingPage {
+    width: 100%;
+    max-width: 1000px;
+    color: #333;
+}
+
+#theBookingPage h4 {
+    margin: 0;
+}
+
+#theBookingPage .GuestForms {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1% 0 0;
+    width: 66%;
+}
+
+#theBookingPage .PaymentPolicies {
+    border: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+}
+
+#theBookingPage fieldset {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+#theBookingPage legend {
+    margin-top: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0;
+}
+
+#theStayPolicies legend {
+    margin-top: 0;
+}
+
+#theBookingPage td {
+    font-size: 13px;
+}
+
+#theHotel {
+    position: relative;
+}
+
+#theHotel img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+#theHotelAddress {
+    text-align: center;
+}
+
+.theHotelName {
+    width: 100%;
+    font-size: 19px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    padding: 6px;
+    border-radius: 5px 5px 0 0;
+}
+
+.checkOutSummaryTable {
+    margin-top: 18px;
+    width: 100%;
+}
+
+.checkOutSummaryTable td {
+    text-align: right;
+}
+
+.ArnSubPage .FormFields {
+    margin-top: 4px;
+}
+
+#theAdditionalEmailsLink {
+    margin: -4px 0 12px 0;
+}
+
+.numberOfAdults td {
+    display: none;
+}
+
+#theSmokingRoomAjax,
+#theRewardNumberAjax,
+.cvvInfo,
+.numberOfChildren {
+    display: none;
+}
+
+.paymethodLabel {
+    display: block;
+    margin-top: 12px;
+}
+
+#theConfirmationButton {
+    background: #9c6aad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+}
+
+#theBookingPage .ArnRateCalendar {
+    border: none;
+    padding: 0 !important;
+}
+
+#theBookingPage .ArnRateCalendar>tbody>tr.ArnRateEven:first-child {
+    display: none;
+}
+
+.ArnRateCalendar .ArnRateEven td,
+.ArnRateCalendar .ArnRateEven th,
+.ArnRateCalendar .ArnRateOdd td,
+.ArnRateCalendar .ArnRateOdd th {
+    font-weight: 500;
+}
+
+.ArnRateCalendar .ArnRateEven td,
+.ArnRateCalendar .ArnRateEven th {
+    background: #f4f4f4;
+}
+
+#theRateTotals {
+    border: none;
+}
+
+.totalsTable {
+    border: none;
+}
+
+.totalsTable tr td,
+.totalsTable tr th {
+    border-bottom: 1px solid #e0e0e0 !important;
+    color: #333;
+}
+
+.totalsTable tr td {
+    font-weight: 700;
+}
+
+#theRateDescription {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#theAdditionalEmailsLink a {
+    color: #9b6aad;
+}
+
+@media screen and (max-width: 800px) {
+    #theHotel legend {
+        display: none;
+    }
+
+    #theReservationFormContainer>table>tbody>tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #theBookingPage .PaymentPolicies {
+        width: 100%;
+    }
+
+    #theBookingPage .GuestForms {
+        order: 1;
+        width: 100%;
+    }
+
+    #theHotel img {
+        margin: 0 auto 8px auto;
+        display: block;
+        border: 4px solid #fff;
+        box-shadow: 0 0 2px 2px #e5e5e5;
+        max-width: 300px;
+    }
+
+    #theBookingPage .ArnRateCalendar {
+        width: 100%;
+    }
+
+    #theStayPolicies {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #theBookingPage legend#policies-legend {
+        font-size: unset;
+        color: #9b6aad;
+        text-decoration: underline;
+        border-bottom: none;
+        cursor: pointer;
+    }
+
+    #theBookingPage table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    #theBookingPage td,
+    #theBookingPage th {
+        word-wrap: break-word;
+    }
+
+    #thePhoneNumberFieldsAjax table {
+        width: unset;
+    }
+
+    #theCityZipAjax1 tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #theCityZipAjax1 .text,
+    .countryList,
+    .stateList {
+        width: 98% !important;
+    }
+
+    #thePhoneNumberAjax input {
+        width: initial;
+    }
+
+}
+
+/* Checkout End */
+
+/* Root Page Start */
+.RootBody .ArnNoResults,
+.RootBody .ArnSecondarySearchOuterContainer,
+.RootBody #search-wrapper,
+.RootBody .ArnRightListContainer,
+.RootBody #HotelNameContainer,
+.RootBody .ArnSearchHeader {
+    display: none;
+}
+
+.RootBody {
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg');
+}
+
+.RootBody h1,
+.RootBody h3 {
+    color: #fff;
+    text-transform: lowercase;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.RootBody .ArnSearchContainerMainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.RootBody .ArnPrimarySearchContainer {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 5px;
+    padding: 18px;
+}
+
+.RootBody #theSearchBox {
+    display: flex;
+
+}
+
+.RootBody #theSubmitButton {
+    background: #9c6aad;
+    color: #fff;
+    border-radius: 5px;
+    padding: 9px 18px;
+    margin-top: 19px;
+    border: 1px solid #9c6aad;
+    transition: all .4s ease;
+}
+
+.RootBody #theSubmitButton:hover,
+.RootBody #theSubmitButton:active,
+.RootBody #theSubmitButton:focus {
+    background: transparent;
+    color: #9c6aad;
+}
+
+.RootBody input,
+.RootBody select {
+    margin-right: 6px;
+    margin-bottom: 0;
+    height: 37px !important;
+}
+
+@media screen and (max-width: 920px) {
+    #root-search-container {
+        margin: 0 12px;
+    }
+
+    .RootBody .ArnPrimarySearchContainer {
+        flex-direction: column;
+    }
+
+    .RootBody #theSearchBox {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .RootBody input,
+    .RootBody select {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .RootBody .ArnStayTable {
+        width: 100%;
+    }
+
+    .RootBody .ArnStayTable .ArnRooms,
+    .RootBody .ArnStayTable .ArnAdults {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Root Page End */
+
+/* Login and Registration Start */
+
+.WBLoginForm {
+    background: none !important;
+}
+
+.registrationText,
+#theWBValidatedRegistrationFormBody legend,
+#theReferredByAjax {
+    display: none;
+}
+
+body.RootBody,
+body.WBResendOrCancelForm,
+body.WBLoginForm,
+body.WBValidatedRegistrationForm,
+body.WBForgotPasswordForm {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.RootBody .ArnSearchContainerMainDiv,
+.WBResendOrCancelForm,
+.WBLoginFormContainer,
+.WBValidatedRegistrationFormContainer,
+.WBForgotPasswordFormContainer {
+    flex-grow: 1;
+}
+
+#theWBLoginFormBody,
+#theWBValidatedRegistrationFormBody,
+#theWBForgotPasswordFormBody {
+    margin-top: 10vh;
+    padding: 18px;
+    width: 400px;
+}
+
+#theWBLoginFormBody input[type="submit"],
+#theWBLoginFormBody input[type="text"],
+#theWBLoginFormBody input[type="password"] {
+    width: 100%;
+}
+
+
+.WBLoginFormActions {
+    text-align: center;
+}
+
+.WBLoginFormActions .submit,
+.WBValidatedRegistrationFormActions .submit,
+.WBForgotPasswordFormActions .submit {
+    margin: 18px 0;
+    padding: 12px;
+    background: #9c6aad;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.ForgotPasswordAction {
+    text-decoration: none;
+    color: #333;
+}
+
+.CancelAction {
+    color: #333;
+}
+
+.redeem-promocode-container {
+    border-top: 1px solid #ccc;
+    margin: 18px 0;
+}
+
+.CreateAnAccountAction {
+    display: inline-block;
+    padding: 12px;
+    background: #9b6aad;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#theWBValidatedRegistrationFormBody fieldset {
+    border: none;
+    padding: 0;
+}
+
+#theWBValidatedRegistrationFormBody input,
+#theWBForgotPasswordFormBody input {
+    display: block;
+    width: 100%;
+}
+
+/* Login and Registration End */
+
+/* Map Popup Start */
+.arn-leaflet-search2-button,
+.arnMapPopup .prev,
+.arnMapPopup .next,
+.arnMapPopup .original,
+.arnMapPopup .discount,
+.arnMapPopup .rebate,
+.arnMapPopup .reviewCount {
+    display: none;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content,
+.arnMapPopup {
+    border-radius: 5px !important;
+}
+
+.arnMapPopup .rate,
+.arnMapPopup img,
+.arnMapPopup .imageContainer {
+    border-radius: 5px 5px 0 0;
+}
+
+.arnMapPopup .imageContainer img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.arnMapPopup .rate {
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.arnMapPopup label {
+    display: none;
+}
+
+.arnMapPopup h1 {
+    color: #333;
+    font-size: 21px;
+    text-align: center;
+    padding: 8px;
+}
+
+.arnMapPopup a {
+    color: #333;
+}
+
+/* Map Popup End */

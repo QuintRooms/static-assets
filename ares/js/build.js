@@ -9,11 +9,12 @@ export default class BasePortal {
      */
     async getSiteID() {
         this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content');
-        console.log('BasePortal getSiteID() fired.')
+        console.log('BasePortal getSiteID() fired.', this.site_id);
         return await this.site_id;
     }
 
     async getSiteConfigJSON() {
+        console.log('getSiteConfigJSON fired', this.site_id);
         try {
             return await fetch(`https://static.hotelsforhope.com/ares/js/site_configs/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())

@@ -357,7 +357,7 @@ export default class BasePortal {
         let interval = setInterval(function() {
             if (document.querySelector('.pollingFinished')) {
                 console.log('pollingFinished() fired.');
-                createStarIcons();
+                // createStarIcons();
                 clearInterval(interval);
             }
         }, 100);

@@ -2,6 +2,8 @@
 	"site_id": ,
 	"affiliate_id": ,
 	"master_id": ,
+    "is_lodging": ,
+    "is_retail": ,
     "is_cug": ,
     "show_date_prompt": ,
     "event_name": "",

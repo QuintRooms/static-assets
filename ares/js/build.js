@@ -31,7 +31,9 @@ export default class BasePortal {
 
                 this.updateRoomDescription();
                 this.createImageSlider();
-                this.pollingFinished();
+                this.pollingFinished().then(() => {
+                    this.createStarIcons();
+                });
             });
         });
     }
@@ -358,8 +360,6 @@ export default class BasePortal {
             let interval = setInterval(() => {
                 if (document.querySelector('.pollingFinished')) {
                     resolve();
-                    console.log('pollingFinished fired.')
-                    this.createStarIcons();
                     clearInterval(interval);
                 };
             }, 250);

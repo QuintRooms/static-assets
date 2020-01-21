@@ -1,7 +1,35 @@
 export default class BasePortal {
-    constructor(site_id, site_config_json) {
+    constructor(site_id, site_config_json, page_name) {
         this.site_id = site_id;
         this.site_config_json = site_config_json;
+        this.page_name = page_name;
+    }
+
+    init() {
+        this.getSiteID();
+        this.getSiteConfigJSON();
+        this.getPageName();
+        this.ieForEachPolyfill();
+
+        // open footer links in new tab
+        this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
+        this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
+
+        // Checkout form input validation
+        this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
+
+        // Shows numpad on ios
+        this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
+        this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+        this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+        this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
+
+        this.updateRoomDescription();
+
     }
 
     /**
@@ -28,40 +56,47 @@ export default class BasePortal {
     /**
      *@description gets page name using css classes from body tag
      */
-    getPageName() {
+    async getPageName() {
         let body_classes = document.querySelector('body');
 
         if (body_classes.classList.contains('SearchHotels')) {
-            return this.page_name = 'search-results';
+            return await this.page_name = 'search-results';
         }
 
         if (body_classes.classList.contains('SinglePropDetail')) {
-            return this.page_name = 'property-detail';
+            return await this.page_name = 'property-detail';
         }
+
         if (body_classes.classList.contains('CheckOutForm')) {
-            return this.page_name = 'checkout';
+            return await this.page_name = 'checkout';
         }
+        
         if (body_classes.classList.contains('ConfirmationForm')) {
-            return this.page_name = 'confirmation';
+            return await this.page_name = 'confirmation';
         }
+        
         if (body_classes.classList.contains('RootBody')) {
-            return this.page_name = 'landing-page';
+            return await this.page_name = 'landing-page';
         }
+        
         if (body_classes.classList.contains('WBFaq')) {
-            return this.page_name = 'faq';
+            return await this.page_name = 'faq';
         }
+        
         if (body_classes.classList.contains('WBTermsAndConditions')) {
-            return this.page_name = 'terms-conditions';
+            return await this.page_name = 'terms-conditions';
         }
+        
         if (body_classes.classList.contains('WBPrivacyPolicy')) {
-            return this.page_name = 'privacy-policy';
+            return await this.page_name = 'privacy-policy';
         }
+        
         if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
-            return this.page_name = 'lrg-page';
+            return await this.page_name = 'lrg-page';
         }
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
-            return this.page_name = 'cug-registration';
+            return await this.page_name = 'cug-registration';
         }
     }
 
@@ -88,10 +123,13 @@ export default class BasePortal {
      */
     updateAttribute(selector, argument, attribute) {
         let arr = document.querySelectorAll(selector);
+
+        if (!arr) {
+            return;
+        }
+
         arr.forEach(function(element, index) {
-            if (element) {
-                element.setAttribute(attribute, argument);
-            }
+            element.setAttribute(attribute, argument);
         });
     }
 
@@ -102,10 +140,12 @@ export default class BasePortal {
      */
     updateText(selector, text) {
         let class_list = document.querySelectorAll(selector);
+        if (!class_list) {
+            return;
+        }
+
         class_list.forEach(function(element, index) {
-            if (element) {
-                element.textContent = text;
-            }
+            element.textContent = text;
         });
     }
 
@@ -116,11 +156,14 @@ export default class BasePortal {
      */
     updateHTML(selector, html) {
         let class_list = document.querySelectorAll(selector);
-        if (class_list) {
-            class_list.forEach(function(element, index) {
-                element.innerHTML = html;
-            });
+
+        if (!class_list) {
+            return;
         }
+
+        class_list.forEach(function(element, index) {
+            element.innerHTML = html;
+        });
     }
 
     /**
@@ -131,9 +174,12 @@ export default class BasePortal {
      */
     createHTML(parent_to_append_to, html, location) {
         let parent = document.querySelector(parent_to_append_to);
-        if (parent) {
-            parent.insertAdjacentHTML(location, html);
+
+        if (!parent) {
+            return;
         }
+
+        parent.insertAdjacentHTML(location, html);
     }
 
     /**
@@ -145,23 +191,25 @@ export default class BasePortal {
         let childElement = document.querySelector(child_selector);
         let parentElement = document.querySelector(parentSelector);
 
-        if (childElement && parentElement) {
-            parentElement.appendChild(childElement);
+        if (!childElement && !parentElement) {
+            return;
         }
+
+        parentElement.appendChild(childElement);
     }
     /**
      *@description adds a tag for each contracted property on the searchHotels page
      *@param string selector - DOM selector
-     *@param string text - text to display - usually 'Event Name Exclusive Rate'
      */
-    updateRoomDescription(selector, text) {
-        if (document.querySelector('.SinglePropDetail')) {
-            let original = document.querySelectorAll(selector);
-            original.forEach(function(element, index) {
-                let updated = element.innerHTML.replace('Special Event Rate', '<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">' + text + '</span>');
-                element.innerHTML = updated;
-            });
+    updateRoomDescription() {
+        let room_description_el = document.querySelectorAll('.RoomDescription');
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el) {
+            return;
         }
+
+        room_description_el.forEach(function(element) {
+            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config_json['event_name']}</span>`);
+        });
     }
 
     /**
@@ -223,24 +271,5 @@ export default class BasePortal {
                 }
             }
         });
-    }
-
-    buildBasePortal() {
-        // open footer links in new tab
-        this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
-        this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
-        this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
-        this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
-        this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
-        this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-
-        // Checkout form input validation
-        this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
-
-        // Shows numpad on ios
-        this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-        this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
-        this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
-        this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
     }
 }

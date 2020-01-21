@@ -1,6 +1,6 @@
 export default class BasePortal {
-    constructor(site_config_json) {
-        site_id;
+    constructor(site_id, site_config_json) {
+        this.site_id = site_id;
         this.site_config_json = site_config_json;
     }
 
@@ -15,7 +15,13 @@ export default class BasePortal {
 
     async getSiteConfigJSON() {
         try {
-            return await fetch('https://static.hotelsforhope.com/ares/js/site_configs/')
+            return await fetch(`https://static.hotelsforhope.com/ares/js/site_configs/${this.site_id}.json`, { method: 'GET' })
+                .then(response => response.json())
+                .then((json) => {
+                    console.log('site_config_json:', json);
+                });
+        } catch {
+            console.log('could not get site config');
         }
     }
     /**
@@ -237,4 +243,3 @@ export default class BasePortal {
         this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
     }
 }
-

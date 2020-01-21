@@ -1,3 +1,5 @@
+import BasePortal from '../../build.js';
+
 class ChildPortal extends BasePortal{
     constructor(){
         super();
@@ -6,7 +8,9 @@ class ChildPortal extends BasePortal{
     }
 
     init(){
-        super.getPageName();
+        super.getSiteConfigJSON();
         console.log('CUGPortal.init() fired.');
     }
 }
+
+let child_portal = new ChildPortal();

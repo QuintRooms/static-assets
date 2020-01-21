@@ -16,7 +16,7 @@ export default class BasePortal {
     async getSiteConfigJSON() {
         console.log('getSiteConfigJSON fired', this.site_id);
         try {
-            return await fetch(`https://static.hotelsforhope.com/ares/js/site_configs/${this.site_id}.json`, { method: 'GET' })
+            return await fetch(`https://static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
                     console.log('site_config_json:', json);

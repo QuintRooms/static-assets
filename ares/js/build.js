@@ -31,7 +31,7 @@ export default class BasePortal {
 
                 this.updateRoomDescription();
                 this.createImageSlider();
-                this.createStarIcons();
+                this.pollingFinished();
             });
         });
     }
@@ -352,4 +352,13 @@ export default class BasePortal {
             }
         });
     }
-}
+
+    pollingFinished() {
+        let interval = setInterval(function() {
+            if (document.querySelector('.pollingFinished')) {
+                console.log('pollingFinished() fired.');
+                this.createStarIcons();
+                clearInterval(interval);
+            }
+        }, 100);
+    }

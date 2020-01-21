@@ -6,35 +6,33 @@ export default class BasePortal {
     }
 
     init() {
-        this.getSiteID()
-            .then(() => {
-                this.getSiteConfigJSON()
-                    .then(() => {
-                        this.getPageName();
-                        this.ieForEachPolyfill();
+        this.getSiteID().then(() => {
+            this.getSiteConfigJSON().then(() => {
+                this.getPageName();
+                this.ieForEachPolyfill();
 
-                        // open footer links in new tab
-                        this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
-                        this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
-                        this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
-                        this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
-                        this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
-                        this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                        console.log(this.site_config_json['fav_icon_url'])
-                        this.createHTML('body', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'afterBegin');
+                // open footer links in new tab
+                this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
+                this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
+                this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
+                this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
+                this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
+                this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
+                console.log(this.site_config_json['fav_icon_url'])
+                this.createHTML('body', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'afterBegin');
 
-                        // Checkout form input validation
-                        this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
+                // Checkout form input validation
+                this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 
-                        // Shows numpad on ios
-                        this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-                        this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
-                        this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
-                        this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
+                // Shows numpad on ios
+                this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
+                this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+                this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+                this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
 
-                        this.updateRoomDescription();
-                    });
+                this.updateRoomDescription();
             });
+        });
     }
 
     /**
@@ -52,6 +50,7 @@ export default class BasePortal {
             return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
+                    this.site_config_json = json;
                     console.log('site_config_json:', json);
                 });
         } catch {

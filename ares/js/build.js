@@ -359,6 +359,7 @@ export default class BasePortal {
                 if (document.querySelector('.pollingFinished')) {
                     resolve();
                     console.log('pollingFinished fired.')
+                    this.createStarIcons();
                     clearInterval(interval);
                 };
             }, 250);

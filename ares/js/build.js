@@ -30,6 +30,7 @@ export default class BasePortal {
                 this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
 
                 this.updateRoomDescription();
+                this.createImageSlider();
             });
         });
     }

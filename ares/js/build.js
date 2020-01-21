@@ -362,3 +362,4 @@ export default class BasePortal {
             }
         }, 100);
     }
+}

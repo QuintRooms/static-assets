@@ -18,7 +18,7 @@ export default class BasePortal {
         this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
         this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
         this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-
+        console.log(${this.site_config_json['fav_icon_url']})
         this.createHTML('body', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'afterBegin');
 
         // Checkout form input validation

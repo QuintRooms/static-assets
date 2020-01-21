@@ -353,13 +353,15 @@ export default class BasePortal {
         });
     }
 
-    pollingFinished() {
-        let interval = setInterval(function() {
-            if (document.querySelector('.pollingFinished')) {
-                console.log('pollingFinished() fired.');
-                // createStarIcons();
-                clearInterval(interval);
-            }
-        }, 100);
+    async pollingFinished(condition) {
+        return await new Promise(resolve => {
+            let interval = setInterval(() => {
+                if (document.querySelector('.pollingFinished')) {
+                    resolve();
+                    console.log('pollingFinished fired.')
+                    clearInterval(interval);
+                };
+            }, 250);
+        });
     }
 }

@@ -60,43 +60,53 @@ export default class BasePortal {
         let body_classes = document.querySelector('body');
 
         if (body_classes.classList.contains('SearchHotels')) {
-            return await this.page_name = 'search-results';
+            this.page_name = 'search-results';
+            return await this.page_name;
         }
 
         if (body_classes.classList.contains('SinglePropDetail')) {
-            return await this.page_name = 'property-detail';
+            this.page_name = 'property-detail';
+            return await this.page_name;
         }
 
         if (body_classes.classList.contains('CheckOutForm')) {
-            return await this.page_name = 'checkout';
+            this.page_name = 'checkout';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('ConfirmationForm')) {
-            return await this.page_name = 'confirmation';
+            this.page_name = 'confirmation';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('RootBody')) {
-            return await this.page_name = 'landing-page';
+            this.page_name = 'landing-page';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('WBFaq')) {
-            return await this.page_name = 'faq';
+            this.page_name = 'faq';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('WBTermsAndConditions')) {
-            return await this.page_name = 'terms-conditions';
+            this.page_name = 'terms-conditions';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('WBPrivacyPolicy')) {
-            return await this.page_name = 'privacy-policy';
+            this.page_name = 'privacy-policy';
+            return await this.page_name;
         }
-        
+
         if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
-            return await this.page_name = 'lrg-page';
+            this.page_name = 'lrg-page';
+            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
-            return await this.page_name = 'cug-registration';
+            this.page_name = 'cug-registration';
+            return await this.page_name;
         }
     }
 

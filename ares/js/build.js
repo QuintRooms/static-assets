@@ -10,7 +10,7 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.ieForEachPolyfill();
-                cssVariablePolyFill();
+                this.cssVariablePolyFill();
 
                 // open footer links in new tab
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');

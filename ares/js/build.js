@@ -32,6 +32,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
+                    console.log('PollingFinished() fired.')
                     // this.createMobileSortAndFilter();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
@@ -408,6 +409,7 @@ export default class BasePortal {
     }
 
     showSearchContainerOnMobile() {
+        console.log('showSearchContainerOnMobile() fired.')
         if (!document.querySelector('.SearchHotels')) {
             return;
         }
@@ -444,7 +446,7 @@ export default class BasePortal {
         if (adults_el) {
             adults_text = adults_el.getAttribute('content');
         }
-        console.log('test')
+
         createHTML(`<div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><div class="search-info"><h3>${location_text}</h3><span><span class="search-dates">${month_names[check_in_date.getMonth()]} ${check_in_date.getDate() + 1} - ${month_names[check_out_date.getMonth()]} ${check_out_date.getDate() + 1} </span><span class="adults-count">${adults_text} guests</span></span></div></div>`, '.SearchHotels .ArnPrimarySearchOuterContainer', 'beforeBegin');
 
         document.querySelector('.show-search-container').addEventListener('click', () => {

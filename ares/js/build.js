@@ -52,6 +52,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.buildMobileMenu();
+                this.showAdditionalPolicies();
 
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
@@ -527,5 +528,37 @@ export default class BasePortal {
                 }
             });
         }
+    }
+
+    showAdditionalPolicies() {
+        let additional_policies = document.querySelector('#theStayPolicies');
+        let additional_policies_legend = additional_policies.querySelector('legend');
+        let additional_policies_height = additional_policies.offsetHeight;
+
+        let policies = document.querySelector('#theConfirmationPoliciesAjax');
+
+        if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) {
+            return;
+        }
+
+        policies.insertAdjacentElement('afterEnd', additional_policies);
+        moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd');
+        additional_policies.insertAdjacentElement('beforeBegin', additional_policies_legend);
+        additional_policies.insertAdjacentHTML('beforeEnd', `
+        <style>
+            #theStayPolicies {
+                height: 0;
+                display: none;
+            }
+            .show-policies{
+                height: ${additional_policies_height}px !important;
+                display: block !important;
+            }
+        </style>
+        `);
+
+        additional_policies_legend.addEventListener('click', () => {
+            additional_policies.classList.toggle('show-policies');
+        });
     }
 }

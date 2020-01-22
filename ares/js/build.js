@@ -75,7 +75,6 @@ export default class BasePortal {
                     this.updateText('.ArnShowRatesLink', 'Book Rooms');
                     this.updateText('#ShowHotelOnMap', 'Open Map');
                     this.updateText('#CitySearchContainer > span', 'Where:');
-                    this.updateText('#theSubmitButton', 'Search');
                     this.updateText('.ArnSearchHeader', 'Search');
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
@@ -84,7 +83,7 @@ export default class BasePortal {
                     this.moveReviewsIntoPropNameContainer();
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     this.movePropClassBelowPropName();
-
+                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', 'beforeEnd');
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();

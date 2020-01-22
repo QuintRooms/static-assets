@@ -80,6 +80,7 @@ export default class BasePortal {
                     this.openSortByDropdown();
                     this.moveReviewsIntoPropNameContainer();
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                    this.movePropClassBelowPropName();
 
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
@@ -671,4 +672,18 @@ export default class BasePortal {
         });
     }
 
+    movePropClassBelowPropName() {
+        if (!document.querySelector('.SearchHotels')) {
+            return;
+        }
+
+        let prop_containers = document.querySelectorAll('.ArnContainer');
+        prop_containers.forEach(function(container) {
+            let prop_class = container.querySelector('.ArnPropClass');
+            let prop_name = container.querySelector('.ArnPropName');
+            if (container && prop_class && prop_name) {
+                prop_name.insertAdjacentElement('beforeEnd', prop_class);
+            }
+        });
+    }
 }

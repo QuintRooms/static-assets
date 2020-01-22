@@ -56,6 +56,11 @@ export default class BasePortal {
                 this.buildMobileMenu();
                 this.showAdditionalPolicies();
 
+                this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
+                this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+                this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
@@ -73,6 +78,8 @@ export default class BasePortal {
                     this.showSearchContainerOnMobile();
                     this.openSortByDropdown();
                     this.moveReviewsIntoPropNameContainer();
+                    this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
@@ -494,6 +501,12 @@ export default class BasePortal {
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
         });
+    }
+
+    moveElementIntoExistingWrapper(element_to_move, wrapper, adjacent_position) {
+        if (document.querySelector(wrapper) && document.querySelector(element_to_move)) {
+            document.querySelector(wrapper).insertAdjacentElement(adjacent_position, document.querySelector(element_to_move));
+        }
     }
 
     async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {

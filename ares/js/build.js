@@ -10,7 +10,7 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.ieForEachPolyfill();
-                this.cssVariablePolyFill();
+                this.createMobileSortAndFilter();
 
                 // open footer links in new tab
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
@@ -206,15 +206,15 @@ export default class BasePortal {
      *@param string child_selector - selector to move into parent
      *@param string parentSelector - selector to move child element into
      */
-    appendToParent(child_selector, parentSelector) {
-        let childElement = document.querySelector(child_selector);
-        let parentElement = document.querySelector(parentSelector);
+    appendToParent(child_selector, parent_selector) {
+        let child_element = document.querySelector(child_selector);
+        let parent_element = document.querySelector(parent_selector);
 
-        if (!childElement || !parentElement || childElement == null) {
+        if (!child_element || !parent_element || child_element == null || parent_element == null) {
             return;
         }
 
-        parentElement.appendChild(childElement);
+        parent_element.appendChild(child_element);
     }
     /**
      *@description adds a tag for each contracted property on the searchHotels page
@@ -367,181 +367,39 @@ export default class BasePortal {
         });
     }
 
-    cssVariablePolyFill() {
-        /*!
-         * css-var-polyfill.js - v1.1.2
-         *
-         * Copyright (c) 2019 Aaron Barker <http://aaronbarker.net>
-         * Released under the MIT license
-         *
-         * Date: 2019-03-23
-         */
-        let cssVarPoly = {
-            init: function() {
-                // first lets see if the browser supports CSS variables
-                // No version of IE supports window.CSS.supports, so if that isn't supported in the first place we know CSS variables is not supported
-                // Edge supports supports, so check for actual variable support
-                if (window.CSS && window.CSS.supports && window.CSS.supports('(--foo: red)')) {
-                    // this browser does support variables, abort
-                    console.log('your browser supports CSS variables, aborting and letting the native support handle things.');
-                    return;
-                } else {
-                    // edge barfs on console statements if the console is not open... lame!
-                    console.log('no support for you! polyfill all (some of) the things!!');
-                    document.querySelector('body').classList.add('cssvars-polyfilled');
-                }
-
-                cssVarPoly.ratifiedVars = {};
-                cssVarPoly.varsByBlock = {};
-                cssVarPoly.oldCSS = {};
-
-                // start things off
-                cssVarPoly.findCSS();
-                cssVarPoly.updateCSS();
-            },
-
-            // find all the css blocks, save off the content, and look for variables
-            findCSS: function() {
-                let styleBlocks = document.querySelectorAll('style:not(.inserted),link[rel="stylesheet"],link[rel="import"]');
-
-                // we need to track the order of the style/link elements when we save off the CSS, set a counter
-                let counter = 1;
-
-                // loop through all CSS blocks looking for CSS variables being set
-                [].forEach.call(styleBlocks, function(block) {
-                    // console.log(block.nodeName);
-                    let theCSS;
-                    if (block.nodeName === 'STYLE') {
-                        // console.log("style");
-                        theCSS = block.innerHTML;
-                        cssVarPoly.findSetters(theCSS, counter);
-                    } else if (block.nodeName === 'LINK') {
-                        // console.log("link");
-                        cssVarPoly.getLink(block.getAttribute('href'), counter, function(counter, request) {
-                            cssVarPoly.findSetters(request.responseText, counter);
-                            cssVarPoly.oldCSS[counter] = request.responseText;
-                            cssVarPoly.updateCSS();
-                        });
-                        theCSS = '';
-                    }
-                    // save off the CSS to parse through again later. the value may be empty for links that are waiting for their ajax return, but this will maintain the order
-                    cssVarPoly.oldCSS[counter] = theCSS;
-                    counter++;
-                });
-            },
-
-            // find all the "--variable: value" matches in a provided block of CSS and add them to the master list
-            findSetters: function(theCSS, counter) {
-                // console.log(theCSS);
-                cssVarPoly.varsByBlock[counter] = theCSS.match(/(--[^:)]+:[\s]*[^;}]+)/g) || [];
-            },
-
-            // run through all the CSS blocks to update the variables and then inject on the page
-            updateCSS: function() {
-                // first lets loop through all the variables to make sure later vars trump earlier vars
-                cssVarPoly.ratifySetters(cssVarPoly.varsByBlock);
-
-                // loop through the css blocks (styles and links)
-                for (let curCSSID in cssVarPoly.oldCSS) {
-                    // console.log("curCSS:", cssVarPoly.oldCSS[curCSSID]);
-                    let newCSS = cssVarPoly.replaceGetters(cssVarPoly.oldCSS[curCSSID], cssVarPoly.ratifiedVars);
-                    // put it back into the page
-                    // first check to see if this block exists already
-                    if (document.querySelector('#inserted' + curCSSID)) {
-                        // console.log("updating")
-                        document.querySelector('#inserted' + curCSSID).innerHTML = newCSS;
-                    } else {
-                        // console.log("adding");
-                        var style = document.createElement('style');
-                        style.type = 'text/css';
-                        style.innerHTML = newCSS;
-                        style.classList.add('inserted');
-                        style.id = 'inserted' + curCSSID;
-                        document.getElementsByTagName('head')[0].appendChild(style);
-                    }
-                };
-            },
-
-            // parse a provided block of CSS looking for a provided list of variables and replace the --var-name with the correct value
-            replaceGetters: function(curCSS, varList) {
-                // console.log(varList);
-                for (let theVar in varList) {
-                    // console.log(theVar);
-                    // match the variable with the actual variable name
-                    let getterRegex = new RegExp('var\\(\\s*' + theVar + '\\s*\\)', 'g');
-                    // console.log(getterRegex);
-                    // console.log(curCSS);
-                    curCSS = curCSS.replace(getterRegex, varList[theVar]);
-
-                    // now check for any getters that are left that have fallbacks
-                    let getterRegex2 = new RegExp('var\\([^\\)]+,\\s*([^\\)]+)\\)', 'g');
-                    // console.log(getterRegex);
-                    // console.log(curCSS);
-                    let matches = curCSS.match(getterRegex2);
-                    if (matches) {
-                        // console.log("matches",matches);
-                        matches.forEach(function(match) {
-                            // console.log(match.match(/var\(.+,\s*(.+)\)/))
-                            // find the fallback within the getter
-                            curCSS = curCSS.replace(match, match.match(/var\([^\)]+,\s*([^\)]+)\)/)[1]);
-                        });
-
-                    }
-
-                    // curCSS = curCSS.replace(getterRegex2,varList[theVar]);
-                };
-                // console.log(curCSS);
-                return curCSS;
-            },
-
-            // determine the css variable name value pair and track the latest
-            ratifySetters: function(varList) {
-                // console.log("varList:",varList);
-                // loop through each block in order, to maintain order specificity
-                for (let curBlock in varList) {
-                    let curVars = varList[curBlock];
-                    // console.log("curVars:",curVars);
-                    // loop through each var in the block
-                    curVars.forEach(function(theVar) {
-                        // console.log(theVar);
-                        // split on the name value pair separator
-                        let matches = theVar.split(/:\s*/);
-                        // console.log(matches);
-                        // put it in an object based on the varName. Each time we do this it will override a previous use and so will always have the last set be the winner
-                        // 0 = the name, 1 = the value, strip off the ; if it is there
-                        cssVarPoly.ratifiedVars[matches[0]] = matches[1].replace(/;/, '');
-                    });
-                };
-                // console.log(cssVarPoly.ratifiedVars);
-            },
-
-            // get the CSS file (same domain for now)
-            getLink: function(url, counter, success) {
-                var request = new XMLHttpRequest();
-                request.open('GET', url, true);
-                request.overrideMimeType('text/css;');
-                request.onload = function() {
-                    if (request.status >= 200 && request.status < 400) {
-                        // Success!
-                        // console.log(request.responseText);
-                        if (typeof success === 'function') {
-                            success(counter, request);
-                        }
-                    } else {
-                        // We reached our target server, but it returned an error
-                        console.warn('an error was returned from:', url);
-                    }
-                };
-
-                request.onerror = function() {
-                    // There was a connection error of some sort
-                    console.warn('we could not get anything from:', url);
-                };
-
-                request.send();
-            }
-        };
-
-        cssVarPoly.init();
+  createMobileSortAndFilter() {
+    if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
+        return;
     }
+    updateText('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
+
+    createHTML('<div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div>', 'body', 'beforeEnd');
+
+    let sort_button = document.querySelector('.ArnSortBy');
+    let sort_container = document.querySelector('#sort-wrapper');
+    let filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
+    let sort_filter_container = document.querySelector('.sort-filter-container');
+
+    sort_button.removeEventListener('click', () => {});
+    sort_button.addEventListener('click', () => {
+        sort_filter_container.classList.toggle('show-sort-filter');
+        document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', sort_container);
+        document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
+        filter_container.style.display = 'block';
+        sort_container.style.display = 'block';
+    });
+
+    document.querySelector('.sort-filter-close').addEventListener('click', () => {
+        sort_filter_container.classList.toggle('show-sort-filter');
+    });
+
+    document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
+        target.toElement.classList.toggle('active-filter');
+    });
+
+    let filters = filter_container.querySelectorAll('.ArnSearchField');
+    filters.forEach((filter) => {
+        filter.classList.add('panel');
+    });
+}
 }

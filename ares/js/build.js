@@ -32,9 +32,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
-                        this.createMobileSortAndFilter();
-                    });
+                    this.createMobileSortAndFilter();
                     this.createStarIcons();
                     // this.showSearchContainerOnMobile();
                 });
@@ -275,15 +273,6 @@ export default class BasePortal {
         }
     }
 
-    moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-        if (document.querySelector(adjacent_element_class)) {
-            document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
-            elements_array.forEach((element) => {
-                document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
-            });
-        }
-    }
-
     hidePropertyThumbnailArrowIfNoPropertyThumbnails() {
         if (!this.page_name === 'search-results') {
             return;
@@ -382,7 +371,7 @@ export default class BasePortal {
         });
     }
 
-    async createMobileSortAndFilter() {
+    createMobileSortAndFilter() {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
             return;
         }

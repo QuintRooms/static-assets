@@ -423,12 +423,12 @@ export default class BasePortal {
     async pollingFinished() {
         console.log('pollingFinished() fired.');
         return await new Promise(resolve => {
-            let interval = setInterval(() => {
+            // let interval = setInterval(() => {
                 if (document.querySelector('.pollingFinished')) {
                     resolve();
                     clearInterval(interval);
                 };
-            }, 250);
+            // }, 250);
         });
     }
 

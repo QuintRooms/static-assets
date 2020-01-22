@@ -28,14 +28,15 @@ export default class BasePortal {
                 this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
                 this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                 this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-                this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd');
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
                     console.log('PollingFinished() fired.')
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
-                    this.createMobileSortAndFilter();
+                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd') then(() => {
+                        this.createMobileSortAndFilter();
+                    });
                 });
             });
         });

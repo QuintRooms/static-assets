@@ -28,7 +28,7 @@ export default class BasePortal {
                 this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
                 this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                 this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-
+                this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd');
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
@@ -456,5 +456,14 @@ export default class BasePortal {
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
         });
+    }
+
+    moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
+        if (document.querySelector(adjacent_element_class)) {
+            document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
+            elements_array.forEach((element) => {
+                document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
+            });
+        }
     }
 }

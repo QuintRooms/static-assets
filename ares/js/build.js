@@ -210,7 +210,7 @@ export default class BasePortal {
         let childElement = document.querySelector(child_selector);
         let parentElement = document.querySelector(parentSelector);
 
-        if (!childElement || !parentElement) {
+        if (!childElement || !parentElement || childElement == null) {
             return;
         }
 

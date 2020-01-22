@@ -74,6 +74,9 @@ export default class BasePortal {
                     this.updateText('.lblCurrency', 'Currency ' + this.svg_arrow);
                     this.updateText('.ArnShowRatesLink', 'Book Rooms');
                     this.updateText('#ShowHotelOnMap', 'Open Map');
+                    this.updateText('#CitySearchContainer > span', 'Where:');
+                    this.updateText('#theSubmitButton', 'Search');
+                    this.updateText('.ArnSearchHeader', 'Search');
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();

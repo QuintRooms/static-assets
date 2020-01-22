@@ -192,7 +192,7 @@ export default class BasePortal {
      *@param string html - html to add to parent
      *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
      */
-    createHTML(parent_to_append_to, html, location) {
+    async createHTML(parent_to_append_to, html, location) {
         return await new Promise(resolve => {
             let parent = document.querySelector(parent_to_append_to);
 

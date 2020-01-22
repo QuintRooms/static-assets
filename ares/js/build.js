@@ -374,6 +374,7 @@ export default class BasePortal {
     }
 
     createMobileSortAndFilter() {
+        console.log('createMobileSortAndFilter() fired.')
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
             return;
         }

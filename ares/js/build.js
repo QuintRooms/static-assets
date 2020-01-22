@@ -42,6 +42,7 @@ export default class BasePortal {
                 this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                 this.updatePropReviewsURLToUseAnchor();
                 this.addDistanceScaleToMap();
+                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
 
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
@@ -631,6 +632,42 @@ export default class BasePortal {
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             L.control.scale().addTo(window.ArnMap);
             this.toggleMap();
+        });
+    }
+
+    accordion(main_container, content_container, open_button) {
+        if (!document.querySelector(main_container)) {
+            return;
+        }
+        let main_container_el = document.querySelector(main_container);
+        let open_el = main_container_el.querySelector(open_button);
+
+        let content_el = main_container_el.querySelector(content_container);
+        let svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        let height = content_el.offsetHeight;
+
+        document.querySelector(main_container).insertAdjacentHTML('beforeEnd',
+            `<style>
+                ${content_container}{
+                    transform: translateY(-${height}px);
+                    pointer-events: none;
+                    transition: all .75s ease;
+                    height: 0;
+                    position: relative;
+                }
+                .show-content{
+                    transform: translateY(0) !important;
+                    opacity: 1 !important;
+                    pointer-events: initial !important;
+                    height: ${height}px !important;
+                }
+            </style>
+            `);
+        open_el.insertAdjacentHTML('beforeEnd', svg_arrow);
+
+        open_el.addEventListener('click', () => {
+            content_el.classList.toggle('show-content');
+            open_el.querySelector('svg').classList.toggle('flip-svg');
         });
     }
 

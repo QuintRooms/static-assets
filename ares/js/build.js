@@ -444,7 +444,7 @@ export default class BasePortal {
         let sort_button = document.querySelector('.ArnSortBy');
         let sort_container = document.querySelector('#sort-wrapper');
         let filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
-        let sort_filter_container = document.querySelector('.sort-filter-container');
+        let sort_filter_container = document.querySelector('.sort-filter-overlay');
 
         sort_button.removeEventListener('click', () => {});
         sort_button.addEventListener('click', () => {

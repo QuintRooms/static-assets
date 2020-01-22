@@ -371,7 +371,7 @@ export default class BasePortal {
         });
     }
 
-    createMobileSortAndFilter() {
+    async createMobileSortAndFilter() {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
             return;
         }

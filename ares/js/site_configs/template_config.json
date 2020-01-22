@@ -1,0 +1,21 @@
+{
+	"site_id": ,
+	"affiliate_id": ,
+	"master_id": ,
+    "is_lodging": ,
+    "is_retail": ,
+    "is_cug": ,
+    "show_date_prompt": ,
+    "event_name": "",
+    "event_website_url": "",
+    "logo_url": "",
+    "fav_icon_url": "",
+    "banner_image_url": "",
+    "primary_background_color": "",
+    "secondary_background_color": "",
+    "primary_text_color": "",
+    "secondary_text_color": "",
+    "button_hover_background_color": "",
+    "button_hover_text_color": "",
+    "google_font_url": ""
+}

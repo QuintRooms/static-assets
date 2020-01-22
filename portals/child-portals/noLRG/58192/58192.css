@@ -12,8 +12,7 @@ body {
     color: #15151E;
 }
 
-body.RootBody {
-    background-color: #FAFAE5;
+.RootBody .ArnSearchContainerMainDiv {
     background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/banner.jpg) no-repeat top center /cover !important;
 }
 

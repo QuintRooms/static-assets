@@ -1,0 +1,21 @@
+{
+    "site_id": 39624,
+    "affiliate_id": 16827,
+    "master_id": 2143,
+    "is_lodging": false,
+    "is_retail": false,
+    "is_cug": true,
+    "show_date_prompt": false,
+    "event_name": "Hotels for Hope",
+    "event_website_url": "https://hotelsforhope.com",
+    "logo_url": "https://events.hotelsforhope.com/v6/?siteid=39624&theme=standard",
+    "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
+    "banner_image_url": "https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg",
+    "primary_background_color": "#9c6aad",
+    "secondary_background_color": "",
+    "primary_text_color": "#fff",
+    "secondary_text_color": "",
+    "button_hover_background_color": "transparent",
+    "button_hover_text_color": "#333",
+    "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700"
+}

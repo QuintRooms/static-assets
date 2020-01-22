@@ -10,7 +10,6 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.ieForEachPolyfill();
-                this.createMobileSortAndFilter();
 
                 // open footer links in new tab
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
@@ -33,6 +32,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
+                    this.createMobileSortAndFilter();
                     this.createStarIcons();
                 });
             });
@@ -367,39 +367,39 @@ export default class BasePortal {
         });
     }
 
-  createMobileSortAndFilter() {
-    if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
-        return;
+    createMobileSortAndFilter() {
+        if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
+            return;
+        }
+        updateText('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
+
+        createHTML('<div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div>', 'body', 'beforeEnd');
+
+        let sort_button = document.querySelector('.ArnSortBy');
+        let sort_container = document.querySelector('#sort-wrapper');
+        let filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
+        let sort_filter_container = document.querySelector('.sort-filter-container');
+
+        sort_button.removeEventListener('click', () => {});
+        sort_button.addEventListener('click', () => {
+            sort_filter_container.classList.toggle('show-sort-filter');
+            document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', sort_container);
+            document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
+            filter_container.style.display = 'block';
+            sort_container.style.display = 'block';
+        });
+
+        document.querySelector('.sort-filter-close').addEventListener('click', () => {
+            sort_filter_container.classList.toggle('show-sort-filter');
+        });
+
+        document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
+            target.toElement.classList.toggle('active-filter');
+        });
+
+        let filters = filter_container.querySelectorAll('.ArnSearchField');
+        filters.forEach((filter) => {
+            filter.classList.add('panel');
+        });
     }
-    updateText('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
-
-    createHTML('<div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div>', 'body', 'beforeEnd');
-
-    let sort_button = document.querySelector('.ArnSortBy');
-    let sort_container = document.querySelector('#sort-wrapper');
-    let filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
-    let sort_filter_container = document.querySelector('.sort-filter-container');
-
-    sort_button.removeEventListener('click', () => {});
-    sort_button.addEventListener('click', () => {
-        sort_filter_container.classList.toggle('show-sort-filter');
-        document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', sort_container);
-        document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
-        filter_container.style.display = 'block';
-        sort_container.style.display = 'block';
-    });
-
-    document.querySelector('.sort-filter-close').addEventListener('click', () => {
-        sort_filter_container.classList.toggle('show-sort-filter');
-    });
-
-    document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
-        target.toElement.classList.toggle('active-filter');
-    });
-
-    let filters = filter_container.querySelectorAll('.ArnSearchField');
-    filters.forEach((filter) => {
-        filter.classList.add('panel');
-    });
-}
 }

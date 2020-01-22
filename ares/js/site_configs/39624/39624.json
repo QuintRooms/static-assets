@@ -6,6 +6,7 @@
     "is_retail": false,
     "is_cug": true,
     "show_date_prompt": false,
+    "show_advanced_search": true,
     "event_name": "Hotels for Hope",
     "event_website_url": "https://hotelsforhope.com",
     "logo_url": "https://events.hotelsforhope.com/v6/?siteid=39624&theme=standard",

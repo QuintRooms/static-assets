@@ -67,6 +67,12 @@ export default class BasePortal {
                 this.pollingFinished().then(() => {
                     console.log('PollingFinished() fired.');
 
+                    this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
+                    this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
+                    this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
+                    this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
+                    this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
+                    
                     this.updateText('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
                     this.updateText('.lblAmenities', 'Amenities ' + this.svg_arrow);
                     this.updateText('.lblRating', 'Stars ' + this.svg_arrow);
@@ -690,5 +696,24 @@ export default class BasePortal {
                 prop_name.insertAdjacentElement('beforeEnd', prop_class);
             }
         });
+    }
+
+    moveSearchOptionLabelsOutsideOfWrapper(search_label) {
+        let label = document.querySelector(search_label);
+
+        if (!label) {
+            return;
+        }
+        label.classList.add('accordion');
+        let label_parent = label.parentNode;
+
+        if (label_parent) {
+            label_parent.insertAdjacentElement('beforeBegin', label)
+
+            label.addEventListener('click', function() {
+                label_parent.classList.toggle('panel');
+                label.querySelector('svg').classList.toggle('flip-svg');
+            });
+        }
     }
 }

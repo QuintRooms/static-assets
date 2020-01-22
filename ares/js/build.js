@@ -18,6 +18,11 @@ export default class BasePortal {
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
+                updateText('.lblNearbyCities', 'Nearby Cities ' + svg_arrow);
+                updateText('.lblAmenities', 'Amenities ' + svg_arrow);
+                updateText('.lblRating', 'Stars ' + svg_arrow);
+                updateText('.lblPropertyType', 'Property Type ' + svg_arrow);
+                updateText('.lblCurrency', 'Currency ' + svg_arrow);
                 this.createHTML('head', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'beforeEnd');
 
                 // Checkout form input validation
@@ -165,14 +170,12 @@ export default class BasePortal {
      *@param string selector - selector to update text
      *@param string text - text to update
      */
-    updateText(selector, text) {
-        let class_list = document.querySelectorAll(selector);
-        if (!class_list) {
-            return;
-        }
-
-        class_list.forEach(function(element, index) {
-            element.textContent = text;
+    updateText(selectors, text) {
+        let elements_to_update = document.querySelectorAll(selectors);
+        elements_to_update.forEach(function(element) {
+            if (element) {
+                element.innerHTML = text;
+            }
         });
     }
 

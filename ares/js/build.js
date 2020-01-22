@@ -65,6 +65,8 @@ export default class BasePortal {
                     this.updateText('.lblRating', 'Stars ' + this.svg_arrow);
                     this.updateText('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                     this.updateText('.lblCurrency', 'Currency ' + this.svg_arrow);
+                    this.updateText('.ArnShowRatesLink', 'Book Rooms');
+                    this.updateText('#ShowHotelOnMap', 'Open Map');
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();

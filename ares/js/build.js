@@ -50,6 +50,7 @@ export default class BasePortal {
                     console.log('PollingFinished() fired.')
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
+                    this.openSortByDropdown();
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
@@ -506,5 +507,16 @@ export default class BasePortal {
             menu_button_el.classList.toggle('is-active');
             menu_el.classList.toggle('active');
         });
+    }
+
+    openSortByDropdown() {
+        if (document.querySelector('.ArnSortBy')) {
+            document.querySelector('.ArnSortBy').addEventListener('click', () => {
+                document.querySelector('#sort-wrapper').classList.toggle('sort-open');
+                if (document.querySelector('.sort svg')) {
+                    document.querySelector('.sort svg').classList.toggle('flip-svg');
+                }
+            });
+        }
     }
 }

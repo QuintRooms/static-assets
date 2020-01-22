@@ -531,15 +531,14 @@ export default class BasePortal {
     }
 
     showAdditionalPolicies() {
-        let additional_policies = document.querySelector('#theStayPolicies');
-        let additional_policies_legend = additional_policies.querySelector('legend');
-        let additional_policies_height = additional_policies.offsetHeight;
-
-        let policies = document.querySelector('#theConfirmationPoliciesAjax');
-
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) {
             return;
         }
+
+        let additional_policies = document.querySelector('#theStayPolicies');
+        let additional_policies_legend = additional_policies.querySelector('legend');
+        let additional_policies_height = additional_policies.offsetHeight;
+        let policies = document.querySelector('#theConfirmationPoliciesAjax');
 
         policies.insertAdjacentElement('afterEnd', additional_policies);
         moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd');

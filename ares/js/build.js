@@ -41,6 +41,7 @@ export default class BasePortal {
                 this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
                 this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                 this.updatePropReviewsURLToUseAnchor();
+                this.addDistanceScaleToMap();
 
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
@@ -596,6 +597,27 @@ export default class BasePortal {
 
         prop_names.forEach((prop_name) => {
             prop_name.insertAdjacentElement('beforeEnd', prop_name.parentElement.querySelector('.ArnTripAdvisorDetails'));
+        });
+    }
+    toggleMap() {
+        if (document.querySelector('#arnCloseAnchorId')) {
+            document.querySelector('#ShowHotelOnMap').innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg> Open Map';
+            document.querySelector('#arnCloseAnchorId').addEventListener('click', function() {
+                document.querySelector('#arnCloseAnchorId').classList.toggle('closeMap');
+                document.querySelector('.ArnPropertyMapInner').classList.toggle('showMap');
+                if (document.querySelector('.closeMap')) {
+                    this.textContent = 'X';
+                } else {
+                    this.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg> Open Map';
+                }
+            });
+        }
+    }
+
+    addDistanceScaleToMap() {
+        jQuery('#theBody').on('arnMapLoadedEvent', () => {
+            L.control.scale().addTo(window.ArnMap);
+            this.toggleMap();
         });
     }
 

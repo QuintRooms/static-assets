@@ -34,6 +34,7 @@ export default class BasePortal {
                     console.log('PollingFinished() fired.')
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
+
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
                     });
@@ -400,8 +401,7 @@ export default class BasePortal {
         document.querySelector('.sort-filter-close').addEventListener('click', () => {
             sort_filter_container.classList.toggle('show-sort-filter');
         });
-        console.log('debugger should pause code here');
-        debugger;
+
         document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
             target.toElement.classList.toggle('active-filter');
         });

@@ -417,6 +417,7 @@ export default class BasePortal {
 
         let content_el = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
         let location_el = document.querySelector('meta[name="SearchLocation"]');
+        console.log('location_el:', location_el);
         let check_in_el = document.querySelector('meta[name="checkIn"]');
         let check_out_el = document.querySelector('meta[name="checkOut"]');
         let adults_el = document.querySelector('meta[name="numberOfAdults"]');

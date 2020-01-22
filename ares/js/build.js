@@ -32,6 +32,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
+                    moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd');
                     this.createMobileSortAndFilter();
                     this.createStarIcons();
                     // this.showSearchContainerOnMobile();
@@ -270,6 +271,15 @@ export default class BasePortal {
                 }
             }
             return;
+        }
+    }
+
+    moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
+        if (document.querySelector(adjacent_element_class)) {
+            document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
+            elements_array.forEach((element) => {
+                document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
+            });
         }
     }
 

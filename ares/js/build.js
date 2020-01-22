@@ -30,6 +30,8 @@ export default class BasePortal {
                 this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 this.updateRoomDescription();
                 this.createImageSlider();
+                this.buildMobileMenu();
+
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
@@ -471,6 +473,28 @@ export default class BasePortal {
                     resolve();
                 });
             }
+        });
+    }
+
+    buildMobileMenu() {
+        let menu_el = document.querySelector('#commands');
+        let header_el = document.querySelector('#AdminControlsContainer');
+
+        if (!menu_el && !header_el) {
+            return;
+        }
+
+        header_el.insertAdjacentHTML('beforeEnd', '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>');
+
+        let menu_button_el = document.querySelector('#hamburger');
+
+        if (!menu_button_el) {
+            return;
+        }
+
+        menu_button_el.addEventListener('click', () => {
+            menu_button_el.classList.toggle('is-active');
+            menu_el.classList.toggle('active');
         });
     }
 }

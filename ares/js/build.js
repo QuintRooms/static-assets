@@ -32,7 +32,7 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
-                    this.createMobileSortAndFilter();
+                    // this.createMobileSortAndFilter();
                     this.createStarIcons();
                     // this.showSearchContainerOnMobile();
                 });

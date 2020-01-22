@@ -362,6 +362,7 @@ export default class BasePortal {
     }
 
     async pollingFinished() {
+        console.log('pollingFinished() fired.');
         return await new Promise(resolve => {
             let interval = setInterval(() => {
                 if (document.querySelector('.pollingFinished')) {

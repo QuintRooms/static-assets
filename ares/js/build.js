@@ -458,12 +458,16 @@ export default class BasePortal {
         });
     }
 
-    moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-        if (document.querySelector(adjacent_element_class)) {
-            document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
-            elements_array.forEach((element) => {
-                document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
-            });
-        }
+    async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
+        console.log('moveOrphanedElementsIntoNewWrapper() fired.');
+        return await new Promise(resolve => {
+            if (document.querySelector(adjacent_element_class)) {
+                document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
+                elements_array.forEach((element) => {
+                    document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
+                    resolve();
+                });
+            }
+        });
     }
 }

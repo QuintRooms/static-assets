@@ -76,6 +76,7 @@ export default class BasePortal {
                     this.updateText('#ShowHotelOnMap', 'Open Map');
                     this.updateText('#CitySearchContainer > span', 'Where:');
                     this.updateText('.ArnSearchHeader', 'Search');
+                    this.updateText('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();

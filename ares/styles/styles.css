@@ -173,6 +173,7 @@ textarea {
         width: 125px;
     }
 
+    .hamburger,
     .hamburger .line {
         display: block;
     }

@@ -39,7 +39,7 @@ export default class BasePortal {
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                 this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
                 this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
-
+                this.updatePropReviewsURLToUseAnchor();
 
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
@@ -57,7 +57,8 @@ export default class BasePortal {
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
-                    console.log('PollingFinished() fired.')
+                    console.log('PollingFinished() fired.');
+                    this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
                     this.openSortByDropdown();
@@ -559,5 +560,20 @@ export default class BasePortal {
         additional_policies_legend.addEventListener('click', () => {
             additional_policies.classList.toggle('show-policies');
         });
+    }
+
+    updatePropReviewsURLToUseAnchor() {
+        if (!document.querySelector('.SinglePropDetail')) {
+            return;
+        }
+
+        let review_link = document.querySelector('.reviewCount a');
+        review_link.setAttribute('href', '#thePropertyReviews');
+    }
+
+    moveFooterOutOfSearchContainer() {
+        if (document.querySelector('.SearchHotels') && document.querySelector('.ArnSupportBottom')) {
+            document.querySelector('body').insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'))
+        }
     }
 }

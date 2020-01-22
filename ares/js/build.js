@@ -30,6 +30,8 @@ export default class BasePortal {
                 this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 this.updateRoomDescription();
                 this.createImageSlider();
+                this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+
                 this.pollingFinished().then(() => {
                     console.log('PollingFinished() fired.')
                     this.createStarIcons();

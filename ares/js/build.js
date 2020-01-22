@@ -18,7 +18,7 @@ export default class BasePortal {
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                this.createHTML('head', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'beforeEnd');
+                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
                 this.updateText('.SinglePropDetail .Details a', 'General Info');
                 this.updateText('.SinglePropDetail .Map a', 'Map');
@@ -32,6 +32,15 @@ export default class BasePortal {
                 this.updateText('#theCharges legend', 'Rate Info');
                 this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
                 this.updateText('#theHotel legend', 'Reservation Summary');
+                this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
+                this.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin');
+                this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
+                this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
+                this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
+                this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
+                this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
+
+
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 
@@ -210,7 +219,7 @@ export default class BasePortal {
      *@param string html - html to add to parent
      *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
      */
-    async createHTML(parent_to_append_to, html, location) {
+    async createHTML(html, parent_to_append_to, location) {
         return await new Promise(resolve => {
             let parent = document.querySelector(parent_to_append_to);
 

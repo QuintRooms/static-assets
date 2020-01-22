@@ -10,7 +10,6 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.ieForEachPolyfill();
-                this.showSearchContainerOnMobile();
 
                 // open footer links in new tab
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
@@ -35,6 +34,7 @@ export default class BasePortal {
                 this.pollingFinished().then(() => {
                     this.createMobileSortAndFilter();
                     this.createStarIcons();
+                    this.showSearchContainerOnMobile();
                 });
             });
         });

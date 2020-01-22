@@ -84,9 +84,8 @@ export default class BasePortal {
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     this.movePropClassBelowPropName();
 
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', '.ArnSearchHeader', 'afterEnd');
+                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', '.ArnSearchHeader', 'afterEnd');
 
-                    console.log('wtf mate?');
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
                     });

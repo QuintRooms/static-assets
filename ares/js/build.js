@@ -83,6 +83,7 @@ export default class BasePortal {
                     this.openSortByDropdown();
                     this.moveReviewsIntoPropNameContainer();
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                    this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
                     this.movePropClassBelowPropName();
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', '.ArnSearchHeader', 'afterEnd');

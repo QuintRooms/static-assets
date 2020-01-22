@@ -193,13 +193,16 @@ export default class BasePortal {
      *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
      */
     createHTML(parent_to_append_to, html, location) {
-        let parent = document.querySelector(parent_to_append_to);
+        return await new Promise(resolve => {
+            let parent = document.querySelector(parent_to_append_to);
 
-        if (!parent) {
-            return;
-        }
+            if (!parent || parent == null) {
+                return;
+            }
 
-        parent.insertAdjacentHTML(location, html);
+            parent.insertAdjacentHTML(location, html);
+            resolve();
+        });
     }
 
     /**
@@ -357,7 +360,7 @@ export default class BasePortal {
         });
     }
 
-    async pollingFinished(condition) {
+    async pollingFinished() {
         return await new Promise(resolve => {
             let interval = setInterval(() => {
                 if (document.querySelector('.pollingFinished')) {

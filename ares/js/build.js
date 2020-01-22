@@ -32,8 +32,9 @@ export default class BasePortal {
                 this.updateRoomDescription();
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
-                    moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd');
-                    this.createMobileSortAndFilter();
+                    moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
+                        this.createMobileSortAndFilter();
+                    });
                     this.createStarIcons();
                     // this.showSearchContainerOnMobile();
                 });

@@ -33,9 +33,9 @@ export default class BasePortal {
                 this.createImageSlider();
                 this.pollingFinished().then(() => {
                     console.log('PollingFinished() fired.')
-                    // this.createMobileSortAndFilter();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
+                    this.createMobileSortAndFilter();
                 });
             });
         });

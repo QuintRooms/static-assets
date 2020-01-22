@@ -18,13 +18,20 @@ export default class BasePortal {
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                updateText('.lblNearbyCities', 'Nearby Cities ' + svg_arrow);
-                updateText('.lblAmenities', 'Amenities ' + svg_arrow);
-                updateText('.lblRating', 'Stars ' + svg_arrow);
-                updateText('.lblPropertyType', 'Property Type ' + svg_arrow);
-                updateText('.lblCurrency', 'Currency ' + svg_arrow);
                 this.createHTML('head', `<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'beforeEnd');
-
+                this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                this.updateText('.SinglePropDetail .Details a', 'General Info');
+                this.updateText('.SinglePropDetail .Map a', 'Map');
+                this.updateText('.SinglePropDetail .Reviews a', 'Reviews');
+                this.updateText('.WBGuestFormFields > legend', 'Billing Address');
+                this.updateText('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+                this.updateText('.RootBody .ArnSearchHeader', 'Start Your Search');
+                this.updateText('#thePassCodeAjax label', 'Promocode');
+                this.updateText('#theUserNameAjax label', 'Username/Email');
+                this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
+                this.updateText('#theCharges legend', 'Rate Info');
+                this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
+                this.updateText('#theHotel legend', 'Reservation Summary');
                 // Checkout form input validation
                 this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
 

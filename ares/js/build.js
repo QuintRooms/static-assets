@@ -179,6 +179,7 @@ export default class BasePortal {
             this.page_name = 'cug-registration';
             return await this.page_name;
         }
+        console.log(this.page_name);
     }
 
     /**

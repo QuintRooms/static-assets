@@ -69,7 +69,8 @@ textarea {
 #theBookingPage .ArnRateCalendar,
 #theBookingPage #theRateSummaryInfo div,
 #theCharges legend,
-#theHotelAddress {
+#theHotelAddress,
+#theBookingPage .paymentMethods img {
     display: none;
 }
 
@@ -1885,7 +1886,7 @@ legend {
 .creditcard {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 1em;
+    margin: .75rem 1rem .75rem 0;
     width: 45px;
     height: 30px;
 }

@@ -46,7 +46,7 @@ export default class BasePortal {
                     // Checkout form input validation
                     this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                     this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
-                    updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/american-express.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/mastercard.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/discover.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/visa.svg">')
+                    this.updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/american-express.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/mastercard.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/discover.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/visa.svg">');
                     this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
 
                     // Shows numpad on ios

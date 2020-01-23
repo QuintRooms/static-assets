@@ -7,7 +7,6 @@ export default class BasePortal {
     }
 
     init() {
-        debugger;
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
@@ -112,6 +111,8 @@ export default class BasePortal {
     }
 
     async getSiteConfigJSON() {
+        debugger;
+
         console.log('getSiteConfigJSON fired', this.site_id);
         try {
             return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
@@ -422,12 +423,12 @@ export default class BasePortal {
 
     async pollingFinished() {
         return await new Promise(resolve => {
-        console.log('pollingFinished() fired.');
+            console.log('pollingFinished() fired.');
             // let interval = setInterval(() => {
-                if (document.querySelector('.pollingFinished')) {
-                    resolve();
-                    clearInterval(interval);
-                };
+            if (document.querySelector('.pollingFinished')) {
+                resolve();
+                clearInterval(interval);
+            };
             // }, 250);
         });
     }

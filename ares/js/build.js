@@ -41,7 +41,7 @@ export default class BasePortal {
 
                 // checkout page methods
                 if (this.page_name == 'checkout') {
-                    this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', 'theConfirmationContainer', 'afterBegin');
+                    this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
                     this.showAdditionalPolicies();
                     this.updateHTML('.WBGuestFormFields > legend', 'Billing Address');
                     // Checkout form input validation

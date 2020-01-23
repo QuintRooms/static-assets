@@ -23,14 +23,14 @@ export default class BasePortal {
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
+                this.updateHTML('.ArnLeftListContainer > span.translateMe', 'Search');
 
                 // single prop detail methods
                 // if (this.page_name == 'property-detail') {
-                    this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                    this.updateText('.SinglePropDetail .Details a', 'General Info');
-                    this.updateText('.SinglePropDetail .Map a', 'Map');
-                    this.updateText('.SinglePropDetail .Reviews a', 'Reviews');
+                    this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                    this.updateHTML('.SinglePropDetail .Details a', 'General Info');
+                    this.updateHTML('.SinglePropDetail .Map a', 'Map');
+                    this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                     this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                     this.updatePropReviewsURLToUseAnchor();
                     this.updateRoomDescription();
@@ -42,11 +42,11 @@ export default class BasePortal {
                 // checkout page methods
                 if (this.page_name == 'checkout') {
                     this.showAdditionalPolicies();
-                    this.updateText('.WBGuestFormFields > legend', 'Billing Address');
+                    this.updateHTML('.WBGuestFormFields > legend', 'Billing Address');
                     // Checkout form input validation
                     this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                     this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
-
+                    updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/american-express.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/mastercard.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/discover.svg"><img src="https://dev-static.hotelsforhope.com/ares/images/visa.svg">')
                     this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
 
                     // Shows numpad on ios
@@ -54,22 +54,22 @@ export default class BasePortal {
                     this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
                     this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                     this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-                    this.updateText('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
-                    this.updateText('#theCharges legend', 'Rate Info');
-                    this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
-                    this.updateText('#theHotel legend', 'Reservation Summary');
+                    this.updateHTML('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+                    this.updateHTML('#theCharges legend', 'Rate Info');
+                    this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
+                    this.updateHTML('#theHotel legend', 'Reservation Summary');
                     this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
                 }
 
                 // root page methods
                 if (this.page_name == 'landing-page') {
-                    this.updateText('.RootBody .ArnSearchHeader', 'Start Your Search');
+                    this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
                 }
 
-                this.updateText('#thePassCodeAjax label', 'Promocode');
-                this.updateText('#theUserNameAjax label', 'Username/Email');
+                this.updateHTML('#thePassCodeAjax label', 'Promocode');
+                this.updateHTML('#theUserNameAjax label', 'Username/Email');
                 this.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
@@ -87,16 +87,16 @@ export default class BasePortal {
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
-                    this.updateText('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                    this.updateText('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                    this.updateText('.lblRating', 'Stars ' + this.svg_arrow);
-                    this.updateText('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                    this.updateText('.lblCurrency', 'Currency ' + this.svg_arrow);
-                    this.updateText('.ArnShowRatesLink', 'Book Rooms');
-                    this.updateText('#ShowHotelOnMap', 'Open Map');
-                    this.updateText('#CitySearchContainer > span', 'Where:');
-                    this.updateText('.ArnSearchHeader', 'Search');
-                    this.updateText('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
+                    this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
+                    this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
+                    this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
+                    this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
+                    this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                    this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                    this.updateHTML('#ShowHotelOnMap', 'Open Map');
+                    this.updateHTML('#CitySearchContainer > span', 'Where:');
+                    this.updateHTML('.ArnSearchHeader', 'Search');
+                    this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
@@ -234,7 +234,7 @@ export default class BasePortal {
      *@param string selector - selector to update text
      *@param string text - text to update
      */
-    updateText(selectors, text) {
+    updateHTML(selectors, text) {
         let elements_to_update = document.querySelectorAll(selectors);
         elements_to_update.forEach(function(element) {
             if (element) {
@@ -451,7 +451,7 @@ export default class BasePortal {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
             return;
         }
-        this.updateText('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
+        this.updateHTML('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
 
         this.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div></div>', 'body', 'beforeEnd');
 
@@ -638,6 +638,7 @@ export default class BasePortal {
             prop_name.insertAdjacentElement('beforeEnd', prop_name.parentElement.querySelector('.ArnTripAdvisorDetails'));
         });
     }
+
     toggleMap() {
         if (document.querySelector('#arnCloseAnchorId')) {
             document.querySelector('#ShowHotelOnMap').innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg> Open Map';
@@ -730,4 +731,6 @@ export default class BasePortal {
             });
         }
     }
+
+
 }

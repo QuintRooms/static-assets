@@ -738,7 +738,7 @@ export default class BasePortal {
             return;
         }
 
-        document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<button class="open-modal">Show ${modal_title}></button>`);
+        document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<span class="open-modal">Show ${modal_title}</span>`);
 
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"></span></div><div class="modal-content"></div></div></div>`);
 

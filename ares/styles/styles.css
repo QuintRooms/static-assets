@@ -62,7 +62,10 @@ textarea {
 .ArnPushPageContent,
 #theArnPushPage,
 .show-search-container,
-#CitiesNearbyContainer {
+#CitiesNearbyContainer,
+.ArnSortByDealPercent,
+.ArnSortByDealAmount,
+.ArnSortByType {
     display: none;
 }
 
@@ -174,7 +177,7 @@ textarea {
     }
 
     .hamburger .line,
-    .hamburger{
+    .hamburger {
         display: block;
     }
 
@@ -757,7 +760,7 @@ div.autocomplete ul li.selected {
     display: inline;
 }
 
-.SearchHotels .star{
+.SearchHotels .star {
     transform: scale(.9);
 }
 
@@ -871,16 +874,16 @@ div.autocomplete ul li.selected {
 @media screen and (max-width: 800px) {
 
     /* Mobile Sort and Filter Start*/
-    .sort-filter-overlay{
+    .sort-filter-overlay {
         position: fixed;
         top: 0;
         height: 100%;
         width: 100%;
         z-index: 9;
-        background: rgba(0,0,0,.7);
+        background: rgba(0, 0, 0, .7);
         display: none;
     }
-    
+
     .sort-filter-container {
         background: #fff;
         overflow: scroll;
@@ -1204,7 +1207,7 @@ legend {
 
 .SinglePropDetail .ArnPropertyMapInner {
     height: 300px !important;
-} 
+}
 
 .PropertyAmenities {
     padding: 0;
@@ -2368,4 +2371,5 @@ body.WBForgotPasswordForm {
 .arnMapPopup a {
     color: #333;
 }
+
 /* Map Popup End */

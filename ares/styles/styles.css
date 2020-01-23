@@ -1919,6 +1919,8 @@ legend {
 .modal-header{
     border-bottom: 1px solid #333;
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 .modal-header h3{

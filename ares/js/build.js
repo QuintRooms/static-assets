@@ -65,7 +65,6 @@ export default class BasePortal {
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
-                    console.log('PollingFinished() fired.');
 
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
@@ -421,8 +420,8 @@ export default class BasePortal {
     }
 
     async pollingFinished() {
-        console.log('pollingFinished() fired.');
         return await new Promise(resolve => {
+        console.log('pollingFinished() fired.');
             // let interval = setInterval(() => {
                 if (document.querySelector('.pollingFinished')) {
                     resolve();

@@ -7,6 +7,7 @@ export default class BasePortal {
     }
 
     init() {
+        debugger;
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();

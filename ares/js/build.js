@@ -41,6 +41,7 @@ export default class BasePortal {
 
                 // checkout page methods
                 if (this.page_name == 'checkout') {
+                    this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', 'theConfirmationContainer', 'afterBegin');
                     this.showAdditionalPolicies();
                     this.updateHTML('.WBGuestFormFields > legend', 'Billing Address');
                     // Checkout form input validation
@@ -732,5 +733,20 @@ export default class BasePortal {
         }
     }
 
+    createModal(array_of_elements_for_modal, modal_title, page_name, open_button_parent_selector, open_button_location) {
+        if (!page_name) {
+            return;
+        }
 
+        document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<button class="open-modal">Show ${modal_title}></button>`);
+
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"></span></div><div lass="modal-content"></div></div></div>`)
+        array_of_elements_for_modal.forEach((element) {
+            document.queyrSelector('body').insertAdjacentElement('beforeEnd', element);
+        });
+
+        document.querySelector('.open-modal').addEventListener('click', () => {
+            document.querySelector('modal-overlay').classList.toggle('show-modal');
+        });
+    }
 }

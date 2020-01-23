@@ -1891,6 +1891,26 @@ legend {
     height: 30px;
 }
 
+.modal-overlay{
+    display: none;
+}
+
+.show-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    background: rgba(0, 0, 0, .7);
+}
+
+.modal-container{
+    background: #fff;
+    padding: 18px;
+}
+
 #theReservationFormContainer {
     margin: 36px 0 0 0;
 }

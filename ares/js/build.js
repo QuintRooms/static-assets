@@ -7,15 +7,14 @@ export default class BasePortal {
     }
 
     init() {
+        this.injectStylesheet();
+        this.ieForEachPolyfill();
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 console.log('page_name:', this.page_name);
-
-
+                
                 // all pages
-                this.injectStylesheet();
-                this.ieForEachPolyfill();
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');

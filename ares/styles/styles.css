@@ -61,7 +61,8 @@ textarea {
 .ArnPagerResult,
 .ArnPushPageContent,
 #theArnPushPage,
-.show-search-container {
+.show-search-container,
+#CitiesNearbyContainer {
     display: none;
 }
 
@@ -612,15 +613,6 @@ textarea {
     display: none;
 }
 
-/*#searching input {
-    background: #9c6aad;
-    border: none;
-    color: #fff;
-    padding: 8px 32px;
-    border-radius: 5px;
-    line-height: 1;
-}*/
-
 .ArnSearchContainerMainTable {
     width: 100%;
     display: block;
@@ -763,6 +755,10 @@ div.autocomplete ul li.selected {
 
 .ArnPropClass {
     display: inline;
+}
+
+.SearchHotels .star{
+    transform: scale(.9);
 }
 
 .SearchHotels .ArnTripAdvisorDetails.HasReviews {

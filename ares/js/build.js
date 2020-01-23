@@ -73,6 +73,9 @@ export default class BasePortal {
                 this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
+                    if (!this.page_name == 'search-results') {
+                        return;
+                    }
 
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');

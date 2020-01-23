@@ -285,7 +285,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || !this.site_config_json['is_lodging']) {
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || !this.site_config_json['site_type'] == "lodging") {
             return;
         }
 

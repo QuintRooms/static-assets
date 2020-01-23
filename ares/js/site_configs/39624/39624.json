@@ -6,7 +6,8 @@
     "lodging":
     {
         "event_id": false,
-        "event_name": "Hotels for Hope"
+        "event_name": "Hotels for Hope",
+        "is_lrg": false
     },
     "cug":
     {

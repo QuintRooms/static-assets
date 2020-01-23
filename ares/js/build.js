@@ -10,6 +10,7 @@ export default class BasePortal {
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
+                console.log(this.page_name);
                 this.ieForEachPolyfill();
 
                 // open footer links in new tab
@@ -179,7 +180,6 @@ export default class BasePortal {
             this.page_name = 'cug-registration';
             return await this.page_name;
         }
-        console.log(this.page_name);
     }
 
     /**
@@ -424,10 +424,10 @@ export default class BasePortal {
         return await new Promise(resolve => {
             console.log('pollingFinished() fired.');
             let interval = setInterval(() => {
-            if (document.querySelector('.pollingFinished')) {
-                resolve();
-                clearInterval(interval);
-            };
+                if (document.querySelector('.pollingFinished')) {
+                    resolve();
+                    clearInterval(interval);
+                };
             }, 250);
         });
     }
@@ -477,7 +477,6 @@ export default class BasePortal {
 
         let content_el = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
         let location_el = document.querySelector('meta[name="SearchLocation"]');
-        console.log('location_el:', location_el);
         let check_in_el = document.querySelector('meta[name="checkIn"]');
         let check_out_el = document.querySelector('meta[name="checkOut"]');
         let adults_el = document.querySelector('meta[name="numberOfAdults"]');

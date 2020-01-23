@@ -747,7 +747,7 @@ export default class BasePortal {
         });
 
         document.querySelector('.open-modal').addEventListener('click', () => {
-            document.querySelector('modal-overlay').classList.toggle('show-modal');
+            document.querySelector('.modal-overlay').classList.toggle('show-modal');
         });
     }
 }

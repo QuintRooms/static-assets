@@ -14,6 +14,8 @@ export default class BasePortal {
                 console.log('page_name:', this.page_name);
 
                 // all pages
+                this.buildMobileMenu();
+                this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
@@ -24,53 +26,55 @@ export default class BasePortal {
                 this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
 
                 // single prop detail methods
-                this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                this.updateText('.SinglePropDetail .Details a', 'General Info');
-                this.updateText('.SinglePropDetail .Map a', 'Map');
-                this.updateText('.SinglePropDetail .Reviews a', 'Reviews');
+                if (this.page_name == '.property-detail') {
+                    this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                    this.updateText('.SinglePropDetail .Details a', 'General Info');
+                    this.updateText('.SinglePropDetail .Map a', 'Map');
+                    this.updateText('.SinglePropDetail .Reviews a', 'Reviews');
+                    this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
+                    this.updatePropReviewsURLToUseAnchor();
+                    this.updateRoomDescription();
+                    this.createImageSlider();
+                    this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                    this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                }
 
                 // checkout page methods
-                this.updateText('.WBGuestFormFields > legend', 'Billing Address');
-                this.updateText('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+                if (this.page_name == 'checkout') {
+                    this.showAdditionalPolicies();
+                    this.updateText('.WBGuestFormFields > legend', 'Billing Address');
+                    // Checkout form input validation
+                    this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
+                    this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
+
+                    this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+
+                    // Shows numpad on ios
+                    this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
+                    this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+                    this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+                    this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
+                    this.updateText('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+                    this.updateText('#theCharges legend', 'Rate Info');
+                    this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
+                    this.updateText('#theHotel legend', 'Reservation Summary');
+                    this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
+                }
 
                 // root page methods
-                this.updateText('.RootBody .ArnSearchHeader', 'Start Your Search');
+                if (this.page_name == 'landing-page') {
+                    this.updateText('.RootBody .ArnSearchHeader', 'Start Your Search');
+                    this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
+                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+                }
+
                 this.updateText('#thePassCodeAjax label', 'Promocode');
                 this.updateText('#theUserNameAjax label', 'Username/Email');
-                this.updateText('#theCharges legend', 'Rate Info');
-                this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
-                this.updateText('#theHotel legend', 'Reservation Summary');
-                this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
                 this.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-
-                this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
-                this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
-                this.updatePropReviewsURLToUseAnchor();
                 this.addDistanceScaleToMap();
-                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-
-                // Checkout form input validation
-                this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
-
-                // Shows numpad on ios
-                this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-                this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
-                this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
-                this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-                this.updateRoomDescription();
-                this.createImageSlider();
-                this.buildMobileMenu();
-                this.showAdditionalPolicies();
-
-                this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
-                this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
-                this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
-                this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
-
-                this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
 
                 this.pollingFinished().then(() => {
                     if (!this.page_name == 'search-results') {

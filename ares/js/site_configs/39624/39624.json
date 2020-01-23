@@ -18,6 +18,8 @@
     "show_language_select": false,
     "show_date_prompt": false,
     "show_advanced_search": true,
+    "show_property_type_filter": false,
+    "sort_by_parameters": ["distance", "price"],
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
     "logo_url": "https://events.hotelsforhope.com/v6/?siteid=39624&theme=standard",
     "outbound_event_website_url": "https://hotelsforhope.com",

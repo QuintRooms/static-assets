@@ -100,7 +100,7 @@ export default class BasePortal {
                     this.moveFooterOutOfSearchContainer();
                     this.createStarIcons();
                     this.showSearchContainerOnMobile();
-                    this.openSortByDropdown();
+                    // this.openSortByDropdown();
                     this.moveReviewsIntoPropNameContainer();
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
@@ -108,9 +108,9 @@ export default class BasePortal {
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', '.ArnSearchHeader', 'afterEnd');
 
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
-                        this.createMobileSortAndFilter();
-                    });
+                    // this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
+                    //     this.createMobileSortAndFilter();
+                    // });
                 });
             });
         });

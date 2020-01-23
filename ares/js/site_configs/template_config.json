@@ -19,6 +19,8 @@
     "show_language_select": ,
     "show_date_prompt": ,
     "show_advanced_search": ,
+    "show_property_type_filter": ,
+    "sort_by_parameters": [],
     "fav_icon_url": "",
     "logo_url": "",
     "outbound_event_website_url": "",

@@ -7,13 +7,12 @@ export default class BasePortal {
     }
 
     init() {
-        this.injectStylesheet();
         this.ieForEachPolyfill();
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 console.log('page_name:', this.page_name);
-                
+
                 // all pages
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
@@ -203,10 +202,6 @@ export default class BasePortal {
                 }
             };
         }
-    }
-
-    injectStylesheet() {
-        document.querySelector('head').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/ares/styles/styles.css">');
     }
 
     /**

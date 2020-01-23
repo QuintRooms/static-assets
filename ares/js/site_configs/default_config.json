@@ -15,6 +15,7 @@
         "show_points": false,
         "allow_registration": true
     },
+    "show_language_select": false,
     "show_date_prompt": false,
     "show_advanced_search": true,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",

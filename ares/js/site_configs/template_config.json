@@ -14,8 +14,9 @@
     {
         "is_cug": ,
         "show_points": ,
-        "allow_registration": 
+        "allow_registration":
     },
+    "show_language_select": ,
     "show_date_prompt": ,
     "show_advanced_search": ,
     "fav_icon_url": "",

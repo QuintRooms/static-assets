@@ -1,4 +1,3 @@
-<style>
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -173,8 +172,8 @@ textarea {
         width: 125px;
     }
 
-    .hamburger,
-    .hamburger .line {
+    .hamburger .line,
+    .hamburger{
         display: block;
     }
 
@@ -876,15 +875,22 @@ div.autocomplete ul li.selected {
 @media screen and (max-width: 800px) {
 
     /* Mobile Sort and Filter Start*/
-    .sort-filter-container {
+    .sort-filter-overlay{
         position: fixed;
         top: 0;
         height: 100%;
         width: 100%;
         z-index: 9;
-        background: #fff;
+        background: rgba(0,0,0,.7);
         display: none;
+    }
+    
+    .sort-filter-container {
+        background: #fff;
         overflow: scroll;
+        position: relative;
+        width: 90vw;
+        height: 90vh;
     }
 
     .mobile-sort-container,
@@ -900,6 +906,9 @@ div.autocomplete ul li.selected {
     .show-sort-filter {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
     }
 
     #sort-wrapper {
@@ -1620,7 +1629,7 @@ legend {
     }
 
     #arnCloseAnchorId {
-        padding: 12px;
+        padding: 8px;
         border: none;
         border-radius: 5px;
         color: #9c6aad;
@@ -2316,7 +2325,7 @@ body.WBForgotPasswordForm {
 .arnMapPopup .discount,
 .arnMapPopup .rebate,
 .arnMapPopup .reviewCount {
-    display: none;
+    display: none !important;
 }
 
 .leaflet-popup-content-wrapper,
@@ -2363,5 +2372,4 @@ body.WBForgotPasswordForm {
 .arnMapPopup a {
     color: #333;
 }
-
 /* Map Popup End */

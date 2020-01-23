@@ -10,27 +10,35 @@ export default class BasePortal {
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
-                console.log(this.page_name);
-                this.ieForEachPolyfill();
+                console.log('page_name:', this.page_name);
 
-                // open footer links in new tab
+
+                // all pages
+                this.injectStylesheet();
+                this.ieForEachPolyfill();
+                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .privacyLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .supportLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .cancelLink', '_blank', 'target');
-                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
+                this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
+
+                // single prop detail methods
                 this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
                 this.updateText('.SinglePropDetail .Details a', 'General Info');
                 this.updateText('.SinglePropDetail .Map a', 'Map');
                 this.updateText('.SinglePropDetail .Reviews a', 'Reviews');
+
+                // checkout page methods
                 this.updateText('.WBGuestFormFields > legend', 'Billing Address');
                 this.updateText('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+
+                // root page methods
                 this.updateText('.RootBody .ArnSearchHeader', 'Start Your Search');
                 this.updateText('#thePassCodeAjax label', 'Promocode');
                 this.updateText('#theUserNameAjax label', 'Username/Email');
-                this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
                 this.updateText('#theCharges legend', 'Rate Info');
                 this.updateText('.taxFeeRow th', '<span>Taxes:</span>');
                 this.updateText('#theHotel legend', 'Reservation Summary');
@@ -39,6 +47,7 @@ export default class BasePortal {
                 this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
+
                 this.createHTML('<legend id="policies-legend">Additional Policy/Fee Info</legend>', '#theStayPolicies', 'afterBegin');
                 this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                 this.updatePropReviewsURLToUseAnchor();
@@ -195,6 +204,10 @@ export default class BasePortal {
                 }
             };
         }
+    }
+
+    injectStylesheet() {
+        document.querySelector('head').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/ares/styles/styles.css">');
     }
 
     /**

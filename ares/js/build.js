@@ -7,7 +7,7 @@ export default class BasePortal {
     }
 
     init() {
-        // this.injectStylesheet();
+        this.injectStylesheet();
         this.ieForEachPolyfill();
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {

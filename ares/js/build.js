@@ -26,7 +26,7 @@ export default class BasePortal {
                 this.updateText('.ArnLeftListContainer > span.translateMe', 'Search');
 
                 // single prop detail methods
-                if (this.page_name == 'property-detail') {
+                // if (this.page_name == 'property-detail') {
                     this.updateText('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     this.updateText('.SinglePropDetail .Details a', 'General Info');
                     this.updateText('.SinglePropDetail .Map a', 'Map');
@@ -37,7 +37,7 @@ export default class BasePortal {
                     this.createImageSlider();
                     this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                     this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
-                }
+                // }
 
                 // checkout page methods
                 if (this.page_name == 'checkout') {

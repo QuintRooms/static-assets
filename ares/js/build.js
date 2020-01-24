@@ -778,16 +778,14 @@ export default class BasePortal {
     }
 
     formatCheckoutForm() {
-        console.log('formatCheckoutForm fired.')
-
         // if(!this.page_name == 'checkout') return;
         let room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 0;
         room_reservations.forEach((reservation) => {
             reservation_count++;
-            console.log('in formatCheckoutForm forEach loop.')
-            this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjaxtd.GuestForms > fieldset:nth-child(${reservation_count})`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
+            this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjaxtd.GuestForms > fieldset:nth-child(${reservation_count})`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
+            console.log([document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)])
 
             this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)], `billing-details-container${reservation_count}`, `td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
 

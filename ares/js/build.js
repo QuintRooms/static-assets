@@ -780,7 +780,7 @@ export default class BasePortal {
     formatCheckoutForm() {
         // if(!this.page_name == 'checkout') return;
         let room_reservations = document.querySelectorAll('.WBGuestFormFields');
-        let reservation_count = 0;
+        let reservation_count = 1;
         room_reservations.forEach((reservation) => {
             reservation_count++;
 

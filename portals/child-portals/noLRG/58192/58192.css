@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: #fff;
+    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/header_banner.png');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,9 @@ header a {
 }
 
 .logo img {
-    max-width: 300px;
+    max-width: 400px;
     margin: 0;
+    padding: 24px;
 }
 
 .SearchHotels .ArnPropName a {

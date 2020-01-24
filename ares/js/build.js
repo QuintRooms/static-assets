@@ -79,7 +79,7 @@ export default class BasePortal {
                     if (!this.page_name == 'search-results') {
                         return;
                     }
-
+                    this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
@@ -751,5 +751,9 @@ export default class BasePortal {
         document.querySelector('.close-modal').addEventListener('click', () => {
             document.querySelector('.modal-overlay').classList.toggle('show-modal');
         });
+    }
+
+    setupReservationSummaryContainer(){
+        
     }
 }

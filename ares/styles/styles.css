@@ -1891,11 +1891,11 @@ legend {
     height: 30px;
 }
 
-.modal-overlay{
+.modal-overlay {
     display: none;
 }
 
-.show-modal{
+.show-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1908,29 +1908,31 @@ legend {
     z-index: 9;
 }
 
-.modal-container{
+.modal-container {
     background: #fff;
     padding: 18px;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 90vw;
+    max-width: 600px;
     height: 90vh;
 }
 
-.modal-header{
+.modal-header {
     border-bottom: 1px solid #333;
     position: relative;
     display: flex;
     justify-content: space-between;
 }
 
-.modal-header h3{
+.modal-header h3 {
     margin-bottom: 0;
 }
 
-.close-modal svg{
+.close-modal svg {
     width: 18px;
     height: 18px;
+    cursor: pointer;
 }
 
 #theReservationFormContainer {
@@ -1998,12 +2000,13 @@ legend {
 
 .theHotelName {
     width: 100%;
-    font-size: 19px;
+    font-size: 14px;
     font-weight: 700;
     color: #333;
     text-align: center;
-    padding: 6px;
+    padding: 12px 0;
     border-radius: 5px 5px 0 0;
+    max-width: 75%;
 }
 
 .checkOutSummaryTable {
@@ -2024,6 +2027,10 @@ legend {
 }
 
 .numberOfAdults td {
+    display: none;
+}
+
+.paymentRow {
     display: none;
 }
 

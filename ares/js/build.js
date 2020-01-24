@@ -762,8 +762,10 @@ export default class BasePortal {
             return;
         }
 
-        let check_in_date = check_in_element.textContent.toLocaleDateString("en-US");
-        let check_out_date = check_out_element.textContent.toLocaleDateString("en-US");
+        let check_in_text = check_in_element.textContent;
+        let check_out_text = check_out_element.textContent;
+        let check_in_date = check_in_text.toLocaleDateString("en-US");
+        let check_out_date = check_out_text.toLocaleDateString("en-US");
 
 
         this.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');

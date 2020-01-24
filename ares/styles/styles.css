@@ -2135,7 +2135,7 @@ legend {
     color: #9b6aad;
 }
 
-/*#billing-details-container {
+#billing-details-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 50% 50%;
@@ -2172,7 +2172,7 @@ legend {
 #billing-details-container>div:nth-child(4) {
     grid-column-start: 2;
     grid-row-start: 2;
-}*/
+}
 
 @media screen and (max-width: 800px) {
     #theHotel legend {

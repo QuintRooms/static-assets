@@ -783,6 +783,7 @@ export default class BasePortal {
         let reservation_count = 0;
         room_reservations.forEach((reservation) => {
             reservation_count++;
+            console.log('formatCheckoutForm fired.')
             this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjaxtd.GuestForms > fieldset:nth-child(${reservation_count})`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
             
 

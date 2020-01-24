@@ -1,4 +1,3 @@
-<style>
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -62,7 +61,16 @@ textarea {
 .ArnPagerResult,
 .ArnPushPageContent,
 #theArnPushPage,
-.show-search-container {
+.show-search-container,
+#CitiesNearbyContainer,
+#theRateDescription,
+.numberOfNights,
+.numberOfAdults,
+#theBookingPage .ArnRateCalendar,
+#theBookingPage #theRateSummaryInfo div,
+#theCharges legend,
+#theHotelAddress,
+#theBookingPage .paymentMethods img {
     display: none;
 }
 
@@ -173,7 +181,8 @@ textarea {
         width: 125px;
     }
 
-    .hamburger .line {
+    .hamburger .line,
+    .hamburger {
         display: block;
     }
 
@@ -612,15 +621,6 @@ textarea {
     display: none;
 }
 
-/*#searching input {
-    background: #9c6aad;
-    border: none;
-    color: #fff;
-    padding: 8px 32px;
-    border-radius: 5px;
-    line-height: 1;
-}*/
-
 .ArnSearchContainerMainTable {
     width: 100%;
     display: block;
@@ -765,6 +765,10 @@ div.autocomplete ul li.selected {
     display: inline;
 }
 
+.SearchHotels .star {
+    transform: scale(.9);
+}
+
 .SearchHotels .ArnTripAdvisorDetails.HasReviews {
     display: flex !important;
 }
@@ -875,15 +879,22 @@ div.autocomplete ul li.selected {
 @media screen and (max-width: 800px) {
 
     /* Mobile Sort and Filter Start*/
-    .sort-filter-container {
+    .sort-filter-overlay {
         position: fixed;
         top: 0;
         height: 100%;
         width: 100%;
         z-index: 9;
-        background: #fff;
+        background: rgba(0, 0, 0, .7);
         display: none;
+    }
+
+    .sort-filter-container {
+        background: #fff;
         overflow: scroll;
+        position: relative;
+        width: 90vw;
+        height: 90vh;
     }
 
     .mobile-sort-container,
@@ -899,6 +910,9 @@ div.autocomplete ul li.selected {
     .show-sort-filter {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
     }
 
     #sort-wrapper {
@@ -1198,7 +1212,7 @@ legend {
 
 .SinglePropDetail .ArnPropertyMapInner {
     height: 300px !important;
-} 
+}
 
 .PropertyAmenities {
     padding: 0;
@@ -1619,7 +1633,7 @@ legend {
     }
 
     #arnCloseAnchorId {
-        padding: 12px;
+        padding: 8px;
         border: none;
         border-radius: 5px;
         color: #9c6aad;
@@ -1869,6 +1883,56 @@ legend {
 }
 
 /* Checkout Start */
+.creditcard {
+    display: inline-block;
+    vertical-align: middle;
+    margin: .75rem 1rem .75rem 0;
+    width: 45px;
+    height: 30px;
+}
+
+.modal-overlay{
+    display: none;
+}
+
+.show-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    z-index: 9;
+}
+
+.modal-container{
+    background: #fff;
+    padding: 18px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 90vw;
+    height: 90vh;
+}
+
+.modal-header{
+    border-bottom: 1px solid #333;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-header h3{
+    margin-bottom: 0;
+}
+
+.close-modal svg{
+    width: 18px;
+    height: 18px;
+}
+
 #theReservationFormContainer {
     margin: 36px 0 0 0;
 }
@@ -2315,7 +2379,7 @@ body.WBForgotPasswordForm {
 .arnMapPopup .discount,
 .arnMapPopup .rebate,
 .arnMapPopup .reviewCount {
-    display: none;
+    display: none !important;
 }
 
 .leaflet-popup-content-wrapper,

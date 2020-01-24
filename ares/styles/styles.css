@@ -1891,7 +1891,7 @@ legend {
     height: 30px;
 }
 
-.open-modal{
+.open-modal {
     color: #9b6aad;
     text-decoration: underline;
     cursor: pointer;
@@ -1998,10 +1998,11 @@ legend {
     border: 1px solid #ccc;
 }
 
-#theHotel legend{
+#theHotel legend {
     border: none;
     font-weight: 700;
 }
+
 #theHotel .discount {
     display: inline-block;
     width: 30%;
@@ -2029,10 +2030,11 @@ legend {
     display: inline-block;
 }
 
-#theCharges{
+#theCharges {
     padding: 0;
     margin-bottom: 0;
 }
+
 .checkOutSummaryTable {
     display: none;
 }
@@ -2131,6 +2133,17 @@ legend {
 
 #theAdditionalEmailsLink a {
     color: #9b6aad;
+}
+
+#theBillingAddressAjax1{
+    width: 50%;
+    float: left;
+}
+#theBillingAddressAjax1 + div label{
+    margin-top: 4px;
+}
+#theCity1 {
+    width: 50%;
 }
 
 @media screen and (max-width: 800px) {

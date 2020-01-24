@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/header_banner.png');
+    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/58192/images/header_banner.png') no-repeat center center /cover;
     display: flex;
     align-items: center;
     justify-content: center;

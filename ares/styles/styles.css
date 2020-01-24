@@ -2026,7 +2026,8 @@ legend {
     margin: -4px 0 12px 0;
 }
 
-.numberOfAdults td {
+.numberOfAdults td,
+.discountRow {
     display: none;
 }
 
@@ -2089,11 +2090,16 @@ legend {
 
 .totalsTable tr td,
 .totalsTable tr th {
-    border-bottom: 1px solid #e0e0e0 !important;
+    border-bottom: none !important;
     color: #333;
 }
 
-.totalsTable tr td {
+.totalRow+.discount th,
+.totalRow+.discount td {
+    border-bottom: 1px solid #ccc;
+}
+
+.totalsTable tr th {
     font-weight: 700;
 }
 

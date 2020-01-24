@@ -2135,7 +2135,7 @@ legend {
     color: #9b6aad;
 }
 
-#theBillingAddressAjax1 {
+/*#theBillingAddressAjax1 {
     width: 50%;
     float: left;
 }
@@ -2153,9 +2153,9 @@ legend {
     width: 50%;
 }
 
-.stateListP {
-    width: 100%;
-}
+.stateList {
+    width: 98% !important;
+}*/
 
 @media screen and (max-width: 800px) {
     #theHotel legend {

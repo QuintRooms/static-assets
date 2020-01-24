@@ -1957,7 +1957,9 @@ legend {
 }
 
 #theBookingPage .PaymentPolicies {
-    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
     display: inline-block;
     vertical-align: top;
     width: 33%;
@@ -1987,8 +1989,13 @@ legend {
 
 #theHotel {
     position: relative;
+    border: 1px solid #ccc;
 }
 
+#theHotel legend{
+    border: none;
+    font-weight: 700;
+}
 #theHotel .discount {
     display: inline-block;
 }

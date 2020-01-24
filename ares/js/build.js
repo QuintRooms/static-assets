@@ -796,7 +796,3 @@ export default class BasePortal {
         });
     }
 }
-
-#theReservationFormContainer > table > tbody > tr > #theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(2)
-#theReservationFormContainer > table > tbody > tr > #theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(3)
-#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(4)

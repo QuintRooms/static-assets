@@ -2135,15 +2135,26 @@ legend {
     color: #9b6aad;
 }
 
-#theBillingAddressAjax1{
+#theBillingAddressAjax1 {
     width: 50%;
     float: left;
 }
-#theBillingAddressAjax1 + div label{
+
+#theBillingAddressAjax1+div label {
     margin-top: 4px;
 }
+
 #theCity1 {
     width: 50%;
+}
+
+#theStateAjax1 {
+    float: left;
+    width: 50%;
+}
+
+.stateListP {
+    width: 100%;
 }
 
 @media screen and (max-width: 800px) {

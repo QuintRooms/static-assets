@@ -1988,6 +1988,9 @@ legend {
 #theHotel {
     position: relative;
 }
+#theHotel .discount{
+
+}
 
 #theHotel img {
     border-radius: 5px;
@@ -2003,19 +2006,15 @@ legend {
     font-size: 14px;
     font-weight: 700;
     color: #333;
-    text-align: center;
+    text-align: left;
     padding: 12px 0;
     border-radius: 5px 5px 0 0;
     max-width: 75%;
+    display: inline-block;
 }
 
 .checkOutSummaryTable {
-    margin-top: 18px;
-    width: 100%;
-}
-
-.checkOutSummaryTable td {
-    text-align: right;
+    display: none;
 }
 
 .ArnSubPage .FormFields {

@@ -753,7 +753,7 @@ export default class BasePortal {
         });
     }
 
-    setupReservationSummaryContainer(){
-        
+    setupReservationSummaryContainer() {
+        this.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 }

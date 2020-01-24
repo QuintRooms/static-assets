@@ -305,7 +305,7 @@ body.WBForgotPasswordForm {
 header {
     background: #fff;
     grid-row-start: 1;
-    border-bottom: 2px solid #5B6770;
+    border-bottom: 2px solid #242323;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -497,7 +497,7 @@ header {
 }
 
 .arn-leaflet-reset-button {
-    background: #5B6770;
+    background: #242323;
     border: 1px solid transparent !important;
     transition: all .2s linear;
 }
@@ -505,7 +505,7 @@ header {
 .arn-leaflet-reset-button:hover,
 .arn-leaflet-reset-button:focus,
 .arn-leaflet-reset-button:active {
-    background: #5B6770;
+    background: #242323;
     border: 1px solid transparent !important;
 }
 
@@ -559,7 +559,7 @@ header {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-    background: #5B6770;
+    background: #242323;
     color: rgb(255, 255, 255) !important;
 }
 

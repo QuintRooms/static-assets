@@ -2172,11 +2172,17 @@ legend {
     grid-row-start: 2;
 }
 
-#security-code-exp-container{
+#security-code-exp-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;
     grid-column-gap: 5%;
+}
+
+#theCvvCode,
+#theCardExpirationFieldsAjax,
+#theCardExpirationFieldsAjax table {
+    width: 100%;
 }
 
 @media screen and (max-width: 800px) {

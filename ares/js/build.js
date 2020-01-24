@@ -754,22 +754,23 @@ export default class BasePortal {
         });
     }
 
-    setupReservationSummaryContainer() {
+    function setupReservationSummaryContainer() {
         let check_in_element = document.querySelector('.checkInRow td');
         let check_out_element = document.querySelector('.checkOutRow td');
+        let locale_element = document.querySelector('meta[name="locale"]')
 
-        if (!check_in_element || !check_out_element) {
+        if (!check_in_element || !check_out_element || !locale_element) {
             return;
         }
-
+        let locale = locale_element.getAttribute('content');
         let check_in_text = check_in_element.textContent;
         let check_out_text = check_out_element.textContent;
-        let check_in_date = new Date(check_in_text).toLocaleDateString("en-US");
-        let check_out_date = new Date(check_out_text).toLocaleDateString("en-US");
+        let check_in_date = new Date(check_in_text).toLocaleDateString();
+        let check_out_date = new Date(check_out_text).toLocaleDateString(locale);
 
         this.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
         this.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
-
-
     }
+
+    setupReservationSummaryContainer();
 }

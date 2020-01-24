@@ -60,6 +60,7 @@ export default class BasePortal {
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');
                     this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
+                    this.formatCheckoutForm();
                 }
 
                 // root page methods

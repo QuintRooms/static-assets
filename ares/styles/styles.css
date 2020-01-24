@@ -2029,6 +2029,10 @@ legend {
     display: inline-block;
 }
 
+#theCharges{
+    padding: 0;
+    margin-bottom: 0;
+}
 .checkOutSummaryTable {
     display: none;
 }

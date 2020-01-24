@@ -306,7 +306,8 @@ export default class BasePortal {
         }
 
         room_description_el.forEach(function(element) {
-            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config_json['event_name']}</span>`);
+            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">
+                ${this.site_config_json['lodging']['event_name']}</span>`);
         });
     }
 

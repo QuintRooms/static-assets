@@ -755,9 +755,8 @@ export default class BasePortal {
     }
 
     setupReservationSummaryContainer() {
-        let date = new Date('Friday, February 28, 2020');
         let check_in_element = document.querySelector('.checkInRow td');
-        let check_out_element = document.querySelecor('.checkOutRow td');
+        let check_out_element = document.querySelector('.checkOutRow td');
 
         if (!check_in_element || !check_out_element) {
             return;

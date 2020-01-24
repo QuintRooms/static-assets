@@ -1891,6 +1891,12 @@ legend {
     height: 30px;
 }
 
+.open-modal{
+    color: #9b6aad;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .modal-overlay {
     display: none;
 }
@@ -1998,6 +2004,8 @@ legend {
 }
 #theHotel .discount {
     display: inline-block;
+    width: 30%;
+    text-align: right;
 }
 
 #theHotel img {

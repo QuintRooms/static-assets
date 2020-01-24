@@ -2185,9 +2185,13 @@ legend {
     width: 100%;
 }
 
+#theCardExpirationFieldsAjax td {
+    width: 50%;
+}
+
 #theExpirationMonthAjax select,
 #theExpirationYearAjax select {
-    width: 96%;
+    width: 96% !important;
 }
 
 @media screen and (max-width: 800px) {

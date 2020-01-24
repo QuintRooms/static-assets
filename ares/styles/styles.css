@@ -2096,7 +2096,7 @@ legend {
 
 .totalRow+.discount th,
 .totalRow+.discount td {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc !important;
 }
 
 .totalsTable tr th {

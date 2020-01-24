@@ -2135,27 +2135,31 @@ legend {
     color: #9b6aad;
 }
 
-/*#theBillingAddressAjax1 {
-    width: 50%;
-    float: left;
+#billing-details-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
 }
 
-#theBillingAddressAjax1+div label {
-    margin-top: 4px;
+#billing-details-container > div:nth-child(1){
+    grid-column-start: 1;
+    grid-row-start: 1 ;
 }
 
-#theCity1 {
-    width: 50%;
+#billing-details-container > div:nth-child(2){
+    grid-column-start: 2;
+    grid-row-start: 1 ;
 }
 
-#theStateAjax1 {
-    float: left;
-    width: 50%;
+#billing-details-container > div:nth-child(3){
+    grid-column-start: 1;
+    grid-row-start: 2 ;
 }
 
-.stateList {
-    width: 98% !important;
-}*/
+#billing-details-container > div:nth-child(4){
+    grid-column-start: 2;
+    grid-row-start: 2 ;
+}
 
 @media screen and (max-width: 800px) {
     #theHotel legend {

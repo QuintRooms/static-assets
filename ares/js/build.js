@@ -51,7 +51,7 @@ export default class BasePortal {
                     this.moveElementIntoExistingWrapper('#theBookingPage #theCreditCardBillingNameAjax1', '#theBookingPage #theCreditCardNumberAjax', 'afterEnd');
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('#theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div'), document.querySelector('#theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div'), document.querySelector('#theStateAjax1'), document.querySelector('#theCountryAjax1')], 'billing-details-container', '#theBillingAddressAjax1', 'afterEnd');
 
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('#theBookingPage .cvvTable'), document.querySelector('#theCardExpirationFieldsAjax')], 'billing-details-container', '#theCreditCardBillingNameAjax1', 'afterEnd');
+                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('#theBookingPage .cvvTable'), document.querySelector('#theCardExpirationFieldsAjax')], 'security-code-exp-container', '#theCreditCardBillingNameAjax1', 'afterEnd');
 
                     // Shows numpad on ios
                     this.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');

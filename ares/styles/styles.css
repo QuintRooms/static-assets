@@ -2086,12 +2086,14 @@ legend {
 
 .totalsTable {
     border: none;
+    padding: 0;
 }
 
 .totalsTable tr td,
 .totalsTable tr th {
     border-bottom: none !important;
     color: #333;
+    padding: 8px 0;
 }
 
 .totalRow+.discount th,

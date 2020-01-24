@@ -42,7 +42,7 @@ export default class BasePortal {
                 // checkout page methods
                 if (this.page_name == 'checkout') {
                     this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
-                    this.updateHTML('.WBGuestFormFields > legend', 'Billing Address');
+                    this.updateHTML('.WBGuestFormFields > legend', 'Billing Info');
                     this.setupReservationSummaryContainer();
                     // Checkout form input validation
                     this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
@@ -55,6 +55,7 @@ export default class BasePortal {
                     this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                     this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                     this.updateHTML('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
+                    this.updateHTML('#theBillingAddressAjax1 label', 'Billing Address');
                     this.updateHTML('#theCharges legend', 'Rate Info');
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');

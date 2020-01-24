@@ -2185,6 +2185,11 @@ legend {
     width: 100%;
 }
 
+#theExpirationMonthAjax select,
+#theExpirationYearAjax select {
+    width: 96%;
+}
+
 @media screen and (max-width: 800px) {
     #theHotel legend {
         display: none;

@@ -776,7 +776,7 @@ export default class BasePortal {
         this.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 
-    function formatCheckoutForm() {
+    formatCheckoutForm() {
         // if(!this.page_name == 'checkout') return;
         let room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 0;
@@ -792,8 +792,4 @@ export default class BasePortal {
 
         });
     }
-    formatCheckoutForm()
 }
-#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${})
-#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(3)
-#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(4)

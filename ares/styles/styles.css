@@ -61,6 +61,7 @@ textarea {
 #theArnPushPage,
 .show-search-container,
 #CitiesNearbyContainer,
+#PropertyTypesContainer,
 #theRateDescription,
 .numberOfNights,
 .numberOfAdults,
@@ -710,7 +711,6 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin-bottom: 4px;
-    border-radius: 5px;
 }
 
 .SearchHotels #CheckInContainer,
@@ -1429,7 +1429,6 @@ legend {
 
 .ArnSecondarySearchOuterContainer select {
     border: 1px solid #9c6aad;
-    border-radius: 5px;
     width: 100%;
     padding: 6px;
 }
@@ -1546,6 +1545,7 @@ legend {
 
 .ArnRateCell {
     text-align: center;
+    align-self: center;
     width: 25%;
 }
 
@@ -1668,7 +1668,6 @@ legend {
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnContainer {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 

@@ -778,9 +778,13 @@ export default class BasePortal {
     }
 
     formatCheckoutForm() {
-        // if(!this.page_name == 'checkout') return;
+        if (!this.page_name == 'checkout') {
+            return;
+        }
+
         let room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 1;
+
         room_reservations.forEach((reservation) => {
             reservation_count++;
 
@@ -792,10 +796,11 @@ export default class BasePortal {
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax${reservation_count - 1}`),
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax${reservation_count - 1}`)
             ], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
+
+            this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardVerificationAjax`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardExpirationFieldsAjax`)], `security-code-exp-container${reservation_count}`, `#theCreditCardBillingNameAjax${reservation_count - 1}`, 'afterEnd');
+
             document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
-
-            // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage #theCardVerificationAjax`), document.querySelector(`#theCardExpirationFieldsAjax`)], 'security-code-exp-container', '#theCreditCardBillingNameAjax1', 'afterEnd');
-
+            document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
         });
     }
 }

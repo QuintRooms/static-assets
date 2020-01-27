@@ -2043,7 +2043,7 @@ legend {
     margin-top: 4px;
 }
 
-#theSpecialRequestsAjax {
+#theSpecialRequestsAjax textarea {
     max-width: 583px;
 }
 
@@ -2176,7 +2176,7 @@ legend {
     grid-row-start: 2;
 }
 
-#security-code-exp-container {
+.security-code-exp-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;

@@ -801,7 +801,7 @@ export default class BasePortal {
 
             this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
             this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
-            this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .paymentMethods`, 'beforeBegin');
+            this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) billing-details-container${reservation_count - 1}`, 'beforeBegin');
         });
     }
 }

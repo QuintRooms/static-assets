@@ -786,7 +786,7 @@ export default class BasePortal {
             console.log('reservation_count:', reservation_count)
 
             console.log(document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count})`))
-            
+
             this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax td.GuestForms > fieldset:nth-child(${reservation_count})`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
             // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)], `billing-details-container${reservation_count}`, `#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
@@ -796,3 +796,4 @@ export default class BasePortal {
 
         });
     }
+}

@@ -2203,10 +2203,14 @@ legend {
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,
 #theBookingPage .FormFields .formField,
-#theBookingPage .FormFields .text,
 #theBookingPage .FormFields textarea,
-#theBookingPage .FormFields select {
-    width: 100%;
+#theBookingPage .FormFields select,
+#theEmailAddressAjax input,
+.additionalEmailAddress input,
+.guestBillingAddress input,
+#theCreditCardNumberAjax input,
+#theCreditCardBillingName {
+    width: 100% !important;
 }
 
 @media screen and (max-width: 800px) {

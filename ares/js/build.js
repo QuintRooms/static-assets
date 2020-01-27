@@ -31,7 +31,7 @@ export default class BasePortal {
                 this.updateHTML('.SinglePropDetail .Details a', 'General Info');
                 this.updateHTML('.SinglePropDetail .Map a', 'Map');
                 this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
-                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
+                // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 this.updatePropReviewsURLToUseAnchor();
                 this.updateRoomDescription();
                 this.createImageSlider();

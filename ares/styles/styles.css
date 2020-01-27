@@ -2043,7 +2043,7 @@ legend {
 }
 
 #theSpecialRequestsAjax textarea {
-    max-width: 583px;
+    max-width: 595px;
 }
 
 #theAdditionalEmailsLink {
@@ -2142,7 +2142,7 @@ legend {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 50% 50%;
-    grid-column-gap: 5%;
+    grid-column-gap: 6%;
 }
 
 .billing-details-container input,
@@ -2179,7 +2179,7 @@ legend {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;
-    grid-column-gap: 5%;
+    grid-column-gap: 6%;
 }
 
 #theCvvCode,
@@ -2195,6 +2195,18 @@ legend {
 #theExpirationMonthAjax select,
 #theExpirationYearAjax select {
     width: 96% !important;
+}
+#theCardVerificationAjax{
+    margin-right: 0;
+}
+#theGuestNameAjax .text,
+#theBookingPage .ArnGuestNames .text,
+#theCityZipAjax input,
+#theBookingPage .FormFields .formField,
+#theBookingPage .FormFields .text,
+#theBookingPage .FormFields textarea,
+#theBookingPage .FormFields select {
+    width: 100%;
 }
 
 @media screen and (max-width: 800px) {

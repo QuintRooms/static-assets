@@ -2256,12 +2256,12 @@ legend {
         width: unset;
     }
 
-    #theCityZipAjax1 tr {
+    .guestCityZip tr {
         display: flex;
         flex-direction: column;
     }
 
-    #theCityZipAjax1 .text,
+    .guestCityZip .text,
     .countryList,
     .stateList {
         width: 98% !important;

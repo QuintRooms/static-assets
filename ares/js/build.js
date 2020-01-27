@@ -26,18 +26,18 @@ export default class BasePortal {
                 this.updateHTML('.ArnLeftListContainer > span.translateMe', 'Search');
 
                 // single prop detail methods
-                // if (this.page_name == 'property-detail') {
-                this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                this.updateHTML('.SinglePropDetail .Details a', 'General Info');
-                this.updateHTML('.SinglePropDetail .Map a', 'Map');
-                this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
-                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-                this.updatePropReviewsURLToUseAnchor();
-                this.updateRoomDescription();
-                this.createImageSlider();
-                this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
-                this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
-                // }
+                if (this.page_name == 'property-detail') {
+                    this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                    this.updateHTML('.SinglePropDetail .Details a', 'General Info');
+                    this.updateHTML('.SinglePropDetail .Map a', 'Map');
+                    this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
+                    this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
+                    this.updatePropReviewsURLToUseAnchor();
+                    this.updateRoomDescription();
+                    this.createImageSlider();
+                    this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                    this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                }
 
                 // checkout page methods
                 if (this.page_name == 'checkout') {

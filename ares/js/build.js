@@ -783,13 +783,10 @@ export default class BasePortal {
         let reservation_count = 1;
         room_reservations.forEach((reservation) => {
             reservation_count++;
-            console.log('reservation_count:', reservation_count)
 
-            console.log(document.querySelector(`td.GuestForms > fieldset:nth-child(${reservation_count})`))
+            moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
-            this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax td.GuestForms > fieldset:nth-child(${reservation_count})`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
-
-            // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)], `billing-details-container${reservation_count}`, `#theReservationFormContainer > table > tbody > tr > td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
+            this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
 
 
             // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage #theCardVerificationAjax`), document.querySelector(`#theCardExpirationFieldsAjax`)], 'security-code-exp-container', '#theCreditCardBillingNameAjax1', 'afterEnd');

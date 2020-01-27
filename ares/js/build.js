@@ -733,7 +733,7 @@ export default class BasePortal {
         }
     }
 
-    createModal(array_of_elements_for_modal, modal_title, page_name, open_button_parent_selector, open_button_location) {
+    createModal(array_of_elements_to_put_in_modal_body, modal_title, page_name, open_button_parent_selector, open_button_location) {
         if (!page_name) {
             return;
         }
@@ -742,7 +742,7 @@ export default class BasePortal {
 
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
 
-        array_of_elements_for_modal.forEach((element) => {
+        array_of_elements_to_put_in_modal_body.forEach((element) => {
             document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', element);
         });
 

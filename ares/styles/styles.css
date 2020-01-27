@@ -26,9 +26,7 @@ textarea {
     font-family: 'Montserrat', 'Helvetica';
     font-size: 15px !important;
     font-weight: 500 !important;
-    padding: 8px 6px !important;
-    border-radius: 5px !important;
-    border: none !important;
+    padding: 6px !important;
     height: unset !important;
     border: 1px solid #e0e0e0 !important;
     margin-bottom: 6px;
@@ -1922,6 +1920,7 @@ legend {
     width: 90vw;
     max-width: 600px;
     height: 90vh;
+    border-radius: 5px;
 }
 
 .modal-header {

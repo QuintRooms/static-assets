@@ -2139,39 +2139,39 @@ legend {
     color: #9b6aad;
 }
 
-#billing-details {
+.billing-details-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 50% 50%;
     grid-column-gap: 5%;
 }
 
-#billing-details input,
-#billing-details select {
+.billing-details-container input,
+.billing-details-container select {
     width: 100% !important;
 }
 
-#billing-details>div:nth-child(2) {
+.billing-details-container>div:nth-child(2) {
     grid-column-start: 1;
     grid-row-start: 1;
     margin-top: 4px;
 }
 
 
-#billing-details>div:nth-child(3) {
+.billing-details-container>div:nth-child(3) {
     grid-column-start: 2;
     grid-row-start: 1;
 }
 
 
 
-#billing-details>div:nth-child(1) {
+.billing-details-container>div:nth-child(1) {
     grid-column-start: 1;
     grid-row-start: 2;
     margin-top: 4px;
 }
 
-#billing-details>div:nth-child(4) {
+.billing-details-container>div:nth-child(4) {
     grid-column-start: 2;
     grid-row-start: 2;
 }

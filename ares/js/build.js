@@ -792,7 +792,7 @@ export default class BasePortal {
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax${reservation_count - 1}`),
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax${reservation_count - 1}`)
             ], `billing-details-container${reservation_count} billing-details`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
-
+            document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
 
             // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage #theCardVerificationAjax`), document.querySelector(`#theCardExpirationFieldsAjax`)], 'security-code-exp-container', '#theCreditCardBillingNameAjax1', 'afterEnd');
 

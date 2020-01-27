@@ -299,6 +299,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         console.log('updateRoomDescription() fired.', this.site_config_json)
+        console.log('site_type:', this.site_config_json['site_type'])
         let room_description_el = document.querySelectorAll('.RoomDescription');
         if (!document.querySelector('.SinglePropDetail') || !room_description_el || ! this.site_config_json['site_type'] == "lodging") {
             console.log('updateRoomDescription() should return here.')

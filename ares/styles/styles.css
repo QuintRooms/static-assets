@@ -2182,7 +2182,14 @@ legend {
     grid-column-gap: 6%;
 }
 
-.ArnGuestNames table > tbody > tr {
+.ArnGuestNames table>tbody>tr {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 100%;
+    grid-column-gap: 6%;
+}
+
+#theCardExpirationFieldsAjax table>tbody>tr {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;
@@ -2193,10 +2200,6 @@ legend {
 #theCardExpirationFieldsAjax,
 #theCardExpirationFieldsAjax table {
     width: 100%;
-}
-
-#theCardExpirationFieldsAjax td {
-    width: 50%;
 }
 
 #theExpirationMonthAjax select,

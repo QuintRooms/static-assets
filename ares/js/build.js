@@ -791,7 +791,7 @@ export default class BasePortal {
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestCityZip > table > tbody > tr > td:nth-child(2) > div`),
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax${reservation_count - 1}`),
                 document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax${reservation_count - 1}`)
-            ], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
+            ], `billing-details-container`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
 
 
             // this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage #theCardVerificationAjax`), document.querySelector(`#theCardExpirationFieldsAjax`)], 'security-code-exp-container', '#theCreditCardBillingNameAjax1', 'afterEnd');
@@ -799,38 +799,3 @@ export default class BasePortal {
         });
     }
 }
-
-// async function moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-//     console.log('moveOrphanedElementsIntoNewWrapper() fired.');
-//     return await new Promise(resolve => {
-//         if (document.querySelector(adjacent_element_class)) {
-//             document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
-//             elements_array.forEach((element) => {
-//                 document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
-//                 resolve();
-//             });
-//         }
-//     });
-// }
-
-// function formatCheckoutForm() {
-//     // if(!this.page_name == 'checkout') return;
-//     let room_reservations = document.querySelectorAll('.WBGuestFormFields');
-//     let reservation_count = 1;
-//     room_reservations.forEach((reservation) => {
-//         reservation_count++;
-
-//         this.moveOrphanedElementsIntoNewWrapper([
-//             document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZip${reservation_count - 1} > table > tbody > tr > td:nth-child(1) > div`),
-//             document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZip${reservation_count - 1} > table > tbody > tr > td:nth-child(2) > div`),
-//             document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax${reservation_count - 1}`),
-//             document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax${reservation_count - 1}`)
-//         ], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
-
-// console.log(document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`))
-
-
-//     });
-// }
-
-// formatCheckoutForm()

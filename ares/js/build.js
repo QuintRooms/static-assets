@@ -784,7 +784,7 @@ export default class BasePortal {
         room_reservations.forEach((reservation) => {
             reservation_count++;
 
-            moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
+            this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
             this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(1) > div`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCityZipAjax1 > table > tbody > tr > td:nth-child(2) > div`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theStateAjax1`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCountryAjax1`)], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax`, 'afterEnd');
 

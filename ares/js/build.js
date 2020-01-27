@@ -54,12 +54,9 @@ export default class BasePortal {
                     this.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
                     this.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                     this.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-                    this.updateHTML('#theCreditCardBillingNameAjax1 label', 'Cardholder\'s Name');
-                    this.updateHTML('#theBillingAddressAjax1 label', 'Billing Address');
                     this.updateHTML('#theCharges legend', 'Rate Info');
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');
-                    this.createHTML('<legend>Credit Card Info</legend>', '#theBookingPage .paymentMethods', 'beforeBegin');
                     this.formatCheckoutForm();
                 }
 
@@ -801,6 +798,10 @@ export default class BasePortal {
 
             document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
             document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
+
+            this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
+            this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
+            this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .paymentMethods`, 'beforeBegin');
         });
     }
 }

@@ -298,10 +298,8 @@ export default class BasePortal {
      *@param string selector - DOM selector
      */
     updateRoomDescription() {
-        console.log('updateRoomDescription() fired.', this.site_config_json)
-        console.log('site_type:', this.site_config_json['site_type'])
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || ! this.site_config_json['site_type'] == "lodging") {
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config_json['site_type'] != "lodging") {
             console.log('updateRoomDescription() should return here.')
             return;
         }

@@ -2182,7 +2182,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-.ArnGuestNames {
+.ArnGuestNames table > tbody > tr {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;

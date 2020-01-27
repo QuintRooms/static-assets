@@ -2182,6 +2182,13 @@ legend {
     grid-column-gap: 6%;
 }
 
+.ArnGuestNames {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 100%;
+    grid-column-gap: 6%;
+}
+
 #theCvvCode,
 #theCardExpirationFieldsAjax,
 #theCardExpirationFieldsAjax table {
@@ -2196,9 +2203,11 @@ legend {
 #theExpirationYearAjax select {
     width: 96% !important;
 }
-#theCardVerificationAjax{
+
+#theCardVerificationAjax {
     margin-right: 0;
 }
+
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,

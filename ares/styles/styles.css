@@ -1275,7 +1275,6 @@ legend {
 .SinglePropDetail #rooms,
 .SinglePropDetail #adults {
     margin-bottom: 4px;
-    border-radius: 5px;
     width: 100%;
 }
 

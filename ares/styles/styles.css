@@ -26,9 +26,7 @@ textarea {
     font-family: 'Montserrat', 'Helvetica';
     font-size: 15px !important;
     font-weight: 500 !important;
-    padding: 8px 6px !important;
-    border-radius: 5px !important;
-    border: none !important;
+    padding: 6px !important;
     height: unset !important;
     border: 1px solid #e0e0e0 !important;
     margin-bottom: 6px;
@@ -63,6 +61,7 @@ textarea {
 #theArnPushPage,
 .show-search-container,
 #CitiesNearbyContainer,
+#PropertyTypesContainer,
 #theRateDescription,
 .numberOfNights,
 .numberOfAdults,
@@ -712,7 +711,6 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin-bottom: 4px;
-    border-radius: 5px;
 }
 
 .SearchHotels #CheckInContainer,
@@ -1277,7 +1275,6 @@ legend {
 .SinglePropDetail #rooms,
 .SinglePropDetail #adults {
     margin-bottom: 4px;
-    border-radius: 5px;
     width: 100%;
 }
 
@@ -1431,7 +1428,6 @@ legend {
 
 .ArnSecondarySearchOuterContainer select {
     border: 1px solid #9c6aad;
-    border-radius: 5px;
     width: 100%;
     padding: 6px;
 }
@@ -1548,6 +1544,7 @@ legend {
 
 .ArnRateCell {
     text-align: center;
+    align-self: center;
     width: 25%;
 }
 
@@ -1670,7 +1667,6 @@ legend {
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnContainer {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
@@ -1891,11 +1887,17 @@ legend {
     height: 30px;
 }
 
-.modal-overlay{
+.open-modal {
+    color: #9b6aad;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-overlay {
     display: none;
 }
 
-.show-modal{
+.show-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1908,29 +1910,32 @@ legend {
     z-index: 9;
 }
 
-.modal-container{
+.modal-container {
     background: #fff;
     padding: 18px;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 90vw;
+    max-width: 600px;
     height: 90vh;
+    border-radius: 5px;
 }
 
-.modal-header{
+.modal-header {
     border-bottom: 1px solid #333;
     position: relative;
     display: flex;
     justify-content: space-between;
 }
 
-.modal-header h3{
+.modal-header h3 {
     margin-bottom: 0;
 }
 
-.close-modal svg{
+.close-modal svg {
     width: 18px;
     height: 18px;
+    cursor: pointer;
 }
 
 #theReservationFormContainer {
@@ -1950,12 +1955,14 @@ legend {
 #theBookingPage .GuestForms {
     display: inline-block;
     vertical-align: top;
-    margin: 0 1% 0 0;
-    width: 66%;
+    margin: 0 7% 0 0;
+    width: 60%;
 }
 
 #theBookingPage .PaymentPolicies {
-    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
     display: inline-block;
     vertical-align: top;
     width: 33%;
@@ -1985,6 +1992,18 @@ legend {
 
 #theHotel {
     position: relative;
+    border: 1px solid #ccc;
+}
+
+#theHotel legend {
+    border: none;
+    font-weight: 700;
+}
+
+#theHotel .discount {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
 }
 
 #theHotel img {
@@ -1998,32 +2017,44 @@ legend {
 
 .theHotelName {
     width: 100%;
-    font-size: 19px;
+    font-size: 14px;
     font-weight: 700;
     color: #333;
-    text-align: center;
-    padding: 6px;
+    text-align: left;
+    padding: 12px 0 4px 0;
     border-radius: 5px 5px 0 0;
+    max-width: 70%;
+    display: inline-block;
+}
+
+#theCharges {
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .checkOutSummaryTable {
-    margin-top: 18px;
-    width: 100%;
-}
-
-.checkOutSummaryTable td {
-    text-align: right;
+    display: none;
 }
 
 .ArnSubPage .FormFields {
     margin-top: 4px;
 }
 
+#theSpecialRequestsAjax textarea {
+    max-width: 595px;
+}
+
 #theAdditionalEmailsLink {
     margin: -4px 0 12px 0;
 }
 
-.numberOfAdults td {
+.numberOfAdults td,
+.discountRow {
+    display: none;
+}
+
+.paymentRow,
+.totalRow {
     display: none;
 }
 
@@ -2077,15 +2108,22 @@ legend {
 
 .totalsTable {
     border: none;
+    padding: 0;
 }
 
 .totalsTable tr td,
 .totalsTable tr th {
-    border-bottom: 1px solid #e0e0e0 !important;
+    border-bottom: none !important;
     color: #333;
+    padding: 8px 0;
 }
 
-.totalsTable tr td {
+.totalRow+.discount th,
+.totalRow+.discount td {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.totalsTable tr th {
     font-weight: 700;
 }
 
@@ -2096,6 +2134,93 @@ legend {
 
 #theAdditionalEmailsLink a {
     color: #9b6aad;
+}
+
+.billing-details-container {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 50% 50%;
+    grid-column-gap: 6%;
+}
+
+.billing-details-container input,
+.billing-details-container select {
+    width: 100% !important;
+}
+
+.billing-details-container>div:nth-child(2) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-top: 4px;
+}
+
+
+.billing-details-container>div:nth-child(3) {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+
+
+.billing-details-container>div:nth-child(1) {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    margin-top: 4px;
+}
+
+.billing-details-container>div:nth-child(4) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.security-code-exp-container {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 100%;
+    grid-column-gap: 6%;
+}
+
+.ArnGuestNames table>tbody>tr {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 100%;
+    grid-column-gap: 6%;
+}
+
+#theCardExpirationFieldsAjax table>tbody>tr {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 100%;
+    grid-column-gap: 6%;
+}
+
+#theCvvCode,
+#theCardExpirationFieldsAjax,
+#theCardExpirationFieldsAjax table {
+    width: 100%;
+}
+
+#theExpirationMonthAjax select,
+#theExpirationYearAjax select {
+    width: 96% !important;
+}
+
+#theCardVerificationAjax {
+    margin-right: 0;
+}
+
+#theGuestNameAjax .text,
+#theBookingPage .ArnGuestNames .text,
+#theCityZipAjax input,
+#theBookingPage .FormFields .formField,
+#theBookingPage .FormFields textarea,
+#theBookingPage .FormFields select,
+#theEmailAddressAjax input,
+.additionalEmailAddress input,
+.guestBillingAddress input,
+#theCreditCardNumberAjax input,
+#theCreditCardBillingName {
+    width: 100% !important;
 }
 
 @media screen and (max-width: 800px) {
@@ -2156,12 +2281,12 @@ legend {
         width: unset;
     }
 
-    #theCityZipAjax1 tr {
+    .guestCityZip tr {
         display: flex;
         flex-direction: column;
     }
 
-    #theCityZipAjax1 .text,
+    .guestCityZip .text,
     .countryList,
     .stateList {
         width: 98% !important;

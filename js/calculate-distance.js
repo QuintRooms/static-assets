@@ -1,4 +1,4 @@
-class Event {
+class Distance {
 
     constructor(params, venueName, unit, from_lat, from_long) {
         this.params = [];
@@ -121,13 +121,25 @@ class Event {
         }
     }
 }
-let event = new Event();
+let distance = new Distance();
 
-jQuery(document).on("ratesReadyEvent", function() {
-    event.params = [];
-    event.getPropertyLatLong().then(() => {
-        if (event.from_lat != null && event.from_long != null) {
-            event.updateDistance();
-        }
+async function pollingFinished() {
+    return await new Promise(resolve => {
+        let interval = setInterval(() => {
+            if (document.querySelector('.pollingFinished')) {
+
+                distance.params = [];
+                distance.getPropertyLatLong().then(() => {
+                    if (distance.from_lat != null && distance.from_long != null) {
+                        distance.updateDistance();
+                    }
+                });
+
+                resolve();
+                clearInterval(interval);
+            };
+        }, 250);
     });
-});
+}
+
+pollingFinished();

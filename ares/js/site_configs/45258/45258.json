@@ -15,7 +15,7 @@
         "show_points": false,
         "allow_registration": true
     },
-    "calculate_distance_type": "query-string",
+    "calculate_distance_type": "DOM",
     "show_language_select": true,
     "show_date_prompt": false,
     "show_advanced_search": true,

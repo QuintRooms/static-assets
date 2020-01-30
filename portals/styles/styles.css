@@ -2475,7 +2475,7 @@ body.WBResendOrCancelForm {
     width: auto;
     font-family: Helvetica, Arial, FreeSans, sans-serif;
     font-size: 14px;
-    background: rgba(50, 50, 50, .95);
+    background: rgba(50, 50, 50, .95) !important;
     color: #fff;
 }
 

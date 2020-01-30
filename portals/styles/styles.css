@@ -2463,6 +2463,10 @@ body.WBResendOrCancelForm {
     z-index: 99999998 !important;
 }
 
+#iubenda-cs-banner.iubenda-cs-top {
+    align-items: flex-end !important;
+}
+
 .iubenda-cs-content {
     display: block;
     margin: 0 auto;

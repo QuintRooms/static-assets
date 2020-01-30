@@ -2468,7 +2468,7 @@ body.WBResendOrCancelForm {
     align-items: flex-end !important;
 }
 
-.iubenda-cs-content {
+#iubenda-cs-banner .iubenda-cs-content {
     display: block;
     margin: 0 auto;
     padding: 20px;

@@ -811,7 +811,7 @@ export default class BasePortal {
             return;
         }
 
-        document.querySelector('body').insertAdjacentHTML('afterBegin', `
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
                 .yui3-skin-sam .yui3-calendar-day:hover,
                 .arn-leaflet-reset-button
@@ -828,7 +828,7 @@ export default class BasePortal {
                 .ArnShowRatesLink,
                 .bookRoom,
                 #theConfirmationButton,
-                .RootBody #theSubmitButton ,
+                .RootBody #theSubmitButton,
                 .WBLoginFormActions .submit,
                 .WBValidatedRegistrationFormActions .submit,
                 .WBForgotPasswordFormActions .submit{

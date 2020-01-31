@@ -1,9 +1,15 @@
 export default class BasePortal {
-    constructor(site_id, site_config_json, page_name) {
+    constructor(site_id, site_config, page_name) {
         this.site_id = site_id;
-        this.site_config_json = site_config_json;
+        this.site_config = site_config;
         this.page_name = page_name;
         this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#9c6aad" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        this.site_type = site_type;
+        this.lodging_details = lodging_details
+        this.cug_details = cug_details;
+        this.site_colors = site_colors;
+        this.banner_image_url;
+
     }
 
     init() {
@@ -11,12 +17,13 @@ export default class BasePortal {
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
+                this.stylePageFromConfig();
                 console.log('page_name:', this.page_name);
 
                 // all pages
                 this.buildMobileMenu();
                 this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
-                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
+                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config['fav_icon_url']}">`, 'head', 'beforeEnd');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
@@ -130,8 +137,8 @@ export default class BasePortal {
             return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
-                    this.site_config_json = json;
-                    console.log('site_config_json:', json);
+                    this.site_config = json;
+                    console.log('site_config:', json);
                 });
         } catch {
             console.log('could not get site config');
@@ -299,14 +306,14 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config_json['site_type'] != "lodging") {
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config['site_type'] != "lodging") {
             console.log('updateRoomDescription() should return here.')
             return;
         }
 
         room_description_el.forEach(function(element) {
             element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">
-                ${this.site_config_json['lodging']['event_name']}</span>`);
+                ${this.site_config['lodging']['event_name']}</span>`);
         });
     }
 
@@ -654,7 +661,6 @@ export default class BasePortal {
             });
         }
     }
-
     addDistanceScaleToMap() {
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             L.control.scale().addTo(window.ArnMap);
@@ -805,4 +811,63 @@ export default class BasePortal {
             this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');
         });
     }
+
+    stylePageFromConfig() {
+        if (!this.site_config) {
+            return;
+        }
+
+        document.querySelector('body').insertAdjacentHTML('afterBegin', `
+            <style>
+                .yui3-skin-sam .yui3-calendar-day:hover,
+                .arn-leaflet-reset-button
+                .arnMapMarker,
+                .arnMapMarker:hover
+                #searching h2:after
+                #search-wrapper
+                .ArnPrimarySearchContainer,
+                .SimpleSearch,
+                .ArnTripAdvisorDetails.HasReviews .ratingCount,
+                #theOtherSubmitButton:hover,
+                #theOtherSubmitButton:focus,
+                #theOtherSubmitButton:active,
+                .ArnShowRatesLink,
+                .bookRoom,
+                #theConfirmationButton,
+                .RootBody #theSubmitButton ,
+                .WBLoginFormActions .submit,
+                .WBValidatedRegistrationFormActions .submit,
+                .WBForgotPasswordFormActions .submit{
+                    background: ${this.site_config.primary_background_color};
+                }
+
+                @media screen and (max-width: 1105px) {
+                    .closeMap,
+                    #arnCloseAnchorId,
+                    #arnCloseAnchorId: hover,
+                    #arnCloseAnchorId:focus,
+                    #arnCloseAnchorId:active{
+                        background: ${this.site_config.primary_background_color} ;              
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    #commands a: hover,
+                        #commands a:active,
+                        #commands a:focus,
+                        #commands button:hover,
+                        #commands button:active,
+                        #commands button:focus,
+                        #sort-wrapper a:before #sort-wrapper a.active-filter:before{
+                            background: ${this.site_config.primary_background_color};
+
+                        }
+                }
+        </style>
+            `);
+
+    }
+
+
+
 }

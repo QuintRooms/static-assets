@@ -814,19 +814,19 @@ export default class BasePortal {
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
             /* Primary Background Color */
-                .yui3-skin-sam .yui3-calendar-day:hover,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,#searching h2:after,#search-wrapper,.ArnPrimarySearchContainer,.SimpleSearch,.ArnTripAdvisorDetails.HasReviews .ratingCount,#theOtherSubmitButton:hover,#theOtherSubmitButton:focus,#theOtherSubmitButton:active,.ArnShowRatesLink,.bookRoom,#theConfirmationButton,.RootBody #theSubmitButton,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.WBForgotPasswordFormActions .submit{
-                    background: ${this.site_config.primary_background_color} !important;
+                .yui3-skin-sam .yui3-calendar-day:hover,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,#searching h2:after,#search-wrapper,.ArnPrimarySearchContainer,.SimpleSearch,.ArnTripAdvisorDetails.HasReviews .ratingCount,#theOtherSubmitButton:hover,#theOtherSubmitButton:focus,#theOtherSubmitButton:active,.ArnShowRatesLink,.bookRoom,#theConfirmationButton,.RootBody #theSubmitButton,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.WBForgotPasswordFormActions .submit,.CreateAnAccountAction{
+                    background: ${this.site_config.primary_color} !important;
                 }
 
                 @media screen and (max-width: 1105px) {
                     .closeMap,#arnCloseAnchorId,#arnCloseAnchorId:hover,#arnCloseAnchorId:focus,#arnCloseAnchorId:active{
-                        background: ${this.site_config.primary_background_color} !important;              
+                        background: ${this.site_config.primary_color} !important;              
                     }
                 }
 
                 @media screen and (max-width: 800px) {
                     #commands a:hover,#commands a:active,#commands a:focus,#commands button:hover,#commands button:active,#commands button:focus,#sort-wrapper a:before #sort-wrapper a.active-filter:before{
-                            background: ${this.site_config.primary_background_color} !important;
+                            background: ${this.site_config.primary_color} !important;
 
                         }
                 }
@@ -861,7 +861,7 @@ export default class BasePortal {
                 ${this.site_config.primary_text_color} !important;
             }
 
-            @media screen and(max - width: 1105 px) {
+            @media screen and(max-width: 1105px) {
                 .closeMap,
                 #arnCloseAnchorId: hover,
                 #arnCloseAnchorId: focus,
@@ -869,11 +869,56 @@ export default class BasePortal {
                   ${this.site_config.primary_text_color} !important;  
                 }
             }
+
+            /* Borders */
+            #AdminControlsContainer{
+                border-bottom: 3px solid ${this.site_config.primary_color} !important;
+            }
+
+
+            .arnMapMarkerTriangle,
+            .arnMapMarker:hover .arnMapMarkerTriangle {
+                border-top-color: ${this.site_config.primary_color} !important;
+            }
+
+            .sort,
+            .ArnSecondarySearchOuterContainer select,
+            #theOtherSubmitButton,
+            .ArnShowRatesLink,
+            .bookRoom,
+            .RootBody #theSubmitButton {
+                border: 1px solid red !important;
+            }
+
+            .ArnSearchField {
+                border-bottom: 1px solid ${this.site_config.primary_color} !important;
+            }
+
+            .ArnShowRatesLink:hover,
+            .bookRoom:hover,
+            .ArnShowRatesLink:active,
+            .bookRoom:active,
+            .ArnShowRatesLink:focus,
+            .bookRoom:focus {
+                border-color: ${this.site_config.primary_color} !important;
+            }
+
+            @media screen and (max-width: 1105px) {
+
+                #arnCloseAnchorId {
+                    border: 1px solid ${this.site_config.primary_color} !important;
+
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                #sort-wrapper a:before {
+                    border: 2px solid ${this.site_config.primary_color} !important;
+
+                }
+            }
+
         </style>
             `);
-
     }
-
-
-
 }

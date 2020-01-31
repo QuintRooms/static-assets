@@ -814,7 +814,7 @@ export default class BasePortal {
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
                 .yui3-skin-sam .yui3-calendar-day:hover,
-                .arn-leaflet-reset-button
+                .arn-leaflet-reset-button,
                 .arnMapMarker,
                 .arnMapMarker:hover,
                 #searching h2:after,

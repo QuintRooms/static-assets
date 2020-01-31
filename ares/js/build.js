@@ -827,48 +827,46 @@ export default class BasePortal {
                 @media screen and (max-width: 800px) {
                     #commands a:hover,#commands a:active,#commands a:focus,#commands button:hover,#commands button:active,#commands button:focus,#sort-wrapper a:before #sort-wrapper a.active-filter:before{
                             background: ${this.site_config.primary_color} !important;
-
                         }
                 }
 
             /* Primary Text Color */
-
-            #commands a: hover,
-            #commands a: active,
-            #commands a: focus,
-            #commands button: hover,
-            #commands button: active,
-            #commands button: focus,
-            #searching,
-            #search - wrapper a,
-            .ArnPrimarySearchContainer,
-            .SimpleSearch,
-            .SearchHotels# theSubmitButton,
-            .CheckRates.submit,
-            .ArnTripAdvisorDetails.HasReviews.ratingCount,
-            #theOtherSubmitButton: hover,
-            #theOtherSubmitButton: focus,
-            #theOtherSubmitButton: active,
-            .ArnShowRatesLink,
-            .bookRoom,
-            #theConfirmationButton,
-            .RootBody# theSubmitButton,
-            .WBLoginFormActions.submit,
-            .WBValidatedRegistrationFormActions.submit,
-            .WBForgotPasswordFormActions.submit,
-            .CreateAnAccountAction,
-            .arnMapPopup.rate {
-                ${this.site_config.primary_text_color} !important;
-            }
-
-            @media screen and(max-width: 1105px) {
-                .closeMap,
-                #arnCloseAnchorId: hover,
-                #arnCloseAnchorId: focus,
-                #arnCloseAnchorId: active {
-                  ${this.site_config.primary_text_color} !important;  
+                #commands a:hover,
+                #commands a:active,
+                #commands a:focus,
+                #commands button:hover,
+                #commands button:active,
+                #commands button:focus,
+                #searching,
+                #search-wrapper a,
+                .ArnPrimarySearchContainer,
+                .SimpleSearch,
+                .SearchHotels #theSubmitButton,
+                .CheckRates .submit,
+                .ArnTripAdvisorDetails.HasReviews .ratingCount,
+                #theOtherSubmitButton:hover,
+                #theOtherSubmitButton:focus,
+                #theOtherSubmitButton:active,
+                .ArnShowRatesLink,
+                .bookRoom,
+                #theConfirmationButton,
+                .RootBody #theSubmitButton,
+                .WBLoginFormActions .submit,
+                .WBValidatedRegistrationFormActions .submit,
+                .WBForgotPasswordFormActions .submit,
+                .CreateAnAccountAction,
+                .arnMapPopup .rate{
+                    ${this.site_config.primary_text_color} !important;
                 }
-            }
+
+                @media screen and (max-width: 1105px) {
+                    .closeMap,
+                    #arnCloseAnchorId:hover,
+                    #arnCloseAnchorId:focus,
+                    #arnCloseAnchorId:active{
+                        ${this.site_config.primary_text_color} !important;
+                    }
+                }
 
             /* Borders */
             #AdminControlsContainer{
@@ -904,17 +902,14 @@ export default class BasePortal {
             }
 
             @media screen and (max-width: 1105px) {
-
                 #arnCloseAnchorId {
                     border: 1px solid ${this.site_config.primary_color} !important;
-
                 }
             }
 
             @media screen and (max-width: 800px) {
                 #sort-wrapper a:before {
                     border: 2px solid ${this.site_config.primary_color} !important;
-
                 }
             }
 

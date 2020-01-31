@@ -12,16 +12,15 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.applyConfigColors();
-                console.log('page_name:', this.page_name);
 
                 // all pages
                 this.buildMobileMenu();
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
-                if (this.site_config_site_type != 'cug') {
+                if (this.site_config.site_type != 'cug') {
                     this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                 }
 
-                if (this.site_config_site_type == 'cug') {
+                if (this.site_config.site_type == 'cug') {
                     this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
                     this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');

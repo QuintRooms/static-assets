@@ -21,6 +21,7 @@ export default class BasePortal {
                 }
 
                 if (this.site_config.site_type == 'cug') {
+                    console.log('site_config.site_type:', this.site_config.site_type)
                     this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
                     this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');

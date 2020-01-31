@@ -4,12 +4,6 @@ export default class BasePortal {
         this.site_config = site_config;
         this.page_name = page_name;
         this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#9c6aad" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
-        this.site_type = site_type;
-        this.lodging_details = lodging_details
-        this.cug_details = cug_details;
-        this.site_colors = site_colors;
-        this.banner_image_url;
-
     }
 
     init() {

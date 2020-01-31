@@ -24,6 +24,7 @@ export default class BasePortal {
                     this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     
                     this.waitForSelectorInDOM('.logo').then(() => {
+                        console.log('.logo should be ready now')
                         this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
                         this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');
                     });

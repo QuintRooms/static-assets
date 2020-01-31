@@ -816,9 +816,9 @@ export default class BasePortal {
                 .yui3-skin-sam .yui3-calendar-day:hover,
                 .arn-leaflet-reset-button
                 .arnMapMarker,
-                .arnMapMarker:hover
-                #searching h2:after
-                #search-wrapper
+                .arnMapMarker:hover,
+                #searching h2:after,
+                #search-wrapper,
                 .ArnPrimarySearchContainer,
                 .SimpleSearch,
                 .ArnTripAdvisorDetails.HasReviews .ratingCount,
@@ -838,7 +838,7 @@ export default class BasePortal {
                 @media screen and (max-width: 1105px) {
                     .closeMap,
                     #arnCloseAnchorId,
-                    #arnCloseAnchorId: hover,
+                    #arnCloseAnchorId:hover,
                     #arnCloseAnchorId:focus,
                     #arnCloseAnchorId:active{
                         background: ${this.site_config.primary_background_color} !important;              
@@ -846,7 +846,7 @@ export default class BasePortal {
                 }
 
                 @media screen and (max-width: 800px) {
-                    #commands a: hover,
+                    #commands a:hover,
                         #commands a:active,
                         #commands a:focus,
                         #commands button:hover,

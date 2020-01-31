@@ -21,6 +21,7 @@ export default class BasePortal {
                 }
 
                 if (this.site_config.site_type == 'cug') {
+                    console.log(this.site_config.site_type)
                     this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     
                     this.waitForSelectorInDOM('.logo').then(() => {

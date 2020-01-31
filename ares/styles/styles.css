@@ -78,6 +78,13 @@ textarea {
 }
 
 /* Header Start */
+header{
+    width: 100%;
+    position: relative;
+    background: #fff;
+    z-index: 9;
+}
+
 #AdminControlsContainer {
     background: #fff;
     display: flex;

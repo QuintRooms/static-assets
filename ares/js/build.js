@@ -11,7 +11,7 @@ export default class BasePortal {
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
-                this.stylePageFromConfig();
+                this.applyConfigColors();
                 console.log('page_name:', this.page_name);
 
                 // all pages
@@ -806,57 +806,69 @@ export default class BasePortal {
         });
     }
 
-    stylePageFromConfig() {
+    applyConfigColors() {
         if (!this.site_config) {
             return;
         }
 
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
-                .yui3-skin-sam .yui3-calendar-day:hover,
-                .arn-leaflet-reset-button,
-                .arnMapMarker,
-                .arnMapMarker:hover,
-                #searching h2:after,
-                #search-wrapper,
-                .ArnPrimarySearchContainer,
-                .SimpleSearch,
-                .ArnTripAdvisorDetails.HasReviews .ratingCount,
-                #theOtherSubmitButton:hover,
-                #theOtherSubmitButton:focus,
-                #theOtherSubmitButton:active,
-                .ArnShowRatesLink,
-                .bookRoom,
-                #theConfirmationButton,
-                .RootBody #theSubmitButton,
-                .WBLoginFormActions .submit,
-                .WBValidatedRegistrationFormActions .submit,
-                .WBForgotPasswordFormActions .submit{
+            /* Primary Background Color */
+                .yui3-skin-sam .yui3-calendar-day:hover,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,#searching h2:after,#search-wrapper,.ArnPrimarySearchContainer,.SimpleSearch,.ArnTripAdvisorDetails.HasReviews .ratingCount,#theOtherSubmitButton:hover,#theOtherSubmitButton:focus,#theOtherSubmitButton:active,.ArnShowRatesLink,.bookRoom,#theConfirmationButton,.RootBody #theSubmitButton,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.WBForgotPasswordFormActions .submit{
                     background: ${this.site_config.primary_background_color} !important;
                 }
 
                 @media screen and (max-width: 1105px) {
-                    .closeMap,
-                    #arnCloseAnchorId,
-                    #arnCloseAnchorId:hover,
-                    #arnCloseAnchorId:focus,
-                    #arnCloseAnchorId:active{
+                    .closeMap,#arnCloseAnchorId,#arnCloseAnchorId:hover,#arnCloseAnchorId:focus,#arnCloseAnchorId:active{
                         background: ${this.site_config.primary_background_color} !important;              
                     }
                 }
 
                 @media screen and (max-width: 800px) {
-                    #commands a:hover,
-                        #commands a:active,
-                        #commands a:focus,
-                        #commands button:hover,
-                        #commands button:active,
-                        #commands button:focus,
-                        #sort-wrapper a:before #sort-wrapper a.active-filter:before{
+                    #commands a:hover,#commands a:active,#commands a:focus,#commands button:hover,#commands button:active,#commands button:focus,#sort-wrapper a:before #sort-wrapper a.active-filter:before{
                             background: ${this.site_config.primary_background_color} !important;
 
                         }
                 }
+
+            /* Primary Text Color */
+
+            #commands a: hover,
+            #commands a: active,
+            #commands a: focus,
+            #commands button: hover,
+            #commands button: active,
+            #commands button: focus,
+            #searching,
+            #search - wrapper a,
+            .ArnPrimarySearchContainer,
+            .SimpleSearch,
+            .SearchHotels# theSubmitButton,
+            .CheckRates.submit,
+            .ArnTripAdvisorDetails.HasReviews.ratingCount,
+            #theOtherSubmitButton: hover,
+            #theOtherSubmitButton: focus,
+            #theOtherSubmitButton: active,
+            .ArnShowRatesLink,
+            .bookRoom,
+            #theConfirmationButton,
+            .RootBody# theSubmitButton,
+            .WBLoginFormActions.submit,
+            .WBValidatedRegistrationFormActions.submit,
+            .WBForgotPasswordFormActions.submit,
+            .CreateAnAccountAction,
+            .arnMapPopup.rate {
+                ${this.site_config.primary_text_color} !important;
+            }
+
+            @media screen and(max - width: 1105 px) {
+                .closeMap,
+                #arnCloseAnchorId: hover,
+                #arnCloseAnchorId: focus,
+                #arnCloseAnchorId: active {
+                  ${this.site_config.primary_text_color} !important;  
+                }
+            }
         </style>
             `);
 

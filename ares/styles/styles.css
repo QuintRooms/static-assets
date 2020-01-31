@@ -280,7 +280,6 @@ textarea {
     position: relative;
     z-index: 7;
     background: #fff;
-    color: #9c6aad;
 }
 
 .ArnSortBy {
@@ -729,7 +728,6 @@ div.autocomplete ul li.selected {
 .SearchHotels #theSubmitButton:active {
     background: #fff;
     border: 1px solid #fff;
-    color: #9c6aad;
 
 }
 
@@ -1409,7 +1407,6 @@ legend {
     border: none;
     border-radius: 5px;
     background: transparent;
-    color: #9c6aad;
     transition: all .3s ease-out;
 }
 
@@ -1584,7 +1581,6 @@ legend {
         padding: 8px;
         border: none;
         border-radius: 5px;
-        color: #9c6aad;
         transition: all .3s ease-out;
         display: inline-block;
         text-decoration: none;
@@ -2296,7 +2292,6 @@ legend {
 .RootBody #theSubmitButton:active,
 .RootBody #theSubmitButton:focus {
     background: transparent;
-    color: #9c6aad;
 }
 
 .RootBody input,

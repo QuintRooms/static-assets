@@ -23,8 +23,10 @@ export default class BasePortal {
                 if (this.site_config.site_type == 'cug') {
                     console.log('site_config.site_type:', this.site_config.site_type)
                     this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
-                    this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
-                    this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');
+                    this.waitForSelector('.logo').then(() => {
+                        this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
+                        this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');
+                    });
                 }
 
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
@@ -85,7 +87,7 @@ export default class BasePortal {
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                 this.addDistanceScaleToMap();
 
-                this.pollingFinished().then(() => {
+                this.waitForSelectorInDOM('.pollingFinished').then(() => {
                     if (!this.page_name == 'search-results') {
                         return;
                     }
@@ -445,11 +447,11 @@ export default class BasePortal {
         });
     }
 
-    async pollingFinished() {
+    async waitForSelectorInDOM(selector) {
         return await new Promise(resolve => {
-            console.log('pollingFinished() fired.');
+            console.log('waitForSelectorInDOM() fired.');
             let interval = setInterval(() => {
-                if (document.querySelector('.pollingFinished')) {
+                if (document.querySelector(selector)) {
                     resolve();
                     clearInterval(interval);
                 };

@@ -23,8 +23,8 @@ export default class BasePortal {
 
                 if (this.site_config.site_type == 'cug') {
                     this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, 'body', 'afterBegin');
-                    
-                    this.waitForSelectorInDOM('.logo').then(() => {
+
+                    this.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                         this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     });
                 }

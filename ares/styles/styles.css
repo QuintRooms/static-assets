@@ -1140,13 +1140,11 @@ legend {
 
 .SinglePropDetail .ArnRateCancelAnchor {
     font-size: 13px;
-    color: #9b6aad;
 }
 
 .SinglePropDetail #moreRatesLink {
     float: right;
     margin-right: 8px;
-    color: #9b6aad;
     font-weight: 700;
 }
 
@@ -1828,7 +1826,6 @@ legend {
 }
 
 .open-modal {
-    color: #9b6aad;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -2070,10 +2067,6 @@ legend {
     margin-bottom: 0;
 }
 
-#theAdditionalEmailsLink a {
-    color: #9b6aad;
-}
-
 .billing-details-container {
     display: grid;
     grid-template-columns: 47% 47%;
@@ -2199,7 +2192,6 @@ legend {
 
     #theBookingPage legend#policies-legend {
         font-size: unset;
-        color: #9b6aad;
         text-decoration: underline;
         border-bottom: none;
         cursor: pointer;

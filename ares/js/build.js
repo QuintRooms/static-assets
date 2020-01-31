@@ -880,14 +880,24 @@ export default class BasePortal {
                 #theOtherSubmitButton,
                 .RootBody #theSubmitButton:hover,
                 .RootBody #theSubmitButton:active,
-                .RootBody #theSubmitButton:focus{
-                    color: ${this.site_config.secondary_text_color}
+                .RootBody #theSubmitButton:focus,
+                .SinglePropDetail #moreRatesLink,
+                .SinglePropDetail .ArnRateCancelAnchor,
+                .open-modal,
+                #theAdditionalEmailsLink a
+                    color: ${this.site_config.secondary_text_color} !important;
                 }
 
                 @media screen and (max-width: 1105px) {
                     #arnCloseAnchorId{
-                        color: ${this.site_config.secondary_text_color}
+                        color: ${this.site_config.secondary_text_color} !important;
 
+                    }
+                }
+
+                @media screen and (max-width: 800px){
+                    #theBookingPage legend#policies-legend{
+                        color: ${this.site_config.secondary_text_color} !important;
                     }
                 }
 

@@ -832,7 +832,7 @@ export default class BasePortal {
                 .WBLoginFormActions .submit,
                 .WBValidatedRegistrationFormActions .submit,
                 .WBForgotPasswordFormActions .submit{
-                    background: ${this.site_config.primary_background_color};
+                    background: ${this.site_config.primary_background_color} !important;
                 }
 
                 @media screen and (max-width: 1105px) {
@@ -841,7 +841,7 @@ export default class BasePortal {
                     #arnCloseAnchorId: hover,
                     #arnCloseAnchorId:focus,
                     #arnCloseAnchorId:active{
-                        background: ${this.site_config.primary_background_color} ;              
+                        background: ${this.site_config.primary_background_color} !important;              
                     }
                 }
 
@@ -853,7 +853,7 @@ export default class BasePortal {
                         #commands button:active,
                         #commands button:focus,
                         #sort-wrapper a:before #sort-wrapper a.active-filter:before{
-                            background: ${this.site_config.primary_background_color};
+                            background: ${this.site_config.primary_background_color} !important;
 
                         }
                 }

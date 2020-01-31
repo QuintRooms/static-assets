@@ -16,18 +16,16 @@ export default class BasePortal {
                 // all pages
                 this.buildMobileMenu();
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
+
                 if (this.site_config.site_type != 'cug') {
                     this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                 }
 
                 if (this.site_config.site_type == 'cug') {
-                    console.log(this.site_config.site_type)
-                    this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
+                    this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, 'body', 'afterBegin');
                     
                     this.waitForSelectorInDOM('.logo').then(() => {
-                        console.log('.logo should be ready now')
-                        this.updateAttribute('.logo', this.site_config.logo_outbound_url, 'href');
-                        this.updateAttribute('.logo img', this.site_config.logo_file_location, 'src');
+                        this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                     });
                 }
 

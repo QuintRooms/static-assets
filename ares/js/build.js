@@ -884,7 +884,7 @@ export default class BasePortal {
                 .SinglePropDetail #moreRatesLink,
                 .SinglePropDetail .ArnRateCancelAnchor,
                 .open-modal,
-                #theAdditionalEmailsLink a
+                #theAdditionalEmailsLink a{
                     color: ${this.site_config.secondary_text_color} !important;
                 }
 

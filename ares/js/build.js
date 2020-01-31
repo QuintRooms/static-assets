@@ -887,7 +887,7 @@ export default class BasePortal {
             .ArnShowRatesLink,
             .bookRoom,
             .RootBody #theSubmitButton {
-                border: 1px solid red !important;
+                border: 1px solid ${this.site_config.primary_color} !important;
             }
 
             .ArnSearchField {

@@ -16,6 +16,7 @@
         "allow_registration": true
     },
     "calculate_distance_type": "query-string",
+    "show_city_landmark_airport_filter": false,
     "show_language_select": true,
     "show_date_prompt": false,
     "show_advanced_search": true,
@@ -27,8 +28,8 @@
     "outbound_event_website_url": "https://hotelsforhope.com",
     "banner_image_url": "https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg",
     "theme": "light",
-    "primary_background_color": "#9c6aad",
-    "secondary_background_color": "",
+    "primary_color": "#9c6aad",
+    "secondary_color": "",
     "primary_text_color": "#fff",
     "secondary_text_color": "",
     "button_hover_background_color": "transparent",

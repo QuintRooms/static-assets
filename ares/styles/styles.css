@@ -86,7 +86,6 @@ textarea {
     align-items: center;
     position: relative;
     z-index: 9;
-    border-bottom: 3px solid #9c6aad;
 }
 
 #commands {
@@ -250,11 +249,6 @@ textarea {
 .arnMapMarker,
 .arnMapMarker:hover {
     border: 1px solid #444f74;
-}
-
-.arnMapMarkerTriangle,
-.arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #9c6aad;
 }
 
 .noPrice {

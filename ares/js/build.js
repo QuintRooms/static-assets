@@ -856,7 +856,7 @@ export default class BasePortal {
                 .WBForgotPasswordFormActions .submit,
                 .CreateAnAccountAction,
                 .arnMapPopup .rate{
-                    ${this.site_config.primary_text_color} !important;
+                    color: ${this.site_config.primary_text_color} !important;
                 }
 
                 @media screen and (max-width: 1105px) {
@@ -864,7 +864,7 @@ export default class BasePortal {
                     #arnCloseAnchorId:hover,
                     #arnCloseAnchorId:focus,
                     #arnCloseAnchorId:active{
-                        ${this.site_config.primary_text_color} !important;
+                        color: ${this.site_config.primary_text_color} !important;
                     }
                 }
 

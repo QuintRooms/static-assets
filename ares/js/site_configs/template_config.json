@@ -7,8 +7,8 @@
     {
         "event_id": ,
         "event_name": "",
+        "event_dates": "",
         "is_lrg": false
-
     },
     "cug":
     {
@@ -23,8 +23,8 @@
     "show_property_type_filter": ,
     "sort_by_parameters": [],
     "fav_icon_url": "",
-    "logo_url": "",
-    "outbound_event_website_url": "",
+    "logo_file_location": "",
+    "logo_outbound_url": "",
     "banner_image_url": "",
     "theme": "light",
     "primary_color": "#",

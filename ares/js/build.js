@@ -18,8 +18,7 @@ export default class BasePortal {
                 this.buildMobileMenu();
                 this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
-                this.updateAttribute('.logo img', this.site_config.logo_url, 'src');
-                this.updateAttribute('.logo', this.site_config.outbound_event_website_url, 'href');
+                this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');

@@ -815,18 +815,18 @@ export default class BasePortal {
             <style>
             /* Primary Background Color */
                 .yui3-skin-sam .yui3-calendar-day:hover,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,#searching h2:after,#search-wrapper,.ArnPrimarySearchContainer,.SimpleSearch,.ArnTripAdvisorDetails.HasReviews .ratingCount,#theOtherSubmitButton:hover,#theOtherSubmitButton:focus,#theOtherSubmitButton:active,.ArnShowRatesLink,.bookRoom,#theConfirmationButton,.RootBody #theSubmitButton,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.WBForgotPasswordFormActions .submit,.CreateAnAccountAction{
-                    background: ${this.site_config.primary_color} !important;
+                    background: ${this.site_config.primary_color};
                 }
 
                 @media screen and (max-width: 1105px) {
                     .closeMap,#arnCloseAnchorId,#arnCloseAnchorId:hover,#arnCloseAnchorId:focus,#arnCloseAnchorId:active{
-                        background: ${this.site_config.primary_color} !important;              
+                        background: ${this.site_config.primary_color};              
                     }
                 }
 
                 @media screen and (max-width: 800px) {
                     #commands a:hover,#commands a:active,#commands a:focus,#commands button:hover,#commands button:active,#commands button:focus,#sort-wrapper a:before #sort-wrapper a.active-filter:before{
-                            background: ${this.site_config.primary_color} !important;
+                            background: ${this.site_config.primary_color};
                         }
                 }
 
@@ -856,7 +856,7 @@ export default class BasePortal {
                 .WBForgotPasswordFormActions .submit,
                 .CreateAnAccountAction,
                 .arnMapPopup .rate{
-                    color: ${this.site_config.primary_text_color} !important;
+                    color: ${this.site_config.primary_text_color};
                 }
 
                 @media screen and (max-width: 1105px) {
@@ -864,7 +864,7 @@ export default class BasePortal {
                     #arnCloseAnchorId:hover,
                     #arnCloseAnchorId:focus,
                     #arnCloseAnchorId:active{
-                        color: ${this.site_config.primary_text_color} !important;
+                        color: ${this.site_config.primary_text_color};
                     }
                 }
 
@@ -885,31 +885,31 @@ export default class BasePortal {
                 .SinglePropDetail .ArnRateCancelAnchor,
                 .open-modal,
                 #theAdditionalEmailsLink a{
-                    color: ${this.site_config.secondary_text_color} !important;
+                    color: ${this.site_config.secondary_text_color};
                 }
 
                 @media screen and (max-width: 1105px) {
                     #arnCloseAnchorId{
-                        color: ${this.site_config.secondary_text_color} !important;
+                        color: ${this.site_config.secondary_text_color};
 
                     }
                 }
 
                 @media screen and (max-width: 800px){
                     #theBookingPage legend#policies-legend{
-                        color: ${this.site_config.secondary_text_color} !important;
+                        color: ${this.site_config.secondary_text_color};
                     }
                 }
 
                 /* Borders */
                 #AdminControlsContainer{
-                    border-bottom: 3px solid ${this.site_config.primary_color} !important;
+                    border-bottom: 3px solid ${this.site_config.primary_color};
                 }
 
 
                 .arnMapMarkerTriangle,
                 .arnMapMarker:hover .arnMapMarkerTriangle {
-                    border-top-color: ${this.site_config.primary_color} !important;
+                    border-top-color: ${this.site_config.primary_color};
                 }
 
                 .sort,
@@ -918,11 +918,11 @@ export default class BasePortal {
                 .ArnShowRatesLink,
                 .bookRoom,
                 .RootBody #theSubmitButton {
-                    border: 1px solid ${this.site_config.primary_color} !important;
+                    border: 1px solid ${this.site_config.primary_color};
                 }
 
                 .ArnSearchField {
-                    border-bottom: 1px solid ${this.site_config.primary_color} !important;
+                    border-bottom: 1px solid ${this.site_config.primary_color};
                 }
 
                 .ArnShowRatesLink:hover,
@@ -931,18 +931,18 @@ export default class BasePortal {
                 .bookRoom:active,
                 .ArnShowRatesLink:focus,
                 .bookRoom:focus {
-                    border-color: ${this.site_config.primary_color} !important;
+                    border-color: ${this.site_config.primary_color};
                 }
 
                 @media screen and (max-width: 1105px) {
                     #arnCloseAnchorId {
-                        border: 1px solid ${this.site_config.primary_color} !important;
+                        border: 1px solid ${this.site_config.primary_color};
                     }
                 }
 
                 @media screen and (max-width: 800px) {
                     #sort-wrapper a:before {
-                        border: 2px solid ${this.site_config.primary_color} !important;
+                        border: 2px solid ${this.site_config.primary_color};
                     }
                 }
             </style>

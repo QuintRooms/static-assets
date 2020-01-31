@@ -868,52 +868,74 @@ export default class BasePortal {
                     }
                 }
 
-            /* Borders */
-            #AdminControlsContainer{
-                border-bottom: 3px solid ${this.site_config.primary_color} !important;
-            }
+                /* Secondary Text Color */
+                #search-wrapper .selectedTab, 
+                #search-wrapper a:hover, 
+                #search-wrapper a:active, 
+                #search-wrapper a:focus,
+                .sort,
+                .SearchHotels #theSubmitButton:hover,
+                .SearchHotels #theSubmitButton:focus,
+                .SearchHotels #theSubmitButton:active,
+                #theOtherSubmitButton,
+                .RootBody #theSubmitButton:hover,
+                .RootBody #theSubmitButton:active,
+                .RootBody #theSubmitButton:focus{
+                    color: ${this.site_config.secondary_text_color}
+                }
+
+                @media screen and (max-width: 1105px) {
+                    #arnCloseAnchorId{
+                        color: ${this.site_config.secondary_text_color}
+
+                    }
+                }
+
+                /* Borders */
+                #AdminControlsContainer{
+                    border-bottom: 3px solid ${this.site_config.primary_color} !important;
+                }
 
 
-            .arnMapMarkerTriangle,
-            .arnMapMarker:hover .arnMapMarkerTriangle {
-                border-top-color: ${this.site_config.primary_color} !important;
-            }
+                .arnMapMarkerTriangle,
+                .arnMapMarker:hover .arnMapMarkerTriangle {
+                    border-top-color: ${this.site_config.primary_color} !important;
+                }
 
-            .sort,
-            .ArnSecondarySearchOuterContainer select,
-            #theOtherSubmitButton,
-            .ArnShowRatesLink,
-            .bookRoom,
-            .RootBody #theSubmitButton {
-                border: 1px solid ${this.site_config.primary_color} !important;
-            }
-
-            .ArnSearchField {
-                border-bottom: 1px solid ${this.site_config.primary_color} !important;
-            }
-
-            .ArnShowRatesLink:hover,
-            .bookRoom:hover,
-            .ArnShowRatesLink:active,
-            .bookRoom:active,
-            .ArnShowRatesLink:focus,
-            .bookRoom:focus {
-                border-color: ${this.site_config.primary_color} !important;
-            }
-
-            @media screen and (max-width: 1105px) {
-                #arnCloseAnchorId {
+                .sort,
+                .ArnSecondarySearchOuterContainer select,
+                #theOtherSubmitButton,
+                .ArnShowRatesLink,
+                .bookRoom,
+                .RootBody #theSubmitButton {
                     border: 1px solid ${this.site_config.primary_color} !important;
                 }
-            }
 
-            @media screen and (max-width: 800px) {
-                #sort-wrapper a:before {
-                    border: 2px solid ${this.site_config.primary_color} !important;
+                .ArnSearchField {
+                    border-bottom: 1px solid ${this.site_config.primary_color} !important;
                 }
-            }
 
-        </style>
+                .ArnShowRatesLink:hover,
+                .bookRoom:hover,
+                .ArnShowRatesLink:active,
+                .bookRoom:active,
+                .ArnShowRatesLink:focus,
+                .bookRoom:focus {
+                    border-color: ${this.site_config.primary_color} !important;
+                }
+
+                @media screen and (max-width: 1105px) {
+                    #arnCloseAnchorId {
+                        border: 1px solid ${this.site_config.primary_color} !important;
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    #sort-wrapper a:before {
+                        border: 2px solid ${this.site_config.primary_color} !important;
+                    }
+                }
+            </style>
             `);
     }
 }

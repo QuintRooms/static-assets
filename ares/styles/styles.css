@@ -218,14 +218,7 @@ textarea {
         transition: all .4s ease;
     }
 
-    #commands a:hover,
-    #commands a:active,
-    #commands a:focus,
-    #commands button:hover,
-    #commands button:active,
-    #commands button:focus {
-        color: #fff;
-    }
+
 
     #commands a:before,
     #commands button:before {
@@ -381,7 +374,6 @@ textarea {
     background: rgba(0, 0, 0, .9);
     height: 100%;
     width: 100%;
-    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -643,7 +635,6 @@ textarea {
 }
 
 #search-wrapper a {
-    color: #fff;
     text-decoration: none;
     padding: 12px 6px;
     font-weight: 500;
@@ -670,7 +661,6 @@ textarea {
 .SimpleSearch {
     border-top: 1px solid #fff;
     padding: 12px;
-    color: #fff;
     border-bottom-right-radius: 5px;
 }
 
@@ -738,7 +728,6 @@ div.autocomplete ul li.selected {
     margin-top: 8px;
     background: transparent;
     border: 1px solid #fff;
-    color: #fff;
     transition: all .3s ease-out;
 }
 
@@ -1227,7 +1216,6 @@ legend {
 
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
     order: 0;
-    color: #fff;
     padding: 0 4px;
     font-size: 12px;
     border-radius: 5px;
@@ -1436,12 +1424,6 @@ legend {
     transition: all .3s ease-out;
 }
 
-#theOtherSubmitButton:hover,
-#theOtherSubmitButton:focus,
-#theOtherSubmitButton:active {
-    color: #fff;
-}
-
 .ArnSortByDealAmount,
 .ArnSortByPrice,
 .ArnSortByDealPercent {
@@ -1556,7 +1538,6 @@ legend {
 
 .ArnShowRatesLink,
 .bookRoom {
-    color: #fff;
     font-weight: 500;
     margin-top: 6px;
     border-radius: 5px;
@@ -1590,7 +1571,6 @@ legend {
     .closeMap {
         z-index: 9;
         position: relative;
-        color: #fff !important;
     }
 
     .showMap {
@@ -1624,11 +1604,6 @@ legend {
         text-decoration: none;
     }
 
-    #arnCloseAnchorId:hover,
-    #arnCloseAnchorId:focus,
-    #arnCloseAnchorId:active {
-        color: #fff;
-    }
 
     .ArnSortBy {
         float: left;
@@ -2054,7 +2029,6 @@ legend {
 }
 
 #theConfirmationButton {
-    color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -2326,7 +2300,6 @@ legend {
 }
 
 .RootBody #theSubmitButton {
-    color: #fff;
     border-radius: 5px;
     padding: 9px 18px;
     margin-top: 19px;
@@ -2435,7 +2408,6 @@ body.WBForgotPasswordForm {
 .WBForgotPasswordFormActions .submit {
     margin: 18px 0;
     padding: 12px;
-    color: #fff;
     border-radius: 5px;
     border: none;
 }
@@ -2459,7 +2431,6 @@ body.WBForgotPasswordForm {
     padding: 12px;
     background: #9b6aad;
     text-decoration: none;
-    color: #fff;
     border-radius: 5px;
 }
 
@@ -2508,7 +2479,6 @@ body.WBForgotPasswordForm {
 
 .arnMapPopup .rate {
     background: rgba(0, 0, 0, .7);
-    color: #fff;
     position: absolute;
     top: 0;
     width: 100%;

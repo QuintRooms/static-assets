@@ -39,9 +39,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 if (document.querySelector('#AdminControlsContainer')) {
                     document.querySelector('#AdminControlsContainer').insertAdjacentHTML('afterBegin', '<a class="room-steals" href="#"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>');
 
-                    let script = document.createElement('script');
-                    script.setAttribute('src', 'https://static.hotelsforhope.com/js/room-steals-provider.js');
-                    document.head.appendChild(script);
+                    document.querySelector('.profileCommand').setAttribute('href', 'https://roomsteals.com/settings');
 
                 } else {
                     cugPortal.createHTML('header', '<a class="room-steals" href="#"><img src="https://static.hotelsforhope.com/portals/child-portals/cug/52342/images/logo-blue.png" alt="Room Steals Logo"></a>', 'afterBegin');

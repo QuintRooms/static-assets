@@ -2,10 +2,10 @@ class RoomStealsNavigation {
 
     constructor(adminToken, email, firstName, lastName, partnerURL, partnersJSON, memberName, memberPartner, data) {
         this.adminToken = adminToken;
-        this.domain = 'https://api.travsrv.com/';
-        this.username = 'h4h';
-        this.password = 'h4hArn1234';
-        this.token = 'nate.ritter@hotelsforhope.com';
+        this.domain = '';
+        this.username = '';
+        this.password = '';
+        this.token = '';
         this.siteID = 52342;
         this.email = email;
         this.firstName = firstName;

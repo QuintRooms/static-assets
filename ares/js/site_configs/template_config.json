@@ -7,8 +7,8 @@
     {
         "event_id": ,
         "event_name": "",
+        "event_dates": "",
         "is_lrg": false
-
     },
     "cug":
     {
@@ -16,18 +16,19 @@
         "show_points": ,
         "allow_registration":
     },
+    "show_city_landmark_airport_filter": false,
     "show_language_select": ,
     "show_date_prompt": ,
     "show_advanced_search": ,
     "show_property_type_filter": ,
     "sort_by_parameters": [],
     "fav_icon_url": "",
-    "logo_url": "",
-    "outbound_event_website_url": "",
+    "logo_file_location": "",
+    "logo_outbound_url": "",
     "banner_image_url": "",
     "theme": "light",
-    "primary_background_color": "#",
-    "secondary_background_color": "",
+    "primary_color": "#",
+    "secondary_color": "",
     "primary_text_color": "#",
     "secondary_text_color": "",
     "button_hover_background_color": "",

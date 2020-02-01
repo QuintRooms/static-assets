@@ -1,9 +1,9 @@
 export default class BasePortal {
-    constructor(site_id, site_config_json, page_name) {
+    constructor(site_id, site_config, page_name) {
         this.site_id = site_id;
-        this.site_config_json = site_config_json;
+        this.site_config = site_config;
         this.page_name = page_name;
-        this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#9c6aad" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
     }
 
     init() {
@@ -11,12 +11,22 @@ export default class BasePortal {
         this.getSiteID().then(() => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
-                console.log('page_name:', this.page_name);
+                this.applyConfigColors();
 
                 // all pages
                 this.buildMobileMenu();
-                this.moveElementIntoExistingWrapper('.logo', '#AdminControlsContainer', 'afterBegin');
-                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config_json['fav_icon_url']}">`, 'head', 'beforeEnd');
+                this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
+
+                if (this.site_config.site_type != 'cug') {
+                    this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                }
+
+                if (this.site_config.site_type == 'cug') {
+                    this.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
+                        this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, '#AdminControlsContainer', 'afterBegin');
+                    });
+                }
+
                 this.updateAttribute('.ArnSupportLinks .lowRateLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .faqLink', '_blank', 'target');
                 this.updateAttribute('.ArnSupportLinks .termsLink', '_blank', 'target');
@@ -75,7 +85,7 @@ export default class BasePortal {
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                 this.addDistanceScaleToMap();
 
-                this.pollingFinished().then(() => {
+                this.waitForSelectorInDOM('.pollingFinished').then(() => {
                     if (!this.page_name == 'search-results') {
                         return;
                     }
@@ -130,8 +140,8 @@ export default class BasePortal {
             return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
-                    this.site_config_json = json;
-                    console.log('site_config_json:', json);
+                    this.site_config = json;
+                    console.log('site_config:', json);
                 });
         } catch {
             console.log('could not get site config');
@@ -299,14 +309,14 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config_json['site_type'] != "lodging") {
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") {
             console.log('updateRoomDescription() should return here.')
             return;
         }
 
         room_description_el.forEach(function(element) {
             element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">
-                ${this.site_config_json['lodging']['event_name']}</span>`);
+                ${this.site_config.lodging.event_name}</span>`);
         });
     }
 
@@ -435,11 +445,11 @@ export default class BasePortal {
         });
     }
 
-    async pollingFinished() {
+    async waitForSelectorInDOM(selector) {
         return await new Promise(resolve => {
-            console.log('pollingFinished() fired.');
+            console.log('waitForSelectorInDOM() fired.');
             let interval = setInterval(() => {
-                if (document.querySelector('.pollingFinished')) {
+                if (document.querySelector(selector)) {
                     resolve();
                     clearInterval(interval);
                 };
@@ -454,7 +464,7 @@ export default class BasePortal {
         }
         this.updateHTML('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
 
-        this.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div></div>', 'body', 'beforeEnd');
+        this.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div></div>', 'body', 'beforeEnd');
 
         let sort_button = document.querySelector('.ArnSortBy');
         let sort_container = document.querySelector('#sort-wrapper');
@@ -654,7 +664,6 @@ export default class BasePortal {
             });
         }
     }
-
     addDistanceScaleToMap() {
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             L.control.scale().addTo(window.ArnMap);
@@ -740,7 +749,7 @@ export default class BasePortal {
 
         document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<span class="open-modal">Show ${modal_title}</span>`);
 
-        document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#9c6aad" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#9c6aad" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
 
         array_of_elements_to_put_in_modal_body.forEach((element) => {
             document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', element);
@@ -804,5 +813,18 @@ export default class BasePortal {
             this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
             this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');
         });
+    }
+
+    applyConfigColors() {
+        if (!this.site_config) {
+            return;
+        }
+
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `
+            <style>
+            /* Primary Background Color */
+                #search-wrapper,#searching h2:after,#theConfirmationButton,#theOtherSubmitButton:active,#theOtherSubmitButton:focus,#theOtherSubmitButton:hover,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.CreateAnAccountAction,.RootBody #theSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,.bookRoom,.yui3-skin-sam .yui3-calendar-day:hover{background:${this.site_config.primary_color}}@media screen and (max-width:1105px){#arnCloseAnchorId,#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover,.closeMap{background:${this.site_config.primary_color}}}@media screen and (max-width:800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover,#sort-wrapper a:before, #sort-wrapper a.active-filter:before{background:${this.site_config.primary_color}}}#search-wrapper a,#searching,#theConfirmationButton,#theOtherSubmitButton:active,#theOtherSubmitButton:focus,#theOtherSubmitButton:hover,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.CheckRates .submit,.CreateAnAccountAction,.RootBody #theSubmitButton,.SearchHotels #theSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arnMapPopup .rate,.bookRoom{color:${this.site_config.primary_text_color}}@media screen and (max-width:1105px){#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover,.closeMap{color:${this.site_config.primary_text_color}}}@media screen and (max-width: 800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover{color:${this.site_config.primary_text_color}}}#search-wrapper .selectedTab,#search-wrapper a:active,#search-wrapper a:focus,#search-wrapper a:hover,#theAdditionalEmailsLink a,#theOtherSubmitButton,.RootBody #theSubmitButton:active,.RootBody #theSubmitButton:focus,.RootBody #theSubmitButton:hover,.SearchHotels #theSubmitButton:active,.SearchHotels #theSubmitButton:focus,.SearchHotels #theSubmitButton:hover,.SinglePropDetail #moreRatesLink,.SinglePropDetail .ArnRateCancelAnchor,.open-modal,.sort{color:${this.site_config.secondary_text_color}}@media screen and (max-width:1105px){#arnCloseAnchorId{color:${this.site_config.secondary_text_color}}}@media screen and (max-width:800px){#theBookingPage legend#policies-legend{color:${this.site_config.secondary_text_color}}}#AdminControlsContainer{border-bottom:3px solid ${this.site_config.primary_color}}.arnMapMarker:hover .arnMapMarkerTriangle,.arnMapMarkerTriangle{border-top-color:${this.site_config.primary_color}}#theOtherSubmitButton,.ArnSecondarySearchOuterContainer select,.ArnShowRatesLink,.RootBody #theSubmitButton,.bookRoom,.sort{border:1px solid ${this.site_config.primary_color}}.ArnSearchField{border-bottom:1px solid ${this.site_config.primary_color}}.ArnShowRatesLink:active,.ArnShowRatesLink:focus,.ArnShowRatesLink:hover,.bookRoom:active,.bookRoom:focus,.bookRoom:hover{border-color:${this.site_config.primary_color}}@media screen and (max-width:1105px){#arnCloseAnchorId{border:1px solid ${this.site_config.primary_color}}}@media screen and (max-width:800px){#sort-wrapper a:before{border:2px solid ${this.site_config.primary_color}}}
+            </style>
+            `);
     }
 }

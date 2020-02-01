@@ -106,10 +106,6 @@ body {
     display: none;
 }
 
-#commands .profileCommand {
-    display: none;
-}
-
 .WBLoginFormActions .submit,
 .WBForgotPasswordFormActions .submit {
     display: block;

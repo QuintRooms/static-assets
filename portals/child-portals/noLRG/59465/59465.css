@@ -196,7 +196,8 @@ h2 {
 }
 
 .logo img {
-    max-width: 200px;
+    max-width: 350px;
+    padding: 12px;
 }
 
 #theConfirmationContainer h4,
@@ -358,7 +359,7 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
@@ -390,14 +391,14 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: rgb(141, 11, 11) !important;
+    background: rgb(111, 11, 11) !important;
     color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: rgb(141, 11, 11);
+    background: rgb(111, 11, 11);
     color: #fff !important;
 }
 
@@ -432,7 +433,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid rgb(239, 17, 17);
+    border: 1px solid rgb(141, 11, 11);
 }
 
 .selectedTab,
@@ -440,14 +441,14 @@ header {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid rgb(239, 17, 17);
+    border-bottom: 1px solid rgb(141, 11, 11);
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #fff;
-    background: rgb(239, 17, 17);
-    border: 1px solid rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
+    border: 1px solid rgb(141, 11, 11);
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -461,7 +462,7 @@ header {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: rgb(239, 17, 17);
+    border-top-color: rgb(141, 11, 11);
 }
 
 .propertiesNearbyLink {
@@ -510,41 +511,41 @@ header {
 }
 
 .arnMapMarker {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
     border: 1px solid #fff;
 }
 
 .arnMapMarker.highlight {
-    background: rgb(141, 11, 11);
-    border: 1px solid rgb(141, 11, 11);
+    background: rgb(111, 11, 11);
+    border: 1px solid rgb(111, 11, 11);
     z-index: 8001;
 }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: rgb(141, 11, 11);
+    border-top-color: rgb(111, 11, 11);
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: rgb(239, 17, 17);
+    border-top-color: rgb(141, 11, 11);
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: rgb(239, 17, 17);
+    border-top-color: rgb(141, 11, 11);
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
 }
 
 .SearchHotels .reserveHotel,
@@ -601,7 +602,7 @@ header {
 }
 
 .ArnPropName div.ratingCount {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
 }
 
 .exclusiveRate {
@@ -609,7 +610,7 @@ header {
 }
 
 .sash {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
     margin-top: -1px;
     justify-content: flex-end;
 }
@@ -656,14 +657,14 @@ header {
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -677,7 +678,7 @@ header {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: rgb(239, 17, 17);
+        border-top-color: rgb(141, 11, 11);
     }
 }
 
@@ -701,7 +702,7 @@ header {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid rgb(239, 17, 17);
+        border-left: 2px solid rgb(141, 11, 11);
     }
 }
 
@@ -729,14 +730,14 @@ header {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid rgb(239, 17, 17);
-        border-bottom: 4px solid rgb(239, 17, 17) !important;
+        border-top: 4px solid rgb(141, 11, 11);
+        border-bottom: 4px solid rgb(141, 11, 11) !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid rgb(239, 17, 17);
+        border-bottom: 4px solid rgb(141, 11, 11);
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -751,12 +752,12 @@ header {
     .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid rgb(239, 17, 17);
-        background: rgb(239, 17, 17);
+        border-bottom: 1px solid rgb(141, 11, 11);
+        background: rgb(141, 11, 11);
     }
 
     .adminContainer span {
-        background-color: rgb(239, 17, 17);
+        background-color: rgb(141, 11, 11);
     }
 }
 
@@ -807,9 +808,9 @@ nav {
 }
 
 .btn-primary {
-    background: rgb(239, 17, 17);
+    background: rgb(141, 11, 11);
     box-shadow: none;
-    border-color: rgb(239, 17, 17);
+    border-color: rgb(141, 11, 11);
 }
 
 .btn-primary:hover {

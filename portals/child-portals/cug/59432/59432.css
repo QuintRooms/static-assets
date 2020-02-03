@@ -402,7 +402,7 @@ body.WBValidatedRegistrationForm {
 }
 
 header {
-    background: #333;
+    background: #fff;
     grid-row-start: 1;
     display: flex;
     justify-content: space-between;
@@ -595,7 +595,7 @@ header {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #333;
+    color: #58585a;
     background: transparent;
     border: 1px solid #f0393d;
     border-radius: 5px;
@@ -1338,7 +1338,7 @@ ul {
     margin: 0px auto 8px auto;
     border: none;
     background: #ffcc00;
-    color: #333;
+    color: #58585a;
     padding: 3px 5px;
     border-radius: 5px;
 }

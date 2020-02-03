@@ -964,7 +964,7 @@ nav {
 }
 
 .logo img {
-    max-width: 200px;
+    max-width: 120px;
     width: 100%;
     padding: 0;
 }
@@ -982,6 +982,11 @@ nav {
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1 {
     font-size: 62px;
+}
+
+.CreateAnAccountAction,
+.loginDivider {
+    display: none;
 }
 
 .btn-primary {

@@ -538,14 +538,14 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #007169 !important;
+    background: #bf2a2d !important;
     color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #007169;
+    background: #bf2a2d;
     color: #fff !important;
 }
 

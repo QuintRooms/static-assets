@@ -595,7 +595,7 @@ header {
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    color: #58585a;
+    color: #333;
     background: transparent;
     border: 1px solid #f0393d;
     border-radius: 5px;
@@ -711,7 +711,7 @@ header {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-    background-color: RGB(21, 21, 30);
+    background-color: #58585a;
     color: rgb(255, 255, 255) !important;
 }
 
@@ -1338,7 +1338,7 @@ ul {
     margin: 0px auto 8px auto;
     border: none;
     background: #ffcc00;
-    color: #58585a;
+    color: #333;
     padding: 3px 5px;
     border-radius: 5px;
 }

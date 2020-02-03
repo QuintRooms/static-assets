@@ -649,7 +649,7 @@ header {
 }
 
 .arn-leaflet-reset-button {
-    background: #15151e;
+    background: #58585a;
     border: 1px solid transparent !important;
     transition: all .2s linear;
 }
@@ -723,11 +723,11 @@ header {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #15151e;
+    background: #58585a;
 }
 
 #slideit section {
-    border-bottom: #15151e;
+    border-bottom: #58585a;
 }
 
 #slideit label.open:hover,

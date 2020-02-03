@@ -1005,11 +1005,6 @@ nav {
     font-size: 62px;
 }
 
-.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
-.loginDivider {
-    display: none;
-}
-
 .btn-primary {
     background: #f0393d;
     box-shadow: none;

@@ -2,6 +2,8 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Republic of Texas Motorcycle Rally Exclusive Rates');
+
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
@@ -15,8 +17,8 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59222/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.okroger.ai/', 'href');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://www.rotrally.com/', 'href');
 
                 observer.disconnect();
             }
@@ -28,4 +30,4 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/59222/59222.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/59465.css">');

@@ -789,6 +789,27 @@ header {
         display: none;
     }
 
+    #SortControls {
+        height: 230px;
+    }
+
+    .ArnSortByClass,
+    .ArnSortByClass:hover,
+    .ArnSortByDealAmount,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByDealPercent,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDistance,
+    .ArnSortByDistance:hover,
+    .ArnSortByPrice,
+    .ArnSortByPrice:hover,
+    .ArnSortByType,
+    .ArnSortByType:hover,
+    .ArnSortByVacationRental,
+    .ArnSortByVacationRental:hover {
+        width: 215px;
+    }
+
     .ArnSortByName:hover,
     .ArnSortByClass:hover,
     .ArnSortByType:hover,

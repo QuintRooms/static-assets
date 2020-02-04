@@ -626,36 +626,6 @@ header{
     font-size: 19px;
 }
 
-#search-wrapper {
-    display: flex;
-    justify-content: space-around;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 0;
-}
-
-#search-wrapper a {
-    text-decoration: none;
-    padding: 12px 6px;
-    font-weight: 500;
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #fff;
-    transition: all .3s ease-out;
-}
-
-#search-wrapper a:last-child {
-    border-right: none;
-    border-top-right-radius: 5px;
-}
-
-#search-wrapper .selectedTab,
-#search-wrapper a:hover,
-#search-wrapper a:active,
-#search-wrapper a:focus {
-    background: #fff;
-    color: #333;
-}
-
 .ArnPrimarySearchContainer,
 .SimpleSearch {
     border-top: 1px solid #fff;
@@ -755,7 +725,6 @@ div.autocomplete ul li.selected {
         padding: 8px;
     }
 
-    .SearchHotels #search-wrapper,
     .SearchHotels .ArnSecondarySearchOuterContainer,
     .SearchHotels #HotelNameContainer,
     .SearchHotels .ArnSearchHeader,
@@ -2240,7 +2209,6 @@ legend {
 /* Root Page Start */
 .RootBody .ArnNoResults,
 .RootBody .ArnSecondarySearchOuterContainer,
-.RootBody #search-wrapper,
 .RootBody .ArnRightListContainer,
 .RootBody #HotelNameContainer,
 .RootBody .ArnSearchHeader {

@@ -35,6 +35,7 @@
     "button_hover_background_color": "transparent",
     "button_hover_text_color": "#333",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
+    "google_font_name": "Montserrat",
     "ads":
     {
         "sidebar_ad":

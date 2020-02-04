@@ -1429,10 +1429,11 @@ legend {
 }
 
 .SearchHotels .ArnPropThumb {
-    width: 25%;
+    max-width: 30%;
+    width: 100%;
+    max-height: 200px;
     overflow: hidden;
     border-radius: 5px 0 0 5px;
-    display: inherit;
 }
 
 .SearchHotels .ArnPropThumb img {
@@ -1450,7 +1451,7 @@ legend {
 }
 
 .SearchHotels .ArnPropName {
-    width: 50%;
+    width: 45%;
 }
 
 .ArnPropName,

@@ -78,7 +78,7 @@ textarea {
 }
 
 /* Header Start */
-header{
+header {
     width: 100%;
     position: relative;
     background: #fff;
@@ -1185,6 +1185,10 @@ legend {
     margin-right: 4px;
 }
 
+.ArnTripAdvisorDetails.HasReviews .reviewCount a {
+    text-decoration: none;
+}
+
 /* Amenities Start */
 #thePropertyAmenities {
     position: relative;
@@ -1434,6 +1438,7 @@ legend {
     max-height: 200px;
     overflow: hidden;
     border-radius: 5px 0 0 5px;
+    s
 }
 
 .SearchHotels .ArnPropThumb img {

@@ -609,6 +609,12 @@ header {
     display: block;
 }
 
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnSearchContainerMainTable {
+        display: initial;
+    }
+}
+
 .ArnLeftSearchContainer,
 .ArnLeftListContainer {
     width: 225px;
@@ -1445,6 +1451,12 @@ legend {
     object-position: center center;
     width: 100%;
     height: 175px;
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnPropThumb {
+        max-width: 100%;
+    }
 }
 
 .ArnImageLink {

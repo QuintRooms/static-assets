@@ -12,11 +12,11 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.applyConfigColors();
+                this.setFontFromConfig();
 
                 // all pages
                 this.buildMobileMenu();
                 this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
-                this.createHTML(`<link href="//fonts.googleapis.com/css?family=Montserrat:100,500,700" rel="stylesheet">`, 'head', 'beforeEnd');
 
                 if (this.site_config.site_type != 'cug') {
                     this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
@@ -827,7 +827,14 @@ export default class BasePortal {
             `);
     }
 
-    setFontFromConfig(){
- 
+    setFontFromConfig() {
+        if (!this.site_config) {
+            return;
+        }
+
+        this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}`);
+
     }
 }

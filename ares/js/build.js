@@ -1,12 +1,8 @@
 export default class BasePortal {
-    
+
     site_id;
     page_name;
     site_config;
-    use_date_prompt;
-    use_advanced_search;
-    use_property_type_filter;
-    use_city_landmark_airport_filter;
     svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
 
     init() {
@@ -839,6 +835,4 @@ export default class BasePortal {
 
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
     }
-
-
 }

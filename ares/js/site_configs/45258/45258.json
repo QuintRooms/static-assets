@@ -16,7 +16,6 @@
         "allow_registration": true
     },
     "calculate_distance_type": "query-string",
-    "show_city_landmark_airport_filter": false,
     "show_language_select": true,
     "show_date_prompt": false,
     "show_advanced_search": true,

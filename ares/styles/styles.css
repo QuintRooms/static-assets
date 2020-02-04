@@ -243,7 +243,7 @@ header {
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(48% - 125px) !important;
+    width: calc(45% - 125px) !important;
     height: 100% !important;
     z-index: 8;
 }
@@ -1419,7 +1419,7 @@ legend {
 
 #currentPropertyPage {
     position: relative;
-    width: 52%;
+    width: 55%;
 }
 
 .SearchHotels .ArnContainer {

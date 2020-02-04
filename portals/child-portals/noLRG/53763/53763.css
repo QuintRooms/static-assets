@@ -370,3 +370,13 @@ header a {
 .geoButton {
     display: none;
 }
+
+.ArnSortByClass, .ArnSortByClass:hover, .ArnSortByDealAmount, .ArnSortByDealAmount:hover, .ArnSortByDealPercent, .ArnSortByDealPercent:hover, .ArnSortByDistance, .ArnSortByDistance:hover, .ArnSortByPrice, .ArnSortByPrice:hover, .ArnSortByType, .ArnSortByType:hover, .ArnSortByVacationRental, .ArnSortByVacationRental:hover{
+    width: 216px;
+}
+
+@media screen and (min-width: 800px){
+    #SortControls{
+        top: 40px;
+    }
+}

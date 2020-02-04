@@ -611,7 +611,7 @@ header {
 
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnSearchContainerMainTable {
-        display: initial;
+        display: table;
     }
 }
 

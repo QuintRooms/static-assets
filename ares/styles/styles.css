@@ -613,6 +613,10 @@ header {
     .SearchHotels .ArnSearchContainerMainTable {
         display: table;
     }
+
+    .SearchHotels .ArnPropAddress {
+        padding: 8px 0;
+    }
 }
 
 .ArnLeftSearchContainer,

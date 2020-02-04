@@ -834,7 +834,7 @@ export default class BasePortal {
 
         this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
-        document.querySelector('body').insertAdjacentHTML('beforeEnd', `*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}`);
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
 
     }
 }

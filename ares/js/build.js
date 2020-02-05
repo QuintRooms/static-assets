@@ -417,10 +417,11 @@ export default class BasePortal {
     }
 
     createStarIcons() {
-        if(!this.site_config.show_prop_rating_stars){
+        if (!this.site_config.show_prop_rating_stars) {
+            document.querySelector('.ArnPropClass').style.display = 'none';
             return;
         }
-        
+
         let star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach(function(star) {
             let number_of_stars = star.textContent;

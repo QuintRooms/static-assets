@@ -909,7 +909,7 @@ export default class BasePortal {
                         color:${this.site_config.primary_text_color}
                     }
                 }
-
+                .holdRoom,
                 .reviewCount a,
                 #theAdditionalEmailsLink a,
                 #theOtherSubmitButton,
@@ -962,7 +962,7 @@ export default class BasePortal {
                 .bookRoom:active,
                 .bookRoom:focus,
                 .bookRoom:hover {
-                    border-color:${this.site_config.primary_color}
+                    border: 1px solid ${this.site_config.primary_color}
                 }
 
                 @media screen and (max-width:1105px) {

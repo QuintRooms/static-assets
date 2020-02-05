@@ -892,6 +892,7 @@ export default class BasePortal {
                 .WBLoginFormActions .submit,
                 .WBValidatedRegistrationFormActions .submit,
                 .arnMapPopup .rate,
+                #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .bookRoom {
                     color:${this.site_config.primary_text_color}
                 }
@@ -930,7 +931,6 @@ export default class BasePortal {
                 .SearchHotels #theSubmitButton:hover,
                 .SinglePropDetail #moreRatesLink,
                 .SinglePropDetail .ArnRateCancelAnchor,
-                #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .open-modal,
                 .sort {
                     color:${this.site_config.secondary_text_color}

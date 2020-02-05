@@ -844,6 +844,7 @@ export default class BasePortal {
                 .arnMapMarker:hover,
                 .bookRoom,
                 .HoldRoomsForm .submit,
+                #datePromptContainer .CheckRates .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover {
                     background:${this.site_config.primary_color}
                 }
@@ -891,6 +892,7 @@ export default class BasePortal {
                 .WBLoginFormActions .submit,
                 .WBValidatedRegistrationFormActions .submit,
                 .arnMapPopup .rate,
+                #datePromptContainer .CheckRates .submit,
                 .bookRoom {
                     color:${this.site_config.primary_text_color}
                 }

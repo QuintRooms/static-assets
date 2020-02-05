@@ -2507,3 +2507,32 @@ body.HoldRoomsForm {
 }
 
 /* Hold Room Page End */
+
+/* Date Prompt Start */
+#datePromptContainer {
+    background: #fff;
+    text-align: center;
+}
+
+#datePromptContainer+.SimpleSearch {
+    background: #fff !important;
+    color: #333;
+}
+
+#datePromptContainer+.SimpleSearch table tbody tr {
+    display: flex;
+    flex-direction: column;
+}
+
+#datePromptContainer+.SimpleSearch .SearchActions,
+#datePromptContainer+.SimpleSearch .rowTwo {
+    display: none;
+}
+
+#datePromptContainer+.SimpleSearch .ArnAdults,
+#datePromptContainer+.SimpleSearch .ArnRooms {
+    width: 100%;
+    margin: 0;
+}
+
+/* Date Prompt End */

@@ -134,7 +134,6 @@ export default class BasePortal {
 
     async getSiteConfigJSON() {
         console.log('getSiteConfigJSON fired');
-        debugger;
         try {
             return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
@@ -312,7 +311,7 @@ export default class BasePortal {
             return;
         }
 
-        room_description_el.forEach(function(element) {
+        room_description_el.forEach((element) => {
             console.log('element:', element)
             console.log('site_config:', this.site_config)
             console.log('site_config.lodging:', this.site_config.lodging)

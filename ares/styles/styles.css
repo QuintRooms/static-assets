@@ -1486,11 +1486,22 @@ legend {
 .ArnPropName,
 .ArnRateCell {
     padding: 8px;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 .ArnPropNameLink {
     text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.SearchHotels .ArnPropAddress {
+    margin-bottom: 4px;
+}
+
+.SearchHotels .distanceLabel {
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
 .ArnPropNameLink span {

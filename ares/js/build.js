@@ -418,12 +418,12 @@ export default class BasePortal {
 
     createStarIcons() {
         if (!this.site_config.show_prop_rating_stars) {
-            document.querySelector('.ArnPropClass').style.display = 'none';
             return;
         }
 
         let star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach(function(star) {
+            star.style.display = 'inline';
             let number_of_stars = star.textContent;
             let num = number_of_stars.replace(/\D/g, "");
             let star_svg = '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';

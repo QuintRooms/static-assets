@@ -718,7 +718,7 @@ div.autocomplete ul li.selected {
 }
 
 .ArnPropClass {
-    display: inline;
+    display: none;
 }
 
 .SearchHotels .star {

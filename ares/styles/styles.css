@@ -1824,7 +1824,7 @@ legend {
 }
 
 /* Checkout Start */
-.theAdditionalGuestLink,
+#theAdditionalGuestLink,
 .DSFormFields {
     display: none;
 }

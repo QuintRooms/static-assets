@@ -1002,7 +1002,7 @@ export default class BasePortal {
     setupDatePrompt(){
         let date_prompt = document.querySelector('#theDatePrompt');
 
-        if(!this.site_config.show_date_prompt || !date_prompt){
+        if(!this.site_config.show_date_prompt){
         console.log('setupDatePrompt() return.')
             return;
         }

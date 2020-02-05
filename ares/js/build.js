@@ -133,17 +133,21 @@ export default class BasePortal {
     }
 
     async getSiteConfigJSON() {
-        console.log('getSiteConfigJSON fired');
-        try {
-            return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
-                .then(response => response.json())
-                .then((json) => {
-                    this.site_config = json;
-                    console.log('site_config:', json);
-                });
-        } catch {
-            console.log('could not get site config');
-        }
+        return await new Promise(resolve => {
+
+            console.log('getSiteConfigJSON fired');
+            try {
+                return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
+                    .then(response => response.json())
+                    .then((json) => {
+                        this.site_config = json;
+                        console.log('site_config:', json);
+                    });
+            } catch {
+                console.log('could not get site config');
+            }
+            resolve();
+        });
     }
 
     /**

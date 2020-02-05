@@ -1000,12 +1000,13 @@ export default class BasePortal {
     }
 
     setupDatePrompt(){
-        console.log('setupDatePrompt() fired.')
         let date_prompt = document.querySelector('#theDatePrompt');
 
         if(!this.site_config.show_date_prompt || !date_prompt){
+        console.log('setupDatePrompt() return.')
             return;
         }
+        console.log('setupDatePrompt() after return.')
 
         date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
 

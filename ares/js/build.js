@@ -999,11 +999,11 @@ export default class BasePortal {
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
     }
 
-    setupDatePrompt(){
+    setupDatePrompt() {
         let date_prompt = document.querySelector('#theDatePrompt');
 
-        if(!this.site_config.show_date_prompt){
-        console.log('setupDatePrompt() return.')
+        if (!date_prompt) {
+            console.log('setupDatePrompt() return.')
             return;
         }
         console.log('setupDatePrompt() after return.')

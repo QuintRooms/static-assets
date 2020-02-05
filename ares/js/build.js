@@ -1036,5 +1036,4 @@ export default class BasePortal {
             });
         });
     }
-
 }

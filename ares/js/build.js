@@ -12,6 +12,7 @@ export default class BasePortal {
                 this.getPageName();
                 this.applyConfigColors();
                 this.setFontFromConfig();
+                this.setupDatePrompt();
 
                 // all pages
                 this.buildMobileMenu();
@@ -996,5 +997,16 @@ export default class BasePortal {
         this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+    }
+
+    setupDatePrompt(){
+        let date_prompt = document.querySelector('#theDatePrompt');
+
+        if(!this.site_config.show_date_prompt || !date_prompt){
+            return;
+        }
+
+        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
+
     }
 }

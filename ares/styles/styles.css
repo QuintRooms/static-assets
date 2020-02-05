@@ -1527,7 +1527,8 @@ legend {
 
 .ArnShowRatesLink,
 .bookRoom,
-.holdRoom {
+.holdRoom,
+.HoldRoomsForm .submit {
     font-weight: 500;
     margin-top: 6px;
     border-radius: 5px;

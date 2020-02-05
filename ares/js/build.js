@@ -949,7 +949,8 @@ export default class BasePortal {
                 .ArnShowRatesLink,
                 .RootBody #theSubmitButton,
                 .bookRoom,
-                .sort {
+                .sort,
+                .HoldRoomsForm .submit {
                     border:1px solid ${this.site_config.primary_color}
                 }
 

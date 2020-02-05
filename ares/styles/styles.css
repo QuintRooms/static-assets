@@ -951,7 +951,7 @@ div.autocomplete ul li.selected {
 }
 
 .holdRoom {
-    margin: -12px 0 4px 0;
+    margin: -12px 0 4px 0 !important;
 }
 
 .SinglePropDetail #thePropertyMap {
@@ -1824,6 +1824,11 @@ legend {
 }
 
 /* Checkout Start */
+.theAdditionalGuestLink,
+.DSFormFields {
+    display: none;
+}
+
 .creditcard {
     display: inline-block;
     vertical-align: middle;
@@ -2360,7 +2365,7 @@ body.HoldRoomsForm {
 .WBLoginFormContainer,
 .WBValidatedRegistrationFormContainer,
 .WBForgotPasswordFormContainer,
-.HoldRoomsForm .ArnSearchContainerMainDiv   {
+.HoldRoomsForm .ArnSearchContainerMainDiv {
     flex-grow: 1;
 }
 

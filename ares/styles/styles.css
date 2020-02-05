@@ -1416,7 +1416,7 @@ legend {
 /* Properties Container */
 .ArnPropImageNext,
 .ArnPropImagePrevious,
-.ArnPropDescription,
+.ArnPropDescription .detailsOrNearbyLabel,
 .ArnIconContainer,
 .ArnPropPopularity,
 .ArnPropType,

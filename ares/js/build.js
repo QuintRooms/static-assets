@@ -883,7 +883,7 @@ export default class BasePortal {
                 .ArnPrimarySearchContainer,
                 .ArnShowRatesLink,
                 .ArnTripAdvisorDetails.HasReviews .ratingCount,
-                .CheckRates .submit,
+                .SinglePropDetail .CheckRates .submit,
                 .CreateAnAccountAction,
                 .RootBody #theSubmitButton,
                 .SearchHotels #theSubmitButton,

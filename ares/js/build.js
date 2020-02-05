@@ -84,7 +84,7 @@ export default class BasePortal {
                 this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-                this.addDistanceScaleToMap();
+                this.mapReadyMethods();
 
                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
                     if (!this.page_name == 'search-results') {
@@ -666,10 +666,11 @@ export default class BasePortal {
             });
         }
     }
-    addDistanceScaleToMap() {
+    mapReadyMethods() {
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             L.control.scale().addTo(window.ArnMap);
             this.toggleMap();
+            this.highlightMapMarkersOnPropertyHover();
         });
     }
 
@@ -1005,12 +1006,35 @@ export default class BasePortal {
         let date_prompt = document.querySelector('#theDatePrompt');
 
         if (!date_prompt) {
-            console.log('setupDatePrompt() return.')
             return;
         }
-        console.log('setupDatePrompt() after return.')
 
         date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
-
     }
+
+    highlightMapMarkersOnPropertyHover() {
+        let prop_container = document.querySelector('#currentPropertyPage');
+        let properties = document.querySelectorAll('.ArnContainer');
+        let prop_id_el;
+        let prop_id;
+
+        if (!prop_container) {
+            return;
+        }
+        properties.forEach((property) => {
+            property.addEventListener('mouseenter', (e) => {
+                prop_id_el = property.parentElement.querySelector('.propId');
+                if (!prop_id_el) {
+                    return;
+                }
+                prop_id = prop_id_el.textContent;
+                ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
+            });
+
+            property.addEventListener('mouseleave', (e) => {
+                ArnMapDispatcher.eventPropertyHighlightOff(prop_id)
+            });
+        });
+    }
+
 }

@@ -308,13 +308,14 @@ export default class BasePortal {
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
         if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") {
-            console.log('updateRoomDescription() should return here.')
             return;
         }
 
         room_description_el.forEach(function(element) {
-            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">
-                ${this.site_config.lodging.event_name}</span>`);
+            console.log('element:', element)
+            console.log('site_config:', this.site_config)
+            console.log('site_config.lodging:', this.site_config.lodging)
+            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`);
         });
     }
 

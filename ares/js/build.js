@@ -837,6 +837,7 @@ export default class BasePortal {
                 .arnMapMarker,
                 .arnMapMarker:hover,
                 .bookRoom,
+                .HoldRoomsForm .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover {
                     background:${this.site_config.primary_color}
                 }
@@ -871,6 +872,7 @@ export default class BasePortal {
                 #theOtherSubmitButton:active,
                 #theOtherSubmitButton:focus,
                 #theOtherSubmitButton:hover,
+                .HoldRoomsForm .submit,
                 .ArnPrimarySearchContainer,
                 .ArnShowRatesLink,
                 .ArnTripAdvisorDetails.HasReviews .ratingCount,

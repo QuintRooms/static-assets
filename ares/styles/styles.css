@@ -2347,7 +2347,8 @@ body.RootBody,
 body.WBResendOrCancelForm,
 body.WBLoginForm,
 body.WBValidatedRegistrationForm,
-body.WBForgotPasswordForm {
+body.WBForgotPasswordForm,
+body.HoldRoomsForm {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -2357,7 +2358,8 @@ body.WBForgotPasswordForm {
 .WBResendOrCancelForm,
 .WBLoginFormContainer,
 .WBValidatedRegistrationFormContainer,
-.WBForgotPasswordFormContainer {
+.WBForgotPasswordFormContainer,
+.HoldRoomsForm .ArnSearchContainerMainDiv   {
     flex-grow: 1;
 }
 
@@ -2482,7 +2484,8 @@ body.WBForgotPasswordForm {
 
 /* Hold Room Page Start */
 .HoldRoomsForm .ArnShowRatesLink,
-.HoldRoomsForm .ArnReviewTab+a {
+.HoldRoomsForm .ArnReviewTab+a,
+.HoldRoomsForm div.ArnContentButtonContainer > div:nth-child(5) {
     display: none;
 }
 

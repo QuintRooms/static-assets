@@ -417,6 +417,10 @@ export default class BasePortal {
     }
 
     createStarIcons() {
+        if(!this.site_config.show_prop_rating_stars){
+            return;
+        }
+        
         let star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach(function(star) {
             let number_of_stars = star.textContent;

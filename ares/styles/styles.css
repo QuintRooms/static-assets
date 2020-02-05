@@ -945,13 +945,13 @@ div.autocomplete ul li.selected {
 .SinglePropDetail .ArnPropClass,
 .SinglePropDetail .PropertyLinks,
 .SinglePropDetail .SearchActions,
-.SinglePropDetail .imageDisclaimer,
+.imageDisclaimer,
 .reportProblemLink {
     display: none;
 }
 
 .holdRoom {
-    margin: 0;
+    margin: -12px 0 4px 0;
 }
 
 .SinglePropDetail #thePropertyMap {
@@ -2486,27 +2486,8 @@ body.HoldRoomsForm {
 /* Hold Room Page Start */
 .HoldRoomsForm .ArnShowRatesLink,
 .HoldRoomsForm .ArnReviewTab+a,
-.HoldRoomsForm div.ArnContentButtonContainer > div:nth-child(5) {
+.HoldRoomsForm .ArnContentButtonContainer {
     display: none;
 }
-
-.HoldRoomsForm .ArnContentButtonContainer {
-    display: flex;
-}
-
-.ArnContentButtonContainer div {
-    background: #9c6aad;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    padding: 4px;
-    border-right: 1px solid #fff;
-    cursor: pointer;
-}
-
-.HoldRoomsForm .ArnAmenityContainer {
-    opacity: 1;
-}
-
 
 /* Hold Room Page End */

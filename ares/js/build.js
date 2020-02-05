@@ -67,7 +67,7 @@ export default class BasePortal {
                     this.updateHTML('#theCharges legend', 'Rate Info');
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');
-                    this.formatCheckoutForm();
+                    // this.formatCheckoutForm();
                 }
 
                 // root page methods

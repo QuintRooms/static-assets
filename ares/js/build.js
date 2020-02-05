@@ -801,10 +801,10 @@ export default class BasePortal {
             ], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
 
             this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardVerificationAjax`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardExpirationFieldsAjax`)], `security-code-exp-container${reservation_count}`, `#theCreditCardBillingNameAjax${reservation_count - 1}`, 'afterEnd');
-
             document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
+            console.log('805:', document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container'))
             document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
-
+            console.log('807:', document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container'))
             this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
             this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
             this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');

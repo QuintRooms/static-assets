@@ -2509,6 +2509,10 @@ body.HoldRoomsForm {
 /* Hold Room Page End */
 
 /* Date Prompt Start */
+#theDatePrompt {
+    width: 500px;
+}
+
 #datePromptContainer {
     background: #fff;
     text-align: center;
@@ -2517,11 +2521,23 @@ body.HoldRoomsForm {
 #datePromptContainer+.SimpleSearch {
     background: #fff !important;
     color: #333;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
 }
 
-#datePromptContainer+.SimpleSearch table tbody tr {
+#datePromptContainer+.SimpleSearch table {
+    width: 70%;
+}
+
+#datePromptContainer+.SimpleSearch>table>tbody>tr {
     display: flex;
     flex-direction: column;
+}
+
+#datePromptContainer+.SimpleSearch #theQuickCheckIn,
+#datePromptContainer+.SimpleSearch #theQuickCheckOut {
+    width: 100%;
 }
 
 #datePromptContainer+.SimpleSearch .SearchActions,
@@ -2533,6 +2549,16 @@ body.HoldRoomsForm {
 #datePromptContainer+.SimpleSearch .ArnRooms {
     width: 100%;
     margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    #lightbox {
+        width: 100vw;
+    }
+
+    #theDatePrompt {
+        width: 100%;
+    }
 }
 
 /* Date Prompt End */

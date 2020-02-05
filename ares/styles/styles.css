@@ -2479,3 +2479,30 @@ body.WBForgotPasswordForm {
 }
 
 /* Map Popup End */
+
+/* Hold Room Page Start */
+.HoldRoomsForm .ArnShowRatesLink,
+.HoldRoomsForm .ArnReviewTab+a {
+    display: none;
+}
+
+.HoldRoomsForm .ArnContentButtonContainer {
+    display: flex;
+}
+
+.ArnContentButtonContainer div {
+    background: #9c6aad;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 4px;
+    border-right: 1px solid #fff;
+    cursor: pointer;
+}
+
+.HoldRoomsForm .ArnAmenityContainer {
+    opacity: 1;
+}
+
+
+/* Hold Room Page End */

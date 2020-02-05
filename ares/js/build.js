@@ -934,9 +934,7 @@ export default class BasePortal {
 
                 header,
                 #AdminControlsContainer {
-                    border-bottom:3px solid ${
-                        thisite_config.primary_color
-                   
+                    border-bottom:3px solid ${this.site_config.primary_color}
                 }
 
                 .arnMapMarker:hover .arnMapMarkerTriangle,
@@ -956,7 +954,7 @@ export default class BasePortal {
                 .ArnSearchField {
                     border-bottom:1px solid ${this.site_config.primary_color}   
                 }
-                
+
                 .holdRoom,
                 .ArnShowRatesLink:active,
                 .ArnShowRatesLink:focus,

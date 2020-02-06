@@ -1840,12 +1840,16 @@ legend {
     display: none;
 }
 
-.creditcard {
+.creditcards {
     display: inline-block;
     vertical-align: middle;
     margin: .75rem 1rem .75rem 0;
     width: 45px;
     height: 30px;
+}
+
+.creditcard img {
+    display: block;
 }
 
 .open-modal {

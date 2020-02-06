@@ -57,7 +57,7 @@ export default class BasePortal {
                     this.setupReservationSummaryContainer();
                     // Checkout form input validation
                     this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
-                    this.updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/creditcards.svg" alt="Credit Cards"></span>');
+                    this.updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
                     this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
 
                     // Shows numpad on ios

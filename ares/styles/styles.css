@@ -66,7 +66,6 @@ textarea {
 #theBookingPage #theRateSummaryInfo div,
 #theCharges legend,
 #theHotelAddress,
-#theBookingPage .paymentMethods img,
 .ArnGoCitySearch,
 .ArnGoLandmarkSearch,
 .ArnGoAirportSearch {
@@ -1840,12 +1839,16 @@ legend {
     display: none;
 }
 
-.creditcard {
+.creditcards {
     display: inline-block;
     vertical-align: middle;
     margin: .75rem 1rem .75rem 0;
     width: 45px;
     height: 30px;
+}
+
+.creditcards img {
+    display: block;
 }
 
 .open-modal {

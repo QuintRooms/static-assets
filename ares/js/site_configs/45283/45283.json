@@ -1,38 +1,36 @@
 {
-    "site_id": 39624,
-    "affiliate_id": 16827,
-    "master_id": 2143,
+    "site_id": 45283,
+    "affiliate_id": 14808,
+    "master_id": 920,
     "site_type": "lodging",
     "lodging":
     {
         "event_id": false,
-        "event_name": "Hotels for Hope",
+        "event_name": "Ares v2 Test Event",
         "event_dates": "",
         "is_lrg": false
     },
     "cug":
     {
-        "is_cug": false,
+        "is_cug": true,
         "show_points": false,
         "allow_registration": true
     },
+    "show_prop_rating_stars": false,
     "show_language_select": false,
-    "show_date_prompt": false,
-    "show_advanced_search": true,
-    "show_property_type_filter": false,
-    "sort_by_parameters": ["distance", "price"],
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
-    "logo_file_location": "https://events.hotelsforhope.com/v6/?siteid=39624&theme=standard",
+    "logo_file_location": "https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png",
     "logo_outbound_url": "https://hotelsforhope.com",
     "banner_image_url": "https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg",
     "theme": "light",
     "primary_color": "#9c6aad",
     "secondary_color": "",
     "primary_text_color": "#fff",
-    "secondary_text_color": "",
+    "secondary_text_color": "#9c6aad",
     "button_hover_background_color": "transparent",
     "button_hover_text_color": "#333",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
+    "google_font_name": "Montserrat",
     "ads":
     {
         "sidebar_ad":

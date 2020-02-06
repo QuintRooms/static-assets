@@ -1,10 +1,9 @@
 export default class BasePortal {
-    constructor(site_id, site_config, page_name) {
-        this.site_id = site_id;
-        this.site_config = site_config;
-        this.page_name = page_name;
-        this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
-    }
+
+    site_id;
+    page_name;
+    site_config;
+    svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
 
     init() {
         this.ieForEachPolyfill();
@@ -12,6 +11,8 @@ export default class BasePortal {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.applyConfigColors();
+                this.setFontFromConfig();
+                this.setupDatePrompt();
 
                 // all pages
                 this.buildMobileMenu();
@@ -67,7 +68,7 @@ export default class BasePortal {
                     this.updateHTML('#theCharges legend', 'Rate Info');
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');
-                    this.formatCheckoutForm();
+                    // this.formatCheckoutForm();
                 }
 
                 // root page methods
@@ -83,7 +84,7 @@ export default class BasePortal {
                 this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                 this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-                this.addDistanceScaleToMap();
+                this.mapReadyMethods();
 
                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
                     if (!this.page_name == 'search-results') {
@@ -114,8 +115,6 @@ export default class BasePortal {
                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
                     this.movePropClassBelowPropName();
-
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnGoCitySearch'), document.querySelector('.ArnGoLandmarkSearch'), document.querySelector('.ArnGoAirportSearch')], 'search-wrapper', '.ArnSearchHeader', 'afterEnd');
 
                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
@@ -310,13 +309,11 @@ export default class BasePortal {
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
         if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") {
-            console.log('updateRoomDescription() should return here.')
             return;
         }
 
-        room_description_el.forEach(function(element) {
-            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">
-                ${this.site_config.lodging.event_name}</span>`);
+        room_description_el.forEach((element) => {
+            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`);
         });
     }
 
@@ -421,8 +418,13 @@ export default class BasePortal {
     }
 
     createStarIcons() {
+        if (!this.site_config.show_prop_rating_stars) {
+            return;
+        }
+
         let star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach(function(star) {
+            star.style.display = 'inline';
             let number_of_stars = star.textContent;
             let num = number_of_stars.replace(/\D/g, "");
             let star_svg = '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
@@ -664,10 +666,11 @@ export default class BasePortal {
             });
         }
     }
-    addDistanceScaleToMap() {
+    mapReadyMethods() {
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             L.control.scale().addTo(window.ArnMap);
             this.toggleMap();
+            this.highlightMapMarkersOnPropertyHover();
         });
     }
 
@@ -805,10 +808,10 @@ export default class BasePortal {
             ], `billing-details-container${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theBillingAddressAjax${reservation_count - 1}`, 'afterEnd');
 
             this.moveOrphanedElementsIntoNewWrapper([document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardVerificationAjax`), document.querySelector(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCardExpirationFieldsAjax`)], `security-code-exp-container${reservation_count}`, `#theCreditCardBillingNameAjax${reservation_count - 1}`, 'afterEnd');
-
             document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
+            console.log('805:', document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container'))
             document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
-
+            console.log('807:', document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container'))
             this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
             this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
             this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');
@@ -823,8 +826,214 @@ export default class BasePortal {
         document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
             /* Primary Background Color */
-                #search-wrapper,#searching h2:after,#theConfirmationButton,#theOtherSubmitButton:active,#theOtherSubmitButton:focus,#theOtherSubmitButton:hover,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.CreateAnAccountAction,.RootBody #theSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arn-leaflet-reset-button,.arnMapMarker,.arnMapMarker:hover,.bookRoom,.yui3-skin-sam .yui3-calendar-day:hover{background:${this.site_config.primary_color}}@media screen and (max-width:1105px){#arnCloseAnchorId,#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover,.closeMap{background:${this.site_config.primary_color}}}@media screen and (max-width:800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover,#sort-wrapper a:before, #sort-wrapper a.active-filter:before{background:${this.site_config.primary_color}}}#search-wrapper a,#searching,#theConfirmationButton,#theOtherSubmitButton:active,#theOtherSubmitButton:focus,#theOtherSubmitButton:hover,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.CheckRates .submit,.CreateAnAccountAction,.RootBody #theSubmitButton,.SearchHotels #theSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arnMapPopup .rate,.bookRoom{color:${this.site_config.primary_text_color}}@media screen and (max-width:1105px){#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover,.closeMap{color:${this.site_config.primary_text_color}}}@media screen and (max-width: 800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover{color:${this.site_config.primary_text_color}}}#search-wrapper .selectedTab,#search-wrapper a:active,#search-wrapper a:focus,#search-wrapper a:hover,#theAdditionalEmailsLink a,#theOtherSubmitButton,.RootBody #theSubmitButton:active,.RootBody #theSubmitButton:focus,.RootBody #theSubmitButton:hover,.SearchHotels #theSubmitButton:active,.SearchHotels #theSubmitButton:focus,.SearchHotels #theSubmitButton:hover,.SinglePropDetail #moreRatesLink,.SinglePropDetail .ArnRateCancelAnchor,.open-modal,.sort{color:${this.site_config.secondary_text_color}}@media screen and (max-width:1105px){#arnCloseAnchorId{color:${this.site_config.secondary_text_color}}}@media screen and (max-width:800px){#theBookingPage legend#policies-legend{color:${this.site_config.secondary_text_color}}}#AdminControlsContainer{border-bottom:3px solid ${this.site_config.primary_color}}.arnMapMarker:hover .arnMapMarkerTriangle,.arnMapMarkerTriangle{border-top-color:${this.site_config.primary_color}}#theOtherSubmitButton,.ArnSecondarySearchOuterContainer select,.ArnShowRatesLink,.RootBody #theSubmitButton,.bookRoom,.sort{border:1px solid ${this.site_config.primary_color}}.ArnSearchField{border-bottom:1px solid ${this.site_config.primary_color}}.ArnShowRatesLink:active,.ArnShowRatesLink:focus,.ArnShowRatesLink:hover,.bookRoom:active,.bookRoom:focus,.bookRoom:hover{border-color:${this.site_config.primary_color}}@media screen and (max-width:1105px){#arnCloseAnchorId{border:1px solid ${this.site_config.primary_color}}}@media screen and (max-width:800px){#sort-wrapper a:before{border:2px solid ${this.site_config.primary_color}}}
+                #searching h2:after,
+                #theConfirmationButton,
+                #theOtherSubmitButton:active,
+                #theOtherSubmitButton:focus,
+                #theOtherSubmitButton:hover,
+                .ArnPrimarySearchContainer,
+                .ArnShowRatesLink,
+                .ArnTripAdvisorDetails.HasReviews .ratingCount,
+                .CreateAnAccountAction,
+                .RootBody #theSubmitButton,
+                .SimpleSearch,
+                .WBForgotPasswordFormActions .submit,
+                .WBLoginFormActions .submit,
+                .WBValidatedRegistrationFormActions .submit,
+                .arn-leaflet-reset-button,
+                .arnMapMarker,
+                .arnMapMarker:hover,
+                .bookRoom,
+                .HoldRoomsForm .submit,
+                #datePromptContainer+.SimpleSearch .CheckRates .submit,
+                .yui3-skin-sam .yui3-calendar-day:hover {
+                    background:${this.site_config.primary_color}
+                }
+
+                @media screen and (max-width:1105px) {
+
+                    #arnCloseAnchorId,
+                    #arnCloseAnchorId:active,
+                    #arnCloseAnchorId:focus,
+                    #arnCloseAnchorId:hover,
+                    .closeMap {
+                        background:${this.site_config.primary_color}
+                    }
+                }
+
+                @media screen and (max-width:800px) {
+
+                    #commands a:active,
+                    #commands a:focus,
+                    #commands a:hover,
+                    #commands button:active,
+                    #commands button:focus,
+                    #commands button:hover,
+                    #sort-wrapper a:before,
+                    #sort-wrapper a.active-filter:before {
+                        background:${this.site_config.primary_color}
+                    }
+                }
+
+                #searching,
+                #theConfirmationButton,
+                #theOtherSubmitButton:active,
+                #theOtherSubmitButton:focus,
+                #theOtherSubmitButton:hover,
+                .HoldRoomsForm .submit,
+                .ArnPrimarySearchContainer,
+                .ArnShowRatesLink,
+                .ArnTripAdvisorDetails.HasReviews .ratingCount,
+                .SinglePropDetail .CheckRates .submit,
+                .CreateAnAccountAction,
+                .RootBody #theSubmitButton,
+                .SearchHotels #theSubmitButton,
+                .SimpleSearch,
+                .WBForgotPasswordFormActions .submit,
+                .WBLoginFormActions .submit,
+                .WBValidatedRegistrationFormActions .submit,
+                .arnMapPopup .rate,
+                #datePromptContainer+.SimpleSearch .CheckRates .submit,
+                .bookRoom {
+                    color:${this.site_config.primary_text_color}
+                }
+
+                @media screen and (max-width:1105px) {
+
+                    #arnCloseAnchorId,
+                    #arnCloseAnchorId:active,
+                    #arnCloseAnchorId:focus,
+                    #arnCloseAnchorId:hover,
+                    .closeMap {
+                        color:${this.site_config.primary_text_color}
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+
+                    #commands a:active,
+                    #commands a:focus,
+                    #commands a:hover,
+                    #commands button:active,
+                    #commands button:focus,
+                    #commands button:hover {
+                        color:${this.site_config.primary_text_color}
+                    }
+                }
+                .holdRoom,
+                .reviewCount a,
+                #theAdditionalEmailsLink a,
+                #theOtherSubmitButton,
+                .RootBody #theSubmitButton:active,
+                .RootBody #theSubmitButton:focus,
+                .RootBody #theSubmitButton:hover,
+                .SearchHotels #theSubmitButton:active,
+                .SearchHotels #theSubmitButton:focus,
+                .SearchHotels #theSubmitButton:hover,
+                .SinglePropDetail #moreRatesLink,
+                .SinglePropDetail .ArnRateCancelAnchor,
+                .open-modal,
+                .sort {
+                    color:${this.site_config.secondary_text_color}
+                }
+
+                @media screen and (max-width:800px) {
+                    #theBookingPage legend#policies-legend {
+                        color:${this.site_config.secondary_text_color}
+                    }
+                }
+
+                header,
+                #AdminControlsContainer {
+                    border-bottom:3px solid ${this.site_config.primary_color}
+                }
+
+                .arnMapMarker:hover .arnMapMarkerTriangle,
+                .arnMapMarkerTriangle {
+                    border-top-color:${this.site_config.primary_color}
+                }
+
+                #theOtherSubmitButton,
+                .ArnSecondarySearchOuterContainer select,
+                .ArnShowRatesLink,
+                .RootBody #theSubmitButton,
+                .bookRoom,
+                .sort,
+                .HoldRoomsForm .submit {
+                    border:1px solid ${this.site_config.primary_color}
+                }
+
+                .ArnSearchField {
+                    border-bottom:1px solid ${this.site_config.primary_color}   
+                }
+
+                .holdRoom,
+                .ArnShowRatesLink:active,
+                .ArnShowRatesLink:focus,
+                .ArnShowRatesLink:hover,
+                .bookRoom:active,
+                .bookRoom:focus,
+                .bookRoom:hover {
+                    border: 1px solid ${this.site_config.primary_color}
+                }
+
+                @media screen and (max-width:1105px) {
+                    #arnCloseAnchorId {
+                        border:1px solid ${this.site_config.primary_color}
+                    }
+                }
+
+                @media screen and (max-width:800px) {
+                    #sort-wrapper a:before {
+                        border:2px solid ${this.site_config.primary_color}
+                    }
+                }
             </style>
             `);
+    }
+
+    setFontFromConfig() {
+        if (!this.site_config) {
+            return;
+        }
+
+        this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+
+        document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+    }
+
+    setupDatePrompt() {
+        let date_prompt = document.querySelector('#theDatePrompt');
+
+        if (!date_prompt) {
+            return;
+        }
+
+        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
+    }
+
+    highlightMapMarkersOnPropertyHover() {
+        let prop_container = document.querySelector('#currentPropertyPage');
+        let properties = document.querySelectorAll('.ArnContainer');
+        let prop_id_el;
+        let prop_id;
+
+        if (!prop_container) {
+            return;
+        }
+        properties.forEach((property) => {
+            property.addEventListener('mouseenter', (e) => {
+                prop_id_el = property.parentElement.querySelector('.propId');
+                if (!prop_id_el) {
+                    return;
+                }
+                prop_id = prop_id_el.textContent;
+                ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
+            });
+
+            property.addEventListener('mouseleave', (e) => {
+                ArnMapDispatcher.eventPropertyHighlightOff(prop_id)
+            });
+        });
     }
 }

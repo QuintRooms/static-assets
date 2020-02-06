@@ -2,14 +2,12 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Montserrat', 'Helvetica' !important;
 }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', 'Helvetica' !important;
     font-size: 14px !important;
 }
 
@@ -23,7 +21,6 @@ input[type="password"],
 input[type="email"],
 select,
 textarea {
-    font-family: 'Montserrat', 'Helvetica';
     font-size: 15px !important;
     font-weight: 500 !important;
     padding: 6px !important;
@@ -69,7 +66,10 @@ textarea {
 #theBookingPage #theRateSummaryInfo div,
 #theCharges legend,
 #theHotelAddress,
-#theBookingPage .paymentMethods img {
+#theBookingPage .paymentMethods img,
+.ArnGoCitySearch,
+.ArnGoLandmarkSearch,
+.ArnGoAirportSearch {
     display: none;
 }
 
@@ -78,7 +78,7 @@ textarea {
 }
 
 /* Header Start */
-header{
+header {
     width: 100%;
     position: relative;
     background: #fff;
@@ -111,7 +111,6 @@ header{
 #commands button {
     background: transparent;
     border: none;
-    font-family: 'Montserrat', 'Helvetica';
     font-size: 15px;
     padding: 0;
     cursor: pointer;
@@ -244,7 +243,7 @@ header{
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(48% - 125px) !important;
+    width: calc(45% - 125px) !important;
     height: 100% !important;
     z-index: 8;
 }
@@ -610,6 +609,16 @@ header{
     display: block;
 }
 
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnSearchContainerMainTable {
+        display: table;
+    }
+
+    .SearchHotels .ArnPropAddress {
+        padding: 8px 0;
+    }
+}
+
 .ArnLeftSearchContainer,
 .ArnLeftListContainer {
     width: 225px;
@@ -626,41 +635,11 @@ header{
     font-size: 19px;
 }
 
-#search-wrapper {
-    display: flex;
-    justify-content: space-around;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 0;
-}
-
-#search-wrapper a {
-    text-decoration: none;
-    padding: 12px 6px;
-    font-weight: 500;
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #fff;
-    transition: all .3s ease-out;
-}
-
-#search-wrapper a:last-child {
-    border-right: none;
-    border-top-right-radius: 5px;
-}
-
-#search-wrapper .selectedTab,
-#search-wrapper a:hover,
-#search-wrapper a:active,
-#search-wrapper a:focus {
-    background: #fff;
-    color: #333;
-}
-
 .ArnPrimarySearchContainer,
 .SimpleSearch {
     border-top: 1px solid #fff;
     padding: 12px;
-    border-bottom-right-radius: 5px;
+    border-radius: 0 5px 5px 0;
 }
 
 .ArnPrimarySearchContainer input,
@@ -739,7 +718,7 @@ div.autocomplete ul li.selected {
 }
 
 .ArnPropClass {
-    display: inline;
+    display: none;
 }
 
 .SearchHotels .star {
@@ -755,7 +734,6 @@ div.autocomplete ul li.selected {
         padding: 8px;
     }
 
-    .SearchHotels #search-wrapper,
     .SearchHotels .ArnSecondarySearchOuterContainer,
     .SearchHotels #HotelNameContainer,
     .SearchHotels .ArnSearchHeader,
@@ -967,9 +945,17 @@ div.autocomplete ul li.selected {
 .SinglePropDetail .ArnPropClass,
 .SinglePropDetail .PropertyLinks,
 .SinglePropDetail .SearchActions,
-.SinglePropDetail .imageDisclaimer,
+.imageDisclaimer,
 .reportProblemLink {
     display: none;
+}
+
+.holdRoom {
+    margin: -12px 0 4px 0 !important;
+}
+
+.SinglePropDetail #thePropertyMap {
+    margin-bottom: 18px;
 }
 
 .SinglePropDetail .SimpleSearch {
@@ -1217,6 +1203,10 @@ legend {
     margin-right: 4px;
 }
 
+.ArnTripAdvisorDetails.HasReviews .reviewCount a {
+    text-decoration: none;
+}
+
 /* Amenities Start */
 #thePropertyAmenities {
     position: relative;
@@ -1426,7 +1416,7 @@ legend {
 /* Properties Container */
 .ArnPropImageNext,
 .ArnPropImagePrevious,
-.ArnPropDescription,
+.ArnPropDescription .detailsOrNearbyLabel,
 .ArnIconContainer,
 .ArnPropPopularity,
 .ArnPropType,
@@ -1447,7 +1437,7 @@ legend {
 
 #currentPropertyPage {
     position: relative;
-    width: 52%;
+    width: 55%;
 }
 
 .SearchHotels .ArnContainer {
@@ -1461,16 +1451,24 @@ legend {
 }
 
 .SearchHotels .ArnPropThumb {
-    width: 25%;
+    max-width: 30%;
+    width: 100%;
     overflow: hidden;
     border-radius: 5px 0 0 5px;
-    display: inherit;
+    height: 175px;
 }
 
 .SearchHotels .ArnPropThumb img {
     object-fit: cover;
     object-position: center center;
     width: 100%;
+    height: 175px;
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnPropThumb {
+        max-width: 100%;
+    }
 }
 
 .ArnImageLink {
@@ -1482,23 +1480,34 @@ legend {
 }
 
 .SearchHotels .ArnPropName {
-    width: 50%;
+    width: 45%;
 }
 
 .ArnPropName,
 .ArnRateCell {
     padding: 8px;
-    line-height: 1.6rem;
+    line-height: 1.4;
 }
 
 .ArnPropNameLink {
     text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.SearchHotels .ArnPropAddress {
+    margin-bottom: 4px;
+}
+
+.SearchHotels .distanceLabel {
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
 .ArnPropNameLink span {
     font-size: 17px;
     color: #333;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .ArnRateCell {
@@ -1528,7 +1537,9 @@ legend {
 }
 
 .ArnShowRatesLink,
-.bookRoom {
+.bookRoom,
+.holdRoom,
+.HoldRoomsForm .submit {
     font-weight: 500;
     margin-top: 6px;
     border-radius: 5px;
@@ -1824,6 +1835,11 @@ legend {
 }
 
 /* Checkout Start */
+#theAdditionalGuestLink,
+.DSFormFields {
+    display: none;
+}
+
 .creditcard {
     display: inline-block;
     vertical-align: middle;
@@ -2240,7 +2256,6 @@ legend {
 /* Root Page Start */
 .RootBody .ArnNoResults,
 .RootBody .ArnSecondarySearchOuterContainer,
-.RootBody #search-wrapper,
 .RootBody .ArnRightListContainer,
 .RootBody #HotelNameContainer,
 .RootBody .ArnSearchHeader {
@@ -2349,7 +2364,8 @@ body.RootBody,
 body.WBResendOrCancelForm,
 body.WBLoginForm,
 body.WBValidatedRegistrationForm,
-body.WBForgotPasswordForm {
+body.WBForgotPasswordForm,
+body.HoldRoomsForm {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -2359,7 +2375,8 @@ body.WBForgotPasswordForm {
 .WBResendOrCancelForm,
 .WBLoginFormContainer,
 .WBValidatedRegistrationFormContainer,
-.WBForgotPasswordFormContainer {
+.WBForgotPasswordFormContainer,
+.HoldRoomsForm .ArnSearchContainerMainDiv {
     flex-grow: 1;
 }
 
@@ -2481,3 +2498,67 @@ body.WBForgotPasswordForm {
 }
 
 /* Map Popup End */
+
+/* Hold Room Page Start */
+.HoldRoomsForm .ArnShowRatesLink,
+.HoldRoomsForm .ArnReviewTab+a,
+.HoldRoomsForm .ArnContentButtonContainer {
+    display: none;
+}
+
+/* Hold Room Page End */
+
+/* Date Prompt Start */
+#theDatePrompt {
+    width: 500px;
+}
+
+#datePromptContainer {
+    background: #fff;
+    text-align: center;
+}
+
+#datePromptContainer+.SimpleSearch {
+    background: #fff !important;
+    color: #333;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#datePromptContainer+.SimpleSearch table {
+    width: 70%;
+}
+
+#datePromptContainer+.SimpleSearch>table>tbody>tr {
+    display: flex;
+    flex-direction: column;
+}
+
+#datePromptContainer+.SimpleSearch #theQuickCheckIn,
+#datePromptContainer+.SimpleSearch #theQuickCheckOut {
+    width: 100%;
+}
+
+#datePromptContainer+.SimpleSearch .SearchActions,
+#datePromptContainer+.SimpleSearch .rowTwo {
+    display: none;
+}
+
+#datePromptContainer+.SimpleSearch .ArnAdults,
+#datePromptContainer+.SimpleSearch .ArnRooms {
+    width: 100%;
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    #lightbox {
+        width: 100vw;
+    }
+
+    #theDatePrompt {
+        width: 100%;
+    }
+}
+
+/* Date Prompt End */

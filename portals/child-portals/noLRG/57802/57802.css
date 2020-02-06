@@ -158,7 +158,10 @@ legend,
 .SearchHotels .ArnPropName a {
     letter-spacing: initial !important;
 }
-
+.distanceLabel{
+    color: #fff;
+    font-weight: 500;
+}
 /* Buttons */
 .submit,
 .OnSale .ArnShowRatesLink,

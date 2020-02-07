@@ -1935,7 +1935,7 @@ legend {
     background: transparent;
     border: none;
     border-radius: 5px;
-    padding: 10px 0;
+    padding: 10px 0 !important;
 }
 
 #theBookingPage legend {
@@ -2565,3 +2565,13 @@ body.HoldRoomsForm {
 }
 
 /* Date Prompt End */
+
+/* Confirmation Page Start */
+.FinalConfirmation .SuccessList{
+    display: none;
+}
+
+.FinalConfirmation .WBGuestFormConfirmed{
+    border: none !important;
+}
+/* Confirmation Page End */

@@ -209,7 +209,7 @@ h2 {
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
 }
 
@@ -327,10 +327,6 @@ header {
     font-weight: initial;
 }
 
-#exclusive-event-rate {
-    font-weight: normal !important;
-}
-
 .hamburger:after,
 .hamburger:before {
     left: 225px;
@@ -361,7 +357,7 @@ header {
 .HoldRoomsForm .ArnContentButtonNarrow {
     background: rgb(141, 11, 11);
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 15px;
 }
 

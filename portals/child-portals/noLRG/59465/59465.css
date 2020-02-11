@@ -629,7 +629,7 @@ header {
 
 .event-rate {
     text-transform: unset;
-    left: -72px;
+    width: 100%;
 }
 
 .tooltipContainer p {

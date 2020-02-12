@@ -599,3 +599,15 @@ legend,
 #theArnProperty42161 {
     display: none;
 }
+
+#exclusive-event-rate{
+    color: #fff;
+}
+
+.GroupHoldForm .ArnContentContainer, .HoldRoomsForm .ArnContentContainer{
+    background: #000;
+}
+
+.holdRoom{
+    border-radius: 10px;
+}

@@ -601,7 +601,7 @@ legend,
 }
 
 #exclusive-event-rate{
-    color: #fff;
+    color: #fff !important;
 }
 
 .GroupHoldForm .ArnContentContainer, .HoldRoomsForm .ArnContentContainer{

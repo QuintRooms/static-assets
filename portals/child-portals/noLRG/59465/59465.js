@@ -17,7 +17,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/images/logo-white.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.rotrally.com/', 'href');
 
                 observer.disconnect();

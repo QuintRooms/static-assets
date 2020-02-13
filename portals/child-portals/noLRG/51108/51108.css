@@ -1105,3 +1105,11 @@ footer img {
         margin: 0;
     }
 }
+
+#SortControlsContainer {
+    visibility: hidden;
+}
+
+.ArnSortContainer {
+    display: none !important;
+}

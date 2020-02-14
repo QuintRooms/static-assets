@@ -811,14 +811,10 @@
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
-             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `#billing-details-container${reservation_count}`);
+             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `#billing-details-container`);
 
              this.createWrapper(`.RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, `#theCreditCardBillingNameAjax${reservation_count}`, `security-code-exp-container${reservation_count}`);
 
-             // document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
-             // console.log('805:', document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container'))
-             // document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
-             // console.log('807:', document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container'))
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
              this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');

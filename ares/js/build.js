@@ -561,7 +561,7 @@
          });
      }
 
-     createWrapper(query_selectors, wrapper_parent, new_wrapper_class) {
+     createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
          const wrapper = document.createElement('div');
 
          if (!wrapper) {
@@ -573,7 +573,7 @@
              wrapper.appendChild(children);
          });
 
-         document.querySelector(wrapper_parent).appendChild(wrapper);
+         document.querySelector(wrapper_parent).insertAdjacentElement(adjacent_location, wrapper);
      }
 
      buildMobileMenu() {
@@ -816,7 +816,7 @@
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
-             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`);
+             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
 
              // this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardNumberAjax, .RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, ``, `security-code-exp-container${reservation_count}`);
 

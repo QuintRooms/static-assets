@@ -2147,6 +2147,21 @@ legend {
     grid-column-gap: 6%;
 }
 
+#theCvvCode,
+#theCardExpirationFieldsAjax,
+#theCardExpirationFieldsAjax table {
+    width: 100%;
+}
+
+#theExpirationMonthAjax select,
+#theExpirationYearAjax select {
+    width: 96% !important;
+}
+
+#theCardVerificationAjax {
+    margin-right: 0;
+}
+
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,

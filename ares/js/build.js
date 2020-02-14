@@ -821,14 +821,9 @@
 
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
+             this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
              this.updateHTML(`.RoomNumber-${reservation_count} .paymentMethods`, '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
-             this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
-
-             if (reservation_count > 1) {
-                 this.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info (Guest ${reservation_count}`);
-             }
-             
          });
      }
 

@@ -824,10 +824,12 @@
              this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
              this.updateHTML(`.RoomNumber-${reservation_count} .paymentMethods`, '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
-
-             document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
-                 document.querySelector(`$.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
-             });
+             
+             if (reservation_count > 1) {
+                 document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
+                     document.querySelector(`$.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
+                 });
+             }
          });
      }
 

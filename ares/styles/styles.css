@@ -2159,9 +2159,10 @@ legend {
     width: 100%;
 }
 
-#theExpirationMonthAjax select,
-#theExpirationYearAjax select {
-    width: 96% !important;
+#theCardExpirationFieldsAjax table tr{
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-column-gap: 6%;
 }
 
 #theCardVerificationAjax {

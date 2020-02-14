@@ -828,7 +828,7 @@
              if (reservation_count >= 2) {
                 console.log(reservation_count)
                  document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
-                     document.querySelector(`$.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
+                     document.querySelector(`.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
                  });
              }
          });

@@ -2165,7 +2165,7 @@ legend {
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,
-#theBookingPage .FormFields .formField,
+/*#theBookingPage .FormFields .formField,*/
 #theBookingPage .FormFields textarea,
 #theBookingPage .FormFields select,
 #theEmailAddressAjax input,
@@ -2176,7 +2176,7 @@ legend {
     width: 100% !important;
 }
 
-#theMarketingOptInAjax input {
+#theMarketingOptInAjax .formField {
     width: initial !important;
 }
 
@@ -2186,6 +2186,18 @@ legend {
     position: relative;
     top: -2px;
     left: 4px;
+}
+
+.ErrorList{
+    border: 2px solid #ffdada;
+}
+
+.Error{
+    color: #ff6161;
+}
+
+.ErrorList ul{
+    list-style: none;
 }
 
 @media screen and (max-width: 800px) {

@@ -716,10 +716,6 @@ div.autocomplete ul li.selected {
 
 }
 
-.ArnPropClass {
-    display: none;
-}
-
 .SearchHotels .star {
     transform: scale(.9);
 }
@@ -2180,6 +2176,18 @@ legend {
     width: 100% !important;
 }
 
+#theMarketingOptInAjax input {
+    width: initial !important;
+}
+
+#theMarketingOptInAjax label {
+    display: inline;
+    font-weight: 700;
+    position: relative;
+    top: -2px;
+    left: 4px;
+}
+
 @media screen and (max-width: 800px) {
     #theHotel legend {
         display: none;
@@ -2567,11 +2575,12 @@ body.HoldRoomsForm {
 /* Date Prompt End */
 
 /* Confirmation Page Start */
-.FinalConfirmation .SuccessList{
+.FinalConfirmation .SuccessList {
     display: none;
 }
 
-.FinalConfirmation .WBGuestFormConfirmed{
+.FinalConfirmation .WBGuestFormConfirmed {
     border: none !important;
 }
+
 /* Confirmation Page End */

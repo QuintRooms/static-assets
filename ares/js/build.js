@@ -826,11 +826,13 @@
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
 
              if (reservation_count >= 2 && document.querySelector(`.RoomNumber-${reservation_count}  #theCopyInfoAjax`)) {
-                 document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
-                     setTimeout(() => {
-                         document.querySelector(`.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
-                     }, 100)
-                 });
+                 setTimeout(() => {
+                     document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
+                         setTimeout(() => {
+                             document.querySelector(`.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
+                         }, 100)
+                     });
+                 }, 500)
              }
          });
      }

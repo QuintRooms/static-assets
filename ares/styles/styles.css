@@ -2140,7 +2140,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-.credit-card-info {
+.credit-card-details {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 33% 33% 33%;

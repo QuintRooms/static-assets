@@ -811,7 +811,7 @@
 
          room_reservations.forEach((reservation) => {
              reservation_count++;
-             console.log(reservation_count)
+
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
@@ -826,13 +826,11 @@
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
 
              if (reservation_count >= 2 && document.querySelector(`.RoomNumber-${reservation_count}  #theCopyInfoAjax`)) {
-                 console.log(reservation_count)
-                 setTimeout(() => {
-
-                     document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
+                 document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
+                     setTimeout(() => {
                          document.querySelector(`.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
-                     });
-                 }, 2000)
+                     }, 100)
+                 });
              }
          });
      }

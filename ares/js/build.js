@@ -818,12 +818,12 @@
 
              this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
 
-             // this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardNumberAjax, .RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, ``, `security-code-exp-container${reservation_count}`);
+             this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardNumberAjax, .RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, ``, `security-code-exp-container${reservation_count}`, 'afterEnd');
 
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
              this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
-             this.createHTML('<legend>Credit Card Info</legend>', `#theBillingAddressAjax${reservation_count - 1}) .guestBillingAddress`, 'beforeBegin');
+             this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
 
          });
      }

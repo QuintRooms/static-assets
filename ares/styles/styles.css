@@ -2140,7 +2140,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-#theCardExpirationFieldsAjax table>tbody>tr {
+.credit-card-info {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;

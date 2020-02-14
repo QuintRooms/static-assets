@@ -54,7 +54,7 @@
                  // checkout page methods
                  if (this.page_name == 'checkout') {
                      this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
-                     this.updateHTML('.WBGuestFormFields > legend', 'Billing Info');
+                     // this.updateHTML('.WBGuestFormFields > legend', 'Billing Info');
                      this.setupReservationSummaryContainer();
                      // Checkout form input validation
                      this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');

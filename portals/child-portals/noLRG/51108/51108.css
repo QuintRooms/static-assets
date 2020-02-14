@@ -708,7 +708,8 @@ header>a {
 
 .arnMapMarker {
     background: #e10600;
-    border: #fff;
+    border: 1px solid #15151e;
+
 }
 
 .arnMapMarker .arnMapMarkerTriangle {

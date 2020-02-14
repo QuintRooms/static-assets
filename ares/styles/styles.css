@@ -716,10 +716,6 @@ div.autocomplete ul li.selected {
 
 }
 
-.ArnPropClass {
-    display: none;
-}
-
 .SearchHotels .star {
     transform: scale(.9);
 }
@@ -2093,39 +2089,39 @@ legend {
     margin-bottom: 0;
 }
 
-.billing-details-container {
+#billing-details-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 50% 50%;
     grid-column-gap: 6%;
 }
 
-.billing-details-container input,
-.billing-details-container select {
+#billing-details-container input,
+#billing-details-container select {
     width: 100% !important;
 }
 
-.billing-details-container>div:nth-child(2) {
+#billing-details-container>div:nth-child(2) {
     grid-column-start: 1;
     grid-row-start: 1;
     margin-top: 4px;
 }
 
 
-.billing-details-container>div:nth-child(3) {
+#billing-details-container>div:nth-child(3) {
     grid-column-start: 2;
     grid-row-start: 1;
 }
 
 
 
-.billing-details-container>div:nth-child(1) {
+#billing-details-container>div:nth-child(1) {
     grid-column-start: 1;
     grid-row-start: 2;
     margin-top: 4px;
 }
 
-.billing-details-container>div:nth-child(4) {
+#billing-details-container>div:nth-child(4) {
     grid-column-start: 2;
     grid-row-start: 2;
 }
@@ -2169,7 +2165,7 @@ legend {
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,
-#theBookingPage .FormFields .formField,
+/*#theBookingPage .FormFields .formField,*/
 #theBookingPage .FormFields textarea,
 #theBookingPage .FormFields select,
 #theEmailAddressAjax input,
@@ -2178,6 +2174,30 @@ legend {
 #theCreditCardNumberAjax input,
 #theCreditCardBillingName {
     width: 100% !important;
+}
+
+#theMarketingOptInAjax .formField {
+    width: initial !important;
+}
+
+#theMarketingOptInAjax label {
+    display: inline;
+    font-weight: 700;
+    position: relative;
+    top: -2px;
+    left: 4px;
+}
+
+.ErrorList{
+    border: 2px solid #ffdada;
+}
+
+.Error{
+    color: #ff6161;
+}
+
+.ErrorList ul{
+    list-style: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -2567,11 +2587,12 @@ body.HoldRoomsForm {
 /* Date Prompt End */
 
 /* Confirmation Page Start */
-.FinalConfirmation .SuccessList{
+.FinalConfirmation .SuccessList {
     display: none;
 }
 
-.FinalConfirmation .WBGuestFormConfirmed{
+.FinalConfirmation .WBGuestFormConfirmed {
     border: none !important;
 }
+
 /* Confirmation Page End */

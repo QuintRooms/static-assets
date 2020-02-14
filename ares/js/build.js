@@ -816,9 +816,9 @@
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
-             this.createWrapper(`.RoomNumber-${reservation_count} #theBillingAddressAjax${reservation_count}, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `.paymentMethods${reservation_count}`, `billing-details-container`);
+             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`);
 
-             this.createWrapper(`.RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, `#theCreditCardBillingNameAjax${reservation_count}`, `security-code-exp-container${reservation_count}`);
+             this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardNumberAjax, .RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, `.RoomNumber-${reservation_count} .paymentMethods`, `security-code-exp-container${reservation_count}`);
 
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');

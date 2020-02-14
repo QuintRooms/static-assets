@@ -830,7 +830,7 @@
                      document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
                          setTimeout(() => {
                              document.querySelector(`.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
-                         }, 100)
+                         }, 500)
                      });
                  }, 500)
              }

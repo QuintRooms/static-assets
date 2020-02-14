@@ -1,3 +1,4 @@
+ // <script type="module" async src="https://dev-static.hotelsforhope.com/ares/js/site_configs/39624/39624.js"></script>
 export default class BasePortal {
 
     site_id;
@@ -68,7 +69,7 @@ export default class BasePortal {
                     this.updateHTML('#theCharges legend', 'Rate Info');
                     this.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                     this.updateHTML('#theHotel legend', 'Reservation Summary');
-                    // this.formatCheckoutForm();
+                    this.formatCheckoutForm();
                 }
 
                 // root page methods
@@ -1037,5 +1038,5 @@ export default class BasePortal {
         });
     }
 
-    
+
 }

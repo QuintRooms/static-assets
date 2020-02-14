@@ -823,7 +823,7 @@
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
              this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
-             this.createHTML('<legend>Credit Card Info</legend>', `#theBillingAddressAjax${reservation_count}) .guestBillingAddress`, 'beforeBegin');
+             this.createHTML('<legend>Credit Card Info</legend>', `#theBillingAddressAjax${reservation_count - 1}) .guestBillingAddress`, 'beforeBegin');
 
          });
      }

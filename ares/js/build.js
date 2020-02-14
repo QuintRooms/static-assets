@@ -562,13 +562,19 @@
          });
      }
 
-     createWrapper(query_selectors, wrapper_parent, wrapper_id) {
+     createWrapper(query_selectors, wrapper_parent, new_wrapper_class) {
          const wrapper = document.createElement('div');
-         wrapper.setAttribute('id', wrapper_id)
+
+         if(!wrapper){
+            return;
+         }
+
+         wrapper.setAttribute('class', new_wrapper_class);
          Array.prototype.forEach.call(document.querySelectorAll(query_selectors), (children) => {
-             wrapper.appendChild(children)
+             wrapper.appendChild(children);
          });
-         document.querySelector(wrapper_parent).appendChild(wrapper)
+
+         document.querySelector(wrapper_parent).appendChild(wrapper);
      }
 
      buildMobileMenu() {

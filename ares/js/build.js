@@ -810,8 +810,6 @@
          let reservation_count = 0;
 
          room_reservations.forEach((reservation) => {
-             reservation_count++;
-
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
@@ -824,12 +822,14 @@
              this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
              this.updateHTML(`.RoomNumber-${reservation_count} .paymentMethods`, '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
-             
+
              if (reservation_count > 0) {
                  document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
                      document.querySelector(`$.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
                  });
              }
+    
+             reservation_count++;
          });
      }
 

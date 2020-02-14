@@ -826,6 +826,7 @@
              this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
              
              if (reservation_count >= 2) {
+                console.log(reservation_count)
                  document.querySelector(`.RoomNumber-${reservation_count} #theCopyInfoAjax`).addEventListener('click', () => {
                      document.querySelector(`$.RoomNumber-${reservation_count} > legend`).textContent = 'Billing info';
                  });

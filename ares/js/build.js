@@ -1108,7 +1108,7 @@
 
         if(!document.querySelector('.SearchHotels')) return;
 
-        updateButtons.forEach((button) => {
+        update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
                 loader.style.display = 'block';
             });

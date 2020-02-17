@@ -1567,6 +1567,11 @@ legend {
     order: 0;
 }
 
+.averageNightly > div{
+    font-size: 13px;
+    font-weight: 500;
+}
+
 .ArnShowRatesLink,
 .bookRoom,
 .holdRoom,

@@ -1049,13 +1049,10 @@
          let nights = this.getTotalNights();
          let properties = document.querySelectorAll('.ArnContainer');
 
-         console.log(nights)
-
          if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
              return;
          }
-         
-         console.log('did i get here?')
+
          properties.forEach((property) => {
              average_rate = property.querySelector('.averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');

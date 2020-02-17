@@ -1054,7 +1054,7 @@
          if (this.page_name != 'search-results' || this.page_name != 'property-detail') {
              return;
          }
-
+         console.log('did i get here?')
          properties.forEach((property) => {
              average_rate = property.querySelector('.averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');

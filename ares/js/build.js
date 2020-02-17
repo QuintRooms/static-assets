@@ -1046,7 +1046,7 @@
      showFullStayAndNightlyRates() {
          let average_rate;
          let full_stay_rate;
-         let nights = getTotalNights();
+         let nights = this.getTotalNights();
          let properties = document.querySelectorAll('.ArnContainer');
 
          console.log(nights)

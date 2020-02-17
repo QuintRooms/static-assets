@@ -242,7 +242,7 @@ header {
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(45% - 125px) !important;
+    width: calc(42% - 125px) !important;
     height: 100% !important;
     z-index: 8;
 }
@@ -620,7 +620,7 @@ header {
 
 .ArnLeftSearchContainer,
 .ArnLeftListContainer {
-    width: 225px;
+    width: 200px;
     display: block;
 }
 
@@ -635,7 +635,7 @@ header {
 }
 
 .ArnPrimarySearchContainer,
-.SimpleSearch {
+.SimpleSearch {45
     border-top: 1px solid #fff;
     padding: 12px;
     border-radius: 0 5px 5px 0;
@@ -1441,7 +1441,7 @@ legend {
 
 #currentPropertyPage {
     position: relative;
-    width: 55%;
+    width: 60%;
 }
 
 .SearchHotels .ArnContainer {
@@ -1484,7 +1484,7 @@ legend {
 }
 
 .SearchHotels .ArnPropName {
-    width: 45%;
+    width: 50%;
     height: 175px;
     display: flex;
     flex-direction: column;

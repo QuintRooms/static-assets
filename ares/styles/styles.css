@@ -1548,7 +1548,7 @@ legend {
 }
 
 
-.ArnPriceCell .mainRate{
+.ArnPriceCell .mainRate {
     font-size: 17px;
     font-weight: 700;
     display: flex;
@@ -1561,15 +1561,15 @@ legend {
     order: 1;
 }
 
-.averageNightly{
+.averageNightly {
     display: block !important;
     font-size: 17px;
     order: 0;
 }
 
-.averageNightly > div{
-    font-size: 13px;
-    font-weight: 500;
+.averageNightly+div {
+    font-size: 13px !important;
+    font-weight: 500 !important;
 }
 
 .ArnShowRatesLink,

@@ -85,7 +85,8 @@
                  this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                  this.mapReadyMethods();
 
-                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
+                 // this.waitForSelectorInDOM('.pollingFinished').then(() => {
+                 jQuery('#theBody').on('arnMapLoadedEvent', () => {
                      if (!this.page_name == 'search-results') {
                          return;
                      }
@@ -1058,7 +1059,7 @@
              average_rate = property.querySelector('.averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-             average_rate.insertAdjacentHTML('afterEnd', `<div> per night</div>`);
+             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`)
          });
      }

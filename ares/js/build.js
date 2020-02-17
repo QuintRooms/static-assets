@@ -96,7 +96,7 @@
                      this.showSearchContainerOnMobile();
                      this.moveFooterOutOfSearchContainer();
                      this.moveReviewsIntoPropNameContainer();
-                     
+
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
@@ -452,7 +452,7 @@
                      resolve();
                      clearInterval(interval);
                  };
-             }, 250);
+             }, 500);
          });
      }
 

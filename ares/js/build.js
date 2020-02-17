@@ -92,7 +92,7 @@
 
                      this.createStarIcons();
                      this.openSortByDropdown();
-                     this.addTitleToProperties();
+                     // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
                      this.moveFooterOutOfSearchContainer();

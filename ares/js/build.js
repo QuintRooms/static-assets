@@ -417,10 +417,6 @@
      }
 
      createStarIcons() {
-         if (!this.site_config.show_prop_rating_stars) {
-             return;
-         }
-
          let star_elements = document.querySelectorAll('.ArnPropClass');
          star_elements.forEach(function(star) {
              star.style.display = 'inline';
@@ -725,11 +721,12 @@
      }
 
      movePropClassBelowPropName() {
+         const prop_containers = document.querySelectorAll('.ArnContainer');
+
          if (!document.querySelector('.SearchHotels')) {
              return;
          }
 
-         let prop_containers = document.querySelectorAll('.ArnContainer');
          prop_containers.forEach(function(container) {
              let prop_class = container.querySelector('.ArnPropClass');
              let prop_name = container.querySelector('.ArnPropName');

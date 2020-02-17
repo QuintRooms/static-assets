@@ -1476,18 +1476,28 @@ legend {
 
 .SearchHotels .ArnPropName {
     width: 45%;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .ArnPropName,
 .ArnRateCell {
-    padding: 8px;
+    padding: 12px;
     line-height: 1.4;
 }
 
 .ArnPropNameLink {
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ArnPropNameLink+br {
+    display: none;
 }
 
 .SearchHotels .ArnPropAddress {
@@ -1506,9 +1516,13 @@ legend {
 }
 
 .ArnRateCell {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-self: center;
     width: 25%;
+    height: 175px;
+    text-align: right;
 }
 
 .percentSavings {
@@ -1523,11 +1537,11 @@ legend {
 
 .arnPrice {
     display: block;
-    margin: 12px auto;
+    margin: 0 auto;
 }
 
 .ArnPriceCell {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -2147,7 +2161,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-#theCardExpirationFieldsAjax + div{
+#theCardExpirationFieldsAjax+div {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-column-end: 3;
@@ -2159,7 +2173,7 @@ legend {
     width: 100%;
 }
 
-#theCardExpirationFieldsAjax table tr{
+#theCardExpirationFieldsAjax table tr {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-column-gap: 6%;
@@ -2195,15 +2209,15 @@ legend {
     left: 4px;
 }
 
-.ErrorList{
+.ErrorList {
     border: 2px solid #ffdada;
 }
 
-.Error{
+.Error {
     color: #ff6161;
 }
 
-.ErrorList ul{
+.ErrorList ul {
     list-style: none;
 }
 

@@ -85,7 +85,7 @@
                  this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                  this.mapReadyMethods();
 
-                 jQuery('#theBody').on('arnMapLoadedEvent', () => {
+                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
                      if (!this.page_name == 'search-results') {
                          return;
                      }
@@ -1062,7 +1062,7 @@
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
              if (nights == 1) {
-                document.querySelector('.arnPrice').style.display = 'none';
+                 document.querySelector('.arnPrice').style.display = 'none';
              }
          });
      }

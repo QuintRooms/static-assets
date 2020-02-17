@@ -93,6 +93,7 @@
                      this.createStarIcons();
                      this.openSortByDropdown();
                      this.addTitleToProperties();
+                     this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
                      this.moveFooterOutOfSearchContainer();
                      this.moveReviewsIntoPropNameContainer();
@@ -1099,5 +1100,18 @@
             property_name_el.setAttribute('title', property_name)
 
          });
+     }
+
+     showLoaderOnResultsUpdate(){
+        let loader = document.querySelector('#searching');
+        let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+
+        if(!document.querySelector('.SearchHotels')) return;
+
+        updateButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                loader.style.display = 'block';
+            });
+        });
      }
  }

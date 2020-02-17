@@ -1062,7 +1062,7 @@
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
              if (nights == 1) {
-                 document.querySelector('.arnPrice').style.display = 'none';
+                 property.querySelector('.arnPrice').style.display = 'none';
              }
          });
      }

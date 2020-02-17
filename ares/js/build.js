@@ -1043,5 +1043,42 @@
          });
      }
 
+     showFullStayAndNightlyRates() {
+         let average_rate;
+         let full_stay_rate;
+         let nights = getTotalNights();
+         let properties = document.querySelectorAll('.ArnContainer');
 
+         console.log(nights)
+
+         if (this.page_name != 'search-results' || this.page_name != 'property-detail') {
+             return;
+         }
+
+         properties.forEach((property) => {
+             average_rate = property.querySelector('.averageNightly');
+             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+
+             average_rate.insertAdjacentHTML('afterEnd', `<div> per night</div>`);
+             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`)
+         });
+     }
+
+     getTotalNights() {
+         let nights;
+         let check_in;
+         let check_out;
+         const check_in_el = document.querySelector('meta[name="checkIn"]');
+         const check_out_el = document.querySelector('meta[name="checkOut"]');
+
+         if (!check_in_el || !check_out_el) {
+             return;
+         }
+
+         check_in = new Date(check_in_el.getAttribute('content'));
+         check_out = new Date(check_out_el.getAttribute('content'));
+         nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
+
+         return nights;
+     }
  }

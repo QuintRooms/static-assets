@@ -722,6 +722,10 @@ div.autocomplete ul li.selected {
 
 .SearchHotels .ArnTripAdvisorDetails.HasReviews {
     display: flex !important;
+    order: 1;
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
 }
 
 @media screen and (max-width: 800px) {
@@ -1165,6 +1169,10 @@ legend {
     height: 300px !important;
 }
 
+.SinglePropDetail .PropLimitedAvail .ArnRateCell {
+    width: 100% !important;
+}
+
 .PropertyAmenities {
     padding: 0;
     margin: 0;
@@ -1188,6 +1196,7 @@ legend {
 
 .ArnTripAdvisorDetails.HasReviews .reviewCount {
     order: 1;
+    font-size: 13px;
 }
 
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
@@ -1480,6 +1489,7 @@ legend {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
 }
 
 .ArnPropName,
@@ -1502,11 +1512,13 @@ legend {
 
 .SearchHotels .ArnPropAddress {
     margin-bottom: 4px;
+    font-size: 13px;
 }
 
 .SearchHotels .distanceLabel {
     margin-bottom: 8px;
     display: inline-block;
+    font-size: 13px;
 }
 
 .ArnPropNameLink span {
@@ -1535,14 +1547,24 @@ legend {
     border-radius: 5px;
 }
 
-.arnPrice {
-    display: block;
-    margin: 0 auto;
-}
 
-.ArnPriceCell {
+.ArnPriceCell .mainRate{
     font-size: 17px;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.arnPrice {
+    display: block;
+    font-size: 13px;
+    order: 1;
+}
+
+.averageNightly{
+    display: block !important;
+    font-size: 17px;
+    order: 0;
 }
 
 .ArnShowRatesLink,

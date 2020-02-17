@@ -90,6 +90,13 @@
                          return;
                      }
 
+                     this.createStarIcons();
+                     this.openSortByDropdown();
+                     this.addTitleToProperties();
+                     this.showSearchContainerOnMobile();
+                     this.moveFooterOutOfSearchContainer();
+                     this.moveReviewsIntoPropNameContainer();
+                     
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
@@ -107,11 +114,6 @@
                      this.updateHTML('#CitySearchContainer > span', 'Where:');
                      this.updateHTML('.ArnSearchHeader', 'Search');
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
-                     this.moveFooterOutOfSearchContainer();
-                     this.createStarIcons();
-                     this.showSearchContainerOnMobile();
-                     this.openSortByDropdown();
-                     this.moveReviewsIntoPropNameContainer();
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
                      this.movePropClassBelowPropName();
@@ -1074,14 +1076,28 @@
          const check_in_el = document.querySelector('meta[name="checkIn"]');
          const check_out_el = document.querySelector('meta[name="checkOut"]');
 
-         if (!check_in_el || !check_out_el) {
-             return;
-         }
+         if (!check_in_el || !check_out_el) return;
 
          check_in = new Date(check_in_el.getAttribute('content'));
          check_out = new Date(check_out_el.getAttribute('content'));
          nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
 
          return nights;
+     }
+
+     addTitleToProperties() {
+         let property_name;
+         let property_name_el;
+         let properties = document.querySelectorAll('.ArnContainer');
+
+         if (!document.querySelector('.SearchHotels')) return;
+
+         properties.forEach((property) => {
+            property_name_el = property.querySelector('.ArnPropNameLink');
+            property_name = property_name_el.querySelector('span').textContent;
+
+            property_name_el.setAttribute('title', property_name)
+
+         });
      }
  }

@@ -1572,6 +1572,11 @@ legend {
     font-weight: 500 !important;
 }
 
+.SearchHotels .ArnRateButton {
+    max-width: 125px;
+    align-self: flex-end;
+}
+
 .ArnShowRatesLink,
 .bookRoom,
 .holdRoom,

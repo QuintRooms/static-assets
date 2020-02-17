@@ -1051,9 +1051,10 @@
 
          console.log(nights)
 
-         if (this.page_name != 'search-results' || this.page_name != 'property-detail') {
+         if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
              return;
          }
+         
          console.log('did i get here?')
          properties.forEach((property) => {
              average_rate = property.querySelector('.averageNightly');

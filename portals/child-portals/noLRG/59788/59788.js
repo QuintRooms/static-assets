@@ -16,7 +16,7 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59788/images/logo.png', 'src');
-                noLRGPortal.updateAttribute('.logo', 'https://www.okroger.ai/', 'href');
+                noLRGPortal.updateAttribute('.logo', 'https://www.breederscup.com/', 'href');
 
                 observer.disconnect();
             }

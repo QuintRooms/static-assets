@@ -87,42 +87,43 @@
 
                  jQuery(document).on('ratesReadyEvent', () => {
                      console.log('ratesReadyEvent fired.');
-                     this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                         if (!this.page_name == 'search-results') {
-                             return;
-                         }
-                         console.log('waitForSelectorInDom fired.');
-                         this.createStarIcons();
-                         this.openSortByDropdown();
-                         // this.addTitleToProperties();
-                         this.showLoaderOnResultsUpdate();
-                         this.showSearchContainerOnMobile();
-                         this.moveFooterOutOfSearchContainer();
-                         this.moveReviewsIntoPropNameContainer();
+                 });
 
-                         this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
-                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
-                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
-                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
-                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
+                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
+                     if (!this.page_name == 'search-results') {
+                         return;
+                     }
+                     console.log('waitForSelectorInDom fired.');
+                     this.createStarIcons();
+                     this.openSortByDropdown();
+                     // this.addTitleToProperties();
+                     this.showLoaderOnResultsUpdate();
+                     this.showSearchContainerOnMobile();
+                     this.moveFooterOutOfSearchContainer();
+                     this.moveReviewsIntoPropNameContainer();
 
-                         this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                         this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                         this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
-                         this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                         this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                         this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                         this.updateHTML('#ShowHotelOnMap', 'Open Map');
-                         this.updateHTML('#CitySearchContainer > span', 'Where:');
-                         this.updateHTML('.ArnSearchHeader', 'Search');
-                         this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
-                         this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                         this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-                         this.movePropClassBelowPropName();
-                         this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
-                             this.createMobileSortAndFilter();
-                         });
+                     this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
+                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
+                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
+                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
+                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
+                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
+
+                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
+                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
+                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
+                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
+                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
+                     this.updateHTML('#CitySearchContainer > span', 'Where:');
+                     this.updateHTML('.ArnSearchHeader', 'Search');
+                     this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
+                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                     this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+                     this.movePropClassBelowPropName();
+                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
+                         this.createMobileSortAndFilter();
                      });
                  });
              });
@@ -450,7 +451,6 @@
 
      async waitForSelectorInDOM(selector) {
          return await new Promise(resolve => {
-             console.log('waitForSelectorInDOM() fired.');
              let interval = setInterval(() => {
                  if (document.querySelector(selector)) {
                      resolve();

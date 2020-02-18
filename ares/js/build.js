@@ -85,11 +85,13 @@
                  this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
                  this.mapReadyMethods();
 
-                 this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                     if (!this.page_name == 'search-results') {
-                         return;
-                     }
-                     jQuery(document).on('ratesReadyEvent', () => {
+                 jQuery(document).on('ratesReadyEvent', () => {
+                     console.log('ratesReadyEvent fired.');
+                     this.waitForSelectorInDOM('.pollingFinished').then(() => {
+                         if (!this.page_name == 'search-results') {
+                             return;
+                         }
+                         console.log('waitForSelectorInDom fired.');
                          this.createStarIcons();
                          this.openSortByDropdown();
                          // this.addTitleToProperties();

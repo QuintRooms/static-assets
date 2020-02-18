@@ -15,6 +15,7 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
+                 this.moveElementIntoExistingWrapper('#CurrenciesContainer', '.config-container', 'afterBegin');
 
                  // all pages
                  this.buildMobileMenu();
@@ -1013,12 +1014,12 @@
      }
 
      showLanguageFromCongif() {
-         const language_container_el = document.querySelector('#language');
+         const language_container_el = document.querySelector('.language-container');
          const header = document.querySelector('#AdminControlsContainer');
          if (!this.site_config || !language_container_el || !header) return;
          if (!this.site_config.show_language_select) return;
 
-         language_container_el.style.display = 'flex';
+         language_container_el.style.display = 'grid';
          header.insertAdjacentElement('beforeBegin', language_container_el);
      }
 

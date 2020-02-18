@@ -89,37 +89,38 @@
                      if (!this.page_name == 'search-results') {
                          return;
                      }
+                     jQuery(document).on('ratesReadyEvent', () => {
+                         this.createStarIcons();
+                         this.openSortByDropdown();
+                         // this.addTitleToProperties();
+                         this.showLoaderOnResultsUpdate();
+                         this.showSearchContainerOnMobile();
+                         this.moveFooterOutOfSearchContainer();
+                         this.moveReviewsIntoPropNameContainer();
 
-                     this.createStarIcons();
-                     this.openSortByDropdown();
-                     // this.addTitleToProperties();
-                     this.showLoaderOnResultsUpdate();
-                     this.showSearchContainerOnMobile();
-                     this.moveFooterOutOfSearchContainer();
-                     this.moveReviewsIntoPropNameContainer();
+                         this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
+                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
+                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
+                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
+                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
+                         this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
-                     this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
-
-                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
-                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
-                     this.updateHTML('#CitySearchContainer > span', 'Where:');
-                     this.updateHTML('.ArnSearchHeader', 'Search');
-                     this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
-                     this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                     this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-                     this.movePropClassBelowPropName();
-                     this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
-                         this.createMobileSortAndFilter();
+                         this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
+                         this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
+                         this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
+                         this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
+                         this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                         this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                         this.updateHTML('#ShowHotelOnMap', 'Open Map');
+                         this.updateHTML('#CitySearchContainer > span', 'Where:');
+                         this.updateHTML('.ArnSearchHeader', 'Search');
+                         this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
+                         this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                         this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+                         this.movePropClassBelowPropName();
+                         this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
+                             this.createMobileSortAndFilter();
+                         });
                      });
                  });
              });
@@ -1094,24 +1095,24 @@
          if (!document.querySelector('.SearchHotels')) return;
 
          properties.forEach((property) => {
-            property_name_el = property.querySelector('.ArnPropNameLink');
-            property_name = property_name_el.querySelector('span').textContent;
+             property_name_el = property.querySelector('.ArnPropNameLink');
+             property_name = property_name_el.querySelector('span').textContent;
 
-            property_name_el.setAttribute('title', property_name)
+             property_name_el.setAttribute('title', property_name)
 
          });
      }
 
-     showLoaderOnResultsUpdate(){
-        let loader = document.querySelector('#searching');
-        let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+     showLoaderOnResultsUpdate() {
+         let loader = document.querySelector('#searching');
+         let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
 
-        if(!document.querySelector('.SearchHotels')) return;
+         if (!document.querySelector('.SearchHotels')) return;
 
-        update_buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                loader.style.display = 'block';
-            });
-        });
+         update_buttons.forEach((button) => {
+             button.addEventListener('click', () => {
+                 loader.style.display = 'block';
+             });
+         });
      }
  }

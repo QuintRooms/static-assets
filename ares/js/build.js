@@ -446,7 +446,6 @@
      }
 
      async waitForSelectorInDOM(selector) {
-        debugger;
          return await new Promise(resolve => {
              let interval = setInterval(() => {
                  if (document.querySelector(selector)) {

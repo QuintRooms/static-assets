@@ -1,4 +1,3 @@
- // <script type="module" async src="https://dev-static.hotelsforhope.com/ares/js/site_configs/39624/39624.js"></script>
  export default class BasePortal {
 
      site_id;
@@ -1014,8 +1013,9 @@
      }
 
      showLanguageFromCongif() {
-         const language_container_el = document.querySelector('.language-container');
+         const language_container_el = document.querySelector('#language');
          const header = document.querySelector('#AdminControlsContainer');
+
          if (!this.site_config || !language_container_el || !header) return;
          if (!this.site_config.show_language_select) return;
 

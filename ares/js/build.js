@@ -86,10 +86,10 @@
                  this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                     if (!this.page_name == 'search-results') {
+                     if (!document.querySelector('.SearchHotels')) {
                          return;
                      }
-                     console.log('waitForSelectorInDom fired.');
+
                      this.createStarIcons();
                      this.openSortByDropdown();
                      // this.addTitleToProperties();

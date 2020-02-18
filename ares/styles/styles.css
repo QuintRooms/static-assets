@@ -152,12 +152,27 @@ header {
 .languageContainer>div {
     display: flex !important;
     justify-content: flex-end;
-    padding: 8px;
+    padding: 6px;
 }
 
-.languageContainer select {
-    background: #fff;
+.languageContainer div#language {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 250px;
+}
+
+.languageContainer div#language div {
+    color: #fff;
     margin-bottom: 0;
+    font-size: 13px !important;
+    cursor: pointer;
+    padding: 3px;
+    transition: all .3s ease;
+}
+
+.languageContainer div#language div:hover{
+    background: #fff;
+    color: #333;
 }
 
 /* Header End */

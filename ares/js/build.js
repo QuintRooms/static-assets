@@ -1014,13 +1014,14 @@
 
      showLanguageFromCongif() {
          const language_container_el = document.querySelector('#language');
+         const config_container = document.querySelector('.config-container');
          const header = document.querySelector('#AdminControlsContainer');
          let language_label;;
 
-         if (!this.site_config || !language_container_el || !header) return;
+         if (!this.site_config || !language_container_el || !header || !config_container) return;
          if (!this.site_config.show_language_select) return;
 
-         header.insertAdjacentElement('beforeBegin', language_container_el);
+         config_container.insertAdjacentElement('beforeBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
 
          language_label.addEventListener('click', () => {

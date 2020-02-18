@@ -1021,7 +1021,8 @@
          if (!this.site_config || !language_container_el || !header || !config_container) return;
          if (!this.site_config.show_language_select) return;
 
-         config_container.insertAdjacentElement('beforeBegin', language_container_el);
+         header.insertAdjacentHTML('beforeBegin', config_container);
+         config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
 
          language_label.addEventListener('click', () => {

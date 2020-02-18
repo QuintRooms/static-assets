@@ -14,6 +14,7 @@
                  this.applyConfigColors();
                  this.setFontFromConfig();
                  this.setupDatePrompt();
+                 this.showLanguageFromCongif();
 
                  // all pages
                  this.buildMobileMenu();
@@ -1009,6 +1010,14 @@
          this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
          document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+     }
+
+     showLanguageFromCongif() {
+         const language_el = document.querySelector('#language');
+         if (!this.site_config) return;
+         if (!this.site_config.show_language_select) return;
+
+         language_el.style.display = 'block';
      }
 
      setupDatePrompt() {

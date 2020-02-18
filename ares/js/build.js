@@ -1015,12 +1015,17 @@
      showLanguageFromCongif() {
          const language_container_el = document.querySelector('#language');
          const header = document.querySelector('#AdminControlsContainer');
+         const language_label;
 
          if (!this.site_config || !language_container_el || !header) return;
          if (!this.site_config.show_language_select) return;
 
-         language_container_el.querySelector('.language-container').style.display = 'grid';
          header.insertAdjacentElement('beforeBegin', language_container_el);
+         language_label = language_container_el.querySelector('#language-label');
+
+         language_label.addEventListener('click', () => {
+             language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
+         });
      }
 
      setupDatePrompt() {

@@ -160,6 +160,10 @@ header {
     width: 250px;
 }
 
+.show-language-container{
+    display: grid !important;
+}
+
 .language-container div {
     color: #fff;
     margin-bottom: 0;

@@ -1019,7 +1019,7 @@
          if (!this.site_config || !language_container_el || !header) return;
          if (!this.site_config.show_language_select) return;
 
-         language_container.querySelector('.language-container').style.display = 'grid';
+         language_container_el.querySelector('.language-container').style.display = 'grid';
          header.insertAdjacentElement('beforeBegin', language_container_el);
      }
 

@@ -54,11 +54,9 @@
                  // checkout page methods
                  if (this.page_name == 'checkout') {
                      this.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
-                     this.updateHTML('.WBGuestFormFields > legend', 'Billing Info');
                      this.setupReservationSummaryContainer();
                      // Checkout form input validation
                      this.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
-                     this.updateHTML('#theBookingPage .paymentMethods', '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
                      this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
 
                      // Shows numpad on ios
@@ -91,6 +89,15 @@
                      if (!this.page_name == 'search-results') {
                          return;
                      }
+                     console.log('waitForSelectorInDom fired.');
+                     this.createStarIcons();
+                     this.openSortByDropdown();
+                     // this.addTitleToProperties();
+                     this.showLoaderOnResultsUpdate();
+                     this.showSearchContainerOnMobile();
+                     this.moveFooterOutOfSearchContainer();
+                     this.moveReviewsIntoPropNameContainer();
+
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
@@ -108,15 +115,9 @@
                      this.updateHTML('#CitySearchContainer > span', 'Where:');
                      this.updateHTML('.ArnSearchHeader', 'Search');
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
-                     this.moveFooterOutOfSearchContainer();
-                     this.createStarIcons();
-                     this.showSearchContainerOnMobile();
-                     this.openSortByDropdown();
-                     this.moveReviewsIntoPropNameContainer();
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
                      this.movePropClassBelowPropName();
-
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
                      });
@@ -419,10 +420,6 @@
      }
 
      createStarIcons() {
-         if (!this.site_config.show_prop_rating_stars) {
-             return;
-         }
-
          let star_elements = document.querySelectorAll('.ArnPropClass');
          star_elements.forEach(function(star) {
              star.style.display = 'inline';
@@ -450,13 +447,12 @@
 
      async waitForSelectorInDOM(selector) {
          return await new Promise(resolve => {
-             console.log('waitForSelectorInDOM() fired.');
              let interval = setInterval(() => {
                  if (document.querySelector(selector)) {
                      resolve();
                      clearInterval(interval);
                  };
-             }, 250);
+             }, 500);
          });
      }
 
@@ -562,13 +558,19 @@
          });
      }
 
-     createWrapper(query_selectors, wrapper_parent, wrapper_id) {
+     createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
          const wrapper = document.createElement('div');
-         wrapper.setAttribute('id', wrapper_id)
+
+         if (!wrapper) {
+             return;
+         }
+
+         wrapper.setAttribute('class', new_wrapper_class);
          Array.prototype.forEach.call(document.querySelectorAll(query_selectors), (children) => {
-             wrapper.appendChild(children)
+             wrapper.appendChild(children);
          });
-         document.querySelector(wrapper_parent).appendChild(wrapper)
+
+         document.querySelector(wrapper_parent).insertAdjacentElement(adjacent_location, wrapper);
      }
 
      buildMobileMenu() {
@@ -681,6 +683,7 @@
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
              this.highlightMapMarkersOnPropertyHover();
+             this.showFullStayAndNightlyRates()
          });
      }
 
@@ -721,11 +724,12 @@
      }
 
      movePropClassBelowPropName() {
+         const prop_containers = document.querySelectorAll('.ArnContainer');
+
          if (!document.querySelector('.SearchHotels')) {
              return;
          }
 
-         let prop_containers = document.querySelectorAll('.ArnContainer');
          prop_containers.forEach(function(container) {
              let prop_class = container.querySelector('.ArnPropClass');
              let prop_name = container.querySelector('.ArnPropName');
@@ -811,17 +815,15 @@
              this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
-             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `#billing-details-container${reservation_count}`);
+             this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
 
-             this.createWrapper(`.RoomNumber-${reservation_count} #theCardVerificationAjax, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax`, `#theCreditCardBillingNameAjax${reservation_count}`, `security-code-exp-container${reservation_count}`);
+             this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`, `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`, `credit-card-details`, 'afterEnd');
 
-             // document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container');
-             // console.log('805:', document.querySelector(`#billing-details-container${reservation_count}`).classList.add('billing-details-container'))
-             // document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container');
-             // console.log('807:', document.querySelector(`#security-code-exp-container${reservation_count}`).classList.add('security-code-exp-container'))
              this.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
              this.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
-             this.createHTML('<legend>Credit Card Info</legend>', `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) .guestBillingAddress`, 'beforeBegin');
+             this.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
+             this.updateHTML(`.RoomNumber-${reservation_count} .paymentMethods`, '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/creditcards.png" alt="Credit Cards"></span>');
+             this.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
          });
      }
 
@@ -1044,5 +1046,71 @@
          });
      }
 
+     showFullStayAndNightlyRates() {
+         let average_rate;
+         let full_stay_rate;
+         let nights = this.getTotalNights();
+         let properties = document.querySelectorAll('.ArnContainer');
 
+         if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
+             return;
+         }
+
+         properties.forEach((property) => {
+             average_rate = property.querySelector('.averageNightly');
+             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+
+             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+
+             if (nights == 1) {
+                 property.querySelector('.arnPrice').style.display = 'none';
+             }
+         });
+     }
+
+     getTotalNights() {
+         let nights;
+         let check_in;
+         let check_out;
+         const check_in_el = document.querySelector('meta[name="checkIn"]');
+         const check_out_el = document.querySelector('meta[name="checkOut"]');
+
+         if (!check_in_el || !check_out_el) return;
+
+         check_in = new Date(check_in_el.getAttribute('content'));
+         check_out = new Date(check_out_el.getAttribute('content'));
+         nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
+
+         return nights;
+     }
+
+     addTitleToProperties() {
+         let property_name;
+         let property_name_el;
+         let properties = document.querySelectorAll('.ArnContainer');
+
+         if (!document.querySelector('.SearchHotels')) return;
+
+         properties.forEach((property) => {
+             property_name_el = property.querySelector('.ArnPropNameLink');
+             property_name = property_name_el.querySelector('span').textContent;
+
+             property_name_el.setAttribute('title', property_name)
+
+         });
+     }
+
+     showLoaderOnResultsUpdate() {
+         let loader = document.querySelector('#searching');
+         let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+
+         if (!document.querySelector('.SearchHotels')) return;
+
+         update_buttons.forEach((button) => {
+             button.addEventListener('click', () => {
+                 loader.style.display = 'block';
+             });
+         });
+     }
  }

@@ -242,7 +242,7 @@ header {
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(45% - 125px) !important;
+    width: calc(41.5% - 125px) !important;
     height: 100% !important;
     z-index: 8;
 }
@@ -620,7 +620,7 @@ header {
 
 .ArnLeftSearchContainer,
 .ArnLeftListContainer {
-    width: 225px;
+    width: 200px;
     display: block;
 }
 
@@ -636,7 +636,7 @@ header {
 
 .ArnPrimarySearchContainer,
 .SimpleSearch {
-    border-top: 1px solid #fff;
+    45 border-top: 1px solid #fff;
     padding: 12px;
     border-radius: 0 5px 5px 0;
 }
@@ -722,6 +722,10 @@ div.autocomplete ul li.selected {
 
 .SearchHotels .ArnTripAdvisorDetails.HasReviews {
     display: flex !important;
+    order: 1;
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
 }
 
 @media screen and (max-width: 800px) {
@@ -1165,6 +1169,10 @@ legend {
     height: 300px !important;
 }
 
+.SinglePropDetail .PropLimitedAvail .ArnRateCell {
+    width: 100% !important;
+}
+
 .PropertyAmenities {
     padding: 0;
     margin: 0;
@@ -1188,6 +1196,7 @@ legend {
 
 .ArnTripAdvisorDetails.HasReviews .reviewCount {
     order: 1;
+    font-size: 13px;
 }
 
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
@@ -1375,9 +1384,9 @@ legend {
 }
 
 .ArnSecondarySearchOuterContainer span {
-    font-size: 15px;
+    font-size: 14px;
     position: relative;
-    top: -3px;
+    top: -4px;
 }
 
 .ArnSecondarySearchOuterContainer select {
@@ -1432,7 +1441,7 @@ legend {
 
 #currentPropertyPage {
     position: relative;
-    width: 55%;
+    width: 60%;
 }
 
 .SearchHotels .ArnContainer {
@@ -1475,28 +1484,41 @@ legend {
 }
 
 .SearchHotels .ArnPropName {
-    width: 45%;
+    width: 50%;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
 }
 
 .ArnPropName,
 .ArnRateCell {
-    padding: 8px;
+    padding: 12px;
     line-height: 1.4;
 }
 
 .ArnPropNameLink {
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    /*    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;*/
+}
+
+.ArnPropNameLink+br {
+    display: none;
 }
 
 .SearchHotels .ArnPropAddress {
     margin-bottom: 4px;
+    font-size: 13px;
 }
 
 .SearchHotels .distanceLabel {
     margin-bottom: 8px;
     display: inline-block;
+    font-size: 13px;
 }
 
 .ArnPropNameLink span {
@@ -1506,9 +1528,13 @@ legend {
 }
 
 .ArnRateCell {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-self: center;
     width: 25%;
+    height: 175px;
+    text-align: right;
 }
 
 .percentSavings {
@@ -1521,14 +1547,34 @@ legend {
     border-radius: 5px;
 }
 
-.arnPrice {
-    display: block;
-    margin: 12px auto;
+
+.ArnPriceCell .mainRate {
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
 }
 
-.ArnPriceCell {
-    font-size: 19px;
-    font-weight: 700;
+.arnPrice {
+    display: block;
+    font-size: 13px;
+    order: 1;
+}
+
+.averageNightly {
+    display: block !important;
+    font-size: 17px;
+    order: 0;
+}
+
+.averageNightly+div {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+
+.SearchHotels .ArnRateButton {
+    max-width: 125px;
+    align-self: flex-end;
 }
 
 .ArnShowRatesLink,
@@ -2089,39 +2135,39 @@ legend {
     margin-bottom: 0;
 }
 
-#billing-details-container {
+.billing-details-container {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 50% 50%;
     grid-column-gap: 6%;
 }
 
-#billing-details-container input,
-#billing-details-container select {
+.billing-details-container input,
+.billing-details-container select {
     width: 100% !important;
 }
 
-#billing-details-container>div:nth-child(2) {
+.billing-details-container>div:nth-child(2) {
     grid-column-start: 1;
     grid-row-start: 1;
     margin-top: 4px;
 }
 
 
-#billing-details-container>div:nth-child(3) {
+.billing-details-container>div:nth-child(3) {
     grid-column-start: 2;
     grid-row-start: 1;
 }
 
 
 
-#billing-details-container>div:nth-child(1) {
+.billing-details-container>div:nth-child(1) {
     grid-column-start: 1;
     grid-row-start: 2;
     margin-top: 4px;
 }
 
-#billing-details-container>div:nth-child(4) {
+.billing-details-container>div:nth-child(4) {
     grid-column-start: 2;
     grid-row-start: 2;
 }
@@ -2140,11 +2186,17 @@ legend {
     grid-column-gap: 6%;
 }
 
-#theCardExpirationFieldsAjax table>tbody>tr {
+.credit-card-details {
     display: grid;
     grid-template-columns: 47% 47%;
-    grid-template-rows: 100%;
+    grid-template-rows: 50% 50%;
     grid-column-gap: 6%;
+}
+
+#theCardExpirationFieldsAjax+div {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
 }
 
 #theCvvCode,
@@ -2153,9 +2205,10 @@ legend {
     width: 100%;
 }
 
-#theExpirationMonthAjax select,
-#theExpirationYearAjax select {
-    width: 96% !important;
+#theCardExpirationFieldsAjax table tr {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-column-gap: 6%;
 }
 
 #theCardVerificationAjax {
@@ -2188,15 +2241,15 @@ legend {
     left: 4px;
 }
 
-.ErrorList{
+.ErrorList {
     border: 2px solid #ffdada;
 }
 
-.Error{
+.Error {
     color: #ff6161;
 }
 
-.ErrorList ul{
+.ErrorList ul {
     list-style: none;
 }
 

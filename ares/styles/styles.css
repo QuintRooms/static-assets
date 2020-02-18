@@ -145,11 +145,19 @@ header {
 .config-container {
     background: #333;
     width: 100%;
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 6px;
+    position: relative;
+    z-index: 9;
 }
 
-#language-label{
+.config-container .lblCurrency {
+    color: #fff;
+}
+
+#language-label {
     cursor: pointer;
     color: #fff;
 }
@@ -160,7 +168,7 @@ header {
     width: 250px;
 }
 
-.show-language-container{
+.show-language-container {
     display: grid !important;
 }
 

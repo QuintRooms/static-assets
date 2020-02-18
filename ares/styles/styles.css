@@ -142,26 +142,21 @@ header {
     display: none;
 }
 
-
-.languageContainer {
+#language {
     display: none;
     background: #333;
     width: 100%;
-}
-
-.languageContainer>div {
-    display: flex !important;
     justify-content: flex-end;
     padding: 6px;
 }
 
-.languageContainer div#language {
+.language-container {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 250px;
 }
 
-.languageContainer div#language div {
+.language-container div {
     color: #fff;
     margin-bottom: 0;
     font-size: 13px !important;
@@ -170,7 +165,7 @@ header {
     transition: all .3s ease;
 }
 
-.languageContainer div#language div:hover{
+.language-container div:hover {
     background: #fff;
     color: #333;
 }

@@ -287,7 +287,7 @@ textarea,
     font-weight: 600;
 }
 
-body.RootBody {
+.RootBody .ArnSearchContainerMainDiv{
     background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/59788/images/banner.png) no-repeat center center /cover !important;
 }
 

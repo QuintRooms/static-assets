@@ -150,11 +150,25 @@ header {
     align-items: center;
     padding: 6px;
     position: relative;
-    z-index: 9;
+    z-index: 10;
+}
+
+.config-container #CurrenciesContainer {
+    margin-right: 24px;
+    position: relative;
 }
 
 .config-container .lblCurrency {
     color: #fff;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField {
+    position: absolute;
+    right: 0;
+}
+
+#language {
+    position: relative;
 }
 
 #language-label {
@@ -166,6 +180,9 @@ header {
     display: none;
     grid-template-columns: 50% 50%;
     width: 250px;
+    position: absolute;
+    right: 0;
+    background: #fff;
 }
 
 .show-language-container {
@@ -173,7 +190,7 @@ header {
 }
 
 .language-container div {
-    color: #fff;
+    color: #333;
     margin-bottom: 0;
     font-size: 13px !important;
     cursor: pointer;

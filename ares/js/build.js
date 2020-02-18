@@ -86,7 +86,6 @@
                  this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                    debugger;
                      if (!this.page_name == 'search-results') {
                          return;
                      }
@@ -447,6 +446,7 @@
      }
 
      async waitForSelectorInDOM(selector) {
+        debugger;
          return await new Promise(resolve => {
              let interval = setInterval(() => {
                  if (document.querySelector(selector)) {

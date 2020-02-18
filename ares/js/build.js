@@ -1015,7 +1015,7 @@
      showLanguageFromCongif() {
          const language_container_el = document.querySelector('#language');
          const header = document.querySelector('#AdminControlsContainer');
-         const language_label;
+         const language_label = '';
 
          if (!this.site_config || !language_container_el || !header) return;
          if (!this.site_config.show_language_select) return;

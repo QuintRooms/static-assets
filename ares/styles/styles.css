@@ -155,7 +155,7 @@ header {
 }
 
 .language-container {
-    display: grid;
+    display: none;
     grid-template-columns: 50% 50%;
     width: 250px;
 }

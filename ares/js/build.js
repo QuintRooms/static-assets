@@ -1054,7 +1054,7 @@
          if (!currencies_node_list || !config_container || !currency_label) return;
          ``
          currencies_node_list.forEach((currency) => {
-             if (currency.getAttribute('selected')) selected_currency = currency.value;
+             if (currency.getAttribute('selected')) selected_currency = currency.value.toString();
 
              currencies_obj[currency.label] = currency.value;
          });
@@ -1070,7 +1070,6 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         console.log(`.currencies #${selected_currency}`)
          document.querySelector(`.currencies #${selected_currency}`).classList.add('active-currency');
      }
 

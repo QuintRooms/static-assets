@@ -858,7 +858,8 @@
                 .HoldRoomsForm .submit,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover,
-                .language-container div:hover {
+                .language-container div:hover,
+                .active-language {
                     background:${this.site_config.primary_color}
                 }
 

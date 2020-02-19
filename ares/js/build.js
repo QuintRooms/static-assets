@@ -110,6 +110,7 @@
                      this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
                      this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                      this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                     this.updateHTML('#language-label', 'Language ' + this.svg_arrow);
                      this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                      this.updateHTML('#ShowHotelOnMap', 'Open Map');
                      this.updateHTML('#CitySearchContainer > span', 'Where:');
@@ -969,12 +970,12 @@
                 .RootBody #theSubmitButton,
                 .bookRoom,
                 .sort,
-                #language-label,
                 .HoldRoomsForm .submit {
                     border:1px solid ${this.site_config.primary_color}
                 }
 
-                .ArnSearchField {
+                .ArnSearchField,
+                #language-label{
                     border-bottom:1px solid ${this.site_config.primary_color}   
                 }
 

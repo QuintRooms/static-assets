@@ -1512,7 +1512,7 @@ legend {
     display: flex;
     flex-direction: row;
     margin-bottom: 18px;
-    box-shadow: 0 2px 8px 0 #000;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
     border: 1px solid #ccc;
     position: relative;
     border-radius: 5px;

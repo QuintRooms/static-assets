@@ -200,6 +200,10 @@ header {
     transform: scale(.85);
 }
 
+#CurrenciesContainer {
+    display: none;
+}
+
 .language-container,
 .currencies {
     display: none;
@@ -217,7 +221,7 @@ header {
     flex-direction: column;
 }
 
-.show-currenices-container{
+.show-currenices-container {
     display: grid;
 }
 

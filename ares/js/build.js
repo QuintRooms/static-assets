@@ -14,7 +14,6 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
-                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
@@ -90,9 +89,9 @@
                      if (!document.querySelector('.SearchHotels')) {
                          return;
                      }
-
                      this.createStarIcons();
                      this.openSortByDropdown();
+                     this.createCurrencyDropDown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();

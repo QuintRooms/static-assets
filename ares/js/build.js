@@ -1039,6 +1039,7 @@
      }
 
      createCurrencyDropDown() {
+         debugger;
          let currencies;
          let currencies_obj = {};
          let currency_label = document.querySelector('#currency-label');

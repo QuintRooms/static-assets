@@ -14,6 +14,7 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
+                 this.showCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();

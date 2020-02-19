@@ -1028,7 +1028,7 @@
          if (!this.site_config.show_language_select) return;
 
          active_language = active_language_el.getAttribute('content');
-         document.querySelector(`.language-container[value='${active_language}']`).classList.add('active-language');
+         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');

@@ -147,7 +147,6 @@ header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     padding: 6px;
     position: relative;
     z-index: 10;
@@ -176,6 +175,11 @@ header {
 
 .lblCurrency {
     border-bottom: 1px solid #fff !important;
+    width: 226px;
+}
+
+.show-currency{
+    display: block;
 }
 
 #language {

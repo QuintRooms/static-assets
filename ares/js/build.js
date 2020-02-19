@@ -1016,7 +1016,7 @@
          const language_container_el = document.querySelector('#language');
          const config_container = document.querySelector('.config-container');
          const header = document.querySelector('#AdminControlsContainer');
-         let language_label;;
+         let language_label;
 
          if (!this.site_config || !language_container_el || !header || !config_container) return;
          if (!this.site_config.show_language_select) return;
@@ -1027,7 +1027,21 @@
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
-             language_label.querySelector('svg').classList.add('flip-svg')
+             language_label.querySelector('svg').classList.toggle('flip-svg')
+         });
+     }
+
+     showCurrencyDropDown() {
+         const currency_select_el = document.querySelector('#CurrenciesContainer select');
+         const currency_label_el = document.querySelector('.lblCurrency');
+
+         if (!currency_select_el || !currency_label_el) {
+             return;
+         }
+
+         currency_label_el.addEventListener('click', () => {
+             currency_select_el.classList.toggle('show-currency');
+             currency_label_el.querySelector('svg').classList.toggle('flip-svg');
          });
      }
 

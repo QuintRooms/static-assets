@@ -265,12 +265,17 @@ header {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 5;
-    margin-bottom: 18px;
+    padding: 0 !important;
 }
 
 .top-currencies:hover {
     background: unset !important;
     color: unset !important;
+}
+
+.top-currencies h4{
+    padding: 0 8px;
+    font-size: 14px;
 }
 
 .top-currencies div:first-child {
@@ -315,6 +320,11 @@ header {
     grid-row-start: 3;
 }
 
+.top-currencies + h4{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 0 8px;
+}
 /* Header End */
 
 /* Mobile Menu Start */

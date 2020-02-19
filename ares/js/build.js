@@ -1083,7 +1083,7 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         document.getElementById(`${selected_currency}`).classList.add('active-currency');
+         document.querySelector(`.${selected_currency}`).classList.add('active-currency');
      }
 
      setupDatePrompt() {

@@ -1071,10 +1071,10 @@
                  currency[0] == 'United Kingdom Pounds' ||
                  currency[0] == 'Mexico Pesos' ||
                  currency[0] == 'Canada Dollars' ||
-                 currency[0] == 'Australia Dollars' ||) {
+                 currency[0] == 'Australia Dollars') {
                  top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
              }
-             
+
              currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 

@@ -187,7 +187,8 @@ header {
     width: 160px;
 }
 
-#language-label {
+#language-label,
+#currency-label {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #fff;
@@ -199,7 +200,8 @@ header {
     transform: scale(.85);
 }
 
-.language-container {
+.language-container,
+.currencies {
     display: none;
     position: absolute;
     top: 24px;
@@ -215,8 +217,11 @@ header {
     flex-direction: column;
 }
 
+.show-currenices-container{
+    display: grid;
+}
+
 .language-container div {
-    color: #333;
     margin-bottom: 0;
     cursor: pointer;
     padding: 6px 8px;

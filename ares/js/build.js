@@ -14,7 +14,7 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
-                 this.showCurrencyDropDown();
+                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
@@ -1040,18 +1040,29 @@
          });
      }
 
-     showCurrencyDropDown() {
-         const currency_select_el = document.querySelector('#CurrenciesContainer select');
-         const currency_label_el = document.querySelector('.lblCurrency');
+     createCurrencyDropDown() {
+         let currencies;
+         let currencies_obj = {};
+         let currency_label = document.querySelector('#currency-label');
+         let currencies_container = document.querySelector('.currencies');
+         let config_container = document.querySelector('.config-container');
+         let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-         if (!currency_select_el || !currency_label_el) {
-             return;
-         }
+         if (!currencies_node_list || !config_container || !currency_label) return;
 
-         currency_label_el.addEventListener('click', () => {
-             currency_select_el.classList.toggle('show-currency');
-             currency_select_el.click();
-             currency_label_el.querySelector('svg').classList.toggle('flip-svg');
+         currencies_node_list.forEach((currency) => {
+             currencies_obj[currency.label] = currency.value;
+         });
+
+         currencies = Object.entries(currencies_obj);
+
+         currencies.forEach((currency) => {
+             document.querySelector('.currency-container').insertAdjacentHTML('beforeEnd', `<div data-value=${currency[1]}>${currency[0]}</div>`);
+         });
+
+         currency_label.addEventListener('click', () => {
+             currencies_container.classList.toggle('show-currencies-container');
+             currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
      }
 

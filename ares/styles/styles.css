@@ -167,6 +167,9 @@ header {
     right: 0;
     overflow: unset !important;
     padding: unset;
+}
+
+.lblCurrency {
     border-bottom: 1px solid #fff !important;
 }
 
@@ -179,6 +182,12 @@ header {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #fff;
+}
+
+#language-label polyline,
+.lblCurrency polyline{
+    stroke: #fff;
+    transform: scale(.85);
 }
 
 .language-container {

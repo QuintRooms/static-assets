@@ -14,7 +14,6 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
-                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
@@ -92,6 +91,7 @@
                      }
                      this.createStarIcons();
                      this.openSortByDropdown();
+                     this.createCurrencyDropDown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
@@ -103,6 +103,7 @@
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
                      this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
                      this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
@@ -1045,10 +1046,6 @@
          let config_container = document.querySelector('.config-container');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-         console.log(currencies_node_list);
-         console.log(config_container);
-         console.log(currency_label);
-
          if (!currencies_node_list || !config_container || !currency_label) return;
 
          currencies_node_list.forEach((currency) => {
@@ -1058,14 +1055,13 @@
          currencies = Object.entries(currencies_obj);
 
          currencies.forEach((currency) => {
-             document.querySelector('.currency-container').insertAdjacentHTML('beforeEnd', `<div data-value=${currency[1]}>${currency[0]}</div>`);
+             currencies_container.insertAdjacentHTML('beforeEnd', `<div data-value=${currency[1]}>${currency[0]}</div>`);
          });
 
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
-         });
-     }
+         });     }
 
      setupDatePrompt() {
          let date_prompt = document.querySelector('#theDatePrompt');

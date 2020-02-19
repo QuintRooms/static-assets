@@ -1070,7 +1070,7 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         document.querySelector(`.currencies div#${selected_currency}`).classList.add('active-currency');
+         document.querySelector(`.currencies div#${selected_currency.toString()}`).classList.add('active-currency');
      }
 
      setupDatePrompt() {

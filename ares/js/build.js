@@ -857,7 +857,8 @@
                 .bookRoom,
                 .HoldRoomsForm .submit,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
-                .yui3-skin-sam .yui3-calendar-day:hover {
+                .yui3-skin-sam .yui3-calendar-day:hover,
+                .language-container div:hover {
                     background:${this.site_config.primary_color}
                 }
 
@@ -905,7 +906,8 @@
                 .WBValidatedRegistrationFormActions .submit,
                 .arnMapPopup .rate,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
-                .bookRoom {
+                .bookRoom,
+                .language-container div:hover {
                     color:${this.site_config.primary_text_color}
                 }
 

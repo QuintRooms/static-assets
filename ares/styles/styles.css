@@ -147,7 +147,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 6px;
+    padding: 8px;
     position: relative;
     z-index: 10;
 }
@@ -178,7 +178,7 @@ header {
     width: 226px;
 }
 
-.config-container #CurrenciesContainer .ArnSearchField select.show-currency{
+.config-container #CurrenciesContainer .ArnSearchField select.show-currency {
     display: block;
 }
 
@@ -201,8 +201,8 @@ header {
 
 .language-container {
     display: none;
-    padding: 8px;
     position: absolute;
+    top: 24px;
     left: 0;
     background: #fff;
     width: 100%;
@@ -219,13 +219,8 @@ header {
     color: #333;
     margin-bottom: 0;
     cursor: pointer;
-    padding: 4px;
+    padding: 6px 8px;
     transition: all .3s ease;
-}
-
-.language-container div:hover {
-    background: #fff;
-    color: #333;
 }
 
 /* Header End */

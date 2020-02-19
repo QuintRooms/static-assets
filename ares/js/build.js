@@ -1145,6 +1145,8 @@
              average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
+             if(!average_rate || !full_stay_rate) return;
+
              average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 

@@ -276,6 +276,7 @@ header {
 .top-currencies h4{
     padding: 0 8px;
     font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .top-currencies div:first-child {
@@ -324,6 +325,7 @@ header {
     grid-column-start: 1;
     grid-column-end: 5;
     padding: 0 8px;
+    margin-bottom: 4px;
 }
 /* Header End */
 

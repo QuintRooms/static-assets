@@ -233,7 +233,7 @@ header {
 
 .currencies div {
     cursor: pointer;
-    padding: 6px 8px;
+    padding: 12px;
     transition: all .3s ease;
 }
 
@@ -243,10 +243,13 @@ header {
     right: 0;
     top: 24px;
     background: #fff;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 50% 50%;
     box-shadow: 0 2px 50px 0 #000;
     border-radius: 5px;
-    width: 800px;
+    width: 450px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: auto;
 }
 
 .show-currencies-container {
@@ -259,6 +262,21 @@ header {
     padding: 6px 8px;
     transition: all .3s ease;
 }
+
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 
 /* Header End */
 

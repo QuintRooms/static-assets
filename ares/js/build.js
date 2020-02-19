@@ -1039,13 +1039,16 @@
      }
 
      createCurrencyDropDown() {
-         debugger;
          let currencies;
          let currencies_obj = {};
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
          let config_container = document.querySelector('.config-container');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+
+         console.log(currencies_node_list);
+         console.log(config_container);
+         console.log(currency_label);
 
          if (!currencies_node_list || !config_container || !currency_label) return;
 
@@ -1062,8 +1065,7 @@
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
-         });
-     }
+         });     }
 
      setupDatePrompt() {
          let date_prompt = document.querySelector('#theDatePrompt');

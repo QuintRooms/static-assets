@@ -1061,7 +1061,8 @@
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
-         });     }
+         });
+     }
 
      setupDatePrompt() {
          let date_prompt = document.querySelector('#theDatePrompt');

@@ -389,26 +389,6 @@ header {
 #arnToggleMapDiv {
     display: none;
 }
-
-.ArnSortContainer {
-    margin-bottom: 18px;
-}
-
-.sort {
-    padding: 8px;
-    display: inline-block;
-    width: 200px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-    z-index: 7;
-    background: #fff;
-}
-
-.ArnSortBy {
-    width: 200px;
-}
-
 .arrow {
     transform: rotate(90deg);
     width: 14px;
@@ -419,64 +399,8 @@ header {
     transition: all .3s ease;
 }
 
-#sort-wrapper {
-    position: relative;
-}
-
-#sort-wrapper a {
-    width: 200px;
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 9px;
-    background: #fff;
-    border-radius: 5px;
-    margin: 6px 0;
-    position: absolute;
-    z-index: 6;
-    top: -44px;
-    transition: all .4s ease;
-    box-shadow: 0 2px 1px 0 #000;
-}
-
-#sort-wrapper a:hover,
-#sort-wrapper a:focus,
-#sort-wrapper a:active,
-#sort-wrapper.sort-open .active {
-    background: #faaf18;
-    color: #333;
-}
-
-.sort-open {
-    display: block !important;
-    position: absolute;
-    width: 204px;
-}
-
-.sort-open a:first-child {
-    transform: translateY(42px) !important;
-}
-
-.sort-open a:nth-child(2) {
-    transform: translateY(calc(42px * 2)) !important;
-}
-
-.sort-open a:nth-child(3) {
-    transform: translateY(calc(42px * 3)) !important;
-}
-
-.sort-open a:nth-child(4) {
-    transform: translateY(calc(42px * 4 + 6px)) !important;
-}
-
-.sort-open a:nth-child(5) {
-    transform: translateY(calc(42px * 5 + 12px)) !important;
-}
-
-.sort svg {
-    width: 14px;
-    position: relative;
-    top: 2px;
+.ArnSortBy{
+    display: none;
 }
 
 /* Sort Container End*/

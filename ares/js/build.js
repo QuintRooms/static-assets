@@ -103,21 +103,22 @@
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
-                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
-                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
-                     this.updateHTML('#CitySearchContainer > span', 'Where:');
+                     this.movePropClassBelowPropName();
                      this.updateHTML('.ArnSearchHeader', 'Search');
+                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
+                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                     this.updateHTML('#CitySearchContainer > span', 'Where:');
+                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
+                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
+                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
+                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                     this.moveElementsIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-                     this.movePropClassBelowPropName();
+
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
                      });

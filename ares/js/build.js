@@ -1062,7 +1062,7 @@
          currencies = Object.entries(currencies_obj);
 
          currencies.forEach((currency) => {
-             currencies_container.insertAdjacentHTML('beforeEnd', `<div data-value=${currency[1]}>${currency[0]}</div>`);
+             currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 
          currency_label.addEventListener('click', () => {
@@ -1070,7 +1070,7 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         document.querySelector(`.currencies div[data-value=${selected_currency}]`).classList.add('active-currency');
+         document.querySelector(`.currencies div#${selected_currency}`).classList.add('active-currency');
      }
 
      setupDatePrompt() {

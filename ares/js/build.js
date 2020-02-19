@@ -1122,7 +1122,7 @@
          }
 
          properties.forEach((property) => {
-             average_rate = property.querySelector('.averageNightly');
+             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
              average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);

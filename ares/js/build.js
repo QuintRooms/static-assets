@@ -1087,6 +1087,7 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
+             console.log('currency clicked');
              clicked_currency = e.target.getAttribute('id');
              currencies_select.value = clicked_currency;
              submit.click();

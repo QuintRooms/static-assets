@@ -123,7 +123,7 @@
                      }).then(() => {
                          setTimeout(() => {
                             console.log('setTimeout blah blah blah')
-                             this.moveElementIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
+                             this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                          }, 3000)
                      });
                  });

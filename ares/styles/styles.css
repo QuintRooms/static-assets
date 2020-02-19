@@ -246,6 +246,7 @@ header {
     grid-template-columns: 25% 25% 25% 25%;
     box-shadow: 0 2px 50px 0 #000;
     border-radius: 5px;
+    width: 800px;
 }
 
 .show-currencies-container {

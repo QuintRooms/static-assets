@@ -185,6 +185,7 @@ header {
 #language {
     position: relative;
     width: 160px;
+    order: 1;
 }
 
 #language-label,
@@ -194,8 +195,12 @@ header {
     border-bottom: 1px solid #fff;
 }
 
+#currency-label {
+    width: 200px;
+}
+
 #language-label polyline,
-.lblCurrency polyline {
+#currency-label polyline {
     stroke: #fff;
     transform: scale(.85);
 }
@@ -204,8 +209,7 @@ header {
     display: none;
 }
 
-.language-container,
-.currencies {
+.language-container {
     display: none;
     position: absolute;
     top: 24px;
@@ -221,7 +225,30 @@ header {
     flex-direction: column;
 }
 
-.show-currenices-container {
+.currencies-container {
+    position: relative;
+    margin-right: 12px;
+    left: 0;
+}
+
+.currencies div {
+    cursor: pointer;
+    padding: 6px 8px;
+    transition: all .3s ease;
+}
+
+.currencies {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    background: #fff;
+    grid-template-columns: 25% 25% 25% 25%;
+    box-shadow: 0 2px 50px 0 #000;
+    border-radius: 5px;
+}
+
+.show-currencies-container {
     display: grid;
 }
 

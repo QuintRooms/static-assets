@@ -857,6 +857,8 @@
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover,
                 .language-container div:hover,
+                .currencies div:hover,
+                .active-currency,
                 .active-language {
                     background:${this.site_config.primary_color}
                 }
@@ -907,7 +909,9 @@
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .bookRoom,
                 .language-container div:hover,
-                .active-language {
+                .currencies div:hover,
+                .active-language,
+                .active-currency {
                     color:${this.site_config.primary_text_color}
                 }
 
@@ -1041,14 +1045,17 @@
      createCurrencyDropDown() {
          let currencies;
          let currencies_obj = {};
+         let selected_currency = '';
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
          let config_container = document.querySelector('.config-container');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
          if (!currencies_node_list || !config_container || !currency_label) return;
-
+         ``
          currencies_node_list.forEach((currency) => {
+             if (currency.getAttribute('selected')) selected_currency = currency.value;
+
              currencies_obj[currency.label] = currency.value;
          });
 
@@ -1062,6 +1069,8 @@
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
+
+         document.querySelector(`.currencies div[data-value=${selected_currency}]`).classList.add('active-currency');
      }
 
      setupDatePrompt() {

@@ -14,6 +14,7 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
+                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
@@ -91,7 +92,6 @@
                      }
                      this.createStarIcons();
                      this.openSortByDropdown();
-                     this.createCurrencyDropDown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
@@ -103,7 +103,6 @@
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
                      this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
                      this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
@@ -1065,7 +1064,8 @@
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
-         });     }
+         });
+     }
 
      setupDatePrompt() {
          let date_prompt = document.querySelector('#theDatePrompt');

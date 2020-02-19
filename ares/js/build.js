@@ -1055,9 +1055,7 @@
          ``
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {
-                 console.log(typeof(selected_currency))
-                 selected_currency = currency.value.toString();
-                 console.log(typeof(selected_currency))
+                 selected_currency = currency.value;
              }
 
              currencies_obj[currency.label] = currency.value;
@@ -1074,7 +1072,7 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         document.querySelector(`.currencies #${selected_currency}`).classList.add('active-currency');
+         document.getElementById(`${selected_currency}`).classList.add('active-currency');
      }
 
      setupDatePrompt() {

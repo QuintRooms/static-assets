@@ -165,6 +165,9 @@ header {
 .config-container #CurrenciesContainer .ArnSearchField {
     position: absolute;
     right: 0;
+    overflow: unset !important;
+    padding: unset;
+    border-bottom: 1px solid #fff !important;
 }
 
 #language {
@@ -175,6 +178,7 @@ header {
 #language-label {
     cursor: pointer;
     color: #fff;
+    border-bottom: 1px solid #fff;
 }
 
 .language-container {

@@ -110,7 +110,6 @@
                      this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
                      this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                      this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                     this.updateHTML('#language-label', 'Language ' + this.svg_arrow);
                      this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                      this.updateHTML('#ShowHotelOnMap', 'Open Map');
                      this.updateHTML('#CitySearchContainer > span', 'Where:');
@@ -974,8 +973,7 @@
                     border:1px solid ${this.site_config.primary_color}
                 }
 
-                .ArnSearchField,
-                #language-label{
+                .ArnSearchField{
                     border-bottom:1px solid ${this.site_config.primary_color}   
                 }
 
@@ -1029,6 +1027,7 @@
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
+             language_label.querySelector('svg').classList.add('flip-svg')
          });
      }
 

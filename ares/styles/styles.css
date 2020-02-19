@@ -167,6 +167,11 @@ header {
     right: 0;
     overflow: unset !important;
     padding: unset;
+    border-bottom: unset;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField select {
+    display: none;
 }
 
 .lblCurrency {
@@ -185,7 +190,7 @@ header {
 }
 
 #language-label polyline,
-.lblCurrency polyline{
+.lblCurrency polyline {
     stroke: #fff;
     transform: scale(.85);
 }

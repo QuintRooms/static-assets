@@ -907,7 +907,8 @@
                 .arnMapPopup .rate,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .bookRoom,
-                .language-container div:hover {
+                .language-container div:hover,
+                .active-language {
                     color:${this.site_config.primary_text_color}
                 }
 
@@ -1016,21 +1017,25 @@
      }
 
      showLanguageFromCongif() {
+         let language_label;
+         let active_langauge;
+         const active_langauge_el = document.querySelector('meta[name="theme"]');
+         const header = document.querySelector('#AdminControlsContainer');
          const language_container_el = document.querySelector('#language');
          const config_container = document.querySelector('.config-container');
-         const header = document.querySelector('#AdminControlsContainer');
-         let language_label;
 
-         if (!this.site_config || !language_container_el || !header || !config_container) return;
+         if (!this.site_config || !language_container_el || !header || !config_container || active_language_el) return;
          if (!this.site_config.show_language_select) return;
 
+         active_language = active_language_el.getAttribute('content');
+         document.querySelector(`.language-container[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
-             language_label.querySelector('svg').classList.toggle('flip-svg')
+             language_label.querySelector('svg').classList.toggle('flip-svg');
          });
      }
 

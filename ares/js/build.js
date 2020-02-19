@@ -1042,6 +1042,7 @@
 
          currency_label_el.addEventListener('click', () => {
              currency_select_el.classList.toggle('show-currency');
+             currency_select_el.click();
              currency_label_el.querySelector('svg').classList.toggle('flip-svg');
          });
      }

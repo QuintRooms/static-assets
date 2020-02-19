@@ -178,7 +178,7 @@ header {
     width: 226px;
 }
 
-.show-currency{
+.config-container #CurrenciesContainer .ArnSearchField select.show-currency{
     display: block;
 }
 

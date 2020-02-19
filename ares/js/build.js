@@ -1046,11 +1046,14 @@
      createCurrencyDropDown() {
          let currencies;
          let currencies_obj = {};
+         let clicked_currency = '';
          let selected_currency = '';
+         let submit = document.querySelector('#theOtherSubmitButton');
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
          let config_container = document.querySelector('.config-container');
          let top_currencies_container = document.querySelector('.top-currencies');
+         let currencies_select = document.querySelector('#CurrenciesContainer select');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
          if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container) return;
@@ -1081,6 +1084,12 @@
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
+         });
+
+         currencies_container.addEventListener('click', (e) => {
+             clicked_currency = e.target.getAttribute('id');
+             currencies_select.value = clicked_currency;
+             submit.click();
          });
 
          document.getElementById(selected_currency).classList.add('active-currency');

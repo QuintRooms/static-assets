@@ -1050,9 +1050,10 @@
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
          let config_container = document.querySelector('.config-container');
+         let top_currencies_container = document.querySelector('.top-currencies');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-         if (!currencies_node_list || !config_container || !currency_label) return;
+         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container) return;
          ``
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {
@@ -1065,6 +1066,15 @@
          currencies = Object.entries(currencies_obj);
 
          currencies.forEach((currency) => {
+             if (currency[0] == 'United States Dollar' ||
+                 currency[0] == 'Euro' ||
+                 currency[0] == 'United Kingdom Pounds' ||
+                 currency[0] == 'Mexico Pesos' ||
+                 currency[0] == 'Canada Dollars' ||
+                 currency[0] == 'Australia Dollars' ||) {
+                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+             }
+             
              currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 

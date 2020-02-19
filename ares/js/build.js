@@ -121,7 +121,9 @@
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
                      }).then(() => {
-                         this.moveElementIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
+                         setTimeout(() => {
+                             this.moveElementIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
+                         }, 3000)
                      });
                  });
              });

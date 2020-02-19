@@ -1054,7 +1054,11 @@
          if (!currencies_node_list || !config_container || !currency_label) return;
          ``
          currencies_node_list.forEach((currency) => {
-             if (currency.getAttribute('selected')) selected_currency = currency.value.toString();
+             if (currency.getAttribute('selected')) {
+                 console.log(typeof(selected_currency))
+                 selected_currency = currency.value.toString();
+                 console.log(typeof(selected_currency))
+             }
 
              currencies_obj[currency.label] = currency.value;
          });

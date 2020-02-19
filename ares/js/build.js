@@ -116,11 +116,12 @@
                      this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                     this.moveElementIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
+                     }).then(() => {
+                         this.moveElementIntoExistingWrapper('#sort-wrapper', 'ArnSecondarySearchOuterContainer', 'afterBegin');
                      });
                  });
              });

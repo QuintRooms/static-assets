@@ -1066,7 +1066,7 @@
          currencies = Object.entries(currencies_obj);
 
          currencies.forEach((currency) => {
-             if (currency[0] == 'United States Dollar' ||
+             if (currency[0] == 'United States Dollars' ||
                  currency[0] == 'Euro' ||
                  currency[0] == 'United Kingdom Pounds' ||
                  currency[0] == 'Mexico Pesos' ||

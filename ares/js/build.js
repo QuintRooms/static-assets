@@ -103,7 +103,7 @@
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
                      this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
                      this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
                      this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
@@ -969,6 +969,7 @@
                 .RootBody #theSubmitButton,
                 .bookRoom,
                 .sort,
+                #language-label,
                 .HoldRoomsForm .submit {
                     border:1px solid ${this.site_config.primary_color}
                 }

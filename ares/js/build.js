@@ -1029,6 +1029,7 @@
                  }
 
                  document.querySelector('.language-container').classList.toggle('show-language-container');
+                 language_label.querySelector('svg').classList.toggle('flip-svg');
              }
          });
      }
@@ -1098,6 +1099,7 @@
                  }
 
                  currencies_container.classList.toggle('show-currencies-container');
+                 currency_label.querySelector('svg').classList.toggle('flip-svg');
              }
          });
      }

@@ -1068,9 +1068,8 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
-            console.log(e)
+            if(e.target == 'h4') return;
              clicked_currency = e.target.getAttribute('id');
-             console.log(clicked_currency)
              if (active_currency) active_currency.classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');

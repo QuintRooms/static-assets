@@ -103,10 +103,10 @@
                      this.moveReviewsIntoPropNameContainer();
 
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
+                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
 
                      this.movePropClassBelowPropName();
                      this.updateHTML('.ArnSearchHeader', 'Search');

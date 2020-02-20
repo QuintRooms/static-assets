@@ -1067,7 +1067,7 @@
          });
 
          window.addEventListener('click', (e) => {
-            if(e.target != currencies_container){
+            if(e.target != currencies_container && document.querySelector('.show-currencies-container')){
                 currencies_container.classList.toggle('show-currencies-container');
             }
          });

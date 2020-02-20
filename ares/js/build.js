@@ -1028,7 +1028,7 @@
                      return;
                  }
 
-                 language_container_el.classList.toggle('show-language-container');
+                 document.querySelector('.language-container').classList.toggle('show-language-container');
              }
          });
      }

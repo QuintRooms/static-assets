@@ -2468,7 +2468,6 @@ legend {
 }
 
 .RootBody .ArnPrimarySearchContainer {
-    display: flex;
     align-items: center;
     background: rgba(0, 0, 0, .6);
     border: none;
@@ -2482,10 +2481,7 @@ legend {
 }
 
 .RootBody #theSubmitButton {
-    border-radius: 5px;
-    padding: 9px 18px;
-    margin-top: 19px;
-    transition: all .4s ease;
+    display: none;
 }
 
 .RootBody #theSubmitButton:hover,

@@ -1085,7 +1085,7 @@
              console.log('windsow clicked')
              console.log(e)
 
-             if (!document.querySelector('.show-currencies-container') && e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) {
+             if (document.querySelector('.show-currencies-container') || e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) {
                  return;
              }
              console.log('window clicked inside conditional')

@@ -327,7 +327,18 @@ header {
     padding: 0 8px;
     margin-bottom: 4px;
 }
+@media screen and (max-width: 800px){
+    .currencies-container{
+        width: 100%;
+        position: static;
+    }
 
+    .currencies{
+        top: 36px;
+        width: 96%;
+        margin: 0 2%;
+    }
+}
 /* Header End */
 
 /* Mobile Menu Start */
@@ -382,7 +393,7 @@ header {
         transition: all .5s ease;
         transform: translateY(-130px);
         width: 100%;
-        box-shadow: 0 2px 50px 0 #000;
+        box-shadow: 0 2px 12px 0 #000;
         position: absolute;
     }
 
@@ -1804,59 +1815,6 @@ legend {
 .PropertyLinks ul li {
     display: inline;
 }
-
-/* Accordion */
-
-/*.accordion {
-    transition: 0.4s;
-    padding: 6px 0
-}
-
-.ArnSearchField {
-    padding: 0 6px;
-    max-height: 0;
-    overflow: hidden !important;
-    transition: all 0.2s ease-in-out;
-}
-
-.lblAmenities+.panel {
-    padding: 115px 0;
-}
-
-.lblPropertyType+.panel {
-    padding: 90px 0 120px 0;
-}
-
-.lblNearbyCities+.panel,
-.lblCurrency+.panel {
-    padding: 20px 0 36px 0;
-}
-
-.lblRating+.panel {
-    padding: 65px 0;
-}
-
-.lblRating+.ArnSearchField div {
-    position: relative;
-    top: -65px;
-}
-
-.lblAmenities+.ArnSearchField div,
-.lblPropertyType+.ArnSearchField div {
-    position: relative;
-    top: -112px;
-}
-
-.lblPropertyType+.ArnSearchField div {
-    position: relative;
-    top: -90px;
-}
-
-.lblNearbyCities+.ArnSearchField select,
-.lblCurrency+.ArnSearchField select {
-    position: relative;
-    top: -15px;
-}*/
 
 /* Pagination */
 .ArnPages a {

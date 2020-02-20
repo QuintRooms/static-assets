@@ -80,6 +80,7 @@
                      this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                      this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+                     this.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchOuterContainer', 'beforeEnd');
                  }
 
                  this.updateHTML('#thePassCodeAjax label', 'Promocode');

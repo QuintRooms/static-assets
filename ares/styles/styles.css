@@ -2484,9 +2484,9 @@ legend {
     display: none;
 }
 
-.RootBody #theSubmitButton:hover,
-.RootBody #theSubmitButton:active,
-.RootBody #theSubmitButton:focus {
+.RootBody #theOtherSubmitButton:hover,
+.RootBody #theOtherSubmitButton:active,
+.RootBody #theOtherSubmitButton:focus {
     background: transparent;
 }
 
@@ -2540,6 +2540,20 @@ legend {
         display: block;
         width: 100%;
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    .RootBody #AmentitiesContainer,
+    .RootBody #PropertyClassesContainer,
+    .RootBody #PropertyTypesContainer {
+        display: none;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        width: 100%;
+    }
+
 }
 
 /* Root Page End */

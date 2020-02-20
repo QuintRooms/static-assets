@@ -1025,8 +1025,8 @@
 
      createCurrencyDropDown() {
          let currencies;
+         let clicked_currency;
          let currencies_obj = {};
-         let clicked_currency = '';
          let selected_currency = '';
          let submit = document.querySelector('#theOtherSubmitButton');
          let currency_label = document.querySelector('#currency-label');
@@ -1068,8 +1068,9 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
+            console.log(e)
              clicked_currency = e.target.getAttribute('id');
-             
+             console.log(clicked_currency)
              if (active_currency) active_currency.classList.remove('active-currency');
 
              clicked_currency.classList.add('active-currency');

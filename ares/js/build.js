@@ -1067,10 +1067,14 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
-             console.log('currency clicked');
              clicked_currency = e.target.getAttribute('id');
+
+             document.querySelector('.active-currency').classList.remove('active-currency');
+             clicked_currency.classList.add('active-currency');
+
              currencies_select.value = clicked_currency;
-             if(document.querySelector('.SearchHotels')) submit.click();
+             
+             if (document.querySelector('.SearchHotels')) submit.click();
          });
 
          document.getElementById(selected_currency).classList.add('active-currency');

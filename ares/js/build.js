@@ -1037,7 +1037,7 @@
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
          if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
-        
+
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {
                  selected_currency = currency.value;
@@ -1066,14 +1066,8 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
-         window.addEventListener('click', (e) => {
-            if(e.target != currencies_container && document.querySelector('.show-currencies-container')){
-                currencies_container.classList.toggle('show-currencies-container');
-            }
-         });
-
          currencies_container.addEventListener('click', (e) => {
-            if(!e.target.getAttribute('id')) return;
+             if (!e.target.getAttribute('id')) return;
 
              clicked_currency = e.target.getAttribute('id');
              document.querySelector('.active-currency').classList.remove('active-currency');
@@ -1086,6 +1080,14 @@
          });
 
          document.getElementById(selected_currency).classList.add('active-currency');
+
+         window.addEventListener('click', (e) => {
+             console.log('window clicked')
+             if (e.target != currencies_container && document.querySelector('.show-currencies-container')) {
+                 console.log('window clicked inside conditional')
+                 currencies_container.classList.toggle('show-currencies-container');
+             }
+         });
      }
 
      setupDatePrompt() {

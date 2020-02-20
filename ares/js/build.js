@@ -1069,9 +1069,9 @@
 
          currencies_container.addEventListener('click', (e) => {
             if(!e.target.getAttribute('id')) return;
-            console.log(e)
+
              clicked_currency = e.target.getAttribute('id');
-             if (active_currency) active_currency.classList.remove('active-currency');
+             active_currency.classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');
 

@@ -1023,13 +1023,12 @@
          });
 
          window.addEventListener('click', (e) => {
-            console.log('window clicked')
              if (document.querySelector('.show-language-container')) {
                  if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) {
                      return;
                  }
 
-                 currencies_container.classList.toggle('show-language-container');
+                 language_container_el.classList.toggle('show-language-container');
              }
          });
      }

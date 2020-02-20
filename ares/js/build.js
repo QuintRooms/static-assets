@@ -1083,7 +1083,7 @@
 
          window.addEventListener('click', (e) => {
              console.log('window clicked')
-             if (e.target != currencies_container && document.querySelector('.show-currencies-container')) {
+             if (e.target != document.querySelector('.currencies-container') && document.querySelector('.show-currencies-container')) {
                  console.log('window clicked inside conditional')
                  currencies_container.classList.toggle('show-currencies-container');
              }

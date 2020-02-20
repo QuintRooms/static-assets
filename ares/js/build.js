@@ -1082,12 +1082,13 @@
          document.getElementById(selected_currency).classList.add('active-currency');
 
          window.addEventListener('click', (e) => {
-                 if (document.querySelector('.show-currencies-container') && e.target == document.querySelector('#currency-label') || e.target.parentNode == document.querySelector('.currencies') || e.target.parentNode == document.querySelector('.top-currencies')) {
+             if (document.querySelector('.show-currencies-container')) {
+                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode == document.querySelector('.currencies') || e.target.parentNode == document.querySelector('.top-currencies')) {
                      return;
                  }
 
                  currencies_container.classList.toggle('show-currencies-container');
-             
+             }
          });
      }
 

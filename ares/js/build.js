@@ -1073,7 +1073,7 @@
              console.log(clicked_currency)
              if (active_currency) active_currency.classList.remove('active-currency');
 
-             document.querySelector(clicked_currency).classList.add('active-currency');
+             document.getElementById(clicked_currency).classList.add('active-currency');
 
              currencies_select.value = clicked_currency;
 

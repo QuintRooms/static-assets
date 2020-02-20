@@ -1070,7 +1070,7 @@
              console.log('currency clicked');
              clicked_currency = e.target.getAttribute('id');
              currencies_select.value = clicked_currency;
-             submit.click();
+             if(document.querySelector('.SearchHotels')) submit.click();
          });
 
          document.getElementById(selected_currency).classList.add('active-currency');

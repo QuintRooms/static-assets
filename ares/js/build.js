@@ -1066,6 +1066,12 @@
              currency_label.querySelector('svg').classList.toggle('flip-svg');
          });
 
+         window.addEventListener('click', () => {
+            if(e.target != currencies_container){
+                currencies_container.classList.toggle('show-currencies-container');
+            }
+         });
+         
          currencies_container.addEventListener('click', (e) => {
             if(!e.target.getAttribute('id')) return;
 

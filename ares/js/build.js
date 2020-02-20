@@ -1031,7 +1031,6 @@
          let submit = document.querySelector('#theOtherSubmitButton');
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
-         let active_currency = document.querySelector('.active-currency');
          let config_container = document.querySelector('.config-container');
          let top_currencies_container = document.querySelector('.top-currencies');
          let currencies_select = document.querySelector('#CurrenciesContainer select');
@@ -1071,7 +1070,7 @@
             if(!e.target.getAttribute('id')) return;
 
              clicked_currency = e.target.getAttribute('id');
-             active_currency.classList.remove('active-currency');
+             document.querySelector('active-currency').classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');
 

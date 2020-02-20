@@ -24,6 +24,10 @@
                  }
 
                  if (this.site_config.site_type == 'cug') {
+                     if (document.querySelector('.MemberNotAuthenticated')) {
+                         this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                     }
+                     
                      this.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                          this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, '#AdminControlsContainer', 'afterBegin');
                      });
@@ -1145,7 +1149,7 @@
              average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-             if(!average_rate || !full_stay_rate) return;
+             if (!average_rate || !full_stay_rate) return;
 
              average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);

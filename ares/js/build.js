@@ -1085,10 +1085,10 @@
              console.log('window clicked')
              console.log(e)
              if (document.querySelector('.show-currencies-container')) {
-                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) {
+                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode('.currencies') || e.target.parentNode('.top-currencies')) {
                      return;
                  }
-                 
+
                  console.log('window clicked inside conditional')
                  currencies_container.classList.toggle('show-currencies-container');
              }

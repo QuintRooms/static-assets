@@ -14,6 +14,7 @@
                  this.setFontFromConfig();
                  this.setupDatePrompt();
                  this.showLanguageFromCongif();
+                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
@@ -27,7 +28,7 @@
                      if (document.querySelector('.MemberNotAuthenticated')) {
                          this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                      }
-                     
+
                      this.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                          this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, '#AdminControlsContainer', 'afterBegin');
                      });
@@ -95,7 +96,6 @@
                      }
                      this.createStarIcons();
                      this.openSortByDropdown();
-                     this.createCurrencyDropDown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
@@ -103,10 +103,6 @@
                      this.moveReviewsIntoPropNameContainer();
 
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
-                     // this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
 
                      this.movePropClassBelowPropName();
                      this.updateHTML('.ArnSearchHeader', 'Search');
@@ -742,26 +738,6 @@
                  prop_name.insertAdjacentElement('beforeEnd', prop_class);
              }
          });
-     }
-
-     moveSearchOptionLabelsOutsideOfWrapper(search_label) {
-         let label = document.querySelector(search_label);
-
-         if (!label) {
-             return;
-         }
-
-         label.classList.add('accordion');
-         let label_parent = label.parentNode;
-
-         if (label_parent) {
-             label_parent.insertAdjacentElement('beforeBegin', label)
-
-             label.addEventListener('click', function() {
-                 label_parent.classList.toggle('panel');
-                 label.querySelector('svg').classList.toggle('flip-svg');
-             });
-         }
      }
 
      createModal(array_of_elements_to_put_in_modal_body, modal_title, page_name, open_button_parent_selector, open_button_location) {

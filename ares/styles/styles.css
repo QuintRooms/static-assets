@@ -58,7 +58,6 @@ textarea {
 #theArnPushPage,
 .show-search-container,
 #CitiesNearbyContainer,
-#PropertyTypesContainer,
 #theRateDescription,
 .numberOfNights,
 .numberOfAdults,
@@ -1807,7 +1806,7 @@ legend {
 
 /* Accordion */
 
-.accordion {
+/*.accordion {
     transition: 0.4s;
     padding: 6px 0
 }
@@ -1856,7 +1855,7 @@ legend {
 .lblCurrency+.ArnSearchField select {
     position: relative;
     top: -15px;
-}
+}*/
 
 /* Pagination */
 .ArnPages a {

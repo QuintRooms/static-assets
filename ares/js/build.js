@@ -1007,8 +1007,8 @@
          let header = document.querySelector('#AdminControlsContainer');
          let language_container_el = document.querySelector('#language');
          let config_container = document.querySelector('.config-container');
-         console.log(!this.site_config, !language_container_el, !header, !config_container, !active_language_el, !document.querySelector('.RootBody'), !document.querySelector('.SearchHotels'))
-         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el || !document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) return;
+
+         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
          if (!this.site_config.show_language_select) return;
 
          active_language = active_language_el.getAttribute('content');
@@ -1036,8 +1036,8 @@
          let top_currencies_container = document.querySelector('.top-currencies');
          let currencies_select = document.querySelector('#CurrenciesContainer select');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
-         console.log(!currencies_node_list, !config_container, !currency_label, !top_currencies_container, !document.querySelector('.RootBody'), !document.querySelector('.SearchHotels'))
-         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) return;
+
+         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
         
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {

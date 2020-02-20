@@ -1031,6 +1031,7 @@
          let submit = document.querySelector('#theOtherSubmitButton');
          let currency_label = document.querySelector('#currency-label');
          let currencies_container = document.querySelector('.currencies');
+         let active_currency = document.querySelector('.active-currency');
          let config_container = document.querySelector('.config-container');
          let top_currencies_container = document.querySelector('.top-currencies');
          let currencies_select = document.querySelector('#CurrenciesContainer select');
@@ -1068,12 +1069,13 @@
 
          currencies_container.addEventListener('click', (e) => {
              clicked_currency = e.target.getAttribute('id');
+             
+             if (active_currency) active_currency.classList.remove('active-currency');
 
-             document.querySelector('.active-currency').classList.remove('active-currency');
              clicked_currency.classList.add('active-currency');
 
              currencies_select.value = clicked_currency;
-             
+
              if (document.querySelector('.SearchHotels')) submit.click();
          });
 

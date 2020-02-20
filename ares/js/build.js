@@ -1084,11 +1084,11 @@
          window.addEventListener('click', (e) => {
              console.log('window clicked')
              console.log(e)
-             if (!document.querySelector('.show-currencies-container')) {
-
+             if (document.querySelector('.show-currencies-container')) {
                  if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) {
                      return;
                  }
+                 
                  console.log('window clicked inside conditional')
                  currencies_container.classList.toggle('show-currencies-container');
              }

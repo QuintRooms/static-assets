@@ -1037,7 +1037,7 @@
          let currencies_select = document.querySelector('#CurrenciesContainer select');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !document.querySelector('.RootBody') || !document.querySelector('.SearchHotels')) return;
+         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container|| !document.querySelector('.RootBody') || !document.querySelector('.SearchHotels')) return;
         
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {

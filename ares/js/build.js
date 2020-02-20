@@ -1008,7 +1008,7 @@
          const language_container_el = document.querySelector('#language');
          const config_container = document.querySelector('.config-container');
 
-         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
+         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el || !document.querySelector('.RootBody' || !document.querySelector('.SearchHotels'))) return;
          if (!this.site_config.show_language_select) return;
 
          active_language = active_language_el.getAttribute('content');

@@ -1023,6 +1023,7 @@
          });
 
          window.addEventListener('click', (e) => {
+            console.log('window clicked')
              if (document.querySelector('.show-language-container')) {
                  if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) {
                      return;

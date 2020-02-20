@@ -1082,118 +1082,120 @@
          document.getElementById(selected_currency).classList.add('active-currency');
 
          window.addEventListener('click', (e) => {
-             console.log('window clicked')
-             console.log(e)
-             if (document.querySelector('.show-currencies-container')) {
-                if(e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) return;
-                 console.log('windoww clicked inside conditional')
+                 console.log('windsow clicked')
+                 console.log(e)
+
+                 if (!document.querySelector('.show-currencies-container') && e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label')) {
+                     return;
+                 }
+                 console.log('window clicked inside conditional')
                  currencies_container.classList.toggle('show-currencies-container');
              }
          });
+ }
+
+ setupDatePrompt() {
+     let date_prompt = document.querySelector('#theDatePrompt');
+
+     if (!date_prompt) {
+         return;
      }
 
-     setupDatePrompt() {
-         let date_prompt = document.querySelector('#theDatePrompt');
+     date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
+ }
 
-         if (!date_prompt) {
-             return;
-         }
+ highlightMapMarkersOnPropertyHover() {
+     let prop_container = document.querySelector('#currentPropertyPage');
+     let properties = document.querySelectorAll('.ArnContainer');
+     let prop_id_el;
+     let prop_id;
 
-         date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
+     if (!prop_container) {
+         return;
      }
-
-     highlightMapMarkersOnPropertyHover() {
-         let prop_container = document.querySelector('#currentPropertyPage');
-         let properties = document.querySelectorAll('.ArnContainer');
-         let prop_id_el;
-         let prop_id;
-
-         if (!prop_container) {
-             return;
-         }
-         properties.forEach((property) => {
-             property.addEventListener('mouseenter', (e) => {
-                 prop_id_el = property.parentElement.querySelector('.propId');
-                 if (!prop_id_el) {
-                     return;
-                 }
-                 prop_id = prop_id_el.textContent;
-                 ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
-             });
-
-             property.addEventListener('mouseleave', (e) => {
-                 ArnMapDispatcher.eventPropertyHighlightOff(prop_id)
-             });
-         });
-     }
-
-     showFullStayAndNightlyRates() {
-         let average_rate;
-         let full_stay_rate;
-         let nights = this.getTotalNights();
-         let properties = document.querySelectorAll('.ArnContainer');
-
-         if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
-             return;
-         }
-
-         properties.forEach((property) => {
-             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
-
-             if (!average_rate || !full_stay_rate) return;
-
-             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
-
-             if (nights == 1) {
-                 property.querySelector('.arnPrice').style.display = 'none';
+     properties.forEach((property) => {
+         property.addEventListener('mouseenter', (e) => {
+             prop_id_el = property.parentElement.querySelector('.propId');
+             if (!prop_id_el) {
+                 return;
              }
+             prop_id = prop_id_el.textContent;
+             ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
          });
-     }
 
-     getTotalNights() {
-         let nights;
-         let check_in;
-         let check_out;
-         const check_in_el = document.querySelector('meta[name="checkIn"]');
-         const check_out_el = document.querySelector('meta[name="checkOut"]');
-
-         if (!check_in_el || !check_out_el) return;
-
-         check_in = new Date(check_in_el.getAttribute('content'));
-         check_out = new Date(check_out_el.getAttribute('content'));
-         nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
-
-         return nights;
-     }
-
-     addTitleToProperties() {
-         let property_name;
-         let property_name_el;
-         let properties = document.querySelectorAll('.ArnContainer');
-
-         if (!document.querySelector('.SearchHotels')) return;
-
-         properties.forEach((property) => {
-             property_name_el = property.querySelector('.ArnPropNameLink');
-             property_name = property_name_el.querySelector('span').textContent;
-
-             property_name_el.setAttribute('title', property_name)
-
+         property.addEventListener('mouseleave', (e) => {
+             ArnMapDispatcher.eventPropertyHighlightOff(prop_id)
          });
+     });
+ }
+
+ showFullStayAndNightlyRates() {
+     let average_rate;
+     let full_stay_rate;
+     let nights = this.getTotalNights();
+     let properties = document.querySelectorAll('.ArnContainer');
+
+     if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
+         return;
      }
 
-     showLoaderOnResultsUpdate() {
-         let loader = document.querySelector('#searching');
-         let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+     properties.forEach((property) => {
+         average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+         full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-         if (!document.querySelector('.SearchHotels')) return;
+         if (!average_rate || !full_stay_rate) return;
 
-         update_buttons.forEach((button) => {
-             button.addEventListener('click', () => {
-                 loader.style.display = 'block';
-             });
+         average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+         full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+
+         if (nights == 1) {
+             property.querySelector('.arnPrice').style.display = 'none';
+         }
+     });
+ }
+
+ getTotalNights() {
+     let nights;
+     let check_in;
+     let check_out;
+     const check_in_el = document.querySelector('meta[name="checkIn"]');
+     const check_out_el = document.querySelector('meta[name="checkOut"]');
+
+     if (!check_in_el || !check_out_el) return;
+
+     check_in = new Date(check_in_el.getAttribute('content'));
+     check_out = new Date(check_out_el.getAttribute('content'));
+     nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
+
+     return nights;
+ }
+
+ addTitleToProperties() {
+     let property_name;
+     let property_name_el;
+     let properties = document.querySelectorAll('.ArnContainer');
+
+     if (!document.querySelector('.SearchHotels')) return;
+
+     properties.forEach((property) => {
+         property_name_el = property.querySelector('.ArnPropNameLink');
+         property_name = property_name_el.querySelector('span').textContent;
+
+         property_name_el.setAttribute('title', property_name)
+
+     });
+ }
+
+ showLoaderOnResultsUpdate() {
+     let loader = document.querySelector('#searching');
+     let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+
+     if (!document.querySelector('.SearchHotels')) return;
+
+     update_buttons.forEach((button) => {
+         button.addEventListener('click', () => {
+             loader.style.display = 'block';
          });
-     }
+     });
+ }
  }

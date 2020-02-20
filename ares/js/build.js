@@ -1021,6 +1021,16 @@
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
              language_label.querySelector('svg').classList.toggle('flip-svg');
          });
+
+         window.addEventListener('click', (e) => {
+             if (document.querySelector('.show-language-container')) {
+                 if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) {
+                     return;
+                 }
+
+                 currencies_container.classList.toggle('show-language-container');
+             }
+         });
      }
 
      createCurrencyDropDown() {

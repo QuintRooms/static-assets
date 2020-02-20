@@ -1085,7 +1085,7 @@
              console.log('window clicked')
              console.log(e)
              if (document.querySelector('.show-currencies-container')) {
-                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode('.currencies') || e.target.parentNode('.top-currencies')) {
+                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode != document.querySelector('.currencies') || e.target.parentNode != document.querySelector('.top-currencies')) {
                      return;
                  }
 

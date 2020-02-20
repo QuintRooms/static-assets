@@ -273,7 +273,7 @@ header {
     color: unset !important;
 }
 
-.top-currencies h4{
+.top-currencies h4 {
     padding: 0 8px;
     font-size: 14px;
     margin-bottom: 4px;
@@ -321,12 +321,13 @@ header {
     grid-row-start: 3;
 }
 
-.top-currencies + h4{
+.top-currencies+h4 {
     grid-column-start: 1;
     grid-column-end: 5;
     padding: 0 8px;
     margin-bottom: 4px;
 }
+
 /* Header End */
 
 /* Mobile Menu Start */
@@ -2498,6 +2499,20 @@ legend {
     margin-right: 6px;
     margin-bottom: 0;
     height: 37px !important;
+}
+
+.RootBody input[type="checkbox"] {
+    height: unset !important;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    color: #fff;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.RootBody .ArnAdvancedSearchImg {
+    display: none;
 }
 
 @media screen and (max-width: 920px) {

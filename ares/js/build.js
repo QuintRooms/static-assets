@@ -961,10 +961,6 @@
                     border:1px solid ${this.site_config.primary_color}
                 }
 
-                .ArnSearchField{
-                    border-bottom:1px solid ${this.site_config.primary_color}   
-                }
-
                 .holdRoom,
                 .ArnShowRatesLink:active,
                 .ArnShowRatesLink:focus,

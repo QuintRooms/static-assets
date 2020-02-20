@@ -1070,7 +1070,7 @@
             if(!e.target.getAttribute('id')) return;
 
              clicked_currency = e.target.getAttribute('id');
-             document.querySelector('active-currency').classList.remove('active-currency');
+             document.querySelector('.active-currency').classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');
 

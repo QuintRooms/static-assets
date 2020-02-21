@@ -816,7 +816,7 @@ div.autocomplete ul li.selected {
     transform: scale(.9);
 }
 
-.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
     display: flex !important;
     order: 1;
     position: absolute;
@@ -2599,8 +2599,7 @@ body.HoldRoomsForm {
 .arnMapPopup .next,
 .arnMapPopup .original,
 .arnMapPopup .discount,
-.arnMapPopup .rebate,
-.arnMapPopup .reviewCount {
+.arnMapPopup .rebate {
     display: none !important;
 }
 
@@ -2639,13 +2638,23 @@ body.HoldRoomsForm {
 
 .arnMapPopup h1 {
     color: #333;
-    font-size: 21px;
+    font-size: 14px;
     text-align: center;
     padding: 8px;
+    margin: 0;
 }
 
 .arnMapPopup a {
     color: #333;
+}
+
+.arnMapPopup .ArnTripAdvisorDetails.HasReviews {
+    text-align: center;
+}
+
+.arnMapPopup .ArnTripAdvisorDetails.HasReviews img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Map Popup End */

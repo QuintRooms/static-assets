@@ -685,7 +685,8 @@
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
-             this.setMapMarkerSize();
+             // this.setMapMarkerSize();
+             this.useLogoForVenueMapMarker();
              this.showFullStayAndNightlyRates()
              this.highlightMapMarkersOnPropertyHover();
          });
@@ -812,9 +813,7 @@
      }
 
      applyConfigColors() {
-         if (!this.site_config) {
-             return;
-         }
+         if (!this.site_config) return;
 
          document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
@@ -1208,13 +1207,14 @@
          });
      }
 
+     // map will need a redraw for this to work - will come back to this
      setMapMarkerSize() {
          let currency = '';
          let currency_el = document.querySelector('meta[name="currency"]');
          let map_markers = document.querySelectorAll('.arnMapMarker')
          console.log('setMapMarkerSize fired.')
          if (!currency_el || !map_markers) {
-            console.log('setMarkerSize return early')
+             console.log('setMarkerSize return early')
              return;
          }
          console.log('setMarkerSize after return early.')
@@ -1223,8 +1223,18 @@
          if (currency == 'USD') return;
 
          map_markers.forEach((marker) => {
-            console.log('inside foreach')
+             console.log('inside foreach')
              marker.style.width = '85px';
+         });
+     }
+
+     useLogoForVenueMapMarker() {
+         let map_markers = document.querySelectorAll('.arnMapMarker');
+
+         if (!this.site_config) return;
+
+         map_markers.forEach((marker) => {
+             marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
          });
      }
  }

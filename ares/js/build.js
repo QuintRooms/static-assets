@@ -1229,7 +1229,7 @@
      }
 
      useLogoForVenueMapMarker() {
-         let map_markers = document.querySelectorAll('.arnMapMarker');
+         let map_markers = document.querySelectorAll('.arn-green-marker-icon');
 
          if (!this.site_config) return;
 

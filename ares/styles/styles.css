@@ -2657,6 +2657,15 @@ body.HoldRoomsForm {
     margin: 0 auto;
 }
 
+.arn-green-marker-icon {
+    max-width: 50px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .75);
+    max-width: 50px !important;
+}
+
 /* Map Popup End */
 
 /* Hold Room Page Start */

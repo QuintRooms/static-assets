@@ -1212,16 +1212,18 @@
          let currency = '';
          let currency_el = document.querySelector('meta[name="currency"]');
          let map_markers = document.querySelectorAll('.arnMapMarker')
-
+         console.log('setMapMarkerSize fired.')
          if (!currency_el || !map_markers) {
+            console.log('setMarkerSize return early')
              return;
          }
-
+         console.log('setMarkerSize after return early.')
          currency = currency_el.getAttribute('content');
 
          if (currency == 'USD') return;
 
          map_markers.forEach((marker) => {
+            console.log('inside foreach')
              marker.style.width = '85px';
          });
      }

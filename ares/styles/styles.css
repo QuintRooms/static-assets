@@ -266,6 +266,7 @@ header {
     grid-column-start: 1;
     grid-column-end: 5;
     padding: 0 !important;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .top-currencies:hover {
@@ -277,6 +278,8 @@ header {
     padding: 0 8px;
     font-size: 14px;
     margin-bottom: 4px;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
 .top-currencies div:first-child {
@@ -285,60 +288,30 @@ header {
     grid-row-start: 1;
 }
 
-.top-currencies div:nth-child(2) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-}
-
-.top-currencies div:nth-child(3) {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-}
-
-.top-currencies div:nth-child(4) {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-}
-
-.top-currencies div:nth-child(5) {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-}
-
-.top-currencies div:nth-child(6) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-}
-
-.top-currencies div:nth-child(7) {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-}
-
 .top-currencies+h4 {
     grid-column-start: 1;
     grid-column-end: 5;
     padding: 0 8px;
     margin-bottom: 4px;
 }
-@media screen and (max-width: 800px){
-    .currencies-container{
+
+@media screen and (max-width: 1000px) {
+    .currencies-container {
         width: 100%;
         position: static;
     }
 
-    .currencies{
+    .currencies {
         top: 36px;
         width: 96%;
         margin: 0 2%;
     }
+
+    #currency-label {
+        margin-left: auto;
+    }
 }
+
 /* Header End */
 
 /* Mobile Menu Start */
@@ -378,7 +351,8 @@ header {
 @media screen and (max-width: 800px) {
 
     .logo img {
-        width: 125px;
+        width: 100%;
+        max-width: 125px;
     }
 
     .hamburger .line,
@@ -1571,7 +1545,6 @@ legend {
     flex-direction: row;
     margin-bottom: 18px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
-    border: 1px solid #ccc;
     position: relative;
     border-radius: 5px;
 }
@@ -2548,12 +2521,22 @@ body.HoldRoomsForm {
     flex-grow: 1;
 }
 
-#theWBLoginFormBody,
+.RootBody .ArnSearchContainerMainDiv,
+.WBResendOrCancelForm,
+.WBLoginFormContainer,
+.WBValidatedRegistrationFormContainer,
+.WBForgotPasswordFormContainer,
+.HoldRoomsForm .ArnSearchContainerMainDiv{
+    width: 100%;
+}
+
+ #theWBLoginFormBody,
 #theWBValidatedRegistrationFormBody,
 #theWBForgotPasswordFormBody {
-    margin-top: 10vh;
+    margin: 10vh auto 0 auto;
     padding: 18px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 #theWBLoginFormBody input[type="submit"],

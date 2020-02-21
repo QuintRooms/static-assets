@@ -77,7 +77,7 @@
 
                  // root page methods
                  if (document.querySelector('.RootBody')) {
-                    console.log('reaching?')
+                     console.log('reaching?')
                      this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                      this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
@@ -685,8 +685,9 @@
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
-             this.highlightMapMarkersOnPropertyHover();
+             this.setMapMarkerSize();
              this.showFullStayAndNightlyRates()
+             this.highlightMapMarkersOnPropertyHover();
          });
      }
 
@@ -1204,6 +1205,24 @@
              button.addEventListener('click', () => {
                  loader.style.display = 'block';
              });
+         });
+     }
+
+     setMapMarkerSize() {
+         let currency = '';
+         let currency_el = document.querySelector('meta[name="currency"]');
+         let map_markers = document.querySelectorAll('.arnMapMarker')
+
+         if (!currency_el || !map_markers) {
+             return;
+         }
+
+         currency = currency_el.getAttribute('content');
+
+         if (currency == 'USD') return;
+
+         map_markers.forEach((marker) => {
+             marker.style.width = '85px';
          });
      }
  }

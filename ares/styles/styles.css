@@ -2526,11 +2526,11 @@ body.HoldRoomsForm {
 .WBLoginFormContainer,
 .WBValidatedRegistrationFormContainer,
 .WBForgotPasswordFormContainer,
-.HoldRoomsForm .ArnSearchContainerMainDiv{
+.HoldRoomsForm .ArnSearchContainerMainDiv {
     width: 100%;
 }
 
- #theWBLoginFormBody,
+#theWBLoginFormBody,
 #theWBValidatedRegistrationFormBody,
 #theWBForgotPasswordFormBody {
     margin: 10vh auto 0 auto;
@@ -2724,3 +2724,41 @@ body.HoldRoomsForm {
 }
 
 /* Confirmation Page End */
+
+
+
+
+
+/* .SearchHotels .ArnContainer {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.SearchHotels .ArnPropName {
+    padding: 0 12px;
+}
+
+.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+    bottom: 8px;
+}
+
+.prop-hr {
+    margin: 42px 18px;
+    height: 1px;
+    border: none;
+    background: #ccc;
+}
+
+.ArnProperty {
+    margin-left: 18px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 5px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .75);
+}
+
+.SearchHotels .ArnShowRatesLink,
+.ratingCount {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .75);
+} */

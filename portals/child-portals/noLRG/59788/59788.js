@@ -40,4 +40,6 @@ function useLogoForVenueMapMarker() {
     });
 }
 
-useLogoForVenueMapMarker();
+jQuery('#theBody').on('arnMapLoadedEvent', () => {
+    useLogoForVenueMapMarker();
+});

@@ -29,3 +29,15 @@ function waitForElementToLoad(elementWaitingFor) {
 waitForElementToLoad('header');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/59788/59788.css">');
+
+function useLogoForVenueMapMarker() {
+    let map_markers = document.querySelectorAll('.arn-green-marker-icon');
+
+    if (!map_markers) return;
+
+    map_markers.forEach((marker) => {
+        marker.setAttribute('src', `https://static.hotelsforhope.com/portals/child-portals/noLRG/59788/images/logo.png`);
+    });
+}
+
+useLogoForVenueMapMarker();

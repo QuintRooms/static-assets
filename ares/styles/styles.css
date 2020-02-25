@@ -58,7 +58,6 @@ textarea {
 #theArnPushPage,
 .show-search-container,
 #CitiesNearbyContainer,
-#PropertyTypesContainer,
 #theRateDescription,
 .numberOfNights,
 .numberOfAdults,
@@ -68,7 +67,8 @@ textarea {
 #theHotelAddress,
 .ArnGoCitySearch,
 .ArnGoLandmarkSearch,
-.ArnGoAirportSearch {
+.ArnGoAirportSearch,
+.MemberNotAuthenticated .config-container {
     display: none;
 }
 
@@ -142,6 +142,176 @@ header {
     display: none;
 }
 
+.config-container {
+    background: #333;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+    position: relative;
+    z-index: 10;
+}
+
+.config-container #CurrenciesContainer {
+    margin-right: 24px;
+    position: relative;
+}
+
+.config-container .lblCurrency {
+    color: #fff;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField {
+    position: absolute;
+    right: 0;
+    overflow: unset !important;
+    padding: unset;
+    border-bottom: unset;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField select {
+    display: none;
+}
+
+.lblCurrency {
+    border-bottom: 1px solid #fff !important;
+    width: 226px;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField select.show-currency {
+    display: block;
+}
+
+#language {
+    position: relative;
+    width: 160px;
+    order: 1;
+}
+
+#language-label,
+#currency-label {
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+#currency-label {
+    width: 200px;
+}
+
+#language-label polyline,
+#currency-label polyline {
+    stroke: #fff;
+    transform: scale(.85);
+}
+
+#CurrenciesContainer {
+    display: none;
+}
+
+.language-container {
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 2px 50px 0 #000;
+    border-radius: 5px;
+}
+
+.show-language-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.currencies-container {
+    position: relative;
+    margin-right: 12px;
+    left: 0;
+}
+
+.currencies div {
+    cursor: pointer;
+    padding: 6px 8px;
+    transition: all .3s ease;
+    font-size: 13px;
+}
+
+.currencies {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    background: #fff;
+    grid-template-columns: 25% 25% 25% 25%;
+    box-shadow: 0 2px 50px 0 #000;
+    border-radius: 5px;
+    width: 800px;
+}
+
+.show-currencies-container {
+    display: grid;
+}
+
+.language-container div {
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 6px 8px;
+    transition: all .3s ease;
+}
+
+.top-currencies {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 0 !important;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.top-currencies:hover {
+    background: unset !important;
+    color: unset !important;
+}
+
+.top-currencies h4 {
+    padding: 0 8px;
+    font-size: 14px;
+    margin-bottom: 4px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.top-currencies div:first-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+}
+
+.top-currencies+h4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+@media screen and (max-width: 1000px) {
+    .currencies-container {
+        width: 100%;
+        position: static;
+    }
+
+    .currencies {
+        top: 36px;
+        width: 96%;
+        margin: 0 2%;
+    }
+
+    #currency-label {
+        margin-left: auto;
+    }
+}
+
 /* Header End */
 
 /* Mobile Menu Start */
@@ -181,7 +351,8 @@ header {
 @media screen and (max-width: 800px) {
 
     .logo img {
-        width: 125px;
+        width: 100%;
+        max-width: 125px;
     }
 
     .hamburger .line,
@@ -196,7 +367,7 @@ header {
         transition: all .5s ease;
         transform: translateY(-130px);
         width: 100%;
-        box-shadow: 0 1px 2px 0 #ccc;
+        box-shadow: 0 2px 12px 0 #000;
         position: absolute;
     }
 
@@ -272,25 +443,6 @@ header {
     display: none;
 }
 
-.ArnSortContainer {
-    margin-bottom: 18px;
-}
-
-.sort {
-    padding: 8px;
-    display: inline-block;
-    width: 200px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-    z-index: 7;
-    background: #fff;
-}
-
-.ArnSortBy {
-    width: 200px;
-}
-
 .arrow {
     transform: rotate(90deg);
     width: 14px;
@@ -301,64 +453,8 @@ header {
     transition: all .3s ease;
 }
 
-#sort-wrapper {
-    position: relative;
-}
-
-#sort-wrapper a {
-    width: 200px;
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 9px;
-    background: #fff;
-    border-radius: 5px;
-    margin: 6px 0;
-    position: absolute;
-    z-index: 6;
-    top: -44px;
-    transition: all .4s ease;
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.50);
-}
-
-#sort-wrapper a:hover,
-#sort-wrapper a:focus,
-#sort-wrapper a:active,
-#sort-wrapper.sort-open .active {
-    background: #faaf18;
-    color: #333;
-}
-
-.sort-open {
-    display: block !important;
-    position: absolute;
-    width: 204px;
-}
-
-.sort-open a:first-child {
-    transform: translateY(42px) !important;
-}
-
-.sort-open a:nth-child(2) {
-    transform: translateY(calc(42px * 2)) !important;
-}
-
-.sort-open a:nth-child(3) {
-    transform: translateY(calc(42px * 3)) !important;
-}
-
-.sort-open a:nth-child(4) {
-    transform: translateY(calc(42px * 4 + 6px)) !important;
-}
-
-.sort-open a:nth-child(5) {
-    transform: translateY(calc(42px * 5 + 12px)) !important;
-}
-
-.sort svg {
-    width: 14px;
-    position: relative;
-    top: 2px;
+.ArnSortBy {
+    display: none;
 }
 
 /* Sort Container End*/
@@ -720,7 +816,7 @@ div.autocomplete ul li.selected {
     transform: scale(.9);
 }
 
-.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
     display: flex !important;
     order: 1;
     position: absolute;
@@ -1157,7 +1253,7 @@ legend {
     background: #fff;
     padding: 12px;
     z-index: 1;
-    box-shadow: 0 0 2px 2px #ccc;
+    box-shadow: 0 2px 50px 0 #000;
     font-size: 12px;
 }
 
@@ -1448,8 +1544,7 @@ legend {
     display: flex;
     flex-direction: row;
     margin-bottom: 18px;
-    box-shadow: 0px 1px 2px #ccc;
-    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
     position: relative;
     border-radius: 5px;
 }
@@ -1692,59 +1787,6 @@ legend {
 
 .PropertyLinks ul li {
     display: inline;
-}
-
-/* Accordion */
-
-.accordion {
-    transition: 0.4s;
-    padding: 6px 0
-}
-
-.ArnSearchField {
-    padding: 0 6px;
-    max-height: 0;
-    overflow: hidden !important;
-    transition: all 0.2s ease-in-out;
-}
-
-.lblAmenities+.panel {
-    padding: 115px 0;
-}
-
-.lblPropertyType+.panel {
-    padding: 90px 0 120px 0;
-}
-
-.lblNearbyCities+.panel,
-.lblCurrency+.panel {
-    padding: 20px 0 36px 0;
-}
-
-.lblRating+.panel {
-    padding: 65px 0;
-}
-
-.lblRating+.ArnSearchField div {
-    position: relative;
-    top: -65px;
-}
-
-.lblAmenities+.ArnSearchField div,
-.lblPropertyType+.ArnSearchField div {
-    position: relative;
-    top: -112px;
-}
-
-.lblPropertyType+.ArnSearchField div {
-    position: relative;
-    top: -90px;
-}
-
-.lblNearbyCities+.ArnSearchField select,
-.lblCurrency+.ArnSearchField select {
-    position: relative;
-    top: -15px;
 }
 
 /* Pagination */
@@ -2276,7 +2318,7 @@ legend {
         margin: 0 auto 8px auto;
         display: block;
         border: 4px solid #fff;
-        box-shadow: 0 0 2px 2px #e5e5e5;
+        box-shadow: 0 2px 50px 0 #000;
         max-width: 300px;
     }
 
@@ -2331,7 +2373,6 @@ legend {
 
 /* Root Page Start */
 .RootBody .ArnNoResults,
-.RootBody .ArnSecondarySearchOuterContainer,
 .RootBody .ArnRightListContainer,
 .RootBody #HotelNameContainer,
 .RootBody .ArnSearchHeader {
@@ -2358,7 +2399,6 @@ legend {
 }
 
 .RootBody .ArnPrimarySearchContainer {
-    display: flex;
     align-items: center;
     background: rgba(0, 0, 0, .6);
     border: none;
@@ -2372,15 +2412,12 @@ legend {
 }
 
 .RootBody #theSubmitButton {
-    border-radius: 5px;
-    padding: 9px 18px;
-    margin-top: 19px;
-    transition: all .4s ease;
+    display: none;
 }
 
-.RootBody #theSubmitButton:hover,
-.RootBody #theSubmitButton:active,
-.RootBody #theSubmitButton:focus {
+.RootBody #theOtherSubmitButton:hover,
+.RootBody #theOtherSubmitButton:active,
+.RootBody #theOtherSubmitButton:focus {
     background: transparent;
 }
 
@@ -2389,6 +2426,20 @@ legend {
     margin-right: 6px;
     margin-bottom: 0;
     height: 37px !important;
+}
+
+.RootBody input[type="checkbox"] {
+    height: unset !important;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    color: #fff;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.RootBody .ArnAdvancedSearchImg {
+    display: none;
 }
 
 @media screen and (max-width: 920px) {
@@ -2420,6 +2471,20 @@ legend {
         display: block;
         width: 100%;
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    .RootBody #AmentitiesContainer,
+    .RootBody #PropertyClassesContainer,
+    .RootBody #PropertyTypesContainer {
+        display: none;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        width: 100%;
+    }
+
 }
 
 /* Root Page End */
@@ -2456,12 +2521,22 @@ body.HoldRoomsForm {
     flex-grow: 1;
 }
 
+.RootBody .ArnSearchContainerMainDiv,
+.WBResendOrCancelForm,
+.WBLoginFormContainer,
+.WBValidatedRegistrationFormContainer,
+.WBForgotPasswordFormContainer,
+.HoldRoomsForm .ArnSearchContainerMainDiv {
+    width: 100%;
+}
+
 #theWBLoginFormBody,
 #theWBValidatedRegistrationFormBody,
 #theWBForgotPasswordFormBody {
-    margin-top: 10vh;
+    margin: 10vh auto 0 auto;
     padding: 18px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 #theWBLoginFormBody input[type="submit"],
@@ -2524,8 +2599,7 @@ body.HoldRoomsForm {
 .arnMapPopup .next,
 .arnMapPopup .original,
 .arnMapPopup .discount,
-.arnMapPopup .rebate,
-.arnMapPopup .reviewCount {
+.arnMapPopup .rebate {
     display: none !important;
 }
 
@@ -2564,13 +2638,32 @@ body.HoldRoomsForm {
 
 .arnMapPopup h1 {
     color: #333;
-    font-size: 21px;
+    font-size: 14px;
     text-align: center;
     padding: 8px;
+    margin: 0;
 }
 
 .arnMapPopup a {
     color: #333;
+}
+
+.arnMapPopup .ArnTripAdvisorDetails.HasReviews {
+    text-align: center;
+}
+
+.arnMapPopup .ArnTripAdvisorDetails.HasReviews img {
+    display: block;
+    margin: 0 auto;
+}
+
+.arn-green-marker-icon {
+    max-width: 50px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 100%;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .75);
+    max-width: 50px !important;
 }
 
 /* Map Popup End */
@@ -2649,3 +2742,41 @@ body.HoldRoomsForm {
 }
 
 /* Confirmation Page End */
+
+
+
+
+
+/* .SearchHotels .ArnContainer {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.SearchHotels .ArnPropName {
+    padding: 0 12px;
+}
+
+.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+    bottom: 8px;
+}
+
+.prop-hr {
+    margin: 42px 18px;
+    height: 1px;
+    border: none;
+    background: #ccc;
+}
+
+.ArnProperty {
+    margin-left: 18px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 5px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .75);
+}
+
+.SearchHotels .ArnShowRatesLink,
+.ratingCount {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .75);
+} */

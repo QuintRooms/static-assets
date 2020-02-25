@@ -1,4 +1,3 @@
- // <script type="module" async src="https://dev-static.hotelsforhope.com/ares/js/site_configs/39624/39624.js"></script>
  export default class BasePortal {
 
      site_id;
@@ -14,16 +13,22 @@
                  this.applyConfigColors();
                  this.setFontFromConfig();
                  this.setupDatePrompt();
+                 this.showLanguageFromCongif();
+                 this.createCurrencyDropDown();
 
                  // all pages
                  this.buildMobileMenu();
                  this.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
                  if (this.site_config.site_type != 'cug') {
-                     this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                     this.createHTML(`<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                  }
 
                  if (this.site_config.site_type == 'cug') {
+                     if (document.querySelector('.MemberNotAuthenticated')) {
+                         this.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                     }
+
                      this.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                          this.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, '#AdminControlsContainer', 'afterBegin');
                      });
@@ -71,10 +76,12 @@
                  }
 
                  // root page methods
-                 if (this.page_name == 'landing-page') {
+                 if (document.querySelector('.RootBody')) {
+                     console.log('reaching?')
                      this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                      this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+                     this.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
                  }
 
                  this.updateHTML('#thePassCodeAjax label', 'Promocode');
@@ -86,10 +93,9 @@
                  this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                     if (!this.page_name == 'search-results') {
+                     if (!document.querySelector('.SearchHotels')) {
                          return;
                      }
-                     console.log('waitForSelectorInDom fired.');
                      this.createStarIcons();
                      this.openSortByDropdown();
                      // this.addTitleToProperties();
@@ -99,27 +105,24 @@
                      this.moveReviewsIntoPropNameContainer();
 
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblNearbyCities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblAmenities');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblRating');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblPropertyType');
-                     this.moveSearchOptionLabelsOutsideOfWrapper('.lblCurrency');
 
-                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
-                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
-                     this.updateHTML('#CitySearchContainer > span', 'Where:');
+                     this.movePropClassBelowPropName();
                      this.updateHTML('.ArnSearchHeader', 'Search');
+                     this.updateHTML('#ShowHotelOnMap', 'Open Map');
+                     this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                     this.updateHTML('#CitySearchContainer > span', 'Where:');
+                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
+                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
+                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
+                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
+                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-                     this.movePropClassBelowPropName();
+
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
+                         this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                      });
                  });
              });
@@ -682,8 +685,10 @@
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
-             this.highlightMapMarkersOnPropertyHover();
+             // this.setMapMarkerSize();
+             this.useLogoForVenueMapMarker();
              this.showFullStayAndNightlyRates()
+             this.highlightMapMarkersOnPropertyHover();
          });
      }
 
@@ -737,26 +742,6 @@
                  prop_name.insertAdjacentElement('beforeEnd', prop_class);
              }
          });
-     }
-
-     moveSearchOptionLabelsOutsideOfWrapper(search_label) {
-         let label = document.querySelector(search_label);
-
-         if (!label) {
-             return;
-         }
-
-         label.classList.add('accordion');
-         let label_parent = label.parentNode;
-
-         if (label_parent) {
-             label_parent.insertAdjacentElement('beforeBegin', label)
-
-             label.addEventListener('click', function() {
-                 label_parent.classList.toggle('panel');
-                 label.querySelector('svg').classList.toggle('flip-svg');
-             });
-         }
      }
 
      createModal(array_of_elements_to_put_in_modal_body, modal_title, page_name, open_button_parent_selector, open_button_location) {
@@ -828,9 +813,7 @@
      }
 
      applyConfigColors() {
-         if (!this.site_config) {
-             return;
-         }
+         if (!this.site_config) return;
 
          document.querySelector('body').insertAdjacentHTML('beforeEnd', `
             <style>
@@ -844,7 +827,7 @@
                 .ArnShowRatesLink,
                 .ArnTripAdvisorDetails.HasReviews .ratingCount,
                 .CreateAnAccountAction,
-                .RootBody #theSubmitButton,
+                .RootBody #theOtherSubmitButton,
                 .SimpleSearch,
                 .WBForgotPasswordFormActions .submit,
                 .WBLoginFormActions .submit,
@@ -855,7 +838,11 @@
                 .bookRoom,
                 .HoldRoomsForm .submit,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
-                .yui3-skin-sam .yui3-calendar-day:hover {
+                .yui3-skin-sam .yui3-calendar-day:hover,
+                .language-container div:hover,
+                .currencies div:hover,
+                .active-currency,
+                .active-language {
                     background:${this.site_config.primary_color}
                 }
 
@@ -895,7 +882,7 @@
                 .ArnTripAdvisorDetails.HasReviews .ratingCount,
                 .SinglePropDetail .CheckRates .submit,
                 .CreateAnAccountAction,
-                .RootBody #theSubmitButton,
+                .RootBody #theOtherSubmitButton,
                 .SearchHotels #theSubmitButton,
                 .SimpleSearch,
                 .WBForgotPasswordFormActions .submit,
@@ -903,7 +890,11 @@
                 .WBValidatedRegistrationFormActions .submit,
                 .arnMapPopup .rate,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
-                .bookRoom {
+                .bookRoom,
+                .language-container div:hover,
+                .currencies div:hover,
+                .active-language,
+                .active-currency {
                     color:${this.site_config.primary_text_color}
                 }
 
@@ -933,9 +924,9 @@
                 .reviewCount a,
                 #theAdditionalEmailsLink a,
                 #theOtherSubmitButton,
-                .RootBody #theSubmitButton:active,
-                .RootBody #theSubmitButton:focus,
-                .RootBody #theSubmitButton:hover,
+                .RootBody #theOtherSubmitButton:active,
+                .RootBody #theOtherSubmitButton:focus,
+                .RootBody #theOtherSubmitButton:hover,
                 .SearchHotels #theSubmitButton:active,
                 .SearchHotels #theSubmitButton:focus,
                 .SearchHotels #theSubmitButton:hover,
@@ -965,15 +956,11 @@
                 #theOtherSubmitButton,
                 .ArnSecondarySearchOuterContainer select,
                 .ArnShowRatesLink,
-                .RootBody #theSubmitButton,
+                .RootBody #theOtherSubmitButton,
                 .bookRoom,
                 .sort,
                 .HoldRoomsForm .submit {
                     border:1px solid ${this.site_config.primary_color}
-                }
-
-                .ArnSearchField {
-                    border-bottom:1px solid ${this.site_config.primary_color}   
                 }
 
                 .holdRoom,
@@ -1009,6 +996,110 @@
          this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
          document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+     }
+
+     showLanguageFromCongif() {
+         let language_label;
+         let active_language;
+         let active_language_el = document.querySelector('meta[name="theme"]');
+         let header = document.querySelector('#AdminControlsContainer');
+         let language_container_el = document.querySelector('#language');
+         let config_container = document.querySelector('.config-container');
+
+         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
+         if (!this.site_config.show_language_select) return;
+
+         active_language = active_language_el.getAttribute('content');
+         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
+         header.insertAdjacentElement('beforeBegin', config_container);
+         config_container.insertAdjacentElement('afterBegin', language_container_el);
+         language_label = language_container_el.querySelector('#language-label');
+
+         language_label.addEventListener('click', () => {
+             language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
+             language_label.querySelector('svg').classList.toggle('flip-svg');
+         });
+
+         window.addEventListener('click', (e) => {
+             if (document.querySelector('.show-language-container')) {
+                 if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) {
+                     return;
+                 }
+
+                 document.querySelector('.language-container').classList.toggle('show-language-container');
+                 language_label.querySelector('svg').classList.toggle('flip-svg');
+             }
+         });
+     }
+
+     createCurrencyDropDown() {
+         let currencies;
+         let clicked_currency;
+         let currencies_obj = {};
+         let selected_currency = '';
+         let submit = document.querySelector('#theOtherSubmitButton');
+         let currency_label = document.querySelector('#currency-label');
+         let currencies_container = document.querySelector('.currencies');
+         let config_container = document.querySelector('.config-container');
+         let top_currencies_container = document.querySelector('.top-currencies');
+         let currencies_select = document.querySelector('#CurrenciesContainer select');
+         let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+
+         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
+
+         currencies_node_list.forEach((currency) => {
+             if (currency.getAttribute('selected')) {
+                 selected_currency = currency.value;
+             }
+
+             currencies_obj[currency.label] = currency.value;
+         });
+
+         currencies = Object.entries(currencies_obj);
+
+         currencies.forEach((currency) => {
+             if (currency[0] == 'United States Dollars' ||
+                 currency[0] == 'Euro' ||
+                 currency[0] == 'United Kingdom Pounds' ||
+                 currency[0] == 'Mexico Pesos' ||
+                 currency[0] == 'Canada Dollars' ||
+                 currency[0] == 'Australia Dollars') {
+                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+             }
+
+             currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+         });
+
+         currency_label.addEventListener('click', () => {
+             currencies_container.classList.toggle('show-currencies-container');
+             currency_label.querySelector('svg').classList.toggle('flip-svg');
+         });
+
+         currencies_container.addEventListener('click', (e) => {
+             if (!e.target.getAttribute('id')) return;
+
+             clicked_currency = e.target.getAttribute('id');
+             document.querySelector('.active-currency').classList.remove('active-currency');
+
+             document.getElementById(clicked_currency).classList.add('active-currency');
+
+             currencies_select.value = clicked_currency;
+
+             if (document.querySelector('.SearchHotels')) submit.click();
+         });
+
+         document.getElementById(selected_currency).classList.add('active-currency');
+
+         window.addEventListener('click', (e) => {
+             if (document.querySelector('.show-currencies-container')) {
+                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode == document.querySelector('.currencies') || e.target.parentNode == document.querySelector('.top-currencies')) {
+                     return;
+                 }
+
+                 currencies_container.classList.toggle('show-currencies-container');
+                 currency_label.querySelector('svg').classList.toggle('flip-svg');
+             }
+         });
      }
 
      setupDatePrompt() {
@@ -1057,8 +1148,10 @@
          }
 
          properties.forEach((property) => {
-             average_rate = property.querySelector('.averageNightly');
+             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
              full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+
+             if (!average_rate || !full_stay_rate) return;
 
              average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
              full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
@@ -1111,6 +1204,37 @@
              button.addEventListener('click', () => {
                  loader.style.display = 'block';
              });
+         });
+     }
+
+     // map will need a redraw for this to work - will come back to this
+     setMapMarkerSize() {
+         let currency = '';
+         let currency_el = document.querySelector('meta[name="currency"]');
+         let map_markers = document.querySelectorAll('.arnMapMarker')
+         console.log('setMapMarkerSize fired.')
+         if (!currency_el || !map_markers) {
+             console.log('setMarkerSize return early')
+             return;
+         }
+         console.log('setMarkerSize after return early.')
+         currency = currency_el.getAttribute('content');
+
+         if (currency == 'USD') return;
+
+         map_markers.forEach((marker) => {
+             console.log('inside foreach')
+             marker.style.width = '85px';
+         });
+     }
+
+     useLogoForVenueMapMarker() {
+         let map_markers = document.querySelectorAll('.arn-green-marker-icon');
+
+         if (!this.site_config) return;
+
+         map_markers.forEach((marker) => {
+             marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
          });
      }
  }

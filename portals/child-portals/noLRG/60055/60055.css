@@ -26,11 +26,11 @@ body {
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/banner.jpg) no-repeat center center /cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/banner.png) no-repeat center center /cover !important;
 }
 
 header {
-    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/header-bg.jpg');
+    background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/header-bg.png');
     border-bottom: 3px solid #3a314d;
     display: flex;
     align-items: center;

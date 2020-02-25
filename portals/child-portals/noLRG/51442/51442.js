@@ -37,8 +37,6 @@ function waitForElementToLoad(elementWaitingFor) {
 waitForElementToLoad('header');
 
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
-
-noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + noLRGPortal.site_id + '&theme=standard', 'href');
 
 function insertLRGAssets() {
@@ -65,4 +63,4 @@ function insertLRGAssets() {
 
 insertLRGAssets();
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/51442.css">');

@@ -25,13 +25,15 @@ body {
     color: #15151E;
 }
 
-.RootBody .ArnSearchContainerMainDiv  {
+.RootBody .ArnSearchContainerMainDiv {
     background: url(https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/banner.png) no-repeat bottom center /cover !important;
 }
+
 .RootBody .reserveHotel,
-.RootBody .modifySearch{
+.RootBody .modifySearch {
     color: #333;
 }
+
 header {
     background: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/header-bg.png');
     border-bottom: 3px solid #3a314d;
@@ -249,6 +251,14 @@ header a {
 }
 
 @media only screen and (min-width: 800px) {
+    #SortControls {
+        top: 45px;
+    }
+
+    .ArnSortByClass, .ArnSortByClass:hover, .ArnSortByDealAmount, .ArnSortByDealAmount:hover, .ArnSortByDealPercent, .ArnSortByDealPercent:hover, .ArnSortByDistance, .ArnSortByDistance:hover, .ArnSortByPrice, .ArnSortByPrice:hover, .ArnSortByType, .ArnSortByType:hover, .ArnSortByVacationRental, .ArnSortByVacationRental:hover{
+        width: 215px;
+    }
+
 
     .ArnSortByName:hover,
     .ArnSortByClass:hover,

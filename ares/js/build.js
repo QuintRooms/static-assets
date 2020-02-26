@@ -119,12 +119,12 @@
                      this.updateHTML('.lblPropertyType', 'Property Type');
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                     this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
                          this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
+                         this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      });
                  });
              });
@@ -551,7 +551,6 @@
      }
 
      async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-         console.log('moveOrphanedElementsIntoNewWrapper() fired.');
          return await new Promise(resolve => {
              if (document.querySelector(adjacent_element_class)) {
                  document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
@@ -1258,7 +1257,7 @@
      addHRToProperties() {
          let props = document.querySelectorAll('.ArnProperty');
 
-         if(!props) return;
+         if (!props) return;
 
          props.forEach((prop) => {
              prop.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');

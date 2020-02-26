@@ -44,16 +44,21 @@
 
                  // single prop detail methods
                  if (this.page_name == 'property-detail') {
-                     this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                     this.updateHTML('.SinglePropDetail .Details a', 'General Info');
+                     this.createImageSlider();
+                     this.updateRoomDescription();
+                     this.updatePropReviewsURLToUseAnchor();
+                     
+                     this.getTotalNights().then((nights) => {
+                         this.showFullStayAndNightlyRates(nights);
+                     });
+
                      this.updateHTML('.SinglePropDetail .Map a', 'Map');
                      this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
+                     this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                     this.updateHTML('.SinglePropDetail .Details a', 'General Info');
                      this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-                     this.updatePropReviewsURLToUseAnchor();
-                     this.updateRoomDescription();
-                     this.createImageSlider();
-                     this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                      this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                     this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                  }
 
                  // checkout page methods

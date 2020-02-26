@@ -463,7 +463,7 @@ header {
 
 #sort-wrapper a {
     color: #333;
-    padding: 4px 0;
+    padding: 4px;
     text-decoration: none;
     transition: all .4s ease;
 }
@@ -1462,7 +1462,6 @@ legend {
 .lblRateTypes,
 .lblRating,
 .lblSortByPrice {
-    cursor: pointer;
     font-weight: 600;
     margin-top: 12px;
     margin-bottom: 4px;
@@ -1486,6 +1485,7 @@ legend {
     font-size: 13px;
     position: relative;
     top: -4px;
+    cursor: pointer;
 }
 
 .ArnSecondarySearchOuterContainer select {
@@ -1510,7 +1510,8 @@ legend {
 
 .ArnSortByDealAmount,
 .ArnSortByPrice,
-.ArnSortByDealPercent {
+.ArnSortByDealPercent,
+.ArnSortByClass {
     display: block !important;
 }
 

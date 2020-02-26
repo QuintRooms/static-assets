@@ -688,7 +688,9 @@
              this.toggleMap();
              // this.setMapMarkerSize();
              this.useLogoForVenueMapMarker();
-             this.showFullStayAndNightlyRates()
+             this.getTotalNights().then((nights) => {
+                this.showFullStayAndNightlyRates(nights);
+             });
              this.highlightMapMarkersOnPropertyHover();
          });
      }
@@ -1142,10 +1144,9 @@
          });
      }
 
-     showFullStayAndNightlyRates() {
+     showFullStayAndNightlyRates(nights) {
          let average_rate;
          let full_stay_rate;
-         let nights = this.getTotalNights();
          let properties = document.querySelectorAll('.ArnContainer');
 
          if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
@@ -1167,7 +1168,7 @@
          });
      }
 
-     getTotalNights() {
+     async getTotalNights() {
          let nights;
          let check_in;
          let check_out;

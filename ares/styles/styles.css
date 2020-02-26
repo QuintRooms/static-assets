@@ -457,6 +457,25 @@ header {
     display: none;
 }
 
+#sort-wrapper h4 {
+    margin-bottom: 4px;
+}
+
+#sort-wrapper a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sort-wrapper div {
+    padding: 4px 0;
+    font-size: 13px;
+
+}
+
+.ArnSortByType {
+    display: none;
+}
+
 /* Sort Container End*/
 /* Search Container Start */
 #searching {
@@ -892,30 +911,6 @@ div.autocomplete ul li.selected {
 
     .ArnSortBy {
         width: 125px;
-    }
-
-    #sort-wrapper a {
-        width: 125px;
-    }
-
-    #sort-wrapper a:first-child {
-        width: 123px;
-    }
-
-    #sort-wrapper a:nth-child(2) {
-        width: 121px;
-    }
-
-    #sort-wrapper a:nth-child(3) {
-        width: 119px;
-    }
-
-    #sort-wrapper a:nth-child(4) {
-        width: 117px;
-    }
-
-    #sort-wrapper a:last-child {
-        width: 115px;
     }
 }
 
@@ -1467,6 +1462,13 @@ legend {
 .lblRating,
 .lblSortByPrice {
     cursor: pointer;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+#PropertyTypesContainer {
+    display: none;
 }
 
 .ArnSearchField {
@@ -1491,8 +1493,8 @@ legend {
 }
 
 .ArnSecondarySearchOuterContainer input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
 }
 
 #theOtherSubmitButton {

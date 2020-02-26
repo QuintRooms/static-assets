@@ -107,6 +107,7 @@
                      this.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
 
                      this.movePropClassBelowPropName();
+                     this.activateCheckboxByClickingOnAssociatedLabel();
                      this.updateHTML('.ArnSearchHeader', 'Search');
                      this.updateHTML('#ShowHotelOnMap', 'Open Map');
                      this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
@@ -118,7 +119,7 @@
                      this.updateHTML('.lblPropertyType', 'Property Type');
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                     this.createHTML('<h4>Sort</h4>', '.SearchHotels .ArnSecondarySearchOuterContainer', 'afterBegin')
+                     this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
@@ -1236,6 +1237,21 @@
 
          map_markers.forEach((marker) => {
              marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
+         });
+     }
+
+     activateCheckboxByClickingOnAssociatedLabel() {
+         let checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
+
+         if (!checkbox_wrappers) return;
+
+         checkbox_wrappers.forEach((wrapper) => {
+             if (!wrapper.querySelector('input[type="checkbox"]')) return;
+
+             wrapper.querySelector('span').addEventListener('click', (e) => {
+                wrapper.querySelector('input[type="checkbox"]').click();
+
+             });
          });
      }
  }

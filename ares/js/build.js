@@ -1159,10 +1159,10 @@
          let full_stay_rate;
          console.log('showFullStayAndNightlyRates fired.');
 
-         if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) {
-             return;
-         }
+         if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) return;
+         console.log('showFullStay after first conditional')
          if (page === 'search-hotels') {
+         console.log('showFullStay after second conditional')
              let properties = document.querySelectorAll('.ArnContainer');
              properties.forEach((property) => {
                  average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');

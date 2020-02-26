@@ -39,12 +39,35 @@ header {
     border-bottom: 3px solid #3a314d;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 6px 12px;
 }
 
 header a {
     color: #444;
+}
+
+.stay22 {
+    text-align: center;
+    background: #3a314d;
+    padding: 12px 18px;
+    color: #fff;
+    transition: all .4s ease;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .4);
+    border-radius: 5px;
+}
+
+.stay22:hover,
+.stay22:active,
+.stay22:focus {
+    background: #8a7494;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px){
+    header{
+        flex-direction: column;
+    }
 }
 
 #language {
@@ -53,7 +76,19 @@ header a {
 
 .logo img {
     max-width: 225px;
+    width: 100%;
     margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .logo img {
+        max-width: 150px;
+        margin-right: 12px;
+    }
+
+    header a {
+        font-size: 13px;
+    }
 }
 
 .SearchHotels .ArnPropName a {
@@ -255,7 +290,20 @@ header a {
         top: 45px;
     }
 
-    .ArnSortByClass, .ArnSortByClass:hover, .ArnSortByDealAmount, .ArnSortByDealAmount:hover, .ArnSortByDealPercent, .ArnSortByDealPercent:hover, .ArnSortByDistance, .ArnSortByDistance:hover, .ArnSortByPrice, .ArnSortByPrice:hover, .ArnSortByType, .ArnSortByType:hover, .ArnSortByVacationRental, .ArnSortByVacationRental:hover{
+    .ArnSortByClass,
+    .ArnSortByClass:hover,
+    .ArnSortByDealAmount,
+    .ArnSortByDealAmount:hover,
+    .ArnSortByDealPercent,
+    .ArnSortByDealPercent:hover,
+    .ArnSortByDistance,
+    .ArnSortByDistance:hover,
+    .ArnSortByPrice,
+    .ArnSortByPrice:hover,
+    .ArnSortByType,
+    .ArnSortByType:hover,
+    .ArnSortByVacationRental,
+    .ArnSortByVacationRental:hover {
         width: 215px;
     }
 
@@ -320,4 +368,15 @@ header a {
         max-width: 300px;
         margin-bottom: 36px;
     }
+}
+
+/* Logo Map Marker */
+.arn-green-marker-icon {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    object-fit: contain;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .3);
+    background: #fff;
+    border-radius: 100%;
 }

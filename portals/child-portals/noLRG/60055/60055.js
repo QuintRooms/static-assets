@@ -20,6 +20,9 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://adayinthevines.com/', 'href');
+
+                document.querySelector('header').insertAdjacentHTML('beforeEnd', '<a class="stay22" target="_blank" href="https://www.stay22.com/embed/a-day-in-the-vines?hidebrandlogo=true&zoom=10">Find your Airbnb rental</a>');
+
                 observer.disconnect();
             }
         }
@@ -33,3 +36,17 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');
+
+function useLogoForVenueMapMarker() {
+    let map_markers = document.querySelectorAll('.arn-green-marker-icon');
+
+    if (!map_markers) return;
+
+    map_markers.forEach((marker) => {
+        marker.setAttribute('src', `https://static.hotelsforhope.com/portals/child-portals/noLRG/60055/images/favicon.png`);
+    });
+}
+
+jQuery('#theBody').on('arnMapLoadedEvent', () => {
+    useLogoForVenueMapMarker();
+});

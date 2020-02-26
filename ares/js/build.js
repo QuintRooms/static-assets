@@ -93,9 +93,9 @@
                  this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                     if (!document.querySelector('.SearchHotels')) {
-                         return;
-                     }
+                     if (!document.querySelector('.SearchHotels')) return;
+
+                     this.addHRToProperties();
                      this.createStarIcons();
                      this.openSortByDropdown();
                      // this.addTitleToProperties();
@@ -119,12 +119,12 @@
                      this.updateHTML('.lblPropertyType', 'Property Type');
                      this.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                     this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                          this.createMobileSortAndFilter();
                          this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
+                         this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      });
                  });
              });
@@ -551,7 +551,6 @@
      }
 
      async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-         console.log('moveOrphanedElementsIntoNewWrapper() fired.');
          return await new Promise(resolve => {
              if (document.querySelector(adjacent_element_class)) {
                  document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
@@ -689,7 +688,9 @@
              this.toggleMap();
              // this.setMapMarkerSize();
              this.useLogoForVenueMapMarker();
-             this.showFullStayAndNightlyRates()
+             this.getTotalNights().then((nights) => {
+                this.showFullStayAndNightlyRates(nights);
+             });
              this.highlightMapMarkersOnPropertyHover();
          });
      }
@@ -844,7 +845,9 @@
                 .language-container div:hover,
                 .currencies div:hover,
                 .active-currency,
-                .active-language {
+                .active-language,
+                #sort-wrapper .active,
+                #sort-wrapper a:hover {
                     background:${this.site_config.primary_color}
                 }
 
@@ -896,7 +899,9 @@
                 .language-container div:hover,
                 .currencies div:hover,
                 .active-language,
-                .active-currency {
+                .active-currency,
+                #sort-wrapper .active,
+                #sort-wrapper a:hover {
                     color:${this.site_config.primary_text_color}
                 }
 
@@ -1139,10 +1144,9 @@
          });
      }
 
-     showFullStayAndNightlyRates() {
+     showFullStayAndNightlyRates(nights) {
          let average_rate;
          let full_stay_rate;
-         let nights = this.getTotalNights();
          let properties = document.querySelectorAll('.ArnContainer');
 
          if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
@@ -1164,7 +1168,7 @@
          });
      }
 
-     getTotalNights() {
+     async getTotalNights() {
          let nights;
          let check_in;
          let check_out;
@@ -1249,9 +1253,19 @@
              if (!wrapper.querySelector('input[type="checkbox"]')) return;
 
              wrapper.querySelector('span').addEventListener('click', (e) => {
-                wrapper.querySelector('input[type="checkbox"]').click();
+                 wrapper.querySelector('input[type="checkbox"]').click();
 
              });
+         });
+     }
+
+     addHRToProperties() {
+         let props = document.querySelectorAll('.ArnProperty');
+
+         if (!props) return;
+
+         props.forEach((prop) => {
+             prop.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');
          });
      }
  }

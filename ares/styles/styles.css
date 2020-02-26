@@ -463,11 +463,12 @@ header {
 
 #sort-wrapper a {
     color: #333;
+    padding: 4px;
     text-decoration: none;
+    transition: all .4s ease;
 }
 
 #sort-wrapper div {
-    padding: 4px 0;
     font-size: 13px;
 
 }
@@ -1461,7 +1462,6 @@ legend {
 .lblRateTypes,
 .lblRating,
 .lblSortByPrice {
-    cursor: pointer;
     font-weight: 600;
     margin-top: 12px;
     margin-bottom: 4px;
@@ -1485,6 +1485,7 @@ legend {
     font-size: 13px;
     position: relative;
     top: -4px;
+    cursor: pointer;
 }
 
 .ArnSecondarySearchOuterContainer select {
@@ -1509,7 +1510,8 @@ legend {
 
 .ArnSortByDealAmount,
 .ArnSortByPrice,
-.ArnSortByDealPercent {
+.ArnSortByDealPercent,
+.ArnSortByClass {
     display: block !important;
 }
 
@@ -2745,11 +2747,7 @@ body.HoldRoomsForm {
 
 /* Confirmation Page End */
 
-
-
-
-
-/* .SearchHotels .ArnContainer {
+.SearchHotels .ArnContainer {
     box-shadow: none;
     margin-bottom: 0;
 }
@@ -2775,10 +2773,4 @@ body.HoldRoomsForm {
 
 .SearchHotels .ArnPropThumb {
     border-radius: 5px;
-    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .75);
 }
-
-.SearchHotels .ArnShowRatesLink,
-.ratingCount {
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .75);
-} */

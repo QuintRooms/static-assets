@@ -49,7 +49,7 @@
                      this.updatePropReviewsURLToUseAnchor();
 
                      this.getTotalNights().then((nights) => {
-                         this.showFullStayAndNightlyRates(nights, 'single-prop-detail');
+                         this.showFullStayAndNightlyRates(nights);
                      });
 
                      this.updateHTML('.SinglePropDetail .Map a', 'Map');
@@ -94,14 +94,13 @@
                  this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                  this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                  this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-                 this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
                      if (!document.querySelector('.SearchHotels')) return;
 
+                     this.mapReadyMethods();
                      this.addHRToProperties();
                      this.createStarIcons();
-                     this.openSortByDropdown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
@@ -607,17 +606,6 @@
          });
      }
 
-     openSortByDropdown() {
-         if (document.querySelector('.ArnSortBy')) {
-             document.querySelector('.ArnSortBy').addEventListener('click', () => {
-                 document.querySelector('#sort-wrapper').classList.toggle('sort-open');
-                 if (document.querySelector('.sort svg')) {
-                     document.querySelector('.sort svg').classList.toggle('flip-svg');
-                 }
-             });
-         }
-     }
-
      showAdditionalPolicies() {
          if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) {
              return;
@@ -698,7 +686,7 @@
              this.useLogoForVenueMapMarker();
 
              this.getTotalNights().then((nights) => {
-                 this.showFullStayAndNightlyRates(nights, 'search-hotels');
+                 this.showFullStayAndNightlyRates(nights);
              });
 
              this.highlightMapMarkersOnPropertyHover();
@@ -1154,7 +1142,7 @@
          });
      }
 
-     showFullStayAndNightlyRates(nights, page) {
+     showFullStayAndNightlyRates(nights) {
          let properties;
          let average_rate;
          let full_stay_rate;

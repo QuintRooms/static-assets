@@ -74,6 +74,7 @@ textarea {
 
 .SinglePropDetail .bestPrice {
     font-size: 0;
+    display: none;
 }
 
 /* Header Start */
@@ -475,6 +476,16 @@ header {
 
 .ArnSortByType {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .ArnSortBy {
+        display: initial;
+    }
+
+    .sort svg{
+        max-width: 18px;
+    }
 }
 
 /* Sort Container End*/
@@ -1165,7 +1176,7 @@ legend {
     flex-direction: column;
 }
 
-.SinglePropDetail .averageNightly{
+.SinglePropDetail ..averageNightly {
     font-weight: 700;
 }
 
@@ -1273,6 +1284,10 @@ legend {
 
 .SinglePropDetail .PropLimitedAvail .ArnRateCell {
     width: 100% !important;
+}
+
+.SinglePropDetail .ArnRateCell {
+    display: none;
 }
 
 .PropertyAmenities {

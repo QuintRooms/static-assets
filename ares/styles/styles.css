@@ -1521,6 +1521,7 @@ legend {
 .ArnPropImageNext,
 .ArnPropImagePrevious,
 .ArnPropDescription .detailsOrNearbyLabel,
+.SinglePropDetail .ArnPropDescription,
 .ArnIconContainer,
 .ArnPropPopularity,
 .ArnPropType,

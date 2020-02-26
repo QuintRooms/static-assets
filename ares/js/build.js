@@ -47,7 +47,7 @@
                      this.createImageSlider();
                      this.updateRoomDescription();
                      this.updatePropReviewsURLToUseAnchor();
-                     
+
                      this.getTotalNights().then((nights) => {
                          this.showFullStayAndNightlyRates(nights);
                      });
@@ -1160,7 +1160,7 @@
          let full_stay_rate;
          let properties = document.querySelectorAll('.ArnContainer');
 
-         if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
+         if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) {
              return;
          }
 

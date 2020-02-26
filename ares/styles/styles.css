@@ -463,11 +463,12 @@ header {
 
 #sort-wrapper a {
     color: #333;
+    padding: 4px 0;
     text-decoration: none;
+    transition: all .4s ease;
 }
 
 #sort-wrapper div {
-    padding: 4px 0;
     font-size: 13px;
 
 }

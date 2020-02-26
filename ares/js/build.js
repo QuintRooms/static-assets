@@ -843,7 +843,9 @@
                 .language-container div:hover,
                 .currencies div:hover,
                 .active-currency,
-                .active-language {
+                .active-language,
+                #sort-wrapper .active,
+                #sort-wrapper a:hover {
                     background:${this.site_config.primary_color}
                 }
 
@@ -895,7 +897,9 @@
                 .language-container div:hover,
                 .currencies div:hover,
                 .active-language,
-                .active-currency {
+                .active-currency,
+                #sort-wrapper .active,
+                #sort-wrapper a:hover {
                     color:${this.site_config.primary_text_color}
                 }
 

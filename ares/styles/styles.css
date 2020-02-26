@@ -1701,6 +1701,10 @@ legend {
 }
 
 @media screen and (max-width: 1105px) {
+    .ArnRightListContainer {
+        padding-top: 0;
+    }
+
     .SearchHotels .ArnPropertyMapInner {
         transform: translateX(100%);
         transition: all .3s ease-in;
@@ -1734,6 +1738,7 @@ legend {
     }
 
     #arnCloseAnchorId {
+        margin: 24px 0;
         padding: 8px;
         border: none;
         border-radius: 5px;

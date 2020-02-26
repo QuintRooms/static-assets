@@ -126,6 +126,12 @@
                          this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                          this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                      });
+
+                     window.addEventListener('DOMContentLoaded', (e) => {
+                         this.getTotalNights().then((nights) => {
+                             this.showFullStayAndNightlyRates(nights);
+                         });
+                     });
                  });
              });
          });
@@ -688,9 +694,6 @@
              this.toggleMap();
              // this.setMapMarkerSize();
              this.useLogoForVenueMapMarker();
-             this.getTotalNights().then((nights) => {
-                this.showFullStayAndNightlyRates(nights);
-             });
              this.highlightMapMarkersOnPropertyHover();
          });
      }

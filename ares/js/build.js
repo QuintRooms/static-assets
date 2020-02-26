@@ -49,7 +49,7 @@
                      this.updatePropReviewsURLToUseAnchor();
 
                      this.getTotalNights().then((nights) => {
-                         this.showFullStayAndNightlyRates(nights);
+                         this.showFullStayAndNightlyRates(nights, 'single-prop-detail');
                      });
 
                      this.updateHTML('.SinglePropDetail .Map a', 'Map');
@@ -82,7 +82,6 @@
 
                  // root page methods
                  if (document.querySelector('.RootBody')) {
-                     console.log('reaching?')
                      this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                      this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
@@ -699,7 +698,7 @@
              this.useLogoForVenueMapMarker();
 
              this.getTotalNights().then((nights) => {
-                 this.showFullStayAndNightlyRates(nights);
+                 this.showFullStayAndNightlyRates(nights, 'search-hotels');
              });
 
              this.highlightMapMarkersOnPropertyHover();
@@ -1155,28 +1154,46 @@
          });
      }
 
-     showFullStayAndNightlyRates(nights) {
+     showFullStayAndNightlyRates(nights, page) {
          let average_rate;
          let full_stay_rate;
-         let properties = document.querySelectorAll('.ArnContainer');
 
          if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) {
              return;
          }
+         if (page === 'search-hotels') {
+             let properties = document.querySelectorAll('.ArnContainer');
+             properties.forEach((property) => {
+                 average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+                 full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-         properties.forEach((property) => {
-             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+                 if (!average_rate || !full_stay_rate) return;
 
-             if (!average_rate || !full_stay_rate) return;
+                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                 if (nights == 1) {
+                     property.querySelector('.arnPrice').style.display = 'none';
+                 }
+             });
+         }
 
-             if (nights == 1) {
-                 property.querySelector('.arnPrice').style.display = 'none';
-             }
-         });
+         if (page == 'single-prop-detail') {
+             let properties = document.querySelectorAll('.ArnNightlyRate');
+             properties.forEach((property) => {
+                 average_rate = property.querySelector('.averageNightly');
+                 full_stay_rate = property.querySelector('strong');
+
+                 if (!average_rate || !full_stay_rate) return;
+
+                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+
+                 if (nights == 1) {
+                     property.querySelector('.averageNightly').style.display = 'none';
+                 }
+             });
+         }
      }
 
      async getTotalNights() {

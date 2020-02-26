@@ -1454,7 +1454,7 @@ legend {
 
 /* Secondary Search Container Start*/
 .ArnSecondarySearchOuterContainer {
-    padding: 12px;
+    padding: 8px;
 }
 
 #batchSize,
@@ -1480,7 +1480,7 @@ legend {
 }
 
 .ArnSecondarySearchOuterContainer span {
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     top: -4px;
 }

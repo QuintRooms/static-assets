@@ -111,13 +111,14 @@
                      this.updateHTML('#ShowHotelOnMap', 'Open Map');
                      this.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                      this.updateHTML('#CitySearchContainer > span', 'Where:');
-                     this.updateHTML('.lblRating', 'Stars ' + this.svg_arrow);
-                     this.updateHTML('.lblCurrency', 'Currency ' + this.svg_arrow);
-                     this.updateHTML('.lblAmenities', 'Amenities ' + this.svg_arrow);
-                     this.updateHTML('.lblNearbyCities', 'Nearby Cities ' + this.svg_arrow);
-                     this.updateHTML('.lblPropertyType', 'Property Type ' + this.svg_arrow);
-                     this.updateHTML('.ArnSortBy', `<div class="sort">Sort ${this.svg_arrow}</div>`);
+                     this.updateHTML('.lblRating', 'Stars');
+                     this.updateHTML('.lblCurrency', 'Currency');
+                     this.updateHTML('.lblAmenities', 'Amenities');
+                     this.updateHTML('.lblNearbyCities', 'Nearby Cities');
+                     this.updateHTML('.lblPropertyType', 'Property Type');
+                     this.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                      this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                     this.createHTML('<h4>Sort</h4>', '.SearchHotels .ArnSecondarySearchOuterContainer', 'afterBegin')
                      this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {

@@ -93,9 +93,9 @@
                  this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
-                     if (!document.querySelector('.SearchHotels')) {
-                         return;
-                     }
+                     if (!document.querySelector('.SearchHotels')) return;
+
+                     this.addHRToProperties();
                      this.createStarIcons();
                      this.openSortByDropdown();
                      // this.addTitleToProperties();
@@ -1249,9 +1249,19 @@
              if (!wrapper.querySelector('input[type="checkbox"]')) return;
 
              wrapper.querySelector('span').addEventListener('click', (e) => {
-                wrapper.querySelector('input[type="checkbox"]').click();
+                 wrapper.querySelector('input[type="checkbox"]').click();
 
              });
+         });
+     }
+
+     addHRToProperties() {
+         let props = document.querySelectorAll('.ArnProperty');
+
+         if(!props) return;
+
+         props.forEach((prop) => {
+             prop.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');
          });
      }
  }

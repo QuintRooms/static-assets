@@ -1155,15 +1155,14 @@
      }
 
      showFullStayAndNightlyRates(nights, page) {
+         let properties;
          let average_rate;
          let full_stay_rate;
          console.log('showFullStayAndNightlyRates fired.');
 
-         if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) return;
-         console.log('showFullStay after first conditional')
-         if (page === 'search-hotels') {
-         console.log('showFullStay after second conditional')
-             let properties = document.querySelectorAll('.ArnContainer');
+         if (document.querySelector('.SearchHotels')) {
+             console.log('showFullStay after second conditional')
+             properties = document.querySelectorAll('.ArnContainer');
              properties.forEach((property) => {
                  average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
                  full_stay_rate = property.querySelector('.arnPrice .arnUnit');
@@ -1179,9 +1178,9 @@
              });
          }
 
-         if (page == 'single-prop-detail') {
+         if (document.querySelector('.SinglePropDetail')) {
              console.log('reaching?')
-             let properties = document.querySelectorAll('.ArnNightlyRate');
+             properties = document.querySelectorAll('.ArnNightlyRate');
              properties.forEach((property) => {
                  average_rate = property.querySelector('.averageNightly');
                  full_stay_rate = property.querySelector('strong');

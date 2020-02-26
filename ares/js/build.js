@@ -1157,6 +1157,7 @@
      showFullStayAndNightlyRates(nights, page) {
          let average_rate;
          let full_stay_rate;
+         console.log('showFullStayAndNightlyRates fired.');
 
          if (!document.querySelector('.SearchHotels') || !document.querySelector('.SinglePropDetail')) {
              return;
@@ -1179,6 +1180,7 @@
          }
 
          if (page == 'single-prop-detail') {
+             console.log('reaching?')
              let properties = document.querySelectorAll('.ArnNightlyRate');
              properties.forEach((property) => {
                  average_rate = property.querySelector('.averageNightly');

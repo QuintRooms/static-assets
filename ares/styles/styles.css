@@ -1176,7 +1176,7 @@ legend {
     flex-direction: column;
 }
 
-.SinglePropDetail ..averageNightly {
+.SinglePropDetail .averageNightly {
     font-weight: 700;
 }
 

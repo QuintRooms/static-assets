@@ -679,13 +679,16 @@
          }
      }
      mapReadyMethods() {
+        console.log('mapReadyMethods fired.')
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
+        console.log('mapReadyMethods  on arnMapLoadedEvent.')
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
              // this.setMapMarkerSize();
              this.useLogoForVenueMapMarker();
 
              this.getTotalNights().then((nights) => {
+                console.log('after gettotalnights()')
                  this.showFullStayAndNightlyRates(nights);
              });
 

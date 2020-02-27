@@ -24,7 +24,15 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.inningsfestival.com/', 'href');
-                noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Feb. 29th - Mar. 1st</span><span>2020</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'afterBegin');
+
+                if (noLRGPortal.site_id == 51442) {
+                    noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Feb. 29th - Mar. 1st</span><span>2020</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'afterBegin');
+                }
+
+                if (noLRGPortal.site_id == 60093) {
+                    noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Feb. 27th-29th</span><span>2021</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'afterBegin');
+                }
+                
                 noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Tempe Beach Park</span><span>&amp; Arts Park</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'beforeEnd');
                 observer.disconnect();
             }

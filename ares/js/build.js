@@ -44,16 +44,21 @@
 
                  // single prop detail methods
                  if (this.page_name == 'property-detail') {
-                     this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                     this.updateHTML('.SinglePropDetail .Details a', 'General Info');
+                     this.createImageSlider();
+                     this.updateRoomDescription();
+                     this.updatePropReviewsURLToUseAnchor();
+
+                     this.getTotalNights().then((nights) => {
+                         this.showFullStayAndNightlyRates(nights);
+                     });
+
                      this.updateHTML('.SinglePropDetail .Map a', 'Map');
                      this.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
+                     this.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                     this.updateHTML('.SinglePropDetail .Details a', 'General Info');
                      this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-                     this.updatePropReviewsURLToUseAnchor();
-                     this.updateRoomDescription();
-                     this.createImageSlider();
-                     this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                      this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                     this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                  }
 
                  // checkout page methods
@@ -77,7 +82,6 @@
 
                  // root page methods
                  if (document.querySelector('.RootBody')) {
-                     console.log('reaching?')
                      this.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                      this.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
                      this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
@@ -90,14 +94,18 @@
                  this.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
                  this.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                  this.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-                 this.mapReadyMethods();
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
                      if (!document.querySelector('.SearchHotels')) return;
 
+                     this.mapReadyMethods();
+
+                     this.getTotalNights().then((nights) => {
+                         this.showFullStayAndNightlyRates(nights);
+                     });
+
                      this.addHRToProperties();
                      this.createStarIcons();
-                     this.openSortByDropdown();
                      // this.addTitleToProperties();
                      this.showLoaderOnResultsUpdate();
                      this.showSearchContainerOnMobile();
@@ -125,6 +133,10 @@
                          this.createMobileSortAndFilter();
                          this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                          this.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
+                     });
+
+                     window.addEventListener('DOMContentLoaded', (event) => {
+
                      });
                  });
              });
@@ -599,17 +611,6 @@
          });
      }
 
-     openSortByDropdown() {
-         if (document.querySelector('.ArnSortBy')) {
-             document.querySelector('.ArnSortBy').addEventListener('click', () => {
-                 document.querySelector('#sort-wrapper').classList.toggle('sort-open');
-                 if (document.querySelector('.sort svg')) {
-                     document.querySelector('.sort svg').classList.toggle('flip-svg');
-                 }
-             });
-         }
-     }
-
      showAdditionalPolicies() {
          if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) {
              return;
@@ -682,15 +683,14 @@
              });
          }
      }
+     
      mapReadyMethods() {
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);
              this.toggleMap();
              // this.setMapMarkerSize();
              this.useLogoForVenueMapMarker();
-             this.getTotalNights().then((nights) => {
-                this.showFullStayAndNightlyRates(nights);
-             });
+
              this.highlightMapMarkersOnPropertyHover();
          });
      }
@@ -1145,27 +1145,46 @@
      }
 
      showFullStayAndNightlyRates(nights) {
+         let properties;
          let average_rate;
          let full_stay_rate;
-         let properties = document.querySelectorAll('.ArnContainer');
+         console.log('showFullStayAndNightlyRates fired.');
 
-         if (!document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
-             return;
+         if (document.querySelector('.SearchHotels')) {
+             console.log('showFullStay after second conditional')
+             properties = document.querySelectorAll('.ArnContainer');
+             properties.forEach((property) => {
+                 average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+                 full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+
+                 if (!average_rate || !full_stay_rate) return;
+
+                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+
+                 if (nights == 1) {
+                     property.querySelector('.arnPrice').style.display = 'none';
+                 }
+             });
          }
 
-         properties.forEach((property) => {
-             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+         if (document.querySelector('.SinglePropDetail')) {
+             console.log('reaching?')
+             properties = document.querySelectorAll('.ArnNightlyRate');
+             properties.forEach((property) => {
+                 average_rate = property.querySelector('.averageNightly');
+                 full_stay_rate = property.querySelector('strong');
 
-             if (!average_rate || !full_stay_rate) return;
+                 if (!average_rate || !full_stay_rate) return;
 
-             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-             if (nights == 1) {
-                 property.querySelector('.arnPrice').style.display = 'none';
-             }
-         });
+                 if (nights == 1) {
+                     property.querySelector('.averageNightly').style.display = 'none';
+                 }
+             });
+         }
      }
 
      async getTotalNights() {

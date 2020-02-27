@@ -74,6 +74,7 @@ textarea {
 
 .SinglePropDetail .bestPrice {
     font-size: 0;
+    display: none;
 }
 
 /* Header Start */
@@ -475,6 +476,16 @@ header {
 
 .ArnSortByType {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .ArnSortBy {
+        display: initial;
+    }
+
+    .sort svg{
+        max-width: 18px;
+    }
 }
 
 /* Sort Container End*/
@@ -1125,7 +1136,7 @@ legend {
 }
 
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2) {
-    width: 20%;
+    width: 25%;
     text-align: center;
 }
 
@@ -1161,11 +1172,20 @@ legend {
 
 .SinglePropDetail .ArnNightlyRate {
     font-size: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.SinglePropDetail .averageNightly {
+    font-weight: 700;
 }
 
 .SinglePropDetail .ArnNightlyRate strong {
     display: block;
-    font-size: 19px;
+    font-size: 1rem;
+    font-weight: normal;
+    order: 1;
+    margin-top: 8px;
 }
 
 .SinglePropDetail .ArnRateCalendar {
@@ -1255,6 +1275,7 @@ legend {
 
 .SinglePropDetail .bookRoom {
     margin: 8px auto;
+    max-width: 150px;
 }
 
 .SinglePropDetail .ArnPropertyMapInner {
@@ -1263,6 +1284,10 @@ legend {
 
 .SinglePropDetail .PropLimitedAvail .ArnRateCell {
     width: 100% !important;
+}
+
+.SinglePropDetail .ArnRateCell {
+    display: none;
 }
 
 .PropertyAmenities {
@@ -1521,6 +1546,7 @@ legend {
 .ArnPropImageNext,
 .ArnPropImagePrevious,
 .ArnPropDescription .detailsOrNearbyLabel,
+.SinglePropDetail .ArnPropDescription,
 .ArnIconContainer,
 .ArnPropPopularity,
 .ArnPropType,
@@ -1701,6 +1727,10 @@ legend {
 }
 
 @media screen and (max-width: 1105px) {
+    .ArnRightListContainer {
+        padding-top: 0;
+    }
+
     .SearchHotels .ArnPropertyMapInner {
         transform: translateX(100%);
         transition: all .3s ease-in;
@@ -1734,6 +1764,7 @@ legend {
     }
 
     #arnCloseAnchorId {
+        margin: 24px 0;
         padding: 8px;
         border: none;
         border-radius: 5px;

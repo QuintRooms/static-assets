@@ -97,7 +97,12 @@
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
                      if (!document.querySelector('.SearchHotels')) return;
+                     L.control.scale().addTo(window.ArnMap);
+                     this.toggleMap();
+                     // this.setMapMarkerSize();
+                     this.useLogoForVenueMapMarker();
 
+                     this.highlightMapMarkersOnPropertyHover();
                      this.mapReadyMethods();
 
                      this.getTotalNights().then((nights) => {
@@ -683,7 +688,7 @@
              });
          }
      }
-     
+
      mapReadyMethods() {
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);

@@ -1784,20 +1784,27 @@ legend {
         text-align: right;
     }
 
+    .SearchHotels .ArnSortContainer {
+        margin: 12px 0;
+    }
+
     #arnOpenAnchorId {
         display: none;
     }
 
     #arnCloseAnchorId {
-        margin: 24px 0;
+        display: inline-block;
+    }
+
+    #arnCloseAnchorId,
+    .sort {
         padding: 8px;
         border: none;
         border-radius: 5px;
         transition: all .3s ease-out;
-        display: inline-block;
         text-decoration: none;
+        cursor: pointer;
     }
-
 
     .ArnSortBy {
         float: left;
@@ -1816,6 +1823,11 @@ legend {
 
     .ArnProperty {
         margin-left: 0;
+    }
+
+    #arnCloseAnchorId,
+    .sort {
+        margin: 0 0 24px 0;
     }
 }
 

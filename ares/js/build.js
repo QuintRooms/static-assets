@@ -876,7 +876,8 @@
                     #commands button:focus,
                     #commands button:hover,
                     #sort-wrapper a:before,
-                    #sort-wrapper a.active-filter:before {
+                    #sort-wrapper a.active-filter:before,
+                    .sort {
                         background:${this.site_config.primary_color}
                     }
                 }
@@ -944,8 +945,7 @@
                 .SearchHotels #theSubmitButton:hover,
                 .SinglePropDetail #moreRatesLink,
                 .SinglePropDetail .ArnRateCancelAnchor,
-                .open-modal,
-                .sort {
+                .open-modal {
                     color:${this.site_config.secondary_text_color}
                 }
 
@@ -986,7 +986,8 @@
                 }
 
                 @media screen and (max-width:1105px) {
-                    #arnCloseAnchorId {
+                    #arnCloseAnchorId,
+                    .sort {
                         border:1px solid ${this.site_config.primary_color}
                     }
                 }

@@ -1071,10 +1071,10 @@
                  currency[0] == 'Mexico Pesos' ||
                  currency[0] == 'Canada Dollars' ||
                  currency[0] == 'Australia Dollars') {
-                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div class=${currency[1]}>${currency[0]}</div>`);
              }
 
-             currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+             currencies_container.insertAdjacentHTML('beforeEnd', `<div class=${currency[1]}>${currency[0]}</div>`);
          });
 
          currency_label.addEventListener('click', () => {
@@ -1083,9 +1083,9 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
-             if (!e.target.getAttribute('id')) return;
+             if (!e.target.getAttribute('class')) return;
 
-             clicked_currency = e.target.getAttribute('id');
+             clicked_currency = e.target.getAttribute('class');
              document.querySelector('.active-currency').classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');

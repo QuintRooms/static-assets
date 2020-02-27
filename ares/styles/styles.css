@@ -483,7 +483,7 @@ header {
         display: initial;
     }
 
-    .sort svg{
+    .sort svg {
         max-width: 18px;
     }
 }
@@ -1600,6 +1600,30 @@ legend {
     }
 }
 
+.SearchHotels .ArnContainer {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+    bottom: 8px;
+}
+
+.prop-hr {
+    margin: 42px 18px;
+    height: 1px;
+    border: none;
+    background: #ccc;
+}
+
+.ArnProperty {
+    margin-left: 18px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 5px;
+}
+
 .ArnImageLink {
     height: 0;
 }
@@ -1615,6 +1639,7 @@ legend {
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    padding: 0 12px;
 }
 
 .ArnPropName,
@@ -1788,20 +1813,27 @@ legend {
     .ArnLeftSearchContainer {
         display: block !important;
     }
+
+    .ArnProperty {
+        margin-left: 0;
+    }
 }
 
 /* Mobile Sort and Filter End*/
 @media screen and (max-width: 600px) {
-    .SearchHotels .ArnContainer {
-        flex-direction: column;
-        text-align: center;
+    .SearchHotels .ArnPropName {
+        width: 100%;
+    }
+
+    .ArnPropNameLink span,
+    .SearchHotels .averageNightly {
+        font-size: 15px;
     }
 
     .SearchHotels .ArnPropThumb {
-        width: 100%;
+        width: 50%;
         display: block;
         height: 175px;
-        border-radius: 5px 5px 0 0;
     }
 
     .SearchHotels .ArnPropName,
@@ -1810,8 +1842,18 @@ legend {
         width: initial;
     }
 
+    .SearchHotels .ArnRateCell {
+        padding: 0;
+    }
+
     .SearchHotels .arnPrice {
-        margin: 0;
+        margin: 4px 0 0 0;
+        font-size: 11px;
+    }
+
+    .SearchHotels .ArnPropAddress,
+    .ArnTripAdvisorDetails.HasReviews .reviewCount {
+        font-size: 11px;
     }
 }
 
@@ -2777,31 +2819,3 @@ body.HoldRoomsForm {
 }
 
 /* Confirmation Page End */
-
-.SearchHotels .ArnContainer {
-    box-shadow: none;
-    margin-bottom: 0;
-}
-
-.SearchHotels .ArnPropName {
-    padding: 0 12px;
-}
-
-.SearchHotels .ArnTripAdvisorDetails.HasReviews {
-    bottom: 8px;
-}
-
-.prop-hr {
-    margin: 42px 18px;
-    height: 1px;
-    border: none;
-    background: #ccc;
-}
-
-.ArnProperty {
-    margin-left: 18px;
-}
-
-.SearchHotels .ArnPropThumb {
-    border-radius: 5px;
-}

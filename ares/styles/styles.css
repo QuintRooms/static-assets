@@ -1819,21 +1819,44 @@ legend {
     }
 }
 
-/* Mobile Sort and Filter End*/
 @media screen and (max-width: 600px) {
+    .SearchHotels #properties {
+        margin: 0 8px;
+    }
+
+    .SearchHotels .ArnContainer {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 75%;
+    }
+
     .SearchHotels .ArnPropName {
-        width: 100%;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: unset;
+        padding: 0 0 0 12px;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 200px;
+    }
+
+    .SearchHotels .ArnPropThumb img {
+        height: 200px;
+    }
+
+    .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+        position: static;
+        justify-content: flex-start;
     }
 
     .ArnPropNameLink span,
     .SearchHotels .averageNightly {
         font-size: 15px;
-    }
-
-    .SearchHotels .ArnPropThumb {
-        width: 50%;
-        display: block;
-        height: 175px;
     }
 
     .SearchHotels .ArnPropName,
@@ -1844,6 +1867,12 @@ legend {
 
     .SearchHotels .ArnRateCell {
         padding: 0;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        height: unset;
+        align-self: flex-end;
     }
 
     .SearchHotels .arnPrice {
@@ -1854,6 +1883,10 @@ legend {
     .SearchHotels .ArnPropAddress,
     .ArnTripAdvisorDetails.HasReviews .reviewCount {
         font-size: 11px;
+    }
+
+    .SearchHotels .ArnPropAddress {
+        display: none;
     }
 }
 

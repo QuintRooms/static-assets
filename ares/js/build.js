@@ -929,7 +929,8 @@
                     #commands a:hover,
                     #commands button:active,
                     #commands button:focus,
-                    #commands button:hover {
+                    #commands button:hover,
+                    .sort {
                         color:${this.site_config.primary_text_color}
                     }
                 }

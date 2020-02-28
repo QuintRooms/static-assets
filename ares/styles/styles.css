@@ -1676,7 +1676,6 @@ legend {
 
 .ArnPropName,
 .ArnRateCell {
-    padding: 12px;
     line-height: 1.4;
 }
 
@@ -1865,13 +1864,13 @@ legend {
 }
 
 @media screen and (max-width: 600px) {
-    .SearchHotels #properties {
+    .SearchHotels #Properties {
         margin: 0 8px;
     }
 
     .SearchHotels .ArnContainer {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% 55%;
         grid-template-rows: 25% 75%;
     }
 
@@ -1887,11 +1886,11 @@ legend {
     .SearchHotels .ArnPropThumb {
         grid-row-start: 1;
         grid-row-end: 3;
-        height: 200px;
+        height: 180px;
     }
 
     .SearchHotels .ArnPropThumb img {
-        height: 200px;
+        height: 180px;
     }
 
     .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
@@ -1932,6 +1931,37 @@ legend {
 
     .SearchHotels .ArnPropAddress {
         display: none;
+    }
+
+    .top-currencies,
+    .currencies {
+        grid-template-columns: 50% 50%;
+    }
+
+    .top-currencies h4,
+    .top-currencies+h4,
+    .top-currencies {
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+        display: none !important;
+    }
+
+    .currencies-container {
+        width: unset;
+    }
+
+    .config-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #language {
+        margin-bottom: 12px;
     }
 }
 

@@ -1013,18 +1013,19 @@
      }
 
      showLanguageFromCongif() {
-         let language_label;
          let active_language;
-         let active_language_el = document.querySelector('meta[name="theme"]');
+         let language_label = document.querySelector('#language-label');
          let header = document.querySelector('#AdminControlsContainer');
          let language_container_el = document.querySelector('#language');
          let config_container = document.querySelector('.config-container');
+         let active_language_el = document.querySelector('meta[name="theme"]');
 
          if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
          if (!this.site_config.show_language_select) return;
 
 
          active_language = active_language_el.getAttribute('content');
+         language_label.textContent = active_language;
          document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);

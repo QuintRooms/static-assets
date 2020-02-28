@@ -148,7 +148,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 8px;
+    padding: 16px 8px;
     position: relative;
     z-index: 10;
 }
@@ -185,7 +185,7 @@ header {
 
 #language {
     position: relative;
-    width: 150px;
+    width: 180px;
     order: 1;
 }
 
@@ -231,6 +231,7 @@ header {
     flex-direction: column;
 }
 
+
 .currencies-container {
     position: relative;
     margin-right: 12px;
@@ -242,6 +243,13 @@ header {
     padding: 6px 8px;
     transition: all .3s ease;
     font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.language-container img {
+    max-width: 24px;
+    margin-right: 8px;
 }
 
 .currencies {
@@ -263,8 +271,14 @@ header {
 .language-container div {
     margin-bottom: 0;
     cursor: pointer;
-    padding: 6px 8px;
+    padding: 10px 8px;
     transition: all .3s ease;
+}
+
+.language-container div:hover,
+.active-language {
+    background: #ccc;
+    color: #333;
 }
 
 .top-currencies {

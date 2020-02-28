@@ -847,10 +847,8 @@
                 .HoldRoomsForm .submit,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover,
-                .language-container div:hover,
                 .currencies div:hover,
                 .active-currency,
-                .active-language,
                 #sort-wrapper .active,
                 #sort-wrapper a:hover {
                     background:${this.site_config.primary_color}
@@ -902,9 +900,7 @@
                 .arnMapPopup .rate,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .bookRoom,
-                .language-container div:hover,
                 .currencies div:hover,
-                .active-language,
                 .active-currency,
                 #sort-wrapper .active,
                 #sort-wrapper a:hover {
@@ -1030,12 +1026,11 @@
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
-         language_label.querySelector('span').textContent = document.querySelector('.active-language').textContent;
+         language_label.querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML;
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
              language_label.querySelector('svg').classList.toggle('flip-svg');
-
          });
 
          window.addEventListener('click', (e) => {

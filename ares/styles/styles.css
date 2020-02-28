@@ -459,6 +459,15 @@ header {
     border: 1px solid #444f74;
 }
 
+.arnMapMarker.highlight {
+    background: #333;
+
+}
+
+.arnMapMarker.highlight .arnMapMarkerTriangle {
+    border-top-color: #333 !important;
+}
+
 .noPrice {
     display: none;
 }

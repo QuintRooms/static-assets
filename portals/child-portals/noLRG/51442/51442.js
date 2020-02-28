@@ -30,7 +30,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 }
 
                 if (noLRGPortal.site_id == 60093) {
-                    noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Feb. 27th-29th</span><span>2021</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'afterBegin');
+                    noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Feb. 27th-28th</span><span>2021</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'afterBegin');
                 }
                 
                 noLRGPortal.createHTML('header', '<span class="header-info"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"><span>Tempe Beach Park</span><span>&amp; Arts Park</span><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/51442/images/dash.png"></span>', 'beforeEnd');

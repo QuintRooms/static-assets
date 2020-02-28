@@ -1020,7 +1020,7 @@
          let language_container_el = document.querySelector('#language');
          let config_container = document.querySelector('.config-container');
 
-         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el || !language_label) return;
+         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
          if (!this.site_config.show_language_select) return;
 
          language_label.textContent = document.querySelector('.active-language').textContent;

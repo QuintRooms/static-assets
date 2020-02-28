@@ -330,7 +330,6 @@ header {
 
 @media screen and (max-width: 1000px) {
     .currencies-container {
-        width: 100%;
         position: static;
     }
 

@@ -97,7 +97,12 @@
 
                  this.waitForSelectorInDOM('.pollingFinished').then(() => {
                      if (!document.querySelector('.SearchHotels')) return;
+                     L.control.scale().addTo(window.ArnMap);
+                     this.toggleMap();
+                     // this.setMapMarkerSize();
+                     this.useLogoForVenueMapMarker();
 
+                     this.highlightMapMarkersOnPropertyHover();
                      this.mapReadyMethods();
 
                      this.getTotalNights().then((nights) => {
@@ -480,7 +485,7 @@
          }
          this.updateHTML('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
 
-         this.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"><h4>Sort By</h4></div><div class="mobile-filter-container"><h4>Filter By</h4></div></div></div>', 'body', 'beforeEnd');
+         this.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>', 'body', 'beforeEnd');
 
          let sort_button = document.querySelector('.ArnSortBy');
          let sort_container = document.querySelector('#sort-wrapper');
@@ -683,7 +688,7 @@
              });
          }
      }
-     
+
      mapReadyMethods() {
          jQuery('#theBody').on('arnMapLoadedEvent', () => {
              L.control.scale().addTo(window.ArnMap);
@@ -871,7 +876,8 @@
                     #commands button:focus,
                     #commands button:hover,
                     #sort-wrapper a:before,
-                    #sort-wrapper a.active-filter:before {
+                    #sort-wrapper a.active-filter:before,
+                    .sort {
                         background:${this.site_config.primary_color}
                     }
                 }
@@ -923,7 +929,8 @@
                     #commands a:hover,
                     #commands button:active,
                     #commands button:focus,
-                    #commands button:hover {
+                    #commands button:hover,
+                    .sort {
                         color:${this.site_config.primary_text_color}
                     }
                 }
@@ -939,8 +946,7 @@
                 .SearchHotels #theSubmitButton:hover,
                 .SinglePropDetail #moreRatesLink,
                 .SinglePropDetail .ArnRateCancelAnchor,
-                .open-modal,
-                .sort {
+                .open-modal {
                     color:${this.site_config.secondary_text_color}
                 }
 
@@ -981,7 +987,8 @@
                 }
 
                 @media screen and (max-width:1105px) {
-                    #arnCloseAnchorId {
+                    #arnCloseAnchorId,
+                    .sort {
                         border:1px solid ${this.site_config.primary_color}
                     }
                 }
@@ -1008,23 +1015,26 @@
      showLanguageFromCongif() {
          let language_label;
          let active_language;
-         let active_language_el = document.querySelector('meta[name="theme"]');
          let header = document.querySelector('#AdminControlsContainer');
          let language_container_el = document.querySelector('#language');
          let config_container = document.querySelector('.config-container');
+         let active_language_el = document.querySelector('meta[name="theme"]');
 
          if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
          if (!this.site_config.show_language_select) return;
+
 
          active_language = active_language_el.getAttribute('content');
          document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
+         language_label.querySelector('span').textContent = document.querySelector('.active-language').textContent;
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
              language_label.querySelector('svg').classList.toggle('flip-svg');
+
          });
 
          window.addEventListener('click', (e) => {
@@ -1071,10 +1081,10 @@
                  currency[0] == 'Mexico Pesos' ||
                  currency[0] == 'Canada Dollars' ||
                  currency[0] == 'Australia Dollars') {
-                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div class=${currency[1]}>${currency[0]}</div>`);
+                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
              }
 
-             currencies_container.insertAdjacentHTML('beforeEnd', `<div class=${currency[1]}>${currency[0]}</div>`);
+             currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 
          currency_label.addEventListener('click', () => {
@@ -1083,9 +1093,9 @@
          });
 
          currencies_container.addEventListener('click', (e) => {
-             if (!e.target.getAttribute('class')) return;
+             if (!e.target.getAttribute('id')) return;
 
-             clicked_currency = e.target.getAttribute('class');
+             clicked_currency = e.target.getAttribute('id');
              document.querySelector('.active-currency').classList.remove('active-currency');
 
              document.getElementById(clicked_currency).classList.add('active-currency');

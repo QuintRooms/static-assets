@@ -483,8 +483,8 @@ header {
         display: initial;
     }
 
-    .sort svg{
-        max-width: 18px;
+    .sort svg {
+        max-width: 14px;
     }
 }
 
@@ -1600,6 +1600,30 @@ legend {
     }
 }
 
+.SearchHotels .ArnContainer {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.SearchHotels .ArnTripAdvisorDetails.HasReviews {
+    bottom: 8px;
+}
+
+.prop-hr {
+    margin: 42px 18px;
+    height: 1px;
+    border: none;
+    background: #ccc;
+}
+
+.ArnProperty {
+    margin-left: 18px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 5px;
+}
+
 .ArnImageLink {
     height: 0;
 }
@@ -1615,6 +1639,7 @@ legend {
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    padding: 0 12px;
 }
 
 .ArnPropName,
@@ -1626,9 +1651,6 @@ legend {
 .ArnPropNameLink {
     text-decoration: none;
     margin-bottom: 4px;
-    /*    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;*/
 }
 
 .ArnPropNameLink+br {
@@ -1759,20 +1781,27 @@ legend {
         text-align: right;
     }
 
+    .SearchHotels .ArnSortContainer {
+        margin: 12px 0;
+    }
+
     #arnOpenAnchorId {
         display: none;
     }
 
     #arnCloseAnchorId {
-        margin: 24px 0;
+        display: inline-block;
+    }
+
+    #arnCloseAnchorId,
+    .sort {
         padding: 8px;
         border: none;
         border-radius: 5px;
         transition: all .3s ease-out;
-        display: inline-block;
         text-decoration: none;
+        cursor: pointer;
     }
-
 
     .ArnSortBy {
         float: left;
@@ -1788,20 +1817,59 @@ legend {
     .ArnLeftSearchContainer {
         display: block !important;
     }
+
+    .ArnProperty {
+        margin-left: 0;
+    }
+
+    #arnCloseAnchorId,
+    .sort {
+        margin: 0 0 24px 0;
+    }
+
+    .prop-hr {
+        margin: 42px 0;
+    }
 }
 
-/* Mobile Sort and Filter End*/
 @media screen and (max-width: 600px) {
+    .SearchHotels #properties {
+        margin: 0 8px;
+    }
+
     .SearchHotels .ArnContainer {
-        flex-direction: column;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 75%;
+    }
+
+    .SearchHotels .ArnPropName {
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: unset;
+        padding: 0 0 0 12px;
     }
 
     .SearchHotels .ArnPropThumb {
-        width: 100%;
-        display: block;
-        height: 175px;
-        border-radius: 5px 5px 0 0;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 200px;
+    }
+
+    .SearchHotels .ArnPropThumb img {
+        height: 200px;
+    }
+
+    .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+        position: static;
+        justify-content: flex-start;
+    }
+
+    .ArnPropNameLink span,
+    .SearchHotels .averageNightly {
+        font-size: 15px;
     }
 
     .SearchHotels .ArnPropName,
@@ -1810,8 +1878,28 @@ legend {
         width: initial;
     }
 
+    .SearchHotels .ArnRateCell {
+        padding: 0;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        height: unset;
+        align-self: flex-end;
+    }
+
     .SearchHotels .arnPrice {
-        margin: 0;
+        margin: 4px 0 0 0;
+        font-size: 11px;
+    }
+
+    .SearchHotels .ArnPropAddress,
+    .ArnTripAdvisorDetails.HasReviews .reviewCount {
+        font-size: 11px;
+    }
+
+    .SearchHotels .ArnPropAddress {
+        display: none;
     }
 }
 
@@ -2777,31 +2865,3 @@ body.HoldRoomsForm {
 }
 
 /* Confirmation Page End */
-
-.SearchHotels .ArnContainer {
-    box-shadow: none;
-    margin-bottom: 0;
-}
-
-.SearchHotels .ArnPropName {
-    padding: 0 12px;
-}
-
-.SearchHotels .ArnTripAdvisorDetails.HasReviews {
-    bottom: 8px;
-}
-
-.prop-hr {
-    margin: 42px 18px;
-    height: 1px;
-    border: none;
-    background: #ccc;
-}
-
-.ArnProperty {
-    margin-left: 18px;
-}
-
-.SearchHotels .ArnPropThumb {
-    border-radius: 5px;
-}

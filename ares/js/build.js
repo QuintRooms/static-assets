@@ -1029,7 +1029,6 @@
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
-         language_label.textContent = document.querySelector('.active-language').textContent;
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');

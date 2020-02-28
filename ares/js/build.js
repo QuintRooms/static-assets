@@ -1023,13 +1023,13 @@
          if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
          if (!this.site_config.show_language_select) return;
 
-         language_label.textContent = document.querySelector('.active-language').textContent;
 
          active_language = active_language_el.getAttribute('content');
          document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
+         language_label.textContent = document.querySelector('.active-language').textContent;
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');

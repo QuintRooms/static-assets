@@ -1003,12 +1003,9 @@
      }
 
      setFontFromConfig() {
-         if (!this.site_config) {
-             return;
-         }
+         if (!this.site_config) return;
 
          this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-
          document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
      }
 
@@ -1020,7 +1017,11 @@
          let config_container = document.querySelector('.config-container');
          let active_language_el = document.querySelector('meta[name="theme"]');
 
-         if (!this.site_config || !language_container_el || !header || !config_container || !active_language_el) return;
+         if (!header ||
+             !this.site_config ||
+             !config_container ||
+             !active_language_el ||
+             !language_container_el) return;
          if (!this.site_config.show_language_select) return;
 
 
@@ -1049,6 +1050,7 @@
          });
      }
 
+     // needs a refactor
      createCurrencyDropDown() {
          let currencies;
          let clicked_currency;
@@ -1062,7 +1064,11 @@
          let currencies_select = document.querySelector('#CurrenciesContainer select');
          let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
+         if (!currencies_node_list ||
+             !config_container ||
+             !currency_label ||
+             !top_currencies_container ||
+             !currencies_select) return;
 
          currencies_node_list.forEach((currency) => {
              if (currency.getAttribute('selected')) {
@@ -1087,6 +1093,8 @@
              currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 
+         currency_label.textContent = document.querySelector('active-currency');
+
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
@@ -1097,9 +1105,8 @@
 
              clicked_currency = e.target.getAttribute('id');
              document.querySelector('.active-currency').classList.remove('active-currency');
-
              document.getElementById(clicked_currency).classList.add('active-currency');
-
+             currency_label.textContent = document.querySelector('active-currency');
              currencies_select.value = clicked_currency;
 
              if (document.querySelector('.SearchHotels')) submit.click();
@@ -1109,9 +1116,11 @@
 
          window.addEventListener('click', (e) => {
              if (document.querySelector('.show-currencies-container')) {
-                 if (e.target == document.querySelector('.currencies') || e.target == document.querySelector('#currency-label') || e.target.parentNode == document.querySelector('.currencies') || e.target.parentNode == document.querySelector('.top-currencies')) {
-                     return;
-                 }
+                 if (e.target == document.querySelector('.currencies') ||
+                     e.target == document.querySelector('#currency-label') ||
+                     e.target.parentNode == document.querySelector('.currencies') ||
+                     e.target.parentNode == document.querySelector('.top-currencies')) return;
+
 
                  currencies_container.classList.toggle('show-currencies-container');
                  currency_label.querySelector('svg').classList.toggle('flip-svg');

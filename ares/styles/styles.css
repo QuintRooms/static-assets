@@ -185,7 +185,7 @@ header {
 
 #language {
     position: relative;
-    width: 160px;
+    width: 150px;
     order: 1;
 }
 
@@ -194,6 +194,10 @@ header {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #868686;
+}
+
+#language-label span {
+    pointer-events: none;
 }
 
 #currency-label {

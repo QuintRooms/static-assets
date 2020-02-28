@@ -1651,9 +1651,6 @@ legend {
 .ArnPropNameLink {
     text-decoration: none;
     margin-bottom: 4px;
-    /*    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;*/
 }
 
 .ArnPropNameLink+br {
@@ -1828,6 +1825,10 @@ legend {
     #arnCloseAnchorId,
     .sort {
         margin: 0 0 24px 0;
+    }
+
+    .prop-hr {
+        margin: 42px 0;
     }
 }
 

@@ -1013,8 +1013,8 @@
      }
 
      showLanguageFromCongif() {
+         let language_label;
          let active_language;
-         let language_label = document.querySelector('#language-label');
          let header = document.querySelector('#AdminControlsContainer');
          let language_container_el = document.querySelector('#language');
          let config_container = document.querySelector('.config-container');
@@ -1025,15 +1025,16 @@
 
 
          active_language = active_language_el.getAttribute('content');
-         language_label.textContent = active_language;
          document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
          header.insertAdjacentElement('beforeBegin', config_container);
          config_container.insertAdjacentElement('afterBegin', language_container_el);
          language_label = language_container_el.querySelector('#language-label');
+         language_label.querySelector('span').textContent = document.querySelector('.active-language');
 
          language_label.addEventListener('click', () => {
              language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
              language_label.querySelector('svg').classList.toggle('flip-svg');
+
          });
 
          window.addEventListener('click', (e) => {

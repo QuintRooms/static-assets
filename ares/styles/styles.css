@@ -189,20 +189,30 @@ header {
     order: 1;
 }
 
+#language-label {
+    display: flex;
+}
+
 #language-label,
 #currency-label {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #868686;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #language-label span,
 #currency-label span {
     pointer-events: none;
+    padding: 2px;
+    display: flex;
 }
 
 #currency-label {
     width: 200px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #language-label polyline,
@@ -243,11 +253,10 @@ header {
     padding: 6px 8px;
     transition: all .3s ease;
     font-size: 13px;
-    display: flex;
-    align-items: center;
 }
 
-.language-container img {
+.language-container img,
+#language-label img {
     max-width: 24px;
     margin-right: 8px;
 }
@@ -273,11 +282,15 @@ header {
     cursor: pointer;
     padding: 10px 8px;
     transition: all .3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .language-container div:hover,
+.currencies div:hover,
+.active-currency,
 .active-language {
-    background: #ccc;
+    background: #e2e2e2;
     color: #333;
 }
 

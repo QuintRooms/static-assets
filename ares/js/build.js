@@ -847,8 +847,6 @@
                 .HoldRoomsForm .submit,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .yui3-skin-sam .yui3-calendar-day:hover,
-                .currencies div:hover,
-                .active-currency,
                 #sort-wrapper .active,
                 #sort-wrapper a:hover {
                     background:${this.site_config.primary_color}
@@ -900,8 +898,6 @@
                 .arnMapPopup .rate,
                 #datePromptContainer+.SimpleSearch .CheckRates .submit,
                 .bookRoom,
-                .currencies div:hover,
-                .active-currency,
                 #sort-wrapper .active,
                 #sort-wrapper a:hover {
                     color:${this.site_config.primary_text_color}

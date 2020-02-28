@@ -196,7 +196,8 @@ header {
     border-bottom: 1px solid #868686;
 }
 
-#language-label span {
+#language-label span,
+#currency-label span {
     pointer-events: none;
 }
 

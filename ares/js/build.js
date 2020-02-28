@@ -1093,8 +1093,6 @@
              currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 
-         currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
-
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
              currency_label.querySelector('svg').classList.toggle('flip-svg');
@@ -1126,6 +1124,8 @@
                  currency_label.querySelector('svg').classList.toggle('flip-svg');
              }
          });
+
+         currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
      }
 
      setupDatePrompt() {

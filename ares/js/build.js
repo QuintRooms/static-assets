@@ -1093,7 +1093,7 @@
              currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
          });
 
-         currency_label.querySelector('span').textContent = document.querySelector('active-currency');
+         currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
 
          currency_label.addEventListener('click', () => {
              currencies_container.classList.toggle('show-currencies-container');
@@ -1106,7 +1106,7 @@
              clicked_currency = e.target.getAttribute('id');
              document.querySelector('.active-currency').classList.remove('active-currency');
              document.getElementById(clicked_currency).classList.add('active-currency');
-             currency_label.querySelector('span').textContent = document.querySelector('active-currency');
+             currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
              currencies_select.value = clicked_currency;
 
              if (document.querySelector('.SearchHotels')) submit.click();

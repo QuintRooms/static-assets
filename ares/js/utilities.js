@@ -88,6 +88,37 @@ export default class Utilities {
         });
     }
 
+    moveElementIntoExistingWrapper(element_to_move, wrapper, adjacent_position) {
+        if (!document.querySelector(wrapper) || !document.querySelector(element_to_move)) return;
+
+        document.querySelector(wrapper).insertAdjacentElement(adjacent_position, document.querySelector(element_to_move));
+    }
+
+    async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
+        return await new Promise(resolve => {
+            if (document.querySelector(adjacent_element_class)) {
+                document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
+                elements_array.forEach((element) => {
+                    document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
+                    resolve();
+                });
+            }
+        });
+    }
+
+    createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
+        const wrapper = document.createElement('div');
+
+        if (!wrapper) return;
+
+        wrapper.setAttribute('class', new_wrapper_class);
+        Array.prototype.forEach.call(document.querySelectorAll(query_selectors), (children) => {
+            wrapper.appendChild(children);
+        });
+
+        document.querySelector(wrapper_parent).insertAdjacentElement(adjacent_location, wrapper);
+    }
+
     createModal(array_of_elements_to_put_in_modal_body, modal_title, page_name, open_button_parent_selector, open_button_location) {
         if (!page_name) return;
 

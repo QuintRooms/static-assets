@@ -16,7 +16,7 @@ export default class BasePortal {
 
     init() {
         utilities.ieForEachPolyfill();
-        this.getSiteID().then(() => {
+        this.getSiteID().then((site_id) => {
             this.getSiteConfigJSON().then(() => {
                 this.getPageName();
                 this.applyConfigColors();
@@ -62,8 +62,8 @@ export default class BasePortal {
                     });
 
                     this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-                    this.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
-                    this.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                    utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                    utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
                 }
 
                 // checkout page methods
@@ -81,15 +81,15 @@ export default class BasePortal {
 
                     this.formatCheckoutForm();
                     this.setupReservationSummaryContainer();
-                    this.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+                    utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 }
 
                 // root page methods
                 if (document.querySelector('.RootBody')) {
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     utilities.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
-                    this.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
+                    utilities.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+                    utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
                 }
 
                 utilities.updateHTML('#thePassCodeAjax label', 'Promocode');
@@ -132,12 +132,12 @@ export default class BasePortal {
                     utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
                     utilities.updateHTML('.lblPropertyType', 'Property Type');
                     utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
-                    this.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                    this.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+                    utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                    utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                    this.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
+                    utilities.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
                         this.createMobileSortAndFilter();
-                        this.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
+                        utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                         utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                     });
 
@@ -154,7 +154,9 @@ export default class BasePortal {
      */
     async getSiteID() {
         this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content');
-        console.log('BasePortal getSiteID() fired.', this.site_id);
+
+        if (!this.site_id) return;
+
         return await this.site_id;
     }
 
@@ -370,11 +372,10 @@ export default class BasePortal {
         });
     }
 
+    // refactor meeeeee
     createMobileSortAndFilter() {
-        console.log('createMobileSortAndFilter() fired.')
-        if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) {
-            return;
-        }
+        if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) return;
+
         utilities.updateHTML('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
 
         utilities.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>', 'body', 'beforeEnd');
@@ -426,7 +427,7 @@ export default class BasePortal {
         location_text = location_el.getAttribute('content');
         check_in_text = check_in_el.getAttribute('content');
         check_out_text = check_out_el.getAttribute('content');
-        
+
         check_in_date = dayjs(check_in_text);
         check_out_date = dayjs(check_out_text);
 
@@ -435,37 +436,6 @@ export default class BasePortal {
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
         });
-    }
-
-    moveElementIntoExistingWrapper(element_to_move, wrapper, adjacent_position) {
-        if (!document.querySelector(wrapper) || !document.querySelector(element_to_move)) return;
-
-        document.querySelector(wrapper).insertAdjacentElement(adjacent_position, document.querySelector(element_to_move));
-    }
-
-    async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-        return await new Promise(resolve => {
-            if (document.querySelector(adjacent_element_class)) {
-                document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
-                elements_array.forEach((element) => {
-                    document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
-                    resolve();
-                });
-            }
-        });
-    }
-
-    createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
-        const wrapper = document.createElement('div');
-
-        if (!wrapper) return;
-
-        wrapper.setAttribute('class', new_wrapper_class);
-        Array.prototype.forEach.call(document.querySelectorAll(query_selectors), (children) => {
-            wrapper.appendChild(children);
-        });
-
-        document.querySelector(wrapper_parent).insertAdjacentElement(adjacent_location, wrapper);
     }
 
     buildMobileMenu() {
@@ -495,7 +465,7 @@ export default class BasePortal {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) return;
 
         policies.insertAdjacentElement('afterEnd', additional_policies);
-        moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd');
+        utilities.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd');
         additional_policies.insertAdjacentElement('beforeBegin', additional_policies_legend);
 
         additional_policies.insertAdjacentHTML('beforeEnd', `
@@ -610,40 +580,40 @@ export default class BasePortal {
     }
 
     setupReservationSummaryContainer() {
+        let check_in_date;
+        let check_in_text;
+        let check_out_date;
+        let check_out_text;
         let check_in_element = document.querySelector('.checkInRow td');
         let check_out_element = document.querySelector('.checkOutRow td');
-        let locale_element = document.querySelector('meta[name="locale"]')
+        let currency_element = document.querySelector('meta[name="currency"]');
 
-        if (!check_in_element || !check_out_element || !locale_element) {
-            return;
-        }
+        if (!check_in_element || !check_out_element || !currency_element) return;
 
-        let locale = locale_element.getAttribute('content').replace('_', '-');
-        let check_in_text = check_in_element.textContent;
-        let check_out_text = check_out_element.textContent;
+        check_in_text = check_in_element.textContent;
+        check_out_text = check_out_element.textContent;
 
-        let check_in_date = new Date(check_in_text).toLocaleDateString('en-US');
-        let check_out_date = new Date(check_out_text).toLocaleDateString('en-US');
+            check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
+            check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
+        
 
         utilities.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
-        this.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
+        utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 
     formatCheckoutForm() {
-        if (!this.page_name == 'checkout') return;
-
         let room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 0;
 
         room_reservations.forEach((reservation) => {
             reservation_count++;
 
-            this.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
+            utilities.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
 
-            this.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
+            utilities.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
 
-            this.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`, `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`, `credit-card-details`, 'afterEnd');
+            utilities.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`, `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`, `credit-card-details`, 'afterEnd');
 
             utilities.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
             utilities.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
@@ -866,9 +836,7 @@ export default class BasePortal {
 
         window.addEventListener('click', (e) => {
             if (document.querySelector('.show-language-container')) {
-                if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) {
-                    return;
-                }
+                if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) return;
 
                 document.querySelector('.language-container').classList.toggle('show-language-container');
                 language_label.querySelector('svg').classList.toggle('flip-svg');
@@ -890,12 +858,13 @@ export default class BasePortal {
         let currencies_select = document.querySelector('#CurrenciesContainer select');
         let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
+        console.log('currencies before return early')
         if (!currencies_node_list ||
             !config_container ||
             !currency_label ||
             !top_currencies_container ||
             !currencies_select) return;
-
+        console.log('currencies after return early')
         currencies_node_list.forEach((currency) => {
             if (currency.getAttribute('selected')) {
                 selected_currency = currency.value;
@@ -973,9 +942,8 @@ export default class BasePortal {
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
                 prop_id_el = property.parentElement.querySelector('.propId');
-                if (!prop_id_el) {
-                    return;
-                }
+                if (!prop_id_el) return;
+
                 prop_id = prop_id_el.textContent;
                 ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
             });
@@ -993,7 +961,6 @@ export default class BasePortal {
         let full_stay_rate;
 
         if (document.querySelector('.SearchHotels')) {
-            console.log('showFullStay after second conditional')
             properties = document.querySelectorAll('.ArnContainer');
             properties.forEach((property) => {
                 average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
@@ -1004,9 +971,7 @@ export default class BasePortal {
                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                if (nights == 1) {
-                    property.querySelector('.arnPrice').style.display = 'none';
-                }
+                if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
             });
         }
 
@@ -1021,9 +986,7 @@ export default class BasePortal {
                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                if (nights == 1) {
-                    property.querySelector('.averageNightly').style.display = 'none';
-                }
+                if (nights == 1) property.querySelector('.averageNightly').style.display = 'none';
             });
         }
     }
@@ -1078,18 +1041,14 @@ export default class BasePortal {
         let currency = '';
         let currency_el = document.querySelector('meta[name="currency"]');
         let map_markers = document.querySelectorAll('.arnMapMarker')
-        console.log('setMapMarkerSize fired.')
-        if (!currency_el || !map_markers) {
-            console.log('setMarkerSize return early')
-            return;
-        }
-        console.log('setMarkerSize after return early.')
+
+        if (!currency_el || !map_markers) return;
+
         currency = currency_el.getAttribute('content');
 
         if (currency == 'USD') return;
 
         map_markers.forEach((marker) => {
-            console.log('inside foreach')
             marker.style.width = '85px';
         });
     }

@@ -1,9 +1,13 @@
  export default class BasePortal {
+    
+     constructor() {
+         this.site_id;
+         this.page_name;
+         this.site_config;
+         this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
 
-     site_id;
-     page_name;
-     site_config;
-     svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+         this.init();
+     }
 
      init() {
          this.ieForEachPolyfill();
@@ -175,7 +179,7 @@
       *@description gets page name using css classes from body tag
       */
      async getPageName() {
-         let body_classes = document.querySelector('body');
+         let body_classes = document.body;
 
          if (body_classes.classList.contains('SearchHotels')) {
              this.page_name = 'search-results';
@@ -658,7 +662,7 @@
 
      moveFooterOutOfSearchContainer() {
          if (document.querySelector('.SearchHotels') && document.querySelector('.ArnSupportBottom')) {
-             document.querySelector('body').insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'))
+             document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'))
          }
      }
 
@@ -759,7 +763,7 @@
 
          document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<span class="open-modal">Show ${modal_title}</span>`);
 
-         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
+         document.body.insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
 
          array_of_elements_to_put_in_modal_body.forEach((element) => {
              document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', element);
@@ -823,7 +827,7 @@
      applyConfigColors() {
          if (!this.site_config) return;
 
-         document.querySelector('body').insertAdjacentHTML('beforeEnd', `
+         document.body.insertAdjacentHTML('beforeEnd', `
             <style>
             /* Primary Background Color */
                 #searching h2:after,
@@ -998,7 +1002,7 @@
          if (!this.site_config) return;
 
          this.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-         document.querySelector('body').insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+         document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
      }
 
      showLanguageFromCongif() {

@@ -211,8 +211,13 @@ header {
 
 #currency-label {
     width: 200px;
-    display: flex;
+    display: none;
     justify-content: space-between;
+}
+
+.RootBody #currency-label,
+.SearchHotels #currency-label {
+    display: flex;
 }
 
 #language-label polyline,
@@ -458,9 +463,11 @@ header {
 .arnMapMarker:hover {
     border: 1px solid #444f74;
 }
-.arnMapMarker:hover .arnMapMarkerTriangle{
+
+.arnMapMarker:hover .arnMapMarkerTriangle {
     border-top-color: #333 !important;
 }
+
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
     background: #333 !important;
@@ -894,7 +901,7 @@ div.autocomplete ul li.selected {
     display: flex !important;
     order: 1;
     position: absolute;
-    bottom: 18px;
+    bottom: 0;
     left: 12px;
 }
 
@@ -1022,25 +1029,7 @@ div.autocomplete ul li.selected {
     }
 
     #sort-wrapper a {
-        position: initial;
-        width: unset !important;
-        padding: unset;
-        box-shadow: unset;
-        transform: unset !important;
-        margin: 18px 0 18px 42px;
-        display: flex !important;
-        align-items: center;
-    }
-
-    #sort-wrapper a:before {
-        background: transparent;
-        position: absolute;
-        left: 24px;
-        content: '';
-        width: 18px;
-        height: 18px;
-        border-radius: 100%;
-        transition: all .4s ease;
+        padding: 8px
     }
 
     #sort-wrapper a:hover,
@@ -1312,7 +1301,7 @@ legend {
     background: #fff;
     padding: 12px;
     z-index: 1;
-    box-shadow: 0 2px 50px 0 #000;
+    border: 1px solid #ccc;
     font-size: 12px;
 }
 
@@ -1797,7 +1786,7 @@ legend {
 
     .SearchHotels .ArnPropertyMapInner {
         transform: translateX(100%);
-        transition: all .3s ease-in;
+        transition: all .5s ease;
         z-index: 8 !important;
         width: 100% !important;
     }
@@ -1824,7 +1813,7 @@ legend {
     }
 
     .SearchHotels .ArnSortContainer {
-        margin: 12px 0;
+        margin: 12px 0 36px 0px;
     }
 
     #arnOpenAnchorId {

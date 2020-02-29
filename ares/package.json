@@ -9,7 +9,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "dayjs": "^1.8.21"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/polyfill": "^7.6.0",

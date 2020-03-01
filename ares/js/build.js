@@ -58,7 +58,9 @@ export default class BasePortal {
                     this.updatePropReviewsURLToUseAnchor();
 
                     this.getTotalNights().then((nights) => {
-                        this.showFullStayAndNightlyRates(nights);
+                        this.getCurrency().then((currency) => {
+                            this.showFullStayAndNightlyRates(nights, currency);
+                        });
                     });
 
                     this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
@@ -99,14 +101,16 @@ export default class BasePortal {
                 utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
 
-                jQuery('#theBody').on("arnMapLoadedEvent", () => {
-                    this.getTotalNights().then((nights) => {
-                        this.getCurrency().then((currency) => {
-                            this.getNightlyRateForMapMarkers(nights, currency);
+                if (this.site_config.show_tax_inclusive_rates) {
+                    jQuery('#theBody').on("arnMapLoadedEvent", () => {
+                        this.getTotalNights().then((nights) => {
+                            this.getCurrency().then((currency) => {
+                                this.getNightlyRateForMapMarkers(nights, currency);
+                            });
                         });
-                    });
 
-                });
+                    });
+                }
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
@@ -117,7 +121,9 @@ export default class BasePortal {
                     this.highlightMapMarkersOnPropertyHover();
 
                     this.getTotalNights().then((nights) => {
-                        this.showFullStayAndNightlyRates(nights);
+                        this.getCurrency().then((currency) => {
+                            this.showFullStayAndNightlyRates(nights, currency);
+                        });
                     });
 
 
@@ -968,43 +974,80 @@ export default class BasePortal {
     }
 
     // refactor me, please!
-    showFullStayAndNightlyRates(nights) {
+    showFullStayAndNightlyRates(nights, currency) {
+        let rate;
         let properties;
         let average_rate;
         let full_stay_rate;
+        let fixed_full_stay;
 
-        if (document.querySelector('.SearchHotels')) {
-            properties = document.querySelectorAll('.ArnContainer');
-            properties.forEach((property) => {
-                average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-                full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+        if (this.site_config.show_full_stay_rate_and_taxes) {
+            if (document.querySelector('.SearchHotels')) {
+                properties = document.querySelectorAll('.ArnContainer');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+                    full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-                if (!average_rate || !full_stay_rate) return;
+                    if (!average_rate || !full_stay_rate) return;
 
-                average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                    average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                    full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                if (nights == 1) {
-                    property.querySelector('.arnPrice').style.display = 'none';
-                }
-            });
+                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                });
+            }
+
+            if (document.querySelector('.SinglePropDetail')) {
+                properties = document.querySelectorAll('.ArnNightlyRate');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('.averageNightly');
+                    full_stay_rate = property.querySelector('strong');
+
+                    if (!average_rate || !full_stay_rate) return;
+
+                    average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                    full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+
+                    if (nights == 1) property.querySelector('.averageNightly').style.display = 'none';
+                });
+            }
         }
+        if (!this.site_config.show_full_stay_rate_and_taxes) {
+            if (document.querySelector('.SearchHotels')) {
+                properties = document.querySelectorAll('.ArnContainer');
+                properties.forEach((property) => {
+                    rate = property.querySelector('.arnPrice');
+                    average_rate = property.querySelector('.arnPrice .arnUnit');
+                    full_stay_rate = parseFloat(average_rate.textContent) * nights;
+                    fixed_full_stay = full_stay_rate.toFixed(2);
 
-        if (document.querySelector('.SinglePropDetail')) {
-            properties = document.querySelectorAll('.ArnNightlyRate');
-            properties.forEach((property) => {
-                average_rate = property.querySelector('.averageNightly');
-                full_stay_rate = property.querySelector('strong');
+                    if (!average_rate) return;
+                    currency == 'USD' ?
+                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>$${fixed_full_stay} for ${nights} nights </div>`) :
+                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>${fixed_full_stay} ${currency} for ${nights} nights </div>`);
 
-                if (!average_rate || !full_stay_rate) return;
+                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                });
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}</style>')
+            }
 
-                average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+            if (document.querySelector('.SinglePropDetail')) {
+                properties = document.querySelectorAll('.ArnNightlyRate');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('strong');
+                    full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, "").replace(/[\r\n]+/gm, "")) * nights;
+                    fixed_full_stay = full_stay_rate.toFixed(2);
 
-                if (nights == 1) {
-                    property.querySelector('.averageNightly').style.display = 'none';
-                }
-            });
+                    if (!average_rate) return;
+                    currency == 'USD' ?
+                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>$${fixed_full_stay} for ${nights} nights </div>`) :
+                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+
+                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                });
+
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>')
+            }
         }
     }
 

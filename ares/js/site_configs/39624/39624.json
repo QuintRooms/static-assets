@@ -16,6 +16,7 @@
         "show_points": false,
         "allow_registration": true
     },
+    "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
     "show_date_prompt": false,

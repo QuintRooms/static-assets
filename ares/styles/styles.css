@@ -1220,6 +1220,18 @@ legend {
     margin-top: 8px;
 }
 
+.arnPrice{
+    font-size: 17px;
+}
+.arnUnit + div{
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.full-stay-rate{
+    font-size: 13px;
+}
+
 .SinglePropDetail .ArnRateCalendar {
     background: rgba(255, 255, 255, .8);
     color: #333;
@@ -1735,7 +1747,6 @@ legend {
 
 .arnPrice {
     display: block;
-    font-size: 13px;
     order: 1;
 }
 

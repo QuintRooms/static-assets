@@ -17,7 +17,7 @@ export default class BasePortal {
     init() {
         utilities.ieForEachPolyfill();
         this.getSiteID().then((site_id) => {
-            this.getSiteConfigJSON().then(() => {
+            this.getSiteConfigJSON(site_id).then(() => {
                 this.getPageName();
                 this.applyConfigColors();
                 this.setFontFromConfig();
@@ -44,7 +44,6 @@ export default class BasePortal {
                 }
 
                 utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
-                utilities.updateHTML('.ArnLeftListContainer > span.translateMe', 'Search');
 
                 // single prop detail methods
                 if (this.page_name == 'property-detail') {
@@ -99,12 +98,12 @@ export default class BasePortal {
                 utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
 
-                utilities.waitForSelectorInDOM('.pollingFinished').then(() => {
+                utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
 
-                    L.control.scale().addTo(window.ArnMap);
                     this.toggleMap();
                     this.useLogoForVenueMapMarker();
+                    L.control.scale().addTo(window.ArnMap);
                     this.highlightMapMarkersOnPropertyHover();
 
                     this.getTotalNights().then((nights) => {
@@ -140,10 +139,6 @@ export default class BasePortal {
                         utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
                         utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                     });
-
-                    window.addEventListener('DOMContentLoaded', (event) => {
-
-                    });
                 });
             });
         });
@@ -160,10 +155,9 @@ export default class BasePortal {
         return await this.site_id;
     }
 
-    async getSiteConfigJSON() {
-        console.log('getSiteConfigJSON fired');
+    async getSiteConfigJSON(site_id) {
         try {
-            return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${this.site_id}/${this.site_id}.json`, { method: 'GET' })
+            return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
                     this.site_config = json;
@@ -593,9 +587,9 @@ export default class BasePortal {
         check_in_text = check_in_element.textContent;
         check_out_text = check_out_element.textContent;
 
-            check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
-            check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
-        
+        check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
+        check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
+
 
         utilities.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
         utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
@@ -858,13 +852,12 @@ export default class BasePortal {
         let currencies_select = document.querySelector('#CurrenciesContainer select');
         let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-        console.log('currencies before return early')
         if (!currencies_node_list ||
             !config_container ||
             !currency_label ||
             !top_currencies_container ||
             !currencies_select) return;
-        console.log('currencies after return early')
+
         currencies_node_list.forEach((currency) => {
             if (currency.getAttribute('selected')) {
                 selected_currency = currency.value;
@@ -960,18 +953,20 @@ export default class BasePortal {
         let average_rate;
         let full_stay_rate;
 
+
         if (document.querySelector('.SearchHotels')) {
-            properties = document.querySelectorAll('.ArnContainer');
+
+            properties = document.querySelectorAll('.ArnProperty');
             properties.forEach((property) => {
-                average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-                full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-                if (!average_rate || !full_stay_rate) return;
+                    average_rate = property.querySelector('.arnPrice .arnUnit');
+                    full_stay_rate = property.getAttribute('total');
 
-                average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                    if (!average_rate || !full_stay_rate) return;
 
-                if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                    average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div><div class="full-stay-rate">${full_stay_rate}<span> for ${nights} nights </span></div>`);
+
+                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
             });
         }
 

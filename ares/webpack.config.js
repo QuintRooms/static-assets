@@ -21,6 +21,5 @@ module.exports = {
             filename: '[name].map',
             append: '\n//# sourceMappingURL=https://dev-static.hotelsforhope.com/ares/dist/' + '[url]'
         })
-
     ]
 };

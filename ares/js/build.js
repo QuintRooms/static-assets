@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import Utilities from './utilities.js';
 
+
 let dayjs = require('dayjs');
 let utilities = new Utilities();
 
@@ -180,8 +181,8 @@ export default class BasePortal {
                     this.site_config = json;
                     console.log('site_config:', json);
                 });
-        } catch {
-            console.log('could not get site config');
+        } catch (error) {
+            console.log('could not get site config', error);
         }
     }
 
@@ -981,7 +982,7 @@ export default class BasePortal {
         let full_stay_rate;
         let fixed_full_stay;
 
-        if (this.site_config.show_full_stay_rate_and_taxes) {
+        if (this.site_config.show_tax_inclusive_rates) {
             if (document.querySelector('.SearchHotels')) {
                 properties = document.querySelectorAll('.ArnContainer');
                 properties.forEach((property) => {
@@ -1012,7 +1013,8 @@ export default class BasePortal {
                 });
             }
         }
-        if (!this.site_config.show_full_stay_rate_and_taxes) {
+
+        if (!this.site_config.show_tax_inclusive_rates) {
             if (document.querySelector('.SearchHotels')) {
                 properties = document.querySelectorAll('.ArnContainer');
                 properties.forEach((property) => {
@@ -1022,13 +1024,14 @@ export default class BasePortal {
                     fixed_full_stay = full_stay_rate.toFixed(2);
 
                     if (!average_rate) return;
-                    currency == 'USD' ?
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>$${fixed_full_stay} for ${nights} nights </div>`) :
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>${fixed_full_stay} ${currency} for ${nights} nights </div>`);
 
-                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                    currency == 'USD' ?
+                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`) :
+                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+                    if (nights == 1) property.querySelector('.full-stay').style.display = 'none';
                 });
-                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}</style>')
+
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>');
             }
 
             if (document.querySelector('.SinglePropDetail')) {
@@ -1040,13 +1043,13 @@ export default class BasePortal {
 
                     if (!average_rate) return;
                     currency == 'USD' ?
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>$${fixed_full_stay} for ${nights} nights </div>`) :
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div>${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`) :
+                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+                    if (nights == 1) property.querySelector('.full-stay').style.display = 'none';
 
-                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
                 });
 
-                document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>')
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>');
             }
         }
     }

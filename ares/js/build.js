@@ -238,11 +238,10 @@ export default class BasePortal {
 
     async getCurrency() {
         let currency_el = document.querySelector('meta[name="currency"]');
-        console.log(currency_el)
         if (!currency_el) return;
 
         this.currency = currency_el.getAttribute('content');
-        console.log(this.currency)
+
         return await this.currency;
     }
 

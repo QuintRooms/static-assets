@@ -77,16 +77,19 @@ export default class Utilities {
         parent_element.appendChild(child_element);
     }
 
-    // async waitForSelectorInDOM(selector) {
-    //     return await new Promise(resolve => {
-    //         let interval = setInterval(() => {
-    //             if (document.querySelector(selector)) {
-    //                 resolve(selector);
-    //                 clearInterval(interval);
-    //             };
-    //         }, 500);
-    //     });
-    // }
+    // should do this using mutationObserver
+    async waitForSelectorInDOM(selector) {
+        return await new Promise(resolve => {
+            let interval = setInterval(() => {
+            let element = document.querySelector(selector);
+                if (element) {
+                    resolve(element);
+                    clearInterval(interval);
+                    return element;
+                };
+            }, 100);
+        });
+    }
 
     moveElementIntoExistingWrapper(element_to_move, wrapper, adjacent_position) {
         if (!document.querySelector(wrapper) || !document.querySelector(element_to_move)) return;
@@ -137,26 +140,5 @@ export default class Utilities {
         document.querySelector('.close-modal').addEventListener('click', () => {
             document.querySelector('.modal-overlay').classList.toggle('show-modal');
         });
-    }
-
-    waitForSelectorInDOM(selector) {
-        let config = {
-            attributes: true,
-            attributeFilter: ['class'],
-            childList: false,
-            characterData: false
-        };
-
-        let observed_element = document.querySelector('#Properties');
-        let element_waiting_on = document.querySelector(selector);
-
-        let observer = new MutationObserver(async (e) => {
-            if (element_waiting_on) {
-                observer.disconnect();
-                return await element_waiting_on;
-            }
-        });
-
-        observer.observe(observed_element, config)
     }
 }

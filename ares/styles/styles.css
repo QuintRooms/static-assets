@@ -1215,20 +1215,21 @@ legend {
 .SinglePropDetail .ArnNightlyRate strong {
     display: block;
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: 700;
     order: 1;
     margin-top: 8px;
 }
 
-.arnPrice{
+.arnPrice {
     font-size: 17px;
 }
-.arnUnit + div{
+
+.arnUnit+div {
     font-weight: 500;
     font-size: 13px;
 }
 
-.full-stay-rate{
+.full-stay-rate {
     font-size: 13px;
 }
 
@@ -1738,6 +1739,7 @@ legend {
 }
 
 
+
 .ArnPriceCell .mainRate {
     font-size: 17px;
     font-weight: 700;
@@ -1747,6 +1749,7 @@ legend {
 
 .arnPrice {
     display: block;
+    font-size: 13px;
     order: 1;
 }
 

@@ -11,6 +11,7 @@ export default class BasePortal {
         this.site_id;
         this.page_name;
         this.site_config;
+        this.currency = '';
         this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
     }
 
@@ -98,6 +99,15 @@ export default class BasePortal {
                 utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
                 utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
 
+                jQuery('#theBody').on("arnMapLoadedEvent", () => {
+                    this.getTotalNights().then((nights) => {
+                        this.getCurrency().then((currency) => {
+                            this.getNightlyRateForMapMarkers(nights, currency);
+                        });
+                    });
+
+                });
+
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
 
@@ -109,6 +119,7 @@ export default class BasePortal {
                     this.getTotalNights().then((nights) => {
                         this.showFullStayAndNightlyRates(nights);
                     });
+
 
                     this.createStarIcons();
                     this.addHRToProperties();
@@ -223,6 +234,16 @@ export default class BasePortal {
             this.page_name = 'cug-registration';
             return await this.page_name;
         }
+    }
+
+    async getCurrency() {
+        let currency_el = document.querySelector('meta[name="currency"]');
+        console.log(currency_el)
+        if (!currency_el) return;
+
+        this.currency = currency_el.getAttribute('content');
+        console.log(this.currency)
+        return await this.currency;
     }
 
     /**
@@ -953,20 +974,20 @@ export default class BasePortal {
         let average_rate;
         let full_stay_rate;
 
-
         if (document.querySelector('.SearchHotels')) {
-
-            properties = document.querySelectorAll('.ArnProperty');
+            properties = document.querySelectorAll('.ArnContainer');
             properties.forEach((property) => {
+                average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+                full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-                    average_rate = property.querySelector('.arnPrice .arnUnit');
-                    full_stay_rate = property.getAttribute('total');
+                if (!average_rate || !full_stay_rate) return;
 
-                    if (!average_rate || !full_stay_rate) return;
+                average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                    average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div><div class="full-stay-rate">${full_stay_rate}<span> for ${nights} nights </span></div>`);
-
-                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                if (nights == 1) {
+                    property.querySelector('.arnPrice').style.display = 'none';
+                }
             });
         }
 
@@ -981,7 +1002,9 @@ export default class BasePortal {
                 average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                 full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                if (nights == 1) property.querySelector('.averageNightly').style.display = 'none';
+                if (nights == 1) {
+                    property.querySelector('.averageNightly').style.display = 'none';
+                }
             });
         }
     }
@@ -1001,6 +1024,24 @@ export default class BasePortal {
 
         return await nights;
     }
+
+    getNightlyRateForMapMarkers(nights, currency) {
+        let average_rate;
+        let full_stay_rate;
+        let fixed_average_rate;
+        let mapMarkers = document.querySelectorAll('.arnMapMarkerSpan');
+
+        mapMarkers.forEach((marker) => {
+            full_stay_rate = marker.textContent.replace(/[^0-9.]/g, "").replace(/[\r\n]+/gm, "");
+            average_rate = full_stay_rate / nights;
+            fixed_average_rate = parseFloat(average_rate).toFixed(0);
+
+            currency == 'USD' ? marker.textContent = `$${fixed_average_rate}` : marker.textContent = `${fixed_average_rate} ${currency}`;
+
+        });
+    }
+
+
 
     addTitleToProperties() {
         let property_name;

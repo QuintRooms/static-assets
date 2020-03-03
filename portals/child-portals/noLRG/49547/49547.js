@@ -15,7 +15,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51474/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/49547/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.breederscup.com/', 'href');
 
                 observer.disconnect();
@@ -28,7 +28,7 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/51474/51474.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/49547/49547.css">');
 
 function useLogoForVenueMapMarker() {
     let map_markers = document.querySelectorAll('.arn-green-marker-icon');
@@ -36,7 +36,7 @@ function useLogoForVenueMapMarker() {
     if (!map_markers) return;
 
     map_markers.forEach((marker) => {
-        marker.setAttribute('src', `https://static.hotelsforhope.com/portals/child-portals/noLRG/51474/images/logo.png`);
+        marker.setAttribute('src', `https://static.hotelsforhope.com/portals/child-portals/noLRG/49547/images/logo.png`);
     });
 }
 

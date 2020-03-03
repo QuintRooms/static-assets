@@ -148,7 +148,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 8px;
+    padding: 16px 8px;
     position: relative;
     z-index: 10;
 }
@@ -185,8 +185,12 @@ header {
 
 #language {
     position: relative;
-    width: 160px;
+    width: 180px;
     order: 1;
+}
+
+#language-label {
+    display: flex;
 }
 
 #language-label,
@@ -194,10 +198,26 @@ header {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #868686;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#language-label span,
+#currency-label span {
+    pointer-events: none;
+    padding: 2px;
+    display: flex;
 }
 
 #currency-label {
     width: 200px;
+    display: none;
+    justify-content: space-between;
+}
+
+.RootBody #currency-label,
+.SearchHotels #currency-label {
+    display: flex;
 }
 
 #language-label polyline,
@@ -226,6 +246,7 @@ header {
     flex-direction: column;
 }
 
+
 .currencies-container {
     position: relative;
     margin-right: 12px;
@@ -237,6 +258,12 @@ header {
     padding: 6px 8px;
     transition: all .3s ease;
     font-size: 13px;
+}
+
+.language-container img,
+#language-label img {
+    max-width: 24px;
+    margin-right: 8px;
 }
 
 .currencies {
@@ -258,8 +285,18 @@ header {
 .language-container div {
     margin-bottom: 0;
     cursor: pointer;
-    padding: 6px 8px;
+    padding: 10px 8px;
     transition: all .3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.language-container div:hover,
+.currencies div:hover,
+.active-currency,
+.active-language {
+    background: #e2e2e2;
+    color: #333;
 }
 
 .top-currencies {
@@ -298,7 +335,6 @@ header {
 
 @media screen and (max-width: 1000px) {
     .currencies-container {
-        width: 100%;
         position: static;
     }
 
@@ -426,6 +462,20 @@ header {
 .arnMapMarker,
 .arnMapMarker:hover {
     border: 1px solid #444f74;
+}
+
+.arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: #333 !important;
+}
+
+.arnMapMarker:hover,
+.arnMapMarker.highlight {
+    background: #333 !important;
+    border: 1px solid #444f74;
+}
+
+.arnMapMarker.highlight .arnMapMarkerTriangle {
+    border-top-color: #333 !important;
 }
 
 .noPrice {
@@ -851,7 +901,7 @@ div.autocomplete ul li.selected {
     display: flex !important;
     order: 1;
     position: absolute;
-    bottom: 18px;
+    bottom: 0;
     left: 12px;
 }
 
@@ -979,25 +1029,7 @@ div.autocomplete ul li.selected {
     }
 
     #sort-wrapper a {
-        position: initial;
-        width: unset !important;
-        padding: unset;
-        box-shadow: unset;
-        transform: unset !important;
-        margin: 18px 0 18px 42px;
-        display: flex !important;
-        align-items: center;
-    }
-
-    #sort-wrapper a:before {
-        background: transparent;
-        position: absolute;
-        left: 24px;
-        content: '';
-        width: 18px;
-        height: 18px;
-        border-radius: 100%;
-        transition: all .4s ease;
+        padding: 8px
     }
 
     #sort-wrapper a:hover,
@@ -1183,9 +1215,22 @@ legend {
 .SinglePropDetail .ArnNightlyRate strong {
     display: block;
     font-size: 1rem;
-    font-weight: normal;
+    font-weight: 700;
     order: 1;
     margin-top: 8px;
+}
+
+.arnPrice {
+    font-size: 17px;
+}
+
+.arnUnit+div {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.full-stay-rate {
+    font-size: 13px;
 }
 
 .SinglePropDetail .ArnRateCalendar {
@@ -1269,7 +1314,7 @@ legend {
     background: #fff;
     padding: 12px;
     z-index: 1;
-    box-shadow: 0 2px 50px 0 #000;
+    border: 1px solid #ccc;
     font-size: 12px;
 }
 
@@ -1644,7 +1689,6 @@ legend {
 
 .ArnPropName,
 .ArnRateCell {
-    padding: 12px;
     line-height: 1.4;
 }
 
@@ -1693,6 +1737,7 @@ legend {
     font-weight: 500;
     border-radius: 5px;
 }
+
 
 
 .ArnPriceCell .mainRate {
@@ -1755,7 +1800,7 @@ legend {
 
     .SearchHotels .ArnPropertyMapInner {
         transform: translateX(100%);
-        transition: all .3s ease-in;
+        transition: all .5s ease;
         z-index: 8 !important;
         width: 100% !important;
     }
@@ -1782,7 +1827,7 @@ legend {
     }
 
     .SearchHotels .ArnSortContainer {
-        margin: 12px 0;
+        margin: 12px 0 36px 0px;
     }
 
     #arnOpenAnchorId {
@@ -1833,13 +1878,13 @@ legend {
 }
 
 @media screen and (max-width: 600px) {
-    .SearchHotels #properties {
+    .SearchHotels #Properties {
         margin: 0 8px;
     }
 
     .SearchHotels .ArnContainer {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% 55%;
         grid-template-rows: 25% 75%;
     }
 
@@ -1855,11 +1900,11 @@ legend {
     .SearchHotels .ArnPropThumb {
         grid-row-start: 1;
         grid-row-end: 3;
-        height: 200px;
+        height: 180px;
     }
 
     .SearchHotels .ArnPropThumb img {
-        height: 200px;
+        height: 180px;
     }
 
     .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
@@ -1900,6 +1945,37 @@ legend {
 
     .SearchHotels .ArnPropAddress {
         display: none;
+    }
+
+    .top-currencies,
+    .currencies {
+        grid-template-columns: 50% 50%;
+    }
+
+    .top-currencies h4,
+    .top-currencies+h4,
+    .top-currencies {
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+        display: none !important;
+    }
+
+    .currencies-container {
+        width: unset;
+    }
+
+    .config-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #language {
+        margin-bottom: 12px;
     }
 }
 

@@ -158,9 +158,19 @@ let affiliates = {
     17172: "Beerfest",
     17263: "Arizona Bike Week",
     17337: "Wonderfront",
-    17367: "F1 Promoters",
+    17367: "Dutch GP Promoter",
     17368: "Miami Beach Pop Festival",
     17369: "Rockweave",
+    17414: "Vietnamese GP Promoter",
+    17415: "Bahrain GP Promoter",
+    17431: "Austin Marathon ",
+    17438: "Community Brands    ",
+    17450: "Vietnam GP",
+    17464: "Pro Football Hall of Fame",
+    17473: "OKRoger.ai",
+    17476: "ROT Rally",
+    17478: "Miami GP Promoter",
+    17481: "Breeder's Cup"
 };
 
 Object.keys(affiliates).forEach(key => {

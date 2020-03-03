@@ -611,7 +611,6 @@ header {
 .sash {
     background: #512b6d;
     margin-top: -1px;
-    justify-content: flex-end;
 }
 
 .svg-container {
@@ -632,7 +631,6 @@ header {
 
 .event-rate {
     text-transform: unset;
-    left: -72px;
 }
 
 .tooltipContainer p {

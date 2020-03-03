@@ -611,7 +611,6 @@ header {
 .sash {
     background: #512b6d;
     margin-top: -1px;
-    justify-content: flex-end;
 }
 
 .svg-container {

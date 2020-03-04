@@ -338,6 +338,10 @@ label,
     color: #333;
 }
 
+.RootBody .ArnPrimarySearchContainer span {
+    color: #fff;
+}
+
 .yui3-calendar-row td {
     color: #15151e !important;
 }

@@ -408,7 +408,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 8px;
-    /* border-bottom: 3px solid #1035F9; */
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
@@ -452,6 +451,7 @@ header {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
 }
 
 #theWBValidatedRegistrationFormBody label {

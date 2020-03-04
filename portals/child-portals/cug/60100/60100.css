@@ -422,6 +422,8 @@ header {
 .WBLoginFormContainer.ArnSubPage .SSFormBody {
     margin: 5% auto;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
+    max-width: 500px;
+    width: 100%;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,
@@ -949,6 +951,14 @@ header {
     #commands a:before,
     #commands form:before {
         background: transparent;
+    }
+
+    #theWBValidatedRegistrationFormBody {
+        padding: 14px !important;
+    }
+
+    .WBValidatedRegistrationForm #thePersonalInfoGroup legend {
+        line-height: 1.4;
     }
 }
 

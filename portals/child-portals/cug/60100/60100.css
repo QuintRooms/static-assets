@@ -386,7 +386,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png);
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png);
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -421,7 +421,7 @@ header {
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png) !important;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png) !important;
     grid-row-start: 2;
     display: flex;
     flex-direction: column;

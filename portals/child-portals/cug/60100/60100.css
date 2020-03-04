@@ -307,7 +307,12 @@ body,
     font-size: 15px;
 }
 
-.SearchHotels .ArnSearchHotelsImg {
+.RootBody .modifySearch {
+    display: none;
+}
+
+.SearchHotels .ArnSearchHotelsImg,
+.RootBody .ArnSearchHotelsImg {
     height: unset;
 }
 
@@ -413,7 +418,7 @@ header {
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
 .WBLoginFormContainer.ArnSubPage .SSFormBody {
     margin: 5% auto;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,
@@ -452,7 +457,7 @@ header {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
 }
 
 #theWBValidatedRegistrationFormBody label {

@@ -336,7 +336,7 @@ label,
     font-size: 13px !important;
     letter-spacing: .5 !important;
     line-height: 15px;
-    color: #fff;
+    color: #333;
 }
 
 .yui3-calendar-row td {
@@ -717,8 +717,7 @@ header {
 .ArnQuadSearchContainer.ArnPrimarySearchContainer,
 .SearchHotels .ArnPrimarySearchOuterContainer,
 .SinglePropDetail .SimpleSearch {
-    background-color: #58585a;
-    color: rgb(255, 255, 255) !important;
+    background-color: #fff;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {

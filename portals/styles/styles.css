@@ -2490,7 +2490,8 @@ body.WBResendOrCancelForm {
     line-height: 1.5;
 }
 
-.ArnRooms span {
+.ArnRooms span,
+.ArnAdults span {
     margin: 0 !important;
 }
 

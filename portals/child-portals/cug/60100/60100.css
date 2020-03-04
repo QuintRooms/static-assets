@@ -64,7 +64,6 @@
 .SearchHotels .ArnPriceCell>span:after,
 .SinglePropDetail .bestPrice .yourRateAmount:after,
 .SinglePropDetail .bestPrice .originalRateAmount,
-.SinglePropDetail .bestPrice .percentSavings,
 .SinglePropDetail legend {
     font-family: 'Titillium Web', 'sans-serif';
 }
@@ -624,16 +623,6 @@ header {
     border-top-color: #1035F9;
 }
 
-.SearchHotels .ArnPropName div.percentSavings,
-.SinglePropDetail .bestPrice .percentSavings {
-    background: #fc0;
-    color: #000;
-}
-
-.SearchHotels .ArnPropName div.percentSavings {
-    margin: 8px auto;
-}
-
 .SinglePropDetail .ArnPropDescription {
     color: #fff;
 }
@@ -755,10 +744,6 @@ header {
 
 .sash {
     background: #1035F9;
-}
-
-.SearchHotels .percentSavings {
-    display: block !important;
 }
 
 .openMapBtn:hover,
@@ -924,11 +909,6 @@ header {
         margin: 0 0 0 3%;
     }
 
-    .SearchHotels .percentSavings {
-        background: #fc0;
-        color: #15151e;
-    }
-
     .adminContainer span {
         position: absolute;
         top: 36px;
@@ -965,15 +945,6 @@ header {
     #commands a:before,
     #commands form:before {
         background: transparent;
-    }
-}
-
-@media only screen and (min-width: 420px) and (max-width: 800px) {
-    .SearchHotels .percentSavings {
-        left: initial;
-        right: 0;
-        top: 0;
-        border-radius: 0 5px 0 5px;
     }
 }
 
@@ -1243,19 +1214,6 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
-    .SearchHotels .percentSavings {
-        left: initial;
-        right: 0 !important;
-        width: 100%;
-        top: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        z-index: 1;
-        color: #000;
-        background: #ffcc00;
-    }
 
     .SearchHotels .ArnPropName div.memberSavings {
         margin: 0 !important;
@@ -1332,16 +1290,6 @@ ul {
         right: 0 !important;
     }
 
-    .SearchHotels .percentSavings {
-        position: absolute !important;
-        top: 0 !important;
-        right: 0 !important;
-        left: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
-        border-radius: 0 5px 0 5px !important;
-    }
-
     .SearchHotels .ArnPriceCell {
         margin-top: 56px !important;
     }
@@ -1354,40 +1302,8 @@ ul {
 }
 
 .percentSavings {
-    display: initial !important;
+    display: none !important;
 }
-
-.SinglePropDetail .bookRoomCell .percentSavings,
-.SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: inline-block !important;
-    max-width: 75px;
-    margin: 0px auto 8px auto;
-    border: none;
-    background: #ffcc00;
-    color: #333;
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-
-
-/*.ArnPropName div.memberSavings,
-.SinglePropDetail .memberSavings {
-    font-style: unset !important;
-    display: block !important;
-    margin: 6px 0 !important;
-    position: static !important;
-}
-
-.SinglePropDetail .memberSavings {
-    text-align: center;
-    border-bottom: none !important;
-}
-*/
-/*.SinglePropDetail .creditsValue,
-.SinglePropDetail .creditsLabel {
-    display: inline;
-    width: unset !important;
-}*/
 
 .SinglePropDetail .creditsLabel {
     margin-right: 3px;

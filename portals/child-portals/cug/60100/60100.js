@@ -21,8 +21,9 @@ function waitForElementToLoad(elementWaitingFor) {
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
+                    document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'));
                 }
-
+                
                 observer.disconnect();
             }
         }

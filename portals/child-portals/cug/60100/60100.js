@@ -29,3 +29,5 @@ function waitForElementToLoad(elementWaitingFor) {
 waitForElementToLoad('header');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/60100.css">');
+
+cugPortal.updateText('CreateAnAccountAction', 'Register');

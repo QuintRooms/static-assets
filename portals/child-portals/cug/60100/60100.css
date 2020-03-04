@@ -168,11 +168,6 @@ h2 {
     margin: 6px 0 0;
 }
 
-.WBLoginFormContainer.ArnSubPage #theWBLoginForm .CreateAnAccountAction,
-.loginDivider {
-    display: none;
-}
-
 .WBForgotPasswordFormContainer.ArnSubPage,
 .WBForgotPasswordFormInform,
 .WBLoginFormContainer.ArnSubPage {
@@ -309,6 +304,7 @@ header {
 .WBForgotPasswordFormContainer.ArnSubPage .SSFormBody,
 .WBLoginFormContainer.ArnSubPage .SSFormBody {
     margin: 5% auto;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,

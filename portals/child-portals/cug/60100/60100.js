@@ -19,6 +19,10 @@ function waitForElementToLoad(elementWaitingFor) {
                 cugPortal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer')
                 cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/logo.svg', 'src');
 
+                if (document.querySelector('#commands')) {
+                    document.querySelector('header').style.display = 'none';
+                }
+
                 observer.disconnect();
             }
         }
@@ -33,4 +37,3 @@ document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="style
 
 cugPortal.updateText('.CreateAnAccountAction', 'Register');
 cugPortal.updateText('.RootBody .reserveHotel', 'search');
-

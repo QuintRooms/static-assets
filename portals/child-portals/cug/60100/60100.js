@@ -38,3 +38,13 @@ document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="style
 
 cugPortal.updateText('.CreateAnAccountAction', 'Register');
 cugPortal.updateText('.RootBody .reserveHotel', 'search');
+
+function hidePromoCode(){
+    let promo_code_element = document.querySelector('#thePassCodeAjax input');
+
+    if(cugPortal.page_name !== 'cug-registration' || !promo_code_element) return;
+
+    promo_code_element.value = 'stay22';
+}
+
+hidePromoCode();

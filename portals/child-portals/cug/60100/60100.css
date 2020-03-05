@@ -1395,3 +1395,7 @@ div.originalPrice span,
 .SearchHotels .PropLimitedAvail .ArnRateCell {
     background: transparent;
 }
+
+#thePassCodeAjax {
+    display: none;
+}

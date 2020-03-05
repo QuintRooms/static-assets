@@ -258,9 +258,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") {
-            return;
-        }
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") return;
 
         room_description_el.forEach((element) => {
             element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`);
@@ -306,9 +304,7 @@ export default class BasePortal {
     }
 
     hidePropertyThumbnailArrowIfNoPropertyThumbnails() {
-        if (!this.page_name === 'search-results') {
-            return;
-        }
+        if (!this.page_name === 'search-results') return;
 
         let thumbnails = document.querySelectorAll('.ArnImageLink img');
         thumbnails.forEach(function(thumbnail) {
@@ -751,6 +747,7 @@ export default class BasePortal {
                     color:${this.site_config.primary_text_color}
                 }
             }
+            
             .holdRoom,
             .reviewCount a,
             #theAdditionalEmailsLink a,
@@ -1085,8 +1082,6 @@ export default class BasePortal {
 
         });
     }
-
-
 
     addTitleToProperties() {
         let property_name;

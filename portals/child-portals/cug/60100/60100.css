@@ -597,12 +597,15 @@ header {
     font-size: 14px !important;
 }
 
-.selectedTab,
+.SearchHotels .selectedTab,
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-bottom: 1px solid #1035F9;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    background-color: #1035F9;
+    transition: all .3s ease;
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
@@ -895,11 +898,13 @@ header {
         margin-bottom: 36px;
     }
 
-    .SearchHotels .ArnGoCitySearch:hover,
+    .SearchHotels .selectedTab, .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        border-bottom: 1px solid #1035F9;
         background: #1035F9;
+        line-height: 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
     }
 
     .adminContainer span {

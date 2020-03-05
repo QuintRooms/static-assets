@@ -15,7 +15,7 @@ module.exports = {
             loader: "babel-loader"
         }]
     },
-    devtool: 'hidden-source-map',
+    devtool: 'eval-source-map',
     plugins: [
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].map',

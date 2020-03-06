@@ -21,7 +21,7 @@ body.RootBody {
 }
 
 header {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #9c6aad;
     padding: 6px 12px;
 }
 
@@ -58,6 +58,7 @@ header a {
 .HoldRoomsForm .ArnContentButtonNarrow {
     background: #9c6aad !important;
     transition: all .5s ease;
+    border: 1px solid transparent;
 }
 
 .submit,
@@ -118,6 +119,7 @@ header a {
 .bookRoom:active {
     background: #fff !important;
     color: #9c6aad !important;
+    border: 1px solid #ccc;
 }
 
 .holdRoom:hover,
@@ -147,7 +149,7 @@ header a {
 
 .arnMapMarker {
     background: #9c6aad !important;
-    border: #c899ff !important;
+    border: 1px solid #fff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
@@ -157,14 +159,15 @@ header a {
 
 .arnMapMarker:hover,
 .highlight {
-    background: #225a7b !important;
-    border: #225a7b !important;
+    background: #fff !important;
+    border:1px solid #fff !important;
     transition: all .3s ease;
+    color: #9c6aad;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #225a7b !important;
+    border-top-color: #9c6aad !important;
     transition: all .3s ease;
 }
 
@@ -250,7 +253,16 @@ header a {
     .RootBody .ArnSearchContainerMainDiv {
         background: none;
     }
+
+    .ArnSortByClass, .ArnSortByClass:hover, .ArnSortByDealAmount, .ArnSortByDealAmount:hover, .ArnSortByDealPercent, .ArnSortByDealPercent:hover, .ArnSortByDistance, .ArnSortByDistance:hover, .ArnSortByPrice, .ArnSortByPrice:hover, .ArnSortByType, .ArnSortByType:hover, .ArnSortByVacationRental, .ArnSortByVacationRental:hover {
+        width: 224px;
+    }
+
+    #SortControls {
+        top: 40px;
+    }
 }
+
 
 @media only screen and (max-width: 800px) {
     .ad-unit {
@@ -316,4 +328,8 @@ header a {
 #slideit label.open:hover {
     color: #9c6aad;
     background:#fff !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day:hover {
+    background-color: #9c6aad !important;
 }

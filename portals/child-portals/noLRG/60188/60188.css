@@ -22,9 +22,6 @@ body.RootBody {
 
 header {
     border-bottom: 3px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 6px 12px;
 }
 
@@ -59,7 +56,7 @@ header a {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
     transition: all .5s ease;
 }
 
@@ -76,7 +73,7 @@ header a {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #2d78a5 !important;
+    border: 1px solid #9c6aad !important;
 }
 
 .selectedTab,
@@ -84,13 +81,13 @@ header a {
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    border-top: 1px solid #2d78a5 !important;
-    border-bottom: 1px solid #2d78a5 !important;
+    border-top: 1px solid #9c6aad !important;
+    border-bottom: 1px solid #9c6aad !important;
 
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
-    border: 1px solid #2d78a5 !important;
+    border: 1px solid #9c6aad !important;
 }
 
 .GroupHoldForm .ArnContentButtonWide,
@@ -119,7 +116,8 @@ header a {
 .bookRoom:hover,
 .bookRoom:focus,
 .bookRoom:active {
-    background: #225a7b !important;
+    background: #fff !important;
+    color: #9c6aad !important;
 }
 
 .holdRoom:hover,
@@ -134,7 +132,7 @@ header a {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #2d78a5 !important;
+    border-top-color: #9c6aad !important;
 }
 
 .SearchHotels .ArnPropName div.percentSavings,
@@ -144,16 +142,16 @@ header a {
 }
 
 .arn-leaflet-reset-button {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 .arnMapMarker {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
     border: #c899ff !important;
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #2d78a5 !important;
+    border-top-color: #9c6aad !important;
     transition: all .3s ease;
 }
 
@@ -172,11 +170,11 @@ header a {
 
 .specialEventRate,
 .hostHotel {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 .throbber {
-    border-left: #2d78a5 !important;
+    border-left: #9c6aad !important;
 }
 
 .SearchHotels .ArnSearchContainerMainTable {
@@ -187,15 +185,15 @@ header a {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 #slideit section {
-    border-bottom: #2d78a5 !important;
+    border-bottom: #9c6aad !important;
 }
 
 .ArnPropName div.ratingCount {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 .sash {
@@ -205,14 +203,14 @@ header a {
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #2d78a5 !important;
+    background: #9c6aad !important;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -246,7 +244,11 @@ header a {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #2d78a5 !important;
+        border-left: 2px solid #9c6aad !important;
+    }
+
+    .RootBody .ArnSearchContainerMainDiv {
+        background: none;
     }
 }
 
@@ -273,14 +275,14 @@ header a {
     .SearchHotels .ArnSortByDealAmount.active,
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active {
-        border-top: 4px solid #2d78a5 !important;
-        border-bottom: 4px solid #2d78a5 !important;
+        border-top: 4px solid #9c6aad !important;
+        border-bottom: 4px solid #9c6aad !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #2d78a5 !important;
+        border-bottom: 4px solid #9c6aad !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -305,4 +307,13 @@ header a {
 
 #adults option:nth-child(n + 7) {
     display: none !important;
+}
+
+.RootBody .reserveHotel, .RootBody .modifySearch {
+    color: #333;
+}
+
+#slideit label.open:hover {
+    color: #9c6aad;
+    background:#fff !important;
 }

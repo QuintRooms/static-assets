@@ -348,7 +348,7 @@ header a {
 
     .ArnPropName div.ArnTripAdvisorDetails {
         width: 100%;
-        display: flex;
+        display: flex !important;
         justify-content: center;
     }
     
@@ -366,6 +366,10 @@ header a {
     .SearchHotels .ArnRateCell{
         position: static !important;
         max-width: none;
+    }
+
+    .SearchHotels.mobile .roomCount {
+        text-align: center !important;
     }
 }
 

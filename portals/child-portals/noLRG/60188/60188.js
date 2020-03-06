@@ -32,11 +32,14 @@ waitForElementToLoad('header');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/60188.css">');
 
-function updateBgImage(){
 
-    if(!document.querySelector('.RootBody')) return;
+noLRGPortal.updateAttribute('.RootBody', 'background-image: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/images/banner.png)', 'style');
 
-    document.querySelector('.RootBody').style.background = 'url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/images/banner.png) no-reapeat center center /cover';
-}
+// function updateBgImage(){
 
-updateBgImage();
+//     if(!document.querySelector('.RootBody')) return;
+
+//     document.querySelector('.RootBody').style.backgroundImage = 'url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/images/banner.png)';
+// }
+
+// updateBgImage();

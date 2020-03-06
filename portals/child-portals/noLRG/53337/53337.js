@@ -24,12 +24,12 @@ function waitForElementToLoad(elementWaitingFor) {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.aclfestival.com/', 'href');
 
-                noLRGPortal.createHTML('header', `
-                    <div class="event-week pull-right">
-                        <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
-                        <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
-                    </div>
-                `, 'beforeEnd');
+                // noLRGPortal.createHTML('header', `
+                //     <div class="event-week pull-right">
+                //         <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
+                //         <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
+                //     </div>
+                // `, 'beforeEnd');
 
                 setCorrectWeekInURLs();
 
@@ -69,7 +69,7 @@ function insertLRGAssets() {
 
 insertLRGAssets();
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/53337.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/53337.min.css">');
 
 function setCorrectWeekInURLs() {
     let currentURL = new URL(location.href);

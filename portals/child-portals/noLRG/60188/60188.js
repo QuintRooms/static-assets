@@ -34,12 +34,3 @@ document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="style
 
 
 noLRGPortal.updateAttribute('.RootBody', 'background-image: url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/images/banner.png)', 'style');
-
-// function updateBgImage(){
-
-//     if(!document.querySelector('.RootBody')) return;
-
-//     document.querySelector('.RootBody').style.backgroundImage = 'url(https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/60188/images/banner.png)';
-// }
-
-// updateBgImage();

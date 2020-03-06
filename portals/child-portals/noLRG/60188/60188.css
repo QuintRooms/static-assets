@@ -50,7 +50,7 @@ header a {
 .ArnShowRatesLink,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.bookRoom,
+.SinglePropDetail .bookRoom, .SinglePropDetail .holdRoom,
 .SearchHotels .modifySearchButton,
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
@@ -332,4 +332,8 @@ header a {
 
 .yui3-skin-sam .yui3-calendar-day:hover {
     background-color: #9c6aad !important;
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    padding-top: 4px;
 }

@@ -342,18 +342,31 @@ header a {
 }
 
 @media only screen and (max-width: 500px) {
-    .SinglePropDetail .ArnPropName div.ratingCount{
+    .ArnPropName div.ratingCount{
         position: static;
     }
 
-    .SinglePropDetail .ArnPropName div.ArnTripAdvisorDetails {
+    .ArnPropName div.ArnTripAdvisorDetails {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-
-    .SinglePropDetail .reviewCount {
+    
+    .reviewCount {
         order: 1;
     }
+
+    .SearchHotels .ArnPropName {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .SearchHotels .ArnRateCell{
+        position: static !important;
+        max-width: none;
+    }
 }
+
 

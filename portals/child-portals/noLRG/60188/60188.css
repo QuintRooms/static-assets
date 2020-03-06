@@ -294,7 +294,7 @@ header a {
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #9c6aad !important;
+        border-bottom: 1px solid #ccc !important;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -304,6 +304,9 @@ header a {
     #theDatePrompt>img {
         max-width: 300px;
         margin-bottom: 36px;
+    }
+    .ArnTripAdvisorDetails .reviewCount {
+        display: inline !important;
     }
 }
 
@@ -337,3 +340,20 @@ header a {
 .SinglePropDetail .ArnNightlyRate strong {
     padding-top: 4px;
 }
+
+@media only screen and (max-width: 500px) {
+    .SinglePropDetail .ArnPropName div.ratingCount{
+        position: static;
+    }
+
+    .SinglePropDetail .ArnPropName div.ArnTripAdvisorDetails {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .SinglePropDetail .reviewCount {
+        order: 1;
+    }
+}
+

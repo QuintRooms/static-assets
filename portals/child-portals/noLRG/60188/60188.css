@@ -40,6 +40,7 @@ header a {
 
 .SearchHotels .ArnPropName a {
     letter-spacing: initial !important;
+    margin-left: 3px;
 }
 
 
@@ -319,6 +320,19 @@ header a {
 @media only screen and (max-width: 565px) {
     .logo+a {
         display: none;
+    }
+
+    .SearchHotels.mobile .ArnTripAdvisorDetails {
+    display: flex !important;
+    justify-content: center;
+    }
+
+    .SearchHotels .ArnTripAdvisorDetails .reviewCount{
+        order: 1;
+    }
+
+    .SearchHotels .ArnPropName div.reviewCount {
+        width: auto;
     }
 }
 

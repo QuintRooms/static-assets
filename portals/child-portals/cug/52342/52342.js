@@ -134,7 +134,7 @@ function showFullStayTotal(page, property_container, rate_container) {
 
         rate_element = property.querySelector(rate_container);
 
-        if (!rate_element) return;
+        if (!rate_element || !property.querySelector('.full-stay-link')) return;
 
         theme == 'standard' ?
             rate_element.insertAdjacentHTML('afterEnd', `<a class="full-stay-link" href="?${params}">Show Full Stay Price</a>`) :

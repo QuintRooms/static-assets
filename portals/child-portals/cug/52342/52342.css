@@ -408,8 +408,7 @@ header {
 
 .SearchHotels .PropLimitedAvail .ArnContainer .ArnPropThumb img {
     opacity: .25;
-    filter: blur(1px;
-    );
+    filter: blur(1px);
 }
 
 .SearchHotels .PropLimitedAvail .ArnRateCell,

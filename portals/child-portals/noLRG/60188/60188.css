@@ -391,6 +391,20 @@ header a {
     .SearchHotels.mobile .roomCount {
         text-align: center !important;
     }
+
+    .SinglePropDetail .ArnRateCell {
+        display: none;
+    }
+
+    .SinglePropDetail .ArnPropNameLink, .SinglePropDetail .ArnPropAddress, .SinglePropDetail .ArnTripAdvisorDetails {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .SinglePropDetail .ArnPropName {
+        padding: 16px;
+    }
 }
 
 

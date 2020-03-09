@@ -12,8 +12,7 @@ jQuery(document).on('ratesReadyEvent', function() {
         removePercentSavingsUnderThreshhold(5);
         showRatesPerLabel();
 
-        showFullStayTotal('.SearchHotels', '.ArnContainer', '.ArnPriceCell');
-        showFullStayTotal('.SinglePropDetail', '.ArnRateList ', '.yourRateAmount');
+        showFullStayTotal('.ArnContainer', '.ArnPriceCell');
 
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
@@ -64,8 +63,6 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-
-
 if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
     window.location.href = 'https://roomsteals.com/login';
     document.querySelector('body').style.display = 'none';
@@ -115,13 +112,13 @@ function showRatesPerLabel() {
 }
 
 // show full stay total
-function showFullStayTotal(page, property_container, rate_container) {
+function showFullStayTotal(property_container, rate_container) {
     let theme;
     let rate_element;
     let theme_meta = document.querySelector('meta[name="theme"]');
     let properties = document.querySelectorAll(property_container);
 
-    if (!document.querySelector(page) || !theme_meta) return;
+    if (!document.querySelector('.SearchHotels') || !theme_meta) return;
 
     theme = theme_meta.getAttribute('content');
 
@@ -141,6 +138,8 @@ function showFullStayTotal(page, property_container, rate_container) {
 }
 
 function showFullStayToggle() {
+    if(!document.querySelector('.SearchHotels')) return;
+
     let theme;
     let toggle;
     let theme_meta = document.querySelector('meta[name="theme"]');
@@ -170,7 +169,6 @@ function showFullStayToggle() {
         theme == 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');
     });
 }
-
 
 showFullStayToggle();
 

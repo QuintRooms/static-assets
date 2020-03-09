@@ -147,6 +147,12 @@ header a {
     background: #9c6aad !important;
 }
 
+.arn-leaflet-reset-button:hover {
+    background: #fff !important;
+    color: #9c6aad;
+    border: 1px solid #ccc;
+}
+
 .arnMapMarker {
     background: #9c6aad !important;
     border: 1px solid #fff !important;
@@ -343,10 +349,10 @@ header a {
 
 @media only screen and (max-width: 500px) {
     .ArnPropName div.ratingCount{
-        position: static;
+        position: static !important;
     }
 
-    .ArnPropName div.ArnTripAdvisorDetails {
+    .SinglePropDetail  .ArnPropName div.ArnTripAdvisorDetails {
         width: 100%;
         display: flex !important;
         justify-content: center;

@@ -386,7 +386,7 @@ header a {
     .SearchHotels .ArnRateCell{
         position: static !important;
         max-width: none;
-        
+
     }
 
     .SearchHotels.mobile .roomCount {
@@ -405,6 +405,10 @@ header a {
 @media only screen and (max-width: 600px){
     .SinglePropDetail .ArnPropName {
         padding: 16px;
+    }
+
+    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList tr:last-child td {
+        text-align: center;
     }
 }
 

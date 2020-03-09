@@ -120,7 +120,7 @@ header a {
 .bookRoom:active {
     background: #fff !important;
     color: #9c6aad !important;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important;
 }
 
 .holdRoom:hover,
@@ -334,34 +334,9 @@ header a {
     .SearchHotels .ArnPropName div.reviewCount {
         width: auto;
     }
-}
+/* } */
 
-#adults option:nth-child(n + 5) {
-    display: block !important;
-}
-
-#adults option:nth-child(n + 7) {
-    display: none !important;
-}
-
-.RootBody .reserveHotel, .RootBody .modifySearch {
-    color: #333;
-}
-
-#slideit label.open:hover {
-    color: #9c6aad;
-    background:#fff !important;
-}
-
-.yui3-skin-sam .yui3-calendar-day:hover {
-    background-color: #9c6aad !important;
-}
-
-.SinglePropDetail .ArnNightlyRate strong {
-    padding-top: 4px;
-}
-
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) { */
     .ArnPropName div.ratingCount{
         position: static !important;
     }
@@ -400,6 +375,31 @@ header a {
     .SinglePropDetail .ArnPropNameLink, .SinglePropDetail .ArnPropAddress, .SinglePropDetail .ArnTripAdvisorDetails {
         width: auto;
     }
+}
+
+#adults option:nth-child(n + 5) {
+    display: block !important;
+}
+
+#adults option:nth-child(n + 7) {
+    display: none !important;
+}
+
+.RootBody .reserveHotel, .RootBody .modifySearch {
+    color: #333;
+}
+
+#slideit label.open:hover {
+    color: #9c6aad;
+    background:#fff !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day:hover {
+    background-color: #9c6aad !important;
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    padding-top: 4px;
 }
 
 @media only screen and (max-width: 600px){

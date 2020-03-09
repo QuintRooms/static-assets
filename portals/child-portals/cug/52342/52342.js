@@ -12,8 +12,8 @@ jQuery(document).on('ratesReadyEvent', function() {
         removePercentSavingsUnderThreshhold(5);
         showRatesPerLabel();
 
-        showFullStayTotal('.SearchHotels', '.ArnContainer', '.ArnPriceCell');
-        showFullStayTotal('.SinglePropDetail', '.ArnRateList ', '.yourRateAmount');
+        // showFullStayTotal('.SearchHotels', '.ArnContainer', '.ArnPriceCell');
+        // showFullStayTotal('.SinglePropDetail', '.ArnRateList ', '.yourRateAmount');
 
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
@@ -188,6 +188,6 @@ function showFullStayToggle() {
     });
 }
 
-showFullStayToggle();
+// showFullStayToggle();
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52342/52342.css">');

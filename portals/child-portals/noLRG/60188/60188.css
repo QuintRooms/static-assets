@@ -386,6 +386,7 @@ header a {
     .SearchHotels .ArnRateCell{
         position: static !important;
         max-width: none;
+        
     }
 
     .SearchHotels.mobile .roomCount {

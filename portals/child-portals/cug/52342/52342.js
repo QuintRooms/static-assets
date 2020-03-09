@@ -11,7 +11,10 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         removePercentSavingsUnderThreshhold(5);
         showRatesPerLabel();
-        
+
+        showFullStayTotal('.SearchHotels', '.ArnContainer', '.ArnPriceCell');
+        showFullStayTotal('.SinglePropDetail', '.ArnRateList ', '.yourRateAmount');
+
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
 
@@ -110,5 +113,81 @@ function showRatesPerLabel() {
     }
     return false;
 }
+
+// show full stay total
+function showFullStayTotal(page, property_container, rate_container) {
+    let theme;
+    let rate_element;
+    let url = window.location;
+    let params = new URLSearchParams(url.search);
+    let theme_meta = document.querySelector('meta[name="theme"]');
+    let properties = document.querySelectorAll(property_container);
+
+    if (!document.querySelector(page) || !theme_meta) return;
+
+    theme = theme_meta.getAttribute('content');
+    params.delete('theme');
+    theme == 'standard' ? params.set('theme', 'international') : params.set('theme', 'standard');
+
+    properties.forEach((property) => {
+        if (!property) return;
+
+        rate_element = property.querySelector(rate_container);
+
+        if (!rate_element) return;
+
+        theme == 'standard' ?
+            rate_element.insertAdjacentHTML('afterEnd', `<a class="full-stay-link" href="?${params}">Show Full Stay Price</a>`) :
+            rate_element.insertAdjacentHTML('afterEnd', `<a class="full-stay-link" href="?${params}">Show Price Per Night</a>`);
+    });
+}
+
+function showFullStayToggle() {
+    let theme;
+    let url = window.location;
+    let params = new URLSearchParams(url.search);
+    let header = document.querySelector('#AdminControlsContainer')
+    let theme_meta = document.querySelector('meta[name="theme"]');
+    let toggle;
+
+    if (!theme_meta) return;
+    theme = theme_meta.getAttribute('content');
+    params.delete('theme');
+    theme == 'standard' ? params.set('theme', 'international') : params.set('theme', 'standard');
+
+    if (theme == 'standard') {
+        header.insertAdjacentHTML('afterEnd',
+            `<span class="rs-label" id="rs-tax-inclusive">
+                    <label for="rs-toggle">Show Full Stay Price</label>
+                    <div class="rs-toggle">
+                        <input type="checkbox" name="rs-toggle" class="rs-toggle-checkbox" id="rs-toggle">
+                        <label class="rs-toggle-label" for="rs-toggle">
+                            <span class="rs-toggle-inner"></span>
+                            <span class="rs-toggle-switch"></span>
+                        </label>
+                    </div>
+                </span>`);
+    } else {
+        header.insertAdjacentHTML('afterEnd',
+            `<span class="rs-label" id="rs-tax-inclusive">
+                    <label for="rs-toggle">Show Full Stay Price</label>
+                    <div class="rs-toggle">
+                        <input type="checkbox" name="rs-toggle" class="rs-toggle-checkbox" id="rs-toggle">
+                        <label class="rs-toggle-label" for="rs-toggle">
+                            <span class="rs-toggle-inner"></span>
+                            <span class="rs-toggle-switch"></span>
+                        </label>
+                    </div>
+                </span>`);
+        toggle = document.querySelector('#rs-toggle');
+        toggle.checked = true;
+    }
+
+    document.querySelector('#rs-tax-inclusive').addEventListener('click', (e) => {
+        window.location.href = '?' + params;
+    });
+}
+
+showFullStayToggle();
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52342/52342.css">');

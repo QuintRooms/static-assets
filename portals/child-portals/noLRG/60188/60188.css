@@ -429,6 +429,10 @@ header a {
     font-size: 20px;
 }
 
+.details-link{
+    display: flex;
+}
+
 .message-content .details-link h1 {
     text-decoration: underline;
     color: #fff;

@@ -407,6 +407,8 @@ header a {
     }
 }
 
+/* - - - - COVID19 ALERT BANNER - - - -  */
+
 .info-banner{
     display: flex;
     align-items: center;
@@ -419,6 +421,7 @@ header a {
     font-family: inherit;
 }
 
+
 .message-content{
     display: flex;
     flex-direction: row;
@@ -427,14 +430,17 @@ header a {
 
 .message-content h1{
     font-size: 20px;
+    font-weight: 800;
 }
 
 .details-link{
     display: flex;
+    align-items: center;
 }
 
 .details-link svg {
     width: 18px;
+    margin-left: 5px;
 }
 
 .message-content .details-link h1 {
@@ -448,7 +454,12 @@ header a {
     color: #fff;
     border: none;
     font-size: 20px;
+    background-color: #1A1A1A;
+    margin: 8px;
+    font-weight: 900;
+    font-size: 22px;
 }
+
 
 
 

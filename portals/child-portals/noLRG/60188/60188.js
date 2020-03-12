@@ -64,42 +64,11 @@ function showCoronavirusInfoBanner(){
     content.appendChild(infoText);
     content.appendChild(link);
     banner.appendChild(closeBanner);
-    body.appendChild(banner)
+    body.prepend(banner)
 
     closeBanner.addEventListener('click', function(evt){
         banner.style.display = 'none';
     });
-
-//  - - - - Styles - - - - 
-    banner.style.color = '#fff'
-    banner.style.display = 'flex';
-    banner.style.alignItems = 'center';
-    banner.style.justifyContent = 'space-between';
-    banner.style.width = '100%';
-    banner.style.height = 'auto';
-    banner.style.backgroundColor = '#1A1A1A';
-    banner.style.order = '-1';
-    banner.style.top = '20%';
-    banner.style.padding = '10px';
-    banner.style.fontFamily = 'inherit';
-    content.style.fontSize = '20px';
-
-
-    content.style.display = 'flex';
-    content.style.flexDirection = 'row';
-    content.style.alignItems = 'center';
-
-
-    infoText.style.margin = '0px';
-
-    link.style.textDecoration = 'underline';
-    link.style.color = '#fff';
-    link.style.margin = '5px';
-
-    closeBanner.color = '#fff';
-    closeBanner.style.backgroundColor = '#1A1A1A';
-    closeBanner.style.border = 'none'
-    closeBanner.style.margin = '8px';
 }
 
 showCoronavirusInfoBanner();

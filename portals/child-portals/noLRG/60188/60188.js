@@ -38,6 +38,7 @@ noLRGPortal.updateAttribute('.RootBody', 'background-image: url(https://dev-stat
 
 function showCoronavirusInfoBanner(){
 
+    if(localStorage.getItem('covidAlertBanner') === 'closed')return;
 
     let body = document.body;
     let banner = document.createElement('div');
@@ -67,6 +68,7 @@ function showCoronavirusInfoBanner(){
 
     closeBanner.addEventListener('click', function(evt){
         banner.style.display = 'none';
+        window.localStorage.setItem('covidAlertBanner', 'closed')
     });
 }
 

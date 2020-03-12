@@ -419,6 +419,8 @@ header a {
     order: -1;
     padding: 10px;
     font-family: inherit;
+    position: relative;
+    z-index: 4;
 }
 
 

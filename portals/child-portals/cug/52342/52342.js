@@ -129,7 +129,9 @@ function showFullStayTotal(property_container, rate_container) {
 
         if (!rate_element || property.querySelector('.full-stay-link')) return;
 
-        rate_element.insertAdjacentHTML('beforeEnd', '<div class="full-stay-link">Show Full Stay Price</div>');
+        theme == 'standard' ?
+            rate_element.insertAdjacentHTML('beforeEnd', '<div class="full-stay-link">Show Full Stay Price</div>') : 
+            rate_element.insertAdjacentHTML('beforeEnd', '<div class="full-stay-link">Show Price Per Night</div>')
 
         property.querySelector('.full-stay-link').addEventListener('click', (e) => {
             theme == 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');

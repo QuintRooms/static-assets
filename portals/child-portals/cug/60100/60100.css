@@ -394,7 +394,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png);
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/banner.png) no-repeat center center /cover;
 }
 
 .RootBody .ArnSearchContainerMainDiv {

@@ -431,6 +431,7 @@ header a {
 .message-content h1{
     font-size: 20px;
     font-weight: 800;
+    color: #fff;
 }
 
 .details-link{
@@ -441,6 +442,7 @@ header a {
 .details-link svg {
     width: 18px;
     margin-left: 5px;
+    color: #fff;
 }
 
 .message-content .details-link h1 {
@@ -450,7 +452,7 @@ header a {
     margin: 0 0 0 5px;
 }
 
-.message-content .close-alert{
+.info-banner .close-alert{
     color: #fff;
     border: none;
     font-size: 20px;

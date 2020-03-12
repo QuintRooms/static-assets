@@ -407,4 +407,36 @@ header a {
     }
 }
 
+.info-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    background-color: #1A1A1A;
+    position: absolute;
+    padding: 10px;
+    font-family: inherit;
+}
+
+.message-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.details-link{
+    text-decoration: underline;
+    color: #fff;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.close-alert{
+    color: #fff;
+    border: none;
+    font-size: 30px;
+}
+
+
 

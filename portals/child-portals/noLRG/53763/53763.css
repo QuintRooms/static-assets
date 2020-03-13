@@ -75,6 +75,14 @@ header a {
 }
 
 #language {
+    display: block;
+}
+
+.languageContainer {
+    top: 23px !important;
+}
+
+#language option[value='german'], #language option[value='dutch'], #language option[value='indonesia'], #language option[value='mandarin'], #language option[value='portuguese'], #language option[value='thai']{
     display: none;
 }
 

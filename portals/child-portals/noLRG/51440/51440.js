@@ -21,7 +21,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/60290/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.austinfoodandwinefestival.com/', 'href');
                 noLRGPortal.createHTML('header', '<span class="header-info"><span>APRIL 24-26, 2020</span></span>', 'afterBegin');
                 noLRGPortal.createHTML('header', '<span class="header-info"><span>AUSTIN, TEXAS</span></span>', 'beforeEnd');
@@ -38,7 +38,7 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
-noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=60290&theme=standard', 'href');
+noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=51440&theme=standard', 'href');
 
 function insertLRGAssets() {
     if (noLRGPortal.page_name === 'lrg-page') {
@@ -64,4 +64,4 @@ function insertLRGAssets() {
 
 insertLRGAssets();
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/60290/60290.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/51440/51440.css">');

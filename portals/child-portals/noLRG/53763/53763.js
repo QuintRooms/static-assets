@@ -13,7 +13,7 @@ jQuery(document).on('ratesReadyEvent', function() {
 });
 
 let year;
-noLRGPortal.site_id === 59243 ? year = '2021' : year = '2020';
+noLRGPortal.site_id == 59243 ? year = '2021' : year = '2020';
 
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);

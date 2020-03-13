@@ -12,6 +12,9 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 1);
 });
 
+let year;
+noLRGPortal.site_id === 59243 ? year = '2021' : year = '2020';
+
 function waitForElementToLoad(elementWaitingFor) {
     let element = document.querySelector(elementWaitingFor);
     let config = { attributes: false, childList: true, subtree: false };
@@ -21,7 +24,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/images/logo-full.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://youraustinmarathon.com/', 'href');
-                document.querySelector('.logo').insertAdjacentHTML('afterEnd', '<span class="event-dates">Feb 12-14, 2021 - Downtown Austin, TX</span>');
+                document.querySelector('.logo').insertAdjacentHTML('afterEnd', `<span class="event-dates">Feb 12-14, ${year} - Downtown Austin, TX</span>`);
                 observer.disconnect();
             }
         }
@@ -35,3 +38,4 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/53763.css">');
+

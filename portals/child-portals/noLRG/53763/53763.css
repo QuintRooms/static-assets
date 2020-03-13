@@ -365,6 +365,11 @@ header a {
     .logo+a {
         display: none;
     }
+
+    #language {
+        margin: 8px;
+        max-width: 140px;
+    }
 }
 
 #adults option:nth-child(n + 5) {

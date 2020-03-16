@@ -53,14 +53,14 @@ async function createCarousel() {
   let counter = 1;
   const size = carouselImages[0].clientWidth;
 
-  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+  carouselSlide.style.transform = "translateX(" + ( - size * counter) + "px)";
 
   nextBtn.addEventListener("click", () => {
       console.log('clicked')
     if (counter >= carouselImages.length - 1) return;
     carouselSlide.style.transition = "transform 0.2s ease-in-out";
     counter++;
-    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    carouselSlide.style.transform = "translateX(" + ( - size * counter) + "px)";
   });
 }
 

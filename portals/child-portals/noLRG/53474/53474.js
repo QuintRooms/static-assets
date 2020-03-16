@@ -23,7 +23,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53474/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'http://www.tortugamusicfestival.com/', 'href');
                 observer.disconnect();
             }
@@ -40,4 +40,4 @@ noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive commun
 // Custom Banner Ad
 noLRGPortal.createHTML('.SearchHotels .ArnLeftSearchContainer', '<a class="ad" target="_blank" href="http://rocktheocean.com/"><img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/'+ noLRGPortal.site_id +'/images/ad.png"></a>', 'beforeEnd');
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53474/53474.css">');

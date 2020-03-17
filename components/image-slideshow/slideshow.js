@@ -14,8 +14,8 @@ async function getPropImages() {
       }
     ).then(response => response.json());
     let propInfo = data.Images;
+    //changes image size
     propImages = propInfo.map(e => e.ImagePath.replace(/_300/, "_804480"));
-    console.log(propImages);
     return propImages;
   } catch (error) {
     console.log(error);
@@ -57,12 +57,14 @@ async function createCarousel() {
   const previousBtn = document.querySelector("#previousBtn");
   const nextBtn = document.querySelector("#nextBtn");
 
+  //size is the value used to move the image by
+  //with each image being a different size, I think the below is an issue
   size = carouselImages[0].clientWidth;
 
-  //event listeners
   nextBtn.addEventListener("click", () => {
     if (counter >= carouselImages.length - 1) return;
     counter++;
+    //calculation for how much to move the current image by
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   });
 

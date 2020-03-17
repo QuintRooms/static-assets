@@ -1,3 +1,6 @@
+/* I'm confused as to which classes to set widths to, I've tried many different ways but haven't worked out the correct combination.
+
+All classes listed below are written in order of the dom tree. */
 
 .carousel-container {
     width: auto;

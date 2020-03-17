@@ -50,12 +50,14 @@ async function createCarousel() {
   await createPropImageSlideshow();
 
   const carouselSlide = document.querySelector(".carousel-slide");
+  const image = document.querySelector(".image-wrapper img");
   const carouselImages = document.querySelectorAll(".carousel-slide img");
   const previousBtn = document.querySelector("#previousBtn");
   const nextBtn = document.querySelector("#nextBtn");
 
   let counter = 1;
-  const size = carouselImages[0].clientWidth;
+//   const size = carouselImages[0].clientWidth;
+  const size = image.offsetWidth;
 
 
   //event listeners

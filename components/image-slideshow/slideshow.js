@@ -25,10 +25,12 @@ async function createPropImageSlideshow() {
     <div class="carousel-container">
         <div class="carousel-slide">
         </div>
+        <a id="previousBtn">&#10094;</a>
+        <a id="nextBtn">&#10095;</a>
     </div>
-    <button id="previousBtn">Previous</button>
-    <button id="nextBtn">Next</button>
-
+    
+  
+  
   `
   );
 //   console.log(propImages.reverse());
@@ -37,7 +39,8 @@ async function createPropImageSlideshow() {
       .querySelector(".carousel-slide")
       .insertAdjacentHTML("afterbegin", `
       <div class="image-wrapper">
-      <img src=${propImages[i].ImagePath}>
+      <div class ="image-number">${i}/${propImages.length}</div>
+        <img src=${propImages[i].ImagePath}>
       </div>`);
   }
 }

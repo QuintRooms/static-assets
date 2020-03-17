@@ -611,3 +611,7 @@ legend,
 .holdRoom{
     border-radius: 10px;
 }
+
+.success{
+    color: #000;
+}

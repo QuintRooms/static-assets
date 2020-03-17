@@ -28,27 +28,25 @@ async function createPropImageSlideshow() {
         <a id="previousBtn">&#10094;</a>
         <a id="nextBtn">&#10095;</a>
     </div>
-    
-  
-  
   `
   );
-//   console.log(propImages.reverse());
+  //   console.log(propImages.reverse());
   for (let i = 0; i < propImages.length; i++) {
-    document
-      .querySelector(".carousel-slide")
-      .insertAdjacentHTML("afterbegin", `
+    document.querySelector(".carousel-slide").insertAdjacentHTML(
+      "afterbegin",
+      `
       <div class="image-wrapper">
-      <div class ="image-number">${i}/${propImages.length}</div>
+      <div class ="image-number">${i + 1}/${propImages.length}</div>
         <img src=${propImages[i].ImagePath}>
-      </div>`);
+      </div>
+      `
+    );
   }
 }
 
 async function createCarousel() {
   await createPropImageSlideshow();
 
-  //cached elements
   const carouselSlide = document.querySelector(".carousel-slide");
   const carouselImages = document.querySelectorAll(".carousel-slide img");
   const previousBtn = document.querySelector("#previousBtn");
@@ -57,36 +55,17 @@ async function createCarousel() {
   let counter = 1;
   const size = carouselImages[0].clientWidth;
 
-  carouselSlide.style.transform = "translateX(" + ( - size * counter) + "px)";
-
   nextBtn.addEventListener("click", () => {
     if (counter >= carouselImages.length - 1) return;
-    carouselSlide.style.transition = "transform 0.2s ease-in-out";
     counter++;
-    carouselSlide.style.transform = "translateX(" + ( - size * counter) + "px)";
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   });
 
-  previousBtn.addEventListener('click', () => {
-        if(counter <= 0) return;
-        carouselSlide.style.transition = 'transform 0.4 ease-in-out';
-        console.log(counter);
-        counter--;
-        console.log(counter);    
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    });
-
-    carouselSlide.addEventListener('transitionend', () => {
-        if(carouselImages[counter].id === 'lastclone'){
-            carouselSlide.style.transition = 'none';
-            counter = carouselImages.length - 2;
-            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-        }
-         if(carouselImages[counter].id === 'lastclone'){
-            carouselSlide.style.transition = 'none';
-            counter = carouselImages.length - counter;
-            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-        }
-    })
+  previousBtn.addEventListener("click", () => {
+    if (counter <= 0) return;
+    counter--;
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+  });
 }
 
 createCarousel();

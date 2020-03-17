@@ -1,7 +1,8 @@
 
 
 .carousel-container {
-    width: 60%;
+    width: auto;
+    height: 100%;
     margin: auto;
     border: .5px solid black;
     overflow: hidden;

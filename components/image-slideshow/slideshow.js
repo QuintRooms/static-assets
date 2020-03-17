@@ -1,7 +1,8 @@
 let propImages;
 
 async function getPropImages() {
-  let propId = "16664";
+//   let propId = "16664";
+  let propId = "45491";
 
   try {
     let data = await fetch(
@@ -17,6 +18,7 @@ async function getPropImages() {
   }
 }
 
+//inject html and images
 async function createPropImageSlideshow() {
   await getPropImages();
   document.body.insertAdjacentHTML(
@@ -55,6 +57,8 @@ async function createCarousel() {
   let counter = 1;
   const size = carouselImages[0].clientWidth;
 
+
+  //event listeners
   nextBtn.addEventListener("click", () => {
     if (counter >= carouselImages.length - 1) return;
     counter++;

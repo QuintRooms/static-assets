@@ -2,9 +2,8 @@ let propImages;
 let size;
 let counter = 0;
 
-
 async function getPropImages() {
-//   let propId = "16664";
+  //   let propId = "16664";
   let propId = "45491";
 
   try {
@@ -15,8 +14,8 @@ async function getPropImages() {
       }
     ).then(response => response.json());
     let propInfo = data.Images;
-     propImages = propInfo.map(e => e.ImagePath.replace(/_300/,'_804480'));
-      console.log(propImages);
+    propImages = propInfo.map(e => e.ImagePath.replace(/_300/, "_804480"));
+    console.log(propImages);
     return propImages;
   } catch (error) {
     console.log(error);
@@ -35,8 +34,7 @@ async function createPropImageSlideshow() {
         <a id="previousBtn">&#10094;</a>
         <a id="nextBtn">&#10095;</a>
     </div>
-  `
-  );
+  `);
   for (let i = 0; i < propImages.length; i++) {
     document.querySelector(".carousel-slide").insertAdjacentHTML(
       "beforeend",
@@ -55,15 +53,14 @@ async function createCarousel() {
 
   const carouselSlide = document.querySelector(".carousel-slide");
   const carouselImages = document.querySelectorAll(".carousel-slide img");
+
   const previousBtn = document.querySelector("#previousBtn");
   const nextBtn = document.querySelector("#nextBtn");
 
-//   const size = carouselImages[0].clientWidth;
-//   const size = image.offsetWidth;
+  size = carouselImages[0].clientWidth;
 
   //event listeners
   nextBtn.addEventListener("click", () => {
-    size = carouselImages[0].clientWidth;
     if (counter >= carouselImages.length - 1) return;
     counter++;
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
@@ -78,5 +75,3 @@ async function createCarousel() {
 
 createCarousel();
 
-
-//_804480

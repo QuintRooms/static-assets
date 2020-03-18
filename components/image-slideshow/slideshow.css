@@ -1,7 +1,10 @@
+/* I'm confused as to which classes to set widths to, I've tried many different ways but haven't worked out the correct combination.
 
+All classes listed below are written in order of the dom tree. */
 
 .carousel-container {
-    width: 60%;
+    width: auto;
+    height: auto;
     margin: auto;
     border: .5px solid black;
     overflow: hidden;
@@ -10,7 +13,7 @@
 
 .carousel-slide {
     display: flex;
-    width: 100%;
+    width: auto;
     height: 500px;
     transition: transform 0.8s ease-in-out;
 }

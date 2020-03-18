@@ -1,7 +1,9 @@
 let propImages;
+let size;
+let counter = 0;
 
 async function getPropImages() {
-//   let propId = "16664";
+  //   let propId = "16664";
   let propId = "45491";
 
   try {
@@ -11,7 +13,9 @@ async function getPropImages() {
         method: "GET"
       }
     ).then(response => response.json());
-    propImages = data.Images;
+    let propInfo = data.Images;
+    //changes image size
+    propImages = propInfo.map(e => e.ImagePath.replace(/_300/, "_804480"));
     return propImages;
   } catch (error) {
     console.log(error);
@@ -30,16 +34,14 @@ async function createPropImageSlideshow() {
         <a id="previousBtn">&#10094;</a>
         <a id="nextBtn">&#10095;</a>
     </div>
-  `
-  );
-  //   console.log(propImages.reverse());
+  `);
   for (let i = 0; i < propImages.length; i++) {
     document.querySelector(".carousel-slide").insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `
       <div class="image-wrapper">
       <div class ="image-number">${i + 1}/${propImages.length}</div>
-        <img src=${propImages[i].ImagePath}>
+        <img src=${propImages[i]}>
       </div>
       `
     );
@@ -50,20 +52,19 @@ async function createCarousel() {
   await createPropImageSlideshow();
 
   const carouselSlide = document.querySelector(".carousel-slide");
-  const image = document.querySelector(".image-wrapper img");
   const carouselImages = document.querySelectorAll(".carousel-slide img");
+
   const previousBtn = document.querySelector("#previousBtn");
   const nextBtn = document.querySelector("#nextBtn");
 
-  let counter = 1;
-//   const size = carouselImages[0].clientWidth;
-  const size = image.offsetWidth;
+  //size is the value used to move the image by
+  //with each image being a different size, I think the below is an issue
+  size = carouselImages[0].clientWidth;
 
-
-  //event listeners
   nextBtn.addEventListener("click", () => {
     if (counter >= carouselImages.length - 1) return;
     counter++;
+    //calculation for how much to move the current image by
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   });
 
@@ -75,3 +76,4 @@ async function createCarousel() {
 }
 
 createCarousel();
+

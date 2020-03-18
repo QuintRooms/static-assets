@@ -295,8 +295,8 @@ body.RootBody {
 
 body.WBLoginForm,
 body.WBForgotPasswordForm {
-    display: grid;
-    grid-template-rows: 45px 1fr auto;
+    display: flex;
+    flex-direction: column;
     min-height: 100%;
 }
 

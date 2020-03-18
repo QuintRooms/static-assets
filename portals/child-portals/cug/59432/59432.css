@@ -396,8 +396,8 @@ body.RootBody {
 body.WBLoginForm,
 body.WBForgotPasswordForm,
 body.WBValidatedRegistrationForm {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     min-height: 100%;
 }
 
@@ -426,6 +426,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 1;
 }
 
 /* Registration */

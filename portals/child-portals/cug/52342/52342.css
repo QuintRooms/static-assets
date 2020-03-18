@@ -18,7 +18,7 @@ body {
 }
 
 .leaflet-top {
-    top: 67px;
+    top: 105px;
 }
 
 #AdminControlsContainer {
@@ -408,8 +408,7 @@ header {
 
 .SearchHotels .PropLimitedAvail .ArnContainer .ArnPropThumb img {
     opacity: .25;
-    filter: blur(1px;
-    );
+    filter: blur(1px);
 }
 
 .SearchHotels .PropLimitedAvail .ArnRateCell,
@@ -1978,6 +1977,13 @@ legend {
     display: block;
 }
 
+/* Full Stay Link*/
+.full-stay-link {
+    text-decoration: underline;
+    padding: 4px;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .rs-toggle {

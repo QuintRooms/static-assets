@@ -20,8 +20,8 @@ function waitForElementToLoad(elementWaitingFor) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 if (noLRGPortal.site_id == 60291) {
-                    noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/55776/images/logo.png', 'src');
-                    noLRGPortal.updateAttribute('.logo', 'https://www.thebukuproject.com/', 'href');
+                    // noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/55776/images/logo.png', 'src');
+                    // noLRGPortal.updateAttribute('.logo', 'https://www.thebukuproject.com/', 'href');
                 }
                 // document.querySelector('header').insertAdjacentHTML('afterEnd', '<img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/55776/images/pattern.png" style="height: 50px; width: 100%; position: relative; z-index: 4; object-fit: cover; object-position: center center;">');
                 observer.disconnect();

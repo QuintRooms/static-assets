@@ -17,7 +17,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cugPortal.updateAttribute('.logo', 'https://www.stay22.com/', 'href');
                 cugPortal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer')
-                cugPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60100/images/logo.svg', 'src');
+                cugPortal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/images/logo.svg', 'src');
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
@@ -34,7 +34,7 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/60100/60100.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60100/60100.css">');
 
 cugPortal.updateText('.CreateAnAccountAction', 'Register');
 cugPortal.updateText('.RootBody .reserveHotel', 'search');

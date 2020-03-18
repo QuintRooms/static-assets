@@ -2652,3 +2652,17 @@ body.WBResendOrCancelForm {
     font-weight: 700;
     font-size: 22px;
 }
+
+@media screen and (max-width: 600px) {
+
+    .info-banner,
+    .info-banner .message-content {
+        flex-direction: column;
+    }
+
+    .info-banner .close-alert {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

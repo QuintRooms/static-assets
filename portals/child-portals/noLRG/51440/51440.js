@@ -23,7 +23,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.austinfoodandwinefestival.com/', 'href');
-                noLRGPortal.createHTML('header', '<span class="header-info"><span>APRIL 24-26, 2020</span></span>', 'afterBegin');
+                noLRGPortal.createHTML('header', '<span class="header-info"><span>NOVEMBER 13-15, 2020</span></span>', 'afterBegin');
                 noLRGPortal.createHTML('header', '<span class="header-info"><span>AUSTIN, TEXAS</span></span>', 'beforeEnd');
                 observer.disconnect();
             }
@@ -37,8 +37,7 @@ waitForElementToLoad('header');
 
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
-noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
-noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + noLRGPortal.site_id + '&theme=standard', 'href');
+noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=51440&theme=standard', 'href');
 
 function insertLRGAssets() {
     if (noLRGPortal.page_name === 'lrg-page') {

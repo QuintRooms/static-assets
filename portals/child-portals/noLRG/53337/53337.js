@@ -21,8 +21,8 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                // noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png', 'src');
-                // noLRGPortal.updateAttribute('.logo', 'https://www.aclfestival.com/', 'href');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://www.aclfestival.com/', 'href');
 
                 // noLRGPortal.createHTML('header', `
                 //     <div class="event-week pull-right">

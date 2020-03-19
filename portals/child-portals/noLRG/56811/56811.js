@@ -20,7 +20,7 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/images/logo.png', 'src');
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/56811/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.bonnaroo.com/', 'href');
                 observer.disconnect();
             }
@@ -32,7 +32,6 @@ function waitForElementToLoad(elementWaitingFor) {
 
 waitForElementToLoad('header');
 
-noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + noLRGPortal.site_id + '&theme=standard', 'href');
 
 function insertLRGAssets() {
@@ -59,4 +58,4 @@ function insertLRGAssets() {
 
 insertLRGAssets();
 
-document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/' + noLRGPortal.site_id + '/' + noLRGPortal.site_id + '.css">');
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/56811/56811.css">');

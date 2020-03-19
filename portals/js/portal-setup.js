@@ -662,6 +662,7 @@ jQuery('#theBody').on("arnMapLoadedEvent", () => {
 });
 
 function showCoronavirusInfoBanner() {
+    if(portal.site_id == 52342) return;
 
     if (localStorage.getItem('covidAlertBanner') === 'closed') return;
 

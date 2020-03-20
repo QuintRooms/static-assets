@@ -111,4 +111,69 @@ function showRatesPerLabel() {
     return false;
 }
 
+// show full stay total
+function showFullStayTotal(property_container, rate_container) {
+    let theme;
+    let rate_element;
+    let theme_meta = document.querySelector('meta[name="theme"]');
+    let properties = document.querySelectorAll(property_container);
+
+    if (!document.querySelector('.SearchHotels') || !theme_meta) return;
+
+    theme = theme_meta.getAttribute('content');
+
+    properties.forEach((property) => {
+        if (!property) return;
+
+        rate_element = property.querySelector(rate_container);
+
+        if (!rate_element || property.querySelector('.full-stay-link')) return;
+
+        theme == 'standard' ?
+            rate_element.insertAdjacentHTML('beforeEnd', '<div class="full-stay-link">Show Full Stay Price</div>') : 
+            rate_element.insertAdjacentHTML('beforeEnd', '<div class="full-stay-link">Show Price Per Night</div>')
+
+        property.querySelector('.full-stay-link').addEventListener('click', (e) => {
+            theme == 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');
+        });
+    });
+}
+
+function showFullStayToggle(page_class) {
+    if(!document.querySelector(page_class)) return;
+
+    let theme;
+    let toggle;
+    let theme_meta = document.querySelector('meta[name="theme"]');
+    let header = document.querySelector('#AdminControlsContainer');
+
+    if (!theme_meta) return;
+    theme = theme_meta.getAttribute('content');
+
+    header.insertAdjacentHTML('afterEnd',
+        `<span class="rs-label" id="rs-tax-inclusive">
+            <label for="rs-toggle">Show Full Stay Price</label>
+            <div class="rs-toggle">
+                <input type="checkbox" name="rs-toggle" class="rs-toggle-checkbox" id="rs-toggle">
+                <label class="rs-toggle-label" for="rs-toggle">
+                    <span class="rs-toggle-inner"></span>
+                    <span class="rs-toggle-switch"></span>
+                </label>
+            </div>
+        </span>`);
+
+    if (theme == 'international') {
+        toggle = document.querySelector('#rs-toggle');
+        toggle.checked = true;
+    }
+
+    document.querySelector('#rs-tax-inclusive').addEventListener('click', (e) => {
+        theme == 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');
+    });
+}
+
+showFullStayToggle('.SearchHotels');
+
+if(window.location.href.includes('toggle')) showFullStayToggle('.SinglePropDetail');
+
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52342/52342.css">');

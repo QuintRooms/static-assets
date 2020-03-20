@@ -31,7 +31,7 @@ function waitForElementToLoad(elementWaitingFor) {
                 //     </div>
                 // `, 'beforeEnd');
 
-                setCorrectWeekInURLs();
+                // setCorrectWeekInURLs();
 
                 observer.disconnect();
             }

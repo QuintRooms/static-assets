@@ -33,3 +33,15 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/57802/57802.css">');
+
+
+
+function showCustomFieldsOnCheckout() {
+    let custom_field = document.querySelector('#theGoldJacketAjax');
+    let special_request_field = document.querySelector('#theSpecialRequestsAjax');
+    if (noLRGPortal.site_id != 60038 || !custom_field || !special_request_field) return;
+
+    special_request_field.insertAdjacentElement('afterEnd', custom_field);
+}
+
+showCustomFieldsOnCheckout();

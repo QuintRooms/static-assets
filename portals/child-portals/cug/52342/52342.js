@@ -139,8 +139,8 @@ function showFullStayTotal(property_container, rate_container) {
     });
 }
 
-function showFullStayToggle() {
-    if(!document.querySelector('.SearchHotels')) return;
+function showFullStayToggle(page_class) {
+    if(!document.querySelector(page_class)) return;
 
     let theme;
     let toggle;
@@ -172,6 +172,8 @@ function showFullStayToggle() {
     });
 }
 
-showFullStayToggle();
+showFullStayToggle('.SearchHotels');
+
+if(window.location.href.includes('toggle')) showFullStayToggle('.SinglePropDetail');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/52342/52342.css">');

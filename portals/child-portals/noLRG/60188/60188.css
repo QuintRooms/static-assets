@@ -407,6 +407,75 @@ header a {
     }
 }
 
+/* - - - - - Image Gallery Slideshow - - - */
+
+* {
+    box-sizing: border-box !important;
+    font-family: 'Montserrat', 'Helvetica';
+}
+
+.carousel-container {
+    margin: auto;
+    border: 1px solid #333;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+  }
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-number {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.carousel-slide .image-wrapper img {
+    width: 100vw;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+#previousBtn,
+#nextBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0 3px 3px 0;
+}
+
+#nextBtn {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#previousBtn:hover,
+#nextBtn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0);
+}
+
 /* - - - - COVID19 ALERT BANNER - - - -  */
 
 .info-banner{

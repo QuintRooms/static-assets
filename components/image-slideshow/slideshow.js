@@ -52,20 +52,23 @@ let props = [718107, 507388, 2332133, 2028020, 1258650, 313962, 282860, 224842, 
                         `
                     );
             }
+            // removeSmallImages();
         };
 
         /* can't find the appropriate place to call fire this code off - I'm currently putting it in the console. 
 
         Before I can refactor I need to have it removing the right images to be able to see the effect it's having on the counter */
+        function removeSmallImages(){
 
-        carouselImages = document.querySelectorAll('.carousel-slide img');
-        for(let j = 0; j < carouselImages.length; j++){
-            if(carouselImages[j].naturalWidth < 400){
-                console.log(carouselImages[j].naturalWidth)
-                carouselImages[j].parentNode.removeChild(carouselImages[j]);
-            }
-        }   
-        carouselImages = document.querySelectorAll('.carousel-slide img');
+            carouselImages = document.querySelectorAll('.carousel-slide img');
+            for(let j = 0; j < carouselImages.length; j++){
+                if(carouselImages[j].naturalWidth < 400){
+                    console.log(carouselImages[j].naturalWidth)
+                    carouselImages[j].parentNode.removeChild(carouselImages[j]);
+                }
+            }   
+            carouselImages = document.querySelectorAll('.carousel-slide img');
+        }
     
 
     async function createCarousel() {
@@ -82,7 +85,7 @@ let props = [718107, 507388, 2332133, 2028020, 1258650, 313962, 282860, 224842, 
             counter++;
             let size = carouselImages[counter].clientWidth;
             carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-            if(counter === carouselImages.length -2){
+            if(counter === carouselImages.length -1){
                 populateImages();
             };
         });

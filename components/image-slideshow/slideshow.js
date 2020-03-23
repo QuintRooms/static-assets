@@ -1,12 +1,13 @@
 let props = [718107, 507388, 2332133, 2028020, 1258650, 313962, 282860, 224842, 445045, 371294, 388067, 341911, 409543, 405529, 300314, 342899, 312202, 1466441, 515326, 18845, 361301, 41357, 615332, 20837, 191708, 1231557, 359000, 191722, 712504, 496155, 29433, 275750];
 
-function replaceImageSlideshow(){
-    document.querySelector('.ArnPhotoContainer').style.display = 'none';
+// function replaceImageSlideshow(){
+    // document.querySelector('.ArnPhotoContainer').style.display = 'none';
 
-    let propId = document.querySelector('meta[name="aPropertyId"]').content;
+    // let propId = document.querySelector('meta[name="aPropertyId"]').content;
     let counter = 0;
     let propImages;
     let carouselImages;
+    let propId = '16664';
 
 
     async function getPropImages() {
@@ -24,7 +25,7 @@ function replaceImageSlideshow(){
 
     async function createPropImageSlideshow() {
         propImages = await getPropImages();
-        document.querySelector('.PropertyLinks').insertAdjacentHTML(
+        document.body.insertAdjacentHTML(
             'afterend',
             `
             <div class="carousel-container">
@@ -50,8 +51,25 @@ function replaceImageSlideshow(){
                         </div>
                         `
                     );
-                }
+            }
         };
+
+
+        /* can't find the appropriate place to call fire this code off - I'm currently putting it in the console. 
+
+        Before I can refactor I need to have it removing the right images to be able to see the effect it's having on the counter */
+
+        carouselImages = document.querySelectorAll('.carousel-slide img');
+        for(let j = 0; j < carouselImages.length; j++){
+            console.log(j)
+            if(carouselImages[j].naturalWidth < 400){
+                console.log(carouselImages[j])
+                console.log(carouselImages[j].naturalWidth)
+                carouselImages[j].parentNode.removeChild(carouselImages[j]);
+            }
+            carouselImages = document.querySelectorAll('.carousel-slide img');
+        }   
+    
 
     async function createCarousel() {
         await createPropImageSlideshow();
@@ -60,6 +78,7 @@ function replaceImageSlideshow(){
         const previousBtn = document.querySelector('#previousBtn');
         const nextBtn = document.querySelector('#nextBtn');
     
+
         nextBtn.addEventListener('click', () => {
             carouselImages = document.querySelectorAll('.carousel-slide img');
             if (counter === carouselImages.length -1) return;
@@ -80,8 +99,8 @@ function replaceImageSlideshow(){
     }
 
     createCarousel();
-};
+// };
 
-if(document.querySelector('.SinglePropDetail')){
-    replaceImageSlideshow();
-}
+// if(document.querySelector('.SinglePropDetail')){
+// }
+// replaceImageSlideshow();

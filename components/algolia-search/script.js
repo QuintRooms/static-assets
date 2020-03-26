@@ -8,7 +8,7 @@ let config = {
   ap_suggestion_background_color: "#fff",
   ap_suggestion_hint_background_color: "#f5f5f5",
   ap_suggestion_text_color: "#333",
-  ap_suggestion_hint_text_color: "#333",
+  ap_suggestion_hint_text_color: "#333"
 };
 
 let lat_lng;
@@ -71,6 +71,7 @@ function hideArnSearchElement() {
       //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);
       //   let nights = date1.diff(date2, 'day');
 
+      // If using Day Js plugin, remove following nights calculation
       let num_nights = (check_in_value, check_out_value) => {
         let start = new Date(check_in_value);
         let end = new Date(check_out_value);
@@ -109,4 +110,3 @@ hideArnSearchElement();
 })();
 
 //   autoselectOnBlur: "true" /* for mobile only */
-

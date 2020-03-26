@@ -43,24 +43,16 @@ function hideArnSearchElement(){
     document.querySelector('form#searchForm')
     .addEventListener('submit', function(e){
         e.preventDefault();
-        // arn_input.style.display = 'none';
-        // arn_input.disabled = 'true';
 
         let destination_value = document.querySelector('input#address-input').value;
-        console.log('destination_value:' + destination_value)
 
         let rooms_value = document.querySelector('select#rooms option[selected="selected"]').textContent;
-        console.log('rooms_value:' + rooms_value);
 
         let adults_value = document.querySelector('select#adults option[selected="selected"]').textContent;
-        console.log('adults value:' + adults_value);
-        // adults_value.style.marginTop = '1px';
 
         // Checkin/checkout calc
         let check_in_value = document.querySelector('input#theCheckIn').value;
-        console.log('check in value:' + check_in_value);
         let check_out_value = document.querySelector('input#theCheckOut').value;
-        console.log('check_out_value:' + check_out_value);
 
         let num_nights = (check_in_value, check_out_value) => {
             let start = new Date(check_in_value);
@@ -78,7 +70,6 @@ function hideArnSearchElement(){
           let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}`
       
           window.location.href = url;
-          console.log(url)
     })
     
 }

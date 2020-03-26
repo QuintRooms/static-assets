@@ -535,6 +535,14 @@ header a {
     font-size: 22px;
 }
 
+.algolia-autocomplete .aa-hint {
+    color: #000;
+  }
 
+.algolia-autocomplete .aa-dropdown-menu {
+    background-color: #fff;
+  }
 
-
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #999;
+  }

@@ -73,6 +73,7 @@ let props = [718107, 507388, 2332133, 2028020, 1258650, 313962, 282860, 224842, 
 
     async function createCarousel() {
         await createPropImageSlideshow();
+        removeSmallImages();
 
         let carouselSlide = document.querySelector('.carousel-slide');
         const previousBtn = document.querySelector('#previousBtn');

@@ -312,7 +312,7 @@ function hideArnSearchElement() {
       let arn_city_input = document.querySelector('input#city')
       let destination_value = document.querySelector("input#address-input")
         .value;
-        arn_city_input.value = destination_value;
+        arn_city_input.setAttribute("value", destination_value);
 
       // let rooms_value = document.querySelector(
       //   'select#rooms option[selected="selected"]'

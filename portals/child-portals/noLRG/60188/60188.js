@@ -303,8 +303,8 @@ function hideArnSearchElement() {
       );
   console.log(document.querySelector("form#searchForm"));
   document
-    .querySelector("form#searchForm")
-    .addEventListener("submit", function(e) {
+    .querySelector("input#theSubmitButton")
+    .addEventListener("click", function(e) {
       e.preventDefault();
       let arn_city_input = document.querySelector("input#city");
       let destination_value = document.querySelector("input#address-input")

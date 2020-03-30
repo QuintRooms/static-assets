@@ -88,6 +88,8 @@ function hideArnSearchElement() {
 
       // let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}`;
 
+      
+
       // window.location.href = url;
     });
 }
@@ -111,3 +113,7 @@ hideArnSearchElement();
 })();
 
 //   autoselectOnBlur: "true" /* for mobile only */
+
+
+
+

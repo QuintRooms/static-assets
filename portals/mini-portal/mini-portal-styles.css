@@ -126,14 +126,12 @@ img {
 }
 
 .rooms {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-gap: 1rem;
     width: 100%;
-    height: 280px;
-    overflow: auto;
-    margin: 10 0 10 0;
+    height: auto;
+    /* margin: 10 0 10 0; */
     border-radius: 10px;
-    cursor: pointer;
 }
 
 .card {
@@ -201,7 +199,7 @@ img {
     text-decoration: none;
 }
 
-/* screens that are 400px wide or less */
+/* screens that are 450px wide or less */
 @media only screen and (max-width: 450px){
 
     .prop-container {
@@ -235,3 +233,21 @@ img {
         margin-right: 14px;
     }
 }
+
+@media only screen and (min-width: 750px){
+    .rooms {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .rooms { 
+        grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+
+@media only screen and (min-width: 1500px) {
+    .rooms { 
+        grid-template-columns: repeat(5, 1fr); 
+    }
+  }

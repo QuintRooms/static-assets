@@ -24,13 +24,12 @@ function hideArnSearchElement() {
     document.querySelector("div#HotelNameContainer").style.display = "none";
   }
 
-  // Remove ARN search bar
+  // Hide ARN search bar
   if (document.querySelector("input#city")) {
-    document.querySelector("input#city").remove();
-    // document.querySelector('div#CitySearchContainer').remove();
+    document.querySelector("input#city").style.display = 'none';
   }
 
-  // Insert new search bar
+  // Insert new search bar in html differently for RootBody vs .SearchHotels
   document.querySelector(".RootBody")
     ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
         "beforeend",
@@ -51,20 +50,22 @@ function hideArnSearchElement() {
     .addEventListener("submit", function(e) {
       e.preventDefault();
 
+      let arn_city_input = document.querySelector('div#CitySearchContainer')
       let destination_value = document.querySelector("input#address-input")
         .value;
+        arn_city_input.value = destination_value;
 
-      let rooms_value = document.querySelector(
-        'select#rooms option[selected="selected"]'
-      ).textContent;
+      // let rooms_value = document.querySelector(
+      //   'select#rooms option[selected="selected"]'
+      // ).textContent;
 
-      let adults_value = document.querySelector(
-        'select#adults option[selected="selected"]'
-      ).textContent;
+      // let adults_value = document.querySelector(
+      //   'select#adults option[selected="selected"]'
+      // ).textContent;
 
       // Checkin/checkout calc
-      let check_in_value = document.querySelector("input#theCheckIn").value;
-      let check_out_value = document.querySelector("input#theCheckOut").value;
+      // let check_in_value = document.querySelector("input#theCheckIn").value;
+      // let check_out_value = document.querySelector("input#theCheckOut").value;
 
       // dayJs calculation
       //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
@@ -72,22 +73,22 @@ function hideArnSearchElement() {
       //   let nights = date1.diff(date2, 'day');
 
       // If using Day Js plugin, remove following nights calculation
-      let num_nights = (check_in_value, check_out_value) => {
-        let start = new Date(check_in_value);
-        let end = new Date(check_out_value);
-        let dayCount = 0;
+      // let num_nights = (check_in_value, check_out_value) => {
+      //   let start = new Date(check_in_value);
+      //   let end = new Date(check_out_value);
+      //   let dayCount = 0;
 
-        while (end > start) {
-          dayCount++;
-          start.setDate(start.getDate() + 1);
-        }
-        return dayCount;
-      };
-      let nights = num_nights(check_in_value, check_out_value);
+      //   while (end > start) {
+      //     dayCount++;
+      //     start.setDate(start.getDate() + 1);
+      //   }
+      //   return dayCount;
+      // };
+      // let nights = num_nights(check_in_value, check_out_value);
 
-      let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}`;
+      // let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}`;
 
-      window.location.href = url;
+      // window.location.href = url;
     });
 }
 

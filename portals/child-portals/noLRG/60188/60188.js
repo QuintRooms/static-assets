@@ -255,8 +255,6 @@ if (document.querySelector(".SinglePropDetail")) {
 //   });
 // })();
 
-
-
 let config = {
   algolia_app_id: "plETUR94AASH",
   algolia_api_key: "7bf688b47ae81044d05d094f0487df08",
@@ -285,7 +283,7 @@ function hideArnSearchElement() {
 
   // Hide ARN search bar
   if (document.querySelector("input#city")) {
-    document.querySelector("input#city").style.display = 'none';
+    document.querySelector("input#city").style.display = "none";
   }
 
   // Insert new search bar in html differently for RootBody vs .SearchHotels
@@ -303,17 +301,16 @@ function hideArnSearchElement() {
         <input type="search" id="address-input" placeholder="Destination" />
     `
       );
-
+  console.log(document.querySelector("form#searchForm"));
   document
     .querySelector("form#searchForm")
     .addEventListener("submit", function(e) {
       e.preventDefault();
-
-      let arn_city_input = document.querySelector('input#city')
+      let arn_city_input = document.querySelector("input#city");
       let destination_value = document.querySelector("input#address-input")
         .value;
-        arn_city_input.value = destination_value;
-
+      arn_city_input.value = destination_value;
+      e.target.submit();
       // let rooms_value = document.querySelector(
       //   'select#rooms option[selected="selected"]'
       // ).textContent;
@@ -346,8 +343,6 @@ function hideArnSearchElement() {
       // let nights = num_nights(check_in_value, check_out_value);
 
       // let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}`;
-
-      
 
       // window.location.href = url;
     });

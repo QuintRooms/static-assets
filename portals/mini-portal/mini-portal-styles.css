@@ -10,6 +10,8 @@
    body {
     height: 100%;
     position: relative;
+    font-family: 'Raleway', sans-serif;
+
    }
    
 /* - - - - - Header - - - - -  */
@@ -62,10 +64,15 @@ img {
     font-size: 25px;
 }
 
+.exclusive-properties-header {
+    width: 90vw;
+    margin: 10px;
+}
+
 .prop-container {
     display: flex;
     flex-direction: row;
-    width: 97vw;
+    width: 90vw;
     height: auto;
     padding: 3px;
     margin: 10px;
@@ -116,7 +123,6 @@ img {
 .prop-info {
     width: 100%;
     height: auto;
-    /* padding-top: 7%; */
 }
 
 .rooms {
@@ -159,6 +165,26 @@ img {
     color: #9C6AAD;
 }
 
+.stay22-header {
+    width: 90vw;
+    margin: 10px;
+}
+
+.stay22-map {
+    width: 90vw;
+    height: 80vh;
+    margin: 10px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+}
+
+#stay22-widget {
+    width: 100%;
+    height: 100%; 
+    border-radius: 9px;
+
+}
+
 .footer { 
     width: 100vw;
     height: 100px;
@@ -175,7 +201,33 @@ img {
     text-decoration: none;
 }
 
-@media only screen and (min-width: 1300px){
+/* screens that are 400px wide or less */
+@media only screen and (max-width: 400px){
 
-  
+    .prop-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+       
+    }
+
+    .rooms {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
 }

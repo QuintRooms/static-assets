@@ -260,12 +260,11 @@ function hideArnSearchElement() {
         let searchParams = new URLSearchParams(url.search);
         let destination = searchParams.get("destination");
       
-        let algolia_input = document.querySelector(
-          "input#address-input"
-        ).value = destination;
+        let algolia_input = document.querySelector("input#address-input");
+        algolia_input.value = destination;
       
         algolia_input.addEventListener("click", function() {
-          algolia_input.value = "";
+          algolia_input.value = '';
         });
       }
 

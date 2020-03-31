@@ -228,7 +228,6 @@ let lat_lng;
 let origin = window.location.origin;
 
 function hideArnSearchElement() {
-  let destination_value = document.querySelector("input#address-input");
 
   if (document.querySelector(".SearchHotels")) {
     // Hide tabs
@@ -265,7 +264,7 @@ function hideArnSearchElement() {
     .querySelector("form#searchForm")
     .addEventListener("submit", function(e) {
       e.preventDefault();
-      destination_value = document.querySelector("input#address-input")
+      let destination_value = document.querySelector("input#address-input")
         .value;
       let rooms_value = document.querySelector(
         'select#rooms option[selected="selected"]'
@@ -296,7 +295,7 @@ function hideArnSearchElement() {
       };
       let nights = num_nights(check_in_value, check_out_value);
 
-      let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}`;
+      let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
 
       window.location.href = url;
     });

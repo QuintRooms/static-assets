@@ -172,7 +172,9 @@ function hideArnSearchElement() {
   }
 
   // Hide ARN search bar
-  if (document.querySelector("input#city")) document.querySelector("input#city").style.display = 'none';
+  if (document.querySelector("input#city")){
+    document.querySelector("input#city").style.display = 'none';
+  };
 
   // Insert new search bar in html differently for RootBody vs .SearchHotels
   document.querySelector(".RootBody") ?

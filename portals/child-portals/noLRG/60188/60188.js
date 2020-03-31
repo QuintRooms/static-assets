@@ -167,24 +167,25 @@ function hideArnSearchElement() {
       document.querySelector(".ArnGoAirportSearch").style.display = "none";
       document.querySelector("div#HotelNameContainer").style.display = "none";
 
-      let searched_destination = document.querySelector("meta[name='SearchLocation']").getAttribute('content');
-      document.querySelector('input#address-input').value = searched_destination;
-  }
-
-  // Hide ARN search bar
-  if (document.querySelector("input#city")){
-    document.querySelector("input#city").style.display = 'none';
+    };
+    
+    // Hide ARN search bar
+    if (document.querySelector("input#city")){
+      document.querySelector("input#city").style.display = 'none';
+    };
+    
+    // Insert new search bar in html differently for RootBody vs .SearchHotels
+    document.querySelector(".RootBody") ?
+    document.querySelector("div#CitySearchContainer span").insertAdjacentHTML("beforeend",
+    `<input type="search" id="address-input" placeholder="Destination" />`) 
+    :
+    document.querySelector("div#theSearchBox").insertAdjacentHTML("afterbegin",
+    `<span>City Search:</span>
+    <input type="search" id="address-input" placeholder="Destination" />`);
+    
+    let searched_destination = document.querySelector("meta[name='SearchLocation']").getAttribute('content');
+    document.querySelector('input#address-input').value = searched_destination;
   };
-
-  // Insert new search bar in html differently for RootBody vs .SearchHotels
-  document.querySelector(".RootBody") ?
-      document.querySelector("div#CitySearchContainer span").insertAdjacentHTML("beforeend",
-          `<input type="search" id="address-input" placeholder="Destination" />`) 
-      :
-      document.querySelector("div#theSearchBox").insertAdjacentHTML("afterbegin",
-        `<span>City Search:</span>
-        <input type="search" id="address-input" placeholder="Destination" />`);
-}
 
 hideArnSearchElement();
 

@@ -145,7 +145,6 @@ if (document.querySelector(".SinglePropDetail")) {
   replaceImageSlideshow();
 }
 
-
 /* - - - - - Algolia search - - - - - */
 
 // let config = {
@@ -171,21 +170,21 @@ if (document.querySelector(".SinglePropDetail")) {
 //       document.querySelector("div#HotelNameContainer").style.display = "none";
 
 //     };
-    
+
 //     // Hide ARN search bar
 //     if (document.querySelector("input#city")){
 //       document.querySelector("input#city").style.display = 'none';
 //     };
-    
+
 //     document.querySelector("div#CitySearchContainer span").insertAdjacentHTML("beforeend",
-//     `<input type="search" id="address-input" placeholder="Destination" />`); 
-    
+//     `<input type="search" id="address-input" placeholder="Destination" />`);
+
 //     let searched_destination = document.querySelector("meta[name='SearchLocation']").getAttribute('content');
 
 //     document.querySelector('input#address-input').value = searched_destination;
 
 //     let algolia_input = document.querySelector('input#address-input');
-    
+
 //     algolia_input.addEventListener('click',function(){
 //       algolia_input.value = '';
 //     });
@@ -209,8 +208,6 @@ if (document.querySelector(".SinglePropDetail")) {
 
 // })();
 
-
-
 let config = {
   algolia_app_id: "plETUR94AASH",
   algolia_api_key: "7bf688b47ae81044d05d094f0487df08",
@@ -228,7 +225,6 @@ let lat_lng;
 let origin = window.location.origin;
 
 function hideArnSearchElement() {
-
   if (document.querySelector(".SearchHotels")) {
     // Hide tabs
     document.querySelector(".ArnGoCitySearch").style.display = "none";
@@ -251,14 +247,25 @@ function hideArnSearchElement() {
         <input type="search" id="address-input" placeholder="Destination" />
     `
       )
-    : 
-    document.querySelector("div#theSearchBox").insertAdjacentHTML(
+    : document.querySelector("div#theSearchBox").insertAdjacentHTML(
         "afterbegin",
         `
         <span>City Search:</span>
         <input type="search" id="address-input" placeholder="Destination" />
     `
       );
+
+  let url = new URL(window.location.href);
+  let searchParams = new URLSearchParams(url.search);
+  let destination = searchParams.get("destination");
+
+  let algolia_input = (document.querySelector(
+    "input#address-input"
+  ).value = destination);
+
+  algolia_input.addEventListener("click", function() {
+    algolia_input.value = "";
+  });
 
   document
     .querySelector("form#searchForm")
@@ -296,6 +303,8 @@ function hideArnSearchElement() {
       let nights = num_nights(check_in_value, check_out_value);
 
       let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+
+      console.log(url);
 
       window.location.href = url;
     });

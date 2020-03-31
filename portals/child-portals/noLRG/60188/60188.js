@@ -185,6 +185,12 @@ function hideArnSearchElement() {
     
     let searched_destination = document.querySelector("meta[name='SearchLocation']").getAttribute('content');
     document.querySelector('input#address-input').value = searched_destination;
+
+    let algolia_input = document.querySelector('input#address-input');
+    
+    algolia_input.addEventListener('click',function(){
+      algolia_input.value = '';
+    });
   };
 
 hideArnSearchElement();

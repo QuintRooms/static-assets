@@ -226,9 +226,10 @@ let config = {
 
 let lat_lng;
 let origin = window.location.origin;
-let destination_value;
 
 function hideArnSearchElement() {
+  let destination_value = document.querySelector("input#address-input");
+
   if (document.querySelector(".SearchHotels")) {
     // Hide tabs
     document.querySelector(".ArnGoCitySearch").style.display = "none";

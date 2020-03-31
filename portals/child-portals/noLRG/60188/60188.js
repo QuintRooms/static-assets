@@ -260,9 +260,9 @@ function hideArnSearchElement() {
         let searchParams = new URLSearchParams(url.search);
         let destination = searchParams.get("destination");
       
-        let algolia_input = (document.querySelector(
+        let algolia_input = document.querySelector(
           "input#address-input"
-        ).value = destination);
+        ).value = destination;
       
         algolia_input.addEventListener("click", function() {
           algolia_input.value = "";

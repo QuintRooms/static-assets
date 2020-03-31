@@ -106,13 +106,6 @@ img {
     border: 2px solid #ccc;
 }
 
-.disclaimer {
-    margin: 20px;
-    color: #55555A;
-    font-size: 15px;
-    width: 97%;
-}
-
 .container-right {
     display: flex;
     flex-direction: column;

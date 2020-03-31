@@ -254,18 +254,20 @@ function hideArnSearchElement() {
         <input type="search" id="address-input" placeholder="Destination" />
     `
       );
+      if (document.querySelector(".SearchHotels")){
 
-  let url = new URL(window.location.href);
-  let searchParams = new URLSearchParams(url.search);
-  let destination = searchParams.get("destination");
-
-  let algolia_input = (document.querySelector(
-    "input#address-input"
-  ).value = destination);
-
-  algolia_input.addEventListener("click", function() {
-    algolia_input.value = "";
-  });
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let destination = searchParams.get("destination");
+      
+        let algolia_input = (document.querySelector(
+          "input#address-input"
+        ).value = destination);
+      
+        algolia_input.addEventListener("click", function() {
+          algolia_input.value = "";
+        });
+      }
 
   document
     .querySelector("form#searchForm")

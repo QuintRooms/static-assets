@@ -166,10 +166,13 @@ function hideArnSearchElement() {
       document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
       document.querySelector(".ArnGoAirportSearch").style.display = "none";
       document.querySelector("div#HotelNameContainer").style.display = "none";
+
+      let searched_destination = document.querySelector("meta[name='SearchLocation']").getAttribute('content');
+      document.querySelector('input#address-input').value = searched_destination;
   }
 
   // Hide ARN search bar
-  if (document.querySelector("input#city")) document.querySelector("input#city").style.display = 'none';
+  if (document.querySelector("input#city")) document.querySelector("div#CitySearchContainer").style.display = 'none';
 
   // Insert new search bar in html differently for RootBody vs .SearchHotels
   document.querySelector(".RootBody") ?

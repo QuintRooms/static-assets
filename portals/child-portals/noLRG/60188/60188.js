@@ -236,7 +236,6 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
-    document.querySelector("meta[name='SearchLocation']").setAttribute("content", destination_value );
   }
 
   // Remove ARN search bar
@@ -245,14 +244,15 @@ function hideArnSearchElement() {
   }
 
   // Insert new search bar
-  document.querySelector(".RootBody")
-    ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
-        "beforeend",
-        `
-        <input type="search" id="address-input" placeholder="Destination" />
-    `
-      )
-    : document.querySelector("div#theSearchBox").insertAdjacentHTML(
+  // document.querySelector(".RootBody")
+  //   ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
+  //       "beforeend",
+  //       `
+  //       <input type="search" id="address-input" placeholder="Destination" />
+  //   `
+  //     )
+  //   : 
+    document.querySelector("div#theSearchBox").insertAdjacentHTML(
         "afterbegin",
         `
         <span>City Search:</span>

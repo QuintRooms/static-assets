@@ -244,14 +244,14 @@ function hideArnSearchElement() {
   }
 
   // Insert new search bar
-  // document.querySelector(".RootBody")
-  //   ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
-  //       "beforeend",
-  //       `
-  //       <input type="search" id="address-input" placeholder="Destination" />
-  //   `
-  //     )
-  //   : 
+  document.querySelector(".RootBody")
+    ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
+        "beforeend",
+        `
+        <input type="search" id="address-input" placeholder="Destination" />
+    `
+      )
+    : 
     document.querySelector("div#theSearchBox").insertAdjacentHTML(
         "afterbegin",
         `

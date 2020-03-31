@@ -91,24 +91,17 @@ function hideArnSearchElement() {
   }
 
   // Insert new search bar
-//   document.querySelector(".RootBody")
-//     ? 
-    document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
+  document.querySelector(".RootBody") ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
         "beforeend",
-        `
-        <input type="search" id="address-input" placeholder="Destination" />
-    `
-      )
-    // : document.querySelector("div#theSearchBox").insertAdjacentHTML(
-    //     "afterbegin",
-    //     `
-    //     <span>City Search:</span>
-    //     <input type="search" id="address-input" placeholder="Destination" />
-    // `
-    //   );
+        `<input type="search" id="address-input" placeholder="Destination" />
+        `)
+         : document.querySelector("div#theSearchBox").insertAdjacentHTML(
+        "afterbegin",
+        `<span>City Search:</span>
+        <input type="search" id="address-input" placeholder="Destination" />`
+      );
 
-  document
-    .querySelector("form#searchForm")
+  document.querySelector("form#searchForm")
     .addEventListener("submit", function(e) {
       e.preventDefault();
       let destination_value = document.querySelector("input#address-input")

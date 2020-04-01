@@ -213,10 +213,9 @@ function hideArnSearchElement() {
 
       rooms_dropdown.addEventListener('change', function(){
          for(let i = 0; i < rooms_dropdown.length; i++){
-           console.log(rooms_dropdown[i]);
              if(rooms_dropdown[i].selected){
                console.log(rooms_dropdown[i].textContent);
-                 rooms_dropdown.selectedIndex = rooms_dropdown[i];
+                 rooms_dropdown.selectedIndex = i;
                  break;
              }
          };
@@ -227,7 +226,6 @@ function hideArnSearchElement() {
 
       adults_dropdown.addEventListener('change', function(){
          for(let i = 0; i < adults_dropdown.length; i++){
-           console.log(adults_dropdown[i]);
              if(adults_dropdown[i].selected){
                console.log(adults_dropdown[i].textContent);
                  adults_dropdown.selectedIndex = i;

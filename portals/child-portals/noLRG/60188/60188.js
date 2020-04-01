@@ -241,49 +241,51 @@ function hideArnSearchElement() {
          };
        })
 
+  if (document.querySelector("input#address-input").value){
 
-  document
-    .querySelector("form#searchForm")
-    .addEventListener("submit", function(e) {
-      e.preventDefault();
-      let destination_value = document.querySelector("input#address-input")
-        .value;
-        
-      // Checkin/checkout calc
-      let check_in_value = document.querySelector("input#theCheckIn").value;
-      let check_out_value = document.querySelector("input#theCheckOut").value;
-
-      // dayJs calculation
-      //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
-      //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);
-      //   let nights = date1.diff(date2, 'day');
-
-      let num_nights = (check_in_value, check_out_value) => {
-        let start = new Date(check_in_value);
-        let end = new Date(check_out_value);
-        let dayCount = 0;
-        while (end > start) {
-          dayCount++;
-          start.setDate(start.getDate() + 1);
-        }
-        return dayCount;
-      };
-      let nights = num_nights(check_in_value, check_out_value);
-
-      if (lat_lng){
-        url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-
-      } else {
-
-        let params = new URL(window.location.href);
-        let searchParams = new URLSearchParams(params.search);
-        let lng = searchParams.get("longitude");
-        let lat = searchParams.get("latitude");
-        url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-      };
-
-      window.location.href = url;
-    });
+    document.querySelector("form#searchForm")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+        let destination_value = document.querySelector("input#address-input")
+          .value;
+          
+        // Checkin/checkout calc
+        let check_in_value = document.querySelector("input#theCheckIn").value;
+        let check_out_value = document.querySelector("input#theCheckOut").value;
+  
+        // dayJs calculation
+        //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
+        //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);
+        //   let nights = date1.diff(date2, 'day');
+  
+        let num_nights = (check_in_value, check_out_value) => {
+          let start = new Date(check_in_value);
+          let end = new Date(check_out_value);
+          let dayCount = 0;
+          while (end > start) {
+            dayCount++;
+            start.setDate(start.getDate() + 1);
+          }
+          return dayCount;
+        };
+        let nights = num_nights(check_in_value, check_out_value);
+  
+        if (lat_lng){
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+  
+        } else {
+  
+          let params = new URL(window.location.href);
+          let searchParams = new URLSearchParams(params.search);
+          let lng = searchParams.get("longitude");
+          let lat = searchParams.get("latitude");
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+        };
+  
+        window.location.href = url;
+      });
+  }
+  
 }
 hideArnSearchElement();
 (function() {

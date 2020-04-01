@@ -163,7 +163,8 @@ let config = {
 let lat_lng;
 let url;
 let origin = window.location.origin;
-
+let params = new URL(window.location.href);
+let searchParams = new URLSearchParams(params.search);
 
 function hideArnSearchElement() {
   if (document.querySelector(".SearchHotels")) {
@@ -173,6 +174,9 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
+
+    if (searchParams.has('locationlabel') || searchParams.has('points')) return;
+    document.querySelector('img .arn-green-marker-icon').style.display = 'none';
   }
 
   // Remove ARN search bar
@@ -196,11 +200,7 @@ function hideArnSearchElement() {
     `
       );
       if (document.querySelector(".SearchHotels")){
-
-        let params = new URL(window.location.href);
-        let searchParams = new URLSearchParams(params.search);
         let destination = searchParams.get("destination");
-      
         let algolia_input = document.querySelector("input#address-input");
         algolia_input.value = destination;
       
@@ -276,11 +276,9 @@ function hideArnSearchElement() {
           url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
   
         } else {
-  
-          let params = new URL(window.location.href);
-          let searchParams = new URLSearchParams(params.search);
           let lng = searchParams.get("longitude");
           let lat = searchParams.get("latitude");
+
           url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
         };
         if(document.querySelector('.RootBody')){
@@ -313,5 +311,10 @@ hideArnSearchElement();
   });
 })();
 
+/*
+https://events.hotelsforhope.com/v6?currency=USD&type=geo&siteid=60336&longitude=-80.10643370000000&latitude=26.10879170000000&radius=5&checkin=10/2/2020&nights=3&properties=x378,x24437,x208368,x2636,x2324,x235230,x39947,x10505,x269736,x1714083,x13941,x848867,x3846047&map&locationlabel=Tortuga-Main+Stage&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&points=-80.104529|26.114917|Tortuga-Sunset+Stage,-80.119458|26.100938|Water+Taxi+Stop+(Tickets+Extra$),-80.106137|26.110877|Water+Taxi+Stop+(Tickets+Extra$)&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique,Weekly%20Rentals&groupid=41307&utm_source=internal
 
 
+https://events.hotelsforhope.com/v6?currency=USD&type=geo&siteid=59243&longitude=-97.74319800000000&latitude=30.26457130000000&radius=100&checkin=2/12/2021&nights=2&properties=x209332,x13333,x3979523,x1202321,x44262,x180438,x3819096,x16664,x51196,x2302516,x442664,x621113,x650166,x45491,x1258332,x258950&map&locationlabel=Marathon+Starting+Line&cid=GROUP-EVENT-EMAIL&pageSize=15&useMiles&points=-97.74193550000000|30.27171120000000|Finish+Line&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique,Weekly%20Rentals&groupid=40435&utm_source=internal
+
+*/

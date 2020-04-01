@@ -246,6 +246,8 @@ function hideArnSearchElement() {
     document.querySelector("form#searchForm")
       .addEventListener("submit", function(e) {
         e.preventDefault();
+        e.stopPropagation();
+        
         let destination_value = document.querySelector("input#address-input")
           .value;
           
@@ -285,7 +287,7 @@ function hideArnSearchElement() {
         window.location.href = url;
       });
   }
-  
+
 }
 hideArnSearchElement();
 (function() {

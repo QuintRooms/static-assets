@@ -162,8 +162,7 @@ let config = {
 
 let lat_lng;
 let origin = window.location.origin;
-let rooms_value;
-let adults_value;
+
 
 function hideArnSearchElement() {
   if (document.querySelector(".SearchHotels")) {
@@ -209,6 +208,12 @@ function hideArnSearchElement() {
         });
       }
 
+      let rooms_value = document.querySelector(
+        'select#rooms option[selected="selected"]').textContent;
+
+      let adults_value = document.querySelector(
+        'select#adults option[selected="selected"]').textContent;
+
       /*  - - - - - Event listeners for adult and rooms drop down - - - - - */
 
       let rooms_dropdown = document.querySelector('select#rooms');
@@ -245,13 +250,7 @@ function hideArnSearchElement() {
       e.preventDefault();
       let destination_value = document.querySelector("input#address-input")
         .value;
-    
-      // let rooms_value = document.querySelector(
-      //   'select#rooms option[selected="selected"]').textContent;
-
-      // let adults_value = document.querySelector(
-      //   'select#adults option[selected="selected"]').textContent;
-
+        
       // Checkin/checkout calc
       let check_in_value = document.querySelector("input#theCheckIn").value;
       let check_out_value = document.querySelector("input#theCheckOut").value;
@@ -294,3 +293,6 @@ hideArnSearchElement();
     lat_lng = e.suggestion.latlng;
   });
 })();
+
+
+

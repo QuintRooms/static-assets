@@ -163,7 +163,6 @@ let config = {
 let lat_lng;
 let origin = window.location.origin;
 
-
 function hideArnSearchElement() {
   if (document.querySelector(".SearchHotels")) {
     // Hide tabs
@@ -208,49 +207,20 @@ function hideArnSearchElement() {
         });
       }
 
-      let rooms_value = document.querySelector(
-        'select#rooms option[selected="selected"]').textContent;
-
-      let adults_value = document.querySelector(
-        'select#adults option[selected="selected"]').textContent;
-
-      /*  - - - - - Event listeners for adult and rooms drop down - - - - - */
-
-      let rooms_dropdown = document.querySelector('select#rooms');
-
-      rooms_dropdown.addEventListener('change', function(){
-         for(let i = 0; i < rooms_dropdown.length; i++){
-             if(rooms_dropdown[i].selected){
-               console.log(rooms_dropdown[i].textContent);
-                 rooms_dropdown.selectedIndex = i;
-                 rooms_value = rooms_dropdown[i].textContent;
-                 break;
-             }
-         };
-       })
- 
-
-      let adults_dropdown = document.querySelector('select#adults');
-
-      adults_dropdown.addEventListener('change', function(){
-         for(let i = 0; i < adults_dropdown.length; i++){
-             if(adults_dropdown[i].selected){
-               console.log(adults_dropdown[i].textContent);
-                 adults_dropdown.selectedIndex = i;
-                 adults_value = adults_dropdown[i].textContent;
-                 break;
-             }
-         };
-       })
-
-
   document
     .querySelector("form#searchForm")
     .addEventListener("submit", function(e) {
       e.preventDefault();
       let destination_value = document.querySelector("input#address-input")
         .value;
-        
+      let rooms_value = document.querySelector(
+        'select#rooms option[selected="selected"]'
+      ).textContent;
+
+      let adults_value = document.querySelector(
+        'select#adults option[selected="selected"]'
+      ).textContent;
+
       // Checkin/checkout calc
       let check_in_value = document.querySelector("input#theCheckIn").value;
       let check_out_value = document.querySelector("input#theCheckOut").value;
@@ -293,6 +263,3 @@ hideArnSearchElement();
     lat_lng = e.suggestion.latlng;
   });
 })();
-
-
-

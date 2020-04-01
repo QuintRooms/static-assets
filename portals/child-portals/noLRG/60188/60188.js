@@ -241,7 +241,8 @@ function hideArnSearchElement() {
          };
        })
 
-  if (document.querySelector("input#address-input").value){
+       let arn_submit_btn = document.querySelector('input#theSubmitButton');
+       arn_submit_btn.setAttribute('onClick', '');
 
     document.querySelector("form#searchForm")
       .addEventListener("submit", function(e) {
@@ -282,12 +283,18 @@ function hideArnSearchElement() {
           let lat = searchParams.get("latitude");
           url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
         };
-  
+        
+        if (!validateSubmitOptions())return false;
+        $('theBody').addClassName('searchingForResults');
+        doPushPagePrep();
+        $('theArnPushPage').show();
+        $('theArnPushPageContent').show()
+
         window.location.href = url;
       });
   }
 
-}
+
 hideArnSearchElement();
 (function() {
   var placesAutocomplete = places({

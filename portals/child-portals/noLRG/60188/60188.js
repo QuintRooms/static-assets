@@ -207,18 +207,48 @@ function hideArnSearchElement() {
         });
       }
 
+      /*  - - - - - Event listeners for adult and rooms drop down - - - - - */
+
+      let rooms_dropdown = document.querySelector('select#rooms');
+
+      rooms_dropdown.addEventListener('change', function(){
+         for(let i = 0; i < rooms_dropdown.length; i++){
+           console.log(rooms_dropdown[i]);
+             if(rooms_dropdown[i].selected){
+               console.log(rooms_dropdown[i].textContent);
+                 rooms_dropdown.selectedIndex = rooms_dropdown[i];
+                 break;
+             }
+         };
+       })
+ 
+
+      let adults_dropdown = document.querySelector('select#adults');
+
+      adults_dropdown.addEventListener('change', function(){
+         for(let i = 0; i < adults_dropdown.length; i++){
+           console.log(adults_dropdown[i]);
+             if(adults_dropdown[i].selected){
+               console.log(adults_dropdown[i].textContent);
+                 adults_dropdown.selectedIndex = i;
+                 break;
+             }
+         };
+       })
+
+
   document
     .querySelector("form#searchForm")
     .addEventListener("submit", function(e) {
       e.preventDefault();
       let destination_value = document.querySelector("input#address-input")
         .value;
+    
       let rooms_value = document.querySelector(
-        'select#rooms option[selected="selected"]'
-      ).textContent;
+        'select#rooms option').textContent;
 
       let adults_value = document.querySelector(
-        'select#adults option[selected="selected"]'
+        'select#adults option'
       ).textContent;
 
       // Checkin/checkout calc

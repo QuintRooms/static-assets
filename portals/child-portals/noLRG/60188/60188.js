@@ -243,11 +243,10 @@ function hideArnSearchElement() {
         .value;
     
       let rooms_value = document.querySelector(
-        'select#rooms').textContent;
+        'select#rooms option[selected="selected"]').textContent;
 
       let adults_value = document.querySelector(
-        'select#adults'
-      ).textContent;
+        'select#adults option[selected="selected"]').textContent;
 
       // Checkin/checkout calc
       let check_in_value = document.querySelector("input#theCheckIn").value;

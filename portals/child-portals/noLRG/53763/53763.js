@@ -9,6 +9,10 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+
+        if (noLRGPortal.site_id == 59243){
+            noLRGPortal.addCustomTag('<div>Opens August 2020</div>', 3979523)
+        }
     }, 1);
 });
 

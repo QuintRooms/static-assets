@@ -175,12 +175,13 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
       
-    document.querySelector('img.arn-green-marker-icon').addEventListener('load',function(){
+    jQuery('#theBody').on("arnMapLoadedEvent", () => {
       if (!searchParams.has('locationlabel') || !searchParams.has('points')){
         document.querySelector('img.arn-green-marker-icon').style.display = 'none';
       };
-
     });
+
+  
    
   }
 

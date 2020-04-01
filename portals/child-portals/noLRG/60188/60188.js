@@ -162,6 +162,8 @@ let config = {
 
 let lat_lng;
 let origin = window.location.origin;
+let rooms_value;
+let adults_value;
 
 function hideArnSearchElement() {
   if (document.querySelector(".SearchHotels")) {
@@ -216,6 +218,7 @@ function hideArnSearchElement() {
              if(rooms_dropdown[i].selected){
                console.log(rooms_dropdown[i].textContent);
                  rooms_dropdown.selectedIndex = i;
+                 rooms_value = rooms_dropdown[i].textContent;
                  break;
              }
          };
@@ -229,6 +232,7 @@ function hideArnSearchElement() {
              if(adults_dropdown[i].selected){
                console.log(adults_dropdown[i].textContent);
                  adults_dropdown.selectedIndex = i;
+                 adults_value = adults_dropdown[i].textContent;
                  break;
              }
          };
@@ -242,11 +246,11 @@ function hideArnSearchElement() {
       let destination_value = document.querySelector("input#address-input")
         .value;
     
-      let rooms_value = document.querySelector(
-        'select#rooms option[selected="selected"]').textContent;
+      // let rooms_value = document.querySelector(
+      //   'select#rooms option[selected="selected"]').textContent;
 
-      let adults_value = document.querySelector(
-        'select#adults option[selected="selected"]').textContent;
+      // let adults_value = document.querySelector(
+      //   'select#adults option[selected="selected"]').textContent;
 
       // Checkin/checkout calc
       let check_in_value = document.querySelector("input#theCheckIn").value;

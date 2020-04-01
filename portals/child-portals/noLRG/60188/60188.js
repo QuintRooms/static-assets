@@ -180,9 +180,6 @@ function hideArnSearchElement() {
         document.querySelector('img.arn-green-marker-icon').style.display = 'none';
       };
     });
-
-  
-   
   }
 
   // Remove ARN search bar
@@ -318,11 +315,3 @@ hideArnSearchElement();
     lat_lng = e.suggestion.latlng;
   });
 })();
-
-/*
-https://events.hotelsforhope.com/v6?currency=USD&type=geo&siteid=60336&longitude=-80.10643370000000&latitude=26.10879170000000&radius=5&checkin=10/2/2020&nights=3&properties=x378,x24437,x208368,x2636,x2324,x235230,x39947,x10505,x269736,x1714083,x13941,x848867,x3846047&map&locationlabel=Tortuga-Main+Stage&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&points=-80.104529|26.114917|Tortuga-Sunset+Stage,-80.119458|26.100938|Water+Taxi+Stop+(Tickets+Extra$),-80.106137|26.110877|Water+Taxi+Stop+(Tickets+Extra$)&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique,Weekly%20Rentals&groupid=41307&utm_source=internal
-
-
-https://events.hotelsforhope.com/v6?currency=USD&type=geo&siteid=59243&longitude=-97.74319800000000&latitude=30.26457130000000&radius=100&checkin=2/12/2021&nights=2&properties=x209332,x13333,x3979523,x1202321,x44262,x180438,x3819096,x16664,x51196,x2302516,x442664,x621113,x650166,x45491,x1258332,x258950&map&locationlabel=Marathon+Starting+Line&cid=GROUP-EVENT-EMAIL&pageSize=15&useMiles&points=-97.74193550000000|30.27171120000000|Finish+Line&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique,Weekly%20Rentals&groupid=40435&utm_source=internal
-
-*/

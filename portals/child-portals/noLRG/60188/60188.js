@@ -175,9 +175,7 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
 
-    if (!searchParams.has('locationlabel') || !searchParams.has('points')){
-      document.querySelector('img.arn-green-marker-icon').style.display = 'none';
-    };
+   
   }
 
   // Remove ARN search bar
@@ -216,7 +214,15 @@ function hideArnSearchElement() {
       let adults_value = document.querySelector(
         'select#adults option[selected="selected"]').textContent;
 
-      /*  - - - - - Event listeners for adult and rooms drop down - - - - - */
+      /*  - - - - - Event listeners  - - - - - */
+
+      let green_marker = document.querySelector(img.arn-green-marker-icon)
+      
+      green_marker.addEventListener('load',function(){
+        if (!searchParams.has('locationlabel') || !searchParams.has('points')){
+          green_marker.style.display = 'none';
+        };
+      });
 
       let rooms_dropdown = document.querySelector('select#rooms');
 

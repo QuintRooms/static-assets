@@ -43,3 +43,4 @@ noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive commun
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/53763.css">');
 
+ 

@@ -9,6 +9,10 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
         noLRGPortal.updateText('.event-rate', 'Exclusive Rates');
+
+        if (noLRGPortal.site_id == 59243){
+            noLRGPortal.addCustomTag('<div>Opens August 2020</div>', 3979523)
+        }
     }, 1);
 });
 
@@ -35,3 +39,5 @@ waitForElementToLoad('header');
 noLRGPortal.updateText('#theMarketingOptInAjax label', 'Opt in to receive communication from the event and its partners.');
 
 document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/53763.css">');
+
+ 

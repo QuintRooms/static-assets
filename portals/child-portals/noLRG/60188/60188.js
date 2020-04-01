@@ -185,14 +185,14 @@ function hideArnSearchElement() {
     ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
         "beforeend",
         `
-        <input type="search" id="address-input" placeholder="Destination" />
+        <input type="search" id="address-input" placeholder="Destination" required="true" />
     `
       )
     : document.querySelector("div#theSearchBox").insertAdjacentHTML(
         "afterbegin",
         `
         <span>City Search:</span>
-        <input type="search" id="address-input" placeholder="Destination" />
+        <input type="search" id="address-input" placeholder="Destination" required="true"  />
     `
       );
       if (document.querySelector(".SearchHotels")){
@@ -272,13 +272,15 @@ function hideArnSearchElement() {
 
       if (lat_lng){
         url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+
       } else {
+
         let params = new URL(window.location.href);
         let searchParams = new URLSearchParams(params.search);
         let lng = searchParams.get("longitude");
         let lat = searchParams.get("latitude");
         url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-      }
+      };
 
       window.location.href = url;
     });

@@ -175,8 +175,9 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
 
-    if (searchParams.has('locationlabel') || searchParams.has('points')) return;
-    document.querySelector('img .arn-green-marker-icon').style.display = 'none';
+    if (!searchParams.has('locationlabel') || !searchParams.has('points')){
+      document.querySelector('img.arn-green-marker-icon').style.display = 'none';
+    };
   }
 
   // Remove ARN search bar

@@ -174,7 +174,7 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
-    let green_marker = document.querySelector(img.arn-green-marker-icon)
+    let green_marker = document.querySelector('img.arn-green-marker-icon');
       
     green_marker.addEventListener('load',function(){
       if (!searchParams.has('locationlabel') || !searchParams.has('points')){

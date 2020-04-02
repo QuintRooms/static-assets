@@ -161,7 +161,10 @@ let config = {
 };
 
 let lat_lng;
+let url;
 let origin = window.location.origin;
+let params = new URL(window.location.href);
+let searchParams = new URLSearchParams(params.search);
 
 function hideArnSearchElement() {
   if (document.querySelector(".SearchHotels")) {
@@ -171,6 +174,12 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
+      
+    jQuery('#theBody').on("arnMapLoadedEvent", () => {
+      if (!searchParams.has('locationlabel') || !searchParams.has('points')){
+        document.querySelector('img.arn-green-marker-icon').style.display = 'none';
+      };
+    });
   }
 
   // Remove ARN search bar
@@ -183,22 +192,18 @@ function hideArnSearchElement() {
     ? document.querySelector("div#CitySearchContainer span").insertAdjacentHTML(
         "beforeend",
         `
-        <input type="search" id="address-input" placeholder="Destination" />
+        <input type="search" id="address-input" placeholder="Destination" required="true" />
     `
       )
     : document.querySelector("div#theSearchBox").insertAdjacentHTML(
         "afterbegin",
         `
         <span>City Search:</span>
-        <input type="search" id="address-input" placeholder="Destination" />
+        <input type="search" id="address-input" placeholder="Destination" required="true"  />
     `
       );
       if (document.querySelector(".SearchHotels")){
-
-        let url = new URL(window.location.href);
-        let searchParams = new URLSearchParams(url.search);
         let destination = searchParams.get("destination");
-      
         let algolia_input = document.querySelector("input#address-input");
         algolia_input.value = destination;
       
@@ -207,46 +212,93 @@ function hideArnSearchElement() {
         });
       }
 
-  document
-    .querySelector("form#searchForm")
-    .addEventListener("submit", function(e) {
-      e.preventDefault();
-      let destination_value = document.querySelector("input#address-input")
-        .value;
       let rooms_value = document.querySelector(
-        'select#rooms option[selected="selected"]'
-      ).textContent;
+        'select#rooms option[selected="selected"]').textContent;
 
       let adults_value = document.querySelector(
-        'select#adults option[selected="selected"]'
-      ).textContent;
+        'select#adults option[selected="selected"]').textContent;
 
-      // Checkin/checkout calc
-      let check_in_value = document.querySelector("input#theCheckIn").value;
-      let check_out_value = document.querySelector("input#theCheckOut").value;
+      /*  - - - - - Event listeners  - - - - - */
 
-      // dayJs calculation
-      //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
-      //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);
-      //   let nights = date1.diff(date2, 'day');
+    
 
-      let num_nights = (check_in_value, check_out_value) => {
-        let start = new Date(check_in_value);
-        let end = new Date(check_out_value);
-        let dayCount = 0;
-        while (end > start) {
-          dayCount++;
-          start.setDate(start.getDate() + 1);
-        }
-        return dayCount;
-      };
-      let nights = num_nights(check_in_value, check_out_value);
+      let rooms_dropdown = document.querySelector('select#rooms');
 
-      let url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+      rooms_dropdown.addEventListener('change', function(){
+         for(let i = 0; i < rooms_dropdown.length; i++){
+             if(rooms_dropdown[i].selected){
+                 rooms_dropdown.selectedIndex = i;
+                 rooms_value = rooms_dropdown[i].textContent;
+                 break;
+             }
+         };
+       })
+ 
+      let adults_dropdown = document.querySelector('select#adults');
 
-      window.location.href = url;
-    });
-}
+      adults_dropdown.addEventListener('change', function(){
+         for(let i = 0; i < adults_dropdown.length; i++){
+             if(adults_dropdown[i].selected){
+                 adults_dropdown.selectedIndex = i;
+                 adults_value = adults_dropdown[i].textContent;
+                 break;
+             }
+         };
+       })
+
+       let arn_submit_btn = document.querySelector('input#theSubmitButton');
+       arn_submit_btn.setAttribute('onClick', '');
+
+    document.querySelector("form#searchForm")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        let destination_value = document.querySelector("input#address-input")
+          .value;
+          
+        // Checkin/checkout calc
+        let check_in_value = document.querySelector("input#theCheckIn").value;
+        let check_out_value = document.querySelector("input#theCheckOut").value;
+  
+        // dayJs calculation
+        //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
+        //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);
+        //   let nights = date1.diff(date2, 'day');
+  
+        let num_nights = (check_in_value, check_out_value) => {
+          let start = new Date(check_in_value);
+          let end = new Date(check_out_value);
+          let dayCount = 0;
+          while (end > start) {
+            dayCount++;
+            start.setDate(start.getDate() + 1);
+          }
+          return dayCount;
+        };
+        let nights = num_nights(check_in_value, check_out_value);
+  
+        if (lat_lng){
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+  
+        } else {
+          let lng = searchParams.get("longitude");
+          let lat = searchParams.get("latitude");
+
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=60188&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+        };
+        if(document.querySelector('.RootBody')){
+          if (!validateSubmitOptions())return false;
+          $('theBody').addClassName('searchingForResults');
+          doPushPagePrep();
+          $('theArnPushPage').show();
+          $('theArnPushPageContent').show()
+        };
+
+        window.location.href = url;
+      });
+  }
+
+
 hideArnSearchElement();
 (function() {
   var placesAutocomplete = places({

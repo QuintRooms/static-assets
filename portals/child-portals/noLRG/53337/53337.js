@@ -14,38 +14,6 @@ jQuery(document).on('ratesReadyEvent', function() {
     }, 1);
 });
 
-// function waitForElementToLoad(elementWaitingFor) {
-//     let element = document.querySelector(elementWaitingFor);
-//     let config = { attributes: false, childList: true, subtree: false };
-
-//     function callback(mutationsList, observer) {
-//         for (let mutation of mutationsList) {
-//             if (mutation.type === 'childList') {
-//                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png', 'src');
-//                 noLRGPortal.updateAttribute('.logo', 'https://www.aclfestival.com/', 'href');
-
-//                 document.querySelector('.logo').insertAdjacentHTML('afterend', `
-//                     <div class="event-week pull-right">
-//                         <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
-//                         <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
-//                     </div>
-//                 `);
-
-//                 setCorrectWeekInURLs();
-
-//                 observer.disconnect();
-//             }
-//         }
-//     }
-//     let observer = new MutationObserver(callback);
-//     observer.observe(element, config);
-// };
-
-
-// waitForElementToLoad('header');
-
-/* - - - - - - -  build custom header  - - - - - - */
-
 document.querySelector('header').style.display = 'none';
 
 let new_header = `<div class="new-header">

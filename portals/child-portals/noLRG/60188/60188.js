@@ -174,7 +174,7 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoLandmarkSearch").style.display = "none";
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
-
+    document.querySelector('input#theCheckIn').required = true;
     // Hide green event marker if there is no event
     jQuery("#theBody").on("arnMapLoadedEvent", () => {
       if (!searchParams.has("locationlabel") || !searchParams.has("points")) {

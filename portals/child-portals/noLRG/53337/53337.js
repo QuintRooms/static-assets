@@ -48,7 +48,7 @@ jQuery(document).on('ratesReadyEvent', function() {
 
 document.querySelector('header').style.display = 'none';
 
-document.body.insertAdjacentElement("afterbegin", `
+document.body.insertAdjacentHTML("afterbegin", `
     <div class="new-header">
         <a class="logo" href="https://www.aclfestival.com/" target="_blank">
             <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png" alt="Logo">

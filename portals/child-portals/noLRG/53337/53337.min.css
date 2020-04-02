@@ -56,6 +56,29 @@ body.RootBody {
     margin: 0 10%;
 }
 
+/* .event-dates {
+    font-family: 'Paytone One';
+    color: #000;
+    font-size: 17px;
+    position: relative;
+    top: 5px;
+    left: 18px;
+} */
+.event-week a{
+	color: #fff;
+	background: #00a081;
+	font-family: 'Paytone One';
+	font-size: 17px;
+	padding: 6px;
+	margin: 0 6px;
+	transition: all .5s ease;
+	box-shadow: 2px 2px 1px 0px #ccc;
+}
+.event-week a:hover{
+	background: #00886d;
+}
+
+
 #language {
     display: none;
 }
@@ -359,4 +382,12 @@ body.RootBody {
     position: relative;
     width: 100%;
     z-index: 9;
+}
+
+
+@media screen and (max-width: 600px){
+	.event-week a{
+		display: block;
+		margin: 12px;
+	}
 }

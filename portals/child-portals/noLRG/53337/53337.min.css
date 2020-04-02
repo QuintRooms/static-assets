@@ -65,6 +65,12 @@ body.RootBody {
     left: 18px;
 } */
 
+.logo-container {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .event-week{
     display: flex;
     flex-direction: column;

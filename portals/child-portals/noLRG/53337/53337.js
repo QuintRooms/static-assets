@@ -50,9 +50,11 @@ document.querySelector('header').style.display = 'none';
 
 document.body.insertAdjacentHTML("afterbegin", `
     <div class="new-header">
-        <a class="logo" href="https://www.aclfestival.com/" target="_blank">
-            <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png" alt="Logo">
-        </a>
+        <div class="logo-container">
+            <a class="logo" href="https://www.aclfestival.com/" target="_blank">
+                <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png" alt="Logo">
+            </a>
+        </div>
         <div class="event-week pull-right">
             <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
             <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>

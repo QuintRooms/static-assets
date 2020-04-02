@@ -363,9 +363,16 @@ body.RootBody {
     left: -34px;
 }
 
-@media screen and (max-width: 700px){
-	.event-week a{
-        display: flex;
+@media screen and (max-width: 750px){
+    .new-header {
         flex-direction: column;
+    }
+
+    .event-week {
+        flex-direction: column;
+    }
+    
+    .event-week a {
+        margin: 6px;
 	}
 }

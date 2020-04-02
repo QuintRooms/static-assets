@@ -48,19 +48,23 @@ jQuery(document).on('ratesReadyEvent', function() {
 
 document.querySelector('header').style.display = 'none';
 
-document.body.insertAdjacentHTML("afterbegin", `
-    <div class="new-header">
-        <div class="logo-container">
-            <a class="logo" href="https://www.aclfestival.com/" target="_blank">
-                <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="event-week pull-right">
-            <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
-            <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
-         </div>
-    </div>
-`);
+let new_header = `<div class="new-header">
+<div class="logo-container">
+    <a class="logo" href="https://www.aclfestival.com/" target="_blank">
+        <img src="https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png" alt="Logo">
+    </a>
+</div>
+<div class="event-week pull-right">
+    <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
+    <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
+ </div>
+</div>`;
+
+if(document.querySelector('.info-banner')){
+    document.querySelector('.info-banner').insertAdjacentElement('afterend', new_header);
+} else {
+    document.body.insertAdjacentElement('afterbegin', new_header);
+};
 
 noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + noLRGPortal.site_id + '&theme=standard', 'href');
 

@@ -24,14 +24,14 @@ function waitForElementToLoad(elementWaitingFor) {
                 noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/53337/images/logo.png', 'src');
                 noLRGPortal.updateAttribute('.logo', 'https://www.aclfestival.com/', 'href');
 
-                // document.querySelector('header').insertAdjacentHTML('beforeend', `
-                //     <div class="event-week pull-right">
-                //         <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
-                //         <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
-                //     </div>
-                // `);
+                document.querySelector('.logo').insertAdjacentHTML('afterend', `
+                    <div class="event-week pull-right">
+                        <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=32970">Book Weekend One</a>
+                        <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=37465">Book Weekend Two</a>
+                    </div>
+                `);
 
-                // setCorrectWeekInURLs();
+                setCorrectWeekInURLs();
 
                 observer.disconnect();
             }

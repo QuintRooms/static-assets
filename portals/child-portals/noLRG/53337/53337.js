@@ -61,9 +61,9 @@ let new_header = `<div class="new-header">
 </div>`;
 
 if(document.querySelector('.info-banner')){
-    document.querySelector('.info-banner').insertAdjacentElement('afterend', new_header);
+    document.querySelector('.info-banner').insertAdjacentHTML('afterend', new_header);
 } else {
-    document.body.insertAdjacentElement('afterbegin', new_header);
+    document.body.insertAdjacentHTML('afterbegin', new_header);
 };
 
 noLRGPortal.updateAttribute('.tooltipLink', 'https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=' + noLRGPortal.site_id + '&theme=standard', 'href');

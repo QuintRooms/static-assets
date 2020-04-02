@@ -51,10 +51,10 @@ body.RootBody {
     z-index: 9;
 }
 
-.new-header a {
+/* .new-header a {
     color: #444;
     margin: 0 10%;
-}
+} */
 
 /* .event-dates {
     font-family: 'Paytone One';
@@ -64,16 +64,23 @@ body.RootBody {
     top: 5px;
     left: 18px;
 } */
+
+.event-week{
+    display: flex;
+    flex-direction: column;
+}
+
 .event-week a{
 	color: #fff;
 	background: #00a081;
 	font-family: 'Paytone One';
 	font-size: 17px;
 	padding: 6px;
-	margin: 0 6px;
+	margin: 6px 0;
 	transition: all .5s ease;
 	box-shadow: 2px 2px 1px 0px #ccc;
 }
+
 .event-week a:hover{
 	background: #00886d;
 }
@@ -376,7 +383,7 @@ body.RootBody {
     border-bottom: 3px solid #d6410f;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 6px 12px;
     background-color: #fff;
     position: relative;

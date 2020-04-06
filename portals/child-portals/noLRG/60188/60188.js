@@ -159,6 +159,8 @@ let url;
 let origin = window.location.origin;
 let params = new URL(window.location.href);
 let searchParams = new URLSearchParams(params.search);
+let site_id = searchParams.get("siteid");
+
 
 function setInputToRequired(selector){
 if(!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
@@ -208,7 +210,6 @@ function setDropdownIndex(dropdown_selector) {
           if (dropdown[i].selected) {
               dropdown.selectedIndex = i;
               value = dropdown[i].textContent;
-              console.log('end of if' + value);
               break;
           }
       }
@@ -243,12 +244,12 @@ function constructURLOnSubmit() {
       let destination_value = document.querySelector("input#address-input").value;
 
       if (lat_lng) {
-          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=${site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
       } else {
           let lng = searchParams.get("longitude");
           let lat = searchParams.get("latitude");
 
-          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+          url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=${site_id}&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
       }
 
       if (document.querySelector(".RootBody")) {
@@ -258,7 +259,6 @@ function constructURLOnSubmit() {
           $("theArnPushPage").show();
           $("theArnPushPageContent").show();
       }
-      console.log('on submit: ' + rooms_value, adults_value);
       window.location.href = url;
   });
 }

@@ -58,38 +58,31 @@ function prepopulateDestinationInputOnSearchHotels() {
 
 function setDropdownIndex(dropdown_selector) {
     let dropdown = document.querySelector(dropdown_selector);
-    let value = dropdown.querySelector('option[selected="selected"]');
-
+    let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
+    
     dropdown.addEventListener('change', function() {
         for (let i = 0; i < dropdown.length; i++) {
             if (dropdown[i].selected) {
                 dropdown.selectedIndex = i;
                 value = dropdown[i].textContent;
+                console.log('end of if' + value);
                 break;
             }
         }
+        return value;
     });
+    return value;
 }
 
-function calcuateCheckDates() {
-    let destination_value = document.querySelector('input#address-input').value;
-
-    // Checkin/checkout calc
-    let check_in_value = document.querySelector('input#theCheckIn').value;
-    let check_out_value = document.querySelector('input#theCheckOut').value;
-
-    let num_nights = (check_in_value, check_out_value) => {
-        let start = new Date(check_in_value);
-        let end = new Date(check_out_value);
-        let dayCount = 0;
-        while (end > start) {
-            dayCount++;
-            start.setDate(start.getDate() + 1);
-        }
-        return dayCount;
-    };
-
-    return [num_nights(check_in_value, check_out_value), check_in_value];
+function calcuateCheckDates(check_in_value, check_out_value) {    
+    let start = new Date(check_in_value);
+    let end = new Date(check_out_value);
+    let dayCount = 0;
+    while (end > start) {
+        dayCount++;
+        start.setDate(start.getDate() + 1);
+    }
+    return dayCount;
 }
 
 function constructURLOnSubmit() {
@@ -98,17 +91,22 @@ function constructURLOnSubmit() {
 
     document.querySelector("form#searchForm").addEventListener("submit", function(e) {
         e.preventDefault();
-        let nights = calcuateCheckDates();
 
+        let check_in_value = document.querySelector('input#theCheckIn').value;
+        let check_out_value = document.querySelector('input#theCheckOut').value;
+        let rooms_value = setDropdownIndex('select#rooms');
+        let adults_value = setDropdownIndex('select#adults');
+
+        let nights = calcuateCheckDates(check_in_value, check_out_value);
         let destination_value = document.querySelector("input#address-input").value;
 
         if (lat_lng) {
-            url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${nights[1]}&nights=${nights[0]}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+            url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
         } else {
             let lng = searchParams.get("longitude");
             let lat = searchParams.get("latitude");
 
-            url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${nights[1]}&nights=${nights[0]}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+            url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=46460&longitude=${lng}&latitude=${lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
         }
 
         if (document.querySelector(".RootBody")) {
@@ -118,7 +116,7 @@ function constructURLOnSubmit() {
             $("theArnPushPage").show();
             $("theArnPushPageContent").show();
         }
-
+        console.log('on submit: ' + rooms_value, adults_value);
         window.location.href = url;
     });
 }

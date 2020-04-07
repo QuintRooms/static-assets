@@ -1239,7 +1239,7 @@ export default class BasePortal {
           return dayCount;
         }
         
-        function constructURLOnSubmit() {
+        const constructURLOnSubmit = () => {
           let arn_submit_btn = document.querySelector("input#theSubmitButton");
           arn_submit_btn.setAttribute("onClick", "");
         

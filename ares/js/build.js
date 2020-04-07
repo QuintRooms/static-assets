@@ -26,6 +26,7 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
+                this.addAlgoliaSearch();
 
                 // all pages
                 this.buildMobileMenu();
@@ -1304,5 +1305,5 @@ export default class BasePortal {
           });
         })();
     }
-    
+
 }

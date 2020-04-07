@@ -1164,3 +1164,143 @@ export default class BasePortal {
         });
     }
 }
+
+let lat_lng;
+let url;
+let origin = window.location.origin;
+let params = new URL(window.location.href);
+let searchParams = new URLSearchParams(params.search);
+let site_id = searchParams.get("siteid");
+
+function setInputToRequired(selector){
+if(!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
+
+document.querySelector(selector).required = true;
+}
+
+function hideArnSearchElements(selectors) {
+  if (!document.querySelector('.SearchHotels')) return;
+  let elements = document.querySelectorAll(selectors);
+
+  elements.forEach((element) => {
+      element.style.display = 'none';
+  });
+}
+
+function removeArnSearchBar(selector) {
+  if (!document.querySelector(selector)) return;
+
+  document.querySelector(selector).remove();
+}
+
+function insertAlgoliaSearch(page, selector, adjacent_location, html) {
+  if (!document.querySelector(page)) return;
+
+  document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
+}
+
+function prepopulateDestinationInputOnSearchHotels() {
+  if (!document.querySelector('.SearchHotels')) return;
+
+  let destination = searchParams.get('destination');
+  let algolia_input = document.querySelector('input#address-input');
+  algolia_input.value = destination;
+
+  algolia_input.addEventListener('click', function() {
+      algolia_input.value = '';
+  });
+}
+
+function setDropdownIndex(dropdown_selector) {
+  let dropdown = document.querySelector(dropdown_selector);
+  let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
+  
+  dropdown.addEventListener('change', function() {
+      for (let i = 0; i < dropdown.length; i++) {
+          if (dropdown[i].selected) {
+              dropdown.selectedIndex = i;
+              value = dropdown[i].textContent;
+              break;
+          }
+      }
+      return value;
+  });
+  return value;
+}
+
+function calcuateCheckDates(check_in_value, check_out_value) {    
+  let start = new Date(check_in_value);
+  let end = new Date(check_out_value);
+  let dayCount = 0;
+  while (end > start) {
+      dayCount++;
+      start.setDate(start.getDate() + 1);
+  }
+  return dayCount;
+}
+
+function constructURLOnSubmit() {
+  let arn_submit_btn = document.querySelector("input#theSubmitButton");
+  arn_submit_btn.setAttribute("onClick", "");
+
+  document.querySelector("form#searchForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let check_in_value = document.querySelector('input#theCheckIn').value;
+      let check_out_value = document.querySelector('input#theCheckOut').value;
+      let rooms_value = setDropdownIndex('select#rooms');
+      let adults_value = setDropdownIndex('select#adults');
+      let nights = calcuateCheckDates(check_in_value, check_out_value);
+      let destination_value = document.querySelector("input#address-input").value;
+
+      if (lat_lng) {
+          url = `${origin}/v6/?currency=${site_configs.currency}&type=geo&siteid=${site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${site_configs.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${site_configs.distance_unit}&mapSize=${site_configs.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+      } else {
+          let lng = searchParams.get("longitude");
+          let lat = searchParams.get("latitude");
+
+          url = `${origin}/v6/?currency=${site_configs.currency}&type=geo&siteid=${site_id}&longitude=${lng}&latitude=${lat}&radius=${site_configs.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${site_configs.distance_unit}&mapSize=${site_configs.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+      }
+
+      if (document.querySelector(".RootBody")) {
+          if (!validateSubmitOptions()) return false;
+          $("theBody").addClassName("searchingForResults");
+          doPushPagePrep();
+          $("theArnPushPage").show();
+          $("theArnPushPageContent").show();
+      }
+      window.location.href = url;
+  });
+}
+
+insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
+insertAlgoliaSearch('.SearchHotels', 'div#theSearchBox', 'afterBegin', '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />');
+removeArnSearchBar('input#city');
+prepopulateDestinationInputOnSearchHotels();
+setDropdownIndex('select#rooms');
+setDropdownIndex('select#adults');
+setInputToRequired('input#theCheckIn');
+
+jQuery('#theBody').on('arnMapLoadedEvent', () => {
+  if (searchParams.has('locationlabel') || searchParams.has('points')) return;
+  hideArnSearchElements('img.arn-green-marker-icon');
+});
+
+hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
+constructURLOnSubmit();
+
+(function() {
+  var placesAutocomplete = places({
+      appId: config.algolia_app_id,
+      apiKey: config.algolia_api_key,
+      container: document.querySelector("input#address-input")
+  }).configure({
+      aroundLatLngViaIP: "false",
+      type: "city"
+  });
+  placesAutocomplete.on("change", function resultSelected(e) {
+      document.querySelector("input#address-input").value =
+          e.suggestion.value || "";
+      lat_lng = e.suggestion.latlng;
+  });
+})();

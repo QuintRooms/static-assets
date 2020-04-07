@@ -3,6 +3,12 @@
     "affiliate_id": 14808,
     "master_id": 920,
     "site_type": "noLRG",
+    "algolia_app_id": "plETUR94AASH",
+    "algolia_api_key": "7bf688b47ae81044d05d094f0487df08",
+    "currency": "USD",
+    "distance_unit": "useMiles",
+    "map_size": "12",
+    "radius": "50",
     "lodging":
     {
         "event_id": false,

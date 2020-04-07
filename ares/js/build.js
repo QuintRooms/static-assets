@@ -1291,8 +1291,8 @@ constructURLOnSubmit();
 
 (function() {
   var placesAutocomplete = places({
-      appId: config.algolia_app_id,
-      apiKey: config.algolia_api_key,
+      appId: site_configs.algolia_app_id,
+      apiKey: site_configs.algolia_api_key,
       container: document.querySelector("input#address-input")
   }).configure({
       aroundLatLngViaIP: "false",

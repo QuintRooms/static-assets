@@ -1289,7 +1289,7 @@ export default class BasePortal {
         hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
         constructURLOnSubmit();
         
-        (function() {
+        ( () => {
           var placesAutocomplete = places({
               appId: this.site_config.algolia_app_id,
               apiKey: this.site_config.algolia_api_key,

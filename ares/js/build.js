@@ -1243,7 +1243,7 @@ export default class BasePortal {
           let arn_submit_btn = document.querySelector("input#theSubmitButton");
           arn_submit_btn.setAttribute("onClick", "");
         
-          document.querySelector("form#searchForm").addEventListener("submit", function(e) {
+          document.querySelector("form#searchForm").addEventListener("submit", (e) => {
               e.preventDefault();
         
               let check_in_value = document.querySelector('input#theCheckIn').value;

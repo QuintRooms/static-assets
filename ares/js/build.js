@@ -1254,12 +1254,12 @@ export default class BasePortal {
               let destination_value = document.querySelector("input#address-input").value;
         
               if (lat_lng) {
-                  url = `${origin}/v6/?currency=${this.site_config.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                  url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
               } else {
                   let lng = searchParams.get("longitude");
                   let lat = searchParams.get("latitude");
         
-                  url = `${origin}/v6/?currency=${this.site_config.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                  url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
               }
         
               if (document.querySelector(".RootBody")) {

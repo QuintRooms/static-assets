@@ -1,11 +1,11 @@
 
-* {
+/* * {
     box-sizing: border-box;
    }
    *:before,
    *:after {
     box-sizing: border-box;
-   }
+   } */
    html,
    body {
     height: 100%;
@@ -15,6 +15,10 @@
    }
    
 /* - - - - - Header - - - - -  */
+
+hr {
+    width: 100%;
+}
 
 header {
     width: 100%;
@@ -246,6 +250,12 @@ h5.card-title {
     margin: 30px;
 }
 
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .stay22-map {
     width: 90vw;
     height: 80vh;
@@ -277,14 +287,23 @@ h5.card-title {
 }
 
 /* screens that are 450px wide or less */
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 770px){
+
+    .exclusive-properties-header {
+        text-align: center;
+    }
 
     .card-header {
         flex-direction: column;
     }
 
+    .address {
+        text-align: center;
+    }
+
     .card-body.prop-body {
         flex-direction: column;
+        align-items: center;
     }
     
     .container-left {
@@ -295,6 +314,10 @@ h5.card-title {
         height: auto;
     }
 
+    .container-right {
+        align-items: center;
+    }
+
     .rooms {
         display: flex;
         flex-direction: column;
@@ -303,12 +326,28 @@ h5.card-title {
         overflow: none;
     }
 
+    .card.room {
+        flex-direction: column;
+    }
+
+    .card-body .room {
+        align-items: center;
+    }
+
+    div.card-body.room {
+        margin-left: 0;
+    }
+
+    p.card-text {
+        text-align: center;
+    }
+
+    .stay22-header {
+        text-align: center;
+    }
+
     .footer {
         flex-direction: column;
         height: auto;
-    }
-
-    .carousel {
-        margin-right: 14px;
     }
 }

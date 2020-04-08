@@ -1,6 +1,6 @@
 function testing() {
-    let age = 10;
+    const age = 10;
+    return age;
 }
 
-const list = ['hello', 'hi'];
-let a = '1222 2';
+testing();

@@ -1267,13 +1267,13 @@ export default class BasePortal {
                   url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
               }
         
-            //   if (document.querySelector(".RootBody")) {
-            //       if (!validateSubmitOptions()) return false;
-            //       $("theBody").addClassName("searchingForResults");
-            //       doPushPagePrep();
-            //       $("theArnPushPage").show();
-            //       $("theArnPushPageContent").show();
-            //   }
+              if (document.querySelector(".RootBody")) {
+                  if (!window.validateSubmitOptions()) return false;
+                  $("theBody").addClassName("searchingForResults");
+                  doPushPagePrep();
+                  $("theArnPushPage").show();
+                  $("theArnPushPageContent").show();
+              }
               window.location.href = url;
           });
         }

@@ -99,7 +99,7 @@ let config = {
         let adults_value = setDropdownIndex('select#adults');
         let nights = calcuateCheckDates(check_in_value, check_out_value);
         let destination_value = document.querySelector("input#address-input").value;
-  
+      
         if (lat_lng) {
             url = `${origin}/v6/?currency=${config.currency}&type=geo&siteid=${site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${config.distance_unit}&mapSize=${config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
         } else {

@@ -26,7 +26,7 @@ function hideArnSearchElement() {
     document.querySelector(".ArnGoAirportSearch").style.display = "none";
     document.querySelector("div#HotelNameContainer").style.display = "none";
     document.querySelector('input#theCheckIn').required = true;
-
+    // Hide green event marker if there is no event
     jQuery("#theBody").on("arnMapLoadedEvent", () => {
       if (!searchParams.has("locationlabel") || !searchParams.has("points")) {
         document.querySelector("img.arn-green-marker-icon").style.display =
@@ -55,6 +55,8 @@ function hideArnSearchElement() {
         <input type="search" id="address-input" placeholder="Destination" required="true"  />
     `
       );
+
+  // On .SearchHotels page, pre-populate destination to input and clear on click
   if (document.querySelector(".SearchHotels")) {
     let destination = searchParams.get("destination");
     let algolia_input = document.querySelector("input#address-input");
@@ -65,6 +67,7 @@ function hideArnSearchElement() {
     });
   }
 
+  // function
   let rooms_value = document.querySelector(
     'select#rooms option[selected="selected"]'
   ).textContent;
@@ -73,6 +76,7 @@ function hideArnSearchElement() {
     'select#adults option[selected="selected"]'
   ).textContent;
 
+  // Set index for rooms and adults dropdowns & define vars for adults/rooms
   let rooms_dropdown = document.querySelector("select#rooms");
 
   rooms_dropdown.addEventListener("change", function() {
@@ -97,6 +101,7 @@ function hideArnSearchElement() {
     }
   });
 
+  // clears out ARN's onClick functionality
   let arn_submit_btn = document.querySelector("input#theSubmitButton");
   arn_submit_btn.setAttribute("onClick", "");
 
@@ -122,9 +127,9 @@ function hideArnSearchElement() {
         }
         return dayCount;
       };
-     
+
       let nights = num_nights(check_in_value, check_out_value);
-     
+
       // dayJs calculation
       //   let date1 = dayjs(document.querySelector("input#theCheckIn").value);
       //   let date2 = dayjs(document.querySelector("input#theCheckOut").value);

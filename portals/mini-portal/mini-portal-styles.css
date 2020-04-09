@@ -1,11 +1,11 @@
 
-* {
+/* * {
     box-sizing: border-box;
    }
    *:before,
    *:after {
     box-sizing: border-box;
-   }
+   } */
    html,
    body {
     height: 100%;
@@ -16,11 +16,14 @@
    
 /* - - - - - Header - - - - -  */
 
+hr {
+    width: 100%;
+}
+
 header {
     width: 100%;
     height: 100px;
     background-color: #fff;
-    border-bottom: 4px solid #9C6AAD;
 }
 
 .logo-container {
@@ -57,28 +60,98 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    width: 100vw;
+    height: 100px;
+    background-color: #9C6AAD;
+    color: #fff;
+    padding: 10px;
+}
+
+h1#event-name {
+    font-size: 30px;
+    font-weight: 100;
 }
 
 #dates {
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .exclusive-properties-header {
     width: 90vw;
-    margin: 10px;
+    margin: 3%;
 }
 
-.prop-container {
+.exclusive-properties-header p {
+    margin: 0;
+}
+
+.prop-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    background-color: #e6edf5;
+    border-radius: 0 0 10px 10px;
+}
+
+.prop-description-container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 15px;
+}
+
+.prop-description  {
+    height: auto;
+    width: auto;
+}
+
+.prop-description p {
+    margin: 0;
+}
+
+.card {
     width: 90vw;
     height: auto;
-    padding: 3px;
-    margin: 10px;
-    border: 3px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 10px 6px -6px #777;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+p.card-text.prop-text  {
+    font-size: 15px;
+    font-weight: 70;
+}
+
+.card-header:first-child {
+    background-color: #D6D7D8;
+    border-radius: 10px 10px 0 0;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.address span {
+    font-weight: 700;
+}
+
+.address h5 {
+    font-size: 20px;
+    font-weight: 20;
+}
+
+svg.star {
+    margin: 3px;
+}
+
+.card-body.prop-body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 20px 20px 20px;
 
 }
 
@@ -96,39 +169,56 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 40vw;
+    width: 35vw;
     height: auto;
     padding: 3px;
-    margin: 6px;
-}
-
-.carousel {
-    border: 2px solid #ccc;
+    margin: 12px 6px 6px 6px;
 }
 
 .container-right {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-.prop-info {
-    width: 100%;
+    width: 70vw;
     height: auto;
-}
-
-.rooms {
-    display: grid;
-    grid-gap: 1rem;
-    width: 100%;
-    height: auto;
-    /* margin: 10 0 10 0; */
-    border-radius: 10px;
-}
-
-.card {
     margin: 10px;
+}
+
+.card.room {
+    margin: 5px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: 0;
+}
+
+.card-body.room {
+    display: flex ;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+h5.card-title {
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.card-body.room .per-night {
+    font-size: 13px;
+    font-weight: 80;
+    margin-bottom: 5px;
+}
+
+.book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin: 10px;
+
 }
 
 .card-header {
@@ -136,7 +226,6 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .stars {
@@ -158,7 +247,13 @@ img {
 
 .stay22-header {
     width: 90vw;
-    margin: 10px;
+    margin: 30px;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .stay22-map {
@@ -166,14 +261,13 @@ img {
     height: 80vh;
     margin: 10px;
     border: 3px solid #ccc;
-    border-radius: 10px;
+    border-radius: 10px;  
 }
 
 #stay22-widget {
     width: 100%;
     height: 100%; 
     border-radius: 9px;
-
 }
 
 .footer { 
@@ -193,20 +287,35 @@ img {
 }
 
 /* screens that are 450px wide or less */
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 770px){
 
-    .prop-container {
-        display: flex;
+    .exclusive-properties-header {
+        text-align: center;
+    }
+
+    .card-header {
         flex-direction: column;
     }
 
+    .address {
+        text-align: center;
+    }
+
+    .card-body.prop-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .container-left {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         height: auto;
-       
+    }
+
+    .container-right {
+        align-items: center;
     }
 
     .rooms {
@@ -215,32 +324,30 @@ img {
         width: 100%;
         height: 100%;
         overflow: none;
-        
+    }
+
+    .card.room {
+        flex-direction: column;
+    }
+
+    .card-body .room {
+        align-items: center;
+    }
+
+    div.card-body.room {
+        margin-left: 0;
+    }
+
+    p.card-text {
+        text-align: center;
+    }
+
+    .stay22-header {
+        text-align: center;
     }
 
     .footer {
         flex-direction: column;
         height: auto;
     }
-    .carousel {
-        margin-right: 14px;
-    }
 }
-
-@media only screen and (min-width: 750px){
-    .rooms {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .rooms { 
-        grid-template-columns: repeat(4, 1fr); 
-    }
-  }
-
-@media only screen and (min-width: 1500px) {
-    .rooms { 
-        grid-template-columns: repeat(5, 1fr); 
-    }
-  }

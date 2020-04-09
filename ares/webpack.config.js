@@ -2,7 +2,8 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        39624: './src/39624.js'
+        39624: './src/39624.js',
+        60265: './src/60265.js'
     },
     output: {
         filename: '[name].js',

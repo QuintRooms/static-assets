@@ -32,9 +32,7 @@
                 "allowShortCircuit": true,
                 "allowTernary": true 
             }
-        ],
-       "no-plusplus": "off",
-       "no-underscore-dangle": "off"
+        ]
      },
      "globals": {
          "L": "readonly",

@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import '@babel/polyfill';
 import Utilities from './utilities.js';
-
+ 
 
 let dayjs = require('dayjs');
 let utilities = new Utilities();

@@ -30,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,html}": [
+    "*.{js, html}": [
       "eslint --fix",
       "prettier --single-quote --write",
       "git add"

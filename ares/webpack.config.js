@@ -2,6 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
+        11111: './src/11111.js',
         39624: './src/39624.js',
         60265: './src/60265.js'
     },
@@ -20,7 +21,7 @@ module.exports = {
     plugins: [
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].map',
-            append: '\n//# sourceMappingURL=https://dev-static.hotelsforhope.com/ares/dist/' + '[url]'
+            append: '\n//# sourceMappingURL=https://dev-static.hotelsforhope.com/ares/dist/[url]'
         })
     ]
 };

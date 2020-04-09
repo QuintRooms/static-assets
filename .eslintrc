@@ -37,7 +37,7 @@
      "globals": {
          "L": "readonly",
          "ArnMapDispatcher": "readonly",
-         "place": "readonly"
+         "places": "readonly"
      }
    }
    

@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import '@babel/polyfill';
-import Utilities from './utilities.js';
+import Utilities from './utilities';
 
 
 let dayjs = require('dayjs');
@@ -9,9 +9,9 @@ let utilities = new Utilities();
 export default class BasePortal {
 
     constructor() {
-        this.site_id;
-        this.page_name;
-        this.site_config;
+        this.site_id = '';
+        this.page_name = '';
+        this.site_config = '';
         this.currency = '';
         this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
     }
@@ -32,11 +32,11 @@ export default class BasePortal {
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
-                if (this.site_config.site_type != 'cug') {
+                if (this.site_config.site_type !== 'cug') {
                     utilities.createHTML(`<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                 }
 
-                if (this.site_config.site_type == 'cug') {
+                if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
                         utilities.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
                     }
@@ -49,13 +49,12 @@ export default class BasePortal {
                 utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
 
                 // single prop detail methods
-                if (this.page_name == 'property-detail') {
+                if (this.page_name === 'property-detail') {
                     utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
                     utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
 
-                    this.createImageSlider();
                     this.updateRoomDescription();
                     this.updatePropReviewsURLToUseAnchor();
 
@@ -71,7 +70,7 @@ export default class BasePortal {
                 }
 
                 // checkout page methods
-                if (this.page_name == 'checkout') {
+                if (this.page_name === 'checkout') {
                     utilities.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
                     utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                     // Shows numpad on ios
@@ -165,18 +164,19 @@ export default class BasePortal {
 
     /**
      *@description gets site id from siteId meta tag
+     *@return {string}
      */
     async getSiteID() {
         this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content');
 
         if (!this.site_id) return;
 
-        return await this.site_id;
+        return this.site_id;
     }
 
     async getSiteConfigJSON(site_id) {
         try {
-            return await fetch(`https://dev-static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`, { method: 'GET' })
+            return fetch(`/ares/js/site_configs/${site_id}/${site_id}.json`, { method: 'GET' })
                 .then(response => response.json())
                 .then((json) => {
                     this.site_config = json;
@@ -185,6 +185,8 @@ export default class BasePortal {
         } catch (error) {
             console.log('could not get site config', error);
         }
+
+        return this.site_config;
     }
 
     /**
@@ -195,53 +197,45 @@ export default class BasePortal {
 
         if (body_classes.classList.contains('SearchHotels')) {
             this.page_name = 'search-results';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('SinglePropDetail')) {
             this.page_name = 'property-detail';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('CheckOutForm')) {
             this.page_name = 'checkout';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('ConfirmationForm')) {
             this.page_name = 'confirmation';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('RootBody')) {
             this.page_name = 'landing-page';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBFaq')) {
             this.page_name = 'faq';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBTermsAndConditions')) {
             this.page_name = 'terms-conditions';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBPrivacyPolicy')) {
             this.page_name = 'privacy-policy';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
             this.page_name = 'lrg-page';
-            return await this.page_name;
         }
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
             this.page_name = 'cug-registration';
-            return await this.page_name;
         }
+
+        return this.page_name;
     }
 
     async getCurrency() {
@@ -250,7 +244,7 @@ export default class BasePortal {
 
         this.currency = currency_el.getAttribute('content');
 
-        return await this.currency;
+        return this.currency;
     }
 
     /**
@@ -259,7 +253,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type != "lodging") {
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== "lodging") {
             return;
         }
 
@@ -275,7 +269,7 @@ export default class BasePortal {
         if (document.querySelector('.ConfirmationForm')) {
             let nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
 
-            if (document.querySelector('.topRoomFunding') && nights != null) {
+            if (document.querySelector('.topRoomFunding') && nights !== null) {
                 document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ ' + nights * 2 + ' donation</span> to <span>RoomFunding</span>.  And that\'s at no cost to you.</p>';
             }
         }
@@ -285,7 +279,7 @@ export default class BasePortal {
         let page_element = document.querySelector(page);
         if (page_element) {
             let price = document.querySelectorAll(selector);
-            price.forEach(function(element) {
+            price.forEach((element) => {
                 let parent = element.parentNode;
                 if (!parent.querySelector('.perNight'))
                     element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
@@ -312,7 +306,7 @@ export default class BasePortal {
         }
 
         let thumbnails = document.querySelectorAll('.ArnImageLink img');
-        thumbnails.forEach(function(thumbnail) {
+        thumbnails.forEach((thumbnail) => {
             if (thumbnail) {
                 let url = thumbnail.getAttribute('src');
                 if (url.includes('no_image_300.gif')) {
@@ -329,66 +323,27 @@ export default class BasePortal {
         });
     }
 
-    createImageSlider() {
-        if (!document.querySelector('.SinglePropDetail') || !document.querySelector('.ArnPhotoContainer>tbody>tr>td:nth-child(1)')) {
-            return;
-        }
-
-        document.querySelector('.propThumbs').removeChild(document.querySelector('.thumbScroller'));
-        let slider_container = document.querySelector('.ArnPhotoContainer');
-        let images_container = document.querySelector('.ArnPhotoContainer > tbody > tr > td:nth-child(1)');
-        let current_image = 0;
-        let prop_thumbs = document.querySelectorAll('.propThumbs div');
-        let thumb_count = prop_thumbs.length;
-
-        let svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
-        slider_container.insertAdjacentHTML('beforeEnd', `<div class="image-arrow arrow-left">${svg_arrow}</div><div class="image-arrow arrow-right">${svg_arrow}</div>`);
-
-        let left_arrow = slider_container.querySelector('.arrow-left');
-        let right_arrow = slider_container.querySelector('.arrow-right');
-
-        left_arrow.addEventListener('click', () => {
-
-            if (current_image == 0) {
-                current_image = thumb_count;
-            }
-
-            current_image -= 1;
-            prop_thumbs[current_image].click();
-
-        });
-
-        right_arrow.addEventListener('click', () => {
-
-            current_image += 1;
-            if (current_image == thumb_count) {
-                current_image = 0;
-            }
-            prop_thumbs[current_image].click();
-        });
-    }
-
     createStarIcons() {
         let star_elements = document.querySelectorAll('.ArnPropClass');
-        star_elements.forEach(function(star) {
+        star_elements.forEach((star) => {
             star.style.display = 'inline';
             let number_of_stars = star.textContent;
             let num = number_of_stars.replace(/\D/g, "");
             let star_svg = '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
 
-            if (num == 1) {
+            if (num === "1") {
                 star.innerHTML = star_svg;
             }
-            if (num == 2) {
+            if (num === "2") {
                 star.innerHTML = star_svg + star_svg;
             }
-            if (num == 3) {
+            if (num === "3") {
                 star.innerHTML = star_svg + star_svg + star_svg;
             }
-            if (num == 4) {
+            if (num === "4") {
                 star.innerHTML = star_svg + star_svg + star_svg + star_svg;
             }
-            if (num == 5) {
+            if (num === "5") {
                 star.innerHTML = star_svg + star_svg + star_svg + star_svg + star_svg;
             }
         });
@@ -431,12 +386,12 @@ export default class BasePortal {
     }
 
     showSearchContainerOnMobile() {
-        let adults_text;
-        let location_text;
-        let check_in_text;
-        let check_in_date;
-        let check_out_text;
-        let check_out_date;
+        let adults_text = '';
+        let location_text = '';
+        let check_in_text = '';
+        let check_in_date = '';
+        let check_out_text = '';
+        let check_out_date = '';
         let check_in_el = document.querySelector('meta[name="checkIn"]');
         let check_out_el = document.querySelector('meta[name="checkOut"]');
         let adults_el = document.querySelector('meta[name="numberOfAdults"]');
@@ -511,7 +466,7 @@ export default class BasePortal {
     updatePropReviewsURLToUseAnchor() {
         let review_link = document.querySelector('.reviewCount a');
 
-        if (this.page_name != 'property-detail' || !review_link) return;
+        if (this.page_name !== 'property-detail' || !review_link) return;
 
         review_link.setAttribute('href', '#thePropertyReviews');
     }
@@ -592,7 +547,7 @@ export default class BasePortal {
             return;
         }
 
-        prop_containers.forEach(function(container) {
+        prop_containers.forEach((container) => {
             let prop_class = container.querySelector('.ArnPropClass');
             let prop_name = container.querySelector('.ArnPropName');
             if (container && prop_class && prop_name) {
@@ -602,10 +557,10 @@ export default class BasePortal {
     }
 
     setupReservationSummaryContainer() {
-        let check_in_date;
-        let check_in_text;
-        let check_out_date;
-        let check_out_text;
+        let check_in_date = '';
+        let check_in_text = '';
+        let check_out_date = '';
+        let check_out_text = '';
         let check_in_element = document.querySelector('.checkInRow td');
         let check_out_element = document.querySelector('.checkOutRow td');
         let currency_element = document.querySelector('meta[name="currency"]');
@@ -628,7 +583,7 @@ export default class BasePortal {
         let reservation_count = 0;
 
         room_reservations.forEach((reservation) => {
-            reservation_count++;
+            reservation_count += 1;
 
             utilities.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
 
@@ -829,8 +784,8 @@ export default class BasePortal {
 
     // refactor me, please!
     showLanguageFromCongif() {
-        let language_label;
-        let active_language;
+        let language_label = '';
+        let active_language = '';
         let header = document.querySelector('#AdminControlsContainer');
         let language_container_el = document.querySelector('#language');
         let config_container = document.querySelector('.config-container');
@@ -858,7 +813,7 @@ export default class BasePortal {
 
         window.addEventListener('click', (e) => {
             if (document.querySelector('.show-language-container')) {
-                if (e.target == document.querySelector('#language-label') || e.target.parentNode == document.querySelector('.language-container')) return;
+                if (e.target === document.querySelector('#language-label') || e.target.parentNode === document.querySelector('.language-container')) return;
 
                 document.querySelector('.language-container').classList.toggle('show-language-container');
                 language_label.querySelector('svg').classList.toggle('flip-svg');
@@ -868,7 +823,7 @@ export default class BasePortal {
 
     // needs a refactor real bad
     createCurrencyDropDown() {
-        let currencies;
+        let currencies = '';
         let clicked_currency;
         let currencies_obj = {};
         let selected_currency = '';
@@ -897,12 +852,12 @@ export default class BasePortal {
         currencies = Object.entries(currencies_obj);
 
         currencies.forEach((currency) => {
-            if (currency[0] == 'United States Dollars' ||
-                currency[0] == 'Euro' ||
-                currency[0] == 'United Kingdom Pounds' ||
-                currency[0] == 'Mexico Pesos' ||
-                currency[0] == 'Canada Dollars' ||
-                currency[0] == 'Australia Dollars') {
+            if (currency[0] === 'United States Dollars' ||
+                currency[0] === 'Euro' ||
+                currency[0] === 'United Kingdom Pounds' ||
+                currency[0] === 'Mexico Pesos' ||
+                currency[0] === 'Canada Dollars' ||
+                currency[0] === 'Australia Dollars') {
                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
             }
 
@@ -1068,7 +1023,7 @@ export default class BasePortal {
         check_out = new Date(check_out_el.getAttribute('content'));
         nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
 
-        return await nights;
+        return nights;
     }
 
     getNightlyRateForMapMarkers(nights, currency) {
@@ -1082,7 +1037,7 @@ export default class BasePortal {
             average_rate = full_stay_rate / nights;
             fixed_average_rate = parseFloat(average_rate).toFixed(0);
 
-            currency == 'USD' ? marker.textContent = `$${fixed_average_rate}` : marker.textContent = `${fixed_average_rate} ${currency}`;
+            currency === 'USD' ? marker.textContent = `$${fixed_average_rate}` : marker.textContent = `${fixed_average_rate} ${currency}`;
 
         });
     }
@@ -1128,7 +1083,7 @@ export default class BasePortal {
 
         currency = currency_el.getAttribute('content');
 
-        if (currency == 'USD') return;
+        if (currency === 'USD') return;
 
         map_markers.forEach((marker) => {
             marker.style.width = '85px';
@@ -1211,7 +1166,7 @@ export default class BasePortal {
           let algolia_input = document.querySelector('input#address-input');
           algolia_input.value = destination;
         
-          algolia_input.addEventListener('click', function() {
+          algolia_input.addEventListener('click', () => {
               algolia_input.value = '';
           });
         }
@@ -1220,8 +1175,8 @@ export default class BasePortal {
           let dropdown = document.querySelector(dropdown_selector);
           let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
           
-          dropdown.addEventListener('change', function() {
-              for (let i = 0; i < dropdown.length; i++) {
+          dropdown.addEventListener('change', () => {
+              for (let i = 0; i < dropdown.length; i += 1) {
                   if (dropdown[i].selected) {
                       dropdown.selectedIndex = i;
                       value = dropdown[i].textContent;
@@ -1238,7 +1193,7 @@ export default class BasePortal {
           let end = new Date(check_out_value);
           let dayCount = 0;
           while (end > start) {
-              dayCount++;
+              dayCount += 1;
               start.setDate(start.getDate() + 1);
           }
           return dayCount;

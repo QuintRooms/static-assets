@@ -11,9 +11,7 @@ jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         removePercentSavingsUnderThreshhold(5);
         showRatesPerLabel();
-
-        showFullStayTotal('.ArnContainer', '.ArnPriceCell');
-
+        
         cugPortal.ratesReadyEventMethods();
         cugPortal.updateText('.event-rate', 'Exclusive Rates');
 
@@ -62,6 +60,8 @@ function waitForElementToLoad(elementWaitingFor) {
 };
 
 waitForElementToLoad('header');
+
+
 
 if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
     window.location.href = 'https://roomsteals.com/login';

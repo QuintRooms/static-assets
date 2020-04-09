@@ -2,7 +2,6 @@ import NoLRGPortal from '../../../js/portal-setup.js';
 
 let noLRGPortal = new NoLRGPortal();
 
-noLRGPortal.updateText('title', 'BUKU Music + Arts Festival Rooms');
 noLRGPortal.updateRoomDescription('.RoomDescription', 'BUKU Music + Arts Festival Exclusive Rates');
 
 jQuery(document).on('ratesReadyEvent', function() {

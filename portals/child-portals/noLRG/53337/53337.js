@@ -72,11 +72,11 @@ function setCorrectWeekInURLs() {
     let weekOneCheckin = '10/02/2020';
     params.append('checkin', weekOneCheckin);
     let weekOneURL = 'https://aclfestival.hotelsforhope.com/v6?' + params;
-    updateAttribute('href', weekOneURL, '#week-one');
+    noLRGPortal.updateAttribute('href', weekOneURL, '#week-one');
 
     params.delete('checkin');
     let weekTwoCheckin = '10/9/2020';
     params.append('checkin', weekTwoCheckin);
     let weekTwoURL = 'https://aclfestival.hotelsforhope.com/v6?' + params;
-    updateAttribute('href', weekTwoURL, '#week-two');
+    noLRGPortal.updateAttribute('href', weekTwoURL, '#week-two');
 }

@@ -75,14 +75,6 @@ header a {
 }
 
 #language {
-    display: block;
-}
-
-.languageContainer {
-    top: 23px !important;
-}
-
-#language option[value='german'], #language option[value='dutch'], #language option[value='indonesia'], #language option[value='mandarin'], #language option[value='portuguese'], #language option[value='thai']{
     display: none;
 }
 
@@ -365,11 +357,6 @@ header a {
     .logo+a {
         display: none;
     }
-
-    #language {
-        margin: 8px;
-        max-width: 140px;
-    }
 }
 
 #adults option:nth-child(n + 5) {
@@ -393,9 +380,3 @@ header a {
         top: 40px;
     }
 }
-
-@media screen and (max-width: 820px){
-    .event-dates{
-        display: none;
-    }
-}; 

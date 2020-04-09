@@ -25,7 +25,7 @@ noLRGPortal.translateText('.confirmationContainer .learnMore', 'use support form
 jQuery(document).on('ratesReadyEvent', function() {
     setTimeout(function() {
         noLRGPortal.ratesReadyEventMethods();
-        noLRGPortal.updateText('.event-rate', 'Exclusive DGP Rates');
+        noLRGPortal.updateText('.event-rate', 'Partner Hotel');
         noLRGPortal.translateText('.perNight', 'per night');
         noLRGPortal.translateText('.openMapBtn', 'open map');
 

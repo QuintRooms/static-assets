@@ -1,4 +1,4 @@
-import BasePortal from '../../build.js';
+import BasePortal from '../../build';
 
 class ChildPortal extends BasePortal {
 
@@ -8,4 +8,4 @@ class ChildPortal extends BasePortal {
     }
 }
 
-let child_portal = new ChildPortal();
+ChildPortal();

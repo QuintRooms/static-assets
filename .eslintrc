@@ -32,14 +32,12 @@
                 "allowShortCircuit": true,
                 "allowTernary": true 
             }
-        ],
-       "no-plusplus": "off",
-       "no-underscore-dangle": "off"
+        ]
      },
      "globals": {
          "L": "readonly",
          "ArnMapDispatcher": "readonly",
-         "place": "readonly"
+         "places": "readonly"
      }
    }
    

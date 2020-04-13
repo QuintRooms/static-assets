@@ -10,7 +10,7 @@
        "es6": true,
        "jquery": true
      },
-     "plugins": [],
+     "plugins": ["prettier"],
      "rules": {
        "no-unused-vars": [
          "error",

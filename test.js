@@ -1,7 +1,8 @@
-function test(){
-	let a = 1;
-	let b = 2
-	let d = 2
+function test() {
+    const a = 1;
+    const b = 2;
 
-				return a+b
+    return a + b;
 }
+
+test();

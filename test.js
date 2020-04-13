@@ -1,7 +1,7 @@
 function test(){
 	let a = 1;
 	let b = 2
-	let d = 3;
+	let d = 2
 
 				return a+b
 }

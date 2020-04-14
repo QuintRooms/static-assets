@@ -231,20 +231,20 @@ function updateLandingPage() {
     if (!no_lrg_portal.site_id === '60292') return;
     let markup;
     try {
-        fetch(
+        markup = fetch(
             'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
             console.log(response);
-            markup = response.text();
-            console.log(`html bj markup: ${markup}`);
-            return markup;
+            return response.text();
         });
     } catch (error) {
-        return error;
+        console.log(error);
     }
+    return markup;
+}
 
+updateLandingPage().then((markup) => {
     document
         .querySelector('div.landing-page-container')
         .insertAdjacentHTML('afterbegin', markup);
-}
-updateLandingPage();
+});

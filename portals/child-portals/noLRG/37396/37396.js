@@ -227,11 +227,11 @@ document
 
 // getPropIds();
 
-function updateLandingPage() {
+async function updateLandingPage() {
     if (!no_lrg_portal.site_id === '60292') return;
     let markup;
     try {
-        fetch(
+        await fetch(
             'static-assets/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
             markup = response.text();

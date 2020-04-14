@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "format": "eslint --fix"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hotels4Hope/static-assets.git"
@@ -15,13 +18,14 @@
   "homepage": "https://github.com/Hotels4Hope/static-assets#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.1.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-more-naming-conventions": "^1.0.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
     "prettier": "^2.0.4"
   },
   "husky": {
@@ -30,9 +34,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,html}": [
-      "eslint --fix",
-      "prettier --single-quote --write",
+    "*.js": [
+      "npm run format",
       "git add"
     ]
   }

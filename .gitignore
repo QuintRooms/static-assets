@@ -1,3 +1,5 @@
 /portals/node_modules
 /ares/node_modules
 .history
+node_modules
+.DS_Store

@@ -1,11 +1,10 @@
-import BasePortal from '../../build.js';
+import BasePortal from '../../build';
 
 class ChildPortal extends BasePortal {
-
     constructor() {
         super();
         super.init();
     }
 }
 
-let child_portal = new ChildPortal();
+new ChildPortal();

@@ -228,7 +228,7 @@ document
 // getPropIds();
 
 function updateLandingPage() {
-    if (!no_lrg_portal.site_id === '60292') return;
+    if (!no_lrg_portal.site_id === '58196') return;
     let markup;
     try {
         markup = fetch(

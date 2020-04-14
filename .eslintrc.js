@@ -5,7 +5,7 @@ module.exports = {
         'jquery': true
     },
     'extends': ['airbnb-base', 'plugin:prettier/recommended'],
-    'plugins': ['prettier',  'more-naming-conventions'],
+    'plugins': ['prettier', 'more-naming-conventions'],
     'rules': {
         'prettier/prettier': ['error']
     },
@@ -43,4 +43,5 @@ module.exports = {
         'ArnMapDispatcher': 'readonly',
         'places': 'readonly'
     },
+    'ignorePatterns': ['ares/node_modules/*', 'ares/dist/*', 'portals/dist/*', 'portals/dist/*', 'node_modules/*']
 };

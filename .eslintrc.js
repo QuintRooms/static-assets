@@ -11,7 +11,7 @@ module.exports = {
     },
     'parserOptions': {
         'ecmaVersion': 2018,
-        'sourceType': 'script'
+        'sourceType': 'module'
     },
     'rules': {
         'more-naming-conventions/snake-case-variables': 'error',
@@ -23,6 +23,9 @@ module.exports = {
             },
         ],
         'camelcase': 'off',
+        'consistent-return': 'off',
+        'no-use-before-define': 'warn',
+        'no-restricted-syntax': 'off',
         'no-new': 'off',
         'no-param-reassign': [
             'error',

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "eslint --fix --fix-type layout"
+    "format": "eslint --fix"
   },
   "repository": {
     "type": "git",

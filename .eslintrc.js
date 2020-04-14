@@ -1,44 +1,46 @@
 module.exports = {
-    extends: ['airbnb-base', 'prettier'],
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'script',
+    'env': {
+        'browser': true,
+        'es6': true,
+        'jquery': true
     },
-    env: {
-        browser: true,
-        node: true,
-        es6: true,
-        jquery: true,
+    'extends': ['airbnb-base', 'plugin:prettier/recommended'],
+    'plugins': ['prettier',  'more-naming-conventions'],
+    'rules': {
+        'prettier/prettier': ['error']
     },
-    plugins: ['prettier', 'more-naming-conventions'],
-    rules: {
+    'parserOptions': {
+        'ecmaVersion': 2018,
+        'sourceType': 'script'
+    },
+    'rules': {
         'more-naming-conventions/snake-case-variables': 'error',
         'no-unused-vars': [
             'error',
             {
-                vars: 'local',
-                args: 'none',
+                'vars': 'local',
+                'args': 'none',
             },
         ],
-        camelcase: 'off',
+        'camelcase': 'off',
         'no-new': 'off',
         'no-param-reassign': [
             'error',
             {
-                props: false,
+                'props': false,
             },
         ],
         'no-unused-expressions': [
             'error',
             {
-                allowShortCircuit: true,
-                allowTernary: true,
+                'allowShortCircuit': true,
+                'allowTernary': true,
             },
         ],
     },
-    globals: {
-        L: 'readonly',
-        ArnMapDispatcher: 'readonly',
-        places: 'readonly',
+    'globals': {
+        'L': 'readonly',
+        'ArnMapDispatcher': 'readonly',
+        'places': 'readonly'
     },
 };

@@ -235,7 +235,7 @@ function updateLandingPage() {
             'static-assets/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
             markup = response.text();
-            console.log(markup);
+            console.log(`html bj markup: ${markup}`);
             return markup;
         });
     } catch (error) {

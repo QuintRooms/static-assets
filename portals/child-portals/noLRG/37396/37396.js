@@ -232,7 +232,7 @@ function updateLandingPage() {
     let markup;
     try {
         fetch(
-            'static-assets/portals/child-portals/noLRG/37396/html-BJ/60292.html'
+            'static-assets/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
             markup = response.text();
             console.log(markup);

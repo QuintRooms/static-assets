@@ -1,49 +1,33 @@
-import NoLRGPortal from '../../../js/portal-setup';
+import NoLRGPortal from '../../../js/portal-setup.js';
 
-const no_l_r_g_portal = new NoLRGPortal();
+let noLRGPortal = new NoLRGPortal();
 
-no_l_r_g_portal.updateRoomDescription(
-    '.RoomDescription',
-    'Republic of Texas Motorcycle Rally Exclusive Rates'
-);
+noLRGPortal.updateRoomDescription('.RoomDescription', 'Republic of Texas Motorcycle Rally Exclusive Rates');
 
-jQuery(document).on('ratesReadyEvent', function () {
-    setTimeout(() => {
-        no_l_r_g_portal.ratesReadyEventMethods();
+jQuery(document).on('ratesReadyEvent', function() {
+    setTimeout(function() {
+        noLRGPortal.ratesReadyEventMethods();
     }, 1);
 });
 
 function waitForElementToLoad(elementWaitingFor) {
-    const element = document.querySelector(elementWaitingFor);
-    const config = {attributes: false, childList: true, subtree: false};
+    let element = document.querySelector(elementWaitingFor);
+    let config = { attributes: false, childList: true, subtree: false };
 
     function callback(mutationsList, observer) {
-        for (const mutation of mutationsList) {
+        for (let mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                no_l_r_g_portal.updateAttribute(
-                    '.logo img',
-                    'https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/images/logo-light.png',
-                    'src'
-                );
-                no_l_r_g_portal.updateAttribute(
-                    '.logo',
-                    'https://www.rotrally.com/',
-                    'href'
-                );
+                noLRGPortal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/images/logo-white.png', 'src');
+                noLRGPortal.updateAttribute('.logo', 'https://www.rotrally.com/', 'href');
 
                 observer.disconnect();
             }
         }
     }
-    const observer = new MutationObserver(callback);
+    let observer = new MutationObserver(callback);
     observer.observe(element, config);
-}
+};
 
 waitForElementToLoad('header');
 
-document
-    .querySelector('body')
-    .insertAdjacentHTML(
-        'beforeEnd',
-        '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/59465.css">'
-    );
+document.querySelector('body').insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/noLRG/59465/59465.css">');

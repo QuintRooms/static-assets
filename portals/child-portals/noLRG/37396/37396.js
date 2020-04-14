@@ -234,7 +234,6 @@ function updateLandingPage() {
         markup = fetch(
             'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
-            console.log(response);
             return response.text();
         });
     } catch (error) {

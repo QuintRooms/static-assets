@@ -232,7 +232,7 @@ function updateLandingPage() {
     let markup;
     try {
         markup = fetch(
-            'https://dev-static.hotelsforhope.com/portals/child-portals/noLRG/37396/html/60292.html'
+            'https://static.hotelsforhope.com/portals/child-portals/noLRG/37396/html/60292.html'
         ).then((response) => {
             return response.text();
         });

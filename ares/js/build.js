@@ -316,7 +316,7 @@ export default class BasePortal {
     /**
      *@description shows how much a user donated to charity on checkout page - should refactor to allow selector and text as arguments
      */
-    static donationAmount() {
+    donationAmount() {
         if (document.querySelector('.ConfirmationForm')) {
             const nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
 
@@ -328,7 +328,7 @@ export default class BasePortal {
         }
     }
 
-    static addPerNightToPrice(page, selector) {
+    addPerNightToPrice(page, selector) {
         const page_element = document.querySelector(page);
         if (page_element) {
             const price = document.querySelectorAll(selector);
@@ -339,7 +339,7 @@ export default class BasePortal {
         }
     }
 
-    static updateBookingFeeLanguage() {
+    updateBookingFeeLanguage() {
         if (document.querySelector('.CheckOutForm')) {
             const due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
             if (due_now) {
@@ -376,7 +376,7 @@ export default class BasePortal {
         });
     }
 
-    static createStarIcons() {
+    createStarIcons() {
         const star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach((star) => {
             star.style.display = 'inline';
@@ -404,7 +404,7 @@ export default class BasePortal {
     }
 
     // refactor meeeeee
-    static createMobileSortAndFilter() {
+    createMobileSortAndFilter() {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) return;
 
         utilities.updateHTML(
@@ -446,7 +446,7 @@ export default class BasePortal {
         });
     }
 
-    static showSearchContainerOnMobile() {
+    showSearchContainerOnMobile() {
         let adults_text = '';
         let location_text = '';
         let check_in_text = '';
@@ -482,7 +482,7 @@ export default class BasePortal {
         });
     }
 
-    static buildMobileMenu() {
+    buildMobileMenu() {
         const menu_el = document.querySelector('#commands');
         const header_el = document.querySelector('#AdminControlsContainer');
 
@@ -500,7 +500,7 @@ export default class BasePortal {
         });
     }
 
-    static showAdditionalPolicies() {
+    showAdditionalPolicies() {
         const additional_policies = document.querySelector('#theStayPolicies');
         const additional_policies_legend = additional_policies.querySelector('legend');
         const additional_policies_height = additional_policies.offsetHeight;
@@ -541,13 +541,13 @@ export default class BasePortal {
         review_link.setAttribute('href', '#thePropertyReviews');
     }
 
-    static moveFooterOutOfSearchContainer() {
+    moveFooterOutOfSearchContainer() {
         if (!document.querySelector('.SearchHotels') || !document.querySelector('.ArnSupportBottom')) return;
 
         document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
     }
 
-    static moveReviewsIntoPropNameContainer() {
+    moveReviewsIntoPropNameContainer() {
         const prop_names = document.querySelectorAll('.SearchHotels .ArnPropName');
 
         if (!document.querySelector('.SearchHotels') || !document.querySelector('.ArnContainer')) return;
@@ -557,7 +557,7 @@ export default class BasePortal {
         });
     }
 
-    static toggleMap() {
+    toggleMap() {
         const map = document.querySelector('.ArnPropertyMapInner');
         const map_btn = document.querySelector('#arnCloseAnchorId');
 
@@ -574,7 +574,7 @@ export default class BasePortal {
         });
     }
 
-    static accordion(main_container, content_container, open_button) {
+    accordion(main_container, content_container, open_button) {
         if (!document.querySelector(main_container)) {
             return;
         }
@@ -613,7 +613,7 @@ export default class BasePortal {
         });
     }
 
-    static movePropClassBelowPropName() {
+    movePropClassBelowPropName() {
         const prop_containers = document.querySelectorAll('.ArnContainer');
 
         if (!document.querySelector('.SearchHotels')) {
@@ -650,7 +650,7 @@ export default class BasePortal {
         utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 
-    static formatCheckoutForm() {
+    formatCheckoutForm() {
         const room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 0;
 
@@ -908,7 +908,7 @@ export default class BasePortal {
     }
 
     // needs a refactor real bad
-    static createCurrencyDropDown() {
+    createCurrencyDropDown() {
         let currencies = '';
         let clicked_currency;
         const currencies_obj = {};
@@ -993,7 +993,7 @@ export default class BasePortal {
         date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`);
     }
 
-    static highlightMapMarkersOnPropertyHover() {
+    highlightMapMarkersOnPropertyHover() {
         let prop_id;
         let prop_id_el;
         const properties = document.querySelectorAll('.ArnContainer');
@@ -1098,7 +1098,7 @@ export default class BasePortal {
         }
     }
 
-    static async getTotalNights() {
+    async getTotalNights() {
         const check_in_el = document.querySelector('meta[name="checkIn"]');
         const check_out_el = document.querySelector('meta[name="checkOut"]');
 
@@ -1111,7 +1111,7 @@ export default class BasePortal {
         return nights;
     }
 
-    static getNightlyRateForMapMarkers(nights, currency) {
+    getNightlyRateForMapMarkers(nights, currency) {
         let average_rate;
         let full_stay_rate;
         let fixed_average_rate;
@@ -1126,7 +1126,7 @@ export default class BasePortal {
         });
     }
 
-    static addTitleToProperties() {
+    addTitleToProperties() {
         let property_name;
         let property_name_el;
         const properties = document.querySelectorAll('.ArnContainer');
@@ -1141,7 +1141,7 @@ export default class BasePortal {
         });
     }
 
-    static showLoaderOnResultsUpdate() {
+    showLoaderOnResultsUpdate() {
         const loader = document.querySelector('#searching');
         const update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
 
@@ -1155,7 +1155,7 @@ export default class BasePortal {
     }
 
     // map will need a redraw for this to work - will come back to this
-    static setMapMarkerSize() {
+    setMapMarkerSize() {
         let currency = '';
         const currency_el = document.querySelector('meta[name="currency"]');
         const map_markers = document.querySelectorAll('.arnMapMarker');
@@ -1181,7 +1181,7 @@ export default class BasePortal {
         });
     }
 
-    static activateCheckboxByClickingOnAssociatedLabel() {
+    activateCheckboxByClickingOnAssociatedLabel() {
         const checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
 
         if (!checkbox_wrappers) return;
@@ -1195,7 +1195,7 @@ export default class BasePortal {
         });
     }
 
-    static addHRToProperties() {
+    addHRToProperties() {
         const props = document.querySelectorAll('.ArnProperty');
 
         if (!props) return;

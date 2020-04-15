@@ -2,18 +2,18 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import Utilities from './utilities';
 
+const dayjs = require('dayjs');
 
-let dayjs = require('dayjs');
-let utilities = new Utilities();
+const utilities = new Utilities();
 
 export default class BasePortal {
-
     constructor() {
         this.site_id = '';
         this.page_name = '';
         this.site_config = '';
         this.currency = '';
-        this.svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        this.svg_arrow =
+            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
     }
 
     init() {
@@ -33,16 +33,28 @@ export default class BasePortal {
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
                 if (this.site_config.site_type !== 'cug') {
-                    utilities.createHTML(`<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                    utilities.createHTML(
+                        `<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
+                        'body',
+                        'afterBegin'
+                    );
                 }
 
                 if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
-                        utilities.createHTML(`<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`, 'body', 'afterBegin');
+                        utilities.createHTML(
+                            `<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
+                            'body',
+                            'afterBegin'
+                        );
                     }
 
                     utilities.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
-                        utilities.createHTML(`<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`, '#AdminControlsContainer', 'afterBegin');
+                        utilities.createHTML(
+                            `<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`,
+                            '#AdminControlsContainer',
+                            'afterBegin'
+                        );
                     });
                 }
 
@@ -71,7 +83,13 @@ export default class BasePortal {
 
                 // checkout page methods
                 if (this.page_name === 'checkout') {
-                    utilities.createModal([document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
+                    utilities.createModal(
+                        [document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')],
+                        'Policies & Fees',
+                        'checkout',
+                        '#theConfirmationContainer',
+                        'afterBegin'
+                    );
                     utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                     // Shows numpad on ios
                     utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
@@ -90,8 +108,17 @@ export default class BasePortal {
                 // root page methods
                 if (document.querySelector('.RootBody')) {
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
-                    utilities.createHTML('<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>', '.RootBody .ArnPrimarySearchContainer', 'beforeBegin');
-                    utilities.moveOrphanedElementsIntoNewWrapper([document.querySelector('.RootBody .ArnLeftSearchContainer form')], 'root-search-container', '.RootBody .ArnSearchContainerMainDiv', 'afterBegin');
+                    utilities.createHTML(
+                        '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
+                        '.RootBody .ArnPrimarySearchContainer',
+                        'beforeBegin'
+                    );
+                    utilities.moveOrphanedElementsIntoNewWrapper(
+                        [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
+                        'root-search-container',
+                        '.RootBody .ArnSearchContainerMainDiv',
+                        'afterBegin'
+                    );
                     utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
                 }
 
@@ -103,13 +130,12 @@ export default class BasePortal {
                 utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
 
                 if (this.site_config.show_tax_inclusive_rates) {
-                    jQuery('#theBody').on("arnMapLoadedEvent", () => {
+                    jQuery('#theBody').on('arnMapLoadedEvent', () => {
                         this.getTotalNights().then((nights) => {
                             this.getCurrency().then((currency) => {
                                 this.getNightlyRateForMapMarkers(nights, currency);
                             });
                         });
-
                     });
                 }
 
@@ -127,7 +153,6 @@ export default class BasePortal {
                         });
                     });
 
-
                     this.createStarIcons();
                     this.addHRToProperties();
                     this.showLoaderOnResultsUpdate();
@@ -135,7 +160,7 @@ export default class BasePortal {
                     this.moveFooterOutOfSearchContainer();
                     this.moveReviewsIntoPropNameContainer();
 
-                    utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target')
+                    utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
 
                     this.movePropClassBelowPropName();
                     this.activateCheckboxByClickingOnAssociatedLabel();
@@ -152,11 +177,24 @@ export default class BasePortal {
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                    utilities.moveOrphanedElementsIntoNewWrapper([document.querySelector('.ArnSortByDealPercent'), document.querySelector('.ArnSortByDealAmount'), document.querySelector('.ArnSortByPrice'), document.querySelector('.ArnSortByClass'), document.querySelector('.ArnSortByType')], 'sort-wrapper', '.ArnSortBy', 'beforeEnd').then(() => {
-                        this.createMobileSortAndFilter();
-                        utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
-                        utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
-                    });
+                    utilities
+                        .moveOrphanedElementsIntoNewWrapper(
+                            [
+                                document.querySelector('.ArnSortByDealPercent'),
+                                document.querySelector('.ArnSortByDealAmount'),
+                                document.querySelector('.ArnSortByPrice'),
+                                document.querySelector('.ArnSortByClass'),
+                                document.querySelector('.ArnSortByType'),
+                            ],
+                            'sort-wrapper',
+                            '.ArnSortBy',
+                            'beforeEnd'
+                        )
+                        .then(() => {
+                            this.createMobileSortAndFilter();
+                            utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
+                            utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
+                        });
                 });
             });
         });
@@ -175,9 +213,19 @@ export default class BasePortal {
     }
 
     async getSiteConfigJSON(site_id) {
+        let path = '';
+
+        if (window.location.href.includes('arn_html')) {
+            path = `/ares/js/site_configs/${site_id}/${site_id}.json`;
+        } else if (window.location.href.includes('dev-static')) {
+            path = `https://dev-static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+        } else {
+            path = `https://static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+        }
+
         try {
-            return fetch(`/ares/js/site_configs/${site_id}/${site_id}.json`, { method: 'GET' })
-                .then(response => response.json())
+            return fetch(path, {method: 'GET'})
+                .then((response) => response.json())
                 .then((json) => {
                     this.site_config = json;
                     console.log('site_config:', json);
@@ -193,7 +241,7 @@ export default class BasePortal {
      *@description gets page name using css classes from body tag
      */
     async getPageName() {
-        let body_classes = document.body;
+        const body_classes = document.body;
 
         if (body_classes.classList.contains('SearchHotels')) {
             this.page_name = 'search-results';
@@ -239,7 +287,7 @@ export default class BasePortal {
     }
 
     async getCurrency() {
-        let currency_el = document.querySelector('meta[name="currency"]');
+        const currency_el = document.querySelector('meta[name="currency"]');
         if (!currency_el) return;
 
         this.currency = currency_el.getAttribute('content');
@@ -252,51 +300,56 @@ export default class BasePortal {
      *@param string selector - DOM selector
      */
     updateRoomDescription() {
-        let room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== "lodging") {
+        const room_description_el = document.querySelectorAll('.RoomDescription');
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') {
             return;
         }
 
         room_description_el.forEach((element) => {
-            element.innerHTML = element.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`);
+            element.innerHTML = element.innerHTML.replace(
+                'Special Event Rate',
+                `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`
+            );
         });
     }
 
     /**
      *@description shows how much a user donated to charity on checkout page - should refactor to allow selector and text as arguments
      */
-    donationAmount() {
+    static donationAmount() {
         if (document.querySelector('.ConfirmationForm')) {
-            let nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
+            const nights = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
 
             if (document.querySelector('.topRoomFunding') && nights !== null) {
-                document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ ' + nights * 2 + ' donation</span> to <span>RoomFunding</span>.  And that\'s at no cost to you.</p>';
+                document.querySelector('.topRoomFunding').innerHTML = `<p>Your reservation just generated an <span>$ ${
+                    nights * 2
+                } donation</span> to <span>RoomFunding</span>.  And that's at no cost to you.</p>`;
             }
         }
     }
 
-    addPerNightToPrice(page, selector) {
-        let page_element = document.querySelector(page);
+    static addPerNightToPrice(page, selector) {
+        const page_element = document.querySelector(page);
         if (page_element) {
-            let price = document.querySelectorAll(selector);
+            const price = document.querySelectorAll(selector);
             price.forEach((element) => {
-                let parent = element.parentNode;
-                if (!parent.querySelector('.perNight'))
-                    element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
+                const parent = element.parentNode;
+                if (!parent.querySelector('.perNight')) element.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
             });
         }
     }
 
-    updateBookingFeeLanguage() {
+    static updateBookingFeeLanguage() {
         if (document.querySelector('.CheckOutForm')) {
-            let due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
+            const due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
             if (due_now) {
-
                 if ((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')) {
-                    due_now.insertAdjacentHTML('beforeEnd', ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>');
+                    due_now.insertAdjacentHTML(
+                        'beforeEnd',
+                        ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
+                    );
                 }
             }
-            return;
         }
     }
 
@@ -305,15 +358,15 @@ export default class BasePortal {
             return;
         }
 
-        let thumbnails = document.querySelectorAll('.ArnImageLink img');
+        const thumbnails = document.querySelectorAll('.ArnImageLink img');
         thumbnails.forEach((thumbnail) => {
             if (thumbnail) {
-                let url = thumbnail.getAttribute('src');
+                const url = thumbnail.getAttribute('src');
                 if (url.includes('no_image_300.gif')) {
-                    let thumbnail_parent = thumbnail.parentNode;
+                    const thumbnail_parent = thumbnail.parentNode;
                     if (thumbnail_parent) {
-                        thumbnail_parent.classList.add("no-images");
-                        let arrows = thumbnail_parent.previousSibling;
+                        thumbnail_parent.classList.add('no-images');
+                        const arrows = thumbnail_parent.previousSibling;
                         if (arrows && arrows.classList.contains('ArnPropImageButtons')) {
                             arrows.style.display = 'none';
                         }
@@ -323,44 +376,52 @@ export default class BasePortal {
         });
     }
 
-    createStarIcons() {
-        let star_elements = document.querySelectorAll('.ArnPropClass');
+    static createStarIcons() {
+        const star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach((star) => {
             star.style.display = 'inline';
-            let number_of_stars = star.textContent;
-            let num = number_of_stars.replace(/\D/g, "");
-            let star_svg = '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
+            const number_of_stars = star.textContent;
+            const num = number_of_stars.replace(/\D/g, '');
+            const star_svg =
+                '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
 
-            if (num === "1") {
+            if (num === '1') {
                 star.innerHTML = star_svg;
             }
-            if (num === "2") {
+            if (num === '2') {
                 star.innerHTML = star_svg + star_svg;
             }
-            if (num === "3") {
+            if (num === '3') {
                 star.innerHTML = star_svg + star_svg + star_svg;
             }
-            if (num === "4") {
+            if (num === '4') {
                 star.innerHTML = star_svg + star_svg + star_svg + star_svg;
             }
-            if (num === "5") {
+            if (num === '5') {
                 star.innerHTML = star_svg + star_svg + star_svg + star_svg + star_svg;
             }
         });
     }
 
     // refactor meeeeee
-    createMobileSortAndFilter() {
+    static createMobileSortAndFilter() {
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) return;
 
-        utilities.updateHTML('.sort', '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter');
+        utilities.updateHTML(
+            '.sort',
+            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
+        );
 
-        utilities.createHTML('<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>', 'body', 'beforeEnd');
+        utilities.createHTML(
+            '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
+            'body',
+            'beforeEnd'
+        );
 
-        let sort_button = document.querySelector('.ArnSortBy');
-        let sort_container = document.querySelector('#sort-wrapper');
-        let filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
-        let sort_filter_container = document.querySelector('.sort-filter-overlay');
+        const sort_button = document.querySelector('.ArnSortBy');
+        const sort_container = document.querySelector('#sort-wrapper');
+        const filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
+        const sort_filter_container = document.querySelector('.sort-filter-overlay');
 
         sort_button.removeEventListener('click', () => {});
         sort_button.addEventListener('click', () => {
@@ -379,24 +440,24 @@ export default class BasePortal {
             target.toElement.classList.toggle('active-filter');
         });
 
-        let filters = filter_container.querySelectorAll('.ArnSearchField');
+        const filters = filter_container.querySelectorAll('.ArnSearchField');
         filters.forEach((filter) => {
             filter.classList.add('panel');
         });
     }
 
-    showSearchContainerOnMobile() {
+    static showSearchContainerOnMobile() {
         let adults_text = '';
         let location_text = '';
         let check_in_text = '';
         let check_in_date = '';
         let check_out_text = '';
         let check_out_date = '';
-        let check_in_el = document.querySelector('meta[name="checkIn"]');
-        let check_out_el = document.querySelector('meta[name="checkOut"]');
-        let adults_el = document.querySelector('meta[name="numberOfAdults"]');
-        let location_el = document.querySelector('meta[name="SearchLocation"]');
-        let content_el = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+        const check_in_el = document.querySelector('meta[name="checkIn"]');
+        const check_out_el = document.querySelector('meta[name="checkOut"]');
+        const adults_el = document.querySelector('meta[name="numberOfAdults"]');
+        const location_el = document.querySelector('meta[name="SearchLocation"]');
+        const content_el = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
 
         if (!check_in_el || !check_out_el || !location_el || !adults_el) return;
 
@@ -408,22 +469,28 @@ export default class BasePortal {
         check_in_date = dayjs(check_in_text);
         check_out_date = dayjs(check_out_text);
 
-        utilities.createHTML(`<div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><div class="search-info"><h3>${location_text}</h3><span><span class="search-dates">${check_in_date.format('MMMM D')} - ${check_out_date.format('MMMM D')} </span><span class="adults-count">${adults_text} guests</span></span></div></div>`, '.SearchHotels .ArnPrimarySearchOuterContainer', 'beforeBegin');
+        utilities.createHTML(
+            `<div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><div class="search-info"><h3>${location_text}</h3><span><span class="search-dates">${check_in_date.format(
+                'MMMM D'
+            )} - ${check_out_date.format('MMMM D')} </span><span class="adults-count">${adults_text} guests</span></span></div></div>`,
+            '.SearchHotels .ArnPrimarySearchOuterContainer',
+            'beforeBegin'
+        );
 
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
         });
     }
 
-    buildMobileMenu() {
-        let menu_el = document.querySelector('#commands');
-        let header_el = document.querySelector('#AdminControlsContainer');
+    static buildMobileMenu() {
+        const menu_el = document.querySelector('#commands');
+        const header_el = document.querySelector('#AdminControlsContainer');
 
         if (!menu_el && !header_el) return;
 
         header_el.insertAdjacentHTML('beforeEnd', '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>');
 
-        let menu_button_el = document.querySelector('#hamburger');
+        const menu_button_el = document.querySelector('#hamburger');
 
         if (!menu_button_el) return;
 
@@ -433,11 +500,11 @@ export default class BasePortal {
         });
     }
 
-    showAdditionalPolicies() {
-        let additional_policies = document.querySelector('#theStayPolicies');
-        let additional_policies_legend = additional_policies.querySelector('legend');
-        let additional_policies_height = additional_policies.offsetHeight;
-        let policies = document.querySelector('#theConfirmationPoliciesAjax');
+    static showAdditionalPolicies() {
+        const additional_policies = document.querySelector('#theStayPolicies');
+        const additional_policies_legend = additional_policies.querySelector('legend');
+        const additional_policies_height = additional_policies.offsetHeight;
+        const policies = document.querySelector('#theConfirmationPoliciesAjax');
 
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('#theBookingPage')) return;
 
@@ -445,7 +512,9 @@ export default class BasePortal {
         utilities.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd');
         additional_policies.insertAdjacentElement('beforeBegin', additional_policies_legend);
 
-        additional_policies.insertAdjacentHTML('beforeEnd', `
+        additional_policies.insertAdjacentHTML(
+            'beforeEnd',
+            `
         <style>
             #theStayPolicies {
                 height: 0;
@@ -456,7 +525,8 @@ export default class BasePortal {
                 display: block !important;
             }
         </style>
-    `);
+    `
+        );
 
         additional_policies_legend.addEventListener('click', () => {
             additional_policies.classList.toggle('show-policies');
@@ -464,21 +534,21 @@ export default class BasePortal {
     }
 
     updatePropReviewsURLToUseAnchor() {
-        let review_link = document.querySelector('.reviewCount a');
+        const review_link = document.querySelector('.reviewCount a');
 
         if (this.page_name !== 'property-detail' || !review_link) return;
 
         review_link.setAttribute('href', '#thePropertyReviews');
     }
 
-    moveFooterOutOfSearchContainer() {
+    static moveFooterOutOfSearchContainer() {
         if (!document.querySelector('.SearchHotels') || !document.querySelector('.ArnSupportBottom')) return;
 
-        document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'))
+        document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
     }
 
-    moveReviewsIntoPropNameContainer() {
-        let prop_names = document.querySelectorAll('.SearchHotels .ArnPropName');
+    static moveReviewsIntoPropNameContainer() {
+        const prop_names = document.querySelectorAll('.SearchHotels .ArnPropName');
 
         if (!document.querySelector('.SearchHotels') || !document.querySelector('.ArnContainer')) return;
 
@@ -487,35 +557,37 @@ export default class BasePortal {
         });
     }
 
-    toggleMap() {
-        let map = document.querySelector('.ArnPropertyMapInner');
-        let map_btn = document.querySelector('#arnCloseAnchorId');
+    static toggleMap() {
+        const map = document.querySelector('.ArnPropertyMapInner');
+        const map_btn = document.querySelector('#arnCloseAnchorId');
 
         if (!map_btn || !map) return;
 
-        map_btn.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>';
+        map_btn.innerHTML =
+            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>';
 
         map_btn.addEventListener('click', () => {
             map_btn.classList.toggle('closeMap');
             map.classList.toggle('showMap');
 
-            map_btn.classList.contains('closeMap') ? map_btn.querySelector('span').textContent = ' Close Map' : map_btn.querySelector('span').innerHTML = ' Open Map';
+            map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });
-
     }
 
-    accordion(main_container, content_container, open_button) {
+    static accordion(main_container, content_container, open_button) {
         if (!document.querySelector(main_container)) {
             return;
         }
-        let main_container_el = document.querySelector(main_container);
-        let open_el = main_container_el.querySelector(open_button);
+        const main_container_el = document.querySelector(main_container);
+        const open_el = main_container_el.querySelector(open_button);
 
-        let content_el = main_container_el.querySelector(content_container);
-        let svg_arrow = '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
-        let height = content_el.offsetHeight;
+        const content_el = main_container_el.querySelector(content_container);
+        const svg_arrow =
+            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        const height = content_el.offsetHeight;
 
-        document.querySelector(main_container).insertAdjacentHTML('beforeEnd',
+        document.querySelector(main_container).insertAdjacentHTML(
+            'beforeEnd',
             `<style>
             ${content_container}{
                 transform: translateY(-${height}px);
@@ -531,7 +603,8 @@ export default class BasePortal {
                 height: ${height}px !important;
             }
         </style>
-        `);
+        `
+        );
         open_el.insertAdjacentHTML('beforeEnd', svg_arrow);
 
         open_el.addEventListener('click', () => {
@@ -540,7 +613,7 @@ export default class BasePortal {
         });
     }
 
-    movePropClassBelowPropName() {
+    static movePropClassBelowPropName() {
         const prop_containers = document.querySelectorAll('.ArnContainer');
 
         if (!document.querySelector('.SearchHotels')) {
@@ -548,8 +621,8 @@ export default class BasePortal {
         }
 
         prop_containers.forEach((container) => {
-            let prop_class = container.querySelector('.ArnPropClass');
-            let prop_name = container.querySelector('.ArnPropName');
+            const prop_class = container.querySelector('.ArnPropClass');
+            const prop_name = container.querySelector('.ArnPropName');
             if (container && prop_class && prop_name) {
                 prop_name.insertAdjacentElement('beforeEnd', prop_class);
             }
@@ -561,9 +634,9 @@ export default class BasePortal {
         let check_in_text = '';
         let check_out_date = '';
         let check_out_text = '';
-        let check_in_element = document.querySelector('.checkInRow td');
-        let check_out_element = document.querySelector('.checkOutRow td');
-        let currency_element = document.querySelector('meta[name="currency"]');
+        const check_in_element = document.querySelector('.checkInRow td');
+        const check_out_element = document.querySelector('.checkOutRow td');
+        const currency_element = document.querySelector('meta[name="currency"]');
 
         if (!check_in_element || !check_out_element || !currency_element) return;
 
@@ -573,29 +646,44 @@ export default class BasePortal {
         check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
         check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
 
-
         utilities.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
         utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 
-    formatCheckoutForm() {
-        let room_reservations = document.querySelectorAll('.WBGuestFormFields');
+    static formatCheckoutForm() {
+        const room_reservations = document.querySelectorAll('.WBGuestFormFields');
         let reservation_count = 0;
 
         room_reservations.forEach((reservation) => {
             reservation_count += 1;
 
-            utilities.moveElementIntoExistingWrapper(`#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`, `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`, 'afterEnd');
+            utilities.moveElementIntoExistingWrapper(
+                `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardBillingNameAjax${reservation_count - 1}`,
+                `#theBookingPage td.GuestForms > fieldset:nth-child(${reservation_count}) #theCreditCardNumberAjax`,
+                'afterEnd'
+            );
 
+            utilities.createWrapper(
+                `.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`,
+                `#theBillingAddressAjax${reservation_count}`,
+                `billing-details-container`,
+                'afterEnd'
+            );
 
-            utilities.createWrapper(`.RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr > td > div, .RoomNumber-${reservation_count} .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax${reservation_count}, #theCountryAjax${reservation_count}`, `#theBillingAddressAjax${reservation_count}`, `billing-details-container`, 'afterEnd');
+            utilities.createWrapper(
+                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`,
+                `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
+                `credit-card-details`,
+                'afterEnd'
+            );
 
-            utilities.createWrapper(`.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`, `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`, `credit-card-details`, 'afterEnd');
-
-            utilities.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, 'Cardholder\'s Name');
+            utilities.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, "Cardholder's Name");
             utilities.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
             utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
-            utilities.updateHTML(`.RoomNumber-${reservation_count} .paymentMethods`, '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></span>');
+            utilities.updateHTML(
+                `.RoomNumber-${reservation_count} .paymentMethods`,
+                '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></span>'
+            );
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
         });
     }
@@ -604,7 +692,9 @@ export default class BasePortal {
     applyConfigColors() {
         if (!this.site_config) return;
 
-        document.body.insertAdjacentHTML('beforeEnd', `
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `
         <style>
         /* Primary Background Color */
             #searching h2:after,
@@ -772,7 +862,8 @@ export default class BasePortal {
                 }
             }
         </style>
-        `);
+        `
+        );
     }
 
     setFontFromConfig() {
@@ -786,18 +877,13 @@ export default class BasePortal {
     showLanguageFromCongif() {
         let language_label = '';
         let active_language = '';
-        let header = document.querySelector('#AdminControlsContainer');
-        let language_container_el = document.querySelector('#language');
-        let config_container = document.querySelector('.config-container');
-        let active_language_el = document.querySelector('meta[name="theme"]');
+        const header = document.querySelector('#AdminControlsContainer');
+        const language_container_el = document.querySelector('#language');
+        const config_container = document.querySelector('.config-container');
+        const active_language_el = document.querySelector('meta[name="theme"]');
 
-        if (!header ||
-            !this.site_config ||
-            !config_container ||
-            !active_language_el ||
-            !language_container_el) return;
+        if (!header || !this.site_config || !config_container || !active_language_el || !language_container_el) return;
         if (!this.site_config.show_language_select) return;
-
 
         active_language = active_language_el.getAttribute('content');
         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
@@ -822,24 +908,20 @@ export default class BasePortal {
     }
 
     // needs a refactor real bad
-    createCurrencyDropDown() {
+    static createCurrencyDropDown() {
         let currencies = '';
         let clicked_currency;
-        let currencies_obj = {};
+        const currencies_obj = {};
         let selected_currency = '';
-        let submit = document.querySelector('#theOtherSubmitButton');
-        let currency_label = document.querySelector('#currency-label');
-        let currencies_container = document.querySelector('.currencies');
-        let config_container = document.querySelector('.config-container');
-        let top_currencies_container = document.querySelector('.top-currencies');
-        let currencies_select = document.querySelector('#CurrenciesContainer select');
-        let currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+        const submit = document.querySelector('#theOtherSubmitButton');
+        const currency_label = document.querySelector('#currency-label');
+        const currencies_container = document.querySelector('.currencies');
+        const config_container = document.querySelector('.config-container');
+        const top_currencies_container = document.querySelector('.top-currencies');
+        const currencies_select = document.querySelector('#CurrenciesContainer select');
+        const currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
 
-        if (!currencies_node_list ||
-            !config_container ||
-            !currency_label ||
-            !top_currencies_container ||
-            !currencies_select) return;
+        if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
 
         currencies_node_list.forEach((currency) => {
             if (currency.getAttribute('selected')) {
@@ -852,12 +934,14 @@ export default class BasePortal {
         currencies = Object.entries(currencies_obj);
 
         currencies.forEach((currency) => {
-            if (currency[0] === 'United States Dollars' ||
+            if (
+                currency[0] === 'United States Dollars' ||
                 currency[0] === 'Euro' ||
                 currency[0] === 'United Kingdom Pounds' ||
                 currency[0] === 'Mexico Pesos' ||
                 currency[0] === 'Canada Dollars' ||
-                currency[0] === 'Australia Dollars') {
+                currency[0] === 'Australia Dollars'
+            ) {
                 top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
             }
 
@@ -885,11 +969,13 @@ export default class BasePortal {
 
         window.addEventListener('click', (e) => {
             if (document.querySelector('.show-currencies-container')) {
-                if (e.target == document.querySelector('.currencies') ||
-                    e.target == document.querySelector('#currency-label') ||
-                    e.target.parentNode == document.querySelector('.currencies') ||
-                    e.target.parentNode == document.querySelector('.top-currencies')) return;
-
+                if (
+                    e.target === document.querySelector('.currencies') ||
+                    e.target === document.querySelector('#currency-label') ||
+                    e.target.parentNode === document.querySelector('.currencies') ||
+                    e.target.parentNode === document.querySelector('.top-currencies')
+                )
+                    return;
 
                 currencies_container.classList.toggle('show-currencies-container');
                 currency_label.querySelector('svg').classList.toggle('flip-svg');
@@ -900,18 +986,18 @@ export default class BasePortal {
     }
 
     setupDatePrompt() {
-        let date_prompt = document.querySelector('#theDatePrompt');
+        const date_prompt = document.querySelector('#theDatePrompt');
 
         if (!date_prompt) return;
 
-        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`)
+        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`);
     }
 
-    highlightMapMarkersOnPropertyHover() {
+    static highlightMapMarkersOnPropertyHover() {
         let prop_id;
         let prop_id_el;
-        let properties = document.querySelectorAll('.ArnContainer');
-        let prop_container = document.querySelector('#currentPropertyPage');
+        const properties = document.querySelectorAll('.ArnContainer');
+        const prop_container = document.querySelector('#currentPropertyPage');
 
         if (!prop_container) return;
 
@@ -921,11 +1007,11 @@ export default class BasePortal {
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
-                ArnMapDispatcher.eventPropertyHighlightOn(prop_id)
+                ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
             });
 
             property.addEventListener('mouseleave', (e) => {
-                ArnMapDispatcher.eventPropertyHighlightOff(prop_id)
+                ArnMapDispatcher.eventPropertyHighlightOff(prop_id);
             });
         });
     }
@@ -950,7 +1036,7 @@ export default class BasePortal {
                     average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                     full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                    if (nights == 1) property.querySelector('.arnPrice').style.display = 'none';
+                    if (nights === 1) property.querySelector('.arnPrice').style.display = 'none';
                 });
             }
 
@@ -965,7 +1051,7 @@ export default class BasePortal {
                     average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                     full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
-                    if (nights == 1) property.querySelector('.averageNightly').style.display = 'none';
+                    if (nights === 1) property.querySelector('.averageNightly').style.display = 'none';
                 });
             }
         }
@@ -981,10 +1067,10 @@ export default class BasePortal {
 
                     if (!average_rate) return;
 
-                    currency == 'USD' ?
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`) :
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
-                    if (nights == 1) property.querySelector('.full-stay').style.display = 'none';
+                    currency === 'USD'
+                        ? rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`)
+                        : rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                 });
 
                 document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>');
@@ -994,60 +1080,56 @@ export default class BasePortal {
                 properties = document.querySelectorAll('.ArnNightlyRate');
                 properties.forEach((property) => {
                     average_rate = property.querySelector('strong');
-                    full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, "").replace(/[\r\n]+/gm, "")) * nights;
+                    full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * nights;
                     fixed_full_stay = full_stay_rate.toFixed(2);
 
                     if (!average_rate) return;
-                    currency == 'USD' ?
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`) :
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
-                    if (nights == 1) property.querySelector('.full-stay').style.display = 'none';
-
+                    currency === 'USD'
+                        ? average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`)
+                        : average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
+                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                 });
 
-                document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>');
+                document.body.insertAdjacentHTML(
+                    'beforeEnd',
+                    '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                );
             }
         }
     }
 
-    async getTotalNights() {
-        let nights;
-        let check_in;
-        let check_out;
-        let check_in_el = document.querySelector('meta[name="checkIn"]');
-        let check_out_el = document.querySelector('meta[name="checkOut"]');
+    static async getTotalNights() {
+        const check_in_el = document.querySelector('meta[name="checkIn"]');
+        const check_out_el = document.querySelector('meta[name="checkOut"]');
 
         if (!check_in_el || !check_out_el) return;
 
-        check_in = new Date(check_in_el.getAttribute('content'));
-        check_out = new Date(check_out_el.getAttribute('content'));
-        nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
+        const check_in = new Date(check_in_el.getAttribute('content'));
+        const check_out = new Date(check_out_el.getAttribute('content'));
+        const nights = (check_out.getTime() - check_in.getTime()) / (1000 * 3600 * 24);
 
         return nights;
     }
 
-    getNightlyRateForMapMarkers(nights, currency) {
+    static getNightlyRateForMapMarkers(nights, currency) {
         let average_rate;
         let full_stay_rate;
         let fixed_average_rate;
-        let mapMarkers = document.querySelectorAll('.arnMapMarkerSpan');
+        const map_markers = document.querySelectorAll('.arnMapMarkerSpan');
 
-        mapMarkers.forEach((marker) => {
-            full_stay_rate = marker.textContent.replace(/[^0-9.]/g, "").replace(/[\r\n]+/gm, "");
+        map_markers.forEach((marker) => {
+            full_stay_rate = marker.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '');
             average_rate = full_stay_rate / nights;
             fixed_average_rate = parseFloat(average_rate).toFixed(0);
 
-            currency === 'USD' ? marker.textContent = `$${fixed_average_rate}` : marker.textContent = `${fixed_average_rate} ${currency}`;
-
+            currency === 'USD' ? (marker.textContent = `$${fixed_average_rate}`) : (marker.textContent = `${fixed_average_rate} ${currency}`);
         });
     }
 
-
-
-    addTitleToProperties() {
+    static addTitleToProperties() {
         let property_name;
         let property_name_el;
-        let properties = document.querySelectorAll('.ArnContainer');
+        const properties = document.querySelectorAll('.ArnContainer');
 
         if (!document.querySelector('.SearchHotels')) return;
 
@@ -1055,14 +1137,13 @@ export default class BasePortal {
             property_name_el = property.querySelector('.ArnPropNameLink');
             property_name = property_name_el.querySelector('span').textContent;
 
-            property_name_el.setAttribute('title', property_name)
-
+            property_name_el.setAttribute('title', property_name);
         });
     }
 
-    showLoaderOnResultsUpdate() {
-        let loader = document.querySelector('#searching');
-        let update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+    static showLoaderOnResultsUpdate() {
+        const loader = document.querySelector('#searching');
+        const update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
 
         if (!document.querySelector('.SearchHotels')) return;
 
@@ -1074,10 +1155,10 @@ export default class BasePortal {
     }
 
     // map will need a redraw for this to work - will come back to this
-    setMapMarkerSize() {
+    static setMapMarkerSize() {
         let currency = '';
-        let currency_el = document.querySelector('meta[name="currency"]');
-        let map_markers = document.querySelectorAll('.arnMapMarker')
+        const currency_el = document.querySelector('meta[name="currency"]');
+        const map_markers = document.querySelectorAll('.arnMapMarker');
 
         if (!currency_el || !map_markers) return;
 
@@ -1091,7 +1172,7 @@ export default class BasePortal {
     }
 
     useLogoForVenueMapMarker() {
-        let map_markers = document.querySelectorAll('.arn-green-marker-icon');
+        const map_markers = document.querySelectorAll('.arn-green-marker-icon');
 
         if (!this.site_config) return;
 
@@ -1100,8 +1181,8 @@ export default class BasePortal {
         });
     }
 
-    activateCheckboxByClickingOnAssociatedLabel() {
-        let checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
+    static activateCheckboxByClickingOnAssociatedLabel() {
+        const checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
 
         if (!checkbox_wrappers) return;
 
@@ -1110,13 +1191,12 @@ export default class BasePortal {
 
             wrapper.querySelector('span').addEventListener('click', (e) => {
                 wrapper.querySelector('input[type="checkbox"]').click();
-
             });
         });
     }
 
-    addHRToProperties() {
-        let props = document.querySelectorAll('.ArnProperty');
+    static addHRToProperties() {
+        const props = document.querySelectorAll('.ArnProperty');
 
         if (!props) return;
 
@@ -1124,146 +1204,149 @@ export default class BasePortal {
             prop.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');
         });
     }
-    
+
     addAlgoliaSearch() {
         let lat_lng;
         let url;
-        let origin = window.location.origin;
-        let params = new URL(window.location.href);
-        let searchParams = new URLSearchParams(params.search);
-        
-        function setInputToRequired(selector){
-        if(!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
-        
-        document.querySelector(selector).required = true;
+        const {origin} = window.location;
+        const params = new URL(window.location.href);
+        const search_params = new URLSearchParams(params.search);
+
+        function setInputToRequired(selector) {
+            if (!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
+
+            document.querySelector(selector).required = true;
         }
-        
+
         function hideArnSearchElements(selectors) {
-          if (!document.querySelector('.SearchHotels')) return;
-          let elements = document.querySelectorAll(selectors);
-        
-          elements.forEach((element) => {
-              element.style.display = 'none';
-          });
+            if (!document.querySelector('.SearchHotels')) return;
+            const elements = document.querySelectorAll(selectors);
+
+            elements.forEach((element) => {
+                element.style.display = 'none';
+            });
         }
-        
+
         function removeArnSearchBar(selector) {
-          if (!document.querySelector(selector)) return;
-        
-          document.querySelector(selector).remove();
+            if (!document.querySelector(selector)) return;
+
+            document.querySelector(selector).remove();
         }
-        
+
         function insertAlgoliaSearch(page, selector, adjacent_location, html) {
-          if (!document.querySelector(page)) return;
-        
-          document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
+            if (!document.querySelector(page)) return;
+
+            document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
         }
-        
+
         function prepopulateDestinationInputOnSearchHotels() {
-          if (!document.querySelector('.SearchHotels')) return;
-        
-          let destination = searchParams.get('destination');
-          let algolia_input = document.querySelector('input#address-input');
-          algolia_input.value = destination;
-        
-          algolia_input.addEventListener('click', () => {
-              algolia_input.value = '';
-          });
+            if (!document.querySelector('.SearchHotels')) return;
+
+            const destination = search_params.get('destination');
+            const algolia_input = document.querySelector('input#address-input');
+            algolia_input.value = destination;
+
+            algolia_input.addEventListener('click', () => {
+                algolia_input.value = '';
+            });
         }
-        
+
         function setDropdownIndex(dropdown_selector) {
-          let dropdown = document.querySelector(dropdown_selector);
-          let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
-          
-          dropdown.addEventListener('change', () => {
-              for (let i = 0; i < dropdown.length; i += 1) {
-                  if (dropdown[i].selected) {
-                      dropdown.selectedIndex = i;
-                      value = dropdown[i].textContent;
-                      break;
-                  }
-              }
-              return value;
-          });
-          return value;
+            const dropdown = document.querySelector(dropdown_selector);
+            let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
+
+            dropdown.addEventListener('change', () => {
+                for (let i = 0; i < dropdown.length; i += 1) {
+                    if (dropdown[i].selected) {
+                        dropdown.selectedIndex = i;
+                        value = dropdown[i].textContent;
+                        break;
+                    }
+                }
+                return value;
+            });
+            return value;
         }
-        
-        function calcuateCheckDates(check_in_value, check_out_value) {    
-          let start = new Date(check_in_value);
-          let end = new Date(check_out_value);
-          let dayCount = 0;
-          while (end > start) {
-              dayCount += 1;
-              start.setDate(start.getDate() + 1);
-          }
-          return dayCount;
+
+        function calcuateCheckDates(check_in_value, check_out_value) {
+            const start = new Date(check_in_value);
+            const end = new Date(check_out_value);
+            let day_count = 0;
+            while (end > start) {
+                day_count += 1;
+                start.setDate(start.getDate() + 1);
+            }
+            return day_count;
         }
-        
-        const constructURLOnSubmit = () => {
-          let arn_submit_btn = document.querySelector("input#theSubmitButton");
-          arn_submit_btn.setAttribute("onClick", "");
-        
-          document.querySelector("form#searchForm").addEventListener("submit", (e) => {
-              e.preventDefault();
-        
-              let check_in_value = document.querySelector('input#theCheckIn').value;
-              let check_out_value = document.querySelector('input#theCheckOut').value;
-              let rooms_value = setDropdownIndex('select#rooms');
-              let adults_value = setDropdownIndex('select#adults');
-              let nights = calcuateCheckDates(check_in_value, check_out_value);
-              let destination_value = document.querySelector("input#address-input").value;
-        
-              if (lat_lng) {
-                  url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-              } else {
-                  let lng = searchParams.get("longitude");
-                  let lat = searchParams.get("latitude");
-        
-                  url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-              }
-        
-            //   if (document.querySelector(".RootBody")) {
-            //       if (!validateSubmitOptions()) return false;
-            //       $("theBody").addClassName("searchingForResults");
-            //       doPushPagePrep();
-            //       $("theArnPushPage").show();
-            //       $("theArnPushPageContent").show();
-            //   }
-              window.location.href = url;
-          });
-        }
-        
+
+        const construct_u_r_l_on_submit = () => {
+            const arn_submit_btn = document.querySelector('input#theSubmitButton');
+            arn_submit_btn.setAttribute('onClick', '');
+
+            document.querySelector('form#searchForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const check_in_value = document.querySelector('input#theCheckIn').value;
+                const check_out_value = document.querySelector('input#theCheckOut').value;
+                const rooms_value = setDropdownIndex('select#rooms');
+                const adults_value = setDropdownIndex('select#adults');
+                const nights = calcuateCheckDates(check_in_value, check_out_value);
+                const destination_value = document.querySelector('input#address-input').value;
+
+                if (lat_lng) {
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                } else {
+                    const lng = search_params.get('longitude');
+                    const lat = search_params.get('latitude');
+
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                }
+
+                //   if (document.querySelector(".RootBody")) {
+                //       if (!validateSubmitOptions()) return false;
+                //       $("theBody").addClassName("searchingForResults");
+                //       doPushPagePrep();
+                //       $("theArnPushPage").show();
+                //       $("theArnPushPageContent").show();
+                //   }
+                window.location.href = url;
+            });
+        };
+
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
-        insertAlgoliaSearch('.SearchHotels', 'div#theSearchBox', 'afterBegin', '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />');
+        insertAlgoliaSearch(
+            '.SearchHotels',
+            'div#theSearchBox',
+            'afterBegin',
+            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
+        );
         removeArnSearchBar('input#city');
         prepopulateDestinationInputOnSearchHotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
-        
+
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
-          if (searchParams.has('locationlabel') || searchParams.has('points')) return;
-          hideArnSearchElements('img.arn-green-marker-icon');
+            if (search_params.has('locationlabel') || search_params.has('points')) return;
+            hideArnSearchElements('img.arn-green-marker-icon');
         });
-        
+
         hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
-        constructURLOnSubmit();
-        
-        ( () => {
-          var placesAutocomplete = places({
-              appId: this.site_config.algolia_app_id,
-              apiKey: this.site_config.algolia_api_key,
-              container: document.querySelector("input#address-input")
-          }).configure({
-              aroundLatLngViaIP: "false",
-              type: "city"
-          });
-          placesAutocomplete.on("change", function resultSelected(e) {
-              document.querySelector("input#address-input").value =
-                  e.suggestion.value || "";
-              lat_lng = e.suggestion.latlng;
-          });
+        construct_u_r_l_on_submit();
+
+        (() => {
+            const places_autocomplete = places({
+                appId: this.site_config.algolia_app_id,
+                apiKey: this.site_config.algolia_api_key,
+                container: document.querySelector('input#address-input'),
+            }).configure({
+                aroundLatLngViaIP: 'false',
+                type: 'city',
+            });
+            places_autocomplete.on('change', function resultSelected(e) {
+                document.querySelector('input#address-input').value = e.suggestion.value || '';
+                lat_lng = e.suggestion.latlng;
+            });
         })();
     }
-
 }

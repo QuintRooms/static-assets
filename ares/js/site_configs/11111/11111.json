@@ -17,6 +17,8 @@
         "allow_registration": true
     },
     "show_tax_inclusive_rates": false,
+    "exclusive_rate_text": "Exclusive festival rate",
+    "custom_tag_text": "Sponsor Hotel",
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
     "show_date_prompt": false,

@@ -153,6 +153,9 @@ export default class BasePortal {
                         });
                     });
 
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text);
+                    console.log(this.site_config.exclusive_rate_text);
+                    console.log(this.site_config.custom_tag_text);
                     this.createStarIcons();
                     this.addHRToProperties();
                     this.showLoaderOnResultsUpdate();
@@ -1205,6 +1208,9 @@ export default class BasePortal {
         });
     }
 
+    /**
+     *@description Swaps out the city search for lat/lng geo search and autocomplete for Algolia's autocomplte.
+     */
     addAlgoliaSearch() {
         let lat_lng;
         let url;
@@ -1348,5 +1354,45 @@ export default class BasePortal {
                 lat_lng = e.suggestion.latlng;
             });
         })();
+    }
+
+    /**
+     *@description Looks at the prop id and checks if it should have a custom tag or sash
+     @param string takes the text for the exclusive rate sash
+     @param string takes the text for the custom tag text
+     */
+
+    isPropByGateway(exclusiveRateText, customTagText) {
+        console.log(exclusiveRateText);
+        console.log(customTagText);
+        if (!this.page_name === 'search-results' || !this.page_name === 'property-detail') return;
+        const prop_thumb = document.querySelector('div.ArnPropThumb');
+        const props = document.querySelector('div#currentPropertyPage');
+        props.forEach((el) => {
+            if (el.querySelector('.ArnPropertyTierTwo')) {
+                addExclusiveRatesSash(exclusiveRateText);
+            }
+            if (el.querySelector('.ArnPropertyTierOne')) {
+                addExclusiveRatesSash(exclusiveRateText);
+                addCustomTag(customTagText);
+            }
+        });
+
+        /**
+        *@description adds a sash to a property
+        @param string takes the text for the exclusive rate sash
+        */
+        function addExclusiveRatesSash(text) {
+            if (!document.querySelector('div.ArnPropertyTierTwo') || !document.querySelector('div.ArnPropertyTierOne')) return;
+
+            prop_thumb.insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
+        }
+        /**
+        *@description adds a custom tag to a property thumbnail image
+        @param string takes the text for custom tag
+        */
+        function addCustomTag(text) {
+            prop_thumb.insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        }
     }
 }

@@ -1435,3 +1435,17 @@ div.originalPrice span,
 .SearchHotels .PropLimitedAvail .ArnRateCell {
     background: transparent;
 }
+
+/* Show strikethrough retail rate */
+.originalPrice {
+    display: block !important;
+}
+
+.SinglePropDetail .bookRoomCell .originalRateContainer {
+    display: none !important;
+}
+
+.SearchHotels .originalRateAmount,
+.SinglePropDetail .originalRateAmount{
+    font-size: 16px !important;
+}

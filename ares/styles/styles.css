@@ -1625,7 +1625,8 @@ legend {
 }
 
 .SearchHotels .ArnPropThumb {
-    max-width: 30%;
+    position: relative;
+    max-width: 35%;
     width: 100%;
     overflow: hidden;
     border-radius: 5px 0 0 5px;
@@ -2948,22 +2949,37 @@ span.exclusive-rate {
     position: absolute;
     top: 0;
     left: 0;
-    background: #9c6aad;
-    color: #fff;
     padding: 5px;
     margin: 5px;
     border-radius: 3px;
     border: 1px solid #ccc;
 }
 
+span#exclusive-event-rate {
+    font-weight: 700;
+    color: #111;
+    font-size: 15px;
+}
+
 div.custom-tag {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35%;
+    width: 100%;
     background: rgba(0, 0, 0, 0.64);
     border-radius: 0px 0px 5px 5px;
     color: #fff;
     text-align: center;
     padding: 5px;
 }
+
+/* autocomplete styles start */
+
+.ap-name {
+    color: #333;
+}
+.ap-address {
+    color: #aaaaaa;
+}
+
+/* autocomplete styles end */

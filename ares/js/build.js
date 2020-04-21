@@ -26,7 +26,6 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
-                this.addAlgoliaSearch();
 
                 // all pages
                 this.buildMobileMenu();
@@ -67,6 +66,7 @@ export default class BasePortal {
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
 
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.updateRoomDescription();
                     this.updatePropReviewsURLToUseAnchor();
 
@@ -107,6 +107,7 @@ export default class BasePortal {
 
                 // root page methods
                 if (document.querySelector('.RootBody')) {
+                    this.addAlgoliaSearch();
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     utilities.createHTML(
                         '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -139,23 +140,22 @@ export default class BasePortal {
                     });
                 }
 
+                if (this.page_name === 'search-results') {
+                    this.addAlgoliaSearch();
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                }
+
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
-
                     this.toggleMap();
                     this.useLogoForVenueMapMarker();
                     L.control.scale().addTo(window.ArnMap);
                     this.highlightMapMarkersOnPropertyHover();
-
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {
                             this.showFullStayAndNightlyRates(nights, currency);
                         });
                     });
-
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text);
-                    console.log(this.site_config.exclusive_rate_text);
-                    console.log(this.site_config.custom_tag_text);
                     this.createStarIcons();
                     this.addHRToProperties();
                     this.showLoaderOnResultsUpdate();
@@ -236,7 +236,7 @@ export default class BasePortal {
         } catch (error) {
             console.log('could not get site config', error);
         }
-
+        console.log(path);
         return this.site_config;
     }
 
@@ -701,6 +701,7 @@ export default class BasePortal {
         <style>
         /* Primary Background Color */
             #searching h2:after,
+            span.exclusive-rate,
             #theConfirmationButton,
             #theOtherSubmitButton:active,
             #theOtherSubmitButton:focus,
@@ -754,6 +755,7 @@ export default class BasePortal {
 
             #searching,
             #theConfirmationButton,
+            span.exclusive-rate,
             #theOtherSubmitButton:active,
             #theOtherSubmitButton:focus,
             #theOtherSubmitButton:hover,
@@ -1362,37 +1364,57 @@ export default class BasePortal {
      @param string takes the text for the custom tag text
      */
 
-    isPropByGateway(exclusiveRateText, customTagText) {
-        console.log(exclusiveRateText);
-        console.log(customTagText);
-        if (!this.page_name === 'search-results' || !this.page_name === 'property-detail') return;
-        const prop_thumb = document.querySelector('div.ArnPropThumb');
-        const props = document.querySelector('div#currentPropertyPage');
-        props.forEach((el) => {
-            if (el.querySelector('.ArnPropertyTierTwo')) {
-                addExclusiveRatesSash(exclusiveRateText);
-            }
-            if (el.querySelector('.ArnPropertyTierOne')) {
-                addExclusiveRatesSash(exclusiveRateText);
-                addCustomTag(customTagText);
-            }
-        });
+    isPropByGateway(exclusiveRateText, customTagText, eventName) {
+        if (this.page_name === 'search-results') {
+            const props = document.querySelectorAll('div.ArnProperty');
+            props.forEach((el) => {
+                if (el.querySelector('.ArnPropertyTierTwo')) {
+                    addCustomTag(customTagText, el);
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+                if (el.querySelector('.ArnPropertyTierOne')) {
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+            });
+        }
+
+        if (this.page_name === 'property-detail') {
+            const rates = document.querySelectorAll('div.rateRow');
+            rates.forEach((el) => {
+                if (el.querySelector('table.SB16') || el.querySelector('table.SB20')) {
+                    updateRoomDescription(el, eventName, exclusiveRateText);
+                }
+            });
+        }
+
+        /**
+        *@description adds a sash to a property
+        @param string DOM selector 
+        @param string Event name from site_config 
+        @param string Exclusive rate text
+        */
+        function updateRoomDescription(selector, name, text) {
+            if (!document.querySelector('.SinglePropDetail')) return;
+            const original = selector.querySelector('.RoomDescription');
+            original.insertAdjacentHTML('afterbegin', `<span id="exclusive-event-rate">${name} ${text}</span>`);
+        }
 
         /**
         *@description adds a sash to a property
         @param string takes the text for the exclusive rate sash
+        @param string is the parent element for the current iteration 
         */
-        function addExclusiveRatesSash(text) {
-            if (!document.querySelector('div.ArnPropertyTierTwo') || !document.querySelector('div.ArnPropertyTierOne')) return;
-
-            prop_thumb.insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
+        function addExclusiveRatesSash(text, selector) {
+            selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
         }
+
         /**
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
+        @param string is the parent element for the current iteration 
         */
-        function addCustomTag(text) {
-            prop_thumb.insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        function addCustomTag(text, selector) {
+            selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
         }
     }
 }

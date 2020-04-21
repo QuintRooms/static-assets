@@ -61,6 +61,7 @@ export default class BasePortal {
 
                 // single prop detail methods
                 if (this.page_name === 'property-detail') {
+                    this.addImageSlideshow();
                     utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
                     utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
@@ -1008,7 +1009,7 @@ export default class BasePortal {
 
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
-                prop_id_el = property.parentElement.querySelector('.propId');
+                prop_id_el = property.parentElement.querySelector('.prop_id');
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
@@ -1416,5 +1417,81 @@ export default class BasePortal {
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
         }
+    }
+
+    addImageSlideshow() {
+        document.querySelector('#thePropertyImages').style.display = 'none';
+
+        const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
+        let counter = 0;
+        let prop_images;
+        let carousel_images;
+
+        async function getPropImages() {
+            try {
+                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+                    method: 'GET',
+                }).then((response) => response.json());
+                return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        async function createPropImageSlideshow() {
+            prop_images = await getPropImages();
+            document.querySelector('.ArnPropName').insertAdjacentHTML(
+                'afterend',
+                `<div class="carousel-container">
+                <div class="carousel-slide">
+                </div>
+                <a id="previousBtn">&#10094;</a>
+                <a id="nextBtn">&#10095;</a>
+            </div>`
+            );
+            populateImages();
+        }
+
+        function populateImages() {
+            carousel_images = document.querySelectorAll('.carousel-slide img');
+            for (let i = counter === 0 ? counter : counter + 2; i < counter + 5; i += 1) {
+                if (i === prop_images.length) return;
+                document.querySelector('.carousel-slide').insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="image-wrapper">
+                <div class ="image-number">${i + 1}/${prop_images.length}</div>
+                <img src=${prop_images[i]}>
+              </div>`
+                );
+            }
+        }
+
+        async function createCarousel() {
+            await createPropImageSlideshow();
+
+            const carousel_slide = document.querySelector('.carousel-slide');
+            const previous_btn = document.querySelector('#previousBtn');
+            const next_btn = document.querySelector('#nextBtn');
+
+            next_btn.addEventListener('click', () => {
+                carousel_images = document.querySelectorAll('.carousel-slide img');
+                if (counter === carousel_images.length - 1) return;
+                counter += 1;
+                const size = carousel_images[counter].clientWidth;
+                carousel_slide.style.transform = `translateX(${-size * counter}px)`;
+                if (counter === carousel_images.length - 2) {
+                    populateImages();
+                }
+            });
+
+            previous_btn.addEventListener('click', () => {
+                if (counter <= 0) return;
+                counter -= 1;
+                const size = carousel_images[counter].clientWidth;
+                carousel_slide.style.transform = `translateX(${-size * counter}px)`;
+            });
+        }
+
+        createCarousel();
     }
 }

@@ -23,6 +23,7 @@ module.exports = {
             },
         ],
         'camelcase': 'off',
+        'guard-for-in': 'off',
         'class-methods-use-this': 'off', // remove this and fix 'this' errors
         'consistent-return': 'off',
         'no-use-before-define': 'warn',

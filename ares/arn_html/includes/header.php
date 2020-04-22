@@ -1,4 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+<?php if($cug){
+echo '
 <div id="AdminControlsContainer">
         <div id="commands"><a class="profileCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;1">My Profile</a><a class="organizationsCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;2">My Organizations</a>
             <form accept-charset="utf-8"  action="../auth/login.php"><button class="logoutCommand submit" name="3" type="submit">Logout</button>
@@ -8,7 +10,8 @@
     </div>
     <form accept-charset="utf-8"  action="search-results.php" id="formChangeTheme" style="display:none;"><input id="inputChangeTheme" name="4" type="text" class="text" /><button id="buttonChangeTheme" type="submit" class="submit">Change Theme</button>
         <div><input name="_s" value="i9OeMFOgz_0aLKzN" type="hidden" class="hidden" /><input name="_k" value="X1p01Dcn" type="hidden" class="hidden" /><input name="siteId" value="39624" type="hidden" class="hidden" /><input name="theme" value="standard" type="hidden" class="hidden" /></div>
-    </form>
+    </form>';
+} ?>
     <script type="text/javascript">
     /*<![CDATA[*/
     function arnChangeTheme(sThemeName) {

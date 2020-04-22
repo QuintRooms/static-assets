@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
 <head>
     <title>Low Rate Guarantee</title>
     <meta content="Online reservations at the guaranteed lowest rates!" name="description" />
@@ -13,7 +13,7 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="11111" name="siteId" />
+    <meta content="<?php echo $site_id; ?>" name="siteId" />
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="DVDzt5wty523T0tH" name="sessionId" />
     <meta content="59m 51s" name="expiresIn" />

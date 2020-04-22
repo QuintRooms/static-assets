@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
 <head>
     <title>Hampton Inn Austin - Northwest Arboretum</title>
     <meta content="Online reservations at the guaranteed lowest rates!" name="description" />
@@ -13,7 +13,7 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="11111" name="siteId" />
+    <meta content="<?php echo $site_id; ?>" name="siteId" />
     <meta content="SOTX" name="cid" />
     <meta content="hXWCT6jOVdK4WGgw" name="sessionId" />
     <meta content="58m 14s" name="expiresIn" />

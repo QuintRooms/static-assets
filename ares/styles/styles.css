@@ -85,6 +85,10 @@ header {
     z-index: 9;
 }
 
+.logo img{
+    max-width: 300px;
+}
+
 #AdminControlsContainer {
     background: #fff;
     display: flex;

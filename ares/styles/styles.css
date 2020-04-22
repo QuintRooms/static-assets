@@ -2993,6 +2993,7 @@ div.custom-tag {
     position: relative;
     max-width: calc(100vw - 310px);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .carousel-slide {
@@ -3056,7 +3057,7 @@ div.custom-tag {
 
     .carousel-container,
     .carousel-slide .image-wrapper img {
-        max-width: 90vw;
+        max-width: 691px;
     }
 }
 
@@ -3064,6 +3065,15 @@ div.custom-tag {
     .carousel-container,
     .carousel-slide .image-wrapper img {
         height: 200px;
+        max-width: 338px
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .carousel-container,
+    .carousel-slide .image-wrapper img {
+        height: 200px;
+        max-width: 310px
     }
 }
 

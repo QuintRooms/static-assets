@@ -1478,7 +1478,7 @@ export default class BasePortal {
                 if (counter === carousel_images.length - 1) return;
                 counter += 1;
                 const size = carousel_images[counter].clientWidth;
-                carousel_slide.style.transform = `translateX(${-size * counter}px)`;
+                carousel_slide.style.transform = `translateX(-${size * counter}px)`;
                 if (counter === carousel_images.length - 2) {
                     populateImages();
                 }
@@ -1488,7 +1488,7 @@ export default class BasePortal {
                 if (counter <= 0) return;
                 counter -= 1;
                 const size = carousel_images[counter].clientWidth;
-                carousel_slide.style.transform = `translateX(${-size * counter}px)`;
+                carousel_slide.style.transform = `translateX(-${size * counter}px)`;
             });
         }
 

@@ -31,7 +31,7 @@
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
     "header":
     {
-        "logo_file_location": "../../js/site_configs/60792/img/logo.png",
+        "logo_file_location": "https://static.hotelsforhope.com/ares/js/site_configs/60792/img/logo.png",
         "logo_outbound_url": "https://www.voodoofestival.com/",
         "background": "#fff",
         "logo_flex_position": "center",

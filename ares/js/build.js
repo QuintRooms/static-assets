@@ -141,7 +141,9 @@ export default class BasePortal {
                         });
                     });
                 }
-
+                if (this.page_name === 'lrg-page') {
+                    this.replaceLRGForm();
+                }
                 if (this.page_name === 'search-results') {
                     this.addAlgoliaSearch();
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
@@ -150,6 +152,7 @@ export default class BasePortal {
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
                     this.toggleMap();
+                    this.addLRGDetails();
                     this.useLogoForVenueMapMarker();
                     L.control.scale().addTo(window.ArnMap);
                     this.highlightMapMarkersOnPropertyHover();
@@ -306,9 +309,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         const room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') {
-            return;
-        }
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') return;
 
         room_description_el.forEach((element) => {
             element.innerHTML = element.innerHTML.replace(
@@ -1445,11 +1446,11 @@ export default class BasePortal {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
             props.forEach((el) => {
-                if (el.classList.contains('.ArnPropertyTierTwo')) {
+                if (el.classList.contains('ArnPropertyTierTwo')) {
                     addCustomTag(customTagText, el);
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
-                if (el.classList.contains('.ArnPropertyTierOne')) {
+                if (el.classList.contains('ArnPropertyTierOne')) {
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
             });
@@ -1492,6 +1493,32 @@ export default class BasePortal {
         */
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        }
+    }
+
+    addLRGDetails() {
+        if (this.site_config.site_type !== 'lodging' || !this.site_config.lodging.is_lrg) return;
+        const properties = document.querySelectorAll('.S16, .S20');
+        properties.forEach((property) => {
+            property.querySelector('.arnPrice').insertAdjacentHTML(
+                'afterEnd',
+                `
+<a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. Guaranteed.</a>
+
+            `
+            );
+        });
+    }
+
+    async replaceLRGForm() {
+        if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
+
+        try {
+            const html = await fetch('https://dev-static.hotelsforhope.com/components/lrg-form/lrg-form.html').then((response) => response.text());
+
+            document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
+        } catch (error) {
+            console.error(error);
         }
     }
 

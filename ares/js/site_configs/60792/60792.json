@@ -2,7 +2,7 @@
     "site_id": 60792,
     "affiliate_id": 16067,
     "master_id": 1816,
-    "site_type": "noLRG",
+    "site_type": "lodging",
     "algolia_app_id": "plETUR94AASH",
     "algolia_api_key": "7bf688b47ae81044d05d094f0487df08",
     "currency": "USD",
@@ -22,8 +22,8 @@
         "show_points": false,
         "allow_registration": true
     },
-    "exclusive_rate_text": "",
-    "custom_tag_text": "",
+    "exclusive_rate_text": "Exclusive Rates",
+    "custom_tag_text": "Host Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
@@ -33,8 +33,8 @@
     {
         "logo_file_location": "../../js/site_configs/60792/img/logo.png",
         "logo_outbound_url": "https://www.voodoofestival.com/",
-        "background": "url()",
-        "logo_position": "flex-start",
+        "background": "#fff",
+        "logo_flex_position": "center",
         "logo_max_width": "300px"
     },
     "banner_image_url": "url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)",

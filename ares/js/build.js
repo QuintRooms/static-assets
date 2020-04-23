@@ -34,8 +34,8 @@ export default class BasePortal {
                 if (this.site_config.site_type !== 'cug') {
                     utilities.createHTML(
                         `<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
-                        'body',
-                        'afterBegin'
+                        '.config-container',
+                        'afterEnd'
                     );
                 }
 

@@ -22,6 +22,7 @@ export default class BasePortal {
             this.getSiteConfigJSON(site_id).then(() => {
                 this.getPageName();
                 this.applyConfigColors();
+                this.setRootPageBackgroundImage();
                 this.setFontFromConfig();
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
@@ -690,6 +691,20 @@ export default class BasePortal {
             );
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
         });
+    }
+
+    setRootPageBackgroundImage() {
+        if (!this.site_config) return;
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `
+
+            <style>
+                .RootBody{
+                    background: url(${this.site_config.banner_image_url});
+                }
+            </style>`
+        );
     }
 
     // probably a much better way to do this

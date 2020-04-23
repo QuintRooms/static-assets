@@ -25,8 +25,8 @@
     {
         "logo_file_location": "https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png",
         "logo_outbound_url": "https://hotelsforhope.com",
-        "background": "url()",
-        "logo_position": "flex-start",
+        "background": "",
+        "logo_flex_position": "flex-start",
         "logo_max_width": "300px"
     },
     "banner_image_url": "url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)",

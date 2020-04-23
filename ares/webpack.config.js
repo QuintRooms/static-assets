@@ -6,6 +6,7 @@ module.exports = {
         39624: './src/39624.js', // CUG Template
         60265: './src/60265.js', //  Housing Template
         60792: './src/60792.js', // Voodoo
+        53474: './src/53474.js', // Tortuga
     },
     output: {
         filename: '[name].js',

@@ -86,7 +86,7 @@ header {
     display: flex;
 }
 
-.logo img{
+.logo img {
     padding: 15px;
 }
 
@@ -164,7 +164,8 @@ a.ArnShowRatesLink:hover {
 
 /* Buttons End */
 
-select#rooms, select#adults {
+select#rooms,
+select#adults {
     border-radius: 0;
 }
 
@@ -1481,7 +1482,10 @@ legend {
 }
 
 /* Single Prop Page End */
-#theCheckIn, #theCheckOut, #rooms, #adults {
+#theCheckIn,
+#theCheckOut,
+#rooms,
+#adults {
     border-radius: 5px;
 }
 
@@ -1822,7 +1826,6 @@ legend {
 
 .arnPrice {
     display: block;
-    font-size: 13px;
     order: 1;
 }
 
@@ -2379,7 +2382,7 @@ legend {
     margin-top: 12px;
 }
 
-#theConfirmationButton { 
+#theConfirmationButton {
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 10px;
@@ -3009,6 +3012,7 @@ span.exclusive-rate {
     margin: 5px;
     border-radius: 3px;
     border: 1px solid #ccc;
+    z-index: 1;
 }
 
 span#exclusive-event-rate {
@@ -3130,6 +3134,7 @@ input#address-input {
 }
 
 @media screen and (max-width: 600px) {
+
     .carousel-container,
     .carousel-slide .image-wrapper img {
         height: 200px;
@@ -3138,6 +3143,7 @@ input#address-input {
 }
 
 @media screen and (max-width: 320px) {
+
     .carousel-container,
     .carousel-slide .image-wrapper img {
         height: 200px;
@@ -3146,7 +3152,7 @@ input#address-input {
 }
 
 @media screen and (min-width: 1100px) {
-    .carousel-container{
+    .carousel-container {
         max-width: 800px;
     }
 
@@ -3156,3 +3162,90 @@ input#address-input {
 }
 
 /* Image slideshow end */
+
+/* LRG Start */
+
+.lowest-rate-link{
+    order: 2;
+    font-size: 13px;
+}
+
+.WBRateGuaranteeForm p,
+.WBRateGuaranteeForm>h1 {
+    display: none;
+}
+
+.eventRateGuarantee input {
+    width: 100%;
+}
+
+.eventRateGuarantee .row {
+    display: flex;
+}
+
+.eventRateGuarantee .col-md-6 {
+    width: 100%;
+}
+
+.eventRateGuarantee p {
+    display: block;
+}
+
+.eventRateGuarantee h1 {
+    color: #7ccd4f;
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 700;
+}
+
+.eventRateGuarantee h2 {
+    color: #5b5c5b;
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 700;
+}
+
+.eventRateGuarantee p,
+.eventRateGuarantee li {
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.eventRateGuarantee li {
+    list-style-type: none;
+}
+
+.eventRateGuarantee li:before {
+    content: '- '
+}
+
+.st0 {
+    fill: #79CF46;
+}
+
+.st1 {
+    fill: #73C140;
+}
+
+.st2 {
+    fill: #FFFFFF;
+}
+
+.st3 {
+    fill: #898989;
+}
+
+.st4 {
+    fill: #6E6E6E;
+}
+
+.st5 {
+    fill: #AEAEAE;
+}
+
+@media screen and (max-width: 800px) {
+    .eventRateGuarantee .row .hidden-sm {
+        display: none;
+    }
+}
+
+/* LRG End */

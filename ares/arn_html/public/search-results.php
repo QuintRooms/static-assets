@@ -1802,7 +1802,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                 </form>
                             </div>
                             <div id="currentPropertyPage">
-                                <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale 360962 234363 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 200132566 234357 441414 S61 200151386 441404 216042288 200151357" id="theArnProperty20498" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.74229" latitude="30.26909" total="2187.82 USD" sortvalue="0">
+                                <div class="ArnProperty ArnPropertyTierTwo WBSimplePropertyView OnSale ArnEnoughNightlyRooms ArnEnoughAvailableRooms S16 ARN611722 price-moved" id="theArnProperty20498" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.74229" latitude="30.26909" total="2187.82 USD" sortvalue="0">
                                     <div class="propId">20498</div>
                                     <div id="theSupportMessage20498" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
                                     <div class="ArnContainer" id="yui_3_18_1_1_1586277558089_145">

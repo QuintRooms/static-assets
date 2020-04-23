@@ -1145,6 +1145,9 @@ export default class BasePortal {
                 properties.forEach((property) => {
                     rate = property.querySelector('.arnPrice');
                     average_rate = property.querySelector('.arnPrice .arnUnit');
+
+                    if (!average_rate || !rate) return;
+
                     full_stay_rate = parseFloat(average_rate.textContent) * nights;
                     fixed_full_stay = full_stay_rate.toFixed(2);
 
@@ -1164,9 +1167,13 @@ export default class BasePortal {
                 properties.forEach((property) => {
                     average_rate = property.querySelector('strong');
                     full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * nights;
+
+                    if (!average_rate || !full_stay_rate) return;
+
                     fixed_full_stay = full_stay_rate.toFixed(2);
 
-                    if (!average_rate) return;
+                    if (!fixed_full_stay) return;
+
                     currency === 'USD'
                         ? average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`)
                         : average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);

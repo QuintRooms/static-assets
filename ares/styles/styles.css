@@ -83,10 +83,89 @@ header {
     position: relative;
     background: #fff;
     z-index: 9;
+    display: flex;
 }
 
 .logo img{
-    max-width: 300px;
+    padding: 15px;
+}
+
+/* Header End */
+
+/* Buttons Start */
+
+input#theSubmitButton,
+input#theSubmitButton,
+input#theSubmitButton,
+#theOtherSubmitButton,
+#theOtherSubmitButton,
+#theOtherSubmitButton,
+.RootBody #theOtherSubmitButton,
+.RootBody #theOtherSubmitButton,
+.RootBody #theOtherSubmitButton,
+.bookRoom,
+.bookRoom,
+.bookRoom,
+.arn-leaflet-reset-button,
+.arn-leaflet-reset-button,
+.arn-leaflet-reset-button,
+.arnMapMarker,
+.arnMapMarker,
+.arnMapMarker,
+input#theConfirmationButton,
+input#theConfirmationButton,
+input#theConfirmationButton,
+a.ArnShowRatesLink {
+    background: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.CheckRates input.submit,
+.CheckRates input.submit,
+.CheckRates input.submit {
+    background: #fff;
+    color: #333;
+}
+
+input#theSubmitButton:hover,
+input#theSubmitButton:focus,
+input#theSubmitButton:active,
+#theOtherSubmitButton:hover,
+#theOtherSubmitButton:focus,
+#theOtherSubmitButton:active,
+.RootBody #theOtherSubmitButton:hover,
+.RootBody #theOtherSubmitButton:focus,
+.RootBody #theOtherSubmitButton:active,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active,
+.arn-leaflet-reset-button:hover,
+.arn-leaflet-reset-button:focus,
+.arn-leaflet-reset-button:active,
+.arnMapMarker:hover,
+.arnMapMarker:focus,
+.arnMapMarker:active,
+input#theConfirmationButton:hover,
+input#theConfirmationButton:focus,
+input#theConfirmationButton:active,
+a.ArnShowRatesLink:hover {
+    background: rgb(227, 224, 224);
+    color: #333;
+    border: 1px solid #333;
+}
+
+.CheckRates input.submit:hover,
+.CheckRates input.submit:focus,
+.CheckRates input.submit:active {
+    background: #ccc;
+    color: #333;
+}
+
+/* Buttons End */
+
+select#rooms, select#adults {
+    border-radius: 0;
 }
 
 #AdminControlsContainer {
@@ -469,12 +548,12 @@ header {
 }
 
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #333 !important;
+    border-top-color: #333;
 }
 
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
-    background: #333 !important;
+    background: #333;
     border: 1px solid #444f74;
 }
 
@@ -851,6 +930,7 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin-bottom: 4px;
+    border-radius: 5px;
 }
 
 .SearchHotels #CheckInContainer,
@@ -887,14 +967,6 @@ div.autocomplete ul li.selected {
     background: transparent;
     border: 1px solid #fff;
     transition: all .3s ease-out;
-}
-
-.SearchHotels #theSubmitButton:hover,
-.SearchHotels #theSubmitButton:focus,
-.SearchHotels #theSubmitButton:active {
-    background: #fff;
-    border: 1px solid #fff;
-
 }
 
 .SearchHotels .star {
@@ -1409,11 +1481,7 @@ legend {
 }
 
 /* Single Prop Page End */
-.SinglePropDetail #theCheckIn,
-.SinglePropDetail #theCheckOut,
-.SinglePropDetail #rooms,
-.SinglePropDetail #adults {
-    margin-bottom: 4px;
+#theCheckIn, #theCheckOut, #rooms, #adults {
     border-radius: 5px;
 }
 
@@ -1786,16 +1854,6 @@ legend {
     display: block;
     text-align: center;
     transition: all .4s ease;
-}
-
-.ArnShowRatesLink:hover,
-.bookRoom:hover,
-.ArnShowRatesLink:active,
-.bookRoom:active,
-.ArnShowRatesLink:focus,
-.bookRoom:focus {
-    background: transparent;
-    color: #333;
 }
 
 @media screen and (max-width: 1105px) {
@@ -2321,8 +2379,8 @@ legend {
     margin-top: 12px;
 }
 
-#theConfirmationButton {
-    border: none;
+#theConfirmationButton { 
+    border: 1px solid #fff;
     border-radius: 5px;
     padding: 10px;
     font-size: 15px;
@@ -2617,12 +2675,6 @@ legend {
 
 .RootBody #theSubmitButton {
     display: none;
-}
-
-.RootBody #theOtherSubmitButton:hover,
-.RootBody #theOtherSubmitButton:active,
-.RootBody #theOtherSubmitButton:focus {
-    background: transparent;
 }
 
 .RootBody input,
@@ -2979,6 +3031,18 @@ div.custom-tag {
 
 /* autocomplete styles start */
 
+.algolia-places {
+    width: 97%;
+}
+
+input#address-input {
+    border-radius: 5px;
+}
+
+.ap-dropdown-menu {
+    border-radius: 5px;
+}
+
 .ap-name {
     color: #333;
 }
@@ -2993,7 +3057,6 @@ div.custom-tag {
 
 .carousel-container {
     margin: 15px auto 15px auto;
-    border: 1px solid #333;
     position: relative;
     max-width: calc(100vw - 310px);
     overflow: hidden;
@@ -3051,6 +3114,7 @@ div.custom-tag {
 #nextBtn:hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: rgba(0, 0, 0);
+    transition: all .5s ease-out;
 }
 
 

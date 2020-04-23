@@ -34,7 +34,7 @@ export default class BasePortal {
 
                 if (this.site_config.site_type !== 'cug') {
                     utilities.createHTML(
-                        `<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
+                        `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                         '.config-container',
                         'afterEnd'
                     );
@@ -43,7 +43,7 @@ export default class BasePortal {
                 if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
                         utilities.createHTML(
-                            `<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
+                            `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                             'body',
                             'afterBegin'
                         );
@@ -51,7 +51,7 @@ export default class BasePortal {
 
                     utilities.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                         utilities.createHTML(
-                            `<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`,
+                            `<a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a>`,
                             '#AdminControlsContainer',
                             'afterBegin'
                         );
@@ -701,7 +701,7 @@ export default class BasePortal {
 
             <style>
                 .RootBody{
-                    background: url(${this.site_config.banner_image_url});
+                    background: ${this.site_config.banner_image_url};
                 }
             </style>`
         );
@@ -715,13 +715,21 @@ export default class BasePortal {
             'beforeEnd',
             `
         <style>
+        /* Header */
+
+        header {
+            justify-content: ${this.site_config.header.logo_flex_position};
+            background: ${this.site_config.header.background};
+        }
+
+        .logo img{
+            max-width: ${this.site_config.header.logo_max_width};
+        }
+
         /* Primary Background Color */
             #searching h2:after,
             span.exclusive-rate,
             #theConfirmationButton,
-            #theOtherSubmitButton:active,
-            #theOtherSubmitButton:focus,
-            #theOtherSubmitButton:hover,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
             .ArnTripAdvisorDetails.HasReviews .ratingCount,
@@ -772,9 +780,6 @@ export default class BasePortal {
             #searching,
             #theConfirmationButton,
             span.exclusive-rate,
-            #theOtherSubmitButton:active,
-            #theOtherSubmitButton:focus,
-            #theOtherSubmitButton:hover,
             .HoldRoomsForm .submit,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -822,16 +827,78 @@ export default class BasePortal {
             .reviewCount a,
             #theAdditionalEmailsLink a,
             #theOtherSubmitButton,
-            .RootBody #theOtherSubmitButton:active,
-            .RootBody #theOtherSubmitButton:focus,
-            .RootBody #theOtherSubmitButton:hover,
-            .SearchHotels #theSubmitButton:active,
-            .SearchHotels #theSubmitButton:focus,
-            .SearchHotels #theSubmitButton:hover,
             .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
             .open-modal {
-                color:${this.site_config.secondary_text_color}
+                color:${this.site_config.secondary_text_color};
+            }
+            
+            input#theSubmitButton,
+            input#theSubmitButton,
+            input#theSubmitButton,
+            #theOtherSubmitButton,
+            #theOtherSubmitButton,
+            #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .bookRoom,
+            .bookRoom,
+            .bookRoom,
+            .arn-leaflet-reset-button,
+            .arn-leaflet-reset-button,
+            .arn-leaflet-reset-button,
+            .arnMapMarker,
+            .arnMapMarker,
+            .arnMapMarker,
+            input#theConfirmationButton,
+            input#theConfirmationButton,
+            input#theConfirmationButton,
+            a.ArnShowRatesLink {
+                background: ${this.site_config.primary_color};
+                color: ${this.site_config.primary_text_color};
+                border: 1px solid ${this.site_config.primary_color};
+            }
+
+            .CheckRates input.submit,
+            .CheckRates input.submit,
+            .CheckRates input.submit {
+                background: ${this.site_config.primary_color};
+                color: ${this.site_config.primary_text_color};
+            }
+
+            input#theSubmitButton:hover,
+            input#theSubmitButton:focus,
+            input#theSubmitButton:active,
+            #theOtherSubmitButton:hover,
+            #theOtherSubmitButton:focus,
+            #theOtherSubmitButton:active,
+            .RootBody #theOtherSubmitButton:hover,
+            .RootBody #theOtherSubmitButton:focus,
+            .RootBody #theOtherSubmitButton:active,
+            .bookRoom:hover,
+            .bookRoom:focus,
+            .bookRoom:active,
+            .arn-leaflet-reset-button:hover,
+            .arn-leaflet-reset-button:focus,
+            .arn-leaflet-reset-button:active,
+            .arnMapMarker:hover,
+            .arnMapMarker:focus,
+            .arnMapMarker:active,
+            input#theConfirmationButton:hover,
+            input#theConfirmationButton:focus,
+            input#theConfirmationButton:active,
+            a.ArnShowRatesLink:hover {
+                background: ${this.site_config.button_hover_background_color};
+                color: ${this.site_config.button_hover_text_color};
+                border: 1px solid ${this.site_config.primary_color};
+            }
+
+            .CheckRates input.submit:hover,
+            .CheckRates input.submit:focus,
+            .CheckRates input.submit:active {
+                background: ${this.site_config.button_hover_background_color};
+                color: ${this.site_config.button_hover_text_color};
             }
 
             @media screen and (max-width:800px) {
@@ -860,13 +927,7 @@ export default class BasePortal {
                 border:1px solid ${this.site_config.primary_color}
             }
 
-            .holdRoom,
-            .ArnShowRatesLink:active,
-            .ArnShowRatesLink:focus,
-            .ArnShowRatesLink:hover,
-            .bookRoom:active,
-            .bookRoom:focus,
-            .bookRoom:hover {
+            .holdRoom {
                 border: 1px solid ${this.site_config.primary_color}
             }
 
@@ -1011,7 +1072,7 @@ export default class BasePortal {
 
         if (!date_prompt) return;
 
-        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`);
+        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.header.logo_file_location}" alt="Logo">`);
     }
 
     highlightMapMarkersOnPropertyHover() {
@@ -1384,11 +1445,11 @@ export default class BasePortal {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
             props.forEach((el) => {
-                if (el.querySelector('.ArnPropertyTierTwo')) {
+                if (el.classList.contains('.ArnPropertyTierTwo')) {
                     addCustomTag(customTagText, el);
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
-                if (el.querySelector('.ArnPropertyTierOne')) {
+                if (el.classList.contains('.ArnPropertyTierOne')) {
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
             });

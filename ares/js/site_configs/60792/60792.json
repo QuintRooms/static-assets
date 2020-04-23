@@ -29,9 +29,15 @@
     "show_language_select": true,
     "show_date_prompt": false,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
-    "logo_file_location": "../../js/site_configs/60792/img/logo.png",
-    "logo_outbound_url": "https://www.voodoofestival.com/",
-    "banner_image_url": "https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg",
+    "header":
+    {
+        "logo_file_location": "../../js/site_configs/60792/img/logo.png",
+        "logo_outbound_url": "https://www.voodoofestival.com/",
+        "background": "url()",
+        "logo_position": "flex-start",
+        "logo_max_width": "300px"
+    },
+    "banner_image_url": "url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
     "primary_color": "#5dc3ac",

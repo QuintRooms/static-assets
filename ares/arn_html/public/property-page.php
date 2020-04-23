@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
 <head>
     <title>InterContinental Stephen F. Austin</title>
     <meta name="description" content="A stay at InterContinental Stephen F. Austin places you in the heart of Austin, steps from Sixth Street and Paramount Theater. This 4-star hotel is 0. 5 m" />
@@ -13,7 +13,7 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="11111" name="siteId" />
+    <meta content="<?php echo $site_id; ?>" name="siteId" />
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="DVDzt5wty523T0tH" name="sessionId" />
     <meta content="43m 4s" name="expiresIn" />
@@ -1153,7 +1153,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </table>
                                     </div>
                                     <div class="rateRow odd"><a name="ratesSection"></a>
-                                        <table class="ArnContentGeneralInfo ArnRateList SB61">
+                                        <table class="ArnContentGeneralInfo ArnRateList SB16">
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 - 11/9/2020</div>Traditional Room, 1 Queen Bed - Traditional Room, 1 Queen Bed 1 Queen Bed Breakfast for 2. Rate for 2 people per room
@@ -1337,10 +1337,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
             </style>
         <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
     </noscript>
-    <script src="https://media.travsrv.com/appSkins/39624/v6/themes/standard/footer.js?8255+11615" type="text/javascript">
-    /*<![CDATA[*/
-    nil /*]]>*/
-    </script><span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
+        <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
     <script>
     /*<![CDATA[*/
     (function() { $('theArnProperty20498').fire('arn:propRatesUpdated') })() /*]]>*/

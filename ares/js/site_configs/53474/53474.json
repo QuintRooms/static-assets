@@ -1,45 +1,51 @@
 {
-    "site_id": 11111,
-    "affiliate_id": 16827,
-    "master_id": 2143,
-    "site_type": "cug",
+    "site_id": 53474,
+    "affiliate_id": 16365,
+    "master_id": 920,
+    "site_type": "noLRG",
+    "algolia_app_id": "plETUR94AASH",
+    "algolia_api_key": "7bf688b47ae81044d05d094f0487df08",
+    "currency": "USD",
+    "distance_unit": "useMiles",
+    "map_size": "12",
+    "radius": "50",
     "lodging":
     {
-        "event_id": false,
-        "event_name": "Hotels for Hope",
+        "event_id": 41307,
+        "event_name": "Tortuga Music Festival",
         "event_dates": "",
-        "is_lrg": false
+        "is_lrg": true
     },
     "cug":
     {
-        "is_cug": true,
+        "is_cug": false,
         "show_points": false,
         "allow_registration": true
     },
+    "exclusive_rate_text": "",
+    "custom_tag_text": "",
     "show_tax_inclusive_rates": false,
-    "exclusive_rate_text": "Exclusive festival rate",
-    "custom_tag_text": "Sponsor Hotel",
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
     "show_date_prompt": false,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
     "header":
     {
-        "logo_file_location": "https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png",
-        "logo_outbound_url": "https://hotelsforhope.com",
-        "background": "",
-        "logo_flex_position": "flex-start",
-        "logo_max_width": "300px"
+        "logo_file_location": "../../js/site_configs/53474/img/logo.png",
+        "logo_outbound_url": "https://www.tortugamusicfestival.com",
+        "background": "url(../../js/site_configs/53474/img/header-bg.png)",
+        "logo_flex_position": "center",
+        "logo_max_width": "600px"
     },
-    "banner_image_url": "url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)",
+    "banner_image_url": "center/cover no-repeat url(../../js/site_configs/53474/img/banner.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
-    "primary_color": "#9c6aad",
-    "secondary_color": "",
+    "primary_color": "#04539e",
+    "secondary_color": "#00a3df",
     "primary_text_color": "#fff",
-    "secondary_text_color": "#9c6aad",
-    "button_hover_background_color": "transparent",
-    "button_hover_text_color": "#333",
+    "secondary_text_color": "",
+    "button_hover_background_color": "#fff",
+    "button_hover_text_color": "#04539e",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":

@@ -22,11 +22,11 @@ export default class BasePortal {
             this.getSiteConfigJSON(site_id).then(() => {
                 this.getPageName();
                 this.applyConfigColors();
+                this.setRootPageBackgroundImage();
                 this.setFontFromConfig();
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
-                this.addAlgoliaSearch();
 
                 // all pages
                 this.buildMobileMenu();
@@ -34,16 +34,16 @@ export default class BasePortal {
 
                 if (this.site_config.site_type !== 'cug') {
                     utilities.createHTML(
-                        `<header><a class="logo" href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
-                        'body',
-                        'afterBegin'
+                        `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
+                        '.config-container',
+                        'afterEnd'
                     );
                 }
 
                 if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
                         utilities.createHTML(
-                            `<header><a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a></header>`,
+                            `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                             'body',
                             'afterBegin'
                         );
@@ -51,7 +51,7 @@ export default class BasePortal {
 
                     utilities.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
                         utilities.createHTML(
-                            `<a href="${this.site_config.logo_outbound_url}" target="_blank"><img src="${this.site_config.logo_file_location}" alt="Logo"></a>`,
+                            `<a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a>`,
                             '#AdminControlsContainer',
                             'afterBegin'
                         );
@@ -62,11 +62,13 @@ export default class BasePortal {
 
                 // single prop detail methods
                 if (this.page_name === 'property-detail') {
+                    this.addImageSlideshow();
                     utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
                     utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
 
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.updateRoomDescription();
                     this.updatePropReviewsURLToUseAnchor();
 
@@ -107,6 +109,7 @@ export default class BasePortal {
 
                 // root page methods
                 if (document.querySelector('.RootBody')) {
+                    this.addAlgoliaSearch();
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     utilities.createHTML(
                         '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -138,24 +141,26 @@ export default class BasePortal {
                         });
                     });
                 }
+                if (this.page_name === 'lrg-page') {
+                    this.replaceLRGForm();
+                }
+                if (this.page_name === 'search-results') {
+                    this.addAlgoliaSearch();
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                }
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
-
                     this.toggleMap();
+                    this.addLRGDetails();
                     this.useLogoForVenueMapMarker();
                     L.control.scale().addTo(window.ArnMap);
                     this.highlightMapMarkersOnPropertyHover();
-
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {
                             this.showFullStayAndNightlyRates(nights, currency);
                         });
                     });
-
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text);
-                    console.log(this.site_config.exclusive_rate_text);
-                    console.log(this.site_config.custom_tag_text);
                     this.createStarIcons();
                     this.addHRToProperties();
                     this.showLoaderOnResultsUpdate();
@@ -236,7 +241,7 @@ export default class BasePortal {
         } catch (error) {
             console.log('could not get site config', error);
         }
-
+        console.log(path);
         return this.site_config;
     }
 
@@ -304,9 +309,7 @@ export default class BasePortal {
      */
     updateRoomDescription() {
         const room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') {
-            return;
-        }
+        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') return;
 
         room_description_el.forEach((element) => {
             element.innerHTML = element.innerHTML.replace(
@@ -691,6 +694,20 @@ export default class BasePortal {
         });
     }
 
+    setRootPageBackgroundImage() {
+        if (!this.site_config) return;
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `
+
+            <style>
+                .RootBody{
+                    background: ${this.site_config.banner_image_url};
+                }
+            </style>`
+        );
+    }
+
     // probably a much better way to do this
     applyConfigColors() {
         if (!this.site_config) return;
@@ -699,12 +716,21 @@ export default class BasePortal {
             'beforeEnd',
             `
         <style>
+        /* Header */
+
+        header {
+            justify-content: ${this.site_config.header.logo_flex_position};
+            background: ${this.site_config.header.background};
+        }
+
+        .logo img{
+            max-width: ${this.site_config.header.logo_max_width};
+        }
+
         /* Primary Background Color */
             #searching h2:after,
+            span.exclusive-rate,
             #theConfirmationButton,
-            #theOtherSubmitButton:active,
-            #theOtherSubmitButton:focus,
-            #theOtherSubmitButton:hover,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
             .ArnTripAdvisorDetails.HasReviews .ratingCount,
@@ -754,9 +780,7 @@ export default class BasePortal {
 
             #searching,
             #theConfirmationButton,
-            #theOtherSubmitButton:active,
-            #theOtherSubmitButton:focus,
-            #theOtherSubmitButton:hover,
+            span.exclusive-rate,
             .HoldRoomsForm .submit,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -804,16 +828,78 @@ export default class BasePortal {
             .reviewCount a,
             #theAdditionalEmailsLink a,
             #theOtherSubmitButton,
-            .RootBody #theOtherSubmitButton:active,
-            .RootBody #theOtherSubmitButton:focus,
-            .RootBody #theOtherSubmitButton:hover,
-            .SearchHotels #theSubmitButton:active,
-            .SearchHotels #theSubmitButton:focus,
-            .SearchHotels #theSubmitButton:hover,
             .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
             .open-modal {
-                color:${this.site_config.secondary_text_color}
+                color:${this.site_config.secondary_text_color};
+            }
+            
+            input#theSubmitButton,
+            input#theSubmitButton,
+            input#theSubmitButton,
+            #theOtherSubmitButton,
+            #theOtherSubmitButton,
+            #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .RootBody #theOtherSubmitButton,
+            .bookRoom,
+            .bookRoom,
+            .bookRoom,
+            .arn-leaflet-reset-button,
+            .arn-leaflet-reset-button,
+            .arn-leaflet-reset-button,
+            .arnMapMarker,
+            .arnMapMarker,
+            .arnMapMarker,
+            input#theConfirmationButton,
+            input#theConfirmationButton,
+            input#theConfirmationButton,
+            a.ArnShowRatesLink {
+                background: ${this.site_config.primary_color};
+                color: ${this.site_config.primary_text_color};
+                border: 1px solid ${this.site_config.primary_color};
+            }
+
+            .CheckRates input.submit,
+            .CheckRates input.submit,
+            .CheckRates input.submit {
+                background: ${this.site_config.primary_color};
+                color: ${this.site_config.primary_text_color};
+            }
+
+            input#theSubmitButton:hover,
+            input#theSubmitButton:focus,
+            input#theSubmitButton:active,
+            #theOtherSubmitButton:hover,
+            #theOtherSubmitButton:focus,
+            #theOtherSubmitButton:active,
+            .RootBody #theOtherSubmitButton:hover,
+            .RootBody #theOtherSubmitButton:focus,
+            .RootBody #theOtherSubmitButton:active,
+            .bookRoom:hover,
+            .bookRoom:focus,
+            .bookRoom:active,
+            .arn-leaflet-reset-button:hover,
+            .arn-leaflet-reset-button:focus,
+            .arn-leaflet-reset-button:active,
+            .arnMapMarker:hover,
+            .arnMapMarker:focus,
+            .arnMapMarker:active,
+            input#theConfirmationButton:hover,
+            input#theConfirmationButton:focus,
+            input#theConfirmationButton:active,
+            a.ArnShowRatesLink:hover {
+                background: ${this.site_config.button_hover_background_color};
+                color: ${this.site_config.button_hover_text_color};
+                border: 1px solid ${this.site_config.primary_color};
+            }
+
+            .CheckRates input.submit:hover,
+            .CheckRates input.submit:focus,
+            .CheckRates input.submit:active {
+                background: ${this.site_config.button_hover_background_color};
+                color: ${this.site_config.button_hover_text_color};
             }
 
             @media screen and (max-width:800px) {
@@ -842,13 +928,7 @@ export default class BasePortal {
                 border:1px solid ${this.site_config.primary_color}
             }
 
-            .holdRoom,
-            .ArnShowRatesLink:active,
-            .ArnShowRatesLink:focus,
-            .ArnShowRatesLink:hover,
-            .bookRoom:active,
-            .bookRoom:focus,
-            .bookRoom:hover {
+            .holdRoom {
                 border: 1px solid ${this.site_config.primary_color}
             }
 
@@ -993,7 +1073,7 @@ export default class BasePortal {
 
         if (!date_prompt) return;
 
-        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.logo_file_location}" alt="Logo">`);
+        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.header.logo_file_location}" alt="Logo">`);
     }
 
     highlightMapMarkersOnPropertyHover() {
@@ -1006,7 +1086,7 @@ export default class BasePortal {
 
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
-                prop_id_el = property.parentElement.querySelector('.propId');
+                prop_id_el = property.parentElement.querySelector('.prop_id');
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
@@ -1362,37 +1442,159 @@ export default class BasePortal {
      @param string takes the text for the custom tag text
      */
 
-    isPropByGateway(exclusiveRateText, customTagText) {
-        console.log(exclusiveRateText);
-        console.log(customTagText);
-        if (!this.page_name === 'search-results' || !this.page_name === 'property-detail') return;
-        const prop_thumb = document.querySelector('div.ArnPropThumb');
-        const props = document.querySelector('div#currentPropertyPage');
-        props.forEach((el) => {
-            if (el.querySelector('.ArnPropertyTierTwo')) {
-                addExclusiveRatesSash(exclusiveRateText);
-            }
-            if (el.querySelector('.ArnPropertyTierOne')) {
-                addExclusiveRatesSash(exclusiveRateText);
-                addCustomTag(customTagText);
-            }
-        });
+    isPropByGateway(exclusiveRateText, customTagText, eventName) {
+        if (this.page_name === 'search-results') {
+            const props = document.querySelectorAll('div.ArnProperty');
+            props.forEach((el) => {
+                if (el.classList.contains('ArnPropertyTierTwo')) {
+                    addCustomTag(customTagText, el);
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+                if (el.classList.contains('ArnPropertyTierOne')) {
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+            });
+        }
+
+        if (this.page_name === 'property-detail') {
+            const rates = document.querySelectorAll('div.rateRow');
+            rates.forEach((el) => {
+                if (el.querySelector('table.SB16') || el.querySelector('table.SB20')) {
+                    updateRoomDescription(el, eventName, exclusiveRateText);
+                }
+            });
+        }
+
+        /**
+        *@description adds a sash to a property
+        @param string DOM selector 
+        @param string Event name from site_config 
+        @param string Exclusive rate text
+        */
+        function updateRoomDescription(selector, name, text) {
+            if (!document.querySelector('.SinglePropDetail')) return;
+            const original = selector.querySelector('.RoomDescription');
+            original.insertAdjacentHTML('afterbegin', `<span id="exclusive-event-rate">${name} ${text}</span>`);
+        }
 
         /**
         *@description adds a sash to a property
         @param string takes the text for the exclusive rate sash
+        @param string is the parent element for the current iteration 
         */
-        function addExclusiveRatesSash(text) {
-            if (!document.querySelector('div.ArnPropertyTierTwo') || !document.querySelector('div.ArnPropertyTierOne')) return;
-
-            prop_thumb.insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
+        function addExclusiveRatesSash(text, selector) {
+            selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
         }
+
         /**
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
+        @param string is the parent element for the current iteration 
         */
-        function addCustomTag(text) {
-            prop_thumb.insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        function addCustomTag(text, selector) {
+            selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
         }
+    }
+
+    addLRGDetails() {
+        if (this.site_config.site_type !== 'lodging' || !this.site_config.lodging.is_lrg) return;
+        const properties = document.querySelectorAll('.S16, .S20');
+        properties.forEach((property) => {
+            property.querySelector('.arnPrice').insertAdjacentHTML(
+                'afterEnd',
+                `
+<a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. Guaranteed.</a>
+
+            `
+            );
+        });
+    }
+
+    async replaceLRGForm() {
+        if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
+
+        try {
+            const html = await fetch('https://dev-static.hotelsforhope.com/components/lrg-form/lrg-form.html').then((response) => response.text());
+
+            document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    addImageSlideshow() {
+        document.querySelector('#thePropertyImages').style.display = 'none';
+
+        const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
+        let counter = 0;
+        let prop_images;
+        let carousel_images;
+
+        async function getPropImages() {
+            try {
+                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+                    method: 'GET',
+                }).then((response) => response.json());
+                return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        async function createPropImageSlideshow() {
+            prop_images = await getPropImages();
+            document.querySelector('.ArnPropName').insertAdjacentHTML(
+                'afterend',
+                `<div class="carousel-container">
+                <div class="carousel-slide">
+                </div>
+                <a id="previousBtn">&#10094;</a>
+                <a id="nextBtn">&#10095;</a>
+            </div>`
+            );
+            populateImages();
+        }
+
+        function populateImages() {
+            carousel_images = document.querySelectorAll('.carousel-slide img');
+            for (let i = counter === 0 ? counter : counter + 2; i < counter + 5; i += 1) {
+                if (i === prop_images.length) return;
+                document.querySelector('.carousel-slide').insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="image-wrapper">
+                <div class ="image-number">${i + 1}/${prop_images.length}</div>
+                <img src=${prop_images[i]}>
+              </div>`
+                );
+            }
+        }
+
+        async function createCarousel() {
+            await createPropImageSlideshow();
+
+            const carousel_slide = document.querySelector('.carousel-slide');
+            const previous_btn = document.querySelector('#previousBtn');
+            const next_btn = document.querySelector('#nextBtn');
+
+            next_btn.addEventListener('click', () => {
+                carousel_images = document.querySelectorAll('.carousel-slide img');
+                if (counter === carousel_images.length - 1) return;
+                counter += 1;
+                const size = carousel_images[counter].clientWidth;
+                carousel_slide.style.transform = `translateX(-${size * counter}px)`;
+                if (counter === carousel_images.length - 2) {
+                    populateImages();
+                }
+            });
+
+            previous_btn.addEventListener('click', () => {
+                if (counter <= 0) return;
+                counter -= 1;
+                const size = carousel_images[counter].clientWidth;
+                carousel_slide.style.transform = `translateX(-${size * counter}px)`;
+            });
+        }
+
+        createCarousel();
     }
 }

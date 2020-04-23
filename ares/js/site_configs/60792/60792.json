@@ -37,7 +37,7 @@
         "logo_flex_position": "center",
         "logo_max_width": "300px"
     },
-    "banner_image_url": "url(https://dev-static.hotelsforhope.com/ares/js/site_configs/60792/img/logo.jpg)",
+    "banner_image_url": "url(https://dev-static.hotelsforhope.com/ares/js/site_configs/60792/img/banner.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
     "primary_color": "#5dc3ac",

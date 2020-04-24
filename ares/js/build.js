@@ -19,7 +19,7 @@ export default class BasePortal {
     init() {
         utilities.ieForEachPolyfill();
         this.getSiteID().then((site_id) => {
-            this.getSiteConfigJSON(site_id).then(() => {
+            this.getSiteConfigJSON(site_id).then(async () => {
                 this.getPageName();
                 this.applyConfigColors();
                 this.setRootPageBackgroundImage();
@@ -27,13 +27,12 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
-
                 // all pages
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
                 if (this.site_config.site_type !== 'cug') {
-                    utilities.createHTML(
+                    await utilities.createHTML(
                         `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                         '.config-container',
                         'afterEnd'
@@ -149,12 +148,16 @@ export default class BasePortal {
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                 }
 
+                jQuery('#theBody').on('arnMapLoadedEvent', () => {
+                    L.control.scale().addTo(window.ArnMap);
+                });
+
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
+                    console.log('test');
                     this.toggleMap();
                     this.addLRGDetails();
                     this.useLogoForVenueMapMarker();
-                    L.control.scale().addTo(window.ArnMap);
                     this.highlightMapMarkersOnPropertyHover();
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {
@@ -184,6 +187,8 @@ export default class BasePortal {
                     utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+
+                    this.repositionMapControls();
 
                     utilities
                         .moveOrphanedElementsIntoNewWrapper(
@@ -967,7 +972,10 @@ export default class BasePortal {
         const active_language_el = document.querySelector('meta[name="theme"]');
 
         if (!this.site_config || !config_container || !active_language_el || !language_container_el) return;
-        if (!this.site_config.show_language_select) return;
+        if (!this.site_config.show_language_select) {
+            language_container_el.style.display = 'none';
+            return;
+        }
 
         active_language = active_language_el.getAttribute('content');
         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
@@ -1604,5 +1612,16 @@ export default class BasePortal {
         }
 
         createCarousel();
+    }
+
+    repositionMapControls() {
+        const site_config_el = document.querySelector('.config-container');
+        const header_el = document.querySelector('header');
+        const map_controls = document.querySelector('.leaflet-top');
+
+        if (!site_config_el || !header_el || !map_controls) return;
+
+        const height = site_config_el.scrollHeight + header_el.scrollHeight;
+        map_controls.style.top = `${height}px`;
     }
 }

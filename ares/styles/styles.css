@@ -538,10 +538,6 @@ select#adults {
     z-index: 8;
 }
 
-.leaflet-top {
-    top: 140px;
-}
-
 .arnMapMarker,
 .arnMapMarker:hover {
     border: 1px solid #444f74;

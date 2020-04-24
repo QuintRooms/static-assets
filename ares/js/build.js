@@ -859,7 +859,7 @@ export default class BasePortal {
             a.ArnShowRatesLink {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
-                border: 1px solid ${this.site_config.primary_color};
+                border: 1px solid ${this.site_config.border_color};
             }
 
             .CheckRates input.submit,
@@ -911,7 +911,7 @@ export default class BasePortal {
 
             header,
             #AdminControlsContainer {
-                border-bottom:3px solid ${this.site_config.primary_color}
+                border-bottom:3px solid ${this.site_config.border_color}
             }
 
             .arnMapMarker:hover .arnMapMarkerTriangle,
@@ -926,11 +926,11 @@ export default class BasePortal {
             .bookRoom,
             .sort,
             .HoldRoomsForm .submit {
-                border:1px solid ${this.site_config.primary_color}
+                border:1px solid ${this.site_config.border_color}
             }
 
             .holdRoom {
-                border: 1px solid ${this.site_config.primary_color}
+                border: 1px solid ${this.site_config.border_color}
             }
 
             @media screen and (max-width:1105px) {

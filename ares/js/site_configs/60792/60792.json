@@ -44,6 +44,7 @@
     "secondary_color": "#333",
     "primary_text_color": "#fff",
     "secondary_text_color": "#5dc3ac",
+    "border_color": "#5dc3ac",
     "button_hover_background_color": "#fff",
     "button_hover_text_color": "#5dc3ac",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",

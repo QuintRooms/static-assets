@@ -208,6 +208,7 @@ export default class BasePortal {
                             utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
                         });
                 });
+                this.applyCustomStyles();
             });
         });
     }
@@ -952,6 +953,12 @@ export default class BasePortal {
         </style>
         `
         );
+    }
+
+    async applyCustomStyles() {
+        if (!this.site_config.has_custom_styles) return;
+        const css = await fetch(`${this.site_config.custom_styles_url}`).then((response) => response.text());
+        document.body.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
     }
 
     setFontFromConfig() {

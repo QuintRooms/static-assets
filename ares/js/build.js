@@ -154,7 +154,6 @@ export default class BasePortal {
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
-                    console.log('test');
                     this.toggleMap();
                     this.addLRGDetails();
                     this.useLogoForVenueMapMarker();
@@ -1618,10 +1617,11 @@ export default class BasePortal {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
+        const logo = document.querySelector('.logo img');
 
-        if (!site_config_el || !header_el || !map_controls) return;
-
-        const height = site_config_el.scrollHeight + header_el.scrollHeight;
-        map_controls.style.top = `${height}px`;
+        logo.onload = () => {
+            const height = site_config_el.scrollHeight + header_el.scrollHeight;
+            map_controls.style.top = `${height}px`;
+        };
     }
 }

@@ -26,7 +26,7 @@
     "custom_tag_text": "Host Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
-    "show_language_select": true,
+    "show_language_select": false,
     "show_date_prompt": false,
     "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/js/site_configs/60792/img/favicon.png",
     "header":
@@ -44,6 +44,7 @@
     "secondary_color": "#333",
     "primary_text_color": "#fff",
     "secondary_text_color": "#5dc3ac",
+    "border_color": "#5dc3ac",
     "button_hover_background_color": "#fff",
     "button_hover_text_color": "#5dc3ac",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",

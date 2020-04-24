@@ -1519,7 +1519,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                             </div>
                             <div class="ArnSecondarySearchOuterContainer">
                                 <div class="" id="sort-wrapper">
-                                    <h4>Sort</h4><a class="ArnSortByDealPercent Desc" style="display:none;" href="property-page.php">
+                                    <a class="ArnSortByDealPercent Desc" style="display:none;" href="property-page.php">
                                         <div>Deal Percent</div>
                                     </a><a class="ArnSortByDealAmount Desc" style="display:none;" href="property-page.php">
                                         <div>Deal Amount</div>
@@ -1832,9 +1832,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnPropPopularity"><label>Popularity Rating:</label>10.0</div>
                                         <div class="ArnPropType">Hotel</div>
                                         <div class="ArnRateCell" id="yui_3_18_1_1_1586277558089_144">
-                                            <div class="ArnPriceCell"><span id="propertyRate20498" class="mainRate" avgnightly="$309.62">
-                                                    <div class="originalPrice" percent="18" amount="$63.60">$373.22</div>
-                                                    <div class="otherPrice" style="display:none">$298</div><span class="arnPrice"><span class="arnCurrency">$</span><span class="arnUnit">294.64</span><div>per night</div><div class="full-stay">$883.92 for 3 nights </div></span>
+                                            <div class="ArnPriceCell"><span id="propertyRate20582" class="mainRate" avgnightly="$247.37">
+                                                    <div class="originalPrice" percent="15" amount="$43.07">$390.44</div>
+                                                    <div class="otherPrice" style="display:none">$339</div><span class="arnPrice"><span class="arnCurrency">$</span><span class="arnUnit">347.37</span></span>
                                                 </span></div>
                                             <div class="ArnRateButton" id="yui_3_18_1_1_1586277558089_143"><a id="theShowRate20498" style="cursor:hand;cursor:pointer;" class="ArnShowRatesLink" href="property-page.php" target="_blank">Book Rooms</a></div>
                                         </div>
@@ -1846,7 +1846,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale 202272010 200158197 201300342 201321203 201731731 202272009 202272011 201300327 S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 201366475 215725398" id="theArnProperty20582" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.747178" latitude="30.260547" total="1747.94 USD" sortvalue="0">
                                     <div class="propId">20582</div>
                                     <div id="theSupportMessage20582" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -1892,7 +1891,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale 200262470 202114774 S61 200265275 202114773 200262462 202114775 108995 336534 ArnEnoughNightlyRooms ArnEnoughAvailableRooms" id="theArnProperty209332" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.7355" latitude="30.26508" total="1443.58 USD" sortvalue="0">
                                     <div class="propId">209332</div>
                                     <div id="theSupportMessage209332" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -1936,7 +1934,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation PropLimitedAvail" id="theArnProperty23922" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.74158" latitude="30.2679">
                                     <div class="propId">23922</div>
                                     <div id="theSupportMessage23922" class="ArnAvailability" style=""><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -1980,7 +1977,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale S61 217829591 217829682 217829593 217829590 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 217829592 217829594" id="theArnProperty24132" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.734456" latitude="30.270876" total="1601.76 USD" sortvalue="0">
                                     <div class="propId">24132</div>
                                     <div id="theSupportMessage24132" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2024,7 +2020,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale 201311276 201182655 ArnEnoughNightlyRooms ArnEnoughAvailableRooms S61 201311268 201311275 201182654 201311270 201311277 201311279 200112966 202115708" id="theArnProperty258950" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.742265" latitude="30.2623" total="4333.84 USD" sortvalue="0">
                                     <div class="propId">258950</div>
                                     <div id="theSupportMessage258950" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2072,7 +2067,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale 218431712 218431707 218431714 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 218431709 218431711 218431706 218431708 218431710 S61" id="theArnProperty377895" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.74666" latitude="30.26508" total="4847.38 USD" sortvalue="0">
                                     <div class="propId">377895</div>
                                     <div id="theSupportMessage377895" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2118,7 +2112,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 201271173 201501087 201271179 201271150 201501086" id="theArnProperty659065" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.736292" latitude="30.268897" total="1522.48 USD" sortvalue="0">
                                     <div class="propId">659065</div>
                                     <div id="theSupportMessage659065" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2161,7 +2154,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale ArnEnoughNightlyRooms ArnEnoughAvailableRooms 503496 503506 503501 503499 S61 503504" id="theArnProperty350181" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.690483" latitude="30.216654" total="581.80 USD" sortvalue="0">
                                     <div class="propId">350181</div>
                                     <div id="theSupportMessage350181" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2203,7 +2195,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                                 <div class="ArnProperty ArnMemberProperty Member100 WBSimplePropertyView ArnPropertyInCurrentLocation OnSale ArnEnoughNightlyRooms ArnEnoughAvailableRooms 201365343 201365338 200264063 S61 201365335 200264048" id="theArnProperty442664" itemscope="" itemtype="http://schema.org/Hotel" longitude="-97.741793" latitude="30.264659" total="1816.36 USD" sortvalue="0">
                                     <div class="propId">442664</div>
                                     <div id="theSupportMessage442664" class="ArnAvailability" style="display:none;"><span style="display:none;">customize with supportMessage.html in theme directory</span> Try properties nearby instead.</div>
@@ -2246,7 +2237,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="prop-hr">
                             </div>
                             <div id="pagerBottomAjax">
                                 <div class="bottomPager ArnPagerContainer">

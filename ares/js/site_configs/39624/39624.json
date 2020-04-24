@@ -2,7 +2,13 @@
     "site_id": 39624,
     "affiliate_id": 16827,
     "master_id": 2143,
-    "site_type": "cug",
+    "site_type": "CUG",
+    "algolia_app_id": "plETUR94AASH",
+    "algolia_api_key": "7bf688b47ae81044d05d094f0487df08",
+    "currency": "USD",
+    "distance_unit": "useMiles",
+    "map_size": "12",
+    "radius": "50",
     "lodging":
     {
         "event_id": false,
@@ -16,6 +22,8 @@
         "show_points": false,
         "allow_registration": true
     },
+    "exclusive_rate_text": "",
+    "custom_tag_text": "",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,

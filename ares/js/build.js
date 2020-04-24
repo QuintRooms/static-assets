@@ -830,7 +830,8 @@ export default class BasePortal {
             #theOtherSubmitButton,
             .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
-            .open-modal {
+            .open-modal,
+            .lowest-rate-link {
                 color:${this.site_config.secondary_text_color};
             }
             
@@ -960,17 +961,17 @@ export default class BasePortal {
     showLanguageFromCongif() {
         let language_label = '';
         let active_language = '';
-        const header = document.querySelector('#AdminControlsContainer');
+
         const language_container_el = document.querySelector('#language');
         const config_container = document.querySelector('.config-container');
         const active_language_el = document.querySelector('meta[name="theme"]');
 
-        if (!header || !this.site_config || !config_container || !active_language_el || !language_container_el) return;
+        if (!this.site_config || !config_container || !active_language_el || !language_container_el) return;
         if (!this.site_config.show_language_select) return;
 
         active_language = active_language_el.getAttribute('content');
         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
-        header.insertAdjacentElement('beforeBegin', config_container);
+        document.body.insertAdjacentElement('afterBegin', config_container);
         config_container.insertAdjacentElement('afterBegin', language_container_el);
         language_label = language_container_el.querySelector('#language-label');
         language_label.querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML;
@@ -1453,11 +1454,11 @@ export default class BasePortal {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
             props.forEach((el) => {
-                if (el.classList.contains('ArnPropertyTierTwo')) {
+                if (el.classList.contains('ArnPropertyTierTwo') && this.site_config.exclusive_rate_text !== '' && this.site_config.custom_tag_text !== '') {
                     addCustomTag(customTagText, el);
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
-                if (el.classList.contains('ArnPropertyTierOne')) {
+                if (el.classList.contains('ArnPropertyTierOne') && this.site_config.exclusive_rate_text !== '') {
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
             });
@@ -1466,7 +1467,7 @@ export default class BasePortal {
         if (this.page_name === 'property-detail') {
             const rates = document.querySelectorAll('div.rateRow');
             rates.forEach((el) => {
-                if (el.querySelector('table.SB16') || el.querySelector('table.SB20')) {
+                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
                     updateRoomDescription(el, eventName, exclusiveRateText);
                 }
             });
@@ -1510,7 +1511,7 @@ export default class BasePortal {
             property.querySelector('.arnPrice').insertAdjacentHTML(
                 'afterEnd',
                 `
-<a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. Guaranteed.</a>
+<a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>
 
             `
             );

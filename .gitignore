@@ -3,3 +3,8 @@
 .history
 node_modules
 .DS_Store
+.vs/slnx.sqlite
+
+.vs/static-assets/v15/.suo
+
+.vs/VSWorkspaceState.json

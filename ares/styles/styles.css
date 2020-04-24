@@ -21,7 +21,7 @@ input[type="password"],
 input[type="email"],
 select,
 textarea {
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-weight: 500 !important;
     padding: 6px !important;
     height: unset !important;
@@ -67,8 +67,7 @@ textarea {
 #theHotelAddress,
 .ArnGoCitySearch,
 .ArnGoLandmarkSearch,
-.ArnGoAirportSearch,
-.MemberNotAuthenticated .config-container {
+.ArnGoAirportSearch {
     display: none;
 }
 
@@ -908,7 +907,7 @@ select#adults {
 .SimpleSearch select {
     border: none;
     padding: 8px 6px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 div.autocomplete {
@@ -1306,7 +1305,7 @@ legend {
     font-size: 13px;
 }
 
-.full-stay-rate {
+.full-stay {
     font-size: 13px;
 }
 
@@ -1683,7 +1682,7 @@ legend {
 }
 
 #Properties {
-    margin: 0 18px;
+    margin: 0 18px 0 24px;
 }
 
 #currentPropertyPage {
@@ -1732,14 +1731,10 @@ legend {
 }
 
 .prop-hr {
-    margin: 42px 18px;
+    margin: 42px 0;
     height: 1px;
     border: none;
     background: #ccc;
-}
-
-.ArnProperty {
-    margin-left: 18px;
 }
 
 .SearchHotels .ArnPropThumb {
@@ -3043,6 +3038,10 @@ input#address-input {
     border-radius: 5px;
 }
 
+.ap-input {
+    height: initial;
+}
+
 .ap-dropdown-menu {
     border-radius: 5px;
 }
@@ -3053,6 +3052,10 @@ input#address-input {
 
 .ap-address {
     color: #aaaaaa;
+}
+
+.ap-input-icon {
+    right: 6px;
 }
 
 /* autocomplete styles end */
@@ -3165,9 +3168,15 @@ input#address-input {
 
 /* LRG Start */
 
-.lowest-rate-link{
+.lowest-rate-link {
     order: 2;
     font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.lowest-rate-link span {
+    font-weight: bold;
 }
 
 .WBRateGuaranteeForm p,

@@ -314,7 +314,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                 <p></p>
                                 <div class="ArnQuadSearchContainer ArnPrimarySearchContainer">
                                     <div id="theSearchBox" class="ArnSearch">
-                                        <div id="CitySearchContainer" class="ArnIndividualSearchContainer ArnCitySearchContainer"><span>Where:</span><br><input id="city" onchange="$('hotelName').setValue('')" onblur="new Ajax.Request('https://events.hotelsforhope.com/v6/search/city',{'parameters':['_s=DVDzt5wty523T0tH','_k=_CQKHXrw','siteId='+39624,'theme=standard','18',$('city').serialize()].join('&amp;')})" value="austin, tx" name="19" type="text" class="text" autocomplete="off">
+                                        <div id="CitySearchContainer" class="ArnIndividualSearchContainer ArnCitySearchContainer"><input id="city" onchange="$('hotelName').setValue('')" onblur="new Ajax.Request('https://events.hotelsforhope.com/v6/search/city',{'parameters':['_s=DVDzt5wty523T0tH','_k=_CQKHXrw','siteId='+39624,'theme=standard','18',$('city').serialize()].join('&amp;')})" value="austin, tx" name="19" type="text" class="text" autocomplete="off">
                                             <div class="WBGeoLocation"><input id="geoLongitudeId" name="20" type="hidden" class="hidden"><input id="geoLatitudeId" name="21" type="hidden" class="hidden">
                                                 <script type="text/javascript">
                                                 /*<![CDATA[*/
@@ -1834,7 +1834,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnRateCell" id="yui_3_18_1_1_1586277558089_144">
                                             <div class="ArnPriceCell"><span id="propertyRate20498" class="mainRate" avgnightly="$309.62">
                                                     <div class="originalPrice" percent="18" amount="$63.60">$373.22</div>
-                                                    <div class="otherPrice" style="display:none">$298</div><span class="arnPrice"><span class="arnCurrency">$</span><span class="arnUnit">309.62</span></span>
+                                                    <div class="otherPrice" style="display:none">$298</div><span class="arnPrice"><span class="arnCurrency">$</span><span class="arnUnit">294.64</span><div>per night</div><div class="full-stay">$883.92 for 3 nights </div></span>
                                                 </span></div>
                                             <div class="ArnRateButton" id="yui_3_18_1_1_1586277558089_143"><a id="theShowRate20498" style="cursor:hand;cursor:pointer;" class="ArnShowRatesLink" href="property-page.php" target="_blank">Book Rooms</a></div>
                                         </div>

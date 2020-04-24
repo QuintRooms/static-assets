@@ -1,8 +1,8 @@
 {
-    "site_id": 39624,
-    "affiliate_id": 16827,
-    "master_id": 2143,
-    "site_type": "CUG",
+    "site_id": 60304,
+    "affiliate_id": 16067,
+    "master_id": 1816,
+    "site_type": "noLRG",
     "algolia_app_id": "plETUR94AASH",
     "algolia_api_key": "7bf688b47ae81044d05d094f0487df08",
     "currency": "USD",
@@ -11,18 +11,18 @@
     "radius": "50",
     "lodging":
     {
-        "event_id": false,
-        "event_name": "Hotels for Hope",
+        "event_id": 41304,
+        "event_name": "Shaky Knees Music Festival",
         "event_dates": "",
-        "is_lrg": false
+        "is_lrg": true
     },
     "cug":
     {
-        "is_cug": true,
+        "is_cug": false,
         "show_points": false,
         "allow_registration": true
     },
-    "exclusive_rate_text": "",
+    "exclusive_rate_text": "Exclusive Festival Rate",
     "custom_tag_text": "",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
@@ -31,21 +31,21 @@
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
     "header":
     {
-        "logo_file_location": "https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png",
-        "logo_outbound_url": "https://hotelsforhope.com",
-        "background": "",
-        "logo_flex_position": "flex-start",
-        "logo_max_width": "300px"
+        "logo_file_location": "../../js/site_configs/49553/img/logo.png",
+        "logo_outbound_url": "https://www.shakykneesfestival.com/",
+        "background": "#de4344",
+        "logo_flex_position": "center",
+        "logo_max_width": "600px"
     },
-    "banner_image_url": "url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)",
+    "banner_image_url": "center/cover no-repeat url(../../js/site_configs/49553/img/banner.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
-    "primary_color": "#9c6aad",
-    "secondary_color": "",
+    "primary_color": "#bf2a2b",
+    "secondary_color": "#5c5c5c",
     "primary_text_color": "#fff",
-    "secondary_text_color": "#9c6aad",
-    "button_hover_background_color": "transparent",
-    "button_hover_text_color": "#333",
+    "secondary_text_color": "",
+    "button_hover_background_color": "#fff",
+    "button_hover_text_color": "#bf2a2b",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":

@@ -152,6 +152,7 @@ export default class BasePortal {
                 jQuery('#theBody').on('arnMapLoadedEvent', () => {
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
+                    this.highlightMapMarkersOnPropertyHover();
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
@@ -159,7 +160,6 @@ export default class BasePortal {
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();
-                    this.highlightMapMarkersOnPropertyHover();
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {
                             this.showFullStayAndNightlyRates(nights, currency);
@@ -1103,9 +1103,11 @@ export default class BasePortal {
 
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
-                prop_id_el = property.parentElement.querySelector('.prop_id');
+                prop_id_el = property.parentElement.querySelector('.propId');
+                console.log(prop_id_el);
+                console.log('mouseenter before return if no prop_id_el');
                 if (!prop_id_el) return;
-
+                console.log('mouseenter after return if no prop_id_el');
                 prop_id = prop_id_el.textContent;
                 ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
             });

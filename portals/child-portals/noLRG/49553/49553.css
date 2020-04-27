@@ -100,7 +100,7 @@ header p {
 .logo img {
     margin: 0;
     width: 100%;
-    min-width: 600px;
+    max-width: 600px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -627,16 +627,6 @@ input[type=file] {
 .SinglePropDetail .ArnPropDescription {
     display: none !important;
 }
-
-.SearchHotels .ArnSortByName,
-.SearchHotels .ArnSortByClass,
-.SearchHotels .ArnSortByType,
-.SearchHotels .ArnSortByPrice,
-.SearchHotels .ArnSortByAvailability,
-.SearchHotels .ArnSortByDealPercent,
-.SearchHotels .ArnSortByDealAmount,
-.SearchHotels .ArnSortByVacationRental,
-.SearchHotels .ArnSortByDistance {}
 
 .ArnSortByVacationRental {
     display: none !important;

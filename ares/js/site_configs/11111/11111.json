@@ -23,6 +23,8 @@
     "show_language_select": true,
     "show_date_prompt": false,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
+    "has_custom_styles": false,
+    "custom_styles_url": "",
     "header":
     {
         "logo_file_location": "https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png",

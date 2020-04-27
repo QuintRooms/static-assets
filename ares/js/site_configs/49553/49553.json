@@ -29,6 +29,8 @@
     "show_language_select": true,
     "show_date_prompt": false,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
+    "has_custom_styles": true,
+    "custom_styles_url": "../../js/site_configs/49553/49553.css",
     "header":
     {
         "logo_file_location": "../../js/site_configs/49553/img/logo.png",

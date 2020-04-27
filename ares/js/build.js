@@ -153,6 +153,7 @@ export default class BasePortal {
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
+                    this.repositionMapControls();
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
@@ -188,8 +189,6 @@ export default class BasePortal {
                     utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-
-                    this.repositionMapControls();
 
                     utilities
                         .moveOrphanedElementsIntoNewWrapper(
@@ -1104,10 +1103,9 @@ export default class BasePortal {
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
                 prop_id_el = property.parentElement.querySelector('.propId');
-                console.log(prop_id_el);
-                console.log('mouseenter before return if no prop_id_el');
+
                 if (!prop_id_el) return;
-                console.log('mouseenter after return if no prop_id_el');
+
                 prop_id = prop_id_el.textContent;
                 ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
             });
@@ -1628,11 +1626,8 @@ export default class BasePortal {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
-        const logo = document.querySelector('.logo img');
 
-        logo.onload = () => {
-            const height = site_config_el.scrollHeight + header_el.scrollHeight;
-            map_controls.style.top = `${height}px`;
-        };
+        const height = site_config_el.scrollHeight + header_el.scrollHeight;
+        map_controls.style.top = `${height}px`;
     }
 }

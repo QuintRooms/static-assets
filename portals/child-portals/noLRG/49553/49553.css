@@ -628,16 +628,6 @@ input[type=file] {
     display: none !important;
 }
 
-.SearchHotels .ArnSortByName,
-.SearchHotels .ArnSortByClass,
-.SearchHotels .ArnSortByType,
-.SearchHotels .ArnSortByPrice,
-.SearchHotels .ArnSortByAvailability,
-.SearchHotels .ArnSortByDealPercent,
-.SearchHotels .ArnSortByDealAmount,
-.SearchHotels .ArnSortByVacationRental,
-.SearchHotels .ArnSortByDistance {}
-
 .ArnSortByVacationRental {
     display: none !important;
 }

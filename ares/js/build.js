@@ -140,23 +140,25 @@ export default class BasePortal {
                         });
                     });
                 }
+
                 if (this.page_name === 'lrg-page') {
                     this.replaceLRGForm();
                 }
+
                 if (this.page_name === 'search-results') {
                     this.addAlgoliaSearch();
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                 }
 
                 jQuery('#theBody').on('arnMapLoadedEvent', () => {
                     L.control.scale().addTo(window.ArnMap);
+                    this.useLogoForVenueMapMarker();
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
+                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();
-                    this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {

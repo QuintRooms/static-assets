@@ -1,4 +1,7 @@
 import BasePortal from '../../build';
+import Utilities from '../../utilities';
+
+const utilities = new Utilities();
 
 class ChildPortal extends BasePortal {
     constructor() {
@@ -10,7 +13,8 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 // This is temporary - only to show Michelle LRG messaging
-function addLRGDetails() {
+async function addLRGDetails() {
+    await utilities.waitForSelectorInDOM('.pollingFinished');
     const properties = document.querySelectorAll('.ArnPropertyTierOne');
     properties.forEach((property) => {
         property.querySelector('.arnPrice').insertAdjacentHTML(

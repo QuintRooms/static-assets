@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import '@babel/polyfill';
+import 'url-polyfill';
 import Utilities from './utilities';
 
 const dayjs = require('dayjs');
@@ -1093,7 +1094,7 @@ export default class BasePortal {
 
                 // return if ie - ie can't toggle svgs
                 if (window.document.documentMode) return;
-
+                console.log('test');
                 currency_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });

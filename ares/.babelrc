@@ -3,9 +3,19 @@
         [
             "@babel/preset-env",
             {
-                "useBuiltIns": "entry"
-            },
-            "@babel/polyfill"
+                "modules": false,
+                "targets":
+                {
+                    "ie": 11
+                },
+                "exclude": [],
+                "useBuiltIns": "entry",
+                "corejs":
+                {
+                    "version": 2,
+                    "proposals": true
+                }
+            }
         ]
     ],
     "plugins": []

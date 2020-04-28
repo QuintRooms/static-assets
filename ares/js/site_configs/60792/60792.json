@@ -31,6 +31,7 @@
     "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/js/site_configs/60792/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
+    "has_social_sharing": true,
     "header":
     {
         "logo_file_location": "https://static.hotelsforhope.com/ares/js/site_configs/60792/img/logo.png", 

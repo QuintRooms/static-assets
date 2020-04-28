@@ -210,6 +210,7 @@ export default class BasePortal {
                         });
                 });
                 this.applyCustomStyles();
+                this.addSocialMediaShareButtons();
             });
         });
     }
@@ -1628,5 +1629,19 @@ export default class BasePortal {
 
         const height = site_config_el.scrollHeight + header_el.scrollHeight;
         map_controls.style.top = `${height}px`;
+    }
+
+    addSocialMediaShareButtons() {
+        if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
+
+        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
+
+        // facebook
+        confirmation_container.insertAdjacentHTML(
+            'afterbegin',
+            `<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2F%3Fsiteid%3D${this.site_id}%26theme%3Dstandard&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>`
+        );
+        // twitter
+        confirmation_container.insertAdjacentHTML('afterbegin', ``);
     }
 }

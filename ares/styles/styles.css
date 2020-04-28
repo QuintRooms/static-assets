@@ -1702,6 +1702,7 @@ legend {
     overflow: hidden;
     border-radius: 5px 0 0 5px;
     height: 175px;
+    max-width: 250px;
 }
 
 .SearchHotels .ArnPropThumb img {

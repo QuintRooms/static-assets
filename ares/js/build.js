@@ -958,8 +958,7 @@ export default class BasePortal {
 
     async applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
-        const css = await fetch(`${this.site_config.custom_styles_url}`).then((response) => response.text());
-        document.body.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
+        document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
     }
 
     setFontFromConfig() {

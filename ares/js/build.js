@@ -210,7 +210,7 @@ export default class BasePortal {
                         });
                 });
                 this.applyCustomStyles();
-                this.addSocialMediaShareButtons(this.site_config.lodging.event_name);
+                this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
             });
         });
     }
@@ -1631,21 +1631,23 @@ export default class BasePortal {
         map_controls.style.top = `${height}px`;
     }
 
-    addSocialMediaShareButtons(event_name) {
-        if (this.site_config.site_type === 'cug' || this.page_name !== 'search-results' || !this.site_config.has_social_sharing) return;
+    addSocialMediaShareButtons(event_name, event_id) {
+        if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
 
-        const confirmation_container = document.querySelector('.ArnRightListContainer');
-        // const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
+        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
 
-        // facebook
+        const twitter_script = document.createElement('script');
+        twitter_script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+        twitter_script.setAttribute('async', true);
+        document.head.appendChild(twitter_script);
+
         confirmation_container.insertAdjacentHTML(
             'afterbegin',
-            `<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2F%3Fsiteid%3D${this.site_id}%26theme%3Dstandard&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>`
-        );
-        // twitter
-        confirmation_container.insertAdjacentHTML(
-            'afterbegin',
-            `<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/v6/?siteid=${this.site_id}&amp;theme=standard" data-via="Hotels4Hope" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
+            `<div class="social-share-buttons-container">
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2F%3Fsiteid%3D${this.site_id}%26theme%3Dstandard&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
+            </div>`
         );
     }
 }

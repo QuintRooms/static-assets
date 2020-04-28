@@ -3265,5 +3265,8 @@ input#address-input {
         display: none;
     }
 }
-
+/* social share buttons start */
+.social-share-buttons-container iframe {
+    margin: 10px;
+}
 /* LRG End */

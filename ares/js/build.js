@@ -1653,6 +1653,15 @@ export default class BasePortal {
 
         const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
 
+        document.head.insertAdjacentHTML(
+            'beforeend',
+            `<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">
+            <meta property="og:type" content="website" >
+            <meta property="og:title" content="${event_name}" >
+            <meta property="og:description" content="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" >
+            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id=${event_id}">`
+        );
+
         const twitter_script = document.createElement('script');
         twitter_script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
         twitter_script.setAttribute('async', true);
@@ -1661,7 +1670,7 @@ export default class BasePortal {
         confirmation_container.insertAdjacentHTML(
             'afterbegin',
             `<div class="social-share-buttons-container">
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2F%3Fsiteid%3D${this.site_id}%26theme%3Dstandard&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
             </div>`

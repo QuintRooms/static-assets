@@ -1634,7 +1634,8 @@ export default class BasePortal {
     addSocialMediaShareButtons(event_name) {
         if (this.site_config.site_type === 'cug' || this.page_name !== 'search-results' || !this.site_config.has_social_sharing) return;
 
-        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
+        const confirmation_container = document.querySelector('.ArnRightListContainer');
+        // const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
 
         // facebook
         confirmation_container.insertAdjacentHTML(

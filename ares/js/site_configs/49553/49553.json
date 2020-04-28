@@ -33,13 +33,13 @@
     "custom_styles_url": "../../js/site_configs/49553/49553.css",
     "header":
     {
-        "logo_file_location": "../../js/site_configs/49553/img/logo.png",
+        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/js/site_configs/49553/img/logo.png",
         "logo_outbound_url": "https://www.shakykneesfestival.com/",
         "background": "#de4344",
         "logo_flex_position": "center",
         "logo_max_width": "600px"
     },
-    "banner_image_url": "center/cover no-repeat url(../../js/site_configs/49553/img/banner.jpg)",
+    "banner_image_url": "center/cover no-repeat url(https://dev-static.hotelsforhope.com/ares/js/site_configs/49553/img/banner.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
     "primary_color": "#bf2a2b",

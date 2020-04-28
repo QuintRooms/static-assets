@@ -581,6 +581,7 @@ select#adults {
     position: relative;
     top: 4px;
     transition: all .3s ease;
+    pointer-events: none;
 }
 
 .ArnSortBy {

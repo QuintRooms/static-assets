@@ -27,6 +27,7 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
+
                 // all pages
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
@@ -993,6 +994,10 @@ export default class BasePortal {
 
         language_label.addEventListener('click', () => {
             language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
+
+            // return if ie - ie can't toggle svgs
+            if (window.document.documentMode) return;
+
             language_label.querySelector('svg').classList.toggle('flip-svg');
         });
 
@@ -1001,6 +1006,10 @@ export default class BasePortal {
                 if (e.target === document.querySelector('#language-label') || e.target.parentNode === document.querySelector('.language-container')) return;
 
                 document.querySelector('.language-container').classList.toggle('show-language-container');
+
+                // return if ie - ie can't toggle svgs
+                if (window.document.documentMode) return;
+
                 language_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });
@@ -1049,6 +1058,10 @@ export default class BasePortal {
 
         currency_label.addEventListener('click', () => {
             currencies_container.classList.toggle('show-currencies-container');
+
+            // return if ie - ie can't toggle svgs
+            if (window.document.documentMode) return;
+
             currency_label.querySelector('svg').classList.toggle('flip-svg');
         });
 
@@ -1077,6 +1090,10 @@ export default class BasePortal {
                     return;
 
                 currencies_container.classList.toggle('show-currencies-container');
+
+                // return if ie - ie can't toggle svgs
+                if (window.document.documentMode) return;
+
                 currency_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });

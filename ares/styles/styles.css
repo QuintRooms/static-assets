@@ -432,6 +432,36 @@ select#adults {
     }
 }
 
+/* IE CSS Hack */
+@media all and (-ms-high-contrast:none) {
+    .show-currencies-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .top-currencies {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100% !important;
+    }
+
+    .currencies h4 {
+        width: 100%;
+    }
+
+    .currencies div {
+        width: 25%;
+    }
+
+    .language-container div {
+        padding: 0;
+    }
+
+    .language-container img {
+        max-width: 64px;
+    }
+}
+
 /* Header End */
 
 /* Mobile Menu Start */
@@ -858,11 +888,6 @@ select#adults {
 #searching img,
 #searching input {
     display: none;
-}
-
-.ArnSearchContainerMainTable {
-    width: 100%;
-    display: block;
 }
 
 @media screen and (max-width: 600px) {
@@ -1623,10 +1648,14 @@ legend {
     padding: 6px 0;
 }
 
+.ArnSearchField div {
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+}
+
 .ArnSecondarySearchOuterContainer span {
     font-size: 13px;
-    position: relative;
-    top: -4px;
     cursor: pointer;
 }
 
@@ -1807,8 +1836,6 @@ legend {
     font-weight: 500;
     border-radius: 5px;
 }
-
-
 
 .ArnPriceCell .mainRate {
     font-size: 17px;
@@ -2664,6 +2691,10 @@ legend {
     padding: 18px;
 }
 
+.RootBody .ArnLeftSearchContainer {
+    width: 100%;
+}
+
 .RootBody #theSearchBox {
     display: flex;
 
@@ -2671,6 +2702,11 @@ legend {
 
 .RootBody #theSubmitButton {
     display: none;
+}
+
+.RootBody #theOtherSubmitButton {
+    margin-left: auto;
+    max-width: 200px;
 }
 
 .RootBody input,
@@ -2686,8 +2722,8 @@ legend {
 
 .RootBody .ArnSecondarySearchOuterContainer {
     color: #fff;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .RootBody .ArnAdvancedSearchImg {
@@ -2762,6 +2798,7 @@ body.HoldRoomsForm {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 100vh;
 }
 
 .RootBody .ArnSearchContainerMainDiv,
@@ -3030,14 +3067,25 @@ div.custom-tag {
 
 
 /* clears the 'X' from Internet Explorer */
-input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
-input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
 /* clears the 'X' from Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
 
 .algolia-places {
     width: 97%;

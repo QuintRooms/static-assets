@@ -432,7 +432,7 @@ select#adults {
     }
 }
 
-/* IE CSS Hack */
+/* Currencies IE CSS Hack */
 @media all and (-ms-high-contrast:none) {
     .show-currencies-container {
         display: flex;
@@ -3365,3 +3365,11 @@ input#address-input {
     margin: 10px;
 }
 /* LRG End */
+
+
+/* GDPR Message IE CSS Hack */
+@media all and (-ms-high-contrast:none) {
+    .iubenda-cs-default#iubenda-cs-banner .iubenda-cs-rationale{
+        height: 225px !important;
+    }
+}

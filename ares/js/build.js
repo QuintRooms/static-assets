@@ -107,6 +107,7 @@ export default class BasePortal {
                     this.formatCheckoutForm();
                     this.setupReservationSummaryContainer();
                     utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+                    utilities.emailVerificationSetup();
                 }
 
                 // root page methods
@@ -157,6 +158,7 @@ export default class BasePortal {
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
                     this.repositionMapControls();
+                    this.changeContractedPropertyPinColor();
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
@@ -751,8 +753,6 @@ export default class BasePortal {
             .WBLoginFormActions .submit,
             .WBValidatedRegistrationFormActions .submit,
             .arn-leaflet-reset-button,
-            .arnMapMarker,
-            .arnMapMarker:hover,
             .bookRoom,
             .HoldRoomsForm .submit,
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
@@ -846,25 +846,9 @@ export default class BasePortal {
             }
             
             input#theSubmitButton,
-            input#theSubmitButton,
-            input#theSubmitButton,
-            #theOtherSubmitButton,
-            #theOtherSubmitButton,
-            #theOtherSubmitButton,
-            .RootBody #theOtherSubmitButton,
-            .RootBody #theOtherSubmitButton,
             .RootBody #theOtherSubmitButton,
             .bookRoom,
-            .bookRoom,
-            .bookRoom,
             .arn-leaflet-reset-button,
-            .arn-leaflet-reset-button,
-            .arn-leaflet-reset-button,
-            .arnMapMarker,
-            .arnMapMarker,
-            .arnMapMarker,
-            input#theConfirmationButton,
-            input#theConfirmationButton,
             input#theConfirmationButton,
             a.ArnShowRatesLink {
                 background: ${this.site_config.primary_color};
@@ -924,9 +908,28 @@ export default class BasePortal {
                 border-bottom:3px solid ${this.site_config.border_color}
             }
 
+            .arnMapMarker, 
+            .highlight{
+                border: 1px solid ${this.site_config.primary_text_color};
+                background: ${this.site_config.secondary_color};
+                color: ${this.site_config.primary_text_color};
+            }
+
             .arnMapMarker:hover .arnMapMarkerTriangle,
             .arnMapMarkerTriangle {
-                border-top-color:${this.site_config.primary_color}
+                border-top-color:${this.site_config.secondary_color};
+            }
+
+            .arnMapMarker.contracted-pin,
+            .arnMapMarker.contracted-pin.highlight{
+                border: 1px solid ${this.site_config.primary_text_color};
+                background: ${this.site_config.primary_color};
+                color: ${this.site_config.primary_text_color};
+            }
+
+            .arnMapMarker.contracted-pin:hover .arnMapMarkerTriangle,
+            .arnMapMarker.contracted-pin .arnMapMarkerTriangle{
+                border-top-color: ${this.site_config.primary_color} !important;
             }
 
             #theOtherSubmitButton,
@@ -1023,13 +1026,24 @@ export default class BasePortal {
         let clicked_currency;
         const currencies_obj = {};
         let selected_currency = '';
-        const submit = document.querySelector('#theOtherSubmitButton');
+        let submit;
+        let currencies_select;
+        let currencies_node_list;
+
         const currency_label = document.querySelector('#currency-label');
         const currencies_container = document.querySelector('.currencies');
         const config_container = document.querySelector('.config-container');
         const top_currencies_container = document.querySelector('.top-currencies');
-        const currencies_select = document.querySelector('#CurrenciesContainer select');
-        const currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+
+        if (this.page_name === 'search-results') {
+            submit = document.querySelector('#theOtherSubmitButton');
+            currencies_select = document.querySelector('#CurrenciesContainer select');
+            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+        } else if (this.page_name === 'property-detail') {
+            submit = document.querySelector('.CheckRates .submit');
+            currencies_select = document.querySelector('.ArnCurrency select');
+            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
+        }
 
         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
 
@@ -1061,7 +1075,7 @@ export default class BasePortal {
         currency_label.addEventListener('click', () => {
             currencies_container.classList.toggle('show-currencies-container');
 
-            // return if ie - ie can't toggle svgs
+            // return if ie - ie can't toggle an svg
             if (window.document.documentMode) return;
 
             currency_label.querySelector('svg').classList.toggle('flip-svg');
@@ -1095,7 +1109,6 @@ export default class BasePortal {
 
                 // return if ie - ie can't toggle svgs
                 if (window.document.documentMode) return;
-                console.log('test');
                 currency_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });
@@ -1277,6 +1290,33 @@ export default class BasePortal {
             button.addEventListener('click', () => {
                 loader.style.display = 'block';
             });
+        });
+    }
+
+    changeContractedPropertyPinColor() {
+        const property_elements = document.querySelectorAll('.ArnProperty');
+        const map_pins_list = document.querySelectorAll('.arnMapMarker');
+        if (!property_elements) return;
+
+        const properties_array = [];
+        const contracted_properties_index = [];
+
+        property_elements.forEach((property) => {
+            if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
+                properties_array.push(true);
+            } else {
+                properties_array.push(false);
+            }
+        });
+
+        properties_array.forEach((property, i) => {
+            if (!property) return;
+
+            contracted_properties_index.push(i);
+        });
+
+        contracted_properties_index.forEach((contracted_property_index) => {
+            map_pins_list[contracted_property_index].classList.add('contracted-pin');
         });
     }
 

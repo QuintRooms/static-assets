@@ -225,8 +225,13 @@ select#adults {
 .hamburger {
     display: none;
 }
+.config-container{
+    display: none;
+}
 
-.config-container {
+.SearchHotels .config-container,
+.SinglePropDetail .config-container,
+.RootBody .config-container{
     background: #333;
     width: 100%;
     display: flex;
@@ -235,6 +240,7 @@ select#adults {
     position: relative;
     z-index: 10;
 }
+
 
 .config-container #CurrenciesContainer {
     margin-right: 24px;
@@ -294,7 +300,7 @@ select#adults {
 
 #currency-label {
     width: 200px;
-    display: none;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -432,7 +438,7 @@ select#adults {
     }
 }
 
-/* IE CSS Hack */
+/* Currencies IE CSS Hack */
 @media all and (-ms-high-contrast:none) {
     .show-currencies-container {
         display: flex;
@@ -1179,7 +1185,7 @@ div.autocomplete ul li.selected {
 .SinglePropDetail .SearchActions,
 .imageDisclaimer,
 .reportProblemLink {
-    display: none;
+    display: none !important;
 }
 
 .holdRoom {
@@ -1503,6 +1509,25 @@ legend {
 }
 
 /* Single Prop Page End */
+
+/* Single Prop IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .SinglePropDetail .SimpleSearch .rowOne > td{
+        display: table-row;
+    }
+    
+    .SinglePropDetail .ArnChildren{
+        display: none !important;
+    }
+
+    .SinglePropDetail .ArnSearchContainerMainTable{
+        table-layout: fixed;
+    }
+
+    .SinglePropDetail #theCheckIn, .SinglePropDetail #theCheckOut, .SinglePropDetail #rooms, .SinglePropDetail #adults{
+        max-width: 175px;
+    }
+   }
 #theCheckIn,
 #theCheckOut,
 #rooms,
@@ -2662,6 +2687,22 @@ legend {
 
 }
 
+/* Single Prop IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .FormFields .text,
+    #theGuestNameAjax .text, #theBookingPage .ArnGuestNames .text, #theCityZipAjax input, #theBookingPage .FormFields textarea, #theBookingPage .FormFields select, #theEmailAddressAjax input, .additionalEmailAddress input, .guestBillingAddress input, #theCreditCardNumberAjax input, #theCreditCardBillingName{
+        height: 32px;
+    }
+
+    #theBookingPage .GuestForms{
+        margin: 0 6% 0 0;
+    }
+
+    .ArnSubPage .FormFields .checkbox{
+        width: 15px !important;
+    }
+
+}
 /* Checkout End */
 
 /* Root Page Start */
@@ -3229,6 +3270,18 @@ input#address-input {
     }
 }
 
+/* Slideshow IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .image-wrapper{
+        display: inline-block;
+    }
+
+    .image-number{
+        text-align: center;
+        width: 100%;
+    }
+}
+
 /* Image slideshow end */
 
 /* LRG Start */
@@ -3326,3 +3379,11 @@ input#address-input {
     margin: 10px;
 }
 /* LRG End */
+
+
+/* GDPR Message IE CSS Hack */
+@media all and (-ms-high-contrast:none) {
+    .iubenda-cs-default#iubenda-cs-banner .iubenda-cs-rationale{
+        height: 225px !important;
+    }
+}

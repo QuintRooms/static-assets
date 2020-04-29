@@ -1,5 +1,5 @@
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const cssnano = require("cssnano");
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 module.exports = {
     entry: {
@@ -53,43 +53,50 @@ module.exports = {
         59432: './src/59432.js',
         59465: './src/59465.js',
         59533: './src/59533.js',
-        59533: './src/59533.js',
-        60055: './src/60055.js'
+        60055: './src/60055.js',
+        60100: './src/60100.js',
     },
     output: {
         filename: '[name].js',
-        path: __dirname + '/dist'
+        path: `${__dirname}/dist`,
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: 'babel-loader',
             },
             {
                 test: /\.css$/,
-                use: [{
-                    loader: 'style-loader',
-                    options: {
-                        insertInto: '#h4h-styles'
-                    }
-                }, {
-                    loader: 'css-loader'
-                }],
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            insertInto: '#h4h-styles',
+                        },
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
             },
-        ]
+        ],
     },
     plugins: [
         new OptimizeCSSAssetsPlugin({
             cssProcessor: cssnano,
             cssProcessorOptions: {
-                preset: ['default', {
-                    discardComments: {
-                        removeAll: true
-                    }
-                }],
+                preset: [
+                    'default',
+                    {
+                        discardComments: {
+                            removeAll: true,
+                        },
+                    },
+                ],
             },
             canPrint: false,
         }),
-    ]
+    ],
 };

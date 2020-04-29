@@ -1023,13 +1023,24 @@ export default class BasePortal {
         let clicked_currency;
         const currencies_obj = {};
         let selected_currency = '';
-        const submit = document.querySelector('#theOtherSubmitButton');
+        let submit;
+        let currencies_select;
+        let currencies_node_list;
+
         const currency_label = document.querySelector('#currency-label');
         const currencies_container = document.querySelector('.currencies');
         const config_container = document.querySelector('.config-container');
         const top_currencies_container = document.querySelector('.top-currencies');
-        const currencies_select = document.querySelector('#CurrenciesContainer select');
-        const currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+
+        if (this.page_name === 'search-results') {
+            submit = document.querySelector('#theOtherSubmitButton');
+            currencies_select = document.querySelector('#CurrenciesContainer select');
+            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+        } else if (this.page_name === 'property-detail') {
+            submit = document.querySelector('.CheckRates .submit');
+            currencies_select = document.querySelector('.ArnCurrency select');
+            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
+        }
 
         if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
 
@@ -1061,7 +1072,7 @@ export default class BasePortal {
         currency_label.addEventListener('click', () => {
             currencies_container.classList.toggle('show-currencies-container');
 
-            // return if ie - ie can't toggle svgs
+            // return if ie - ie can't toggle an svg
             if (window.document.documentMode) return;
 
             currency_label.querySelector('svg').classList.toggle('flip-svg');

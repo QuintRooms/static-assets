@@ -1179,7 +1179,7 @@ div.autocomplete ul li.selected {
 .SinglePropDetail .SearchActions,
 .imageDisclaimer,
 .reportProblemLink {
-    display: none;
+    display: none !important;
 }
 
 .holdRoom {
@@ -1503,6 +1503,25 @@ legend {
 }
 
 /* Single Prop Page End */
+
+/* Single Prop IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .SinglePropDetail .SimpleSearch .rowOne > td{
+        display: table-row;
+    }
+    
+    .SinglePropDetail .ArnChildren{
+        display: none !important;
+    }
+
+    .SinglePropDetail .ArnSearchContainerMainTable{
+        table-layout: fixed;
+    }
+
+    .SinglePropDetail #theCheckIn, .SinglePropDetail #theCheckOut, .SinglePropDetail #rooms, .SinglePropDetail #adults{
+        max-width: 175px;
+    }
+   }
 #theCheckIn,
 #theCheckOut,
 #rooms,
@@ -2654,6 +2673,22 @@ legend {
 
 }
 
+/* Single Prop IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .FormFields .text,
+    #theGuestNameAjax .text, #theBookingPage .ArnGuestNames .text, #theCityZipAjax input, #theBookingPage .FormFields textarea, #theBookingPage .FormFields select, #theEmailAddressAjax input, .additionalEmailAddress input, .guestBillingAddress input, #theCreditCardNumberAjax input, #theCreditCardBillingName{
+        height: 32px;
+    }
+
+    #theBookingPage .GuestForms{
+        margin: 0 6% 0 0;
+    }
+
+    .ArnSubPage .FormFields .checkbox{
+        width: 15px !important;
+    }
+
+}
 /* Checkout End */
 
 /* Root Page Start */
@@ -3218,6 +3253,18 @@ input#address-input {
 
     .carousel-slide .image-wrapper img {
         max-width: 800px;
+    }
+}
+
+/* Slideshow IE CSS Hacks */
+@media all and (-ms-high-contrast:none) {
+    .image-wrapper{
+        display: inline-block;
+    }
+
+    .image-number{
+        text-align: center;
+        width: 100%;
     }
 }
 

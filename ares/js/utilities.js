@@ -1,17 +1,11 @@
 export default class Utilities {
-
     /**
      *@description forEach polyfill for internet explorer
      *@return {void}
      */
     ieForEachPolyfill() {
-        if ('NodeList' in window && !NodeList.prototype.forEach) {
-            NodeList.prototype.forEach = function(callback, thisArg) {
-                thisArg = thisArg || window;
-                for (var i = 0; i < this.length; i++) {
-                    callback.call(thisArg, this[i], i, this);
-                }
-            };
+        if (window.NodeList && !NodeList.prototype.forEach) {
+            NodeList.prototype.forEach = Array.prototype.forEach;
         }
     }
 
@@ -22,11 +16,9 @@ export default class Utilities {
      *@param string location - where to add in relation to parent using JS method insertAdjacentHTML - arguments include beforeBegin, beforeEnd, afterBegin, afterEnd
      */
     async createHTML(html, parent_to_append_to, location) {
-        return await new Promise(resolve => {
-            let parent = document.querySelector(parent_to_append_to);
-
+        return new Promise((resolve) => {
+            const parent = document.querySelector(parent_to_append_to);
             if (!parent || parent == null) return;
-
             parent.insertAdjacentHTML(location, html);
             resolve();
         });
@@ -39,11 +31,11 @@ export default class Utilities {
      *@param string attribute - which attribute to update
      */
     updateAttribute(selector, argument, attribute) {
-        let node_list = document.querySelectorAll(selector);
+        const node_list = document.querySelectorAll(selector);
 
         if (!node_list) return;
 
-        node_list.forEach(function(node, index) {
+        node_list.forEach((node, index) => {
             node.setAttribute(attribute, argument);
         });
     }
@@ -54,11 +46,11 @@ export default class Utilities {
      *@param string html - html to add
      */
     updateHTML(selector, html) {
-        let node_list = document.querySelectorAll(selector);
+        const node_list = document.querySelectorAll(selector);
 
         if (!node_list) return;
 
-        node_list.forEach(function(node, index) {
+        node_list.forEach((node, index) => {
             node.innerHTML = html;
         });
     }
@@ -69,8 +61,8 @@ export default class Utilities {
      *@param string parentSelector - selector to move child element into
      */
     appendToParent(child_selector, parent_selector) {
-        let child_element = document.querySelector(child_selector);
-        let parent_element = document.querySelector(parent_selector);
+        const child_element = document.querySelector(child_selector);
+        const parent_element = document.querySelector(parent_selector);
 
         if (!child_element || !parent_element) return;
 
@@ -79,14 +71,14 @@ export default class Utilities {
 
     // should do this using mutationObserver
     async waitForSelectorInDOM(selector) {
-        return await new Promise(resolve => {
-            let interval = setInterval(() => {
-            let element = document.querySelector(selector);
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                const element = document.querySelector(selector);
                 if (element) {
                     resolve(element);
                     clearInterval(interval);
                     return element;
-                };
+                }
             }, 100);
         });
     }
@@ -96,11 +88,12 @@ export default class Utilities {
 
         document.querySelector(wrapper).insertAdjacentElement(adjacent_position, document.querySelector(element_to_move));
     }
+
     // duplicate of createWrapper(), use createWrapper and move any existing use of this method to createWrapper()
     async moveOrphanedElementsIntoNewWrapper(elements_array, wrapper_id, adjacent_element_class, adjacent_position) {
-        return await new Promise(resolve => {
+        return new Promise((resolve) => {
             if (document.querySelector(adjacent_element_class)) {
-                document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, '<div class id="' + wrapper_id + '"></div>');
+                document.querySelector(adjacent_element_class).insertAdjacentHTML(adjacent_position, `<div class id="${wrapper_id}"></div>`);
                 elements_array.forEach((element) => {
                     document.getElementById(wrapper_id).insertAdjacentElement('beforeEnd', element);
                     resolve();
@@ -127,7 +120,10 @@ export default class Utilities {
 
         document.querySelector(open_button_parent_selector).insertAdjacentHTML(open_button_location, `<span class="open-modal">Show ${modal_title}</span>`);
 
-        document.body.insertAdjacentHTML('beforeEnd', `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`);
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>${modal_title}</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>`
+        );
 
         array_of_elements_to_put_in_modal_body.forEach((element) => {
             document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', element);
@@ -140,5 +136,33 @@ export default class Utilities {
         document.querySelector('.close-modal').addEventListener('click', () => {
             document.querySelector('.modal-overlay').classList.toggle('show-modal');
         });
+    }
+
+    /**
+     * @description adds extra logos to the header, will only insert if window size is greater that 1200px
+     * @param {object} images - an object with one or more images, their class names and insertAdjacentHtml position
+     * @property {string} images[].insertPosition - position for insertAdjacentHTML to insert element into header
+     * @property {string} images[].className - name of class tag for each element being insterted
+     * @property {string} images[].imageUrl - url for image src
+     */
+    async addMultipleHeaderLogos(images) {
+        await this.waitForSelectorInDOM('header');
+        const header = document.querySelector('header');
+        let logos_loaded;
+
+        function widthChange(mq) {
+            if (!mq.matches || logos_loaded) return;
+            try {
+                Object.keys(images).forEach((e) => {
+                    header.insertAdjacentHTML(images[e].insertPosition, `<img class="${images[e].className}" src="${images[e].imageUrl}">`);
+                    logos_loaded = true;
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        const mq = window.matchMedia('(min-width: 1200px)');
+        widthChange(mq);
+        mq.addListener(widthChange);
     }
 }

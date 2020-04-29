@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import '@babel/polyfill';
+import 'url-polyfill';
 import Utilities from './utilities';
 
 const dayjs = require('dayjs');
@@ -27,7 +28,9 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
+
                 // all pages
+                this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
@@ -152,6 +155,8 @@ export default class BasePortal {
                 jQuery('#theBody').on('arnMapLoadedEvent', () => {
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
+                    this.highlightMapMarkersOnPropertyHover();
+                    this.repositionMapControls();
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
@@ -159,7 +164,6 @@ export default class BasePortal {
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();
-                    this.highlightMapMarkersOnPropertyHover();
                     this.getTotalNights().then((nights) => {
                         this.getCurrency().then((currency) => {
                             this.showFullStayAndNightlyRates(nights, currency);
@@ -189,8 +193,6 @@ export default class BasePortal {
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                    this.repositionMapControls();
-
                     utilities
                         .moveOrphanedElementsIntoNewWrapper(
                             [
@@ -211,6 +213,7 @@ export default class BasePortal {
                         });
                 });
                 this.applyCustomStyles();
+                this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
             });
         });
     }
@@ -959,8 +962,7 @@ export default class BasePortal {
 
     async applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
-        const css = await fetch(`${this.site_config.custom_styles_url}`).then((response) => response.text());
-        document.body.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
+        document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
     }
 
     setFontFromConfig() {
@@ -994,6 +996,10 @@ export default class BasePortal {
 
         language_label.addEventListener('click', () => {
             language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
+
+            // return if ie - ie can't toggle svgs
+            if (window.document.documentMode) return;
+
             language_label.querySelector('svg').classList.toggle('flip-svg');
         });
 
@@ -1002,6 +1008,10 @@ export default class BasePortal {
                 if (e.target === document.querySelector('#language-label') || e.target.parentNode === document.querySelector('.language-container')) return;
 
                 document.querySelector('.language-container').classList.toggle('show-language-container');
+
+                // return if ie - ie can't toggle svgs
+                if (window.document.documentMode) return;
+
                 language_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });
@@ -1050,6 +1060,10 @@ export default class BasePortal {
 
         currency_label.addEventListener('click', () => {
             currencies_container.classList.toggle('show-currencies-container');
+
+            // return if ie - ie can't toggle svgs
+            if (window.document.documentMode) return;
+
             currency_label.querySelector('svg').classList.toggle('flip-svg');
         });
 
@@ -1078,6 +1092,10 @@ export default class BasePortal {
                     return;
 
                 currencies_container.classList.toggle('show-currencies-container');
+
+                // return if ie - ie can't toggle svgs
+                if (window.document.documentMode) return;
+                console.log('test');
                 currency_label.querySelector('svg').classList.toggle('flip-svg');
             }
         });
@@ -1103,7 +1121,8 @@ export default class BasePortal {
 
         properties.forEach((property) => {
             property.addEventListener('mouseenter', (e) => {
-                prop_id_el = property.parentElement.querySelector('.prop_id');
+                prop_id_el = property.parentElement.querySelector('.propId');
+
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
@@ -1378,29 +1397,19 @@ export default class BasePortal {
             return value;
         }
 
-        function calcuateCheckDates(check_in_value, check_out_value) {
-            const start = new Date(check_in_value);
-            const end = new Date(check_out_value);
-            let day_count = 0;
-            while (end > start) {
-                day_count += 1;
-                start.setDate(start.getDate() + 1);
-            }
-            return day_count;
-        }
-
-        const construct_u_r_l_on_submit = () => {
+        const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                const check_in_value = document.querySelector('input#theCheckIn').value;
-                const check_out_value = document.querySelector('input#theCheckOut').value;
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
-                const nights = calcuateCheckDates(check_in_value, check_out_value);
+
+                const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
+                const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
                 if (lat_lng) {
@@ -1442,7 +1451,7 @@ export default class BasePortal {
         });
 
         hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
-        construct_u_r_l_on_submit();
+        construct_url_on_submit();
 
         (() => {
             const places_autocomplete = places({
@@ -1626,11 +1635,40 @@ export default class BasePortal {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
-        const logo = document.querySelector('.logo img');
 
-        logo.onload = () => {
-            const height = site_config_el.scrollHeight + header_el.scrollHeight;
-            map_controls.style.top = `${height}px`;
-        };
+        const height = site_config_el.scrollHeight + header_el.scrollHeight;
+        map_controls.style.top = `${height}px`;
+    }
+
+    addSocialMetaTags(event_name, event_id) {
+        if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
+
+        document.head.insertAdjacentHTML(
+            'beforeend',
+            `<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">
+            <meta property="og:type" content="website" >
+            <meta property="og:title" content="${event_name}" >
+            <meta property="og:description" content="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" >
+            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id=${event_id}">`
+        );
+    }
+
+    addSocialMediaShareButtons(event_name, event_id) {
+        if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
+        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
+
+        const twitter_script = document.createElement('script');
+        twitter_script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+        twitter_script.setAttribute('async', true);
+        document.head.appendChild(twitter_script);
+
+        confirmation_container.insertAdjacentHTML(
+            'afterbegin',
+            `<div class="social-share-buttons-container">
+                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
+                </div>`
+        );
     }
 }

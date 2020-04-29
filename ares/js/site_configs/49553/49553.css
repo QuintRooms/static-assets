@@ -1,4 +1,13 @@
 img.logo-left, img.logo-right {
-    max-width: 300px;
+    max-width: 375px;
+    min-width: 375px;
+    min-height: 160px;
+    max-height: 160px;
     padding: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+   .logo-left, .logo-right{
+        display: none;
+    }
 }

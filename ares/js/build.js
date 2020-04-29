@@ -30,6 +30,7 @@ export default class BasePortal {
                 this.createCurrencyDropDown();
 
                 // all pages
+                this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
@@ -1396,29 +1397,19 @@ export default class BasePortal {
             return value;
         }
 
-        function calcuateCheckDates(check_in_value, check_out_value) {
-            const start = new Date(check_in_value);
-            const end = new Date(check_out_value);
-            let day_count = 0;
-            while (end > start) {
-                day_count += 1;
-                start.setDate(start.getDate() + 1);
-            }
-            return day_count;
-        }
-
-        const construct_u_r_l_on_submit = () => {
+        const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                const check_in_value = document.querySelector('input#theCheckIn').value;
-                const check_out_value = document.querySelector('input#theCheckOut').value;
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
-                const nights = calcuateCheckDates(check_in_value, check_out_value);
+
+                const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
+                const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
                 if (lat_lng) {
@@ -1460,7 +1451,7 @@ export default class BasePortal {
         });
 
         hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
-        construct_u_r_l_on_submit();
+        construct_url_on_submit();
 
         (() => {
             const places_autocomplete = places({
@@ -1649,10 +1640,8 @@ export default class BasePortal {
         map_controls.style.top = `${height}px`;
     }
 
-    addSocialMediaShareButtons(event_name, event_id) {
+    addSocialMetaTags(event_name, event_id) {
         if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
-
-        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
 
         document.head.insertAdjacentHTML(
             'beforeend',
@@ -1662,6 +1651,11 @@ export default class BasePortal {
             <meta property="og:description" content="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" >
             <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id=${event_id}">`
         );
+    }
+
+    addSocialMediaShareButtons(event_name, event_id) {
+        if (this.site_config.site_type === 'cug' || this.page_name !== 'confirmation' || !this.site_config.has_social_sharing) return;
+        const confirmation_container = document.querySelector('#theReservationFormContainer tbody');
 
         const twitter_script = document.createElement('script');
         twitter_script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
@@ -1671,10 +1665,10 @@ export default class BasePortal {
         confirmation_container.insertAdjacentHTML(
             'afterbegin',
             `<div class="social-share-buttons-container">
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-            
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
-            </div>`
+                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
+                </div>`
         );
     }
 }

@@ -3381,3 +3381,12 @@ input#address-input {
         height: 225px !important;
     }
 }
+
+/* Debounce */
+#theEmailAddressAjax{
+    position: relative
+}
+
+.tc-result{
+    top: 26px !important;
+}

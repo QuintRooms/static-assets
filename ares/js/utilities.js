@@ -165,4 +165,18 @@ export default class Utilities {
         widthChange(mq);
         mq.addListener(widthChange);
     }
+
+    emailVerificationSetup() {
+        const script = document.createElement('script');
+        script.text = `
+            const DeBounce_APIKEY = 'public_T0tSVklSNEZRTEtkc1c5MFZoUWhKZz09';
+            const DeBounce_BlockFreeEmails = 'false';
+        `;
+        document.body.appendChild(script);
+
+        const debounce_script = document.createElement('script');
+        debounce_script.setAttribute('src', 'https://cdn.debounce.io/widget/DeBounce.js');
+        debounce_script.setAttribute('async', true);
+        document.body.appendChild(debounce_script);
+    }
 }

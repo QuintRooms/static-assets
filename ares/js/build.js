@@ -107,6 +107,7 @@ export default class BasePortal {
                     this.formatCheckoutForm();
                     this.setupReservationSummaryContainer();
                     utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+                    utilities.emailVerificationSetup();
                 }
 
                 // root page methods

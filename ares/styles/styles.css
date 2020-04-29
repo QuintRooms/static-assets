@@ -92,27 +92,11 @@ header {
 /* Header End */
 
 /* Buttons Start */
-
-input#theSubmitButton,
-input#theSubmitButton,
-input#theSubmitButton,
-#theOtherSubmitButton,
-#theOtherSubmitButton,
 #theOtherSubmitButton,
 .RootBody #theOtherSubmitButton,
-.RootBody #theOtherSubmitButton,
-.RootBody #theOtherSubmitButton,
-.bookRoom,
-.bookRoom,
 .bookRoom,
 .arn-leaflet-reset-button,
-.arn-leaflet-reset-button,
-.arn-leaflet-reset-button,
 .arnMapMarker,
-.arnMapMarker,
-.arnMapMarker,
-input#theConfirmationButton,
-input#theConfirmationButton,
 input#theConfirmationButton,
 a.ArnShowRatesLink {
     background: #fff;
@@ -120,8 +104,6 @@ a.ArnShowRatesLink {
     border: 1px solid #333;
 }
 
-.CheckRates input.submit,
-.CheckRates input.submit,
 .CheckRates input.submit {
     background: #fff;
     color: #333;

@@ -3138,6 +3138,7 @@ input#address-input {
 
 .ap-input-icon {
     right: 6px;
+    background-color: #fff;
 }
 
 /* autocomplete styles end */

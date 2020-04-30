@@ -1455,6 +1455,11 @@ export default class BasePortal {
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
+                    return;
+                }
+
                 if (lat_lng) {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 } else {

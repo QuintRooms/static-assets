@@ -1382,8 +1382,7 @@ export default class BasePortal {
         const search_params = new URLSearchParams(params.search);
 
         function setInputToRequired(selector) {
-            if (!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
-
+            if (!document.querySelector(selector)) return;
             document.querySelector(selector).required = true;
         }
 

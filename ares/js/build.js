@@ -1288,6 +1288,8 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
+                const checkin_val = document.querySelector('input#theCheckIn').value;
+                console.log(checkin_val);
                 if (document.querySelector('input#theCheckIn').value === null) return;
                 loader.style.display = 'block';
             });

@@ -1284,7 +1284,7 @@ export default class BasePortal {
         const loader = document.querySelector('#searching');
         const update_buttons = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
 
-        if (!document.querySelector('.SearchHotels')) return;
+        if (!document.querySelector('.SearchHotels') || document.querySelector('input#theCheckIn').value === null) return;
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {

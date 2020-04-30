@@ -1035,7 +1035,7 @@ export default class BasePortal {
         const config_container = document.querySelector('.config-container');
         const top_currencies_container = document.querySelector('.top-currencies');
 
-        if (this.page_name === 'search-results') {
+        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
             submit = document.querySelector('#theOtherSubmitButton');
             currencies_select = document.querySelector('#CurrenciesContainer select');
             currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');

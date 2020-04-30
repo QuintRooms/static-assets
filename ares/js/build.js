@@ -1288,7 +1288,10 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (document.querySelector('input#theCheckIn').value === '') return;
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
+                    return;
+                }
                 loader.style.display = 'block';
             });
         });
@@ -1710,5 +1713,12 @@ export default class BasePortal {
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
                 </div>`
         );
+    }
+
+    style_validation_fields(element) {
+        const el_val = document.querySelector(element);
+        if (el_val.value === '') {
+            el_val.classList.add('unvalidated');
+        }
     }
 }

@@ -5,7 +5,7 @@
  }
  @font-face {
     font-family: 'Avenir-Black';
-         url("https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir.ttf") format("truetype");
+         url("https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf") format("truetype");
  }
 
  
@@ -769,7 +769,9 @@ header {
     }
 
     #SortControls {
-        height: 230px;
+        height: 284px;
+        background: transparent;
+        top: 40px;
     }
 
     .ArnSortByClass,
@@ -786,7 +788,7 @@ header {
     .ArnSortByType:hover,
     .ArnSortByVacationRental,
     .ArnSortByVacationRental:hover {
-        width: 215px;
+        width: 221px;
     }
 
     .ArnSortByName:hover,

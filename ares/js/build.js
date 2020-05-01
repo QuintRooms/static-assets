@@ -766,9 +766,14 @@ export default class BasePortal {
                 #arnCloseAnchorId,
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover,
-                .closeMap {
+                #arnCloseAnchorId:hover {
                     border: 1px solid ${this.site_config.primary_color}
+                }
+
+                .closeMap {
+                    border: 1px solid ${this.site_config.primary_text_color}!important;
+                    background-color: ${this.site_config.primary_color}!important;
+                    color: ${this.site_config.primary_text_color}!important;
                 }
             }
 
@@ -820,8 +825,7 @@ export default class BasePortal {
                 #arnCloseAnchorId,
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover,
-                .closeMap {
+                #arnCloseAnchorId:hover {
                     color:${this.site_config.secondary_text_color}
                 }
             }

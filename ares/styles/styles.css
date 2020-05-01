@@ -2998,6 +2998,22 @@ body.HoldRoomsForm {
     max-width: 50px !important;
 }
 
+@media screen and (max-width: 600px) {
+    .arnClosePopupButton {
+        height: 0px;
+        background: transparent;
+        color: #fff;
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    #arnMapPopupMobile .imageContainer img {
+        width: 281px;
+        margin: 42px auto 0;
+    }
+}
+
+
 /* Map Popup End */
 
 /* Hold Room Page Start */

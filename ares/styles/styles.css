@@ -3008,8 +3008,9 @@ body.HoldRoomsForm {
     }
 
     #arnMapPopupMobile .imageContainer img {
-        width: 281px;
-        margin: 42px auto 0;
+        width: 300px!important;
+        height: 235px!important;
+        margin: 42px auto 0!important;
     }
 }
 

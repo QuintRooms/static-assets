@@ -11,18 +11,8 @@
  
 /* Font Overrides */
 /* Body Text */
-.SearchHotels .ArnPropName div.originalPrice,
-.SearchHotels .ArnPropName div.originalPrice:before,
-.SinglePropDetail .bestPrice .originalPrice:before,
-.SearchHotels .ArnPropName div.yourRateContainer span,
-.ArnPriceCell>span,
-.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
-.SearchHotels .ArnPriceCell>a>span,
-.SearchHotels .ArnPriceCell>span:after,
-.SinglePropDetail .bestPrice .yourRateAmount:after,
-.SinglePropDetail .bestPrice .originalRateAmount,
-.SinglePropDetail legend {
-    font-family: 'Avenir', 'sans-serif';
+* {
+    font-family: 'Avenir', 'Helvetica' !important;
 }
 
 
@@ -254,8 +244,8 @@ body,
 .ArnPropNameLink,
 .ArnPropNameLink:active,
 .ArnPropNameLink:visited {
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 600 !important;
+    font-size: 17px;
 }
 
 .reserveHotel,
@@ -293,6 +283,13 @@ label,
     letter-spacing: .5 !important;
     line-height: 15px;
     color: #333;
+}
+
+@media screen and (max-width: 1225px){
+    .SinglePropDetail #theCheckIn,
+    .SinglePropDetail #theCheckOut{
+        width: 100% !important;
+    }
 }
 
 .RootBody .ArnPrimarySearchContainer span {
@@ -484,7 +481,6 @@ header {
 
 /* Buttons */
 #theSubmitButton,
-.selectedTab,
 .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
@@ -497,10 +493,12 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #215853;
+    background: #e2ad37;
+    color: #333 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 15px;
+    font-weight: 500 !important;
 }
 
 .submit,
@@ -529,15 +527,15 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #bde3de !important;
-    color: #333 !important;
+    background: #215853 !important;
+    color: #fff !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #bde3de;
-    color: #333 !important;
+    background: #215853;
+    color: #fff !important;
 }
 
 .RootBody #theSubmitButton {
@@ -571,7 +569,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #215853;
+    border: 1px solid #e2ad37;
     border-radius: 5px;
     padding: 3px 3px;
     font-size: 14px !important;
@@ -633,7 +631,10 @@ header {
 }
 
 .arn-leaflet-reset-button {
-    background: #58585a;
+    background: #e2ad37;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
     border: 1px solid transparent !important;
     transition: all .2s linear;
 }
@@ -706,11 +707,11 @@ header {
 #slideit label.open:focus,
 #slideit label.open,
 #slideit span.title {
-    background: #58585a;
+    background: #215853;
 }
 
 #slideit section {
-    border-bottom: #58585a;
+    border-bottom: #215853;
 }
 
 #slideit label.open:hover,
@@ -720,7 +721,7 @@ header {
 
 #slideit label.open:hover,
 #slideit label.open:focus {
-    background: #38383f;
+    background: #215853;
 }
 
 .ArnPropName div.ratingCount {
@@ -1376,8 +1377,4 @@ div.originalPrice span,
 
 .SearchHotels .PropLimitedAvail .ArnRateCell {
     background: transparent;
-}
-
-#thePassCodeAjax {
-    display: none;
 }

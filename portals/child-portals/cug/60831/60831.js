@@ -8,6 +8,8 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
+cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png', 'href');
+
 function waitForElementToLoad(elementWaitingFor) {
     const element = document.querySelector(elementWaitingFor);
     const config = {attributes: false, childList: true, subtree: false};

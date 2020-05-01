@@ -741,7 +741,6 @@ export default class BasePortal {
 
         /* Primary Background Color */
             #searching h2:after,
-            span.exclusive-rate,
             #theConfirmationButton,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -790,7 +789,6 @@ export default class BasePortal {
 
             #searching,
             #theConfirmationButton,
-            span.exclusive-rate,
             .HoldRoomsForm .submit,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -810,6 +808,12 @@ export default class BasePortal {
             #sort-wrapper a:hover {
                 color:${this.site_config.primary_text_color}
             }
+
+            span.exclusive-rate {
+                background: ${this.site_config.secondary_color};
+                color: #fff;
+            }
+
 
             @media screen and (max-width:1105px) {
 
@@ -878,9 +882,6 @@ export default class BasePortal {
             .arn-leaflet-reset-button:hover,
             .arn-leaflet-reset-button:focus,
             .arn-leaflet-reset-button:active,
-            .arnMapMarker:hover,
-            .arnMapMarker:focus,
-            .arnMapMarker:active,
             input#theConfirmationButton:hover,
             input#theConfirmationButton:focus,
             input#theConfirmationButton:active,
@@ -910,14 +911,14 @@ export default class BasePortal {
 
             .arnMapMarker, 
             .highlight{
-                border: 1px solid ${this.site_config.primary_text_color};
-                background: ${this.site_config.secondary_color};
-                color: ${this.site_config.primary_text_color};
+                border: 1px solid #333;
+                background: #fff;
+                color: #333;
             }
 
             .arnMapMarker:hover .arnMapMarkerTriangle,
             .arnMapMarkerTriangle {
-                border-top-color:${this.site_config.secondary_color};
+                border-top-color: #333;
             }
 
             .arnMapMarker.contracted-pin,
@@ -929,7 +930,9 @@ export default class BasePortal {
 
             .arnMapMarker.contracted-pin:hover .arnMapMarkerTriangle,
             .arnMapMarker.contracted-pin .arnMapMarkerTriangle{
-                border-top-color: ${this.site_config.primary_color} !important;
+                border: 1px solid ${this.site_config.primary_color};
+                background: ${this.site_config.primary_text_color};
+                color: ${this.site_config.primary_color};
             }
 
             #theOtherSubmitButton,

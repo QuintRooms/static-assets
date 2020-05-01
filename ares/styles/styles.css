@@ -561,7 +561,7 @@ select#adults {
     border-top-color: rgb(77, 77, 77);
 }
 
-.arnMapMarkerTriangle:hover {
+.arnMapMarker:hover .arnMapMarkerTriangle {
     border-top-color: rgb(77, 77, 77);
 }
 

@@ -77,7 +77,7 @@ body {
     background: #fff;
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid #1035F9;
+    border-bottom: 3px solid #215853;
 }
 
 #commands {
@@ -125,7 +125,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #1035F9;
+    background-color: #215853;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -303,10 +303,30 @@ label,
     color: #15151e !important;
 }
 
+.yui3-skin-sam .yui3-calendar-content{
+    border-color: #215853 !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day:hover{
+    background: #215853 !important;
+}
+
+.yui3-skin-sam .yui3-calendarnav-nextmonth:hover, [dir="rtl"] .yui3-skin-sam .yui3-calendarnav-prevmonth:hover, .yui3-skin-sam [dir="rtl"] .yui3-calendarnav-prevmonth:hover{
+    border-left-color: #215853 !important;
+}
+
+.yui3-skin-sam .yui3-calendarnav-prevmonth:hover, [dir="rtl"] .yui3-skin-sam .yui3-calendarnav-nextmonth:hover, .yui3-skin-sam [dir="rtl"] .yui3-calendarnav-nextmonth:hover{
+    border-right-color: #215853 !important;
+}
+
 #theBookingPage label,
 label,
 .confirmationAgreement {
     color: #15151e;
+}
+
+div.autocomplete ul li.selected{
+    background: #215853 !important;
 }
 
 input,
@@ -356,6 +376,8 @@ body.RootBody {
 
 .RootBody .ArnSearchContainerMainDiv {
     background-color: transparent;
+    display: flex;
+    align-items: center;
 }
 
 body.WBLoginForm,
@@ -475,7 +497,7 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
 .HoldRoomsForm .ArnContentButtonNarrow {
-    background: #1035F9;
+    background: #215853;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 13px;
     line-height: 15px;
@@ -507,15 +529,15 @@ header {
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
 .HoldRoomsForm .ArnContentButtonNarrow:hover {
-    background: #008AFA !important;
-    color: #fff !important;
+    background: #bde3de !important;
+    color: #333 !important;
 }
 
 #theSubmitButton:hover,
 #theSubmitButton:focus,
 #theSubmitButton:active {
-    background: #bf2a2d;
-    color: #fff !important;
+    background: #bde3de;
+    color: #333 !important;
 }
 
 .RootBody #theSubmitButton {
@@ -549,7 +571,7 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #1035F9;
+    border: 1px solid #215853;
     border-radius: 5px;
     padding: 3px 3px;
     font-size: 14px !important;
@@ -562,14 +584,14 @@ header {
 .ArnGoAirportSearch:hover {
     color: #fff;
     border-bottom: 1px solid #ccc;
-    background-color: #1035F9;
+    background-color: #215853;
     transition: all .3s ease;
 }
 
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #333;
     background: transparent;
-    border: 1px solid #1035F9;
+    border: 1px solid #215853;
     border-radius: 5px;
     font-size: 14px !important;
     padding: 3px 4px;
@@ -587,7 +609,7 @@ header {
 
 .hamburger:before,
 .PropertyAmenities:before {
-    border-top-color: #1035F9;
+    border-top-color: #215853;
 }
 
 .SinglePropDetail .ArnPropDescription {
@@ -624,7 +646,7 @@ header {
 }
 
 .arnMapMarker {
-    background: #1035F9;
+    background: #215853;
     border: #fff;
 }
 
@@ -639,26 +661,26 @@ header {
 }
 
 .arnMapMarker .arnMapMarkerTriangle {
-    border-top-color: #1035F9;
+    border-top-color: #215853;
     transition: all .3s ease;
 }
 
 .arnMapMarker:hover,
 .highlight {
-    background: #1035F9;
+    background: #215853;
     border: #fff;
     transition: all .3s ease;
 }
 
 .highlight>.arnMapMarkerTriangle,
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #1035F9;
+    border-top-color: #215853;
     transition: all .3s ease;
 }
 
 .specialEventRate,
 .hostHotel {
-    background: #1035F9;
+    background: #215853;
 }
 
 .SearchHotels .reserveHotel,
@@ -702,7 +724,7 @@ header {
 }
 
 .ArnPropName div.ratingCount {
-    background: #1035F9;
+    background: #215853;
 }
 
 .exclusiveRate {
@@ -710,20 +732,20 @@ header {
 }
 
 .sash {
-    background: #1035F9;
+    background: #215853;
 }
 
 .openMapBtn:hover,
 .openMapBtn:focus,
 .openMapBtn:active {
-    background: #1035F9;
+    background: #215853;
 }
 
 .ArnGoCitySearch:hover,
 .ArnGoAddressSearch:hover,
 .ArnGoLandmarkSearch:hover,
 .ArnGoAirportSearch:hover {
-    background: #1035F9;
+    background: #215853;
 }
 
 .HoldRoomsForm .ArnRightListContainer input {
@@ -737,7 +759,7 @@ header {
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
     #SortControlsContainer .hamburger:before {
-        border-top-color: #1035F9;
+        border-top-color: #215853;
     }
 }
 
@@ -785,7 +807,7 @@ header {
     .ArnSortByDealAmount.active,
     .ArnSortByVacationRental.active,
     .ArnSortByDistance.active {
-        border-left: 2px solid #1035F9;
+        border-left: 2px solid #215853;
     }
 
     .SearchHotels .ArnPropThumb,
@@ -837,14 +859,14 @@ header {
     .SearchHotels .ArnSortByVacationRental.active,
     .SearchHotels .ArnSortByDistance.active,
     .ArnToggleMap {
-        border-top: 4px solid #1035F9;
-        border-bottom: 4px solid #1035F9 !important;
+        border-top: 4px solid #215853;
+        border-bottom: 4px solid #215853 !important;
     }
 
     .ArnToggleMap,
     .SearchHotels .filters,
     .SinglePropDetail.mobile .subHeader a.refineLink {
-        border-bottom: 4px solid #1035F9;
+        border-bottom: 4px solid #215853;
     }
 
     .SearchHotels .ArnSearchContainerMainTable {
@@ -859,14 +881,14 @@ header {
     .SearchHotels .selectedTab, .SearchHotels .ArnGoCitySearch:hover,
     .SearchHotels .ArnGoLandmarkSearch:hover,
     .SearchHotels .ArnGoAirportSearch:hover {
-        background: #1035F9;
+        background: #215853;
         line-height: 24px;
         font-size: 14px;
         border-bottom: 1px solid #ccc;
     }
 
     .adminContainer span {
-        background-color: #1035F9;
+        background-color: #215853;
     }
 
     .RootPage #city {
@@ -900,7 +922,7 @@ header {
     #commands a:hover,
     #commands form:hover,
     #commands form:hover .logoutCommand.submit {
-        background: #1035F9 !important;
+        background: #215853 !important;
         color: #fff !important;
         border-top-color: transparent;
     }
@@ -938,7 +960,7 @@ nav {
 }
 
 .logo img {
-    max-width: 120px;
+    max-width: 200px;
     width: 100%;
     padding: 0;
 }
@@ -959,9 +981,9 @@ nav {
 }
 
 .btn-primary {
-    background: #1035F9;
+    background: #215853;
     box-shadow: none;
-    border-color: #1035F9;
+    border-color: #215853;
 }
 
 .btn-primary:hover {

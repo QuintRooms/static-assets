@@ -559,7 +559,16 @@ select#adults {
 }
 .arnMapMarkerTriangle {
     border-top-color: rgb(77, 77, 77);
+}
+
+.arnMapMarkerTriangle:hover {
+    border-top-color: rgb(77, 77, 77);
+}
+
+.arnMapMarker:hover{
+    border: 1px solid rgb(77, 77, 77);
     background: rgb(206, 206, 206);
+    color: #333;
 }
 
 /* .arnMapMarker,

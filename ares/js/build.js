@@ -916,11 +916,14 @@ export default class BasePortal {
                 color: ${this.site_config.primary_text_color};
             }
 
-            .arnMapMarker.contracted-pin:hover .arnMapMarkerTriangle,
-            .arnMapMarker.contracted-pin .arnMapMarkerTriangle{
+            .arnMapMarker.contracted-pin:hover {
                 border: 1px solid ${this.site_config.secondary_color};
                 background: ${this.site_config.primary_text_color};
                 color: ${this.site_config.secondary_color};
+            }
+
+            .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
+                border-top-color: ${this.site_config.secondary_color};
             }
 
             #theOtherSubmitButton,

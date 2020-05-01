@@ -909,18 +909,6 @@ export default class BasePortal {
                 border-bottom:3px solid ${this.site_config.border_color}
             }
 
-            .arnMapMarker, 
-            .highlight{
-                border: 1px solid #333;
-                background: #fff;
-                color: #333;
-            }
-
-            .arnMapMarker:hover .arnMapMarkerTriangle,
-            .arnMapMarkerTriangle {
-                border-top-color: #333;
-            }
-
             .arnMapMarker.contracted-pin,
             .arnMapMarker.contracted-pin.highlight{
                 border: 1px solid ${this.site_config.primary_text_color};

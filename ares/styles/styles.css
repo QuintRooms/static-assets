@@ -96,7 +96,6 @@ header {
 .RootBody #theOtherSubmitButton,
 .bookRoom,
 .arn-leaflet-reset-button,
-.arnMapMarker,
 input#theConfirmationButton,
 a.ArnShowRatesLink {
     background: #fff;
@@ -553,11 +552,34 @@ select#adults {
     z-index: 8;
 }
 
-.arnMapMarker, .arnMapMarkerTriangle {
+.arnMapMarker {
     border: 1px solid rgb(77, 77, 77);
     background: rgb(206, 206, 206);
     color: #333;
 }
+.arnMapMarkerTriangle {
+    border-top-color: rgb(77, 77, 77);
+    background: rgb(206, 206, 206);
+}
+
+/* .arnMapMarker,
+.arnMapMarker:hover {
+    border: 1px solid #444f74;
+}
+
+.arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: #333;
+}
+
+.arnMapMarker:hover,
+.arnMapMarker.highlight {
+    background: #333;
+    border: 1px solid #444f74;
+}
+
+.arnMapMarker.highlight .arnMapMarkerTriangle {
+    border-top-color: #333 !important;
+} */
 
 .noPrice {
     display: none;

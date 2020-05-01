@@ -912,15 +912,15 @@ export default class BasePortal {
             .arnMapMarker.contracted-pin,
             .arnMapMarker.contracted-pin.highlight{
                 border: 1px solid ${this.site_config.primary_text_color};
-                background: ${this.site_config.primary_color};
+                background: ${this.site_config.secondary_color};
                 color: ${this.site_config.primary_text_color};
             }
 
             .arnMapMarker.contracted-pin:hover .arnMapMarkerTriangle,
             .arnMapMarker.contracted-pin .arnMapMarkerTriangle{
-                border: 1px solid ${this.site_config.primary_color};
+                border: 1px solid ${this.site_config.secondary_color};
                 background: ${this.site_config.primary_text_color};
-                color: ${this.site_config.primary_color};
+                color: ${this.site_config.secondary_color};
             }
 
             #theOtherSubmitButton,

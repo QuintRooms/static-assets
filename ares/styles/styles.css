@@ -1994,21 +1994,22 @@ legend {
 
     .SearchHotels .ArnPropName {
         height: unset;
-        padding: 12px 0 0 0;
+        padding: 12px 0 0 10px;
         display: flex;
     }
 
     .SearchHotels .ArnPropThumb {
-        height: 200px;
+        height: 175px;
     }
 
     .SearchHotels .ArnPropThumb img {
-        height: 200px;
+        height: 175px;
     }
 
     .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
         position: static;
-        justify-content: center;
+        justify-content: flex-start;
+        margin: 5px 0 5px 0;
     }
 
     .ArnPropNameLink span,
@@ -2020,20 +2021,25 @@ legend {
     .SearchHotels .ArnRateCell {
         line-height: 1.4;
         width: initial;
-        text-align: center;
+        text-align: left;
     }
 
     .SearchHotels .ArnRateButton {
         text-align: center;
-        align-self: auto;
     }
 
     .SearchHotels .ArnRateCell {
         padding: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 90vw;
+        height: 10vh;
+        align-self: none;
+    }
+
+    .SearchHotels .ArnPriceCell {
+        text-align: left;
     }
 
     .SearchHotels .arnPrice {
@@ -2062,7 +2068,7 @@ legend {
     }
 
     .SearchHotels .ArnPropClass {
-        text-align: center;
+        text-align: left;
     }
 }
 

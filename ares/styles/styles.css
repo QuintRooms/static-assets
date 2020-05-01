@@ -558,11 +558,11 @@ select#adults {
     color: #333;
 }
 .arnMapMarkerTriangle {
-    border-top-color: #333;
+    border-top-color: rgb(118, 114, 114);
 }
 
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #333;
+    border-top-color: rgb(118, 114, 114);
 }
 
 .arnMapMarker:hover{
@@ -577,18 +577,14 @@ select#adults {
     z-index: 8001;
 }
 
-.arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: rgb(82, 80, 80);
-}
-
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
-    background-color: #333!important;
+    background-color: rgb(206, 206, 206);
     border: 1px solid #444f74;
 }
 
-.arnMapMarker .arnMapMarkerTriangle .highlight {
-    border-top-color: rgb(82, 80, 80) !important;
+.arnMapMarker.highlight  .arnMapMarkerTriangle {
+    border-top-color: rgb(118, 114, 114);
 }
 
 .noPrice {

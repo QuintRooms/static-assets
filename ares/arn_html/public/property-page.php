@@ -1139,6 +1139,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                             </div>
                         </div>
                         <div id="theFullDetailFor20498">
+                            <ul class="errors"><li>Someone grabbed the last room at that price. Try another room or search nearby properties using link at top of the page.</li></ul>
                             <div id="theArnContentContainer20498" class="ArnContentContainer">
                                 <div class="quickLinks"></div>
                                 <fieldset id="standardAvail" class="QualifiedRates StandardAvailability">

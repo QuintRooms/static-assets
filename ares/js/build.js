@@ -741,7 +741,6 @@ export default class BasePortal {
 
         /* Primary Background Color */
             #searching h2:after,
-            span.exclusive-rate,
             #theConfirmationButton,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -767,9 +766,14 @@ export default class BasePortal {
                 #arnCloseAnchorId,
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover,
-                .closeMap {
+                #arnCloseAnchorId:hover {
                     border: 1px solid ${this.site_config.primary_color}
+                }
+
+                .closeMap {
+                    border: 1px solid ${this.site_config.primary_text_color}!important;
+                    background-color: ${this.site_config.primary_color}!important;
+                    color: ${this.site_config.primary_text_color}!important;
                 }
             }
 
@@ -790,7 +794,6 @@ export default class BasePortal {
 
             #searching,
             #theConfirmationButton,
-            span.exclusive-rate,
             .HoldRoomsForm .submit,
             .ArnPrimarySearchContainer,
             .ArnShowRatesLink,
@@ -811,13 +814,18 @@ export default class BasePortal {
                 color:${this.site_config.primary_text_color}
             }
 
+            span.exclusive-rate {
+                background: ${this.site_config.secondary_color};
+                color: #fff;
+            }
+
+
             @media screen and (max-width:1105px) {
 
                 #arnCloseAnchorId,
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover,
-                .closeMap {
+                #arnCloseAnchorId:hover {
                     color:${this.site_config.secondary_text_color}
                 }
             }
@@ -878,9 +886,6 @@ export default class BasePortal {
             .arn-leaflet-reset-button:hover,
             .arn-leaflet-reset-button:focus,
             .arn-leaflet-reset-button:active,
-            .arnMapMarker:hover,
-            .arnMapMarker:focus,
-            .arnMapMarker:active,
             input#theConfirmationButton:hover,
             input#theConfirmationButton:focus,
             input#theConfirmationButton:active,
@@ -908,28 +913,21 @@ export default class BasePortal {
                 border-bottom:3px solid ${this.site_config.border_color}
             }
 
-            .arnMapMarker, 
-            .highlight{
+            .arnMapMarker.contracted-pin,
+            .arnMapMarker.contracted-pin.highlight{
                 border: 1px solid ${this.site_config.primary_text_color};
                 background: ${this.site_config.secondary_color};
                 color: ${this.site_config.primary_text_color};
             }
 
-            .arnMapMarker:hover .arnMapMarkerTriangle,
-            .arnMapMarkerTriangle {
-                border-top-color:${this.site_config.secondary_color};
+            .arnMapMarker.contracted-pin:hover {
+                border: 1px solid ${this.site_config.secondary_color};
+                background: ${this.site_config.primary_text_color};
+                color: ${this.site_config.secondary_color};
             }
 
-            .arnMapMarker.contracted-pin,
-            .arnMapMarker.contracted-pin.highlight{
-                border: 1px solid ${this.site_config.primary_text_color};
-                background: ${this.site_config.primary_color};
-                color: ${this.site_config.primary_text_color};
-            }
-
-            .arnMapMarker.contracted-pin:hover .arnMapMarkerTriangle,
-            .arnMapMarker.contracted-pin .arnMapMarkerTriangle{
-                border-top-color: ${this.site_config.primary_color} !important;
+            .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
+                border-top-color: ${this.site_config.secondary_color};
             }
 
             #theOtherSubmitButton,
@@ -1035,7 +1033,7 @@ export default class BasePortal {
         const config_container = document.querySelector('.config-container');
         const top_currencies_container = document.querySelector('.top-currencies');
 
-        if (this.page_name === 'search-results') {
+        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
             submit = document.querySelector('#theOtherSubmitButton');
             currencies_select = document.querySelector('#CurrenciesContainer select');
             currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
@@ -1288,6 +1286,10 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
+                    return;
+                }
                 loader.style.display = 'block';
             });
         });
@@ -1382,8 +1384,7 @@ export default class BasePortal {
         const search_params = new URLSearchParams(params.search);
 
         function setInputToRequired(selector) {
-            if (!document.querySelector(selector) || !document.querySelector('.SearchHotels')) return;
-
+            if (!document.querySelector(selector)) return;
             document.querySelector(selector).required = true;
         }
 
@@ -1451,6 +1452,11 @@ export default class BasePortal {
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
+
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
+                    return;
+                }
 
                 if (lat_lng) {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
@@ -1605,7 +1611,7 @@ export default class BasePortal {
 
         async function getPropImages() {
             try {
-                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
                     method: 'GET',
                 }).then((response) => response.json());
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
@@ -1710,5 +1716,12 @@ export default class BasePortal {
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
                 </div>`
         );
+    }
+
+    style_validation_fields(element) {
+        const el_val = document.querySelector(element);
+        if (el_val.value === '') {
+            el_val.classList.add('unvalidated');
+        }
     }
 }

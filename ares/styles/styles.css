@@ -25,7 +25,7 @@ textarea {
     font-weight: 500 !important;
     padding: 6px !important;
     height: unset !important;
-    border: 1px solid #e0e0e0 !important;
+    border: 1px solid #e0e0e0;
     margin-bottom: 6px;
 }
 
@@ -96,7 +96,6 @@ header {
 .RootBody #theOtherSubmitButton,
 .bookRoom,
 .arn-leaflet-reset-button,
-.arnMapMarker,
 input#theConfirmationButton,
 a.ArnShowRatesLink {
     background: #fff;
@@ -124,9 +123,6 @@ input#theSubmitButton:active,
 .arn-leaflet-reset-button:hover,
 .arn-leaflet-reset-button:focus,
 .arn-leaflet-reset-button:active,
-.arnMapMarker:hover,
-.arnMapMarker:focus,
-.arnMapMarker:active,
 input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
@@ -556,23 +552,39 @@ select#adults {
     z-index: 8;
 }
 
-.arnMapMarker,
-.arnMapMarker:hover {
-    border: 1px solid #444f74;
+.arnMapMarker {
+    border: 1px solid rgb(77, 77, 77);
+    background: rgb(206, 206, 206);
+    color: #333;
+}
+.arnMapMarkerTriangle {
+    border-top-color: rgb(118, 114, 114);
 }
 
 .arnMapMarker:hover .arnMapMarkerTriangle {
-    border-top-color: #333;
+    border-top-color: rgb(118, 114, 114);
+}
+
+.arnMapMarker:hover{
+    border: 1px solid rgb(77, 77, 77);
+    background: rgb(206, 206, 206);
+    color: #333;
+}
+
+
+.arnMapMarker.contracted-pin,
+.arnMapMarker.contracted-pin.highlight{
+    z-index: 8001;
 }
 
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
-    background: #333;
+    background-color: rgb(206, 206, 206);
     border: 1px solid #444f74;
 }
 
-.arnMapMarker.highlight .arnMapMarkerTriangle {
-    border-top-color: #333 !important;
+.arnMapMarker.highlight  .arnMapMarkerTriangle {
+    border-top-color: rgb(118, 114, 114);
 }
 
 .noPrice {
@@ -1982,21 +1994,22 @@ legend {
 
     .SearchHotels .ArnPropName {
         height: unset;
-        padding: 12px 0 0 0;
+        padding: 12px 0 0 3px;
         display: flex;
     }
 
     .SearchHotels .ArnPropThumb {
-        height: 200px;
+        height: 175px;
     }
 
     .SearchHotels .ArnPropThumb img {
-        height: 200px;
+        height: 175px;
     }
 
     .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
         position: static;
-        justify-content: center;
+        justify-content: flex-start;
+        margin: 5px 0 5px 5px;
     }
 
     .ArnPropNameLink span,
@@ -2008,20 +2021,25 @@ legend {
     .SearchHotels .ArnRateCell {
         line-height: 1.4;
         width: initial;
-        text-align: center;
+        text-align: left;
     }
 
     .SearchHotels .ArnRateButton {
         text-align: center;
-        align-self: auto;
     }
 
     .SearchHotels .ArnRateCell {
         padding: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 94vw;
+        height: 10vh;
+        align-self: none;
+    }
+
+    .SearchHotels .ArnPriceCell {
+        text-align: left;
     }
 
     .SearchHotels .arnPrice {
@@ -2050,7 +2068,7 @@ legend {
     }
 
     .SearchHotels .ArnPropClass {
-        text-align: center;
+        text-align: left;
     }
 }
 
@@ -2980,6 +2998,27 @@ body.HoldRoomsForm {
     max-width: 50px !important;
 }
 
+@media screen and (max-width: 600px) {
+    .arnClosePopupButton {
+        height: 0px;
+        background: transparent;
+        color: #fff;
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    #arnMapPopupMobile .imageContainer img {
+        width: 300px!important;
+        height: 235px!important;
+        margin: 42px auto 0!important;
+    }
+
+    .arnMapPopup .rate {
+        background: transparent;
+    }
+}
+
+
 /* Map Popup End */
 
 /* Hold Room Page Start */
@@ -3138,6 +3177,7 @@ input#address-input {
 
 .ap-input-icon {
     right: 6px;
+    background-color: #fff;
 }
 
 /* autocomplete styles end */
@@ -3371,4 +3411,10 @@ input#address-input {
 
 .tc-result{
     top: 26px !important;
+}
+
+.unvalidated {
+    /* background-color: #f2adade5; */
+    border: 1px solid red!important;
+    outline: none;
 }

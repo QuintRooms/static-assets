@@ -785,6 +785,14 @@ header {
         height: 284px;
         background: transparent;
         top: 40px;
+        border: none;
+    }
+    .ArnSortContainer {
+        height: unset;
+    }
+
+    .ArnSortByClass {
+        border-bottom: 1px solid #ccc;
     }
 
     .ArnSortByClass,
@@ -802,6 +810,8 @@ header {
     .ArnSortByVacationRental,
     .ArnSortByVacationRental:hover {
         width: 220px;
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
     }
 
     .ArnSortByName:hover,
@@ -1028,9 +1038,15 @@ ul {
 .ArnPriceCell > span,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
 .SearchHotels .ArnPriceCell > a > span,
-.ArnPriceCell a {
+.ArnPriceCell a,
+.SinglePropDetail .SB16 .yourRateAmount,
+.SinglePropDetail .yourRateAmount,
+.SinglePropDetail .SB16 .exclusiveRate + strong,
+.SinglePropDetail .SB20 .yourRateAmount,
+.SinglePropDetail .SB20 .exclusiveRate + strong,
+.SinglePropDetail .ArnNightlyRate strong {
     color: #215853 !important;
-    font-family: inherit !important;
+    font-family: 'Avenir-Black', 'Helvetica' !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1209,7 +1225,7 @@ ul {
     }
 
     .SearchHotels .reviewCount,
-    .SearchHotels .ratingCount{
+    .SearchHotels .ratingCount {
         width: initial !important;
         max-width: fit-content;
     }

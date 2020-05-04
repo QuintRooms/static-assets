@@ -10,8 +10,31 @@
 
 /* Font Overrides */
 /* Body Text */
-* {
-    font-family: 'Avenir', 'Helvetica' !important;
+body,
+.ArnSubPage td,
+.ArnRoomsOnHold,
+.ArnRoomsOnHold td,
+.SearchHotels .ArnPropName div.originalPrice,
+.SearchHotels .ArnPropName div.originalPrice:before,
+.SinglePropDetail .bestPrice .originalPrice:before,
+.SearchHotels .ArnPropName div.yourRateContainer span,
+.ArnPriceCell > span,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.SearchHotels .ArnPriceCell > a > span,
+.SearchHotels .ArnPriceCell > span:after,
+.modifySearch,
+.arnMapPopup {
+    font-family: 'Avenir', 'Helvetica';
+}
+
+.ArnPropNameLink,
+.ArnPropNameLink:active,
+.ArnPropNameLink:visited,
+.arnPrice,
+.yourRateAmount,
+legend,
+.arnMapPopup h1 {
+    font-family: 'Avenir-Black', 'Helvetica';
 }
 
 .detailsTitle,
@@ -60,15 +83,14 @@ body {
     z-index: 10;
     position: relative;
     height: initial;
-    background: #fff;
+    background: #215853;
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid #215853;
+    border-bottom: 3px solid #e2ad37;
 }
 
 #commands {
     width: 100%;
-    background: #fff;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -85,14 +107,14 @@ body {
 #commands form .logoutCommand.submit {
     background: transparent;
     font-weight: 500 !important;
-    color: #606060;
+    color: #fff !important;
     font-family: inherit;
 }
 
 #commands a,
 #commands button {
     position: relative;
-    color: #606060;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -111,7 +133,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #215853;
+    background: #fff;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -129,7 +151,7 @@ body {
 #commands button {
     background: transparent;
     border: none;
-    font-family: 'Montserrat', 'Helvetica';
+    font-family: 'Avenir', 'Helvetica';
     font-size: 15px;
 }
 
@@ -137,7 +159,7 @@ body {
 #commands form .logoutCommand.submit:active,
 #commands form .logoutCommand.submit:focus {
     box-shadow: none;
-    color: #606060 !important;
+    color: #fff !important;
     background: transparent !important;
 }
 
@@ -220,13 +242,6 @@ body {
 .ArnSupportBottom .lowRateLink,
 .ArnSupportBottom .lowRateLink + .dvd {
     display: none !important;
-}
-
-body,
-.ArnSubPage td,
-.ArnRoomsOnHold,
-.ArnRoomsOnHold td {
-    font-family: 'Avenir', 'Helvetica';
 }
 
 #theConfirmationContainer h4,
@@ -586,7 +601,7 @@ header {
 .SearchHotels .bottomPager .ArnPages .pagesActive {
     color: #333;
     background: transparent;
-    border: 1px solid #215853;
+    border: 1px solid #e2ad37;
     border-radius: 5px;
     font-size: 14px !important;
     padding: 3px 4px;
@@ -786,7 +801,7 @@ header {
     .ArnSortByType:hover,
     .ArnSortByVacationRental,
     .ArnSortByVacationRental:hover {
-        width: 221px;
+        width: 220px;
     }
 
     .ArnSortByName:hover,
@@ -966,21 +981,6 @@ nav {
     padding: 0;
 }
 
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h3,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron p,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    color: #fff;
-    line-height: 1.4;
-    font-family: 'Avenir-Black', 'Helvetica';
-    font-weight: 700;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h1 {
-    font-size: 62px;
-}
-
 .btn-primary {
     background: #215853;
     box-shadow: none;
@@ -991,20 +991,6 @@ nav {
     background: #fff;
     color: black;
     border-color: none;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron h2,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    font-family: 'Avenir-Black', 'Helvetica';
-    font-weight: 400;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .jumbotron li {
-    list-style: none;
-    line-height: 2;
-    font-size: 1.2em;
-    color: #fff;
-    font-weight: 200;
 }
 
 ul {
@@ -1027,79 +1013,6 @@ ul {
     text-transform: uppercase;
 }
 
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works {
-    padding-bottom: 48px;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works li,
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
-    color: #000;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h1 {
-    margin-bottom: 18px;
-    font-family: 'Avenir-Black', 'Helvetica';
-    font-weight: 700;
-    font-size: 50px;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works h3 {
-    font-family: 'Avenir-Black', 'Helvetica';
-    font-weight: 700;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works p {
-    font-family: 'Avenir', 'Helvetica';
-    margin: auto;
-    max-width: 80%;
-}
-
-.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer .how-it-works img {
-    display: block;
-    max-width: 125px;
-    margin: 36px auto 8px auto;
-}
-
-.steps {
-    position: relative;
-}
-
-.steps h3 {
-    width: 33.333%;
-    margin: 0 15px;
-}
-
-.steps fieldset {
-    position: absolute;
-    width: 330px;
-    left: -165px;
-    top: -6px;
-}
-
-@media screen and (max-width: 1200px) {
-    .steps fieldset {
-        width: 260px;
-        left: -130px;
-    }
-}
-
-.WBValidatedRegistrationForm .steps fieldset legend {
-    border-bottom: 2px dashed #7d7e81 !important;
-}
-
-@media screen and (min-width: 767px) {
-    .col-md-12.flex {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .flex {
-        display: flex;
-    }
-}
-
 #greet {
     font-family: 'Avenir', 'Helvetica';
     font-weight: 700;
@@ -1111,25 +1024,13 @@ ul {
     font-size: 1em;
 }
 
-.step {
-    width: 35px;
-    color: #7d7e81;
-    padding: 4px;
-    font-size: 19px;
-    display: block;
-    background: #a7a9ac;
-    border: 3px solid #6d6e71;
-    border-radius: 100%;
-    margin: 12px auto;
-}
-
-.relative {
-    position: relative;
-}
-
-.col-md-4 img {
-    padding-bottom: 10px;
-    height: 97px;
+.SearchHotels .ArnPropName div.yourRateContainer span,
+.ArnPriceCell > span,
+.SinglePropDetail .OnSale .bestPrice .yourRateAmount,
+.SearchHotels .ArnPriceCell > a > span,
+.ArnPriceCell a {
+    color: #215853 !important;
+    font-family: inherit !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1151,14 +1052,6 @@ ul {
 
     .SearchHotels .geoButton {
         filter: invert(1);
-    }
-
-    .SearchHotels .ArnPropName div.yourRateContainer span,
-    .ArnPriceCell > span,
-    .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
-    .SearchHotels .ArnPriceCell > a > span,
-    .ArnPriceCell a {
-        font-family: inherit !important;
     }
 
     .ArnPriceCell {
@@ -1211,6 +1104,34 @@ ul {
         top: 81px;
         width: 100%;
     }
+
+    .SearchHotels .ArnRateCell {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        align-content: center;
+    }
+
+    .SearchHotels .percentSavings {
+        right: 0;
+        max-width: 100px;
+        width: 100%;
+        left: unset;
+        top: 0;
+        border-radius: 0 5px 0 5px !important;
+        background: #215853;
+    }
+
+    .SearchHotels .originalRateAmount {
+        font-size: initial !important;
+    }
+
+    .SearchHotels .ArnRateButton,
+    .SearchHotels .OnSale .ArnRateButton {
+        width: initial !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1218,17 +1139,14 @@ ul {
         margin: 0 !important;
     }
 
-    div.originalPrice span,
-    .SearchHotels .ArnPropName div.originalPrice span {
-        font-size: 17px !important;
-    }
-
     .SearchHotels .ArnPropName div.memberSavings {
         margin: 0 !important;
     }
 
     .SearchHotels .ArnRateCell {
-        bottom: 0;
+        bottom: 12px;
+        height: initial !important;
+        justify-content: flex-end;
     }
 
     .SinglePropDetail .ArnPropNameLink,
@@ -1262,11 +1180,38 @@ ul {
     .adminContainer {
         padding: 0;
     }
+
+    .ArnPropName div.ArnTripAdvisorDetails {
+        display: flex !important;
+        margin-bottom: 12px;
+    }
+
+    .ArnPropName div.reviewCount {
+        order: 1;
+        margin-left: 6px !important;
+    }
+
+    .SearchHotels .ArnPropAddress {
+        margin: 6px 0 12px 0 !important;
+    }
 }
 
-@media only screen and (max-width: 315px) {
+@media only screen and (max-width: 360px) {
     .RootPage #city {
         width: 80%;
+    }
+
+    .ArnPropName div.ArnTripAdvisorDetails {
+        justify-content: center;
+        width: initial !important;
+        margin: 0 auto !important;
+        max-width: fit-content;
+    }
+
+    .SearchHotels .reviewCount,
+    .SearchHotels .ratingCount{
+        width: initial !important;
+        max-width: fit-content;
     }
 }
 
@@ -1307,11 +1252,6 @@ ul {
 .SinglePropDetail .creditsLabel {
     margin-right: 3px;
 }
-
-/*
-.originalPrice {
-    display: block !important;
-}*/
 
 div.originalPrice span,
 .SearchHotels .ArnPropName div.originalPrice span {
@@ -1413,6 +1353,8 @@ div.originalPrice span,
         border-radius: 0 5px 0 5px !important;
         background: #215853 !important;
         display: inline-block !important;
+        padding: 6px 10px;
+        font-size: 15px !important;
     }
 }
 
@@ -1427,4 +1369,8 @@ div.originalPrice span,
     border-radius: 5px;
     line-height: 1.6;
     margin-bottom: 12px;
+}
+
+.SearchHotels .roomCount {
+    display: none;
 }

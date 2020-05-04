@@ -8,7 +8,7 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
-cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png', 'href');
+cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-white.png', 'href');
 
 function waitForElementToLoad(elementWaitingFor) {
     const element = document.querySelector(elementWaitingFor);
@@ -43,12 +43,12 @@ document
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
 cug_portal.updateText('.RootBody .reserveHotel', 'search');
 
-// function hidePromoCode() {
-//     const promo_code_element = document.querySelector('#thePassCodeAjax input');
+function hidePromoCode() {
+    const promo_code_element = document.querySelector('#thePassCodeAjax input');
 
-//     if (cug_portal.page_name !== 'cug-registration' || !promo_code_element) return;
+    if (cug_portal.page_name !== 'cug-registration' || !promo_code_element) return;
 
-//     promo_code_element.value = 'stay22';
-// }
+    promo_code_element.value = 'resbeat';
+}
 
-// hidePromoCode();
+hidePromoCode();

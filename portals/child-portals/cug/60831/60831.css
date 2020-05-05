@@ -269,6 +269,11 @@ body {
 
 .RootBody .ArnSearchHotelsImg h1 {
     font-family: 'Avenir-Black';
+    font-size: 48px;
+}
+
+.RootBody .ArnSearchHotelsImg h4 {
+    font-size: 21px;
 }
 
 .RootBody .reserveHotel {

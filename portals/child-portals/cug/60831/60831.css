@@ -295,6 +295,11 @@ label,
     color: #333;
 }
 
+#simpleSearch input,
+#simpleSearch select {
+    margin-bottom: 4px;
+}
+
 @media screen and (max-width: 1225px) {
     .SinglePropDetail #theCheckIn,
     .SinglePropDetail #theCheckOut {
@@ -1082,7 +1087,6 @@ ul {
     }
 
     .SinglePropDetail .bestPrice .yourRateContainer {
-        margin-top: 60px;
         font-weight: 700;
     }
 
@@ -1134,16 +1138,16 @@ ul {
 
     .SearchHotels .percentSavings {
         right: 0;
-        max-width: 100px;
         width: 100%;
         left: unset;
         top: 0;
-        border-radius: 0 5px 0 5px !important;
+        border-radius: 0 5px 0 5px;
         background: #215853;
     }
 
     .SearchHotels .originalRateAmount {
-        font-size: initial !important;
+        font-size: 15px !important;
+        font-family: 'Avenir';
     }
 
     .SearchHotels .ArnRateButton,
@@ -1352,11 +1356,11 @@ div.originalPrice span,
     font-size: 15px;
 }
 
-.SearchHotels .ArnPropName div.originalPrice .originalRateContainer{
+.SearchHotels .ArnPropName div.originalPrice .originalRateContainer {
     display: none !important;
 }
 
-.SearchHotels .ArnRateCell{
+.SearchHotels .ArnRateCell {
     max-width: 205px;
 }
 
@@ -1399,10 +1403,81 @@ div.originalPrice span,
 }
 
 .SinglePropDetail .ArnContentContainer .originalRateContainer,
-.SinglePropDetail .bestPrice .originalRateAmount{
+.SinglePropDetail .bestPrice .originalRateAmount {
     display: none !important;
 }
 
 .SearchHotels .roomCount {
     display: none;
+}
+
+.SinglePropDetail .SimpleSearch .CheckIn {
+    display: inline;
+    float: left;
+    width: 50% !important;
+    margin-right: 2%;
+}
+
+.SinglePropDetail .SimpleSearch .CheckOut {
+    position: static;
+    width: 50% !important;
+}
+
+.SinglePropDetail .SimpleSearch .ArnCheckOutDate,
+.SinglePropDetail .SimpleSearch .ArnCheckInDate {
+    width: 100% !important;
+}
+@media screen and (max-width: 800px) {
+    .SearchHotels .percentSavings{
+        display: block;
+        max-width: 190px;
+        z-index: 1;
+    }
+
+    .SinglePropDetail .SimpleSearch .ArnRooms,
+    .SinglePropDetail .SimpleSearch .CheckIn{
+        margin-right: 2%;
+        width: 48% !important;
+    }
+
+    .SinglePropDetail #adults {
+        max-width: none;
+        width: 100% !important;
+    }
+
+    .SinglePropDetail .ArnPropDescription {
+        display: none;
+    }
+
+    .CheckRates .submit {
+        border-radius: 5px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .SearchHotels .ArnRateCell{
+        max-width: 175px;
+    }
+    
+    .SearchHotels .percentSavings{
+        max-width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .SinglePropDetail .ArnPropName div.ArnTripAdvisorDetails {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .SinglePropDetail .ArnPropName div.ratingCount {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 325px){
+    .SinglePropDetail .SimpleSearch .CheckIn,
+    .SinglePropDetail .SimpleSearch .CheckOut{
+        width: 100% !important;
+        display: block !important;
+    }
 }

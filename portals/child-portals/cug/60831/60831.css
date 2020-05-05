@@ -23,7 +23,8 @@ body,
 .SearchHotels .ArnPriceCell > a > span,
 .SearchHotels .ArnPriceCell > span:after,
 .modifySearch,
-.arnMapPopup {
+.arnMapPopup,
+.arnMapMarker {
     font-family: 'Avenir', 'Helvetica';
 }
 
@@ -34,7 +35,7 @@ body,
 .yourRateAmount,
 legend,
 .arnMapPopup h1 {
-    font-family: 'Avenir-Black', 'Helvetica';
+    font-family: 'Avenir-Black', 'Helvetica' !important;
 }
 
 .detailsTitle,
@@ -86,7 +87,7 @@ body {
     background: #215853;
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid #e2ad37;
+    border-bottom: 5px solid #bde3de;
 }
 
 #commands {
@@ -654,7 +655,8 @@ header {
 .arn-leaflet-reset-button:hover,
 .arn-leaflet-reset-button:focus,
 .arn-leaflet-reset-button:active {
-    background: #38383f;
+    background: #215853;
+    color: #fff;
     border: 1px solid transparent !important;
 }
 
@@ -1386,16 +1388,21 @@ div.originalPrice span,
 
 .SinglePropDetail .bookRoomCell .percentSavings,
 .SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: block;
+    display: block !important;
     border: none;
     background: #215853;
     color: #fff;
-    max-width: 100px;
+    max-width: 200px;
     margin: 0 auto;
     border-radius: 5px;
     line-height: 1.6;
-    margin-bottom: 12px;
 }
+
+.SinglePropDetail .ArnContentContainer .originalRateContainer,
+.SinglePropDetail .bestPrice .originalRateAmount{
+    display: none !important;
+}
+
 
 .SearchHotels .roomCount {
     display: none;

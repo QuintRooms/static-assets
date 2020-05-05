@@ -6,7 +6,7 @@ jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
         cug_portal.ratesReadyEventMethods();
         cug_portal.removeSavingsLessThan10();
-        beatTheirRateMessaging();
+        beatTheirRateMessaging('.SearchHotels', '.ArnProperty');
     }, 1);
 });
 
@@ -55,11 +55,11 @@ function hidePromoCode() {
 
 hidePromoCode();
 
-function beatTheirRateMessaging() {
+function beatTheirRateMessaging(page_selector, property_container) {
     let percent_el;
-    const properties = document.querySelectorAll('.ArnProperty');
+    const properties = document.querySelectorAll(property_container);
 
-    if (!document.querySelector('.SearchHotels')) return;
+    if (!document.querySelector(page_selector)) return;
 
     properties.forEach((property) => {
         if (!property) return;
@@ -73,13 +73,14 @@ function beatTheirRateMessaging() {
 
         if (!percent_banner || percent < 3) {
             percent_banner.style.display = 'none';
-            property.querySelector('.originalRateAmount').style.fontSize = 0;
-            property.querySelector('.originalPrice').style.height = 0;
+            percent_banner.style.background = 'transparent';
+            property.querySelector('.originalPrice').style.position = 'absolute';
+            property.querySelector('.originalPrice').style.left = '100000px';
 
             return;
         }
 
-        percent_banner.textContent = `We beat their price by ${percent}%`;
+        percent_banner.textContent = `We beat their rates by ${percent}%`;
     });
 }
-beatTheirRateMessaging();
+beatTheirRateMessaging('.SinglePropDetail', '.rateRow');

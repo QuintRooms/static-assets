@@ -1262,7 +1262,7 @@ ul {
 }
 
 .percentSavings {
-    display: none !important;
+    display: none;
 }
 
 .SinglePropDetail .creditsLabel {
@@ -1291,7 +1291,7 @@ div.originalPrice span,
 
 .originalRateContainer,
 .bestPrice .originalRateAmount {
-    display: none !important;
+    display: none;
 }
 
 .SinglePropDetail .originalRateAmount {
@@ -1344,13 +1344,18 @@ div.originalPrice span,
 
 .originalPrice,
 .originalRateAmount,
+.SearchHotels .ArnPropName div.originalPrice span,
 .SinglePropDetail .RoomDescription .originalRateAmount {
     display: inline-block !important;
-    font-size: 15px !important;
+    font-size: 15px;
+}
+
+.SearchHotels .ArnPropName div.originalPrice .originalRateContainer{
+    display: none !important;
 }
 
 .SearchHotels .ArnRateCell{
-    max-width: 210px;
+    max-width: 205px;
 }
 
 .SinglePropDetail .originalRateAmount {
@@ -1358,7 +1363,6 @@ div.originalPrice span,
 }
 
 .SearchHotels .percentSavings {
-    display: block !important;
     font-family: 'Avenir', 'Helvetica';
     padding: 6px 4px;
 }
@@ -1374,7 +1378,7 @@ div.originalPrice span,
         width: 100% !important;
         border-radius: 0 5px 0 5px !important;
         background: #215853 !important;
-        display: inline-block !important;
+        display: inline-block;
         padding: 6px 10px;
         font-size: 15px !important;
     }
@@ -1382,7 +1386,7 @@ div.originalPrice span,
 
 .SinglePropDetail .bookRoomCell .percentSavings,
 .SinglePropDetail.mobile .bookRoomCell .percentSavings {
-    display: block !important;
+    display: block;
     border: none;
     background: #215853;
     color: #fff;

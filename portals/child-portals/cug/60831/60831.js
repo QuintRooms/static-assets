@@ -5,6 +5,7 @@ const cug_portal = new CUGPortal();
 jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
         cug_portal.ratesReadyEventMethods();
+        cug_portal.removeSavingsLessThan10();
         beatTheirRateMessaging();
     }, 1);
 });
@@ -70,9 +71,15 @@ function beatTheirRateMessaging() {
         const percent = percent_el.getAttribute('percent');
         const percent_banner = property.querySelector('.percentSavings');
 
-        if (!percent_banner) return;
-        console.log('beatTheirRateMessaging -> percent_banner', percent_banner);
+        if (!percent_banner || percent < 3) {
+            percent_banner.style.display = 'none';
+            property.querySelector('.originalRateAmount').style.fontSize = 0;
+            property.querySelector('.originalPrice').style.height = 0;
+
+            return;
+        }
 
         percent_banner.textContent = `We beat their price by ${percent}%`;
     });
 }
+beatTheirRateMessaging();

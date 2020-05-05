@@ -87,7 +87,7 @@ body {
     background: #215853;
     display: flex;
     justify-content: space-between;
-    border-bottom: 5px solid #bde3de;
+    border-bottom: 3px solid #e2ad37;
 }
 
 #commands {
@@ -377,7 +377,7 @@ textarea,
     margin: 5px 5px 0 0;
 }
 
-.ArnPropAddress,
+.ArnPropAddress,    
 .distanceLabel {
     font-size: 13px;
 }
@@ -387,7 +387,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg) no-repeat left center / cover;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat left center / cover;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -1458,7 +1458,7 @@ div.originalPrice span,
     .SearchHotels .ArnRateCell{
         max-width: 175px;
     }
-    
+
     .SearchHotels .percentSavings{
         max-width: 100%;
         border-radius: 5px 5px 0 0;
@@ -1471,6 +1471,23 @@ div.originalPrice span,
 
     .SinglePropDetail .ArnPropName div.ratingCount {
         position: static;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .SearchHotels .ArnRateCell{
+        position: static !important;
+        max-width: none;
+    }
+
+    .SearchHotels .ArnPropName{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .SearchHotels .ArnRateCell{
+        max-width: 100%;
     }
 }
 

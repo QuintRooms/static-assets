@@ -7,6 +7,7 @@ jQuery(document).on('ratesReadyEvent', () => {
         cug_portal.ratesReadyEventMethods();
         cug_portal.removeSavingsLessThan10();
         beatTheirRateMessaging('.SearchHotels', '.ArnProperty');
+        beatTheirRateMessaging('.SinglePropDetail', '.rateRow');
     }, 1);
 });
 
@@ -83,4 +84,3 @@ function beatTheirRateMessaging(page_selector, property_container) {
         percent_banner.textContent = `We beat their rates by ${percent}%`;
     });
 }
-beatTheirRateMessaging('.SinglePropDetail', '.rateRow');

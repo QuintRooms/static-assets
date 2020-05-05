@@ -1257,7 +1257,7 @@ ul {
 
 @media screen and (min-width: 500px) {
     .SearchHotels .ArnPropThumb {
-        width: 27%;
+        width: 25%;
     }
 }
 
@@ -1349,12 +1349,18 @@ div.originalPrice span,
     font-size: 15px !important;
 }
 
+.SearchHotels .ArnRateCell{
+    max-width: 210px;
+}
+
 .SinglePropDetail .originalRateAmount {
     font-size: 15px !important;
 }
 
 .SearchHotels .percentSavings {
     display: block !important;
+    font-family: 'Avenir', 'Helvetica';
+    padding: 6px 4px;
 }
 
 @media screen and (min-width: 800px) {

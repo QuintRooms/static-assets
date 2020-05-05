@@ -52,3 +52,28 @@ function hidePromoCode() {
 }
 
 hidePromoCode();
+
+function beatTheirRateMessaging() {
+    let percent_el;
+    const properties = document.querySelectorAll('.ArnProperty');
+
+    if (!document.querySelector('.SearchHotels')) return;
+
+    properties.forEach((property) => {
+        if (!property) return;
+
+        percent_el = property.querySelector('.originalPrice');
+
+        if (!percent_el) return;
+
+        const percent = percent_el.getAttribute('percent');
+        const percent_banner = property.querySelector('.percentSavings');
+
+        if (!percent_banner) return;
+        console.log('beatTheirRateMessaging -> percent_banner', percent_banner);
+
+        percent_banner.textContent = `We beat their price by ${percent}%`;
+    });
+}
+
+beatTheirRateMessaging();

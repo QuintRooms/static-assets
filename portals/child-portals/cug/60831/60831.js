@@ -5,6 +5,7 @@ const cug_portal = new CUGPortal();
 jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
         cug_portal.ratesReadyEventMethods();
+        beatTheirRateMessaging();
     }, 1);
 });
 
@@ -75,5 +76,3 @@ function beatTheirRateMessaging() {
         percent_banner.textContent = `We beat their price by ${percent}%`;
     });
 }
-
-beatTheirRateMessaging();

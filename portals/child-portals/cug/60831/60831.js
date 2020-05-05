@@ -44,7 +44,7 @@ document
     .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/60831.css">');
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
-cug_portal.updateText('.RootBody .reserveHotel', 'start your search for unbeatable rates.');
+cug_portal.updateHTML('.RootBody .ArnSearchHotelsImg', `<h1>start your search</h1><h4>we'll beat their rates on 600k+ hotels</h4>`);
 
 function hidePromoCode() {
     const promo_code_element = document.querySelector('#thePassCodeAjax input');

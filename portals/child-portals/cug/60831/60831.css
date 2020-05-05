@@ -263,6 +263,18 @@ body {
     font-size: 15px;
 }
 
+.RootBody .ArnSearchHotelsImg {
+    color: #fff;
+}
+
+.RootBody .ArnSearchHotelsImg h1 {
+    font-family: 'Avenir-Black';
+}
+
+.RootBody .reserveHotel {
+    display: none !important;
+}
+
 .RootBody .modifySearch {
     display: none;
 }
@@ -377,7 +389,7 @@ textarea,
     margin: 5px 5px 0 0;
 }
 
-.ArnPropAddress,    
+.ArnPropAddress,
 .distanceLabel {
     font-size: 13px;
 }
@@ -921,7 +933,7 @@ header {
     }
 
     .adminContainer span {
-        background-color: #215853;
+        background-color: #e2ad37;
     }
 
     .RootPage #city {
@@ -935,11 +947,11 @@ header {
 
     .adminContainer span {
         position: absolute;
-        top: 24px;
+        top: 30px;
         right: 18px;
     }
 
-    #AdminControlsContainer {
+    #AdminControlsContainer > #AdminControlsContainer  {
         border-bottom: none;
     }
 
@@ -1157,6 +1169,10 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
+    .logo img{
+        max-width: 225px;
+    }
+    
     .SearchHotels .ArnPropName div.memberSavings {
         margin: 0 !important;
     }
@@ -1428,14 +1444,14 @@ div.originalPrice span,
     width: 100% !important;
 }
 @media screen and (max-width: 800px) {
-    .SearchHotels .percentSavings{
+    .SearchHotels .percentSavings {
         display: block;
         max-width: 190px;
         z-index: 1;
     }
 
     .SinglePropDetail .SimpleSearch .ArnRooms,
-    .SinglePropDetail .SimpleSearch .CheckIn{
+    .SinglePropDetail .SimpleSearch .CheckIn {
         margin-right: 2%;
         width: 48% !important;
     }
@@ -1455,11 +1471,11 @@ div.originalPrice span,
 }
 
 @media screen and (max-width: 500px) {
-    .SearchHotels .ArnRateCell{
+    .SearchHotels .ArnRateCell {
         max-width: 175px;
     }
 
-    .SearchHotels .percentSavings{
+    .SearchHotels .percentSavings {
         max-width: 100%;
         border-radius: 5px 5px 0 0;
     }
@@ -1474,26 +1490,26 @@ div.originalPrice span,
     }
 }
 
-@media screen and (max-width: 420px){
-    .SearchHotels .ArnRateCell{
+@media screen and (max-width: 420px) {
+    .SearchHotels .ArnRateCell {
         position: static !important;
         max-width: none;
     }
 
-    .SearchHotels .ArnPropName{
+    .SearchHotels .ArnPropName {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 360px){
-    .SearchHotels .ArnRateCell{
+@media screen and (max-width: 360px) {
+    .SearchHotels .ArnRateCell {
         max-width: 100%;
     }
 }
 
-@media screen and (max-width: 325px){
+@media screen and (max-width: 325px) {
     .SinglePropDetail .SimpleSearch .CheckIn,
-    .SinglePropDetail .SimpleSearch .CheckOut{
+    .SinglePropDetail .SimpleSearch .CheckOut {
         width: 100% !important;
         display: block !important;
     }

@@ -3053,6 +3053,7 @@ body.HoldRoomsForm {
     #arnMapPopupMobile {
         width: 90%;
         left: 20px;
+        margin: auto;
     }
 }
 
@@ -3064,6 +3065,11 @@ body.HoldRoomsForm {
 
     #arnCloseAnchorId {
         z-index: 8;
+    }
+
+    #arnMapPopupMobile .imageContainer img {
+        width: 250px!important;
+        height: 200px!important;
     }
 }
 

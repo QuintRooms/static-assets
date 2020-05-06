@@ -3031,7 +3031,7 @@ body.HoldRoomsForm {
     max-width: 50px !important;
 }
 
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 600px) {
     .arnClosePopupButton {
         height: 0px;
         background: transparent;
@@ -3048,6 +3048,22 @@ body.HoldRoomsForm {
 
     .arnMapPopup .rate {
         background: transparent;
+    }
+
+    #arnMapPopupMobile {
+        width: 90%;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+   
+    #arnMapPopupMobile {
+        z-index: 1001;
+    }
+
+    #arnCloseAnchorId {
+        z-index: 8;
     }
 }
 

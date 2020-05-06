@@ -81,6 +81,6 @@ function beatTheirRateMessaging(page_selector, property_container) {
             return;
         }
 
-        percent_banner.textContent = `We beat their rates by ${percent}%`;
+        percent_banner.innerHTML = `<span><strong>Beat</strong> 'em by ${percent}%</span>`;
     });
 }

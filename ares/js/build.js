@@ -587,6 +587,7 @@ export default class BasePortal {
         map_btn.addEventListener('click', () => {
             map_btn.classList.toggle('closeMap');
             map.classList.toggle('showMap');
+            document.body.classList.toggle('fixed');
 
             map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });
@@ -1648,17 +1649,35 @@ export default class BasePortal {
             }
         }
 
+        function hideArrows(next, prev) {
+            if (counter > 1 && counter < prop_images.length - 2) return;
+            if (counter !== 0 && counter !== prop_images.length) {
+                next.style.display = 'block';
+                prev.style.display = 'block';
+            }
+
+            if (counter === 0) {
+                prev.style.display = 'none';
+            }
+
+            if (counter + 1 === prop_images.length) {
+                next.style.display = 'none';
+            }
+        }
+
         async function createCarousel() {
             await createPropImageSlideshow();
 
             const carousel_slide = document.querySelector('.carousel-slide');
             const previous_btn = document.querySelector('#previousBtn');
             const next_btn = document.querySelector('#nextBtn');
+            hideArrows(next_btn, previous_btn);
 
             next_btn.addEventListener('click', () => {
                 carousel_images = document.querySelectorAll('.carousel-slide img');
                 if (counter === carousel_images.length - 1) return;
                 counter += 1;
+                hideArrows(next_btn, previous_btn);
                 const size = carousel_images[counter].clientWidth;
                 carousel_slide.style.transform = `translateX(-${size * counter}px)`;
                 if (counter === carousel_images.length - 2) {
@@ -1669,6 +1688,7 @@ export default class BasePortal {
             previous_btn.addEventListener('click', () => {
                 if (counter <= 0) return;
                 counter -= 1;
+                hideArrows(next_btn, previous_btn);
                 const size = carousel_images[counter].clientWidth;
                 carousel_slide.style.transform = `translateX(-${size * counter}px)`;
             });

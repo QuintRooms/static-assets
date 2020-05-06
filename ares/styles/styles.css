@@ -1931,6 +1931,10 @@ legend {
         width: 100% !important;
     }
 
+    .fixed {
+        position: fixed;
+    }
+
     .closeMap {
         z-index: 9;
         position: relative;
@@ -3031,15 +3035,18 @@ body.HoldRoomsForm {
     max-width: 50px !important;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 805px) {
     .arnClosePopupButton {
         height: 0px;
         background: transparent;
         color: #fff;
         font-size: 24px;
         margin-left: 10px;
+        position: relative;
+        z-index: 1;
+        padding: 0px 20px;
     }
-
+    
     #arnMapPopupMobile .imageContainer img {
         width: 300px!important;
         height: 235px!important;
@@ -3054,19 +3061,15 @@ body.HoldRoomsForm {
         width: 90%;
         left: 20px;
         margin: auto;
-    }
-}
-
-@media screen and (max-width: 350px) {
-   
-    #arnMapPopupMobile {
         z-index: 1001;
     }
 
     #arnCloseAnchorId {
-        z-index: 8;
+        z-index: 9;
     }
+}
 
+@media screen and (max-width: 350px) {
     #arnMapPopupMobile .imageContainer img {
         width: 250px!important;
         height: 200px!important;

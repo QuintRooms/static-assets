@@ -951,8 +951,16 @@ div.autocomplete ul li.selected {
 .SearchHotels #adults,
 .SearchHotels #hotelName {
     width: 100%;
-    margin-bottom: 4px;
+    margin: 4px 0;
     border-radius: 5px;
+}
+
+.SearchHotels .algolia-places {
+    margin: 4px 0;
+}
+
+.SearchHotels .ap-input-icon {
+    top: 0px;
 }
 
 .SearchHotels #CheckInContainer,
@@ -1390,9 +1398,22 @@ legend {
 }
 
 .SinglePropDetail #moreRatesLink {
-    float: right;
-    margin-right: 8px;
+    background-color: #5dc3ac;
+    float: left;
     font-weight: 700;
+    border: 1px solid #5dc3ac;
+    border-radius: 5px;
+    width: 155px;
+    height: 44px;
+    padding: 10px;
+    color: #fff!important;
+    text-decoration: none;
+    margin: 20px 0 20px 0;
+}
+
+.SinglePropDetail #moreRatesLink:hover {
+    background-color: #fff;
+    color: #5dc3ac!important;
 }
 
 .SinglePropDetail .ArnRateCancelPolicyContainer .close {
@@ -2754,8 +2775,8 @@ legend {
 
 .RootBody input,
 .RootBody select {
-    margin-right: 6px;
     margin-bottom: 0;
+    margin-top: 6px;
     height: 37px !important;
 }
 
@@ -2773,9 +2794,21 @@ legend {
     display: none;
 }
 
+.RootBody .ArnRooms, .RootBody #CheckInContainer {
+    padding: 0 15px
+}
+
 @media screen and (max-width: 920px) {
     #root-search-container {
         margin: 0 12px;
+    }
+
+    .RootBody .ArnRooms, .RootBody #CheckInContainer {
+    padding: 0;
+    }
+
+    .RootBody .ap-input-icon {
+        bottom: 4px;
     }
 
     .RootBody .ArnPrimarySearchContainer {
@@ -3016,6 +3049,28 @@ body.HoldRoomsForm {
     .arnMapPopup .rate {
         background: transparent;
     }
+
+    #arnMapPopupMobile {
+        width: 90%;
+        left: 20px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+   
+    #arnMapPopupMobile {
+        z-index: 1001;
+    }
+
+    #arnCloseAnchorId {
+        z-index: 8;
+    }
+
+    #arnMapPopupMobile .imageContainer img {
+        width: 250px!important;
+        height: 200px!important;
+    }
 }
 
 
@@ -3152,7 +3207,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .algolia-places {
-    width: 97%;
+    width: 100%;
 }
 
 input#address-input {
@@ -3177,6 +3232,7 @@ input#address-input {
 
 .ap-input-icon {
     right: 6px;
+    top: 6px;
     background-color: #fff;
 }
 

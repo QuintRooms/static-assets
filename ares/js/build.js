@@ -587,6 +587,7 @@ export default class BasePortal {
         map_btn.addEventListener('click', () => {
             map_btn.classList.toggle('closeMap');
             map.classList.toggle('showMap');
+            document.body.classList.toggle('fixed');
 
             map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });

@@ -1931,6 +1931,10 @@ legend {
         width: 100% !important;
     }
 
+    .fixed {
+        position: fixed;
+    }
+
     .closeMap {
         z-index: 9;
         position: relative;
@@ -3060,7 +3064,7 @@ body.HoldRoomsForm {
     }
 
     #arnCloseAnchorId {
-        z-index: 8;
+        z-index: 9;
     }
 }
 

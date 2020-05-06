@@ -1676,7 +1676,7 @@ export default class BasePortal {
                 carousel_images = document.querySelectorAll('.carousel-slide img');
                 if (counter === carousel_images.length - 1) return;
                 counter += 1;
-                hideArrows(document.querySelector('#nextBtn'), document.querySelector('#previousBtn'));
+                hideArrows(next_btn, previous_btn);
                 const size = carousel_images[counter].clientWidth;
                 carousel_slide.style.transform = `translateX(-${size * counter}px)`;
                 if (counter === carousel_images.length - 2) {

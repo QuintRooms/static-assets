@@ -80,11 +80,12 @@ body {
     top: 175px;
 }
 
-#AdminControlsContainer {
+#AdminControlsContainer,
+header {
     z-index: 10;
     position: relative;
     height: initial;
-    background: #215853;
+    background: #215853 !important;
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid #e2ad37;
@@ -404,7 +405,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat left center / cover;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -443,7 +444,7 @@ header {
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg) no-repeat left center / cover !important;
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
     grid-row-start: 2;
     display: flex;
     flex-direction: column;
@@ -1382,7 +1383,7 @@ div.originalPrice span,
 }
 
 .SearchHotels .ArnRateCell {
-    max-width: 205px;
+    max-width: 185px;
 }
 
 .SinglePropDetail .originalRateAmount {

@@ -3038,8 +3038,10 @@ body.HoldRoomsForm {
         color: #fff;
         font-size: 24px;
         margin-left: 10px;
+        position: relative;
+        z-index: 1;
     }
-
+    
     #arnMapPopupMobile .imageContainer img {
         width: 300px!important;
         height: 235px!important;
@@ -3054,19 +3056,15 @@ body.HoldRoomsForm {
         width: 90%;
         left: 20px;
         margin: auto;
-    }
-}
-
-@media screen and (max-width: 350px) {
-   
-    #arnMapPopupMobile {
         z-index: 1001;
     }
 
     #arnCloseAnchorId {
         z-index: 8;
     }
+}
 
+@media screen and (max-width: 350px) {
     #arnMapPopupMobile .imageContainer img {
         width: 250px!important;
         height: 200px!important;

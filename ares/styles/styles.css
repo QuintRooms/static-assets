@@ -3058,7 +3058,7 @@ body.HoldRoomsForm {
     }
 
     #arnMapPopupMobile {
-        width: 90%;
+        width: 50%;
         left: 20px;
         margin: auto;
         z-index: 1001;
@@ -3066,6 +3066,12 @@ body.HoldRoomsForm {
 
     #arnCloseAnchorId {
         z-index: 9;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #arnMapPopupMobile {
+        width: 90%;
     }
 }
 

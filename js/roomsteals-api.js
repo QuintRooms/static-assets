@@ -103,7 +103,7 @@ class RS {
 
                         total = total_el.getAttribute('total');
                         btn.text = 'Subscribe to Book';
-                        btn.setAttribute('href', `${this.subscribe_url}?return_to=${this.property_url}?total=${total}`);
+                        btn.setAttribute('href', `${this.subscribe_url}/?return_to=${this.property_url}?total=${total}`);
                     });
                 }
             }

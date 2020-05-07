@@ -1581,13 +1581,11 @@ div.originalPrice span,
 }} */
 
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
-{ @media {
-    @media screen and (max-width: 420px) {
+{ @media screen and (max-width: 420px) {
         .message-content h1 {
             padding: 8px;
         }
         .details-link {
             margin: 10px;
         }
-    }
 }}

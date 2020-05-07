@@ -34,6 +34,7 @@ body,
 .arnPrice,
 .yourRateAmount,
 legend,
+#theWBLoginForm h1,
 .arnMapPopup h1 {
     font-family: 'Avenir-Black', 'Helvetica' !important;
 }
@@ -163,6 +164,10 @@ header {
     box-shadow: none;
     color: #fff !important;
     background: transparent !important;
+}
+
+.WBLoginFormContainer.ArnSubPage #theWBLoginForm h1{
+    text-align: left;
 }
 
 #theWBLoginForm h2 {
@@ -444,12 +449,17 @@ header {
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
     position: static;
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
     grid-row-start: 2;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-grow: 1;
+}
+
+.WBForgotPasswordFormContainer.ArnSubPage,
+.WBForgotPasswordFormInform,
+.WBLoginFormContainer.ArnSubPage{
+    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
 }
 
 /* Registration */
@@ -461,6 +471,14 @@ header {
     top: 0;
 }
 
+.WBValidatedRegistrationForm .SSFormBody #theUserNameAjax{
+    width: 100%;
+}
+
+.WBValidatedRegistrationFormFields legend{
+    display: none;
+}
+
 .MemberAuthenticated.WBValidatedRegistrationForm header {
     margin-top: 45px;
 }
@@ -468,26 +486,51 @@ header {
 .WBValidatedRegistrationForm .ArnSubPage {
     margin: 0;
     max-width: 100%;
+    padding: 0;
 }
 
 #theWBValidatedRegistrationFormBody {
-    background: #fff;
+    background: transparent;
     padding: 50px !important;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#theWBValidatedRegistrationFormBody form{
+    max-width: 600px;
+}
+
+.register-container{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(https://dev-static.hotelsforhope.com/images/stock_photos/hamburg.jpg) no-repeat center center / cover !important;
 }
 
 #theWBValidatedRegistrationFormBody label {
     display: block !important;
 }
 
-.WBValidatedRegistrationForm #thePersonalInfoGroup legend {
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer h1 {
     display: block !important;
     font-size: 36px;
-    font-weight: 500;
-    color: #15151e;
+    font-family: 'Avenir-Black', 'Helvetica';
+    color: #fff;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer p{
+    color: #fff;
+}
+
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormContainer button{
+    background: transparent;
+    border: 1px solid #e2ad37;
+    color: #fff;
 }
 
 .registrationText,
@@ -532,7 +575,7 @@ header {
     background: #e2ad37;
     color: #333 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 15px;
     font-weight: 500 !important;
 }
@@ -1072,6 +1115,10 @@ ul {
 .SinglePropDetail .ArnNightlyRate strong {
     color: #215853 !important;
     font-family: 'Avenir-Black', 'Helvetica' !important;
+}
+
+.SinglePropDetail .ArnNightlyRate .brand-message strong{
+    color: #fff !important;
 }
 
 @media only screen and (max-width: 800px) {

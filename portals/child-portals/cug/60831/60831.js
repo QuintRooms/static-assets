@@ -81,6 +81,17 @@ function beatTheirRateMessaging(page_selector, property_container) {
             return;
         }
 
-        percent_banner.innerHTML = `<span><strong>Beat</strong> 'em by ${percent}%</span>`;
+        percent_banner.innerHTML = `<span class="brand-message"><strong>Beat</strong> 'em by ${percent}%</span>`;
     });
 }
+
+// document.querySelector('#theWBValidatedRegistrationFormBody').insertAdjacentHTML(
+//     'beforeBegin',
+//     `
+//     <div class="register-container">
+//         <h1>Sign Up</h1>
+//         <p>You're seconds away from getting the best deals on hotels across the globe!</p>
+//         <p>Already a member?</p>
+//         <button>Sign In</button>
+//     </div>`
+// );

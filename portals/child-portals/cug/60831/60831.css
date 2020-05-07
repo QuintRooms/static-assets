@@ -1119,6 +1119,7 @@ ul {
 
 .SinglePropDetail .ArnNightlyRate .brand-message strong{
     color: #fff !important;
+    font-size: 15px !important;
 }
 
 @media only screen and (max-width: 800px) {

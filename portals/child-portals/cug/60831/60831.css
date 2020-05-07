@@ -1569,3 +1569,18 @@ div.originalPrice span,
         display: block !important;
     }
 }
+
+@media screen and (max-width: 375px) {
+    .message-content h1 {
+        line-height: 2;
+    }
+
+    .WBLoginFormContainer.ArnSubPage .SSFormBody {
+        margin: 90px 0 0;
+    }
+}
+
+
+
+
+

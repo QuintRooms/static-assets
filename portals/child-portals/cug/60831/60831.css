@@ -1570,17 +1570,17 @@ div.originalPrice span,
     }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    
-    /* Safari 5+ ONLY */
-    ::i-block-chrome, .message-content h1 {
-        padding: 8px;
+@media screen and (max-width: 375px) {
+    .message-content h1 {
+        line-height: 2;
     }
 
-    ::i-block-chrome, .details-link {
-        margin: 10px;
+    .WBLoginFormContainer.ArnSubPage .SSFormBody {
+        margin: 90px 0 0;
     }
 }
+
+
 
 
 

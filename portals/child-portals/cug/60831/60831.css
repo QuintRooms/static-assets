@@ -1571,13 +1571,18 @@ div.originalPrice span,
 }
 
 @media screen and (max-width: 375px) {
+    body {
+        display: block;
+    }
+
     .message-content h1 {
         line-height: 2;
     }
 
     .WBLoginFormContainer.ArnSubPage .SSFormBody {
-        margin: 90px 0 0;
+        margin: 0 10px;
     }
+
 }
 
 

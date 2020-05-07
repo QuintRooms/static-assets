@@ -1569,3 +1569,13 @@ div.originalPrice span,
         display: block !important;
     }
 }
+
+@media not all and (min-resolution:.001dpcm) { 
+    @media {
+            .message-content h1 {
+                padding: 8px;
+            }
+            .details-link {
+                margin: 10px;
+            }
+}}

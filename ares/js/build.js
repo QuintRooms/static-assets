@@ -1651,18 +1651,13 @@ export default class BasePortal {
 
         function hideArrows(next, prev) {
             if (counter > 1 && counter < prop_images.length - 2) return;
-            if (counter !== 0 && counter !== prop_images.length) {
-                next.style.display = 'block';
-                prev.style.display = 'block';
-            }
 
-            if (counter === 0) {
-                prev.style.display = 'none';
-            }
+            next.style.display = 'block';
+            prev.style.display = 'block';
 
-            if (counter + 1 === prop_images.length) {
-                next.style.display = 'none';
-            }
+            if (counter === 0) prev.style.display = 'none';
+
+            if (counter + 1 === prop_images.length) next.style.display = 'none';
         }
 
         async function createCarousel() {

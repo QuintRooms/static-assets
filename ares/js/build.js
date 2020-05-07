@@ -850,7 +850,9 @@ export default class BasePortal {
             .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
             .open-modal,
-            .lowest-rate-link {
+            .lowest-rate-link,
+            .SinglePropDetail .RateCalendarPopupAnchor,
+            .ArnContentContainer legend {
                 color:${this.site_config.secondary_text_color};
             }
             
@@ -1612,7 +1614,8 @@ export default class BasePortal {
 
         async function getPropImages() {
             try {
-                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
+                // const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
+                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
                     method: 'GET',
                 }).then((response) => response.json());
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));

@@ -16,9 +16,9 @@ html {
     margin: 0 auto;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
+input[type='text'],
+input[type='password'],
+input[type='email'],
 select,
 textarea {
     font-size: 13px !important;
@@ -48,7 +48,7 @@ textarea {
 .ArnSortByName,
 #CitySearchContainer span br,
 .ArnChildren,
-.ArnSearchHotelsImg+br,
+.ArnSearchHotelsImg + br,
 #ajaxStatus,
 #RateFiltersContainer,
 .ArnAvailability,
@@ -179,7 +179,7 @@ select#adults {
 
 #commands a:before,
 #commands button:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -203,13 +203,13 @@ select#adults {
 .hamburger {
     display: none;
 }
-.config-container{
+.config-container {
     display: none;
 }
 
 .SearchHotels .config-container,
 .SinglePropDetail .config-container,
-.RootBody .config-container{
+.RootBody .config-container {
     background: #333;
     width: 100%;
     display: flex;
@@ -218,7 +218,6 @@ select#adults {
     position: relative;
     z-index: 10;
 }
-
 
 .config-container #CurrenciesContainer {
     margin-right: 24px;
@@ -290,7 +289,7 @@ select#adults {
 #language-label polyline,
 #currency-label polyline {
     stroke: #868686;
-    transform: scale(.85);
+    transform: scale(0.85);
 }
 
 #CurrenciesContainer {
@@ -313,7 +312,6 @@ select#adults {
     flex-direction: column;
 }
 
-
 .currencies-container {
     position: relative;
     margin-right: 12px;
@@ -323,7 +321,7 @@ select#adults {
 .currencies div {
     cursor: pointer;
     padding: 6px 8px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     font-size: 13px;
 }
 
@@ -353,7 +351,7 @@ select#adults {
     margin-bottom: 0;
     cursor: pointer;
     padding: 10px 8px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
 }
@@ -393,7 +391,7 @@ select#adults {
     grid-row-start: 1;
 }
 
-.top-currencies+h4 {
+.top-currencies + h4 {
     grid-column-start: 1;
     grid-column-end: 5;
     padding: 0 8px;
@@ -417,7 +415,7 @@ select#adults {
 }
 
 /* Currencies IE CSS Hack */
-@media all and (-ms-high-contrast:none) {
+@media all and (-ms-high-contrast: none) {
     .show-currencies-container {
         display: flex;
         flex-wrap: wrap;
@@ -483,7 +481,6 @@ select#adults {
 }
 
 @media screen and (max-width: 800px) {
-
     .logo img {
         width: 100%;
         max-width: 125px;
@@ -498,7 +495,7 @@ select#adults {
         flex-direction: column;
         opacity: 0;
         z-index: -1;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
         transform: translateY(-130px);
         width: 100%;
         box-shadow: 0 2px 12px 0 #000;
@@ -511,7 +508,7 @@ select#adults {
         z-index: 1;
         width: 100%;
         background: #fff;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
     }
 
     #commands a,
@@ -524,10 +521,8 @@ select#adults {
         border-bottom: 1px solid #ccc;
         margin: 0;
         padding: 12px;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
     }
-
-
 
     #commands a:before,
     #commands button:before {
@@ -537,7 +532,6 @@ select#adults {
 
 /* Mobile Menu End */
 /* Calendar and Map Start */
-
 
 .arn-leaflet-reset-button {
     height: unset;
@@ -565,15 +559,14 @@ select#adults {
     border-top-color: rgb(118, 114, 114);
 }
 
-.arnMapMarker:hover{
+.arnMapMarker:hover {
     border: 1px solid rgb(77, 77, 77);
     background: rgb(206, 206, 206);
     color: #333;
 }
 
-
 .arnMapMarker.contracted-pin,
-.arnMapMarker.contracted-pin.highlight{
+.arnMapMarker.contracted-pin.highlight {
     z-index: 8001;
 }
 
@@ -583,7 +576,7 @@ select#adults {
     border: 1px solid #444f74;
 }
 
-.arnMapMarker.highlight  .arnMapMarkerTriangle {
+.arnMapMarker.highlight .arnMapMarkerTriangle {
     border-top-color: rgb(118, 114, 114);
 }
 
@@ -610,7 +603,7 @@ select#adults {
     float: right;
     position: relative;
     top: 4px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     pointer-events: none;
 }
 
@@ -626,12 +619,11 @@ select#adults {
     color: #333;
     padding: 4px;
     text-decoration: none;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 #sort-wrapper div {
     font-size: 13px;
-
 }
 
 .ArnSortByType {
@@ -655,7 +647,7 @@ select#adults {
     top: 0;
     left: 0;
     z-index: 999;
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, 0.9);
     height: 100%;
     width: 100%;
     display: flex;
@@ -707,8 +699,6 @@ select#adults {
     -webkit-animation: cssload-animate 0.58s linear infinite;
     -moz-animation: cssload-animate 0.58s linear infinite;
 }
-
-
 
 @keyframes cssload-animate {
     17% {
@@ -826,7 +816,6 @@ select#adults {
 }
 
 @keyframes shadow {
-
     0%,
     100% {
         transform: scale(1, 1);
@@ -838,7 +827,6 @@ select#adults {
 }
 
 @-o-keyframes shadow {
-
     0%,
     100% {
         -o-transform: scale(1, 1);
@@ -850,7 +838,6 @@ select#adults {
 }
 
 @-ms-keyframes shadow {
-
     0%,
     100% {
         -ms-transform: scale(1, 1);
@@ -862,7 +849,6 @@ select#adults {
 }
 
 @-webkit-keyframes shadow {
-
     0%,
     100% {
         -webkit-transform: scale(1, 1);
@@ -874,7 +860,6 @@ select#adults {
 }
 
 @-moz-keyframes shadow {
-
     0%,
     100% {
         -moz-transform: scale(1, 1);
@@ -996,11 +981,11 @@ div.autocomplete ul li.selected {
     margin-top: 8px;
     background: transparent;
     border: 1px solid #fff;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .SearchHotels .star {
-    transform: scale(.9);
+    transform: scale(0.9);
 }
 
 .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
@@ -1086,11 +1071,9 @@ div.autocomplete ul li.selected {
     .SearchHotels .ArnTripAdvisorDetails.HasReviews {
         justify-content: center;
     }
-
 }
 
 @media screen and (max-width: 800px) {
-
     /* Mobile Sort and Filter Start*/
     .sort-filter-overlay {
         position: fixed;
@@ -1098,7 +1081,7 @@ div.autocomplete ul li.selected {
         height: 100%;
         width: 100%;
         z-index: 9;
-        background: rgba(0, 0, 0, .7);
+        background: rgba(0, 0, 0, 0.7);
         display: none;
     }
 
@@ -1135,7 +1118,7 @@ div.autocomplete ul li.selected {
     }
 
     #sort-wrapper a {
-        padding: 8px
+        padding: 8px;
     }
 
     #sort-wrapper a:hover,
@@ -1181,7 +1164,7 @@ div.autocomplete ul li.selected {
 /* Single Prop Page Start */
 .SinglePropDetail .ArnPropThumb,
 .SinglePropDetail .PropertyImages legend,
-.SinglePropDetail .ArnProperty>legend,
+.SinglePropDetail .ArnProperty > legend,
 .SinglePropDetail .ArnPropClass,
 .SinglePropDetail .PropertyLinks,
 .SinglePropDetail .SearchActions,
@@ -1207,7 +1190,7 @@ div.autocomplete ul li.selected {
     width: 250px;
 }
 
-.SinglePropDetail .ArnLeftListContainer>span.translateMe {
+.SinglePropDetail .ArnLeftListContainer > span.translateMe {
     display: block;
     padding: 12px;
     font-size: 19px;
@@ -1218,11 +1201,14 @@ div.autocomplete ul li.selected {
     position: relative;
 }
 
+.ArnContentContainer legend {
+    padding-top: 18px;
+}
+
 legend {
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 500;
     width: 100%;
-    border-bottom: 1px solid #333;
 }
 
 .SinglePropDetail .ArnPropName {
@@ -1234,11 +1220,11 @@ legend {
     font-weight: 700;
 }
 
-.SinglePropDetail .ArnMildText>div {
+.SinglePropDetail .ArnMildText > div {
     font-size: 0;
 }
 
-.SinglePropDetail .ArnMildText>div img {
+.SinglePropDetail .ArnMildText > div img {
     text-align: center;
     height: 400px;
 }
@@ -1248,12 +1234,11 @@ legend {
 }
 
 .SinglePropDetail .ArnProperty {
-    border: 1px solid #ccc;
     border-radius: 5px;
     margin-left: 18px;
 }
 
-.SinglePropDetail .ArnSearchContainerMainTable>tbody>tr {
+.SinglePropDetail .ArnSearchContainerMainTable > tbody > tr {
     display: flex;
     flex-direction: row;
 }
@@ -1268,12 +1253,12 @@ legend {
     flex-direction: column;
 }
 
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:first-child {
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:first-child {
     width: 75%;
     padding-right: 5%;
 }
 
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2) {
+.SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
     width: 25%;
     text-align: center;
 }
@@ -1305,7 +1290,6 @@ legend {
 .SinglePropDetail .RateCalendarPopupAnchor {
     float: left;
     font-size: 13px;
-    color: #9b6aad;
 }
 
 .SinglePropDetail .ArnNightlyRate {
@@ -1330,7 +1314,7 @@ legend {
     font-size: 17px;
 }
 
-.arnUnit+div {
+.arnUnit + div {
     font-weight: 500;
     font-size: 13px;
 }
@@ -1340,7 +1324,7 @@ legend {
 }
 
 .SinglePropDetail .ArnRateCalendar {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
     text-align: center;
 }
@@ -1367,14 +1351,14 @@ legend {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(6, 6, 6, .85);
+    background-color: rgba(6, 6, 6, 0.85);
 }
 
 .SinglePropDetail .RateCalendarPopupClose.arnPopupClose {
     position: absolute;
     right: 0;
     padding: 8px;
-    color: rgba(238, 238, 238, .75);
+    color: rgba(238, 238, 238, 0.75);
     line-height: 1;
     font-size: 19px;
     font-weight: 100;
@@ -1446,6 +1430,10 @@ legend {
     height: 300px !important;
 }
 
+.SinglePropDetail .PropertyMap legend {
+    display: none;
+}
+
 .SinglePropDetail .PropLimitedAvail .ArnRateCell {
     width: 100% !important;
 }
@@ -1459,10 +1447,20 @@ legend {
     margin: 0;
 }
 
+.PropertyAmenities ul {
+    margin: 0;
+    padding-left: 24px;
+}
+
 .PropertyAmenities legend {
+    font-size: 17px;
     padding: 0;
     width: initial;
     text-align: center;
+}
+
+.ArnAmenityContainer {
+    margin-top: 12px;
 }
 
 .SinglePropDetail .ArnTripAdvisorDetails.HasReviews {
@@ -1526,23 +1524,26 @@ legend {
 /* Single Prop Page End */
 
 /* Single Prop IE CSS Hacks */
-@media all and (-ms-high-contrast:none) {
-    .SinglePropDetail .SimpleSearch .rowOne > td{
+@media all and (-ms-high-contrast: none) {
+    .SinglePropDetail .SimpleSearch .rowOne > td {
         display: table-row;
     }
-    
-    .SinglePropDetail .ArnChildren{
+
+    .SinglePropDetail .ArnChildren {
         display: none !important;
     }
 
-    .SinglePropDetail .ArnSearchContainerMainTable{
+    .SinglePropDetail .ArnSearchContainerMainTable {
         table-layout: fixed;
     }
 
-    .SinglePropDetail #theCheckIn, .SinglePropDetail #theCheckOut, .SinglePropDetail #rooms, .SinglePropDetail #adults{
+    .SinglePropDetail #theCheckIn,
+    .SinglePropDetail #theCheckOut,
+    .SinglePropDetail #rooms,
+    .SinglePropDetail #adults {
         max-width: 175px;
     }
-   }
+}
 #theCheckIn,
 #theCheckOut,
 #rooms,
@@ -1574,7 +1575,7 @@ legend {
         padding: 0;
     }
 
-    .SinglePropDetail .ArnMildText>div img {
+    .SinglePropDetail .ArnMildText > div img {
         width: 100%;
         height: 350px;
         object-fit: cover;
@@ -1606,34 +1607,37 @@ legend {
         margin: 0;
     }
 
-    .ArnPhotoContainer>tbody>tr>td:nth-child(1) {
+    .ArnPhotoContainer > tbody > tr > td:nth-child(1) {
         width: 100vw;
     }
 
-    .ArnPhotoContainer>tbody>tr>td:nth-child(1)>div {
+    .ArnPhotoContainer > tbody > tr > td:nth-child(1) > div {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 560px) {
-
     .SinglePropDetail .RateRowHeader,
     .arnPopupAnchor {
         display: none;
     }
 
-    .SinglePropDetail .ArnContentGeneralInfo tbody>tr {
+    .SinglePropDetail .ArnContentGeneralInfo tbody > tr {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:first-child {
+    .SinglePropDetail .RoomDescription {
+        text-align: center;
+    }
+
+    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:first-child {
         width: 100%;
         padding-right: 0;
     }
 
-    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2) {
+    .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
         width: 100%;
     }
 
@@ -1643,6 +1647,11 @@ legend {
 
     .SinglePropDetail .ArnNightlyRate {
         margin-top: 8px;
+    }
+
+    .ArnContentContainer legend {
+        text-align: center;
+        font-weight: 700;
     }
 }
 
@@ -1704,7 +1713,7 @@ legend {
     padding: 6px;
 }
 
-.ArnSecondarySearchOuterContainer input[type="checkbox"] {
+.ArnSecondarySearchOuterContainer input[type='checkbox'] {
     width: 15px;
     height: 15px;
 }
@@ -1716,7 +1725,7 @@ legend {
     border: none;
     border-radius: 5px;
     background: transparent;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .ArnSortByDealAmount,
@@ -1760,7 +1769,7 @@ legend {
     display: flex;
     flex-direction: row;
     margin-bottom: 18px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
     position: relative;
     border-radius: 5px;
 }
@@ -1836,7 +1845,7 @@ legend {
     margin-bottom: 4px;
 }
 
-.ArnPropNameLink+br {
+.ArnPropNameLink + br {
     display: none;
 }
 
@@ -1895,7 +1904,7 @@ legend {
     order: 0;
 }
 
-.averageNightly+div {
+.averageNightly + div {
     font-size: 13px !important;
     font-weight: 500 !important;
 }
@@ -1916,7 +1925,7 @@ legend {
     padding: 6px 12px;
     display: block;
     text-align: center;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 @media screen and (max-width: 1105px) {
@@ -1926,7 +1935,7 @@ legend {
 
     .SearchHotels .ArnPropertyMapInner {
         transform: translateX(100%);
-        transition: all .5s ease;
+        transition: all 0.5s ease;
         z-index: 8 !important;
         width: 100% !important;
     }
@@ -1944,7 +1953,7 @@ legend {
         transform: translateX(0) !important;
         width: 100% !important;
         z-index: 7;
-        transition: all .3s ease-in;
+        transition: all 0.3s ease-in;
     }
 
     #currentPropertyPage {
@@ -1973,7 +1982,7 @@ legend {
         padding: 8px;
         border: none;
         border-radius: 5px;
-        transition: all .3s ease-out;
+        transition: all 0.3s ease-out;
         text-decoration: none;
         cursor: pointer;
     }
@@ -1984,7 +1993,7 @@ legend {
 }
 
 @media screen and (max-width: 800px) {
-    .ArnSearchContainerMainTable>tbody>tr {
+    .ArnSearchContainerMainTable > tbody > tr {
         display: flex;
         flex-direction: column;
     }
@@ -2087,7 +2096,7 @@ legend {
     }
 
     .top-currencies h4,
-    .top-currencies+h4,
+    .top-currencies + h4,
     .top-currencies {
         grid-column-end: 3;
     }
@@ -2174,10 +2183,10 @@ legend {
     font-size: 15px;
     position: relative;
     text-indent: -9999em;
-    border-top: .3em solid rgba(0, 0, 0, .2);
-    border-right: .3em solid rgba(0, 0, 0, .2);
-    border-bottom: .3em solid rgba(0, 0, 0, .2);
-    border-left: .3em solid transparent;
+    border-top: 0.3em solid rgba(0, 0, 0, 0.2);
+    border-right: 0.3em solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.3em solid rgba(0, 0, 0, 0.2);
+    border-left: 0.3em solid transparent;
     -webkit-animation: spin 1s linear infinite;
     -moz-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
@@ -2210,13 +2219,13 @@ legend {
     align-items: center;
 }
 
-.ArnPhotoContainer>tbody>tr>td:nth-child(1) {
+.ArnPhotoContainer > tbody > tr > td:nth-child(1) {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.ArnPhotoContainer>tbody>tr>td:nth-child(1)>div {
+.ArnPhotoContainer > tbody > tr > td:nth-child(1) > div {
     display: block;
     margin: 0 auto;
 }
@@ -2226,7 +2235,7 @@ legend {
 }
 
 .image-arrow {
-    background: rgba(0, 0, 0, .85);
+    background: rgba(0, 0, 0, 0.85);
     z-index: 9999;
     position: absolute;
     padding: 12px;
@@ -2251,7 +2260,7 @@ legend {
 
 .flip-svg {
     transform: rotate(-90deg);
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 /* Checkout Start */
@@ -2263,7 +2272,7 @@ legend {
 .creditcards {
     display: inline-block;
     vertical-align: middle;
-    margin: .75rem 1rem .75rem 0;
+    margin: 0.75rem 1rem 0.75rem 0;
     width: 45px;
     height: 30px;
 }
@@ -2290,7 +2299,7 @@ legend {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 9;
 }
 
@@ -2356,13 +2365,13 @@ legend {
     background: transparent;
     border: none;
     border-radius: 5px;
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
 }
 
 #theBookingPage legend {
-    margin-top: 24px;
+    margin-top: 48px;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 700;
     padding: 0;
 }
 
@@ -2399,6 +2408,10 @@ legend {
     text-align: center;
 }
 
+#mainHotelImage {
+    display: none;
+}
+
 .theHotelName {
     width: 100%;
     font-size: 14px;
@@ -2407,8 +2420,11 @@ legend {
     text-align: left;
     padding: 12px 0 4px 0;
     border-radius: 5px 5px 0 0;
-    max-width: 70%;
     display: inline-block;
+}
+
+#theHotel .discount{
+    display: none;
 }
 
 #theCharges {
@@ -2421,7 +2437,7 @@ legend {
 }
 
 .ArnSubPage .FormFields {
-    margin-top: 4px;
+    margin-top: 12px;
 }
 
 #theSpecialRequestsAjax textarea {
@@ -2468,7 +2484,7 @@ legend {
     padding: 0 !important;
 }
 
-#theBookingPage .ArnRateCalendar>tbody>tr.ArnRateEven:first-child {
+#theBookingPage .ArnRateCalendar > tbody > tr.ArnRateEven:first-child {
     display: none;
 }
 
@@ -2500,8 +2516,8 @@ legend {
     padding: 8px 0;
 }
 
-.totalRow+.discount th,
-.totalRow+.discount td {
+.totalRow + .discount th,
+.totalRow + .discount td {
     border-bottom: 1px solid #ccc !important;
 }
 
@@ -2526,27 +2542,24 @@ legend {
     width: 100% !important;
 }
 
-.billing-details-container>div:nth-child(2) {
+.billing-details-container > div:nth-child(2) {
     grid-column-start: 1;
     grid-row-start: 1;
     margin-top: 4px;
 }
 
-
-.billing-details-container>div:nth-child(3) {
+.billing-details-container > div:nth-child(3) {
     grid-column-start: 2;
     grid-row-start: 1;
 }
 
-
-
-.billing-details-container>div:nth-child(1) {
+.billing-details-container > div:nth-child(1) {
     grid-column-start: 1;
     grid-row-start: 2;
     margin-top: 4px;
 }
 
-.billing-details-container>div:nth-child(4) {
+.billing-details-container > div:nth-child(4) {
     grid-column-start: 2;
     grid-row-start: 2;
 }
@@ -2558,7 +2571,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-.ArnGuestNames table>tbody>tr {
+.ArnGuestNames table > tbody > tr {
     display: grid;
     grid-template-columns: 47% 47%;
     grid-template-rows: 100%;
@@ -2572,7 +2585,7 @@ legend {
     grid-column-gap: 6%;
 }
 
-#theCardExpirationFieldsAjax+div {
+#theCardExpirationFieldsAjax + div {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-column-end: 3;
@@ -2597,7 +2610,6 @@ legend {
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
 #theCityZipAjax input,
-/*#theBookingPage .FormFields .formField,*/
 #theBookingPage .FormFields textarea,
 #theBookingPage .FormFields select,
 #theEmailAddressAjax input,
@@ -2632,14 +2644,31 @@ legend {
     list-style: none;
 }
 
+.confirmationWarning,
+#theMarketingOptInAjax {
+    display: flex;
+}
+
 @media screen and (max-width: 800px) {
-    #theHotel legend {
-        display: none;
+    #theReservationFormContainer {
+        padding: 8px;
     }
 
-    #theReservationFormContainer>table>tbody>tr {
+    #theReservationFormContainer > table > tbody > tr {
         display: flex;
         flex-direction: column;
+    }
+
+    #theBookingPage fieldset{
+        margin-top: 36px;
+    }
+
+
+    fieldset#theCharges,
+    fieldset#theHotel,
+    #theHotel legend{
+        margin-top: 0;
+        padding: 0 !important;
     }
 
     #theBookingPage .PaymentPolicies {
@@ -2703,24 +2732,31 @@ legend {
     #thePhoneNumberAjax input {
         width: initial;
     }
-
 }
 
 /* Single Prop IE CSS Hacks */
-@media all and (-ms-high-contrast:none) {
+@media all and (-ms-high-contrast: none) {
     .FormFields .text,
-    #theGuestNameAjax .text, #theBookingPage .ArnGuestNames .text, #theCityZipAjax input, #theBookingPage .FormFields textarea, #theBookingPage .FormFields select, #theEmailAddressAjax input, .additionalEmailAddress input, .guestBillingAddress input, #theCreditCardNumberAjax input, #theCreditCardBillingName{
+    #theGuestNameAjax .text,
+    #theBookingPage .ArnGuestNames .text,
+    #theCityZipAjax input,
+    #theBookingPage .FormFields textarea,
+    #theBookingPage .FormFields select,
+    #theEmailAddressAjax input,
+    .additionalEmailAddress input,
+    .guestBillingAddress input,
+    #theCreditCardNumberAjax input,
+    #theCreditCardBillingName {
         height: 32px;
     }
 
-    #theBookingPage .GuestForms{
+    #theBookingPage .GuestForms {
         margin: 0 6% 0 0;
     }
 
-    .ArnSubPage .FormFields .checkbox{
+    .ArnSubPage .FormFields .checkbox {
         width: 15px !important;
     }
-
 }
 /* Checkout End */
 
@@ -2753,7 +2789,7 @@ legend {
 
 .RootBody .ArnPrimarySearchContainer {
     align-items: center;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, 0.6);
     border: none;
     border-radius: 5px;
     padding: 18px;
@@ -2765,7 +2801,6 @@ legend {
 
 .RootBody #theSearchBox {
     display: flex;
-
 }
 
 .RootBody #theSubmitButton {
@@ -2784,7 +2819,7 @@ legend {
     height: 37px !important;
 }
 
-.RootBody input[type="checkbox"] {
+.RootBody input[type='checkbox'] {
     height: unset !important;
 }
 
@@ -2842,7 +2877,6 @@ legend {
 }
 
 @media screen and (max-width: 600px) {
-
     .RootBody #AmentitiesContainer,
     .RootBody #PropertyClassesContainer,
     .RootBody #PropertyTypesContainer {
@@ -2852,7 +2886,6 @@ legend {
     .RootBody #theOtherSubmitButton {
         width: 100%;
     }
-
 }
 
 /* Root Page End */
@@ -2908,12 +2941,11 @@ body.HoldRoomsForm {
     max-width: 400px;
 }
 
-#theWBLoginFormBody input[type="submit"],
-#theWBLoginFormBody input[type="text"],
-#theWBLoginFormBody input[type="password"] {
+#theWBLoginFormBody input[type='submit'],
+#theWBLoginFormBody input[type='text'],
+#theWBLoginFormBody input[type='password'] {
     width: 100%;
 }
-
 
 .WBLoginFormActions {
     text-align: center;
@@ -2992,7 +3024,7 @@ body.HoldRoomsForm {
 }
 
 .arnMapPopup .rate {
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
     width: 100%;
@@ -3031,7 +3063,7 @@ body.HoldRoomsForm {
     background: #fff;
     padding: 8px;
     border-radius: 100%;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .75);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
     max-width: 50px !important;
 }
 
@@ -3048,9 +3080,9 @@ body.HoldRoomsForm {
     }
     
     #arnMapPopupMobile .imageContainer img {
-        width: 300px!important;
-        height: 235px!important;
-        margin: 42px auto 0!important;
+        width: 300px !important;
+        height: 235px !important;
+        margin: 42px auto 0 !important;
     }
 
     .arnMapPopup .rate {
@@ -3082,12 +3114,11 @@ body.HoldRoomsForm {
     }
 }
 
-
 /* Map Popup End */
 
 /* Hold Room Page Start */
 .HoldRoomsForm .ArnShowRatesLink,
-.HoldRoomsForm .ArnReviewTab+a,
+.HoldRoomsForm .ArnReviewTab + a,
 .HoldRoomsForm .ArnContentButtonContainer {
     display: none;
 }
@@ -3104,7 +3135,7 @@ body.HoldRoomsForm {
     text-align: center;
 }
 
-#datePromptContainer+.SimpleSearch {
+#datePromptContainer + .SimpleSearch {
     background: #fff !important;
     color: #333;
     border-radius: 0;
@@ -3112,27 +3143,27 @@ body.HoldRoomsForm {
     justify-content: center;
 }
 
-#datePromptContainer+.SimpleSearch table {
+#datePromptContainer + .SimpleSearch table {
     width: 70%;
 }
 
-#datePromptContainer+.SimpleSearch>table>tbody>tr {
+#datePromptContainer + .SimpleSearch > table > tbody > tr {
     display: flex;
     flex-direction: column;
 }
 
-#datePromptContainer+.SimpleSearch #theQuickCheckIn,
-#datePromptContainer+.SimpleSearch #theQuickCheckOut {
+#datePromptContainer + .SimpleSearch #theQuickCheckIn,
+#datePromptContainer + .SimpleSearch #theQuickCheckOut {
     width: 100%;
 }
 
-#datePromptContainer+.SimpleSearch .SearchActions,
-#datePromptContainer+.SimpleSearch .rowTwo {
+#datePromptContainer + .SimpleSearch .SearchActions,
+#datePromptContainer + .SimpleSearch .rowTwo {
     display: none;
 }
 
-#datePromptContainer+.SimpleSearch .ArnAdults,
-#datePromptContainer+.SimpleSearch .ArnRooms {
+#datePromptContainer + .SimpleSearch .ArnAdults,
+#datePromptContainer + .SimpleSearch .ArnRooms {
     width: 100%;
     margin: 0;
 }
@@ -3193,25 +3224,24 @@ div.custom-tag {
 
 /* autocomplete styles start */
 
-
 /* clears the 'X' from Internet Explorer */
-input[type=search]::-ms-clear {
+input[type='search']::-ms-clear {
     display: none;
     width: 0;
     height: 0;
 }
 
-input[type=search]::-ms-reveal {
+input[type='search']::-ms-reveal {
     display: none;
     width: 0;
     height: 0;
 }
 
 /* clears the 'X' from Chrome */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
     display: none;
 }
 
@@ -3308,9 +3338,8 @@ input#address-input {
 #nextBtn:hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: rgba(0, 0, 0);
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
 }
-
 
 @media screen and (max-width: 800px) {
     .carousel-container {
@@ -3324,20 +3353,18 @@ input#address-input {
 }
 
 @media screen and (max-width: 600px) {
-
     .carousel-container,
     .carousel-slide .image-wrapper img {
         height: 200px;
-        max-width: 338px
+        max-width: 338px;
     }
 }
 
 @media screen and (max-width: 320px) {
-
     .carousel-container,
     .carousel-slide .image-wrapper img {
         height: 200px;
-        max-width: 310px
+        max-width: 310px;
     }
 }
 
@@ -3352,12 +3379,12 @@ input#address-input {
 }
 
 /* Slideshow IE CSS Hacks */
-@media all and (-ms-high-contrast:none) {
-    .image-wrapper{
+@media all and (-ms-high-contrast: none) {
+    .image-wrapper {
         display: inline-block;
     }
 
-    .image-number{
+    .image-number {
         text-align: center;
         width: 100%;
     }
@@ -3379,7 +3406,7 @@ input#address-input {
 }
 
 .WBRateGuaranteeForm p,
-.WBRateGuaranteeForm>h1 {
+.WBRateGuaranteeForm > h1 {
     display: none;
 }
 
@@ -3423,19 +3450,19 @@ input#address-input {
 }
 
 .eventRateGuarantee li:before {
-    content: '- '
+    content: '- ';
 }
 
 .st0 {
-    fill: #79CF46;
+    fill: #79cf46;
 }
 
 .st1 {
-    fill: #73C140;
+    fill: #73c140;
 }
 
 .st2 {
-    fill: #FFFFFF;
+    fill: #ffffff;
 }
 
 .st3 {
@@ -3443,11 +3470,11 @@ input#address-input {
 }
 
 .st4 {
-    fill: #6E6E6E;
+    fill: #6e6e6e;
 }
 
 .st5 {
-    fill: #AEAEAE;
+    fill: #aeaeae;
 }
 
 @media screen and (max-width: 800px) {
@@ -3461,25 +3488,24 @@ input#address-input {
 }
 /* LRG End */
 
-
 /* GDPR Message IE CSS Hack */
-@media all and (-ms-high-contrast:none) {
-    .iubenda-cs-default#iubenda-cs-banner .iubenda-cs-rationale{
+@media all and (-ms-high-contrast: none) {
+    .iubenda-cs-default#iubenda-cs-banner .iubenda-cs-rationale {
         height: 225px !important;
     }
 }
 
 /* Debounce */
-#theEmailAddressAjax{
-    position: relative
+#theEmailAddressAjax {
+    position: relative;
 }
 
-.tc-result{
+.tc-result {
     top: 26px !important;
 }
 
 .unvalidated {
     /* background-color: #f2adade5; */
-    border: 1px solid red!important;
+    border: 1px solid red !important;
     outline: none;
 }

@@ -458,7 +458,8 @@ header {
 
 .WBForgotPasswordFormContainer.ArnSubPage,
 .WBForgotPasswordFormInform,
-.WBLoginFormContainer.ArnSubPage{
+.WBLoginFormContainer.ArnSubPage,
+.WBValidatedRegistrationFormContainer.ArnSubPage {
     background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
 }
 
@@ -471,12 +472,15 @@ header {
     top: 0;
 }
 
-.WBValidatedRegistrationForm .SSFormBody #theUserNameAjax{
-    width: 100%;
+#thePersonalInfoGroup legend{
+    display: block !important;
+    font-size: 36px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    color: #333;
 }
 
-.WBValidatedRegistrationFormFields legend{
-    display: none;
+.WBValidatedRegistrationForm .SSFormBody #theUserNameAjax{
+    width: 100%;
 }
 
 .MemberAuthenticated.WBValidatedRegistrationForm header {
@@ -489,10 +493,19 @@ header {
     padding: 0;
 }
 
+#theWBValidatedRegistrationForm{
+    background: #Fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
+    padding: 50px;
+}
+
+#theWBValidatedRegistrationForm .submit{
+    font-size: 15px;
+}
+
 #theWBValidatedRegistrationFormBody {
     background: transparent;
     padding: 50px !important;
-    width: 50vw;
     height: 100%;
     display: flex;
     align-items: center;

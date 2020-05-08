@@ -847,7 +847,6 @@ export default class BasePortal {
             .reviewCount a,
             #theAdditionalEmailsLink a,
             #theOtherSubmitButton,
-            .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
             .open-modal,
             .lowest-rate-link,
@@ -903,6 +902,15 @@ export default class BasePortal {
             .CheckRates input.submit:active {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
+            }
+
+            .SinglePropDetail #moreRatesLink {
+                color: ${this.site_config.primary_color};
+                border-color: ${this.site_config.primary_color};
+            }
+            
+            .SinglePropDetail #moreRatesLink:hover {
+                background-color: ${this.site_config.primary_color}
             }
 
             @media screen and (max-width:800px) {

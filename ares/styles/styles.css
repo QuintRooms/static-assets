@@ -1029,6 +1029,20 @@ div.autocomplete ul li.selected {
         padding: 0 18px;
         height: 60px;
         cursor: pointer;
+        position: relative;
+    }
+
+    .search-close{
+        position: absolute;
+        top: 12px;
+        right: 0;
+        width: 32px;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .show-search-close{
+        opacity: 1;
     }
 
     .search-info span {

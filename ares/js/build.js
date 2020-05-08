@@ -490,15 +490,32 @@ export default class BasePortal {
         check_out_date = dayjs(check_out_text);
 
         utilities.createHTML(
-            `<div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><div class="search-info"><h3>${location_text}</h3><span><span class="search-dates">${check_in_date.format(
-                'MMMM D'
-            )} - ${check_out_date.format('MMMM D')} </span><span class="adults-count">${adults_text} guests</span></span></div></div>`,
+            `
+            <div class="show-search-container">
+                <span class="search-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
+                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>
+                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>
+                    </svg>
+                </span>
+                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <div class="search-info">
+                    <h3>${location_text}</h3>
+                    <span>
+                        <span class="search-dates">${check_in_date.format('MMMM D')} - ${check_out_date.format('MMMM D')}</span>
+                        <span class="adults-count">${adults_text} guests</span>
+                    </span>
+                </div>
+            </div>`,
             '.SearchHotels .ArnPrimarySearchOuterContainer',
             'beforeBegin'
         );
 
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
+            document.querySelector('.search-close').classList.toggle('show-search-close');
         });
     }
 

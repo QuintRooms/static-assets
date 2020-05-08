@@ -1829,6 +1829,10 @@ legend {
     .SearchHotels .ArnPropThumb {
         max-width: 100%;
     }
+
+    .SearchHotels .ArnPages #batch {
+        text-align: center!important;
+    }
 }
 
 .SearchHotels .ArnContainer {

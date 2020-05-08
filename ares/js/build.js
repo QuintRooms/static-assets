@@ -1466,7 +1466,7 @@ export default class BasePortal {
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                if (document.querySelector('input#theCheckIn').value === '') {
+                if (document.querySelector('input#theCheckIn').value === '' || !lat_lng) {
                     this.style_validation_fields('input#theCheckIn');
                     return;
                 }
@@ -1524,6 +1524,7 @@ export default class BasePortal {
             places_autocomplete.on('change', function resultSelected(e) {
                 document.querySelector('input#address-input').value = e.suggestion.value || '';
                 lat_lng = e.suggestion.latlng;
+                console.log(e.suggestion);
             });
         })();
     }

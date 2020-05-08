@@ -1726,9 +1726,8 @@ export default class BasePortal {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
-        const logo = document.querySelector('.logo img');
 
-        await utilities.waitForSelectorInDOM(logo);
+        await utilities.waitForSelectorInDOM('.logo img');
 
         const height = site_config_el.scrollHeight + header_el.scrollHeight;
         map_controls.style.top = `${height}px`;

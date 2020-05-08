@@ -1389,6 +1389,7 @@ export default class BasePortal {
      */
     addAlgoliaSearch() {
         let lat_lng;
+        let default_lat_lng;
         let url;
         const {origin} = window.location;
         const params = new URL(window.location.href);
@@ -1464,19 +1465,26 @@ export default class BasePortal {
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                if (document.querySelector('input#theCheckIn').value === '' || !lat_lng) {
-                    this.style_validation_fields('input#theCheckIn');
-                    return;
-                }
+                // if (document.querySelector('input#theCheckIn').value === '' || !lat_lng) {
+                //     this.style_validation_fields('input#theCheckIn');
+                //     return;
+                // }
 
-                if (lat_lng) {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-                } else {
-                    const lng = search_params.get('longitude');
-                    const lat = search_params.get('latitude');
+                // if (lat_lng) {
+                //     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                // } else if (document.querySelector('.searchHotels')) {
+                //     const lng = search_params.get('longitude');
+                //     const lat = search_params.get('latitude');
 
+                //     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+
+                const build_url = (lat, lng) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-                }
+                };
+                // }
+                if (this.page_name === 'search-results') build_url(search_params.get('latitude'), search_params.get('longitude'));
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
+                if (!lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
 
                 //   if (document.querySelector(".RootBody")) {
                 //       if (!validateSubmitOptions()) return false;
@@ -1522,7 +1530,10 @@ export default class BasePortal {
             places_autocomplete.on('change', function resultSelected(e) {
                 document.querySelector('input#address-input').value = e.suggestion.value || '';
                 lat_lng = e.suggestion.latlng;
-                console.log(e.suggestion);
+            });
+            places_autocomplete.on('suggestions', function saveDefaultGeo(e) {
+                // eslint-disable-next-line no-underscore-dangle
+                default_lat_lng = e.rawAnswer.hits[0]._geoloc;
             });
         })();
     }

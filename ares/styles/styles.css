@@ -3538,7 +3538,7 @@ input#address-input {
     top: 26px !important;
 }
 
-.unvalidated {
+.invalidated {
     /* background-color: #f2adade5; */
     border: 1px solid red !important;
     outline: none;

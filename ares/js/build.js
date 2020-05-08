@@ -153,7 +153,9 @@ export default class BasePortal {
                     this.addAlgoliaSearch();
                 }
 
-                jQuery('#theBody').on('arnMapLoadedEvent', () => {
+                jQuery('#theBody').on('arnMapLoadedEvent', async () => {
+                    await utilities.waitForSelectorInDOM('.pollingFinished');
+
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
@@ -1531,7 +1533,6 @@ export default class BasePortal {
      @param string takes the text for the exclusive rate sash
      @param string takes the text for the custom tag text
      */
-
     isPropByGateway(exclusiveRateText, customTagText, eventName) {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
@@ -1637,11 +1638,11 @@ export default class BasePortal {
             document.querySelector('.ArnPropName').insertAdjacentHTML(
                 'afterend',
                 `<div class="carousel-container">
-                <div class="carousel-slide">
-                </div>
-                <a id="previousBtn">&#10094;</a>
-                <a id="nextBtn">&#10095;</a>
-            </div>`
+                    <div class="carousel-slide">
+                    </div>
+                    <a id="previousBtn">&#10094;</a>
+                    <a id="nextBtn">&#10095;</a>
+                </div>`
             );
             populateImages();
         }
@@ -1653,9 +1654,9 @@ export default class BasePortal {
                 document.querySelector('.carousel-slide').insertAdjacentHTML(
                     'beforeend',
                     `<div class="image-wrapper">
-                <div class ="image-number">${i + 1}/${prop_images.length}</div>
-                <img src=${prop_images[i]}>
-              </div>`
+                        <div class ="image-number">${i + 1}/${prop_images.length}</div>
+                        <img src=${prop_images[i]}>
+                    </div>`
                 );
             }
         }
@@ -1703,10 +1704,13 @@ export default class BasePortal {
         createCarousel();
     }
 
-    repositionMapControls() {
+    async repositionMapControls() {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
+        const logo = document.querySelector('.logo img');
+
+        await utilities.waitForSelectorInDOM(logo);
 
         const height = site_config_el.scrollHeight + header_el.scrollHeight;
         map_controls.style.top = `${height}px`;
@@ -1747,7 +1751,7 @@ export default class BasePortal {
     style_validation_fields(element) {
         const el_val = document.querySelector(element);
         if (el_val.value === '') {
-            el_val.classList.add('unvalidated');
+            el_val.classList.add('invalidated');
         }
     }
 }

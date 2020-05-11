@@ -139,7 +139,7 @@ export default class BasePortal {
                     jQuery('#theBody').on('arnMapLoadedEvent', () => {
                         this.getTotalNights().then((nights) => {
                             this.getCurrency().then((currency) => {
-                                this.getNightlyRateForMapMarkers(nights, currency);
+                                // this.getNightlyRateForMapMarkers(nights, currency);
                             });
                         });
                     });

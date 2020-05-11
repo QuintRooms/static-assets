@@ -2940,6 +2940,14 @@ legend {
     }
 }
 
+@media screen and (max-width: 375px) {
+    body.RootBody {
+        display: block!important;
+        background-size: auto;
+    }
+}
+
+
 /* Root Page End */
 
 /* Login and Registration Start */

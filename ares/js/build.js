@@ -1478,40 +1478,22 @@ export default class BasePortal {
 
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
-
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                // if (document.querySelector('input#theCheckIn').value === '' || !lat_lng) {
-                //     this.style_validation_fields('input#theCheckIn');
-                //     return;
-                // }
-
-                // if (lat_lng) {
-                //     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-                // } else if (document.querySelector('.searchHotels')) {
-                //     const lng = search_params.get('longitude');
-                //     const lat = search_params.get('latitude');
-
-                //     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                const original_params = document.querySelector('meta[name="originalParams"]').content;
+                const original_params_url = new URLSearchParams(original_params);
 
                 const build_url = (lat, lng) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
-                // }
-                if (this.page_name === 'search-results') build_url(search_params.get('latitude'), search_params.get('longitude'));
-                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
-                if (!lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
 
-                //   if (document.querySelector(".RootBody")) {
-                //       if (!validateSubmitOptions()) return false;
-                //       $("theBody").addClassName("searchingForResults");
-                //       doPushPagePrep();
-                //       $("theArnPushPage").show();
-                //       $("theArnPushPageContent").show();
-                //   }
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
+                else if (this.page_name === 'search-results') build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
+                else if (!lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
+
                 window.location.href = url;
             });
         };

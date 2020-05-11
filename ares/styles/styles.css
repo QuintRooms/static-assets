@@ -2728,7 +2728,6 @@ legend {
     fieldset#theHotel,
     #theHotel legend{
         margin-top: 0;
-        /* padding: 0 !important; */
     }
 
     #theBookingPage .PaymentPolicies {
@@ -3179,6 +3178,12 @@ body.HoldRoomsForm {
     #arnMapPopupMobile .imageContainer img {
         width: 250px!important;
         height: 200px!important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hideElement {
+        display: none;
     }
 }
 

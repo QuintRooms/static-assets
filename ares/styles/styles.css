@@ -2728,7 +2728,7 @@ legend {
     fieldset#theHotel,
     #theHotel legend{
         margin-top: 0;
-        padding: 0 !important;
+        /* padding: 0 !important; */
     }
 
     #theBookingPage .PaymentPolicies {
@@ -2744,7 +2744,7 @@ legend {
         margin: 0 auto 8px auto;
         display: block;
         border: 4px solid #fff;
-        box-shadow: 0 2px 50px 0 #000;
+        box-shadow: 0 1px 4px 0 #000;
         max-width: 300px;
     }
 
@@ -2947,6 +2947,14 @@ legend {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 375px) {
+    body.RootBody {
+        display: block!important;
+        background-size: auto;
+    }
+}
+
 
 /* Root Page End */
 

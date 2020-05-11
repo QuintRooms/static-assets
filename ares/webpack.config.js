@@ -2,12 +2,12 @@ require('webpack');
 
 module.exports = {
     entry: {
-        11111: './src/11111.js', // local portal
-        39624: './src/39624.js', // CUG Template
-        60265: './src/60265.js', //  Housing Template
+        // 11111: './src/11111.js', // local portal
+        // 39624: './src/39624.js', // CUG Template
+        // 60265: './src/60265.js', //  Housing Template
+        // 53474: './src/53474.js', // Tortuga
+        // 49553: './src/49553.js', // Shaky Knees
         60792: './src/60792.js', // Voodoo
-        53474: './src/53474.js', // Tortuga
-        49553: './src/49553.js', // Shaky Knees
     },
     output: {
         filename: '[name].js',

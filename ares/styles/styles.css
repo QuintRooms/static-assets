@@ -1281,14 +1281,9 @@ legend {
     flex-direction: column;
 }
 
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:first-child {
-    width: 75%;
-    padding-right: 5%;
-}
-
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
-    width: 19%;
     text-align: center;
+    min-width: 175px;
 }
 
 .SinglePropDetail .RoomTypeHeader {
@@ -1656,6 +1651,10 @@ legend {
         align-items: center;
     }
 
+    .SinglePropDetail .rateRow{
+        margin: 36px 0;
+    }
+
     .SinglePropDetail .RoomDescription {
         text-align: left;
     }
@@ -1675,14 +1674,17 @@ legend {
     }
 
     .SinglePropDetail .bookRoom {
-        max-width: 170px;
+        max-width: 125px;
+        width: 100%;
         align-self: flex-end;
-        margin: 10px 0;
+        margin: 10px 0 10px auto;
+
     }
 
     .SinglePropDetail .ArnRateCancelAnchor {
         align-self: flex-end;
         grid-column: 2;
+        text-align: right;
     }
 
     .SinglePropDetail .ArnNightlyRate {
@@ -1700,6 +1702,12 @@ legend {
     .SinglePropDetail #moreRatesLink {
         max-width: 170;
         margin-right: 7px;
+    }
+
+    .roomCount{
+        text-align: left;
+        color: #ff4040;
+        padding-top: 8px;
     }
 }
 
@@ -3342,6 +3350,7 @@ input#address-input {
 .carousel-slide {
     display: flex;
     transition: transform 0.8s ease-in-out;
+    max-width: 100vw;
 }
 
 .image-wrapper {

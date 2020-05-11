@@ -165,6 +165,7 @@ export default class BasePortal {
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
+                    utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();

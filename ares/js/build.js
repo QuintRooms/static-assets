@@ -139,7 +139,7 @@ export default class BasePortal {
                     jQuery('#theBody').on('arnMapLoadedEvent', () => {
                         this.getTotalNights().then((nights) => {
                             this.getCurrency().then((currency) => {
-                                // this.getNightlyRateForMapMarkers(nights, currency);
+                                this.getNightlyRateForMapMarkers(nights, currency);
                             });
                         });
                     });
@@ -153,15 +153,15 @@ export default class BasePortal {
                     this.addAlgoliaSearch();
                 }
 
-                jQuery('#theBody').on('arnMapLoadedEvent', async () => {
-                    await utilities.waitForSelectorInDOM('.pollingFinished');
+                // jQuery('#theBody').on('arnMapLoadedEvent', async () => {
+                //     await utilities.waitForSelectorInDOM('.pollingFinished');
 
-                    L.control.scale().addTo(window.ArnMap);
-                    this.useLogoForVenueMapMarker();
-                    this.highlightMapMarkersOnPropertyHover();
-                    this.repositionMapControls();
-                    this.changeContractedPropertyPinColor();
-                });
+                //     L.control.scale().addTo(window.ArnMap);
+                //     this.useLogoForVenueMapMarker();
+                //     this.highlightMapMarkersOnPropertyHover();
+                //     this.repositionMapControls();
+                //     this.changeContractedPropertyPinColor();
+                // });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;

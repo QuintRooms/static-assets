@@ -44,7 +44,18 @@ document
     .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/60831.css">');
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
-cug_portal.updateHTML('.RootBody .ArnSearchHotelsImg', `<h1>start your search</h1><h4>we'll beat their rates on 600k+ hotels</h4>`);
+cug_portal.updateHTML(
+    '.RootBody .ArnSearchHotelsImg',
+    `
+    <span class="search-messaging">
+        <img src="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-gold.png" alt="ResBeat Mark">
+        <span>
+            <h1>start your search</h1>
+            <h4>we'll beat their rates on 600k+ hotels</h4>
+        </span>
+    </span>
+    `
+);
 
 function hidePromoCode() {
     const promo_code_element = document.querySelector('#thePassCodeAjax input');
@@ -84,14 +95,3 @@ function beatTheirRateMessaging(page_selector, property_container) {
         percent_banner.innerHTML = `<span class="brand-message"><strong>Beat</strong> 'em by ${percent}%</span>`;
     });
 }
-
-// document.querySelector('#theWBValidatedRegistrationFormBody').insertAdjacentHTML(
-//     'beforeBegin',
-//     `
-//     <div class="register-container">
-//         <h1>Sign Up</h1>
-//         <p>You're seconds away from getting the best deals on hotels across the globe!</p>
-//         <p>Already a member?</p>
-//         <button>Sign In</button>
-//     </div>`
-// );

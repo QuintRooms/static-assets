@@ -11,7 +11,11 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
-cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-white.png', 'href');
+cug_portal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-white.png', 'href');
+
+setTimeout(() => {
+    cug_portal.updateHTML('.savingsTable .savings th', `<strong>Beat 'em by</strong>`);
+}, 1000);
 
 function waitForElementToLoad(elementWaitingFor) {
     const element = document.querySelector(elementWaitingFor);
@@ -22,7 +26,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cug_portal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=60831', 'href');
                 cug_portal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer');
-                cug_portal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo-white.png', 'src');
+                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo-white.png', 'src');
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
@@ -41,10 +45,21 @@ waitForElementToLoad('header');
 
 document
     .querySelector('body')
-    .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/60831.css">');
+    .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/60831/60831.css">');
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
-cug_portal.updateHTML('.RootBody .ArnSearchHotelsImg', `<h1>start your search</h1><h4>we'll beat their rates on 600k+ hotels</h4>`);
+cug_portal.updateHTML(
+    '.RootBody .ArnSearchHotelsImg',
+    `
+    <span class="search-messaging">
+        <img src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-gold.png" alt="ResBeat Mark">
+        <span>
+            <h1>start your search</h1>
+            <h4>we'll beat their rates on 600k+ hotels</h4>
+        </span>
+    </span>
+    `
+);
 
 function hidePromoCode() {
     const promo_code_element = document.querySelector('#thePassCodeAjax input');
@@ -84,14 +99,3 @@ function beatTheirRateMessaging(page_selector, property_container) {
         percent_banner.innerHTML = `<span class="brand-message"><strong>Beat</strong> 'em by ${percent}%</span>`;
     });
 }
-
-// document.querySelector('#theWBValidatedRegistrationFormBody').insertAdjacentHTML(
-//     'beforeBegin',
-//     `
-//     <div class="register-container">
-//         <h1>Sign Up</h1>
-//         <p>You're seconds away from getting the best deals on hotels across the globe!</p>
-//         <p>Already a member?</p>
-//         <button>Sign In</button>
-//     </div>`
-// );

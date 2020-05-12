@@ -451,10 +451,12 @@ export default class BasePortal {
             document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
             filter_container.style.display = 'block';
             sort_container.style.display = 'block';
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('.sort-filter-close').addEventListener('click', () => {
             sort_filter_container.classList.toggle('show-sort-filter');
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
@@ -599,6 +601,7 @@ export default class BasePortal {
         const map = document.querySelector('.ArnPropertyMapInner');
         const map_btn = document.querySelector('#arnCloseAnchorId');
         const header = document.querySelector('header');
+        const currency = document.querySelector('.config-container');
 
         if (!map_btn || !map) return;
 
@@ -610,6 +613,7 @@ export default class BasePortal {
             map.classList.toggle('showMap');
             document.body.classList.toggle('fixed');
             header.classList.toggle('hideElement');
+            currency.classList.toggle('hideElement');
 
             map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });

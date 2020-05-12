@@ -1,11 +1,11 @@
 /* Fonts */
 @font-face {
     font-family: 'Avenir';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Book.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Book.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Avenir-Black';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
 }
 
 /* Font Overrides */
@@ -273,13 +273,26 @@ header {
     color: #fff;
 }
 
+.search-messaging{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-messaging img{
+    margin-right: 24px;
+    max-width: 125px;
+}
+
 .RootBody .ArnSearchHotelsImg h1 {
     font-family: 'Avenir-Black';
     font-size: 48px;
+    color: #333;
 }
 
 .RootBody .ArnSearchHotelsImg h4 {
     font-size: 21px;
+    color: #333;
 }
 
 .RootBody .reserveHotel {
@@ -410,7 +423,7 @@ textarea,
 }
 
 body.RootBody {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover;
+    background: #fff
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -460,7 +473,7 @@ header {
 .WBForgotPasswordFormInform,
 .WBLoginFormContainer.ArnSubPage,
 .WBValidatedRegistrationFormContainer.ArnSubPage {
-    background: url(https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
+    background: url(https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/banner.png) no-repeat center center / cover !important;
 }
 
 /* Registration */
@@ -522,7 +535,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(https://dev-static.hotelsforhope.com/images/stock_photos/hamburg.jpg) no-repeat center center / cover !important;
+    background: url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg) no-repeat center center / cover !important;
 }
 
 #theWBValidatedRegistrationFormBody label {
@@ -574,17 +587,22 @@ header {
 /* Buttons */
 #theSubmitButton,
 .submit,
+.submit:focus,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
+.ArnShowRatesLink:focus,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
 .SinglePropDetail .bookRoom,
-.SinglePropDetail .holdRoom,
+.SinglePropDetail .bookRoom:focus,
+.holdRoom,
+.holdRoom:focus,
 .SearchHotels .modifySearchButton,
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
-.HoldRoomsForm .ArnContentButtonNarrow {
+.HoldRoomsForm .ArnContentButtonNarrow, 
+#theSubmitButton:focus{
     background: #e2ad37;
     color: #333 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
@@ -597,7 +615,7 @@ header {
 #theConfirmationContainer .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
-.SinglePropDetail .bookRoom,
+.SinglePropDetail .SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
     border-radius: 4px;
@@ -605,16 +623,12 @@ header {
 
 .submit:hover,
 .submit:active,
-.submit:focus,
 .ArnShowRatesLink:hover,
 .ArnShowRatesLink:active,
-.ArnShowRatesLink:focus,
-.bookRoom:hover,
-.bookRoom:focus,
+.SinglePropDetail .bookRoom:hover,
 .bookRoom:active,
 .holdRoom:hover,
 .holdRoom:active,
-.holdRoom:focus,
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
@@ -624,7 +638,6 @@ header {
 }
 
 #theSubmitButton:hover,
-#theSubmitButton:focus,
 #theSubmitButton:active {
     background: #215853;
     color: #fff !important;
@@ -1237,6 +1250,10 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
+    .search-messaging img{
+        display: none;
+    }
+    
     .logo img{
         max-width: 225px;
     }
@@ -1323,6 +1340,11 @@ ul {
 
 #theMarketingOptInAjax {
     display: none;
+}
+
+.savingsTable .savings td, .savingsTable .savings th{
+    color: #215853;
+    font-weight: 700;;
 }
 
 @media screen and (min-width: 800px) {
@@ -1556,6 +1578,14 @@ div.originalPrice span,
     .SinglePropDetail .ArnPropName div.ratingCount {
         position: static;
     }
+
+    .RootBody .ArnSearchContainerMainDiv {
+        padding-top: 0!important;
+    }
+
+    .message-content h1 {
+        line-height: 2;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -1584,16 +1614,13 @@ div.originalPrice span,
 }
 
 @media screen and (max-width: 375px) {
-    body.WBLoginForm, body.WBForgotPasswordForm, body.WBValidatedRegistrationForm {
+    body.RootBody, body.WBLoginForm, body.WBForgotPasswordForm, body.WBValidatedRegistrationForm {
         display: block;
-    }
-
-    .message-content h1 {
-        line-height: 2;
+        height: unset;
     }
 
     .WBLoginFormContainer.ArnSubPage .SSFormBody {
-        margin: 0 10px;
+        margin: 10px;
     }
 
 }

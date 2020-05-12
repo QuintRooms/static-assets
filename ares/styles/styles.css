@@ -1094,7 +1094,7 @@ div.autocomplete ul li.selected {
         top: 0;
         height: 100%;
         width: 100%;
-        z-index: 9;
+        z-index: 10;
         background: rgba(0, 0, 0, 0.7);
         display: none;
     }
@@ -3140,10 +3140,9 @@ body.HoldRoomsForm {
         background: transparent;
         color: #fff;
         font-size: 24px;
-        margin-left: 10px;
         position: relative;
         z-index: 1;
-        padding: 0px 20px;
+        padding: 0px 30px;
     }
     
     #arnMapPopupMobile .imageContainer img {
@@ -3183,7 +3182,7 @@ body.HoldRoomsForm {
 
 @media screen and (max-width: 375px) {
     .hideElement {
-        display: none;
+        display: none!important;
     }
 }
 

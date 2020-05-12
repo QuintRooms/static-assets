@@ -3240,9 +3240,13 @@ body.HoldRoomsForm {
         display: none!important;
     }
 
-    .ArnTripAdvisorDetails {
+    /* .ArnTripAdvisorDetails {
         margin-bottom: 50px;
         padding-top: 0!important;
+    } */
+
+    #arnMapPopupMobile {
+        bottom:60px;
     }
 }
 

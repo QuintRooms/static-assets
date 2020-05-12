@@ -1573,6 +1573,14 @@ div.originalPrice span,
     .SinglePropDetail .ArnPropName div.ratingCount {
         position: static;
     }
+
+    .RootBody .ArnSearchContainerMainDiv {
+        padding-top: 0!important;
+    }
+
+    .message-content h1 {
+        line-height: 2;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -1604,13 +1612,6 @@ div.originalPrice span,
     body.RootBody, body.WBLoginForm, body.WBForgotPasswordForm, body.WBValidatedRegistrationForm {
         display: block;
         height: unset;
-    }
-
-    .RootBody .ArnSearchContainerMainDiv {
-        padding-top: 0!important;
-    }
-    .message-content h1 {
-        line-height: 2;
     }
 
     .WBLoginFormContainer.ArnSubPage .SSFormBody {

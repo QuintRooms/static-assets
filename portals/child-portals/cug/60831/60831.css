@@ -1603,8 +1603,12 @@ div.originalPrice span,
 @media screen and (max-width: 375px) {
     body.WBLoginForm, body.WBForgotPasswordForm, body.WBValidatedRegistrationForm {
         display: block;
+        height: unset;
     }
 
+    .ArnSearchContainerMainDiv {
+        padding-top: 0;
+    }
     .message-content h1 {
         line-height: 2;
     }

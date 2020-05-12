@@ -600,6 +600,7 @@ export default class BasePortal {
         const map = document.querySelector('.ArnPropertyMapInner');
         const map_btn = document.querySelector('#arnCloseAnchorId');
         const header = document.querySelector('header');
+        const currency = document.querySelector('.config-container');
 
         if (!map_btn || !map) return;
 
@@ -611,6 +612,7 @@ export default class BasePortal {
             map.classList.toggle('showMap');
             document.body.classList.toggle('fixed');
             header.classList.toggle('hideElement');
+            currency.classList.toggle('hideElement');
 
             map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });

@@ -3246,7 +3246,7 @@ body.HoldRoomsForm {
     } */
 
     #arnMapPopupMobile {
-        bottom:60px;
+        bottom:60px!important;
     }
 }
 

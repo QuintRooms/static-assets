@@ -593,8 +593,8 @@ header {
 .ArnShowRatesLink:focus,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.bookRoom,
-.bookRoom:focus,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .bookRoom:focus,
 .holdRoom,
 .holdRoom:focus,
 .SearchHotels .modifySearchButton,
@@ -615,7 +615,7 @@ header {
 #theConfirmationContainer .submit,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
-.SinglePropDetail .bookRoom,
+.SinglePropDetail .SinglePropDetail .bookRoom,
 .SearchHotels .modifySearchButton,
 .SinglePropDetail .holdRoom {
     border-radius: 4px;
@@ -625,7 +625,7 @@ header {
 .submit:active,
 .ArnShowRatesLink:hover,
 .ArnShowRatesLink:active,
-.bookRoom:hover,
+.SinglePropDetail .bookRoom:hover,
 .bookRoom:active,
 .holdRoom:hover,
 .holdRoom:active,

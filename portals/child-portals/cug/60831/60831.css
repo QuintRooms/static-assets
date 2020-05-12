@@ -1529,6 +1529,11 @@ div.originalPrice span,
     width: 100% !important;
 }
 @media screen and (max-width: 800px) {
+
+    .RootBody .ArnPrimarySearchContainer span {
+        margin-top: 0;
+    }
+    
     .SearchHotels .percentSavings {
         display: block;
         max-width: 190px;

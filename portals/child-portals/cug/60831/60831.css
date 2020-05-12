@@ -587,17 +587,22 @@ header {
 /* Buttons */
 #theSubmitButton,
 .submit,
+.submit:focus,
 .OnSale .ArnShowRatesLink,
 .ArnShowRatesLink,
+.ArnShowRatesLink:focus,
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page,
-.SinglePropDetail .bookRoom,
-.SinglePropDetail .holdRoom,
+.bookRoom,
+.bookRoom:focus,
+.holdRoom,
+.holdRoom:focus,
 .SearchHotels .modifySearchButton,
 .GroupHoldForm .ArnContentButtonWide,
 .GroupHoldForm .ArnContentButtonNarrow,
 .HoldRoomsForm .ArnContentButtonWide,
-.HoldRoomsForm .ArnContentButtonNarrow {
+.HoldRoomsForm .ArnContentButtonNarrow, 
+#theSubmitButton:focus{
     background: #e2ad37;
     color: #333 !important;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
@@ -618,16 +623,12 @@ header {
 
 .submit:hover,
 .submit:active,
-.submit:focus,
 .ArnShowRatesLink:hover,
 .ArnShowRatesLink:active,
-.ArnShowRatesLink:focus,
 .bookRoom:hover,
-.bookRoom:focus,
 .bookRoom:active,
 .holdRoom:hover,
 .holdRoom:active,
-.holdRoom:focus,
 .GroupHoldForm .ArnContentButtonWide:hover,
 .GroupHoldForm .ArnContentButtonNarrow:hover,
 .HoldRoomsForm .ArnContentButtonWide:hover,
@@ -637,7 +638,6 @@ header {
 }
 
 #theSubmitButton:hover,
-#theSubmitButton:focus,
 #theSubmitButton:active {
     background: #215853;
     color: #fff !important;
@@ -1342,6 +1342,11 @@ ul {
     display: none;
 }
 
+.savingsTable .savings td, .savingsTable .savings th{
+    color: #215853;
+    font-weight: 700;;
+}
+
 @media screen and (min-width: 800px) {
     .RootBody .ArnSearchContainerMainDiv {
         padding: 0;
@@ -1529,11 +1534,6 @@ div.originalPrice span,
     width: 100% !important;
 }
 @media screen and (max-width: 800px) {
-
-    .RootBody .ArnPrimarySearchContainer span {
-        margin-top: 0;
-    }
-    
     .SearchHotels .percentSavings {
         display: block;
         max-width: 190px;

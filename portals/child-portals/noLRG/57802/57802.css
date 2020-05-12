@@ -612,6 +612,7 @@ legend,
     border-radius: 10px;
 }
 
-.success{
+.success, .SearchHotels .ArnSecondarySearchOuterContainer{
     color: #000;
 }
+

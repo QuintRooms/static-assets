@@ -289,13 +289,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                 <tr id="yui_3_18_1_1_1586277558089_147">
                     <td class="ArnLeftSearchContainer" valign="top">
                         <form accept-charset="utf-8" method="post" action="https://events.hotelsforhope.com/v6/search/city" autocomplete="off" id="searchForm">
-                            <div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                </svg>
-                                <div class="search-info">
-                                    <h3>austin, tx</h3><span><span class="search-dates">November 6 - November 9 </span><span class="adults-count">4 guests</span></span>
-                                </div>
-                            </div>
                             <div class="ArnPrimarySearchOuterContainer">
                                 <div class="ArnSearchHotelsImg"></div><br>
                                 <div class="ArnSearchHeader">Search</div><a accesskey="c" class="ArnGoCitySearch selectedTab" onclick="new Ajax.Updater('theSearchBox','https://events.hotelsforhope.com/v6/search/city',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=_CQKHXrw','siteId='+39624,'theme=standard','12'].join('&amp;'),'arnName':'WBHotelList_theSearchBox'});$$('.ArnGoCitySearch')[0].addClassName('selectedTab');$$('.ArnGoDestinationSearch,.ArnGoAddressSearch,.ArnGoLandmarkSearch,.ArnGoAirportSearch').each(function(e){e.removeClassName('selectedTab')})" href="javascript:void(0)">

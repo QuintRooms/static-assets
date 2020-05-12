@@ -153,7 +153,9 @@ export default class BasePortal {
                     this.addAlgoliaSearch();
                 }
 
-                jQuery('#theBody').on('arnMapLoadedEvent', () => {
+                jQuery('#theBody').on('arnMapLoadedEvent', async () => {
+                    await utilities.waitForSelectorInDOM('.pollingFinished');
+
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
@@ -448,10 +450,12 @@ export default class BasePortal {
             document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
             filter_container.style.display = 'block';
             sort_container.style.display = 'block';
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('.sort-filter-close').addEventListener('click', () => {
             sort_filter_container.classList.toggle('show-sort-filter');
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
@@ -488,15 +492,32 @@ export default class BasePortal {
         check_out_date = dayjs(check_out_text);
 
         utilities.createHTML(
-            `<div class="show-search-container"><svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><div class="search-info"><h3>${location_text}</h3><span><span class="search-dates">${check_in_date.format(
-                'MMMM D'
-            )} - ${check_out_date.format('MMMM D')} </span><span class="adults-count">${adults_text} guests</span></span></div></div>`,
+            `
+            <div class="show-search-container">
+                <span class="search-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
+                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>
+                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>
+                    </svg>
+                </span>
+                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <div class="search-info">
+                    <h3>${location_text}</h3>
+                    <span>
+                        <span class="search-dates">${check_in_date.format('MMMM D')} - ${check_out_date.format('MMMM D')}</span>
+                        <span class="adults-count">${adults_text} guests</span>
+                    </span>
+                </div>
+            </div>`,
             '.SearchHotels .ArnPrimarySearchOuterContainer',
             'beforeBegin'
         );
 
         document.querySelector('.show-search-container').addEventListener('click', () => {
             content_el.classList.toggle('show-search');
+            document.querySelector('.search-close').classList.toggle('show-search-close');
         });
     }
 
@@ -578,6 +599,8 @@ export default class BasePortal {
     toggleMap() {
         const map = document.querySelector('.ArnPropertyMapInner');
         const map_btn = document.querySelector('#arnCloseAnchorId');
+        const header = document.querySelector('header');
+        const currency = document.querySelector('.config-container');
 
         if (!map_btn || !map) return;
 
@@ -588,6 +611,8 @@ export default class BasePortal {
             map_btn.classList.toggle('closeMap');
             map.classList.toggle('showMap');
             document.body.classList.toggle('fixed');
+            header.classList.toggle('hideElement');
+            currency.classList.toggle('hideElement');
 
             map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
         });
@@ -847,7 +872,6 @@ export default class BasePortal {
             .reviewCount a,
             #theAdditionalEmailsLink a,
             #theOtherSubmitButton,
-            .SinglePropDetail #moreRatesLink,
             .SinglePropDetail .ArnRateCancelAnchor,
             .open-modal,
             .lowest-rate-link,
@@ -903,6 +927,15 @@ export default class BasePortal {
             .CheckRates input.submit:active {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
+            }
+
+            .SinglePropDetail #moreRatesLink {
+                color: ${this.site_config.primary_color};
+                border-color: ${this.site_config.primary_color};
+            }
+            
+            .SinglePropDetail #moreRatesLink:hover {
+                background-color: ${this.site_config.primary_color}
             }
 
             @media screen and (max-width:800px) {
@@ -1381,6 +1414,7 @@ export default class BasePortal {
      */
     addAlgoliaSearch() {
         let lat_lng;
+        let default_lat_lng;
         let url;
         const {origin} = window.location;
         const params = new URL(window.location.href);
@@ -1450,33 +1484,22 @@ export default class BasePortal {
 
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
-
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                if (document.querySelector('input#theCheckIn').value === '') {
-                    this.style_validation_fields('input#theCheckIn');
-                    return;
-                }
+                const original_params = document.querySelector('meta[name="originalParams"]').content;
+                const original_params_url = new URLSearchParams(original_params);
 
-                if (lat_lng) {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lat_lng.lng}&latitude=${lat_lng.lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-                } else {
-                    const lng = search_params.get('longitude');
-                    const lat = search_params.get('latitude');
-
+                const build_url = (lat, lng) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
-                }
+                };
 
-                //   if (document.querySelector(".RootBody")) {
-                //       if (!validateSubmitOptions()) return false;
-                //       $("theBody").addClassName("searchingForResults");
-                //       doPushPagePrep();
-                //       $("theArnPushPage").show();
-                //       $("theArnPushPageContent").show();
-                //   }
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
+                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
+                else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
+
                 window.location.href = url;
             });
         };
@@ -1515,6 +1538,10 @@ export default class BasePortal {
                 document.querySelector('input#address-input').value = e.suggestion.value || '';
                 lat_lng = e.suggestion.latlng;
             });
+            places_autocomplete.on('suggestions', function saveDefaultGeo(e) {
+                // eslint-disable-next-line no-underscore-dangle
+                default_lat_lng = e.rawAnswer.hits[0]._geoloc;
+            });
         })();
     }
 
@@ -1523,7 +1550,6 @@ export default class BasePortal {
      @param string takes the text for the exclusive rate sash
      @param string takes the text for the custom tag text
      */
-
     isPropByGateway(exclusiveRateText, customTagText, eventName) {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
@@ -1629,11 +1655,11 @@ export default class BasePortal {
             document.querySelector('.ArnPropName').insertAdjacentHTML(
                 'afterend',
                 `<div class="carousel-container">
-                <div class="carousel-slide">
-                </div>
-                <a id="previousBtn">&#10094;</a>
-                <a id="nextBtn">&#10095;</a>
-            </div>`
+                    <div class="carousel-slide">
+                    </div>
+                    <a id="previousBtn">&#10094;</a>
+                    <a id="nextBtn">&#10095;</a>
+                </div>`
             );
             populateImages();
         }
@@ -1645,9 +1671,9 @@ export default class BasePortal {
                 document.querySelector('.carousel-slide').insertAdjacentHTML(
                     'beforeend',
                     `<div class="image-wrapper">
-                <div class ="image-number">${i + 1}/${prop_images.length}</div>
-                <img src=${prop_images[i]}>
-              </div>`
+                        <div class ="image-number">${i + 1}/${prop_images.length}</div>
+                        <img src=${prop_images[i]}>
+                    </div>`
                 );
             }
         }
@@ -1695,10 +1721,12 @@ export default class BasePortal {
         createCarousel();
     }
 
-    repositionMapControls() {
+    async repositionMapControls() {
         const site_config_el = document.querySelector('.config-container');
         const header_el = document.querySelector('header');
         const map_controls = document.querySelector('.leaflet-top');
+
+        await utilities.waitForSelectorInDOM('.logo img');
 
         const height = site_config_el.scrollHeight + header_el.scrollHeight;
         map_controls.style.top = `${height}px`;
@@ -1739,7 +1767,7 @@ export default class BasePortal {
     style_validation_fields(element) {
         const el_val = document.querySelector(element);
         if (el_val.value === '') {
-            el_val.classList.add('unvalidated');
+            el_val.classList.add('invalidated');
         }
     }
 }

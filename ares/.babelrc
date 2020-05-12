@@ -6,10 +6,12 @@
                 "modules": false,
                 "targets":
                 {
-                    "ie": 11
+                    "browsers": [
+                        "IE 11"
+                      ]
                 },
                 "exclude": [],
-                "useBuiltIns": "entry",
+                "useBuiltIns": "usage",
                 "corejs":
                 {
                     "version": 2,

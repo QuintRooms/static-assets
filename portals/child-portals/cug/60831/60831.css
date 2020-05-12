@@ -1607,7 +1607,7 @@ div.originalPrice span,
     }
 
     .RootBody .ArnSearchContainerMainDiv {
-        padding-top: 0;
+        padding-top: 0!important;
     }
     .message-content h1 {
         line-height: 2;

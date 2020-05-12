@@ -710,6 +710,18 @@ select#adults {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 600px) {
+    body.ArnNoPropertyResults {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .ArnNoPropertyResults .ArnSearchContainerMainDiv {
+        flex-grow: 1;
+    }
+}
 /* Search Results Layout End */
 
 /* Search Container Start */

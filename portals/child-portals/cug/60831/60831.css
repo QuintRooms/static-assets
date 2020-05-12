@@ -1250,6 +1250,10 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
+    .search-messaging img{
+        display: none;
+    }
+    
     .logo img{
         max-width: 225px;
     }

@@ -450,10 +450,12 @@ export default class BasePortal {
             document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', filter_container);
             filter_container.style.display = 'block';
             sort_container.style.display = 'block';
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('.sort-filter-close').addEventListener('click', () => {
             sort_filter_container.classList.toggle('show-sort-filter');
+            document.body.classList.toggle('fixed');
         });
 
         document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {

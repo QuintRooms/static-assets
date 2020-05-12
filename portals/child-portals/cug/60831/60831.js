@@ -12,6 +12,7 @@ jQuery(document).on('ratesReadyEvent', () => {
 });
 
 cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-white.png', 'href');
+cug_portal.updateHTML('.savingsTable .savings th', `<strong>Beat 'em by</strong>`);
 
 function waitForElementToLoad(elementWaitingFor) {
     const element = document.querySelector(elementWaitingFor);

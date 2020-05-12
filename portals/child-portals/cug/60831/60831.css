@@ -1606,7 +1606,7 @@ div.originalPrice span,
         height: unset;
     }
 
-    .ArnSearchContainerMainDiv {
+    .RootBody .ArnSearchContainerMainDiv {
         padding-top: 0;
     }
     .message-content h1 {

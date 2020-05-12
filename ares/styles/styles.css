@@ -3175,7 +3175,7 @@ body.HoldRoomsForm {
 
 @media screen and (max-width: 375px) {
     .hideElement {
-        display: none;
+        display: none!important;
     }
 }
 

@@ -3181,6 +3181,10 @@ body.HoldRoomsForm {
     max-width: 50px !important;
 }
 
+.discountPercent {
+    display: none;
+}
+
 @media screen and (max-width: 805px) {
     .arnClosePopupButton {
         height: 0px;
@@ -3195,7 +3199,7 @@ body.HoldRoomsForm {
     #arnMapPopupMobile .imageContainer img {
         width: 300px !important;
         height: 235px !important;
-        margin: 42px auto 0 !important;
+        margin: 42px auto 10px !important;
     }
 
     .arnMapPopup .rate {
@@ -3218,6 +3222,10 @@ body.HoldRoomsForm {
     #arnMapPopupMobile {
         width: 90%;
     }
+
+    #arnMapPopupMobile .imageContainer img {
+        border-radius: 5px;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -3230,6 +3238,11 @@ body.HoldRoomsForm {
 @media screen and (max-width: 375px) {
     .hideElement {
         display: none!important;
+    }
+
+    .ArnTripAdvisorDetails {
+        margin-bottom: 40px;
+        padding-top: 0;
     }
 }
 

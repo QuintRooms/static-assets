@@ -1601,7 +1601,7 @@ div.originalPrice span,
 }
 
 @media screen and (max-width: 375px) {
-    body.RootBody {
+    body.RootBody, body.WBLoginForm, body.WBForgotPasswordForm, body.WBValidatedRegistrationForm {
         display: block;
         height: unset;
     }

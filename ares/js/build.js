@@ -159,7 +159,6 @@ export default class BasePortal {
                     L.control.scale().addTo(window.ArnMap);
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
-                    this.repositionMapControls();
                     this.changeContractedPropertyPinColor();
                 });
 
@@ -598,7 +597,7 @@ export default class BasePortal {
     }
 
     toggleMap() {
-        const map = document.querySelector('.ArnPropertyMapInner');
+        const map = document.querySelector('#ArnPropertyMap');
         const map_btn = document.querySelector('#arnCloseAnchorId');
         const header = document.querySelector('header');
         const currency = document.querySelector('.config-container');
@@ -1720,17 +1719,6 @@ export default class BasePortal {
         }
 
         createCarousel();
-    }
-
-    async repositionMapControls() {
-        const site_config_el = document.querySelector('.config-container');
-        const header_el = document.querySelector('header');
-        const map_controls = document.querySelector('.leaflet-top');
-
-        await utilities.waitForSelectorInDOM('.logo img');
-
-        const height = site_config_el.scrollHeight + header_el.scrollHeight;
-        map_controls.style.top = `${height}px`;
     }
 
     addSocialMetaTags(event_name, event_id) {

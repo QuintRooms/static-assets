@@ -2068,7 +2068,6 @@ legend {
     .closeMap {
         z-index: 9;
         position: relative;
-        bottom: 70px;
     }
 
     .SearchHotels #arnToggleMapDiv {
@@ -2104,6 +2103,10 @@ legend {
 }
 
 @media screen and (max-width: 800px) {
+    .closeMap {
+        bottom: 70px;
+    }
+
     .ArnSearchContainerMainTable > tbody > tr {
         display: flex;
         flex-direction: column;

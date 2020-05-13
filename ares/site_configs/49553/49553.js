@@ -1,5 +1,5 @@
-import BasePortal from '../../build';
-import Utilities from '../../utilities';
+import BasePortal from '../../js/build';
+import Utilities from '../../js/utilities';
 
 const utilities = new Utilities();
 
@@ -16,11 +16,11 @@ utilities.addMultipleHeaderLogos({
     image1: {
         insertPosition: 'afterbegin',
         className: 'logo-left',
-        imageUrl: '../../js/site_configs/49553/img/left.svg',
+        imageUrl: '../../site_configs/49553/img/left.svg',
     },
     image2: {
         insertPosition: 'beforeend',
         className: 'logo-right',
-        imageUrl: '../../js/site_configs/49553/img/right.svg',
+        imageUrl: '../../site_configs/49553/img/right.svg',
     },
 });

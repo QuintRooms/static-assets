@@ -255,11 +255,11 @@ export default class BasePortal {
         let path = '';
 
         if (window.location.href.includes('arn_html')) {
-            path = `/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `/ares/site_configs/${site_id}/${site_id}.json`;
         } else if (window.location.href.includes('dev-static')) {
-            path = `https://dev-static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
         } else {
-            path = `https://static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `https://static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
         }
 
         try {

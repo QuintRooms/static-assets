@@ -3003,7 +3003,7 @@ legend {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 800px) {
     .hideElement {
         display: none !important;
     }

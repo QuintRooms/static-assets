@@ -3253,10 +3253,12 @@ body.HoldRoomsForm {
         display: none!important;
     }
 
-    _::-webkit-full-page-media, _:future, :root #arnMapPopupMobile  {
-        bottom:75px!important; 
-        border-radius: 5px;     
-      }
+    @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+        _::-webkit-full-page-media, _:future, :root , #arnMapPopupMobile  {
+            bottom:75px!important; 
+            border-radius: 5px;     
+          }
+        }
 }
 
 /* Map Popup End */

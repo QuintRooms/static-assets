@@ -1,1 +1,1 @@
-import '../js/site_configs/49553/49553';
+import '../site_configs/49553/49553';

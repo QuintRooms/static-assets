@@ -3253,14 +3253,10 @@ body.HoldRoomsForm {
         display: none!important;
     }
 
-    /* .ArnTripAdvisorDetails {
-        margin-bottom: 50px;
-        padding-top: 0!important;
-    } */
-
-    #arnMapPopupMobile {
-        bottom:60px!important;
-    }
+    _::-webkit-full-page-media, _:future, :root #arnMapPopupMobile  {
+        bottom:75px!important; 
+        border-radius: 5px;     
+      }
 }
 
 /* Map Popup End */

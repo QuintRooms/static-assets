@@ -15,6 +15,7 @@ export default class BasePortal {
         this.currency = '';
         this.svg_arrow =
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
+        this.map_loaded = false;
     }
 
     init() {
@@ -154,9 +155,13 @@ export default class BasePortal {
                 }
 
                 jQuery('#theBody').on('arnMapLoadedEvent', async () => {
+                    this.map_loaded = true;
                     await utilities.waitForSelectorInDOM('.pollingFinished');
 
-                    L.control.scale().addTo(window.ArnMap);
+                    if (!document.querySelector('.leaflet-control-scale-line')) {
+                        L.control.scale().addTo(window.ArnMap);
+                    }
+
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
                     this.changeContractedPropertyPinColor();
@@ -164,6 +169,16 @@ export default class BasePortal {
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
+
+                    if (!this.map_loaded) {
+                        if (!document.querySelector('.leaflet-control-scale-line')) {
+                            L.control.scale().addTo(window.ArnMap);
+                        }
+
+                        this.useLogoForVenueMapMarker();
+                        this.highlightMapMarkersOnPropertyHover();
+                        this.changeContractedPropertyPinColor();
+                    }
                     utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
@@ -201,7 +216,9 @@ export default class BasePortal {
                         .moveOrphanedElementsIntoNewWrapper(
                             [
                                 document.querySelector('.ArnSortByDealPercent'),
+                                document.querySelector('.ArnSortByDistance'),
                                 document.querySelector('.ArnSortByDealAmount'),
+                                document.querySelector('.ArnSortByAvailability'),
                                 document.querySelector('.ArnSortByPrice'),
                                 document.querySelector('.ArnSortByClass'),
                                 document.querySelector('.ArnSortByType'),
@@ -1340,6 +1357,8 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
+            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
+
             if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
                 properties_array.push(true);
             } else {
@@ -1606,13 +1625,18 @@ export default class BasePortal {
 
     addLRGDetails() {
         if (this.site_config.site_type !== 'lodging' || !this.site_config.lodging.is_lrg) return;
+
         const properties = document.querySelectorAll('.S16, .S20');
+
+        if (!properties) return;
+
         properties.forEach((property) => {
+            if (!property.querySelector('.arnPrice')) return;
+
             property.querySelector('.arnPrice').insertAdjacentHTML(
                 'afterEnd',
                 `
-<a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>
-
+                <a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>
             `
             );
         });

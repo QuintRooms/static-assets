@@ -1864,6 +1864,7 @@ legend {
 .ArnSortByDealAmount,
 .ArnSortByPrice,
 .ArnSortByDealPercent,
+.ArnSortByDistance,
 .ArnSortByClass {
     display: block !important;
 }

@@ -2068,9 +2068,8 @@ legend {
     .closeMap {
         z-index: 9;
         position: relative;
+        bottom: 70px;
     }
-
-
 
     .SearchHotels #arnToggleMapDiv {
         display: block;
@@ -3248,15 +3247,19 @@ body.HoldRoomsForm {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 800px) {
     .hideElement {
         display: none!important;
     }
+}
 
-    _::-webkit-full-page-media, _:future, :root #arnMapPopupMobile  {
-        bottom:75px!important; 
-        border-radius: 5px;     
-      }
+@media screen and (max-width: 375px) {
+    @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+        _::-webkit-full-page-media, _:future, :root , #arnMapPopupMobile  {
+            bottom:75px!important; 
+            border-radius: 5px;     
+          }
+        }
 }
 
 /* Map Popup End */

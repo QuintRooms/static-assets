@@ -344,9 +344,9 @@ label,
 }
 
 @media screen and (max-width: 800px) {
-    .RootBody .ArnPrimarySearchContainer .ArnAdults span {
+    .RootBody .ArnPrimarySearchContainer span {
         margin-top: 0px!important;
-    }
+        }
 }
 
 .RootBody .ArnPrimarySearchContainer span {

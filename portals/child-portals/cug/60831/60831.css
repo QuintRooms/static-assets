@@ -54,6 +54,12 @@ body {
     margin-top: 88px !important;
 }
 
+@media screen and (max-width: 800px) {
+    #promocodeRedemptionForm2 {
+        display: none;
+    }
+}
+
 .IsAgent #userCommands {
     display: none;
 }
@@ -340,6 +346,12 @@ label,
     .SinglePropDetail #theCheckIn,
     .SinglePropDetail #theCheckOut {
         width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .RootBody .ArnPrimarySearchContainer .ArnAdults span {
+        margin-top: 0px;
     }
 }
 

@@ -345,7 +345,7 @@ label,
 
 @media screen and (max-width: 800px) {
     .RootBody .ArnPrimarySearchContainer span {
-        margin-top: 0px!important;
+        margin: 0px!important;
         }
 }
 

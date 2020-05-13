@@ -113,7 +113,7 @@ export default class BasePortal {
 
                 // root page methods
                 if (document.querySelector('.RootBody')) {
-                    this.addAlgoliaSearch();
+                    // this.addAlgoliaSearch();
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     utilities.createHTML(
                         '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -150,9 +150,9 @@ export default class BasePortal {
                     this.replaceLRGForm();
                 }
 
-                if (this.page_name === 'search-results') {
-                    this.addAlgoliaSearch();
-                }
+                // if (this.page_name === 'search-results') {
+                //     this.addAlgoliaSearch();
+                // }
 
                 jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                     this.map_loaded = true;
@@ -255,11 +255,11 @@ export default class BasePortal {
         let path = '';
 
         if (window.location.href.includes('arn_html')) {
-            path = `/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `/ares/site_configs/${site_id}/${site_id}.json`;
         } else if (window.location.href.includes('dev-static')) {
-            path = `https://dev-static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
         } else {
-            path = `https://static.hotelsforhope.com/ares/js/site_configs/${site_id}/${site_id}.json`;
+            path = `https://static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
         }
 
         try {

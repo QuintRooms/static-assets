@@ -1357,8 +1357,6 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
-            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
-
             if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
                 properties_array.push(true);
             } else {

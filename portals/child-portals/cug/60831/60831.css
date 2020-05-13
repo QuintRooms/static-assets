@@ -90,7 +90,7 @@ body {
 header {
     z-index: 10;
     position: relative;
-    height: initial;
+    height: auto;
     background: #215853 !important;
     display: flex;
     justify-content: space-between;
@@ -475,7 +475,6 @@ header {
     position: static;
     grid-row-start: 2;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-grow: 1;
 }

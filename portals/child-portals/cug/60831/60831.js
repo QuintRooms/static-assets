@@ -12,6 +12,9 @@ jQuery(document).on('ratesReadyEvent', () => {
 });
 
 cug_portal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-white.png', 'href');
+cug_portal.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value');
+cug_portal.updateText('#theUserNameAjax label', 'Username');
+cug_portal.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin');
 
 setTimeout(() => {
     cug_portal.updateHTML('.savingsTable .savings th', `<strong>Beat 'em by</strong>`);

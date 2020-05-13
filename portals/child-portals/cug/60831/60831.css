@@ -310,7 +310,7 @@ header {
 
 .SearchHotels .ArnSearchHotelsImg,
 .RootBody .ArnSearchHotelsImg {
-    height: unset;
+    height: auto;
 }
 
 .SearchHotels .ArnSearchHotelsImg + br {
@@ -1374,7 +1374,7 @@ ul {
 
     .SearchHotels .ArnRateCell {
         height: 100%;
-        bottom: 0;
+        top: 0;
         right: 0 !important;
     }
 

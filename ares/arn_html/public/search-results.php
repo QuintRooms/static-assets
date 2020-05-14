@@ -101,7 +101,7 @@
     <link rel="stylesheet" type="text/css" href="https://media.travsrv.com/appSkins/64/v6/themes/global/jQuery/select2.min.css">
     <link rel="stylesheet" type="text/css" href="https://media.travsrv.com/appSkins/64/v6/themes/global/map/leaflet.css">
     <link rel="stylesheet" type="text/css" href="https://media.travsrv.com/appSkins/64/v6/themes/global/calendar/css/yui3Calendar.css">
-    <meta content="City" name="SearchType">
+    <meta content="" name="SearchType">
     <meta content="1" name="pageNumber">
     <meta content="en_US" name="aLocale">
     <meta content="0" name="aHotelSizeMinRooms">

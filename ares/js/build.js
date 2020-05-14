@@ -45,7 +45,7 @@ export default class BasePortal {
 
                 if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
-                        utilities.createHTML(
+                        await utilities.createHTML(
                             `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                             'body',
                             'afterBegin'
@@ -167,7 +167,7 @@ export default class BasePortal {
                     this.changeContractedPropertyPinColor();
                 });
 
-                utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
+                utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
 
                     if (!this.map_loaded) {
@@ -179,7 +179,7 @@ export default class BasePortal {
                         this.highlightMapMarkersOnPropertyHover();
                         this.changeContractedPropertyPinColor();
                     }
-                    utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();
@@ -212,29 +212,29 @@ export default class BasePortal {
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                    utilities
-                        .moveOrphanedElementsIntoNewWrapper(
-                            [
-                                document.querySelector('.ArnSortByDealPercent'),
-                                document.querySelector('.ArnSortByDistance'),
-                                document.querySelector('.ArnSortByDealAmount'),
-                                document.querySelector('.ArnSortByAvailability'),
-                                document.querySelector('.ArnSortByPrice'),
-                                document.querySelector('.ArnSortByClass'),
-                                document.querySelector('.ArnSortByType'),
-                            ],
-                            'sort-wrapper',
-                            '.ArnSortBy',
-                            'beforeEnd'
-                        )
-                        .then(() => {
-                            this.createMobileSortAndFilter();
-                            utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
-                            utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
-                        });
+                    await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
+                        utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                    });
+                    await utilities.waitForSelectorInDOM('.ArnSortContainer').then(() => {
+                        utilities
+                            .createWrapper(
+                                '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                                '.ArnSecondarySearchOuterContainer',
+                                'sort-wrapper',
+                                'afterBegin'
+                            )
+                            .then(() => {
+                                this.createMobileSortAndFilter();
+                                utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            });
+                    });
                 });
+
                 this.applyCustomStyles();
                 this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                this.forceClickOnCitySearch();
+                this.setInputToRequired('input#city');
+                this.setInputToRequired('input#theCheckIn');
             });
         });
     }
@@ -456,7 +456,7 @@ export default class BasePortal {
         );
 
         const sort_button = document.querySelector('.ArnSortBy');
-        const sort_container = document.querySelector('#sort-wrapper');
+        const sort_container = document.querySelector('.sort-wrapper');
         const filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
         const sort_filter_container = document.querySelector('.sort-filter-overlay');
 
@@ -475,7 +475,7 @@ export default class BasePortal {
             document.body.classList.toggle('fixed');
         });
 
-        document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
+        document.querySelector('.sort-wrapper a').addEventListener('click', (target) => {
             target.toElement.classList.toggle('active-filter');
         });
 
@@ -799,8 +799,8 @@ export default class BasePortal {
             .HoldRoomsForm .submit,
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
-            #sort-wrapper .active,
-            #sort-wrapper a:hover {
+            .sort-wrapper .active,
+            .sort-wrapper a:hover {
                 background:${this.site_config.primary_color}
             }
 
@@ -828,8 +828,8 @@ export default class BasePortal {
                 #commands button:active,
                 #commands button:focus,
                 #commands button:hover,
-                #sort-wrapper a:before,
-                #sort-wrapper a.active-filter:before,
+                .sort-wrapper a:before,
+                .sort-wrapper a.active-filter:before,
                 .sort {
                     background:${this.site_config.primary_color}
                 }
@@ -852,8 +852,8 @@ export default class BasePortal {
             .arnMapPopup .rate,
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
-            #sort-wrapper .active,
-            #sort-wrapper a:hover {
+            .sort-wrapper .active,
+            .sort-wrapper a:hover {
                 color:${this.site_config.primary_text_color}
             }
 
@@ -1005,7 +1005,7 @@ export default class BasePortal {
             }
 
             @media screen and (max-width:800px) {
-                #sort-wrapper a:before {
+                .sort-wrapper a:before {
                     border:2px solid ${this.site_config.primary_color}
                 }
             }
@@ -1339,8 +1339,9 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (document.querySelector('input#theCheckIn').value === '') {
+                if (document.querySelector('input#theCheckIn').value === '' || document.querySelector('input#city').value === '') {
                     this.style_validation_fields('input#theCheckIn');
+                    this.style_validation_fields('input#city');
                     return;
                 }
                 loader.style.display = 'block';
@@ -1357,6 +1358,8 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
+            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
+
             if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
                 properties_array.push(true);
             } else {
@@ -1662,8 +1665,7 @@ export default class BasePortal {
 
         async function getPropImages() {
             try {
-                // const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
-                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
                     method: 'GET',
                 }).then((response) => response.json());
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
@@ -1780,5 +1782,16 @@ export default class BasePortal {
         if (el_val.value === '') {
             el_val.classList.add('invalidated');
         }
+    }
+
+    forceClickOnCitySearch() {
+        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
+            document.querySelector('.ArnGoCitySearch').click();
+        }
+    }
+
+    setInputToRequired(selector) {
+        if (!document.querySelector(selector)) return;
+        document.querySelector(selector).required = true;
     }
 }

@@ -1,3 +1,4 @@
+
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -144,6 +145,7 @@ a.ArnShowRatesLink:hover {
 select#rooms,
 select#adults {
     border-radius: 0;
+    background-color: #fff;
 }
 
 #AdminControlsContainer {
@@ -602,18 +604,18 @@ select#adults {
     display: none;
 }
 
-#sort-wrapper h4 {
+.sort-wrapper h4 {
     margin-bottom: 4px;
 }
 
-#sort-wrapper a {
+.sort-wrapper a {
     color: #333;
     padding: 4px;
     text-decoration: none;
     transition: all 0.4s ease;
 }
 
-#sort-wrapper div {
+.sort-wrapper div {
     font-size: 13px;
 }
 
@@ -663,6 +665,10 @@ select#adults {
 .ArnLeftListContainer {
     width: 200px;
     display: block;
+}
+
+.ArnNoResults{
+    width: 100%;
 }
 
 @media screen and (max-width: 1105px){
@@ -1014,7 +1020,8 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin: 4px 0;
-    border-radius: 5px;
+    -webkit-appearance: none ;
+    border-radius: 0;
 }
 
 .SearchHotels .algolia-places {
@@ -1202,28 +1209,28 @@ div.autocomplete ul li.selected {
         overflow-x: hidden;
     }
 
-    #sort-wrapper {
+    .sort-wrapper {
         position: static;
         display: none;
         width: unset;
     }
 
-    #sort-wrapper a {
+    .sort-wrapper a {
         padding: 8px;
     }
 
-    #sort-wrapper a:hover,
-    #sort-wrapper a:focus,
-    #sort-wrapper a:active,
-    #sort-wrapper.sort-open .active {
+    .sort-wrapper a:hover,
+    .sort-wrapper a:focus,
+    .sort-wrapper a:active,
+    .sort-wrapper.sort-open .active {
         background: unset;
     }
 
-    #sort-wrapper .accordion svg {
+    .sort-wrapper .accordion svg {
         display: none;
     }
 
-    #sort-wrapper a div {
+    .sort-wrapper a div {
         pointer-events: none;
     }
 
@@ -1361,6 +1368,7 @@ legend {
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
     text-align: center;
     min-width: 175px;
+    width: 20%;
 }
 
 .SinglePropDetail .RoomTypeHeader {
@@ -1643,12 +1651,6 @@ legend {
     .SinglePropDetail #adults {
         max-width: 175px;
     }
-}
-#theCheckIn,
-#theCheckOut,
-#rooms,
-#adults {
-    border-radius: 5px;
 }
 
 @media screen and (max-width: 800px) {
@@ -2883,6 +2885,15 @@ legend {
     display: none;
 }
 
+
+#theCheckIn,
+#theCheckOut,
+#rooms,
+#adults {
+    -webkit-appearance: none ;
+    border-radius: 0;
+}
+
 /*.RootBody {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg');
 }*/
@@ -2932,6 +2943,7 @@ legend {
     margin-bottom: 0;
     margin-top: 6px;
     height: 37px !important;
+    width: 100%;
 }
 
 .RootBody input[type='checkbox'] {
@@ -3003,7 +3015,7 @@ legend {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1105px) {
     .hideElement {
         display: none !important;
     }
@@ -3373,6 +3385,9 @@ div.custom-tag {
     padding: 5px;
 }
 
+.SearchHotels #HotelNameContainer {
+    display: none;
+}
 /* autocomplete styles start */
 
 /* clears the 'X' from Internet Explorer */

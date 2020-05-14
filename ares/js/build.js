@@ -1353,8 +1353,9 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (document.querySelector('input#theCheckIn').value === '') {
+                if (document.querySelector('input#theCheckIn').value === '' || document.querySelector('input#city').value === '') {
                     this.style_validation_fields('input#theCheckIn');
+                    this.style_validation_fields('input#city');
                     return;
                 }
                 loader.style.display = 'block';

@@ -16,11 +16,11 @@ utilities.addMultipleHeaderLogos({
     image1: {
         insertPosition: 'afterbegin',
         className: 'logo-left',
-        imageUrl: '../../site_configs/49553/img/left.svg',
+        imageUrl: 'url(https://dev-static.hotelsforhope.com/ares/site_configs/49553/img/left.svg',
     },
     image2: {
         insertPosition: 'beforeend',
         className: 'logo-right',
-        imageUrl: '../../site_configs/49553/img/right.svg',
+        imageUrl: 'url(https://dev-static.hotelsforhope.com/ares/site_configs/49553/img/right.svg',
     },
 });

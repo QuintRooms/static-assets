@@ -31,6 +31,7 @@ export default class BasePortal {
                 this.createCurrencyDropDown();
 
                 // all pages
+                this.forceClickOnCitySearch();
                 this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
@@ -1673,8 +1674,8 @@ export default class BasePortal {
 
         async function getPropImages() {
             try {
-                // const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
-                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
+                    // const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
                     method: 'GET',
                 }).then((response) => response.json());
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
@@ -1790,6 +1791,12 @@ export default class BasePortal {
         const el_val = document.querySelector(element);
         if (el_val.value === '') {
             el_val.classList.add('invalidated');
+        }
+    }
+
+    forceClickOnCitySearch() {
+        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content !== 'City') {
+            document.querySelector('.ArnGoCitySearch').click();
         }
     }
 }

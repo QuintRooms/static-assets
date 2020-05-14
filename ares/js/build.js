@@ -1796,7 +1796,7 @@ export default class BasePortal {
     }
 
     forceClickOnCitySearch() {
-        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content !== 'City') {
+        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
             document.querySelector('.ArnGoCitySearch').click();
         }
     }

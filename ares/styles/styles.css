@@ -3214,13 +3214,14 @@ body.HoldRoomsForm {
 
 @media screen and (max-width: 805px) {
     .arnClosePopupButton {
-        height: 0px;
         background: transparent;
         color: #fff;
         font-size: 24px;
-        position: relative;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
         z-index: 1;
-        padding: 0px 30px;
+        padding: 3px 24px;
     }
     
     #arnMapPopupMobile .imageContainer img {

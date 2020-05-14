@@ -1363,6 +1363,7 @@ legend {
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
     text-align: center;
     min-width: 175px;
+    width: 20%;
 }
 
 .SinglePropDetail .RoomTypeHeader {

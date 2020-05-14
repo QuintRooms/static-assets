@@ -145,6 +145,7 @@ a.ArnShowRatesLink:hover {
 select#rooms,
 select#adults {
     border-radius: 0;
+    background-color: #fff;
 }
 
 #AdminControlsContainer {

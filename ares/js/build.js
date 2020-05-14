@@ -213,25 +213,36 @@ export default class BasePortal {
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
                     utilities
-                        .moveOrphanedElementsIntoNewWrapper(
-                            [
-                                document.querySelector('.ArnSortByDealPercent'),
-                                document.querySelector('.ArnSortByDistance'),
-                                document.querySelector('.ArnSortByDealAmount'),
-                                document.querySelector('.ArnSortByAvailability'),
-                                document.querySelector('.ArnSortByPrice'),
-                                document.querySelector('.ArnSortByClass'),
-                                document.querySelector('.ArnSortByType'),
-                            ],
+                        .createWrapper(
+                            '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                            '.ArnSecondarySearchOuterContainer',
                             'sort-wrapper',
-                            '.ArnSortBy',
-                            'beforeEnd'
+                            'afterBegin'
                         )
                         .then(() => {
                             this.createMobileSortAndFilter();
-                            utilities.moveElementIntoExistingWrapper('#sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
-                            utilities.createHTML('<h4>Sort</h4>', '#sort-wrapper', 'afterBegin');
+                            utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
                         });
+                    // utilities
+                    //     .moveOrphanedElementsIntoNewWrapper(
+                    //         [
+                    //             document.querySelector('.ArnSortByDealPercent'),
+                    //             document.querySelector('.ArnSortByDistance'),
+                    //             document.querySelector('.ArnSortByDealAmount'),
+                    //             document.querySelector('.ArnSortByAvailability'),
+                    //             document.querySelector('.ArnSortByPrice'),
+                    //             document.querySelector('.ArnSortByClass'),
+                    //             document.querySelector('.ArnSortByType'),
+                    //         ],
+                    //         'sort-wrapper',
+                    //         '.ArnSortBy',
+                    //         'beforeEnd'
+                    //     )
+                    //     .then(() => {
+                    //         this.createMobileSortAndFilter();
+                    //         utilities.moveElementIntoExistingWrapper('.sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
+                    //         utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                    //     });
                 });
                 this.applyCustomStyles();
                 this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -456,7 +467,7 @@ export default class BasePortal {
         );
 
         const sort_button = document.querySelector('.ArnSortBy');
-        const sort_container = document.querySelector('#sort-wrapper');
+        const sort_container = document.querySelector('.sort-wrapper');
         const filter_container = document.querySelector('.ArnSecondarySearchOuterContainer');
         const sort_filter_container = document.querySelector('.sort-filter-overlay');
 
@@ -475,7 +486,7 @@ export default class BasePortal {
             document.body.classList.toggle('fixed');
         });
 
-        document.querySelector('#sort-wrapper a').addEventListener('click', (target) => {
+        document.querySelector('.sort-wrapper a').addEventListener('click', (target) => {
             target.toElement.classList.toggle('active-filter');
         });
 
@@ -799,8 +810,8 @@ export default class BasePortal {
             .HoldRoomsForm .submit,
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
-            #sort-wrapper .active,
-            #sort-wrapper a:hover {
+            .sort-wrapper .active,
+            .sort-wrapper a:hover {
                 background:${this.site_config.primary_color}
             }
 
@@ -828,8 +839,8 @@ export default class BasePortal {
                 #commands button:active,
                 #commands button:focus,
                 #commands button:hover,
-                #sort-wrapper a:before,
-                #sort-wrapper a.active-filter:before,
+                .sort-wrapper a:before,
+                .sort-wrapper a.active-filter:before,
                 .sort {
                     background:${this.site_config.primary_color}
                 }
@@ -852,8 +863,8 @@ export default class BasePortal {
             .arnMapPopup .rate,
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
-            #sort-wrapper .active,
-            #sort-wrapper a:hover {
+            .sort-wrapper .active,
+            .sort-wrapper a:hover {
                 color:${this.site_config.primary_text_color}
             }
 
@@ -1005,7 +1016,7 @@ export default class BasePortal {
             }
 
             @media screen and (max-width:800px) {
-                #sort-wrapper a:before {
+                .sort-wrapper a:before {
                     border:2px solid ${this.site_config.primary_color}
                 }
             }

@@ -102,7 +102,7 @@ export default class Utilities {
         });
     }
 
-    createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
+    async createWrapper(query_selectors, wrapper_parent, new_wrapper_class, adjacent_location) {
         const wrapper = document.createElement('div');
 
         if (!wrapper) return;

@@ -602,18 +602,18 @@ select#adults {
     display: none;
 }
 
-#sort-wrapper h4 {
+.sort-wrapper h4 {
     margin-bottom: 4px;
 }
 
-#sort-wrapper a {
+.sort-wrapper a {
     color: #333;
     padding: 4px;
     text-decoration: none;
     transition: all 0.4s ease;
 }
 
-#sort-wrapper div {
+.sort-wrapper div {
     font-size: 13px;
 }
 
@@ -1202,28 +1202,28 @@ div.autocomplete ul li.selected {
         overflow-x: hidden;
     }
 
-    #sort-wrapper {
+    .sort-wrapper {
         position: static;
         display: none;
         width: unset;
     }
 
-    #sort-wrapper a {
+    .sort-wrapper a {
         padding: 8px;
     }
 
-    #sort-wrapper a:hover,
-    #sort-wrapper a:focus,
-    #sort-wrapper a:active,
-    #sort-wrapper.sort-open .active {
+    .sort-wrapper a:hover,
+    .sort-wrapper a:focus,
+    .sort-wrapper a:active,
+    .sort-wrapper.sort-open .active {
         background: unset;
     }
 
-    #sort-wrapper .accordion svg {
+    .sort-wrapper .accordion svg {
         display: none;
     }
 
-    #sort-wrapper a div {
+    .sort-wrapper a div {
         pointer-events: none;
     }
 

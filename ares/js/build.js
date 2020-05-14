@@ -31,7 +31,6 @@ export default class BasePortal {
                 this.createCurrencyDropDown();
 
                 // all pages
-                this.forceClickOnCitySearch();
                 this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
@@ -247,6 +246,7 @@ export default class BasePortal {
                 });
                 this.applyCustomStyles();
                 this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                this.forceClickOnCitySearch();
             });
         });
     }

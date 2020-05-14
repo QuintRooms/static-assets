@@ -667,6 +667,10 @@ select#adults {
     display: block;
 }
 
+.ArnNoResults{
+    width: 100%;
+}
+
 @media screen and (max-width: 1105px){
     #Properties {
         display: block;

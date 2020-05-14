@@ -45,7 +45,7 @@ export default class BasePortal {
 
                 if (this.site_config.site_type === 'cug') {
                     if (document.querySelector('.MemberNotAuthenticated')) {
-                        utilities.createHTML(
+                        await utilities.createHTML(
                             `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
                             'body',
                             'afterBegin'
@@ -167,7 +167,7 @@ export default class BasePortal {
                     this.changeContractedPropertyPinColor();
                 });
 
-                utilities.waitForSelectorInDOM('.pollingFinished').then((selector) => {
+                utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
                     if (!document.querySelector('.SearchHotels')) return;
 
                     if (!this.map_loaded) {
@@ -179,7 +179,7 @@ export default class BasePortal {
                         this.highlightMapMarkersOnPropertyHover();
                         this.changeContractedPropertyPinColor();
                     }
-                    utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+
                     this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
                     this.toggleMap();
                     this.addLRGDetails();
@@ -212,38 +212,24 @@ export default class BasePortal {
                     utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                     utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                    utilities
-                        .createWrapper(
-                            '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
-                            '.ArnSecondarySearchOuterContainer',
-                            'sort-wrapper',
-                            'afterBegin'
-                        )
-                        .then(() => {
-                            this.createMobileSortAndFilter();
-                            utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
-                        });
-                    // utilities
-                    //     .moveOrphanedElementsIntoNewWrapper(
-                    //         [
-                    //             document.querySelector('.ArnSortByDealPercent'),
-                    //             document.querySelector('.ArnSortByDistance'),
-                    //             document.querySelector('.ArnSortByDealAmount'),
-                    //             document.querySelector('.ArnSortByAvailability'),
-                    //             document.querySelector('.ArnSortByPrice'),
-                    //             document.querySelector('.ArnSortByClass'),
-                    //             document.querySelector('.ArnSortByType'),
-                    //         ],
-                    //         'sort-wrapper',
-                    //         '.ArnSortBy',
-                    //         'beforeEnd'
-                    //     )
-                    //     .then(() => {
-                    //         this.createMobileSortAndFilter();
-                    //         utilities.moveElementIntoExistingWrapper('.sort-wrapper', '.ArnSecondarySearchOuterContainer', 'afterBegin');
-                    //         utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
-                    //     });
+                    await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
+                        utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                    });
+                    await utilities.waitForSelectorInDOM('.ArnSortContainer').then(() => {
+                        utilities
+                            .createWrapper(
+                                '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                                '.ArnSecondarySearchOuterContainer',
+                                'sort-wrapper',
+                                'afterBegin'
+                            )
+                            .then(() => {
+                                this.createMobileSortAndFilter();
+                                utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            });
+                    });
                 });
+
                 this.applyCustomStyles();
                 this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.forceClickOnCitySearch();
@@ -1372,6 +1358,8 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
+            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
+
             if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
                 properties_array.push(true);
             } else {

@@ -1015,7 +1015,8 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin: 4px 0;
-    border-radius: 5px;
+    -webkit-appearance: none ;
+    border-radius: 0;
 }
 
 .SearchHotels .algolia-places {
@@ -1644,12 +1645,6 @@ legend {
     .SinglePropDetail #adults {
         max-width: 175px;
     }
-}
-#theCheckIn,
-#theCheckOut,
-#rooms,
-#adults {
-    border-radius: 5px;
 }
 
 @media screen and (max-width: 800px) {
@@ -2884,6 +2879,15 @@ legend {
     display: none;
 }
 
+
+#theCheckIn,
+#theCheckOut,
+#rooms,
+#adults {
+    -webkit-appearance: none ;
+    border-radius: 0;
+}
+
 /*.RootBody {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg');
 }*/
@@ -3374,6 +3378,9 @@ div.custom-tag {
     padding: 5px;
 }
 
+.SearchHotels #HotelNameContainer {
+    display: none;
+}
 /* autocomplete styles start */
 
 /* clears the 'X' from Internet Explorer */

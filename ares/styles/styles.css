@@ -2937,6 +2937,7 @@ legend {
     margin-bottom: 0;
     margin-top: 6px;
     height: 37px !important;
+    width: 100%;
 }
 
 .RootBody input[type='checkbox'] {

@@ -574,7 +574,7 @@ select#adults {
 }
 
 .noPrice {
-    display: none;
+    display: none !important;
 }
 
 #arnCloseAnchorId svg {

@@ -533,7 +533,7 @@ select#adults {
 }
 
 /* Mobile Menu End */
-/* Calendar and Map Start */
+/* Map Start */
 
 .arn-leaflet-reset-button {
     height: unset;
@@ -583,7 +583,25 @@ select#adults {
     top: 2px;
 }
 
-/*Calendar and Map End */
+/* Map End */
+
+/* Calendar Start */
+@media screen and (max-width: 600px){
+    .yui3-u-1-2, .yui3-u-12-24{
+        display: block !important;
+    }
+
+    .yui3-skin-sam .yui3-calendar-header-label{
+        font-size: 11px;
+    }
+
+    .yui3-calendar-content{
+        left: 0;
+    }
+}
+
+/* Calendar End */
+
 /* Sort Container Start */
 #arnToggleMapDiv {
     display: none;
@@ -3269,12 +3287,14 @@ body.HoldRoomsForm {
     }
 }
 
-@media screen and (max-width: 375px) {
-    @media screen and (-webkit-min-device-pixel-ratio: 0) { 
-        _::-webkit-full-page-media, _:future, :root , #arnMapPopupMobile  {
+@media screen and (max-width: 1105px) {
+    /* @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+        _::-webkit-full-page-media, _:future, :root ,  */
+        
+        #arnMapPopupMobile  {
             bottom:75px!important; 
             border-radius: 5px;     
-          }
+          /* } */
         }
 }
 

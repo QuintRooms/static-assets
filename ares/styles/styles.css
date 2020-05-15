@@ -2407,14 +2407,15 @@ legend {
 
 /* Checkout Start */
 #theAdditionalGuestLink,
-.DSFormFields {
+.DSFormFields,
+.paymentMethods {
     display: none;
 }
 
 .creditcards {
     display: inline-block;
     vertical-align: middle;
-    margin: 0.75rem 1rem 0.75rem 0;
+    margin: 0.75rem 1rem 1.5rem 0;
     width: 45px;
     height: 30px;
 }

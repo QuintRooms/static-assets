@@ -59,11 +59,9 @@ textarea {
 #theArnPushPage,
 .show-search-container,
 #CitiesNearbyContainer,
-#theRateDescription,
+#theRateDescription :first-child,
 .numberOfNights,
 .numberOfAdults,
-#theBookingPage .ArnRateCalendar,
-#theBookingPage #theRateSummaryInfo div,
 #theCharges legend,
 #theHotelAddress,
 .ArnGoCitySearch,
@@ -2793,6 +2791,10 @@ legend {
 .confirmationWarning,
 #theMarketingOptInAjax {
     display: flex;
+}
+
+#theBookingPage #theRateSummaryInfo div{
+    font-weight: bold;
 }
 
 @media screen and (max-width: 800px) {

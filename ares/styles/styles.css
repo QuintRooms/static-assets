@@ -735,7 +735,7 @@ select#adults {
     }
 
     .SearchHotels .ArnPropertyMapInner {
-            height: 100vh; 
+            height: 100vh!important; 
             height: calc(var(--vh, 1vh) * 100)!important;   
     }
 

@@ -235,6 +235,7 @@ export default class BasePortal {
                 this.forceClickOnCitySearch();
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
+                this.resizeViewportForMapMobile();
             });
         });
     }
@@ -740,12 +741,29 @@ export default class BasePortal {
 
             utilities.updateHTML(`#theCreditCardBillingNameAjax${reservation_count - 1} label`, "Cardholder's Name");
             utilities.updateHTML(`#theBillingAddressAjax${reservation_count - 1} label`, 'Billing Address');
-            utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, 'Billing Info');
-            utilities.updateHTML(
-                `.RoomNumber-${reservation_count} .paymentMethods`,
-                '<span class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></span>'
-            );
+            utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);
+            if (reservation_count > 1) {
+                utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info - Room ${reservation_count}`);
+            }
+
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
+            utilities.updateHTML(
+                `.cardNumber label`,
+                '<div class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+            );
+        });
+
+        this.keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count);
+    }
+
+    keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count) {
+        document.querySelector('#theCopyInfoAjax input').addEventListener('click', () => {
+            setTimeout(() => {
+                utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);
+                if (reservation_count > 1) {
+                    utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info - Room ${reservation_count}`);
+                }
+            }, 750);
         });
     }
 
@@ -1793,5 +1811,16 @@ export default class BasePortal {
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;
         document.querySelector(selector).required = true;
+    }
+
+    resizeViewportForMapMobile() {
+        if (this.page_name !== 'search-results' && !window.matchMedia('(max-width:800px)').matches) return;
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        window.addEventListener('resize', () => {
+            vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
     }
 }

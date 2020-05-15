@@ -676,7 +676,7 @@ select#adults {
 
 .SearchHotels .ArnPropertyMapInner {
     z-index: 8;
-    height: 100vh !important;
+    height: 100vh;
 }
 
 .ArnLeftSearchContainer,
@@ -732,6 +732,12 @@ select#adults {
     .SearchHotels .ArnSearchContainerMainTable{
         table-layout: fixed;
         width: 100%;
+    }
+
+    .SearchHotels .ArnPropertyMapInner {
+            height: 100vh; 
+            /* height: var(--vh);    */
+            height: calc(var(--vh, 1vh) * 100);   
     }
 }
 
@@ -2401,14 +2407,15 @@ legend {
 
 /* Checkout Start */
 #theAdditionalGuestLink,
-.DSFormFields {
+.DSFormFields,
+.paymentMethods {
     display: none;
 }
 
 .creditcards {
     display: inline-block;
     vertical-align: middle;
-    margin: 0.75rem 1rem 0.75rem 0;
+    margin: 0.75rem 1rem 1.5rem 0;
     width: 45px;
     height: 30px;
 }
@@ -3285,17 +3292,10 @@ body.HoldRoomsForm {
     .hideElement {
         display: none!important;
     }
-}
 
-@media screen and (max-width: 1105px) {
-    /* @media screen and (-webkit-min-device-pixel-ratio: 0) { 
-        _::-webkit-full-page-media, _:future, :root ,  */
-        
-        #arnMapPopupMobile  {
-            bottom:75px!important; 
-            border-radius: 5px;     
-          /* } */
-        }
+    #arnMapPopupMobile  {
+        border-radius: 5px;     
+    }
 }
 
 /* Map Popup End */

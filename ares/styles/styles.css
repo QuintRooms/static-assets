@@ -2428,7 +2428,7 @@ legend {
 .open-modal {
     text-decoration: underline;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1rem;
 }
 
@@ -2782,12 +2782,17 @@ legend {
     border: 2px solid #ffdada;
 }
 
-.Error {
+.Error,
+.error {
     color: #ff6161;
 }
 
 .ErrorList ul {
     list-style: none;
+}
+
+.FieldError{
+    border-color: #e0e0e0;
 }
 
 .confirmationWarning,

@@ -3269,12 +3269,14 @@ body.HoldRoomsForm {
     }
 }
 
-@media screen and (max-width: 375px) {
-    @media screen and (-webkit-min-device-pixel-ratio: 0) { 
-        _::-webkit-full-page-media, _:future, :root , #arnMapPopupMobile  {
+@media screen and (max-width: 1105px) {
+    /* @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+        _::-webkit-full-page-media, _:future, :root ,  */
+        
+        #arnMapPopupMobile  {
             bottom:75px!important; 
             border-radius: 5px;     
-          }
+          /* } */
         }
 }
 

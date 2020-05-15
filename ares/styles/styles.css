@@ -736,6 +736,7 @@ select#adults {
 
     .SearchHotels .ArnPropertyMapInner {
             height: 100vh; 
+            /* height: var(--vh);    */
             height: calc(var(--vh, 1vh) * 100);   
     }
 }
@@ -3290,17 +3291,10 @@ body.HoldRoomsForm {
     .hideElement {
         display: none!important;
     }
-}
 
-@media screen and (max-width: 800px) {
-    /* @media screen and (-webkit-min-device-pixel-ratio: 0) { 
-        _::-webkit-full-page-media, _:future, :root ,  */
-        
-        #arnMapPopupMobile  {
-            /* bottom:75px!important;  */
-            border-radius: 5px;     
-          /* } */
-        }
+    #arnMapPopupMobile  {
+        border-radius: 5px;     
+    }
 }
 
 /* Map Popup End */

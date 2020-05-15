@@ -1798,8 +1798,11 @@ export default class BasePortal {
 
     resizeViewportForMapMobile() {
         if (this.page_name !== 'search-results' && !window.matchMedia('(max-width:800px)').matches) return;
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
         window.addEventListener('resize', () => {
-            const vh = window.innerHeight * 0.01;
+            vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
     }

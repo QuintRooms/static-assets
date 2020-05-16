@@ -668,6 +668,7 @@ select#adults {
     overflow: hidden;
     order: 2;
     position: sticky;
+    margin-right: 12px;
 }
 
 .SearchHotels .ArnPropertyMapInner {
@@ -676,7 +677,7 @@ select#adults {
 }
 
 .SearchHotels .ArnLeftSearchContainer{
-    margin-left: 24px;
+    margin-left: 12px;
 }
 
 .ArnLeftSearchContainer,
@@ -712,6 +713,7 @@ select#adults {
         overflow: hidden;
         position: fixed;
         height: 0;
+        margin-right: 0;
     }
 
     .showMap {

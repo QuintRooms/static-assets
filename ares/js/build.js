@@ -1599,7 +1599,7 @@ export default class BasePortal {
      @param string takes the text for the host hotel custom tag text
      @param string takes the text for the partner hotel custom tag text
      */
-    isPropByGateway(exclusiveRateText, host_hotel_text, partner_hotel_text, eventName) {
+    isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName) {
         /**
         *@description adds a sash to a property
         @param string DOM selector 
@@ -1634,13 +1634,13 @@ export default class BasePortal {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
             props.forEach((el) => {
-                if (el.classList.contains('ArnPropertyTierTwo')) {
-                    addCustomTag(partner_hotel_text, el);
+                if (el.classList.contains('ArnPropertyTierTwo') && partnerHotelText !== '') {
+                    addCustomTag(partnerHotelText, el);
                 }
-                if (el.classList.contains('ArnPropertyTierThree')) {
-                    addCustomTag(host_hotel_text, el);
+                if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '') {
+                    addCustomTag(hostHotelText, el);
                 }
-                if (el.querySelector('div.S16') || el.querySelector('div.S20')) {
+                if (el.classList.contains('S16') || (el.classList.contains('S20') && exclusiveRateText !== '')) {
                     addExclusiveRatesSash(exclusiveRateText, el);
                 }
             });

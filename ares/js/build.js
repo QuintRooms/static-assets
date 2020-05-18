@@ -71,7 +71,12 @@ export default class BasePortal {
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
 
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                    this.isPropByGateway(
+                        this.site_config.exclusive_rate_text,
+                        this.site_config.host_hotel_text,
+                        this.site_config.partner_hotel_text,
+                        this.site_config.lodging.event_name
+                    );
                     this.updateRoomDescription();
                     this.updatePropReviewsURLToUseAnchor();
 
@@ -180,7 +185,12 @@ export default class BasePortal {
                         this.changeContractedPropertyPinColor();
                     }
 
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                    this.isPropByGateway(
+                        this.site_config.exclusive_rate_text,
+                        this.site_config.host_hotel_text,
+                        this.site_config.partner_hotel_text,
+                        this.site_config.lodging.event_name
+                    );
                     this.toggleMap();
                     this.addLRGDetails();
                     this.getTotalNights().then((nights) => {
@@ -1586,31 +1596,10 @@ export default class BasePortal {
     /**
      *@description Looks at the prop id and checks if it should have a custom tag or sash
      @param string takes the text for the exclusive rate sash
-     @param string takes the text for the custom tag text
+     @param string takes the text for the host hotel custom tag text
+     @param string takes the text for the partner hotel custom tag text
      */
-    isPropByGateway(exclusiveRateText, customTagText, eventName) {
-        if (this.page_name === 'search-results') {
-            const props = document.querySelectorAll('div.ArnProperty');
-            props.forEach((el) => {
-                if (el.classList.contains('ArnPropertyTierTwo') && this.site_config.exclusive_rate_text !== '' && this.site_config.custom_tag_text !== '') {
-                    addCustomTag(customTagText, el);
-                    addExclusiveRatesSash(exclusiveRateText, el);
-                }
-                if (el.classList.contains('ArnPropertyTierOne') && this.site_config.exclusive_rate_text !== '') {
-                    addExclusiveRatesSash(exclusiveRateText, el);
-                }
-            });
-        }
-
-        if (this.page_name === 'property-detail') {
-            const rates = document.querySelectorAll('div.rateRow');
-            rates.forEach((el) => {
-                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
-                    updateRoomDescription(el, eventName, exclusiveRateText);
-                }
-            });
-        }
-
+    isPropByGateway(exclusiveRateText, host_hotel_text, partner_hotel_text, eventName) {
         /**
         *@description adds a sash to a property
         @param string DOM selector 
@@ -1636,9 +1625,34 @@ export default class BasePortal {
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
         @param string is the parent element for the current iteration 
+        @param string will be either 'x' or 'y'. Determines if Host or Partner hotel. 
         */
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        }
+
+        if (this.page_name === 'search-results') {
+            const props = document.querySelectorAll('div.ArnProperty');
+            props.forEach((el) => {
+                if (el.classList.contains('ArnPropertyTierTwo')) {
+                    addCustomTag(partner_hotel_text, el);
+                }
+                if (el.classList.contains('ArnPropertyTierThree')) {
+                    addCustomTag(host_hotel_text, el);
+                }
+                if (el.querySelector('div.S16') || el.querySelector('div.S20')) {
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+            });
+        }
+
+        if (this.page_name === 'property-detail') {
+            const rates = document.querySelectorAll('div.rateRow');
+            rates.forEach((el) => {
+                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
+                    updateRoomDescription(el, eventName, exclusiveRateText);
+                }
+            });
         }
     }
 

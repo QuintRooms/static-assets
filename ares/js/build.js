@@ -227,7 +227,7 @@ export default class BasePortal {
                 });
 
                 this.applyCustomStyles();
-                this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.forceClickOnCitySearch();
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');

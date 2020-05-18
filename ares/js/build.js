@@ -35,29 +35,15 @@ export default class BasePortal {
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
-                if (this.site_config.site_type !== 'cug') {
-                    await utilities.createHTML(
-                        `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
-                        '.config-container',
-                        'afterEnd'
-                    );
-                }
+                await utilities.createHTML(
+                    `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
+                    '.config-container',
+                    'afterEnd'
+                );
 
                 if (this.site_config.site_type === 'cug') {
-                    if (document.querySelector('.MemberNotAuthenticated')) {
-                        await utilities.createHTML(
-                            `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
-                            'body',
-                            'afterBegin'
-                        );
-                    }
-
-                    utilities.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
-                        utilities.createHTML(
-                            `<a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a>`,
-                            '#AdminControlsContainer',
-                            'afterBegin'
-                        );
+                    utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
+                        utilities.appendToParent('#commands', 'header');
                     });
                 }
 
@@ -954,7 +940,7 @@ export default class BasePortal {
             a.ArnShowRatesLink:hover {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
-                border: 1px solid ${this.site_config.primary_color};
+                border: 1px solid ${this.site_config.button_hover_border_color};
             }
 
             .CheckRates input.submit:hover,

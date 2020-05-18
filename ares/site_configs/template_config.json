@@ -27,7 +27,8 @@
     "exclusive_rate_text": "Exclusive Event Rate",
     // Text to appear at the bottom of the property thumbnail for specific properties
     // e.g "New Hotel Jan 2021" etc
-    "custom_tag_text": "",
+    "host_hotel_text": "Host Hotel",
+    "partner_hotel_text": "partner Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,

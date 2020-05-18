@@ -1008,9 +1008,13 @@ select#adults {
     }
 }
 
+.ArnLeftListContainer{
+    padding-top: 48px;
+}
+
 .ArnRightListContainer {
     width: 100%;
-    padding-top: 47px;
+    padding-top: 48px;
 }
 
 .ArnSearchHeader {
@@ -1391,8 +1395,15 @@ legend {
 }
 
 .SinglePropDetail .rowOne {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 3%;
+}
+
+.SinglePropDetail .CheckRates{
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {

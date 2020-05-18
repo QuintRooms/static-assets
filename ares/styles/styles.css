@@ -1811,7 +1811,6 @@ legend {
 
     .roomCount{
         text-align: left;
-        color: #ff4040;
         padding-top: 8px;
     }
 }
@@ -1973,6 +1972,11 @@ legend {
 .SearchHotels .roomCount {
     display: none;
 }
+
+.roomCount {
+    color: #ff4040;
+}
+
 
 .SearchHotels .ArnPropName {
     width: 50%;

@@ -1514,37 +1514,38 @@ export default class BasePortal {
         function applyFilters() {
             const stars_arr = [];
             const amenities_arr = [];
-            let string_array;
-
             const amenity_checkboxes = document.querySelectorAll('#AmentitiesContainer input[type="checkbox"');
-
             const stars_checkboxes = document.querySelectorAll('#PropertyClassesContainer input[type="checkbox"');
 
-            function getFilterParams(checkboxes, array, filterVar) {
-                checkboxes.forEach((el) => {
-                    el.addEventListener('click', (e) => {
-                        const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
-                        if (array.includes(label)) {
-                            for (let i = 0; i < array.length; i += 1) {
-                                if (array[i] === label) {
-                                    array.splice(i, 1);
-                                    return;
-                                }
+            amenity_checkboxes.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
+                    if (amenities_arr.includes(label)) {
+                        for (let i = 0; i < amenities_arr.length; i += 1) {
+                            if (amenities_arr[i] === label) {
+                                amenities_arr.splice(i, 1);
+                                return;
                             }
-                        } else array.push(label);
-                        string_array = array.toString();
-                        // eslint-disable-next-line no-param-reassign
-                        filterVar = string_array;
-                        console.log(filterVar);
-                        return filterVar;
-                    });
-                    return filterVar;
+                        }
+                    } else amenities_arr.push(label);
+                    amenities = amenities_arr.toString();
                 });
-                console.log(filterVar);
-                return filterVar;
-            }
-            getFilterParams(amenity_checkboxes, amenities_arr, amenities);
-            getFilterParams(stars_checkboxes, stars_arr, stars);
+            });
+
+            stars_checkboxes.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
+                    if (stars_arr.includes(label)) {
+                        for (let i = 0; i < stars_arr.length; i += 1) {
+                            if (stars_arr[i] === label) {
+                                stars_arr.splice(i, 1);
+                                return;
+                            }
+                        }
+                    } else stars_arr.push(label);
+                    stars = stars_arr.toString();
+                });
+            });
         }
 
         const construct_url_on_submit = () => {
@@ -1553,7 +1554,8 @@ export default class BasePortal {
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
-
+                console.log(amenities);
+                console.log(stars);
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
@@ -1577,7 +1579,7 @@ export default class BasePortal {
                 window.alert(url);
             });
         };
-        applyFilters();
+        applyFilters(amenities, stars);
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',

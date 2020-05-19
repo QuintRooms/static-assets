@@ -1554,8 +1554,7 @@ export default class BasePortal {
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
-                console.log(amenities);
-                console.log(stars);
+
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
@@ -1576,7 +1575,6 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'), amenities, stars);
 
                 window.location.href = url;
-                window.alert(url);
             });
         };
         applyFilters(amenities, stars);

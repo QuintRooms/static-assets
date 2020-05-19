@@ -1835,7 +1835,7 @@ export default class BasePortal {
         const {ads} = this.site_config;
 
         if (this.page_name === 'search-results') {
-            if (!document.querySelector('.ArnSecondarySearchOuterContainer')) return;
+            if (!document.querySelector('.ArnSecondarySearchOuterContainer') || !ads.sidebar_ad.is_active) return;
             document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
                 'afterEnd',
                 `
@@ -1845,7 +1845,7 @@ export default class BasePortal {
             `
             );
 
-            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')) return;
+            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') || !ads.between_property_ad.is_active) return;
             document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
                 'afterEnd',
                 `
@@ -1858,7 +1858,7 @@ export default class BasePortal {
         }
 
         if (this.page_name === 'confirmation') {
-            if (!document.querySelector('.GuestForms')) return;
+            if (!document.querySelector('.GuestForms') || !ads.confirmation_page_bottom.is_active) return;
 
             document.querySelector('.GuestForms').insertAdjacentHTML(
                 'beforeEnd',

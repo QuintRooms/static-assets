@@ -104,13 +104,11 @@ function beatTheirRateMessaging(page_selector, property_container) {
 }
 
 function styleLoginContainer() {
-    if (!document.querySelector('.WBLoginForm') || !document.querySelector('.WBValidatedRegistrationForm')) return;
-
     if (this.page_name === 'cug-registration') {
         document.querySelector('#theWBValidatedRegistrationFormBody').insertAdjacentHTML('afterend', `<div id='already-member-container'></div>`);
         const already_member = document.querySelector('.loginLink');
         document.querySelector('#already-member-container').insertAdjacentElement('afterbegin', already_member);
-    } else {
+    } else if (!document.querySelector('.WBLoginForm')) {
         document.querySelector('#theWBLoginFormBody').insertAdjacentHTML('afterend', `<div id='register-button'></div>`);
         const register = document.querySelector('.CreateAnAccountAction');
         document.querySelector('#register-button').insertAdjacentElement('afterbegin', register);

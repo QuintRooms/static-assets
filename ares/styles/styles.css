@@ -3691,3 +3691,27 @@ input[type='search']::-webkit-search-results-decoration {
     border: 1px solid red !important;
     outline: none;
 }
+
+/* Ads */
+
+.sidebar-ad img{
+    width: 100%;
+    max-width: 185px;
+    display: block;
+    margin-top: 24px;
+    margin-left: 8px;
+}
+
+.between-property-ad img{
+    width: 100%;
+    max-width: 800px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.confirmation-bottom-ad img{
+    margin-top: 36px;
+    display: block;
+    width: 100%;
+}

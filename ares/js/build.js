@@ -102,6 +102,10 @@ export default class BasePortal {
                     utilities.emailVerificationSetup();
                 }
 
+                if (this.page_name === 'confirmation') {
+                    this.implementAds();
+                }
+
                 // root page methods
                 if (document.querySelector('.RootBody')) {
                     // this.addAlgoliaSearch();
@@ -171,6 +175,7 @@ export default class BasePortal {
                         this.changeContractedPropertyPinColor();
                     }
 
+                    this.implementAds();
                     this.isPropByGateway(
                         this.site_config.exclusive_rate_text,
                         this.site_config.host_hotel_text,
@@ -1822,5 +1827,47 @@ export default class BasePortal {
             vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
+    }
+
+    implementAds() {
+        if (!this.site_config.ads || window.matchMedia('(max-width:800px)').matches) return;
+
+        const {ads} = this.site_config;
+
+        if (this.page_name === 'search-results') {
+            if (!document.querySelector('.ArnSecondarySearchOuterContainer')) return;
+            document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
+                'afterEnd',
+                `
+                <a class="sidebar-ad" href="${ads.sidebar_ad.outbound_url}" target="_blank">
+                    <img src="${ads.sidebar_ad.image_url}" alt="Advertisement">
+                </a>
+            `
+            );
+
+            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')) return;
+            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
+                'afterEnd',
+                `
+                <a class="between-property-ad" href="${ads.between_property_ad.outbound_url}" target="_blank">
+                    <img src="${ads.between_property_ad.image_url}" alt="Advertisement">
+                </a>
+                <hr class="prop-hr">
+            `
+            );
+        }
+
+        if (this.page_name === 'confirmation') {
+            if (!document.querySelector('.GuestForms')) return;
+
+            document.querySelector('.GuestForms').insertAdjacentHTML(
+                'beforeEnd',
+                `
+                <a class="confirmation-bottom-ad" href="${ads.confirmation_page_bottom.outbound_url}" target="_blank">
+                    <img src="${ads.confirmation_page_bottom.image_url}" alt="Advertisement">
+                </a>
+            `
+            );
+        }
     }
 }

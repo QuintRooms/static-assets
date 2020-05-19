@@ -61,27 +61,21 @@
     {
         "sidebar_ad":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/185x600?text=185x600",
+            "outbound_url": "https://placeholder.com/"
         },
         "between_property_ad":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
-        },
-        "confirmation_page_top":
-        {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/800x200?text=800x200",
+            "outbound_url": "https://placeholder.com/"
         },
         "confirmation_page_bottom":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/600x250?text=600x250",
+            "outbound_url": "https://placeholder.com/"
         }
     }
 }

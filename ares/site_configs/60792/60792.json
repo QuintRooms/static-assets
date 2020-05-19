@@ -68,12 +68,6 @@
             "image_url": "",
             "outbound_url": ""
         },
-        "confirmation_page_top":
-        {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
-        },
         "confirmation_page_bottom":
         {
             "is_active": false,

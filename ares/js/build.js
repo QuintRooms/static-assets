@@ -178,6 +178,7 @@ export default class BasePortal {
                         this.changeContractedPropertyPinColor();
                     }
 
+                    this.cugConfigs();
                     this.implementAds();
                     this.isPropByGateway(
                         this.site_config.exclusive_rate_text,
@@ -827,7 +828,7 @@ export default class BasePortal {
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
             .sort-wrapper a:hover {
-                background:${this.site_config.primary_color}
+                background: ${this.site_config.primary_color}
             }
 
             @media screen and (max-width:1105px) {
@@ -857,7 +858,7 @@ export default class BasePortal {
                 .sort-wrapper a:before,
                 .sort-wrapper a.active-filter:before,
                 .sort {
-                    background:${this.site_config.primary_color}
+                    background: ${this.site_config.primary_color}
                 }
             }
 
@@ -880,7 +881,7 @@ export default class BasePortal {
             .bookRoom,
             .sort-wrapper .active,
             .sort-wrapper a:hover {
-                color:${this.site_config.primary_text_color}
+                color: ${this.site_config.primary_text_color}
             }
 
             span.exclusive-rate {
@@ -895,7 +896,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    color:${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color}
                 }
             }
 
@@ -908,7 +909,7 @@ export default class BasePortal {
                 #commands button:focus,
                 #commands button:hover,
                 .sort {
-                    color:${this.site_config.primary_text_color}
+                    color: ${this.site_config.primary_text_color}
                 }
             }
             .holdRoom,
@@ -920,9 +921,13 @@ export default class BasePortal {
             .lowest-rate-link,
             .SinglePropDetail .RateCalendarPopupAnchor,
             .ArnContentContainer legend {
-                color:${this.site_config.secondary_text_color};
+                color: ${this.site_config.secondary_text_color};
             }
             
+            .percent-savings{
+                color: ${this.site_config.secondary_color};
+            }
+
             input#theSubmitButton,
             .RootBody #theOtherSubmitButton,
             .bookRoom,
@@ -983,7 +988,7 @@ export default class BasePortal {
 
             @media screen and (max-width:800px) {
                 #theBookingPage legend#policies-legend {
-                    color:${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color}
                 }
             }
 
@@ -1941,5 +1946,46 @@ export default class BasePortal {
             `
             );
         }
+    }
+
+    cugConfigs() {
+        const {site_config} = this;
+
+        if (site_config.site_type !== 'cug') return;
+
+        function showPercentSavingsFilter() {
+            if (!site_config.cug.show_percent_savings) return;
+
+            const percent_savings_filter = document.querySelector('.ArnSortByDealPercent');
+
+            if (!percent_savings_filter) return;
+
+            percent_savings_filter.style.display = 'block';
+        }
+
+        function showPercentSavingsOnProperties() {
+            if (!site_config.cug.show_percent_savings) return;
+
+            const properties = document.querySelectorAll('.ArnProperty');
+
+            if (!properties) return;
+
+            properties.forEach((property) => {
+                const original_price = property.querySelector('.originalPrice');
+                const rate_container = property.querySelector('.ArnRateCell');
+
+                if (!original_price || !rate_container) return;
+
+                const percent = original_price.getAttribute('percent');
+
+                if (window.matchMedia('(min-width: 600px)').matches) rate_container.insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
+
+                if (window.matchMedia('(max-width: 600px)').matches)
+                    property.querySelector('.ArnRateButton').insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
+            });
+        }
+
+        showPercentSavingsFilter();
+        showPercentSavingsOnProperties();
     }
 }

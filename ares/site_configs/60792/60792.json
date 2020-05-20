@@ -20,7 +20,8 @@
     {
         "is_cug": false,
         "show_points": false,
-        "allow_registration": true
+        "allow_registration": true,
+        "show_percent_savings": false
     },
     "exclusive_rate_text": "Exclusive Rates",
     "host_hotel_text": "Host Hotel",

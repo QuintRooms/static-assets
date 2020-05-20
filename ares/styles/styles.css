@@ -1321,10 +1321,6 @@ div.autocomplete ul li.selected {
     width: 100%;
 }
 
-.holdRoom {
-    margin: -12px 0 4px 0 !important;
-}
-
 .SinglePropDetail #thePropertyMap {
     margin-bottom: 18px;
 }
@@ -1568,7 +1564,12 @@ legend {
     font-size: 12px;
 }
 
-.SinglePropDetail .bookRoom {
+.SinglePropDetail .bookRoom + br{
+    display: none;
+}
+
+.SinglePropDetail .bookRoom,
+.SinglePropDetail .holdRoom {
     margin: 8px auto;
     max-width: 150px;
 }
@@ -1986,6 +1987,7 @@ legend {
 
 .roomCount {
     color: #ff4040;
+    padding: 6px;
 }
 
 
@@ -3715,3 +3717,27 @@ input[type='search']::-webkit-search-results-decoration {
     display: block;
     width: 100%;
 }
+
+/*  Hold Rooms */
+#roomHoldForm table tr{
+    display: flex;
+}
+
+#roomHoldForm table td{
+    width: 75px;
+    margin-right: 4px;
+    text-align: left;
+}
+
+#roomHoldForm table td select{
+    width: 75px;
+}
+
+.HoldRoomsForm .ArnPropClass{
+    display: none;
+}
+
+.HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews{
+    position: static;
+}
+/* Hold Rooms End */

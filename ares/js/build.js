@@ -163,8 +163,11 @@ export default class BasePortal {
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
-                    if (!document.querySelector('.SearchHotels')) return;
+                    if (this.page_name === 'hold-rooms') {
+                        this.moveReviewsIntoPropNameContainer();
+                    }
 
+                    if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                     if (!this.map_loaded) {
                         if (!document.querySelector('.leaflet-control-scale-line')) {
                             L.control.scale().addTo(window.ArnMap);
@@ -284,7 +287,7 @@ export default class BasePortal {
     async getPageName() {
         const body_classes = document.body;
 
-        if (body_classes.classList.contains('SearchHotels')) {
+        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) {
             this.page_name = 'search-results';
         }
 
@@ -322,6 +325,10 @@ export default class BasePortal {
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
             this.page_name = 'cug-registration';
+        }
+
+        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) {
+            this.page_name = 'hold-rooms';
         }
 
         return this.page_name;

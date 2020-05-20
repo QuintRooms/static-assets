@@ -163,8 +163,11 @@ export default class BasePortal {
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
-                    if (!document.querySelector('.SearchHotels')) return;
+                    if (this.page_name === 'hold-rooms') {
+                        this.moveReviewsIntoPropNameContainer();
+                    }
 
+                    if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                     if (!this.map_loaded) {
                         if (!document.querySelector('.leaflet-control-scale-line')) {
                             L.control.scale().addTo(window.ArnMap);
@@ -284,7 +287,7 @@ export default class BasePortal {
     async getPageName() {
         const body_classes = document.body;
 
-        if (body_classes.classList.contains('SearchHotels')) {
+        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) {
             this.page_name = 'search-results';
         }
 
@@ -322,6 +325,10 @@ export default class BasePortal {
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
             this.page_name = 'cug-registration';
+        }
+
+        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) {
+            this.page_name = 'hold-rooms';
         }
 
         return this.page_name;
@@ -1460,6 +1467,8 @@ export default class BasePortal {
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
+        const original_params = document.querySelector('meta[name="originalParams"]').content;
+        const original_params_url = new URLSearchParams(original_params);
 
         function setInputToRequired(selector) {
             if (!document.querySelector(selector)) return;
@@ -1517,8 +1526,11 @@ export default class BasePortal {
         }
 
         function applyFilters() {
-            const stars_arr = [];
-            const amenities_arr = [];
+            const stars_arr = original_params_url.get('stars').split(',');
+            const amenities_arr = original_params_url.get('amenities').split(',');
+
+            console.log(stars_arr);
+            console.log(amenities_arr);
             const amenity_checkboxes = document.querySelectorAll('#AmentitiesContainer input[type="checkbox"');
             const stars_checkboxes = document.querySelectorAll('#PropertyClassesContainer input[type="checkbox"');
 
@@ -1569,15 +1581,12 @@ export default class BasePortal {
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                const original_params = document.querySelector('meta[name="originalParams"]').content;
-                const original_params_url = new URLSearchParams(original_params);
-
                 const build_url = (lat, lng, amenity, star) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
-                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng, amenities, stars);
-                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng, amenities, stars);
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
+                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
                 else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'), amenities, stars);
                 }

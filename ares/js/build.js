@@ -1537,7 +1537,7 @@ export default class BasePortal {
             }
             if (original_params_url.has('amenities')) {
                 amenities_arr = original_params_url.get('amenities');
-                amenities_arr.length >= 2 ? amenities_arr.split(',') : amenities_arr.split();
+                amenities_arr.length > 1 ? amenities_arr.split(',') : amenities_arr.split();
             } else {
                 amenities_arr = [];
             }
@@ -1601,7 +1601,7 @@ export default class BasePortal {
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
                 else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
                 else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
-                    build_url(original_params_url.get('latitude'), original_params_url.get('longitude'), amenities, stars);
+                    build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
                 const built_url = new URL(url);
@@ -1614,7 +1614,7 @@ export default class BasePortal {
                 window.location.href = built_url.href;
             });
         };
-        applyFilters(amenities, stars);
+        applyFilters();
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',

@@ -1526,8 +1526,19 @@ export default class BasePortal {
         }
 
         function applyFilters() {
-            const stars_arr = original_params_url.get('stars').split(',');
-            const amenities_arr = original_params_url.get('amenities').split(',');
+            let stars_arr;
+            let amenities_arr;
+
+            if (original_params_url.has('stars')) {
+                stars_arr = original_params_url.get('stars').split(',');
+            } else {
+                stars_arr = [];
+            }
+            if (original_params_url.has('amenities')) {
+                amenities_arr = original_params_url.get('amenities').split(',');
+            } else {
+                amenities_arr = [];
+            }
 
             console.log(stars_arr);
             console.log(amenities_arr);

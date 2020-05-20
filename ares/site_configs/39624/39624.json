@@ -23,7 +23,8 @@
         "allow_registration": true
     },
     "exclusive_rate_text": "",
-    "custom_tag_text": "",
+    "host_hotel_text": "Host Hotel",
+    "partner_hotel_text": "partner Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
@@ -50,6 +51,7 @@
     "border_color": "#9c6aad",
     "button_hover_background_color": "transparent",
     "button_hover_text_color": "#333",
+    "button_hover_border_color": "#9c6aad",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":

@@ -31,33 +31,19 @@ export default class BasePortal {
                 this.createCurrencyDropDown();
 
                 // all pages
-                this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 this.buildMobileMenu();
                 utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
-                if (this.site_config.site_type !== 'cug') {
-                    await utilities.createHTML(
-                        `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
-                        '.config-container',
-                        'afterEnd'
-                    );
-                }
+                await utilities.createHTML(
+                    `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
+                    '.config-container',
+                    'afterEnd'
+                );
 
                 if (this.site_config.site_type === 'cug') {
-                    if (document.querySelector('.MemberNotAuthenticated')) {
-                        await utilities.createHTML(
-                            `<header><a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
-                            'body',
-                            'afterBegin'
-                        );
-                    }
-
-                    utilities.waitForSelectorInDOM('#AdminControlsContainer').then(() => {
-                        utilities.createHTML(
-                            `<a href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a>`,
-                            '#AdminControlsContainer',
-                            'afterBegin'
-                        );
+                    utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
+                        utilities.appendToParent('#commands', 'header');
                     });
                 }
 
@@ -71,7 +57,12 @@ export default class BasePortal {
                     utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
                     utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
 
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                    this.isPropByGateway(
+                        this.site_config.exclusive_rate_text,
+                        this.site_config.host_hotel_text,
+                        this.site_config.partner_hotel_text,
+                        this.site_config.lodging.event_name
+                    );
                     this.updateRoomDescription();
                     this.updatePropReviewsURLToUseAnchor();
 
@@ -111,9 +102,13 @@ export default class BasePortal {
                     utilities.emailVerificationSetup();
                 }
 
+                if (this.page_name === 'confirmation') {
+                    this.implementAds();
+                }
+
                 // root page methods
                 if (document.querySelector('.RootBody')) {
-                    // this.addAlgoliaSearch();
+                    this.addAlgoliaSearch();
                     utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                     utilities.createHTML(
                         '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -150,9 +145,9 @@ export default class BasePortal {
                     this.replaceLRGForm();
                 }
 
-                // if (this.page_name === 'search-results') {
-                //     this.addAlgoliaSearch();
-                // }
+                if (this.page_name === 'search-results') {
+                    this.addAlgoliaSearch();
+                }
 
                 jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                     this.map_loaded = true;
@@ -180,7 +175,13 @@ export default class BasePortal {
                         this.changeContractedPropertyPinColor();
                     }
 
-                    this.isPropByGateway(this.site_config.exclusive_rate_text, this.site_config.custom_tag_text, this.site_config.lodging.event_name);
+                    this.implementAds();
+                    this.isPropByGateway(
+                        this.site_config.exclusive_rate_text,
+                        this.site_config.host_hotel_text,
+                        this.site_config.partner_hotel_text,
+                        this.site_config.lodging.event_name
+                    );
                     this.toggleMap();
                     this.addLRGDetails();
                     this.getTotalNights().then((nights) => {
@@ -232,7 +233,7 @@ export default class BasePortal {
 
                 this.applyCustomStyles();
                 this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
-                this.forceClickOnCitySearch();
+                // this.forceClickOnCitySearch();
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
@@ -954,7 +955,7 @@ export default class BasePortal {
             a.ArnShowRatesLink:hover {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
-                border: 1px solid ${this.site_config.primary_color};
+                border: 1px solid ${this.site_config.button_hover_border_color};
             }
 
             .CheckRates input.submit:hover,
@@ -1454,6 +1455,8 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
+        let stars;
+        let amenities;
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
@@ -1513,6 +1516,45 @@ export default class BasePortal {
             return value;
         }
 
+        function applyFilters() {
+            const stars_arr = [];
+            const amenities_arr = [];
+            const amenity_checkboxes = document.querySelectorAll('#AmentitiesContainer input[type="checkbox"');
+            const stars_checkboxes = document.querySelectorAll('#PropertyClassesContainer input[type="checkbox"');
+
+            amenity_checkboxes.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
+                    if (amenities_arr.includes(label)) {
+                        for (let i = 0; i < amenities_arr.length; i += 1) {
+                            if (amenities_arr[i] === label) {
+                                amenities_arr.splice(i, 1);
+                                return;
+                            }
+                        }
+                    } else amenities_arr.push(label);
+                    amenities = amenities_arr.toString();
+                    console.log(amenities);
+                });
+            });
+
+            stars_checkboxes.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
+                    if (stars_arr.includes(label)) {
+                        for (let i = 0; i < stars_arr.length; i += 1) {
+                            if (stars_arr[i] === label) {
+                                stars_arr.splice(i, 1);
+                                return;
+                            }
+                        }
+                    } else stars_arr.push(label);
+                    stars = stars_arr.toString();
+                    console.log(stars);
+                });
+            });
+        }
+
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -1530,18 +1572,27 @@ export default class BasePortal {
                 const original_params = document.querySelector('meta[name="originalParams"]').content;
                 const original_params_url = new URLSearchParams(original_params);
 
-                const build_url = (lat, lng) => {
+                const build_url = (lat, lng, amenity, star) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
-                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
-                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
-                else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng, amenities, stars);
+                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng, amenities, stars);
+                else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
+                    build_url(original_params_url.get('latitude'), original_params_url.get('longitude'), amenities, stars);
+                }
 
-                window.location.href = url;
+                const built_url = new URL(url);
+                if (amenities) {
+                    built_url.searchParams.append('amenities', amenities);
+                }
+                if (stars) {
+                    built_url.searchParams.append('stars', stars);
+                }
+                window.location.href = built_url.href;
             });
         };
-
+        applyFilters(amenities, stars);
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',
@@ -1586,31 +1637,10 @@ export default class BasePortal {
     /**
      *@description Looks at the prop id and checks if it should have a custom tag or sash
      @param string takes the text for the exclusive rate sash
-     @param string takes the text for the custom tag text
+     @param string takes the text for the host hotel custom tag text
+     @param string takes the text for the partner hotel custom tag text
      */
-    isPropByGateway(exclusiveRateText, customTagText, eventName) {
-        if (this.page_name === 'search-results') {
-            const props = document.querySelectorAll('div.ArnProperty');
-            props.forEach((el) => {
-                if (el.classList.contains('ArnPropertyTierTwo') && this.site_config.exclusive_rate_text !== '' && this.site_config.custom_tag_text !== '') {
-                    addCustomTag(customTagText, el);
-                    addExclusiveRatesSash(exclusiveRateText, el);
-                }
-                if (el.classList.contains('ArnPropertyTierOne') && this.site_config.exclusive_rate_text !== '') {
-                    addExclusiveRatesSash(exclusiveRateText, el);
-                }
-            });
-        }
-
-        if (this.page_name === 'property-detail') {
-            const rates = document.querySelectorAll('div.rateRow');
-            rates.forEach((el) => {
-                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
-                    updateRoomDescription(el, eventName, exclusiveRateText);
-                }
-            });
-        }
-
+    isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName) {
         /**
         *@description adds a sash to a property
         @param string DOM selector 
@@ -1636,9 +1666,34 @@ export default class BasePortal {
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
         @param string is the parent element for the current iteration 
+        @param string will be either 'x' or 'y'. Determines if Host or Partner hotel. 
         */
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
+        }
+
+        if (this.page_name === 'search-results') {
+            const props = document.querySelectorAll('div.ArnProperty');
+            props.forEach((el) => {
+                if (el.classList.contains('ArnPropertyTierTwo') && partnerHotelText !== '') {
+                    addCustomTag(partnerHotelText, el);
+                }
+                if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '') {
+                    addCustomTag(hostHotelText, el);
+                }
+                if (el.classList.contains('S16') || (el.classList.contains('S20') && exclusiveRateText !== '')) {
+                    addExclusiveRatesSash(exclusiveRateText, el);
+                }
+            });
+        }
+
+        if (this.page_name === 'property-detail') {
+            const rates = document.querySelectorAll('div.rateRow');
+            rates.forEach((el) => {
+                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
+                    updateRoomDescription(el, eventName, exclusiveRateText);
+                }
+            });
         }
     }
 
@@ -1802,11 +1857,11 @@ export default class BasePortal {
         }
     }
 
-    forceClickOnCitySearch() {
-        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
-            document.querySelector('.ArnGoCitySearch').click();
-        }
-    }
+    // forceClickOnCitySearch() {
+    //     if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
+    //         document.querySelector('.ArnGoCitySearch').click();
+    //     }
+    // }
 
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;
@@ -1822,5 +1877,47 @@ export default class BasePortal {
             vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
+    }
+
+    implementAds() {
+        if (!this.site_config.ads || window.matchMedia('(max-width:800px)').matches) return;
+
+        const {ads} = this.site_config;
+
+        if (this.page_name === 'search-results') {
+            if (!document.querySelector('.ArnSecondarySearchOuterContainer') || !ads.sidebar_ad.is_active) return;
+            document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
+                'afterEnd',
+                `
+                <a class="sidebar-ad" href="${ads.sidebar_ad.outbound_url}" target="_blank">
+                    <img src="${ads.sidebar_ad.image_url}" alt="Advertisement">
+                </a>
+            `
+            );
+
+            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') || !ads.between_property_ad.is_active) return;
+            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
+                'afterEnd',
+                `
+                <a class="between-property-ad" href="${ads.between_property_ad.outbound_url}" target="_blank">
+                    <img src="${ads.between_property_ad.image_url}" alt="Advertisement">
+                </a>
+                <hr class="prop-hr">
+            `
+            );
+        }
+
+        if (this.page_name === 'confirmation') {
+            if (!document.querySelector('.GuestForms') || !ads.confirmation_page_bottom.is_active) return;
+
+            document.querySelector('.GuestForms').insertAdjacentHTML(
+                'beforeEnd',
+                `
+                <a class="confirmation-bottom-ad" href="${ads.confirmation_page_bottom.outbound_url}" target="_blank">
+                    <img src="${ads.confirmation_page_bottom.image_url}" alt="Advertisement">
+                </a>
+            `
+            );
+        }
     }
 }

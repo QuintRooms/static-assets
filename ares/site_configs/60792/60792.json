@@ -23,7 +23,8 @@
         "allow_registration": true
     },
     "exclusive_rate_text": "Exclusive Rates",
-    "custom_tag_text": "Host Hotel",
+    "host_hotel_text": "Host Hotel",
+    "partner_hotel_text": "partner Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": false,
@@ -50,6 +51,7 @@
     "border_color": "#5dc3ac",
     "button_hover_background_color": "#fff",
     "button_hover_text_color": "#5dc3ac",
+    "button_hover_border_color": "#5dc3ac",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":
@@ -61,12 +63,6 @@
             "outbound_url": ""
         },
         "between_property_ad":
-        {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
-        },
-        "confirmation_page_top":
         {
             "is_active": false,
             "image_url": "",

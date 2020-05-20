@@ -27,7 +27,8 @@
     "exclusive_rate_text": "Exclusive Event Rate",
     // Text to appear at the bottom of the property thumbnail for specific properties
     // e.g "New Hotel Jan 2021" etc
-    "custom_tag_text": "",
+    "host_hotel_text": "Host Hotel",
+    "partner_hotel_text": "partner Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
@@ -60,27 +61,21 @@
     {
         "sidebar_ad":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/185x600?text=185x600",
+            "outbound_url": "https://placeholder.com/"
         },
         "between_property_ad":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
-        },
-        "confirmation_page_top":
-        {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/800x200?text=800x200",
+            "outbound_url": "https://placeholder.com/"
         },
         "confirmation_page_bottom":
         {
-            "is_active": false,
-            "image_url": "",
-            "outbound_url": ""
+            "is_active": true,
+            "image_url": "https://via.placeholder.com/600x250?text=600x250",
+            "outbound_url": "https://placeholder.com/"
         }
     }
 }

@@ -1534,6 +1534,7 @@ export default class BasePortal {
                         }
                     } else amenities_arr.push(label);
                     amenities = amenities_arr.toString();
+                    console.log(amenities);
                 });
             });
 
@@ -1549,6 +1550,7 @@ export default class BasePortal {
                         }
                     } else stars_arr.push(label);
                     stars = stars_arr.toString();
+                    console.log(stars);
                 });
             });
         }
@@ -1571,15 +1573,23 @@ export default class BasePortal {
                 const original_params_url = new URLSearchParams(original_params);
 
                 const build_url = (lat, lng, amenity, star) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}&amenities=${amenity}&propertyclasses=${star}`;
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng, amenities, stars);
                 else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng, amenities, stars);
-                else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results')
+                else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'), amenities, stars);
+                }
 
-                window.location.href = url;
+                const built_url = new URL(url);
+                if (amenities) {
+                    built_url.searchParams.append('amenities', amenities);
+                }
+                if (stars) {
+                    built_url.searchParams.append('stars', stars);
+                }
+                window.location.href = built_url;
             });
         };
         applyFilters(amenities, stars);

@@ -1530,12 +1530,14 @@ export default class BasePortal {
             let amenities_arr;
 
             if (original_params_url.has('stars')) {
-                stars_arr = original_params_url.get('stars').split(',');
+                stars_arr = original_params_url.get('stars');
+                stars_arr.length >= 2 ? stars_arr.split(',') : stars_arr.split();
             } else {
                 stars_arr = [];
             }
             if (original_params_url.has('amenities')) {
-                amenities_arr = original_params_url.get('amenities').split(',');
+                amenities_arr = original_params_url.get('amenities');
+                amenities_arr.length >= 2 ? amenities_arr.split(',') : amenities_arr.split();
             } else {
                 amenities_arr = [];
             }

@@ -1589,7 +1589,7 @@ export default class BasePortal {
                 if (stars) {
                     built_url.searchParams.append('stars', stars);
                 }
-                window.location.href = built_url;
+                window.location.href = built_url.href;
             });
         };
         applyFilters(amenities, stars);

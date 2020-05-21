@@ -1567,7 +1567,7 @@ export default class BasePortal {
                         if (el.classList.contains('lblAmenities')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            checked_amenities += ` ${label},`;
+                            checked_amenities += `${label},`;
                         }
                     });
 
@@ -1577,7 +1577,7 @@ export default class BasePortal {
                         if (el.classList.contains('lblRating')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            checked_stars += ` ${label},`;
+                            checked_stars += `${label},`;
                         }
                     });
                 }
@@ -1594,7 +1594,7 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('stars', stars);
                 }
-                window.location.href = decodeURIComponent(built_url.href);
+                window.location.href = decodeURIComponent(built_url);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');

@@ -1949,6 +1949,10 @@ legend {
     height: 175px;
 }
 
+.SearchHotels span.matchLabel {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnPropThumb {
         max-width: 100%;

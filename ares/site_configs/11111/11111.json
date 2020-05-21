@@ -26,7 +26,7 @@
     "show_tax_inclusive_rates": false,
     "exclusive_rate_text": "Exclusive festival rate",
     "host_hotel_text": "Host Hotel",
-    "partner_hotel_text": "partner Hotel",
+    "partner_hotel_text": "Partner Hotel",
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": true,
     "show_date_prompt": false,

@@ -1949,6 +1949,10 @@ legend {
     height: 175px;
 }
 
+.SearchHotels span.matchLabel {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnPropThumb {
         max-width: 100%;
@@ -3757,3 +3761,21 @@ input[type='search']::-webkit-search-results-decoration {
     }
 }
 /* Percent Savings End */
+
+/* Pagination Start */
+#batch{
+    display: flex;
+    align-items: center;
+}
+
+.ArnPages a,
+.active-page{
+    border: 1px solid #AAAAAA;
+    padding: 2px 6px;
+    font-size: 1em;
+    margin: 2px 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Pagination End */

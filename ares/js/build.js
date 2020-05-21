@@ -63,7 +63,7 @@ export default class BasePortal {
                         this.site_config.partner_hotel_text,
                         this.site_config.lodging.event_name
                     );
-                    this.updateRoomDescription();
+
                     this.updatePropReviewsURLToUseAnchor();
 
                     this.getTotalNights().then((nights) => {
@@ -153,9 +153,7 @@ export default class BasePortal {
                     this.map_loaded = true;
                     await utilities.waitForSelectorInDOM('.pollingFinished');
 
-                    if (!document.querySelector('.leaflet-control-scale-line')) {
-                        L.control.scale().addTo(window.ArnMap);
-                    }
+                    if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
@@ -169,9 +167,7 @@ export default class BasePortal {
 
                     if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                     if (!this.map_loaded) {
-                        if (!document.querySelector('.leaflet-control-scale-line')) {
-                            L.control.scale().addTo(window.ArnMap);
-                        }
+                        if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
                         this.useLogoForVenueMapMarker();
                         this.highlightMapMarkersOnPropertyHover();
@@ -236,7 +232,7 @@ export default class BasePortal {
                 });
 
                 this.applyCustomStyles();
-                this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 // this.forceClickOnCitySearch();
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
@@ -342,22 +338,6 @@ export default class BasePortal {
         this.currency = currency_el.getAttribute('content');
 
         return this.currency;
-    }
-
-    /**
-     *@description adds a tag for each contracted property on the searchHotels page
-     *@param string selector - DOM selector
-     */
-    updateRoomDescription() {
-        const room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') return;
-
-        room_description_el.forEach((element) => {
-            element.innerHTML = element.innerHTML.replace(
-                'Special Event Rate',
-                `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`
-            );
-        });
     }
 
     /**
@@ -1040,6 +1020,12 @@ export default class BasePortal {
                     border:2px solid ${this.site_config.primary_color}
                 }
             }
+
+            .active-page{
+                background: ${this.site_config.primary_color} !important;
+                color: ${this.site_config.primary_text_color} !important;
+                border: 1px solid ${this.site_config.border_color} !important;
+            }
         </style>
         `
         );
@@ -1389,9 +1375,7 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
-            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
-
-            if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
+            if (property.classList.contains('S16') || property.classList.contains('S20')) {
                 properties_array.push(true);
             } else {
                 properties_array.push(false);
@@ -1467,8 +1451,8 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
-        let stars;
-        let amenities;
+        let checked_amenities = '';
+        let checked_stars = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
@@ -1530,61 +1514,6 @@ export default class BasePortal {
             return value;
         }
 
-        function applyFilters() {
-            let stars_arr;
-            let amenities_arr;
-
-            if (original_params_url.has('stars')) {
-                stars_arr = original_params_url.get('stars');
-                stars_arr.length >= 2 ? stars_arr.split(',') : stars_arr.split();
-            } else {
-                stars_arr = [];
-            }
-            if (original_params_url.has('amenities')) {
-                amenities_arr = original_params_url.get('amenities');
-                amenities_arr.length > 1 ? amenities_arr.split(',') : amenities_arr.split();
-            } else {
-                amenities_arr = [];
-            }
-
-            console.log(stars_arr);
-            console.log(amenities_arr);
-            const amenity_checkboxes = document.querySelectorAll('#AmentitiesContainer input[type="checkbox"');
-            const stars_checkboxes = document.querySelectorAll('#PropertyClassesContainer input[type="checkbox"');
-
-            amenity_checkboxes.forEach((el) => {
-                el.addEventListener('click', (e) => {
-                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
-                    if (amenities_arr.includes(label)) {
-                        for (let i = 0; i < amenities_arr.length; i += 1) {
-                            if (amenities_arr[i] === label) {
-                                amenities_arr.splice(i, 1);
-                                return;
-                            }
-                        }
-                    } else amenities_arr.push(label);
-                    amenities = amenities_arr.toString();
-                    console.log(amenities);
-                });
-            });
-
-            stars_checkboxes.forEach((el) => {
-                el.addEventListener('click', (e) => {
-                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
-                    if (stars_arr.includes(label)) {
-                        for (let i = 0; i < stars_arr.length; i += 1) {
-                            if (stars_arr[i] === label) {
-                                stars_arr.splice(i, 1);
-                                return;
-                            }
-                        }
-                    } else stars_arr.push(label);
-                    stars = stars_arr.toString();
-                    console.log(stars);
-                });
-            });
-        }
-
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -1598,9 +1527,16 @@ export default class BasePortal {
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
+                const properties = `&properties=${original_params_url.get('properties')}`;
+                const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
+                const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
+                const radius = `&radius=${original_params_url.get('radius')}`;
+                const group_id = `&groupid=${original_params_url.get('groupid')}`;
+                const page_size = `&pageSize=${original_params_url.get('pageSize')}`;
+                const cid = `&cid=${original_params_url.get('cid')}`;
 
-                const build_url = (lat, lng, amenity, star) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                const build_url = (lat, lng) => {
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -1609,17 +1545,45 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
+                function applyFilters() {
+                    const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');
+
+                    amenity_filters.forEach((el) => {
+                        if (el.classList.contains('lblAmenities')) return;
+                        if (el.querySelector('input').checked) {
+                            const label = el.querySelector('span').textContent;
+                            checked_amenities += `${label},`;
+                        }
+                    });
+
+                    const star_filters = document.querySelectorAll('#PropertyClassesContainer .ArnSearchField div');
+
+                    star_filters.forEach((el) => {
+                        if (el.classList.contains('lblRating')) return;
+                        if (el.querySelector('input').checked) {
+                            const label = el.querySelector('span').textContent;
+                            checked_stars += `${label},`;
+                        }
+                    });
+                }
+
+                applyFilters();
+
                 const built_url = new URL(url);
-                if (amenities) {
+                const amenities = checked_amenities.slice(0, -1);
+                const stars = checked_stars.slice(0, -1);
+
+                if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }
-                if (stars) {
-                    built_url.searchParams.append('stars', stars);
+                if (stars !== '') {
+                    built_url.searchParams.append('propertyclasses', stars);
                 }
-                window.location.href = built_url.href;
+                if (this.page_name === 'search-results') {
+                    window.location.href = `${decodeURIComponent(built_url)}${properties}${utm_source}${location_label}${radius}${group_id}${page_size}${cid}`;
+                } else window.location.href = decodeURIComponent(built_url);
             });
         };
-        applyFilters();
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',
@@ -1677,7 +1641,7 @@ export default class BasePortal {
         function updateRoomDescription(selector, name, text) {
             if (!document.querySelector('.SinglePropDetail')) return;
             const original = selector.querySelector('.RoomDescription');
-            original.insertAdjacentHTML('afterbegin', `<span id="exclusive-event-rate">${name} ${text}</span>`);
+            original.innerHTML = original.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate">${name} ${text}</span>`);
         }
 
         /**

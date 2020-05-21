@@ -151,7 +151,7 @@ export default class BasePortal {
 
                 jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                     this.map_loaded = true;
-                    // await utilities.waitForSelectorInDOM('.pollingFinished');
+                    await utilities.waitForSelectorInDOM('.pollingFinished');
 
                     if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 

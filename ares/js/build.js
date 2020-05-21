@@ -1574,8 +1574,6 @@ export default class BasePortal {
                             stars += ` ${label},`;
                         }
                     });
-                    console.log(`stars: ${stars}`);
-                    console.log(`amenities: ${amenities}`);
                 }
 
                 applyFilters();
@@ -1587,10 +1585,7 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('stars', stars);
                 }
-                console.log(built_url);
-                console.log(decodeURI(built_url));
-                window.alert(decodeURI(built_url));
-                window.location.href = built_url.href;
+                window.location.href = decodeURI(built_url.href);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');

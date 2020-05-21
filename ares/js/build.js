@@ -1040,6 +1040,12 @@ export default class BasePortal {
                     border:2px solid ${this.site_config.primary_color}
                 }
             }
+
+            .active-page{
+                background: ${this.site_config.primary_color} !important;
+                color: ${this.site_config.primary_text_color} !important;
+                border: 1px solid ${this.site_config.border_color} !important;
+            }
         </style>
         `
         );

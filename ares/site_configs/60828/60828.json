@@ -38,7 +38,7 @@
         "logo_flex_position": "center",
         "logo_max_width": "300px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/60828/img/banner.jpg) no-repeat center center /cover",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/60828/img/banner.png) no-repeat center center /cover",
     "map_marker_image_url": "",
     "theme": "light",
     "primary_color": "#7018d7",

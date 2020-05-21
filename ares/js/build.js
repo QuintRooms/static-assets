@@ -1594,7 +1594,7 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('stars', stars);
                 }
-                window.location.href = decodeURI(built_url.href);
+                window.location.href = decodeURIComponent(built_url.href);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');

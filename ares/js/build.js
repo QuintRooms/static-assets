@@ -1592,7 +1592,7 @@ export default class BasePortal {
                     built_url.searchParams.append('amenities', amenities);
                 }
                 if (stars !== '') {
-                    built_url.searchParams.append('stars', stars);
+                    built_url.searchParams.append('propertyclasses', stars);
                 }
                 window.location.href = decodeURIComponent(built_url);
             });

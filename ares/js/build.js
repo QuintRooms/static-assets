@@ -151,11 +151,9 @@ export default class BasePortal {
 
                 jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                     this.map_loaded = true;
-                    await utilities.waitForSelectorInDOM('.pollingFinished');
+                    // await utilities.waitForSelectorInDOM('.pollingFinished');
 
-                    if (!document.querySelector('.leaflet-control-scale-line')) {
-                        L.control.scale().addTo(window.ArnMap);
-                    }
+                    if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
@@ -169,9 +167,7 @@ export default class BasePortal {
 
                     if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                     if (!this.map_loaded) {
-                        if (!document.querySelector('.leaflet-control-scale-line')) {
-                            L.control.scale().addTo(window.ArnMap);
-                        }
+                        if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
                         this.useLogoForVenueMapMarker();
                         this.highlightMapMarkersOnPropertyHover();
@@ -1395,9 +1391,7 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
-            if (!property.classList.contains('ArnPropertyTierOne') || !property.classList.contains('ArnPropertyTierTwo')) return;
-
-            if (property.classList.contains('ArnPropertyTierOne') || property.classList.contains('ArnPropertyTierTwo')) {
+            if (property.classList.contains('S16') || property.classList.contains('S20')) {
                 properties_array.push(true);
             } else {
                 properties_array.push(false);

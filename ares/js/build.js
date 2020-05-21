@@ -1467,8 +1467,8 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
-        let stars = '';
-        let amenities = '';
+        let checked_amenities = '';
+        let checked_stars = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
@@ -1561,7 +1561,7 @@ export default class BasePortal {
                         if (el.classList.contains('lblAmenities')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            amenities += ` ${label},`;
+                            checked_amenities += ` ${label},`;
                         }
                     });
 
@@ -1571,7 +1571,7 @@ export default class BasePortal {
                         if (el.classList.contains('lblRating')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            stars += ` ${label},`;
+                            checked_stars += ` ${label},`;
                         }
                     });
                 }
@@ -1579,6 +1579,9 @@ export default class BasePortal {
                 applyFilters();
 
                 const built_url = new URL(url);
+                const amenities = checked_amenities.slice(0, -1);
+                const stars = checked_stars.slice(0, -1);
+
                 if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }

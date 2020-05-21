@@ -1467,8 +1467,8 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
-        let stars;
-        let amenities;
+        let checked_amenities = '';
+        let checked_stars = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
@@ -1530,61 +1530,6 @@ export default class BasePortal {
             return value;
         }
 
-        function applyFilters() {
-            let stars_arr;
-            let amenities_arr;
-
-            if (original_params_url.has('stars')) {
-                stars_arr = original_params_url.get('stars');
-                stars_arr.length >= 2 ? stars_arr.split(',') : stars_arr.split();
-            } else {
-                stars_arr = [];
-            }
-            if (original_params_url.has('amenities')) {
-                amenities_arr = original_params_url.get('amenities');
-                amenities_arr.length > 1 ? amenities_arr.split(',') : amenities_arr.split();
-            } else {
-                amenities_arr = [];
-            }
-
-            console.log(stars_arr);
-            console.log(amenities_arr);
-            const amenity_checkboxes = document.querySelectorAll('#AmentitiesContainer input[type="checkbox"');
-            const stars_checkboxes = document.querySelectorAll('#PropertyClassesContainer input[type="checkbox"');
-
-            amenity_checkboxes.forEach((el) => {
-                el.addEventListener('click', (e) => {
-                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
-                    if (amenities_arr.includes(label)) {
-                        for (let i = 0; i < amenities_arr.length; i += 1) {
-                            if (amenities_arr[i] === label) {
-                                amenities_arr.splice(i, 1);
-                                return;
-                            }
-                        }
-                    } else amenities_arr.push(label);
-                    amenities = amenities_arr.toString();
-                    console.log(amenities);
-                });
-            });
-
-            stars_checkboxes.forEach((el) => {
-                el.addEventListener('click', (e) => {
-                    const label = document.getElementById(e.target.id).parentElement.lastChild.textContent;
-                    if (stars_arr.includes(label)) {
-                        for (let i = 0; i < stars_arr.length; i += 1) {
-                            if (stars_arr[i] === label) {
-                                stars_arr.splice(i, 1);
-                                return;
-                            }
-                        }
-                    } else stars_arr.push(label);
-                    stars = stars_arr.toString();
-                    console.log(stars);
-                });
-            });
-        }
-
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -1609,17 +1554,43 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
+                function applyFilters() {
+                    const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');
+
+                    amenity_filters.forEach((el) => {
+                        if (el.classList.contains('lblAmenities')) return;
+                        if (el.querySelector('input').checked) {
+                            const label = el.querySelector('span').textContent;
+                            checked_amenities += ` ${label},`;
+                        }
+                    });
+
+                    const star_filters = document.querySelectorAll('#PropertyClassesContainer .ArnSearchField div');
+
+                    star_filters.forEach((el) => {
+                        if (el.classList.contains('lblRating')) return;
+                        if (el.querySelector('input').checked) {
+                            const label = el.querySelector('span').textContent;
+                            checked_stars += ` ${label},`;
+                        }
+                    });
+                }
+
+                applyFilters();
+
                 const built_url = new URL(url);
-                if (amenities) {
+                const amenities = checked_amenities.slice(0, -1);
+                const stars = checked_stars.slice(0, -1);
+
+                if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }
-                if (stars) {
+                if (stars !== '') {
                     built_url.searchParams.append('stars', stars);
                 }
-                window.location.href = built_url.href;
+                window.location.href = decodeURI(built_url.href);
             });
         };
-        applyFilters();
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',

@@ -167,6 +167,13 @@ export default class BasePortal {
 
                     if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
 
+                    this.isPropByGateway(
+                        this.site_config.exclusive_rate_text,
+                        this.site_config.host_hotel_text,
+                        this.site_config.partner_hotel_text,
+                        this.site_config.lodging.event_name
+                    );
+
                     if (!this.map_loaded) {
                         if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
@@ -224,15 +231,6 @@ export default class BasePortal {
                                 utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
                             });
                     });
-                });
-
-                utilities.waitForSelectorInDOM('.S16').then(async () => {
-                    this.isPropByGateway(
-                        this.site_config.exclusive_rate_text,
-                        this.site_config.host_hotel_text,
-                        this.site_config.partner_hotel_text,
-                        this.site_config.lodging.event_name
-                    );
                 });
 
                 this.applyCustomStyles();

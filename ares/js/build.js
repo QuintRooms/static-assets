@@ -63,7 +63,7 @@ export default class BasePortal {
                         this.site_config.partner_hotel_text,
                         this.site_config.lodging.event_name
                     );
-                    this.updateRoomDescription();
+
                     this.updatePropReviewsURLToUseAnchor();
 
                     this.getTotalNights().then((nights) => {
@@ -338,22 +338,6 @@ export default class BasePortal {
         this.currency = currency_el.getAttribute('content');
 
         return this.currency;
-    }
-
-    /**
-     *@description adds a tag for each contracted property on the searchHotels page
-     *@param string selector - DOM selector
-     */
-    updateRoomDescription() {
-        const room_description_el = document.querySelectorAll('.RoomDescription');
-        if (!document.querySelector('.SinglePropDetail') || !room_description_el || this.site_config.site_type !== 'lodging') return;
-
-        room_description_el.forEach((element) => {
-            element.innerHTML = element.innerHTML.replace(
-                'Special Event Rate',
-                `<span id="exclusive-event-rate" style="font-weight:bold; color:#111; font-size: 17px;">${this.site_config.lodging.event_name}</span>`
-            );
-        });
     }
 
     /**
@@ -1648,7 +1632,7 @@ export default class BasePortal {
         function updateRoomDescription(selector, name, text) {
             if (!document.querySelector('.SinglePropDetail')) return;
             const original = selector.querySelector('.RoomDescription');
-            original.insertAdjacentHTML('afterbegin', `<span id="exclusive-event-rate">${name} ${text}</span>`);
+            original.innerHTML = original.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate">${name} ${text}</span>`);
         }
 
         /**

@@ -1527,9 +1527,16 @@ export default class BasePortal {
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
+                const properties = `&properties=${original_params_url.get('properties')}`;
+                const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
+                const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
+                const radius = `&radius=${original_params_url.get('radius')}`;
+                const group_id = `&groupid=${original_params_url.get('groupid')}`;
+                const page_size = `&pageSize=${original_params_url.get('pageSize')}`;
+                const cid = `&cid=${original_params_url.get('cid')}`;
 
-                const build_url = (lat, lng, amenity, star) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                const build_url = (lat, lng) => {
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -1572,7 +1579,9 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
-                window.location.href = decodeURIComponent(built_url);
+                if (this.page_name === 'search-results') {
+                    window.location.href = `${decodeURIComponent(built_url)}${properties}${utm_source}${location_label}${radius}${group_id}${page_size}${cid}`;
+                } else window.location.href = decodeURIComponent(built_url);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');

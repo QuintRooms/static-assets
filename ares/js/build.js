@@ -1603,8 +1603,7 @@ export default class BasePortal {
                 }
                 if (this.page_name === 'search-results') {
                     window.location.href = `${decodeURIComponent(built_url)}${properties}${utm_source}${location_label}${radius}${group_id}${page_size}${cid}`;
-                }
-                window.location.href = decodeURIComponent(built_url);
+                } else window.location.href = decodeURIComponent(built_url);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');

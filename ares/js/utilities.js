@@ -79,7 +79,7 @@ export default class Utilities {
                     clearInterval(interval);
                     return element;
                 }
-            }, 100);
+            }, 500);
         });
     }
 

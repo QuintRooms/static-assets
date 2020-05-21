@@ -176,12 +176,6 @@ export default class BasePortal {
 
                     this.cugConfigs();
                     this.implementAds();
-                    this.isPropByGateway(
-                        this.site_config.exclusive_rate_text,
-                        this.site_config.host_hotel_text,
-                        this.site_config.partner_hotel_text,
-                        this.site_config.lodging.event_name
-                    );
                     this.toggleMap();
                     this.addLRGDetails();
                     this.getTotalNights().then((nights) => {
@@ -237,6 +231,12 @@ export default class BasePortal {
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
+                this.isPropByGateway(
+                    this.site_config.exclusive_rate_text,
+                    this.site_config.host_hotel_text,
+                    this.site_config.partner_hotel_text,
+                    this.site_config.lodging.event_name
+                );
             });
         });
     }

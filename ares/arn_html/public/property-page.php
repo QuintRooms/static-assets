@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+
 <head>
     <title>InterContinental Stephen F. Austin</title>
     <meta name="description" content="A stay at InterContinental Stephen F. Austin places you in the heart of Austin, steps from Sixth Street and Paramount Theater. This 4-star hotel is 0. 5 m" />
@@ -160,9 +161,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
     });
     /*]]>*/
     </script>
-
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
-
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/search.png" class="searchIcon"></span><span class="translateMe">Search</span></a></div>
     </div>
@@ -1139,7 +1138,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                             </div>
                         </div>
                         <div id="theFullDetailFor20498">
-                            <ul class="errors"><li>Someone grabbed the last room at that price. Try another room or search nearby properties using link at top of the page.</li></ul>
+                            <ul class="errors">
+                                <li>Someone grabbed the last room at that price. Try another room or search nearby properties using link at top of the page.</li>
+                            </ul>
                             <div id="theArnContentContainer20498" class="ArnContentContainer">
                                 <div class="quickLinks"></div>
                                 <fieldset id="standardAvail" class="QualifiedRates StandardAvailability">
@@ -1154,27 +1155,29 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </table>
                                     </div>
                                     <div class="rateRow odd"><a name="ratesSection"></a>
-                                        <table class="ArnContentGeneralInfo ArnRateList SB16">
-                                            <tr>
-                                                <td class="RoomDescription" valign="top">
-                                                    <div style="display:none" class="ArnRateFromTo">11/6/2020 - 11/9/2020</div>Traditional Room, 1 Queen Bed - Traditional Room, 1 Queen Bed 1 Queen Bed Breakfast for 2. Rate for 2 people per room
-                                                </td>
-                                                <td valign="top" align="right" rowspan="2" class="bookRoomCell">
-                                                    <div class="ArnNightlyRate" total="2187.82 USD">Average Nightly: <div class="originalPrice" percent="18" amount="$63.60">$373.22</div>
-                                                        <div class="otherPrice" style="display:none">$298</div><strong>$309.62</strong>
-                                                    </div><a class="bookRoom" rateCode="234363" roomType="577232|37310|ARN|PKG_NET" gateway="61" supplier="61" href="https://events.hotelsforhope.com/v6?_s=DVDzt5wty523T0tH&amp;_k=rtESuKEZ&amp;siteId=39624&amp;theme=standard&amp;292">Book Rate</a><a class="ArnRateCancelAnchor" onclick="$('id293').toggle();if (jQuery(&quot;#id293&quot;).children().length) {return};new Ajax.Updater('id293','https://events.hotelsforhope.com/v6',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=rtESuKEZ','siteId='+39624,'theme=standard','294'].join('&amp;')})" href="javascript:void(0)">Cancellation Policy</a>
-                                                    <div class="ArnRateCancelPolicyContainer" id="id293" style="display:none"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" align="right">
-                                                    <div><a id="id295" class="RateCalendarPopupAnchor arnPopupAnchor" onclick="new Ajax.Updater('id297','https://events.hotelsforhope.com/v6',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=rtESuKEZ','siteId='+39624,'theme=standard','298'].join('&amp;'),'asynchronous':false});$('id295').hide();$('id296').show();return false" href="javascript:void(0)">Daily Rates</a>
-                                                        <div id="id296" class="RateCalendarPopupContainer arnPopupContainer" style="display: none"><a class="RateCalendarPopupClose arnPopupClose" onclick="$('id296').hide();$('id295').show();return false" href="javascript:void(0)">X</a>
-                                                            <div id="id297" class="RateCalendarPopupContents arnPopupContents"></div>
+                                        <table class="ArnContentGeneralInfo ArnRateList SB16" id="yui_3_18_1_1_1589999583809_167">
+                                            <tbody id="yui_3_18_1_1_1589999583809_166">
+                                                <tr id="yui_3_18_1_1_1589999583809_165">
+                                                    <td class="RoomDescription" valign="top">
+                                                        <div style="display:none" class="ArnRateFromTo">12/31/2020 - 1/3/2021</div> - Double
+                                                        Test property - bookings will not be honored Test Test Test. No breakfast included. You must be at least 17 years old to check into room. Payment Policy: Test deposit policy. This Rate is based on 2 person(s) in room over age 18.
+                                                    </td>
+                                                    <td valign="top" align="right" rowspan="2" class="bookRoomCell" id="yui_3_18_1_1_1589999583809_164">
+                                                        <div class="ArnNightlyRate" total="686.51 USD">Average Nightly: <strong>$220.61</strong></div><a class="bookRoom" ratecode="ARN669557" roomtype="669557" gateway="16" supplier="Arn Groups" href="https://events.hotelsforhope.com/v6?_s=iWhYCBmuxNl8k3B6&amp;_k=S6l9LJwD&amp;siteId=60279&amp;theme=standard&amp;272" id="yui_3_18_1_1_1589999583809_163">Book Rate</a><br><a class="holdRoom" href="https://events.hotelsforhope.com/v6?_s=iWhYCBmuxNl8k3B6&amp;_k=S6l9LJwD&amp;siteId=60279&amp;theme=standard&amp;273">Hold Rate</a>
+                                                        <div id="theRoomsRemaining1145055" class="roomCount">Rooms Remaining: <strong>50</strong></div><a class="ArnRateCancelAnchor" onclick="$('id274').toggle();if (jQuery(&quot;#id274&quot;).children().length) {return};new Ajax.Updater('id274','https://events.hotelsforhope.com/v6',{'evalScripts':true,'parameters':['_s=iWhYCBmuxNl8k3B6','_k=S6l9LJwD','siteId='+60279,'theme=standard','275'].join('&amp;')})" href="javascript:void(0)">Cancellation Policy</a>
+                                                        <div class="ArnRateCancelPolicyContainer" id="id274" style="display:none"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" align="right">
+                                                        <div><a id="id276" class="RateCalendarPopupAnchor arnPopupAnchor" onclick="new Ajax.Updater('id278','https://events.hotelsforhope.com/v6',{'evalScripts':true,'parameters':['_s=iWhYCBmuxNl8k3B6','_k=S6l9LJwD','siteId='+60279,'theme=standard','279'].join('&amp;'),'asynchronous':false});$('id276').hide();$('id277').show();return false" href="javascript:void(0)">Daily Rates</a>
+                                                            <div id="id277" class="RateCalendarPopupContainer arnPopupContainer" style="display: none"><a class="RateCalendarPopupClose arnPopupClose" onclick="$('id277').hide();$('id276').show();return false" href="javascript:void(0)">X</a>
+                                                                <div id="id278" class="RateCalendarPopupContents arnPopupContents"></div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                     <div class="rateRow even"><a name="ratesSection"></a>
@@ -1300,10 +1303,12 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         marker.addTo(map);
                                         map.scrollWheelZoom.disable();
 
-                                        function addTileLayer(oMap) { var url, tileLayer;
+                                        function addTileLayer(oMap) {
+                                            var url, tileLayer;
                                             url = "https://api.maptiler.com/maps/f3b554fa-9d5c-4e14-a8da-67f0219d00d8/256/{z}/{x}/{y}.png?key=QagFDv02cd9icmU8gsTj";
                                             tileLayer = L.tileLayer(url, { attribution: '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>', subdomains: "0123" });
-                                            tileLayer.addTo(oMap) };
+                                            tileLayer.addTo(oMap)
+                                        };
                                         addTileLayer(map)
                                     })(); /*]]>*/
                                     </script>
@@ -1323,9 +1328,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
             </tr>
         </table>
     </div>
-
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
-
     <script>
     </script>
     <script type="text/javascript">
@@ -1333,12 +1336,22 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
     $$("a").each(function(link) { if (link.href) link.href = link.href.replace("~sessionid~", "DVDzt5wty523T0tH") }); /*]]>*/
     </script><noscript>
         <style>
-            body {background-color: white; background-image: none;}
-                .ArnSearchContainerMainDiv, .ArnHeader, .ArnSupportLinks, .ArnFooter, .ArnSubPage {display:none;}
-            </style>
+        body {
+            background-color: white;
+            background-image: none;
+        }
+
+        .ArnSearchContainerMainDiv,
+        .ArnHeader,
+        .ArnSupportLinks,
+        .ArnFooter,
+        .ArnSubPage {
+            display: none;
+        }
+        </style>
         <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
     </noscript>
-        <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
+    <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
     <script>
     /*<![CDATA[*/
     (function() { $('theArnProperty20498').fire('arn:propRatesUpdated') })() /*]]>*/

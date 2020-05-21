@@ -163,8 +163,11 @@ export default class BasePortal {
                 });
 
                 utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
-                    if (!document.querySelector('.SearchHotels')) return;
+                    if (this.page_name === 'hold-rooms') {
+                        this.moveReviewsIntoPropNameContainer();
+                    }
 
+                    if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                     if (!this.map_loaded) {
                         if (!document.querySelector('.leaflet-control-scale-line')) {
                             L.control.scale().addTo(window.ArnMap);
@@ -175,6 +178,7 @@ export default class BasePortal {
                         this.changeContractedPropertyPinColor();
                     }
 
+                    this.cugConfigs();
                     this.implementAds();
                     this.isPropByGateway(
                         this.site_config.exclusive_rate_text,
@@ -232,7 +236,7 @@ export default class BasePortal {
                 });
 
                 this.applyCustomStyles();
-                this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+                // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
                 // this.forceClickOnCitySearch();
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
@@ -284,7 +288,7 @@ export default class BasePortal {
     async getPageName() {
         const body_classes = document.body;
 
-        if (body_classes.classList.contains('SearchHotels')) {
+        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) {
             this.page_name = 'search-results';
         }
 
@@ -322,6 +326,10 @@ export default class BasePortal {
 
         if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
             this.page_name = 'cug-registration';
+        }
+
+        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) {
+            this.page_name = 'hold-rooms';
         }
 
         return this.page_name;
@@ -820,7 +828,7 @@ export default class BasePortal {
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
             .sort-wrapper a:hover {
-                background:${this.site_config.primary_color}
+                background: ${this.site_config.primary_color}
             }
 
             @media screen and (max-width:1105px) {
@@ -850,7 +858,7 @@ export default class BasePortal {
                 .sort-wrapper a:before,
                 .sort-wrapper a.active-filter:before,
                 .sort {
-                    background:${this.site_config.primary_color}
+                    background: ${this.site_config.primary_color}
                 }
             }
 
@@ -873,7 +881,7 @@ export default class BasePortal {
             .bookRoom,
             .sort-wrapper .active,
             .sort-wrapper a:hover {
-                color:${this.site_config.primary_text_color}
+                color: ${this.site_config.primary_text_color}
             }
 
             span.exclusive-rate {
@@ -888,7 +896,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    color:${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color}
                 }
             }
 
@@ -901,7 +909,7 @@ export default class BasePortal {
                 #commands button:focus,
                 #commands button:hover,
                 .sort {
-                    color:${this.site_config.primary_text_color}
+                    color: ${this.site_config.primary_text_color}
                 }
             }
             .holdRoom,
@@ -913,9 +921,13 @@ export default class BasePortal {
             .lowest-rate-link,
             .SinglePropDetail .RateCalendarPopupAnchor,
             .ArnContentContainer legend {
-                color:${this.site_config.secondary_text_color};
+                color: ${this.site_config.secondary_text_color};
             }
             
+            .percent-savings{
+                color: ${this.site_config.secondary_color};
+            }
+
             input#theSubmitButton,
             .RootBody #theOtherSubmitButton,
             .bookRoom,
@@ -976,7 +988,7 @@ export default class BasePortal {
 
             @media screen and (max-width:800px) {
                 #theBookingPage legend#policies-legend {
-                    color:${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color}
                 }
             }
 
@@ -1027,6 +1039,12 @@ export default class BasePortal {
                 .sort-wrapper a:before {
                     border:2px solid ${this.site_config.primary_color}
                 }
+            }
+
+            .active-page{
+                background: ${this.site_config.primary_color} !important;
+                color: ${this.site_config.primary_text_color} !important;
+                border: 1px solid ${this.site_config.border_color} !important;
             }
         </style>
         `
@@ -1455,11 +1473,13 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
-        let stars = '';
-        let amenities = '';
+        let checked_amenities = '';
+        let checked_stars = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
+        const original_params = document.querySelector('meta[name="originalParams"]').content;
+        const original_params_url = new URLSearchParams(original_params);
 
         function setInputToRequired(selector) {
             if (!document.querySelector(selector)) return;
@@ -1530,15 +1550,12 @@ export default class BasePortal {
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const destination_value = document.querySelector('input#address-input').value;
 
-                const original_params = document.querySelector('meta[name="originalParams"]').content;
-                const original_params_url = new URLSearchParams(original_params);
-
                 const build_url = (lat, lng, amenity, star) => {
                     url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&radius=${this.site_config.radius}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&mapSize=${this.site_config.map_size}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
                 };
 
-                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng, amenities, stars);
-                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng, amenities, stars);
+                if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
+                else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
                 else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
@@ -1550,7 +1567,7 @@ export default class BasePortal {
                         if (el.classList.contains('lblAmenities')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            amenities += ` ${label},`;
+                            checked_amenities += `${label},`;
                         }
                     });
 
@@ -1560,26 +1577,24 @@ export default class BasePortal {
                         if (el.classList.contains('lblRating')) return;
                         if (el.querySelector('input').checked) {
                             const label = el.querySelector('span').textContent;
-                            stars += ` ${label},`;
+                            checked_stars += `${label},`;
                         }
                     });
-                    console.log(`stars: ${stars}`);
-                    console.log(`amenities: ${amenities}`);
                 }
 
                 applyFilters();
 
                 const built_url = new URL(url);
+                const amenities = checked_amenities.slice(0, -1);
+                const stars = checked_stars.slice(0, -1);
+
                 if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }
                 if (stars !== '') {
-                    built_url.searchParams.append('stars', stars);
+                    built_url.searchParams.append('propertyclasses', stars);
                 }
-                console.log(built_url);
-                console.log(decodeURI(built_url));
-                window.alert(decodeURI(built_url));
-                window.location.href = built_url.href;
+                window.location.href = decodeURIComponent(built_url);
             });
         };
         insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
@@ -1874,7 +1889,7 @@ export default class BasePortal {
         const {ads} = this.site_config;
 
         if (this.page_name === 'search-results') {
-            if (!document.querySelector('.ArnSecondarySearchOuterContainer')) return;
+            if (!document.querySelector('.ArnSecondarySearchOuterContainer') || !ads.sidebar_ad.is_active) return;
             document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
                 'afterEnd',
                 `
@@ -1884,7 +1899,7 @@ export default class BasePortal {
             `
             );
 
-            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')) return;
+            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') || !ads.between_property_ad.is_active) return;
             document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
                 'afterEnd',
                 `
@@ -1897,7 +1912,7 @@ export default class BasePortal {
         }
 
         if (this.page_name === 'confirmation') {
-            if (!document.querySelector('.GuestForms')) return;
+            if (!document.querySelector('.GuestForms') || !ads.confirmation_page_bottom.is_active) return;
 
             document.querySelector('.GuestForms').insertAdjacentHTML(
                 'beforeEnd',
@@ -1908,5 +1923,46 @@ export default class BasePortal {
             `
             );
         }
+    }
+
+    cugConfigs() {
+        const {site_config} = this;
+
+        if (site_config.site_type !== 'cug') return;
+
+        function showPercentSavingsFilter() {
+            if (!site_config.cug.show_percent_savings) return;
+
+            const percent_savings_filter = document.querySelector('.ArnSortByDealPercent');
+
+            if (!percent_savings_filter) return;
+
+            percent_savings_filter.style.display = 'block';
+        }
+
+        function showPercentSavingsOnProperties() {
+            if (!site_config.cug.show_percent_savings) return;
+
+            const properties = document.querySelectorAll('.ArnProperty');
+
+            if (!properties) return;
+
+            properties.forEach((property) => {
+                const original_price = property.querySelector('.originalPrice');
+                const rate_container = property.querySelector('.ArnRateCell');
+
+                if (!original_price || !rate_container) return;
+
+                const percent = original_price.getAttribute('percent');
+
+                if (window.matchMedia('(min-width: 600px)').matches) rate_container.insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
+
+                if (window.matchMedia('(max-width: 600px)').matches)
+                    property.querySelector('.ArnRateButton').insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
+            });
+        }
+
+        showPercentSavingsFilter();
+        showPercentSavingsOnProperties();
     }
 }

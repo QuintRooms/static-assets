@@ -20,7 +20,8 @@
     {
         "is_cug": true,
         "show_points": false,
-        "allow_registration": true
+        "allow_registration": true,
+        "show_percent_savings": false
     },
     "show_tax_inclusive_rates": false,
     "exclusive_rate_text": "Exclusive festival rate",

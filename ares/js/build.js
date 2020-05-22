@@ -160,19 +160,27 @@ export default class BasePortal {
                     this.changeContractedPropertyPinColor();
                 });
 
+                jQuery(document).on('ratesReadyEvent', async () => {
+                    setTimeout(() => {
+                        this.isPropByGateway(
+                            this.site_config.exclusive_rate_text,
+                            this.site_config.host_hotel_text,
+                            this.site_config.partner_hotel_text,
+                            this.site_config.lodging.event_name
+                        );
+                        if (this.page_name === 'property-detail' && this.site_config.site_type.toLowerCase() === 'cug') {
+                            utilities.updateHTML('.bookRoom', 'Book Rooooooooms');
+                            this.cugConfigs();
+                        }
+                    }, 1);
+                });
+
                 utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
                     if (this.page_name === 'hold-rooms') {
                         this.moveReviewsIntoPropNameContainer();
                     }
 
                     if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
-
-                    this.isPropByGateway(
-                        this.site_config.exclusive_rate_text,
-                        this.site_config.host_hotel_text,
-                        this.site_config.partner_hotel_text,
-                        this.site_config.lodging.event_name
-                    );
 
                     if (!this.map_loaded) {
                         if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
@@ -352,7 +360,7 @@ export default class BasePortal {
             if (document.querySelector('.topRoomFunding') && nights !== null) {
                 document.querySelector('.topRoomFunding').innerHTML = `<p>Your reservation just generated an <span>$ ${
                     nights * 2
-                } donation</span> to <span>RoomFunding</span>.  And that's at no cost to you.</p>`;
+                } donation</span> to <span>RoomFunding</span>.  And s at no cost to you.</p>`;
             }
         }
     }
@@ -906,7 +914,7 @@ export default class BasePortal {
                 color: ${this.site_config.secondary_text_color};
             }
             
-            .percent-savings{
+            .percentSavings{
                 color: ${this.site_config.secondary_color};
             }
 
@@ -1917,10 +1925,10 @@ export default class BasePortal {
     cugConfigs() {
         const {site_config} = this;
 
-        if (site_config.site_type !== 'cug') return;
+        if (site_config.site_type.toLowerCase() !== 'cug') return;
 
         function showPercentSavingsFilter() {
-            if (!site_config.cug.show_percent_savings) return;
+            if (site_config.cug.show_percent_savings) return;
 
             const percent_savings_filter = document.querySelector('.ArnSortByDealPercent');
 
@@ -1929,28 +1937,46 @@ export default class BasePortal {
             percent_savings_filter.style.display = 'block';
         }
 
-        function showPercentSavingsOnProperties() {
-            if (!site_config.cug.show_percent_savings) return;
+        function updatePercentSavingsText() {
+            const percents = document.querySelectorAll('.percentSavings');
 
-            const properties = document.querySelectorAll('.ArnProperty');
+            if (!percents || site_config.cug.show_percent_savings) return;
 
-            if (!properties) return;
-
-            properties.forEach((property) => {
-                const original_price = property.querySelector('.originalPrice');
-                const rate_container = property.querySelector('.ArnRateCell');
-
-                if (!original_price || !rate_container) return;
-
-                const percent = original_price.getAttribute('percent');
-
-                if (window.matchMedia('(min-width: 600px)').matches) rate_container.insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
-
-                if (window.matchMedia('(max-width: 600px)').matches)
-                    property.querySelector('.ArnRateButton').insertAdjacentHTML('afterBegin', `<span class="percent-savings">${percent}% Off Today</span>`);
+            percents.forEach((percent) => {
+                percent.insertAdjacentHTML('beforeEnd', ` Today`);
             });
         }
 
+        function showPercentSavingsOnProperties() {
+            if (site_config.cug.show_percent_savings) return;
+
+            let properties = '';
+
+            if (document.querySelector('.SearchHotels')) properties = document.querySelectorAll('.ArnProperty');
+            if (document.querySelector('.SinglePropDetail')) properties = document.querySelectorAll('.ArnNightlyRate');
+
+            if (!properties) return;
+            console.log(properties);
+
+            properties.forEach((property) => {
+                const percent = property.querySelector('div.percentSavings');
+                console.log(percent);
+                if (!percent) return;
+
+                percent.style.display = 'block';
+
+                if (!document.querySelector('.SearchHotels')) return;
+
+                const rate_container = property.querySelector('.ArnRateCell');
+                const rate_button = property.querySelector('.ArnRateButton');
+
+                window.matchMedia('(min-width: 600px)').matches
+                    ? rate_container.insertAdjacentElement('afterBegin', percent)
+                    : rate_button.insertAdjacentElement('afterBegin', percent);
+            });
+        }
+
+        updatePercentSavingsText();
         showPercentSavingsFilter();
         showPercentSavingsOnProperties();
     }

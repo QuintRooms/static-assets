@@ -14,4 +14,5 @@
     <a class="ARN_ServiceLinks cancelLink" href="../public/cancel.php">Cancel/Modify</a>
 </div>
 <script async src="../../dist/<?php echo $site_id; ?>.js"></script>
+<script async id="arn_scripts_include" src="//media.travsrv.com/appSkins/51820/v6/themes/standard/scripts/scripts.min.js?%version%"></script>
 

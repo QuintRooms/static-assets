@@ -160,7 +160,7 @@ export default class BasePortal {
                     this.changeContractedPropertyPinColor();
                 });
 
-                jQuery(document).on('ratesReadyEvent', async () => {
+                jQuery(document).on('ratesReadyEvent', () => {
                     setTimeout(() => {
                         this.isPropByGateway(
                             this.site_config.exclusive_rate_text,

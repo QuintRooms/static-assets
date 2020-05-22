@@ -11,6 +11,7 @@ module.exports = {
         60792: './src/60792.js', // Voodoo
         60279: './src/60279.js', // Ares Child Test
         60828: './src/60828.js', // lollapalooza 2021
+        52975: './src/52975.js', // lollapalooza 2020
     },
     output: {
         filename: '[name].js',

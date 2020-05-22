@@ -1572,6 +1572,7 @@ legend {
 .SinglePropDetail .holdRoom {
     margin: 8px auto;
     max-width: 150px;
+    font-size: 1rem;
 }
 
 .SinglePropDetail .ArnPropertyMapInner {
@@ -2042,15 +2043,6 @@ legend {
     width: 25%;
     height: 175px;
     text-align: right;
-}
-
-.percentSavings {
-    display: inline-block;
-    background: #faaf18;
-    color: #333;
-    padding: 2px 6px;
-    font-size: 15px;
-    font-weight: 500;
 }
 
 .ArnPriceCell .mainRate {
@@ -3745,11 +3737,17 @@ input[type='search']::-webkit-search-results-decoration {
 /* Hold Rooms End */
 
 /* Percent Savings Start */
-.percent-savings{
+.percentSavings{
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
     font-weight: 700;
+    display: none;
+    font-size: 1rem;
+}
+
+.SinglePropDetail .percentSavings{
+    text-align: center;
 }
 
 @media screen and (max-width: 600px){

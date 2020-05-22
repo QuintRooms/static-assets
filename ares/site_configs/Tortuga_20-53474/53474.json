@@ -36,13 +36,13 @@
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/Tortuga_20-53474/img/logo.png",
+        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-53474/img/logo.png",
         "logo_outbound_url": "https://www.tortugamusicfestival.com",
-        "background": "url(https://dev-static.hotelsforhope.com/ares/site_configs/Tortuga_20-53474/img/header-bg.png)",
+        "background": "url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-53474/img/header-bg.png)",
         "logo_flex_position": "center",
         "logo_max_width": "600px"
     },
-    "banner_image_url": "center/cover no-repeat url(https://dev-static.hotelsforhope.com/ares/site_configs/Tortuga_20-53474/img/banner.jpg)",
+    "banner_image_url": "center/cover no-repeat url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-53474/img/banner.jpg)",
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
     "primary_color": "#04539e",

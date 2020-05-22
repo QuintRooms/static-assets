@@ -46,7 +46,7 @@
     "map_marker_image_url": "https://static.hotelsforhope.com/portals/images/h4h-fav.ico",
     "theme": "light",
     "primary_color": "#9c6aad",
-    "secondary_color": "",
+    "secondary_color": "#333",
     "primary_text_color": "#fff",
     "secondary_text_color": "#9c6aad",
     "border_color": "#9c6aad",

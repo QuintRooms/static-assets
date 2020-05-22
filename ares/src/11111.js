@@ -1,1 +1,1 @@
-import '../site_configs/Local_portal-11111/11111';
+import '../site_configs/local_portal-11111/11111';

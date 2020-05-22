@@ -1,1 +1,1 @@
-import '../site_configs/Lolla_21-60828/60828';
+import '../site_configs/lolla_21-60828/60828';

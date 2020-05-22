@@ -2,7 +2,7 @@
     "site_id": 60279,
     "affiliate_id": 14808,
     "master_id": 920,
-    "site_type": "lodging",
+    "site_type": "cug",
     "algolia_app_id": "plCZXR0GZ7J1",
     "algolia_api_key": "b9763a419845b59957b8cc5c9b13440c",
     "currency": "USD",
@@ -14,14 +14,14 @@
         "event_id": 42099,
         "event_name": "Ares Child",
         "event_dates": "",
-        "is_lrg": true
+        "is_lrg": false
     },
     "cug":
     {
         "is_cug": true,
         "show_points": false,
         "allow_registration": false,
-        "show_percent_savings": false
+        "show_percent_savings": true
     },
     "exclusive_rate_text": "Exclusive Rates",
     "host_hotel_text": "Host Hotel",
@@ -31,20 +31,20 @@
     "show_language_select": false,
     "show_date_prompt": false,
     "showStarRatings": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/Ares_child-60279/img/favicon.png",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/Ares_child-60279/img/logo.png", 
+        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png", 
         "logo_outbound_url": "https://www.voodoofestival.com/",
         "background": "#fff",
         "logo_flex_position": "center",
         "logo_max_width": "300px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/Ares_child-60279/img/banner.jpg) no-repeat center center /cover",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/Ares_child-60279/img/favicon.png",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/banner.jpg) no-repeat center center /cover",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/favicon.png",
     "theme": "light",
     "primary_color": "#5dc3ac",
     "secondary_color": "#7487dd",

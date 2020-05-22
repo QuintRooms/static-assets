@@ -154,7 +154,6 @@ export default class Utilities {
             if (!mq.matches || logos_loaded) return;
             try {
                 Object.keys(images).forEach((e) => {
-                    console.log(images[e])
                     header.insertAdjacentHTML(images[e].insertPosition, `<img class="${images[e].className}" src="${images[e].imageUrl}">`);
                     logos_loaded = true;
                 });

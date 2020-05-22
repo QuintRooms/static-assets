@@ -1,5 +1,6 @@
 {
-    "site_id": 60828,
+    "directory_name": "Lolla_20-52975",
+    "site_id": 52975,
     "affiliate_id": 16067,
     "master_id": 1816,
     "site_type": "lodging",
@@ -7,7 +8,7 @@
     "algolia_api_key": "b9763a419845b59957b8cc5c9b13440c",
     "lodging":
     {
-        "event_id": 41751,
+        "event_id": 35879,
         "event_name": "Lollapalooza",
         "event_dates": "7/30/2020 - 8/2/2020",
         "is_lrg": true

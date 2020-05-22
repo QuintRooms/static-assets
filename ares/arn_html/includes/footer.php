@@ -13,5 +13,5 @@
     <span class="dvd"> | </span>
     <a class="ARN_ServiceLinks cancelLink" href="../public/cancel.php">Cancel/Modify</a>
 </div>
-<script async src="../../dist/<?php echo $site_id; ?>.js"></script>
+<script async src="../../dist/<?php echo $dist_name; ?>"></script>
 

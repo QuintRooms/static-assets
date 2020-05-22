@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+<meta name="directory_name" content="<?php echo $directory_name ?>">
 
 <?php
 $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];

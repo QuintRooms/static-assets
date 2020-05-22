@@ -1,1 +1,1 @@
-import '../site_configs/60279/60279';
+import '../site_configs/Ares_child-60279/60279';

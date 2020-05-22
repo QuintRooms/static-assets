@@ -256,8 +256,6 @@ export default class BasePortal {
     }
 
     getDirectoryName() {
-        console.log(document.querySelector('meta[name="directory_name"]').getAttribute('content'));
-
         if (!document.querySelector('meta[name="directory_name"]')) {
             console.log('no directory_name');
             return;
@@ -267,9 +265,7 @@ export default class BasePortal {
 
     async getSiteConfigJSON(site_id) {
         let path = '';
-        console.log('hello');
         const directory_name = this.getDirectoryName();
-        console.log(directory_name);
         if (window.location.href.includes('arn_html')) {
             path = `/ares/site_configs/${directory_name}/${site_id}.json`;
         } else if (window.location.href.includes('dev-static')) {

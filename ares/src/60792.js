@@ -1,1 +1,1 @@
-import '../site_configs/60792/60792';
+import '../site_configs/Voodoo_21-60792/60792';

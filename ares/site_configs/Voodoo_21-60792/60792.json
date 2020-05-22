@@ -1,7 +1,7 @@
 {
-    "site_id": 60279,
-    "affiliate_id": 14808,
-    "master_id": 920,
+    "site_id": 60792,
+    "affiliate_id": 16067,
+    "master_id": 1816,
     "site_type": "lodging",
     "algolia_app_id": "plCZXR0GZ7J1",
     "algolia_api_key": "b9763a419845b59957b8cc5c9b13440c",
@@ -11,16 +11,16 @@
     "radius": "50",
     "lodging":
     {
-        "event_id": 42099,
-        "event_name": "Ares Child",
+        "event_id": 41751,
+        "event_name": "Voodoo Music + Arts Experience",
         "event_dates": "",
         "is_lrg": true
     },
     "cug":
     {
-        "is_cug": true,
+        "is_cug": false,
         "show_points": false,
-        "allow_registration": false,
+        "allow_registration": true,
         "show_percent_savings": false
     },
     "exclusive_rate_text": "Exclusive Rates",
@@ -30,21 +30,20 @@
     "dayjs_date_format": "M/D/YYYY",
     "show_language_select": false,
     "show_date_prompt": false,
-    "showStarRatings": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/60279/img/favicon.png",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/Voodoo_21-60792/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/60279/img/logo.png", 
+        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/Voodoo_21-60792/img/logo.png", 
         "logo_outbound_url": "https://www.voodoofestival.com/",
         "background": "#fff",
         "logo_flex_position": "center",
         "logo_max_width": "300px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/60279/img/banner.jpg) no-repeat center center /cover",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/60279/img/favicon.png",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/Voodoo_21-60792/img/banner.jpg) no-repeat center center /cover",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/Voodoo_21-60792/img/favicon.png",
     "theme": "light",
     "primary_color": "#5dc3ac",
     "secondary_color": "#7487dd",

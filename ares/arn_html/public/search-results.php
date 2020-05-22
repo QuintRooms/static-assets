@@ -1827,6 +1827,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnRateCell" id="yui_3_18_1_1_1586277558089_144">
                                             <div class="ArnPriceCell"><span id="propertyRate20582" class="mainRate" avgnightly="$247.37">
                                                     <div class="originalPrice" percent="15" amount="$43.07">$390.44</div>
+                                                    <div class="percentSavings">29% Off</div>
                                                     <div class="otherPrice" style="display:none">$339</div><span class="arnPrice"><span class="arnCurrency">$</span><span class="arnUnit">347.37</span></span>
                                                 </span></div>
                                             <div class="ArnRateButton" id="yui_3_18_1_1_1586277558089_143"><a id="theShowRate20498" style="cursor:hand;cursor:pointer;" class="ArnShowRatesLink" href="property-page.php" target="_blank">Book Rooms</a></div>

@@ -1,6 +1,6 @@
 <?php 
-	$site_id = "60278";
+	$site_id = "49553";
 	$cug = false; 
-	$dist_name = "ares_child-60278.js";
-	$directory_name = "ares_child-60278";
+	$dist_name = "shaky_knees_21-49553.js";
+	$directory_name = "shaky_knees_21-49553";
 ?>

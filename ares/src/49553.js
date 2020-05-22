@@ -1,1 +1,1 @@
-import '../site_configs/49553/49553';
+import '../site_configs/shaky_knees_21-49553/49553';

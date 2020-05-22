@@ -262,15 +262,23 @@ export default class BasePortal {
         return this.site_id;
     }
 
+    getDirectoryName() {
+        if (!document.querySelector('meta[name="directory_name"]')) {
+            console.log('no directory_name');
+            return;
+        }
+        return document.querySelector('meta[name="directory_name"]').getAttribute('content');
+    }
+
     async getSiteConfigJSON(site_id) {
         let path = '';
-
+        const directory_name = this.getDirectoryName();
         if (window.location.href.includes('arn_html')) {
-            path = `/ares/site_configs/${site_id}/${site_id}.json`;
+            path = `/ares/site_configs/${directory_name}/${site_id}.json`;
         } else if (window.location.href.includes('dev-static')) {
-            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
         } else {
-            path = `https://static.hotelsforhope.com/ares/site_configs/${site_id}/${site_id}.json`;
+            path = `https://static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
         }
 
         try {

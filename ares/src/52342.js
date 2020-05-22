@@ -1,1 +1,1 @@
-import '../site_configs/52342/52342';
+import '../site_configs/room_steals-52342/52342';

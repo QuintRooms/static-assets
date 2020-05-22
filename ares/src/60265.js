@@ -1,1 +1,1 @@
-import '../site_configs/60265/60265';
+import '../site_configs/housing_template-60265/60265';

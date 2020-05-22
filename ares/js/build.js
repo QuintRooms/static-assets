@@ -169,7 +169,6 @@ export default class BasePortal {
                             this.site_config.lodging.event_name
                         );
                         if (this.page_name === 'property-detail' && this.site_config.site_type.toLowerCase() === 'cug') {
-                            utilities.updateHTML('.bookRoom', 'Book Rooooooooms');
                             this.cugConfigs();
                         }
                     }, 1);

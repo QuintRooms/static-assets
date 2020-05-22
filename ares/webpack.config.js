@@ -10,6 +10,7 @@ module.exports = {
         'housing_template-60265': './src/60265.js', // Housing Template
         'voodoo_21-60792': './src/60792.js', // Voodoo
         'ares_child-60279': './src/60279.js', // Ares Child Test
+        'ares_child-60278': './src/60278.js', // Ares Child Test
         'lolla_21-60828': './src/60828.js', // lollapalooza 2021
         'lolla_20-52975': './src/52975.js', // lollapalooza 2020
     },

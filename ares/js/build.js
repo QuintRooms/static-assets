@@ -29,6 +29,7 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
+                this.showStarsAndFilter();
 
                 // all pages
                 // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -421,27 +422,16 @@ export default class BasePortal {
     createStarIcons() {
         const star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach((star) => {
-            star.style.display = 'inline';
             const number_of_stars = star.textContent;
             const num = number_of_stars.replace(/\D/g, '');
             const star_svg =
                 '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
 
-            if (num === '1') {
-                star.innerHTML = star_svg;
-            }
-            if (num === '2') {
-                star.innerHTML = star_svg + star_svg;
-            }
-            if (num === '3') {
-                star.innerHTML = star_svg + star_svg + star_svg;
-            }
-            if (num === '4') {
-                star.innerHTML = star_svg + star_svg + star_svg + star_svg;
-            }
-            if (num === '5') {
-                star.innerHTML = star_svg + star_svg + star_svg + star_svg + star_svg;
-            }
+            if (num === '1') star.innerHTML = star_svg;
+            if (num === '2') star.innerHTML = star_svg.repeat(2);
+            if (num === '3') star.innerHTML = star_svg.repeat(3);
+            if (num === '4') star.innerHTML = star_svg.repeat(4);
+            if (num === '5') star.innerHTML = star_svg.repeat(5);
         });
     }
 
@@ -1971,11 +1961,10 @@ export default class BasePortal {
             if (document.querySelector('.SinglePropDetail')) properties = document.querySelectorAll('.ArnNightlyRate');
 
             if (!properties) return;
-            console.log(properties);
 
             properties.forEach((property) => {
                 const percent = property.querySelector('div.percentSavings');
-                console.log(percent);
+
                 if (!percent) return;
 
                 percent.style.display = 'block';
@@ -1994,5 +1983,11 @@ export default class BasePortal {
         updatePercentSavingsText();
         showPercentSavingsFilter();
         showPercentSavingsOnProperties();
+    }
+    
+    showStarsAndFilter() {
+        if (!this.site_config.show_stars) return;
+
+        document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
     }
 }

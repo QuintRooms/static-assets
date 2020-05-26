@@ -1116,6 +1116,11 @@ div.autocomplete ul li.selected {
     left: 12px;
 }
 
+.SearchHotels .ArnPropClass,
+#PropertyClassesContainer{
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
     #arnCloseAnchorId {
         padding: 8px;

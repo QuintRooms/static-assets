@@ -1812,7 +1812,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor20498" href="property-page.php#reviews">1549 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating4Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating4Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -1858,7 +1858,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor20582" href="property-page.php#reviews">3160 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating4Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating4Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -1903,7 +1903,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor209332" href="property-page.php#reviews">1524 User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating3Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating3Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -1945,7 +1945,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor23922" href="property-page.php#reviews">2642 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating4Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating4Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -1989,7 +1989,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor24132" href="property-page.php#reviews">1136 User Reviews</a></div>
                                                 <div class="ratingCount">3.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating3Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating3Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -2032,7 +2032,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor258950" href="property-page.php#reviews">2151 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating5Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating5Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -2079,7 +2079,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor377895" href="property-page.php#reviews">1375 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating4Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating4Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -2123,7 +2123,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor659065" href="property-page.php#reviews">173 User Reviews</a></div>
                                                 <div class="ratingCount">3.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating3Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating3Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -2166,7 +2166,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor350181" href="property-page.php#reviews">942 User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating2Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating2Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
@@ -2206,7 +2206,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 <div class="reviewCount"><a id="theArnAnchor442664" href="property-page.php#reviews">2230 User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
-                                            <div class="ArnPropClass ArnRating3Stars" style="display: inline;"><svg height="21" width="20" class="star rating" data-rating="1">
+                                            <div class="ArnPropClass ArnRating3Stars"><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>
                                                 </svg><svg height="21" width="20" class="star rating" data-rating="1">
                                                     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"></polygon>

@@ -275,10 +275,8 @@ export default class BasePortal {
         const directory_name = this.getDirectoryName();
         if (window.location.href.includes('arn_html')) {
             path = `/ares/site_configs/${directory_name}/${site_id}.json`;
-        } else if (window.location.href.includes('dev-static')) {
-            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
         } else {
-            path = `https://static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
         }
 
         try {

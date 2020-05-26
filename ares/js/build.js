@@ -1559,7 +1559,7 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
-                if (!this.site_config.lodging.event_id) {
+                if (this.site_config.lodging.event_id === null) {
                     destination_value = document.querySelector('input#address-input').value;
                     url += `&destination=${destination_value}`;
                 }

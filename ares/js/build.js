@@ -1523,7 +1523,7 @@ export default class BasePortal {
             if (this.page_name !== 'search-results') return;
             if (!this.site_config.lodging.event_id) return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
-                document.querySelector('.algolia-places').style.display = 'none';
+                document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
             });
         };
@@ -1550,13 +1550,17 @@ export default class BasePortal {
                 const cid = `&cid=${original_params_url.get('cid')}`;
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
                 else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
                 else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
+                }
+
+                if (!this.site_config.lodging.event_id) {
+                    url += `&destination=${destination_value}`;
                 }
 
                 function applyFilters() {

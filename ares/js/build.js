@@ -1456,6 +1456,7 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
+        let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
         const {origin} = window.location;
@@ -1540,7 +1541,9 @@ export default class BasePortal {
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
-                const destination_value = document.querySelector('input#address-input').value;
+                if (!this.site_config.lodging.event_id) {
+                    destination_value = document.querySelector('input#address-input').value;
+                }
                 const properties = `&properties=${original_params_url.get('properties')}`;
                 const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
                 const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;

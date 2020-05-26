@@ -1361,9 +1361,12 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (document.querySelector('input#theCheckIn').value === '' || document.querySelector('input#city').value === '') {
-                    this.style_validation_fields('input#theCheckIn');
+                if (this.site_config.lodging.event_id === null && document.querySelector('input#city').value === '') {
                     this.style_validation_fields('input#city');
+                    return;
+                }
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
                     return;
                 }
                 loader.style.display = 'block';
@@ -1535,11 +1538,11 @@ export default class BasePortal {
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
-
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
                 const properties = `&properties=${original_params_url.get('properties')}`;
                 const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;

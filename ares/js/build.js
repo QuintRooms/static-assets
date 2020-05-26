@@ -1532,8 +1532,10 @@ export default class BasePortal {
         const remove_city_search_for_event = () => {
             if (this.page_name !== 'search-results') return;
             if (!this.site_config.lodging.event_id) return;
-            document.querySelector('.algolia-places').style.display = 'none';
-            document.querySelector('#theSearchBox').firstChild.style.display = 'none';
+            utilities.waitForSelectorInDOM('.algolia-places').then(() => {
+                document.querySelector('.algolia-places').style.display = 'none';
+                document.querySelector('#theSearchBox').firstChild.style.display = 'none';
+            });
         };
 
         const construct_url_on_submit = () => {

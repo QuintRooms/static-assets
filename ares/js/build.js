@@ -1553,7 +1553,7 @@ export default class BasePortal {
                 const cid = `&cid=${original_params_url.get('cid')}`;
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -1992,7 +1992,7 @@ export default class BasePortal {
         showPercentSavingsFilter();
         showPercentSavingsOnProperties();
     }
-    
+
     showStarsAndFilter() {
         if (!this.site_config.show_stars) return;
 

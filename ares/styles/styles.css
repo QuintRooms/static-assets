@@ -3782,3 +3782,77 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 /* Pagination End */
+
+/* - - - - Covid-19 banner start - - - -  */
+
+.info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    background-color: #1A1A1A;
+    order: -1;
+    padding: 10px;
+    font-family: inherit;
+    position: relative;
+    z-index: 4;
+}
+
+
+.message-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.message-content h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0px;
+}
+
+.details-link {
+    display: flex;
+    align-items: center;
+}
+
+.details-link svg {
+    width: 18px;
+    margin-left: 5px;
+    color: #fff;
+}
+
+.message-content .details-link h1 {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 0 5px;
+    font-weight: 400;
+}
+
+.info-banner .close-alert {
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    background-color: #1A1A1A;
+    margin: 8px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .info-banner,
+    .info-banner .message-content {
+        flex-direction: column;
+    }
+
+    .info-banner .close-alert {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+/* - - - - Covid-19 banner end - - - -  */

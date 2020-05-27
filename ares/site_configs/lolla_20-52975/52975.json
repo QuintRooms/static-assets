@@ -28,7 +28,7 @@
     "show_stars": false,
     "show_language_select": false,
     "show_date_prompt": false,
-    "fav_icon_url": "",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/lolla_20-52975/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
@@ -41,7 +41,7 @@
         "logo_max_width": "300px"
     },
     "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/lolla_20-52975/img/banner.png) no-repeat center center /cover",
-    "map_marker_image_url": "",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/lolla_20-52975/img/favicon.png",
     "theme": "light",
     "primary_color": "#00af9a",
     "secondary_color": "#7018d7",

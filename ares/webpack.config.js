@@ -16,7 +16,8 @@ module.exports = {
         // 'acl_20-53336': './src/53336.js', // acl 2020
         // 'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
         // 'bj_west_palm_beach_20-60292': './src/60292.js', // BJ W Palm Beach 2020
-        'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
+        // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
+        'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
     },
     output: {
         filename: '[name].js',

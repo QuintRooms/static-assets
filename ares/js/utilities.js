@@ -179,4 +179,25 @@ export default class Utilities {
         debounce_script.setAttribute('async', true);
         document.body.appendChild(debounce_script);
     }
+
+    createDropdownMenu(label_selector, dropdown_html, content_selector_to_show, content_parent) {
+        const label = document.querySelector(label_selector);
+        const parent = document.querySelector(content_parent);
+
+        if (!label || !parent) return;
+
+        parent.insertAdjacentHTML('beforeEnd', `<style>${content_selector_to_show}{display: none;}${content_parent}{position: relative;}</style>${dropdown_html.outerHTML}`);
+
+        const content_to_show = document.querySelector(content_selector_to_show);
+        document.addEventListener('click', (e) => {
+            const target_el = e.target;
+
+            if (target_el === label) {
+                content_to_show.classList.toggle('show-dropdown');
+            }
+            if (document.querySelector(`${content_selector_to_show}.show-dropdown`) && target_el !== label) {
+                content_to_show.classList.toggle('show-dropdown');
+            }
+        });
+    }
 }

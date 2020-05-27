@@ -28,8 +28,8 @@ export default class BasePortal {
                 this.setFontFromConfig();
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
-                this.createCurrencyDropDown();
                 this.showStarsAndFilter();
+                this.createCurrencyDropdown();
 
                 // all pages
                 // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -1093,100 +1093,729 @@ export default class BasePortal {
         });
     }
 
-    // needs a refactor real bad
-    createCurrencyDropDown() {
-        let currencies = '';
-        let clicked_currency;
-        const currencies_obj = {};
-        let selected_currency = '';
-        let submit;
-        let currencies_select;
-        let currencies_node_list;
+    createCurrencyDropdown() {
+        const currencies_json = 
+        {
+            "AED": {
+                "symbol": "AED",
+                "name": "United Arab Emirates Dirham",
+                "symbol_native": "د.إ.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "AED",
+                "name_plural": "UAE dirhams"
+            },
+            "AOA": {
+                "symbol": "Kz",
+                "symbol_native": "Kz",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "AOA",
+                "name": "Angolan Kwanza"
+            },
+            "AMD": {
+                "symbol": "AMD",
+                "name": "Armenian Dram",
+                "symbol_native": "դր.",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "AMD",
+                "name_plural": "Armenian drams"
+            },
+            "ARS": {
+                "symbol": "AR$",
+                "name": "Argentine Peso",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "ARS",
+                "name_plural": "Argentine pesos"
+            },
+            "AUD": {
+                "symbol": "AU$",
+                "name": "Australian Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "AUD",
+                "name_plural": "Australian Dollars"
+            },
+            "AWG": {
+                "symbol": "Afl.",
+                "symbol_native": "Afl.",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "AWG",
+                "name": "Aruban Florin"
+            },
+            "AZN": {
+                "symbol": "man.",
+                "name": "Azerbaijani Manat",
+                "symbol_native": "ман.",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "AZN",
+                "name_plural": "Azerbaijani manats"
+            },
+            "BBD": {
+                "symbol": "Bds$",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "BBD",
+                "name": "Barbadian Dollar"
+            },
+            "BHD": {
+                "symbol": "BD",
+                "name": "Bahraini Dinar",
+                "symbol_native": "د.ب.‏",
+                "decimal_digits": 3,
+                "rounding": 0,
+                "code": "BHD",
+                "name_plural": "Bahraini dinars"
+            },
+            "BMD": {
+                "symbol": "$",
+                "name": "Bermudian Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "BMD",
+                "name_plural": "Bermudian Dollar"
+            },
+            "BRL": {
+                "symbol": "R$",
+                "name": "Brazilian Real",
+                "symbol_native": "R$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "BRL",
+                "name_plural": "Brazilian reals"
+            },
+            "BSD": {
+                "symbol": "B$",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "BSD",
+                "name": "Bahamian Dollar"
+            },
+            "CAD": {
+                "symbol": "CA$",
+                "name": "Canadian Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "CAD",
+                "name_plural": "Canadian Dollars"
+            },
+            "CHF": {
+                "symbol": "CHF",
+                "name": "Swiss Franc",
+                "symbol_native": "CHF",
+                "decimal_digits": 2,
+                "rounding": 0.05,
+                "code": "CHF",
+                "name_plural": "Swiss francs"
+            },
+            "CLP": {
+                "symbol": "CL$",
+                "name": "Chilean Peso",
+                "symbol_native": "$",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "CLP",
+                "name_plural": "Chilean pesos"
+            },
+            "CNY": {
+                "symbol": "CN¥",
+                "name": "Chinese Yuan",
+                "symbol_native": "CN¥",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "CNY",
+                "name_plural": "Chinese yuan"
+            },
+            "COP": {
+                "symbol": "CO$",
+                "name": "Colombian Peso",
+                "symbol_native": "$",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "COP",
+                "name_plural": "Colombian pesos"
+            },
+            "CRC": {
+                "symbol": "₡",
+                "name": "Costa Rican Colón",
+                "symbol_native": "₡",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "CRC",
+                "name_plural": "Costa Rican colóns"
+            },
+            "CZK": {
+                "symbol": "Kč",
+                "name": "Czech Republic Koruna",
+                "symbol_native": "Kč",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "CZK",
+                "name_plural": "Czech Republic korunas"
+            },
+            "DKK": {
+                "symbol": "Dkr",
+                "name": "Danish Krone",
+                "symbol_native": "kr",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "DKK",
+                "name_plural": "Danish kroner"
+            },
+            "DZD": {
+                "symbol": "DA",
+                "name": "Algerian Dinar",
+                "symbol_native": "د.ج.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "DZD",
+                "name_plural": "Algerian dinars"
+            },
+            "EGP": {
+                "symbol": "EGP",
+                "name": "Egyptian Pound",
+                "symbol_native": "ج.م.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "EGP",
+                "name_plural": "Egyptian pounds"
+            },
+            "EUR": {
+                "symbol": "€",
+                "name": "Euro",
+                "symbol_native": "€",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "EUR",
+                "name_plural": "euros"
+            },
+            "FJD": {
+                "symbol": "FJ$€",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "FJD",
+                "name": "Fijian Dollar"
+            },
+            "GBP": {
+                "symbol": "£",
+                "name": "British Pound Sterling",
+                "symbol_native": "£",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "GBP",
+                "name_plural": "British pounds sterling"
+            },
+            "HKD": {
+                "symbol": "HK$",
+                "name": "Hong Kong Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "HKD",
+                "name_plural": "Hong Kong Dollars"
+            },
+            "HUF": {
+                "symbol": "Ft",
+                "name": "Hungarian Forint",
+                "symbol_native": "Ft",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "HUF",
+                "name_plural": "Hungarian forints"
+            },
+            "IDR": {
+                "symbol": "Rp",
+                "name": "Indonesian Rupiah",
+                "symbol_native": "Rp",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "IDR",
+                "name_plural": "Indonesian rupiahs"
+            },
+            "ISK": {
+                "symbol": "Ikr",
+                "name": "Icelandic Króna",
+                "symbol_native": "kr",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "ISK",
+                "name_plural": "Icelandic krónur"
+            },
+            "ILS": {
+                "symbol": "₪",
+                "name": "Israeli New Shekel",
+                "symbol_native": "₪",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "ILS",
+                "name_plural": "Israeli new shekels"
+            },
+            "INR": {
+                "symbol": "Rs",
+                "name": "Indian Rupee",
+                "symbol_native": "₹",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "INR",
+                "name_plural": "Indian rupees"
+            },
+            "JPY": {
+                "symbol": "¥",
+                "name": "Japanese Yen",
+                "symbol_native": "￥",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "JPY",
+                "name_plural": "Japanese yen"
+            },
+            "KGS": {
+                "symbol": "Ksh",
+                "name": "Kyrgyzstani Som",
+                "symbol_native": "Ksh",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "KES",
+                "name_plural": "Kenyan shillings"
+            },
+            "KRW": {
+                "symbol": "₩",
+                "name": "South Korean Won",
+                "symbol_native": "₩",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "KRW",
+                "name_plural": "South Korean won"
+            },
+            "KWD": {
+                "symbol": "KD",
+                "name": "Kuwaiti Dinar",
+                "symbol_native": "د.ك.‏",
+                "decimal_digits": 3,
+                "rounding": 0,
+                "code": "KWD",
+                "name_plural": "Kuwaiti dinars"
+            },
+            "KYD": {
+                "symbol": "$",
+                "name": "Cayman Islands dollar",
+                "symbol_native": "$‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "KYD",
+                "name_plural": "Cayman Islands DollarS"
+            },
+            "KZT": {
+                "symbol": "KZT",
+                "name": "Kazakhstani Tenge",
+                "symbol_native": "тңг.",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "KZT",
+                "name_plural": "Kazakhstani tenges"
+            },
+            "LVL": {
+                "symbol": "Ls",
+                "name": "Latvian Lats",
+                "symbol_native": "Ls",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "LVL",
+                "name_plural": "Latvian lati"
+            },
+            "MAD": {
+                "symbol": "MAD",
+                "name": "Moroccan Dirham",
+                "symbol_native": "د.م.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "MAD",
+                "name_plural": "Moroccan dirhams"
+            },
+            "MXN": {
+                "symbol": "MX$",
+                "name": "Mexican Peso",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "MXN",
+                "name_plural": "Mexican pesos"
+            },
+            "MYR": {
+                "symbol": "RM",
+                "name": "Malaysian Ringgit",
+                "symbol_native": "RM",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "MYR",
+                "name_plural": "Malaysian ringgits"
+            },
+            "NGN": {
+                "symbol": "₦",
+                "name": "Nigerian Naira",
+                "symbol_native": "₦",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "NGN",
+                "name_plural": "Nigerian nairas"
+            },
+            "NOK": {
+                "symbol": "Nkr",
+                "name": "Norwegian Krone",
+                "symbol_native": "kr",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "NOK",
+                "name_plural": "Norwegian kroner"
+            },
+            "NZD": {
+                "symbol": "NZ$",
+                "name": "New Zealand Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "NZD",
+                "name_plural": "New Zealand Dollars"
+            },
+            "OMR": {
+                "symbol": "OMR",
+                "name": "Omani Rial",
+                "symbol_native": "ر.ع.‏",
+                "decimal_digits": 3,
+                "rounding": 0,
+                "code": "OMR",
+                "name_plural": "Omani rials"
+            },
+            "PAB": {
+                "symbol": "B/.",
+                "name": "Panamanian Balboa",
+                "symbol_native": "B/.",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "PAB",
+                "name_plural": "Panamanian balboas"
+            },
+            "PGK": {
+                "symbol": "K",
+                "symbol_native": "K",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "PGK",
+                "name": "Papua New Guinean Kina"
+            },
+            "PHP": {
+                "symbol": "₱",
+                "name": "Philippine Peso",
+                "symbol_native": "₱",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "PHP",
+                "name_plural": "Philippine pesos"
+            },
+            "PLN": {
+                "symbol": "zł",
+                "name": "Polish Zloty",
+                "symbol_native": "zł",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "PLN",
+                "name_plural": "Polish zlotys"
+            },
+            "QAR": {
+                "symbol": "QR",
+                "name": "Qatari Rial",
+                "symbol_native": "ر.ق.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "QAR",
+                "name_plural": "Qatari rials"
+            },
+            "RON": {
+                "symbol": "RON",
+                "name": "Romanian Leu",
+                "symbol_native": "RON",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "RON",
+                "name_plural": "Romanian lei"
+            },
+            "RUB": {
+                "symbol": "RUB",
+                "name": "Russian Ruble",
+                "symbol_native": "руб.",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "RUB",
+                "name_plural": "Russian rubles"
+            },
+            "SAR": {
+                "symbol": "SR",
+                "name": "Saudi Riyal",
+                "symbol_native": "ر.س.‏",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "SAR",
+                "name_plural": "Saudi riyals"
+            },
+            "SEK": {
+                "symbol": "Skr",
+                "name": "Swedish Krona",
+                "symbol_native": "kr",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "SEK",
+                "name_plural": "Swedish kronor"
+            },
+            "SGD": {
+                "symbol": "S$",
+                "name": "Singapore Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "SGD",
+                "name_plural": "Singapore Dollars"
+            },
+            "THB": {
+                "symbol": "฿",
+                "name": "Thai Baht",
+                "symbol_native": "฿",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "THB",
+                "name_plural": "Thai baht"
+            },
+            "TRY": {
+                "symbol": "TL",
+                "name": "Turkish Lira",
+                "symbol_native": "TL",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "TRY",
+                "name_plural": "Turkish Lira"
+            },
+            "TTD": {
+                "symbol": "TT$",
+                "name": "Trinidad and Tobago Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "TTD",
+                "name_plural": "Trinidad and Tobago Dollars"
+            },
+            "TWD": {
+                "symbol": "NT$",
+                "name": "New Taiwan Dollar",
+                "symbol_native": "NT$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "TWD",
+                "name_plural": "New Taiwan Dollars"
+            },
+            "UAH": {
+                "symbol": "₴",
+                "name": "Ukrainian Hryvnia",
+                "symbol_native": "₴",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "UAH",
+                "name_plural": "Ukrainian hryvnias"
+            },
+            "USD": {
+                "symbol": "$",
+                "name": "US Dollar",
+                "symbol_native": "$",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "USD",
+                "name_plural": "US Dollars"
+            },
+            "VEF": {
+                "symbol": "Bs.F.",
+                "name": "Venezuelan Bolívar",
+                "symbol_native": "Bs.F.",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "VEF",
+                "name_plural": "Venezuelan Bolívars"
+            },
+            "VND": {
+                "symbol": "₫",
+                "name": "Vietnamese Dong",
+                "symbol_native": "₫",
+                "decimal_digits": 0,
+                "rounding": 0,
+                "code": "VND",
+                "name_plural": "Vietnamese Dong"
+            },
+            "ZAR": {
+                "symbol": "R",
+                "name": "South African Rand",
+                "symbol_native": "R",
+                "decimal_digits": 2,
+                "rounding": 0,
+                "code": "ZAR",
+                "name_plural": "South African Rand"
+            }
+        };
 
-        const currency_label = document.querySelector('#currency-label');
-        const currencies_container = document.querySelector('.currencies');
-        const config_container = document.querySelector('.config-container');
-        const top_currencies_container = document.querySelector('.top-currencies');
+        const setupContentForDropdown = () => {
+            const currencies = Object.entries(currencies_json);
+            const menu_container = document.createElement('div');
+            const all_currencies_container = document.createElement('div');
+            const top_currencies = `
+            <div class="top-currencies">
+                <h4>Top Currencies</h4>
+                <div>
+                    <span><strong>${currencies_json['AUD']['code']}</strong> - ${currencies_json['AUD']['name']}</span>
+                    <span><strong>${currencies_json['CAD']['code']}</strong> - ${currencies_json['CAD']['name']}</span>
+                    <span><strong>${currencies_json['EUR']['code']}</strong> - ${currencies_json['EUR']['name']}</span>
+                    <span><strong>${currencies_json['MXN']['code']}</strong> - ${currencies_json['MXN']['name']}</span>
+                    <span><strong>${currencies_json['GBP']['code']}</strong> - ${currencies_json['GBP']['name']}</span>
+                    <span><strong>${currencies_json['USD']['code']}</strong> - ${currencies_json['USD']['name']}</span>
+                </div>
 
-        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
-            submit = document.querySelector('#theOtherSubmitButton');
-            currencies_select = document.querySelector('#CurrenciesContainer select');
-            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
-        } else if (this.page_name === 'property-detail') {
-            submit = document.querySelector('.CheckRates .submit');
-            currencies_select = document.querySelector('.ArnCurrency select');
-            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
+                <h4>All Currencies</h4>
+            </div>`;
+
+            menu_container.insertAdjacentHTML('afterBegin', top_currencies)
+            menu_container.classList.add('currency-content');
+            
+            all_currencies_container.classList.add('all-currencies-container');
+
+            for(const currency in currencies_json){
+                all_currencies_container.insertAdjacentHTML('beforeEnd', `<div id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency]['name']}</div>`);
+            }
+
+            menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
+    
+            utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown' );
         }
 
-        if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
+        const updateParamOnCurrencyClick = () => {
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+            const dropdown = document.querySelector('.dropdown');
 
-        currencies_node_list.forEach((currency) => {
-            if (currency.getAttribute('selected')) {
-                selected_currency = currency.value;
-            }
+            if(!dropdown) return;
+            dropdown.addEventListener('click', (e) => {
+                let clicked_currency = e.target.id;
+                params.delete('currency');
+                params.set('currency', clicked_currency);
 
-            currencies_obj[currency.label] = currency.value;
-        });
+                window.location.href = url.host + url.pathname + '?' + decodeURIComponent(params);
+            });
+        }
 
-        currencies = Object.entries(currencies_obj);
+        setupContentForDropdown();
+        updateParamOnCurrencyClick();
 
-        currencies.forEach((currency) => {
-            if (
-                currency[0] === 'United States Dollars' ||
-                currency[0] === 'Euro' ||
-                currency[0] === 'United Kingdom Pounds' ||
-                currency[0] === 'Mexico Pesos' ||
-                currency[0] === 'Canada Dollars' ||
-                currency[0] === 'Australia Dollars'
-            ) {
-                top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-            }
+        // let currencies = '';
+        // let clicked_currency;
+        // const currencies_obj = {};
+        // let selected_currency = '';
+        // let submit;
+        // let currencies_select;
+        // let currencies_node_list;
+        
+        // const currency_label = document.querySelector('#currency-label');
+        // const currencies_container = document.querySelector('.currencies');
+        // const config_container = document.querySelector('.config-container');
+        // const top_currencies_container = document.querySelector('.top-currencies');
 
-            currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-        });
+        // if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
+        //     submit = document.querySelector('#theOtherSubmitButton');
+        //     currencies_select = document.querySelector('#CurrenciesContainer select');
+        //     currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+        // } else if (this.page_name === 'property-detail') {
+        //     submit = document.querySelector('.CheckRates .submit');
+        //     currencies_select = document.querySelector('.ArnCurrency select');
+        //     currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
+        // }
 
-        currency_label.addEventListener('click', () => {
-            currencies_container.classList.toggle('show-currencies-container');
+        // if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
 
-            // return if ie - ie can't toggle an svg
-            if (window.document.documentMode) return;
+        // currencies_node_list.forEach((currency) => {
+        //     if (currency.getAttribute('selected')) {
+        //         selected_currency = currency.value;
+        //     }
 
-            currency_label.querySelector('svg').classList.toggle('flip-svg');
-        });
+        //     currencies_obj[currency.label] = currency.value;
+        // });
 
-        currencies_container.addEventListener('click', (e) => {
-            if (!e.target.getAttribute('id')) return;
+        // currencies = Object.entries(currencies_obj);
 
-            clicked_currency = e.target.getAttribute('id');
-            document.querySelector('.active-currency').classList.remove('active-currency');
-            document.getElementById(clicked_currency).classList.add('active-currency');
-            currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
-            currencies_select.value = clicked_currency;
+        // currencies.forEach((currency) => {
+        //     console.log(currency)
+        //     if (
+        //         currency[0] === 'United States Dollars' ||
+        //         currency[0] === 'Euro' ||
+        //         currency[0] === 'United Kingdom Pounds' ||
+        //         currency[0] === 'Mexico Pesos' ||
+        //         currency[0] === 'Canada Dollars' ||
+        //         currency[0] === 'Australia Dollars'
+        //     ) {
+        //         top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+        //     }
 
-            if (document.querySelector('.SearchHotels')) submit.click();
-        });
+        //     currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+        // });
 
-        document.getElementById(selected_currency).classList.add('active-currency');
+        // currency_label.addEventListener('click', () => {
+        //     currencies_container.classList.toggle('show-currencies-container');
 
-        window.addEventListener('click', (e) => {
-            if (document.querySelector('.show-currencies-container')) {
-                if (
-                    e.target === document.querySelector('.currencies') ||
-                    e.target === document.querySelector('#currency-label') ||
-                    e.target.parentNode === document.querySelector('.currencies') ||
-                    e.target.parentNode === document.querySelector('.top-currencies')
-                )
-                    return;
+        //     // return if ie - ie can't toggle an svg
+        //     if (window.document.documentMode) return;
 
-                currencies_container.classList.toggle('show-currencies-container');
+        //     currency_label.querySelector('svg').classList.toggle('flip-svg');
+        // });
 
-                // return if ie - ie can't toggle svgs
-                if (window.document.documentMode) return;
-                currency_label.querySelector('svg').classList.toggle('flip-svg');
-            }
-        });
+        // currencies_container.addEventListener('click', (e) => {
+        //     if (!e.target.getAttribute('id')) return;
 
-        currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
+        //     clicked_currency = e.target.getAttribute('id');
+        //     document.querySelector('.active-currency').classList.remove('active-currency');
+        //     document.getElementById(clicked_currency).classList.add('active-currency');
+        //     currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
+        //     currencies_select.value = clicked_currency;
+
+        //     // submit.click();
+        //     const url = new URL(window.location.href);
+        //     const params = new URLSearchParams(url.search);
+        //     params.set('currency', clicked_currency)
+        //     console.log('Output: createCurrencyDropDown -> params', clicked_currency.tex);
+        // });
+
+        // document.getElementById(selected_currency).classList.add('active-currency');
+
+        // window.addEventListener('click', (e) => {
+        //     if (document.querySelector('.show-currencies-container')) {
+        //         if (
+        //             e.target === document.querySelector('.currencies') ||
+        //             e.target === document.querySelector('#currency-label') ||
+        //             e.target.parentNode === document.querySelector('.currencies') ||
+        //             e.target.parentNode === document.querySelector('.top-currencies')
+        //         )
+        //             return;
+
+        //         currencies_container.classList.toggle('show-currencies-container');
+
+        //         // return if ie - ie can't toggle svgs
+        //         if (window.document.documentMode) return;
+        //         currency_label.querySelector('svg').classList.toggle('flip-svg');
+        //     }
+        // });
+
+        // currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
     }
 
     setupDatePrompt() {
@@ -1212,11 +1841,11 @@ export default class BasePortal {
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
-                ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
+                if (window.ArnMapDispatcher) ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
             });
 
             property.addEventListener('mouseleave', (e) => {
-                ArnMapDispatcher.eventPropertyHighlightOff(prop_id);
+                if (window.ArnMapDispatcher) ArnMapDispatcher.eventPropertyHighlightOff(prop_id);
             });
         });
     }

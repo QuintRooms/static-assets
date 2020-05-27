@@ -292,10 +292,10 @@ select#adults {
     stroke: #868686;
     transform: scale(0.85);
 }
-
+/* 
 #CurrenciesContainer {
     display: none;
-}
+} */
 
 .language-container {
     display: none;
@@ -3782,3 +3782,10 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 /* Pagination End */
+
+/* Dropdown Menus */
+.show-dropdown{
+    display: block !important;
+    background: #fff;
+    position: absolute;
+}

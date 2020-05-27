@@ -179,4 +179,16 @@ export default class Utilities {
         debounce_script.setAttribute('async', true);
         document.body.appendChild(debounce_script);
     }
+
+    /**
+     *@description creates custom tag in a properties image
+     *@param string text - text of tag
+     *@param int propId - property id to add the tag to
+     */
+    addPropThumbTag(text, propId) {
+        if (!document.querySelector(`#theArnProperty${propId} .ArnPropThumb > .propThumbTag`) && document.querySelector(`#theArnProperty${propId}`)) {
+            const property_thumbnail = document.querySelector(`#theArnProperty${propId} .ArnPropThumb`);
+            property_thumbnail.insertAdjacentHTML('afterbegin', `<div class="propThumbTag">${text}</div>`);
+        }
+    }
 }

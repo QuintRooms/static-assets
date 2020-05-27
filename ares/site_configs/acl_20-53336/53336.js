@@ -1,4 +1,7 @@
 import BasePortal from '../../js/build';
+import Utilities from '../../js/utilities';
+
+const utilities = new Utilities();
 
 class ChildPortal extends BasePortal {
     constructor() {
@@ -9,7 +12,8 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-function addWeekendButtons() {
+async function addWeekendButtons() {
+    await utilities.waitForSelectorInDOM('header');
     document.querySelector('header').insertAdjacentHTML(
         'beforeend',
         `<div class="event-week pull-right">

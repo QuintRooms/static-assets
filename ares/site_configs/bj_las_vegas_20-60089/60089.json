@@ -37,11 +37,11 @@
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/bj_las_vegas_20-60089/img/logo.png", 
+        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/bj_las_vegas_20-60089/img/logo.png", 
         "logo_outbound_url": "https://www.barrett-jackson.com/",
         "background": "#fff",
         "logo_flex_position": "center",
-        "logo_max_width": "300px"
+        "logo_max_width": "400px"
     },
     "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_las_vegas_20-60089/img/banner.jpg) no-repeat center center /cover",
     "map_marker_image_url": "",
@@ -61,7 +61,7 @@
         "sidebar_ad":
         {
             "is_active": true,
-            "image_url": "https://static.hotelsforhope.com/ares/site_configs/bj_las_vegas_20-60089/img/leftbanner.jpg",
+            "image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/bj_las_vegas_20-60089/img/leftbanner.jpg",
             "outbound_url": "https://www.grandcanyon.org/"
         },
         "between_property_ad":

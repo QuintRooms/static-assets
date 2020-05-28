@@ -19,6 +19,7 @@ export default class BasePortal {
     }
 
     init() {
+        this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then((site_id) => {
             this.getSiteConfigJSON(site_id).then(async () => {
@@ -250,6 +251,23 @@ export default class BasePortal {
                 this.showCoronavirusInfoBanner();
             });
         });
+    }
+
+    initializeARNRatesReadyEvent() {
+        function globalAjax() {
+            try {
+                setTimeout(() => {
+                    jQuery(document).trigger('ratesReadyEvent');
+                }, 1);
+            // eslint-disable-next-line no-empty
+            } catch (e) {}
+        }
+        // eslint-disable-next-line no-undef
+        Ajax.Responders.register({
+            onComplete: globalAjax,
+        });
+
+        globalAjax();
     }
 
     /**
@@ -752,6 +770,8 @@ export default class BasePortal {
     }
 
     keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count) {
+        if (!document.querySelector('#theCopyInfoAjax input')) return;
+
         document.querySelector('#theCopyInfoAjax input').addEventListener('click', () => {
             setTimeout(() => {
                 utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);

@@ -1729,10 +1729,14 @@ export default class BasePortal {
 
             dropdown.addEventListener('click', (e) => {
                 let clicked_currency = e.target.id;
+                
+                document.querySelector('.active-currency').classList.remove('active-currency');
+                document.querySelector(`#${clicked_currency}`).classList.add('active-currency');
+
                 params.delete('currency');
                 params.set('currency', clicked_currency);
 
-                window.location.href = url.host + url.pathname + '?' + decodeURIComponent(params);
+                if(this.page_name === 'search-results') window.location.href = url.host + url.pathname + '?' + decodeURIComponent(params);
             });
         }
 

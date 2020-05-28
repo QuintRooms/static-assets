@@ -19,6 +19,7 @@ export default class BasePortal {
     }
 
     init() {
+        this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then((site_id) => {
             this.getSiteConfigJSON(site_id).then(async () => {
@@ -29,6 +30,7 @@ export default class BasePortal {
                 this.setupDatePrompt();
                 this.showLanguageFromCongif();
                 this.createCurrencyDropDown();
+                this.showStarsAndFilter();
 
                 // all pages
                 // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -246,8 +248,27 @@ export default class BasePortal {
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
+                this.showCoronavirusInfoBanner();
+                this.showCurrencySelect();
             });
         });
+    }
+
+    initializeARNRatesReadyEvent() {
+        function globalAjax() {
+            try {
+                setTimeout(() => {
+                    jQuery(document).trigger('ratesReadyEvent');
+                }, 1);
+                // eslint-disable-next-line no-empty
+            } catch (e) {}
+        }
+        // eslint-disable-next-line no-undef
+        Ajax.Responders.register({
+            onComplete: globalAjax,
+        });
+
+        globalAjax();
     }
 
     /**
@@ -421,27 +442,16 @@ export default class BasePortal {
     createStarIcons() {
         const star_elements = document.querySelectorAll('.ArnPropClass');
         star_elements.forEach((star) => {
-            star.style.display = 'inline';
             const number_of_stars = star.textContent;
             const num = number_of_stars.replace(/\D/g, '');
             const star_svg =
                 '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
 
-            if (num === '1') {
-                star.innerHTML = star_svg;
-            }
-            if (num === '2') {
-                star.innerHTML = star_svg + star_svg;
-            }
-            if (num === '3') {
-                star.innerHTML = star_svg + star_svg + star_svg;
-            }
-            if (num === '4') {
-                star.innerHTML = star_svg + star_svg + star_svg + star_svg;
-            }
-            if (num === '5') {
-                star.innerHTML = star_svg + star_svg + star_svg + star_svg + star_svg;
-            }
+            if (num === '1') star.innerHTML = star_svg;
+            if (num === '2') star.innerHTML = star_svg.repeat(2);
+            if (num === '3') star.innerHTML = star_svg.repeat(3);
+            if (num === '4') star.innerHTML = star_svg.repeat(4);
+            if (num === '5') star.innerHTML = star_svg.repeat(5);
         });
     }
 
@@ -761,6 +771,8 @@ export default class BasePortal {
     }
 
     keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count) {
+        if (!document.querySelector('#theCopyInfoAjax input')) return;
+
         document.querySelector('#theCopyInfoAjax input').addEventListener('click', () => {
             setTimeout(() => {
                 utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);
@@ -1055,7 +1067,7 @@ export default class BasePortal {
         if (!this.site_config) return;
 
         utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-        document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+        document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica';}</style>`);
     }
 
     // refactor me, please!
@@ -1371,9 +1383,12 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (document.querySelector('input#theCheckIn').value === '' || document.querySelector('input#city').value === '') {
-                    this.style_validation_fields('input#theCheckIn');
+                if (this.site_config.lodging.event_id === null && document.querySelector('input#city').value === '') {
                     this.style_validation_fields('input#city');
+                    return;
+                }
+                if (document.querySelector('input#theCheckIn').value === '') {
+                    this.style_validation_fields('input#theCheckIn');
                     return;
                 }
                 loader.style.display = 'block';
@@ -1466,6 +1481,7 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
+        let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
         const {origin} = window.location;
@@ -1529,19 +1545,27 @@ export default class BasePortal {
             return value;
         }
 
+        const remove_city_search_for_event = () => {
+            if (this.page_name !== 'search-results') return;
+            if (!this.site_config.lodging.event_id) return;
+            utilities.waitForSelectorInDOM('.algolia-places').then(() => {
+                document.querySelector('.algolia-places').remove();
+                document.querySelector('#theSearchBox').firstChild.style.display = 'none';
+            });
+        };
+
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
 
             document.querySelector('form#searchForm').addEventListener('submit', (e) => {
                 e.preventDefault();
-
                 const rooms_value = setDropdownIndex('select#rooms');
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
-                const destination_value = document.querySelector('input#address-input').value;
                 const properties = `&properties=${original_params_url.get('properties')}`;
                 const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
                 const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
@@ -1551,13 +1575,18 @@ export default class BasePortal {
                 const cid = `&cid=${original_params_url.get('cid')}`;
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&destination=${destination_value}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
                 else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
                 else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
+                }
+
+                if (this.site_config.lodging.event_id === null) {
+                    destination_value = document.querySelector('input#address-input').value;
+                    url += `&destination=${destination_value}`;
                 }
 
                 function applyFilters() {
@@ -1607,6 +1636,7 @@ export default class BasePortal {
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
         removeArnSearchBar('input#city');
+        remove_city_search_for_event();
         prepopulateDestinationInputOnSearchHotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
@@ -1961,11 +1991,10 @@ export default class BasePortal {
             if (document.querySelector('.SinglePropDetail')) properties = document.querySelectorAll('.ArnNightlyRate');
 
             if (!properties) return;
-            console.log(properties);
 
             properties.forEach((property) => {
                 const percent = property.querySelector('div.percentSavings');
-                console.log(percent);
+
                 if (!percent) return;
 
                 percent.style.display = 'block';
@@ -1984,5 +2013,63 @@ export default class BasePortal {
         updatePercentSavingsText();
         showPercentSavingsFilter();
         showPercentSavingsOnProperties();
+    }
+
+    showStarsAndFilter() {
+        if (!this.site_config.show_stars) return;
+
+        document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+    }
+
+    showCoronavirusInfoBanner() {
+        if (this.site_id === 52342) return;
+
+        if (localStorage.getItem('covidAlertBanner') === 'closed') return;
+
+        document.body.insertAdjacentHTML(
+            'afterBegin',
+            `
+            <div class="info-banner">
+                <div class="message-content">
+                    <h1>Book with Confidence:</h1>
+                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">
+                        <h1>COVID-19 Update</h1> 
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
+                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
+                            </path>
+                        </svg>
+                    </a>
+                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">
+                        <h1>Cleaning Policies</h1>                    
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
+                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <button class="close-banner-button close-alert">X</button>
+            </div>
+        `
+        );
+
+        document.querySelector('.close-banner-button').addEventListener('click', (evt) => {
+            document.querySelector('.info-banner').style.display = 'none';
+            window.localStorage.setItem('covidAlertBanner', 'closed');
+        });
+    }
+
+    showCurrencySelect() {
+        if (this.site_config.show_currency_select === true) return;
+
+        const config_container = document.querySelector('.config-container');
+        const currency_element = document.querySelector('.currencies-container');
+
+        if (this.site_config.show_currency_select === false && this.site_config.show_language_select === false) {
+            config_container.style.display = 'none';
+            return;
+        }
+        if (this.site_config.show_currency_select === false) {
+            currency_element.style.display = 'none';
+        }
     }
 }

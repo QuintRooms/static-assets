@@ -1,6 +1,6 @@
 <?php 
-	$site_id = '52342';
-	$site_name = 'room_steals';
+	$site_id = '39624';
+	$site_name = 'cug_template';
 	$cug = false; 
 
 	$dist_name = $site_name . '-' . $site_id . '.js';

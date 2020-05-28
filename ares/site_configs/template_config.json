@@ -32,6 +32,7 @@
     "partner_hotel_text": "pPartner Hotel",
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
+    "show_stars": false,
     "show_language_select": true,
     "show_date_prompt": false,
     "fav_icon_url": "",

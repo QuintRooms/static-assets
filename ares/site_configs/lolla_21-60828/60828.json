@@ -27,6 +27,7 @@
     "dayjs_date_format": "M/D/YYYY",
     "show_stars": false,
     "show_language_select": false,
+    "show_currency_select": false,
     "show_date_prompt": false,
     "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/lolla_21-60828/img/favicon.png",
     "has_custom_styles": false,

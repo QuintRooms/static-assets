@@ -30,6 +30,7 @@
     "dayjs_date_format": "M/D/YYYY",
     "show_stars": true,
     "show_language_select": false,
+    "show_currency_select": false,
     "show_date_prompt": false,
     "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/cug_template-39624/img/favicon.png",
     "has_custom_styles": true,

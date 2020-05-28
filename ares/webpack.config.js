@@ -6,7 +6,7 @@ module.exports = {
         // 'cug_template-39624': './src/39624.js', // CUG Template
         // 'shaky_knees_21-49553': './src/49553.js', // Shaky Knees
         // 'room_steals-52342': './src/52342.js', // Room Steals
-        // 'tortuga_20-53474': './src/53474.js', // Tortuga
+        'tortuga_20-60036': './src/60036.js', // Tortuga
         // 'housing_template-60265': './src/60265.js', // Housing Template
         // 'voodoo_21-60792': './src/60792.js', // Voodoo
         // 'ares_child-60279': './src/60279.js', // Ares Child Test

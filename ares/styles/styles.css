@@ -2122,10 +2122,13 @@ legend {
     .SearchHotels #arnToggleMapDiv {
         display: block;
         text-align: right;
+        width: 125px;
     }
 
     .SearchHotels .ArnSortContainer {
         margin: 12px 0 36px 0px;
+        display: flex;
+        justify-content: space-between;
     }
 
     #arnOpenAnchorId {

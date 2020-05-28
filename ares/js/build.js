@@ -19,6 +19,7 @@ export default class BasePortal {
     }
 
     init() {
+        this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then((site_id) => {
             this.getSiteConfigJSON(site_id).then(async () => {
@@ -247,8 +248,26 @@ export default class BasePortal {
                 this.setInputToRequired('input#city');
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
+                this.showCoronavirusInfoBanner();
             });
         });
+    }
+
+    initializeARNRatesReadyEvent() {
+        function globalAjax() {
+            try {
+                setTimeout(() => {
+                    jQuery(document).trigger('ratesReadyEvent');
+                }, 1);
+            // eslint-disable-next-line no-empty
+            } catch (e) {}
+        }
+        // eslint-disable-next-line no-undef
+        Ajax.Responders.register({
+            onComplete: globalAjax,
+        });
+
+        globalAjax();
     }
 
     /**
@@ -751,6 +770,8 @@ export default class BasePortal {
     }
 
     keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count) {
+        if (!document.querySelector('#theCopyInfoAjax input')) return;
+
         document.querySelector('#theCopyInfoAjax input').addEventListener('click', () => {
             setTimeout(() => {
                 utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);
@@ -1045,7 +1066,7 @@ export default class BasePortal {
         if (!this.site_config) return;
 
         utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-        document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica' !important;}</style>`);
+        document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica';}</style>`);
     }
 
     // refactor me, please!
@@ -2182,7 +2203,7 @@ export default class BasePortal {
                 const cid = `&cid=${original_params_url.get('cid')}`;
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?currency=${this.currency}&type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -2621,10 +2642,47 @@ export default class BasePortal {
         showPercentSavingsFilter();
         showPercentSavingsOnProperties();
     }
-    
+
     showStarsAndFilter() {
         if (!this.site_config.show_stars) return;
 
         document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+    }
+
+    showCoronavirusInfoBanner() {
+        if (this.site_id === 52342) return;
+
+        if (localStorage.getItem('covidAlertBanner') === 'closed') return;
+
+        document.body.insertAdjacentHTML(
+            'afterBegin',
+            `
+            <div class="info-banner">
+                <div class="message-content">
+                    <h1>Book with Confidence:</h1>
+                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">
+                        <h1>COVID-19 Update</h1> 
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
+                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
+                            </path>
+                        </svg>
+                    </a>
+                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">
+                        <h1>Cleaning Policies</h1>                    
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
+                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <button class="close-banner-button close-alert">X</button>
+            </div>
+        `
+        );
+
+        document.querySelector('.close-banner-button').addEventListener('click', (evt) => {
+            document.querySelector('.info-banner').style.display = 'none';
+            window.localStorage.setItem('covidAlertBanner', 'closed');
+        });
     }
 }

@@ -2,7 +2,7 @@
     "site_id": 60279,
     "affiliate_id": 14808,
     "master_id": 920,
-    "site_type": "cug",
+    "site_type": "lodging",
     "algolia_app_id": "plCZXR0GZ7J1",
     "algolia_api_key": "b9763a419845b59957b8cc5c9b13440c",
     "currency": "USD",
@@ -14,11 +14,11 @@
         "event_id": 42099,
         "event_name": "Ares Child",
         "event_dates": "",
-        "is_lrg": false
+        "is_lrg": true
     },
     "cug":
     {
-        "is_cug": true,
+        "is_cug": false,
         "show_points": false,
         "allow_registration": false,
         "show_percent_savings": true
@@ -32,29 +32,29 @@
     "show_language_select": false,
     "show_date_prompt": false,
     "showStarRatings": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/favicon.png",
-    "has_custom_styles": false,
-    "custom_styles_url": "",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/acl_20-53336/img/favicon.png",
+    "has_custom_styles": true,
+    "custom_styles_url": "https://dev-static.hotelsforhope.com/ares/site_configs/acl_20-53336/53336.css",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png", 
-        "logo_outbound_url": "https://www.voodoofestival.com/",
+        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/acl_20-53336/img/logo.png", 
+        "logo_outbound_url": "https://www.aclfestival.com/",
         "background": "#fff",
-        "logo_flex_position": "center",
-        "logo_max_width": "300px"
+        "logo_flex_position": "space-between",
+        "logo_max_width": "400px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/banner.jpg) no-repeat center center /cover",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/favicon.png",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/acl_20-53336/img/banner.jpg) no-repeat center center /cover",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/acl_20-53336/img/favicon.png",
     "theme": "light",
-    "primary_color": "#5dc3ac",
-    "secondary_color": "#7487dd",
+    "primary_color": "#d6410f",
+    "secondary_color": "#00a081",
     "primary_text_color": "#fff",
-    "secondary_text_color": "#5dc3ac",
-    "border_color": "#5dc3ac",
+    "secondary_text_color": "#d6410f",
+    "border_color": "#d6410f",
     "button_hover_background_color": "#fff",
-    "button_hover_text_color": "#5dc3ac",
-    "button_hover_border_color": "#5dc3ac",
+    "button_hover_text_color": "#d6410f",
+    "button_hover_border_color": "#d6410f",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":

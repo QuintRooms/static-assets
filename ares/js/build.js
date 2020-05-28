@@ -249,7 +249,6 @@ export default class BasePortal {
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
                 this.showCoronavirusInfoBanner();
-                this.showCurrencySelect();
             });
         });
     }
@@ -260,7 +259,7 @@ export default class BasePortal {
                 setTimeout(() => {
                     jQuery(document).trigger('ratesReadyEvent');
                 }, 1);
-                // eslint-disable-next-line no-empty
+            // eslint-disable-next-line no-empty
             } catch (e) {}
         }
         // eslint-disable-next-line no-undef
@@ -1120,12 +1119,12 @@ export default class BasePortal {
         {
             "AED": {
                 "symbol": "AED",
-                "name": "United Arab Emirates Dirham",
+                "name": "UAE Dirham",
                 "symbol_native": "د.إ.‏",
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "AED",
-                "name_plural": "UAE dirhams"
+                "name_plural": "UAE Dirhams"
             },
             "AOA": {
                 "symbol": "Kz",
@@ -1142,7 +1141,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "AMD",
-                "name_plural": "Armenian drams"
+                "name_plural": "Armenian Drams"
             },
             "ARS": {
                 "symbol": "AR$",
@@ -1151,7 +1150,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "ARS",
-                "name_plural": "Argentine pesos"
+                "name_plural": "Argentine Pesos"
             },
             "AUD": {
                 "symbol": "AU$",
@@ -1177,7 +1176,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "AZN",
-                "name_plural": "Azerbaijani manats"
+                "name_plural": "Azerbaijani Manats"
             },
             "BBD": {
                 "symbol": "Bds$",
@@ -1194,7 +1193,7 @@ export default class BasePortal {
                 "decimal_digits": 3,
                 "rounding": 0,
                 "code": "BHD",
-                "name_plural": "Bahraini dinars"
+                "name_plural": "Bahraini Dinars"
             },
             "BMD": {
                 "symbol": "$",
@@ -1212,7 +1211,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "BRL",
-                "name_plural": "Brazilian reals"
+                "name_plural": "Brazilian Reals"
             },
             "BSD": {
                 "symbol": "B$",
@@ -1238,7 +1237,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0.05,
                 "code": "CHF",
-                "name_plural": "Swiss francs"
+                "name_plural": "Swiss Francs"
             },
             "CLP": {
                 "symbol": "CL$",
@@ -1247,7 +1246,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "CLP",
-                "name_plural": "Chilean pesos"
+                "name_plural": "Chilean Pesos"
             },
             "CNY": {
                 "symbol": "CN¥",
@@ -1256,7 +1255,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "CNY",
-                "name_plural": "Chinese yuan"
+                "name_plural": "Chinese Yuan"
             },
             "COP": {
                 "symbol": "CO$",
@@ -1265,7 +1264,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "COP",
-                "name_plural": "Colombian pesos"
+                "name_plural": "Colombian Pesos"
             },
             "CRC": {
                 "symbol": "₡",
@@ -1274,7 +1273,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "CRC",
-                "name_plural": "Costa Rican colóns"
+                "name_plural": "Costa Rican Colóns"
             },
             "CZK": {
                 "symbol": "Kč",
@@ -1283,7 +1282,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "CZK",
-                "name_plural": "Czech Republic korunas"
+                "name_plural": "Czech Republic Korunas"
             },
             "DKK": {
                 "symbol": "Dkr",
@@ -1292,7 +1291,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "DKK",
-                "name_plural": "Danish kroner"
+                "name_plural": "Danish Kroner"
             },
             "DZD": {
                 "symbol": "DA",
@@ -1301,7 +1300,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "DZD",
-                "name_plural": "Algerian dinars"
+                "name_plural": "Algerian Dinars"
             },
             "EGP": {
                 "symbol": "EGP",
@@ -1310,7 +1309,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "EGP",
-                "name_plural": "Egyptian pounds"
+                "name_plural": "Egyptian Pounds"
             },
             "EUR": {
                 "symbol": "€",
@@ -1319,7 +1318,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "EUR",
-                "name_plural": "euros"
+                "name_plural": "Euros"
             },
             "FJD": {
                 "symbol": "FJ$€",
@@ -1336,7 +1335,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "GBP",
-                "name_plural": "British pounds sterling"
+                "name_plural": "British Pounds Sterling"
             },
             "HKD": {
                 "symbol": "HK$",
@@ -1354,7 +1353,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "HUF",
-                "name_plural": "Hungarian forints"
+                "name_plural": "Hungarian Forints"
             },
             "IDR": {
                 "symbol": "Rp",
@@ -1363,7 +1362,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "IDR",
-                "name_plural": "Indonesian rupiahs"
+                "name_plural": "Indonesian Rupiahs"
             },
             "ISK": {
                 "symbol": "Ikr",
@@ -1372,7 +1371,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "ISK",
-                "name_plural": "Icelandic krónur"
+                "name_plural": "Icelandic Krónur"
             },
             "ILS": {
                 "symbol": "₪",
@@ -1381,7 +1380,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "ILS",
-                "name_plural": "Israeli new shekels"
+                "name_plural": "Israeli New Shekels"
             },
             "INR": {
                 "symbol": "Rs",
@@ -1390,7 +1389,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "INR",
-                "name_plural": "Indian rupees"
+                "name_plural": "Indian Rupees"
             },
             "JPY": {
                 "symbol": "¥",
@@ -1399,16 +1398,16 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "JPY",
-                "name_plural": "Japanese yen"
+                "name_plural": "Japanese Yen"
             },
             "KGS": {
-                "symbol": "Ksh",
+                "symbol": "Лв",
                 "name": "Kyrgyzstani Som",
-                "symbol_native": "Ksh",
+                "symbol_native": "Лв",
                 "decimal_digits": 2,
                 "rounding": 0,
-                "code": "KES",
-                "name_plural": "Kenyan shillings"
+                "code": "KGS",
+                "name_plural": "Kyrgyzstani Soms"
             },
             "KRW": {
                 "symbol": "₩",
@@ -1417,7 +1416,7 @@ export default class BasePortal {
                 "decimal_digits": 0,
                 "rounding": 0,
                 "code": "KRW",
-                "name_plural": "South Korean won"
+                "name_plural": "South Korean Won"
             },
             "KWD": {
                 "symbol": "KD",
@@ -1426,11 +1425,11 @@ export default class BasePortal {
                 "decimal_digits": 3,
                 "rounding": 0,
                 "code": "KWD",
-                "name_plural": "Kuwaiti dinars"
+                "name_plural": "Kuwaiti Dinars"
             },
             "KYD": {
                 "symbol": "$",
-                "name": "Cayman Islands dollar",
+                "name": "Cayman Islands Dollar",
                 "symbol_native": "$‏",
                 "decimal_digits": 2,
                 "rounding": 0,
@@ -1444,7 +1443,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "KZT",
-                "name_plural": "Kazakhstani tenges"
+                "name_plural": "Kazakhstani Tenges"
             },
             "LVL": {
                 "symbol": "Ls",
@@ -1453,7 +1452,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "LVL",
-                "name_plural": "Latvian lati"
+                "name_plural": "Latvian Lati"
             },
             "MAD": {
                 "symbol": "MAD",
@@ -1462,7 +1461,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "MAD",
-                "name_plural": "Moroccan dirhams"
+                "name_plural": "Moroccan Dirhams"
             },
             "MXN": {
                 "symbol": "MX$",
@@ -1471,7 +1470,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "MXN",
-                "name_plural": "Mexican pesos"
+                "name_plural": "Mexican Pesos"
             },
             "MYR": {
                 "symbol": "RM",
@@ -1480,7 +1479,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "MYR",
-                "name_plural": "Malaysian ringgits"
+                "name_plural": "Malaysian Ringgits"
             },
             "NGN": {
                 "symbol": "₦",
@@ -1489,7 +1488,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "NGN",
-                "name_plural": "Nigerian nairas"
+                "name_plural": "Nigerian Nairas"
             },
             "NOK": {
                 "symbol": "Nkr",
@@ -1498,7 +1497,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "NOK",
-                "name_plural": "Norwegian kroner"
+                "name_plural": "Norwegian Kroner"
             },
             "NZD": {
                 "symbol": "NZ$",
@@ -1516,7 +1515,7 @@ export default class BasePortal {
                 "decimal_digits": 3,
                 "rounding": 0,
                 "code": "OMR",
-                "name_plural": "Omani rials"
+                "name_plural": "Omani Rials"
             },
             "PAB": {
                 "symbol": "B/.",
@@ -1525,7 +1524,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "PAB",
-                "name_plural": "Panamanian balboas"
+                "name_plural": "Panamanian Balboas"
             },
             "PGK": {
                 "symbol": "K",
@@ -1542,7 +1541,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "PHP",
-                "name_plural": "Philippine pesos"
+                "name_plural": "Philippine Pesos"
             },
             "PLN": {
                 "symbol": "zł",
@@ -1551,7 +1550,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "PLN",
-                "name_plural": "Polish zlotys"
+                "name_plural": "Polish Zlotys"
             },
             "QAR": {
                 "symbol": "QR",
@@ -1560,7 +1559,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "QAR",
-                "name_plural": "Qatari rials"
+                "name_plural": "Qatari Rials"
             },
             "RON": {
                 "symbol": "RON",
@@ -1569,7 +1568,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "RON",
-                "name_plural": "Romanian lei"
+                "name_plural": "Romanian Lei"
             },
             "RUB": {
                 "symbol": "RUB",
@@ -1578,7 +1577,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "RUB",
-                "name_plural": "Russian rubles"
+                "name_plural": "Russian Rubles"
             },
             "SAR": {
                 "symbol": "SR",
@@ -1587,7 +1586,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "SAR",
-                "name_plural": "Saudi riyals"
+                "name_plural": "Saudi Riyals"
             },
             "SEK": {
                 "symbol": "Skr",
@@ -1596,7 +1595,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "SEK",
-                "name_plural": "Swedish kronor"
+                "name_plural": "Swedish Kronor"
             },
             "SGD": {
                 "symbol": "S$",
@@ -1614,7 +1613,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "THB",
-                "name_plural": "Thai baht"
+                "name_plural": "Thai Baht"
             },
             "TRY": {
                 "symbol": "TL",
@@ -1650,7 +1649,7 @@ export default class BasePortal {
                 "decimal_digits": 2,
                 "rounding": 0,
                 "code": "UAH",
-                "name_plural": "Ukrainian hryvnias"
+                "name_plural": "Ukrainian Hryvnias"
             },
             "USD": {
                 "symbol": "$",
@@ -1695,27 +1694,25 @@ export default class BasePortal {
             const menu_container = document.createElement('div');
             const all_currencies_container = document.createElement('div');
             const top_currencies = `
+            <h4>Top Currencies</h4>
             <div class="top-currencies">
-                <h4>Top Currencies</h4>
-                <div>
-                    <span><strong>${currencies_json['AUD']['code']}</strong> - ${currencies_json['AUD']['name']}</span>
-                    <span><strong>${currencies_json['CAD']['code']}</strong> - ${currencies_json['CAD']['name']}</span>
-                    <span><strong>${currencies_json['EUR']['code']}</strong> - ${currencies_json['EUR']['name']}</span>
-                    <span><strong>${currencies_json['MXN']['code']}</strong> - ${currencies_json['MXN']['name']}</span>
-                    <span><strong>${currencies_json['GBP']['code']}</strong> - ${currencies_json['GBP']['name']}</span>
-                    <span><strong>${currencies_json['USD']['code']}</strong> - ${currencies_json['USD']['name']}</span>
-                </div>
-
-                <h4>All Currencies</h4>
-            </div>`;
+                <span id="AUD"><strong>${currencies_json['AUD']['code']}</strong> - ${currencies_json['AUD']['name']}</span>
+                <span id="CAD"><strong>${currencies_json['CAD']['code']}</strong> - ${currencies_json['CAD']['name']}</span>
+                <span id="EUR"><strong>${currencies_json['EUR']['code']}</strong> - ${currencies_json['EUR']['name']}</span>
+                <span id="MXN"><strong>${currencies_json['MXN']['code']}</strong> - ${currencies_json['MXN']['name']}</span>
+                <span id="GBP"><strong>${currencies_json['GBP']['code']}</strong> - ${currencies_json['GBP']['name']}</span>
+                <span id="USD"><strong>${currencies_json['USD']['code']}</strong> - ${currencies_json['USD']['name']}</span>
+            </div>
+            <h4>All Currencies</h4>
+            `;
 
             menu_container.insertAdjacentHTML('afterBegin', top_currencies)
             menu_container.classList.add('currency-content');
             
-            all_currencies_container.classList.add('all-currencies-container');
+            all_currencies_container.classList.add('all-currencies');
 
             for(const currency in currencies_json){
-                all_currencies_container.insertAdjacentHTML('beforeEnd', `<div id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency]['name']}</div>`);
+                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency]['name']}</span>`);
             }
 
             menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
@@ -1729,6 +1726,7 @@ export default class BasePortal {
             const dropdown = document.querySelector('.dropdown');
 
             if(!dropdown) return;
+
             dropdown.addEventListener('click', (e) => {
                 let clicked_currency = e.target.id;
                 params.delete('currency');
@@ -1738,106 +1736,19 @@ export default class BasePortal {
             });
         }
 
+        const styleActiveCurrency = () => {
+            const active_currency_meta = document.querySelector('meta[name="currency"]');
+
+            if(!active_currency_meta) return;
+
+            const active_currency = active_currency_meta.content;
+            document.querySelector(`#${active_currency}`).classList.add('active-currency');
+        }
+
         setupContentForDropdown();
         updateParamOnCurrencyClick();
+        styleActiveCurrency();
 
-        // let currencies = '';
-        // let clicked_currency;
-        // const currencies_obj = {};
-        // let selected_currency = '';
-        // let submit;
-        // let currencies_select;
-        // let currencies_node_list;
-        
-        // const currency_label = document.querySelector('#currency-label');
-        // const currencies_container = document.querySelector('.currencies');
-        // const config_container = document.querySelector('.config-container');
-        // const top_currencies_container = document.querySelector('.top-currencies');
-
-        // if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
-        //     submit = document.querySelector('#theOtherSubmitButton');
-        //     currencies_select = document.querySelector('#CurrenciesContainer select');
-        //     currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
-        // } else if (this.page_name === 'property-detail') {
-        //     submit = document.querySelector('.CheckRates .submit');
-        //     currencies_select = document.querySelector('.ArnCurrency select');
-        //     currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
-        // }
-
-        // if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
-
-        // currencies_node_list.forEach((currency) => {
-        //     if (currency.getAttribute('selected')) {
-        //         selected_currency = currency.value;
-        //     }
-
-        //     currencies_obj[currency.label] = currency.value;
-        // });
-
-        // currencies = Object.entries(currencies_obj);
-
-        // currencies.forEach((currency) => {
-        //     console.log(currency)
-        //     if (
-        //         currency[0] === 'United States Dollars' ||
-        //         currency[0] === 'Euro' ||
-        //         currency[0] === 'United Kingdom Pounds' ||
-        //         currency[0] === 'Mexico Pesos' ||
-        //         currency[0] === 'Canada Dollars' ||
-        //         currency[0] === 'Australia Dollars'
-        //     ) {
-        //         top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-        //     }
-
-        //     currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-        // });
-
-        // currency_label.addEventListener('click', () => {
-        //     currencies_container.classList.toggle('show-currencies-container');
-
-        //     // return if ie - ie can't toggle an svg
-        //     if (window.document.documentMode) return;
-
-        //     currency_label.querySelector('svg').classList.toggle('flip-svg');
-        // });
-
-        // currencies_container.addEventListener('click', (e) => {
-        //     if (!e.target.getAttribute('id')) return;
-
-        //     clicked_currency = e.target.getAttribute('id');
-        //     document.querySelector('.active-currency').classList.remove('active-currency');
-        //     document.getElementById(clicked_currency).classList.add('active-currency');
-        //     currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
-        //     currencies_select.value = clicked_currency;
-
-        //     // submit.click();
-        //     const url = new URL(window.location.href);
-        //     const params = new URLSearchParams(url.search);
-        //     params.set('currency', clicked_currency)
-        //     console.log('Output: createCurrencyDropDown -> params', clicked_currency.tex);
-        // });
-
-        // document.getElementById(selected_currency).classList.add('active-currency');
-
-        // window.addEventListener('click', (e) => {
-        //     if (document.querySelector('.show-currencies-container')) {
-        //         if (
-        //             e.target === document.querySelector('.currencies') ||
-        //             e.target === document.querySelector('#currency-label') ||
-        //             e.target.parentNode === document.querySelector('.currencies') ||
-        //             e.target.parentNode === document.querySelector('.top-currencies')
-        //         )
-        //             return;
-
-        //         currencies_container.classList.toggle('show-currencies-container');
-
-        //         // return if ie - ie can't toggle svgs
-        //         if (window.document.documentMode) return;
-        //         currency_label.querySelector('svg').classList.toggle('flip-svg');
-        //     }
-        // });
-
-        // currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
     }
 
     setupDatePrompt() {
@@ -2685,20 +2596,5 @@ export default class BasePortal {
             document.querySelector('.info-banner').style.display = 'none';
             window.localStorage.setItem('covidAlertBanner', 'closed');
         });
-    }
-
-    showCurrencySelect() {
-        if (this.site_config.show_currency_select === true) return;
-
-        const config_container = document.querySelector('.config-container');
-        const currency_element = document.querySelector('.currencies-container');
-
-        if (this.site_config.show_currency_select === false && this.site_config.show_language_select === false) {
-            config_container.style.display = 'none';
-            return;
-        }
-        if (this.site_config.show_currency_select === false) {
-            currency_element.style.display = 'none';
-        }
     }
 }

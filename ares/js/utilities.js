@@ -181,17 +181,12 @@ export default class Utilities {
     }
 
     /**
-     *@description creates custom tag in a properties image
-     *@param string text - text of tag
-     *@param int propId - property id to add the tag to
+     *@description creates dropdown menu container
+     *@param string label_selector - selector of the label that will open the dropdown on click
+     *@param string dropdown_html - html that will display in the dropdown
+     *@param string content_selector_to_show - selector for the container containing content to show on click
+     *@param string content_parent - selector of parent content will be appended to
      */
-    addPropThumbTag(text, propId) {
-        if (!document.querySelector(`#theArnProperty${propId} .ArnPropThumb > .propThumbTag`) && document.querySelector(`#theArnProperty${propId}`)) {
-            const property_thumbnail = document.querySelector(`#theArnProperty${propId} .ArnPropThumb`);
-            property_thumbnail.insertAdjacentHTML('afterbegin', `<div class="propThumbTag">${text}</div>`);
-        }
-    }
-
     createDropdownMenu(label_selector, dropdown_html, content_selector_to_show, content_parent) {
         const label = document.querySelector(label_selector);
         const parent = document.querySelector(content_parent);
@@ -211,5 +206,17 @@ export default class Utilities {
                 content_to_show.classList.toggle('show-dropdown');
             }
         });
+    }
+
+    /**
+     *@description creates custom tag in a properties image
+     *@param string text - text of tag
+     *@param int propId - property id to add the tag to
+     */
+    addPropThumbTag(text, propId) {
+        if (!document.querySelector(`#theArnProperty${propId} .ArnPropThumb > .propThumbTag`) && document.querySelector(`#theArnProperty${propId}`)) {
+            const property_thumbnail = document.querySelector(`#theArnProperty${propId} .ArnPropThumb`);
+            property_thumbnail.insertAdjacentHTML('afterbegin', `<div class="propThumbTag">${text}</div>`);
+        }
     }
 }

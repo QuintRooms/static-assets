@@ -41,7 +41,7 @@ if(strpos($url, 'index') !== false || 'search-results' !== false){
     echo '
         <div class="config-container">
             <div class="currencies-container">
-                <div id="currency-label"><span>Currency</span>
+                <div class="config-label" id="currency-label"><span>Currency</span>
                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve">
                         <polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
                     </svg>
@@ -55,7 +55,7 @@ if(strpos($url, 'index') !== false || 'search-results' !== false){
                 </div>-->
             </div>
             <div id="language">
-                <div id="language-label"><span><span id="flag"></span>Language</span>
+                <div class="config-label" id="language-label"><span><span id="flag"></span>Language</span>
                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve">
                         <polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
                     </svg>

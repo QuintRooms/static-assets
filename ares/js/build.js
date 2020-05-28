@@ -297,7 +297,7 @@ export default class BasePortal {
         if (window.location.href.includes('arn_html')) {
             path = `/ares/site_configs/${directory_name}/${site_id}.json`;
         } else {
-            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}`;
         }
 
         try {
@@ -305,7 +305,6 @@ export default class BasePortal {
                 .then((response) => response.json())
                 .then((json) => {
                     this.site_config = json;
-                    console.log('site_config:', json);
                 });
         } catch (error) {
             console.log('could not get site config', error);

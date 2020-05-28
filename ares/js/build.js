@@ -249,6 +249,7 @@ export default class BasePortal {
                 this.setInputToRequired('input#theCheckIn');
                 this.resizeViewportForMapMobile();
                 this.showCoronavirusInfoBanner();
+                this.showCurrencySelect();
             });
         });
     }
@@ -259,7 +260,7 @@ export default class BasePortal {
                 setTimeout(() => {
                     jQuery(document).trigger('ratesReadyEvent');
                 }, 1);
-            // eslint-disable-next-line no-empty
+                // eslint-disable-next-line no-empty
             } catch (e) {}
         }
         // eslint-disable-next-line no-undef
@@ -2684,5 +2685,20 @@ export default class BasePortal {
             document.querySelector('.info-banner').style.display = 'none';
             window.localStorage.setItem('covidAlertBanner', 'closed');
         });
+    }
+
+    showCurrencySelect() {
+        if (this.site_config.show_currency_select === true) return;
+
+        const config_container = document.querySelector('.config-container');
+        const currency_element = document.querySelector('.currencies-container');
+
+        if (this.site_config.show_currency_select === false && this.site_config.show_language_select === false) {
+            config_container.style.display = 'none';
+            return;
+        }
+        if (this.site_config.show_currency_select === false) {
+            currency_element.style.display = 'none';
+        }
     }
 }

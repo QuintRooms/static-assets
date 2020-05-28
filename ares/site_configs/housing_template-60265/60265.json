@@ -30,6 +30,7 @@
     "dayjs_date_format": "M/D/YYYY",
     "show_stars": false,
     "show_language_select": true,
+    "show_currency_select": false,
     "show_date_prompt": false,
     "fav_icon_url": "https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png",
     "has_custom_styles": false,

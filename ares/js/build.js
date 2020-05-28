@@ -770,6 +770,8 @@ export default class BasePortal {
     }
 
     keepHeaderConsistentWhenSameAsLastGuestClicked(reservation_count) {
+        if (!document.querySelector('#theCopyInfoAjax input')) return;
+
         document.querySelector('#theCopyInfoAjax input').addEventListener('click', () => {
             setTimeout(() => {
                 utilities.updateHTML(`.RoomNumber-${reservation_count} > legend`, `Billing Info`);

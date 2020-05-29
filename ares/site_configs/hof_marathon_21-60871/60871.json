@@ -42,9 +42,9 @@
         "logo_outbound_url": "https://www.hofmarathon.com/",
         "background": "#fff",
         "logo_flex_position": "center",
-        "logo_max_width": "300px"
+        "logo_max_width": "200px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/banner.jpg) no-repeat center center /cover",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/banner.png) no-repeat center center /cover",
     "map_marker_image_url": "",
     "theme": "light",
     "primary_color": "#38831F",

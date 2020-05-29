@@ -1626,7 +1626,7 @@ export default class BasePortal {
                 }
                 if (this.page_name === 'search-results') {
                     no_null_params.forEach((param) => {
-                        if (param !== null) {
+                        if (!param.includes('null')) {
                             built_url += param;
                         }
                     });

@@ -3257,6 +3257,7 @@ body.HoldRoomsForm {
 .leaflet-container .leaflet-marker-pane img {
     max-width: 50px !important;
     z-index: 8001!important;
+    border-radius: 50%;
 }
 
 .discountPercent {

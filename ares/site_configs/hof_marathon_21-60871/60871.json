@@ -32,7 +32,7 @@
     "show_language_select": false,
     "show_currency_select": false,
     "show_date_prompt": false,
-    "fav_icon_url": "",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/logo.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
@@ -45,7 +45,7 @@
         "logo_max_width": "200px"
     },
     "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/banner2.jpg) no-repeat center center /cover",
-    "map_marker_image_url": "",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/logo.png",
     "theme": "light",
     "primary_color": "#38831F",
     "secondary_color": "#D02730",

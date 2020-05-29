@@ -225,7 +225,6 @@ select#adults {
     display: flex;
 }
 
-.config-label,
 .config-label
  {
     cursor: pointer;
@@ -235,12 +234,13 @@ select#adults {
     justify-content: space-between;
 }
 
-.config-label span,
-.config-label span 
-{
+.config-label span{
     pointer-events: none;
     padding: 2px;
+    margin-right: 12px;
     display: flex;
+    white-space: nowrap;
+    overflow: hidden;
 }
  
 .config-label {
@@ -313,6 +313,9 @@ select#adults {
 /* Language Dropdown End */
 
 /* Currency Dropdown Start */
+#CurrenciesContainer{
+    display: none;
+}
 
 .currency-content{
     padding: 12px;
@@ -3196,13 +3199,10 @@ body.HoldRoomsForm {
     margin: 0 auto;
 }
 
-.arn-green-marker-icon {
-    max-width: 50px;
-    background: #fff;
-    padding: 8px;
-    border-radius: 100%;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
+.leaflet-container .leaflet-marker-pane img {
     max-width: 50px !important;
+    z-index: 8001!important;
+    border-radius: 50%;
 }
 
 .discountPercent {

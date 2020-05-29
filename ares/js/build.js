@@ -296,7 +296,7 @@ export default class BasePortal {
         if (window.location.href.includes('arn_html')) {
             path = `/ares/site_configs/${directory_name}/${site_id}.json`;
         } else {
-            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}/${site_id}.json`;
+            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}`;
         }
 
         try {
@@ -304,7 +304,6 @@ export default class BasePortal {
                 .then((response) => response.json())
                 .then((json) => {
                     this.site_config = json;
-                    console.log('site_config:', json);
                 });
         } catch (error) {
             console.log('could not get site config', error);
@@ -1721,22 +1720,26 @@ export default class BasePortal {
         }
 
         const updateParamOnCurrencyClick = () => {
-            const url = new URL(window.location.href);
-            const params = new URLSearchParams(url.search);
+            const params = new URLSearchParams(window.location.search);
             const dropdown = document.querySelector('.dropdown');
 
             if(!dropdown) return;
 
             dropdown.addEventListener('click', (e) => {
                 let clicked_currency = e.target.id;
-                
+
+                if(!clicked_currency) return;
+
                 document.querySelector('.active-currency').classList.remove('active-currency');
                 document.querySelector(`#${clicked_currency}`).classList.add('active-currency');
 
-                params.delete('currency');
-                params.set('currency', clicked_currency);
+                document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
 
-                if(this.page_name === 'search-results') window.location.href = url.host + url.pathname + '?' + decodeURIComponent(params);
+                if(this.page_name === 'search-results' || this.page_name === 'landing-page') {
+                    console.log(clicked_currency)
+                    params.set('currency', clicked_currency)
+                    window.location.search = params.toString();
+                }
             });
         }
 
@@ -1746,7 +1749,10 @@ export default class BasePortal {
             if(!active_currency_meta) return;
 
             const active_currency = active_currency_meta.content;
+
             document.querySelector(`#${active_currency}`).classList.add('active-currency');
+
+            document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
         }
 
         setupContentForDropdown();

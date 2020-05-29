@@ -191,4 +191,17 @@ export default class Utilities {
             property_thumbnail.insertAdjacentHTML('afterbegin', `<div class="propThumbTag">${text}</div>`);
         }
     }
+
+    /**
+     *@description Replaces the "No Vacancy" text with "Rates Coming Soon" for all prop ids passed in.
+     *@param Array Numbers - property id
+     */
+    ratesComingSoon([props]) {
+        if (!document.querySelector('.SearchHotels')) return;
+        props.forEach((prop) => {
+            if (document.querySelector(`#theArnProperty${prop} .ArnLimitedAvail`)) {
+                document.querySelector(`#theArnProperty${prop} .ArnLimitedAvail`).textContent = 'Rates Coming Soon';
+            }
+        });
+    }
 }

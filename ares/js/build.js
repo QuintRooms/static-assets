@@ -1563,8 +1563,8 @@ export default class BasePortal {
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
                 const properties = `&properties=${original_params_url.get('properties')}`;
                 const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
                 const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
@@ -1572,6 +1572,8 @@ export default class BasePortal {
                 const group_id = `&groupid=${original_params_url.get('groupid')}`;
                 const page_size = `&pageSize=${original_params_url.get('pageSize')}`;
                 const cid = `&cid=${original_params_url.get('cid')}`;
+
+                const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
 
                 const build_url = (lat, lng) => {
                     url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
@@ -1612,7 +1614,7 @@ export default class BasePortal {
 
                 applyFilters();
 
-                const built_url = new URL(url);
+                let built_url = new URL(url);
                 const amenities = checked_amenities.slice(0, -1);
                 const stars = checked_stars.slice(0, -1);
 
@@ -1623,7 +1625,12 @@ export default class BasePortal {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
                 if (this.page_name === 'search-results') {
-                    window.location.href = `${decodeURIComponent(built_url)}${properties}${utm_source}${location_label}${radius}${group_id}${page_size}${cid}`;
+                    no_null_params.forEach((param) => {
+                        if (param !== null) {
+                            built_url += param;
+                        }
+                    });
+                    window.location.href = decodeURIComponent(built_url);
                 } else window.location.href = decodeURIComponent(built_url);
             });
         };

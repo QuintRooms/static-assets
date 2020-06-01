@@ -12,7 +12,7 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-utilities.ratesComingSoon([
+const props = [
     33602,
     24968,
     20578,
@@ -43,4 +43,6 @@ utilities.ratesComingSoon([
     208598,
     3388,
     614462,
-]);
+];
+
+utilities.ratesComingSoon(props);

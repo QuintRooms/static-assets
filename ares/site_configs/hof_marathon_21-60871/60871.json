@@ -1,8 +1,8 @@
 {
-    "site_id": 53474,
-    "affiliate_id": 16365,
+    "site_id": 60871,
+    "affiliate_id": 17493,
     "master_id": 920,
-    "site_type": "noLRG",
+    "site_type": "lodging",
     "algolia_app_id": "plCZXR0GZ7J1",
     "algolia_api_key": "b9763a419845b59957b8cc5c9b13440c",
     "currency": "USD",
@@ -11,9 +11,9 @@
     "radius": "50",
     "lodging":
     {
-        "event_id": 41307,
-        "event_name": "Tortuga Music Festival",
-        "event_dates": "",
+        "event_id": 42001,
+        "event_name": "Pro Football Hall of Fame Marathon",
+        "event_dates": "05/01/2021 - 05/02/2021",
         "is_lrg": false
     },
     "cug":
@@ -29,49 +29,43 @@
     "show_tax_inclusive_rates": false,
     "dayjs_date_format": "M/D/YYYY",
     "show_stars": false,
-    "show_language_select": true,
+    "show_language_select": false,
     "show_currency_select": false,
     "show_date_prompt": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
+    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/logo.png",
-        "logo_outbound_url": "https://www.tortugamusicfestival.com",
-        "background": "url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/header-bg.png)",
+        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/logo.png", 
+        "logo_outbound_url": "https://www.hofmarathon.com/",
+        "background": "#fff",
         "logo_flex_position": "center",
-        "logo_max_width": "600px"
+        "logo_max_width": "200px"
     },
-    "banner_image_url": "center/cover no-repeat url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/banner.jpg)",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/banner2.jpg) no-repeat center center /cover",
+    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/favicon.png",
     "theme": "light",
-    "primary_color": "#04539e",
-    "secondary_color": "#00a3df",
+    "primary_color": "#38831F",
+    "secondary_color": "#D02730",
     "primary_text_color": "#fff",
-    "secondary_text_color": "",
-    "border_color": "#04539e",
+    "secondary_text_color": "#38831F",
+    "border_color": "#38831F",
     "button_hover_background_color": "#fff",
-    "button_hover_text_color": "#04539e",
-    "button_hover_border_color": "#04539e",
+    "button_hover_text_color": "#38831F",
+    "button_hover_border_color": "#38831F",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":
     {
         "sidebar_ad":
         {
-            "is_active": true,
-            "image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/ad.png",
-            "outbound_url": "http://rocktheocean.com/"
-        },
-        "between_property_ad":
-        {
             "is_active": false,
             "image_url": "",
             "outbound_url": ""
         },
-        "confirmation_page_top":
+        "between_property_ad":
         {
             "is_active": false,
             "image_url": "",

@@ -1141,7 +1141,6 @@ div.autocomplete ul li.selected {
     }
 
     .SearchHotels .ArnSecondarySearchOuterContainer,
-    .SearchHotels #HotelNameContainer,
     .SearchHotels .ArnSearchHeader,
     .SearchHotels .subHeaderContainer .translateMe {
         display: none;
@@ -3257,6 +3256,7 @@ body.HoldRoomsForm {
 .leaflet-container .leaflet-marker-pane img {
     max-width: 50px !important;
     z-index: 8001!important;
+    border-radius: 50%;
 }
 
 .discountPercent {
@@ -3430,9 +3430,6 @@ div.custom-tag {
     padding: 5px;
 }
 
-.SearchHotels #HotelNameContainer {
-    display: none;
-}
 /* autocomplete styles start */
 
 /* clears the 'X' from Internet Explorer */
@@ -3462,6 +3459,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-input {
     height: initial;
+    border-radius: 0px;
 }
 
 .ap-name {

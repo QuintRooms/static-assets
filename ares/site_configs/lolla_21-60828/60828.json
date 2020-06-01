@@ -47,7 +47,7 @@
     "primary_color": "#00af9a",
     "secondary_color": "#7018d7",
     "primary_text_color": "#fff",
-    "secondary_text_color": "#333",
+    "secondary_text_color": "#00af9a",
     "border_color": "#00af9a",
     "button_hover_background_color": "#fff",
     "button_hover_text_color": "#7018d7",

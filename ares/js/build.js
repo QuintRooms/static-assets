@@ -1515,7 +1515,7 @@ export default class BasePortal {
             document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
         }
 
-        function prepopulateDestinationInputOnSearchHotels() {
+        function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;
 
             const destination = search_params.get('destination');
@@ -1546,7 +1546,7 @@ export default class BasePortal {
 
         const remove_city_search_for_event = () => {
             if (this.page_name !== 'search-results') return;
-            if (!this.site_config.lodging.event_id) return;
+            if (this.site_config.site_type.toLowerCase() === 'cug') return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
                 document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
@@ -1585,10 +1585,19 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
-                if (this.site_config.lodging.event_id === null) {
+                if (this.site_config.cug.is_cug) {
                     destination_value = document.querySelector('input#address-input').value;
                     url += `&destination=${destination_value}`;
                 }
+
+                function getOptionalHotelName() {
+                    if (this.page_name !== 'search-results') return;
+                    if (document.querySelector('input#hotelName').value === '') return;
+                    const hotel_name = `&hotelname=${document.querySelector('input#hotelName').value}`;
+                    url += hotel_name;
+                }
+
+                getOptionalHotelName();
 
                 function applyFilters() {
                     const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');
@@ -1643,7 +1652,7 @@ export default class BasePortal {
         );
         removeArnSearchBar('input#city');
         remove_city_search_for_event();
-        prepopulateDestinationInputOnSearchHotels();
+        prepopulateInputsOnSearchHotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
@@ -1653,7 +1662,7 @@ export default class BasePortal {
             hideArnSearchElements('img.arn-green-marker-icon');
         });
 
-        hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
+        hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch');
         construct_url_on_submit();
 
         (() => {

@@ -3431,9 +3431,6 @@ div.custom-tag {
     padding: 5px;
 }
 
-.SearchHotels #HotelNameContainer {
-    display: none;
-}
 /* autocomplete styles start */
 
 /* clears the 'X' from Internet Explorer */

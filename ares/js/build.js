@@ -2,8 +2,27 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
+import SiteConfig from './get-site-config';
 
 const dayjs = require('dayjs');
+const site_config = new SiteConfig();
+
+// console.log(site_config.path)
+// console.log(site_config.site_id)
+// const aaa = `http://static-assets.localhost/ares/site_configs/${site_config.path}/${site_config.site_id}-config.js`;
+// console.log(aaa)
+// const test = require(aaa);
+// console.log(test)
+
+(async () => {
+    console.log('ladsj;algh')
+    const moduleSpecifier = `http://static-assets.localhost/ares/site_configs/${site_config.path}/${site_config.site_id}-config.mjs`;
+    const module = await import(moduleSpecifier)
+    console.log(module.path);
+
+  })();
+
+
 
 const utilities = new Utilities();
 
@@ -293,9 +312,9 @@ export default class BasePortal {
 
     async getSiteConfigJSON(site_id) {
         let path = '';
-        const directory_name = this.getDirectoryName();
+        // const directory_name = this.getDirectoryName();
         if (window.location.href.includes('arn_html')) {
-            path = `/ares/site_configs/${directory_name}/${site_id}.json`;
+            path = `/ares/site_configs/${site_config.path}/${site_config.site_id}.js`;
         } else {
             path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}`;
         }

@@ -7,4 +7,4 @@ class ChildPortal extends BasePortal {
     }
 }
 
-new ChildPortal();
+// new ChildPortal();

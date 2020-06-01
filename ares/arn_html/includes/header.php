@@ -1,6 +1,5 @@
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
-<meta name="directory_name" content="<?php echo $directory_name ?>">
-
+<meta name="config_details" path="hof_marathon_21-60871" site_id="60871">
 <?php
 $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 if($cug && strpos($url, 'auth') === false){

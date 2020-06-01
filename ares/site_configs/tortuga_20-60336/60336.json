@@ -32,20 +32,20 @@
     "show_language_select": true,
     "show_currency_select": false,
     "show_date_prompt": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
+    "fav_icon_url": "https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/logo.png",
+        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/logo.png",
         "logo_outbound_url": "https://www.tortugamusicfestival.com",
-        "background": "url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/header-bg.png)",
+        "background": "url(https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/header-bg.png)",
         "logo_flex_position": "center",
         "logo_max_width": "600px"
     },
-    "banner_image_url": "center/cover no-repeat url(https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/banner.jpg)",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
+    "banner_image_url": "center/cover no-repeat url(https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/banner.jpg)",
+    "map_marker_image_url": "https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/favicon.png",
     "theme": "light",
     "primary_color": "#04539e",
     "secondary_color": "#00a3df",
@@ -62,7 +62,7 @@
         "sidebar_ad":
         {
             "is_active": true,
-            "image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/ad.png",
+            "image_url": "https://static.hotelsforhope.com/ares/site_configs/tortuga_20-60336/img/ad.png",
             "outbound_url": "http://rocktheocean.com/"
         },
         "between_property_ad":

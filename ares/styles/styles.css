@@ -3459,6 +3459,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-input {
     height: initial;
+    border-radius: 0px;
 }
 
 .ap-name {

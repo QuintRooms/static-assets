@@ -1590,14 +1590,14 @@ export default class BasePortal {
                     url += `&destination=${destination_value}`;
                 }
 
-                function getOptionalHotelName() {
+                const get_optional_hotel_name = () => {
                     if (this.page_name !== 'search-results') return;
                     if (document.querySelector('input#hotelName').value === '') return;
                     const hotel_name = `&hotelname=${document.querySelector('input#hotelName').value}`;
                     url += hotel_name;
-                }
+                };
 
-                getOptionalHotelName();
+                get_optional_hotel_name();
 
                 function applyFilters() {
                     const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');

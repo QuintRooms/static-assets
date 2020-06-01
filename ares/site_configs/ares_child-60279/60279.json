@@ -18,7 +18,7 @@
     },
     "cug":
     {
-        "is_cug": false,
+        "is_cug": true,
         "show_points": false,
         "allow_registration": false,
         "show_percent_savings": true

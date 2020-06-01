@@ -1141,7 +1141,6 @@ div.autocomplete ul li.selected {
     }
 
     .SearchHotels .ArnSecondarySearchOuterContainer,
-    .SearchHotels #HotelNameContainer,
     .SearchHotels .ArnSearchHeader,
     .SearchHotels .subHeaderContainer .translateMe {
         display: none;

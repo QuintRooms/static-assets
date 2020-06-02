@@ -1483,7 +1483,7 @@ export default class BasePortal {
             document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
         }
 
-        function prepopulateDestinationInputOnSearchHotels() {
+        function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;
 
             const destination = search_params.get('destination');
@@ -1514,7 +1514,7 @@ export default class BasePortal {
 
         const remove_city_search_for_event = () => {
             if (this.page_name !== 'search-results') return;
-            if (!this.site_config.lodging.event_id) return;
+            if (this.site_config.site_type.toLowerCase() === 'cug') return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
                 document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
@@ -1531,8 +1531,8 @@ export default class BasePortal {
                 const adults_value = setDropdownIndex('select#adults');
                 const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
                 const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-
                 const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
                 const properties = `&properties=${original_params_url.get('properties')}`;
                 const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
                 const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
@@ -1540,6 +1540,8 @@ export default class BasePortal {
                 const group_id = `&groupid=${original_params_url.get('groupid')}`;
                 const page_size = `&pageSize=${original_params_url.get('pageSize')}`;
                 const cid = `&cid=${original_params_url.get('cid')}`;
+
+                const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
 
                 const build_url = (lat, lng) => {
                     url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
@@ -1551,10 +1553,19 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
-                if (this.site_config.lodging.event_id === null) {
+                if (this.site_config.cug.is_cug) {
                     destination_value = document.querySelector('input#address-input').value;
                     url += `&destination=${destination_value}`;
                 }
+
+                const get_optional_hotel_name = () => {
+                    if (this.page_name !== 'search-results') return;
+                    if (document.querySelector('input#hotelName').value === '') return;
+                    const hotel_name = `&hotelname=${document.querySelector('input#hotelName').value}`;
+                    url += hotel_name;
+                };
+
+                get_optional_hotel_name();
 
                 function applyFilters() {
                     const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');
@@ -1580,7 +1591,7 @@ export default class BasePortal {
 
                 applyFilters();
 
-                const built_url = new URL(url);
+                let built_url = new URL(url);
                 const amenities = checked_amenities.slice(0, -1);
                 const stars = checked_stars.slice(0, -1);
 
@@ -1591,7 +1602,12 @@ export default class BasePortal {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
                 if (this.page_name === 'search-results') {
-                    window.location.href = `${decodeURIComponent(built_url)}${properties}${utm_source}${location_label}${radius}${group_id}${page_size}${cid}`;
+                    no_null_params.forEach((param) => {
+                        if (!param.includes('null')) {
+                            built_url += param;
+                        }
+                    });
+                    window.location.href = decodeURIComponent(built_url);
                 } else window.location.href = decodeURIComponent(built_url);
             });
         };
@@ -1604,7 +1620,7 @@ export default class BasePortal {
         );
         removeArnSearchBar('input#city');
         remove_city_search_for_event();
-        prepopulateDestinationInputOnSearchHotels();
+        prepopulateInputsOnSearchHotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
@@ -1614,7 +1630,7 @@ export default class BasePortal {
             hideArnSearchElements('img.arn-green-marker-icon');
         });
 
-        hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch, div#HotelNameContainer');
+        hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch');
         construct_url_on_submit();
 
         (() => {

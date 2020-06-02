@@ -16,11 +16,11 @@ utilities.addMultipleHeaderLogos({
     image1: {
         insertPosition: 'afterbegin',
         className: 'logo-left',
-        imageUrl: 'https://dev-static.hotelsforhope.com/ares/site_configs/shaky_knees_20-60303/img/left.svg',
+        imageUrl: 'https://static.hotelsforhope.com/ares/site_configs/shaky_knees_20-60303/img/left.svg',
     },
     image2: {
         insertPosition: 'beforeend',
         className: 'logo-right',
-        imageUrl: 'https://dev-static.hotelsforhope.com/ares/site_configs/shaky_knees_20-60303/img/right.svg',
+        imageUrl: 'https://static.hotelsforhope.com/ares/site_configs/shaky_knees_20-60303/img/right.svg',
     },
 });

@@ -1,14 +1,8 @@
+import Path from '../../js/path';
+
+const env_path = new Path();
+
 export default function siteConfig() {
-    let path = '';
-
-    if (process.env.environment === 'production') {
-        path = 'https://static.hotelsforhope.com/ares/site_configs';
-    } else if (process.env.environment === 'development') {
-        path = 'https://dev-static.hotelsforhope.com/ares/site_configs';
-    } else if (process.env.environment === 'local') {
-        path = '../../site_configs';
-    }
-
     return {
         site_id: 60871,
         affiliate_id: 17493,
@@ -41,19 +35,19 @@ export default function siteConfig() {
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,
-        fav_icon_url: `${path}/${process.env.directory_name}/img/favicon.png`,
+        fav_icon_url: `${env_path.path}/${process.env.directory_name}/img/favicon.png`,
         has_custom_styles: false,
         custom_styles_url: '',
         has_social_sharing: true,
         header: {
-            logo_file_location: `${path}/${process.env.directory_name}/img/logo.png`,
+            logo_file_location: `${env_path.path}/${process.env.directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.hofmarathon.com/',
             background: '#fff',
             logo_flex_position: 'center',
             logo_max_width: '200px',
         },
-        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${path}/${process.env.directory_name}/img/banner2.jpg) no-repeat center center /cover`,
-        map_marker_image_url: `${path}/${process.env.directory_name}/img/favicon.png`,
+        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/${process.env.directory_name}/img/banner2.jpg) no-repeat center center /cover`,
+        map_marker_image_url: `${env_path.path}/${process.env.directory_name}/img/favicon.png`,
         theme: 'light',
         primary_color: '#38831F',
         secondary_color: '#D02730',

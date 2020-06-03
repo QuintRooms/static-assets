@@ -31,6 +31,7 @@ export default class BasePortal {
             this.showLanguageFromCongif();
             this.createCurrencyDropDown();
             this.showStarsAndFilter();
+            this.insertPoweredByFooterLogo();
 
             // all pages
             // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -250,6 +251,7 @@ export default class BasePortal {
             this.resizeViewportForMapMobile();
             this.showCoronavirusInfoBanner();
             this.showCurrencySelect();
+            this.positionPropReviews();
         });
     }
 
@@ -2043,17 +2045,33 @@ export default class BasePortal {
     }
 
     showCurrencySelect() {
-        if (this.site_config.show_currency_select === true) return;
+        if (this.site_config.show_currency_select) return;
 
         const config_container = document.querySelector('.config-container');
         const currency_element = document.querySelector('.currencies-container');
 
-        if (this.site_config.show_currency_select === false && this.site_config.show_language_select === false) {
+        if (!this.site_config.show_currency_select && !this.site_config.show_language_select) {
             config_container.style.display = 'none';
             return;
         }
-        if (this.site_config.show_currency_select === false) {
+        if (!this.site_config.show_currency_select) {
             currency_element.style.display = 'none';
         }
+    }
+
+    positionPropReviews() {
+        if (this.page_name !== 'property-detail') return;
+        if (!this.site_config.reviews_before_info) return;
+
+        const reviews = document.querySelector('.PropertyReviews');
+        document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', reviews);
+    }
+
+    insertPoweredByFooterLogo() {
+        document.querySelector('.ArnSupportLinks').insertAdjacentHTML(
+            'beforeend',
+            `<div class="pb-container">
+            <img src="https://dev-static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo" href="https://www.hotelsforhope.com/" target="_blank">`
+        );
     }
 }

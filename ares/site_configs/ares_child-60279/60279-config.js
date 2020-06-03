@@ -33,6 +33,7 @@ export default function siteConfig() {
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
+        reviews_before_info: true,
         show_stars: false,
         show_language_select: false,
         show_currency_select: false,

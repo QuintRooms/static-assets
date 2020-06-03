@@ -252,6 +252,7 @@ export default class BasePortal {
             this.showCurrencySelect();
             this.positionPropReviews();
             this.insertPoweredByFooterLogo();
+            this.updateConfirmationCheckBoxes();
         });
     }
 
@@ -2074,5 +2075,14 @@ export default class BasePortal {
             <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://dev-static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>
             </div>`
         );
+    }
+
+    updateConfirmationCheckBoxes() {
+        if (this.page_name !== 'checkout') return;
+
+        document.querySelector('.open-modal').textContent = 'Policies & Fees';
+        document.querySelector(
+            'span.confirmationAgreement'
+        ).innerHTML = `By checking this box you agree to the <a id="policies-fees" href="">Policies & Fees</a> above and the <a id="t-and-cs" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
     }
 }

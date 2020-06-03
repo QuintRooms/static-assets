@@ -2343,6 +2343,16 @@ legend {
     cursor: pointer;
 }
 
+#policies-fees, #t-and-cs{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #333;
+}
+
+/* #policies-fees:hover, #t-and-cs:hover{
+    pointer-events: none;
+} */
+
 /* Loader */
 .ArnPushPageContent {
     background-image: none;

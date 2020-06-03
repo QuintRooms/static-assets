@@ -2337,6 +2337,12 @@ legend {
     text-decoration: none;
 }
 
+.pb-container img {
+    width: 10%;
+    margin: 10px;
+    cursor: pointer;
+}
+
 /* Loader */
 .ArnPushPageContent {
     background-image: none;

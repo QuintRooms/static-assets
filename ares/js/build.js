@@ -31,7 +31,6 @@ export default class BasePortal {
             this.showLanguageFromCongif();
             this.createCurrencyDropDown();
             this.showStarsAndFilter();
-            this.insertPoweredByFooterLogo();
 
             // all pages
             // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -252,6 +251,7 @@ export default class BasePortal {
             this.showCoronavirusInfoBanner();
             this.showCurrencySelect();
             this.positionPropReviews();
+            this.insertPoweredByFooterLogo();
         });
     }
 
@@ -2068,10 +2068,10 @@ export default class BasePortal {
     }
 
     insertPoweredByFooterLogo() {
-        document.querySelector('.ArnSupportLinks').insertAdjacentHTML(
+        document.querySelector('.ArnSupportBottom').insertAdjacentHTML(
             'beforeend',
             `<div class="pb-container">
-            <img src="https://dev-static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo" href="https://www.hotelsforhope.com/" target="_blank">
+            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://dev-static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>
             </div>`
         );
     }

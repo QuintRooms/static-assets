@@ -8,6 +8,6 @@ export default function setupPath() {
     } else if (process.env.environment === 'local') {
         path = '../../site_configs';
     }
-    
+
     return {path};
 }

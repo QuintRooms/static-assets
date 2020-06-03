@@ -5,7 +5,7 @@ let source_map_path = '';
 
 if (process.env.environment === 'production') {
     source_map_path = 'https://static.hotelsforhope.com/ares/dist';
-} else if (process.env.environment === 'development') {
+} else if (process.env.environment === 'develop') {
     source_map_path = 'https://dev-static.hotelsforhope.com/ares/dist';
 } else if (process.env.environment === 'local') {
     source_map_path = './dist';

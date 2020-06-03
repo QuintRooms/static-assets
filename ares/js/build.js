@@ -9,6 +9,7 @@ const utilities = new Utilities();
 
 export default class BasePortal {
     constructor(config) {
+        console.log(config);
         this.site_id = '';
         this.page_name = '';
         this.site_config = config;

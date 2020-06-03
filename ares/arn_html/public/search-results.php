@@ -1693,9 +1693,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                         </form>
                     </td>
                     <td class="ArnRightListContainer" valign="top" id="yui_3_18_1_1_1586277558089_146">
-                        <div id="searching" style="display: none;"><img alt="" src="/appSkins/64/v6/themes/global/images/throbber.gif">
-                            <h2 style="display:inline;">Searching for availability...</h2><input onclick="propRefresh.stop();$('searching').hide();$('Properties').removeClassName('opaque').addClassName('pollingFinished').fire('arn:pollingFinished')" name="342" value="Stop Searching" type="submit" class="submit">
-                        </div>
                         <div id="Properties" class="pollingFinished">
                             <div id="pagerTopAjax">
                                 <div class="topPager ArnPagerContainer">

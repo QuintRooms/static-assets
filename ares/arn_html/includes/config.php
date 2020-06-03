@@ -1,5 +1,5 @@
 <?php 
-	$site_id = '60279';
+	$site_id = '60278';
 	$site_name = 'ares_child';
 	$cug = false; 
 

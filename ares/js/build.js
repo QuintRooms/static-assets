@@ -8,10 +8,10 @@ const dayjs = require('dayjs');
 const utilities = new Utilities();
 
 export default class BasePortal {
-    constructor() {
+    constructor(config) {
         this.site_id = '';
         this.page_name = '';
-        this.site_config = '';
+        this.site_config = config;
         this.currency = '';
         this.svg_arrow =
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
@@ -21,236 +21,234 @@ export default class BasePortal {
     init() {
         this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
-        this.getSiteID().then((site_id) => {
-            this.getSiteConfigJSON(site_id).then(async () => {
-                this.getPageName();
-                this.applyConfigColors();
-                this.setRootPageBackgroundImage();
-                this.setFontFromConfig();
-                this.setupDatePrompt();
-                this.showLanguageFromCongif();
-                this.createCurrencyDropDown();
-                this.showStarsAndFilter();
+        this.getSiteID().then(async (site_id) => {
+            this.getPageName();
+            this.applyConfigColors();
+            this.setRootPageBackgroundImage();
+            this.setFontFromConfig();
+            this.setupDatePrompt();
+            this.showLanguageFromCongif();
+            this.createCurrencyDropDown();
+            this.showStarsAndFilter();
 
-                // all pages
-                // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
-                this.buildMobileMenu();
-                utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
+            // all pages
+            // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+            this.buildMobileMenu();
+            utilities.createHTML(`<link id="favicon" rel="shortcut icon" href="${this.site_config.fav_icon_url}">`, 'head', 'beforeEnd');
 
-                await utilities.createHTML(
-                    `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
-                    '.config-container',
-                    'afterEnd'
+            await utilities.createHTML(
+                `<header><a class="logo" href="${this.site_config.header.logo_outbound_url}" target="_blank"><img src="${this.site_config.header.logo_file_location}" alt="Logo"></a></header>`,
+                '.config-container',
+                'afterEnd'
+            );
+
+            if (this.site_config.site_type === 'cug') {
+                utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
+                    utilities.appendToParent('#commands', 'header');
+                });
+            }
+
+            utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
+
+            // single prop detail methods
+            if (this.page_name === 'property-detail') {
+                this.addImageSlideshow();
+                utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
+                utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
+                utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
+                utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
+
+                this.isPropByGateway(
+                    this.site_config.exclusive_rate_text,
+                    this.site_config.host_hotel_text,
+                    this.site_config.partner_hotel_text,
+                    this.site_config.lodging.event_name
                 );
 
-                if (this.site_config.site_type === 'cug') {
-                    utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
-                        utilities.appendToParent('#commands', 'header');
+                this.updatePropReviewsURLToUseAnchor();
+
+                this.getTotalNights().then((nights) => {
+                    this.getCurrency().then((currency) => {
+                        this.showFullStayAndNightlyRates(nights, currency);
                     });
-                }
+                });
 
-                utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
+                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
+                utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
+                utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+            }
 
-                // single prop detail methods
-                if (this.page_name === 'property-detail') {
-                    this.addImageSlideshow();
-                    utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
-                    utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
-                    utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
-                    utilities.updateHTML('.SinglePropDetail .Details a', 'General Info');
+            // checkout page methods
+            if (this.page_name === 'checkout') {
+                utilities.createModal(
+                    [document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')],
+                    'Policies & Fees',
+                    'checkout',
+                    '#theConfirmationContainer',
+                    'afterBegin'
+                );
+                utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
+                // Shows numpad on ios
+                utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+                utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
+                utilities.updateHTML('#theCharges legend', 'Rate Info');
+                utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
+                utilities.updateHTML('#theHotel legend', 'Reservation Summary');
 
+                this.formatCheckoutForm();
+                this.setupReservationSummaryContainer();
+                utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
+                utilities.emailVerificationSetup();
+            }
+
+            if (this.page_name === 'confirmation') {
+                this.implementAds();
+            }
+
+            // root page methods
+            if (document.querySelector('.RootBody')) {
+                this.addAlgoliaSearch();
+                utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
+                utilities.createHTML(
+                    '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
+                    '.RootBody .ArnPrimarySearchContainer',
+                    'beforeBegin'
+                );
+                utilities.moveOrphanedElementsIntoNewWrapper(
+                    [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
+                    'root-search-container',
+                    '.RootBody .ArnSearchContainerMainDiv',
+                    'afterBegin'
+                );
+                utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
+            }
+
+            utilities.updateHTML('#thePassCodeAjax label', 'Promocode');
+            utilities.updateHTML('#theUserNameAjax label', 'Username/Email');
+            utilities.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin');
+            utilities.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
+            utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
+            utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
+
+            if (this.site_config.show_tax_inclusive_rates) {
+                jQuery('#theBody').on('arnMapLoadedEvent', () => {
+                    this.getTotalNights().then((nights) => {
+                        this.getCurrency().then((currency) => {
+                            this.getNightlyRateForMapMarkers(nights, currency);
+                        });
+                    });
+                });
+            }
+
+            if (this.page_name === 'lrg-page') {
+                this.replaceLRGForm();
+            }
+
+            if (this.page_name === 'search-results') {
+                this.addAlgoliaSearch();
+            }
+
+            jQuery('#theBody').on('arnMapLoadedEvent', async () => {
+                this.map_loaded = true;
+                await utilities.waitForSelectorInDOM('.pollingFinished');
+
+                if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
+
+                this.useLogoForVenueMapMarker();
+                this.highlightMapMarkersOnPropertyHover();
+                this.changeContractedPropertyPinColor();
+            });
+
+            jQuery(document).on('ratesReadyEvent', () => {
+                setTimeout(() => {
                     this.isPropByGateway(
                         this.site_config.exclusive_rate_text,
                         this.site_config.host_hotel_text,
                         this.site_config.partner_hotel_text,
                         this.site_config.lodging.event_name
                     );
+                    if (this.page_name === 'property-detail' && this.site_config.site_type.toLowerCase() === 'cug') {
+                        this.cugConfigs();
+                    }
+                }, 1);
+            });
 
-                    this.updatePropReviewsURLToUseAnchor();
-
-                    this.getTotalNights().then((nights) => {
-                        this.getCurrency().then((currency) => {
-                            this.showFullStayAndNightlyRates(nights, currency);
-                        });
-                    });
-
-                    this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
-                    utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
-                    utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+            utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
+                if (this.page_name === 'hold-rooms') {
+                    this.moveReviewsIntoPropNameContainer();
                 }
 
-                // checkout page methods
-                if (this.page_name === 'checkout') {
-                    utilities.createModal(
-                        [document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')],
-                        'Policies & Fees',
-                        'checkout',
-                        '#theConfirmationContainer',
-                        'afterBegin'
-                    );
-                    utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
-                    // Shows numpad on ios
-                    utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-                    utilities.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
-                    utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
-                    utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
-                    utilities.updateHTML('#theCharges legend', 'Rate Info');
-                    utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
-                    utilities.updateHTML('#theHotel legend', 'Reservation Summary');
+                if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
 
-                    this.formatCheckoutForm();
-                    this.setupReservationSummaryContainer();
-                    utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
-                    utilities.emailVerificationSetup();
-                }
-
-                if (this.page_name === 'confirmation') {
-                    this.implementAds();
-                }
-
-                // root page methods
-                if (document.querySelector('.RootBody')) {
-                    this.addAlgoliaSearch();
-                    utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
-                    utilities.createHTML(
-                        '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
-                        '.RootBody .ArnPrimarySearchContainer',
-                        'beforeBegin'
-                    );
-                    utilities.moveOrphanedElementsIntoNewWrapper(
-                        [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
-                        'root-search-container',
-                        '.RootBody .ArnSearchContainerMainDiv',
-                        'afterBegin'
-                    );
-                    utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
-                }
-
-                utilities.updateHTML('#thePassCodeAjax label', 'Promocode');
-                utilities.updateHTML('#theUserNameAjax label', 'Username/Email');
-                utilities.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin');
-                utilities.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
-                utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
-                utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-
-                if (this.site_config.show_tax_inclusive_rates) {
-                    jQuery('#theBody').on('arnMapLoadedEvent', () => {
-                        this.getTotalNights().then((nights) => {
-                            this.getCurrency().then((currency) => {
-                                this.getNightlyRateForMapMarkers(nights, currency);
-                            });
-                        });
-                    });
-                }
-
-                if (this.page_name === 'lrg-page') {
-                    this.replaceLRGForm();
-                }
-
-                if (this.page_name === 'search-results') {
-                    this.addAlgoliaSearch();
-                }
-
-                jQuery('#theBody').on('arnMapLoadedEvent', async () => {
-                    this.map_loaded = true;
-                    await utilities.waitForSelectorInDOM('.pollingFinished');
-
+                if (!this.map_loaded) {
                     if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
 
                     this.useLogoForVenueMapMarker();
                     this.highlightMapMarkersOnPropertyHover();
                     this.changeContractedPropertyPinColor();
+                }
+
+                this.cugConfigs();
+                this.implementAds();
+                this.toggleMap();
+                this.addLRGDetails();
+                this.getTotalNights().then((nights) => {
+                    this.getCurrency().then((currency) => {
+                        this.showFullStayAndNightlyRates(nights, currency);
+                    });
                 });
+                this.createStarIcons();
+                this.addHRToProperties();
+                this.showLoaderOnResultsUpdate();
+                this.showSearchContainerOnMobile();
+                this.moveFooterOutOfSearchContainer();
+                this.moveReviewsIntoPropNameContainer();
 
-                jQuery(document).on('ratesReadyEvent', () => {
-                    setTimeout(() => {
-                        this.isPropByGateway(
-                            this.site_config.exclusive_rate_text,
-                            this.site_config.host_hotel_text,
-                            this.site_config.partner_hotel_text,
-                            this.site_config.lodging.event_name
-                        );
-                        if (this.page_name === 'property-detail' && this.site_config.site_type.toLowerCase() === 'cug') {
-                            this.cugConfigs();
-                        }
-                    }, 1);
+                utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
+
+                this.movePropClassBelowPropName();
+                this.activateCheckboxByClickingOnAssociatedLabel();
+                utilities.updateHTML('.ArnSearchHeader', 'Search');
+                utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
+                utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                utilities.updateHTML('#CitySearchContainer > span', 'Where:');
+                utilities.updateHTML('.lblRating', 'Stars');
+                utilities.updateHTML('.lblCurrency', 'Currency');
+                utilities.updateHTML('.lblAmenities', 'Amenities');
+                utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
+                utilities.updateHTML('.lblPropertyType', 'Property Type');
+                utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
+                utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
+                utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+
+                await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
+                    utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                 });
-
-                utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
-                    if (this.page_name === 'hold-rooms') {
-                        this.moveReviewsIntoPropNameContainer();
-                    }
-
-                    if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
-
-                    if (!this.map_loaded) {
-                        if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
-
-                        this.useLogoForVenueMapMarker();
-                        this.highlightMapMarkersOnPropertyHover();
-                        this.changeContractedPropertyPinColor();
-                    }
-
-                    this.cugConfigs();
-                    this.implementAds();
-                    this.toggleMap();
-                    this.addLRGDetails();
-                    this.getTotalNights().then((nights) => {
-                        this.getCurrency().then((currency) => {
-                            this.showFullStayAndNightlyRates(nights, currency);
+                await utilities.waitForSelectorInDOM('.ArnSortContainer').then(() => {
+                    utilities
+                        .createWrapper(
+                            '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                            '.ArnSecondarySearchOuterContainer',
+                            'sort-wrapper',
+                            'afterBegin'
+                        )
+                        .then(() => {
+                            this.createMobileSortAndFilter();
+                            utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
                         });
-                    });
-                    this.createStarIcons();
-                    this.addHRToProperties();
-                    this.showLoaderOnResultsUpdate();
-                    this.showSearchContainerOnMobile();
-                    this.moveFooterOutOfSearchContainer();
-                    this.moveReviewsIntoPropNameContainer();
-
-                    utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
-
-                    this.movePropClassBelowPropName();
-                    this.activateCheckboxByClickingOnAssociatedLabel();
-                    utilities.updateHTML('.ArnSearchHeader', 'Search');
-                    utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
-                    utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                    utilities.updateHTML('#CitySearchContainer > span', 'Where:');
-                    utilities.updateHTML('.lblRating', 'Stars');
-                    utilities.updateHTML('.lblCurrency', 'Currency');
-                    utilities.updateHTML('.lblAmenities', 'Amenities');
-                    utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
-                    utilities.updateHTML('.lblPropertyType', 'Property Type');
-                    utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
-                    utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
-                    utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-
-                    await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
-                        utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
-                    });
-                    await utilities.waitForSelectorInDOM('.ArnSortContainer').then(() => {
-                        utilities
-                            .createWrapper(
-                                '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
-                                '.ArnSecondarySearchOuterContainer',
-                                'sort-wrapper',
-                                'afterBegin'
-                            )
-                            .then(() => {
-                                this.createMobileSortAndFilter();
-                                utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
-                            });
-                    });
                 });
-
-                this.applyCustomStyles();
-                // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
-                // this.forceClickOnCitySearch();
-                this.setInputToRequired('input#city');
-                this.setInputToRequired('input#theCheckIn');
-                this.resizeViewportForMapMobile();
-                this.showCoronavirusInfoBanner();
-                this.showCurrencySelect();
             });
+
+            this.applyCustomStyles();
+            // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
+            // this.forceClickOnCitySearch();
+            this.setInputToRequired('input#city');
+            this.setInputToRequired('input#theCheckIn');
+            this.resizeViewportForMapMobile();
+            this.showCoronavirusInfoBanner();
+            this.showCurrencySelect();
         });
     }
 
@@ -281,36 +279,6 @@ export default class BasePortal {
         if (!this.site_id) return;
 
         return this.site_id;
-    }
-
-    getDirectoryName() {
-        if (!document.querySelector('meta[name="directory_name"]')) {
-            console.log('no directory_name');
-            return;
-        }
-        return document.querySelector('meta[name="directory_name"]').getAttribute('content');
-    }
-
-    async getSiteConfigJSON(site_id) {
-        let path = '';
-        const directory_name = this.getDirectoryName();
-        if (window.location.href.includes('arn_html')) {
-            path = `/ares/site_configs/${directory_name}/${site_id}.json`;
-        } else {
-            path = `https://dev-static.hotelsforhope.com/ares/site_configs/${directory_name}`;
-        }
-
-        try {
-            return fetch(path, {method: 'GET'})
-                .then((response) => response.json())
-                .then((json) => {
-                    this.site_config = json;
-                });
-        } catch (error) {
-            console.log('could not get site config', error);
-        }
-        console.log(path);
-        return this.site_config;
     }
 
     /**

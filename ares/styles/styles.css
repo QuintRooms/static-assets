@@ -1860,6 +1860,10 @@ legend {
     padding: 8px;
 }
 
+.RootBody .ArnSecondarySearchOuterContainer {
+    padding: 8px 0;
+}
+
 #batchSize,
 .lblAmenities,
 .lblCurrency,
@@ -2735,6 +2739,10 @@ legend {
     grid-row-start: 2;
 }
 
+.billing-details-container .guestCountryList, .billing-details-container .guestStateList {
+    margin-top: 4px;
+}
+
 .security-code-exp-container {
     display: grid;
     grid-template-columns: 47% 47%;
@@ -2995,7 +3003,6 @@ legend {
 }
 
 .RootBody #theOtherSubmitButton {
-    margin-left: auto;
     max-width: 200px;
 }
 
@@ -3014,7 +3021,7 @@ legend {
 .RootBody .ArnSecondarySearchOuterContainer {
     color: #fff;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .RootBody .ArnAdvancedSearchImg {

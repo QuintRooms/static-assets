@@ -2083,6 +2083,11 @@ export default class BasePortal {
         document.querySelector('.open-modal').textContent = 'Policies & Fees';
         document.querySelector(
             'span.confirmationAgreement'
-        ).innerHTML = `By checking this box you agree to the <a id="policies-fees" href="">Policies & Fees</a> above and the <a id="t-and-cs" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+        ).innerHTML = `By checking this box you agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+
+        const policies = document.querySelector('#policies-fees');
+        policies.addEventListener('click', () => {
+            document.querySelector('div.modal-overlay').classList.toggle('show-modal');
+        });
     }
 }

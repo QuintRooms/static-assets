@@ -1,8 +1,11 @@
 import BasePortal from '../../js/build';
+import SiteConfig from './60336-config';
+
+const site_config = new SiteConfig();
 
 class ChildPortal extends BasePortal {
     constructor() {
-        super();
+        super(site_config);
         super.init();
     }
 }

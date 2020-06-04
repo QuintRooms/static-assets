@@ -9,7 +9,7 @@ const utilities = new Utilities();
 
 export default class BasePortal {
     constructor(config) {
-        console.log(config);
+        console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
         this.page_name = '';
         this.site_config = config;
@@ -20,6 +20,8 @@ export default class BasePortal {
     }
 
     init() {
+        if (!this.site_config) console.error('No site config found.');
+
         this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {

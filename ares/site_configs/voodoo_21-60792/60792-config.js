@@ -2,9 +2,12 @@ import Path from '../../js/path';
 
 const env_path = new Path();
 
+const site_id = 60792;
+const directory_name = `voodoo_21-${site_id}`;
+
 export default function siteConfig() {
     return {
-        site_id: 60792,
+        site_id,
         affiliate_id: 16067,
         master_id: 1816,
         site_type: 'lodging',
@@ -31,23 +34,24 @@ export default function siteConfig() {
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
+        reviews_before_info: true,
         show_stars: false,
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,
-        fav_icon_url: `${env_path.path}/${process.env.directory_name}/img/favicon.png`,
+        fav_icon_url: `${env_path.path}/${directory_name}/img/favicon.png`,
         has_custom_styles: false,
         custom_styles_url: '',
         has_social_sharing: true,
         header: {
-            logo_file_location: `${env_path.path}/${process.env.directory_name}/img/logo.png`,
+            logo_file_location: `${env_path.path}/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.voodoofestival.com/',
             background: '#fff',
             logo_flex_position: 'center',
             logo_max_width: '300px',
         },
-        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/${process.env.directory_name}/img/banner.jpg) no-repeat center center /cover`,
-        map_marker_image_url: `${env_path.path}/${process.env.directory_name}/img/favicon.png`,
+        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/${directory_name}/img/banner.jpg) no-repeat center center /cover`,
+        map_marker_image_url: `${env_path.path}/${directory_name}/img/favicon.png`,
         theme: 'light',
         primary_color: '#5dc3ac',
         secondary_color: '#7487dd',
@@ -76,5 +80,6 @@ export default function siteConfig() {
                 outbound_url: '',
             },
         },
+        // new options
     };
 }

@@ -898,7 +898,8 @@ export default class BasePortal {
             .open-modal,
             .lowest-rate-link,
             .SinglePropDetail .RateCalendarPopupAnchor,
-            .ArnContentContainer legend {
+            .ArnContentContainer legend, #theRoomsOnHold h2
+             {
                 color: ${this.site_config.secondary_text_color};
             }
             

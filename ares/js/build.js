@@ -2,6 +2,9 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
+import Path from './path';
+
+const env_path = new Path();
 
 const dayjs = require('dayjs');
 
@@ -1039,8 +1042,7 @@ export default class BasePortal {
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
-        document.querySelector('.arrow polyline').removeAttribute('stroke');
-        document.body.insertAdjacentHTML('beforeend', '<link href="https://static.hotelsforhope.com/ares/styles/dark.css" rel="stylesheet">');
+        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.stylesheet}/dark.css" rel="stylesheet">`);
     }
 
     applyCustomStyles() {

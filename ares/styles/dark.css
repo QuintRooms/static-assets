@@ -4,5 +4,5 @@ body, .ArnPropNameLink span, .CheckOutForm #theHotel, .CheckOutForm label, .Chec
 }
 
 svg.arrow polyline {
-    stroke: #fff!important;
+    stroke: #fff;
 }

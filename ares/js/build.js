@@ -1032,7 +1032,13 @@ export default class BasePortal {
         );
     }
 
-    async applyCustomStyles() {
+    applyDarkTheme() {
+        if (this.site_config.theme.toLowerCase() === 'light') return;
+
+        document.body.insertAdjacentHTML('beforeend', '<link href="https://static.hotelsforhope.com/ares/styles/dark.css" rel="stylesheet">');
+    }
+
+    applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
         document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
     }

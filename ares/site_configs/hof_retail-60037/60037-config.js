@@ -1,13 +1,13 @@
 import Path from '../../js/path';
 
 const env_path = new Path();
-const site_id = 60089;
-const directory_name = `bj_las_vegas_20-${site_id}`;
+const site_id = 60037;
+const directory_name = `hof_retail-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
-        affiliate_id: 16659,
+        affiliate_id: 17464,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
@@ -17,9 +17,9 @@ export default function siteConfig() {
         map_size: '12',
         radius: '50',
         lodging: {
-            event_id: 40943,
-            event_name: 'Barrett-Jackson Las Vegas 2020',
-            event_dates: '09/10/2020 - 09/12/2020',
+            event_id: 10001,
+            event_name: 'Pro Football Hall of Fame',
+            event_dates: '',
             is_lrg: false,
         },
         cug: {
@@ -38,36 +38,36 @@ export default function siteConfig() {
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,
-        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
         has_custom_styles: false,
         custom_styles_url: '',
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.barrett-jackson.com/',
-            background: '#fff',
+            logo_outbound_url: 'https://www.voodoofestival.com/',
+            background: '#000',
             logo_flex_position: 'center',
-            logo_max_width: '400px',
+            logo_max_width: '250px',
         },
         banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.jpg) no-repeat center center /cover`,
-        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        theme: 'light',
-        background_color: '#fff',
-        primary_color: '#c8102e',
-        secondary_color: '#c8102e',
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+        theme: 'dark',
+        background_color: '#000',
+        primary_color: '#da2128',
+        secondary_color: '#166497',
         primary_text_color: '#fff',
-        secondary_text_color: '#c8102e',
-        border_color: '#222',
+        secondary_text_color: '#fff',
+        border_color: '#da2128',
         button_hover_background_color: '#fff',
-        button_hover_text_color: '#c8102e',
-        button_hover_border_color: '#c8102e',
+        button_hover_text_color: '#da2128',
+        button_hover_border_color: '#da2128',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         google_font_name: 'Montserrat',
         ads: {
             sidebar_ad: {
-                is_active: true,
-                image_url: `${env_path.path}/site_configs/${directory_name}/img/leftbanner.jpg`,
-                outbound_url: 'https://www.grandcanyon.org/',
+                is_active: false,
+                image_url: '',
+                outbound_url: '',
             },
             between_property_ad: {
                 is_active: false,
@@ -80,6 +80,5 @@ export default function siteConfig() {
                 outbound_url: '',
             },
         },
-        // new options
     };
 }

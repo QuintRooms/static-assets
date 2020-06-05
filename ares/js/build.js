@@ -196,7 +196,7 @@ export default class BasePortal {
                     this.highlightMapMarkersOnPropertyHover();
                     this.changeContractedPropertyPinColor();
                 }
-
+                this.constructSinglePropPageURL();
                 this.cugConfigs();
                 this.implementAds();
                 this.toggleMap();
@@ -1172,9 +1172,10 @@ export default class BasePortal {
 
                 document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
 
-                if (this.page_name !== 'search-results') return;
-                params.set('currency', this.selected_currency);
-                window.location.search = params.toString();
+                if (this.page_name === 'search-results' || this.page_name === 'property-detail') {
+                    params.set('currency', this.selected_currency);
+                    window.location.search = params.toString();
+                }
             });
         };
 
@@ -1287,7 +1288,7 @@ export default class BasePortal {
                     if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                 });
 
-                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>');
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;font-size:13px}</style>');
             }
 
             if (document.querySelector('.SinglePropDetail')) {
@@ -2101,6 +2102,36 @@ export default class BasePortal {
         const policies = document.querySelector('#policies-fees');
         policies.addEventListener('click', () => {
             document.querySelector('div.modal-overlay').classList.toggle('show-modal');
+        });
+    }
+
+    async constructSinglePropPageURL() {
+        if (this.page_name !== 'search-results') return;
+
+        const nights = await this.getTotalNights();
+
+        const check_in_element = document.querySelector('.ArnCheckInDate');
+
+        if (!check_in_element) return;
+
+        const check_in = check_in_element.value;
+
+        const properties = document.querySelectorAll('.ArnProperty');
+
+        properties.forEach((property) => {
+            const thumbnail = property.querySelector('.ArnImageLink');
+            const btn = property.querySelector('.ArnShowRatesLink');
+            const hotel_name = property.querySelector('.ArnPropNameLink');
+            const prop_id_element = property.querySelector('.propId');
+
+            if (!thumbnail || !btn || !hotel_name || !nights || !prop_id_element) return;
+
+            const prop_id = prop_id_element.textContent;
+            const property_url = `${window.location.pathname}?type=property&site_id=${this.site_id}&nights=${nights}&property=${prop_id}&checkIn=${check_in}`;
+
+            thumbnail.href = property_url;
+            hotel_name.href = property_url;
+            btn.href = property_url;
         });
     }
 }

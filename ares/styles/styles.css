@@ -210,6 +210,7 @@ select#adults {
 
 
 .SearchHotels .config-container,
+.SinglePropDetail .config-container,
 .RootBody .config-container {
     background: #333;
     width: 100%;
@@ -344,7 +345,7 @@ select#adults {
 .currency-content div span{
     white-space: nowrap;
     overflow: hidden;
-    padding: 6px 24px 6px 6px;
+    padding: 8px 24px 8px 6px;
     color: #333;
     transition: all .3s ease;
     cursor: pointer;

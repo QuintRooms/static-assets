@@ -36,7 +36,7 @@ export default function siteConfig() {
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: true,
-        show_language_select: true,
+        show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,

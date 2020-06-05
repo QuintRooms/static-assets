@@ -2,6 +2,7 @@ require('dotenv').config({path: '.env'});
 
 module.exports = () => {
     let entry_points = {};
+
     // production environment
     if (process.env.environment === 'production') {
         entry_points = {
@@ -9,6 +10,7 @@ module.exports = () => {
             'lolla_21-60828': './src/60828.js', // lollapalooza 2021
             'voodoo_21-60792': './src/60792.js', // Voodoo
         };
+
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
@@ -26,6 +28,7 @@ module.exports = () => {
             'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             'hof_retail-60037': './src/60037.js', // HOF Retail
         };
+
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {

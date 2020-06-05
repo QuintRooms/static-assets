@@ -208,8 +208,8 @@ select#adults {
     display: none;
 }
 
+
 .SearchHotels .config-container,
-.SinglePropDetail .config-container,
 .RootBody .config-container {
     background: #333;
     width: 100%;
@@ -220,48 +220,13 @@ select#adults {
     z-index: 10;
 }
 
-.config-container #CurrenciesContainer {
-    margin-right: 24px;
-    position: relative;
-}
-
-.config-container .lblCurrency {
-    color: #fff;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField {
-    position: absolute;
-    right: 0;
-    overflow: unset !important;
-    padding: unset;
-    border-bottom: unset;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField select {
-    display: none;
-}
-
-.lblCurrency {
-    border-bottom: 1px solid #868686 !important;
-    width: 226px;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField select.show-currency {
-    display: block;
-}
-
-#language {
-    position: relative;
-    width: 180px;
-    order: 1;
-}
-
-#language-label {
+/* Config Labels Start */
+.config-label {
     display: flex;
 }
 
-#language-label,
-#currency-label {
+.config-label
+ {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #868686;
@@ -269,34 +234,47 @@ select#adults {
     justify-content: space-between;
 }
 
-#language-label span,
-#currency-label span {
+.config-label span{
     pointer-events: none;
     padding: 2px;
+    margin-right: 12px;
     display: flex;
+    white-space: nowrap;
+    overflow: hidden;
 }
-
-#currency-label {
+ 
+.config-label {
     width: 200px;
     display: flex;
     justify-content: space-between;
 }
 
-.RootBody #currency-label,
-.SearchHotels #currency-label {
+.RootBody .config-label,
+.SearchHotels .config-label {
     display: flex;
 }
 
-#language-label polyline,
-#currency-label polyline {
+.config-label polyline,
+.config-label polyline {
     stroke: #868686;
     transform: scale(0.85);
 }
+/* Config Labels End */
 
-#CurrenciesContainer {
-    display: none;
+/* Dropdown Start */
+
+.show-dropdown{
+    display: block !important;
+    background: #fff;
+    position: absolute;
 }
 
+/* Language Dropdown Start */
+#language {
+    position: relative;
+    width: 180px;
+    order: 1;
+}
 .language-container {
     display: none;
     position: absolute;
@@ -312,38 +290,10 @@ select#adults {
     flex-direction: column;
 }
 
-.currencies-container {
-    position: relative;
-    margin-right: 12px;
-    left: 0;
-}
-
-.currencies div {
-    cursor: pointer;
-    padding: 6px 8px;
-    transition: all 0.3s ease;
-    font-size: 13px;
-}
-
 .language-container img,
-#language-label img {
+.config-label img {
     max-width: 24px;
     margin-right: 8px;
-}
-
-.currencies {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 24px;
-    background: #fff;
-    grid-template-columns: 25% 25% 25% 25%;
-    box-shadow: 0 2px 50px 0 #000;
-    width: 800px;
-}
-
-.show-currencies-container {
-    display: grid;
 }
 
 .language-container div {
@@ -356,65 +306,60 @@ select#adults {
 }
 
 .language-container div:hover,
-.currencies div:hover,
-.active-currency,
 .active-language {
     background: #e2e2e2;
     color: #333;
 }
+/* Language Dropdown End */
 
-.top-currencies {
+/* Currency Dropdown Start */
+#CurrenciesContainer{
+    display: none;
+}
+
+.currency-content{
+    padding: 12px;
+    box-shadow: 0 2px 50px 0 #000;
+}
+
+.currencies-container .dropdown{
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    right: 0;
+    top: 42px;
+}
+
+.currency-content h4{
+    margin: 12px 0 6px 0;
+}
+
+.currency-content div{
+    padding: 6px 6px 6px 0;
     display: grid;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    padding: 0 !important;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 18px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.top-currencies:hover {
-    background: unset !important;
-    color: unset !important;
+.currency-content div span{
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 6px 24px 6px 6px;
+    color: #333;
+    transition: all .3s ease;
+    cursor: pointer;
 }
 
-.top-currencies h4 {
-    padding: 0 8px;
-    font-size: 14px;
-    margin-bottom: 4px;
-    grid-column-start: 1;
-    grid-column-end: 5;
+.currency-content div span:hover,
+.active-currency{
+    background: #ccc;
 }
 
-.top-currencies div:first-child {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-}
+/* Currency Dropdown End */
 
-.top-currencies + h4 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    padding: 0 8px;
-    margin-bottom: 4px;
-}
-
-@media screen and (max-width: 1000px) {
-    .currencies-container {
-        position: static;
-    }
-
-    .currencies {
-        top: 36px;
-        width: 96%;
-        margin: 0 2%;
-    }
-
-    #currency-label {
-        margin-left: auto;
-    }
-}
-
+/* Dropdown End */
 /* Currencies IE CSS Hack */
-@media all and (-ms-high-contrast: none) {
+/* @media all and (-ms-high-contrast: none) {
     .show-currencies-container {
         display: flex;
         flex-wrap: wrap;
@@ -441,7 +386,7 @@ select#adults {
     .language-container img {
         max-width: 64px;
     }
-}
+} */
 
 /* Header End */
 

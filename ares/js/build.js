@@ -793,7 +793,7 @@ export default class BasePortal {
                 max-width: ${this.site_config.header.logo_max_width};
             }
             
-            body, #thePropertyAmenities legend {
+            body, #thePropertyAmenities legend, .WBRateGuaranteeForm2 .zsFormClass {
                 background-color: ${this.site_config.background_color};
             }
 

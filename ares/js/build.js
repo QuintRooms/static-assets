@@ -17,7 +17,7 @@ export default class BasePortal {
         this.svg_arrow =
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
         this.map_loaded = false;
-        this.selected_currency = '';
+        this.selected_currency = 'USD';
     }
 
     init() {
@@ -32,7 +32,7 @@ export default class BasePortal {
             this.setFontFromConfig();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
-            this.doSomethingWithCurrencyStuff();
+            this.buildCurrencyDropdown();
             this.showStarsAndFilter();
 
             // all pages
@@ -1101,7 +1101,7 @@ export default class BasePortal {
         });
     }
 
-    doSomethingWithCurrencyStuff() {
+    buildCurrencyDropdown() {
         const currencies_json = {
             AED: {
                 symbol: 'AED',

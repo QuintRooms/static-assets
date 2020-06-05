@@ -1,11 +1,14 @@
 import BasePortal from '../../js/build';
+import SiteConfig from './58513-config';
 import Utilities from '../../js/utilities';
+
+const site_config = new SiteConfig();
 
 const utilities = new Utilities();
 
 class ChildPortal extends BasePortal {
     constructor() {
-        super();
+        super(site_config);
         super.init();
     }
 }
@@ -102,9 +105,6 @@ function addHiltonTags() {
             }
 
             utilities.addPropThumbTag('<div style="border-bottom: 1px solid rgba(255, 255, 255, .4);">Hilton Hotel</div>', prop);
-            // if (document.querySelector('#theArnProperty' + prop + '> .sash')) {
-            //     document.querySelector('#theArnProperty' + prop + '> .sash .event-rate').textContent = 'Hilton Deals';
-            // }
         }
     });
 }

@@ -1,8 +1,9 @@
-<?php 
-	$site_id = '39624';
-	$site_name = 'cug_template';
-	$cug = false; 
+<?php
+	require_once '../../vendor/autoload.php';
 
-	$dist_name = $site_name . '-' . $site_id . '.js';
-	$directory_name = $site_name . '-' . $site_id;
+	$dotenv = Dotenv\Dotenv::createImmutable('../../');
+	$dotenv->load();
+
+	$dist_file = getenv('directory_name') . '-' . getenv('site_id');
 ?>
+

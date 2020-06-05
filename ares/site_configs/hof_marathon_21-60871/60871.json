@@ -1,6 +1,6 @@
 {
-    "site_id": 60278,
-    "affiliate_id": 14808,
+    "site_id": 60871,
+    "affiliate_id": 17493,
     "master_id": 920,
     "site_type": "lodging",
     "algolia_app_id": "plCZXR0GZ7J1",
@@ -11,16 +11,16 @@
     "radius": "50",
     "lodging":
     {
-        "event_id": 42099,
-        "event_name": "Ares Child",
-        "event_dates": "",
-        "is_lrg": true
+        "event_id": 42001,
+        "event_name": "Pro Football Hall of Fame Marathon",
+        "event_dates": "05/01/2021 - 05/02/2021",
+        "is_lrg": false
     },
     "cug":
     {
-        "is_cug": true,
+        "is_cug": false,
         "show_points": false,
-        "allow_registration": false,
+        "allow_registration": true,
         "show_percent_savings": false
     },
     "exclusive_rate_text": "Exclusive Rates",
@@ -32,30 +32,29 @@
     "show_language_select": false,
     "show_currency_select": false,
     "show_date_prompt": false,
-    "showStarRatings": false,
-    "fav_icon_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/favicon.png",
+    "fav_icon_url": "https://static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/favicon.png",
     "has_custom_styles": false,
     "custom_styles_url": "",
     "has_social_sharing": true,
     "header":
     {
-        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/logo.png", 
-        "logo_outbound_url": "https://www.voodoofestival.com/",
+        "logo_file_location": "https://static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/logo.png", 
+        "logo_outbound_url": "https://www.hofmarathon.com/",
         "background": "#fff",
         "logo_flex_position": "center",
-        "logo_max_width": "300px"
+        "logo_max_width": "200px"
     },
-    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/banner.jpg) no-repeat center center /cover",
-    "map_marker_image_url": "https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/favicon.png",
+    "banner_image_url": "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(https://static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/banner2.jpg) no-repeat center center /cover",
+    "map_marker_image_url": "https://static.hotelsforhope.com/ares/site_configs/hof_marathon_21-60871/img/favicon.png",
     "theme": "light",
-    "primary_color": "#5dc3ac",
-    "secondary_color": "#7487dd",
+    "primary_color": "#38831F",
+    "secondary_color": "#D02730",
     "primary_text_color": "#fff",
-    "secondary_text_color": "#5dc3ac",
-    "border_color": "#5dc3ac",
+    "secondary_text_color": "#38831F",
+    "border_color": "#38831F",
     "button_hover_background_color": "#fff",
-    "button_hover_text_color": "#5dc3ac",
-    "button_hover_border_color": "#5dc3ac",
+    "button_hover_text_color": "#38831F",
+    "button_hover_border_color": "#38831F",
     "google_font_url": "//fonts.googleapis.com/css?family=Montserrat:100,500,700",
     "google_font_name": "Montserrat",
     "ads":

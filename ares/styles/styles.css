@@ -86,7 +86,7 @@ header {
 }
 
 .logo img {
-    margin: 15px;
+    padding: 15px;
 }
 
 /* Header End */
@@ -1086,7 +1086,6 @@ div.autocomplete ul li.selected {
     }
 
     .SearchHotels .ArnSecondarySearchOuterContainer,
-    .SearchHotels #HotelNameContainer,
     .SearchHotels .ArnSearchHeader,
     .SearchHotels .subHeaderContainer .translateMe {
         display: none;
@@ -1806,6 +1805,10 @@ legend {
     padding: 8px;
 }
 
+.RootBody .ArnSecondarySearchOuterContainer {
+    padding: 8px 0;
+}
+
 #batchSize,
 .lblAmenities,
 .lblCurrency,
@@ -2279,6 +2282,25 @@ legend {
     text-decoration: none;
 }
 
+.pb-container {
+    padding-top: 24px;
+}
+
+.pb-container img {
+    width: 175px;
+    cursor: pointer;
+}
+
+#policies-fees, #t-and-cs{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #333;
+}
+
+/* #policies-fees:hover, #t-and-cs:hover{
+    pointer-events: none;
+} */
+
 /* Loader */
 .ArnPushPageContent {
     background-image: none;
@@ -2681,6 +2703,10 @@ legend {
     grid-row-start: 2;
 }
 
+.billing-details-container .guestCountryList, .billing-details-container .guestStateList {
+    margin-top: 4px;
+}
+
 .security-code-exp-container {
     display: grid;
     grid-template-columns: 47% 47%;
@@ -2941,7 +2967,6 @@ legend {
 }
 
 .RootBody #theOtherSubmitButton {
-    margin-left: auto;
     max-width: 200px;
 }
 
@@ -2960,7 +2985,7 @@ legend {
 .RootBody .ArnSecondarySearchOuterContainer {
     color: #fff;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .RootBody .ArnAdvancedSearchImg {
@@ -3376,9 +3401,6 @@ div.custom-tag {
     padding: 5px;
 }
 
-.SearchHotels #HotelNameContainer {
-    display: none;
-}
 /* autocomplete styles start */
 
 /* clears the 'X' from Internet Explorer */
@@ -3408,6 +3430,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-input {
     height: initial;
+    border-radius: 0px;
 }
 
 .ap-name {
@@ -3683,14 +3706,32 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 /*  Hold Rooms */
+.HoldRoomsForm .ArnBodyWithSearchPages {
+    margin: auto;
+}
+
+.HoldRoomsForm .ArnSecondarySearchOuterContainer {
+    display: none;
+}
+
+.HoldRoomsForm .ArnProperty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 900px;
+}
+
+#roomHoldForm input.text{
+    margin: 0 6px 6px 0;
+}
+
 #roomHoldForm table tr{
     display: flex;
 }
 
 #roomHoldForm table td{
-    width: 75px;
-    margin-right: 4px;
-    text-align: left;
+    margin-right: 14px;
+    text-align: center;
 }
 
 #roomHoldForm table td select{
@@ -3704,6 +3745,30 @@ input[type='search']::-webkit-search-results-decoration {
 .HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews{
     position: static;
 }
+
+@media screen and (max-width: 1105px){
+    .HoldRoomsForm .ArnBodyWithSearchPages {
+        margin-top: 48px;
+    }
+}
+@media screen and (max-width: 1140px){
+
+    .HoldRoomsForm #Properties {
+        display: block;
+        padding: 0 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .HoldRoomsForm .ArnProperty {
+        align-items: center;
+    }
+
+    .HoldRoomsForm .ArnContainer {
+        width: 100%;
+    }
+}
+
 /* Hold Rooms End */
 
 /* Percent Savings Start */

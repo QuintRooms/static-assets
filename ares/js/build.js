@@ -1042,7 +1042,7 @@ export default class BasePortal {
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
-        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.stylesheet}/dark.css" rel="stylesheet">`);
+        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/dark.css" rel="stylesheet">`);
     }
 
     applyCustomStyles() {

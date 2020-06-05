@@ -1,17 +1,13 @@
 export default function setupPath() {
     let path = '';
-    let stylesheet = '';
 
     if (process.env.environment === 'production') {
-        path = 'https://static.hotelsforhope.com/ares/site_configs';
-        stylesheet = 'https://static.hotelsforhope.com/ares/styles';
+        path = 'https://static.hotelsforhope.com/ares';
     } else if (process.env.environment === 'develop') {
-        path = 'https://dev-static.hotelsforhope.com/ares/site_configs';
-        stylesheet = 'https://dev-static.hotelsforhope.com/ares/styles';
+        path = 'https://dev-static.hotelsforhope.com/ares';
     } else if (process.env.environment === 'local') {
-        path = '../../site_configs';
-        stylesheet = '../../styles';
+        path = '../..';
     }
 
-    return {path, stylesheet};
+    return {path};
 }

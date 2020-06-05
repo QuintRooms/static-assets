@@ -9,7 +9,7 @@ const utilities = new Utilities();
 
 export default class BasePortal {
     constructor(config) {
-        console.log(config);
+        console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
         this.page_name = '';
         this.site_config = config;
@@ -20,6 +20,8 @@ export default class BasePortal {
     }
 
     init() {
+        if (!this.site_config) console.error('No site config found.');
+
         this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
@@ -898,7 +900,8 @@ export default class BasePortal {
             .open-modal,
             .lowest-rate-link,
             .SinglePropDetail .RateCalendarPopupAnchor,
-            .ArnContentContainer legend {
+            .ArnContentContainer legend, #theRoomsOnHold h2
+             {
                 color: ${this.site_config.secondary_text_color};
             }
             
@@ -1029,7 +1032,13 @@ export default class BasePortal {
         );
     }
 
-    async applyCustomStyles() {
+    applyDarkTheme() {
+        if (this.site_config.theme.toLowerCase() === 'light') return;
+
+        document.body.insertAdjacentHTML('beforeend', '<link href="https://static.hotelsforhope.com/ares/styles/dark.css" rel="stylesheet">');
+    }
+
+    applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
         document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
     }

@@ -86,7 +86,7 @@ header {
 }
 
 .logo img {
-    margin: 15px;
+    padding: 15px;
 }
 
 /* Header End */
@@ -1024,7 +1024,6 @@ select#adults {
 
 .ArnPrimarySearchContainer,
 .SimpleSearch {
-    border-top: 1px solid #fff;
     padding: 12px;
 }
 
@@ -2337,9 +2336,12 @@ legend {
     text-decoration: none;
 }
 
+.pb-container {
+    padding-top: 24px;
+}
+
 .pb-container img {
-    width: 10%;
-    margin: 10px;
+    width: 150px;
     cursor: pointer;
 }
 
@@ -3758,14 +3760,32 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 /*  Hold Rooms */
+.HoldRoomsForm .ArnBodyWithSearchPages {
+    margin: auto;
+}
+
+.HoldRoomsForm .ArnSecondarySearchOuterContainer {
+    display: none;
+}
+
+.HoldRoomsForm .ArnProperty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 900px;
+}
+
+#roomHoldForm input.text{
+    margin: 0 6px 6px 0;
+}
+
 #roomHoldForm table tr{
     display: flex;
 }
 
 #roomHoldForm table td{
-    width: 75px;
-    margin-right: 4px;
-    text-align: left;
+    margin-right: 14px;
+    text-align: center;
 }
 
 #roomHoldForm table td select{
@@ -3779,6 +3799,30 @@ input[type='search']::-webkit-search-results-decoration {
 .HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews{
     position: static;
 }
+
+@media screen and (max-width: 1105px){
+    .HoldRoomsForm .ArnBodyWithSearchPages {
+        margin-top: 48px;
+    }
+}
+@media screen and (max-width: 1140px){
+
+    .HoldRoomsForm #Properties {
+        display: block;
+        padding: 0 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .HoldRoomsForm .ArnProperty {
+        align-items: center;
+    }
+
+    .HoldRoomsForm .ArnContainer {
+        width: 100%;
+    }
+}
+
 /* Hold Rooms End */
 
 /* Percent Savings Start */

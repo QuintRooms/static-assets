@@ -1,12 +1,14 @@
 import BasePortal from '../../js/build';
 import Utilities from '../../js/utilities';
 // import RoomSteals from '../../../js/roomsteals-api';
+import SiteConfig from './52342-config';
 
 const utilities = new Utilities();
+const site_config = new SiteConfig();
 
 class ChildPortal extends BasePortal {
     constructor() {
-        super();
+        super(site_config);
         super.init();
     }
 }

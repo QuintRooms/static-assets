@@ -208,8 +208,8 @@ select#adults {
     display: none;
 }
 
+
 .SearchHotels .config-container,
-.SinglePropDetail .config-container,
 .RootBody .config-container {
     background: #333;
     width: 100%;

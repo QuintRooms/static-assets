@@ -29,6 +29,7 @@ module.exports = () => {
     } else if (process.env.environment === 'local') {
         entry_points = {
             'room_steals-52342': './src/52342.js', // Room Steals
+            'hof_retail-60037': './src/60037.js', // HOF Retail
         };
     }
 

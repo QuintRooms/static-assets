@@ -1,0 +1,8 @@
+
+body, .ArnPropNameLink span, .CheckOutForm #theHotel, .CheckOutForm label, .CheckOutForm legend, .sort-wrapper a, .theHotelName, .CheckOutForm #theRateSummaryInfo div, .CheckOutForm #theConfirmCheckboxesAjax, .CheckOutForm #theConfirmCheckboxesAjax a, .CheckOutForm #theConfirmCheckboxesAjax span, .ConfirmationForm .PaymentPolicies, .ConfirmationForm .GuestForms, .ConfirmationForm a, #batch a {
+    color: #fff;
+}
+
+svg.arrow polyline {
+    stroke: #fff!important;
+}

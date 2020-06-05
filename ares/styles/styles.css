@@ -969,7 +969,6 @@ select#adults {
 
 .ArnPrimarySearchContainer,
 .SimpleSearch {
-    border-top: 1px solid #fff;
     padding: 12px;
 }
 
@@ -2287,7 +2286,7 @@ legend {
 }
 
 .pb-container img {
-    width: 175px;
+    width: 150px;
     cursor: pointer;
 }
 

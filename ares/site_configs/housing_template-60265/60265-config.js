@@ -1,8 +1,10 @@
 import Path from '../../js/path';
 
+// eslint-disable-next-line no-unused-vars
 const env_path = new Path();
 
 const site_id = 60265;
+// eslint-disable-next-line no-unused-vars
 const directory_name = `housing_template-${site_id}`;
 
 export default function siteConfig() {
@@ -53,6 +55,7 @@ export default function siteConfig() {
         banner_image_url: 'url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)',
         map_marker_image_url: 'https://static.hotelsforhope.com/portals/images/h4h-fav.ico',
         theme: 'light',
+        background_color: '#fff',
         primary_color: '#9c6aad',
         secondary_color: '#333',
         primary_text_color: '#fff',

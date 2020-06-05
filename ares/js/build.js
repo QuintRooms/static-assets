@@ -20,6 +20,7 @@ export default class BasePortal {
         this.svg_arrow =
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
         this.map_loaded = false;
+        this.selected_currency = 'USD';
     }
 
     init() {
@@ -34,7 +35,7 @@ export default class BasePortal {
             this.setFontFromConfig();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
-            this.createCurrencyDropDown();
+            this.buildCurrencyDropdown();
             this.showStarsAndFilter();
 
             // all pages
@@ -1042,7 +1043,7 @@ export default class BasePortal {
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
-        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.stylesheet}/dark.css" rel="stylesheet">`);
+        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/dark.css" rel="stylesheet">`);
     }
 
     applyCustomStyles() {
@@ -1102,100 +1103,96 @@ export default class BasePortal {
         });
     }
 
-    // needs a refactor real bad
-    createCurrencyDropDown() {
-        let currencies = '';
-        let clicked_currency;
-        const currencies_obj = {};
-        let selected_currency = '';
-        let submit;
-        let currencies_select;
-        let currencies_node_list;
+    async buildCurrencyDropdown() {
+        const getCurrencyJSON = () => {
+            fetch(`${env_path.path}/js/json/currencies.json`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then((currencies_json) => {
+                    setupContentForDropdown(currencies_json);
+                    updateParamOnCurrencyClick();
+                    styleActiveCurrency();
+                })
+                .catch((err) => {
+                    err.text().then((error) => {
+                        console.error('Could not fetch currencies.json', error);
+                    });
+                });
+        };
 
-        const currency_label = document.querySelector('#currency-label');
-        const currencies_container = document.querySelector('.currencies');
-        const config_container = document.querySelector('.config-container');
-        const top_currencies_container = document.querySelector('.top-currencies');
+        const setupContentForDropdown = (currencies_json) => {
+            const currencies = Object.entries(currencies_json);
 
-        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
-            submit = document.querySelector('#theOtherSubmitButton');
-            currencies_select = document.querySelector('#CurrenciesContainer select');
-            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
-        } else if (this.page_name === 'property-detail') {
-            submit = document.querySelector('.CheckRates .submit');
-            currencies_select = document.querySelector('.ArnCurrency select');
-            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
-        }
+            const menu_container = document.createElement('div');
+            const all_currencies_container = document.createElement('div');
 
-        if (!currencies_node_list || !config_container || !currency_label || !top_currencies_container || !currencies_select) return;
+            const top_currencies = `
+            <h4>Top Currencies</h4>
+            <div class="top-currencies">
+                <span id="AUD"><strong>${currencies_json['AUD']['code']}</strong> - ${currencies_json['AUD']['name']}</span>
+                <span id="CAD"><strong>${currencies_json['CAD']['code']}</strong> - ${currencies_json['CAD']['name']}</span>
+                <span id="EUR"><strong>${currencies_json['EUR']['code']}</strong> - ${currencies_json['EUR']['name']}</span>
+                <span id="MXN"><strong>${currencies_json['MXN']['code']}</strong> - ${currencies_json['MXN']['name']}</span>
+                <span id="GBP"><strong>${currencies_json['GBP']['code']}</strong> - ${currencies_json['GBP']['name']}</span>
+                <span id="USD"><strong>${currencies_json['USD']['code']}</strong> - ${currencies_json['USD']['name']}</span>
+            </div>
+            <h4>All Currencies</h4>
+            `;
 
-        currencies_node_list.forEach((currency) => {
-            if (currency.getAttribute('selected')) {
-                selected_currency = currency.value;
+            menu_container.insertAdjacentHTML('afterBegin', top_currencies);
+            menu_container.classList.add('currency-content');
+
+            all_currencies_container.classList.add('all-currencies');
+
+            for (const currency in currencies_json) {
+                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency]['name']}</span>`);
             }
 
-            currencies_obj[currency.label] = currency.value;
-        });
+            menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
 
-        currencies = Object.entries(currencies_obj);
+            utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
+        };
 
-        currencies.forEach((currency) => {
-            if (
-                currency[0] === 'United States Dollars' ||
-                currency[0] === 'Euro' ||
-                currency[0] === 'United Kingdom Pounds' ||
-                currency[0] === 'Mexico Pesos' ||
-                currency[0] === 'Canada Dollars' ||
-                currency[0] === 'Australia Dollars'
-            ) {
-                top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-            }
+        const updateParamOnCurrencyClick = () => {
+            const params = new URLSearchParams(window.location.search);
+            const dropdown = document.querySelector('.dropdown');
 
-            currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-        });
+            if (!dropdown) return;
 
-        currency_label.addEventListener('click', () => {
-            currencies_container.classList.toggle('show-currencies-container');
+            dropdown.addEventListener('click', (e) => {
+                this.selected_currency = e.target.id;
+                if (!this.selected_currency) return;
 
-            // return if ie - ie can't toggle an svg
-            if (window.document.documentMode) return;
+                document.querySelector('.active-currency').classList.remove('active-currency');
+                document.querySelector(`#${e.target.id}`).classList.add('active-currency');
 
-            currency_label.querySelector('svg').classList.toggle('flip-svg');
-        });
+                document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
 
-        currencies_container.addEventListener('click', (e) => {
-            if (!e.target.getAttribute('id')) return;
+                if (this.page_name !== 'search-results') return;
+                params.set('currency', this.selected_currency);
+                window.location.search = params.toString();
+            });
+        };
 
-            clicked_currency = e.target.getAttribute('id');
-            document.querySelector('.active-currency').classList.remove('active-currency');
-            document.getElementById(clicked_currency).classList.add('active-currency');
-            currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
-            currencies_select.value = clicked_currency;
+        const styleActiveCurrency = () => {
+            const active_currency_meta = document.querySelector('meta[name="currency"]');
 
-            if (document.querySelector('.SearchHotels')) submit.click();
-        });
+            if (!active_currency_meta) return;
 
-        document.getElementById(selected_currency).classList.add('active-currency');
+            const active_currency = active_currency_meta.content;
 
-        window.addEventListener('click', (e) => {
-            if (document.querySelector('.show-currencies-container')) {
-                if (
-                    e.target === document.querySelector('.currencies') ||
-                    e.target === document.querySelector('#currency-label') ||
-                    e.target.parentNode === document.querySelector('.currencies') ||
-                    e.target.parentNode === document.querySelector('.top-currencies')
-                )
-                    return;
+            this.selected_currency = active_currency;
 
-                currencies_container.classList.toggle('show-currencies-container');
+            document.querySelector(`#${active_currency}`).classList.add('active-currency');
 
-                // return if ie - ie can't toggle svgs
-                if (window.document.documentMode) return;
-                currency_label.querySelector('svg').classList.toggle('flip-svg');
-            }
-        });
+            document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
+        };
 
-        currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
+        await getCurrencyJSON();
     }
 
     setupDatePrompt() {
@@ -1221,11 +1218,11 @@ export default class BasePortal {
                 if (!prop_id_el) return;
 
                 prop_id = prop_id_el.textContent;
-                ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
+                if (window.ArnMapDispatcher) ArnMapDispatcher.eventPropertyHighlightOn(prop_id);
             });
 
             property.addEventListener('mouseleave', (e) => {
-                ArnMapDispatcher.eventPropertyHighlightOff(prop_id);
+                if (window.ArnMapDispatcher) ArnMapDispatcher.eventPropertyHighlightOff(prop_id);
             });
         });
     }
@@ -1564,7 +1561,7 @@ export default class BasePortal {
                 const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);

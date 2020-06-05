@@ -36,7 +36,7 @@ export default function siteConfig() {
         reviews_before_info: true,
         show_stars: false,
         show_language_select: false,
-        show_currency_select: false,
+        show_currency_select: true,
         show_date_prompt: false,
         showStarRatings: false,
         fav_icon_url: `${env_path.path}/${directory_name}/img/favicon.png`,

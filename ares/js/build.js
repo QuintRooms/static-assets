@@ -243,7 +243,7 @@ export default class BasePortal {
                         });
                 });
             });
-
+            this.applyDarkTheme();
             this.applyCustomStyles();
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
             // this.forceClickOnCitySearch();
@@ -778,16 +778,20 @@ export default class BasePortal {
             'beforeEnd',
             `
         <style>
-        /* Header */
+            /* Header */
 
-        header {
-            justify-content: ${this.site_config.header.logo_flex_position};
-            background: ${this.site_config.header.background};
-        }
-
-        .logo img{
-            max-width: ${this.site_config.header.logo_max_width};
-        }
+            header {
+                justify-content: ${this.site_config.header.logo_flex_position};
+                background: ${this.site_config.header.background};
+            }
+            
+            .logo img{
+                max-width: ${this.site_config.header.logo_max_width};
+            }
+            
+            body, #thePropertyAmenities legend {
+                background-color: ${this.site_config.background_color};
+            }
 
         /* Primary Background Color */
             #searching h2:after,
@@ -1035,6 +1039,7 @@ export default class BasePortal {
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
+        document.querySelector('.arrow polyline').removeAttribute('stroke');
         document.body.insertAdjacentHTML('beforeend', '<link href="https://static.hotelsforhope.com/ares/styles/dark.css" rel="stylesheet">');
     }
 

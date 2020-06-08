@@ -1,5 +1,5 @@
 import BasePortal from '../../js/build';
-import SiteConfig from './60279-config';
+import SiteConfig from './59788-config';
 
 const site_config = new SiteConfig();
 

@@ -34,6 +34,7 @@ module.exports = () => {
     } else if (process.env.environment === 'local') {
         entry_points = {
             'room_steals-52342': './src/52342.js', // Room Steals
+            'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
         };
     }
 

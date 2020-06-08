@@ -23,7 +23,7 @@ export default function siteConfig() {
             is_lrg: true,
         },
         cug: {
-            is_cug: true,
+            is_cug: false,
             show_points: false,
             allow_registration: false,
             show_percent_savings: false,
@@ -82,5 +82,6 @@ export default function siteConfig() {
             },
         },
         // new options
+        confirmation_email_from: 'Hotels for Hope',
     };
 }

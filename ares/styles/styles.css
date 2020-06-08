@@ -1751,24 +1751,36 @@ legend {
     .SinglePropDetail .bookRoomCell {
         display: grid;
         grid-template-columns: 2fr 2fr;
+        grid-template-rows: 3fr .5fr .25fr;
     }
 
     .SinglePropDetail .bookRoom {
         max-width: 125px;
         width: 100%;
-        align-self: flex-end;
-        margin: 10px 0 10px auto;
+        align-self: start;
+        justify-self: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-top: 8px;
+    }
 
+    .SinglePropDetail .holdRoom {
+        max-width: 125px;
+        width: 100%;
+        align-self: end;
+        justify-self: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-top: 10px;
     }
 
     .SinglePropDetail .ArnRateCancelAnchor {
-        align-self: flex-end;
-        grid-column: 2;
-        text-align: right;
+        align-self: flex-start;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
     }
 
     .SinglePropDetail .ArnNightlyRate {
-        margin-top: 8px;
         text-align: left;
         width: 200px;
     }
@@ -1787,6 +1799,8 @@ legend {
     .roomCount{
         text-align: left;
         padding-top: 8px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
     }
 }
 

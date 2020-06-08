@@ -108,6 +108,7 @@ export default class BasePortal {
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 utilities.emailVerificationSetup();
+                this.fixCheckoutInputTabOrder();
             }
 
             if (this.page_name === 'confirmation') {
@@ -725,7 +726,9 @@ export default class BasePortal {
             );
 
             utilities.createWrapper(
-                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, .RoomNumber-${reservation_count} #theCardVerificationAjax`,
+                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
+                 .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
+                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,
                 'afterEnd'
@@ -1120,7 +1123,7 @@ export default class BasePortal {
     }
 
     async buildCurrencyDropdown() {
-        const getCurrencyJSON = () => {
+        const get_currency_j_s_o_n = () => {
             fetch(`${env_path.path}/js/json/currencies.json`)
                 .then((response) => {
                     if (!response.ok) {
@@ -1129,9 +1132,9 @@ export default class BasePortal {
                     return response.json();
                 })
                 .then((currencies_json) => {
-                    setupContentForDropdown(currencies_json);
-                    updateParamOnCurrencyClick();
-                    styleActiveCurrency();
+                    setup_content_for_dropdown(currencies_json);
+                    update_param_on_currency_click();
+                    style_active_currency();
                 })
                 .catch((err) => {
                     err.text().then((error) => {
@@ -1140,7 +1143,7 @@ export default class BasePortal {
                 });
         };
 
-        const setupContentForDropdown = (currencies_json) => {
+        const setup_content_for_dropdown = (currencies_json) => {
             const currencies = Object.entries(currencies_json);
 
             const menu_container = document.createElement('div');
@@ -1149,12 +1152,12 @@ export default class BasePortal {
             const top_currencies = `
             <h4>Top Currencies</h4>
             <div class="top-currencies">
-                <span id="AUD"><strong>${currencies_json['AUD']['code']}</strong> - ${currencies_json['AUD']['name']}</span>
-                <span id="CAD"><strong>${currencies_json['CAD']['code']}</strong> - ${currencies_json['CAD']['name']}</span>
-                <span id="EUR"><strong>${currencies_json['EUR']['code']}</strong> - ${currencies_json['EUR']['name']}</span>
-                <span id="MXN"><strong>${currencies_json['MXN']['code']}</strong> - ${currencies_json['MXN']['name']}</span>
-                <span id="GBP"><strong>${currencies_json['GBP']['code']}</strong> - ${currencies_json['GBP']['name']}</span>
-                <span id="USD"><strong>${currencies_json['USD']['code']}</strong> - ${currencies_json['USD']['name']}</span>
+                <span id="AUD"><strong>${currencies_json.AUD.code}</strong> - ${currencies_json.AUD.name}</span>
+                <span id="CAD"><strong>${currencies_json.CAD.code}</strong> - ${currencies_json.CAD.name}</span>
+                <span id="EUR"><strong>${currencies_json.EUR.code}</strong> - ${currencies_json.EUR.name}</span>
+                <span id="MXN"><strong>${currencies_json.MXN.code}</strong> - ${currencies_json.MXN.name}</span>
+                <span id="GBP"><strong>${currencies_json.GBP.code}</strong> - ${currencies_json.GBP.name}</span>
+                <span id="USD"><strong>${currencies_json.USD.code}</strong> - ${currencies_json.USD.name}</span>
             </div>
             <h4>All Currencies</h4>
             `;
@@ -1165,7 +1168,7 @@ export default class BasePortal {
             all_currencies_container.classList.add('all-currencies');
 
             for (const currency in currencies_json) {
-                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency]['name']}</span>`);
+                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency].name}</span>`);
             }
 
             menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
@@ -1173,7 +1176,7 @@ export default class BasePortal {
             utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
         };
 
-        const updateParamOnCurrencyClick = () => {
+        const update_param_on_currency_click = () => {
             const params = new URLSearchParams(window.location.search);
             const dropdown = document.querySelector('.dropdown');
 
@@ -1194,7 +1197,7 @@ export default class BasePortal {
             });
         };
 
-        const styleActiveCurrency = () => {
+        const style_active_currency = () => {
             const active_currency_meta = document.querySelector('meta[name="currency"]');
 
             if (!active_currency_meta) return;
@@ -1208,7 +1211,7 @@ export default class BasePortal {
             document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
         };
 
-        await getCurrencyJSON();
+        await get_currency_j_s_o_n();
     }
 
     setupDatePrompt() {
@@ -2138,5 +2141,55 @@ export default class BasePortal {
             <hr>
             `
         );
+    }
+
+    fixCheckoutInputTabOrder() {
+        const form = document.querySelector('#theReservationForm');
+        const room_count_el = document.querySelector('meta[name="numberOfRooms');
+
+        if (!form || !room_count_el) return;
+
+        const room_count = room_count_el.content;
+
+        const elements = form.getElements();
+
+        elements.forEach((element, i) => {
+            if (!element) return;
+            element.setAttribute('tabIndex', i);
+        });
+
+        for (let i = 1; i <= room_count; i += 1) {
+            const city = document.querySelector(`#theCity${i}`);
+            const postal = document.querySelector(`#theZipCode${i}`);
+            const state = document.querySelector(`#theStateAjax${i} select`);
+            const country = document.querySelector(`#theCountryAjax${i} select`);
+
+            const card_name = document.querySelector(`#theCreditCardBillingNameAjax${i} input`);
+            const cvv_code = document.querySelector(`.RoomNumber-${i} #theCvvCode`);
+            const month = document.querySelector(`.RoomNumber-${i} .cardMonth`);
+            const year = document.querySelector(`.RoomNumber-${i} .cardYear`);
+
+            if (!city || !postal || !state || !country || !card_name || !cvv_code || !month || !year) return;
+
+            const city_tab_index = city.tabIndex;
+            const state_tab_index = state.tabIndex;
+            const postal_tab_index = postal.tabIndex;
+            const country_tab_index = country.tabIndex;
+
+            const card_name_tab_index = card_name.tabIndex;
+            const cvv_code_tab_index = cvv_code.tabIndex;
+            const month_tab_index = month.tabIndex;
+            const year_tab_index = year.tabIndex;
+
+            city.setAttribute('tabIndex', postal_tab_index);
+            state.setAttribute('tabIndex', city_tab_index);
+            postal.setAttribute('tabIndex', country_tab_index);
+            country.setAttribute('tabIndex', state_tab_index);
+
+            card_name.setAttribute('tabIndex', cvv_code_tab_index);
+            cvv_code.setAttribute('tabIndex', month_tab_index);
+            month.setAttribute('tabIndex', year_tab_index);
+            year.setAttribute('tabIndex', card_name_tab_index);
+        }
     }
 }

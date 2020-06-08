@@ -24,7 +24,7 @@ export default function siteConfig() {
             allow_registration: true,
             show_percent_savings: false,
         },
-        exclusive_rate_text: 'TSC DEALS',
+        exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,

@@ -19,14 +19,15 @@ module.exports = () => {
             'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
+            'transportation_short_course_20-56735': './src/56735.js', // TSC 2020
         };
 
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
             'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'cug_template-39624': './src/39624.js', // CUG Template
+            'ares_child-60279': './src/60279.js', // Ares Child Test
+            'cug_template-39624': './src/39624.js', // CUG Template
         };
 
         // local environment

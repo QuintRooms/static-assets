@@ -13,10 +13,6 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        currency: 'USD',
-        distance_unit: 'useMiles',
-        map_size: '12',
-        radius: '50',
         lodging: {
             event_id: 41751,
             event_name: 'Voodoo Music + Arts Experience',

@@ -3369,6 +3369,26 @@ body.HoldRoomsForm {
     border: none !important;
 }
 
+.confirmation-messaging + hr{
+    margin: 42px 0;
+    border: none;
+    height: 1px;
+    background: #ccc;
+}
+
+@media screen and (max-width: 800px){
+    .confirmation-messaging {
+        margin-top: 42px;
+    }
+
+    #theBookingPage.ConfirmationPage .GuestForms{
+        margin-bottom: 42px;
+    }
+
+    #theBookingPage.ConfirmationPage #theAjaxPaymentPolicies{
+        order: 2;
+    }
+}
 /* Confirmation Page End */
 
 /* search-results page tags and sash start */

@@ -112,6 +112,7 @@ export default class BasePortal {
 
             if (this.page_name === 'confirmation') {
                 this.implementAds();
+                this.addMessagingToConfirmationPage();
             }
 
             // root page methods
@@ -889,7 +890,6 @@ export default class BasePortal {
             }
 
             @media screen and (max-width: 800px) {
-
                 #commands a:active,
                 #commands a:focus,
                 #commands a:hover,
@@ -908,8 +908,11 @@ export default class BasePortal {
             .open-modal,
             .lowest-rate-link,
             .SinglePropDetail .RateCalendarPopupAnchor,
-            .ArnContentContainer legend, #theRoomsOnHold h2
-             {
+            .ArnContentContainer legend, #theRoomsOnHold h2,
+            .confirmation-messaging a,
+            .receiptLink,
+            .returnResultsInfo a,
+            .supportInfo a{
                 color: ${this.site_config.secondary_text_color};
             }
             
@@ -1055,7 +1058,20 @@ export default class BasePortal {
         if (!this.site_config) return;
 
         utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-        document.body.insertAdjacentHTML('beforeEnd', `<style>*{font-family: ${this.site_config.google_font_name}, 'Helvetica';}</style>`);
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `
+            <style>
+                *,
+                .taxFeeRow td,
+                .discount td,
+                .totalRow td,
+                .balanceDueRow td,
+                .guestNameFields td{
+                    font-family: ${this.site_config.google_font_name}, 'Helvetica';
+                }
+            </style>`
+        );
     }
 
     // refactor me, please!
@@ -1756,7 +1772,7 @@ export default class BasePortal {
         if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
 
         try {
-            const html = await fetch('https://dev-static.hotelsforhope.com/components/lrg-form/lrg-form.html').then((response) => response.text());
+            const html = await fetch('https://static.hotelsforhope.com/components/lrg-form/lrg-form.html').then((response) => response.text());
 
             document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
         } catch (error) {
@@ -2102,5 +2118,25 @@ export default class BasePortal {
         policies.addEventListener('click', () => {
             document.querySelector('div.modal-overlay').classList.toggle('show-modal');
         });
+    }
+
+    addMessagingToConfirmationPage() {
+        if (this.page_name !== 'confirmation' || this.site_config.confirmation_email_from === null || this.site_config.confirmation_email_from === '') return;
+
+        const user_email = window.arnCustomerEmailAddress;
+        const email_from = this.site_config.confirmation_email_from;
+        const confirmation_container = document.querySelector('.GuestForms');
+
+        if (!user_email || !confirmation_container) return;
+
+        confirmation_container.insertAdjacentHTML(
+            'afterBegin',
+            `<div class="confirmation-messaging">
+                <h2>Thank You!</h1>
+                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>${email_from}</strong></a> at <strong>${user_email}</strong> shortly.</p>
+            </div>
+            <hr>
+            `
+        );
     }
 }

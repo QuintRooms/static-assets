@@ -1811,6 +1811,12 @@ legend {
     }
 }
 
+@media screen and (max-width: 412px) {
+    .SinglePropDetail .bookRoomCell {
+        grid-template-rows: 2fr .5fr .25fr;
+    }
+}
+
 /* Single Prop Page End */
 
 /* Secondary Search Container Start*/

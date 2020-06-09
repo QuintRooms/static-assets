@@ -1553,6 +1553,18 @@ legend {
     display: none;
 }
 
+@media screen and (min-width: 1000px) {
+    .SinglePropDetail #theGeneralInfo {
+        width: 30vw;
+        display: inline;
+    }
+
+    .SinglePropDetail #thePropertyMap {
+        display: inline;
+        width: 40vw;
+    }
+}
+
 .PropertyAmenities {
     padding: 0;
     margin: 0;

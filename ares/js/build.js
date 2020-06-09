@@ -187,6 +187,7 @@ export default class BasePortal {
             utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
                 if (this.page_name === 'hold-rooms') {
                     this.moveReviewsIntoPropNameContainer();
+                    utilities.addClass('ArnSearchContainerMainDiv', 'ArnSubPage');
                 }
 
                 if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;

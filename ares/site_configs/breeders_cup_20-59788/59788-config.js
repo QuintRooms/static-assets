@@ -43,7 +43,7 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.breederscup.com/',
             background: '#fff',
-            logo_flex_position: 'flex_start',
+            logo_flex_position: 'flex-start',
             logo_max_width: '400px',
         },
         banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.png) no-repeat center center /cover`,

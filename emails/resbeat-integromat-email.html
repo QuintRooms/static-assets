@@ -8,22 +8,22 @@
 <body style="margin: 0; padding: 0; font-family: Avenir, Helvetica;">
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">	
 		<tr>
-			<td style="padding: 10px 0 30px 0;">
+			<td style="padding: 10px 0 30px 0; color: #646262;">
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
                     <tr>
                         <td align="center">
-                            <img style="max-width: 225px;" src="https://static.hotelsforhope.com/ares/site_configs/voodoo_21-60792/img/logo.png" alt="">
+                            <img style="max-width: 225px;" src="[LogoURL, fallback=https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png]" alt="">
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
-                            <hr style="margin: 24px 0; border: none; background: #dfdfdf; height: 1px; max-width: 650px;">
+                            <hr style="margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
-                            <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked, Jason.</h1>
-                            <p style="color: #5dc3ac; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0;">Reservation Number: ARN1532765336</p>
+                            <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked</h1>
+                            <p style="color: #5dc3ac; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0;">Reservation Number: [ConfirmationNumber,fallback=]</p>
                         </td>
                     </tr>
 					<tr>
@@ -36,12 +36,12 @@
 							<table style="margin: 18px 0;" border="0" cellpadding="0" cellspacing="0" width="100%">
 								<tr>
 									<td align="center">
-                                        <h1 style="font-weight: lighter; color: #5dc3ac; margin: 0;">Hyatt Regency McCormick Place</h1>
-                                        <p style="margin-top: 8px; font-weight: 500; color: #646262;">2233 S Martin Luther King Dr. Chicago, IL 60616</p>
+                                        <h1 style="font-weight: lighter; color: #5dc3ac; margin: 0;">[Hotel,fallback=]</h1>
+                                        <p style="margin-top: 8px; font-weight: 500; color: #646262;">[HotelAddress1,fallback=] [City-Hotel,fallback=], [State-Hotel,fallback=] [ZipCode-Hotel,fallback=]</p>
 									</td>
 								</tr>
 							</table>
-							<table bgcolor="#f4f4f4" width="100%" align="center" style="padding: 36px; color: #808080">
+							<table bgcolor="#f4f4f4" width="100%" align="center" style="padding: 42px; color: #808080">
 								<tr>
 									<td colspan="2" align="center">
 										<h3 style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #646262; margin: 0;">Reservation Details</h3>
@@ -50,53 +50,50 @@
 								</tr>
 								<tr>
 									<td width="50%" valign="top">
-										<table cellspacing="8">
+										<table>
 											<tr>
 												<td>Guest Name:</td>
-												<td>Jason Kaplan</td>
+												<td>[GuestName,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Check In:</td>
-												<td>09-31-2020 3 PM</td>
+												<td>[CheckInDate,fallback=] - [CheckInTime,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Check Out:</td>
-												<td>10-02-2020 - 12 PM</td>
+												<td>[CheckOutDate,fallback=] - [CheckOutTime,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Guests:</td>
-												<td>2</td>
+												<td>[Guests,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Rooms:</td>
-												<td>1</td>
+												<td>[Rooms,fallback=]</td>
 											</tr>
 										</table>
 									</td>
 									<td width="50%" valign="top">
-										<table cellspacing="8">
+										<table>
 											<tr>
 												<td>Total for Stay:</td>
-												<td>$155.21</td>
+												<td>[Total,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Tax Amount:</td>
-												<td>$15.21</td>
+												<td>[TaxAmount,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Deposit Charged:</td>
-												<td>$178.49</td>
+												<td>[DepositCharged,fallback=]</td>
 											</tr>
 											<tr>
 												<td>Balance Due:</td>
-												<td>$0</td>
+												<td>[BalanceDue,fallback=]</td>
 											</tr>
 											<tr>
 												<td valign="top">Rate Per Night:</td>
-												<td>Sept 31, 2020: 229.00 USD<br>
-													Oct 01, 2020: 229.00 USD<br>
-													Oct 02, 2020: 229.00 USD
-												</td>
+												<td>[RoomRate,fallback=]</td>
 											</tr>
 										</table>
 									</td>
@@ -108,7 +105,7 @@
 						<td>
 							<table>
 								<tr>
-									<td align="center">
+									<td align="center" style="padding: 0 42px;">
 										<img style="margin-top: 36px;" src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png" alt="Resbeat logo">
 										<h1 style="color:#1f5853; font-weight: 500;">Need help with this reservation?</h1>
 										<p style="color: #646262">Voodoo has partnered with ResBeat to manage hotel stays. ResBeat is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
@@ -118,48 +115,117 @@
 						</td>
 					</tr>
 					<tr>
-						<td>
-							<h3>Cancel Reservation</h3>
-							<p>click here to cancel</p>
-						</td>
-						<td>
-							<h3>Email ResBeat</h3>
-							<p><a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>
-						</td>
-						<td>
-							<h3>Call ResBeat</h3>
-							<p>+1 512.691.9555</p>
-						</td>
-					</tr>
-				</table>
-					<tr>
-						<td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
-							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<td style="padding: 0 42px;">
+							<table width="100%">
 								<tr>
-									<td style="color: #ffffff; font-size: 14px;" width="75%">
-										&reg; Someone, somewhere 2013<br/>
-										<a href="#" style="color: #ffffff;"><font color="#ffffff">Unsubscribe</font></a> to this newsletter instantly
+									<td width="33%" align="center">
+										<svg style="max-width: 48px;" viewBox="0 0 24 24" class="close">
+											<path d="M 2 2 L 22 22 M 2 22 L22 2" stroke="#1f5853" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"></path>
+										</svg>
+										<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Cancel Reservation</h3>
+										<span style="font-weight: 500; color: #646262;">click here to cancel</span>
 									</td>
-									<td align="right" width="25%">
-										<table border="0" cellpadding="0" cellspacing="0">
-											<tr>
-												<td style="font-size: 12px; font-weight: bold;">
-													<a href="http://www.twitter.com/" style="color: #ffffff;">
-														<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/tw.gif" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
-													</a>
-												</td>
-												<td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
-												<td style="font-size: 12px; font-weight: bold;">
-													<a href="http://www.twitter.com/" style="color: #ffffff;">
-														<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/fb.gif" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
-													</a>
-												</td>
-											</tr>
-										</table>
+									<td width="33%" align="center">
+										<svg style="max-width: 48px;" viewBox="-5 0 130 120" class="mail">
+											<g stroke="#1f5853" stroke-width="2" fill="none">
+												<rect x="0" y="10" width="120" height="100" rx="15" ry="15"></rect>
+											</g>
+											<g fill="none" stroke="#1f5853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M3.2 16 C -3 20, 10 42, 16 46 L60 80"></path>
+											<path transform="translate(120,0) scale(-1,1)" d="M3.2 16 C -3 20, 10 42, 16 46 L60 80"></path>
+											</g>
+										</svg>
+										<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Email ResBeat</h3>
+										<span><a style="font-weight: 500; color: #646262;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></span>
+									</td>
+									<td width="33%" align="center">
+										<svg class="phone" style="max-width: 48px;" viewBox="-3 0 36 36">
+											<path d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z" fill="none" stroke="#1f5853" stroke-width=".5"></path>
+											</svg>
+										<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Call ResBeat</h3>
+										<span style="font-weight: 500; color: #646262;">+1 512.691.9555</span>
 									</td>
 								</tr>
 							</table>
 						</td>
+					</tr>
+					<tr>
+                        <td align="center">
+                            <hr style="margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
+                        </td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Room Description</h4>
+							<span>[RoomDescription,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Deposit Policy</h4>
+							<span>[DepositPolicy,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Payment Terms</h4>
+							<span>[PaymentTerms,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Cancellation Policy</h4>
+							<span>[CancellationPolicy,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Property Policy</h4>
+							<span>[PropertyPolicy,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Extra Fees Policy</h4>
+							<span>[ExtraFeesPolicy,fallback=] </span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Payment Policy</h4>
+							<span>[PaymentPolicy,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Check In Support Policy</h4>
+							<span>[CheckInSupportPolicy,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Important Guest Information</h4>
+							<span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+						</td>
+					</tr>
+					<tr>
+                        <td align="center">
+                            <hr style="margin: 36px 42px; border: none; background: #dfdfdf; height: 1px;">
+                        </td>
+					</tr>
+
+							<tr>
+								<td>
+									<h3 style="margin-bottom: 0; font-weight: 500;">ResBeat</h3>
+									<span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
+								</td>
+								<td>
+									<img src="" alt="">
+									<img src="" alt="">
+									<img src="" alt="">
+									<img src="" alt="">
+								</td>
+							</tr>
 					</tr>
 				</table>
 			</td>

@@ -46,7 +46,7 @@ export default function siteConfig() {
             logo_flex_position: 'flex-start',
             logo_max_width: '400px',
         },
-        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.png) no-repeat center center /cover`,
+        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.jpg) no-repeat center center /cover`,
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         background_color: '#fff',

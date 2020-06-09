@@ -1555,13 +1555,13 @@ legend {
 
 @media screen and (min-width: 1000px) {
     .SinglePropDetail #theGeneralInfo {
-        width: 30vw;
+        width: 48%;
         display: inline;
     }
 
     .SinglePropDetail #thePropertyMap {
         display: inline;
-        width: 40vw;
+        width: 48%;
     }
 }
 

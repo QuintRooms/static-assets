@@ -80,7 +80,7 @@ export default class BasePortal {
                     });
                 });
 
-                this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
+                // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
             }
@@ -262,6 +262,8 @@ export default class BasePortal {
             this.positionPropReviews();
             this.insertPoweredByFooterLogo();
             this.updateConfirmationCheckBoxes();
+            this.showMoreAmenities();
+            this.hideRemainingRooms();
         });
     }
 
@@ -916,7 +918,7 @@ export default class BasePortal {
             .confirmation-messaging a,
             .receiptLink,
             .returnResultsInfo a,
-            .supportInfo a{
+            .supportInfo a, .SinglePropDetail #show-more-or-less {
                 color: ${this.site_config.secondary_text_color};
             }
             
@@ -2094,8 +2096,7 @@ export default class BasePortal {
     }
 
     positionPropReviews() {
-        if (this.page_name !== 'property-detail') return;
-        if (!this.site_config.reviews_before_info) return;
+        if (this.page_name !== 'property-detail' || !this.site_config.reviews_before_info || document.querySelector('.PropertyReviews') === null) return;
 
         const reviews = document.querySelector('.PropertyReviews');
         document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', reviews);
@@ -2192,5 +2193,50 @@ export default class BasePortal {
             month.setAttribute('tabIndex', year_tab_index);
             year.setAttribute('tabIndex', card_name_tab_index);
         }
+    }
+
+    showMoreAmenities() {
+        if (this.page_name !== 'property-detail') return;
+        let show_more;
+        const amenity_container = document.querySelector('.ArnAmenityContainer');
+
+        function showMore() {
+            show_more.addEventListener('click', () => {
+                if (document.querySelector('span.show-more')) {
+                    const amenities = document.querySelectorAll('.ArnAmenityContainer td:not(.show-amenities)');
+                    amenities.forEach((el) => {
+                        el.classList.toggle('show-amenities');
+                    });
+                    show_more.textContent = 'Show Less Amenities';
+                    show_more.classList.toggle('show-more');
+                    show_more.classList.toggle('show-less');
+                } else if (document.querySelector('span.show-less')) {
+                    const amenities = document.querySelectorAll('.ArnAmenityContainer td:not(:first-child)');
+                    amenities.forEach((el) => {
+                        el.classList.toggle('show-amenities');
+                    });
+                    show_more.textContent = 'Show More Amenities';
+                    show_more.classList.toggle('show-less');
+                    show_more.classList.toggle('show-more');
+                }
+            });
+        }
+
+        if (document.querySelector('#show-more-or-less')) return;
+        amenity_container.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>');
+        show_more = document.querySelector('span#show-more-or-less');
+        document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities');
+        showMore();
+    }
+
+    hideRemainingRooms() {
+        if (this.page_name !== 'property-detail' || !document.querySelector('div.roomCount')) return;
+        const low_rooms = document.querySelectorAll('div.roomCount');
+        low_rooms.forEach((el) => {
+            const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
+            if (rooms_remaining < 6) {
+                el.style.display = 'block';
+            }
+        });
     }
 }

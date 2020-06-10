@@ -1635,7 +1635,6 @@ legend {
 #thePropertyAmenities legend {
     z-index: 9;
     position: relative;
-    cursor: pointer;
     background: #fff;
 }
 

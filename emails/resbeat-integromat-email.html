@@ -11,8 +11,8 @@
 			<td style="padding: 10px 0 30px 0; color: #646262;">
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
                     <tr>
-                        <td align="center">
-                            <img style="max-width: 225px;" src=[LogoURL,fallback=https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png]>
+                        <td align="center" style="background:url([LogoURL,fallback=https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png]);">
+							<img style="max-width: 225px;" src="[LogoURL,fallback=https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png]">
                         </td>
                     </tr>
                     <tr>
@@ -28,7 +28,7 @@
                     </tr>
 					<tr>
 						<td align="center">
-							<img width="800" src="../images/stock_photos/hotel-bed.jpg" alt="Hotel bed" style="display: block;" />
+							<img width="800" src="https://dev-static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" alt="Hotel bed" style="display: block;" />
 						</td>
 					</tr>
 					<tr>
@@ -37,7 +37,7 @@
 								<tr>
 									<td align="center">
                                         <h1 style="font-weight: lighter; color: #5dc3ac; margin: 0;">[Hotel,fallback=]</h1>
-                                        <p style="margin-top: 8px; font-weight: 500; color: #646262;">[HotelAddress1,fallback=] [City-Hotel,fallback=], [State-Hotel,fallback=] [ZipCode-Hotel,fallback=]</p>
+                                        <p style="margin-top: 8px; font-weight: 500; color: #646262;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
 									</td>
 								</tr>
 							</table>
@@ -93,7 +93,7 @@
 											</tr>
 											<tr>
 												<td valign="top">Rate Per Night:</td>
-												<td>[RoomRate,fallback=]</td>
+												<td>[RoomRates,fallback=]</td>
 											</tr>
 										</table>
 									</td>
@@ -108,7 +108,7 @@
 									<td align="center" style="padding: 0 42px;">
 										<img style="margin-top: 36px;" src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png" alt="Resbeat logo">
 										<h1 style="color:#1f5853; font-weight: 500;">Need help with this reservation?</h1>
-										<p style="color: #646262">Voodoo has partnered with ResBeat to manage hotel stays. ResBeat is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
+										<p style="color: #646262">[EventName, fallback=] has partnered with ResBeat to manage hotel stays. ResBeat is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
 									</td>
 								</tr>
 							</table>
@@ -154,58 +154,80 @@
                             <hr style="margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
                         </td>
 					</tr>
+					[if:RoomDescriptionLong]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Room Description</h4>
-							<span>[RoomDescription,fallback=]</span>
+							<span>[RoomDescriptionLong,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:DepositPolicyLong]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Deposit Policy</h4>
-							<span>[DepositPolicy,fallback=]</span>
+							<span>[DepositPolicyLong,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:PaymentTermsLong]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Payment Terms</h4>
-							<span>[PaymentTerms,fallback=]</span>
+							<span>[PaymentTermsLong,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:CancellationPolicyLong]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Cancellation Policy</h4>
-							<span>[CancellationPolicy,fallback=]</span>
+							<span>[CancellationPolicyLong,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:PropertyPolicy]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Property Policy</h4>
 							<span>[PropertyPolicy,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:ExtraFeesPolicy]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Extra Fees Policy</h4>
 							<span>[ExtraFeesPolicy,fallback=] </span>
 						</td>
 					</tr>
+					[endif]
+					[if:PaymentPolicy]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Payment Policy</h4>
 							<span>[PaymentPolicy,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
+					[if:CheckInSupportPolicy]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Check In Support Policy</h4>
 							<span>[CheckInSupportPolicy,fallback=]</span>
 						</td>
 					</tr>
+					[endif]
 					<tr>
 						<td>
 							<h4 style="margin-bottom: 0; color: #646262;">Important Guest Information</h4>
-							<span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+							<span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin-bottom: 0; color: #646262;">Reservation Modification</h4>
+							<span>To cancel a reservation, <a href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[SiteID,fallback=39560]">click here</a>. For further assistance or if you have questions about your reservation, contact Hotels for Hope at 512-691-9555 or <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
 						</td>
 					</tr>
 					<tr>
@@ -213,23 +235,20 @@
                             <hr style="margin: 36px 42px; border: none; background: #dfdfdf; height: 1px;">
                         </td>
 					</tr>
-
-							<tr>
-								<td>
-									<h3 style="margin-bottom: 0; font-weight: 500;">ResBeat</h3>
-									<span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
-								</td>
-								<td>
-									<img src="" alt="">
-									<img src="" alt="">
-									<img src="" alt="">
-									<img src="" alt="">
-								</td>
-							</tr>
+						<tr>
+							<td>
+								<h3 style="margin-bottom: 0; font-weight: 500;">ResBeat</h3>
+								<span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
+							</td>
+						</tr>
+						<tr>
+							<td><unsubscribe>Unsubscribe</unsubscribe></td>
+						</tr>
 					</tr>
 				</table>
 			</td>
 		</tr>
 	</table>
+	<img src="https://createsend1.com/t/i-o-l-l/o.gif" style="visibility: hidden !important; display: block !important; height:1px !important; width:1px !important; border: 0 !important; margin: 0 !important; padding: 0 !important" width="1" height="1" border="0" alt="" editable="true" />
 </body>
 </html>

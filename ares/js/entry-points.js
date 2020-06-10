@@ -20,6 +20,8 @@ module.exports = () => {
             'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
             'transportation_short_course_20-56735': './src/56735.js', // TSC 2020
+            'breeders_cup_20-59788': './src/59788.js', // Breeder's Cup 2020
+            'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
         };
 
         // develop environment

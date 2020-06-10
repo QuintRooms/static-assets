@@ -233,4 +233,13 @@ export default class Utilities {
             }
         });
     }
+
+    /**
+     *@description Adds a class to the selector passed in.
+     *@param selector grabs the element using query selector.
+     *@param class gives the method the class you wish to add to the classList of that element.
+     */
+    addClass(selector, className) {
+        document.querySelector(`.${selector}`).classList.add(className);
+    }
 }

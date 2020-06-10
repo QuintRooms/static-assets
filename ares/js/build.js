@@ -2230,7 +2230,7 @@ export default class BasePortal {
     }
 
     hideRemainingRooms() {
-        if (this.page_name !== 'property-detail') return;
+        if (this.page_name !== 'property-detail' || !document.querySelector('div.roomCount')) return;
         const low_rooms = document.querySelectorAll('div.roomCount');
         low_rooms.forEach((el) => {
             const rooms_remaining = parseFloat(el.querySelector('strong').textContent);

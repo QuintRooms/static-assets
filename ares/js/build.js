@@ -263,6 +263,7 @@ export default class BasePortal {
             this.insertPoweredByFooterLogo();
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();
+            this.hideRemainingRooms();
         });
     }
 
@@ -2226,5 +2227,16 @@ export default class BasePortal {
         show_more = document.querySelector('span#show-more-or-less');
         document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities');
         showMore();
+    }
+
+    hideRemainingRooms() {
+        if (this.page_name !== 'property-detail') return;
+        const low_rooms = document.querySelectorAll('div.roomCount');
+        low_rooms.forEach((el) => {
+            const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
+            if (rooms_remaining < 6) {
+                el.style.display = 'block';
+            }
+        });
     }
 }

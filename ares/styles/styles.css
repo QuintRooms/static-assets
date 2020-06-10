@@ -1997,13 +1997,10 @@ legend {
     height: 0;
 }
 
-.SearchHotels .roomCount {
-    display: none;
-}
-
 .roomCount {
     color: #ff4040;
     padding: 6px;
+    display: none;
 }
 
 

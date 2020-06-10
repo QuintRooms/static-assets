@@ -1352,6 +1352,21 @@ legend {
     flex-direction: column;
 }
 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2), 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3){
+    display: none;
+}
+
+.show-amenities {
+    display: block!important;
+}
+
+.SinglePropDetail #show-more-or-less {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 10px;
+}
+
 .SinglePropDetail .rowOne {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1628,9 +1643,10 @@ legend {
     margin-left: 8px;
 }
 
-.ArnAmenityContainer {
+/* .ArnAmenityContainer {
     opacity: 0;
-}
+} */
+
 
 /* Amenities End */
 /* Single Prop Search */

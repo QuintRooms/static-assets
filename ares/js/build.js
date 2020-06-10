@@ -2223,7 +2223,7 @@ export default class BasePortal {
         }
 
         if (document.querySelector('#show-more-or-less')) return;
-        amenity_container.querySelector('tbody tr').insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>');
+        amenity_container.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>');
         show_more = document.querySelector('span#show-more-or-less');
         document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities');
         showMore();

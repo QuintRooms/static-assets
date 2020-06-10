@@ -1364,7 +1364,6 @@ legend {
 .SinglePropDetail #show-more-or-less {
     cursor: pointer;
     text-decoration: underline;
-    padding: 10px;
 }
 
 .SinglePropDetail .rowOne {

@@ -80,7 +80,7 @@ header {
     width: 100%;
     position: relative;
     background: #fff;
-    z-index: 9;
+    z-index: 4;
     display: flex;
     align-items: center;
 }
@@ -1352,6 +1352,20 @@ legend {
     flex-direction: column;
 }
 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2), 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3){
+    display: none;
+}
+
+.show-amenities {
+    display: block!important;
+}
+
+.SinglePropDetail #show-more-or-less {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .SinglePropDetail .rowOne {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1553,6 +1567,18 @@ legend {
     display: none;
 }
 
+@media screen and (min-width: 1000px) {
+    .SinglePropDetail #theGeneralInfo {
+        width: 48%;
+        display: inline;
+    }
+
+    .SinglePropDetail #thePropertyMap {
+        display: inline;
+        width: 48%;
+    }
+}
+
 .PropertyAmenities {
     padding: 0;
     margin: 0;
@@ -1608,7 +1634,6 @@ legend {
 #thePropertyAmenities legend {
     z-index: 9;
     position: relative;
-    cursor: pointer;
     background: #fff;
 }
 
@@ -1616,9 +1641,10 @@ legend {
     margin-left: 8px;
 }
 
-.ArnAmenityContainer {
+/* .ArnAmenityContainer {
     opacity: 0;
-}
+} */
+
 
 /* Amenities End */
 /* Single Prop Search */
@@ -1970,13 +1996,10 @@ legend {
     height: 0;
 }
 
-.SearchHotels .roomCount {
-    display: none;
-}
-
 .roomCount {
     color: #ff4040;
     padding: 6px;
+    display: none;
 }
 
 

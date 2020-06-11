@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Futura-Bold';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format("embedded-opentype"), url("https://static.hotelsforhope.com/ares/site_configs/austin_marathon_21-59243/fonts/FuturaStd-Bold.ttf") format("truetype");
+}
+
+.event-dates {
+    font-family: 'Futura-Bold', 'helvetica';
+    margin-left: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    .event-dates {
+        margin: 0 0 15px 0;
+    }
+}

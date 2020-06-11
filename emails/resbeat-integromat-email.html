@@ -12,18 +12,18 @@
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
                     <tr>
                         <td align="center">
-							<img style="max-width: 225px; display: block;" width="100%" src="[LogoURL]" alt="Logo" title="Logo" />
+							<img style="max-width: 225px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
-                            <hr style="margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
+                            <hr style="display: block; text-align: center; margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
-                            <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked</h1>
-                            <p style="color: [PrimaryTextColor, fallback=#1f5853]; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0;">Reservation Number: [ConfirmationNumber,fallback=]</p>
+                            <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked!</h1>
+                            <p style="color: [PrimaryTextColor, fallback=#1f5853]; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0; font-size: 16px;">Reservation Number: [ConfirmationNumber,fallback=]</p>
                         </td>
                     </tr>
 					<tr>
@@ -33,11 +33,11 @@
 					</tr>
 					<tr>
 						<td>
-							<table style="margin: 18px 0;" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
 								<tr>
-									<td align="center">
+									<td align="center" style="padding: 18px 0;">
                                         <h1 style="font-weight: lighter; color: [PrimaryTextColor, fallback=#1f5853]; margin: 0;">[Hotel,fallback=]</h1>
-                                        <p style="margin-top: 8px; font-weight: 500; color: #646262;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
+                                        <p style="margin-top: 8px; font-weight: 500; color: #646262; font-size: 16px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
 									</td>
 								</tr>
 							</table>
@@ -52,48 +52,48 @@
 									<td width="50%" valign="top">
 										<table width="100%">
 											<tr>
-												<td width="35%">Guest Name:</td>
-												<td>[GuestName,fallback=]</td>
+												<td width="35%" style="font-size: 16px;">Guest Name:</td>
+												<td style="font-size: 16px;">[GuestName,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Check In:</td>
-												<td>[CheckInDate,fallback=] - [CheckInTime,fallback=]</td>
+												<td style="font-size: 16px;">Check In:</td>
+												<td style="font-size: 16px;">[CheckInDate,fallback=] - [CheckInTime,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Check Out:</td>
-												<td>[CheckOutDate,fallback=] - [CheckOutTime,fallback=]</td>
+												<td style="font-size: 16px;">Check Out:</td>
+												<td style="font-size: 16px;">[CheckOutDate,fallback=] - [CheckOutTime,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Guests:</td>
-												<td>[Guests,fallback=]</td>
+												<td style="font-size: 16px;">Guests:</td>
+												<td style="font-size: 16px;">[Guests,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Rooms:</td>
-												<td>[Rooms,fallback=]</td>
+												<td style="font-size: 16px;">Rooms:</td>
+												<td style="font-size: 16px;">[Rooms,fallback=]</td>
 											</tr>
 										</table>
 									</td>
 									<td width="50%" valign="top">
 										<table width="100%">
 											<tr>
-												<td width="35%">Total for Stay:</td>
-												<td>[CurrencySymbol, fallback=][Total,fallback=]</td>
+												<td width="35%" style="font-size: 16px;">Total for Stay:</td>
+												<td style="font-size: 16px;">[CurrencySymbol, fallback=][Total,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Tax Amount:</td>
-												<td>[CurrencySymbol, fallback=][TaxAmount,fallback=]</td>
+												<td style="font-size: 16px;">Tax Amount:</td>
+												<td style="font-size: 16px;">[CurrencySymbol, fallback=][TaxAmount,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Deposit:</td>
-												<td>[CurrencySymbol, fallback=][DepositCharged,fallback=]</td>
+												<td style="font-size: 16px;">Deposit:</td>
+												<td style="font-size: 16px;">[CurrencySymbol, fallback=][DepositCharged,fallback=]</td>
 											</tr>
 											<tr>
-												<td>Balance Due:</td>
-												<td>[CurrencySymbol, fallback=][BalanceDue,fallback=]</td>
+												<td style="font-size: 16px;">Balance Due:</td>
+												<td style="font-size: 16px;">[CurrencySymbol, fallback=][BalanceDue,fallback=]</td>
 											</tr>
 											<tr>
-												<td valign="top">Rate Per Night:</td>
-												<td>[RoomRates,fallback=]</td>
+												<td valign="top" style="font-size: 16px;">Rate Per Night:</td>
+												<td style="font-size: 16px;">[RoomRates,fallback=]</td>
 											</tr>
 										</table>
 									</td>
@@ -103,13 +103,13 @@
 					</tr>
 					<tr>
 						<td>
-							<table>
+							<table width="100%">
 								<tr>
 									<td align="center" style="padding: 0 42px;">
 										<img style="margin-top: 36px;" src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png" alt="Resbeat logo">
 										<h1 style="color:#1f5853; font-weight: 500;">Need help with this reservation?</h1>
 										[if:ClientName]
-											<p style="color: #646262">[ClientName, fallback=] has partnered with ResBeat to manage hotel stays. ResBeat is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
+											<p style="color: #646262; font-size: 16px;">[ClientName, fallback=] has partnered with ResBeat to manage hotel stays. ResBeat is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
 										[endif]
 									</td>
 								</tr>
@@ -123,22 +123,22 @@
 									<td width="33%" align="center">
 										<a style="text-decoration: none;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">
 											<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/cancel.png" alt="Cancel Icon">
-											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Cancel Reservation</h3>
-											<span style="font-weight: 500; color: #646262;">click here to cancel</span>
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Cancel Reservation</h3>
+											<span style="font-weight: 500; color: #646262; font-size:16px;">click here to cancel</span>
 										</a>
 									</td>
 									<td width="33%" align="center">
 										<a style="font-weight: 500; color: #646262; text-decoration: none;" href="mailto:reservations@resbeat.com">
 											<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/email.png" alt="Email Icon">
-											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Email ResBeat</h3>
-											<span>reservations@resbeat.com</span>
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Email ResBeat</h3>
+											<span style="font-size: 16px;">reservations@resbeat.com</span>
 										</a>
 									</td>
 									<td width="33%" align="center">
 										<a style="font-weight: 500; color: #646262; text-decoration: none;" href="tel:+1 512.691.9555">
 											<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/phone.png" alt="Phone Icon">
-											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px;">Call ResBeat</h3>
-											<span style="font-weight: 500; color: #646262;">+1 512.691.9555</span>
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Call ResBeat</h3>
+											<span style="font-weight: 500; color: #646262; font-size: 16px;">+1 512.691.9555</span>
 										</a>
 									</td>
 								</tr>
@@ -153,77 +153,77 @@
 					[if:RoomDescriptionLong]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Room Description</h4>
-							<span>[RoomDescriptionLong,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Room Description</h4>
+							<span style="font-size: 16px;">[RoomDescriptionLong,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:DepositPolicyLong]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Deposit Policy</h4>
-							<span>[DepositPolicyLong,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Deposit Policy</h4>
+							<span style="font-size: 16px;">[DepositPolicyLong,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:PaymentTermsLong]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Payment Terms</h4>
-							<span>[PaymentTermsLong,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Payment Terms</h4>
+							<span style="font-size: 16px;">[PaymentTermsLong,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:CancellationPolicyLong]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Cancellation Policy</h4>
-							<span>[CancellationPolicyLong,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Cancellation Policy</h4>
+							<span style="font-size: 16px;">[CancellationPolicyLong,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:PropertyPolicy]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Property Policy</h4>
-							<span>[PropertyPolicy,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Property Policy</h4>
+							<span style="font-size: 16px;">[PropertyPolicy,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:ExtraFeesPolicy]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Extra Fees Policy</h4>
-							<span>[ExtraFeesPolicy,fallback=] </span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Extra Fees Policy</h4>
+							<span style="font-size: 16px;">[ExtraFeesPolicy,fallback=] </span>
 						</td>
 					</tr>
 					[endif]
 					[if:PaymentPolicy]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Payment Policy</h4>
-							<span>[PaymentPolicy,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Payment Policy</h4>
+							<span style="font-size: 16px;">[PaymentPolicy,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					[if:CheckInSupportPolicy]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Check In Support Policy</h4>
-							<span>[CheckInSupportPolicy,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Check In Support Policy</h4>
+							<span style="font-size: 16px;">[CheckInSupportPolicy,fallback=]</span>
 						</td>
 					</tr>
 					[endif]
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Important Guest Information</h4>
-							<span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=60831]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Important Guest Information</h4>
+							<span style="font-size: 16px;">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=60831]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<h4 style="margin-bottom: 0; color: #646262;">Reservation Modification</h4>
-							<span>To cancel a reservation, <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[SiteID,fallback=60831]">click here</a>. For further assistance or if you have questions about your reservation, contact ResBeat at 512-691-9555 or <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Reservation Modification</h4>
+							<span style="font-size: 16px;">To cancel a reservation, <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[SiteID,fallback=60831]">click here</a>. For further assistance or if you have questions about your reservation, contact ResBeat at 512-691-9555 or <a style="color: [PrimaryTextColor, fallback=#1f5853]" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
 						</td>
 					</tr>
 					<tr>
@@ -234,7 +234,7 @@
 						<tr>
 							<td>
 								<h3 style="margin-bottom: 0; font-weight: 500;">ResBeat</h3>
-								<span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
+								<span style="font-size: 16px;">4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
 							</td>
 						</tr>
 						<tr>

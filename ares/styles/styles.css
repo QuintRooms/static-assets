@@ -243,6 +243,10 @@ select#adults {
     overflow: hidden;
 }
  
+#language-label span {
+    overflow: visible;
+}
+
 .config-label {
     width: 200px;
     display: flex;
@@ -274,6 +278,7 @@ select#adults {
     position: relative;
     width: 180px;
     order: 1;
+    margin: 0 30px 0 15px;
 }
 .language-container {
     display: none;

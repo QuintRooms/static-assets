@@ -27,15 +27,17 @@ module.exports = () => {
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
-            'ares_child-60278': './src/60278.js', // Ares Child Test
+            // 'ares_child-60278': './src/60278.js', // Ares Child Test
+            // 'cug_template-39624': './src/39624.js', // CUG Template
             'ares_child-60279': './src/60279.js', // Ares Child Test
-            'cug_template-39624': './src/39624.js', // CUG Template
+            'akon_21-60284': './src/60284.js', // A-Kon 2021
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
-            'room_steals-52342': './src/52342.js', // Room Steals
+            // 'room_steals-52342': './src/52342.js', // Room Steals
+            // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
         };
     }
 

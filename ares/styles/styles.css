@@ -2004,7 +2004,7 @@ legend {
 .roomCount {
     color: #ff4040;
     padding: 6px;
-    display: none;
+    visibility: hidden;
 }
 
 

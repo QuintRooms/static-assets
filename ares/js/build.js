@@ -2235,7 +2235,7 @@ export default class BasePortal {
         low_rooms.forEach((el) => {
             const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
             if (rooms_remaining < 6) {
-                el.style.display = 'block';
+                el.style.visibility = 'visible';
             }
         });
     }

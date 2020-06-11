@@ -41,7 +41,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.a-kon.com/',
-            background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.jpg)`,
+            background: '#638cc2',
             logo_flex_position: 'center',
             logo_max_width: '250px',
         },

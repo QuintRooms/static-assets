@@ -1094,7 +1094,7 @@ export default class BasePortal {
             language_container_el.style.display = 'none';
             return;
         }
-
+        document.querySelector('div#language-label').classList.add('config-label');
         active_language = active_language_el.getAttribute('content');
         document.querySelector(`.language-container div[value='${active_language}']`).classList.add('active-language');
         document.body.insertAdjacentElement('afterBegin', config_container);
@@ -2235,7 +2235,7 @@ export default class BasePortal {
         low_rooms.forEach((el) => {
             const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
             if (rooms_remaining < 6) {
-                el.style.display = 'block';
+                el.style.visibility = 'visible';
             }
         });
     }

@@ -22,14 +22,16 @@ module.exports = () => {
             'transportation_short_course_20-56735': './src/56735.js', // TSC 2020
             'breeders_cup_20-59788': './src/59788.js', // Breeder's Cup 2020
             'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
+            'akon_21-60284': './src/60284.js', // A-Kon 2021
+            'innings_21-60093': './src/60093.js', // Innings Fest 2021
         };
 
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
             'ares_child-60278': './src/60278.js', // Ares Child Test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
             'cug_template-39624': './src/39624.js', // CUG Template
+            'ares_child-60279': './src/60279.js', // Ares Child Test
         };
 
         // local environment

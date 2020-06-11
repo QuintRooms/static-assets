@@ -1,8 +1,9 @@
 import Path from '../../js/path';
 
 const env_path = new Path();
-const site_id = 60279;
-const directory_name = `ares_child-${site_id}`;
+
+const site_id = 59243;
+const directory_name = `austin_marathon_21-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -77,6 +78,5 @@ export default function siteConfig() {
             },
         },
         // new options
-        confirmation_email_from: 'Hotels for Hope',
     };
 }

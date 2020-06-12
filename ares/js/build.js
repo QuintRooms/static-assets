@@ -1389,8 +1389,8 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (this.site_config.lodging.event_id === null && document.querySelector('input#city').value === '') {
-                    this.style_validation_fields('input#city');
+                if (this.site_config.site_type.toLowerCase() === 'cug' && document.querySelector('input#address-input').value === '') {
+                    this.style_validation_fields('input#address-input');
                     return;
                 }
                 if (document.querySelector('input#theCheckIn').value === '') {
@@ -1560,6 +1560,13 @@ export default class BasePortal {
             });
         };
 
+        const grab_login_params = () => {
+            if (this.site_config.site_type.toLowerCase() !== 'cug' && this.page_name !== 'landing-page') return;
+
+            const login_params = `&_s=${search_params.get('_s')}&_k=${search_params.get('_k')}`;
+            return login_params;
+        };
+
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -1594,7 +1601,7 @@ export default class BasePortal {
 
                 if (this.site_config.cug.is_cug) {
                     destination_value = document.querySelector('input#address-input').value;
-                    url += `&destination=${destination_value}`;
+                    url += `&destination=${destination_value}${grab_login_params()}`;
                 }
 
                 const get_optional_hotel_name = () => {

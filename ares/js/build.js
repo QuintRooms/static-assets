@@ -1565,6 +1565,7 @@ export default class BasePortal {
             if (this.site_config.site_type.toLowerCase() !== 'cug' && this.page_name !== 'landing-page') return;
 
             login_params = `&_s=${search_params.get('_s')}&_k=${search_params.get('_k')}`;
+            console.log(login_params);
         };
 
         const construct_url_on_submit = () => {
@@ -1601,7 +1602,7 @@ export default class BasePortal {
 
                 if (this.site_config.cug.is_cug) {
                     destination_value = document.querySelector('input#address-input').value;
-                    url += `&destination=${destination_value}${login_params}`;
+                    url += `&destination=${destination_value}`;
                 }
 
                 const get_optional_hotel_name = () => {
@@ -1641,6 +1642,9 @@ export default class BasePortal {
                 const amenities = checked_amenities.slice(0, -1);
                 const stars = checked_stars.slice(0, -1);
 
+                if (login_params) {
+                    built_url += login_params;
+                }
                 if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }

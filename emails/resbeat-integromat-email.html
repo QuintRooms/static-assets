@@ -83,8 +83,8 @@
 												<td style="font-size: 14px;">Tax Amount:</td>
 												<td style="font-size: 14px;">[CurrencySymbol, fallback=][TaxAmount,fallback=]</td>
 											</tr>
-											[if DepositCharged=0.00]
-											[else]
+											[if:DepositCharged=0.00]
+											[elseif:DepositCharged]
 											<tr>
 												<td style="font-size: 14px;">Deposit Charged:</td>
 												<td style="font-size: 14px;">[CurrencySymbol, fallback=][DepositCharged,fallback=]</td>

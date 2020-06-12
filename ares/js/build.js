@@ -118,7 +118,9 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                this.addAlgoliaSearch();
+                if (this.site_config.site_type.toLowerCase() !== 'cug') {
+                    this.addAlgoliaSearch();
+                }
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -155,7 +157,7 @@ export default class BasePortal {
                 this.replaceLRGForm();
             }
 
-            if (this.page_name === 'search-results') {
+            if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() !== 'cug') {
                 this.addAlgoliaSearch();
             }
 
@@ -253,7 +255,8 @@ export default class BasePortal {
             this.applyDarkTheme();
             this.applyCustomStyles();
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
-            // this.forceClickOnCitySearch();
+
+            this.forceClickOnCitySearch();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -1487,7 +1490,6 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
-        let login_params;
         let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
@@ -1559,13 +1561,6 @@ export default class BasePortal {
                 document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
             });
-        };
-
-        const grab_login_params = () => {
-            if (this.site_config.site_type.toLowerCase() !== 'cug' && this.page_name !== 'landing-page') return;
-
-            login_params = `&_s=${search_params.get('_s')}`;
-            console.log(login_params);
         };
 
         const construct_url_on_submit = () => {
@@ -1642,13 +1637,6 @@ export default class BasePortal {
                 const amenities = checked_amenities.slice(0, -1);
                 const stars = checked_stars.slice(0, -1);
 
-                if (login_params) {
-                    const k = document.querySelector('input[name=_k]');
-                    if (k) {
-                        built_url += `&_k=${k.value}`;
-                    }
-                    built_url += login_params;
-                }
                 if (amenities !== '') {
                     built_url.searchParams.append('amenities', amenities);
                 }
@@ -1678,7 +1666,6 @@ export default class BasePortal {
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
-        grab_login_params();
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             if (search_params.has('locationlabel') || search_params.has('points')) return;
             hideArnSearchElements('img.arn-green-marker-icon');
@@ -1930,11 +1917,11 @@ export default class BasePortal {
         }
     }
 
-    // forceClickOnCitySearch() {
-    //     if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
-    //         document.querySelector('.ArnGoCitySearch').click();
-    //     }
-    // }
+    forceClickOnCitySearch() {
+        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
+            document.querySelector('.ArnGoCitySearch').click();
+        }
+    }
 
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;

@@ -80,7 +80,7 @@ header {
     width: 100%;
     position: relative;
     background: #fff;
-    z-index: 9;
+    z-index: 4;
     display: flex;
     align-items: center;
 }
@@ -243,6 +243,10 @@ select#adults {
     overflow: hidden;
 }
  
+#language-label span {
+    overflow: visible;
+}
+
 .config-label {
     width: 200px;
     display: flex;
@@ -274,6 +278,7 @@ select#adults {
     position: relative;
     width: 180px;
     order: 1;
+    margin: 0 30px 0 15px;
 }
 .language-container {
     display: none;
@@ -1352,6 +1357,20 @@ legend {
     flex-direction: column;
 }
 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2), 
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3){
+    display: none;
+}
+
+.show-amenities {
+    display: block!important;
+}
+
+.SinglePropDetail #show-more-or-less {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .SinglePropDetail .rowOne {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1553,6 +1572,18 @@ legend {
     display: none;
 }
 
+@media screen and (min-width: 1000px) {
+    .SinglePropDetail #theGeneralInfo {
+        width: 48%;
+        display: inline;
+    }
+
+    .SinglePropDetail #thePropertyMap {
+        display: inline;
+        width: 48%;
+    }
+}
+
 .PropertyAmenities {
     padding: 0;
     margin: 0;
@@ -1608,7 +1639,6 @@ legend {
 #thePropertyAmenities legend {
     z-index: 9;
     position: relative;
-    cursor: pointer;
     background: #fff;
 }
 
@@ -1616,9 +1646,10 @@ legend {
     margin-left: 8px;
 }
 
-.ArnAmenityContainer {
+/* .ArnAmenityContainer {
     opacity: 0;
-}
+} */
+
 
 /* Amenities End */
 /* Single Prop Search */
@@ -1751,24 +1782,36 @@ legend {
     .SinglePropDetail .bookRoomCell {
         display: grid;
         grid-template-columns: 2fr 2fr;
+        grid-template-rows: 3fr .5fr .25fr;
     }
 
     .SinglePropDetail .bookRoom {
         max-width: 125px;
         width: 100%;
-        align-self: flex-end;
-        margin: 10px 0 10px auto;
+        align-self: start;
+        justify-self: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-top: 8px;
+    }
 
+    .SinglePropDetail .holdRoom {
+        max-width: 125px;
+        width: 100%;
+        align-self: end;
+        justify-self: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-top: 10px;
     }
 
     .SinglePropDetail .ArnRateCancelAnchor {
-        align-self: flex-end;
-        grid-column: 2;
-        text-align: right;
+        align-self: flex-start;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
     }
 
     .SinglePropDetail .ArnNightlyRate {
-        margin-top: 8px;
         text-align: left;
         width: 200px;
     }
@@ -1787,6 +1830,8 @@ legend {
     .roomCount{
         text-align: left;
         padding-top: 8px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
     }
 }
 
@@ -1794,6 +1839,12 @@ legend {
     .SinglePropDetail .PropertyLinks ul li a {
         padding: 12px 6px;
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .SinglePropDetail .bookRoomCell {
+        grid-template-rows: 2fr .5fr .25fr;
     }
 }
 
@@ -1950,13 +2001,10 @@ legend {
     height: 0;
 }
 
-.SearchHotels .roomCount {
-    display: none;
-}
-
 .roomCount {
     color: #ff4040;
     padding: 6px;
+    visibility: hidden;
 }
 
 
@@ -2688,7 +2736,7 @@ legend {
 
 .billing-details-container > div:nth-child(3) {
     grid-column-start: 2;
-    grid-row-start: 1;
+    grid-row-start: 2;
 }
 
 .billing-details-container > div:nth-child(1) {
@@ -2699,7 +2747,7 @@ legend {
 
 .billing-details-container > div:nth-child(4) {
     grid-column-start: 2;
-    grid-row-start: 2;
+    grid-row-start: 1;
 }
 
 .billing-details-container .guestCountryList, .billing-details-container .guestStateList {
@@ -3369,6 +3417,26 @@ body.HoldRoomsForm {
     border: none !important;
 }
 
+.confirmation-messaging + hr{
+    margin: 42px 0;
+    border: none;
+    height: 1px;
+    background: #ccc;
+}
+
+@media screen and (max-width: 800px){
+    .confirmation-messaging {
+        margin-top: 42px;
+    }
+
+    #theBookingPage.ConfirmationPage .GuestForms{
+        margin-bottom: 42px;
+    }
+
+    #theBookingPage.ConfirmationPage #theAjaxPaymentPolicies{
+        order: 2;
+    }
+}
 /* Confirmation Page End */
 
 /* search-results page tags and sash start */

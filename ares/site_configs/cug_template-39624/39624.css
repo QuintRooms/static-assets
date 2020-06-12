@@ -35,3 +35,126 @@ footer a+span{
     padding: 0 12px;
     color: #23305a;
 }
+
+#language {
+    order: 3;
+}
+
+.currencies-container {
+    order: 2;
+}
+
+/* Full stay toggle start */
+
+/* Full Stay Link*/
+/* .full-stay-link {
+    text-decoration: underline;
+    padding: 4px;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+} */
+
+.rs-toggle {
+    position: relative;
+    width: 65px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+
+#rs-tax-inclusive {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    z-index: 9;
+    position: relative;
+    order: 1;
+    margin-right: 15px;
+}
+
+#rs-tax-inclusive>label {
+    margin-right: 12px;
+}
+
+#rs-tax-inclusive label {
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.rs-toggle-checkbox {
+    display: none
+}
+
+.rs-toggle-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #535c79;
+    border-radius: 20px
+}
+
+.rs-toggle-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin .3s ease-in 0s
+}
+
+.rs-toggle-inner:after,
+.rs-toggle-inner:before {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 24px;
+    padding: 0;
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    box-sizing: border-box
+}
+
+.rs-toggle-inner:before {
+    content: 'On';
+    padding-left: 10px;
+    background: #23305a;
+    color: #fff
+}
+
+.rs-toggle-inner:after {
+    content: 'Off';
+    padding-right: 10px;
+    background-color: #eee;
+    color: #999;
+    text-align: right
+}
+
+.rs-toggle-switch {
+    display: block;
+    width: 21px;
+    height: 21px;
+    margin: 3px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 37px;
+    border: 2px solid #999;
+    border-radius: 20px;
+    transition: all .3s ease-in 0s
+}
+
+.rs-toggle-checkbox {
+    pointer-events: none;
+}
+
+.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-inner {
+    margin-left: 0
+}
+
+.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-switch {
+    right: 0
+}

@@ -81,5 +81,6 @@ export default function siteConfig() {
             },
         },
         // new options
+        confirmation_email_from: 'Hotels for Hope',
     };
 }

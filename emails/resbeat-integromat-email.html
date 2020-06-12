@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>H4H Confirmation Email</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 0; padding: 0; font-family: Avenir, Helvetica; font-size: 16px;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">	
+		<tr>
+			<td style="padding: 10px 0 30px 0; color: #646262;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
+                    <tr>
+                        <td align="center">
+							<img style="max-width: 225px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <hr style="display: block; text-align: center; margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked!</h1>
+                            <p style="color: [PrimaryTextColor, fallback=#1f5853]; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0; font-size: 16px;">Booking Number: [ConfirmationNumber,fallback=]</p>
+                        </td>
+                    </tr>
+					<tr>
+						<td align="center">
+							<img width="800" src="https://dev-static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" alt="Hotel Bed" title="Hotel Bed" style="display: block;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td align="center" style="padding: 18px 0;">
+                                        <h1 style="font-weight: lighter; color: [PrimaryTextColor, fallback=#1f5853]; margin: 0;">[Hotel,fallback=]</h1>
+                                        <p style="margin-top: 8px; font-weight: 500; color: #646262; font-size: 16px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
+									</td>
+								</tr>
+							</table>
+							<table bgcolor="#f4f4f4" width="100%" align="center" style="padding: 42px; color: #808080">
+								<tr>
+									<td colspan="2" align="center">
+										<h3 style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #646262; margin: 0;">Reservation Details</h3>
+										<hr style="margin: 24px 0; border: none; background: #d7d7d7; height: 1px;">
+									</td>
+								</tr>
+								<tr>
+									<td width="50%" valign="top">
+										<table width="100%">
+											<tr>
+												<td width="35%" style="font-size: 14px;">Guest Name:</td>
+												<td style="font-size: 14px;">[GuestName,fallback=]</td>
+											</tr>
+											<tr>
+												<td style="font-size: 14px;">Check In:</td>
+												<td style="font-size: 14px;">[CheckInDate,fallback=] - [CheckInTime,fallback=]</td>
+											</tr>
+											<tr>
+												<td style="font-size: 14px;">Check Out:</td>
+												<td style="font-size: 14px;">[CheckOutDate,fallback=] - [CheckOutTime,fallback=]</td>
+											</tr>
+											<tr>
+												<td style="font-size: 14px;">Guests:</td>
+												<td style="font-size: 14px;">[Guests,fallback=]</td>
+											</tr>
+											<tr>
+												<td style="font-size: 14px;">Rooms:</td>
+												<td style="font-size: 14px;">[Rooms,fallback=]</td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%" valign="top">
+										<table width="100%">
+											<tr>
+												<td width="35%" style="font-size: 14px;">Total for Stay:</td>
+												<td style="font-size: 14px;">[CurrencySymbol, fallback=][Total,fallback=]</td>
+											</tr>
+											<tr>
+												<td style="font-size: 14px;">Tax Amount:</td>
+												<td style="font-size: 14px;">[CurrencySymbol, fallback=][TaxAmount,fallback=]</td>
+											</tr>
+											[if:DepositCharged=0.00]
+											[elseif:DepositCharged]
+											<tr>
+												<td style="font-size: 14px;">Deposit Charged:</td>
+												<td style="font-size: 14px;">[CurrencySymbol, fallback=][DepositCharged,fallback=]</td>
+											</tr>
+											[endif]
+											<tr>
+												<td style="font-size: 14px;">Balance Due:</td>
+												<td style="font-size: 14px;">[CurrencySymbol, fallback=][BalanceDue,fallback=]</td>
+											</tr>
+											<tr>
+												<td valign="top" style="font-size: 14px;">Rate Per Night:</td>
+												<td style="font-size: 14px;">[RoomRates,fallback=]</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%">
+								<tr>
+									<td align="center" style="padding: 0 42px;">
+										<img style="margin-top: 36px;" src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png" alt="RESBEAT logo">
+										<h1 style="color:#1f5853; font-weight: 500;">Need help with this reservation?</h1>
+										[if:ClientName]
+											<p style="color: #646262; font-size: 16px;">[ClientName, fallback=] has partnered with RES<b>BEAT</b> to manage hotel stays. RES<b>BEAT</b> is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
+										[endif]
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding: 0 42px;">
+							<table width="100%">
+								<tr>
+									<td width="33%" align="center">
+										<a style="text-decoration: none;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">
+												<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/pencil.png" alt="Pencil Icon">
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Modify Reservation</h3>
+											<span style="font-weight: 500; color: #646262; font-size:16px;">click here to modify</span>
+										</a>
+									</td>
+									<td width="33%" align="center">
+										<a style="font-weight: 500; color: #646262; text-decoration: none;" href="mailto:reservations@resbeat.com">
+											<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/email.png" alt="Email Icon">
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Email <span style="font-weight: 500">RES<b>BEAT</b></h3>
+											<span style="font-size: 16px;">reservations@resbeat.com</span>
+										</a>
+									</td>
+									<td width="33%" align="center">
+										<a style="font-weight: 500; color: #646262; text-decoration: none;" href="tel:+1 512.691.9555">
+											<img src="https://dev-static.hotelsforhope.com/images/confirmation-emails/icons/phone.png" alt="Phone Icon">
+											<h3 style="color:#1f5853; margin-top: 8px; margin-bottom: 8px; font-size: 18px;">Call <span style="font-weight: 500;">RES<b>BEAT</b></span></h3>
+											<span style="font-weight: 500; color: #646262; font-size: 16px;">+1 512.691.9555</span>
+										</a>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+                        <td align="center">
+                            <hr style="margin: 24px 42px; border: none; background: #dfdfdf; height: 1px;">
+                        </td>
+					</tr>
+					[if:RoomDescriptionLong]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Room Description</h4>
+							<span style="font-size: 16px;">[RoomDescriptionLong,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:DepositPolicyLong]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Deposit Policy</h4>
+							<span style="font-size: 16px;">[DepositPolicyLong,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:PaymentTermsLong]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Payment Terms</h4>
+							<span style="font-size: 16px;">[PaymentTermsLong,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:CancellationPolicyLong]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Cancellation Policy</h4>
+							<span style="font-size: 16px;">[CancellationPolicyLong,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:PropertyPolicy]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Property Policy</h4>
+							<span style="font-size: 16px;">[PropertyPolicy,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:ExtraFeesPolicy]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Extra Fees Policy</h4>
+							<span style="font-size: 16px;">[ExtraFeesPolicy,fallback=] </span>
+						</td>
+					</tr>
+					[endif]
+					[if:PaymentPolicy]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Payment Policy</h4>
+							<span style="font-size: 16px;">[PaymentPolicy,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					[if:CheckInSupportPolicy]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Check In Support Policy</h4>
+							<span style="font-size: 16px;">[CheckInSupportPolicy,fallback=]</span>
+						</td>
+					</tr>
+					[endif]
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Important Guest Information</h4>
+							<span style="font-size: 16px;">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=60831]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Reservation Modification</h4>
+							<span style="font-size: 16px;"><a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[SiteID,fallback=60831]">Modify your reservation</a>. For further assistance or if you have questions about your reservation, contact RES<b>BEAT</b> at <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a> or <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
+						</td>
+					</tr>
+					<tr>
+                        <td align="center">
+                            <hr style="margin: 36px 42px; border: none; background: #dfdfdf; height: 1px;">
+                        </td>
+					</tr>
+						<tr>
+							<td>
+								<h3 style="margin-bottom: 0; font-weight: 500;">RES<b>BEAT</b></h3>
+								<div style="font-size: 16px;">4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
+								<div>
+									<a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>
+								</div>
+								<div>
+									<a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><unsubscribe>Unsubscribe</unsubscribe></td>
+						</tr>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<img src="https://createsend1.com/t/i-o-l-l/o.gif" style="visibility: hidden !important; display: block !important; height:1px !important; width:1px !important; border: 0 !important; margin: 0 !important; padding: 0 !important" width="1" height="1" border="0" alt="" editable="true" />
+</body>
+</html>

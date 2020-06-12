@@ -13,10 +13,6 @@ export default function siteConfig() {
         site_type: 'noLRG',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        currency: 'USD',
-        distance_unit: 'useMiles',
-        map_size: '12',
-        radius: '50',
         lodging: {
             event_id: 41307,
             event_name: 'Tortuga Music Festival',
@@ -87,5 +83,6 @@ export default function siteConfig() {
             },
         },
         // new options
+        confirmation_email_from: 'Hotels for Hope',
     };
 }

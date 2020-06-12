@@ -2234,10 +2234,12 @@ export default class BasePortal {
     hideRemainingRooms() {
         if (this.page_name !== 'property-detail' || !document.querySelector('div.roomCount')) return;
         const low_rooms = document.querySelectorAll('div.roomCount');
+        const mq = window.matchMedia('(max-width: 560px)');
+
         low_rooms.forEach((el) => {
             const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
             if (rooms_remaining < 6) {
-                el.style.visibility = 'visible';
+                mq.matches ? (el.style.visibility = 'visible') : (el.style.display = 'block');
             }
         });
     }

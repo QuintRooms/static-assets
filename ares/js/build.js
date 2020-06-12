@@ -1487,6 +1487,7 @@ export default class BasePortal {
         let lat_lng;
         let default_lat_lng;
         let url;
+        let login_params;
         let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
@@ -1563,9 +1564,7 @@ export default class BasePortal {
         const grab_login_params = () => {
             if (this.site_config.site_type.toLowerCase() !== 'cug' && this.page_name !== 'landing-page') return;
 
-            const login_params = `&_s=${search_params.get('_s')}&_k=${search_params.get('_k')}`;
-            console.log(login_params);
-            return login_params;
+            login_params = `&_s=${search_params.get('_s')}&_k=${search_params.get('_k')}`;
         };
 
         const construct_url_on_submit = () => {
@@ -1602,7 +1601,7 @@ export default class BasePortal {
 
                 if (this.site_config.cug.is_cug) {
                     destination_value = document.querySelector('input#address-input').value;
-                    url += `&destination=${destination_value}${grab_login_params()}`;
+                    url += `&destination=${destination_value}${login_params}`;
                 }
 
                 const get_optional_hotel_name = () => {
@@ -1671,7 +1670,7 @@ export default class BasePortal {
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
-
+        grab_login_params();
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             if (search_params.has('locationlabel') || search_params.has('points')) return;
             hideArnSearchElements('img.arn-green-marker-icon');

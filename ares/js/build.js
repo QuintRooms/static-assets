@@ -1564,7 +1564,7 @@ export default class BasePortal {
         const grab_login_params = () => {
             if (this.site_config.site_type.toLowerCase() !== 'cug' && this.page_name !== 'landing-page') return;
 
-            login_params = `&_s=${search_params.get('_s')}&_k=${search_params.get('_k')}`;
+            login_params = `&_s=${search_params.get('_s')}`;
             console.log(login_params);
         };
 

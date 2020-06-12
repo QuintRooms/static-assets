@@ -36,4 +36,42 @@ utilities.createHTML(
     'beforeBegin'
 );
 
+function showFullStayToggle(page_class) {
+    if (!document.querySelector(page_class)) return;
+
+    let toggle;
+    const theme_meta = document.querySelector('meta[name="theme"]');
+    const container = document.querySelector('.config-container');
+
+    if (!theme_meta) return;
+    const theme = theme_meta.getAttribute('content');
+
+    container.insertAdjacentHTML(
+        'beforeend',
+        `<span class="rs-label" id="rs-tax-inclusive">
+            <label for="rs-toggle">Show Full Stay Price</label>
+            <div class="rs-toggle">
+                <input type="checkbox" name="rs-toggle" class="rs-toggle-checkbox" id="rs-toggle">
+                <label class="rs-toggle-label" for="rs-toggle">
+                    <span class="rs-toggle-inner"></span>
+                    <span class="rs-toggle-switch"></span>
+                </label>
+            </div>
+        </span>`
+    );
+
+    if (theme.toLowerCase() === 'international') {
+        toggle = document.querySelector('#rs-toggle');
+        toggle.checked = true;
+    }
+
+    document.querySelector('#rs-tax-inclusive').addEventListener('click', (e) => {
+        // eslint-disable-next-line no-undef
+        theme.toLowerCase() === 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');
+    });
+}
+
+showFullStayToggle('.SearchHotels');
+showFullStayToggle('.SinglePropDetail');
+
 new ChildPortal();

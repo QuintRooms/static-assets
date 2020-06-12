@@ -1591,7 +1591,7 @@ export default class BasePortal {
                 const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -1643,6 +1643,10 @@ export default class BasePortal {
                 const stars = checked_stars.slice(0, -1);
 
                 if (login_params) {
+                    const k = document.querySelector('input[name=_k]');
+                    if (k) {
+                        built_url += `&_k=${k.value}`;
+                    }
                     built_url += login_params;
                 }
                 if (amenities !== '') {

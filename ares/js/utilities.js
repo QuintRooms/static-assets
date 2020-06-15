@@ -242,4 +242,63 @@ export default class Utilities {
     addClass(selector, className) {
         document.querySelector(`.${selector}`).classList.add(className);
     }
+
+    getMetaTagContent(meta_tag_name) {
+        if (!document.querySelector(`meta[name="${meta_tag_name}"]`)) return;
+
+        return document.querySelector(`meta[name="${meta_tag_name}"]`).content;
+    }
+
+    parseJSON(json) {
+        if (!json) return;
+
+        return JSON.parse(json);
+    }
+
+    /**
+     *@description gets page name using css classes from body tag
+     */
+    getPageName() {
+        const body_classes = document.body;
+        let page_name;
+
+        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) page_name = 'search-results';
+        if (body_classes.classList.contains('SinglePropDetail')) page_name = 'property-detail';
+        if (body_classes.classList.contains('CheckOutForm')) page_name = 'checkout';
+        if (body_classes.classList.contains('ConfirmationForm')) page_name = 'confirmation';
+        if (body_classes.classList.contains('RootBody')) page_name = 'landing-page';
+        if (body_classes.classList.contains('WBFaq')) page_name = 'faq';
+        if (body_classes.classList.contains('WBTermsAndConditions')) page_name = 'terms-conditions';
+        if (body_classes.classList.contains('WBPrivacyPolicy')) page_name = 'privacy-policy';
+        if (body_classes.classList.contains('WBRateGuaranteeForm2')) page_name = 'lrg-page';
+        if (body_classes.classList.contains('WBValidatedRegistrationForm')) page_name = 'cug-registration';
+        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) page_name = 'hold-rooms';
+
+        return page_name;
+    }
+
+    getElementTextContent(selector) {
+        if (!document.querySelector(selector)) return;
+
+        return document.querySelector(selector).textContent;
+    }
+
+    fetchJSON(url) {
+        const json = () => {
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .catch((err) => {
+                    err.text().then((error) => {
+                        console.error(`Could not fetch json from ${url}`, error);
+                    });
+                });
+        };
+
+        return json;
+    }
 }

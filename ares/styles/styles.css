@@ -154,7 +154,7 @@ select#adults {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 9;
+    z-index: 8;
 }
 
 #commands {
@@ -217,7 +217,15 @@ select#adults {
     justify-content: flex-end;
     padding: 16px 8px;
     position: relative;
-    z-index: 10;
+    z-index: 8;
+}
+
+#language {
+    order: 3;
+}
+
+.currencies-container {
+    order: 2;
 }
 
 /* Config Labels Start */
@@ -1832,6 +1840,8 @@ legend {
         padding-top: 8px;
         grid-row: 2 / 3;
         grid-column: 2 / 3;
+        visibility: hidden;
+        display: block!important;
     }
 }
 
@@ -2004,7 +2014,7 @@ legend {
 .roomCount {
     color: #ff4040;
     padding: 6px;
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -2072,7 +2082,7 @@ legend {
 }
 
 .averageNightly {
-    display: block !important;
+    display: block;
     font-size: 17px;
     order: 0;
 }
@@ -2098,6 +2108,111 @@ legend {
     display: block;
     text-align: center;
     transition: all 0.4s ease;
+}
+
+/* Full stay toggle start */
+
+.rs-toggle {
+    position: relative;
+    width: 65px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+
+#rs-tax-inclusive {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 9;
+    position: relative;
+    order: 1;
+    margin-right: 15px;
+}
+
+#rs-tax-inclusive>label {
+    margin-right: 12px;
+}
+
+#rs-tax-inclusive label {
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.rs-toggle-checkbox {
+    display: none
+}
+
+.rs-toggle-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #535c79;
+    border-radius: 20px
+}
+
+.rs-toggle-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin .3s ease-in 0s
+}
+
+.rs-toggle-inner:after,
+.rs-toggle-inner:before {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 24px;
+    padding: 0;
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    box-sizing: border-box
+}
+
+.rs-toggle-inner:before {
+    content: 'On';
+    padding-left: 10px;
+    background: #23305a;
+    color: #fff
+}
+
+.rs-toggle-inner:after {
+    content: 'Off';
+    padding-right: 10px;
+    background-color: #eee;
+    color: #999;
+    text-align: right
+}
+
+.rs-toggle-switch {
+    display: block;
+    width: 21px;
+    height: 21px;
+    margin: 3px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 37px;
+    border: 2px solid #999;
+    border-radius: 20px;
+    transition: all .3s ease-in 0s
+}
+
+.rs-toggle-checkbox {
+    pointer-events: none;
+}
+
+.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-inner {
+    margin-left: 0
+}
+
+.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-switch {
+    right: 0
 }
 
 @media screen and (max-width: 1105px) {
@@ -2274,7 +2389,7 @@ legend {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
         display: none !important;
     }
@@ -2283,14 +2398,21 @@ legend {
         width: unset;
     }
 
-    .config-container {
+    .SearchHotels .config-container, .RootBody .config-container {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
     #language {
-        margin-bottom: 12px;
+        margin: 0 0 12px 0;
+    }
+
+    #rs-tax-inclusive {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 10px 0 10px 0;
+        order: 2;
     }
 }
 

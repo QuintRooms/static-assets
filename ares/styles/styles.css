@@ -2124,7 +2124,6 @@ legend {
     display: flex; 
     justify-content: flex-end;
     align-items: center;
-    width: 20%;
     z-index: 9;
     position: relative;
     order: 1;

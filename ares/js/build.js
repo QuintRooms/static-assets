@@ -14,7 +14,7 @@ export default class BasePortal {
     constructor(config) {
         console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
-        this.page_name = '';
+        this.page_name = utilities.getPageName();
         this.site_config = config;
         this.currency = '';
         this.svg_arrow =
@@ -29,7 +29,7 @@ export default class BasePortal {
         this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
-            this.getPageName();
+            utilities.getPageName();
             this.applyConfigColors();
             this.setRootPageBackgroundImage();
             this.setFontFromConfig();
@@ -294,59 +294,6 @@ export default class BasePortal {
         if (!this.site_id) return;
 
         return this.site_id;
-    }
-
-    /**
-     *@description gets page name using css classes from body tag
-     */
-    async getPageName() {
-        const body_classes = document.body;
-
-        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) {
-            this.page_name = 'search-results';
-        }
-
-        if (body_classes.classList.contains('SinglePropDetail')) {
-            this.page_name = 'property-detail';
-        }
-
-        if (body_classes.classList.contains('CheckOutForm')) {
-            this.page_name = 'checkout';
-        }
-
-        if (body_classes.classList.contains('ConfirmationForm')) {
-            this.page_name = 'confirmation';
-        }
-
-        if (body_classes.classList.contains('RootBody')) {
-            this.page_name = 'landing-page';
-        }
-
-        if (body_classes.classList.contains('WBFaq')) {
-            this.page_name = 'faq';
-        }
-
-        if (body_classes.classList.contains('WBTermsAndConditions')) {
-            this.page_name = 'terms-conditions';
-        }
-
-        if (body_classes.classList.contains('WBPrivacyPolicy')) {
-            this.page_name = 'privacy-policy';
-        }
-
-        if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
-            this.page_name = 'lrg-page';
-        }
-
-        if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
-            this.page_name = 'cug-registration';
-        }
-
-        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) {
-            this.page_name = 'hold-rooms';
-        }
-
-        return this.page_name;
     }
 
     async getCurrency() {

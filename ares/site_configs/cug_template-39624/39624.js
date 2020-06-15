@@ -1,8 +1,9 @@
 import BasePortal from '../../js/build';
 import Utilities from '../../js/utilities';
-// import RoomSteals from '../../../js/roomsteals-api';
+import RoomSteals from './roomsteals';
 import SiteConfig from './39624-config';
 
+// const base = new BasePortal();
 const utilities = new Utilities();
 const site_config = new SiteConfig();
 
@@ -74,4 +75,112 @@ function showFullStayToggle(page_class) {
 showFullStayToggle('.SearchHotels');
 showFullStayToggle('.SinglePropDetail');
 
+function buildObjectsForRoomstealsPost() {
+    /**
+     *@todo
+     * get object properties for each page
+     * conditionalize properties that don't exist on certain pages
+     * hit ARN API to get lat/lng where they don't exist in the DOM
+     * send user details if they hit the root page
+     */
+
+    const member_details = utilities.parseJSON(utilities.getMetaTagContent('memberMetaTag'));
+    const member_details_additional_info = utilities.parseJSON(member_details.AdditionalInfo);
+
+    const location = utilities.getMetaTagContent('SearchLocation');
+    const location_id = utilities.getMetaTagContent('aLocationId');
+    const check_in = utilities.getMetaTagContent('checkIn');
+    const check_out = utilities.getMetaTagContent('checkOut');
+    const guests = utilities.getMetaTagContent('numberOfAdults');
+    const rooms = utilities.getMetaTagContent('numberOfRooms');
+    const currency = utilities.getMetaTagContent('currency');
+    const theme = utilities.getMetaTagContent('theme');
+    const page = utilities.getPageName();
+    let property_details = {};
+
+    let is_full_stay_rate = false;
+
+    if (
+        !member_details ||
+        !member_details_additional_info ||
+        !member_details_additional_info.email ||
+        !member_details_additional_info.name ||
+        !member_details_additional_info.id ||
+        !member_details_additional_info.partner ||
+        !check_in ||
+        !check_out ||
+        !guests ||
+        !rooms ||
+        !currency ||
+        !theme
+    )
+        return;
+    if (theme === 'international') is_full_stay_rate = true;
+
+    const {email} = member_details_additional_info;
+    const {name} = member_details_additional_info;
+    const {id} = member_details_additional_info;
+    const {partner} = member_details_additional_info;
+
+    if (partner !== 'roomsteals.com') return;
+
+    let search_details = {
+        location_details: {
+            location,
+            location_id,
+        },
+        check_in,
+        check_out,
+        guests,
+        rooms,
+        currency,
+        is_full_stay_rate,
+        property_details,
+    };
+
+    if (page === 'property-detail') {
+        const city = utilities.getElementTextContent('span[itemprop="addressLocality"]');
+        const region = utilities.getElementTextContent('span[itemprop="addressRegion"]');
+        const book_room_btn = document.querySelector('.rateRow .bookRoom');
+
+        search_details.location_details.location = `${city}, ${region}`;
+        property_details.property_id = utilities.getMetaTagContent('aPropertyId');
+        property_details.property_name = utilities.getElementTextContent('.ArnPropNameLink > span');
+        property_details.lowest_average_nightly_rate = utilities.getElementTextContent('.rateRow .ArnNightlyRate strong');
+
+        if (book_room_btn) {
+            property_details.lowest_rate_gateway = book_room_btn.getAttribute('gateway');
+        }
+    }
+
+    if (page === 'checkout' || page === 'confirmation') {
+        property_details.property_name = utilities.getElementTextContent('.theHotelName');
+        property_details.property_id = utilities.getMetaTagContent('propertyId');
+        property_details.lowest_average_nightly_rate = utilities.getElementTextContent('.ArnNightlyRateCal');
+        property_details.lowest_rate_gateway = utilities.getMetaTagContent('gateway');
+        console.log('test');
+    }
+
+    if (page === 'confirmation') {
+        property_details.confirmation_number = window.arnConfirmations;
+
+        if (window.arnCity && window.arnState) property_details.location = `${window.arnCity}, ${window.arnState}`;
+    }
+
+    const user_data = {
+        email,
+        name,
+        id,
+        page,
+        search_details,
+    };
+
+    console.log('Output: buildObjectsForRoomstealsPost -> user_data', user_data);
+    return user_data;
+}
+
+// waiting for the url to post this data - it can go live without this
+buildObjectsForRoomstealsPost();
+
 new ChildPortal();
+new RoomSteals();

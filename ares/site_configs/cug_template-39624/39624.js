@@ -158,7 +158,6 @@ function buildObjectsForRoomstealsPost() {
         property_details.property_id = utilities.getMetaTagContent('propertyId');
         property_details.lowest_average_nightly_rate = utilities.getElementTextContent('.ArnNightlyRateCal');
         property_details.lowest_rate_gateway = utilities.getMetaTagContent('gateway');
-        console.log('test');
     }
 
     if (page === 'confirmation') {
@@ -175,12 +174,11 @@ function buildObjectsForRoomstealsPost() {
         search_details,
     };
 
-    console.log('Output: buildObjectsForRoomstealsPost -> user_data', user_data);
     return user_data;
 }
 
 // waiting for the url to post this data - it can go live without this
-buildObjectsForRoomstealsPost();
+// buildObjectsForRoomstealsPost();
 
 new ChildPortal();
 new RoomSteals();

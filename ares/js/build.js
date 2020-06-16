@@ -1451,9 +1451,7 @@ export default class BasePortal {
         const grab_member_token = () => {
             if (this.site_config.site_type.toLowerCase() !== 'cug') return;
             if (this.page_name === 'landing-page' || this.page_name === 'search-results') {
-                console.log('heeeyey');
                 member_token = document.querySelector('meta[name="memberToken"]').content;
-                console.log(member_token);
             }
         };
 

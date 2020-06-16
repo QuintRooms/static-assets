@@ -3,6 +3,10 @@ header {
     box-shadow: 0 2px 4px rgba(55, 63, 67, 0.04);
     border-bottom: none;
 }
+.logo img{
+    padding: 0 !important;
+    margin: 15px !important;
+}
 
 /* Footer */
 .ArnSupportBottom {

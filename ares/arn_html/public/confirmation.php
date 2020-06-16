@@ -25,6 +25,7 @@
     <meta content="2" name="numberOfAdults" />
     <meta content="0" name="numberOfKids" />
     <meta content="1" name="numberOfRooms" />
+    <meta content='{"MemberId":4825782,"Rewards":0,"Points":0,"RedemptionMultiplier":1.0,"EarnMultiplier":1.0,"Names":[{"FirstName":"Jason","LastName":"Kaplan","BirthDate":null,"Email":"jason.kaplan@hotelsforhope.com","Address1":null,"Address2":null,"City":null,"State":null,"Country":null,"Postal":null,"Longitude":null,"Latitude":null,"HomePhone":null,"Referral":null,"ReferralId":"RST-3513","RegistrationCode":null,"Password":null,"IsActive":true,"DeleteMember":false,"ReactivateMember":false,"UpdateMemberUsername":false,"CreditCards":null,"FullName":"Jason Kaplan"}],"DebugData":null,"Error":null,"CurrentToken":null,"TransactionResponse":null,"MetaTag":null,"MemberUsername":"RT-52342-RST-3513","MemberProvider":"ReserveTravel","IsArnProvider":true,"AdditionalInfo":"{\"partner\":\"roomsteals.com\",\"id\":\"RST-3513\",\"name\":\"Jason Kaplan\",\"email\":\"jason.kaplan@hotelsforhope.com\"}","MemberType":"Wholesale"}' name="memberMetaTag">
     <style>
     .PropFullDescription {
         display: none;

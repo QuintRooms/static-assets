@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 
 const site_id = 52342;
-const directory_name = `cug_template-${site_id}`;
+const directory_name = `room_steals-${site_id}`;
 
 export default function siteConfig() {
     return {

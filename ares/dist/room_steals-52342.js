@@ -6341,7 +6341,7 @@
             });
         }
         var l = new (n(29).a)(),
-            d = 'cug_template-'.concat(52342);
+            d = 'room_steals-'.concat(52342);
         function f(e) {
             return (f =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator

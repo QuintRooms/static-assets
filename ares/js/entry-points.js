@@ -30,15 +30,17 @@ module.exports = () => {
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
-            'ares_child-60278': './src/60278.js', // Ares Child Test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'ares_child-60278': './src/60278.js', // Ares Child Test
             'cug_template-39624': './src/39624.js', // CUG Template
-            'room_steals-52342': './src/52342.js', // Room Steals
+            // 'room_steals-52342': './src/52342.js', // Room Steals
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
-        entry_points = {};
+        entry_points = {
+            'ares_child-60279': './src/60279.js', // Ares Child Test
+            'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+        };
     }
 
     return entry_points;

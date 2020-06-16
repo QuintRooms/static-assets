@@ -5198,21 +5198,22 @@
                                     a = this,
                                     c = '',
                                     s = '',
-                                    u = window.location.origin,
-                                    l = new URL(window.location.href),
-                                    d = new URLSearchParams(l.search),
-                                    f = document.querySelector('meta[name="originalParams"]').content,
-                                    h = new URLSearchParams(f);
-                                function p(e) {
+                                    u = '',
+                                    l = window.location.origin,
+                                    d = new URL(window.location.href),
+                                    f = new URLSearchParams(d.search),
+                                    h = document.querySelector('meta[name="originalParams"]').content,
+                                    p = new URLSearchParams(h);
+                                function m(e) {
                                     document.querySelector('.SearchHotels') &&
                                         document.querySelectorAll(e).forEach(function (e) {
                                             e.style.display = 'none';
                                         });
                                 }
-                                function m(e, t, n, r) {
+                                function y(e, t, n, r) {
                                     document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
                                 }
-                                function y(e) {
+                                function g(e) {
                                     var t = document.querySelector(e),
                                         n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
                                     return (
@@ -5227,13 +5228,17 @@
                                         n
                                     );
                                 }
-                                m('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />'),
-                                    m(
+                                y('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />'),
+                                    y(
                                         '.SearchHotels',
                                         'div#theSearchBox',
                                         'afterBegin',
                                         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
                                     ),
+                                    'cug' === a.site_config.site_type.toLowerCase() &&
+                                        'landing-page' === a.page_name &&
+                                        'search-results' === a.page_name &&
+                                        (u = document.querySelector('meta[name="memberToken"]').content),
                                     (o = 'input#city'),
                                     document.querySelector(o) && document.querySelector(o).remove(),
                                     'search-results' === a.page_name &&
@@ -5243,7 +5248,7 @@
                                         }),
                                     (function () {
                                         if (document.querySelector('.SearchHotels')) {
-                                            var e = d.get('destination'),
+                                            var e = f.get('destination'),
                                                 t = document.querySelector('input#address-input');
                                             (t.value = e),
                                                 t.addEventListener('click', function () {
@@ -5251,46 +5256,46 @@
                                                 });
                                         }
                                     })(),
-                                    y('select#rooms'),
-                                    y('select#adults'),
+                                    g('select#rooms'),
+                                    g('select#adults'),
                                     (function (e) {
                                         document.querySelector(e) && (document.querySelector(e).required = !0);
                                     })('input#theCheckIn'),
                                     jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        d.has('locationlabel') || d.has('points') || p('img.arn-green-marker-icon');
+                                        f.has('locationlabel') || f.has('points') || m('img.arn-green-marker-icon');
                                     }),
-                                    p('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    m('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
                                     document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
                                     document.querySelector('form#searchForm').addEventListener('submit', function (o) {
                                         o.preventDefault();
-                                        var i = y('select#rooms'),
-                                            l = y('select#adults'),
-                                            d = B(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                            f = B(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                            p = B(f).diff(B(d), 'days'),
-                                            m = [
-                                                '&properties='.concat(h.get('properties')),
-                                                '&utm_source='.concat(h.get('utm_source')),
-                                                '&locationlabel='.concat(h.get('locationlabel')),
-                                                '&radius='.concat(h.get('radius')),
-                                                '&groupid='.concat(h.get('groupid')),
-                                                '&pageSize='.concat(h.get('pageSize')),
-                                                '&cid='.concat(h.get('cid')),
+                                        var i = g('select#rooms'),
+                                            d = g('select#adults'),
+                                            f = B(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                            h = B(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
+                                            m = B(h).diff(B(f), 'days'),
+                                            y = [
+                                                '&properties='.concat(p.get('properties')),
+                                                '&utm_source='.concat(p.get('utm_source')),
+                                                '&locationlabel='.concat(p.get('locationlabel')),
+                                                '&radius='.concat(p.get('radius')),
+                                                '&groupid='.concat(p.get('groupid')),
+                                                '&pageSize='.concat(p.get('pageSize')),
+                                                '&cid='.concat(p.get('cid')),
                                             ],
-                                            g = function (e, t) {
+                                            v = function (e, t) {
                                                 n = ''
-                                                    .concat(u, '/v6/?type=geo&siteid=')
+                                                    .concat(l, '/v6/?type=geo&siteid=')
                                                     .concat(a.site_id, '&longitude=')
                                                     .concat(t, '&latitude=')
                                                     .concat(e, '&checkin=')
-                                                    .concat(d, '&nights=')
-                                                    .concat(p, '&map&pagesize=10&')
+                                                    .concat(f, '&nights=')
+                                                    .concat(m, '&map&pagesize=10&')
                                                     .concat(a.site_config.distance_unit, '&rooms=')
                                                     .concat(i, '&adults=')
-                                                    .concat(l, '&currency=')
+                                                    .concat(d, '&currency=')
                                                     .concat(a.selected_currency);
                                             };
-                                        e ? g(e.lat, e.lng) : t ? g(t.lat, t.lng) : e || t || 'search-results' !== a.page_name || g(h.get('latitude'), h.get('longitude')),
+                                        e ? v(e.lat, e.lng) : t ? v(t.lat, t.lng) : e || t || 'search-results' !== a.page_name || v(p.get('latitude'), p.get('longitude')),
                                             a.site_config.cug.is_cug && ((r = document.querySelector('input#address-input').value), (n += '&destination='.concat(r))),
                                             (function () {
                                                 if ('search-results' === a.page_name && '' !== document.querySelector('input#hotelName').value) {
@@ -5310,17 +5315,18 @@
                                                     s += ''.concat(t, ',');
                                                 }
                                             });
-                                        var v = new URL(n),
-                                            b = c.slice(0, -1),
-                                            S = s.slice(0, -1);
-                                        '' !== b && v.searchParams.append('amenities', b),
-                                            '' !== S && v.searchParams.append('propertyclasses', S),
+                                        var b = new URL(n),
+                                            S = c.slice(0, -1),
+                                            _ = s.slice(0, -1);
+                                        '' !== S && b.searchParams.append('amenities', S),
+                                            '' !== _ && b.searchParams.append('propertyclasses', _),
+                                            'cug' === a.site_config.site_type.toLowerCase() && b.searchParams.append('memberToken', u),
                                             'search-results' === a.page_name
-                                                ? (m.forEach(function (e) {
-                                                      e.includes('null') || (v += e);
+                                                ? (y.forEach(function (e) {
+                                                      e.includes('null') || (b += e);
                                                   }),
-                                                  (window.location.href = decodeURIComponent(v)))
-                                                : (window.location.href = decodeURIComponent(v));
+                                                  (window.location.href = decodeURIComponent(b)))
+                                                : (window.location.href = decodeURIComponent(b));
                                     }),
                                     (i = places({
                                         appId: a.site_config.algolia_app_id,

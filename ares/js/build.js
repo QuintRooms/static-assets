@@ -1441,11 +1441,18 @@ export default class BasePortal {
         let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
+        let member_token = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
         const original_params = document.querySelector('meta[name="originalParams"]').content;
         const original_params_url = new URLSearchParams(original_params);
+
+        const grab_member_token = () => {
+            if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'landing-page' || this.page_name !== 'search-results') return;
+
+            member_token = document.querySelector('meta[name="memberToken"]').content;
+        };
 
         function setInputToRequired(selector) {
             if (!document.querySelector(selector)) return;
@@ -1591,6 +1598,9 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
+                if (this.site_config.site_type.toLowerCase() === 'cug') {
+                    built_url.searchParams.append('memberToken', member_token);
+                }
                 if (this.page_name === 'search-results') {
                     no_null_params.forEach((param) => {
                         if (!param.includes('null')) {
@@ -1608,6 +1618,7 @@ export default class BasePortal {
             'afterBegin',
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
+        grab_member_token();
         removeArnSearchBar('input#city');
         remove_city_search_for_event();
         prepopulateInputsOnSearchHotels();

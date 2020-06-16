@@ -2,8 +2,8 @@ import Path from '../../js/path';
 
 const env_path = new Path();
 
-const site_id = 52342;
-const directory_name = `room_steals-${site_id}`;
+const site_id = 39624;
+const directory_name = `cug_template-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -41,7 +41,7 @@ export default function siteConfig() {
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         has_custom_styles: true,
-        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/52342.css`,
+        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/39624.css`,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
@@ -87,6 +87,6 @@ export default function siteConfig() {
             },
         },
         // new options
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Room Steals',
     };
 }

@@ -5236,9 +5236,8 @@
                                         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
                                     ),
                                     'cug' === a.site_config.site_type.toLowerCase() &&
-                                        'landing-page' === a.page_name &&
-                                        'search-results' === a.page_name &&
-                                        ((u = document.querySelector('meta[name="memberToken"]').content), console.log(u)),
+                                        (('landing-page' !== a.page_name && 'search-results' !== a.page_name) ||
+                                            (console.log('heeeyey'), (u = document.querySelector('meta[name="memberToken"]').content), console.log(u))),
                                     (o = 'input#city'),
                                     document.querySelector(o) && document.querySelector(o).remove(),
                                     'search-results' === a.page_name &&

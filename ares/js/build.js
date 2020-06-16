@@ -1449,7 +1449,8 @@ export default class BasePortal {
         const original_params_url = new URLSearchParams(original_params);
 
         const grab_member_token = () => {
-            if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'landing-page' || this.page_name !== 'search-results') return;
+            if (this.site_config.site_type.toLowerCase() !== 'cug') return;
+            if (this.page_name !== 'landing-page' || this.page_name !== 'search-results') return;
 
             member_token = document.querySelector('meta[name="memberToken"]').content;
             console.log(member_token);

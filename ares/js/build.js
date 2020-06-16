@@ -1755,20 +1755,6 @@ export default class BasePortal {
             }
         }
 
-        async function createPropImageSlideshow() {
-            prop_images = await getPropImages();
-            document.querySelector('.ArnPropName').insertAdjacentHTML(
-                'afterend',
-                `<div class="carousel-container">
-                    <div class="carousel-slide">
-                    </div>
-                    <a id="previousBtn">&#10094;</a>
-                    <a id="nextBtn">&#10095;</a>
-                </div>`
-            );
-            populateImages();
-        }
-
         function populateImages() {
             carousel_images = document.querySelectorAll('.carousel-slide img');
             for (let i = counter === 0 ? counter : counter + 2; i < counter + 5; i += 1) {
@@ -1781,6 +1767,20 @@ export default class BasePortal {
                     </div>`
                 );
             }
+        }
+
+        async function createPropImageSlideshow() {
+            prop_images = await getPropImages();
+            document.querySelector('.ArnPropName').insertAdjacentHTML(
+                'afterend',
+                `<div class="carousel-container">
+                    <div class="carousel-slide">
+                    </div>
+                    <a id="previousBtn">&#10094;</a>
+                    <a id="nextBtn">&#10095;</a>
+                </div>`
+            );
+            populateImages();
         }
 
         function hideArrows(next, prev) {
@@ -2172,7 +2172,7 @@ export default class BasePortal {
             });
         }
 
-        if (document.querySelector('#show-more-or-less')) return;
+        if (document.querySelector('#show-more-or-less') || !document.querySelector('.PropertyAmenities li')) return;
         amenity_container.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>');
         show_more = document.querySelector('span#show-more-or-less');
         document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities');

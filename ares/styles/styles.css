@@ -1790,7 +1790,11 @@ legend {
     .SinglePropDetail .bookRoomCell {
         display: grid;
         grid-template-columns: 2fr 2fr;
-        grid-template-rows: 3fr .5fr .25fr;
+        grid-template-rows: 1fr .5fr .25fr;
+    }
+
+    .SinglePropDetail table.SB16 .bookRoomCell, .SinglePropDetail table.SB20 .bookRoomCell {
+        grid-template-rows: 6fr .5fr .25fr;
     }
 
     .SinglePropDetail .bookRoom {
@@ -1836,12 +1840,9 @@ legend {
     }
 
     .roomCount{
-        text-align: left;
         padding-top: 8px;
         grid-row: 2 / 3;
         grid-column: 2 / 3;
-        visibility: hidden;
-        display: block!important;
     }
 }
 

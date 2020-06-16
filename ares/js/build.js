@@ -1150,6 +1150,7 @@ export default class BasePortal {
         };
 
         const setup_content_for_dropdown = (currencies_json) => {
+            // eslint-disable-next-line no-unused-vars
             const currencies = Object.entries(currencies_json);
 
             const menu_container = document.createElement('div');
@@ -2233,13 +2234,19 @@ export default class BasePortal {
 
     hideRemainingRooms() {
         if (this.page_name !== 'property-detail' || !document.querySelector('div.roomCount')) return;
-        const low_rooms = document.querySelectorAll('div.roomCount');
+        const rooms = document.querySelectorAll('table.ArnRateList');
         const mq = window.matchMedia('(max-width: 560px)');
 
-        low_rooms.forEach((el) => {
-            const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
+        rooms.forEach((el) => {
+            if (!el.querySelector('.roomCount') && !el.classList.contains('SB16') && !el.classList.contains('SB20')) return;
+
+            const rooms_remaining = parseFloat(el.querySelector('.roomCount strong').textContent);
             if (rooms_remaining < 6) {
-                mq.matches ? (el.style.visibility = 'visible') : (el.style.display = 'block');
+                el.querySelector('.roomCount').style.display = 'block';
+            }
+            if (!el.classList.contains('SB16') || (!el.classList.contains('SB20') && !mq.matches)) return;
+            if ((rooms_remaining < 6 && el.classList.contains('SB16')) || el.classList.contains('SB20')) {
+                el.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr';
             }
         });
     }

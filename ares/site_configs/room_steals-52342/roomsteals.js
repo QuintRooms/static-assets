@@ -1,7 +1,3 @@
-import Utilities from '../../js/utilities';
-
-const utilities = new Utilities();
-
 export default class RoomSteals {
     constructor(
         member_meta_data,

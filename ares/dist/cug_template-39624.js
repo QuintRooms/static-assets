@@ -5238,7 +5238,7 @@
                                     'cug' === a.site_config.site_type.toLowerCase() &&
                                         'landing-page' === a.page_name &&
                                         'search-results' === a.page_name &&
-                                        (u = document.querySelector('meta[name="memberToken"]').content),
+                                        ((u = document.querySelector('meta[name="memberToken"]').content), console.log(u)),
                                     (o = 'input#city'),
                                     document.querySelector(o) && document.querySelector(o).remove(),
                                     'search-results' === a.page_name &&
@@ -5320,7 +5320,7 @@
                                             _ = s.slice(0, -1);
                                         '' !== S && b.searchParams.append('amenities', S),
                                             '' !== _ && b.searchParams.append('propertyclasses', _),
-                                            'cug' === a.site_config.site_type.toLowerCase() && b.searchParams.append('memberToken', u),
+                                            'cug' === a.site_config.site_type.toLowerCase() && '' !== u && b.searchParams.append('memberToken', u),
                                             'search-results' === a.page_name
                                                 ? (y.forEach(function (e) {
                                                       e.includes('null') || (b += e);

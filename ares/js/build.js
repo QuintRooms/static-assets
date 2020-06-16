@@ -1452,6 +1452,7 @@ export default class BasePortal {
             if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'landing-page' || this.page_name !== 'search-results') return;
 
             member_token = document.querySelector('meta[name="memberToken"]').content;
+            console.log(member_token);
         };
 
         function setInputToRequired(selector) {
@@ -1598,7 +1599,7 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
-                if (this.site_config.site_type.toLowerCase() === 'cug') {
+                if (this.site_config.site_type.toLowerCase() === 'cug' && member_token !== '') {
                     built_url.searchParams.append('memberToken', member_token);
                 }
                 if (this.page_name === 'search-results') {

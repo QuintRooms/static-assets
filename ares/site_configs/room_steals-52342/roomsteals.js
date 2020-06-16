@@ -238,7 +238,7 @@ export default class RoomSteals {
 if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels')) || document.querySelector('.SinglePropDetail')) {
     const roomsteals = new RoomSteals();
 
-    utilities.waitForSelectorInDOM('.pollingFinished').then(() => {
+    jQuery(document).on('ratesReadyEvent', () => {
         roomsteals.getRoomNights();
         roomsteals
             .getMemberMetaData()

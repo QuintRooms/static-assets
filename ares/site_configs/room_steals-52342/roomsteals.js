@@ -1,3 +1,7 @@
+import Utilities from '../../js/utilities';
+
+const utilities = new Utilities();
+
 export default class RoomSteals {
     constructor(
         member_meta_data,
@@ -213,7 +217,8 @@ export default class RoomSteals {
 }
 if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels')) || document.querySelector('.SinglePropDetail')) {
     const roomsteals = new RoomSteals();
-    jQuery(document).on('ratesReadyEvent', () => {
+
+    utilities.waitForSelectorInDOM('.pollingFinished').then(() => {
         roomsteals.getRoomNights();
         roomsteals
             .getMemberMetaData()

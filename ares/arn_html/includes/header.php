@@ -10,7 +10,7 @@
 <?php
     $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     
-    if(getenv('isCUG') == true && strpos($url, 'auth') === false){
+    if(getenv('isCUG') === true && strpos($url, 'auth') === false){
         echo '
             <div id="AdminControlsContainer">
                 <div id="commands"><a class="profileCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;1">My Profile</a><a class="organizationsCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;2">My Organizations</a>

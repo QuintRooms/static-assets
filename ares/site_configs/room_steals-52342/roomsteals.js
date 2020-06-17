@@ -31,8 +31,10 @@ export default class RoomSteals {
      *@return json of member data
      */
     async getMemberMetaData() {
-        const member_meta_tag = await document.querySelector('meta[name="memberMetaTag"]');
+        const member_meta_tag = await document.querySelector('meta[name="memberMetaTag-test"]');
+
         if (!member_meta_tag) return;
+
         this.member_meta_data = JSON.parse(member_meta_tag.getAttribute('content'));
 
         return this.member_meta_data;
@@ -55,9 +57,7 @@ export default class RoomSteals {
             this.additional_info_data = this.member_meta_data.AdditionalInfo;
             this.additional_info_data = JSON.parse(this.additional_info_data);
             if (this.additional_info_data && this.additional_info_data.partner) {
-                // this.partner = this.additional_info_data.partner;
-                this.partner = 'roomsteals.com';
-                console.log('Output: RoomSteals -> getPartner -> this.partner', this.partner);
+                this.partner = this.additional_info_data.partner;
 
                 return this.partner;
             }
@@ -74,9 +74,9 @@ export default class RoomSteals {
     async setRoomStealsUser() {
         if (!this.room_steals_api_data) return;
 
-        this.subscribe_url = await this.room_steals_api_data.subscribe_url;
-        this.partner_model = await this.room_steals_api_data.partner_model;
-        this.user_plan = await this.room_steals_api_data.user_plan;
+        this.subscribe_url = this.room_steals_api_data.subscribe_url;
+        this.partner_model = this.room_steals_api_data.partner_model;
+        this.user_plan = this.room_steals_api_data.user_plan;
     }
 
     async checkIsRoomStealsTrialUser() {
@@ -131,90 +131,102 @@ export default class RoomSteals {
         }
     }
 
-    showCustomerSavingsOnSearchResults() {
-        if (this.is_room_steals_trial_user !== true || !document.querySelector('.SearchHotels')) return;
-        const member_savings = document.querySelectorAll('.ArnContainer');
-        member_savings.forEach((element) => {
-            const savings = element.querySelector('.creditsValue');
-            const btn = element.querySelector('.ArnRateButton');
+    showCustomerSavings() {
+        if (this.is_room_steals_trial_user !== true) return;
 
-            if (!savings) return;
+        let property_container = '';
+        let btn = '';
 
-            const savings_int = savings.textContent.replace(/\D+/g, '');
+        if (document.querySelector('.SearchHotels')) {
+            property_container = document.querySelectorAll('.ArnContainer');
+        }
+
+        if (document.querySelector('.SinglePropDetail')) {
+            property_container = document.querySelectorAll('.rateRow');
+        }
+
+        property_container.forEach((property) => {
+            const savings_el = property.querySelector('.originalPrice');
+
+            if (document.querySelector('.SearchHotels')) {
+                btn = property.querySelector('.ArnRateButton');
+            } else if (document.querySelector('.SinglePropDetail')) {
+                btn = property.querySelector('.bookRoom');
+            }
+
+            if (!savings_el) return;
+
+            const savings = savings_el.getAttribute('amount');
+
+            const savings_int = savings.replace(/\D+/g, '');
             let adjusted_savings = savings_int * this.room_nights - 5900;
+
             if (adjusted_savings > 500) {
                 adjusted_savings = adjusted_savings.toString().slice(0, -2);
-                if (!element.querySelector('.savings-tag')) {
+                if (!property.querySelector('.savings-tag')) {
                     btn.insertAdjacentHTML(
                         'afterEnd',
-                        `<div class="savings-tag">With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!</div><style>/* Savings Tag */
-                        .savings-tag {
-                            max-width: 250px;
-                            text-align: center;
-                            width: 100%;
-                            margin-left: auto;
-                            font-size: 13px;
-                            padding: 4px;
-                            background: #faaf18;
-                            color: #333;
-                        }
-                        @media screen and (max-width: 800px) {
+                        `<div class="savings-tag">With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!</div>
+                        <style>
+                        /* Savings Tag */
                             .savings-tag {
-                                top: 6px;
+                                max-width: 250px;
+                                text-align: center;
+                                width: 100%;
+                                margin-top: 8px;
+                                letter-spacing: -.2px;
+                                margin-left: auto;
+                                font-size: 13px;
+                                padding: 4px;
+                                background: #faaf18;
+                                color: #333;
                             }
-                        }
-                        @media screen and (max-width: 500px) {
-                            .savings-tag {
-                                top: 0;
+
+                            .SinglePropDetail .bookRoom, .SinglePropDetail .holdRoom{
+                                max-width: 165px;
                             }
-                        }</style>`
+
+                            .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2){
+                                width: 25%;
+                            }
+                            
+                            .SinglePropDetail .savings-tag{
+                                margin-bottom: 8px;
+                            }
+
+                            @media screen and (max-width: 600px) {
+                                .ArnRateCell{
+                                    display: grid !important;
+                                }
+
+                                .savings-tag {
+                                    grid-column-start: 2;
+                                    grid-row-start: 2;
+                                    margin-top: 0;
+                                }
+
+                                .ArnRateButton{
+                                    grid-column-start: 2;
+                                    grid-row-start: 1;
+                                    margin-left: auto;
+                                }
+                            }
+
+                            @media screen and (max-width: 560px){
+                                .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2){
+                                    width: 100%;
+                                }
+                            }
+                            @media screen and (max-width: 412px){
+                                .SinglePropDetail .bookRoomCell{
+                                    grid-template-rows: 1fr .5fr .25fr;
+                                }
+                            }
+                        </style>`
                     );
                 }
             }
         });
-    }
-
-    showCustomerSavingsOnSinglePropPage() {
-        if (this.is_room_steals_trial_user === true) {
-            if (document.querySelector('.SinglePropDetail')) {
-                document.body.insertAdjacentHTML(
-                    'beforeEnd',
-                    '<style>.bestPrice .creditsLabel{display: none !important;}.SinglePropDetail .bookRoomCell .memberSavings{ border-bottom: none;} .ArnNightlyRate{display: flex; flex-direction: column;} .memberSavings{order: 2;}</style>'
-                );
-
-                const member_savings = document.querySelectorAll('.memberSavings');
-                member_savings.forEach((element) => {
-                    const savings = element.querySelector('.creditsValue');
-                    const label = element.querySelector('.creditsLabel');
-                    if (savings) {
-                        const savings_int = savings.textContent.replace(/\D+/g, '');
-                        let adjusted_savings = savings_int * this.room_nights - 5900;
-                        if (adjusted_savings > 500) {
-                            let element_styles = 'display: block !important';
-                            element.style.cssText += element_styles;
-                            savings.style.display = 'none';
-                            const label_styles =
-                                'max-width: 250px; display: block; font-style: initial; text-align: center; width: 100%; margin: 8px auto; font-size: 13px; padding: 2px; border-radius: 5px; background: #faaf18; color: #333;letter-spacing:-.2px';
-                            label.style.cssText += label_styles;
-
-                            element_styles = 'display: block !important; position: static !important;';
-                            element.style.cssText += element_styles;
-                            const single_prop_savings = document.querySelectorAll('.creditsLabel strong');
-                            if (single_prop_savings) {
-                                single_prop_savings.forEach(function (prop_saving) {
-                                    const single_prop_savings_styles =
-                                        'display: inline !important; color: inherit !important; font-size: inherit !important; font-weight: bold !important;';
-                                    prop_saving.style.cssText += single_prop_savings_styles;
-                                });
-                            }
-
-                            adjusted_savings = adjusted_savings.toString().slice(0, -2);
-                            label.innerHTML = `With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!`;
-                        }
-                    }
-                });
-            }
-        }
     }
 
     async setPropertyURL() {
@@ -231,6 +243,7 @@ export default class RoomSteals {
         }
     }
 }
+
 if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels')) || document.querySelector('.SinglePropDetail')) {
     const roomsteals = new RoomSteals();
 
@@ -250,8 +263,7 @@ if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.
                                 roomsteals.showSubscribeNowButtonsForTrialUsers();
                             });
 
-                            roomsteals.showCustomerSavingsOnSinglePropPage();
-                            roomsteals.showCustomerSavingsOnSearchResults();
+                            roomsteals.showCustomerSavings();
                         });
                     });
                 });

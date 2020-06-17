@@ -247,26 +247,26 @@ export default class RoomSteals {
 if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels')) || document.querySelector('.SinglePropDetail')) {
     const roomsteals = new RoomSteals();
 
-    jQuery(document).on('ratesReadyEvent', () => {
-        roomsteals.getRoomNights();
-        roomsteals
-            .getMemberMetaData()
-            .then((member_data) => {
-                roomsteals.getReferralID();
-                roomsteals.getPartner();
-            })
-            .then(() => {
-                roomsteals.getRoomStealsAPIData().then(() => {
-                    roomsteals.setRoomStealsUser().then(() => {
-                        roomsteals.checkIsRoomStealsTrialUser().then(() => {
-                            roomsteals.setPropertyURL().then(() => {
-                                roomsteals.showSubscribeNowButtonsForTrialUsers();
-                            });
+    roomsteals.getRoomNights();
+    roomsteals
+        .getMemberMetaData()
+        .then((member_data) => {
+            roomsteals.getReferralID();
+            roomsteals.getPartner();
+        })
+        .then(() => {
+            roomsteals.getRoomStealsAPIData().then(() => {
+                roomsteals.setRoomStealsUser().then(() => {
+                    roomsteals.checkIsRoomStealsTrialUser().then(() => {
+                        roomsteals.setPropertyURL().then(() => {
+                            roomsteals.showSubscribeNowButtonsForTrialUsers();
+                        });
 
+                        jQuery(document).on('ratesReadyEvent', () => {
                             roomsteals.showCustomerSavings();
                         });
                     });
                 });
             });
-    });
+        });
 }

@@ -225,7 +225,6 @@ export default class BasePortal {
                 utilities.updateHTML('.ArnSearchHeader', 'Search');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
                 utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                utilities.updateHTML('#CitySearchContainer > span', 'Where:');
                 utilities.updateHTML('.lblRating', 'Stars');
                 utilities.updateHTML('.lblCurrency', 'Currency');
                 utilities.updateHTML('.lblAmenities', 'Amenities');
@@ -1472,7 +1471,17 @@ export default class BasePortal {
         function removeArnSearchBar(selector) {
             if (!document.querySelector(selector)) return;
 
-            document.querySelector(selector).remove();
+            const arn_search_styles = {
+                display: 'none',
+                position: 'absolute',
+                left: '-10000px',
+            };
+
+            Object.assign(document.querySelector(selector), arn_search_styles);
+
+            // document.querySelector(selector).style.display = 'none';
+            // document.querySelector(selector).style.position = 'absolute';
+            // document.querySelector(selector).style.left = '-10000px';
         }
 
         function insertAlgoliaSearch(page, selector, adjacent_location, html) {

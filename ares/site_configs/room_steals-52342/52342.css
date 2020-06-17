@@ -41,10 +41,6 @@ footer a + span {
 }
 
 /* Full stay toggle start */
-.currencies-container{
-    order: 1;
-}
-
 .rs-toggle {
     position: relative;
     width: 65px;

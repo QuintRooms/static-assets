@@ -1519,6 +1519,26 @@ export default class BasePortal {
             });
         };
 
+        function setInputValue() {
+            const input = document.querySelector('input#address-input');
+            input.addEventListener('blur', (e) => {
+                console.log(`before set attribute: `, destination_value);
+                input.value = destination_value;
+                // console.log(`input: `, input);
+                // console.log(`e`, e);
+                // console.log(`input value: `, input.value);
+                // console.log(`destination_value: `, destination_value);
+            });
+        }
+
+        // setInputValue() {
+        //     const input = document.querySelector('input#address-input');
+        //     let hello = 'heyyoooo';
+        //     input.addEventListener('blur', (e) => {
+        //         input.value = hello;
+        //     });
+        // }
+
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -1552,8 +1572,7 @@ export default class BasePortal {
                 }
 
                 if (this.site_config.cug.is_cug) {
-                    destination_value = document.querySelector('input#address-input').value;
-                    url += `&destination=${destination_value}`;
+                    url += `&destination=${document.querySelector('input#address-input').value}`;
                 }
 
                 const get_optional_hotel_name = () => {
@@ -1609,10 +1628,12 @@ export default class BasePortal {
                         }
                     });
                     window.location.href = decodeURIComponent(built_url);
-                } else window.location.href = decodeURIComponent(built_url);
+                } else {
+                    window.location.href = decodeURIComponent(built_url);
+                }
             });
         };
-        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
+        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" value id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',
             'div#theSearchBox',
@@ -1620,6 +1641,7 @@ export default class BasePortal {
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
         grab_member_token();
+        setInputValue();
         removeArnSearchBar('input#city');
         remove_city_search_for_event();
         prepopulateInputsOnSearchHotels();
@@ -1644,10 +1666,12 @@ export default class BasePortal {
                 type: 'city',
             });
             places_autocomplete.on('change', function resultSelected(e) {
-                document.querySelector('input#address-input').value = e.suggestion.value || '';
+                // document.querySelector('input#address-input').value = e.suggestion.value || '';
                 lat_lng = e.suggestion.latlng;
             });
             places_autocomplete.on('suggestions', function saveDefaultGeo(e) {
+                destination_value = e.suggestions[0].value;
+                console.log(`destination_value`, destination_value);
                 // eslint-disable-next-line no-underscore-dangle
                 default_lat_lng = e.rawAnswer.hits[0]._geoloc;
             });

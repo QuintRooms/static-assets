@@ -1521,23 +1521,12 @@ export default class BasePortal {
 
         function setInputValue() {
             const input = document.querySelector('input#address-input');
-            input.addEventListener('blur', (e) => {
-                console.log(`before set attribute: `, destination_value);
-                input.value = destination_value;
-                // console.log(`input: `, input);
-                // console.log(`e`, e);
-                // console.log(`input value: `, input.value);
-                // console.log(`destination_value: `, destination_value);
+            input.addEventListener('blur', () => {
+                setTimeout(() => {
+                    input.value = destination_value;
+                }, 1);
             });
         }
-
-        // setInputValue() {
-        //     const input = document.querySelector('input#address-input');
-        //     let hello = 'heyyoooo';
-        //     input.addEventListener('blur', (e) => {
-        //         input.value = hello;
-        //     });
-        // }
 
         const construct_url_on_submit = () => {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
@@ -1633,7 +1622,7 @@ export default class BasePortal {
                 }
             });
         };
-        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" value id="address-input" placeholder="Destination" required="true" />');
+        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="text" value id="address-input" placeholder="Destination" required="true" />');
         insertAlgoliaSearch(
             '.SearchHotels',
             'div#theSearchBox',
@@ -1661,17 +1650,17 @@ export default class BasePortal {
                 appId: this.site_config.algolia_app_id,
                 apiKey: this.site_config.algolia_api_key,
                 container: document.querySelector('input#address-input'),
+                autoselectOnBlur: true,
             }).configure({
                 aroundLatLngViaIP: 'false',
                 type: 'city',
             });
             places_autocomplete.on('change', function resultSelected(e) {
-                // document.querySelector('input#address-input').value = e.suggestion.value || '';
+                document.querySelector('input#address-input').value = e.suggestion.value || '';
                 lat_lng = e.suggestion.latlng;
             });
             places_autocomplete.on('suggestions', function saveDefaultGeo(e) {
                 destination_value = e.suggestions[0].value;
-                console.log(`destination_value`, destination_value);
                 // eslint-disable-next-line no-underscore-dangle
                 default_lat_lng = e.rawAnswer.hits[0]._geoloc;
             });

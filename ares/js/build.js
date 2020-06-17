@@ -14,7 +14,7 @@ export default class BasePortal {
     constructor(config) {
         console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
-        this.page_name = '';
+        this.page_name = utilities.getPageName();
         this.site_config = config;
         this.currency = '';
         this.svg_arrow =
@@ -29,7 +29,7 @@ export default class BasePortal {
         this.initializeARNRatesReadyEvent();
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
-            this.getPageName();
+            utilities.getPageName();
             this.applyConfigColors();
             this.setRootPageBackgroundImage();
             this.setFontFromConfig();
@@ -118,7 +118,9 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
+                // if (this.site_config.site_type.toLowerCase() !== 'cug') {
                 this.addAlgoliaSearch();
+                // }
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -253,7 +255,8 @@ export default class BasePortal {
             this.applyDarkTheme();
             this.applyCustomStyles();
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
-            // this.forceClickOnCitySearch();
+
+            this.forceClickOnCitySearch();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -294,59 +297,6 @@ export default class BasePortal {
         if (!this.site_id) return;
 
         return this.site_id;
-    }
-
-    /**
-     *@description gets page name using css classes from body tag
-     */
-    async getPageName() {
-        const body_classes = document.body;
-
-        if (body_classes.classList.contains('SearchHotels') && !body_classes.classList.contains('HoldRoomsForm')) {
-            this.page_name = 'search-results';
-        }
-
-        if (body_classes.classList.contains('SinglePropDetail')) {
-            this.page_name = 'property-detail';
-        }
-
-        if (body_classes.classList.contains('CheckOutForm')) {
-            this.page_name = 'checkout';
-        }
-
-        if (body_classes.classList.contains('ConfirmationForm')) {
-            this.page_name = 'confirmation';
-        }
-
-        if (body_classes.classList.contains('RootBody')) {
-            this.page_name = 'landing-page';
-        }
-
-        if (body_classes.classList.contains('WBFaq')) {
-            this.page_name = 'faq';
-        }
-
-        if (body_classes.classList.contains('WBTermsAndConditions')) {
-            this.page_name = 'terms-conditions';
-        }
-
-        if (body_classes.classList.contains('WBPrivacyPolicy')) {
-            this.page_name = 'privacy-policy';
-        }
-
-        if (body_classes.classList.contains('WBRateGuaranteeForm2')) {
-            this.page_name = 'lrg-page';
-        }
-
-        if (body_classes.classList.contains('WBValidatedRegistrationForm')) {
-            this.page_name = 'cug-registration';
-        }
-
-        if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) {
-            this.page_name = 'hold-rooms';
-        }
-
-        return this.page_name;
     }
 
     async getCurrency() {
@@ -1147,6 +1097,7 @@ export default class BasePortal {
         };
 
         const setup_content_for_dropdown = (currencies_json) => {
+            // eslint-disable-next-line no-unused-vars
             const currencies = Object.entries(currencies_json);
 
             const menu_container = document.createElement('div');
@@ -1389,8 +1340,8 @@ export default class BasePortal {
 
         update_buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                if (this.site_config.lodging.event_id === null && document.querySelector('input#city').value === '') {
-                    this.style_validation_fields('input#city');
+                if (this.site_config.site_type.toLowerCase() === 'cug' && document.querySelector('input#address-input').value === '') {
+                    this.style_validation_fields('input#address-input');
                     return;
                 }
                 if (document.querySelector('input#theCheckIn').value === '') {
@@ -1490,11 +1441,19 @@ export default class BasePortal {
         let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
+        let member_token = '';
         const {origin} = window.location;
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
         const original_params = document.querySelector('meta[name="originalParams"]').content;
         const original_params_url = new URLSearchParams(original_params);
+
+        const grab_member_token = () => {
+            if (this.site_config.site_type.toLowerCase() !== 'cug') return;
+            if (this.page_name === 'landing-page' || this.page_name === 'search-results') {
+                member_token = document.querySelector('meta[name="memberToken"]').content;
+            }
+        };
 
         function setInputToRequired(selector) {
             if (!document.querySelector(selector)) return;
@@ -1583,7 +1542,7 @@ export default class BasePortal {
                 const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
 
                 const build_url = (lat, lng) => {
-                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
+                    url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
                 };
 
                 if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
@@ -1640,6 +1599,9 @@ export default class BasePortal {
                 if (stars !== '') {
                     built_url.searchParams.append('propertyclasses', stars);
                 }
+                if (this.site_config.site_type.toLowerCase() === 'cug' && member_token !== '') {
+                    built_url.searchParams.append('memberToken', member_token);
+                }
                 if (this.page_name === 'search-results') {
                     no_null_params.forEach((param) => {
                         if (!param.includes('null')) {
@@ -1657,13 +1619,13 @@ export default class BasePortal {
             'afterBegin',
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
+        grab_member_token();
         removeArnSearchBar('input#city');
         remove_city_search_for_event();
         prepopulateInputsOnSearchHotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');
-
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             if (search_params.has('locationlabel') || search_params.has('points')) return;
             hideArnSearchElements('img.arn-green-marker-icon');
@@ -1805,20 +1767,6 @@ export default class BasePortal {
             }
         }
 
-        async function createPropImageSlideshow() {
-            prop_images = await getPropImages();
-            document.querySelector('.ArnPropName').insertAdjacentHTML(
-                'afterend',
-                `<div class="carousel-container">
-                    <div class="carousel-slide">
-                    </div>
-                    <a id="previousBtn">&#10094;</a>
-                    <a id="nextBtn">&#10095;</a>
-                </div>`
-            );
-            populateImages();
-        }
-
         function populateImages() {
             carousel_images = document.querySelectorAll('.carousel-slide img');
             for (let i = counter === 0 ? counter : counter + 2; i < counter + 5; i += 1) {
@@ -1831,6 +1779,20 @@ export default class BasePortal {
                     </div>`
                 );
             }
+        }
+
+        async function createPropImageSlideshow() {
+            prop_images = await getPropImages();
+            document.querySelector('.ArnPropName').insertAdjacentHTML(
+                'afterend',
+                `<div class="carousel-container">
+                    <div class="carousel-slide">
+                    </div>
+                    <a id="previousBtn">&#10094;</a>
+                    <a id="nextBtn">&#10095;</a>
+                </div>`
+            );
+            populateImages();
         }
 
         function hideArrows(next, prev) {
@@ -1915,11 +1877,11 @@ export default class BasePortal {
         }
     }
 
-    // forceClickOnCitySearch() {
-    //     if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City') {
-    //         document.querySelector('.ArnGoCitySearch').click();
-    //     }
-    // }
+    forceClickOnCitySearch() {
+        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
+            document.querySelector('.ArnGoCitySearch').click();
+        }
+    }
 
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;
@@ -2222,7 +2184,7 @@ export default class BasePortal {
             });
         }
 
-        if (document.querySelector('#show-more-or-less')) return;
+        if (document.querySelector('#show-more-or-less') || !document.querySelector('.PropertyAmenities li')) return;
         amenity_container.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>');
         show_more = document.querySelector('span#show-more-or-less');
         document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities');
@@ -2231,11 +2193,19 @@ export default class BasePortal {
 
     hideRemainingRooms() {
         if (this.page_name !== 'property-detail' || !document.querySelector('div.roomCount')) return;
-        const low_rooms = document.querySelectorAll('div.roomCount');
-        low_rooms.forEach((el) => {
-            const rooms_remaining = parseFloat(el.querySelector('strong').textContent);
+        const rooms = document.querySelectorAll('table.ArnRateList');
+        const mq = window.matchMedia('(max-width: 560px)');
+
+        rooms.forEach((el) => {
+            if (!el.querySelector('.roomCount') && !el.classList.contains('SB16') && !el.classList.contains('SB20')) return;
+
+            const rooms_remaining = parseFloat(el.querySelector('.roomCount strong').textContent);
             if (rooms_remaining < 6) {
-                el.style.visibility = 'visible';
+                el.querySelector('.roomCount').style.display = 'block';
+            }
+            if (!el.classList.contains('SB16') || (!el.classList.contains('SB20') && !mq.matches)) return;
+            if ((rooms_remaining < 6 && el.classList.contains('SB16')) || el.classList.contains('SB20')) {
+                el.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr';
             }
         });
     }

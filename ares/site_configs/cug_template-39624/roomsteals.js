@@ -36,6 +36,7 @@ export default class RoomSteals {
         if (!member_meta_tag) return;
 
         this.member_meta_data = JSON.parse(member_meta_tag.getAttribute('content'));
+        console.log('Output: RoomSteals -> getMemberMetaData -> this.member_meta_data', this.member_meta_data);
 
         return this.member_meta_data;
     }
@@ -44,6 +45,7 @@ export default class RoomSteals {
         if (this.member_meta_data && this.member_meta_data.Names && this.member_meta_data.Names[0] && this.member_meta_data.Names[0].ReferralId) {
             // eslint-disable-next-line prefer-destructuring
             this.referral_id = this.member_meta_data.Names[0].ReferralId.split('-')[1];
+            console.log('Output: RoomSteals -> getReferralID -> this.referral_id', this.referral_id);
             return this.referral_id;
         }
     }
@@ -53,6 +55,7 @@ export default class RoomSteals {
      *@return json of partner data
      */
     async getPartner() {
+        console.log('Output: RoomSteals -> getPartner -> this.member_meta_data.AdditionalInfo', this.member_meta_data.AdditionalInfo);
         if (this.member_meta_data && this.member_meta_data.AdditionalInfo) {
             this.additional_info_data = this.member_meta_data.AdditionalInfo;
             this.additional_info_data = JSON.parse(this.additional_info_data);

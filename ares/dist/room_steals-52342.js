@@ -6001,7 +6001,7 @@
                                             for (;;)
                                                 switch ((e.prev = e.next)) {
                                                     case 0:
-                                                        return (e.next = 2), document.querySelector('meta[name="memberMetaTag-test"]');
+                                                        return (e.next = 2), document.querySelector('meta[name="memberMetaTag"]');
                                                     case 2:
                                                         if ((t = e.sent)) {
                                                             e.next = 5;

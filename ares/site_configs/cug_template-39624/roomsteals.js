@@ -31,7 +31,7 @@ export default class RoomSteals {
      *@return json of member data
      */
     async getMemberMetaData() {
-        const member_meta_tag = await document.querySelector('meta[name="memberMetaTag-test"]');
+        const member_meta_tag = await document.querySelector('meta[name="memberMetaTag"]');
 
         if (!member_meta_tag) return;
 

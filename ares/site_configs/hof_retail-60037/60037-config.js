@@ -9,7 +9,7 @@ export default function siteConfig() {
         site_id,
         affiliate_id: 17464,
         master_id: 920,
-        site_type: 'lodging',
+        site_type: 'retail',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',

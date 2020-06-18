@@ -1470,28 +1470,22 @@ export default class BasePortal {
 
         const remove_arn_search_bar = (selector) => {
             if (!document.querySelector(selector)) return;
+            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') document.querySelector(selector).remove();
 
-            document.querySelector(selector).remove();
-            // const arn_search_styles = {
-            //     display: 'none',
-            //     position: 'absolute',
-            //     left: '-10000px',
-            // };
-
-            // Object.assign(document.querySelector(selector), arn_search_styles);
-
-            // if (this.page_name === 'landing-page') {
-            //     document.body.append(document.querySelector(selector));
-            //     document.querySelector(selector).style.display = 'none';
-            // }
+            if (this.site_config.site_type.toLowerCase() === 'cug') {
+                document.body.append(document.querySelector(selector));
+                document.querySelector(selector).style.display = 'none';
+                document.querySelector('#CitySearchContainer').style.display = 'none';
+            }
         };
 
-        function insertAlgoliaSearch(page, selector, adjacent_location, html) {
+        const insertAlgoliaSearch = (page, selector, adjacent_location, html) => {
             if (!document.querySelector(page)) return;
 
-            // document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
-            document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
-        }
+            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail')
+                document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
+            if (this.site_config.site_type.toLowerCase() === 'cug') document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+        };
 
         function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;

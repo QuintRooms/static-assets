@@ -255,7 +255,7 @@ export default class BasePortal {
             this.applyCustomStyles();
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
-            this.forceClickOnCitySearch();
+            // this.forceClickOnCitySearch();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -1882,11 +1882,11 @@ export default class BasePortal {
         }
     }
 
-    forceClickOnCitySearch() {
-        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
-            document.querySelector('.ArnGoCitySearch').click();
-        }
-    }
+    // forceClickOnCitySearch() {
+    //     if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
+    //         document.querySelector('.ArnGoCitySearch').click();
+    //     }
+    // }
 
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;

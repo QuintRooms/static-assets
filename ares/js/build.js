@@ -1524,7 +1524,7 @@ export default class BasePortal {
 
         const remove_city_search_for_event = () => {
             if (this.page_name !== 'search-results') return;
-            if (this.site_config.site_type.toLowerCase() === 'cug') return;
+            if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
                 document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';

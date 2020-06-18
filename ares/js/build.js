@@ -1471,14 +1471,26 @@ export default class BasePortal {
         const remove_arn_search_bar = (selector) => {
             if (!document.querySelector(selector)) return;
 
-            document.body.append(document.querySelector(selector));
-            document.querySelector(selector).style.display = 'none';
+            document.querySelector(selector).remove();
+            // const arn_search_styles = {
+            //     display: 'none',
+            //     position: 'absolute',
+            //     left: '-10000px',
+            // };
+
+            // Object.assign(document.querySelector(selector), arn_search_styles);
+
+            // if (this.page_name === 'landing-page') {
+            //     document.body.append(document.querySelector(selector));
+            //     document.querySelector(selector).style.display = 'none';
+            // }
         };
 
         function insertAlgoliaSearch(page, selector, adjacent_location, html) {
             if (!document.querySelector(page)) return;
 
-            document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+            // document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+            document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
         }
 
         function prepopulateInputsOnSearchHotels() {

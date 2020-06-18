@@ -225,7 +225,6 @@ export default class BasePortal {
                 utilities.updateHTML('.ArnSearchHeader', 'Search');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
                 utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
-                utilities.updateHTML('#CitySearchContainer > span', 'Where:');
                 utilities.updateHTML('.lblRating', 'Stars');
                 utilities.updateHTML('.lblCurrency', 'Currency');
                 utilities.updateHTML('.lblAmenities', 'Amenities');
@@ -1432,13 +1431,13 @@ export default class BasePortal {
     }
 
     /**
-     *@description Swaps out the city search for lat/lng geo search and autocomplete for Algolia's autocomplte.
+     *@description Swaps out the city search for lat/lng geo search and autocomplete for Algolia's autocomplete.
      */
     addAlgoliaSearch() {
         let lat_lng;
         let default_lat_lng;
         let url;
-        // let destination_value;
+        let destination_value;
         let checked_amenities = '';
         let checked_stars = '';
         let member_token = '';
@@ -1469,17 +1468,24 @@ export default class BasePortal {
             });
         }
 
-        function removeArnSearchBar(selector) {
+        const remove_arn_search_bar = (selector) => {
             if (!document.querySelector(selector)) return;
+            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') document.querySelector(selector).remove();
 
-            document.querySelector(selector).remove();
-        }
+            if (this.site_config.site_type.toLowerCase() === 'cug') {
+                document.body.append(document.querySelector(selector));
+                document.querySelector(selector).style.display = 'none';
+                document.querySelector('#CitySearchContainer').style.display = 'none';
+            }
+        };
 
-        function insertAlgoliaSearch(page, selector, adjacent_location, html) {
+        const insert_algolia_search = (page, selector, adjacent_location, html) => {
             if (!document.querySelector(page)) return;
 
-            document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
-        }
+            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail')
+                document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
+            if (this.site_config.site_type.toLowerCase() === 'cug') document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+        };
 
         function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;
@@ -1512,7 +1518,7 @@ export default class BasePortal {
 
         const remove_city_search_for_event = () => {
             if (this.page_name !== 'search-results') return;
-            if (this.site_config.site_type.toLowerCase() === 'cug') return;
+            if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
                 document.querySelector('.algolia-places').remove();
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
@@ -1560,8 +1566,9 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
-                if (this.site_config.cug.is_cug) {
-                    url += `&destination=${document.querySelector('input#address-input').value}`;
+                if (this.site_config.cug.is_cug || this.site_config.site_type.toLowerCase() === 'retail') {
+                    destination_value = document.querySelector('input#address-input').value;
+                    url += `&destination=${destination_value}`;
                 }
 
                 const get_optional_hotel_name = () => {
@@ -1622,16 +1629,15 @@ export default class BasePortal {
                 }
             });
         };
-        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="text" value id="address-input" placeholder="Destination" required="true" />');
-        insertAlgoliaSearch(
+        insert_algolia_search('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="text" value id="address-input" placeholder="Destination" required="true" />');
+        insert_algolia_search(
             '.SearchHotels',
             'div#theSearchBox',
             'afterBegin',
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
         grab_member_token();
-        // setInputValue();
-        removeArnSearchBar('input#city');
+        remove_arn_search_bar('input#city');
         remove_city_search_for_event();
         prepopulateInputsOnSearchHotels();
         setDropdownIndex('select#rooms');

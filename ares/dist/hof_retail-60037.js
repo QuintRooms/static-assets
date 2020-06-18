@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 120));
+        n((n.s = 126));
 })([
     function (e, t, n) {
         var r = n(23)('wks'),
@@ -152,7 +152,7 @@
             o = n(7),
             i = n(10),
             a = n(17)('src'),
-            c = n(62),
+            c = n(65),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -177,7 +177,7 @@
         'number' == typeof __e && (__e = n);
     },
     function (e, t, n) {
-        var r = n(80),
+        var r = n(83),
             o = n(15);
         e.exports = function (e) {
             return r(o(e));
@@ -384,7 +384,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(90);
+        n(92);
         var r = n(9),
             o = n(7),
             i = n(8),
@@ -498,10 +498,10 @@
     function (e, t, n) {
         'use strict';
         var r = n(58),
-            o = n(92),
+            o = n(94),
             i = n(18),
             a = n(12);
-        (e.exports = n(93)(
+        (e.exports = n(95)(
             Array,
             'Array',
             function (e, t) {
@@ -947,19 +947,19 @@
             d = n(4),
             f = n(6),
             h = n(21),
-            p = n(63),
-            m = n(64),
+            p = n(66),
+            m = n(67),
             y = n(44),
             g = n(45).set,
-            v = n(69)(),
+            v = n(72)(),
             b = n(47),
-            S = n(70),
-            _ = n(71),
-            w = n(72),
+            S = n(73),
+            _ = n(74),
+            w = n(75),
             x = s.TypeError,
             A = s.process,
-            k = A && A.versions,
-            L = (k && k.v8) || '',
+            L = A && A.versions,
+            k = (L && L.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
             M = function () {},
@@ -970,7 +970,7 @@
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             R = function (e) {
@@ -1081,7 +1081,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(73)(E.prototype, {
+            }).prototype = n(76)(E.prototype, {
                 then: function (e, t) {
                     var n = P(y(this, E));
                     return (
@@ -1107,7 +1107,7 @@
             })),
             d(d.G + d.W + d.F * !q, {Promise: E}),
             n(26)(E, 'Promise'),
-            n(74)('Promise'),
+            n(77)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !q, 'Promise', {
                 reject: function (e) {
@@ -1125,7 +1125,7 @@
                     d.F *
                         !(
                             q &&
-                            n(75)(function (e) {
+                            n(78)(function (e) {
                                 E.all(e).catch(M);
                             })
                         ),
@@ -1524,7 +1524,7 @@
             o,
             i,
             a = n(20),
-            c = n(68),
+            c = n(71),
             s = n(46),
             u = n(30),
             l = n(1),
@@ -1638,7 +1638,7 @@
     function (e, t, n) {
         var r = n(12),
             o = n(25),
-            i = n(81);
+            i = n(84);
         e.exports = function (e) {
             return function (t, n, a) {
                 var c,
@@ -1657,7 +1657,7 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(83),
+            o = n(86),
             i = n(33),
             a = n(32)('IE_PROTO'),
             c = function () {},
@@ -1792,7 +1792,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(100)(!0);
+        var r = n(101)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -1808,7 +1808,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(40), n(86), n(88), n(91), n(57), n(38), n(41), n(95), n(97), n(99), n(101), n(102), n(105), n(42);
+        n(40), n(62), n(90), n(93), n(57), n(38), n(41), n(97), n(99), n(63), n(102), n(103), n(64), n(42);
         var r = 'URLSearchParams' in self,
             o = 'Symbol' in self && 'iterator' in Symbol,
             i =
@@ -2327,7 +2327,7 @@
                                                                             e.fixCheckoutInputTabOrder()),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
-                                                                            ('cug' !== e.site_config.site_type.toLowerCase() && e.addAlgoliaSearch(),
+                                                                            (e.addAlgoliaSearch(),
                                                                             j.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             j.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -2364,7 +2364,7 @@
                                                                                 });
                                                                             }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && 'cug' !== e.site_config.site_type.toLowerCase() && e.addAlgoliaSearch(),
+                                                                        'search-results' === e.page_name && e.addAlgoliaSearch(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             P(
@@ -2452,7 +2452,6 @@
                                                                                                             j.updateHTML('.ArnSearchHeader', 'Search'),
                                                                                                             j.updateHTML('#ShowHotelOnMap', 'Open Map'),
                                                                                                             j.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                            j.updateHTML('#CitySearchContainer > span', 'Where:'),
                                                                                                             j.updateHTML('.lblRating', 'Stars'),
                                                                                                             j.updateHTML('.lblCurrency', 'Currency'),
                                                                                                             j.updateHTML('.lblAmenities', 'Amenities'),
@@ -2469,14 +2468,14 @@
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            (t.next = 32),
+                                                                                                            (t.next = 31),
                                                                                                             j.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
                                                                                                                 j.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                             })
                                                                                                         );
-                                                                                                    case 32:
+                                                                                                    case 31:
                                                                                                         return (
-                                                                                                            (t.next = 34),
+                                                                                                            (t.next = 33),
                                                                                                             j.waitForSelectorInDOM('.ArnSortContainer').then(function () {
                                                                                                                 j.createWrapper(
                                                                                                                     '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
@@ -2493,7 +2492,7 @@
                                                                                                                 });
                                                                                                             })
                                                                                                         );
-                                                                                                    case 34:
+                                                                                                    case 33:
                                                                                                     case 'end':
                                                                                                         return t.stop();
                                                                                                 }
@@ -2507,7 +2506,6 @@
                                                                         ),
                                                                         e.applyDarkTheme(),
                                                                         e.applyCustomStyles(),
-                                                                        e.forceClickOnCitySearch(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -2518,7 +2516,7 @@
                                                                         e.updateConfirmationCheckBoxes(),
                                                                         e.showMoreAmenities(),
                                                                         e.hideRemainingRooms();
-                                                                case 43:
+                                                                case 42:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -3512,26 +3510,30 @@
                                     t,
                                     n,
                                     r,
-                                    o,
-                                    i,
-                                    a = this,
+                                    o = this,
+                                    i = '',
+                                    a = '',
                                     c = '',
-                                    s = '',
-                                    u = window.location.origin,
-                                    l = new URL(window.location.href),
-                                    d = new URLSearchParams(l.search),
-                                    f = document.querySelector('meta[name="originalParams"]').content,
-                                    h = new URLSearchParams(f);
-                                function p(e) {
+                                    s = window.location.origin,
+                                    u = new URL(window.location.href),
+                                    l = new URLSearchParams(u.search),
+                                    d = document.querySelector('meta[name="originalParams"]').content,
+                                    f = new URLSearchParams(d);
+                                function h(e) {
                                     document.querySelector('.SearchHotels') &&
                                         document.querySelectorAll(e).forEach(function (e) {
                                             e.style.display = 'none';
                                         });
                                 }
-                                function m(e, t, n, r) {
-                                    document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
-                                }
-                                function y(e) {
+                                var p,
+                                    m,
+                                    y = function (e, t, n, r) {
+                                        document.querySelector(e) &&
+                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
+                                                document.querySelector(t).insertAdjacentHTML(n, r),
+                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                    };
+                                function g(e) {
                                     var t = document.querySelector(e),
                                         n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
                                     return (
@@ -3546,23 +3548,32 @@
                                         n
                                     );
                                 }
-                                m('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />'),
-                                    m(
+                                y('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />'),
+                                    y(
                                         '.SearchHotels',
                                         'div#theSearchBox',
                                         'afterBegin',
                                         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
                                     ),
-                                    (o = 'input#city'),
-                                    document.querySelector(o) && document.querySelector(o).remove(),
-                                    'search-results' === a.page_name &&
-                                        'cug' !== a.site_config.site_type.toLowerCase() &&
+                                    'cug' === o.site_config.site_type.toLowerCase() &&
+                                        (('landing-page' !== o.page_name && 'search-results' !== o.page_name) || (c = document.querySelector('meta[name="memberToken"]').content)),
+                                    (p = 'input#city'),
+                                    document.querySelector(p) &&
+                                        (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
+                                            document.querySelector(p).remove(),
+                                        'cug' === o.site_config.site_type.toLowerCase() &&
+                                            (document.body.append(document.querySelector(p)),
+                                            (document.querySelector(p).style.display = 'none'),
+                                            (document.querySelector('#CitySearchContainer').style.display = 'none'))),
+                                    'search-results' === o.page_name &&
+                                        'cug' !== o.site_config.site_type.toLowerCase() &&
+                                        'retail' !== o.site_config.site_type.toLowerCase() &&
                                         j.waitForSelectorInDOM('.algolia-places').then(function () {
                                             document.querySelector('.algolia-places').remove(), (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
                                         }),
                                     (function () {
                                         if (document.querySelector('.SearchHotels')) {
-                                            var e = d.get('destination'),
+                                            var e = l.get('destination'),
                                                 t = document.querySelector('input#address-input');
                                             (t.value = e),
                                                 t.addEventListener('click', function () {
@@ -3570,49 +3581,50 @@
                                                 });
                                         }
                                     })(),
-                                    y('select#rooms'),
-                                    y('select#adults'),
+                                    g('select#rooms'),
+                                    g('select#adults'),
                                     (function (e) {
                                         document.querySelector(e) && (document.querySelector(e).required = !0);
                                     })('input#theCheckIn'),
                                     jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        d.has('locationlabel') || d.has('points') || p('img.arn-green-marker-icon');
+                                        l.has('locationlabel') || l.has('points') || h('img.arn-green-marker-icon');
                                     }),
-                                    p('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    h('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
                                     document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    document.querySelector('form#searchForm').addEventListener('submit', function (o) {
-                                        o.preventDefault();
-                                        var i = y('select#rooms'),
-                                            l = y('select#adults'),
-                                            d = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                            f = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                            p = T(f).diff(T(d), 'days'),
-                                            m = [
-                                                '&properties='.concat(h.get('properties')),
-                                                '&utm_source='.concat(h.get('utm_source')),
-                                                '&locationlabel='.concat(h.get('locationlabel')),
-                                                '&radius='.concat(h.get('radius')),
-                                                '&groupid='.concat(h.get('groupid')),
-                                                '&pageSize='.concat(h.get('pageSize')),
-                                                '&cid='.concat(h.get('cid')),
+                                    document.querySelector('form#searchForm').addEventListener('submit', function (u) {
+                                        u.preventDefault();
+                                        var l = g('select#rooms'),
+                                            d = g('select#adults'),
+                                            h = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                            p = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
+                                            m = T(p).diff(T(h), 'days'),
+                                            y = [
+                                                '&properties='.concat(f.get('properties')),
+                                                '&utm_source='.concat(f.get('utm_source')),
+                                                '&locationlabel='.concat(f.get('locationlabel')),
+                                                '&radius='.concat(f.get('radius')),
+                                                '&groupid='.concat(f.get('groupid')),
+                                                '&pageSize='.concat(f.get('pageSize')),
+                                                '&cid='.concat(f.get('cid')),
                                             ],
-                                            g = function (e, t) {
+                                            v = function (e, t) {
                                                 n = ''
-                                                    .concat(u, '/v6/?type=geo&siteid=')
-                                                    .concat(a.site_id, '&longitude=')
+                                                    .concat(s, '/v6/?type=geo&siteid=')
+                                                    .concat(o.site_id, '&longitude=')
                                                     .concat(t, '&latitude=')
                                                     .concat(e, '&checkin=')
-                                                    .concat(d, '&nights=')
-                                                    .concat(p, '&map&pagesize=10&')
-                                                    .concat(a.site_config.distance_unit, '&rooms=')
-                                                    .concat(i, '&adults=')
-                                                    .concat(l, '&currency=')
-                                                    .concat(a.selected_currency);
+                                                    .concat(h, '&nights=')
+                                                    .concat(m, '&map&pagesize=10&')
+                                                    .concat(o.site_config.distance_unit, '&rooms=')
+                                                    .concat(l, '&adults=')
+                                                    .concat(d, '&currency=')
+                                                    .concat(o.selected_currency);
                                             };
-                                        e ? g(e.lat, e.lng) : t ? g(t.lat, t.lng) : e || t || 'search-results' !== a.page_name || g(h.get('latitude'), h.get('longitude')),
-                                            a.site_config.cug.is_cug && ((r = document.querySelector('input#address-input').value), (n += '&destination='.concat(r))),
+                                        e ? v(e.lat, e.lng) : t ? v(t.lat, t.lng) : e || t || 'search-results' !== o.page_name || v(f.get('latitude'), f.get('longitude')),
+                                            (o.site_config.cug.is_cug || 'retail' === o.site_config.site_type.toLowerCase()) &&
+                                                ((r = document.querySelector('input#address-input').value), (n += '&destination='.concat(r))),
                                             (function () {
-                                                if ('search-results' === a.page_name && '' !== document.querySelector('input#hotelName').value) {
+                                                if ('search-results' === o.page_name && '' !== document.querySelector('input#hotelName').value) {
                                                     var e = '&hotelname='.concat(document.querySelector('input#hotelName').value);
                                                     n += e;
                                                 }
@@ -3620,35 +3632,36 @@
                                             document.querySelectorAll('#AmentitiesContainer .ArnSearchField div').forEach(function (e) {
                                                 if (!e.classList.contains('lblAmenities') && e.querySelector('input').checked) {
                                                     var t = e.querySelector('span').textContent;
-                                                    c += ''.concat(t, ',');
+                                                    i += ''.concat(t, ',');
                                                 }
                                             }),
                                             document.querySelectorAll('#PropertyClassesContainer .ArnSearchField div').forEach(function (e) {
                                                 if (!e.classList.contains('lblRating') && e.querySelector('input').checked) {
                                                     var t = e.querySelector('span').textContent;
-                                                    s += ''.concat(t, ',');
+                                                    a += ''.concat(t, ',');
                                                 }
                                             });
-                                        var v = new URL(n),
-                                            b = c.slice(0, -1),
-                                            S = s.slice(0, -1);
-                                        '' !== b && v.searchParams.append('amenities', b),
-                                            '' !== S && v.searchParams.append('propertyclasses', S),
-                                            'search-results' === a.page_name
-                                                ? (m.forEach(function (e) {
-                                                      e.includes('null') || (v += e);
+                                        var b = new URL(n),
+                                            S = i.slice(0, -1),
+                                            _ = a.slice(0, -1);
+                                        '' !== S && b.searchParams.append('amenities', S),
+                                            '' !== _ && b.searchParams.append('propertyclasses', _),
+                                            'cug' === o.site_config.site_type.toLowerCase() && '' !== c && b.searchParams.append('memberToken', c),
+                                            'search-results' === o.page_name
+                                                ? (y.forEach(function (e) {
+                                                      e.includes('null') || (b += e);
                                                   }),
-                                                  (window.location.href = decodeURIComponent(v)))
-                                                : (window.location.href = decodeURIComponent(v));
+                                                  (window.location.href = decodeURIComponent(b)))
+                                                : (window.location.href = decodeURIComponent(b));
                                     }),
-                                    (i = places({
-                                        appId: a.site_config.algolia_app_id,
-                                        apiKey: a.site_config.algolia_api_key,
+                                    (m = places({
+                                        appId: o.site_config.algolia_app_id,
+                                        apiKey: o.site_config.algolia_api_key,
                                         container: document.querySelector('input#address-input'),
                                     }).configure({aroundLatLngViaIP: 'false', type: 'city'})).on('change', function (t) {
                                         (document.querySelector('input#address-input').value = t.suggestion.value || ''), (e = t.suggestion.latlng);
                                     }),
-                                    i.on('suggestions', function (e) {
+                                    m.on('suggestions', function (e) {
                                         t = e.rawAnswer.hits[0]._geoloc;
                                     });
                             },
@@ -3937,15 +3950,6 @@
                             },
                         },
                         {
-                            key: 'forceClickOnCitySearch',
-                            value: function () {
-                                'search-results' === this.page_name &&
-                                    'City' === document.querySelector('meta[name="SearchType"]').content &&
-                                    'cug' === this.site_config.site_type.toLowerCase() &&
-                                    document.querySelector('.ArnGoCitySearch').click();
-                            },
-                        },
-                        {
                             key: 'setInputToRequired',
                             value: function (e) {
                                 document.querySelector(e) && (document.querySelector(e).required = !0);
@@ -4228,6 +4232,203 @@
             })();
     },
     function (e, t, n) {
+        'use strict';
+        n(89);
+        var r = n(2),
+            o = n(34),
+            i = n(3),
+            a = /./.toString,
+            c = function (e) {
+                n(9)(RegExp.prototype, 'toString', e, !0);
+            };
+        n(8)(function () {
+            return '/a/b' != a.call({source: 'a', flags: 'b'});
+        })
+            ? c(function () {
+                  var e = r(this);
+                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
+              })
+            : 'toString' != a.name &&
+              c(function () {
+                  return a.call(this);
+              });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(2),
+            o = n(28),
+            i = n(25),
+            a = n(19),
+            c = n(59),
+            s = n(35),
+            u = Math.max,
+            l = Math.min,
+            d = Math.floor,
+            f = /\$([$&`']|\d\d?|<[^>]*>)/g,
+            h = /\$([$&`']|\d\d?)/g;
+        n(36)('replace', 2, function (e, t, n, p) {
+            return [
+                function (r, o) {
+                    var i = e(this),
+                        a = null == r ? void 0 : r[t];
+                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
+                },
+                function (e, t) {
+                    var o = p(n, e, this, t);
+                    if (o.done) return o.value;
+                    var d = r(e),
+                        f = String(this),
+                        h = 'function' == typeof t;
+                    h || (t = String(t));
+                    var y = d.global;
+                    if (y) {
+                        var g = d.unicode;
+                        d.lastIndex = 0;
+                    }
+                    for (var v = []; ; ) {
+                        var b = s(d, f);
+                        if (null === b) break;
+                        if ((v.push(b), !y)) break;
+                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
+                    }
+                    for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
+                        b = v[x];
+                        for (var A = String(b[0]), L = u(l(a(b.index), f.length), 0), k = [], E = 1; E < b.length; E++) k.push(void 0 === (S = b[E]) ? S : String(S));
+                        var C = b.groups;
+                        if (h) {
+                            var M = [A].concat(k, L, f);
+                            void 0 !== C && M.push(C);
+                            var P = String(t.apply(void 0, M));
+                        } else P = m(A, f, L, k, C, t);
+                        L >= w && ((_ += f.slice(w, L) + P), (w = L + A.length));
+                    }
+                    return _ + f.slice(w);
+                },
+            ];
+            function m(e, t, r, i, a, c) {
+                var s = r + e.length,
+                    u = i.length,
+                    l = h;
+                return (
+                    void 0 !== a && ((a = o(a)), (l = f)),
+                    n.call(c, l, function (n, o) {
+                        var c;
+                        switch (o.charAt(0)) {
+                            case '$':
+                                return '$';
+                            case '&':
+                                return e;
+                            case '`':
+                                return t.slice(0, r);
+                            case "'":
+                                return t.slice(s);
+                            case '<':
+                                c = a[o.slice(1, -1)];
+                                break;
+                            default:
+                                var l = +o;
+                                if (0 === l) return n;
+                                if (l > u) {
+                                    var f = d(l / 10);
+                                    return 0 === f ? n : f <= u ? (void 0 === i[f - 1] ? o.charAt(1) : i[f - 1] + o.charAt(1)) : n;
+                                }
+                                c = i[l - 1];
+                        }
+                        return void 0 === c ? '' : c;
+                    })
+                );
+            }
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(60),
+            o = n(2),
+            i = n(44),
+            a = n(59),
+            c = n(25),
+            s = n(35),
+            u = n(37),
+            l = n(8),
+            d = Math.min,
+            f = [].push,
+            h = !l(function () {
+                RegExp(4294967295, 'y');
+            });
+        n(36)('split', 2, function (e, t, n, l) {
+            var p;
+            return (
+                (p =
+                    'c' == 'abbc'.split(/(b)*/)[1] ||
+                    4 != 'test'.split(/(?:)/, -1).length ||
+                    2 != 'ab'.split(/(?:ab)*/).length ||
+                    4 != '.'.split(/(.?)(.?)/).length ||
+                    '.'.split(/()()/).length > 1 ||
+                    ''.split(/.?/).length
+                        ? function (e, t) {
+                              var o = String(this);
+                              if (void 0 === e && 0 === t) return [];
+                              if (!r(e)) return n.call(o, e, t);
+                              for (
+                                  var i,
+                                      a,
+                                      c,
+                                      s = [],
+                                      l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
+                                      d = 0,
+                                      h = void 0 === t ? 4294967295 : t >>> 0,
+                                      p = new RegExp(e.source, l + 'g');
+                                  (i = u.call(p, o)) &&
+                                  !(
+                                      (a = p.lastIndex) > d &&
+                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && f.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= h)
+                                  );
+
+                              )
+                                  p.lastIndex === i.index && p.lastIndex++;
+                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > h ? s.slice(0, h) : s;
+                          }
+                        : '0'.split(void 0, 0).length
+                        ? function (e, t) {
+                              return void 0 === e && 0 === t ? [] : n.call(this, e, t);
+                          }
+                        : n),
+                [
+                    function (n, r) {
+                        var o = e(this),
+                            i = null == n ? void 0 : n[t];
+                        return void 0 !== i ? i.call(n, o, r) : p.call(String(o), n, r);
+                    },
+                    function (e, t) {
+                        var r = l(p, e, this, t, p !== n);
+                        if (r.done) return r.value;
+                        var u = o(e),
+                            f = String(this),
+                            m = i(u, RegExp),
+                            y = u.unicode,
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (h ? 'y' : 'g'),
+                            v = new m(h ? u : '^(?:' + u.source + ')', g),
+                            b = void 0 === t ? 4294967295 : t >>> 0;
+                        if (0 === b) return [];
+                        if (0 === f.length) return null === s(v, f) ? [f] : [];
+                        for (var S = 0, _ = 0, w = []; _ < f.length; ) {
+                            v.lastIndex = h ? _ : 0;
+                            var x,
+                                A = s(v, h ? f : f.slice(_));
+                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
+                            else {
+                                if ((w.push(f.slice(S, _)), w.length === b)) return w;
+                                for (var L = 1; L <= A.length - 1; L++) if ((w.push(A[L]), w.length === b)) return w;
+                                _ = S = x;
+                            }
+                        }
+                        return w.push(f.slice(S)), w;
+                    },
+                ]
+            );
+        });
+    },
+    function (e, t, n) {
         e.exports = n(23)('native-function-to-string', Function.toString);
     },
     function (e, t) {
@@ -4238,11 +4439,11 @@
     },
     function (e, t, n) {
         var r = n(20),
-            o = n(65),
-            i = n(66),
+            o = n(68),
+            i = n(69),
             a = n(2),
             c = n(25),
-            s = n(67),
+            s = n(70),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, f) {
@@ -4448,7 +4649,7 @@
             i = n(3),
             a = n(4),
             c = n(9),
-            s = n(78).KEY,
+            s = n(81).KEY,
             u = n(8),
             l = n(23),
             d = n(26),
@@ -4456,8 +4657,8 @@
             h = n(0),
             p = n(49),
             m = n(48),
-            y = n(79),
-            g = n(82),
+            y = n(82),
+            g = n(85),
             v = n(2),
             b = n(6),
             S = n(28),
@@ -4465,14 +4666,14 @@
             w = n(31),
             x = n(24),
             A = n(53),
-            k = n(84),
-            L = n(55),
+            L = n(87),
+            k = n(55),
             E = n(52),
             C = n(5),
             M = n(14),
-            P = L.f,
+            P = k.f,
             q = C.f,
-            R = k.f,
+            R = L.f,
             T = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
@@ -4566,9 +4767,9 @@
                     return this._k;
                 }
             ),
-            (L.f = X),
+            (k.f = X),
             (C.f = J),
-            (n(54).f = k.f = Q),
+            (n(54).f = L.f = Q),
             (n(27).f = K),
             (E.f = ee),
             i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
@@ -4765,34 +4966,12 @@
         });
     },
     function (e, t, n) {
-        'use strict';
-        n(87);
-        var r = n(2),
-            o = n(34),
-            i = n(3),
-            a = /./.toString,
-            c = function (e) {
-                n(9)(RegExp.prototype, 'toString', e, !0);
-            };
-        n(8)(function () {
-            return '/a/b' != a.call({source: 'a', flags: 'b'});
-        })
-            ? c(function () {
-                  var e = r(this);
-                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
-              })
-            : 'toString' != a.name &&
-              c(function () {
-                  return a.call(this);
-              });
-    },
-    function (e, t, n) {
         n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(34)});
     },
     function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(89),
+            o = n(91),
             i = n(35);
         n(36)('search', 1, function (e, t, n, a) {
             return [
@@ -4855,7 +5034,7 @@
             i = n(9),
             a = n(7),
             c = n(18),
-            s = n(94),
+            s = n(96),
             u = n(26),
             l = n(56),
             d = n(0)('iterator'),
@@ -4869,7 +5048,7 @@
                 b,
                 S,
                 _ = function (e) {
-                    if (!f && e in k) return k[e];
+                    if (!f && e in L) return L[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -4884,26 +5063,26 @@
                 w = t + ' Iterator',
                 x = 'values' == m,
                 A = !1,
-                k = e.prototype,
-                L = k[d] || k['@@iterator'] || (m && k[m]),
-                E = L || _(m),
+                L = e.prototype,
+                k = L[d] || L['@@iterator'] || (m && L[m]),
+                E = k || _(m),
                 C = m ? (x ? _('entries') : E) : void 0,
-                M = ('Array' == t && k.entries) || L;
+                M = ('Array' == t && L.entries) || k;
             if (
                 (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
-                    L &&
-                    'values' !== L.name &&
+                    k &&
+                    'values' !== k.name &&
                     ((A = !0),
                     (E = function () {
-                        return L.call(this);
+                        return k.call(this);
                     })),
-                (r && !g) || (!f && !A && k[d]) || a(k, d, E),
+                (r && !g) || (!f && !A && L[d]) || a(L, d, E),
                 (c[t] = E),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
+                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in L || i(L, b, v[b]);
                 else o(o.P + o.F * (f || A), t, v);
             return v;
         };
@@ -4923,7 +5102,7 @@
     },
     function (e, t, n) {
         var r = n(4),
-            o = n(96)(!0);
+            o = n(98)(!0);
         r(r.S, 'Object', {
             entries: function (e) {
                 return o(e);
@@ -4944,7 +5123,7 @@
     },
     function (e, t, n) {
         var r = n(4);
-        r(r.P, 'String', {repeat: n(98)});
+        r(r.P, 'String', {repeat: n(100)});
     },
     function (e, t, n) {
         'use strict';
@@ -4958,93 +5137,6 @@
             for (; i > 0; (i >>>= 1) && (t += t)) 1 & i && (n += t);
             return n;
         };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(2),
-            o = n(28),
-            i = n(25),
-            a = n(19),
-            c = n(59),
-            s = n(35),
-            u = Math.max,
-            l = Math.min,
-            d = Math.floor,
-            f = /\$([$&`']|\d\d?|<[^>]*>)/g,
-            h = /\$([$&`']|\d\d?)/g;
-        n(36)('replace', 2, function (e, t, n, p) {
-            return [
-                function (r, o) {
-                    var i = e(this),
-                        a = null == r ? void 0 : r[t];
-                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
-                },
-                function (e, t) {
-                    var o = p(n, e, this, t);
-                    if (o.done) return o.value;
-                    var d = r(e),
-                        f = String(this),
-                        h = 'function' == typeof t;
-                    h || (t = String(t));
-                    var y = d.global;
-                    if (y) {
-                        var g = d.unicode;
-                        d.lastIndex = 0;
-                    }
-                    for (var v = []; ; ) {
-                        var b = s(d, f);
-                        if (null === b) break;
-                        if ((v.push(b), !y)) break;
-                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
-                    }
-                    for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
-                        b = v[x];
-                        for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
-                        var C = b.groups;
-                        if (h) {
-                            var M = [A].concat(L, k, f);
-                            void 0 !== C && M.push(C);
-                            var P = String(t.apply(void 0, M));
-                        } else P = m(A, f, k, L, C, t);
-                        k >= w && ((_ += f.slice(w, k) + P), (w = k + A.length));
-                    }
-                    return _ + f.slice(w);
-                },
-            ];
-            function m(e, t, r, i, a, c) {
-                var s = r + e.length,
-                    u = i.length,
-                    l = h;
-                return (
-                    void 0 !== a && ((a = o(a)), (l = f)),
-                    n.call(c, l, function (n, o) {
-                        var c;
-                        switch (o.charAt(0)) {
-                            case '$':
-                                return '$';
-                            case '&':
-                                return e;
-                            case '`':
-                                return t.slice(0, r);
-                            case "'":
-                                return t.slice(s);
-                            case '<':
-                                c = a[o.slice(1, -1)];
-                                break;
-                            default:
-                                var l = +o;
-                                if (0 === l) return n;
-                                if (l > u) {
-                                    var f = d(l / 10);
-                                    return 0 === f ? n : f <= u ? (void 0 === i[f - 1] ? o.charAt(1) : i[f - 1] + o.charAt(1)) : n;
-                                }
-                                c = i[l - 1];
-                        }
-                        return void 0 === c ? '' : c;
-                    })
-                );
-            }
-        });
     },
     function (e, t, n) {
         var r = n(19),
@@ -5084,8 +5176,8 @@
     function (e, t, n) {
         'use strict';
         var r = n(4),
-            o = n(103);
-        r(r.P + r.F * n(104)('includes'), 'String', {
+            o = n(104);
+        r(r.P + r.F * n(105)('includes'), 'String', {
             includes: function (e) {
                 return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
             },
@@ -5112,94 +5204,6 @@
             }
             return !0;
         };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(60),
-            o = n(2),
-            i = n(44),
-            a = n(59),
-            c = n(25),
-            s = n(35),
-            u = n(37),
-            l = n(8),
-            d = Math.min,
-            f = [].push,
-            h = !l(function () {
-                RegExp(4294967295, 'y');
-            });
-        n(36)('split', 2, function (e, t, n, l) {
-            var p;
-            return (
-                (p =
-                    'c' == 'abbc'.split(/(b)*/)[1] ||
-                    4 != 'test'.split(/(?:)/, -1).length ||
-                    2 != 'ab'.split(/(?:ab)*/).length ||
-                    4 != '.'.split(/(.?)(.?)/).length ||
-                    '.'.split(/()()/).length > 1 ||
-                    ''.split(/.?/).length
-                        ? function (e, t) {
-                              var o = String(this);
-                              if (void 0 === e && 0 === t) return [];
-                              if (!r(e)) return n.call(o, e, t);
-                              for (
-                                  var i,
-                                      a,
-                                      c,
-                                      s = [],
-                                      l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
-                                      d = 0,
-                                      h = void 0 === t ? 4294967295 : t >>> 0,
-                                      p = new RegExp(e.source, l + 'g');
-                                  (i = u.call(p, o)) &&
-                                  !(
-                                      (a = p.lastIndex) > d &&
-                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && f.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= h)
-                                  );
-
-                              )
-                                  p.lastIndex === i.index && p.lastIndex++;
-                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > h ? s.slice(0, h) : s;
-                          }
-                        : '0'.split(void 0, 0).length
-                        ? function (e, t) {
-                              return void 0 === e && 0 === t ? [] : n.call(this, e, t);
-                          }
-                        : n),
-                [
-                    function (n, r) {
-                        var o = e(this),
-                            i = null == n ? void 0 : n[t];
-                        return void 0 !== i ? i.call(n, o, r) : p.call(String(o), n, r);
-                    },
-                    function (e, t) {
-                        var r = l(p, e, this, t, p !== n);
-                        if (r.done) return r.value;
-                        var u = o(e),
-                            f = String(this),
-                            m = i(u, RegExp),
-                            y = u.unicode,
-                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (h ? 'y' : 'g'),
-                            v = new m(h ? u : '^(?:' + u.source + ')', g),
-                            b = void 0 === t ? 4294967295 : t >>> 0;
-                        if (0 === b) return [];
-                        if (0 === f.length) return null === s(v, f) ? [f] : [];
-                        for (var S = 0, _ = 0, w = []; _ < f.length; ) {
-                            v.lastIndex = h ? _ : 0;
-                            var x,
-                                A = s(v, h ? f : f.slice(_));
-                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
-                            else {
-                                if ((w.push(f.slice(S, _)), w.length === b)) return w;
-                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
-                                _ = S = x;
-                            }
-                        }
-                        return w.push(f.slice(S)), w;
-                    },
-                ]
-            );
-        });
     },
     function (e, t, n) {
         (function (e) {
@@ -5934,10 +5938,16 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
         n.r(t);
-        n(76), n(77), n(85);
+        n(79), n(80), n(88);
         var r = n(61),
             o = new (n(29).a)(),
             i = 'hof_retail-'.concat(60037);
@@ -5989,7 +5999,7 @@
                 site_id: 60037,
                 affiliate_id: 17464,
                 master_id: 920,
-                site_type: 'lodging',
+                site_type: 'retail',
                 algolia_app_id: 'plCZXR0GZ7J1',
                 algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
                 currency: 'USD',

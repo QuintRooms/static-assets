@@ -4222,7 +4222,6 @@
                                                                         ),
                                                                         e.applyDarkTheme(),
                                                                         e.applyCustomStyles(),
-                                                                        e.forceClickOnCitySearch(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -4233,7 +4232,7 @@
                                                                         e.updateConfirmationCheckBoxes(),
                                                                         e.showMoreAmenities(),
                                                                         e.hideRemainingRooms();
-                                                                case 43:
+                                                                case 42:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5245,7 +5244,7 @@
                                         });
                                 }
                                 function y(e, t, n, r) {
-                                    document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
+                                    document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
                                 }
                                 function g(e) {
                                     var t = document.querySelector(e),
@@ -5272,7 +5271,9 @@
                                     'cug' === a.site_config.site_type.toLowerCase() &&
                                         (('landing-page' !== a.page_name && 'search-results' !== a.page_name) || (u = document.querySelector('meta[name="memberToken"]').content)),
                                     (function (e) {
-                                        document.querySelector(e) && Object.assign(document.querySelector(e), {display: 'none', position: 'absolute', left: '-10000px'});
+                                        document.querySelector(e) &&
+                                            (Object.assign(document.querySelector(e), {display: 'none', position: 'absolute', left: '-10000px'}),
+                                            'landing-page' === a.page_name && document.body.append(document.querySelector(e)));
                                     })('input#city'),
                                     'search-results' === a.page_name &&
                                         'cug' !== a.site_config.site_type.toLowerCase() &&
@@ -5653,15 +5654,6 @@
                             value: function (e) {
                                 var t = document.querySelector(e);
                                 '' === t.value && t.classList.add('invalidated');
-                            },
-                        },
-                        {
-                            key: 'forceClickOnCitySearch',
-                            value: function () {
-                                'search-results' === this.page_name &&
-                                    'City' === document.querySelector('meta[name="SearchType"]').content &&
-                                    'cug' === this.site_config.site_type.toLowerCase() &&
-                                    document.querySelector('.ArnGoCitySearch').click();
                             },
                         },
                         {

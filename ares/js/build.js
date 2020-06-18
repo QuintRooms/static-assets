@@ -1479,7 +1479,10 @@ export default class BasePortal {
 
             Object.assign(document.querySelector(selector), arn_search_styles);
 
-            if (this.page_name === 'landing-page') document.body.append(document.querySelector(selector));
+            if (this.page_name === 'landing-page') {
+                document.body.append(document.querySelector(selector));
+                document.querySelector(selector).style.display = 'none';
+            }
         };
 
         function insertAlgoliaSearch(page, selector, adjacent_location, html) {

@@ -25,6 +25,7 @@ module.exports = () => {
             'akon_21-60284': './src/60284.js', // A-Kon 2021
             'innings_21-60093': './src/60093.js', // Innings Fest 2021
             'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            'room_steals-52342': './src/52342.js', // Room Steals
         };
 
         // develop environment
@@ -32,7 +33,6 @@ module.exports = () => {
         entry_points = {
             'ares_child-60278': './src/60278.js', // Ares Child Test
             'cug_template-39624': './src/39624.js', // CUG Template
-            'room_steals-52342': './src/52342.js', // Room Steals
         };
 
         // local environment

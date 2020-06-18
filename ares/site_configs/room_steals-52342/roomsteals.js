@@ -247,26 +247,32 @@ export default class RoomSteals {
 if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.SearchHotels')) || document.querySelector('.SinglePropDetail')) {
     const roomsteals = new RoomSteals();
 
-    jQuery(document).on('ratesReadyEvent', () => {
-        roomsteals.getRoomNights();
-        roomsteals
-            .getMemberMetaData()
-            .then((member_data) => {
-                roomsteals.getReferralID();
-                roomsteals.getPartner();
-            })
-            .then(() => {
-                roomsteals.getRoomStealsAPIData().then(() => {
-                    roomsteals.setRoomStealsUser().then(() => {
-                        roomsteals.checkIsRoomStealsTrialUser().then(() => {
-                            roomsteals.setPropertyURL().then(() => {
-                                roomsteals.showSubscribeNowButtonsForTrialUsers();
-                            });
-
-                            roomsteals.showCustomerSavings();
+    roomsteals.getRoomNights();
+    roomsteals
+        .getMemberMetaData()
+        .then((member_data) => {
+            roomsteals.getReferralID();
+            roomsteals.getPartner();
+        })
+        .then(() => {
+            roomsteals.getRoomStealsAPIData().then(() => {
+                roomsteals.setRoomStealsUser().then(() => {
+                    roomsteals.checkIsRoomStealsTrialUser().then(() => {
+                        roomsteals.setPropertyURL().then(() => {
+                            roomsteals.showSubscribeNowButtonsForTrialUsers();
                         });
+
+                        if (document.querySelector('.SearchHotels')) {
+                            jQuery(document).on('ratesReadyEvent', () => {
+                                roomsteals.showCustomerSavings();
+                            });
+                        }
+
+                        if (document.querySelector('.SinglePropDetail')) {
+                            roomsteals.showCustomerSavings();
+                        }
                     });
                 });
             });
-    });
+        });
 }

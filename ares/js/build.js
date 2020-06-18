@@ -1478,10 +1478,6 @@ export default class BasePortal {
             };
 
             Object.assign(document.querySelector(selector), arn_search_styles);
-
-            // document.querySelector(selector).style.display = 'none';
-            // document.querySelector(selector).style.position = 'absolute';
-            // document.querySelector(selector).style.left = '-10000px';
         }
 
         function insertAlgoliaSearch(page, selector, adjacent_location, html) {

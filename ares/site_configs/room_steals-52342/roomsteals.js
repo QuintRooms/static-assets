@@ -262,9 +262,15 @@ if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.
                             roomsteals.showSubscribeNowButtonsForTrialUsers();
                         });
 
-                        jQuery(document).on('ratesReadyEvent', () => {
+                        if (document.querySelector('.SearchHotels')) {
+                            jQuery(document).on('ratesReadyEvent', () => {
+                                roomsteals.showCustomerSavings();
+                            });
+                        }
+
+                        if (document.querySelector('.SinglePropDetail')) {
                             roomsteals.showCustomerSavings();
-                        });
+                        }
                     });
                 });
             });

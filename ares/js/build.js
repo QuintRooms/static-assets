@@ -1563,7 +1563,7 @@ export default class BasePortal {
                     build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
                 }
 
-                if (this.site_config.cug.is_cug) {
+                if (this.site_config.cug.is_cug || this.site_config.site_type.toLowerCase() === 'retail') {
                     destination_value = document.querySelector('input#address-input').value;
                     url += `&destination=${destination_value}`;
                 }

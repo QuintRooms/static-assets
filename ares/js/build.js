@@ -1482,9 +1482,12 @@ export default class BasePortal {
         const insert_algolia_search = (page, selector, adjacent_location, html) => {
             if (!document.querySelector(page)) return;
 
-            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail')
-                document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
-            if (this.site_config.site_type.toLowerCase() === 'cug') document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+            // if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') {
+            //     document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
+            // }
+            // if (this.site_config.site_type.toLowerCase() === 'cug') {
+            document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
+            // }
         };
 
         const prepopulate_inputs_on_search_hotels = () => {

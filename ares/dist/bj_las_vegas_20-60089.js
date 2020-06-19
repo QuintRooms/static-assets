@@ -958,19 +958,19 @@
             w = n(75),
             x = s.TypeError,
             A = s.process,
-            L = A && A.versions,
-            k = (L && L.v8) || '',
+            k = A && A.versions,
+            L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
             M = function () {},
-            q = (o = b.f),
-            P = !!(function () {
+            P = (o = b.f),
+            q = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             R = function (e) {
@@ -1070,7 +1070,7 @@
                     }
                 }
             };
-        P ||
+        q ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -1083,7 +1083,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(76)(E.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, E));
+                    var n = P(y(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -1102,20 +1102,20 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
             }),
-            (b.f = q = function (e) {
+            (b.f = P = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !P, {Promise: E}),
+            d(d.G + d.W + d.F * !q, {Promise: E}),
             n(26)(E, 'Promise'),
             n(77)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !P, 'Promise', {
+            d(d.S + d.F * !q, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = P(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !P), 'Promise', {
+            d(d.S + d.F * (c || !q), 'Promise', {
                 resolve: function (e) {
                     return w(c && this === a ? E : this, e);
                 },
@@ -1124,7 +1124,7 @@
                 d.S +
                     d.F *
                         !(
-                            P &&
+                            q &&
                             n(78)(function (e) {
                                 E.all(e).catch(M);
                             })
@@ -1133,7 +1133,7 @@
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -1155,7 +1155,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -2168,7 +2168,7 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function q(e) {
+        function P(e) {
             return function () {
                 var t = this,
                     n = arguments;
@@ -2184,7 +2184,7 @@
                 });
             };
         }
-        function P(e, t) {
+        function q(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -2224,7 +2224,7 @@
                                     j.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = q(
+                                            var t = P(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -2257,7 +2257,7 @@
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
                                                                         j.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            q(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -2367,7 +2367,7 @@
                                                                         'search-results' === e.page_name && e.addAlgoliaSearch(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            q(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -2407,7 +2407,7 @@
                                                                         }),
                                                                         j.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = q(
+                                                                                var t = P(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -2546,7 +2546,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((s = q(
+                                ((s = P(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2577,7 +2577,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((c = q(
+                                ((c = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3165,7 +3165,7 @@
                         {
                             key: 'buildCurrencyDropdown',
                             value:
-                                ((a = q(
+                                ((a = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -3365,7 +3365,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((i = q(
+                                ((i = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3528,10 +3528,7 @@
                                 var p,
                                     m,
                                     y = function (e, t, n, r) {
-                                        document.querySelector(e) &&
-                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                                document.querySelector(t).insertAdjacentHTML(n, r),
-                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                        document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
                                     };
                                 function g(e) {
                                     var t = document.querySelector(e),
@@ -3727,7 +3724,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((o = q(
+                                ((o = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3780,7 +3777,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = q(
+                                    return (i = P(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -3836,7 +3833,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = q(
+                                    return (s = P(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -3868,7 +3865,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = q(
+                                    return (l = P(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -4230,8 +4227,8 @@
                                 }
                             },
                         },
-                    ]) && P(t.prototype, n),
-                    r && P(t, r),
+                    ]) && q(t.prototype, n),
+                    r && q(t, r),
                     e
                 );
             })();
@@ -4298,14 +4295,14 @@
                     }
                     for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var A = String(b[0]), L = u(l(a(b.index), f.length), 0), k = [], E = 1; E < b.length; E++) k.push(void 0 === (S = b[E]) ? S : String(S));
+                        for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var M = [A].concat(k, L, f);
+                            var M = [A].concat(L, k, f);
                             void 0 !== C && M.push(C);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(A, f, L, k, C, t);
-                        L >= w && ((_ += f.slice(w, L) + q), (w = L + A.length));
+                            var P = String(t.apply(void 0, M));
+                        } else P = m(A, f, k, L, C, t);
+                        k >= w && ((_ += f.slice(w, k) + P), (w = k + A.length));
                     }
                     return _ + f.slice(w);
                 },
@@ -4423,7 +4420,7 @@
                             if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
                             else {
                                 if ((w.push(f.slice(S, _)), w.length === b)) return w;
-                                for (var L = 1; L <= A.length - 1; L++) if ((w.push(A[L]), w.length === b)) return w;
+                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
                                 _ = S = x;
                             }
                         }
@@ -4671,14 +4668,14 @@
             w = n(31),
             x = n(24),
             A = n(53),
-            L = n(87),
-            k = n(55),
+            k = n(87),
+            L = n(55),
             E = n(52),
             C = n(5),
             M = n(14),
-            q = k.f,
-            P = C.f,
-            R = L.f,
+            P = L.f,
+            q = C.f,
+            R = k.f,
             T = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
@@ -4698,19 +4695,19 @@
                     return (
                         7 !=
                         A(
-                            P({}, 'a', {
+                            q({}, 'a', {
                                 get: function () {
-                                    return P(this, 'a', {value: 7}).a;
+                                    return q(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q($, t);
-                          r && delete $[t], P(e, t, n), r && e !== $ && P($, t, r);
+                          var r = P($, t);
+                          r && delete $[t], q(e, t, n), r && e !== $ && q($, t, r);
                       }
-                    : P,
+                    : q,
             V = function (e) {
                 var t = (D[e] = A(T.prototype));
                 return (t._k = e), t;
@@ -4730,8 +4727,8 @@
                     (t = w(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
-                        : P(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || q(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
+                        : q(e, t, n)
                 );
             },
             Z = function (e, t) {
@@ -4745,7 +4742,7 @@
             },
             X = function (e, t) {
                 if (((e = _(e)), (t = w(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
-                    var n = q(e, t);
+                    var n = P(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -4772,9 +4769,9 @@
                     return this._k;
                 }
             ),
-            (k.f = X),
+            (L.f = X),
             (C.f = J),
-            (n(54).f = L.f = Q),
+            (n(54).f = k.f = Q),
             (n(27).f = K),
             (E.f = ee),
             i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
@@ -5053,7 +5050,7 @@
                 b,
                 S,
                 _ = function (e) {
-                    if (!f && e in L) return L[e];
+                    if (!f && e in k) return k[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -5068,26 +5065,26 @@
                 w = t + ' Iterator',
                 x = 'values' == m,
                 A = !1,
-                L = e.prototype,
-                k = L[d] || L['@@iterator'] || (m && L[m]),
-                E = k || _(m),
+                k = e.prototype,
+                L = k[d] || k['@@iterator'] || (m && k[m]),
+                E = L || _(m),
                 C = m ? (x ? _('entries') : E) : void 0,
-                M = ('Array' == t && L.entries) || k;
+                M = ('Array' == t && k.entries) || L;
             if (
                 (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
-                    k &&
-                    'values' !== k.name &&
+                    L &&
+                    'values' !== L.name &&
                     ((A = !0),
                     (E = function () {
-                        return k.call(this);
+                        return L.call(this);
                     })),
-                (r && !g) || (!f && !A && L[d]) || a(L, d, E),
+                (r && !g) || (!f && !A && k[d]) || a(k, d, E),
                 (c[t] = E),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in L || i(L, b, v[b]);
+                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (f || A), t, v);
             return v;
         };

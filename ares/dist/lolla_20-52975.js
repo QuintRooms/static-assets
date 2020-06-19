@@ -963,8 +963,8 @@
             E = s.Promise,
             C = 'process' == l(A),
             M = function () {},
-            q = (o = b.f),
-            P = !!(function () {
+            P = (o = b.f),
+            q = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -1070,7 +1070,7 @@
                     }
                 }
             };
-        P ||
+        q ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -1083,7 +1083,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(76)(E.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, E));
+                    var n = P(y(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -1102,20 +1102,20 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
             }),
-            (b.f = q = function (e) {
+            (b.f = P = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !P, {Promise: E}),
+            d(d.G + d.W + d.F * !q, {Promise: E}),
             n(26)(E, 'Promise'),
             n(77)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !P, 'Promise', {
+            d(d.S + d.F * !q, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = P(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !P), 'Promise', {
+            d(d.S + d.F * (c || !q), 'Promise', {
                 resolve: function (e) {
                     return w(c && this === a ? E : this, e);
                 },
@@ -1124,7 +1124,7 @@
                 d.S +
                     d.F *
                         !(
-                            P &&
+                            q &&
                             n(78)(function (e) {
                                 E.all(e).catch(M);
                             })
@@ -1133,7 +1133,7 @@
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -1155,7 +1155,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -2168,7 +2168,7 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function q(e) {
+        function P(e) {
             return function () {
                 var t = this,
                     n = arguments;
@@ -2184,7 +2184,7 @@
                 });
             };
         }
-        function P(e, t) {
+        function q(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -2224,7 +2224,7 @@
                                     j.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = q(
+                                            var t = P(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -2257,7 +2257,7 @@
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
                                                                         j.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            q(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -2367,7 +2367,7 @@
                                                                         'search-results' === e.page_name && e.addAlgoliaSearch(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            q(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -2407,7 +2407,7 @@
                                                                         }),
                                                                         j.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = q(
+                                                                                var t = P(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -2546,7 +2546,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((s = q(
+                                ((s = P(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2577,7 +2577,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((c = q(
+                                ((c = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3165,7 +3165,7 @@
                         {
                             key: 'buildCurrencyDropdown',
                             value:
-                                ((a = q(
+                                ((a = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -3365,7 +3365,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((i = q(
+                                ((i = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3528,10 +3528,7 @@
                                 var p,
                                     m,
                                     y = function (e, t, n, r) {
-                                        document.querySelector(e) &&
-                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                                document.querySelector(t).insertAdjacentHTML(n, r),
-                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                        document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
                                     };
                                 function g(e) {
                                     var t = document.querySelector(e),
@@ -3727,7 +3724,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((o = q(
+                                ((o = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3780,7 +3777,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = q(
+                                    return (i = P(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -3836,7 +3833,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = q(
+                                    return (s = P(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -3868,7 +3865,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = q(
+                                    return (l = P(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -4230,8 +4227,8 @@
                                 }
                             },
                         },
-                    ]) && P(t.prototype, n),
-                    r && P(t, r),
+                    ]) && q(t.prototype, n),
+                    r && q(t, r),
                     e
                 );
             })();
@@ -4303,9 +4300,9 @@
                         if (h) {
                             var M = [A].concat(k, L, f);
                             void 0 !== C && M.push(C);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(A, f, L, k, C, t);
-                        L >= w && ((_ += f.slice(w, L) + q), (w = L + A.length));
+                            var P = String(t.apply(void 0, M));
+                        } else P = m(A, f, L, k, C, t);
+                        L >= w && ((_ += f.slice(w, L) + P), (w = L + A.length));
                     }
                     return _ + f.slice(w);
                 },
@@ -4676,8 +4673,8 @@
             E = n(52),
             C = n(5),
             M = n(14),
-            q = k.f,
-            P = C.f,
+            P = k.f,
+            q = C.f,
             R = L.f,
             T = r.Symbol,
             j = r.JSON,
@@ -4698,19 +4695,19 @@
                     return (
                         7 !=
                         A(
-                            P({}, 'a', {
+                            q({}, 'a', {
                                 get: function () {
-                                    return P(this, 'a', {value: 7}).a;
+                                    return q(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q($, t);
-                          r && delete $[t], P(e, t, n), r && e !== $ && P($, t, r);
+                          var r = P($, t);
+                          r && delete $[t], q(e, t, n), r && e !== $ && q($, t, r);
                       }
-                    : P,
+                    : q,
             V = function (e) {
                 var t = (D[e] = A(T.prototype));
                 return (t._k = e), t;
@@ -4730,8 +4727,8 @@
                     (t = w(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
-                        : P(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || q(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
+                        : q(e, t, n)
                 );
             },
             Z = function (e, t) {
@@ -4745,7 +4742,7 @@
             },
             X = function (e, t) {
                 if (((e = _(e)), (t = w(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
-                    var n = q(e, t);
+                    var n = P(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },

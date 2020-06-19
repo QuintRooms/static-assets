@@ -501,7 +501,6 @@ body.RootBody {
 .RootBody .ArnSearchContainerMainDiv {
     background-color: transparent;
     display: flex;
-    align-items: center;
 }
 
 body.WBLoginForm,
@@ -724,6 +723,7 @@ header {
 
 .RootBody #theSubmitButton {
     font-size: 17px;
+    border-radius: 40px;
 }
 
 .selectedTab {
@@ -1491,7 +1491,7 @@ div.originalPrice span,
 
 .RootBody .ArnSecondarySearchOuterContainer {
     display: flex !important;
-    background: rgba(0, 0, 0, 0.75);
+    background: #F0F1F2;
     padding: 15px 15px 14px;
 }
 
@@ -1637,7 +1637,7 @@ div #theRememberMeAjax label {
     color: #6D6E6F;
 }
 
-.WBLoginFormFields input {
+.WBLoginFormFields input, .RootBody select {
     border: unset !important;
 }
 
@@ -1660,6 +1660,25 @@ div #theRememberMeAjax label {
 
 .WBValidatedRegistrationForm .SSFormBody .WBValidatedRegistrationFormActions.FormActions .submit {
     border-radius: 40px
+}
+
+.RootPage .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+    background-color: #F0F1F2;
+}
+
+.RootBody .ArnQuadSearchContainer span, .RootBody .ArnSecondarySearchOuterContainer span, .RootBody .ArnSecondarySearchOuterContainer .ArnSearchField div {
+    color: #6D6E6F;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer .ArnSearchField div:first-child {
+    font-size: 17px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+#slideit label.open {
+    border: unset;
+    border-radius: 4px 4px 0 0;
 }
 
 @media screen and (max-width: 800px) {

@@ -1521,7 +1521,7 @@ export default class BasePortal {
             if (this.page_name !== 'search-results') return;
             if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
             utilities.waitForSelectorInDOM('.algolia-places').then(() => {
-                document.querySelector('.algolia-places').remove();
+                document.querySelector('.algolia-places').style.display = 'none';
                 document.querySelector('#theSearchBox').firstChild.style.display = 'none';
             });
         };

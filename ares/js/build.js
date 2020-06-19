@@ -1479,7 +1479,7 @@ export default class BasePortal {
             }
         };
 
-        const insertAlgoliaSearch = (page, selector, adjacent_location, html) => {
+        const insert_algolia_search = (page, selector, adjacent_location, html) => {
             if (!document.querySelector(page)) return;
 
             if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail')
@@ -1489,6 +1489,7 @@ export default class BasePortal {
 
         function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;
+            if (this.site_type.toLowerCase() !== 'cug' || this.site_type.toLowerCase() !== 'retail') return;
 
             const destination = search_params.get('destination');
             const algolia_input = document.querySelector('input#address-input');
@@ -1618,8 +1619,8 @@ export default class BasePortal {
                 } else window.location.href = decodeURIComponent(built_url);
             });
         };
-        insertAlgoliaSearch('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
-        insertAlgoliaSearch(
+        insert_algolia_search('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
+        insert_algolia_search(
             '.SearchHotels',
             'div#theSearchBox',
             'afterBegin',

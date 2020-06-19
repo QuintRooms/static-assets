@@ -3528,10 +3528,7 @@
                                 var p,
                                     m,
                                     y = function (e, t, n, r) {
-                                        document.querySelector(e) &&
-                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                                document.querySelector(t).insertAdjacentHTML(n, r),
-                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                        document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
                                     };
                                 function g(e) {
                                     var t = document.querySelector(e),

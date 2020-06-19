@@ -958,8 +958,8 @@
             w = n(75),
             x = s.TypeError,
             A = s.process,
-            L = A && A.versions,
-            k = (L && L.v8) || '',
+            k = A && A.versions,
+            L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
             M = function () {},
@@ -970,7 +970,7 @@
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             R = function (e) {
@@ -3528,10 +3528,7 @@
                                 var p,
                                     m,
                                     y = function (e, t, n, r) {
-                                        document.querySelector(e) &&
-                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                                document.querySelector(t).insertAdjacentHTML(n, r),
-                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                        document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
                                     };
                                 function g(e) {
                                     var t = document.querySelector(e),
@@ -4298,14 +4295,14 @@
                     }
                     for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var A = String(b[0]), L = u(l(a(b.index), f.length), 0), k = [], E = 1; E < b.length; E++) k.push(void 0 === (S = b[E]) ? S : String(S));
+                        for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var M = [A].concat(k, L, f);
+                            var M = [A].concat(L, k, f);
                             void 0 !== C && M.push(C);
                             var P = String(t.apply(void 0, M));
-                        } else P = m(A, f, L, k, C, t);
-                        L >= w && ((_ += f.slice(w, L) + P), (w = L + A.length));
+                        } else P = m(A, f, k, L, C, t);
+                        k >= w && ((_ += f.slice(w, k) + P), (w = k + A.length));
                     }
                     return _ + f.slice(w);
                 },
@@ -4423,7 +4420,7 @@
                             if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
                             else {
                                 if ((w.push(f.slice(S, _)), w.length === b)) return w;
-                                for (var L = 1; L <= A.length - 1; L++) if ((w.push(A[L]), w.length === b)) return w;
+                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
                                 _ = S = x;
                             }
                         }
@@ -4671,14 +4668,14 @@
             w = n(31),
             x = n(24),
             A = n(53),
-            L = n(87),
-            k = n(55),
+            k = n(87),
+            L = n(55),
             E = n(52),
             C = n(5),
             M = n(14),
-            P = k.f,
+            P = L.f,
             q = C.f,
-            R = L.f,
+            R = k.f,
             T = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
@@ -4772,9 +4769,9 @@
                     return this._k;
                 }
             ),
-            (k.f = X),
+            (L.f = X),
             (C.f = J),
-            (n(54).f = L.f = Q),
+            (n(54).f = k.f = Q),
             (n(27).f = K),
             (E.f = ee),
             i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
@@ -5053,7 +5050,7 @@
                 b,
                 S,
                 _ = function (e) {
-                    if (!f && e in L) return L[e];
+                    if (!f && e in k) return k[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -5068,26 +5065,26 @@
                 w = t + ' Iterator',
                 x = 'values' == m,
                 A = !1,
-                L = e.prototype,
-                k = L[d] || L['@@iterator'] || (m && L[m]),
-                E = k || _(m),
+                k = e.prototype,
+                L = k[d] || k['@@iterator'] || (m && k[m]),
+                E = L || _(m),
                 C = m ? (x ? _('entries') : E) : void 0,
-                M = ('Array' == t && L.entries) || k;
+                M = ('Array' == t && k.entries) || L;
             if (
                 (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
-                    k &&
-                    'values' !== k.name &&
+                    L &&
+                    'values' !== L.name &&
                     ((A = !0),
                     (E = function () {
-                        return k.call(this);
+                        return L.call(this);
                     })),
-                (r && !g) || (!f && !A && L[d]) || a(L, d, E),
+                (r && !g) || (!f && !A && k[d]) || a(k, d, E),
                 (c[t] = E),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in L || i(L, b, v[b]);
+                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (f || A), t, v);
             return v;
         };

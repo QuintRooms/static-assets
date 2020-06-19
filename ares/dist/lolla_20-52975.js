@@ -3569,7 +3569,8 @@
                                         'cug' !== o.site_config.site_type.toLowerCase() &&
                                         'retail' !== o.site_config.site_type.toLowerCase() &&
                                         j.waitForSelectorInDOM('.algolia-places').then(function () {
-                                            document.querySelector('.algolia-places').remove(), (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
+                                            (document.querySelector('.algolia-places').style.display = 'none'),
+                                                (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
                                         }),
                                     (function () {
                                         if (

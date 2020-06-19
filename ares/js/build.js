@@ -1487,7 +1487,7 @@ export default class BasePortal {
             if (this.site_config.site_type.toLowerCase() === 'cug') document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
         };
 
-        function prepopulateInputsOnSearchHotels() {
+        const prepopulate_inputs_on_search_hotels = () => {
             if (!document.querySelector('.SearchHotels')) return;
             if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_config.site_type.toLowerCase() !== 'retail') return;
 
@@ -1498,7 +1498,7 @@ export default class BasePortal {
             algolia_input.addEventListener('click', () => {
                 algolia_input.value = '';
             });
-        }
+        };
 
         function setDropdownIndex(dropdown_selector) {
             const dropdown = document.querySelector(dropdown_selector);
@@ -1629,7 +1629,7 @@ export default class BasePortal {
         grab_member_token();
         remove_arn_search_bar('input#city');
         remove_city_search_for_event();
-        prepopulateInputsOnSearchHotels();
+        prepopulate_inputs_on_search_hotels();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
         setInputToRequired('input#theCheckIn');

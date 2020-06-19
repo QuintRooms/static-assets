@@ -1489,7 +1489,7 @@ export default class BasePortal {
 
         function prepopulateInputsOnSearchHotels() {
             if (!document.querySelector('.SearchHotels')) return;
-            if (this.site_type.toLowerCase() !== 'cug' || this.site_type.toLowerCase() !== 'retail') return;
+            if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_config.site_type.toLowerCase() !== 'retail') return;
 
             const destination = search_params.get('destination');
             const algolia_input = document.querySelector('input#address-input');

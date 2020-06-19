@@ -3572,7 +3572,11 @@
                                             document.querySelector('.algolia-places').remove(), (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
                                         }),
                                     (function () {
-                                        if (document.querySelector('.SearchHotels') && 'cug' === this.site_type.toLowerCase() && 'retail' === this.site_type.toLowerCase()) {
+                                        if (
+                                            document.querySelector('.SearchHotels') &&
+                                            'cug' === this.site_config.site_type.toLowerCase() &&
+                                            'retail' === this.site_config.site_type.toLowerCase()
+                                        ) {
                                             var e = l.get('destination'),
                                                 t = document.querySelector('input#address-input');
                                             (t.value = e),

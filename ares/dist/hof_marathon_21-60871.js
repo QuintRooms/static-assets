@@ -958,26 +958,26 @@
             w = n(75),
             x = s.TypeError,
             A = s.process,
-            L = A && A.versions,
-            k = (L && L.v8) || '',
+            k = A && A.versions,
+            L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
             M = function () {},
             P = (o = b.f),
-            q = !!(function () {
+            T = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            R = function (e) {
+            q = function (e) {
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
-            T = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -998,7 +998,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = R(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = q(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -1046,7 +1046,7 @@
             },
             H = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
             F = function (e) {
                 var t,
@@ -1055,7 +1055,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = R(e))
+                        (t = q(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -1064,13 +1064,13 @@
                                       H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), T(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
                         H.call({_w: n, _d: !1}, e);
                     }
                 }
             };
-        q ||
+        T ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -1090,7 +1090,7 @@
                         (n.domain = C ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && T(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -1105,17 +1105,17 @@
             (b.f = P = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
-            f(f.G + f.W + f.F * !q, {Promise: E}),
+            f(f.G + f.W + f.F * !T, {Promise: E}),
             n(26)(E, 'Promise'),
             n(77)('Promise'),
             (a = n(11).Promise),
-            f(f.S + f.F * !q, 'Promise', {
+            f(f.S + f.F * !T, 'Promise', {
                 reject: function (e) {
                     var t = P(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            f(f.S + f.F * (c || !q), 'Promise', {
+            f(f.S + f.F * (c || !T), 'Promise', {
                 resolve: function (e) {
                     return w(c && this === a ? E : this, e);
                 },
@@ -1124,7 +1124,7 @@
                 f.S +
                     f.F *
                         !(
-                            q &&
+                            T &&
                             n(78)(function (e) {
                                 E.all(e).catch(M);
                             })
@@ -2184,7 +2184,7 @@
                 });
             };
         }
-        function q(e, t) {
+        function T(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -2193,8 +2193,8 @@
         n.d(t, 'a', function () {
             return O;
         });
-        var R = new C.a(),
-            T = n(110),
+        var q = new C.a(),
+            R = n(110),
             j = new E.a(),
             O = (function () {
                 function e(t) {
@@ -2327,8 +2327,7 @@
                                                                             e.fixCheckoutInputTabOrder()),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
-                                                                            (e.addAlgoliaSearch(),
-                                                                            j.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                            (j.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             j.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
                                                                                 '.RootBody .ArnPrimarySearchContainer',
@@ -2364,7 +2363,6 @@
                                                                                 });
                                                                             }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && e.addAlgoliaSearch(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             P(
@@ -2506,6 +2504,7 @@
                                                                         ),
                                                                         e.applyDarkTheme(),
                                                                         e.applyCustomStyles(),
+                                                                        e.forceClickOnCitySearch(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -2735,8 +2734,8 @@
                                     (t = u.getAttribute('content')),
                                     (n = a.getAttribute('content')),
                                     (r = c.getAttribute('content')),
-                                    (o = T(n)),
-                                    (i = T(r)),
+                                    (o = R(n)),
+                                    (i = R(r)),
                                     j.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                             .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
@@ -2899,8 +2898,8 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = T(t).format(this.site_config.dayjs_date_format)),
-                                    (n = T(r).format(this.site_config.dayjs_date_format)),
+                                    (e = R(t).format(this.site_config.dayjs_date_format)),
+                                    (n = R(r).format(this.site_config.dayjs_date_format)),
                                     j.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     j.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -3100,7 +3099,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(R.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(q.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -3178,7 +3177,7 @@
                                                     case 0:
                                                         return (
                                                             (t = function () {
-                                                                fetch(''.concat(R.path, '/js/json/currencies.json'))
+                                                                fetch(''.concat(q.path, '/js/json/currencies.json'))
                                                                     .then(function (e) {
                                                                         if (!e.ok) throw e;
                                                                         return e.json();
@@ -3504,171 +3503,6 @@
                             },
                         },
                         {
-                            key: 'addAlgoliaSearch',
-                            value: function () {
-                                var e,
-                                    t,
-                                    n,
-                                    r,
-                                    o = this,
-                                    i = '',
-                                    a = '',
-                                    c = '',
-                                    s = window.location.origin,
-                                    u = new URL(window.location.href),
-                                    l = new URLSearchParams(u.search),
-                                    f = document.querySelector('meta[name="originalParams"]').content,
-                                    d = new URLSearchParams(f);
-                                function h(e) {
-                                    document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll(e).forEach(function (e) {
-                                            e.style.display = 'none';
-                                        });
-                                }
-                                var p,
-                                    m,
-                                    y = function (e, t, n, r) {
-                                        document.querySelector(e) && document.querySelector(t).parentNode.insertAdjacentHTML(n, r);
-                                    };
-                                function g(e) {
-                                    var t = document.querySelector(e),
-                                        n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
-                                    return (
-                                        t.addEventListener('change', function () {
-                                            for (var e = 0; e < t.length; e += 1)
-                                                if (t[e].selected) {
-                                                    (t.selectedIndex = e), (n = t[e].textContent);
-                                                    break;
-                                                }
-                                            return n;
-                                        }),
-                                        n
-                                    );
-                                }
-                                y('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />'),
-                                    y(
-                                        '.SearchHotels',
-                                        'div#theSearchBox',
-                                        'afterBegin',
-                                        '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
-                                    ),
-                                    'cug' === o.site_config.site_type.toLowerCase() &&
-                                        (('landing-page' !== o.page_name && 'search-results' !== o.page_name) || (c = document.querySelector('meta[name="memberToken"]').content)),
-                                    (p = 'input#city'),
-                                    document.querySelector(p) &&
-                                        (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                            document.querySelector(p).remove(),
-                                        'cug' === o.site_config.site_type.toLowerCase() &&
-                                            (document.body.append(document.querySelector(p)),
-                                            (document.querySelector(p).style.display = 'none'),
-                                            (document.querySelector('#CitySearchContainer').style.display = 'none'))),
-                                    'search-results' === o.page_name &&
-                                        'cug' !== o.site_config.site_type.toLowerCase() &&
-                                        'retail' !== o.site_config.site_type.toLowerCase() &&
-                                        j.waitForSelectorInDOM('.algolia-places').then(function () {
-                                            (document.querySelector('.algolia-places').style.display = 'none'),
-                                                (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
-                                        }),
-                                    (function () {
-                                        if (
-                                            document.querySelector('.SearchHotels') &&
-                                            'cug' === o.site_config.site_type.toLowerCase() &&
-                                            'retail' === o.site_config.site_type.toLowerCase()
-                                        ) {
-                                            var e = l.get('destination'),
-                                                t = document.querySelector('input#address-input');
-                                            (t.value = e),
-                                                t.addEventListener('click', function () {
-                                                    t.value = '';
-                                                });
-                                        }
-                                    })(),
-                                    g('select#rooms'),
-                                    g('select#adults'),
-                                    (function (e) {
-                                        document.querySelector(e) && (document.querySelector(e).required = !0);
-                                    })('input#theCheckIn'),
-                                    jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        l.has('locationlabel') || l.has('points') || h('img.arn-green-marker-icon');
-                                    }),
-                                    h('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
-                                    document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    document.querySelector('form#searchForm').addEventListener('submit', function (u) {
-                                        u.preventDefault();
-                                        var l = g('select#rooms'),
-                                            f = g('select#adults'),
-                                            h = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                            p = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                            m = T(p).diff(T(h), 'days'),
-                                            y = [
-                                                '&properties='.concat(d.get('properties')),
-                                                '&utm_source='.concat(d.get('utm_source')),
-                                                '&locationlabel='.concat(d.get('locationlabel')),
-                                                '&radius='.concat(d.get('radius')),
-                                                '&groupid='.concat(d.get('groupid')),
-                                                '&pageSize='.concat(d.get('pageSize')),
-                                                '&cid='.concat(d.get('cid')),
-                                            ],
-                                            v = function (e, t) {
-                                                n = ''
-                                                    .concat(s, '/v6/?type=geo&siteid=')
-                                                    .concat(o.site_id, '&longitude=')
-                                                    .concat(t, '&latitude=')
-                                                    .concat(e, '&checkin=')
-                                                    .concat(h, '&nights=')
-                                                    .concat(m, '&map&pagesize=10&')
-                                                    .concat(o.site_config.distance_unit, '&rooms=')
-                                                    .concat(l, '&adults=')
-                                                    .concat(f, '&currency=')
-                                                    .concat(o.selected_currency);
-                                            };
-                                        e ? v(e.lat, e.lng) : t ? v(t.lat, t.lng) : e || t || 'search-results' !== o.page_name || v(d.get('latitude'), d.get('longitude')),
-                                            (o.site_config.cug.is_cug || 'retail' === o.site_config.site_type.toLowerCase()) &&
-                                                ((r = document.querySelector('input#address-input').value), (n += '&destination='.concat(r))),
-                                            (function () {
-                                                if ('search-results' === o.page_name && '' !== document.querySelector('input#hotelName').value) {
-                                                    var e = '&hotelname='.concat(document.querySelector('input#hotelName').value);
-                                                    n += e;
-                                                }
-                                            })(),
-                                            document.querySelectorAll('#AmentitiesContainer .ArnSearchField div').forEach(function (e) {
-                                                if (!e.classList.contains('lblAmenities') && e.querySelector('input').checked) {
-                                                    var t = e.querySelector('span').textContent;
-                                                    i += ''.concat(t, ',');
-                                                }
-                                            }),
-                                            document.querySelectorAll('#PropertyClassesContainer .ArnSearchField div').forEach(function (e) {
-                                                if (!e.classList.contains('lblRating') && e.querySelector('input').checked) {
-                                                    var t = e.querySelector('span').textContent;
-                                                    a += ''.concat(t, ',');
-                                                }
-                                            });
-                                        var b = new URL(n),
-                                            S = i.slice(0, -1),
-                                            _ = a.slice(0, -1);
-                                        '' !== S && b.searchParams.append('amenities', S),
-                                            '' !== _ && b.searchParams.append('propertyclasses', _),
-                                            'cug' === o.site_config.site_type.toLowerCase() && '' !== c && b.searchParams.append('memberToken', c),
-                                            'search-results' === o.page_name
-                                                ? (y.forEach(function (e) {
-                                                      e.includes('null') || (b += e);
-                                                  }),
-                                                  (window.location.href = decodeURIComponent(b)))
-                                                : (window.location.href = decodeURIComponent(b));
-                                    }),
-                                    (m = places({
-                                        appId: o.site_config.algolia_app_id,
-                                        apiKey: o.site_config.algolia_api_key,
-                                        container: document.querySelector('input#address-input'),
-                                    }).configure({aroundLatLngViaIP: 'false', type: 'city'})).on('change', function (t) {
-                                        (document.querySelector('input#address-input').value = t.suggestion.value || ''), (e = t.suggestion.latlng);
-                                    }),
-                                    m.on('suggestions', function (e) {
-                                        t = e.rawAnswer.hits[0]._geoloc;
-                                    });
-                            },
-                        },
-                        {
                             key: 'isPropByGateway',
                             value: function (e, t, n, r) {
                                 var o = this;
@@ -3952,6 +3786,15 @@
                             },
                         },
                         {
+                            key: 'forceClickOnCitySearch',
+                            value: function () {
+                                'search-results' === this.page_name &&
+                                    'City' === document.querySelector('meta[name="SearchType"]').content &&
+                                    'cug' === this.site_config.site_type.toLowerCase() &&
+                                    document.querySelector('.ArnGoCitySearch').click();
+                            },
+                        },
+                        {
                             key: 'setInputToRequired',
                             value: function (e) {
                                 document.querySelector(e) && (document.querySelector(e).required = !0);
@@ -4227,8 +4070,8 @@
                                 }
                             },
                         },
-                    ]) && q(t.prototype, n),
-                    r && q(t, r),
+                    ]) && T(t.prototype, n),
+                    r && T(t, r),
                     e
                 );
             })();
@@ -4295,14 +4138,14 @@
                     }
                     for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var A = String(b[0]), L = u(l(a(b.index), d.length), 0), k = [], E = 1; E < b.length; E++) k.push(void 0 === (S = b[E]) ? S : String(S));
+                        for (var A = String(b[0]), k = u(l(a(b.index), d.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var M = [A].concat(k, L, d);
+                            var M = [A].concat(L, k, d);
                             void 0 !== C && M.push(C);
                             var P = String(t.apply(void 0, M));
-                        } else P = m(A, d, L, k, C, t);
-                        L >= w && ((_ += d.slice(w, L) + P), (w = L + A.length));
+                        } else P = m(A, d, k, L, C, t);
+                        k >= w && ((_ += d.slice(w, k) + P), (w = k + A.length));
                     }
                     return _ + d.slice(w);
                 },
@@ -4420,7 +4263,7 @@
                             if (null === A || (x = f(c(v.lastIndex + (h ? 0 : _)), d.length)) === S) _ = a(d, _, y);
                             else {
                                 if ((w.push(d.slice(S, _)), w.length === b)) return w;
-                                for (var L = 1; L <= A.length - 1; L++) if ((w.push(A[L]), w.length === b)) return w;
+                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
                                 _ = S = x;
                             }
                         }
@@ -4668,15 +4511,15 @@
             w = n(31),
             x = n(24),
             A = n(53),
-            L = n(87),
-            k = n(55),
+            k = n(87),
+            L = n(55),
             E = n(52),
             C = n(5),
             M = n(14),
-            P = k.f,
-            q = C.f,
-            R = L.f,
-            T = r.Symbol,
+            P = L.f,
+            T = C.f,
+            q = k.f,
+            R = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
             B = h('_hidden'),
@@ -4686,7 +4529,7 @@
             D = l('symbols'),
             N = l('op-symbols'),
             $ = Object.prototype,
-            U = 'function' == typeof T && !!E.f,
+            U = 'function' == typeof R && !!E.f,
             W = r.QObject,
             G = !W || !W.prototype || !W.prototype.findChild,
             z =
@@ -4695,9 +4538,9 @@
                     return (
                         7 !=
                         A(
-                            q({}, 'a', {
+                            T({}, 'a', {
                                 get: function () {
-                                    return q(this, 'a', {value: 7}).a;
+                                    return T(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -4705,20 +4548,20 @@
                 })
                     ? function (e, t, n) {
                           var r = P($, t);
-                          r && delete $[t], q(e, t, n), r && e !== $ && q($, t, r);
+                          r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
                       }
-                    : q,
+                    : T,
             V = function (e) {
-                var t = (D[e] = A(T.prototype));
+                var t = (D[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             Y =
-                U && 'symbol' == typeof T.iterator
+                U && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof T;
+                          return e instanceof R;
                       },
             J = function (e, t, n) {
                 return (
@@ -4727,8 +4570,8 @@
                     (t = w(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || q(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
-                        : q(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
+                        : T(e, t, n)
                 );
             },
             Z = function (e, t) {
@@ -4736,28 +4579,28 @@
                 for (var n, r = y((t = _(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
                 return e;
             },
-            K = function (e) {
+            X = function (e) {
                 var t = F.call(this, (e = w(e, !0)));
                 return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
-            X = function (e, t) {
+            K = function (e, t) {
                 if (((e = _(e)), (t = w(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = P(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             Q = function (e) {
-                for (var t, n = R(_(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = q(_(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = R(n ? N : _(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
+                for (var t, n = e === $, r = q(n ? N : _(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
                 return i;
             };
         U ||
             (c(
-                (T = function () {
-                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = d(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), z(this, e, x(1, n));
@@ -4769,22 +4612,22 @@
                     return this._k;
                 }
             ),
-            (k.f = X),
+            (L.f = K),
             (C.f = J),
-            (n(54).f = L.f = Q),
-            (n(27).f = K),
+            (n(54).f = k.f = Q),
+            (n(27).f = X),
             (E.f = ee),
-            i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
+            i && !n(16) && c($, 'propertyIsEnumerable', X, !0),
             (p.f = function (e) {
                 return V(h(e));
             })),
-            a(a.G + a.W + a.F * !U, {Symbol: T});
+            a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = T(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
             },
             keyFor: function (e) {
                 if (!Y(e)) throw TypeError(e + ' is not a symbol!');
@@ -4803,7 +4646,7 @@
                 },
                 defineProperty: J,
                 defineProperties: Z,
-                getOwnPropertyDescriptor: X,
+                getOwnPropertyDescriptor: K,
                 getOwnPropertyNames: Q,
                 getOwnPropertySymbols: ee,
             });
@@ -4821,7 +4664,7 @@
                         a.F *
                             (!U ||
                                 u(function () {
-                                    var e = T();
+                                    var e = R();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
@@ -4840,8 +4683,8 @@
                         },
                     }
                 ),
-            T.prototype[H] || n(7)(T.prototype, H, T.prototype.valueOf),
-            f(T, 'Symbol'),
+            R.prototype[H] || n(7)(R.prototype, H, R.prototype.valueOf),
+            f(R, 'Symbol'),
             f(Math, 'Math', !0),
             f(r.JSON, 'JSON', !0);
     },
@@ -5050,7 +4893,7 @@
                 b,
                 S,
                 _ = function (e) {
-                    if (!d && e in L) return L[e];
+                    if (!d && e in k) return k[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -5065,26 +4908,26 @@
                 w = t + ' Iterator',
                 x = 'values' == m,
                 A = !1,
-                L = e.prototype,
-                k = L[f] || L['@@iterator'] || (m && L[m]),
-                E = k || _(m),
+                k = e.prototype,
+                L = k[f] || k['@@iterator'] || (m && k[m]),
+                E = L || _(m),
                 C = m ? (x ? _('entries') : E) : void 0,
-                M = ('Array' == t && L.entries) || k;
+                M = ('Array' == t && k.entries) || L;
             if (
                 (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[f] || a(S, f, h)),
                 x &&
-                    k &&
-                    'values' !== k.name &&
+                    L &&
+                    'values' !== L.name &&
                     ((A = !0),
                     (E = function () {
-                        return k.call(this);
+                        return L.call(this);
                     })),
-                (r && !g) || (!d && !A && L[f]) || a(L, f, E),
+                (r && !g) || (!d && !A && k[f]) || a(k, f, E),
                 (c[t] = E),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in L || i(L, b, v[b]);
+                if (((v = {values: x ? E : _('values'), keys: y ? E : _('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (d || A), t, v);
             return v;
         };
@@ -5370,6 +5213,7 @@
                         });
             })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this),
                 (function (e) {
+                    var t, n, r;
                     if (
                         ((function () {
                             try {
@@ -5379,136 +5223,132 @@
                                 return !1;
                             }
                         })() ||
-                            (function () {
-                                var t = e.URL,
-                                    n = function (t, n) {
-                                        'string' != typeof t && (t = String(t));
-                                        var r,
-                                            o = document;
-                                        if (n && (void 0 === e.location || n !== e.location.href)) {
-                                            ((r = (o = document.implementation.createHTMLDocument('')).createElement('base')).href = n), o.head.appendChild(r);
-                                            try {
-                                                if (0 !== r.href.indexOf(n)) throw new Error(r.href);
-                                            } catch (e) {
-                                                throw new Error('URL unable to set base ' + n + ' due to ' + e);
-                                            }
-                                        }
-                                        var i = o.createElement('a');
-                                        if (((i.href = t), r && (o.body.appendChild(i), (i.href = i.href)), ':' === i.protocol || !/:/.test(i.href)))
-                                            throw new TypeError('Invalid URL');
-                                        Object.defineProperty(this, '_anchorElement', {value: i});
-                                        var a = new e.URLSearchParams(this.search),
-                                            c = !0,
-                                            s = !0,
-                                            u = this;
-                                        ['append', 'delete', 'set'].forEach(function (e) {
-                                            var t = a[e];
-                                            a[e] = function () {
-                                                t.apply(a, arguments), c && ((s = !1), (u.search = a.toString()), (s = !0));
-                                            };
-                                        }),
-                                            Object.defineProperty(this, 'searchParams', {value: a, enumerable: !0});
-                                        var l = void 0;
-                                        Object.defineProperty(this, '_updateSearchParams', {
-                                            enumerable: !1,
-                                            configurable: !1,
-                                            writable: !1,
-                                            value: function () {
-                                                this.search !== l && ((l = this.search), s && ((c = !1), this.searchParams._fromString(this.search), (c = !0)));
-                                            },
-                                        });
-                                    },
-                                    r = n.prototype;
-                                ['hash', 'host', 'hostname', 'port', 'protocol'].forEach(function (e) {
-                                    !(function (e) {
-                                        Object.defineProperty(r, e, {
-                                            get: function () {
-                                                return this._anchorElement[e];
-                                            },
-                                            set: function (t) {
-                                                this._anchorElement[e] = t;
-                                            },
-                                            enumerable: !0,
-                                        });
-                                    })(e);
+                            ((t = e.URL),
+                            (r = (n = function (t, n) {
+                                'string' != typeof t && (t = String(t));
+                                var r,
+                                    o = document;
+                                if (n && (void 0 === e.location || n !== e.location.href)) {
+                                    ((r = (o = document.implementation.createHTMLDocument('')).createElement('base')).href = n), o.head.appendChild(r);
+                                    try {
+                                        if (0 !== r.href.indexOf(n)) throw new Error(r.href);
+                                    } catch (e) {
+                                        throw new Error('URL unable to set base ' + n + ' due to ' + e);
+                                    }
+                                }
+                                var i = o.createElement('a');
+                                if (((i.href = t), r && (o.body.appendChild(i), (i.href = i.href)), ':' === i.protocol || !/:/.test(i.href))) throw new TypeError('Invalid URL');
+                                Object.defineProperty(this, '_anchorElement', {value: i});
+                                var a = new e.URLSearchParams(this.search),
+                                    c = !0,
+                                    s = !0,
+                                    u = this;
+                                ['append', 'delete', 'set'].forEach(function (e) {
+                                    var t = a[e];
+                                    a[e] = function () {
+                                        t.apply(a, arguments), c && ((s = !1), (u.search = a.toString()), (s = !0));
+                                    };
                                 }),
-                                    Object.defineProperty(r, 'search', {
+                                    Object.defineProperty(this, 'searchParams', {value: a, enumerable: !0});
+                                var l = void 0;
+                                Object.defineProperty(this, '_updateSearchParams', {
+                                    enumerable: !1,
+                                    configurable: !1,
+                                    writable: !1,
+                                    value: function () {
+                                        this.search !== l && ((l = this.search), s && ((c = !1), this.searchParams._fromString(this.search), (c = !0)));
+                                    },
+                                });
+                            }).prototype),
+                            ['hash', 'host', 'hostname', 'port', 'protocol'].forEach(function (e) {
+                                !(function (e) {
+                                    Object.defineProperty(r, e, {
                                         get: function () {
-                                            return this._anchorElement.search;
+                                            return this._anchorElement[e];
                                         },
-                                        set: function (e) {
-                                            (this._anchorElement.search = e), this._updateSearchParams();
+                                        set: function (t) {
+                                            this._anchorElement[e] = t;
                                         },
                                         enumerable: !0,
-                                    }),
-                                    Object.defineProperties(r, {
-                                        toString: {
-                                            get: function () {
-                                                var e = this;
-                                                return function () {
-                                                    return e.href;
-                                                };
-                                            },
-                                        },
-                                        href: {
-                                            get: function () {
-                                                return this._anchorElement.href.replace(/\?$/, '');
-                                            },
-                                            set: function (e) {
-                                                (this._anchorElement.href = e), this._updateSearchParams();
-                                            },
-                                            enumerable: !0,
-                                        },
-                                        pathname: {
-                                            get: function () {
-                                                return this._anchorElement.pathname.replace(/(^\/?)/, '/');
-                                            },
-                                            set: function (e) {
-                                                this._anchorElement.pathname = e;
-                                            },
-                                            enumerable: !0,
-                                        },
-                                        origin: {
-                                            get: function () {
-                                                var e = {'http:': 80, 'https:': 443, 'ftp:': 21}[this._anchorElement.protocol],
-                                                    t = this._anchorElement.port != e && '' !== this._anchorElement.port;
-                                                return this._anchorElement.protocol + '//' + this._anchorElement.hostname + (t ? ':' + this._anchorElement.port : '');
-                                            },
-                                            enumerable: !0,
-                                        },
-                                        password: {
-                                            get: function () {
-                                                return '';
-                                            },
-                                            set: function (e) {},
-                                            enumerable: !0,
-                                        },
-                                        username: {
-                                            get: function () {
-                                                return '';
-                                            },
-                                            set: function (e) {},
-                                            enumerable: !0,
-                                        },
-                                    }),
-                                    (n.createObjectURL = function (e) {
-                                        return t.createObjectURL.apply(t, arguments);
-                                    }),
-                                    (n.revokeObjectURL = function (e) {
-                                        return t.revokeObjectURL.apply(t, arguments);
-                                    }),
-                                    (e.URL = n);
-                            })(),
+                                    });
+                                })(e);
+                            }),
+                            Object.defineProperty(r, 'search', {
+                                get: function () {
+                                    return this._anchorElement.search;
+                                },
+                                set: function (e) {
+                                    (this._anchorElement.search = e), this._updateSearchParams();
+                                },
+                                enumerable: !0,
+                            }),
+                            Object.defineProperties(r, {
+                                toString: {
+                                    get: function () {
+                                        var e = this;
+                                        return function () {
+                                            return e.href;
+                                        };
+                                    },
+                                },
+                                href: {
+                                    get: function () {
+                                        return this._anchorElement.href.replace(/\?$/, '');
+                                    },
+                                    set: function (e) {
+                                        (this._anchorElement.href = e), this._updateSearchParams();
+                                    },
+                                    enumerable: !0,
+                                },
+                                pathname: {
+                                    get: function () {
+                                        return this._anchorElement.pathname.replace(/(^\/?)/, '/');
+                                    },
+                                    set: function (e) {
+                                        this._anchorElement.pathname = e;
+                                    },
+                                    enumerable: !0,
+                                },
+                                origin: {
+                                    get: function () {
+                                        var e = {'http:': 80, 'https:': 443, 'ftp:': 21}[this._anchorElement.protocol],
+                                            t = this._anchorElement.port != e && '' !== this._anchorElement.port;
+                                        return this._anchorElement.protocol + '//' + this._anchorElement.hostname + (t ? ':' + this._anchorElement.port : '');
+                                    },
+                                    enumerable: !0,
+                                },
+                                password: {
+                                    get: function () {
+                                        return '';
+                                    },
+                                    set: function (e) {},
+                                    enumerable: !0,
+                                },
+                                username: {
+                                    get: function () {
+                                        return '';
+                                    },
+                                    set: function (e) {},
+                                    enumerable: !0,
+                                },
+                            }),
+                            (n.createObjectURL = function (e) {
+                                return t.createObjectURL.apply(t, arguments);
+                            }),
+                            (n.revokeObjectURL = function (e) {
+                                return t.revokeObjectURL.apply(t, arguments);
+                            }),
+                            (e.URL = n)),
                         void 0 !== e.location && !('origin' in e.location))
                     ) {
-                        var t = function () {
+                        var o = function () {
                             return e.location.protocol + '//' + e.location.hostname + (e.location.port ? ':' + e.location.port : '');
                         };
                         try {
-                            Object.defineProperty(e.location, 'origin', {get: t, enumerable: !0});
-                        } catch (n) {
+                            Object.defineProperty(e.location, 'origin', {get: o, enumerable: !0});
+                        } catch (t) {
                             setInterval(function () {
-                                e.location.origin = t();
+                                e.location.origin = o();
                             }, 100);
                         }
                     }

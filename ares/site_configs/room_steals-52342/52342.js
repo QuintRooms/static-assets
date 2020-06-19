@@ -76,6 +76,11 @@ function showFullStayToggle(page_class) {
 showFullStayToggle('.SearchHotels');
 showFullStayToggle('.SinglePropDetail');
 
+if (document.querySelector('.WBLoginForm') || document.querySelector('.WBForgotPasswordForm')) {
+    window.location.href = 'https://roomsteals.com/login';
+    document.querySelector('body').style.display = 'none';
+}
+
 // function buildObjectsForRoomstealsPost() {
 //     /**
 //      *@todo
@@ -129,6 +134,9 @@ showFullStayToggle('.SinglePropDetail');
 //         location_details: {
 //             location,
 //             location_id,
+// ------------- need to add these ------------
+// //          lat,
+// //          lng
 //         },
 //         check_in,
 //         check_out,

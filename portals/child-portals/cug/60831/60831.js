@@ -29,7 +29,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cug_portal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=60831', 'href');
                 cug_portal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer');
-                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo-white.png', 'src');
+                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png', 'src');
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
@@ -117,3 +117,13 @@ function styleLoginContainer() {
 }
 
 styleLoginContainer();
+
+// New styles below
+
+function updateAttribute(element, attribute, value) {
+    document.querySelector(element).setAttribute(attribute, value);
+}
+
+updateAttribute('#theUserNameAjax input', 'placeholder', 'Username');
+updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
+updateAttribute('.LoginAction.submit', 'value', 'LOGIN');

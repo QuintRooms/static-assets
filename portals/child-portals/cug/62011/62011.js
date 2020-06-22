@@ -111,7 +111,27 @@ function beatTheirRateMessaging(page_selector, property_container) {
 
 // New styles below
 
+function styleRegisterContainer() {
+    document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
+        'beforeend',
+        `
+        <div id="register-container">
+            <h2 id="new-user-text">NEW <strong>USER?</strong></h2>
+            <div id="register-btn">
+            </div>
+        </div>    
+    `
+    );
+
+    const register_link = document.querySelector('.CreateAnAccountAction');
+    document.querySelector('#register-btn').insertAdjacentElement('afterbegin', register_link);
+    register_link.textContent = 'REGISTER';
+}
+
+styleRegisterContainer();
+
 function updateAttribute(element, attribute, value) {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
     document.querySelector(element).setAttribute(attribute, value);
 }
 
@@ -120,6 +140,7 @@ updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
 updateAttribute('.LoginAction.submit', 'value', 'LOGIN');
 
 function removerCharacters(arr) {
+    if (!document.querySelector('.RootBody')) return;
     arr.forEach((e) => {
         const el = document.querySelector(e);
         const str = el.textContent;

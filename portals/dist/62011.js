@@ -6490,8 +6490,9 @@
             N,
             B,
             q,
-            H = new k();
-        function D(t, n) {
+            H,
+            D = new k();
+        function U(t, n) {
             var e,
                 r = document.querySelectorAll(n);
             document.querySelector(t) &&
@@ -6510,20 +6511,20 @@
                     }
                 });
         }
-        function U(t, n, e) {
-            document.querySelector(t).setAttribute(n, e);
+        function W(t, n, e) {
+            document.querySelector('.MemberNotAuthenticated') && document.querySelector(t).setAttribute(n, e);
         }
         jQuery(document).on('ratesReadyEvent', function () {
             setTimeout(function () {
-                H.ratesReadyEventMethods(), H.removeSavingsLessThan10(), D('.SearchHotels', '.ArnProperty'), D('.SinglePropDetail', '.rateRow');
+                D.ratesReadyEventMethods(), D.removeSavingsLessThan10(), U('.SearchHotels', '.ArnProperty'), U('.SinglePropDetail', '.rateRow');
             }, 1);
         }),
-            H.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
-            H.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value'),
-            H.updateText('#theUserNameAjax label', 'Username'),
-            H.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin'),
+            D.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
+            D.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value'),
+            D.updateText('#theUserNameAjax label', 'Username'),
+            D.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin'),
             setTimeout(function () {
-                H.updateHTML('.savingsTable .savings th', "<strong>Beat 'em by</strong>");
+                D.updateHTML('.savingsTable .savings th', "<strong>Beat 'em by</strong>");
             }, 1e3),
             (R = 'header'),
             (N = document.querySelector(R)),
@@ -6533,9 +6534,9 @@
                 try {
                     for (r.s(); !(e = r.n()).done; )
                         'childList' === e.value.type &&
-                            (H.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href'),
-                            H.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer'),
-                            H.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
+                            (D.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href'),
+                            D.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer'),
+                            D.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
                             document.querySelector('#commands') &&
                                 ((document.querySelector('header').style.display = 'none'),
                                 document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'))),
@@ -6549,9 +6550,9 @@
             document
                 .querySelector('body')
                 .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
-            H.updateText('.CreateAnAccountAction', 'Register'),
+            D.updateText('.CreateAnAccountAction', 'Register'),
             (B = document.querySelector('meta[name="firstName"]').content),
-            H.updateHTML(
+            D.updateHTML(
                 '.RootBody .ArnSearchHotelsImg',
                 '\n        <span class="search-messaging">\n            <span>\n                <h3>'.concat(
                     B,
@@ -6559,11 +6560,21 @@
                 )
             ),
             (q = document.querySelector('#thePassCodeAjax input')),
-            'cug-registration' === H.page_name && q && (q.value = 'resbeat'),
-            U('#theUserNameAjax input', 'placeholder', 'Username'),
-            U('#thePasswordAjax input', 'placeholder', 'Password'),
-            U('.LoginAction.submit', 'value', 'LOGIN'),
-            [
+            'cug-registration' === D.page_name && q && (q.value = 'resbeat'),
+            (function () {
+                document
+                    .querySelector('#theWBLoginFormBody')
+                    .insertAdjacentHTML(
+                        'beforeend',
+                        '\n        <div id="register-container">\n            <h2 id="new-user-text">NEW <strong>USER?</strong></h2>\n            <div id="register-btn">\n            </div>\n        </div>    \n    '
+                    );
+                var t = document.querySelector('.CreateAnAccountAction');
+                document.querySelector('#register-btn').insertAdjacentElement('afterbegin', t), (t.textContent = 'REGISTER');
+            })(),
+            W('#theUserNameAjax input', 'placeholder', 'Username'),
+            W('#thePasswordAjax input', 'placeholder', 'Password'),
+            W('.LoginAction.submit', 'value', 'LOGIN'),
+            (H = [
                 '#CitySearchContainer span',
                 '#CheckInContainer span',
                 '#CheckOutContainer span',
@@ -6573,10 +6584,12 @@
                 '.lblRating',
                 '.lblPropertyType',
                 '.lblCurrency',
-            ].forEach(function (t) {
-                var n = document.querySelector(t),
-                    e = n.textContent.slice(0, -1);
-                n.textContent = e;
-            });
+            ]),
+            document.querySelector('.RootBody') &&
+                H.forEach(function (t) {
+                    var n = document.querySelector(t),
+                        e = n.textContent.slice(0, -1);
+                    n.textContent = e;
+                });
     },
 ]);

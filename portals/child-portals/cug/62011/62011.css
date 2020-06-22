@@ -1681,6 +1681,27 @@ div #theRememberMeAjax label {
     border-radius: 4px 4px 0 0;
 }
 
+#register-container {
+    margin-top: 50px;
+}
+
+#register-btn {
+    height: 40px;
+    border-radius: 30px;
+    background-color: #215853;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 900 !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#register-btn a {
+    color: #fff;
+}
+
 @media screen and (max-width: 800px) {
     .SearchHotels .percentSavings {
         display: block;

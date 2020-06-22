@@ -6518,7 +6518,7 @@
                 H.ratesReadyEventMethods(), H.removeSavingsLessThan10(), D('.SearchHotels', '.ArnProperty'), D('.SinglePropDetail', '.rateRow');
             }, 1);
         }),
-            H.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
+            H.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
             H.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value'),
             H.updateText('#theUserNameAjax label', 'Username'),
             H.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin'),
@@ -6533,9 +6533,9 @@
                 try {
                     for (r.s(); !(e = r.n()).done; )
                         'childList' === e.value.type &&
-                            (H.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=62011', 'href'),
+                            (H.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href'),
                             H.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer'),
-                            H.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
+                            H.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
                             document.querySelector('#commands') &&
                                 ((document.querySelector('header').style.display = 'none'),
                                 document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'))),
@@ -6548,7 +6548,7 @@
             }).observe(N, {attributes: !1, childList: !0, subtree: !1}),
             document
                 .querySelector('body')
-                .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
+                .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
             H.updateText('.CreateAnAccountAction', 'Register'),
             (B = document.querySelector('meta[name="firstName"]').content),
             H.updateHTML(

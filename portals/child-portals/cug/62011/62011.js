@@ -11,7 +11,7 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
-cug_portal.updateAttribute('#favicon', 'https://static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href');
+cug_portal.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href');
 cug_portal.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value');
 cug_portal.updateText('#theUserNameAjax label', 'Username');
 cug_portal.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin');
@@ -27,9 +27,9 @@ function waitForElementToLoad(elementWaitingFor) {
     function callback(mutationsList, observer) {
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                cug_portal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=62011', 'href');
+                cug_portal.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href');
                 cug_portal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer');
-                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src');
+                cug_portal.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src');
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
@@ -48,7 +48,7 @@ waitForElementToLoad('header');
 
 document
     .querySelector('body')
-    .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">');
+    .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">');
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
 

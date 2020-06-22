@@ -53,6 +53,8 @@ document
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
 
 function updateSearchTitle() {
+    if (!document.querySelector('.RootBody')) return;
+
     const name = document.querySelector('meta[name="firstName"]').content;
 
     cug_portal.updateHTML(
@@ -112,6 +114,8 @@ function beatTheirRateMessaging(page_selector, property_container) {
 // New styles below
 
 function styleRegisterContainer() {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+
     document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
         'beforeend',
         `

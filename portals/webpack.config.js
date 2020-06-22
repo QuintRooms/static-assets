@@ -1,4 +1,5 @@
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const cssnano = require('cssnano');
 
 module.exports = {
@@ -55,7 +56,8 @@ module.exports = {
         // 59533: './src/59533.js',
         // 60055: './src/60055.js',
         // 60100: './src/60100.js',
-        60831: './src/60831.js',
+        // 60831: './src/60831.js',
+        62011: './src/62011.js',
     },
     output: {
         filename: '[name].js',

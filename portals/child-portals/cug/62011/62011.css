@@ -745,6 +745,7 @@ header {
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
     margin: 20px 0 20px;
+    border-radius: 40px;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {
@@ -911,6 +912,19 @@ header {
 
 .ArnPropName div.ratingCount {
     background: #215853;
+    border-radius: 50%;
+    width: 30px!important;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.SearchHotels .reviewCount {
+    padding: 5px;
+}
+
+.SearchHotels .reviewCount a {
+    color: #333;
 }
 
 .exclusiveRate {
@@ -1218,7 +1232,7 @@ ul {
 .SinglePropDetail .SB20 .yourRateAmount,
 .SinglePropDetail .SB20 .exclusiveRate + strong,
 .SinglePropDetail .ArnNightlyRate strong {
-    color: #215853 !important;
+    color: #e2ad37 !important;
     font-family: 'Avenir-Black', 'Helvetica' !important;
 }
 
@@ -1567,8 +1581,6 @@ div.originalPrice span,
         left: 0 !important;
         margin: 0 !important;
         width: 100% !important;
-        border-radius: 0 5px 0 5px !important;
-        background: #215853 !important;
         display: inline-block;
         padding: 6px 10px;
         font-size: 15px !important;
@@ -1593,7 +1605,7 @@ div.originalPrice span,
 }
 
 .SearchHotels .roomCount {
-    display: none;
+    color: #e2ad37;
 }
 
 .SinglePropDetail .SimpleSearch .CheckIn {
@@ -1637,7 +1649,7 @@ div #theRememberMeAjax label {
     color: #6D6E6F;
 }
 
-.WBLoginFormFields input, .RootBody select {
+.WBLoginFormFields input, .RootBody select, .SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select, .SearchHotels .ArnProperty {
     border: unset !important;
 }
 
@@ -1700,6 +1712,56 @@ div #theRememberMeAjax label {
 
 #register-btn a {
     color: #fff;
+}
+
+.search-messaging {
+    color: #333;
+}
+
+.SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
+    background-color: #F0F1F2;
+}
+
+.ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    border-radius: 40px;
+}
+
+body.SearchHotels {
+    background-color: #F0F1F2;
+}
+
+#SortControlsContainer .hamburger {
+    border: unset;
+    border-radius: unset;
+}
+
+.ArnRightListContainer .openMapBtn {
+    border: unset;
+    border-radius: unset;
+    background-color: #fff;
+}
+
+.ArnRightListContainer .openMapBtn:hover {
+    color: #333;
+    border: 1px solid #333;
+}
+
+.SearchHotels div.percentSavings {
+    background-color: #e2ad37!important;
+    border-radius: 30px 7px 0px 30px !important;
+    height: 17%;
+}
+
+.SearchHotels .ArnRateButton .ArnShowRatesLink {
+    background-color: #fff;
+    border: 2px solid #215853;
+    border-radius: 40px;
+    color: #215853 !important;
+}
+
+.SearchHotels .ArnRateButton .ArnShowRatesLink:hover {
+    background-color: #215853;
+    color: #fff!important;
 }
 
 @media screen and (max-width: 800px) {

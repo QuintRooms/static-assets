@@ -52,6 +52,42 @@ document
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
 
+/* - - - - - - -  login form functions start - - - - - - - */
+
+function styleRegisterContainer() {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+
+    document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
+        'beforeend',
+        `
+        <div id="register-container">
+            <h2 id="new-user-text">NEW <strong>USER?</strong></h2>
+            <div id="register-btn">
+            </div>
+        </div>    
+    `
+    );
+
+    const register_link = document.querySelector('.CreateAnAccountAction');
+    document.querySelector('#register-btn').insertAdjacentElement('afterbegin', register_link);
+    register_link.textContent = 'REGISTER';
+}
+
+styleRegisterContainer();
+
+function updateAttribute(element, attribute, value) {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+    document.querySelector(element).setAttribute(attribute, value);
+}
+
+updateAttribute('#theUserNameAjax input', 'placeholder', 'Username');
+updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
+updateAttribute('.LoginAction.submit', 'value', 'LOGIN');
+
+/* - - - - - - -  login form functions end - - - - - - - */
+
+/* - - - - - - -  .RootBody functions start - - - - - - - */
+
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
 
@@ -71,6 +107,58 @@ function updateSearchTitle() {
 }
 
 updateSearchTitle();
+
+function removeCharacters(arr) {
+    arr.forEach((e) => {
+        if (!document.querySelector(e)) return;
+        const el = document.querySelector(e);
+        const str = el.textContent;
+        const new_str = str.slice(0, -1);
+        el.textContent = new_str;
+    });
+}
+if (document.querySelector('.Rootbody')) {
+    removeCharacters([
+        '#CitySearchContainer span',
+        '#CheckInContainer span',
+        '#CheckOutContainer span',
+        '.ArnRooms span',
+        '.ArnAdults span',
+        '.lblAmenities',
+        '.lblRating',
+        '.lblPropertyType',
+        '.lblCurrency',
+        '#HotelNameContainer span',
+    ]);
+}
+
+function upperCase(element) {
+    if (!document.querySelector(element)) return;
+    const el = document.querySelector(element);
+    const string = el.value;
+    const new_str = string.toUpperCase();
+    el.value = new_str;
+}
+
+upperCase('#theSearchBox #theSubmitButton', 'value');
+
+/* - - - - - - -  .RootBody functions end - - - - - - - */
+/* - - - - - - -  .SearchHotels functions start - - - - - - - */
+
+upperCase('div#modifySearch', 'textContent');
+upperCase('.SearchHotels .roomCount', 'textContent');
+
+if (document.querySelector('.SearchHotels')) {
+    removeCharacters([
+        '.ArnPrimarySearchContainer #CitySearchContainer span',
+        '.ArnPrimarySearchContainer #CheckInContainer span',
+        '.ArnPrimarySearchContainer #CheckOutContainer span',
+        '.ArnPrimarySearchContainer .ArnRooms span',
+        '.ArnPrimarySearchContainer .ArnAdults span',
+        '.ArnPrimarySearchContainer #HotelNameContainer span',
+    ]);
+}
+/* - - - - - - -  .SearchHotels functions end - - - - - - - */
 
 function hidePromoCode() {
     const promo_code_element = document.querySelector('#thePassCodeAjax input');
@@ -110,57 +198,3 @@ function beatTheirRateMessaging(page_selector, property_container) {
         percent_banner.innerHTML = `<span class="brand-message"><strong>Beat</strong> 'em by ${percent}%</span>`;
     });
 }
-
-// New styles below
-
-function styleRegisterContainer() {
-    if (!document.querySelector('.MemberNotAuthenticated')) return;
-
-    document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
-        'beforeend',
-        `
-        <div id="register-container">
-            <h2 id="new-user-text">NEW <strong>USER?</strong></h2>
-            <div id="register-btn">
-            </div>
-        </div>    
-    `
-    );
-
-    const register_link = document.querySelector('.CreateAnAccountAction');
-    document.querySelector('#register-btn').insertAdjacentElement('afterbegin', register_link);
-    register_link.textContent = 'REGISTER';
-}
-
-styleRegisterContainer();
-
-function updateAttribute(element, attribute, value) {
-    if (!document.querySelector('.MemberNotAuthenticated')) return;
-    document.querySelector(element).setAttribute(attribute, value);
-}
-
-updateAttribute('#theUserNameAjax input', 'placeholder', 'Username');
-updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
-updateAttribute('.LoginAction.submit', 'value', 'LOGIN');
-
-function removerCharacters(arr) {
-    if (!document.querySelector('.RootBody')) return;
-    arr.forEach((e) => {
-        const el = document.querySelector(e);
-        const str = el.textContent;
-        const new_str = str.slice(0, -1);
-        el.textContent = new_str;
-    });
-}
-
-removerCharacters([
-    '#CitySearchContainer span',
-    '#CheckInContainer span',
-    '#CheckOutContainer span',
-    '.ArnRooms span',
-    '.ArnAdults span',
-    '.lblAmenities',
-    '.lblRating',
-    '.lblPropertyType',
-    '.lblCurrency',
-]);

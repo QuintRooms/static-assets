@@ -123,7 +123,7 @@ function removeCharacters(arr) {
         el.textContent = new_str;
     });
 }
-if (document.querySelector('.Rootbody')) {
+if (document.querySelector('.RootBody')) {
     removeCharacters([
         '#CitySearchContainer span',
         '#CheckInContainer span',

@@ -6586,7 +6586,7 @@
                     );
                 }
             })(),
-            document.querySelector('.Rootbody') &&
+            document.querySelector('.RootBody') &&
                 D([
                     '#CitySearchContainer span',
                     '#CheckInContainer span',

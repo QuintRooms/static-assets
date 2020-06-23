@@ -394,8 +394,8 @@
                 T = n(65),
                 M = n(30),
                 O = n(5),
-                F = n(19),
-                L = n(51),
+                L = n(19),
+                F = n(51),
                 k = n(46),
                 C = n(66),
                 j = n(38),
@@ -413,14 +413,14 @@
                 z = Array.prototype,
                 Y = c.ArrayBuffer,
                 $ = c.DataView,
-                X = F(0),
-                K = F(2),
-                J = F(3),
-                Q = F(4),
-                Z = F(5),
-                tt = F(6),
-                et = L(!0),
-                nt = L(!1),
+                X = L(0),
+                K = L(2),
+                J = L(3),
+                Q = L(4),
+                Z = L(5),
+                tt = L(6),
+                et = F(!0),
+                nt = F(!1),
                 rt = C.values,
                 ot = C.keys,
                 it = C.entries,
@@ -439,7 +439,7 @@
                 mt = a.CONSTR,
                 bt = a.TYPED,
                 St = a.VIEW,
-                wt = F(1, function (t, e) {
+                wt = L(1, function (t, e) {
                     return Pt(k(t, t[gt]), e);
                 }),
                 xt = i(function () {
@@ -478,7 +478,7 @@
                         },
                     });
                 },
-                Ft = function (t) {
+                Lt = function (t) {
                     var e,
                         n,
                         r,
@@ -497,7 +497,7 @@
                     for (l && c > 2 && (f = s(f, arguments[2], 2)), e = 0, n = v(a.length), o = Pt(this, n); n > e; e++) o[e] = l ? f(a[e], e) : a[e];
                     return o;
                 },
-                Lt = function () {
+                Ft = function () {
                     for (var t = 0, e = arguments.length, n = Pt(this, e); e > t; ) n[t] = arguments[t++];
                     return n;
                 },
@@ -667,7 +667,7 @@
                                   l = 0,
                                   p = 0;
                               if (w(n)) {
-                                  if (!(n instanceof Y || 'ArrayBuffer' == (c = S(n)) || 'SharedArrayBuffer' == c)) return bt in n ? Mt(d, n) : Ft.call(d, n);
+                                  if (!(n instanceof Y || 'ArrayBuffer' == (c = S(n)) || 'SharedArrayBuffer' == c)) return bt in n ? Mt(d, n) : Lt.call(d, n);
                                   (i = n), (p = _t(r, e));
                                   var g = n.byteLength;
                                   if (void 0 === o) {
@@ -702,7 +702,7 @@
                                               : new g(n)
                                           : bt in n
                                           ? Mt(d, n)
-                                          : Ft.call(d, n)
+                                          : Lt.call(d, n)
                                       : new g(y(n))
                               );
                           })),
@@ -713,7 +713,7 @@
                           r || (A.constructor = d));
                     var M = A[dt],
                         O = !!M && ('values' == M.name || null == M.name),
-                        F = Nt.values;
+                        L = Nt.values;
                     h(d, yt, !0),
                         h(A, bt, s),
                         h(A, St, !0),
@@ -734,7 +734,7 @@
                                         g.of.call(d, 1);
                                     }),
                             s,
-                            {from: Ft, of: Lt}
+                            {from: Lt, of: Ft}
                         ),
                         'BYTES_PER_ELEMENT' in A || h(A, 'BYTES_PER_ELEMENT', e),
                         u(u.P, s, jt),
@@ -763,8 +763,8 @@
                             s,
                             {toLocaleString: Ct}
                         ),
-                        (j[s] = O ? M : F),
-                        r || O || h(A, dt, F);
+                        (j[s] = O ? M : L),
+                        r || O || h(A, dt, L);
                 });
         } else t.exports = function () {};
     },
@@ -1713,8 +1713,8 @@
             T = S.log,
             M = S.LN2,
             O = o ? '_b' : 'buffer',
-            F = o ? '_l' : 'byteLength',
-            L = o ? '_o' : 'byteOffset';
+            L = o ? '_l' : 'byteLength',
+            F = o ? '_o' : 'byteOffset';
         function k(t, e, n) {
             var r,
                 o,
@@ -1784,16 +1784,16 @@
         }
         function D(t, e, n, r) {
             var o = p(+n);
-            if (o + e > t[F]) throw w('Wrong index!');
+            if (o + e > t[L]) throw w('Wrong index!');
             var i = t[O]._b,
-                u = o + t[L],
+                u = o + t[F],
                 a = i.slice(u, u + e);
             return r ? a : a.reverse();
         }
         function U(t, e, n, r, o, i) {
             var u = p(+n);
-            if (u + e > t[F]) throw w('Wrong index!');
-            for (var a = t[O]._b, c = u + t[L], s = r(+o), f = 0; f < e; f++) a[c + f] = s[i ? f : e - f - 1];
+            if (u + e > t[L]) throw w('Wrong index!');
+            for (var a = t[O]._b, c = u + t[F], s = r(+o), f = 0; f < e; f++) a[c + f] = s[i ? f : e - f - 1];
         }
         if (u.ABV) {
             if (
@@ -1841,15 +1841,15 @@
             (m = function (t) {
                 f(this, m, 'ArrayBuffer');
                 var e = p(t);
-                (this._b = y.call(new Array(e), 0)), (this[F] = e);
+                (this._b = y.call(new Array(e), 0)), (this[L] = e);
             }),
                 (b = function (t, e, n) {
                     f(this, b, 'DataView'), f(t, m, 'DataView');
-                    var r = t[F],
+                    var r = t[L],
                         o = l(e);
                     if (o < 0 || o > r) throw w('Wrong offset!');
                     if (o + (n = void 0 === n ? r - o : h(n)) > r) throw w('Wrong length!');
-                    (this[O] = t), (this[L] = o), (this[F] = n);
+                    (this[O] = t), (this[F] = o), (this[L] = n);
                 }),
                 o && (H(m, 'byteLength', '_l'), H(b, 'buffer', '_b'), H(b, 'byteLength', '_l'), H(b, 'byteOffset', '_o')),
                 c(b.prototype, {
@@ -3451,8 +3451,8 @@
             T = c.Promise,
             M = 'process' == f(_),
             O = function () {},
-            F = (o = b.f),
-            L = !!(function () {
+            L = (o = b.f),
+            F = !!(function () {
                 try {
                     var t = T.resolve(1),
                         e = ((t.constructor = {})[n(5)('species')] = function (t) {
@@ -3558,7 +3558,7 @@
                     }
                 }
             };
-        L ||
+        F ||
             ((T = function (t) {
                 d(this, T, 'Promise', '_h'), p(t), r.call(this);
                 try {
@@ -3571,7 +3571,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(41)(T.prototype, {
                 then: function (t, e) {
-                    var n = F(y(this, T));
+                    var n = L(y(this, T));
                     return (
                         (n.ok = 'function' != typeof t || t),
                         (n.fail = 'function' == typeof e && e),
@@ -3590,20 +3590,20 @@
                 var t = new r();
                 (this.promise = t), (this.resolve = s(B, t, 1)), (this.reject = s(N, t, 1));
             }),
-            (b.f = F = function (t) {
+            (b.f = L = function (t) {
                 return t === T || t === u ? new i(t) : o(t);
             })),
-            l(l.G + l.W + l.F * !L, {Promise: T}),
+            l(l.G + l.W + l.F * !F, {Promise: T}),
             n(39)(T, 'Promise'),
             n(40)('Promise'),
             (u = n(26).Promise),
-            l(l.S + l.F * !L, 'Promise', {
+            l(l.S + l.F * !F, 'Promise', {
                 reject: function (t) {
-                    var e = F(this);
+                    var e = L(this);
                     return (0, e.reject)(t), e.promise;
                 },
             }),
-            l(l.S + l.F * (a || !L), 'Promise', {
+            l(l.S + l.F * (a || !F), 'Promise', {
                 resolve: function (t) {
                     return x(a && this === u ? T : this, t);
                 },
@@ -3612,7 +3612,7 @@
                 l.S +
                     l.F *
                         !(
-                            L &&
+                            F &&
                             n(50)(function (t) {
                                 T.all(t).catch(O);
                             })
@@ -3621,7 +3621,7 @@
                 {
                     all: function (t) {
                         var e = this,
-                            n = F(e),
+                            n = L(e),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -3643,7 +3643,7 @@
                     },
                     race: function (t) {
                         var e = this,
-                            n = F(e),
+                            n = L(e),
                             r = n.reject,
                             o = S(function () {
                                 v(t, !1, function (t) {
@@ -4096,9 +4096,9 @@
                         if (p) {
                             var O = [_].concat(P, E, h);
                             void 0 !== M && O.push(M);
-                            var F = String(e.apply(void 0, O));
-                        } else F = v(_, h, E, P, M, e);
-                        E >= x && ((w += h.slice(x, E) + F), (x = E + _.length));
+                            var L = String(e.apply(void 0, O));
+                        } else L = v(_, h, E, P, M, e);
+                        E >= x && ((w += h.slice(x, E) + L), (x = E + _.length));
                     }
                     return w + h.slice(x);
                 },
@@ -4322,8 +4322,8 @@
             T = n(54),
             M = n(7),
             O = n(34),
-            F = P.f,
-            L = M.f,
+            L = P.f,
+            F = M.f,
             k = E.f,
             C = r.Symbol,
             j = r.JSON,
@@ -4344,19 +4344,19 @@
                     return (
                         7 !=
                         _(
-                            L({}, 'a', {
+                            F({}, 'a', {
                                 get: function () {
-                                    return L(this, 'a', {value: 7}).a;
+                                    return F(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
                     );
                 })
                     ? function (t, e, n) {
-                          var r = F(U, e);
-                          r && delete U[e], L(t, e, n), r && t !== U && L(U, e, r);
+                          var r = L(U, e);
+                          r && delete U[e], F(t, e, n), r && t !== U && F(U, e, r);
                       }
-                    : L,
+                    : F,
             Y = function (t) {
                 var e = (H[t] = _(C.prototype));
                 return (e._k = t), e;
@@ -4376,8 +4376,8 @@
                     (e = x(e, !0)),
                     m(n),
                     o(H, e)
-                        ? (n.enumerable ? (o(t, R) && t[R][e] && (t[R][e] = !1), (n = _(n, {enumerable: A(0, !1)}))) : (o(t, R) || L(t, R, A(1, {})), (t[R][e] = !0)), z(t, e, n))
-                        : L(t, e, n)
+                        ? (n.enumerable ? (o(t, R) && t[R][e] && (t[R][e] = !1), (n = _(n, {enumerable: A(0, !1)}))) : (o(t, R) || F(t, R, A(1, {})), (t[R][e] = !0)), z(t, e, n))
+                        : F(t, e, n)
                 );
             },
             K = function (t, e) {
@@ -4391,7 +4391,7 @@
             },
             Q = function (t, e) {
                 if (((t = w(t)), (e = x(e, !0)), t !== U || !o(H, e) || o(D, e))) {
-                    var n = F(t, e);
+                    var n = L(t, e);
                     return !n || !o(H, e) || (o(t, R) && t[R][e]) || (n.enumerable = !0), n;
                 }
             },
@@ -6558,6 +6558,7 @@
                 .querySelector('body')
                 .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
             q.updateText('.CreateAnAccountAction', 'Register'),
+            document.querySelector('.MemberNotAuthenticated') && (document.querySelector('#theWBLoginForm h1').innerHTML = 'LOG<strong>IN</strong>'),
             (function () {
                 if (document.querySelector('.MemberNotAuthenticated')) {
                     document

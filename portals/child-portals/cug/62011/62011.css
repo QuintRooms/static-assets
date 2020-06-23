@@ -529,6 +529,11 @@ header {
     margin: 5% auto;
     max-width: 500px;
     width: 100%;
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated input.LoginAction {
+    letter-spacing: 1px;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,
@@ -690,7 +695,7 @@ header {
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 14px;
     line-height: 15px;
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 .submit,
@@ -1635,6 +1640,7 @@ div.originalPrice span,
 
 .WBLoginFormContainer.ArnSubPage #theWBLoginForm .formField {
     margin-top: 15px;
+    font-family: 'Avenir-Light', 'Helvetica';
 }
 
 div #theRememberMeAjax {
@@ -1708,7 +1714,6 @@ div #theRememberMeAjax label {
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 14px;
     line-height: 15px;
-    font-weight: 900 !important;
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -1716,6 +1721,7 @@ div #theRememberMeAjax label {
 
 #register-btn a {
     color: #fff;
+    letter-spacing: 1px;
 }
 
 .search-messaging {
@@ -1772,11 +1778,12 @@ body.SearchHotels {
     text-transform: uppercase;
 }
 
-.MemberNotAuthenticated #new-user-text h2 {
-    font-family: 'Avenir-Light', 'Helvetica';
+.MemberNotAuthenticated h2#new-user-text, .WBLoginFormActions a, #theWBLoginFormBody h1{
+    font-family: 'Avenir-Light', 'Helvetica' !important;
+    font-weight: 100;
 }
 
-.MemberNotAuthenticated #new-user-text strong {
+.MemberNotAuthenticated #new-user-text strong, #theWBLoginFormBody strong {
     font-family: 'Avenir-Black', 'Helvetica';
 }
 

@@ -26,7 +26,6 @@ body,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
 .SearchHotels .ArnPriceCell > a > span,
 .SearchHotels .ArnPriceCell > span:after,
-.modifySearch,
 .arnMapPopup,
 .arnMapMarker {
     font-family: 'Avenir', 'Helvetica';
@@ -167,7 +166,6 @@ header {
     justify-content: flex-end;
     align-items: center;
     order: 1;
-    font-family: 'Avenir', 'Helvetica';
 }
 
 #commands a,
@@ -175,6 +173,9 @@ header {
     margin: 0 18px !important;
     line-height: 1.4;
     padding: 0;
+    font-family: 'Avenir', 'Helvetica';
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #commands form .logoutCommand.submit {
@@ -335,8 +336,7 @@ header {
     font-size: 17px;
 }
 
-.reserveHotel,
-.modifySearch {
+.reserveHotel {
     font-size: 15px;
 }
 
@@ -768,7 +768,6 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #e2ad37;
     border-radius: 5px;
     padding: 3px 3px;
     font-size: 14px !important;
@@ -1581,11 +1580,6 @@ div.originalPrice span,
     font-size: 15px !important;
 }
 
-.SearchHotels .percentSavings {
-    font-family: 'Avenir', 'Helvetica';
-    padding: 6px 4px;
-}
-
 @media screen and (min-width: 800px) {
     .SearchHotels .percentSavings,
     .SinglePropDetail .bestPrice .percentSavings {
@@ -1657,11 +1651,11 @@ div #theRememberMeAjax label {
 }
 
 .ArnSupportLinks.ArnSupportBottom {
-    background-color: #F0F1F2;
-    color: #6D6E6F;
+    background-color: #F0F1F2 !important;
+    color: #6D6E6F !important;
 }
 .ArnSupportLinks.ArnSupportBottom a {
-    color: #6D6E6F;
+    color: #6D6E6F !important;
 }
 
 .WBLoginFormFields input, .RootBody select, .SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select, .SearchHotels .ArnProperty {
@@ -1763,8 +1757,10 @@ body.SearchHotels {
 
 .SearchHotels div.percentSavings {
     background-color: #e2ad37!important;
-    border-radius: 30px 7px 0px 30px !important;
-    height: 17%;
+    border-radius: 30px 25px 0px 30px !important;
+    font-family: 'Avenir', 'Helvetica';
+    padding: 12px !important;
+    text-transform: uppercase;
 }
 
 .SearchHotels .ArnRateButton .ArnShowRatesLink {
@@ -1779,17 +1775,19 @@ body.SearchHotels {
     color: #fff!important;
 }
 
-.RootBody #theSearchBox #theSubmitButton, .SearchHotels .roomCount, .SearchHotels #modifySearch {
+.RootBody #theSearchBox #theSubmitButton, .SearchHotels .roomCount, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
     text-transform: uppercase;
 }
 
-.MemberNotAuthenticated h2#new-user-text, .WBLoginFormActions a, #theWBLoginFormBody h1, .RootBody .search-messaging span, .RootBody .ArnSecondarySearchOuterContainer span {
+.MemberNotAuthenticated h2#new-user-text, .WBLoginFormActions a, #theWBLoginFormBody h1, .RootBody .search-messaging span, .RootBody .ArnSecondarySearchOuterContainer span, .SearchHotels .ArnPropAddress, .SearchHotels .modifySearch {
     font-family: 'Avenir-Light', 'Helvetica' !important;
     font-weight: 100;
+    letter-spacing: 1px;
 }
 
-.MemberNotAuthenticated #new-user-text strong, #theWBLoginFormBody strong, .RootBody .search-messaging strong {
+.MemberNotAuthenticated #new-user-text strong, #theWBLoginFormBody strong, .RootBody .search-messaging strong, .SearchHotels .modifySearch strong {
     font-family: 'Avenir-Black', 'Helvetica';
+    letter-spacing: 1px;
 }
 
 .search-messaging h3 {
@@ -1798,24 +1796,58 @@ body.SearchHotels {
     font-weight: 100;
 }
 
-.RootBody .ArnSecondarySearchOuterContainer .ArnSearchField div:first-child {
+.RootBody .ArnSecondarySearchOuterContainer .ArnSearchField div:first-child, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
     letter-spacing: 1px;
     font-family: 'Avenir-Black', 'Helvetica';
     font-size: 14px;
 }
 
-.RootBody #theSearchBox span {
+.RootBody #theSearchBox span, .ArnRooms span {
     margin-bottom: 5px !important;
 }
 
-.RootBody .ArnQuadSearchContainer input:not(#theSubmitButton), .RootBody .ArnQuadSearchContainer select {
+.RootBody .ArnQuadSearchContainer input:not(#theSubmitButton), .RootBody select {
     background-image: unset !important;
-    text-indent: 15px !important;
+    text-indent: 10px !important;
     font-family: 'Avenir-Light', 'Helvetica' !important;
 }
 
 .ArnSecondarySearchOuterContainer span {
     margin: 9px 0 0 0 !important;
+}
+
+.SearchHotels .ArnContainer .ArnPropName {
+    margin: 10px 0 0 15px;
+}
+
+.SearchHotels .roomCount {
+    margin-top: 20px !important;
+    letter-spacing: 1px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    font-size: 14px;
+}
+
+.SearchHotels .ArnContainer .ArnPropNameLink {
+    letter-spacing: 1px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.SearchHotels .ArnLeftSearchContainer a {
+    text-transform: uppercase;
+}
+
+.SearchHotels .ArnPropNameLink {
+    margin-bottom: 15px;
+}
+
+.SearchHotels .ArnProperty {
+    border-radius: 15px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 15px 0 0 15px;
 }
 
 @media screen and (max-width: 800px) {

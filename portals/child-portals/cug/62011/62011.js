@@ -150,6 +150,14 @@ if (document.querySelector('.SearchHotels')) {
         '.ArnPrimarySearchContainer #HotelNameContainer span',
     ]);
 }
+
+function updateModifySearch() {
+    if (!document.querySelector('.SearchHotels')) return;
+    const text = document.querySelector('.ArnPrimarySearchOuterContainer .modifySearch');
+    text.innerHTML = 'UPDATE <strong>SEARCH</strong>';
+}
+
+updateModifySearch();
 /* - - - - - - -  .SearchHotels functions end - - - - - - - */
 
 function hidePromoCode() {

@@ -6608,6 +6608,7 @@
                     '.ArnPrimarySearchContainer .ArnAdults span',
                     '.ArnPrimarySearchContainer #HotelNameContainer span',
                 ]),
+            document.querySelector('.SearchHotels') && (document.querySelector('.ArnPrimarySearchOuterContainer .modifySearch').innerHTML = 'UPDATE <strong>SEARCH</strong>'),
             (B = document.querySelector('#thePassCodeAjax input')),
             'cug-registration' === q.page_name && B && (B.value = 'resbeat');
     },

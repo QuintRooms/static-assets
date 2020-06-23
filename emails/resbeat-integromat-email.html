@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>H4H Confirmation Email</title>
+<title>Your reservation has been confirmed!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body style="margin: 0; padding: 0; font-family: Avenir, Helvetica; font-size: 16px;">
@@ -12,7 +12,7 @@
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
                     <tr>
                         <td align="center">
-							<img style="max-width: 225px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
+							<img style="max-width: 300px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
                         </td>
                     </tr>
                     <tr>
@@ -23,7 +23,7 @@
                     <tr>
                         <td align="center">
                             <h1 style="color: #646262; font-weight: bold; margin: 0;">Your room is booked!</h1>
-                            <p style="color: [PrimaryTextColor, fallback=#1f5853]; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0; font-size: 16px;">Booking Number: [ConfirmationNumber,fallback=]</p>
+                            <p style="color: [PrimaryColor, fallback=#1f5853]; font-weight: 500; text-transform: uppercase; margin: 0 0 24px 0; font-size: 16px;">Booking Number: [ConfirmationNumber,fallback=]</p>
                         </td>
                     </tr>
 					<tr>
@@ -36,7 +36,7 @@
 							<table border="0" cellpadding="0" cellspacing="0" width="100%">
 								<tr>
 									<td align="center" style="padding: 18px 0;">
-                                        <h1 style="font-weight: lighter; color: [PrimaryTextColor, fallback=#1f5853]; margin: 0;">[Hotel,fallback=]</h1>
+                                        <h1 style="font-weight: lighter; color: [PrimaryColor, fallback=#1f5853]; margin: 0;">[Hotel,fallback=]</h1>
                                         <p style="margin-top: 8px; font-weight: 500; color: #646262; font-size: 16px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
 									</td>
 								</tr>
@@ -103,7 +103,7 @@
 												<td style="font-size: 14px;">[CurrencySymbol, fallback=][Savings,fallback=]</td>
 											</tr>
 											<tr>
-												<td valign="top" style="font-size: 14px;">Reward Points:</td>
+												<td valign="top" style="font-size: 14px;">Rewards Earned:</td>
 												<td style="font-size: 14px;">[RewardPointsEarned,fallback=]</td>
 											</tr>
 										</table>
@@ -119,9 +119,10 @@
 									<td align="center" style="padding: 0 42px;">
 										<img style="margin-top: 36px;" src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon.png" alt="RESBEAT logo">
 										<h1 style="color:#1f5853; font-weight: 500;">Need help with this reservation?</h1>
-										[if:ClientName]
-											<p style="color: #646262; font-size: 16px;">[ClientName, fallback=] has partnered with RES<b>BEAT</b> to manage hotel stays. RES<b>BEAT</b> is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p>
-										[endif]
+										<!-- [if:ClientName] -->
+											<!-- <p style="color: #646262; font-size: 16px;">[ClientName, fallback=] has partnered with RES<b>BEAT</b> to manage hotel stays. RES<b>BEAT</b> is available from 8:00 am CT - 7:00 pm CT to help with your reservation.</p> -->
+											<p style="color: #646262; font-size: 16px;">Your RES<b>BEAT</b> Customer Service team is available from 8:00am - 5:30pm CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>
+										<!-- [endif] -->
 									</td>
 								</tr>
 							</table>
@@ -228,13 +229,13 @@
 					<tr>
 						<td>
 							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Important Guest Information</h4>
-							<span style="font-size: 16px;">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=60831]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+							<span style="font-size: 16px;">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color: [PrimaryColor, fallback=#1f5853]; text-decoration: none;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[SiteID,fallback=60831]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<h4 style="margin: 0; padding-top: 18px; color: #646262;">Reservation Information</h4>
-							<span style="font-size: 16px;"> For further assistance or if you have questions about your reservation, contact RES<b>BEAT</b> at <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a> or <a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
+							<span style="font-size: 16px;"> For further assistance or if you have questions about your reservation, contact RES<b>BEAT</b> at <a style="color: [PrimaryColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a> or <a style="color: [PrimaryColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>. To speak to the hotel directly, contact [Hotel,fallback=] at [HotelPhone,fallback=]</span>
 						</td>
 					</tr>
 					<tr>
@@ -247,10 +248,10 @@
 								<h3 style="margin-bottom: 0; font-weight: 500;">RES<b>BEAT</b></h3>
 								<div style="font-size: 16px;">4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
 								<div>
-									<a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>
+									<a style="color: [PrimaryColor, fallback=#1f5853]; text-decoration: none;" href="mailto:reservations@resbeat.com">reservations@resbeat.com</a>
 								</div>
 								<div>
-									<a style="color: [PrimaryTextColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a>
+									<a style="color: [PrimaryColor, fallback=#1f5853]; text-decoration: none;" href="tel:+1 512.691.9555">+1 512.691.9555</a>
 								</div>
 							</td>
 						</tr>

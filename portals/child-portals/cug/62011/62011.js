@@ -84,8 +84,6 @@ updateAttribute('#theUserNameAjax input', 'placeholder', 'Username');
 updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
 updateAttribute('.LoginAction.submit', 'value', 'LOGIN');
 
-/* - - - - - - -  login form functions end - - - - - - - */
-
 /* - - - - - - -  .RootBody functions start - - - - - - - */
 
 function updateSearchTitle() {
@@ -98,7 +96,7 @@ function updateSearchTitle() {
         `
         <span class="search-messaging">
             <span>
-                <h3>${name}, START YOUR <strong>SEARCH</strong></h3>
+                <h3>${name.toUpperCase()}, START YOUR <strong>SEARCH</strong></h3>
                 <h4>RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES</h4>
             </span>
         </span>
@@ -132,21 +130,7 @@ if (document.querySelector('.Rootbody')) {
     ]);
 }
 
-function upperCase(element) {
-    if (!document.querySelector(element)) return;
-    const el = document.querySelector(element);
-    const string = el.value;
-    const new_str = string.toUpperCase();
-    el.value = new_str;
-}
-
-upperCase('#theSearchBox #theSubmitButton', 'value');
-
-/* - - - - - - -  .RootBody functions end - - - - - - - */
 /* - - - - - - -  .SearchHotels functions start - - - - - - - */
-
-upperCase('div#modifySearch', 'textContent');
-upperCase('.SearchHotels .roomCount', 'textContent');
 
 if (document.querySelector('.SearchHotels')) {
     removeCharacters([

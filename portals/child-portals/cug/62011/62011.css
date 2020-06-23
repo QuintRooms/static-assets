@@ -1,11 +1,15 @@
 /* Fonts */
 @font-face {
-    font-family: 'Avenir';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Book.ttf') format('truetype');
+    font-family: 'Avenir-Light';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Avenir-Black';
     src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Meduim';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
 }
 
 /* Font Overrides */
@@ -175,14 +179,14 @@ header {
 #commands form .logoutCommand.submit {
     background: transparent;
     font-weight: 500 !important;
-    color: #fff !important;
+    color: #333 !important;
     font-family: inherit;
 }
 
 #commands a,
 #commands button {
     position: relative;
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-weight: 500;
 }
@@ -1762,6 +1766,18 @@ body.SearchHotels {
 .SearchHotels .ArnRateButton .ArnShowRatesLink:hover {
     background-color: #215853;
     color: #fff!important;
+}
+
+.RootBody #theSearchBox #theSubmitButton, .SearchHotels .roomCount, .SearchHotels #modifySearch {
+    text-transform: uppercase;
+}
+
+.MemberNotAuthenticated #new-user-text h2 {
+    font-family: 'Avenir-Light', 'Helvetica';
+}
+
+.MemberNotAuthenticated #new-user-text strong {
+    font-family: 'Avenir-Black', 'Helvetica';
 }
 
 @media screen and (max-width: 800px) {

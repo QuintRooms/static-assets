@@ -397,9 +397,9 @@
                 F = n(19),
                 L = n(51),
                 k = n(46),
-                j = n(66),
-                I = n(38),
-                C = n(50),
+                C = n(66),
+                j = n(38),
+                I = n(50),
                 R = n(40),
                 N = n(62),
                 B = n(84),
@@ -421,9 +421,9 @@
                 tt = F(6),
                 et = L(!0),
                 nt = L(!1),
-                rt = j.values,
-                ot = j.keys,
-                it = j.entries,
+                rt = C.values,
+                ot = C.keys,
+                it = C.entries,
                 ut = z.lastIndexOf,
                 at = z.reduce,
                 ct = z.reduceRight,
@@ -506,10 +506,10 @@
                     i(function () {
                         pt.call(new G(1));
                     }),
-                jt = function () {
+                Ct = function () {
                     return pt.apply(kt ? lt.call(Et(this)) : Et(this), arguments);
                 },
-                It = {
+                jt = {
                     copyWithin: function (t, e) {
                         return B.call(Et(this), t, e, arguments.length > 2 ? arguments[2] : void 0);
                     },
@@ -569,7 +569,7 @@
                         return new (k(n, n[gt]))(n.buffer, n.byteOffset + o * n.BYTES_PER_ELEMENT, v((void 0 === e ? r : g(e, r)) - o));
                     },
                 },
-                Ct = function (t, e) {
+                It = function (t, e) {
                     return Tt(this, lt.call(Et(this), t, e));
                 },
                 Rt = function (t) {
@@ -617,10 +617,10 @@
                     (ht = pt = function () {
                         return st.call(this);
                     });
-            var Dt = p({}, It);
+            var Dt = p({}, jt);
             p(Dt, Nt),
                 h(Dt, dt, Nt.values),
-                p(Dt, {slice: Ct, set: Rt, constructor: function () {}, toString: ht, toLocaleString: jt}),
+                p(Dt, {slice: It, set: Rt, constructor: function () {}, toString: ht, toLocaleString: Ct}),
                 Ot(Dt, 'buffer', 'b'),
                 Ot(Dt, 'byteOffset', 'o'),
                 Ot(Dt, 'byteLength', 'l'),
@@ -686,7 +686,7 @@
                               i(function () {
                                   new d(-1);
                               }) &&
-                              C(function (t) {
+                              I(function (t) {
                                   new d(), new d(null), new d(1.5), new d(t);
                               }, !0)) ||
                           ((d = n(function (t, n, r, o) {
@@ -737,7 +737,7 @@
                             {from: Ft, of: Lt}
                         ),
                         'BYTES_PER_ELEMENT' in A || h(A, 'BYTES_PER_ELEMENT', e),
-                        u(u.P, s, It),
+                        u(u.P, s, jt),
                         R(s),
                         u(u.P + u.F * At, s, {set: Rt}),
                         u(u.P + u.F * !O, s, Nt),
@@ -749,7 +749,7 @@
                                         new d(1).slice();
                                     }),
                             s,
-                            {slice: Ct}
+                            {slice: It}
                         ),
                         u(
                             u.P +
@@ -761,9 +761,9 @@
                                             A.toLocaleString.call([1, 2]);
                                         })),
                             s,
-                            {toLocaleString: jt}
+                            {toLocaleString: Ct}
                         ),
-                        (I[s] = O ? M : F),
+                        (j[s] = O ? M : F),
                         r || O || h(A, dt, F);
                 });
         } else t.exports = function () {};
@@ -1739,7 +1739,7 @@
             for (r = (r << e) | o, a += e; a > 0; u[l++] = 255 & r, r /= 256, a -= 8);
             return (u[--l] |= 128 * h), u;
         }
-        function j(t, e, n) {
+        function C(t, e, n) {
             var r,
                 o = 8 * n - e - 1,
                 i = (1 << o) - 1,
@@ -1757,10 +1757,10 @@
             }
             return (s ? -1 : 1) * r * E(2, f - e);
         }
-        function I(t) {
+        function j(t) {
             return (t[3] << 24) | (t[2] << 16) | (t[1] << 8) | t[0];
         }
-        function C(t) {
+        function I(t) {
             return [255 & t];
         }
         function R(t) {
@@ -1868,22 +1868,22 @@
                         return (e[1] << 8) | e[0];
                     },
                     getInt32: function (t) {
-                        return I(D(this, 4, t, arguments[1]));
+                        return j(D(this, 4, t, arguments[1]));
                     },
                     getUint32: function (t) {
-                        return I(D(this, 4, t, arguments[1])) >>> 0;
+                        return j(D(this, 4, t, arguments[1])) >>> 0;
                     },
                     getFloat32: function (t) {
-                        return j(D(this, 4, t, arguments[1]), 23, 4);
+                        return C(D(this, 4, t, arguments[1]), 23, 4);
                     },
                     getFloat64: function (t) {
-                        return j(D(this, 8, t, arguments[1]), 52, 8);
+                        return C(D(this, 8, t, arguments[1]), 52, 8);
                     },
                     setInt8: function (t, e) {
-                        U(this, 1, t, C, e);
+                        U(this, 1, t, I, e);
                     },
                     setUint8: function (t, e) {
-                        U(this, 1, t, C, e);
+                        U(this, 1, t, I, e);
                     },
                     setInt16: function (t, e) {
                         U(this, 2, t, R, e, arguments[2]);
@@ -3465,7 +3465,7 @@
                 var e;
                 return !(!h(t) || 'function' != typeof (e = t.then)) && e;
             },
-            j = function (t, e) {
+            C = function (t, e) {
                 if (!t._n) {
                     t._n = !0;
                     var n = t._c;
@@ -3496,17 +3496,17 @@
 
                         )
                             u(n[i++]);
-                        (t._c = []), (t._n = !1), e && !t._h && I(t);
+                        (t._c = []), (t._n = !1), e && !t._h && j(t);
                     });
                 }
             },
-            I = function (t) {
+            j = function (t) {
                 g.call(c, function () {
                     var e,
                         n,
                         r,
                         o = t._v,
-                        i = C(t);
+                        i = I(t);
                     if (
                         (i &&
                             ((e = S(function () {
@@ -3516,14 +3516,14 @@
                                     ? n({promise: t, reason: o})
                                     : (r = c.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = M || C(t) ? 2 : 1)),
+                            (t._h = M || I(t) ? 2 : 1)),
                         (t._a = void 0),
                         i && e.e)
                     )
                         throw e.v;
                 });
             },
-            C = function (t) {
+            I = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
             R = function (t) {
@@ -3534,7 +3534,7 @@
             },
             N = function (t) {
                 var e = this;
-                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), j(e, !0));
+                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), C(e, !0));
             },
             B = function (t) {
                 var e,
@@ -3552,7 +3552,7 @@
                                       N.call(r, t);
                                   }
                               })
-                            : ((n._v = t), (n._s = 1), j(n, !1));
+                            : ((n._v = t), (n._s = 1), C(n, !1));
                     } catch (t) {
                         N.call({_w: n, _d: !1}, t);
                     }
@@ -3578,7 +3578,7 @@
                         (n.domain = M ? _.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && j(this, !1),
+                        this._s && C(this, !1),
                         n.promise
                     );
                 },
@@ -4325,9 +4325,9 @@
             F = P.f,
             L = M.f,
             k = E.f,
-            j = r.Symbol,
-            I = r.JSON,
-            C = I && I.stringify,
+            C = r.Symbol,
+            j = r.JSON,
+            I = j && j.stringify,
             R = p('_hidden'),
             N = p('toPrimitive'),
             B = {}.propertyIsEnumerable,
@@ -4335,7 +4335,7 @@
             H = f('symbols'),
             D = f('op-symbols'),
             U = Object.prototype,
-            W = 'function' == typeof j && !!T.f,
+            W = 'function' == typeof C && !!T.f,
             V = r.QObject,
             G = !V || !V.prototype || !V.prototype.findChild,
             z =
@@ -4358,16 +4358,16 @@
                       }
                     : L,
             Y = function (t) {
-                var e = (H[t] = _(j.prototype));
+                var e = (H[t] = _(C.prototype));
                 return (e._k = t), e;
             },
             $ =
-                W && 'symbol' == typeof j.iterator
+                W && 'symbol' == typeof C.iterator
                     ? function (t) {
                           return 'symbol' == typeof t;
                       }
                     : function (t) {
-                          return t instanceof j;
+                          return t instanceof C;
                       },
             X = function (t, e, n) {
                 return (
@@ -4405,8 +4405,8 @@
             };
         W ||
             (a(
-                (j = function () {
-                    if (this instanceof j) throw TypeError('Symbol is not a constructor!');
+                (C = function () {
+                    if (this instanceof C) throw TypeError('Symbol is not a constructor!');
                     var t = h(arguments.length > 0 ? arguments[0] : void 0),
                         e = function (n) {
                             this === U && e.call(D, n), o(this, R) && o(this[R], t) && (this[R][t] = !1), z(this, t, A(1, n));
@@ -4427,13 +4427,13 @@
             (d.f = function (t) {
                 return Y(p(t));
             })),
-            u(u.G + u.W + u.F * !W, {Symbol: j});
+            u(u.G + u.W + u.F * !W, {Symbol: C});
         for (var et = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), nt = 0; et.length > nt; )
             p(et[nt++]);
         for (var rt = O(p.store), ot = 0; rt.length > ot; ) v(rt[ot++]);
         u(u.S + u.F * !W, 'Symbol', {
             for: function (t) {
-                return o(q, (t += '')) ? q[t] : (q[t] = j(t));
+                return o(q, (t += '')) ? q[t] : (q[t] = C(t));
             },
             keyFor: function (t) {
                 if (!$(t)) throw TypeError(t + ' is not a symbol!');
@@ -4464,14 +4464,14 @@
                 return T.f(S(t));
             },
         }),
-            I &&
+            j &&
                 u(
                     u.S +
                         u.F *
                             (!W ||
                                 s(function () {
-                                    var t = j();
-                                    return '[null]' != C([t]) || '{}' != C({a: t}) || '{}' != C(Object(t));
+                                    var t = C();
+                                    return '[null]' != I([t]) || '{}' != I({a: t}) || '{}' != I(Object(t));
                                 })),
                     'JSON',
                     {
@@ -4484,13 +4484,13 @@
                                             if (('function' == typeof n && (e = n.call(this, t, e)), !$(e))) return e;
                                         }),
                                     (r[1] = e),
-                                    C.apply(I, r)
+                                    I.apply(j, r)
                                 );
                         },
                     }
                 ),
-            j.prototype[N] || n(12)(j.prototype, N, j.prototype.valueOf),
-            l(j, 'Symbol'),
+            C.prototype[N] || n(12)(C.prototype, N, C.prototype.valueOf),
+            l(C, 'Symbol'),
             l(Math, 'Math', !0),
             l(r.JSON, 'JSON', !0);
     },
@@ -6407,18 +6407,18 @@
                     t
                 );
             })(),
-            j = new k();
-        function I(t) {
+            C = new k();
+        function j(t) {
             if ('undefined' == typeof Symbol || null == t[Symbol.iterator]) {
                 if (
                     Array.isArray(t) ||
                     (t = (function (t, e) {
                         if (!t) return;
-                        if ('string' == typeof t) return C(t, e);
+                        if ('string' == typeof t) return I(t, e);
                         var n = Object.prototype.toString.call(t).slice(8, -1);
                         'Object' === n && t.constructor && (n = t.constructor.name);
                         if ('Map' === n || 'Set' === n) return Array.from(n);
-                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return C(t, e);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return I(t, e);
                     })(t))
                 ) {
                     var e = 0,
@@ -6460,24 +6460,24 @@
                 },
             };
         }
-        function C(t, e) {
+        function I(t, e) {
             (null == e || e > t.length) && (e = t.length);
             for (var n = 0, r = new Array(e); n < e; n++) r[n] = t[n];
             return r;
         }
-        j.createParentPortal(),
+        C.createParentPortal(),
             jQuery(document).on('ratesReadyEvent', function () {
                 setTimeout(function () {
-                    j.ratesReadyEventMethods();
+                    C.ratesReadyEventMethods();
                 }, 1),
                     setTimeout(function () {
-                        j.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
+                        C.hidePropertyThumbnailArrowIfNoPropertyThumbnails();
                     }, 500);
             }),
             jQuery('#theBody').on('arnMapLoadedEvent', function () {
                 L.control.scale().addTo(window.ArnMap);
             }),
-            52342 != j.site_id &&
+            52342 != C.site_id &&
                 'closed' !== localStorage.getItem('covidAlertBanner') &&
                 (document.body.insertAdjacentHTML(
                     'afterBegin',
@@ -6489,9 +6489,20 @@
         var R,
             N,
             B,
-            q,
-            H = new k();
-        function D(t, e) {
+            q = new k();
+        function H(t, e, n) {
+            document.querySelector('.MemberNotAuthenticated') && document.querySelector(t).setAttribute(e, n);
+        }
+        function D(t) {
+            t.forEach(function (t) {
+                if (document.querySelector(t)) {
+                    var e = document.querySelector(t),
+                        n = e.textContent.slice(0, -1);
+                    e.textContent = n;
+                }
+            });
+        }
+        function U(t, e) {
             var n,
                 r = document.querySelectorAll(e);
             document.querySelector(t) &&
@@ -6510,32 +6521,29 @@
                     }
                 });
         }
-        function U(t, e, n) {
-            document.querySelector('.MemberNotAuthenticated') && document.querySelector(t).setAttribute(e, n);
-        }
         jQuery(document).on('ratesReadyEvent', function () {
             setTimeout(function () {
-                H.ratesReadyEventMethods(), H.removeSavingsLessThan10(), D('.SearchHotels', '.ArnProperty'), D('.SinglePropDetail', '.rateRow');
+                q.ratesReadyEventMethods(), q.removeSavingsLessThan10(), U('.SearchHotels', '.ArnProperty'), U('.SinglePropDetail', '.rateRow');
             }, 1);
         }),
-            H.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
-            H.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value'),
-            H.updateText('#theUserNameAjax label', 'Username'),
-            H.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin'),
+            q.updateAttribute('#favicon', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/favicon-white.png', 'href'),
+            q.updateAttribute('.SendMeNewPasswordAction', 'Send New Password', 'value'),
+            q.updateText('#theUserNameAjax label', 'Username'),
+            q.createHTML('#theWBForgotPasswordFormBody', '<h1>Forgot Your Password?</h1>', 'afterBegin'),
             setTimeout(function () {
-                H.updateHTML('.savingsTable .savings th', "<strong>Beat 'em by</strong>");
+                q.updateHTML('.savingsTable .savings th', "<strong>Beat 'em by</strong>");
             }, 1e3),
             (R = 'header'),
             (N = document.querySelector(R)),
             new MutationObserver(function (t, e) {
                 var n,
-                    r = I(t);
+                    r = j(t);
                 try {
                     for (r.s(); !(n = r.n()).done; )
                         'childList' === n.value.type &&
-                            (H.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href'),
-                            H.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer'),
-                            H.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
+                            (q.updateAttribute('.logo', 'https://dev-events.hotelsforhope.com/v6/?siteid=62011', 'href'),
+                            q.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer'),
+                            q.updateAttribute('.logo img', 'https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/images/logo.png', 'src'),
                             document.querySelector('#commands') &&
                                 ((document.querySelector('header').style.display = 'none'),
                                 document.querySelector('#AdminControlsContainer').insertAdjacentElement('afterBegin', document.querySelector('.logo'))),
@@ -6549,21 +6557,7 @@
             document
                 .querySelector('body')
                 .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
-            H.updateText('.CreateAnAccountAction', 'Register'),
-            (function () {
-                if (document.querySelector('.RootBody')) {
-                    var t = document.querySelector('meta[name="firstName"]').content;
-                    H.updateHTML(
-                        '.RootBody .ArnSearchHotelsImg',
-                        '\n        <span class="search-messaging">\n            <span>\n                <h3>'.concat(
-                            t,
-                            ', START YOUR <strong>SEARCH</strong></h3>\n                <h4>RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES</h4>\n            </span>\n        </span>\n        '
-                        )
-                    );
-                }
-            })(),
-            (B = document.querySelector('#thePassCodeAjax input')),
-            'cug-registration' === H.page_name && B && (B.value = 'resbeat'),
+            q.updateText('.CreateAnAccountAction', 'Register'),
             (function () {
                 if (document.querySelector('.MemberNotAuthenticated')) {
                     document
@@ -6576,25 +6570,44 @@
                     document.querySelector('#register-btn').insertAdjacentElement('afterbegin', t), (t.textContent = 'REGISTER');
                 }
             })(),
-            U('#theUserNameAjax input', 'placeholder', 'Username'),
-            U('#thePasswordAjax input', 'placeholder', 'Password'),
-            U('.LoginAction.submit', 'value', 'LOGIN'),
-            (q = [
-                '#CitySearchContainer span',
-                '#CheckInContainer span',
-                '#CheckOutContainer span',
-                '.ArnRooms span',
-                '.ArnAdults span',
-                '.lblAmenities',
-                '.lblRating',
-                '.lblPropertyType',
-                '.lblCurrency',
-            ]),
-            document.querySelector('.RootBody') &&
-                q.forEach(function (t) {
-                    var e = document.querySelector(t),
-                        n = e.textContent.slice(0, -1);
-                    e.textContent = n;
-                });
+            H('#theUserNameAjax input', 'placeholder', 'Username'),
+            H('#thePasswordAjax input', 'placeholder', 'Password'),
+            H('.LoginAction.submit', 'value', 'LOGIN'),
+            (function () {
+                if (document.querySelector('.RootBody')) {
+                    var t = document.querySelector('meta[name="firstName"]').content;
+                    q.updateHTML(
+                        '.RootBody .ArnSearchHotelsImg',
+                        '\n        <span class="search-messaging">\n            <span>\n                <h3>'.concat(
+                            t.toUpperCase(),
+                            ', START YOUR <strong>SEARCH</strong></h3>\n                <h4>RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES</h4>\n            </span>\n        </span>\n        '
+                        )
+                    );
+                }
+            })(),
+            document.querySelector('.Rootbody') &&
+                D([
+                    '#CitySearchContainer span',
+                    '#CheckInContainer span',
+                    '#CheckOutContainer span',
+                    '.ArnRooms span',
+                    '.ArnAdults span',
+                    '.lblAmenities',
+                    '.lblRating',
+                    '.lblPropertyType',
+                    '.lblCurrency',
+                    '#HotelNameContainer span',
+                ]),
+            document.querySelector('.SearchHotels') &&
+                D([
+                    '.ArnPrimarySearchContainer #CitySearchContainer span',
+                    '.ArnPrimarySearchContainer #CheckInContainer span',
+                    '.ArnPrimarySearchContainer #CheckOutContainer span',
+                    '.ArnPrimarySearchContainer .ArnRooms span',
+                    '.ArnPrimarySearchContainer .ArnAdults span',
+                    '.ArnPrimarySearchContainer #HotelNameContainer span',
+                ]),
+            (B = document.querySelector('#thePassCodeAjax input')),
+            'cug-registration' === q.page_name && B && (B.value = 'resbeat');
     },
 ]);

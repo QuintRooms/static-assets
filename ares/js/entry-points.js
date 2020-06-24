@@ -32,7 +32,8 @@ module.exports = () => {
     } else if (process.env.environment === 'develop') {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            'cug_template-39624': './src/39624.js', // CUG Template
+            // 'cug_template-39624': './src/39624.js', // CUG Template
+            'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 
         // local environment

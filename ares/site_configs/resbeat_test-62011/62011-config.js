@@ -2,8 +2,8 @@ import Path from '../../js/path';
 
 const env_path = new Path();
 
-const site_id = 39624;
-const directory_name = `cug_template-${site_id}`;
+const site_id = 62011;
+const directory_name = `resbeat_test-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -87,6 +87,6 @@ export default function siteConfig() {
             },
         },
         // new options
-        confirmation_email_from: 'Room Steals',
+        confirmation_email_from: 'Resbeat',
     };
 }

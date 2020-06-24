@@ -1,11 +1,15 @@
 /* Fonts */
 @font-face {
-    font-family: 'Avenir';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Book.ttf') format('truetype');
+    font-family: 'Avenir-Light';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Avenir-Black';
     src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Meduim';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
 }
 
 /* Font Overrides */
@@ -22,7 +26,6 @@ body,
 .SinglePropDetail .OnSale .bestPrice .yourRateAmount,
 .SearchHotels .ArnPriceCell > a > span,
 .SearchHotels .ArnPriceCell > span:after,
-.modifySearch,
 .arnMapPopup,
 .arnMapMarker {
     font-family: 'Avenir', 'Helvetica';
@@ -170,19 +173,22 @@ header {
     margin: 0 18px !important;
     line-height: 1.4;
     padding: 0;
+    font-family: 'Avenir', 'Helvetica';
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #commands form .logoutCommand.submit {
     background: transparent;
     font-weight: 500 !important;
-    color: #fff !important;
+    color: #333 !important;
     font-family: inherit;
 }
 
 #commands a,
 #commands button {
     position: relative;
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-weight: 500;
 }
@@ -330,8 +336,7 @@ header {
     font-size: 17px;
 }
 
-.reserveHotel,
-.modifySearch {
+.reserveHotel {
     font-size: 15px;
 }
 
@@ -525,6 +530,11 @@ header {
     margin: 5% auto;
     max-width: 500px;
     width: 100%;
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated input.LoginAction {
+    letter-spacing: 1px;
 }
 
 .WBForgotPasswordFormContainer.ArnSubPage,
@@ -686,7 +696,7 @@ header {
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
     font-size: 14px;
     line-height: 15px;
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 .submit,
@@ -722,8 +732,12 @@ header {
 }
 
 .RootBody #theSubmitButton {
-    font-size: 17px;
+    font-size: 15px;
     border-radius: 40px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    letter-spacing: 1px;
+    font-weight: 100 !important;
+    margin-top: 26px;
 }
 
 .selectedTab {
@@ -745,6 +759,7 @@ header {
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton {
     margin: 20px 0 20px;
+    border-radius: 40px;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer #theSubmitButton:hover {
@@ -753,7 +768,6 @@ header {
 
 .SearchHotels .bottomPager .ArnPages a,
 .SearchHotels .bottomPager .ArnPages .not_page {
-    border: 1px solid #e2ad37;
     border-radius: 5px;
     padding: 3px 3px;
     font-size: 14px !important;
@@ -911,6 +925,19 @@ header {
 
 .ArnPropName div.ratingCount {
     background: #215853;
+    border-radius: 50%;
+    width: 30px!important;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.SearchHotels .reviewCount {
+    padding: 5px;
+}
+
+.SearchHotels .reviewCount a {
+    color: #333;
 }
 
 .exclusiveRate {
@@ -1218,7 +1245,7 @@ ul {
 .SinglePropDetail .SB20 .yourRateAmount,
 .SinglePropDetail .SB20 .exclusiveRate + strong,
 .SinglePropDetail .ArnNightlyRate strong {
-    color: #215853 !important;
+    color: #e2ad37 !important;
     font-family: 'Avenir-Black', 'Helvetica' !important;
 }
 
@@ -1553,11 +1580,6 @@ div.originalPrice span,
     font-size: 15px !important;
 }
 
-.SearchHotels .percentSavings {
-    font-family: 'Avenir', 'Helvetica';
-    padding: 6px 4px;
-}
-
 @media screen and (min-width: 800px) {
     .SearchHotels .percentSavings,
     .SinglePropDetail .bestPrice .percentSavings {
@@ -1567,8 +1589,6 @@ div.originalPrice span,
         left: 0 !important;
         margin: 0 !important;
         width: 100% !important;
-        border-radius: 0 5px 0 5px !important;
-        background: #215853 !important;
         display: inline-block;
         padding: 6px 10px;
         font-size: 15px !important;
@@ -1593,7 +1613,7 @@ div.originalPrice span,
 }
 
 .SearchHotels .roomCount {
-    display: none;
+    color: #e2ad37;
 }
 
 .SinglePropDetail .SimpleSearch .CheckIn {
@@ -1619,6 +1639,7 @@ div.originalPrice span,
 
 .WBLoginFormContainer.ArnSubPage #theWBLoginForm .formField {
     margin-top: 15px;
+    font-family: 'Avenir-Light', 'Helvetica';
 }
 
 div #theRememberMeAjax {
@@ -1630,14 +1651,14 @@ div #theRememberMeAjax label {
 }
 
 .ArnSupportLinks.ArnSupportBottom {
-    background-color: #F0F1F2;
-    color: #6D6E6F;
+    background-color: #F0F1F2 !important;
+    color: #6D6E6F !important;
 }
 .ArnSupportLinks.ArnSupportBottom a {
-    color: #6D6E6F;
+    color: #6D6E6F !important;
 }
 
-.WBLoginFormFields input, .RootBody select {
+.WBLoginFormFields input, .RootBody select, .SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select, .SearchHotels .ArnProperty {
     border: unset !important;
 }
 
@@ -1679,6 +1700,154 @@ div #theRememberMeAjax label {
 #slideit label.open {
     border: unset;
     border-radius: 4px 4px 0 0;
+}
+
+#register-container {
+    margin-top: 50px;
+}
+
+#register-btn {
+    height: 40px;
+    border-radius: 30px;
+    background-color: #215853;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1) !important;
+    font-size: 14px;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#register-btn a {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.search-messaging {
+    color: #333;
+}
+
+.SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
+    background-color: #F0F1F2;
+}
+
+.ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    border-radius: 40px;
+}
+
+body.SearchHotels {
+    background-color: #F0F1F2;
+}
+
+#SortControlsContainer .hamburger {
+    border: unset;
+    border-radius: unset;
+}
+
+.ArnRightListContainer .openMapBtn {
+    border: unset;
+    border-radius: unset;
+    background-color: #fff;
+}
+
+.ArnRightListContainer .openMapBtn:hover {
+    color: #333;
+    border: 1px solid #333;
+}
+
+.SearchHotels div.percentSavings {
+    background-color: #e2ad37!important;
+    border-radius: 30px 25px 0px 30px !important;
+    font-family: 'Avenir', 'Helvetica';
+    padding: 12px !important;
+    text-transform: uppercase;
+}
+
+.SearchHotels .ArnRateButton .ArnShowRatesLink {
+    background-color: #fff;
+    border: 2px solid #215853;
+    border-radius: 40px;
+    color: #215853 !important;
+}
+
+.SearchHotels .ArnRateButton .ArnShowRatesLink:hover {
+    background-color: #215853;
+    color: #fff!important;
+}
+
+.RootBody #theSearchBox #theSubmitButton, .SearchHotels .roomCount, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+    text-transform: uppercase;
+}
+
+.MemberNotAuthenticated h2#new-user-text, .WBLoginFormActions a, #theWBLoginFormBody h1, .RootBody .search-messaging span, .RootBody .ArnSecondarySearchOuterContainer span, .SearchHotels .ArnPropAddress, .SearchHotels .modifySearch {
+    font-family: 'Avenir-Light', 'Helvetica' !important;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated #new-user-text strong, #theWBLoginFormBody strong, .RootBody .search-messaging strong, .SearchHotels .modifySearch strong {
+    font-family: 'Avenir-Black', 'Helvetica';
+    letter-spacing: 1px;
+}
+
+.search-messaging h3 {
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer .ArnSearchField div:first-child, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+    letter-spacing: 1px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    font-size: 14px;
+}
+
+.RootBody #theSearchBox span, .ArnRooms span {
+    margin-bottom: 5px !important;
+}
+
+.RootBody .ArnQuadSearchContainer input:not(#theSubmitButton), .RootBody select {
+    background-image: unset !important;
+    text-indent: 10px !important;
+    font-family: 'Avenir-Light', 'Helvetica' !important;
+}
+
+.ArnSecondarySearchOuterContainer span {
+    margin: 9px 0 0 0 !important;
+}
+
+.SearchHotels .ArnContainer .ArnPropName {
+    margin: 10px 0 0 15px;
+}
+
+.SearchHotels .roomCount {
+    margin-top: 20px !important;
+    letter-spacing: 1px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    font-size: 14px;
+}
+
+.SearchHotels .ArnContainer .ArnPropNameLink {
+    letter-spacing: 1px;
+    font-family: 'Avenir-Black', 'Helvetica';
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.SearchHotels .ArnLeftSearchContainer a {
+    text-transform: uppercase;
+}
+
+.SearchHotels .ArnPropNameLink {
+    margin-bottom: 15px;
+}
+
+.SearchHotels .ArnProperty {
+    border-radius: 15px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 15px 0 0 15px;
 }
 
 @media screen and (max-width: 800px) {

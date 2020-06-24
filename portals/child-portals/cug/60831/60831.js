@@ -29,7 +29,7 @@ function waitForElementToLoad(elementWaitingFor) {
             if (mutation.type === 'childList') {
                 cug_portal.updateAttribute('.logo', 'https://events.hotelsforhope.com/v6/?siteid=60831', 'href');
                 cug_portal.appendToParent('.MemberAuthenticated .logo', '.MemberAuthenticated #AdminControlsContainer');
-                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo-white.png', 'src');
+                cug_portal.updateAttribute('.logo img', 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png', 'src');
 
                 if (document.querySelector('#commands')) {
                     document.querySelector('header').style.display = 'none';
@@ -51,18 +51,24 @@ document
     .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://static.hotelsforhope.com/portals/child-portals/cug/60831/60831.css">');
 
 cug_portal.updateText('.CreateAnAccountAction', 'Register');
-cug_portal.updateHTML(
-    '.RootBody .ArnSearchHotelsImg',
-    `
-    <span class="search-messaging">
-        <img src="https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/favicon-gold.png" alt="ResBeat Mark">
-        <span>
-            <h1>start your search</h1>
-            <h4>we'll beat their rates on 600k+ hotels</h4>
+
+function updateSearchTitle() {
+    const name = document.querySelector('meta[name="firstName"]').content;
+
+    cug_portal.updateHTML(
+        '.RootBody .ArnSearchHotelsImg',
+        `
+        <span class="search-messaging">
+            <span>
+                <h3>${name} START YOUR <strong>SEARCH</strong></h3>
+                <h4>RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES</h4>
+            </span>
         </span>
-    </span>
-    `
-);
+        `
+    );
+}
+
+updateSearchTitle();
 
 function hidePromoCode() {
     const promo_code_element = document.querySelector('#thePassCodeAjax input');
@@ -117,3 +123,34 @@ function styleLoginContainer() {
 }
 
 styleLoginContainer();
+
+// New styles below
+
+function updateAttribute(element, attribute, value) {
+    document.querySelector(element).setAttribute(attribute, value);
+}
+
+updateAttribute('#theUserNameAjax input', 'placeholder', 'Username');
+updateAttribute('#thePasswordAjax input', 'placeholder', 'Password');
+updateAttribute('.LoginAction.submit', 'value', 'LOGIN');
+
+function removerCharacters(arr) {
+    arr.forEach((e) => {
+        const el = document.querySelector(e);
+        const str = el.textContent;
+        const new_str = str.slice(0, -1);
+        el.textContent = new_str;
+    });
+}
+
+removerCharacters([
+    '#CitySearchContainer span',
+    '#CheckInContainer span',
+    '#CheckOutContainer span',
+    '.ArnRooms span',
+    '.ArnAdults span',
+    '.lblAmenities',
+    '.lblRating',
+    '.lblPropertyType',
+    '.lblCurrency',
+]);

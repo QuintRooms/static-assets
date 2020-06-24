@@ -939,8 +939,7 @@ export default class BasePortal {
                 }
             }
 
-            header,
-            #AdminControlsContainer {
+            header {
                 border-bottom:3px solid ${this.site_config.border_color}
             }
 

@@ -16,20 +16,62 @@
     display: block !important;
 }
 
-.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h3:not(.search-messaging h1){
-    display: none;
+.RootBody h1, .RootBody h3{
+    display: none !important;
 }
 
 .RootBody .search-messaging {
     display: block;
-    color: #333;
+    color: #333 !important;
+    letter-spacing: 1px;
 }
 
-#beat-em {
+.RootBody .search-messaging #user-name {
+    color: #333 !important;
+    display: block !important;
+    text-transform: uppercase;
+    font-family: 'Avenir-Light';
+}
+
+.RootBody .search-messaging #user-name strong {
+    font-family: 'Avenir-Black';
+}
+
+.RootBody .search-messaging h4 {
+    font-family: 'Avenir-Light';
+}
+
+.beat-em {
     background: #e2ad37;
     color: #fff;
     text-align: center;
     padding: 6px 12px;
     max-width: 150px;
     margin-left: auto;
+}
+
+.SinglePropDetail .beat-em {
+    margin-left: 10px;
+}
+
+.originalPrice {
+    display: block !important;
+    text-decoration: line-through;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.SinglePropDetail .originalPrice {
+    font-size: 15px;
+}
+
+
+.full-stay {
+    display: none;
+}
+
+.SinglePropDetail .points-earned {
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: 800;
 }

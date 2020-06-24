@@ -45,6 +45,9 @@ function insertBeatEmBy() {
     });
 }
 
-insertBeatEmBy();
-
+jQuery(document).on('ratesReadyEvent', () => {
+    setTimeout(() => {
+        insertBeatEmBy();
+    }, 1);
+});
 new ChildPortal();

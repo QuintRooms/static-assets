@@ -16,7 +16,7 @@
     display: block !important;
 }
 
-.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h3{
+.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h3:not(.search-messaging h1){
     display: none;
 }
 

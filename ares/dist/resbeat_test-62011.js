@@ -5892,9 +5892,13 @@
                     );
                 }
             })(),
-            document.querySelectorAll('.ArnRateCell').forEach(function (e) {
-                var t = e.querySelector('.originalPrice').getAttribute('percent');
-                e.insertAdjacentHTML('afterbegin', '<div id="beat-em">\n            Beat \'em by '.concat(t, '%'));
+            jQuery(document).on('ratesReadyEvent', function () {
+                setTimeout(function () {
+                    document.querySelectorAll('.ArnRateCell').forEach(function (e) {
+                        var t = e.querySelector('.originalPrice').getAttribute('percent');
+                        e.insertAdjacentHTML('afterbegin', '<div id="beat-em">\n            Beat \'em by '.concat(t, '%'));
+                    });
+                }, 1);
             }),
             new V();
     },

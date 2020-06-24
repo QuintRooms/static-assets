@@ -1,0 +1,35 @@
+/* Fonts */
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Black';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Meduim';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
+}
+
+.RootBody #PropertyTypesContainer {
+    display: block !important;
+}
+
+.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h3{
+    display: none;
+}
+
+.RootBody .search-messaging {
+    display: block;
+    color: #333;
+}
+
+#beat-em {
+    background: #e2ad37;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    max-width: 150px;
+    margin-left: auto;
+}

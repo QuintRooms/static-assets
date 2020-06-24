@@ -41,7 +41,7 @@ export default function siteConfig() {
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon-gold.png`,
         has_custom_styles: true,
-        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/39624.css`,
+        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,

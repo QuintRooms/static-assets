@@ -4735,7 +4735,7 @@
                                             )
                                             .concat(
                                                 this.site_config.secondary_text_color,
-                                                '\n                }\n            }\n\n            header,\n            #AdminControlsContainer {\n                border-bottom:3px solid '
+                                                '\n                }\n            }\n\n            header {\n                border-bottom:3px solid '
                                             )
                                             .concat(
                                                 this.site_config.border_color,
@@ -5824,7 +5824,7 @@
                 show_date_prompt: !1,
                 fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon-gold.png'),
                 has_custom_styles: !0,
-                custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/39624.css'),
+                custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
                 has_social_sharing: !0,
                 header: {
                     logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),

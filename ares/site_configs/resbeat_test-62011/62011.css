@@ -134,10 +134,22 @@
     display: none;
 }
 
-.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1 {
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1, .MemberNotAuthenticated .ForgotPasswordAction {
     font-family: 'Avenir-Light';
     letter-spacing: 1px;
     font-weight: 100;
+}
+.ArnSupportLinks {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input {
+    border: unset;
+    background-color: #F0F1F2 ;
 }
 
 .MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {

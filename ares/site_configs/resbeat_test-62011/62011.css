@@ -15,6 +15,11 @@
 .RootBody .ArnPrimarySearchContainer {
     background: #F0F1F2;
     color: #333;
+    width: 60vw;
+}
+
+.RootBody #CitySearchContainer {
+    width: 40%;
 }
 
 .RootBody .ArnSecondarySearchOuterContainer {
@@ -70,6 +75,13 @@
     margin-top: 10px;
 }
 
+.CheckOutForm .originalPrice {
+    display: block !important;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+
 .SinglePropDetail .originalPrice {
     font-size: 15px;
 }
@@ -83,4 +95,16 @@
     margin-top: 40px;
     font-size: 15px;
     font-weight: 800;
+}
+
+.roomCount {
+    color: #e2ad37;
+}
+
+.organizationsCommand {
+    display: none;
+}
+
+.ConfirmationForm .totalsTable tr.awarded-after-checkout td {
+    text-align: left !important;
 }

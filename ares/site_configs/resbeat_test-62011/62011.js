@@ -12,14 +12,14 @@ class ChildPortal extends BasePortal {
     }
 }
 
-function styleResbeatFonts(element, word1, word2) {
-    if (!document.querySelector(element)) return;
-    const el = document.querySelector(element);
-    el.innerHTML = `${word1}<strong>${word2}</strong>`;
-}
+// function styleResbeatFonts(element, word1, word2) {
+//     if (!document.querySelector(element)) return;
+//     const el = document.querySelector(element);
+//     el.innerHTML = `${word1}<strong>${word2}</strong>`;
+// }
 
-styleResbeatFonts();
-styleResbeatFonts();
+// styleResbeatFonts();
+// styleResbeatFonts();
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
@@ -101,29 +101,55 @@ function totalStayPoints() {
         'beforeend',
         `
         <tr class="total-points-earned">
-            <th>Points:</th>
+            <th>Rewards Earned:</th>
             <td>${points}</td>
         </tr>
         `
     );
+
+    document.querySelector('tr .discount th').textContent = "Beat 'em by:";
 }
 
 totalStayPoints();
 
 function headerLinks() {
-    if (document.querySelector('.MemberNotAuthenticated')) return;
+    if (!document.querySelector('#commands')) return;
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);
     commands.insertAdjacentHTML(
         'afterbegin',
         `
-        <a class="rewards" href="https://hotels.resbeat.com/v6/rewards-guide/?siteId=${site_config.site_id}">Rewards</a>
-        <a class="booking-guide" https://hotels.resbeat.com/v6/booking-guide/?siteId=${site_config.site_id}">Booking Guide</a>
+        <a class="rewards" href="${window.location.origin}/v6/rewards-guide/?siteId=${site_config.site_id}">Rewards</a>
+        <a class="booking-guide" href="${window.location.origin}/v6/booking-guide/?siteId=${site_config.site_id}">Booking Guide</a>
         `
     );
 }
 
 headerLinks();
+
+function confirmationPointsEarned() {
+    if (!document.querySelector('.ConfirmationForm')) return;
+
+    let points_earned = document.querySelector('.discountRow td').textContent;
+    // eslint-disable-next-line radix
+    points_earned = parseInt(points_earned.replace(/[^0-9.]/g, ''));
+    document.querySelector('#theRateTotals .taxFeeRow').insertAdjacentHTML(
+        'afterend',
+        `
+        <tr class="points-earned">
+            <th>Rewards Earned:</th>
+            <td>${points_earned}</td>
+        </tr>
+        <tr class="awarded-after-checkout">
+        <td colspan="2">
+        Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.
+        </td>
+        </tr>
+    `
+    );
+}
+
+confirmationPointsEarned();
 
 new ChildPortal();

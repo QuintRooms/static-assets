@@ -1688,6 +1688,7 @@ export default class BasePortal {
         @param string is the parent element for the current iteration 
         */
         function addExclusiveRatesSash(text, selector) {
+            if (this.site_config.exclusive_rate_text === '') return;
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
         }
 

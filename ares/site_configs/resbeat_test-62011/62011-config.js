@@ -87,6 +87,7 @@ export default function siteConfig() {
             },
         },
         // new options
+        is_resbeat_client: true,
         confirmation_email_from: 'RESBEAT',
     };
 }

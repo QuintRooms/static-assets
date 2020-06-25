@@ -5823,9 +5823,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var Y,
-            J,
-            Z = new (function () {
+        var Y = new (function () {
                 return {
                     site_id: 62011,
                     affiliate_id: 16827,
@@ -5883,8 +5881,8 @@
                     confirmation_email_from: 'Resbeat',
                 };
             })(),
-            K = new P(),
-            X = (function (e) {
+            J = new P(),
+            Z = (function (e) {
                 function t() {
                     var e;
                     return (
@@ -5893,7 +5891,7 @@
                         })(this, t),
                         (e = (function (e, t) {
                             return !t || ('object' !== U(t) && 'function' != typeof t) ? W(e) : t;
-                        })(this, V(t).call(this, Z))),
+                        })(this, V(t).call(this, Y))),
                         z(V(t.prototype), 'init', W(e)).call(W(e)),
                         e
                     );
@@ -5906,10 +5904,10 @@
                     t
                 );
             })(I);
-        function Q(e, t, n) {
+        function K(e, t, n) {
             document.querySelector(e) && (document.querySelector(e).innerHTML = ''.concat(t, '<strong>').concat(n, '</strong>'));
         }
-        function ee(e) {
+        function X(e) {
             if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
                 if (!document.querySelector(e)) return;
                 document.querySelectorAll(e).forEach(function (e) {
@@ -5920,8 +5918,8 @@
                 });
             }
         }
-        function te() {
-            return (te = $(
+        function Q() {
+            return (Q = $(
                 regeneratorRuntime.mark(function e() {
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
@@ -5933,7 +5931,7 @@
                                     }
                                     return e.abrupt('return');
                                 case 2:
-                                    return (e.next = 4), K.waitForSelectorInDOM('.ArnNightlyRate');
+                                    return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
                                     document.querySelectorAll('table.ArnRateList').forEach(function (e) {
                                         var t = e.querySelector('.full-stay').textContent;
@@ -5955,8 +5953,8 @@
                 })
             )).apply(this, arguments);
         }
-        Q(),
-            Q(),
+        K(),
+            K(),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;
@@ -5966,14 +5964,14 @@
                     );
                 }
             })(),
-            ee('.SinglePropDetail .bookRoomCell'),
+            X('.SinglePropDetail .bookRoomCell'),
             jQuery(document).on('ratesReadyEvent', function () {
                 setTimeout(function () {
-                    ee('.SearchHotels .ArnRateCell');
+                    X('.SearchHotels .ArnRateCell');
                 }, 1);
             }),
             (function () {
-                te.apply(this, arguments);
+                Q.apply(this, arguments);
             })(),
             (function () {
                 if (document.querySelector('.CheckOutForm')) {
@@ -5988,15 +5986,20 @@
                         );
                 }
             })(),
-            (Y = document.querySelector('.supportLink')),
-            (J = document.querySelector('#commands')).insertAdjacentElement('afterbegin', Y),
-            J.insertAdjacentHTML(
-                'afterbegin',
-                '\n        <a class="rewards" href="https://hotels.resbeat.com/v6/rewards-guide/?siteId='
-                    .concat(Z.site_id, '">Rewards</a>\n        <a class="booking-guide" https://hotels.resbeat.com/v6/booking-guide/?siteId=')
-                    .concat(Z.site_id, '">Booking Guide</a>\n        ')
-            ),
-            new X();
+            (function () {
+                if (!document.querySelector('.MemberNotAuthenticated')) {
+                    var e = document.querySelector('.supportLink'),
+                        t = document.querySelector('#commands');
+                    t.insertAdjacentElement('afterbegin', e),
+                        t.insertAdjacentHTML(
+                            'afterbegin',
+                            '\n        <a class="rewards" href="https://hotels.resbeat.com/v6/rewards-guide/?siteId='
+                                .concat(Y.site_id, '">Rewards</a>\n        <a class="booking-guide" https://hotels.resbeat.com/v6/booking-guide/?siteId=')
+                                .concat(Y.site_id, '">Booking Guide</a>\n        ')
+                        );
+                }
+            })(),
+            new Z();
     },
 ]);
 //# sourceMappingURL=resbeat_test-62011.map

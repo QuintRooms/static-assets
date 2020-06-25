@@ -111,6 +111,7 @@ function totalStayPoints() {
 totalStayPoints();
 
 function headerLinks() {
+    if (document.querySelector('.MemberNotAuthenticated')) return;
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);

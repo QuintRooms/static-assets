@@ -53,4 +53,6 @@ for (const [key, value] of entries) {
     const data = JSON.stringify(site_details);
 
     fs.writeFileSync(__dirname + '/../../emails/email-configs/' + key + '.json', data);
+
+    console.log('/emails/email-configs/' + key + '.json (' + value.client_name + ') has been generated.');
 }

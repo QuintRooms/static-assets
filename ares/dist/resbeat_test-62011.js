@@ -5977,7 +5977,7 @@
             K.apply(this, arguments);
         })(),
             (function () {
-                if (document.querySelector('.theWBLoginFormBody')) {
+                if (document.querySelector('#theWBLoginFormBody')) {
                     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email'),
                         document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password'),
                         document

@@ -6018,7 +6018,7 @@
             })(),
             document.querySelector('.SinglePropDetail') &&
                 document.querySelectorAll('table.ArnRateList').forEach(function (e) {
-                    parseFloat(document.querySelector('.roomCount strong').textContent) < 6 && (document.querySelector('.roomCount').style.display = 'block');
+                    parseFloat(e.querySelector('.roomCount strong').textContent) < 6 && (document.querySelector('.roomCount').style.display = 'block');
                 }),
             new Z();
     },

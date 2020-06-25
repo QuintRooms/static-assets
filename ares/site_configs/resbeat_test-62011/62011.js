@@ -47,7 +47,7 @@ function insertBeatEmBy(element) {
                 el.insertAdjacentHTML(
                     'afterbegin',
                     `<div class="beat-em">
-                    Beat 'em by ${percent}%
+                    BEAT 'EM BY ${percent}%
                     </div>`
                 );
             }
@@ -159,5 +159,18 @@ function confirmationPointsEarned() {
 }
 
 confirmationPointsEarned();
+
+function showRoomCount() {
+    if (!document.querySelector('.SinglePropDetail')) return;
+    const rooms = document.querySelectorAll('table.ArnRateList');
+    rooms.forEach((el) => {
+        const rooms_remaining = parseFloat(document.querySelector('.roomCount strong').textContent);
+        if (rooms_remaining < 6) {
+            document.querySelector('.roomCount').style.display = 'block';
+        }
+    });
+}
+
+showRoomCount();
 
 new ChildPortal();

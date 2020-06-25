@@ -12,14 +12,30 @@
     src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
 }
 
+.config-container {
+    background: #fff !important;
+    padding: 5px 10px 0 0 !important;
+}
+.config-container .config-label {
+    color: #333;
+}
+
 .RootBody .ArnPrimarySearchContainer {
     background: #F0F1F2;
     color: #333;
-    width: 60vw;
+}
+.ArnSupportLinks {
+    background: #F0F1F2;
+    color: #333;
 }
 
-.RootBody #CitySearchContainer {
-    width: 40%;
+.ArnSupportLinks a {
+    color: #333;
+}
+
+#commands, #commands .logoutCommand {
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .RootBody .ArnSecondarySearchOuterContainer {
@@ -49,6 +65,11 @@
 
 .RootBody .search-messaging #user-name strong {
     font-family: 'Avenir-Black';
+}
+
+.RootBody .search-messaging {
+    text-align: center;
+    margin-top: 40px;
 }
 
 .RootBody .search-messaging h4 {
@@ -124,4 +145,64 @@
 
 .message-content h1 {
     display: block !important;
+}
+
+.SearchHotels .ArnSearchHeader {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+.SearchHotels .sort-wrapper h4, .SearchHotels .lblAmenities, .SearchHotels .lblRating {
+    font-family: 'Avenir-black';
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 900px) {
+    .RootBody .ArnPrimarySearchContainer {
+        width: 60vw;
+        max-width: 800px;
+        min-width: 700px;
+    }
+    
+    .RootBody #CitySearchContainer {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnRateCell {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 40% 60%;
+    }
+
+    .SearchHotels .beat-em {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: center;
+        margin-left: unset;
+    }
+
+    .SearchHotels .ArnPriceCell {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        align-self: end;
+        margin-left: 10px;
+
+    }
+
+    .SearchHotels .ArnRateButton {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .ArnRateButton a {
+        margin: auto;
+    }
+
 }

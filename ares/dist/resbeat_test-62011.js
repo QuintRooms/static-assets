@@ -5911,7 +5911,7 @@
                 document.querySelectorAll(e).forEach(function (e) {
                     if (e.querySelector('.originalPrice')) {
                         var t = e.querySelector('.originalPrice').getAttribute('percent');
-                        e.insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    Beat \'em by '.concat(t, '%\n                    </div>'));
+                        e.insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(t, '%\n                    </div>'));
                     }
                 });
             }
@@ -6016,6 +6016,10 @@
                             );
                 }
             })(),
+            document.querySelector('.SinglePropDetail') &&
+                document.querySelectorAll('table.ArnRateList').forEach(function (e) {
+                    parseFloat(document.querySelector('.roomCount strong').textContent) < 6 && (document.querySelector('.roomCount').style.display = 'block');
+                }),
             new Z();
     },
 ]);

@@ -130,6 +130,39 @@
     display: none;
 }
 
+.MemberNotAuthenticated #theUserNameAjax label, .MemberNotAuthenticated #thePasswordAjax label {
+    display: none;
+}
+
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1 {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {
+    font-family: 'Avenir-black';
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated #new-user-text {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.MemberNotAuthenticated .CreateAnAccountAction {
+    width: 100%;
+}
+
+.MemberNotAuthenticated #register-btn {
+    text-align: center;
+}
+
+.MemberNotAuthenticated .LoginAction {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .pb-container {
     display: none;
 }
@@ -139,15 +172,11 @@
     flex-direction: column;
 }
 
-.MemberNotAuthenticated .ForgotPasswordAction {
-    margin: 20px;
-}
-
 .message-content h1 {
     display: block !important;
 }
 
-.SearchHotels .ArnSearchHeader {
+.ArnSearchHeader {
     font-family: 'Avenir-Light';
     letter-spacing: 1px;
     font-size: 25px;

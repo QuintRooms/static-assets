@@ -20,6 +20,37 @@ class ChildPortal extends BasePortal {
 
 // styleResbeatFonts();
 // styleResbeatFonts();
+function updateLogin() {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+    const login_text = document.querySelector('#theWBLoginFormBody h1');
+    login_text.innerHTML = 'LOG<strong>IN</strong>';
+}
+
+updateLogin();
+
+function styleRegisterContainer() {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+
+    document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email');
+    document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password');
+
+    document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
+        'beforeend',
+        `
+        <div id="register-container">
+            <h2 id="new-user-text">NEW <strong>USER</strong>?</h2>
+            <div id="register-btn">
+            </div>
+        </div>    
+    `
+    );
+
+    const register_link = document.querySelector('.CreateAnAccountAction');
+    document.querySelector('#register-btn').insertAdjacentElement('afterbegin', register_link);
+    register_link.textContent = 'REGISTER';
+}
+
+styleRegisterContainer();
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
@@ -107,7 +138,7 @@ function totalStayPoints() {
         `
     );
 
-    document.querySelector('tr .discount th').textContent = "Beat 'em by:";
+    document.querySelector('tr .discount th').textContent = "BEAT 'EM BY:";
 }
 
 totalStayPoints();

@@ -434,7 +434,7 @@
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
             },
-            I = function (e) {
+            F = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -445,7 +445,7 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(I, r, 1), u(H, r, 1));
+                                      t.call(e, u(F, r, 1), u(H, r, 1));
                                   } catch (e) {
                                       H.call(r, e);
                                   }
@@ -460,7 +460,7 @@
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(I, this, 1), u(H, this, 1));
+                    e(u(F, this, 1), u(H, this, 1));
                 } catch (e) {
                     H.call(this, e);
                 }
@@ -486,7 +486,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
+                (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
             }),
             (b.f = P = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
@@ -1750,8 +1750,8 @@
             O = j && j.stringify,
             B = h('_hidden'),
             H = h('toPrimitive'),
-            I = {}.propertyIsEnumerable,
-            F = l('symbol-registry'),
+            F = {}.propertyIsEnumerable,
+            I = l('symbol-registry'),
             D = l('symbols'),
             N = l('op-symbols'),
             $ = Object.prototype,
@@ -1806,7 +1806,7 @@
                 return e;
             },
             K = function (e) {
-                var t = I.call(this, (e = _(e, !0)));
+                var t = F.call(this, (e = _(e, !0)));
                 return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
             X = function (e, t) {
@@ -1853,11 +1853,11 @@
         for (var re = C(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(F, (e += '')) ? F[e] : (F[e] = T(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = T(e));
             },
             keyFor: function (e) {
                 if (!Y(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in F) if (F[t] === e) return t;
+                for (var t in I) if (I[t] === e) return t;
             },
             useSetter: function () {
                 G = !0;
@@ -3874,7 +3874,7 @@
         var O = new q(),
             B = n(107),
             H = new P(),
-            I = (function () {
+            F = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -5751,7 +5751,7 @@
                     e
                 );
             })(),
-            F = new q(),
+            I = new q(),
             D = 'resbeat_test-'.concat(62011);
         function N(e, t, n, r, o, i, a) {
             try {
@@ -5845,19 +5845,19 @@
                     show_language_select: !0,
                     show_currency_select: !0,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(F.path, '/site_configs/').concat(D, '/img/favicon-gold.png'),
+                    fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon-gold.png'),
                     has_custom_styles: !0,
-                    custom_styles_url: ''.concat(F.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
+                    custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(F.path, '/site_configs/').concat(D, '/img/logo.png'),
+                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
                         logo_outbound_url: 'https://resbeat.com/',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '300px',
                     },
                     banner_image_url: '#fff',
-                    map_marker_image_url: ''.concat(F.path, '/site_configs/').concat(D, '/img/favicon.png'),
+                    map_marker_image_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     primary_color: '#215853',
@@ -5902,7 +5902,7 @@
                     })(t, e),
                     t
                 );
-            })(I);
+            })(F);
         function K() {
             return (K = $(
                 regeneratorRuntime.mark(function e() {
@@ -5977,7 +5977,7 @@
             K.apply(this, arguments);
         })(),
             (function () {
-                if (document.querySelector('.MemberNotAuthenticated')) {
+                if (document.querySelector('.theWBLoginFormBody')) {
                     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email'),
                         document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password'),
                         document

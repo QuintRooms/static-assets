@@ -32,7 +32,7 @@ async function updateLogin() {
 updateLogin();
 
 function styleRegisterContainer() {
-    if (!document.querySelector('.MemberNotAuthenticated')) return;
+    if (!document.querySelector('.theWBLoginFormBody')) return;
 
     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email');
     document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password');

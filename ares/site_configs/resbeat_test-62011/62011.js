@@ -21,8 +21,10 @@ class ChildPortal extends BasePortal {
 // styleResbeatFonts();
 // styleResbeatFonts();
 
-function updateLogin() {
+async function updateLogin() {
     if (!document.querySelector('.MemberNotAuthenticated')) return;
+    await utilities.waitForSelectorInDOM('#theWBLoginFormBody h1');
+
     const login_text = document.querySelector('#theWBLoginFormBody h1');
     login_text.innerHTML = 'LOG<strong>IN</strong>';
 }

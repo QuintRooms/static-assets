@@ -3981,10 +3981,7 @@
                                                                             )),
                                                                         'checkout' === e.page_name &&
                                                                             (H.createModal(
-                                                                                [
-                                                                                    document.querySelector('#theConfirmationPoliciesAjax'),
-                                                                                    document.querySelector('#theStayPolicies'),
-                                                                                ],
+                                                                                [document.querySelector('#theStayPolicies')],
                                                                                 'Policies & Fees',
                                                                                 'checkout',
                                                                                 '#theConfirmationContainer',
@@ -6029,15 +6026,15 @@
                 if (document.querySelector('#commands')) {
                     var e = document.querySelector('.supportLink'),
                         t = document.querySelector('#commands');
-                    t.insertAdjacentElement('afterbegin', e),
-                        t.insertAdjacentHTML(
-                            'afterbegin',
-                            '\n        <a class="rewards" href="'
-                                .concat(window.location.origin, '/v6/rewards-guide/?siteId=')
-                                .concat(Y.site_id, '">Rewards</a>\n        <a class="booking-guide" href="')
-                                .concat(window.location.origin, '/v6/booking-guide/?siteId=')
-                                .concat(Y.site_id, '">Booking Guide</a>\n        ')
-                        );
+                    t.insertAdjacentElement('afterbegin', e);
+                    var n = document.querySelector('.static-booking-guideLink').href,
+                        r = document.querySelector('.static-rewards-guideLink').href;
+                    t.insertAdjacentHTML(
+                        'afterbegin',
+                        '\n        <a class="rewards" target="_blank" href="'
+                            .concat(r, '">Rewards</a>\n        <a class="booking-guide" target="_blank" href="')
+                            .concat(n, '">Booking Guide</a>\n        ')
+                    );
                 }
             })(),
             (function () {

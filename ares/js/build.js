@@ -87,13 +87,7 @@ export default class BasePortal {
 
             // checkout page methods
             if (this.page_name === 'checkout') {
-                utilities.createModal(
-                    [document.querySelector('#theConfirmationPoliciesAjax'), document.querySelector('#theStayPolicies')],
-                    'Policies & Fees',
-                    'checkout',
-                    '#theConfirmationContainer',
-                    'afterBegin'
-                );
+                utilities.createModal([document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
                 utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                 // Shows numpad on ios
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');

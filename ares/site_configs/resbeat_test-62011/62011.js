@@ -151,11 +151,13 @@ function headerLinks() {
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);
+    const booking_href = document.querySelector('.static-booking-guideLink').href;
+    const rewards_href = document.querySelector('.static-rewards-guideLink').href;
     commands.insertAdjacentHTML(
         'afterbegin',
         `
-        <a class="rewards" href="${window.location.origin}/v6/rewards-guide/?siteId=${site_config.site_id}">Rewards</a>
-        <a class="booking-guide" href="${window.location.origin}/v6/booking-guide/?siteId=${site_config.site_id}">Booking Guide</a>
+        <a class="rewards" target="_blank" href="${rewards_href}">Rewards</a>
+        <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
         `
     );
 }

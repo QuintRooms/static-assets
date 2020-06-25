@@ -6558,7 +6558,6 @@
                 .querySelector('body')
                 .insertAdjacentHTML('beforeEnd', '<link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/62011.css">'),
             q.updateText('.CreateAnAccountAction', 'Register'),
-            document.querySelector('.MemberNotAuthenticated') && (document.querySelector('#theWBLoginForm h1').innerHTML = 'LOG<strong>IN</strong>'),
             (function () {
                 if (document.querySelector('.MemberNotAuthenticated')) {
                     document

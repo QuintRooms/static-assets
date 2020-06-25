@@ -1,0 +1,238 @@
+/* Fonts */
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Black';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Meduim';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
+}
+
+.config-container {
+    background: #fff !important;
+    padding: 5px 10px 0 0 !important;
+}
+.config-container .config-label {
+    color: #333;
+}
+
+.RootBody .ArnPrimarySearchContainer {
+    background: #F0F1F2;
+    color: #333;
+}
+.ArnSupportLinks {
+    background: #F0F1F2;
+    color: #333;
+}
+
+.ArnSupportLinks a {
+    color: #333;
+}
+
+#commands, #commands .logoutCommand {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    color: #333;
+}
+
+.RootBody #PropertyTypesContainer {
+    display: block !important;
+}
+
+.RootBody h1, .RootBody h3{
+    display: none !important;
+}
+
+.RootBody .search-messaging {
+    display: block;
+    color: #333 !important;
+    letter-spacing: 1px;
+}
+
+.RootBody .search-messaging #user-name {
+    color: #333 !important;
+    display: block !important;
+    text-transform: uppercase;
+    font-family: 'Avenir-Light';
+}
+
+.RootBody .search-messaging #user-name strong {
+    font-family: 'Avenir-Black';
+}
+
+.RootBody .search-messaging {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.RootBody .search-messaging h4 {
+    font-family: 'Avenir-Light';
+}
+
+.beat-em {
+    background: #e2ad37;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    max-width: 150px;
+    margin-left: auto;
+}
+
+.SinglePropDetail .beat-em {
+    margin-left: 10px;
+}
+
+.SearchHotels .originalPrice, .SinglePropDetail .originalPrice {
+    display: block !important;
+    text-decoration: line-through;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.CheckOutForm .originalPrice {
+    display: block !important;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+
+.SinglePropDetail .originalPrice {
+    font-size: 15px;
+}
+
+
+.full-stay {
+    display: none;
+}
+
+.SinglePropDetail .points-earned {
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.roomCount {
+    color: #e2ad37;
+}
+
+.organizationsCommand {
+    display: none;
+}
+
+.MemberNotAuthenticated .redeem-promocode-container {
+    display: none;
+}
+
+.MemberNotAuthenticated #theUserNameAjax label, .MemberNotAuthenticated #thePasswordAjax label {
+    display: none;
+}
+
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1 {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {
+    font-family: 'Avenir-black';
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated #new-user-text {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.MemberNotAuthenticated .CreateAnAccountAction {
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.MemberNotAuthenticated #register-btn {
+    text-align: center;
+}
+
+.MemberNotAuthenticated .LoginAction {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pb-container {
+    display: none;
+}
+
+.MemberNotAuthenticated .WBLoginFormActions {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-content h1 {
+    display: block !important;
+}
+
+.ArnSearchHeader {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+.SearchHotels .sort-wrapper h4, .SearchHotels .lblAmenities, .SearchHotels .lblRating {
+    font-family: 'Avenir-black';
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 900px) {
+    .RootBody .ArnPrimarySearchContainer {
+        width: 60vw;
+        max-width: 800px;
+        min-width: 700px;
+    }
+    
+    .RootBody #CitySearchContainer {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .SearchHotels .ArnRateCell {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 40% 60%;
+    }
+
+    .SearchHotels .beat-em {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: center;
+        margin-left: unset;
+    }
+
+    .SearchHotels .ArnPriceCell {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        align-self: end;
+        margin-left: 10px;
+
+    }
+
+    .SearchHotels .ArnRateButton {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .ArnRateButton a {
+        margin: auto;
+    }
+
+}

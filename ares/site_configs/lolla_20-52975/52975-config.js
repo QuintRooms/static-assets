@@ -78,6 +78,7 @@ export default function siteConfig() {
             },
         },
         // new options
+        is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
     };
 }

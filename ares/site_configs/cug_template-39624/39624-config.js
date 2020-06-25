@@ -51,7 +51,6 @@ export default function siteConfig() {
             logo_max_width: '300px',
         },
         banner_image_url: '#fff',
-        // banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.jpg) no-repeat center center /cover`,
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         background_color: '#fff',
@@ -88,6 +87,7 @@ export default function siteConfig() {
             },
         },
         // new options
+        is_resbeat_client: false,
         confirmation_email_from: 'Room Steals',
     };
 }

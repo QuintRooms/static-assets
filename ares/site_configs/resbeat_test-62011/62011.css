@@ -108,3 +108,24 @@
 .ConfirmationForm .totalsTable tr.awarded-after-checkout td {
     text-align: left !important;
 }
+
+.MemberNotAuthenticated .redeem-promocode-container {
+    display: none;
+}
+
+.pb-container {
+    display: none;
+}
+
+.MemberNotAuthenticated .WBLoginFormActions {
+    display: flex;
+    flex-direction: column;
+}
+
+.MemberNotAuthenticated .ForgotPasswordAction {
+    margin: 20px;
+}
+
+.message-content h1 {
+    display: block !important;
+}

@@ -164,6 +164,7 @@ function showRoomCount() {
     if (!document.querySelector('.SinglePropDetail')) return;
     const rooms = document.querySelectorAll('table.ArnRateList');
     rooms.forEach((el) => {
+        if (!el.querySelector('.roomCount')) return;
         const rooms_remaining = parseFloat(el.querySelector('.roomCount strong').textContent);
         if (rooms_remaining < 6) {
             document.querySelector('.roomCount').style.display = 'block';

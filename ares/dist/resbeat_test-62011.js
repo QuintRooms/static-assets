@@ -5952,7 +5952,7 @@
                 })
             )).apply(this, arguments);
         }
-        document.querySelector('.MemberNotAuthenticated') && (document.querySelector('#theWBLoginFormBody h1').innerHTML = 'LOG<strong>IN</strong>'),
+        document.querySelector('.MemberNotAuthenticated') && (document.querySelector('#theWBLoginForm h1').innerHTML = 'LOG<strong>IN</strong>'),
             (function () {
                 if (document.querySelector('.MemberNotAuthenticated')) {
                     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email'),

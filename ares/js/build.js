@@ -2102,17 +2102,15 @@ export default class BasePortal {
 
         const user_email = window.arnCustomerEmailAddress;
         const email_from = this.site_config.confirmation_email_from;
-        const confirmation_container = document.querySelector('.GuestForms');
+        const support_info = document.querySelector('.supportInfo');
 
-        if (!user_email || !confirmation_container) return;
+        if (!user_email || !support_info) return;
 
-        confirmation_container.insertAdjacentHTML(
-            'afterBegin',
+        support_info.insertAdjacentHTML(
+            'afterEnd',
             `<div class="confirmation-messaging">
-                <h2>Thank You!</h1>
                 <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>${email_from}</strong></a> at <strong>${user_email}</strong> shortly.</p>
             </div>
-            <hr>
             `
         );
     }

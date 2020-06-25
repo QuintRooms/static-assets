@@ -105,10 +105,6 @@
     display: none;
 }
 
-.ConfirmationForm .totalsTable tr.awarded-after-checkout td {
-    text-align: left !important;
-}
-
 .MemberNotAuthenticated .redeem-promocode-container {
     display: none;
 }

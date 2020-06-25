@@ -5648,14 +5648,14 @@
                                 if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
                                     var e = window.arnCustomerEmailAddress,
                                         t = this.site_config.confirmation_email_from,
-                                        n = document.querySelector('.GuestForms');
+                                        n = document.querySelector('.supportInfo');
                                     e &&
                                         n &&
                                         n.insertAdjacentHTML(
-                                            'afterBegin',
-                                            '<div class="confirmation-messaging">\n                <h2>Thank You!</h1>\n                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>'
+                                            'afterEnd',
+                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>'
                                                 .concat(t, '</strong></a> at <strong>')
-                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            <hr>\n            ')
+                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
                                         );
                                 }
                             },
@@ -5879,7 +5879,7 @@
                         confirmation_page_top: {is_active: !1, image_url: '', outbound_url: ''},
                         confirmation_page_bottom: {is_active: !1, image_url: '', outbound_url: ''},
                     },
-                    confirmation_email_from: 'Resbeat',
+                    confirmation_email_from: 'RESBEAT',
                 };
             })(),
             J = new P(),
@@ -6003,13 +6003,16 @@
                     var e = document.querySelector('.discountRow td').textContent;
                     (e = parseInt(e.replace(/[^0-9.]/g, ''))),
                         document
-                            .querySelector('#theRateTotals .taxFeeRow')
+                            .querySelector('.GuestForms')
                             .insertAdjacentHTML(
-                                'afterend',
-                                '\n        <tr class="points-earned">\n            <th>Rewards Earned:</th>\n            <td>'.concat(
-                                    e,
-                                    '</td>\n        </tr>\n        <tr class="awarded-after-checkout">\n        <td colspan="2">\n        Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.\n        </td>\n        </tr>\n    '
-                                )
+                                'beforeEnd',
+                                '\n        <style>\n            .points-earned{\n                background: '
+                                    .concat(Y.primary_color, ';\n                color: ')
+                                    .concat(
+                                        Y.primary_text_color,
+                                        ';\n                width: 100%;\n                display: flex;\n                justify-content: space-between;\n                align-content: center;\n                padding: 18px;\n                margin-top: 48px;\n            }\n        </style>\n        <p class="awarded-after-checkout">Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.</p>\n        <div class="points-earned">\n            <span>RESBEAT Rewards Earned</span>\n            <span>'
+                                    )
+                                    .concat(e, '</span>\n        </div>\n    ')
                             );
                 }
             })(),

@@ -134,18 +134,26 @@ function confirmationPointsEarned() {
     let points_earned = document.querySelector('.discountRow td').textContent;
     // eslint-disable-next-line radix
     points_earned = parseInt(points_earned.replace(/[^0-9.]/g, ''));
-    document.querySelector('#theRateTotals .taxFeeRow').insertAdjacentHTML(
-        'afterend',
+    document.querySelector('.GuestForms').insertAdjacentHTML(
+        'beforeEnd',
         `
-        <tr class="points-earned">
-            <th>Rewards Earned:</th>
-            <td>${points_earned}</td>
-        </tr>
-        <tr class="awarded-after-checkout">
-        <td colspan="2">
-        Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.
-        </td>
-        </tr>
+        <style>
+            .points-earned{
+                background: ${site_config.primary_color};
+                color: ${site_config.primary_text_color};
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                padding: 18px;
+                margin-top: 48px;
+            }
+        </style>
+        <p class="awarded-after-checkout">Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.</p>
+        <div class="points-earned">
+            <span>RESBEAT Rewards Earned</span>
+            <span>${points_earned}</span>
+        </div>
     `
     );
 }

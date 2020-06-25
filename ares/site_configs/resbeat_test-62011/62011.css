@@ -33,6 +33,22 @@
     color: #333;
 }
 
+.WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax {
+    display: none;
+}
+
+.WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #thefirstNameAjax input[type='text'], .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input {
+    background: #F0F1F2;
+    border: unset;
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+}
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
+    font-family: 'Avenir-Light';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 #commands, #commands .logoutCommand {
     text-transform: uppercase;
     letter-spacing: 1px;

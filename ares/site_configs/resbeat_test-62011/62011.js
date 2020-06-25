@@ -55,6 +55,18 @@ function styleRegisterContainer() {
 
 styleRegisterContainer();
 
+function styleRegisterForm(element, value) {
+    if (!document.querySelector('.WBValidatedRegistrationForm')) return;
+
+    document.querySelector(element).setAttribute('placeholder', value);
+}
+
+styleRegisterForm('#theUserNameAjax input', 'Email');
+styleRegisterForm('#theFirstNameAjax input', 'First Name');
+styleRegisterForm('#theLastNameAjax input', 'Last Name');
+styleRegisterForm('#theEditablePasswordAjax input', 'Create a Password');
+styleRegisterForm('#theEditableConfirmPasswordAjax input', 'Confirm Password');
+
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
 

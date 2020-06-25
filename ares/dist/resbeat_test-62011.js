@@ -394,17 +394,17 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && O(e);
+                        (e._c = []), (e._n = !1), t && !e._h && j(e);
                     });
                 }
             },
-            O = function (e) {
+            j = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
                         r,
                         o = e._v,
-                        i = j(e);
+                        i = O(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -414,14 +414,14 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = C || j(e) ? 2 : 1)),
+                            (e._h = C || O(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            j = function (e) {
+            O = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
             H = function (e) {
@@ -1746,8 +1746,8 @@
             q = C.f,
             R = k.f,
             T = r.Symbol,
-            O = r.JSON,
-            j = O && O.stringify,
+            j = r.JSON,
+            O = j && j.stringify,
             H = h('_hidden'),
             B = h('toPrimitive'),
             I = {}.propertyIsEnumerable,
@@ -1884,14 +1884,14 @@
                 return E.f(S(e));
             },
         }),
-            O &&
+            j &&
                 a(
                     a.S +
                         a.F *
                             (!U ||
                                 u(function () {
                                     var e = T();
-                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
+                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
                     {
@@ -1904,7 +1904,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !Y(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(O, r)
+                                    O.apply(j, r)
                                 );
                         },
                     }
@@ -3865,13 +3865,13 @@
                 });
             };
         }
-        function O(e, t) {
+        function j(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var j = new q(),
+        var O = new q(),
             H = n(107),
             B = new P(),
             I = (function () {
@@ -4777,7 +4777,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(j.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(O.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -4855,7 +4855,7 @@
                                                     case 0:
                                                         return (
                                                             (t = function () {
-                                                                fetch(''.concat(j.path, '/js/json/currencies.json'))
+                                                                fetch(''.concat(O.path, '/js/json/currencies.json'))
                                                                     .then(function (e) {
                                                                         if (!e.ok) throw e;
                                                                         return e.json();
@@ -5748,8 +5748,8 @@
                                 }
                             },
                         },
-                    ]) && O(t.prototype, n),
-                    r && O(t, r),
+                    ]) && j(t.prototype, n),
+                    r && j(t, r),
                     e
                 );
             })(),
@@ -5823,7 +5823,9 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var Y = new (function () {
+        var Y,
+            J,
+            Z = new (function () {
                 return {
                     site_id: 62011,
                     affiliate_id: 16827,
@@ -5881,8 +5883,8 @@
                     confirmation_email_from: 'Resbeat',
                 };
             })(),
-            J = new P(),
-            Z = (function (e) {
+            K = new P(),
+            X = (function (e) {
                 function t() {
                     var e;
                     return (
@@ -5891,7 +5893,7 @@
                         })(this, t),
                         (e = (function (e, t) {
                             return !t || ('object' !== U(t) && 'function' != typeof t) ? W(e) : t;
-                        })(this, V(t).call(this, Y))),
+                        })(this, V(t).call(this, Z))),
                         z(V(t.prototype), 'init', W(e)).call(W(e)),
                         e
                     );
@@ -5904,10 +5906,10 @@
                     t
                 );
             })(I);
-        function K(e, t, n) {
+        function Q(e, t, n) {
             document.querySelector(e) && (document.querySelector(e).innerHTML = ''.concat(t, '<strong>').concat(n, '</strong>'));
         }
-        function X(e) {
+        function ee(e) {
             if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
                 if (!document.querySelector(e)) return;
                 document.querySelectorAll(e).forEach(function (e) {
@@ -5918,8 +5920,8 @@
                 });
             }
         }
-        function Q() {
-            return (Q = $(
+        function te() {
+            return (te = $(
                 regeneratorRuntime.mark(function e() {
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
@@ -5931,7 +5933,7 @@
                                     }
                                     return e.abrupt('return');
                                 case 2:
-                                    return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
+                                    return (e.next = 4), K.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
                                     document.querySelectorAll('table.ArnRateList').forEach(function (e) {
                                         var t = e.querySelector('.full-stay').textContent;
@@ -5953,8 +5955,8 @@
                 })
             )).apply(this, arguments);
         }
-        K(),
-            K(),
+        Q(),
+            Q(),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;
@@ -5964,9 +5966,14 @@
                     );
                 }
             })(),
-            X('.SinglePropDetail .bookRoomCell'),
+            ee('.SinglePropDetail .bookRoomCell'),
+            jQuery(document).on('ratesReadyEvent', function () {
+                setTimeout(function () {
+                    ee('.SearchHotels .ArnRateCell');
+                }, 1);
+            }),
             (function () {
-                Q.apply(this, arguments);
+                te.apply(this, arguments);
             })(),
             (function () {
                 if (document.querySelector('.CheckOutForm')) {
@@ -5981,12 +5988,15 @@
                         );
                 }
             })(),
-            jQuery(document).on('ratesReadyEvent', function () {
-                setTimeout(function () {
-                    X('.SearchHotels .ArnRateCell');
-                }, 1);
-            }),
-            new Z();
+            (Y = document.querySelector('.supportLink')),
+            (J = document.querySelector('#commands')).insertAdjacentElement('afterbegin', Y),
+            J.insertAdjacentHTML(
+                'afterbegin',
+                '\n        <a class="rewards" href="https://hotels.resbeat.com/v6/rewards-guide/?siteId='
+                    .concat(Z.site_id, '">Rewards</a>\n        <a class="booking-guide" https://hotels.resbeat.com/v6/booking-guide/?siteId=')
+                    .concat(Z.site_id, '">Booking Guide</a>\n        ')
+            ),
+            new X();
     },
 ]);
 //# sourceMappingURL=resbeat_test-62011.map

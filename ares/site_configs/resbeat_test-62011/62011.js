@@ -11,6 +11,7 @@ class ChildPortal extends BasePortal {
         super.init();
     }
 }
+
 function styleResbeatFonts(element, word1, word2) {
     if (!document.querySelector(element)) return;
     const el = document.querySelector(element);
@@ -55,6 +56,11 @@ function insertBeatEmBy(element) {
 }
 
 insertBeatEmBy('.SinglePropDetail .bookRoomCell');
+jQuery(document).on('ratesReadyEvent', () => {
+    setTimeout(() => {
+        insertBeatEmBy('.SearchHotels .ArnRateCell');
+    }, 1);
+});
 
 async function displayRewardPoints() {
     if (!document.querySelector('.SinglePropDetail')) return;
@@ -104,10 +110,19 @@ function totalStayPoints() {
 
 totalStayPoints();
 
-jQuery(document).on('ratesReadyEvent', () => {
-    setTimeout(() => {
-        insertBeatEmBy('.SearchHotels .ArnRateCell');
-    }, 1);
-});
+function headerLinks() {
+    const support_link = document.querySelector('.supportLink');
+    const commands = document.querySelector('#commands');
+    commands.insertAdjacentElement('afterbegin', support_link);
+    commands.insertAdjacentHTML(
+        'afterbegin',
+        `
+        <a class="rewards" href="https://hotels.resbeat.com/v6/rewards-guide/?siteId=${site_config.site_id}">Rewards</a>
+        <a class="booking-guide" https://hotels.resbeat.com/v6/booking-guide/?siteId=${site_config.site_id}">Booking Guide</a>
+        `
+    );
+}
+
+headerLinks();
 
 new ChildPortal();

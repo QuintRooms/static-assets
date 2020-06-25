@@ -12,6 +12,15 @@
     src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
 }
 
+.RootBody .ArnPrimarySearchContainer {
+    background: #F0F1F2;
+    color: #333;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    color: #333;
+}
+
 .RootBody #PropertyTypesContainer {
     display: block !important;
 }
@@ -54,7 +63,7 @@
     margin-left: 10px;
 }
 
-.originalPrice {
+.SearchHotels .originalPrice, .SinglePropDetail .originalPrice {
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;

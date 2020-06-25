@@ -36,6 +36,7 @@ function updateSearchTitle() {
 updateSearchTitle();
 
 function insertBeatEmBy(element) {
+    if (document.querySelector('.beat-em')) return;
     if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
         if (!document.querySelector(element)) return;
         const rate_cells = document.querySelectorAll(element);
@@ -76,11 +77,37 @@ async function displayRewardPoints() {
     });
 }
 
+displayRewardPoints();
+
+function totalStayPoints() {
+    if (!document.querySelector('.CheckOutForm')) return;
+
+    let total = document.querySelector('.dueNowRow td').textContent;
+    let taxes = document.querySelector('.taxFeeRow td').textContent;
+    // eslint-disable-next-line radix
+    total = parseInt(total.replace(/[^0-9.]/g, ''));
+    // eslint-disable-next-line radix
+    taxes = parseInt(taxes.replace(/[^0-9.]/g, ''));
+
+    const points = total - taxes;
+
+    document.querySelector('.totalsTable tbody').insertAdjacentHTML(
+        'beforeend',
+        `
+        <tr class="total-points-earned">
+            <th>Points:</th>
+            <td>${points}</td>
+        </tr>
+        `
+    );
+}
+
+totalStayPoints();
+
 jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
         insertBeatEmBy('.SearchHotels .ArnRateCell');
     }, 1);
 });
-displayRewardPoints();
 
 new ChildPortal();

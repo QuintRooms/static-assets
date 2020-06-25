@@ -152,6 +152,7 @@
 
 .MemberNotAuthenticated .CreateAnAccountAction {
     width: 100%;
+    letter-spacing: 1px;
 }
 
 .MemberNotAuthenticated #register-btn {

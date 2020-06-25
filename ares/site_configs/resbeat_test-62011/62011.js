@@ -21,13 +21,13 @@ class ChildPortal extends BasePortal {
 // styleResbeatFonts();
 // styleResbeatFonts();
 
-// function updateLogin() {
-//     if (!document.querySelector('.MemberNotAuthenticated')) return;
-//     const login_text = document.querySelector('#theWBLoginForm h1');
-//     login_text.innerHTML = 'LOG<strong>IN</strong>';
-// }
+function updateLogin() {
+    if (!document.querySelector('.MemberNotAuthenticated')) return;
+    const login_text = document.querySelector('#theWBLoginFormBody h1');
+    login_text.innerHTML = 'LOG<strong>IN</strong>';
+}
 
-// updateLogin();
+updateLogin();
 
 function styleRegisterContainer() {
     if (!document.querySelector('.MemberNotAuthenticated')) return;

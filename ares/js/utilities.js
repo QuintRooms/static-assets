@@ -283,6 +283,10 @@ export default class Utilities {
         return document.querySelector(selector).textContent;
     }
 
+    /**
+     *@description Fetches json from URL
+     *@param url url of resource
+     */
     fetchJSON(url) {
         const json = () => {
             fetch(url)
@@ -300,5 +304,31 @@ export default class Utilities {
         };
 
         return json;
+    }
+
+    /**
+     *@description Fetches text from URL
+     *@param url url of resource
+     */
+    async fetchHTMLFromFile(url) {
+        let html = '';
+        await fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw response;
+                }
+
+                return response.text();
+            })
+            .then((text) => {
+                html = text;
+            })
+            .catch((err) => {
+                err.text().then((error) => {
+                    console.error(`Could not fetch text from ${url}`, error);
+                });
+            });
+
+        return html;
     }
 }

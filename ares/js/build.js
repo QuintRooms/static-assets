@@ -260,6 +260,10 @@ export default class BasePortal {
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();
             this.hideRemainingRooms();
+
+            if (this.site_config.is_resbeat_client) {
+                this.createResbeatGuides('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide');
+            }
         });
     }
 
@@ -1681,10 +1685,10 @@ export default class BasePortal {
         @param string takes the text for the exclusive rate sash
         @param string is the parent element for the current iteration 
         */
-        function addExclusiveRatesSash(text, selector) {
+        const add_exclusive_rates_sash = (text, selector) => {
             if (this.site_config.exclusive_rate_text === '') return;
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', `<span class="exclusive-rate">${text}</span>`);
-        }
+        };
 
         /**
         *@description adds a custom tag to a property thumbnail image
@@ -1706,7 +1710,7 @@ export default class BasePortal {
                     addCustomTag(hostHotelText, el);
                 }
                 if (el.classList.contains('S16') || (el.classList.contains('S20') && exclusiveRateText !== '')) {
-                    addExclusiveRatesSash(exclusiveRateText, el);
+                    add_exclusive_rates_sash(exclusiveRateText, el);
                 }
             });
         }
@@ -2210,5 +2214,14 @@ export default class BasePortal {
                 el.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr';
             }
         });
+    }
+
+    async createResbeatGuides(html_url, page_body_selector) {
+        if (!document.querySelector(page_body_selector)) return;
+
+        const parent_container = document.querySelector(page_body_selector);
+        const html = await utilities.fetchHTMLFromFile(html_url);
+
+        parent_container.insertAdjacentHTML('afterBegin', html);
     }
 }

@@ -3467,7 +3467,7 @@
                     if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                 })(this, e);
             }
-            var t, n, r, o, i, a, c, s, u;
+            var t, n, r, o, i, a, c, s, u, l;
             return (
                 (t = e),
                 (n = [
@@ -3480,7 +3480,7 @@
                     {
                         key: 'createHTML',
                         value:
-                            ((u = C(
+                            ((l = C(
                                 regeneratorRuntime.mark(function e(t, n, r) {
                                     return regeneratorRuntime.wrap(function (e) {
                                         for (;;)
@@ -3501,7 +3501,7 @@
                                 })
                             )),
                             function (e, t, n) {
-                                return u.apply(this, arguments);
+                                return l.apply(this, arguments);
                             }),
                     },
                     {
@@ -3535,7 +3535,7 @@
                     {
                         key: 'waitForSelectorInDOM',
                         value:
-                            ((s = C(
+                            ((u = C(
                                 regeneratorRuntime.mark(function e(t) {
                                     return regeneratorRuntime.wrap(function (e) {
                                         for (;;)
@@ -3558,7 +3558,7 @@
                                 })
                             )),
                             function (e) {
-                                return s.apply(this, arguments);
+                                return u.apply(this, arguments);
                             }),
                     },
                     {
@@ -3570,7 +3570,7 @@
                     {
                         key: 'moveOrphanedElementsIntoNewWrapper',
                         value:
-                            ((c = C(
+                            ((s = C(
                                 regeneratorRuntime.mark(function e(t, n, r, o) {
                                     return regeneratorRuntime.wrap(function (e) {
                                         for (;;)
@@ -3594,13 +3594,13 @@
                                 })
                             )),
                             function (e, t, n, r) {
-                                return c.apply(this, arguments);
+                                return s.apply(this, arguments);
                             }),
                     },
                     {
                         key: 'createWrapper',
                         value:
-                            ((a = C(
+                            ((c = C(
                                 regeneratorRuntime.mark(function e(t, n, r, o) {
                                     var i;
                                     return regeneratorRuntime.wrap(function (e) {
@@ -3626,7 +3626,7 @@
                                 })
                             )),
                             function (e, t, n, r) {
-                                return a.apply(this, arguments);
+                                return c.apply(this, arguments);
                             }),
                     },
                     {
@@ -3655,7 +3655,7 @@
                     {
                         key: 'addMultipleHeaderLogos',
                         value:
-                            ((i = C(
+                            ((a = C(
                                 regeneratorRuntime.mark(function e(t) {
                                     var n, r, o, i;
                                     return regeneratorRuntime.wrap(
@@ -3694,7 +3694,7 @@
                                 })
                             )),
                             function (e) {
-                                return i.apply(this, arguments);
+                                return a.apply(this, arguments);
                             }),
                     },
                     {
@@ -3737,7 +3737,7 @@
                     {
                         key: 'ratesComingSoon',
                         value:
-                            ((o = C(
+                            ((i = C(
                                 regeneratorRuntime.mark(function e(t) {
                                     return regeneratorRuntime.wrap(
                                         function (e) {
@@ -3767,7 +3767,7 @@
                                 })
                             )),
                             function (e) {
-                                return o.apply(this, arguments);
+                                return i.apply(this, arguments);
                             }),
                     },
                     {
@@ -3832,6 +3832,46 @@
                             };
                         },
                     },
+                    {
+                        key: 'fetchHTMLFromFile',
+                        value:
+                            ((o = C(
+                                regeneratorRuntime.mark(function e(t) {
+                                    var n;
+                                    return regeneratorRuntime.wrap(function (e) {
+                                        for (;;)
+                                            switch ((e.prev = e.next)) {
+                                                case 0:
+                                                    return (
+                                                        (n = ''),
+                                                        (e.next = 3),
+                                                        fetch(t)
+                                                            .then(function (e) {
+                                                                if (!e.ok) throw e;
+                                                                return e.text();
+                                                            })
+                                                            .then(function (e) {
+                                                                n = e;
+                                                            })
+                                                            .catch(function (e) {
+                                                                e.text().then(function (e) {
+                                                                    console.error('Could not fetch text from '.concat(t), e);
+                                                                });
+                                                            })
+                                                    );
+                                                case 3:
+                                                    return e.abrupt('return', n);
+                                                case 4:
+                                                case 'end':
+                                                    return e.stop();
+                                            }
+                                    }, e);
+                                })
+                            )),
+                            function (e) {
+                                return o.apply(this, arguments);
+                            }),
+                    },
                 ]) && M(t.prototype, n),
                 r && M(t, r),
                 e
@@ -3889,7 +3929,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = 'USD');
                 }
-                var t, n, r, o, i, a, c, s;
+                var t, n, r, o, i, a, c, s, u;
                 return (
                     (t = e),
                     (n = [
@@ -4189,8 +4229,13 @@
                                                                         e.insertPoweredByFooterLogo(),
                                                                         e.updateConfirmationCheckBoxes(),
                                                                         e.showMoreAmenities(),
-                                                                        e.hideRemainingRooms();
-                                                                case 42:
+                                                                        e.hideRemainingRooms(),
+                                                                        e.site_config.is_resbeat_client &&
+                                                                            e.createResbeatGuides(
+                                                                                'https://dev-static.hotelsforhope.com/ares/html/booking-guide.html',
+                                                                                '#booking-guide'
+                                                                            );
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4220,7 +4265,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((s = T(
+                                ((u = T(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4245,13 +4290,13 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((c = T(
+                                ((s = T(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4277,7 +4322,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -4839,7 +4884,7 @@
                         {
                             key: 'buildCurrencyDropdown',
                             value:
-                                ((a = T(
+                                ((c = T(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -4932,7 +4977,7 @@
                                     })
                                 )),
                                 function () {
-                                    return a.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5039,7 +5084,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((i = T(
+                                ((a = T(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5066,7 +5111,7 @@
                                     })
                                 )),
                                 function () {
-                                    return i.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5186,13 +5231,14 @@
                                 }
                                 'search-results' === this.page_name &&
                                     document.querySelectorAll('div.ArnProperty').forEach(function (r) {
+                                        var a, c;
                                         r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
                                             r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
                                             (r.classList.contains('S16') || (r.classList.contains('S20') && '' !== e)) &&
-                                                (function (e, t) {
-                                                    '' !== this.site_config.exclusive_rate_text &&
-                                                        t.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(e, '</span>'));
-                                                })(e, r);
+                                                ((a = e),
+                                                (c = r),
+                                                '' !== o.site_config.exclusive_rate_text &&
+                                                    c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
                                     }),
                                     'property-detail' === this.page_name &&
                                         document.querySelectorAll('div.rateRow').forEach(function (t) {
@@ -5234,7 +5280,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((o = T(
+                                ((i = T(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5272,7 +5318,7 @@
                                     })
                                 )),
                                 function () {
-                                    return o.apply(this, arguments);
+                                    return i.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5745,6 +5791,36 @@
                                     });
                                 }
                             },
+                        },
+                        {
+                            key: 'createResbeatGuides',
+                            value:
+                                ((o = T(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        var r, o;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (document.querySelector(n)) {
+                                                            e.next = 2;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 2:
+                                                        return (r = document.querySelector(n)), (e.next = 5), H.fetchHTMLFromFile(t);
+                                                    case 5:
+                                                        (o = e.sent), r.insertAdjacentHTML('afterBegin', o);
+                                                    case 7:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t) {
+                                    return o.apply(this, arguments);
+                                }),
                         },
                     ]) && j(t.prototype, n),
                     r && j(t, r),

@@ -359,7 +359,7 @@
     color: #fff;
 }
 
-.WBSupportForm label{
+.WBSupportForm .SSForm .FormFields label{
     display: none;
 }
 

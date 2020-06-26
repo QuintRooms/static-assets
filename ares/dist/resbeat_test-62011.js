@@ -6045,7 +6045,7 @@
                 }, 1),
             J.updateHTML(
                 '.ArnSupportChatTable',
-                '\n    <div class="support-details">\n        <h3>Customer Support</h3>\n        <p>Hours: 8:00am - 5:30pm CST</p>\n        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n    </div>\n\n'
+                '\n    <div class="support-details">\n        <h3>Customer Support</h3>\n        <p>Hours: M-F 8:00am - 5:30pm CST</p>\n        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n        <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n    </div>\n\n'
             ),
             document.querySelector('.WBSupportFormContainer') &&
                 (Q('#theNameAjax input', 'Name', 'placeholder'),

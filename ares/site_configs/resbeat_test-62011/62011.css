@@ -488,6 +488,10 @@
     margin: 0;
 }
 
+.support-details p:last-child{
+    margin-top:18px;
+}
+
 @media screen and (max-width: 800px){
     .ArnSubPage.WBSupportForm{
         grid-template-columns: 1fr;

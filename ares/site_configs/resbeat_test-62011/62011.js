@@ -260,9 +260,10 @@ utilities.updateHTML(
     `
     <div class="support-details">
         <h3>Customer Support</h3>
-        <p>Hours: 8:00am - 5:30pm CST</p>
+        <p>Hours: M-F 8:00am - 5:30pm CST</p>
         <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>
         <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>
+        <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>
     </div>
 
 `

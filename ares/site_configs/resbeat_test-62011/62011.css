@@ -172,6 +172,20 @@
     border: 2px solid #215853;
 }
 
+.LoginAction.submit, #register-btn a {
+    border-radius: 40px;
+    background: #215853;
+    color: #fff;
+    border: 2px solid #215853;
+    padding: 6px 12px;
+}
+
+.LoginAction.submit:hover, #register-btn a:hover {
+    background: #fff;
+    color: #215853;
+    border: 2px solid #215853;
+}
+
 .SinglePropDetail .beat-em {
     margin-left: 10px;
 }

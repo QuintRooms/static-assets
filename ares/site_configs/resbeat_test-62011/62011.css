@@ -154,7 +154,7 @@
     background: #e2ad37;
     color: #fff;
     text-align: center;
-    padding: 9px 12px;
+    padding: 9px 10px;
     max-width: 150px;
     margin-left: auto;
     border-radius: 40px;
@@ -208,6 +208,10 @@
 .SearchHotels .ArnPrimarySearchContainer {
     background: #fff;
     color:#666
+}
+
+.SearchHotels .ArnPriceCell .mainRate {
+    padding-right: 42px;
 }
 
 .SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {

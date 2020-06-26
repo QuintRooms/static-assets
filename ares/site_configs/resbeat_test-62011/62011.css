@@ -106,6 +106,10 @@
     display: block !important;
 }
 
+.RootBody .ArnSecondarySearchOuterContainer span {
+    margin-top: 6px;
+}
+
 .RootBody h1, .RootBody h3{
     display: none !important;
 }
@@ -309,6 +313,10 @@
     font-family: 'Avenir';
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.CheckOutForm #theConfirmationPoliciesAjax {
+    margin-top: 10px;
 }
 
 @media screen and (min-width: 900px) {

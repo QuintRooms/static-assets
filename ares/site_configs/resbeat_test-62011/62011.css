@@ -183,11 +183,11 @@
     border: 2px solid #215853;
 }
 
-.LoginAction.submit, #register-btn a, .RegisterAction.submit, .SendMeNewPasswordAction.submit {
+.LoginAction.submit, #register-btn a, .RegisterAction.submit, .SendMeNewPasswordAction.submit, #moreRatesLink {
     border-radius: 40px;
     background: #215853;
     color: #fff;
-    border: 2px solid #215853;
+    border: 2px solid #215853 !important;
     padding: 6px 12px;
 }
 
@@ -242,6 +242,11 @@
 
 .full-stay {
     display: none;
+}
+
+.SinglePropDetail #moreRatesLink {
+    width: 200px;
+    height: 35px;
 }
 
 .SinglePropDetail .points-earned {
@@ -313,7 +318,8 @@
     text-align: center;
 }
 
-.MemberNotAuthenticated .LoginAction, .SendMeNewPasswordAction.submit {
+.MemberNotAuthenticated .LoginAction, .SendMeNewPasswordAction.submit, .ArnShowRatesLink, .bookRoom, .holdRoom, #moreRatesLink, .GuestForms legend
+{
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Avenir';
@@ -350,6 +356,11 @@
     margin-top: 10px;
 }
 
+.CheckOutForm .theHotelAddress {
+    display: block;
+    text-align: left;
+}
+
 @media screen and (min-width: 900px) {
     .RootBody .ArnPrimarySearchContainer {
         width: 60vw;
@@ -365,36 +376,65 @@
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnRateCell {
         width: 100%;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 40% 60%;
     }
 
     .SearchHotels .beat-em {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
         align-self: center;
         justify-self: center;
         margin-left: unset;
     }
 
     .SearchHotels .ArnPriceCell {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
         align-self: end;
         margin-left: 10px;
 
     }
 
     .SearchHotels .ArnRateButton {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
         align-self: center;
         justify-self: center;
     }
 
-    .ArnRateButton a {
-        margin: auto;
+    .SearchHotels div.beat-em {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+    }
+
+    .SinglePropDetail .beat-em {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        max-width: 145px;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+        margin: 8px auto;
+    }
+
+    .SinglePropDetail .bookRoom {
+        grid-row: 2 / 3;
+        max-width: 145px;
+        align-self: center;
+    }
+
+    .SinglePropDetail .ArnNightlyRate {
+        grid-row: 2 / 3;
+    }
+
+    .SinglePropDetail .holdRoom {
+        max-width: 145px;
+    }
+
+    .SinglePropDetail .points-earned {
+        width: unset;
+        padding: 4px 10px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        top: 97px;
+        bottom: unset;
     }
 }
 

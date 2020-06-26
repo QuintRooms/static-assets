@@ -5894,11 +5894,16 @@
         }
         function X(e) {
             if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
+                var t = window.matchMedia('(max-width: 600px)');
                 if (!document.querySelector(e)) return;
                 document.querySelectorAll(e).forEach(function (e) {
                     if (e.querySelector('.originalPrice')) {
-                        var t = e.querySelector('.originalPrice').getAttribute('percent');
-                        e.insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(t, '%\n                    </div>'));
+                        var n = e.querySelector('.originalPrice').getAttribute('percent'),
+                            r = '.ArnRateCell';
+                        t.matches && document.querySelector('.SearchHotels') ? (r = '.ArnPropThumb') : document.querySelector('.SinglePropDetail') && (r = '.bookRoomCell'),
+                            e
+                                .querySelector(r)
+                                .insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(n, '%\n                    </div>'));
                     }
                 });
             }
@@ -5906,6 +5911,7 @@
         function ee() {
             return (ee = $(
                 regeneratorRuntime.mark(function e() {
+                    var t, n, r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
@@ -5918,21 +5924,35 @@
                                 case 2:
                                     return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
-                                    document.querySelectorAll('table.ArnRateList').forEach(function (e) {
-                                        var t = e.querySelector('.full-stay').textContent;
-                                        t = t.replace(/[^0-9.]/g, '');
-                                        var n = parseInt(t);
-                                        e.querySelector('tbody tr td').insertAdjacentHTML(
-                                            'beforeend',
-                                            '\n            <style>\n            .points{\n                color: '
-                                                .concat(
-                                                    Y.secondary_color,
-                                                    ';\n            }\n\n            div.points-earned span {\n                font-family: \'Avenir\';\n                letter-spacing: 1px;\n            }\n        </style>\n\n            <div class="points-earned">\n            Earn <b class="points">'
-                                                )
-                                                .concat(n, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
-                                        );
-                                    });
-                                case 6:
+                                    (t = document.querySelectorAll('table.ArnRateList')),
+                                        (n = window.matchMedia('(max-width: 600px)')),
+                                        (r = '  \n        <style>\n            .points{\n                color: '.concat(
+                                            Y.secondary_color,
+                                            ";\n            }\n\n            div.points-earned span {\n                font-family: 'Avenir';\n                letter-spacing: 1px;\n            }\n        </style>\n        "
+                                        )),
+                                        t.forEach(function (e) {
+                                            var t = e.querySelector('.full-stay').textContent;
+                                            t = t.replace(/[^0-9.]/g, '');
+                                            var o = parseInt(t);
+                                            n.matches
+                                                ? e
+                                                      .querySelector('tbody .bookRoomCell')
+                                                      .insertAdjacentHTML(
+                                                          'afterbegin',
+                                                          '\n             '
+                                                              .concat(r, '\n            <div class="points-earned">\n            <span>RE<b>WARDS</b>: ')
+                                                              .concat(o, '</span> \n            </div>\n            ')
+                                                      )
+                                                : e
+                                                      .querySelector('tbody tr td')
+                                                      .insertAdjacentHTML(
+                                                          'beforeend',
+                                                          '\n                  '
+                                                              .concat(r, '\n            <div class="points-earned">\n            Earn <b class="points">')
+                                                              .concat(o, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
+                                                      );
+                                        });
+                                case 8:
                                 case 'end':
                                     return e.stop();
                             }
@@ -5982,10 +6002,10 @@
                     );
                 }
             })(),
-            X('.SinglePropDetail .bookRoomCell'),
+            X('.SinglePropDetail .rateRow'),
             jQuery(document).on('ratesReadyEvent', function () {
                 setTimeout(function () {
-                    X('.SearchHotels .ArnRateCell');
+                    X('.SearchHotels .ArnContainer');
                 }, 1);
             }),
             (function () {

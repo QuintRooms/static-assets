@@ -37,7 +37,7 @@ const sites = {
         site_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
         primary_color: '#215853',
         secondary_color: '##e2ad37',
-        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-62011/img/logo.png',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
     },
 };
 

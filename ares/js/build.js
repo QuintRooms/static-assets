@@ -1072,97 +1072,191 @@ export default class BasePortal {
         });
     }
 
-    async buildCurrencyDropdown() {
-        const get_currency_j_s_o_n = () => {
-            fetch(`${env_path.path}/js/json/currencies.json`)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw response;
-                    }
-                    return response.json();
-                })
-                .then((currencies_json) => {
-                    setup_content_for_dropdown(currencies_json);
-                    update_param_on_currency_click();
-                    style_active_currency();
-                })
-                .catch((err) => {
-                    err.text().then((error) => {
-                        console.error('Could not fetch currencies.json', error);
-                    });
-                });
-        };
+    // async buildCurrencyDropdown() {
+    //     const get_currency_j_s_o_n = () => {
+    //         fetch(`${env_path.path}/js/json/currencies.json`)
+    //             .then((response) => {
+    //                 if (!response.ok) {
+    //                     throw response;
+    //                 }
+    //                 return response.json();
+    //             })
+    //             .then((currencies_json) => {
+    //                 setup_content_for_dropdown(currencies_json);
+    //                 update_param_on_currency_click();
+    //                 style_active_currency();
+    //             })
+    //             .catch((err) => {
+    //                 err.text().then((error) => {
+    //                     console.error('Could not fetch currencies.json', error);
+    //                 });
+    //             });
+    //     };
 
-        const setup_content_for_dropdown = (currencies_json) => {
-            // eslint-disable-next-line no-unused-vars
-            const currencies = Object.entries(currencies_json);
+    //     const setup_content_for_dropdown = (currencies_json) => {
+    //         // eslint-disable-next-line no-unused-vars
+    //         const currencies = Object.entries(currencies_json);
 
-            const menu_container = document.createElement('div');
-            const all_currencies_container = document.createElement('div');
+    //         const menu_container = document.createElement('div');
+    //         const all_currencies_container = document.createElement('div');
 
-            const top_currencies = `
-            <h4>Top Currencies</h4>
-            <div class="top-currencies">
-                <span id="AUD"><strong>${currencies_json.AUD.code}</strong> - ${currencies_json.AUD.name}</span>
-                <span id="CAD"><strong>${currencies_json.CAD.code}</strong> - ${currencies_json.CAD.name}</span>
-                <span id="EUR"><strong>${currencies_json.EUR.code}</strong> - ${currencies_json.EUR.name}</span>
-                <span id="MXN"><strong>${currencies_json.MXN.code}</strong> - ${currencies_json.MXN.name}</span>
-                <span id="GBP"><strong>${currencies_json.GBP.code}</strong> - ${currencies_json.GBP.name}</span>
-                <span id="USD"><strong>${currencies_json.USD.code}</strong> - ${currencies_json.USD.name}</span>
-            </div>
-            <h4>All Currencies</h4>
-            `;
+    //         const top_currencies = `
+    //         <h4>Top Currencies</h4>
+    //         <div class="top-currencies">
+    //             <span id="AUD"><strong>${currencies_json.AUD.code}</strong> - ${currencies_json.AUD.name}</span>
+    //             <span id="CAD"><strong>${currencies_json.CAD.code}</strong> - ${currencies_json.CAD.name}</span>
+    //             <span id="EUR"><strong>${currencies_json.EUR.code}</strong> - ${currencies_json.EUR.name}</span>
+    //             <span id="MXN"><strong>${currencies_json.MXN.code}</strong> - ${currencies_json.MXN.name}</span>
+    //             <span id="GBP"><strong>${currencies_json.GBP.code}</strong> - ${currencies_json.GBP.name}</span>
+    //             <span id="USD"><strong>${currencies_json.USD.code}</strong> - ${currencies_json.USD.name}</span>
+    //         </div>
+    //         <h4>All Currencies</h4>
+    //         `;
 
-            menu_container.insertAdjacentHTML('afterBegin', top_currencies);
-            menu_container.classList.add('currency-content');
+    //         menu_container.insertAdjacentHTML('afterBegin', top_currencies);
+    //         menu_container.classList.add('currency-content');
 
-            all_currencies_container.classList.add('all-currencies');
+    //         all_currencies_container.classList.add('all-currencies');
 
-            for (const currency in currencies_json) {
-                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency].name}</span>`);
+    //         for (const currency in currencies_json) {
+    //             all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency].name}</span>`);
+    //         }
+
+    //         menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
+
+    //         utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
+    //     };
+
+    //     const update_param_on_currency_click = () => {
+    //         const params = new URLSearchParams(window.location.search);
+    //         const dropdown = document.querySelector('.dropdown');
+
+    //         if (!dropdown) return;
+
+    //         dropdown.addEventListener('click', (e) => {
+    //             this.selected_currency = e.target.id;
+    //             if (!this.selected_currency) return;
+
+    //             document.querySelector('.active-currency').classList.remove('active-currency');
+    //             document.querySelector(`#${e.target.id}`).classList.add('active-currency');
+
+    //             document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
+
+    //             if (this.page_name !== 'search-results') return;
+    //             params.set('currency', this.selected_currency);
+    //             window.location.search = params.toString();
+    //         });
+    //     };
+
+    //     const style_active_currency = () => {
+    //         const active_currency_meta = document.querySelector('meta[name="currency"]');
+
+    //         if (!active_currency_meta) return;
+
+    //         const active_currency = active_currency_meta.content;
+
+    //         this.selected_currency = active_currency;
+
+    //         document.querySelector(`#${active_currency}`).classList.add('active-currency');
+
+    //         document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
+    //     };
+
+    //     await get_currency_j_s_o_n();
+    // }
+    buildCurrencyDropdown() {
+        let currencies = '';
+        let clicked_currency;
+        const currencies_obj = {};
+        let selected_currency = '';
+        let submit;
+        let currencies_select;
+        let currencies_node_list;
+
+        const currency_label = document.querySelector('#currency-label');
+        const currencies_container = document.querySelector('.dropdown');
+        const config_container = document.querySelector('.config-container');
+        // const top_currencies_container = document.querySelector('.top-currencies');
+
+        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
+            submit = document.querySelector('#theOtherSubmitButton');
+            currencies_select = document.querySelector('#CurrenciesContainer select');
+            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
+        } else if (this.page_name === 'property-detail') {
+            submit = document.querySelector('.CheckRates .submit');
+            currencies_select = document.querySelector('.ArnCurrency select');
+            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
+        }
+
+        if (!currencies_node_list || !config_container || !currency_label || !currencies_select) return;
+
+        currencies_node_list.forEach((currency) => {
+            if (currency.getAttribute('selected')) {
+                selected_currency = currency.value;
             }
 
-            menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
+            currencies_obj[currency.label] = currency.value;
+        });
 
-            utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
-        };
+        currencies = Object.entries(currencies_obj);
 
-        const update_param_on_currency_click = () => {
-            const params = new URLSearchParams(window.location.search);
-            const dropdown = document.querySelector('.dropdown');
+        currencies.forEach((currency) => {
+            // if (
+            //     currency[0] === 'United States Dollars' ||
+            //     currency[0] === 'Euro' ||
+            //     currency[0] === 'United Kingdom Pounds' ||
+            //     currency[0] === 'Mexico Pesos' ||
+            //     currency[0] === 'Canada Dollars' ||
+            //     currency[0] === 'Australia Dollars'
+            // ) {
+            //     top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+            // }
 
-            if (!dropdown) return;
+            currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
+        });
 
-            dropdown.addEventListener('click', (e) => {
-                this.selected_currency = e.target.id;
-                if (!this.selected_currency) return;
+        currency_label.addEventListener('click', () => {
+            currencies_container.classList.toggle('show-currencies-container');
 
-                document.querySelector('.active-currency').classList.remove('active-currency');
-                document.querySelector(`#${e.target.id}`).classList.add('active-currency');
+            // return if ie - ie can't toggle an svg
+            if (window.document.documentMode) return;
 
-                document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
+            currency_label.querySelector('svg').classList.toggle('flip-svg');
+        });
 
-                if (this.page_name !== 'search-results') return;
-                params.set('currency', this.selected_currency);
-                window.location.search = params.toString();
-            });
-        };
+        currencies_container.addEventListener('click', (e) => {
+            if (!e.target.getAttribute('id')) return;
 
-        const style_active_currency = () => {
-            const active_currency_meta = document.querySelector('meta[name="currency"]');
+            clicked_currency = e.target.getAttribute('id');
+            document.querySelector('.active-currency').classList.remove('active-currency');
+            document.getElementById(clicked_currency).classList.add('active-currency');
+            currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
+            currencies_select.value = clicked_currency;
 
-            if (!active_currency_meta) return;
+            if (document.querySelector('.SearchHotels')) submit.click();
+        });
 
-            const active_currency = active_currency_meta.content;
+        document.getElementById(selected_currency).classList.add('active-currency');
 
-            this.selected_currency = active_currency;
+        window.addEventListener('click', (e) => {
+            if (document.querySelector('.show-currencies-container')) {
+                if (
+                    e.target === document.querySelector('.currencies') ||
+                    e.target === document.querySelector('#currency-label') ||
+                    e.target.parentNode === document.querySelector('.currencies') ||
+                    e.target.parentNode === document.querySelector('.top-currencies')
+                )
+                    return;
 
-            document.querySelector(`#${active_currency}`).classList.add('active-currency');
+                currencies_container.classList.toggle('show-currencies-container');
 
-            document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
-        };
+                // return if ie - ie can't toggle svgs
+                if (window.document.documentMode) return;
+                currency_label.querySelector('svg').classList.toggle('flip-svg');
+            }
+        });
 
-        await get_currency_j_s_o_n();
+        currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
     }
 
     setupDatePrompt() {

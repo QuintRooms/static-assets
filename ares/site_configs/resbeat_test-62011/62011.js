@@ -243,4 +243,18 @@ if (document.querySelector('.CheckOutForm')) {
         boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);
     }, 1);
 }
+
+utilities.updateHTML(
+    '.ArnSupportChatTable',
+    `
+    <div class="support-details">
+        <h3>Customer Support</h3>
+        <p>Hours: 8:00am - 5:30pm CST</p>
+        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>
+        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>
+    </div>
+
+`
+);
+
 new ChildPortal();

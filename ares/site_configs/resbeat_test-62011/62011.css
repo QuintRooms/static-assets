@@ -298,5 +298,112 @@
     .ArnRateButton a {
         margin: auto;
     }
+}
 
+.lowRateLink,
+.lowRateLink + .dvd,
+.cancelLink,
+.supportLink + .dvd{
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .ArnSubPage{
+        padding: 12px;
+    }
+}
+
+.ArnSubPage h1{
+    color: #333;
+}
+
+.ArnSubPage.WBSupportForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 96px;
+
+}
+.WBSupportForm .FormFields{
+    margin-top: 6px;
+}
+
+.WBSupportForm .SSForm{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.WBSupportForm input,
+.WBSupportForm select,
+.WBSupportForm textarea{
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    width: 100%;
+    padding: 12px !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    outline: 0;
+}
+
+.WBSupportForm .ArnSupportChatTable{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.WBSupportForm .ArnSupportChatTable td p:first-of-type,
+.WBSupportForm .ArnSupportChatTable td div + p + p{
+    display: none;
+}
+
+.WBSupportForm .SendRequestAction{
+    background: #215853;
+    color: #fff;
+}
+
+.useCancelFormWarning{
+    display: none;
+}
+
+.support-details{
+    background: #f4f4f4;
+    color: #666;
+    padding: 30px;
+    line-height: 1.7;
+}
+
+.support-details h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.support-details a{
+    color: #215853;
+    text-decoration: none;
+}
+
+.support-details p{
+    margin: 0;
+}
+
+@media screen and (max-width: 800px){
+    .ArnSubPage.WBSupportForm{
+        grid-template-columns: 1fr;
+    }
+
+    .WBSupportForm .SSForm{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        width: 100%;
+    }
+    .WBSupportForm .ArnSupportChatTable{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .support-details{
+        padding: 18px;
+    }
 }

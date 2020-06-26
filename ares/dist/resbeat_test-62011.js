@@ -6155,6 +6155,10 @@
                 setTimeout(function () {
                     te(['#theConfirmationContainer legend', '#theHotel legend']);
                 }, 1)),
+            J.updateHTML(
+                '.ArnSupportChatTable',
+                '\n    <div class="support-details">\n        <h3>Customer Support</h3>\n        <p>Hours: 8:00am - 5:30pm CST</p>\n        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n    </div>\n\n'
+            ),
             new Z();
     },
 ]);

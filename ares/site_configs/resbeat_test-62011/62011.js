@@ -32,7 +32,7 @@ async function updateLogin() {
 updateLogin();
 
 function styleRegisterContainer() {
-    if (!document.querySelector('.MemberNotAuthenticated')) return;
+    if (!document.querySelector('#theWBLoginFormBody')) return;
 
     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email');
     document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password');
@@ -54,6 +54,19 @@ function styleRegisterContainer() {
 }
 
 styleRegisterContainer();
+
+function addAttributeToInput(element, value, attribute) {
+    if (!document.querySelector(element)) return;
+
+    document.querySelector(element).setAttribute(attribute, value);
+}
+
+addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
+addAttributeToInput('#theUserNameAjax input', 'email', 'type');
+addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
+addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
+addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
@@ -109,8 +122,19 @@ async function displayRewardPoints() {
         el.querySelector('tbody tr td').insertAdjacentHTML(
             'beforeend',
             `
+            <style>
+            .points{
+                color: ${site_config.secondary_color};
+            }
+
+            div.points-earned span {
+                font-family: 'Avenir';
+                letter-spacing: 1px;
+            }
+        </style>
+
             <div class="points-earned">
-            Reward points earned for this stay: ${reward_points}
+            Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 
             </div>
             `
         );
@@ -151,11 +175,13 @@ function headerLinks() {
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);
+    const booking_href = document.querySelector('.static-booking-guideLink').href;
+    const rewards_href = document.querySelector('.static-rewards-guideLink').href;
     commands.insertAdjacentHTML(
         'afterbegin',
         `
-        <a class="rewards" href="${window.location.origin}/v6/rewards-guide/?siteId=${site_config.site_id}">Rewards</a>
-        <a class="booking-guide" href="${window.location.origin}/v6/booking-guide/?siteId=${site_config.site_id}">Booking Guide</a>
+        <a class="rewards" target="_blank" href="${rewards_href}">Rewards</a>
+        <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
         `
     );
 }
@@ -183,9 +209,9 @@ function confirmationPointsEarned() {
                 margin-top: 48px;
             }
         </style>
-        <p class="awarded-after-checkout">Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.</p>
+        <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
         <div class="points-earned">
-            <span>RESBEAT Rewards Earned</span>
+            <span>RES<b>BEAT</b> Rewards Earned</span>
             <span>${points_earned}</span>
         </div>
     `
@@ -208,4 +234,49 @@ confirmationPointsEarned();
 
 // showRoomCount();
 
+function boldLastWord(arrayOfSelectors) {
+    const strings = document.querySelectorAll(arrayOfSelectors);
+
+    strings.forEach((string) => {
+        if (!string) return;
+
+        const text = string.textContent;
+        const last_word_length = text.lastIndexOf(' ');
+        const last_word = text.split(' ').pop();
+
+        string.innerHTML = `${text.substring(0, last_word_length)} <b>${last_word}</b>`;
+    });
+}
+
+if (document.querySelector('.SinglePropDetail')) boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
+if (document.querySelector('.CheckOutForm')) {
+    setTimeout(() => {
+        boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);
+    }, 1);
+}
+
+utilities.updateHTML(
+    '.ArnSupportChatTable',
+    `
+    <div class="support-details">
+        <h3>Customer Support</h3>
+        <p>Hours: 8:00am - 5:30pm CST</p>
+        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>
+        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>
+    </div>
+
+`
+);
+if (document.querySelector('.WBSupportFormContainer')) {
+    addAttributeToInput('#theNameAjax input', 'Name', 'placeholder');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder');
+    addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theEmailAjax input', 'email', 'type');
+    addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder');
+    addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder');
+    addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder');
+    addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder');
+
+    document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
+}
 new ChildPortal();

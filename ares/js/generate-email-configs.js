@@ -32,6 +32,13 @@ const sites = {
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png',
     },
+    62011: {
+        client_name: 'RESBEAT Test',
+        site_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
+        primary_color: '#215853',
+        secondary_color: '##e2ad37',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-62011/img/logo.png',
+    },
 };
 
 const entries = Object.entries(sites);

@@ -1,15 +1,34 @@
 /* Fonts */
 @font-face {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
     src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
+
 @font-face {
-    font-family: 'Avenir-Black';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
+
 @font-face {
-    font-family: 'Avenir-Meduim';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.logo img{
+    padding: 0;
 }
 
 .config-container {
@@ -31,6 +50,47 @@
 
 .ArnSupportLinks a {
     color: #333;
+}
+
+.SinglePropDetail .SimpleSearch {
+    background: #fff;
+    color: #666;
+}
+
+.SinglePropDetail .SimpleSearch input, .SinglePropDetail .SimpleSearch select {
+    background-color: #F0F0F0 !important;
+}
+
+#theSubmitButton, #theOtherSubmitButton, .SinglePropDetail .CheckRates .submit, .CheckOutForm #theConfirmationButton {
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #215853 !important;
+    background: #215853 !important;
+    color: #fff !important;
+}
+
+#theSubmitButton:hover, #theOtherSubmitButton:hover, .CheckRates .submit:hover, .CheckOutForm #theConfirmationButton:hover {
+    background: #fff !important;
+    color: #215853 !important;
+}
+
+.WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax {
+    display: none;
+}
+
+.WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #theFirstNameAjax input, .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input {
+    background: #F0F1F2;
+    border: unset;
+    font-family: 'Avenir';
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
+    font-family: 'Avenir';
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #commands, #commands .logoutCommand {
@@ -60,11 +120,13 @@
     color: #333 !important;
     display: block !important;
     text-transform: uppercase;
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
 }
 
 .RootBody .search-messaging #user-name strong {
-    font-family: 'Avenir-Black';
+    font-family: 'Avenir';
+    font-weight: 700;
 }
 
 .RootBody .search-messaging {
@@ -73,16 +135,37 @@
 }
 
 .RootBody .search-messaging h4 {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
 }
 
 .beat-em {
     background: #e2ad37;
     color: #fff;
     text-align: center;
-    padding: 6px 12px;
+    padding: 9px 12px;
     max-width: 150px;
     margin-left: auto;
+    border-radius: 40px;
+}
+
+.ArnRateButton {
+    width: 100%;
+    max-width: 135px !important;
+}
+
+.ArnRateButton a, .bookRoom, .holdRoom {
+    border-radius: 40px;
+    background: #fff;
+    color: #215853;
+    border: 2px solid #215853;
+    padding: 6px 12px;
+}
+
+.ArnRateButton a:hover, .bookRoom:hover, .holdRoom:hover {
+    background: #215853;
+    color: #fff;
+    border: 2px solid #215853;
 }
 
 .SinglePropDetail .beat-em {
@@ -93,7 +176,17 @@
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;
+    font-weight: 500;
     margin-top: 10px;
+}
+
+.SearchHotels .ArnPrimarySearchContainer {
+    background: #fff;
+    color:#666
+}
+
+.SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
+    background-color: #F0F0F0;
 }
 
 .CheckOutForm .originalPrice {
@@ -102,20 +195,32 @@
     font-size: 13px;
 }
 
+.CheckOutForm .total-points-earned td{
+    font-family: 'Avenir';
+}
 
 .SinglePropDetail .originalPrice {
     font-size: 15px;
 }
 
+#theBookingPage legend{
+    font-weight: normal;
+}
 
 .full-stay {
     display: none;
 }
 
 .SinglePropDetail .points-earned {
-    margin-top: 40px;
     font-size: 15px;
-    font-weight: 800;
+    background: #215853;
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    padding: 7px 0;
+    position: absolute;
+    bottom: 30px;
+    border-radius: 40px;
 }
 
 .roomCount {
@@ -134,14 +239,30 @@
     display: none;
 }
 
-.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1 {
-    font-family: 'Avenir-Light';
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1, .MemberNotAuthenticated .ForgotPasswordAction {
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     font-weight: 100;
 }
+.ArnSupportLinks {
+    font-family: 'Avenir';
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input {
+    border: unset;
+    background-color: #F0F1F2;
+    width: 100%;
+}
 
 .MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {
-    font-family: 'Avenir-black';
+    font-family: 'Avenir';
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -178,13 +299,15 @@
 }
 
 .ArnSearchHeader {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     font-size: 25px;
 }
 
 .SearchHotels .sort-wrapper h4, .SearchHotels .lblAmenities, .SearchHotels .lblRating {
-    font-family: 'Avenir-black';
+    font-family: 'Avenir';
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -196,7 +319,7 @@
     }
     
     .RootBody #CitySearchContainer {
-        width: 40%;
+        width: 30vw;
     }
 }
 
@@ -234,5 +357,117 @@
     .ArnRateButton a {
         margin: auto;
     }
+}
+
+.lowRateLink,
+.lowRateLink + .dvd,
+.cancelLink,
+.supportLink + .dvd{
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .ArnSubPage{
+        padding: 12px;
+    }
+}
+
+.ArnSubPage h1{
+    color: #333;
+}
+
+.ArnSubPage.WBSupportForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 96px;
 
 }
+.WBSupportForm .FormFields{
+    margin-top: 6px;
+}
+
+.WBSupportForm .SSForm{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.WBSupportForm input,
+.WBSupportForm select,
+.WBSupportForm textarea{
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    width: 100%;
+    padding: 12px !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    outline: 0;
+}
+
+.WBSupportForm .ArnSupportChatTable{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.WBSupportForm .ArnSupportChatTable td p:first-of-type,
+.WBSupportForm .ArnSupportChatTable td div + p + p{
+    display: none;
+}
+
+.WBSupportForm .SendRequestAction{
+    background: #215853;
+    color: #fff;
+}
+
+.WBSupportForm .SSForm .FormFields label{
+    display: none;
+}
+
+.useCancelFormWarning{
+    display: none;
+}
+
+.support-details{
+    background: #f4f4f4;
+    color: #666;
+    padding: 30px;
+    line-height: 1.7;
+}
+
+.support-details h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.support-details a{
+    color: #215853;
+    text-decoration: none;
+}
+
+.support-details p{
+    margin: 0;
+}
+
+@media screen and (max-width: 800px){
+    .ArnSubPage.WBSupportForm{
+        grid-template-columns: 1fr;
+    }
+
+    .WBSupportForm .SSForm{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        width: 100%;
+    }
+    .WBSupportForm .ArnSupportChatTable{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .support-details{
+        padding: 18px;
+    }
+}
+

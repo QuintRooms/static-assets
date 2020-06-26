@@ -1,46 +1,189 @@
-<h1>Booking Guide</h1>
-<h2>Simple steps to help you make the most of your membership!</h2>
+<style>
+    #booking-guide {
+        max-width: 1000px;
+        margin: 0 auto;
+        color: #666;
+    }
+
+    .guide-entry {
+        margin: 56px 0;
+    }
+
+    .guide-entry .content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .guide-content h1 {
+        color: #333;
+    }
+
+    .guide-content a {
+        color: #215853;
+    }
+
+    .guide-content h2 {
+        color: #646262;
+        font-weight: normal;
+    }
+
+    .guide-content h1,
+    .guide-content h2 {
+        text-align: center;
+    }
+
+    .guide-entry h3 {
+        color: #215853;
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .content img {
+        padding: 0 18px;
+        max-width: 450px;
+    }
+
+    .guide-entry .content div:first-child {
+        margin-right: 36px;
+    }
+
+    .guide-entry:nth-child(2n) .content div:first-child {
+        order: 2;
+        margin-left: 36px;
+        margin-right: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        .guide-entry {
+            margin: 0;
+        }
+
+        .guide-entry .content {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
+
+        .guide-entry:nth-child(2n) .content div:first-child {
+            margin-left: 0;
+        }
+
+        .guide-entry .content div:first-child {
+            order: 2;
+            max-width: 500px;
+            margin: 18px auto;
+        }
+
+        .content img {
+            padding: 0;
+            max-width: unset;
+        }
+    }
+</style>
 
 <div class="guide-content">
+    <h1>Booking Guide</h1>
+    <h2>Simple steps to help you make the most of your membership!</h2>
     <div class="guide-entry">
-        <h3>1. Access</h3>
-        <p>If you are a new user, to activate your membership click REGISTER, enter your personal details, confirm your password and you’ll receive immediate access.</p>
-        <p>If you are an existing member, just click LOGIN and enter your email address and password to access your exclusive rates. </p>
+        <div class="content">
+            <div>
+                <h3>Access</h3>
+                <p>If you are a new user, to activate your membership click REGISTER, enter your personal details, confirm your password and you’ll receive immediate access.</p>
+                <p>If you are an existing member, just click LOGIN and enter your email address and password to access your exclusive rates.</p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 
     <div class="guide-entry">
-        <h3>2. Start Your Search</h3>
-        <p>You’re now ready to start searching over 600,000 hotels with unbeatable rates.</p>
-        <p>Simply enter your destination, travel dates, number of rooms required and people staying, and hit the search button.</p>
-        <p>You can also filter by the property type, amenities, rating and preferred currency.</p>
+        <div class="content">
+            <div>
+                <h3>Start Your Search</h3>
+                <p>You’re now ready to start searching over 600,000 hotels with unbeatable rates.</p>
+                <p>Simply enter your destination, travel dates, number of rooms required and people staying, and hit the search button.</p>
+                <p>You can also filter by the property type, amenities, rating and preferred currency.</p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 
     <div class="guide-entry">
-        <h3>3. Select Your Hotel</h3>
-        <p>You’ll find additional filters to the left of the hotel listings, where you can sort by savings and price. You can also update your search terms here.</p>
-        <p>In the top header you’ll find links that navigate to other useful pages, such as your profile, our Customer Service contact info and your RESBEAT Rewards program.</p>
-        <p>And don’t forget to take note of the significant savings you’ll be making on other travel sites!</p>
+        <div class="content">
+            <div>
+                <h3>Select Your Hotel</h3>
+                <p>You’ll find additional filters to the left of the hotel listings, where you can sort by savings and price. You can also update your search terms here.</p>
+                <p>
+                    In the top header you’ll find links that navigate to other useful pages, such as your profile, our Customer Service contact info and your RES<b>BEAT</b> Rewards
+                    program.
+                </p>
+                <p>And don’t forget to take note of the significant savings you’ll be making on other travel sites!</p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 
     <div class="guide-entry">
-        <h3>4. Hotel Details</h3>
-        <p>By clicking Book Rooms, you’ll be able to see more specific information on each hotel, such as its location, amenities, reviews and room options.</p>
-        <p>Also, look out for how many RESBEAT Rewards you can earn from earn booking!</p>
+        <div class="content">
+            <div>
+                <h3>Hotel Details</h3>
+                <p>By clicking Book Rooms, you’ll be able to see more specific information on each hotel, such as its location, amenities, reviews and room options.</p>
+                <p>Also, look out for how many RES<b>BEAT</b> Rewards you can earn from earn booking!</p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 
     <div class="guide-entry">
-        <h3>5. Secure Your Room</h3>
-        <p>Once you’ve chosen your preferred room, you’ll be asked to enter personal and payment details. You can make a reservation for someone else – just make sure you include that person's name and information as the guest. You can also have a different name and address for the guest and for the credit card details.</p>
-        <p>You also have the option to add an additional email to be notified of the reservation, if required.</p>
-        <p>This page also contains further details on the hotel’s policies and payment terms. Please review before making your secure purchase. </p>
+        <div class="content">
+            <div>
+                <h3>Secure Your Room</h3>
+                <p>
+                    Once you’ve chosen your preferred room, you’ll be asked to enter personal and payment details. You can make a reservation for someone else – just make sure you
+                    include that person's name and information as the guest. You can also have a different name and address for the guest and for the credit card details.
+                </p>
+                <p>You also have the option to add an additional email to be notified of the reservation, if required.</p>
+                <p>This page also contains further details on the hotel’s policies and payment terms. Please review before making your secure purchase.</p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 
     <div class="guide-entry">
-        <h3>6. Confirmation</h3>
-        <p>You’re all set!</p>
-        <p>Once your payment has been approved, your reservation will be confirmed immediately. You’ll also receive a booking number. Please reference this number if you need to speak to a member of our team.</p>
-        <p>A confirmation email containing your booking details will be sent to the primary email address you supplied when making your reservation. You’ll also be able to download a receipt.</p>
-        <p>Your total RESBEAT Rewards earned will also be confirmed. These will be redeemable 48 hours after checkout. Keep a lookout for an email notifying you when these have been added to your Rewards account.</p>
-        <p>If you have any queries about your reservation, you can check our <a id="faq-link" href="#">Frequently Asked Questions</a>. Our <a id="customer-support-link" href="#">Customer Service</a> team are also on hand to help.</p>
+        <div class="content">
+            <div>
+                <h3>Confirmation</h3>
+                <p>You’re all set!</p>
+                <p>
+                    Once your payment has been approved, your reservation will be confirmed immediately. You’ll also receive a booking number. Please reference this number if you
+                    need to speak to a member of our team.
+                </p>
+                <p>
+                    A confirmation email containing your booking details will be sent to the primary email address you supplied when making your reservation. You’ll also be able to
+                    download a receipt.
+                </p>
+                <p>
+                    Your total RES<b>BEAT</b> Rewards earned will also be confirmed. These will be redeemable 48 hours after checkout. Keep a lookout for an email notifying you
+                    when these have been added to your Rewards account.
+                </p>
+                <p>
+                    If you have any queries about your reservation, you can check our <a id="faq-link" href="#">Frequently Asked Questions</a>. Our
+                    <a id="customer-support-link" href="#">Customer Service</a> team are also on hand to help.
+                </p>
+            </div>
+            <div>
+                <img src="//via.placeholder.com/500x150?text=placeholder" alt="Supporting image" />
+            </div>
+        </div>
     </div>
 </div>

@@ -116,7 +116,7 @@
     <link rel="stylesheet" type="text/css" href="/v6?_s=EbtaxS99rdV3WJtx" />
 </head>
 
-<body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 events-hotelsforhope-com MemberNotAuthenticated PublicSite MemberTypeNone property19311 WBSearchLongLat ConfirmationForm supplier16Confirm FinalConfirmation" id="theBody">
+<body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 events-hotelsforhope-com PublicSite MemberTypeNone property19311 WBSearchLongLat ConfirmationForm supplier16Confirm FinalConfirmation" id="theBody">
     <!--[if IE]><script>Element.addClassName(document.body, "IE")</script><![endif]-->
     <script>
     if (navigator.userAgent.toLowerCase().indexOf("applewebkit") != -1) { Element.addClassName(document.body, "WK"); }

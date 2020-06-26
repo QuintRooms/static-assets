@@ -295,7 +295,7 @@ select#adults {
     left: 0;
     background: #fff;
     width: 100%;
-    box-shadow: 0 2px 50px 0 #000;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
 }
 
 .show-language-container {
@@ -326,13 +326,13 @@ select#adults {
 /* Language Dropdown End */
 
 /* Currency Dropdown Start */
-#CurrenciesContainer{
+/* #CurrenciesContainer{
     display: none;
 }
 
 .currency-content{
     padding: 12px;
-    box-shadow: 0 2px 50px 0 #000;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
 }
 
 .currencies-container .dropdown{
@@ -366,13 +366,160 @@ select#adults {
 .currency-content div span:hover,
 .active-currency{
     background: #ccc;
+} */
+
+.config-container #CurrenciesContainer {
+    margin-right: 24px;
+    position: relative;
 }
 
-/* Currency Dropdown End */
+.config-container .lblCurrency {
+    color: #fff;
+}
 
-/* Dropdown End */
+.config-container #CurrenciesContainer .ArnSearchField {
+    position: absolute;
+    right: 0;
+    overflow: unset !important;
+    padding: unset;
+    border-bottom: unset;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField select {
+    display: none;
+}
+
+.lblCurrency {
+    border-bottom: 1px solid #868686 !important;
+    width: 226px;
+}
+
+.config-container #CurrenciesContainer .ArnSearchField select.show-currency {
+    display: block;
+}
+
+.config-label {
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid #868686;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#currency-label span {
+    pointer-events: none;
+    padding: 2px;
+    display: flex;
+}
+
+#currency-label {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.RootBody #currency-label,
+.SearchHotels #currency-label {
+    display: flex;
+}
+
+#currency-label polyline {
+    stroke: #868686;
+    transform: scale(0.85);
+}
+
+#CurrenciesContainer {
+    display: none;
+}
+
+.currencies-container {
+    position: relative;
+    margin-right: 12px;
+    left: 0;
+}
+
+.dropdown div {
+    cursor: pointer;
+    padding: 6px 8px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    background: #fff;
+    grid-template-columns: 25% 25% 25% 25%;
+    box-shadow: 0 2px 12px 0 #000;
+    width: 800px;
+}
+
+.show-currencies-container {
+    display: grid;
+}
+
+.language-container div:hover,
+.dropdown div:hover,
+.active-currency,
+.active-language {
+    background: #e2e2e2;
+    color: #333;
+}
+
+.top-currencies {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 0 !important;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.top-currencies:hover {
+    background: unset !important;
+    color: unset !important;
+}
+
+.top-currencies h4 {
+    padding: 0 8px;
+    font-size: 14px;
+    margin-bottom: 4px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.top-currencies div:first-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+}
+
+.top-currencies + h4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+@media screen and (max-width: 1000px) {
+    .currencies-container {
+        position: static;
+    }
+
+    .dropdown {
+        top: 36px;
+        width: 96%;
+        margin: 0 2%;
+    }
+
+    #currency-label {
+        margin-left: auto;
+    }
+}
+
 /* Currencies IE CSS Hack */
-/* @media all and (-ms-high-contrast: none) {
+@media all and (-ms-high-contrast: none) {
     .show-currencies-container {
         display: flex;
         flex-wrap: wrap;
@@ -384,22 +531,21 @@ select#adults {
         width: 100% !important;
     }
 
-    .currencies h4 {
+    .dropdown h4 {
         width: 100%;
     }
 
-    .currencies div {
+    .dropdown div {
         width: 25%;
     }
 
-    .language-container div {
-        padding: 0;
-    }
+}
 
-    .language-container img {
-        max-width: 64px;
-    }
-} */
+
+/* Currency Dropdown End */
+
+/* Dropdown End */
+
 
 /* Header End */
 

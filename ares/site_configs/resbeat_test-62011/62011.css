@@ -1,15 +1,34 @@
 /* Fonts */
 @font-face {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
     src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
+
 @font-face {
-    font-family: 'Avenir-Black';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
+
 @font-face {
-    font-family: 'Avenir-Meduim';
-    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Meduim.ttf') format('truetype');
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://dev-static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.logo img{
+    padding: 0;
 }
 
 .config-container {
@@ -40,11 +59,13 @@
 .WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #thefirstNameAjax input[type='text'], .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input {
     background: #F0F1F2;
     border: unset;
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
 }
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -76,11 +97,13 @@
     color: #333 !important;
     display: block !important;
     text-transform: uppercase;
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
 }
 
 .RootBody .search-messaging #user-name strong {
-    font-family: 'Avenir-Black';
+    font-family: 'Avenir';
+    font-weight: 700;
 }
 
 .RootBody .search-messaging {
@@ -89,7 +112,8 @@
 }
 
 .RootBody .search-messaging h4 {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
 }
 
 .beat-em {
@@ -109,6 +133,7 @@
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;
+    font-weight: 500;
     margin-top: 10px;
 }
 
@@ -118,11 +143,17 @@
     font-size: 13px;
 }
 
+.CheckOutForm .total-points-earned td{
+    font-family: 'Avenir';
+}
 
 .SinglePropDetail .originalPrice {
     font-size: 15px;
 }
 
+#theBookingPage legend{
+    font-weight: normal;
+}
 
 .full-stay {
     display: none;
@@ -151,16 +182,18 @@
 }
 
 .MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1, .MemberNotAuthenticated .ForgotPasswordAction {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     font-weight: 100;
 }
 .ArnSupportLinks {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     font-weight: 100;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input {
@@ -169,7 +202,8 @@
 }
 
 .MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {
-    font-family: 'Avenir-black';
+    font-family: 'Avenir';
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -206,13 +240,15 @@
 }
 
 .ArnSearchHeader {
-    font-family: 'Avenir-Light';
+    font-family: 'Avenir';
+    font-weight: 200;
     letter-spacing: 1px;
     font-size: 25px;
 }
 
 .SearchHotels .sort-wrapper h4, .SearchHotels .lblAmenities, .SearchHotels .lblRating {
-    font-family: 'Avenir-black';
+    font-family: 'Avenir';
+    font-weight: 700;
     letter-spacing: 1px;
 }
 

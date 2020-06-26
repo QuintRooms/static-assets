@@ -197,9 +197,9 @@ function confirmationPointsEarned() {
                 margin-top: 48px;
             }
         </style>
-        <p class="awarded-after-checkout">Your RESBEAT Rewards will be added to your Rewards account 48 hours after checkout.</p>
+        <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
         <div class="points-earned">
-            <span>RESBEAT Rewards Earned</span>
+            <span>RES<b>BEAT</b> Rewards Earned</span>
             <span>${points_earned}</span>
         </div>
     `
@@ -222,4 +222,25 @@ confirmationPointsEarned();
 
 // showRoomCount();
 
+function boldLastWord(arrayOfSelectors) {
+    const strings = document.querySelectorAll(arrayOfSelectors);
+
+    strings.forEach((string) => {
+        if (!string) return;
+
+        const text = string.textContent;
+        const last_word_length = text.lastIndexOf(' ');
+        const last_word = text.split(' ').pop();
+
+        string.innerHTML = `${text.substring(0, last_word_length)} <b>${last_word}</b>`;
+    });
+}
+
+if (document.querySelector('.SinglePropDetail')) boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
+if (document.querySelector('.CheckOutForm')) {
+    console.log('checkout page');
+    setTimeout(() => {
+        boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);
+    }, 1);
+}
 new ChildPortal();

@@ -1019,6 +1019,7 @@ export default class BasePortal {
                 .discount td,
                 .totalRow td,
                 .balanceDueRow td,
+                .dueNowRow td,
                 .guestNameFields td{
                     font-family: ${this.site_config.google_font_name}, 'Helvetica';
                 }

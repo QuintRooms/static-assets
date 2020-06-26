@@ -5804,7 +5804,7 @@
                     dayjs_date_format: 'M/D/YYYY',
                     reviews_before_info: !0,
                     show_stars: !0,
-                    show_language_select: !0,
+                    show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
                     fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),

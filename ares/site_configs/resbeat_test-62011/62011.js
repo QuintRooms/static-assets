@@ -55,17 +55,18 @@ function styleRegisterContainer() {
 
 styleRegisterContainer();
 
-function styleRegisterForm(element, value) {
-    if (!document.querySelector('.WBValidatedRegistrationForm')) return;
+function addAttributeToInput(element, value, attribute) {
+    if (!document.querySelector(element)) return;
 
-    document.querySelector(element).setAttribute('placeholder', value);
+    document.querySelector(element).setAttribute(attribute, value);
 }
 
-styleRegisterForm('#theUserNameAjax input', 'Email');
-styleRegisterForm('#theFirstNameAjax input', 'First Name');
-styleRegisterForm('#theLastNameAjax input', 'Last Name');
-styleRegisterForm('#theEditablePasswordAjax input', 'Create a Password');
-styleRegisterForm('#theEditableConfirmPasswordAjax input', 'Confirm Password');
+addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
+addAttributeToInput('#theUserNameAjax input', 'email', 'type');
+addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
+addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
+addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
@@ -249,7 +250,6 @@ function boldLastWord(arrayOfSelectors) {
 
 if (document.querySelector('.SinglePropDetail')) boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
 if (document.querySelector('.CheckOutForm')) {
-    console.log('checkout page');
     setTimeout(() => {
         boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);
     }, 1);
@@ -267,5 +267,16 @@ utilities.updateHTML(
 
 `
 );
+if (document.querySelector('.WBSupportFormContainer')) {
+    addAttributeToInput('#theNameAjax input', 'Name', 'placeholder');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder');
+    addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theEmailAjax input', 'email', 'type');
+    addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder');
+    addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder');
+    addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder');
+    addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder');
 
+    document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
+}
 new ChildPortal();

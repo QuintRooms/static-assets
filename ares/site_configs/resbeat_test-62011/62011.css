@@ -56,7 +56,7 @@
     display: none;
 }
 
-.WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #thefirstNameAjax input[type='text'], .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input {
+.WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #theFirstNameAjax input, .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input {
     background: #F0F1F2;
     border: unset;
     font-family: 'Avenir';
@@ -357,6 +357,10 @@
 .WBSupportForm .SendRequestAction{
     background: #215853;
     color: #fff;
+}
+
+.WBSupportForm label{
+    display: none;
 }
 
 .useCancelFormWarning{

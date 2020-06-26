@@ -121,8 +121,19 @@ async function displayRewardPoints() {
         el.querySelector('tbody tr td').insertAdjacentHTML(
             'beforeend',
             `
+            <style>
+            .points{
+                color: ${site_config.secondary_color};
+            }
+
+            div.points-earned span {
+                font-family: 'Avenir';
+                letter-spacing: 1px;
+            }
+        </style>
+
             <div class="points-earned">
-            Reward points earned for this stay: ${reward_points}
+            Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 
             </div>
             `
         );

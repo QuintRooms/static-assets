@@ -6038,10 +6038,12 @@
                                         var n = parseInt(t);
                                         e.querySelector('tbody tr td').insertAdjacentHTML(
                                             'beforeend',
-                                            '\n            <div class="points-earned">\n            Reward points earned for this stay: '.concat(
-                                                n,
-                                                '\n            </div>\n            '
-                                            )
+                                            '\n            <style>\n            .points{\n                color: '
+                                                .concat(
+                                                    Y.secondary_color,
+                                                    ';\n            }\n\n            div.points-earned span {\n                font-family: \'Avenir\';\n                letter-spacing: 1px;\n            }\n        </style>\n\n            <div class="points-earned">\n            Earn <b class="points">'
+                                                )
+                                                .concat(n, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
                                         );
                                     });
                                 case 6:

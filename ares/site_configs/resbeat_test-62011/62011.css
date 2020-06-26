@@ -317,6 +317,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Avenir';
+    outline: none;
 }
 
 .pb-container {

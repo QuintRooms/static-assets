@@ -197,7 +197,8 @@
 
 .MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input {
     border: unset;
-    background-color: #F0F1F2 ;
+    background-color: #F0F1F2;
+    width: 100%;
 }
 
 .MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {

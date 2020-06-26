@@ -52,6 +52,29 @@
     color: #333;
 }
 
+.SinglePropDetail .SimpleSearch {
+    background: #fff;
+    color: #666;
+}
+
+.SinglePropDetail .SimpleSearch input, .SinglePropDetail .SimpleSearch select {
+    background-color: #F0F0F0 !important;
+}
+
+#theSubmitButton, #theOtherSubmitButton, .SinglePropDetail .CheckRates .submit, .CheckOutForm #theConfirmationButton {
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #215853 !important;
+    background: #215853 !important;
+    color: #fff !important;
+}
+
+#theSubmitButton:hover, #theOtherSubmitButton:hover, .CheckRates .submit:hover, .CheckOutForm #theConfirmationButton:hover {
+    background: #fff !important;
+    color: #215853 !important;
+}
+
 .WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax {
     display: none;
 }
@@ -120,9 +143,29 @@
     background: #e2ad37;
     color: #fff;
     text-align: center;
-    padding: 6px 12px;
+    padding: 9px 12px;
     max-width: 150px;
     margin-left: auto;
+    border-radius: 40px;
+}
+
+.ArnRateButton {
+    width: 100%;
+    max-width: 135px !important;
+}
+
+.ArnRateButton a, .bookRoom, .holdRoom {
+    border-radius: 40px;
+    background: #fff;
+    color: #215853;
+    border: 2px solid #215853;
+    padding: 6px 12px;
+}
+
+.ArnRateButton a:hover, .bookRoom:hover, .holdRoom:hover {
+    background: #215853;
+    color: #fff;
+    border: 2px solid #215853;
 }
 
 .SinglePropDetail .beat-em {
@@ -135,6 +178,15 @@
     font-size: 15px;
     font-weight: 500;
     margin-top: 10px;
+}
+
+.SearchHotels .ArnPrimarySearchContainer {
+    background: #fff;
+    color:#666
+}
+
+.SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
+    background-color: #F0F0F0;
 }
 
 .CheckOutForm .originalPrice {
@@ -160,8 +212,15 @@
 }
 
 .SinglePropDetail .points-earned {
-    margin-top: 40px;
     font-size: 15px;
+    background: #215853;
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    padding: 7px 0;
+    position: absolute;
+    bottom: 30px;
+    border-radius: 40px;
 }
 
 .roomCount {
@@ -260,7 +319,7 @@
     }
     
     .RootBody #CitySearchContainer {
-        width: 40%;
+        width: 30vw;
     }
 }
 

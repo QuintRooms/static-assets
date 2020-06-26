@@ -105,6 +105,10 @@
     text-transform: uppercase;
 }
 
+.WBForgotPasswordFormActions {
+    text-align: center;
+}
+
 .RootBody .ArnSecondarySearchOuterContainer {
     color: #333;
 }
@@ -179,7 +183,7 @@
     border: 2px solid #215853;
 }
 
-.LoginAction.submit, #register-btn a, .RegisterAction.submit {
+.LoginAction.submit, #register-btn a, .RegisterAction.submit, .SendMeNewPasswordAction.submit {
     border-radius: 40px;
     background: #215853;
     color: #fff;
@@ -187,7 +191,7 @@
     padding: 6px 12px;
 }
 
-.LoginAction.submit:hover, #register-btn a:hover, .RegisterAction.submit:hover {
+.LoginAction.submit:hover, #register-btn a:hover, .RegisterAction.submit:hover, .SendMeNewPasswordAction.submit:hover {
     background: #fff;
     color: #215853;
     border: 2px solid #215853;
@@ -309,9 +313,10 @@
     text-align: center;
 }
 
-.MemberNotAuthenticated .LoginAction {
+.MemberNotAuthenticated .LoginAction, .SendMeNewPasswordAction.submit {
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: 'Avenir';
 }
 
 .pb-container {

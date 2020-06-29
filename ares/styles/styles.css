@@ -101,12 +101,15 @@ a.ArnShowRatesLink {
     background: #fff;
     color: #333;
     border: 1px solid #333;
+    -webkit-appearance: none;
 }
 
 .CheckRates input.submit {
     background: #fff;
     color: #333;
+    -webkit-appearance: none;
 }
+
 
 input#theSubmitButton:hover,
 input#theSubmitButton:focus,
@@ -2856,6 +2859,7 @@ legend {
 
 #theHotelAddress {
     text-align: center;
+    -webkit-appearance: none ;
 }
 
 #mainHotelImage {

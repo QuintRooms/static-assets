@@ -1846,7 +1846,7 @@
             U = 'function' == typeof R && !!E.f,
             W = r.QObject,
             G = !W || !W.prototype || !W.prototype.findChild,
-            z =
+            V =
                 i &&
                 u(function () {
                     return (
@@ -1865,7 +1865,7 @@
                           r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
                       }
                     : T,
-            V = function (e) {
+            z = function (e) {
                 var t = (D[e] = A(R.prototype));
                 return (t._k = e), t;
             },
@@ -1884,7 +1884,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
                         : T(e, t, n)
                 );
             },
@@ -1917,9 +1917,9 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), z(this, e, x(1, n));
+                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
                         };
-                    return i && G && z($, e, {configurable: !0, set: t}), V(e);
+                    return i && G && V($, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -1933,7 +1933,7 @@
             (E.f = ee),
             i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
             (p.f = function (e) {
-                return V(h(e));
+                return z(h(e));
             })),
             a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -5783,13 +5783,13 @@
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function z(e, t, n) {
-            return (z =
+        function V(e, t, n) {
+            return (V =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = V(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = z(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -5798,8 +5798,8 @@
                           }
                       })(e, t, n || e);
         }
-        function V(e) {
-            return (V = Object.setPrototypeOf
+        function z(e) {
+            return (z = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
@@ -5874,8 +5874,8 @@
                         })(this, t),
                         (e = (function (e, t) {
                             return !t || ('object' !== U(t) && 'function' != typeof t) ? W(e) : t;
-                        })(this, V(t).call(this, Y))),
-                        z(V(t.prototype), 'init', W(e)).call(W(e)),
+                        })(this, z(t).call(this, Y))),
+                        V(z(t.prototype), 'init', W(e)).call(W(e)),
                         e
                     );
                 }
@@ -6015,14 +6015,27 @@
             Q('#theLastNameAjax input', 'Last Name', 'placeholder'),
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
-            document.querySelector('#theUserNameAjax input') &&
-                (document.querySelector('#theUserNameAjax input').onblur = function () {
-                    var e = document.querySelector('#theUserNameAjax input');
-                    if (e) {
-                        var t = e.getAttribute('onblur');
-                        e.setAttribute('onblur', t), Q('#theUserNameAjax input', 'Email', 'placeholder'), Q('#theUserNameAjax input', 'email', 'type');
+            document.querySelector('.WBValidatedRegistrationForm') &&
+                (function (e) {
+                    var t = document.querySelector(e);
+                    if (t) {
+                        var n = t.querySelector('input');
+                        t.insertAdjacentHTML(
+                            'beforeBegin',
+                            '<input type="email" placeholder="Email" class="email-mask"><style>'
+                                .concat(e, ' input, ')
+                                .concat(e, ' label {position:absolute;left:-100000px;}</style>')
+                        );
+                        var r = document.querySelector('.email-mask');
+                        r.addEventListener('blur', function () {
+                            n.value = r.value;
+                            var e = setInterval(function () {
+                                document.querySelector('#'.concat(n.id)) || ((n = document.querySelector('#theUserNameAjax input')), clearInterval(e));
+                            }, 500);
+                            n.focus(), n.blur();
+                        });
                     }
-                }),
+                })('#theUserNameAjax'),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;

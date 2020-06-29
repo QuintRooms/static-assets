@@ -59,19 +59,37 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
-function validateInputOnBlur() {
-    const email = document.querySelector('#theUserNameAjax input');
+function createInputMaskToBypassArnValidation(selector) {
+    const arn_input_container = document.querySelector(selector);
 
-    if (!email) return;
+    if (!arn_input_container) return;
 
-    const blur_function = email.getAttribute('onblur');
-    email.setAttribute('onblur', blur_function);
+    let arn_input = arn_input_container.querySelector('input');
 
-    addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
-    addAttributeToInput('#theUserNameAjax input', 'email', 'type');
+    arn_input_container.insertAdjacentHTML(
+        'beforeBegin',
+        `<input type="email" placeholder="Email" class="email-mask"><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+    );
+
+    const new_input = document.querySelector('.email-mask');
+
+    new_input.addEventListener('blur', () => {
+        arn_input.value = new_input.value;
+
+        const interval = setInterval(() => {
+            if (!document.querySelector(`#${arn_input.id}`)) {
+                arn_input = document.querySelector('#theUserNameAjax input');
+
+                clearInterval(interval);
+            }
+        }, 500);
+
+        arn_input.focus();
+        arn_input.blur();
+    });
 }
 
-if (document.querySelector('#theUserNameAjax input')) document.querySelector('#theUserNameAjax input').onblur = validateInputOnBlur;
+if (document.querySelector('.WBValidatedRegistrationForm')) createInputMaskToBypassArnValidation('#theUserNameAjax');
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;

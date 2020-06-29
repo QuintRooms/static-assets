@@ -412,6 +412,10 @@
         width: 100%;
     }
 
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 0px;
+    }
+
     .SearchHotels .beat-em {
         align-self: center;
         justify-self: center;

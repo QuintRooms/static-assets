@@ -294,4 +294,26 @@ if (document.querySelector('.WBSupportFormContainer')) {
 
     document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
 }
+
+function styleMapPins() {
+    if (!document.querySelector('.SearchHotels')) return;
+    document.body.insertAdjacentHTML(
+        'beforeend',
+        `
+    <style>
+        .SearchHotels .arnMapMarker {
+            background: ${site_config.secondary_color};
+            border-color:  ${site_config.primary_text_color};
+            color: ${site_config.primary_text_color};
+        }
+        
+        .SearchHotels .arnMapMarkerTriangle {
+            border-top-color: ${site_config.secondary_color};
+        }
+    `
+    );
+}
+
+styleMapPins();
+
 new ChildPortal();

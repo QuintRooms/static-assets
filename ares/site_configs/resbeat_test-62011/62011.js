@@ -94,7 +94,11 @@ if (document.querySelector('.WBValidatedRegistrationForm')) {
     createInputMaskToBypassArnValidation('#theUserNameAjax');
     utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
 
-    if (document.querySelector('#theUserNameAjax input').classList.contains('HasError')) document.querySelector('.email-mask').classList.add('HasError');
+    if (document.querySelector('.email-mask')) {
+        document.querySelector('.email-mask').addEventListener('blur', () => {
+            if (document.querySelector('#theUserNameAjax').classList.contains('HasError')) document.querySelector('.email-mask').classList.add('HasError');
+        });
+    }
 }
 
 function updateSearchTitle() {

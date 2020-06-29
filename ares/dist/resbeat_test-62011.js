@@ -6045,7 +6045,10 @@
                     }
                 })('#theUserNameAjax'),
                 J.removeMaskedElementFromTabIndex('#theUserNameAjax input'),
-                document.querySelector('#theUserNameAjax input').classList.contains('HasError') && document.querySelector('.email-mask').classList.add('HasError')),
+                document.querySelector('.email-mask') &&
+                    document.querySelector('.email-mask').addEventListener('blur', function () {
+                        document.querySelector('#theUserNameAjax').classList.contains('HasError') && document.querySelector('.email-mask').classList.add('HasError');
+                    })),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;

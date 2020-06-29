@@ -260,9 +260,10 @@ export default class BasePortal {
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();
             this.hideRemainingRooms();
+            this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
 
             if (this.site_config.is_resbeat_client) {
-                this.createResbeatGuides('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide');
+                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide');
             }
         });
     }
@@ -2311,12 +2312,12 @@ export default class BasePortal {
         });
     }
 
-    async createResbeatGuides(html_url, page_body_selector) {
+    async replaceHTMLWithFile(html_url, page_body_selector) {
         if (!document.querySelector(page_body_selector)) return;
 
         const parent_container = document.querySelector(page_body_selector);
         const html = await utilities.fetchHTMLFromFile(html_url);
 
-        parent_container.insertAdjacentHTML('afterBegin', html);
+        parent_container.innerHTML = html;
     }
 }

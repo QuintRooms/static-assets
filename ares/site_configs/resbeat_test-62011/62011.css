@@ -551,9 +551,13 @@
     margin-top:18px;
 }
 
-.CheckOutForm #theHotelAddress {
+#theHotelAddress {
     display: block !important;
     text-align: left !important;
+}
+
+#AdminControlsContainer {
+    justify-content: flex-end;
 }
 
 @media screen and (max-width: 800px){

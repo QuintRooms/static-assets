@@ -59,14 +59,16 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
-function validateInputOnBlur(selector, attribute, value) {
-    const element = document.querySelector(selector);
-    if (!element) return;
-    const blur_function = element.getAttribute('onblur');
-    element.setAttribute('onblur', blur_function);
+function validateInputOnBlur() {
+    const email = document.querySelector('#theUserNameAjax input');
 
-    addAttributeToInput(element, 'Email', 'placeholder');
-    addAttributeToInput(element, 'email', 'type');
+    if (!email) return;
+
+    const blur_function = email.getAttribute('onblur');
+    email.setAttribute('onblur', blur_function);
+
+    addAttributeToInput(email, 'Email', 'placeholder');
+    addAttributeToInput(email, 'email', 'type');
 }
 
 if (document.querySelector('#theUserNameAjax input')) document.querySelector('#theUserNameAjax input').onblur = validateInputOnBlur;

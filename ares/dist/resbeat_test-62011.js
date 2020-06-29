@@ -6016,11 +6016,11 @@
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
             document.querySelector('#theUserNameAjax input') &&
-                (document.querySelector('#theUserNameAjax input').onblur = function (e, t, n) {
-                    var r = document.querySelector(e);
-                    if (r) {
-                        var o = r.getAttribute('onblur');
-                        r.setAttribute('onblur', o), Q(r, 'Email', 'placeholder'), Q(r, 'email', 'type');
+                (document.querySelector('#theUserNameAjax input').onblur = function () {
+                    var e = document.querySelector('#theUserNameAjax input');
+                    if (e) {
+                        var t = e.getAttribute('onblur');
+                        e.setAttribute('onblur', t), Q(e, 'Email', 'placeholder'), Q(e, 'email', 'type');
                     }
                 }),
             (function () {

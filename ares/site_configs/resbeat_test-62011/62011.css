@@ -222,6 +222,25 @@
     background-color: #F0F0F0;
 }
 
+.SearchHotels .ArnPrimarySearchOuterContainer div.ArnSearchHeader {
+    display: none;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer {
+    margin-top: 32px;
+}
+
+.SearchHotels .ratingCount {
+    padding: 8px !important;
+    border-radius: 20px;
+}
+
+.SearchHotels .reviewCount {
+    align-self: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .CheckOutForm .originalPrice {
     display: block !important;
     text-decoration: line-through;
@@ -556,6 +575,22 @@
 
     .support-details{
         padding: 18px;
+    }
+
+    .RootBody .ArnPrimarySearchContainer #AmentitiesContainer, .RootBody .ArnPrimarySearchContainer #PropertyClassesContainer, .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
+        display: none !important;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1105px){
+
+.SearchHotels .ArnPrimarySearchOuterContainer {
+    margin-top: 69px;
     }
 }
 

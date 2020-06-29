@@ -603,6 +603,7 @@ select#adults {
         width: 100%;
         box-shadow: 0 2px 12px 0 #000;
         position: absolute;
+        pointer-events: none;
     }
 
     #commands.active {

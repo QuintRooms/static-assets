@@ -115,7 +115,7 @@ async function displayRewardPoints() {
 
     await utilities.waitForSelectorInDOM('.ArnNightlyRate');
     const rooms = document.querySelectorAll('table.ArnRateList');
-    const mq = window.matchMedia('(max-width: 600px)');
+    const mq = window.matchMedia('(max-width: 500px)');
     const style = `  
         <style>
             .points{

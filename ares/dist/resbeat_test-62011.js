@@ -5817,7 +5817,7 @@
                     has_social_sharing: !0,
                     header: {
                         logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
-                        logo_outbound_url: 'https://resbeat.com/',
+                        logo_outbound_url: 'events.hotelsforhope.com/v6/siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',
@@ -5929,7 +5929,7 @@
                                     return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
                                     (t = document.querySelectorAll('table.ArnRateList')),
-                                        (n = window.matchMedia('(max-width: 600px)')),
+                                        (n = window.matchMedia('(max-width: 500px)')),
                                         (r = '  \n        <style>\n            .points{\n                color: '.concat(
                                             Y.secondary_color,
                                             ";\n            }\n\n            div.points-earned span {\n                font-family: 'Avenir';\n                letter-spacing: 1px;\n            }\n        </style>\n        "

@@ -5976,9 +5976,10 @@
             Q('#theLastNameAjax input', 'Last Name', 'placeholder'),
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
-            (document.querySelector('#theUserNameAjax input').onblur = function () {
-                Q('#theUserNameAjax input', 'Email', 'placeholder'), Q('#theUserNameAjax input', 'email', 'type');
-            }),
+            document.querySelector('#theUserNameAjax input') &&
+                (document.querySelector('#theUserNameAjax input').onblur = function () {
+                    Q('#theUserNameAjax input', 'Email', 'placeholder'), Q('#theUserNameAjax input', 'email', 'type');
+                }),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;

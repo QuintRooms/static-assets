@@ -532,6 +532,11 @@
     margin-top:18px;
 }
 
+.CheckOutForm #theHotelAddress {
+    display: block !important;
+    text-align: left !important;
+}
+
 @media screen and (max-width: 800px){
     .ArnSubPage.WBSupportForm{
         grid-template-columns: 1fr;

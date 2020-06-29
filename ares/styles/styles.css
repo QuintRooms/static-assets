@@ -613,6 +613,7 @@ select#adults {
         width: 100%;
         background: #fff;
         transition: all 0.5s ease;
+        pointer-events: unset;
     }
 
     #commands a,

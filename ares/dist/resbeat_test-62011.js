@@ -3855,7 +3855,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = 'USD');
                 }
-                var t, n, r, o, i, a, c, s;
+                var t, n, r, o, i, a, c, s, u;
                 return (
                     (t = e),
                     (n = [
@@ -4155,6 +4155,7 @@
                                                                         e.insertPoweredByFooterLogo(),
                                                                         e.updateConfirmationCheckBoxes(),
                                                                         e.showMoreAmenities(),
+                                                                        e.appendMemberTokenForCug(),
                                                                         e.hideRemainingRooms(),
                                                                         e.replaceHTMLWithFile(
                                                                             'https://static.hotelsforhope.com/ares/html/terms.html',
@@ -4165,7 +4166,7 @@
                                                                                 'https://dev-static.hotelsforhope.com/ares/html/booking-guide.html',
                                                                                 '#booking-guide'
                                                                             );
-                                                                case 44:
+                                                                case 45:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4195,7 +4196,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((s = R(
+                                ((u = R(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4220,13 +4221,13 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((c = R(
+                                ((s = R(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4252,7 +4253,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -4953,7 +4954,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((a = R(
+                                ((c = R(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4980,7 +4981,7 @@
                                     })
                                 )),
                                 function () {
-                                    return a.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5149,7 +5150,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((i = R(
+                                ((a = R(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5187,7 +5188,7 @@
                                     })
                                 )),
                                 function () {
-                                    return i.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5664,7 +5665,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((o = R(
+                                ((i = R(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5688,6 +5689,42 @@
                                     })
                                 )),
                                 function (e, t) {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'appendMemberTokenForCug',
+                            value:
+                                ((o = R(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if ('cug' === this.site_config.site_type.toLowerCase()) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), H.waitForSelectorInDOM('.logo');
+                                                        case 4:
+                                                            (t = document.querySelector('#formChangeTheme input[name="_s"]').value),
+                                                                document.querySelector('.logo').getAttribute('href'),
+                                                                '&_s='.concat(t);
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
                                     return o.apply(this, arguments);
                                 }),
                         },
@@ -5796,7 +5833,7 @@
                     has_social_sharing: !0,
                     header: {
                         logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
-                        logo_outbound_url: 'events.hotelsforhope.com/v6/siteId=62011',
+                        logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',

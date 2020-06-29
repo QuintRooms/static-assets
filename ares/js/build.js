@@ -259,6 +259,7 @@ export default class BasePortal {
             this.insertPoweredByFooterLogo();
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();
+            this.appendMemberTokenForCug();
             this.hideRemainingRooms();
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
 
@@ -2319,5 +2320,18 @@ export default class BasePortal {
         const html = await utilities.fetchHTMLFromFile(html_url);
 
         parent_container.innerHTML = html;
+    }
+
+    async appendMemberTokenForCug() {
+        if (this.site_config.site_type.toLowerCase() !== 'cug') return;
+
+        await utilities.waitForSelectorInDOM('.logo');
+        // const member_token = document.querySelector('meta[name="memberToken"]').content;
+        const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
+        // eslint-disable-next-line no-underscore-dangle
+        // eslint-disable-next-line no-unused-vars
+        let logo_href = document.querySelector('.logo').getAttribute('href');
+        // logo_href += `&memberToken=${member_token}`;
+        logo_href += `&_s=${member_token}`;
     }
 }

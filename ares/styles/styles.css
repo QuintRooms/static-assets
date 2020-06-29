@@ -1433,12 +1433,12 @@ div.autocomplete ul li.selected {
     display: none !important;
 }
 
-.SinglePropDetail .errors {
+.errors {
     padding: 0;
     margin: 13px;
 }
 
-.SinglePropDetail .errors li {
+.errors li {
     list-style-type: none;
     border: 1px solid #FCD1D1;
     background-color: #FBE7E7;

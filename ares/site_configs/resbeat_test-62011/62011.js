@@ -93,6 +93,8 @@ function createInputMaskToBypassArnValidation(selector) {
 if (document.querySelector('.WBValidatedRegistrationForm')) {
     createInputMaskToBypassArnValidation('#theUserNameAjax');
     utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+
+    if (document.querySelector('#theUserNameAjax input').classList.contains('HasError')) document.querySelector('.email-mask').classList.add('HasError');
 }
 
 function updateSearchTitle() {

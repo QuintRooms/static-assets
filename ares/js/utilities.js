@@ -331,4 +331,11 @@ export default class Utilities {
 
         return html;
     }
+
+    removeMaskedElementFromTabIndex(selector) {
+        const element = document.querySelector(selector);
+
+        if (!element) return;
+        element.setAttribute('tabindex', -1);
+    }
 }

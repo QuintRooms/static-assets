@@ -79,6 +79,7 @@ function createInputMaskToBypassArnValidation(selector) {
         const interval = setInterval(() => {
             if (!document.querySelector(`#${arn_input.id}`)) {
                 arn_input = document.querySelector('#theUserNameAjax input');
+                utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
 
                 clearInterval(interval);
             }
@@ -89,7 +90,10 @@ function createInputMaskToBypassArnValidation(selector) {
     });
 }
 
-if (document.querySelector('.WBValidatedRegistrationForm')) createInputMaskToBypassArnValidation('#theUserNameAjax');
+if (document.querySelector('.WBValidatedRegistrationForm')) {
+    createInputMaskToBypassArnValidation('#theUserNameAjax');
+    utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+}
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;

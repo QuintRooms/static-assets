@@ -3798,6 +3798,13 @@
                                 return o.apply(this, arguments);
                             }),
                     },
+                    {
+                        key: 'removeMaskedElementFromTabIndex',
+                        value: function (e) {
+                            var t = document.querySelector(e);
+                            t && t.setAttribute('tabindex', -1);
+                        },
+                    },
                 ]) && M(t.prototype, n),
                 r && M(t, r),
                 e
@@ -6016,7 +6023,7 @@
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
             document.querySelector('.WBValidatedRegistrationForm') &&
-                (function (e) {
+                (!(function (e) {
                     var t = document.querySelector(e);
                     if (t) {
                         var n = t.querySelector('input');
@@ -6030,12 +6037,14 @@
                         r.addEventListener('blur', function () {
                             n.value = r.value;
                             var e = setInterval(function () {
-                                document.querySelector('#'.concat(n.id)) || ((n = document.querySelector('#theUserNameAjax input')), clearInterval(e));
+                                document.querySelector('#'.concat(n.id)) ||
+                                    ((n = document.querySelector('#theUserNameAjax input')), J.removeMaskedElementFromTabIndex('#theUserNameAjax input'), clearInterval(e));
                             }, 500);
                             n.focus(), n.blur();
                         });
                     }
                 })('#theUserNameAjax'),
+                J.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;

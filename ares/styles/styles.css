@@ -3090,21 +3090,29 @@ legend {
     left: 4px;
 }
 
-.ErrorList {
+.ErrorList,
+.errors {
     border: 2px solid #ffdada;
 }
 
 .Error,
-.error {
+.error,
+.errors {
     color: #ff6161;
 }
 
-.ErrorList ul {
+.ErrorList ul,
+.errors ul {
     list-style: none;
 }
 
 .FieldError{
     border-color: #e0e0e0;
+}
+
+.HasError{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #ce8483;
+    border-color: #843534;
 }
 
 .confirmationWarning,

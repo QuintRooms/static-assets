@@ -67,8 +67,8 @@ function validateInputOnBlur() {
     const blur_function = email.getAttribute('onblur');
     email.setAttribute('onblur', blur_function);
 
-    addAttributeToInput(email, 'Email', 'placeholder');
-    addAttributeToInput(email, 'email', 'type');
+    addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theUserNameAjax input', 'email', 'type');
 }
 
 if (document.querySelector('#theUserNameAjax input')) document.querySelector('#theUserNameAjax input').onblur = validateInputOnBlur;

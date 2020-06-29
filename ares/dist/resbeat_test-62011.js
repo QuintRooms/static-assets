@@ -6020,7 +6020,7 @@
                     var e = document.querySelector('#theUserNameAjax input');
                     if (e) {
                         var t = e.getAttribute('onblur');
-                        e.setAttribute('onblur', t), Q(e, 'Email', 'placeholder'), Q(e, 'email', 'type');
+                        e.setAttribute('onblur', t), Q('#theUserNameAjax input', 'Email', 'placeholder'), Q('#theUserNameAjax input', 'email', 'type');
                     }
                 }),
             (function () {

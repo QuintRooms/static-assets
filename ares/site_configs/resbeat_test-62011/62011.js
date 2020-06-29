@@ -59,12 +59,17 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
-function validateRegisterInputOnBlur() {
-    addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
-    addAttributeToInput('#theUserNameAjax input', 'email', 'type');
+function validateInputOnBlur(selector, attribute, value) {
+    const element = document.querySelector(selector);
+    if (!element) return;
+    const blur_function = element.getAttribute('onblur');
+    element.setAttribute('onblur', blur_function);
+
+    addAttributeToInput(element, 'Email', 'placeholder');
+    addAttributeToInput(element, 'email', 'type');
 }
 
-if (document.querySelector('#theUserNameAjax input')) document.querySelector('#theUserNameAjax input').onblur = validateRegisterInputOnBlur;
+if (document.querySelector('#theUserNameAjax input')) document.querySelector('#theUserNameAjax input').onblur = validateInputOnBlur;
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;

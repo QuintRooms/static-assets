@@ -6016,8 +6016,12 @@
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
             document.querySelector('#theUserNameAjax input') &&
-                (document.querySelector('#theUserNameAjax input').onblur = function () {
-                    Q('#theUserNameAjax input', 'Email', 'placeholder'), Q('#theUserNameAjax input', 'email', 'type');
+                (document.querySelector('#theUserNameAjax input').onblur = function (e, t, n) {
+                    var r = document.querySelector(e);
+                    if (r) {
+                        var o = r.getAttribute('onblur');
+                        r.setAttribute('onblur', o), Q(r, 'Email', 'placeholder'), Q(r, 'email', 'type');
+                    }
                 }),
             (function () {
                 if (document.querySelector('.RootBody')) {

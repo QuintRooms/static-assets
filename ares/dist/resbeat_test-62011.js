@@ -5461,7 +5461,7 @@
                                             e.insertAdjacentHTML('beforeEnd', ' Today');
                                         }),
                                     (function () {
-                                        if (!t.cug.show_percent_savings) {
+                                        if (t.cug.show_percent_savings) {
                                             var e = document.querySelector('.ArnSortByDealPercent');
                                             e && (e.style.display = 'block');
                                         }

@@ -2052,7 +2052,7 @@ export default class BasePortal {
         if (site_config.site_type.toLowerCase() !== 'cug') return;
 
         function showPercentSavingsFilter() {
-            if (site_config.cug.show_percent_savings) return;
+            if (!site_config.cug.show_percent_savings) return;
 
             const percent_savings_filter = document.querySelector('.ArnSortByDealPercent');
 

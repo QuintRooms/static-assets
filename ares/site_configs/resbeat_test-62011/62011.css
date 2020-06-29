@@ -76,7 +76,7 @@
     color: #215853 !important;
 }
 
-.WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax {
+.WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax, #availableUser {
     display: none;
 }
 

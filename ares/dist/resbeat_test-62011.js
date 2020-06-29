@@ -350,7 +350,7 @@
             C = 'process' == l(A),
             M = function () {},
             q = (o = b.f),
-            P = !!(function () {
+            T = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -359,7 +359,7 @@
                     return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            P = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -384,7 +384,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -441,7 +441,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = P(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -456,7 +456,7 @@
                     }
                 }
             };
-        P ||
+        T ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -491,17 +491,17 @@
             (b.f = q = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !P, {Promise: E}),
+            d(d.G + d.W + d.F * !T, {Promise: E}),
             n(26)(E, 'Promise'),
             n(72)('Promise'),
             (a = n(8).Promise),
-            d(d.S + d.F * !P, 'Promise', {
+            d(d.S + d.F * !T, 'Promise', {
                 reject: function (e) {
                     var t = q(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !P), 'Promise', {
+            d(d.S + d.F * (c || !T), 'Promise', {
                 resolve: function (e) {
                     return _(c && this === a ? E : this, e);
                 },
@@ -510,7 +510,7 @@
                 d.S +
                     d.F *
                         !(
-                            P &&
+                            T &&
                             n(73)(function (e) {
                                 E.all(e).catch(M);
                             })
@@ -1831,8 +1831,8 @@
             C = n(9),
             M = n(15),
             q = L.f,
-            P = C.f,
-            T = k.f,
+            T = C.f,
+            P = k.f,
             R = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
@@ -1852,9 +1852,9 @@
                     return (
                         7 !=
                         A(
-                            P({}, 'a', {
+                            T({}, 'a', {
                                 get: function () {
-                                    return P(this, 'a', {value: 7}).a;
+                                    return T(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -1862,9 +1862,9 @@
                 })
                     ? function (e, t, n) {
                           var r = q($, t);
-                          r && delete $[t], P(e, t, n), r && e !== $ && P($, t, r);
+                          r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
                       }
-                    : P,
+                    : T,
             V = function (e) {
                 var t = (D[e] = A(R.prototype));
                 return (t._k = e), t;
@@ -1884,8 +1884,8 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
-                        : P(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), z(e, t, n))
+                        : T(e, t, n)
                 );
             },
             Z = function (e, t) {
@@ -1904,11 +1904,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = T(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
+                for (var t, n = e === $, r = P(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
                 return i;
             };
         U ||
@@ -3803,10 +3803,10 @@
                 e
             );
         })();
-        function P() {
+        function T() {
             return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
-        function T(e, t, n, r, o, i, a) {
+        function P(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3822,10 +3822,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        T(i, r, o, a, c, 'next', e);
+                        P(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        T(i, r, o, a, c, 'throw', e);
+                        P(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3837,7 +3837,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var O = new P(),
+        var O = new T(),
             B = n(102),
             H = new q(),
             F = (function () {
@@ -5735,7 +5735,7 @@
                     e
                 );
             })(),
-            I = new P(),
+            I = new T(),
             D = 'resbeat_test-'.concat(62011);
         function N(e, t, n, r, o, i, a) {
             try {
@@ -6116,6 +6116,12 @@
                         .concat(Y.primary_text_color, ';\n        }\n        \n        .SearchHotels .arnMapMarkerTriangle {\n            border-top-color: ')
                         .concat(Y.secondary_color, ';\n        }\n    ')
                 ),
+            document.body.insertAdjacentHTML(
+                'beforeend',
+                '\n        <style>\n        .yui3-g .yui3-calendar-grid td.yui3-calendar-day {\n            color: '
+                    .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-content {\n            border: 2px solid ')
+                    .concat(Y.primary_color, ' !important;\n        }\n        <style>\n        ')
+            ),
             new Z();
     },
 ]);

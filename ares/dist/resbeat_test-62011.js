@@ -5697,7 +5697,7 @@
                             value:
                                 ((o = R(
                                     regeneratorRuntime.mark(function e() {
-                                        var t;
+                                        var t, n, r;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
@@ -5712,9 +5712,11 @@
                                                             return (e.next = 4), H.waitForSelectorInDOM('.logo');
                                                         case 4:
                                                             (t = document.querySelector('#formChangeTheme input[name="_s"]').value),
-                                                                document.querySelector('.logo').getAttribute('href'),
-                                                                '&_s='.concat(t);
-                                                        case 7:
+                                                                (n = document.querySelector('.logo')),
+                                                                (r = n.getAttribute('href')),
+                                                                (r += '&_s='.concat(t)),
+                                                                n.setAttribute('href', r);
+                                                        case 9:
                                                         case 'end':
                                                             return e.stop();
                                                     }

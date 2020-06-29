@@ -2328,10 +2328,11 @@ export default class BasePortal {
         await utilities.waitForSelectorInDOM('.logo');
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
-        // eslint-disable-next-line no-underscore-dangle
+        const logo = document.querySelector('.logo');
         // eslint-disable-next-line no-unused-vars
-        let logo_href = document.querySelector('.logo').getAttribute('href');
+        let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
         logo_href += `&_s=${member_token}`;
+        logo.setAttribute('href', logo_href);
     }
 }

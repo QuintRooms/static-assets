@@ -335,12 +335,12 @@ function colorCalendardays() {
         'beforeend',
         `
         <style>
-        .yui3-g .yui3-calendar-grid td.yui3-calendar-day {
-            color: ${site_config.primary_color} !important;
+        .yui3-skin-sam .yui3-calendar-day-selected {
+            background-color: ${site_config.primary_color} !important;
         }
 
-        .yui3-skin-sam .yui3-calendar-content {
-            border: 2px solid ${site_config.primary_color} !important;
+        .yui3-skin-sam .yui3-calendar-day:hover{
+            background-color: ${site_config.primary_color} !important;
         }
         <style>
         `

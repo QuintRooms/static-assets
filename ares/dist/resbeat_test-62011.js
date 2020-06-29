@@ -6118,8 +6118,8 @@
                 ),
             document.body.insertAdjacentHTML(
                 'beforeend',
-                '\n        <style>\n        .yui3-g .yui3-calendar-grid td.yui3-calendar-day {\n            color: '
-                    .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-content {\n            border: 2px solid ')
+                '\n        <style>\n        .yui3-skin-sam .yui3-calendar-day-selected {\n            background-color: '
+                    .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-day:hover{\n            background-color: ')
                     .concat(Y.primary_color, ' !important;\n        }\n        <style>\n        ')
             ),
             new Z();

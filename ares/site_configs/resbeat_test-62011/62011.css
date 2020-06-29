@@ -400,11 +400,11 @@
 
 @media screen and (max-width: 600px) {
 
-    header {
+    .MemberNotAuthenticated header {
         display: unset;
     }
 
-    .info-banner {
+    .MemberNotAuthenticated .info-banner {
         display: unset
     }
     

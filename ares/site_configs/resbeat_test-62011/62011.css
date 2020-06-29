@@ -227,7 +227,7 @@
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
-    margin-top: 32px;
+    margin-top: 13px;
 }
 
 .SearchHotels .ratingCount {
@@ -594,7 +594,7 @@
 @media screen and (max-width: 1105px){
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
-    margin-top: 69px;
+    margin-top: 50px;
     }
 }
 

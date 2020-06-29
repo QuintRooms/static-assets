@@ -46,18 +46,31 @@ function styleRegisterContainer() {
 
 styleRegisterContainer();
 
-function addAttributeToInput(element, value, attribute) {
-    if (!document.querySelector(element)) return;
-
-    document.querySelector(element).setAttribute(attribute, value);
-}
-
 addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
 addAttributeToInput('#theUserNameAjax input', 'email', 'type');
 addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
 addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
+
+function addAttributeToInput(element, value, attribute) {
+    if (!document.querySelector(element)) return;
+
+    document.querySelector(element).setAttribute(attribute, value);
+}
+
+// addAttributeToInput('#theUserNameAjax input', '', 'onblur');
+
+document.body.addEventListener('click', () => {
+    addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theUserNameAjax input', 'email', 'type');
+    // addAttributeToInput(
+    //     '#theUserNameAjax input',
+    //     `new Ajax.Updater('theUserNameAjax','https://events.hotelsforhope.com/v6/register',{'evalScripts':true,'parameters':['_s=JuFAmrkVAvGMvo3f','_k=kJkKPwYq','siteId='+62011,'theme=standard','18',$('id17').serialize()].join('&')})`,
+    //     'onblur'
+    // );
+    console.log('blur event');
+});
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;

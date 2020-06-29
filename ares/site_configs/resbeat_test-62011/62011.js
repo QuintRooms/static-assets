@@ -12,15 +12,6 @@ class ChildPortal extends BasePortal {
     }
 }
 
-// function styleResbeatFonts(element, word1, word2) {
-//     if (!document.querySelector(element)) return;
-//     const el = document.querySelector(element);
-//     el.innerHTML = `${word1}<strong>${word2}</strong>`;
-// }
-
-// styleResbeatFonts();
-// styleResbeatFonts();
-
 async function updateLogin() {
     if (!document.querySelector('.MemberNotAuthenticated')) return;
     await utilities.waitForSelectorInDOM('#theWBLoginFormBody h1');
@@ -86,12 +77,22 @@ updateSearchTitle();
 function insertBeatEmBy(element) {
     if (document.querySelector('.beat-em')) return;
     if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
+        const mq = window.matchMedia('(max-width: 600px)');
+
         if (!document.querySelector(element)) return;
         const rate_cells = document.querySelectorAll(element);
         rate_cells.forEach((el) => {
             if (el.querySelector('.originalPrice')) {
                 const percent = el.querySelector('.originalPrice').getAttribute('percent');
-                el.insertAdjacentHTML(
+
+                let insert_pos = '.ArnRateCell';
+
+                if (mq.matches && document.querySelector('.SearchHotels')) {
+                    insert_pos = '.ArnPropThumb';
+                } else if (document.querySelector('.SinglePropDetail')) {
+                    insert_pos = '.bookRoomCell';
+                }
+                el.querySelector(insert_pos).insertAdjacentHTML(
                     'afterbegin',
                     `<div class="beat-em">
                     BEAT 'EM BY ${percent}%
@@ -102,10 +103,10 @@ function insertBeatEmBy(element) {
     }
 }
 
-insertBeatEmBy('.SinglePropDetail .bookRoomCell');
+insertBeatEmBy('.SinglePropDetail .rateRow');
 jQuery(document).on('ratesReadyEvent', () => {
     setTimeout(() => {
-        insertBeatEmBy('.SearchHotels .ArnRateCell');
+        insertBeatEmBy('.SearchHotels .ArnContainer');
     }, 1);
 });
 
@@ -114,15 +115,9 @@ async function displayRewardPoints() {
 
     await utilities.waitForSelectorInDOM('.ArnNightlyRate');
     const rooms = document.querySelectorAll('table.ArnRateList');
-    rooms.forEach((el) => {
-        let full_stay = el.querySelector('.full-stay').textContent;
-        full_stay = full_stay.replace(/[^0-9.]/g, '');
-        // eslint-disable-next-line radix
-        const reward_points = parseInt(full_stay);
-        el.querySelector('tbody tr td').insertAdjacentHTML(
-            'beforeend',
-            `
-            <style>
+    const mq = window.matchMedia('(max-width: 600px)');
+    const style = `  
+        <style>
             .points{
                 color: ${site_config.secondary_color};
             }
@@ -132,12 +127,31 @@ async function displayRewardPoints() {
                 letter-spacing: 1px;
             }
         </style>
-
+        `;
+    rooms.forEach((el) => {
+        let full_stay = el.querySelector('.full-stay').textContent;
+        full_stay = full_stay.replace(/[^0-9.]/g, '');
+        // eslint-disable-next-line radix
+        const reward_points = parseInt(full_stay);
+        mq.matches
+            ? el.querySelector('tbody .bookRoomCell').insertAdjacentHTML(
+                  'afterbegin',
+                  `
+             ${style}
+            <div class="points-earned">
+            <span>RE<b>WARDS</b>: ${reward_points}</span> 
+            </div>
+            `
+              )
+            : el.querySelector('tbody tr td').insertAdjacentHTML(
+                  'beforeend',
+                  `
+                  ${style}
             <div class="points-earned">
             Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 
             </div>
             `
-        );
+              );
     });
 }
 
@@ -260,9 +274,10 @@ utilities.updateHTML(
     `
     <div class="support-details">
         <h3>Customer Support</h3>
-        <p>Hours: 8:00am - 5:30pm CST</p>
+        <p>Hours: M-F 8:00am - 5:30pm CST</p>
         <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>
         <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>
+        <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>
     </div>
 
 `
@@ -279,4 +294,26 @@ if (document.querySelector('.WBSupportFormContainer')) {
 
     document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
 }
+
+function styleMapPins() {
+    if (!document.querySelector('.SearchHotels')) return;
+    document.body.insertAdjacentHTML(
+        'beforeend',
+        `
+    <style>
+        .SearchHotels .arnMapMarker {
+            background: ${site_config.secondary_color};
+            border-color:  ${site_config.primary_text_color};
+            color: ${site_config.primary_text_color};
+        }
+        
+        .SearchHotels .arnMapMarkerTriangle {
+            border-top-color: ${site_config.secondary_color};
+        }
+    `
+    );
+}
+
+styleMapPins();
+
 new ChildPortal();

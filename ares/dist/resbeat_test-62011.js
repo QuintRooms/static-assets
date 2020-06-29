@@ -348,15 +348,15 @@
             L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
-            q = function () {},
-            M = (o = b.f),
+            M = function () {},
+            q = (o = b.f),
             P = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(q, q);
+                            e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             R = function (e) {
@@ -469,7 +469,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(71)(E.prototype, {
                 then: function (e, t) {
-                    var n = M(y(this, E));
+                    var n = q(y(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -488,7 +488,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
             }),
-            (b.f = M = function (e) {
+            (b.f = q = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !P, {Promise: E}),
@@ -497,7 +497,7 @@
             (a = n(8).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
-                    var t = M(this);
+                    var t = q(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -512,14 +512,14 @@
                         !(
                             P &&
                             n(73)(function (e) {
-                                E.all(e).catch(q);
+                                E.all(e).catch(M);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = M(t),
+                            n = q(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -541,7 +541,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = M(t),
+                            n = q(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1321,11 +1321,11 @@
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var q = [A].concat(L, k, f);
-                            void 0 !== C && q.push(C);
-                            var M = String(t.apply(void 0, q));
-                        } else M = m(A, f, k, L, C, t);
-                        k >= _ && ((w += f.slice(_, k) + M), (_ = k + A.length));
+                            var M = [A].concat(L, k, f);
+                            void 0 !== C && M.push(C);
+                            var q = String(t.apply(void 0, M));
+                        } else q = m(A, f, k, L, C, t);
+                        k >= _ && ((w += f.slice(_, k) + q), (_ = k + A.length));
                     }
                     return w + f.slice(_);
                 },
@@ -1829,8 +1829,8 @@
             L = n(56),
             E = n(53),
             C = n(9),
-            q = n(15),
-            M = L.f,
+            M = n(15),
+            q = L.f,
             P = C.f,
             R = k.f,
             T = r.Symbol,
@@ -1861,7 +1861,7 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = M($, t);
+                          var r = q($, t);
                           r && delete $[t], P(e, t, n), r && e !== $ && P($, t, r);
                       }
                     : P,
@@ -1899,7 +1899,7 @@
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
-                    var n = M(e, t);
+                    var n = q(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -1938,7 +1938,7 @@
             a(a.G + a.W + a.F * !U, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
-        for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = T(e));
@@ -2169,9 +2169,9 @@
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 E = L || w(m),
                 C = m ? (x ? w('entries') : E) : void 0,
-                q = ('Array' == t && k.entries) || L;
+                M = ('Array' == t && k.entries) || L;
             if (
-                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
+                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
                     L &&
                     'values' !== L.name &&
@@ -3381,13 +3381,13 @@
                 });
             };
         }
-        function q(e, t) {
+        function M(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var M = (function () {
+        var q = (function () {
             function e() {
                 !(function (e, t) {
                     if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -3798,8 +3798,8 @@
                                 return o.apply(this, arguments);
                             }),
                     },
-                ]) && q(t.prototype, n),
-                r && q(t, r),
+                ]) && M(t.prototype, n),
+                r && M(t, r),
                 e
             );
         })();
@@ -3839,7 +3839,7 @@
         }
         var O = new P(),
             B = n(102),
-            H = new M(),
+            H = new q(),
             F = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -5804,7 +5804,7 @@
                     dayjs_date_format: 'M/D/YYYY',
                     reviews_before_info: !0,
                     show_stars: !0,
-                    show_language_select: !0,
+                    show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
                     fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
@@ -5842,7 +5842,7 @@
                     confirmation_email_from: 'RESBEAT',
                 };
             })(),
-            J = new M(),
+            J = new q(),
             Z = (function (e) {
                 function t() {
                     var e;
@@ -5894,11 +5894,16 @@
         }
         function X(e) {
             if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
+                var t = window.matchMedia('(max-width: 600px)');
                 if (!document.querySelector(e)) return;
                 document.querySelectorAll(e).forEach(function (e) {
                     if (e.querySelector('.originalPrice')) {
-                        var t = e.querySelector('.originalPrice').getAttribute('percent');
-                        e.insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(t, '%\n                    </div>'));
+                        var n = e.querySelector('.originalPrice').getAttribute('percent'),
+                            r = '.ArnRateCell';
+                        t.matches && document.querySelector('.SearchHotels') ? (r = '.ArnPropThumb') : document.querySelector('.SinglePropDetail') && (r = '.bookRoomCell'),
+                            e
+                                .querySelector(r)
+                                .insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(n, '%\n                    </div>'));
                     }
                 });
             }
@@ -5906,6 +5911,7 @@
         function ee() {
             return (ee = $(
                 regeneratorRuntime.mark(function e() {
+                    var t, n, r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
@@ -5918,21 +5924,35 @@
                                 case 2:
                                     return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
-                                    document.querySelectorAll('table.ArnRateList').forEach(function (e) {
-                                        var t = e.querySelector('.full-stay').textContent;
-                                        t = t.replace(/[^0-9.]/g, '');
-                                        var n = parseInt(t);
-                                        e.querySelector('tbody tr td').insertAdjacentHTML(
-                                            'beforeend',
-                                            '\n            <style>\n            .points{\n                color: '
-                                                .concat(
-                                                    Y.secondary_color,
-                                                    ';\n            }\n\n            div.points-earned span {\n                font-family: \'Avenir\';\n                letter-spacing: 1px;\n            }\n        </style>\n\n            <div class="points-earned">\n            Earn <b class="points">'
-                                                )
-                                                .concat(n, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
-                                        );
-                                    });
-                                case 6:
+                                    (t = document.querySelectorAll('table.ArnRateList')),
+                                        (n = window.matchMedia('(max-width: 600px)')),
+                                        (r = '  \n        <style>\n            .points{\n                color: '.concat(
+                                            Y.secondary_color,
+                                            ";\n            }\n\n            div.points-earned span {\n                font-family: 'Avenir';\n                letter-spacing: 1px;\n            }\n        </style>\n        "
+                                        )),
+                                        t.forEach(function (e) {
+                                            var t = e.querySelector('.full-stay').textContent;
+                                            t = t.replace(/[^0-9.]/g, '');
+                                            var o = parseInt(t);
+                                            n.matches
+                                                ? e
+                                                      .querySelector('tbody .bookRoomCell')
+                                                      .insertAdjacentHTML(
+                                                          'afterbegin',
+                                                          '\n             '
+                                                              .concat(r, '\n            <div class="points-earned">\n            <span>RE<b>WARDS</b>: ')
+                                                              .concat(o, '</span> \n            </div>\n            ')
+                                                      )
+                                                : e
+                                                      .querySelector('tbody tr td')
+                                                      .insertAdjacentHTML(
+                                                          'beforeend',
+                                                          '\n                  '
+                                                              .concat(r, '\n            <div class="points-earned">\n            Earn <b class="points">')
+                                                              .concat(o, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
+                                                      );
+                                        });
+                                case 8:
                                 case 'end':
                                     return e.stop();
                             }
@@ -5982,10 +6002,10 @@
                     );
                 }
             })(),
-            X('.SinglePropDetail .bookRoomCell'),
+            X('.SinglePropDetail .rateRow'),
             jQuery(document).on('ratesReadyEvent', function () {
                 setTimeout(function () {
-                    X('.SearchHotels .ArnRateCell');
+                    X('.SearchHotels .ArnContainer');
                 }, 1);
             }),
             (function () {
@@ -6045,7 +6065,7 @@
                 }, 1),
             J.updateHTML(
                 '.ArnSupportChatTable',
-                '\n    <div class="support-details">\n        <h3>Customer Support</h3>\n        <p>Hours: 8:00am - 5:30pm CST</p>\n        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n    </div>\n\n'
+                '\n    <div class="support-details">\n        <h3>Customer Support</h3>\n        <p>Hours: M-F 8:00am - 5:30pm CST</p>\n        <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n        <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n        <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n    </div>\n\n'
             ),
             document.querySelector('.WBSupportFormContainer') &&
                 (Q('#theNameAjax input', 'Name', 'placeholder'),
@@ -6057,6 +6077,15 @@
                 Q('#theHotelNameAjax input', 'Hotel', 'placeholder'),
                 Q('#theCommentsAjax textarea', 'Comments', 'placeholder'),
                 (document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry')),
+            document.querySelector('.SearchHotels') &&
+                document.body.insertAdjacentHTML(
+                    'beforeend',
+                    '\n    <style>\n        .SearchHotels .arnMapMarker {\n            background: '
+                        .concat(Y.secondary_color, ';\n            border-color:  ')
+                        .concat(Y.primary_text_color, ';\n            color: ')
+                        .concat(Y.primary_text_color, ';\n        }\n        \n        .SearchHotels .arnMapMarkerTriangle {\n            border-top-color: ')
+                        .concat(Y.secondary_color, ';\n        }\n    ')
+                ),
             new Z();
     },
 ]);

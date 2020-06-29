@@ -20,24 +20,24 @@ const sites = {
     },
     60278: {
         client_name: 'Ares Child',
-        site_url: 'https://events.hotelsforhope.com/v6/?siteId=60278',
+        site_url: 'https://events.hotelsforhope.com/v6/',
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/logo.png',
     },
     60279: {
         client_name: 'Ares Child',
-        site_url: 'https://events.hotelsforhope.com/v6/?siteId=60279',
+        site_url: 'https://events.hotelsforhope.com/v6/',
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png',
     },
     62011: {
         client_name: 'RESBEAT Test',
-        site_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
+        site_url: 'https://events.hotelsforhope.com/v6/',
         primary_color: '#215853',
         secondary_color: '##e2ad37',
-        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-62011/img/logo.png',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
     },
 };
 
@@ -51,10 +51,10 @@ for (const [key, value] of entries) {
         primary_color: value.primary_color,
         secondary_color: value.secondary_color,
         logo_url: value.logo_url,
-        site_url: value.site_url,
-        faq_url: value.site_url + 'faq/?siteId=' + key,
-        booking_guide_url: value.site_url + 'booking-guide/?siteId=' + key,
-        rewards_guide_url: value.site_url + 'rewards-guide/?siteId=' + key,
+        site_url: value.site_url + '?siteId=' + key,
+        faq_url: value.site_url + 'faq?siteId=' + key,
+        booking_guide_url: value.site_url + 'booking-guide?siteId=' + key,
+        rewards_guide_url: value.site_url + 'rewards-guide?siteId=' + key,
     };
 
     const data = JSON.stringify(site_details);

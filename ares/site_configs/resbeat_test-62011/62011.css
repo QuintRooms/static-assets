@@ -98,12 +98,27 @@
     letter-spacing: 1px;
 }
 
+.ArnSubPage h1 {
+    color: #333;
+    font-size: 30px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.WBForgotPasswordFormActions {
+    text-align: center;
+}
+
 .RootBody .ArnSecondarySearchOuterContainer {
     color: #333;
 }
 
 .RootBody #PropertyTypesContainer {
     display: block !important;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer span {
+    margin-top: 6px;
 }
 
 .RootBody h1, .RootBody h3{
@@ -143,7 +158,7 @@
     background: #e2ad37;
     color: #fff;
     text-align: center;
-    padding: 9px 12px;
+    padding: 9px 10px;
     max-width: 150px;
     margin-left: auto;
     border-radius: 40px;
@@ -168,6 +183,20 @@
     border: 2px solid #215853;
 }
 
+.LoginAction.submit, #register-btn a, .RegisterAction.submit, .SendMeNewPasswordAction.submit, #moreRatesLink {
+    border-radius: 40px;
+    background: #215853;
+    color: #fff;
+    border: 2px solid #215853 !important;
+    padding: 6px 12px;
+}
+
+.LoginAction.submit:hover, #register-btn a:hover, .RegisterAction.submit:hover, .SendMeNewPasswordAction.submit:hover {
+    background: #fff;
+    color: #215853;
+    border: 2px solid #215853;
+}
+
 .SinglePropDetail .beat-em {
     margin-left: 10px;
 }
@@ -185,8 +214,31 @@
     color:#666
 }
 
+.SearchHotels .ArnPriceCell .mainRate {
+    padding-right: 42px;
+}
+
 .SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
     background-color: #F0F0F0;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer div.ArnSearchHeader {
+    display: none;
+}
+
+.SearchHotels .ArnPrimarySearchOuterContainer {
+    margin-top: 32px;
+}
+
+.SearchHotels .ratingCount {
+    padding: 8px !important;
+    border-radius: 20px;
+}
+
+.SearchHotels .reviewCount {
+    align-self: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .CheckOutForm .originalPrice {
@@ -209,6 +261,11 @@
 
 .full-stay {
     display: none;
+}
+
+.SinglePropDetail #moreRatesLink {
+    width: 200px;
+    height: 35px;
 }
 
 .SinglePropDetail .points-earned {
@@ -280,9 +337,12 @@
     text-align: center;
 }
 
-.MemberNotAuthenticated .LoginAction {
+.MemberNotAuthenticated .LoginAction, .SendMeNewPasswordAction.submit, .ArnShowRatesLink, .bookRoom, .holdRoom, #moreRatesLink, .GuestForms legend
+{
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: 'Avenir';
+    outline: none;
 }
 
 .pb-container {
@@ -311,6 +371,15 @@
     letter-spacing: 1px;
 }
 
+.CheckOutForm #theConfirmationPoliciesAjax {
+    margin-top: 10px;
+}
+
+.CheckOutForm .theHotelAddress {
+    display: block;
+    text-align: left;
+}
+
 @media screen and (min-width: 900px) {
     .RootBody .ArnPrimarySearchContainer {
         width: 60vw;
@@ -326,36 +395,65 @@
 @media screen and (max-width: 600px) {
     .SearchHotels .ArnRateCell {
         width: 100%;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 40% 60%;
     }
 
     .SearchHotels .beat-em {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
         align-self: center;
         justify-self: center;
         margin-left: unset;
     }
 
     .SearchHotels .ArnPriceCell {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
         align-self: end;
         margin-left: 10px;
 
     }
 
     .SearchHotels .ArnRateButton {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
         align-self: center;
         justify-self: center;
     }
 
-    .ArnRateButton a {
-        margin: auto;
+    .SearchHotels div.beat-em {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+    }
+
+    .SinglePropDetail .beat-em {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        max-width: 145px;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+        margin: 8px auto;
+    }
+
+    .SinglePropDetail .bookRoom {
+        grid-row: 2 / 3;
+        max-width: 145px;
+        align-self: center;
+    }
+
+    .SinglePropDetail .ArnNightlyRate {
+        grid-row: 2 / 3;
+    }
+
+    .SinglePropDetail .holdRoom {
+        max-width: 145px;
+    }
+
+    .SinglePropDetail .points-earned {
+        width: unset;
+        padding: 4px 10px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        top: 97px;
+        bottom: unset;
     }
 }
 
@@ -449,6 +547,15 @@
     margin: 0;
 }
 
+.support-details p:last-child{
+    margin-top:18px;
+}
+
+.CheckOutForm #theHotelAddress {
+    display: block !important;
+    text-align: left !important;
+}
+
 @media screen and (max-width: 800px){
     .ArnSubPage.WBSupportForm{
         grid-template-columns: 1fr;
@@ -468,6 +575,22 @@
 
     .support-details{
         padding: 18px;
+    }
+
+    .RootBody .ArnPrimarySearchContainer #AmentitiesContainer, .RootBody .ArnPrimarySearchContainer #PropertyClassesContainer, .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
+        display: none !important;
+    }
+
+    .RootBody #theOtherSubmitButton {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1105px){
+
+.SearchHotels .ArnPrimarySearchOuterContainer {
+    margin-top: 69px;
     }
 }
 

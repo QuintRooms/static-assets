@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node js/production-checklist.js && webpack --mode production && node js/generate-email-configs.js"
+    "build": "node js/production-checklist.js && webpack --mode production && node js/generate-email-configs.js",
+    "email": "node js/generate-email-configs.js"
 
   },
   "author": "",

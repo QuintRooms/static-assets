@@ -6022,6 +6022,10 @@
             Q('#theLastNameAjax input', 'Last Name', 'placeholder'),
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
+            Q('#theFirstNameAjax input', !0, 'required'),
+            Q('#theLastNameAjax input', !0, 'required'),
+            Q('#theEditablePasswordAjax input', !0, 'required'),
+            Q('#theEditableConfirmPasswordAjax input', !0, 'required'),
             document.querySelector('.WBValidatedRegistrationForm') &&
                 (!(function (e) {
                     var t = document.querySelector(e);
@@ -6029,7 +6033,7 @@
                         var n = t.querySelector('input');
                         t.insertAdjacentHTML(
                             'beforeBegin',
-                            '<input type="email" placeholder="Email" class="email-mask"><style>'
+                            '<input type="email" placeholder="Email" class="email-mask" required><style>'
                                 .concat(e, ' input, ')
                                 .concat(e, ' label {position:absolute;left:-100000px;}</style>')
                         );
@@ -6044,11 +6048,7 @@
                         });
                     }
                 })('#theUserNameAjax'),
-                J.removeMaskedElementFromTabIndex('#theUserNameAjax input'),
-                document.querySelector('.email-mask') &&
-                    document.querySelector('.email-mask').addEventListener('blur', function () {
-                        document.querySelector('#theUserNameAjax').classList.contains('HasError') && document.querySelector('.email-mask').classList.add('HasError');
-                    })),
+                J.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
             (function () {
                 if (document.querySelector('.RootBody')) {
                     var e = document.querySelector('meta[name="firstName"]').content;

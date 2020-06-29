@@ -59,6 +59,11 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
 
+addAttributeToInput('#theFirstNameAjax input', true, 'required');
+addAttributeToInput('#theLastNameAjax input', true, 'required');
+addAttributeToInput('#theEditablePasswordAjax input', true, 'required');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', true, 'required');
+
 function createInputMaskToBypassArnValidation(selector) {
     const arn_input_container = document.querySelector(selector);
 
@@ -68,7 +73,7 @@ function createInputMaskToBypassArnValidation(selector) {
 
     arn_input_container.insertAdjacentHTML(
         'beforeBegin',
-        `<input type="email" placeholder="Email" class="email-mask"><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+        `<input type="email" placeholder="Email" class="email-mask" required><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
     );
 
     const new_input = document.querySelector('.email-mask');
@@ -93,12 +98,6 @@ function createInputMaskToBypassArnValidation(selector) {
 if (document.querySelector('.WBValidatedRegistrationForm')) {
     createInputMaskToBypassArnValidation('#theUserNameAjax');
     utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
-
-    if (document.querySelector('.email-mask')) {
-        document.querySelector('.email-mask').addEventListener('blur', () => {
-            if (document.querySelector('#theUserNameAjax').classList.contains('HasError')) document.querySelector('.email-mask').classList.add('HasError');
-        });
-    }
 }
 
 function updateSearchTitle() {

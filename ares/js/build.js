@@ -97,7 +97,6 @@ export default class BasePortal {
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                 utilities.updateHTML('#theHotel legend', 'Reservation Summary');
-
                 this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
@@ -2214,7 +2213,7 @@ export default class BasePortal {
 
     fixCheckoutInputTabOrder() {
         const form = document.querySelector('#theReservationForm');
-        const room_count_el = document.querySelector('meta[name="numberOfRooms');
+        const room_count_el = document.querySelector('meta[name="numberOfRooms"]');
 
         if (!form || !room_count_el) return;
 
@@ -2337,6 +2336,4 @@ export default class BasePortal {
         logo_href += `&_s=${member_token}`;
         logo.setAttribute('href', logo_href);
     }
-
-    rerunRateFunctionsOnClickingSeeMoreRooms() {}
 }

@@ -555,6 +555,10 @@ input[type='email'].email-mask,
         justify-self: end;
         padding-right: 15px;
     }
+
+    .CheckOutForm #confirmCheckBox, .CheckOutForm .confirmationWarning input.checkbox {
+        width: 26px;
+    }
 }
 
 .lowRateLink,

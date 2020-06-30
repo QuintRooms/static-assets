@@ -705,5 +705,5 @@ input[type='email'].email-mask,
 
 .static-rewardsLink,
  #commands .rewards{
-    display: done;
+    display: none;
 }

@@ -326,6 +326,7 @@
     border: unset;
     background-color: #F0F1F2;
     width: 100%;
+    padding: 12px !important;
 }
 
 .MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {

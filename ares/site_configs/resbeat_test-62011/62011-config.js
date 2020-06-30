@@ -46,7 +46,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             // logo_outbound_url: 'http://hotels.resbeat.com/',
-            logo_outbound_url: 'events.hotelsforhope.com/v6/siteId=62011' /* only for test */,
+            logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011' /* only for test */,
             background: '#fff',
             logo_flex_position: 'space-between',
             logo_max_width: '230px',

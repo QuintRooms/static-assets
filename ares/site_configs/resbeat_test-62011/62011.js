@@ -46,31 +46,59 @@ function styleRegisterContainer() {
 
 styleRegisterContainer();
 
-addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
-addAttributeToInput('#theUserNameAjax input', 'email', 'type');
-addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
-addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
-addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
-addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
-
 function addAttributeToInput(element, value, attribute) {
     if (!document.querySelector(element)) return;
 
     document.querySelector(element).setAttribute(attribute, value);
 }
 
-// addAttributeToInput('#theUserNameAjax input', '', 'onblur');
+addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
+addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
+addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
+addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder');
+addAttributeToInput('#theFirstNameAjax input', true, 'required');
+addAttributeToInput('#theLastNameAjax input', true, 'required');
+addAttributeToInput('#theEditablePasswordAjax input', true, 'required');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', true, 'required');
+addAttributeToInput('#commands .supportLink', '_blank', 'target');
+addAttributeToInput('#commands .profileCommand', '_blank', 'target');
 
-document.body.addEventListener('click', () => {
-    addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
-    addAttributeToInput('#theUserNameAjax input', 'email', 'type');
-    // addAttributeToInput(
-    //     '#theUserNameAjax input',
-    //     `new Ajax.Updater('theUserNameAjax','https://events.hotelsforhope.com/v6/register',{'evalScripts':true,'parameters':['_s=JuFAmrkVAvGMvo3f','_k=kJkKPwYq','siteId='+62011,'theme=standard','18',$('id17').serialize()].join('&')})`,
-    //     'onblur'
-    // );
-    console.log('blur event');
-});
+function createInputMaskToBypassArnValidation(selector) {
+    const arn_input_container = document.querySelector(selector);
+
+    if (!arn_input_container) return;
+
+    let arn_input = arn_input_container.querySelector('input');
+
+    arn_input_container.insertAdjacentHTML(
+        'beforeBegin',
+        `<input type="email" placeholder="Email" class="email-mask" required><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+    );
+
+    const new_input = document.querySelector('.email-mask');
+
+    new_input.addEventListener('blur', () => {
+        arn_input.value = new_input.value;
+
+        const interval = setInterval(() => {
+            if (!document.querySelector(`#${arn_input.id}`)) {
+                arn_input = document.querySelector('#theUserNameAjax input');
+                utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+
+                clearInterval(interval);
+            }
+        }, 500);
+
+        arn_input.focus();
+        arn_input.blur();
+    });
+}
+
+if (document.querySelector('.WBValidatedRegistrationForm')) {
+    createInputMaskToBypassArnValidation('#theUserNameAjax');
+    utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+}
 
 function updateSearchTitle() {
     if (!document.querySelector('.RootBody')) return;
@@ -202,12 +230,12 @@ function headerLinks() {
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);
-    const booking_href = document.querySelector('.static-booking-guideLink').href;
-    const rewards_href = document.querySelector('.static-rewards-guideLink').href;
+    const booking_href = document.querySelector('.static-bookingLink').href;
+    const rewards_href = document.querySelector('.static-rewardsLink').href;
     commands.insertAdjacentHTML(
         'afterbegin',
         `
-        <a class="rewards" target="_blank" href="${rewards_href}">Rewards</a>
+        <a class="rewards" target="_blank" href="${rewards_href}">Rewards Guide</a>
         <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
         `
     );
@@ -295,10 +323,46 @@ utilities.updateHTML(
 
 `
 );
+
+// This is entirely repeated code... it's late and I don't care right now
+function createInputMaskToBypassArnValidationForSupportPage(selector) {
+    const arn_input_container = document.querySelector(selector);
+
+    if (!arn_input_container) return;
+
+    let arn_input = arn_input_container.querySelector('input');
+
+    arn_input_container.insertAdjacentHTML(
+        'beforeBegin',
+        `<input type="text" placeholder="Booking Number" class="booking-number-mask" required><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+    );
+
+    const new_input = document.querySelector('.booking-number-mask');
+
+    new_input.addEventListener('blur', () => {
+        arn_input.value = new_input.value;
+
+        const interval = setInterval(() => {
+            if (!document.querySelector(`#${arn_input.id}`)) {
+                arn_input = document.querySelector('#theReservationConfirmationNumberAjax input');
+                utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
+
+                clearInterval(interval);
+            }
+        }, 500);
+
+        arn_input.focus();
+        arn_input.blur();
+    });
+}
+
 if (document.querySelector('.WBSupportFormContainer')) {
     addAttributeToInput('#theNameAjax input', 'Name', 'placeholder');
     addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder');
     addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theNameAjax input', true, 'required');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', true, 'required');
+    addAttributeToInput('#theEmailAjax input', true, 'required');
     addAttributeToInput('#theEmailAjax input', 'email', 'type');
     addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder');
     addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder');
@@ -306,6 +370,9 @@ if (document.querySelector('.WBSupportFormContainer')) {
     addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder');
 
     document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
+
+    createInputMaskToBypassArnValidationForSupportPage('#theReservationConfirmationNumberAjax');
+    utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
 }
 
 function styleMapPins() {
@@ -323,10 +390,41 @@ function styleMapPins() {
         .SearchHotels .arnMapMarkerTriangle {
             border-top-color: ${site_config.secondary_color};
         }
+
+        .arnMapMarker:hover .arnMapMarkerTriangle {
+            border-top-color: ${site_config.secondary_color};
+        }
     `
     );
 }
 
 styleMapPins();
+
+function colorCalendardays() {
+    document.body.insertAdjacentHTML(
+        'beforeend',
+        `
+        <style>
+        .yui3-skin-sam .yui3-calendar-day-selected {
+            background-color: ${site_config.primary_color} !important;
+            color: ${site_config.primary_text_color} !important;
+        }
+
+        .yui3-skin-sam .yui3-calendar-day:hover{
+            background-color: ${site_config.primary_color} !important;
+        }
+
+        .yui3-skin-sam .yui3-calendar-content{
+            border-color: ${site_config.border_color} !important;
+        }
+        <style>
+        `
+    );
+}
+
+colorCalendardays();
+
+utilities.updateHTML('.static-bookingLink', 'Booking Guide');
+utilities.updateHTML('.static-rewardsLink', 'Rewards Guide');
 
 new ChildPortal();

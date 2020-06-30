@@ -91,13 +91,12 @@ export default class BasePortal {
                 utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                 // Shows numpad on ios
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-                utilities.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                 utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                 utilities.updateHTML('#theHotel legend', 'Reservation Summary');
-
                 this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
@@ -259,6 +258,7 @@ export default class BasePortal {
             this.insertPoweredByFooterLogo();
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();
+            this.appendMemberTokenForCug();
             this.hideRemainingRooms();
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
 
@@ -483,7 +483,7 @@ export default class BasePortal {
         });
     }
 
-    buildMobileMenu() {
+    async buildMobileMenu() {
         const menu_el = document.querySelector('#commands');
         const header_el = document.querySelector('#AdminControlsContainer');
 
@@ -499,6 +499,8 @@ export default class BasePortal {
             menu_button_el.classList.toggle('is-active');
             menu_el.classList.toggle('active');
         });
+        await utilities.waitForSelectorInDOM('header');
+        document.querySelector('header').insertAdjacentElement('beforeend', header_el);
     }
 
     showAdditionalPolicies() {
@@ -2051,7 +2053,7 @@ export default class BasePortal {
         if (site_config.site_type.toLowerCase() !== 'cug') return;
 
         function showPercentSavingsFilter() {
-            if (site_config.cug.show_percent_savings) return;
+            if (!site_config.cug.show_percent_savings) return;
 
             const percent_savings_filter = document.querySelector('.ArnSortByDealPercent');
 
@@ -2211,17 +2213,19 @@ export default class BasePortal {
 
     fixCheckoutInputTabOrder() {
         const form = document.querySelector('#theReservationForm');
-        const room_count_el = document.querySelector('meta[name="numberOfRooms');
+        const room_count_el = document.querySelector('meta[name="numberOfRooms"]');
 
         if (!form || !room_count_el) return;
-
         const room_count = room_count_el.content;
-
-        const elements = form.getElements();
+        const elements = form.querySelectorAll('input, select, textarea');
 
         elements.forEach((element, i) => {
             if (!element) return;
-            element.setAttribute('tabIndex', i);
+            if (i === 0) {
+                element.setAttribute('tabindex', 1);
+            } else {
+                element.setAttribute('tabIndex', i);
+            }
         });
 
         for (let i = 1; i <= room_count; i += 1) {
@@ -2229,7 +2233,6 @@ export default class BasePortal {
             const postal = document.querySelector(`#theZipCode${i}`);
             const state = document.querySelector(`#theStateAjax${i} select`);
             const country = document.querySelector(`#theCountryAjax${i} select`);
-
             const card_name = document.querySelector(`#theCreditCardBillingNameAjax${i} input`);
             const cvv_code = document.querySelector(`.RoomNumber-${i} #theCvvCode`);
             const month = document.querySelector(`.RoomNumber-${i} .cardMonth`);
@@ -2241,7 +2244,6 @@ export default class BasePortal {
             const state_tab_index = state.tabIndex;
             const postal_tab_index = postal.tabIndex;
             const country_tab_index = country.tabIndex;
-
             const card_name_tab_index = card_name.tabIndex;
             const cvv_code_tab_index = cvv_code.tabIndex;
             const month_tab_index = month.tabIndex;
@@ -2251,7 +2253,6 @@ export default class BasePortal {
             state.setAttribute('tabIndex', city_tab_index);
             postal.setAttribute('tabIndex', country_tab_index);
             country.setAttribute('tabIndex', state_tab_index);
-
             card_name.setAttribute('tabIndex', cvv_code_tab_index);
             cvv_code.setAttribute('tabIndex', month_tab_index);
             month.setAttribute('tabIndex', year_tab_index);
@@ -2319,5 +2320,19 @@ export default class BasePortal {
         const html = await utilities.fetchHTMLFromFile(html_url);
 
         parent_container.innerHTML = html;
+    }
+
+    async appendMemberTokenForCug() {
+        if (this.site_config.site_type.toLowerCase() !== 'cug') return;
+
+        await utilities.waitForSelectorInDOM('.logo');
+        // const member_token = document.querySelector('meta[name="memberToken"]').content;
+        const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
+        const logo = document.querySelector('.logo');
+        // eslint-disable-next-line no-unused-vars
+        let logo_href = logo.getAttribute('href');
+        // logo_href += `&memberToken=${member_token}`;
+        logo_href += `&_s=${member_token}`;
+        logo.setAttribute('href', logo_href);
     }
 }

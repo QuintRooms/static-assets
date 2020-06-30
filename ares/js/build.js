@@ -91,7 +91,7 @@ export default class BasePortal {
                 utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                 // Shows numpad on ios
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
-                utilities.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
                 utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
@@ -2335,4 +2335,6 @@ export default class BasePortal {
         logo_href += `&_s=${member_token}`;
         logo.setAttribute('href', logo_href);
     }
+
+    rerunRateFunctionsOnClickingSeeMoreRooms() {}
 }

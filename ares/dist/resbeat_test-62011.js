@@ -3962,7 +3962,7 @@
                                                                             ),
                                                                             H.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
                                                                             H.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                            H.updateAttribute('.CheckOutForm #theAreaCode', 'inputmode'),
+                                                                            H.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
                                                                             H.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
                                                                             H.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
                                                                             H.updateHTML('#theCharges legend', 'Rate Info'),
@@ -5737,6 +5737,7 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
+                        {key: 'rerunRateFunctionsOnClickingSeeMoreRooms', value: function () {}},
                     ]) && j(t.prototype, n),
                     r && j(t, r),
                     e

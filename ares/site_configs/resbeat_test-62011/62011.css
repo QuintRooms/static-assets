@@ -118,6 +118,8 @@ input[type='email'].email-mask,
 #commands .logoutCommand {
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 14px;
+    outline: none;
 }
 
 .ArnSubPage h1 {

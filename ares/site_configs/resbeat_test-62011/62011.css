@@ -27,8 +27,7 @@
     font-style: normal;
 }
 
-
-.logo img{
+.logo img {
     padding: 0;
 }
 
@@ -41,11 +40,11 @@
 }
 
 .RootBody .ArnPrimarySearchContainer {
-    background: #F0F1F2;
+    background: #f0f1f2;
     color: #333;
 }
 .ArnSupportLinks {
-    background: #F0F1F2;
+    background: #f0f1f2;
     color: #333;
 }
 
@@ -58,11 +57,15 @@
     color: #666;
 }
 
-.SinglePropDetail .SimpleSearch input, .SinglePropDetail .SimpleSearch select {
-    background-color: #F0F0F0 !important;
+.SinglePropDetail .SimpleSearch input,
+.SinglePropDetail .SimpleSearch select {
+    background-color: #f0f0f0 !important;
 }
 
-#theSubmitButton, #theOtherSubmitButton, .SinglePropDetail .CheckRates .submit, .CheckOutForm #theConfirmationButton {
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton {
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -71,24 +74,34 @@
     color: #fff !important;
 }
 
-#theSubmitButton:hover, #theOtherSubmitButton:hover, .CheckRates .submit:hover, .CheckOutForm #theConfirmationButton:hover {
+#theSubmitButton:hover,
+#theOtherSubmitButton:hover,
+.CheckRates .submit:hover,
+.CheckOutForm #theConfirmationButton:hover {
     background: #fff !important;
     color: #215853 !important;
 }
 
-.WBValidatedRegistrationForm #thePersonalInfoGroup label, .WBValidatedRegistrationForm #thePassCodeAjax, #availableUser {
+.WBValidatedRegistrationForm #thePersonalInfoGroup label,
+.WBValidatedRegistrationForm #thePassCodeAjax,
+#availableUser {
     display: none;
 }
 
-.WBValidatedRegistrationForm #theUserNameAjax input, .WBValidatedRegistrationForm #theFirstNameAjax input, .WBValidatedRegistrationForm #theLastNameAjax input, .WBValidatedRegistrationForm #theEditablePasswordAjax input, .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input, input[type="email"].email-mask,
+.WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type='email'].email-mask,
 .WBLoginFormFields input {
-    background: #F0F1F2 !important;
+    background: #f0f1f2 !important;
     border: unset !important;
     font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     padding: 12px !important;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     outline: 0;
     color: #666 !important;
 }
@@ -100,7 +113,8 @@
     padding: 12px;
 }
 
-#commands, #commands .logoutCommand {
+#commands,
+#commands .logoutCommand {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -128,7 +142,8 @@
     margin-top: 6px;
 }
 
-.RootBody h1, .RootBody h3{
+.RootBody h1,
+.RootBody h3 {
     display: none !important;
 }
 
@@ -176,7 +191,9 @@
     max-width: 135px !important;
 }
 
-.ArnRateButton a, .bookRoom, .holdRoom {
+.ArnRateButton a,
+.bookRoom,
+.holdRoom {
     border-radius: 40px;
     background: #fff;
     color: #215853;
@@ -184,13 +201,20 @@
     padding: 6px 12px;
 }
 
-.ArnRateButton a:hover, .bookRoom:hover, .holdRoom:hover {
+.ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover {
     background: #215853;
     color: #fff;
     border: 2px solid #215853;
 }
 
-.LoginAction.submit, #register-btn a, .RegisterAction.submit, .SendMeNewPasswordAction.submit, #moreRatesLink, .WBSupportForm .SendRequestAction {
+.LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction {
     border-radius: 40px;
     background: #215853;
     color: #fff;
@@ -198,7 +222,11 @@
     padding: 12px;
 }
 
-.LoginAction.submit:hover, #register-btn a:hover, .RegisterAction.submit:hover, .SendMeNewPasswordAction.submit:hover, .WBSupportForm .SendRequestAction:hover {
+.LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover {
     background: #fff;
     color: #215853;
     border: 2px solid #215853;
@@ -208,7 +236,8 @@
     margin-left: 10px;
 }
 
-.SearchHotels .originalPrice, .SinglePropDetail .originalPrice {
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;
@@ -218,15 +247,16 @@
 
 .SearchHotels .ArnPrimarySearchContainer {
     background: #fff;
-    color:#666
+    color: #666;
 }
 
 .SearchHotels .ArnPriceCell .mainRate {
     padding-right: 42px;
 }
 
-.SearchHotels #theSearchBox input, .SearchHotels #theSearchBox select {
-    background-color: #F0F0F0;
+.SearchHotels #theSearchBox input,
+.SearchHotels #theSearchBox select {
+    background-color: #f0f0f0;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer div.ArnSearchHeader {
@@ -254,7 +284,7 @@
     font-size: 13px;
 }
 
-.CheckOutForm .total-points-earned td{
+.CheckOutForm .total-points-earned td {
     font-family: 'Avenir';
 }
 
@@ -262,7 +292,7 @@
     font-size: 15px;
 }
 
-#theBookingPage legend{
+#theBookingPage legend {
     font-weight: normal;
 }
 
@@ -303,11 +333,16 @@
     display: none;
 }
 
-.MemberNotAuthenticated #theUserNameAjax label, .MemberNotAuthenticated #thePasswordAjax label {
+.MemberNotAuthenticated #theUserNameAjax label,
+.MemberNotAuthenticated #thePasswordAjax label {
     display: none;
 }
 
-.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input, .MemberNotAuthenticated #new-user-text, .MemberNotAuthenticated #theWBLoginFormBody h1, .MemberNotAuthenticated .ForgotPasswordAction {
+.MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input,
+.MemberNotAuthenticated #new-user-text,
+.MemberNotAuthenticated #theWBLoginFormBody h1,
+.MemberNotAuthenticated .ForgotPasswordAction {
     font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
@@ -322,16 +357,18 @@
     font-size: 12px;
 }
 
-.MemberNotAuthenticated #theUserNameAjax input, .MemberNotAuthenticated #thePasswordAjax input {
+.MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input {
     border: unset;
-    background-color: #F0F1F2;
+    background-color: #f0f1f2;
     width: 100%;
     padding: 12px !important;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     outline: none;
 }
 
-.MemberNotAuthenticated #new-user-text strong, .MemberNotAuthenticated #theWBLoginFormBody strong {
+.MemberNotAuthenticated #new-user-text strong,
+.MemberNotAuthenticated #theWBLoginFormBody strong {
     font-family: 'Avenir';
     font-weight: 700;
     letter-spacing: 1px;
@@ -351,8 +388,14 @@
     text-align: center;
 }
 
-.MemberNotAuthenticated .LoginAction, .SendMeNewPasswordAction.submit, .ArnShowRatesLink, .bookRoom, .holdRoom, #moreRatesLink, .GuestForms legend, .WBSupportFormActions .SendRequestAction 
-{
+.MemberNotAuthenticated .LoginAction,
+.SendMeNewPasswordAction.submit,
+.ArnShowRatesLink,
+.bookRoom,
+.holdRoom,
+#moreRatesLink,
+.GuestForms legend,
+.WBSupportFormActions .SendRequestAction {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Avenir';
@@ -380,7 +423,9 @@
     font-size: 25px;
 }
 
-.SearchHotels .sort-wrapper h4, .SearchHotels .lblAmenities, .SearchHotels .lblRating {
+.SearchHotels .sort-wrapper h4,
+.SearchHotels .lblAmenities,
+.SearchHotels .lblRating {
     font-family: 'Avenir';
     font-weight: 700;
     letter-spacing: 1px;
@@ -395,28 +440,43 @@
     text-align: left;
 }
 
+#theBookingPage .PaymentPolicies {
+    border: none;
+    background: #f4f4f4;
+    color: #666;
+}
+
+.totalsTable tr th,
+.totalsTable tr td {
+    background: #f4f4f4;
+    color: #666;
+}
+
+.theHotelName {
+    color: #666;
+}
+
 @media screen and (min-width: 900px) {
     .RootBody .ArnPrimarySearchContainer {
         width: 60vw;
         max-width: 800px;
         min-width: 700px;
     }
-    
+
     .RootBody #CitySearchContainer {
         width: 30vw;
     }
 }
 
 @media screen and (max-width: 600px) {
-
     .MemberNotAuthenticated header {
         display: unset;
     }
 
     .MemberNotAuthenticated .info-banner {
-        display: unset
+        display: unset;
     }
-    
+
     .SearchHotels .ArnRateCell {
         width: 100%;
     }
@@ -434,7 +494,6 @@
     .SearchHotels .ArnPriceCell {
         align-self: end;
         margin-left: 10px;
-
     }
 
     .SearchHotels .ArnRateButton {
@@ -488,90 +547,89 @@
 .lowRateLink,
 .lowRateLink + .dvd,
 .cancelLink,
-.supportLink + .dvd{
+.supportLink + .dvd {
     display: none;
 }
 
-@media screen and (max-width: 1200px){
-    .ArnSubPage{
+@media screen and (max-width: 1200px) {
+    .ArnSubPage {
         padding: 12px;
     }
 }
 
-.ArnSubPage h1{
+.ArnSubPage h1 {
     color: #333;
 }
 
-.ArnSubPage.WBSupportForm{
+.ArnSubPage.WBSupportForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 96px;
-
 }
-.WBSupportForm .FormFields{
+.WBSupportForm .FormFields {
     margin-top: 6px;
 }
 
-.WBSupportForm .SSForm{
+.WBSupportForm .SSForm {
     grid-column-start: 1;
     grid-row-start: 2;
 }
 
 .WBSupportForm input,
 .WBSupportForm select,
-.WBSupportForm textarea{
+.WBSupportForm textarea {
     background: #f0f0f0;
     color: #666;
     border: none;
     width: 100%;
     padding: 12px !important;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     outline: 0;
 }
 
-.WBSupportForm .ArnSupportChatTable{
+.WBSupportForm .ArnSupportChatTable {
     grid-column-start: 2;
     grid-row-start: 2;
 }
 
 .WBSupportForm .ArnSupportChatTable td p:first-of-type,
-.WBSupportForm .ArnSupportChatTable td div + p + p{
+.WBSupportForm .ArnSupportChatTable td div + p + p {
     display: none;
 }
 
-.WBSupportForm .SSForm .FormFields label{
+.WBSupportForm .SSForm .FormFields label {
     display: none;
 }
 
-.useCancelFormWarning{
+.useCancelFormWarning {
     display: none;
 }
 
-.support-details{
+.support-details {
     background: #f4f4f4;
     color: #666;
     padding: 30px;
     line-height: 1.7;
 }
 
-.support-details h3{
+.support-details h3 {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: normal;
 }
 
-.support-details a{
+.support-details a {
     color: #215853;
     text-decoration: none;
 }
 
-.support-details p{
+.support-details p {
     margin: 0;
 }
 
-.support-details p:last-child{
-    margin-top:18px;
+.support-details p:last-child {
+    margin-top: 18px;
 }
 
 #theHotelAddress {
@@ -583,28 +641,30 @@
     justify-content: flex-end;
 }
 
-@media screen and (max-width: 800px){
-    .ArnSubPage.WBSupportForm{
+@media screen and (max-width: 800px) {
+    .ArnSubPage.WBSupportForm {
         grid-template-columns: 1fr;
     }
 
-    .WBSupportForm .SSForm{
+    .WBSupportForm .SSForm {
         grid-row-start: 3;
         grid-column-start: 1;
         width: 100%;
     }
-    .WBSupportForm .ArnSupportChatTable{
+    .WBSupportForm .ArnSupportChatTable {
         grid-row-start: 2;
         grid-column-start: 1;
         width: 100%;
         margin-bottom: 24px;
     }
 
-    .support-details{
+    .support-details {
         padding: 18px;
     }
 
-    .RootBody .ArnPrimarySearchContainer #AmentitiesContainer, .RootBody .ArnPrimarySearchContainer #PropertyClassesContainer, .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
+    .RootBody .ArnPrimarySearchContainer #AmentitiesContainer,
+    .RootBody .ArnPrimarySearchContainer #PropertyClassesContainer,
+    .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
         display: none !important;
     }
 
@@ -614,10 +674,8 @@
     }
 }
 
-@media screen and (max-width: 1105px){
-
-.SearchHotels .ArnPrimarySearchOuterContainer {
-    margin-top: 50px;
+@media screen and (max-width: 1105px) {
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 50px;
     }
 }
-

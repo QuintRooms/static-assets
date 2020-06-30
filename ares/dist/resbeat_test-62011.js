@@ -6085,12 +6085,12 @@
                     var e = document.querySelector('.supportLink'),
                         t = document.querySelector('#commands');
                     t.insertAdjacentElement('afterbegin', e);
-                    var n = document.querySelector('.static-booking-guideLink').href,
-                        r = document.querySelector('.static-rewards-guideLink').href;
+                    var n = document.querySelector('.static-bookingLink').href,
+                        r = document.querySelector('.static-rewardsLink').href;
                     t.insertAdjacentHTML(
                         'afterbegin',
                         '\n        <a class="rewards" target="_blank" href="'
-                            .concat(r, '">Rewards</a>\n        <a class="booking-guide" target="_blank" href="')
+                            .concat(r, '">Rewards Guide</a>\n        <a class="booking-guide" target="_blank" href="')
                             .concat(n, '">Booking Guide</a>\n        ')
                     );
                 }
@@ -6174,8 +6174,8 @@
                     .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-day:hover{\n            background-color: ')
                     .concat(Y.primary_color, ' !important;\n        }\n        <style>\n        ')
             ),
-            J.updateHTML('.ArnSupportBottom .static-bookingLink', 'Booking Guide'),
-            J.updateHTML('.ArnSupportBottom .static-rewardsLink', 'Rewards Guide'),
+            J.updateHTML('.static-bookingLink', 'Booking Guide'),
+            J.updateHTML('.static-rewardsLink', 'Rewards Guide'),
             new Z();
     },
 ]);

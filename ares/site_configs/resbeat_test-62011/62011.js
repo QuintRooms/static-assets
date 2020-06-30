@@ -228,12 +228,12 @@ function headerLinks() {
     const support_link = document.querySelector('.supportLink');
     const commands = document.querySelector('#commands');
     commands.insertAdjacentElement('afterbegin', support_link);
-    const booking_href = document.querySelector('.static-booking-guideLink').href;
-    const rewards_href = document.querySelector('.static-rewards-guideLink').href;
+    const booking_href = document.querySelector('.static-bookingLink').href;
+    const rewards_href = document.querySelector('.static-rewardsLink').href;
     commands.insertAdjacentHTML(
         'afterbegin',
         `
-        <a class="rewards" target="_blank" href="${rewards_href}">Rewards</a>
+        <a class="rewards" target="_blank" href="${rewards_href}">Rewards Guide</a>
         <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
         `
     );
@@ -413,7 +413,7 @@ function colorCalendardays() {
 
 colorCalendardays();
 
-utilities.updateHTML('.ArnSupportBottom .static-bookingLink', 'Booking Guide');
-utilities.updateHTML('.ArnSupportBottom .static-rewardsLink', 'Rewards Guide');
+utilities.updateHTML('.static-bookingLink', 'Booking Guide');
+utilities.updateHTML('.static-rewardsLink', 'Rewards Guide');
 
 new ChildPortal();

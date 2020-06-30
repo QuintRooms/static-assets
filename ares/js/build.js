@@ -84,7 +84,7 @@ export default class BasePortal {
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
 
-                this.reduceHeightOfPropReviewsWhenMissing();
+                // this.reduceHeightOfPropReviewsWhenMissing();
             }
 
             // checkout page methods
@@ -2346,8 +2346,10 @@ export default class BasePortal {
         logo.setAttribute('href', logo_href);
     }
 
-    reduceHeightOfPropReviewsWhenMissing() {
+    async reduceHeightOfPropReviewsWhenMissing() {
         if (utilities.page_name !== 'property-detail') return;
+
+        await utilities.waitForSelectorInDOM('.propReview');
 
         const review_iframe = document.querySelector('.propReview');
         const review_count_element = document.querySelector('.ArnTripAdvisorDetails .reviewCount a');

@@ -46,23 +46,28 @@ function styleRegisterContainer() {
 
 styleRegisterContainer();
 
-function addAttributeToInput(element, value, attribute) {
-    if (!document.querySelector(element)) return;
-
-    document.querySelector(element).setAttribute(attribute, value);
+async function addAttributeToInput(element, value, attribute, page_name) {
+    if (!document.querySelector(page_name)) return;
+    try {
+        await utilities.waitForSelectorInDOM(element);
+        // if (!document.querySelector(element)) return;
+        document.querySelector(element).setAttribute(attribute, value);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
-addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
-addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
-addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
-addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
-addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder');
-addAttributeToInput('#theFirstNameAjax input', true, 'required');
-addAttributeToInput('#theLastNameAjax input', true, 'required');
-addAttributeToInput('#theEditablePasswordAjax input', true, 'required');
-addAttributeToInput('#theEditableConfirmPasswordAjax input', true, 'required');
-addAttributeToInput('#commands .supportLink', '_blank', 'target');
-addAttributeToInput('#commands .profileCommand', '_blank', 'target');
+addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm');
+addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm');
+addAttributeToInput('#theFirstNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theLastNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theEditablePasswordAjax input', true, 'required', '.WBValidatedRegistrationForm');
+addAttributeToInput('#theEditableConfirmPasswordAjax input', true, 'required', '.WBValidatedRegistrationForm');
+addAttributeToInput('#commands .supportLink', '_blank', 'target', '.MemberAuthenticated');
+addAttributeToInput('#commands .profileCommand', '_blank', 'target', '.MemberAuthenticated');
 
 function createInputMaskToBypassArnValidation(selector) {
     const arn_input_container = document.querySelector(selector);

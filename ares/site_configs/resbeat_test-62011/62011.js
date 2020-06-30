@@ -52,13 +52,10 @@ function addAttributeToInput(element, value, attribute) {
     document.querySelector(element).setAttribute(attribute, value);
 }
 
-addAttributeToInput('#theUserNameAjax input', 'Email', 'placeholder');
-addAttributeToInput('#theUserNameAjax input', 'email', 'type');
 addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
 addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
-
 addAttributeToInput('#theFirstNameAjax input', true, 'required');
 addAttributeToInput('#theLastNameAjax input', true, 'required');
 addAttributeToInput('#theEditablePasswordAjax input', true, 'required');

@@ -6016,8 +6016,6 @@
                     document.querySelector('#register-btn').insertAdjacentElement('afterbegin', e), (e.textContent = 'REGISTER');
                 }
             })(),
-            Q('#theUserNameAjax input', 'Email', 'placeholder'),
-            Q('#theUserNameAjax input', 'email', 'type'),
             Q('#theFirstNameAjax input', 'First Name', 'placeholder'),
             Q('#theLastNameAjax input', 'Last Name', 'placeholder'),
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),

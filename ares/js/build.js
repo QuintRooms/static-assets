@@ -83,8 +83,6 @@ export default class BasePortal {
                 // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
-
-                // this.reduceHeightOfPropReviewsWhenMissing();
             }
 
             // checkout page methods
@@ -2344,19 +2342,5 @@ export default class BasePortal {
         // logo_href += `&memberToken=${member_token}`;
         logo_href += `&_s=${member_token}`;
         logo.setAttribute('href', logo_href);
-    }
-
-    async reduceHeightOfPropReviewsWhenMissing() {
-        if (utilities.page_name !== 'property-detail') return;
-
-        await utilities.waitForSelectorInDOM('.propReview');
-
-        const review_iframe = document.querySelector('.propReview');
-        const review_count_element = document.querySelector('.ArnTripAdvisorDetails .reviewCount a');
-
-        if (!review_iframe || !review_count_element) return;
-        if (review_count_element.textContent !== '0 User Reviews') return;
-
-        review_iframe.style.height = '100px';
     }
 }

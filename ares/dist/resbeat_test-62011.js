@@ -3868,7 +3868,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = 'USD');
                 }
-                var t, n, r, o, i, a, c, s, u, l, d;
+                var t, n, r, o, i, a, c, s, u, l;
                 return (
                     (t = e),
                     (n = [
@@ -4241,7 +4241,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((d = P(
+                                ((l = P(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4266,13 +4266,13 @@
                                     })
                                 )),
                                 function () {
-                                    return d.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((l = P(
+                                ((u = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4298,7 +4298,7 @@
                                     })
                                 )),
                                 function () {
-                                    return l.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -4449,7 +4449,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((u = P(
+                                ((s = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4491,7 +4491,7 @@
                                     })
                                 )),
                                 function () {
-                                    return u.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5029,7 +5029,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((s = P(
+                                ((c = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5056,7 +5056,7 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5225,7 +5225,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((c = P(
+                                ((a = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5263,7 +5263,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5740,7 +5740,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((a = P(
+                                ((i = P(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5764,13 +5764,13 @@
                                     })
                                 )),
                                 function (e, t) {
-                                    return a.apply(this, arguments);
+                                    return i.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((i = P(
+                                ((o = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(
@@ -5805,52 +5805,6 @@
                                             e,
                                             this
                                         );
-                                    })
-                                )),
-                                function () {
-                                    return i.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'reduceHeightOfPropReviewsWhenMissing',
-                            value:
-                                ((o = P(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t, n;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        if ('property-detail' === H.page_name) {
-                                                            e.next = 2;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 2:
-                                                        return (e.next = 4), H.waitForSelectorInDOM('.propReview');
-                                                    case 4:
-                                                        if (
-                                                            ((t = document.querySelector('.propReview')),
-                                                            (n = document.querySelector('.ArnTripAdvisorDetails .reviewCount a')),
-                                                            t && n)
-                                                        ) {
-                                                            e.next = 8;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 8:
-                                                        if ('0 User Reviews' === n.textContent) {
-                                                            e.next = 10;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 10:
-                                                        t.style.height = '100px';
-                                                    case 11:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
                                     })
                                 )),
                                 function () {

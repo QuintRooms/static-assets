@@ -411,6 +411,10 @@ function colorCalendardays() {
         .yui3-skin-sam .yui3-calendar-day:hover{
             background-color: ${site_config.primary_color} !important;
         }
+
+        .yui3-skin-sam .yui3-calendar-content{
+            border-color: ${site_config.border_color} !important;
+        }
         <style>
         `
     );

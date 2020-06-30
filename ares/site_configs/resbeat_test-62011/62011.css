@@ -693,6 +693,60 @@ input[type='email'].email-mask,
         width: 100%;
         max-width: 400px;
     }
+
+    .currencies-container {
+        margin: 4px auto;
+        background: #fff;
+        height: 38px;
+        padding: 6px;
+    }
+
+    .SearchHotels .currencies-container {
+        background: #f0f0f0;
+    }
+
+    .currencies-container #currency-label {
+        color: #333;
+        border-bottom: unset;
+        justify-content: space-between;
+        margin: unset;
+        width: 100%;
+    }
+
+    .config-label .arrow {
+        margin-right: 10px;
+    }
+
+    .RootBody .currency {
+        display: block;
+        width: 100%;
+    }
+
+    .RootBody #language {
+        order: 2;
+    }
+
+    .RootBody .dropdown {
+        width: 350px;
+        grid-template-columns: 50% 50%;
+        z-index: 400;
+        position: unset;
+        margin: auto;
+    }
+
+    .SearchHotels .currencies-container{
+        position: relative;
+        z-index: 20;
+    }
+
+    .SearchHotels .currencies-container #currency-label {
+        margin: 0 0 0 10px;
+    }
+
+    .SearchHotels .dropdown {
+        margin: 2% 2%;
+        grid-template-columns: 50% 50%;
+    }
 }
 
 @media screen and (max-width: 1105px) {

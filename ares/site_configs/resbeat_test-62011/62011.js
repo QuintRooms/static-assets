@@ -174,16 +174,18 @@ async function displayRewardPoints() {
             }
         </style>
         `;
-    rooms.forEach((el) => {
+    rooms.forEach((el, i) => {
         let full_stay = el.querySelector('.full-stay').textContent;
         full_stay = full_stay.replace(/[^0-9.]/g, '');
         // eslint-disable-next-line radix
         const reward_points = parseInt(full_stay);
+        if (i === 0) {
+            document.body.insertAdjacentHTML('beforeend', style);
+        }
         mq.matches
             ? el.querySelector('tbody .bookRoomCell').insertAdjacentHTML(
                   'afterbegin',
                   `
-             ${style}
             <div class="points-earned">
             <span>RE<b>WARDS</b>: ${reward_points}</span> 
             </div>
@@ -192,7 +194,6 @@ async function displayRewardPoints() {
             : el.querySelector('tbody tr td').insertAdjacentHTML(
                   'beforeend',
                   `
-                  ${style}
             <div class="points-earned">
             Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 
             </div>
@@ -432,4 +433,33 @@ colorCalendardays();
 utilities.updateHTML('.static-bookingLink', 'Booking Guide');
 utilities.updateHTML('.static-rewardsLink', 'Rewards Guide');
 
+function moveConfigContainer() {
+    if (!document.querySelector('.config-container')) return;
+
+    const mq = window.matchMedia('(max-width: 800px)');
+    const currencies_container = document.querySelector('.currencies-container');
+
+    if (mq.matches && document.querySelector('.SearchHotels')) {
+        document.querySelector('#theSearchBox').insertAdjacentElement('afterend', currencies_container);
+        currencies_container.insertAdjacentHTML(
+            'beforebegin',
+            `
+            <span class="currency-label">Currency:</span>
+            `
+        );
+    }
+    if (mq.matches && document.querySelector('.RootBody')) {
+        document.querySelector('.ArnAdults').insertAdjacentHTML(
+            'afterend',
+            `
+            <td class="currency">
+                <span class="currency-label">Currency:</span>
+            </td>
+            `
+        );
+        document.querySelector('.currency').insertAdjacentElement('beforeend', currencies_container);
+    }
+}
+
+moveConfigContainer();
 new ChildPortal();

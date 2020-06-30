@@ -6174,6 +6174,8 @@
                     .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-day:hover{\n            background-color: ')
                     .concat(Y.primary_color, ' !important;\n        }\n        <style>\n        ')
             ),
+            J.updateHTML('.ArnSupportBottom .static-bookingLink', 'Booking Guide'),
+            J.updateHTML('.ArnSupportBottom .static-rewardsLink', 'Rewards Guide'),
             new Z();
     },
 ]);

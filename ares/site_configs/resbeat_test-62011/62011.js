@@ -413,4 +413,7 @@ function colorCalendardays() {
 
 colorCalendardays();
 
+utilities.updateHTML('.ArnSupportBottom .static-bookingLink', 'Booking Guide');
+utilities.updateHTML('.ArnSupportBottom .static-rewardsLink', 'Rewards Guide');
+
 new ChildPortal();

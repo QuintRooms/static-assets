@@ -2931,6 +2931,7 @@ legend {
     width: 100%;
     margin-top: 18px;
     max-width: 225px;
+    -webkit-appearance: none;
 }
 
 #theBookingPage .ArnRateCalendar {

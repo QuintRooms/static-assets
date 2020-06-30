@@ -72,6 +72,7 @@
     border: 2px solid #215853 !important;
     background: #215853 !important;
     color: #fff !important;
+    -webkit-appearance: none;
 }
 
 #theSubmitButton:hover,
@@ -318,7 +319,7 @@ input[type='email'].email-mask,
 }
 
 .SinglePropDetail .translateMe {
-    display: none;
+    display: none !important;
 }
 
 .roomCount {
@@ -482,7 +483,7 @@ input[type='email'].email-mask,
     }
 
     .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 0px;
+        margin-top: 0px !important;
     }
 
     .SearchHotels .beat-em {

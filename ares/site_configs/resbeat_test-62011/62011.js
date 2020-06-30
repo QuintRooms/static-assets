@@ -388,6 +388,10 @@ function styleMapPins() {
         .SearchHotels .arnMapMarkerTriangle {
             border-top-color: ${site_config.secondary_color};
         }
+
+        .arnMapMarker:hover .arnMapMarkerTriangle {
+            border-top-color: ${site_config.secondary_color};
+        }
     `
     );
 }

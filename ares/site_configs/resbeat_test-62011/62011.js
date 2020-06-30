@@ -56,6 +56,7 @@ addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder');
 addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder');
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder');
+addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder');
 addAttributeToInput('#theFirstNameAjax input', true, 'required');
 addAttributeToInput('#theLastNameAjax input', true, 'required');
 addAttributeToInput('#theEditablePasswordAjax input', true, 'required');

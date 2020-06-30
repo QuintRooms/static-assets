@@ -6020,6 +6020,7 @@
             Q('#theLastNameAjax input', 'Last Name', 'placeholder'),
             Q('#theEditablePasswordAjax input', 'Create a Password', 'placeholder'),
             Q('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder'),
+            Q('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder'),
             Q('#theFirstNameAjax input', !0, 'required'),
             Q('#theLastNameAjax input', !0, 'required'),
             Q('#theEditablePasswordAjax input', !0, 'required'),

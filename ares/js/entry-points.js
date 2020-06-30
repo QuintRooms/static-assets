@@ -39,6 +39,7 @@ module.exports = () => {
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
+            'resbeat-60831': './src/60831.js', // Resbeat test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
         };

@@ -556,8 +556,14 @@ input[type='email'].email-mask,
         padding-right: 15px;
     }
 
-    .CheckOutForm #confirmCheckBox, .CheckOutForm .confirmationWarning input.checkbox {
+    .CheckOutForm #confirmCheckBox {
         width: 26px;
+        border-radius: 3px;
+    }
+
+    .CheckOutForm .confirmationWarning input.checkbox {
+        width: 44px;
+        border-radius: 3px;
     }
 }
 

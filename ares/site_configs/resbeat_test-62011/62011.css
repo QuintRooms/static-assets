@@ -697,6 +697,6 @@ input[type='email'].email-mask,
     }
 }
 
-#commands .rewards{
+#commands .static-rewardsLink{
     display: done;
 }

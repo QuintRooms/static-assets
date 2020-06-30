@@ -516,15 +516,16 @@ input[type='email'].email-mask,
         grid-row: 1 / 2;
         max-width: 145px;
         width: 100%;
-        align-self: center;
-        justify-self: center;
-        margin: 8px auto;
+        align-self: flex-end;
+        justify-self: flex-end;
     }
 
     .SinglePropDetail .bookRoom {
         grid-row: 2 / 3;
         max-width: 145px;
         align-self: center;
+        justify-self: flex-end;
+        margin: unset;
     }
 
     .SinglePropDetail .ArnNightlyRate {
@@ -535,13 +536,19 @@ input[type='email'].email-mask,
         max-width: 145px;
     }
 
+    .SinglePropDetail .bookRoomCell {
+        grid-template-rows: 1fr .5fr .25fr;
+        grid-template-columns: 45% 55%;
+    }
+
     .SinglePropDetail .points-earned {
         width: unset;
-        padding: 4px 10px;
         grid-row: 1 / 2;
         grid-column: 1 / 2;
         top: 97px;
         bottom: unset;
+        background: unset;
+        color: #333;
     }
 }
 

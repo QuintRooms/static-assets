@@ -61,6 +61,8 @@ addAttributeToInput('#theFirstNameAjax input', true, 'required');
 addAttributeToInput('#theLastNameAjax input', true, 'required');
 addAttributeToInput('#theEditablePasswordAjax input', true, 'required');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', true, 'required');
+addAttributeToInput('#commands .supportLink', '_blank', 'target');
+addAttributeToInput('#commands .profileCommand', '_blank', 'target');
 
 function createInputMaskToBypassArnValidation(selector) {
     const arn_input_container = document.querySelector(selector);

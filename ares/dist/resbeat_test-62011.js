@@ -6055,6 +6055,8 @@
             Q('#theLastNameAjax input', !0, 'required'),
             Q('#theEditablePasswordAjax input', !0, 'required'),
             Q('#theEditableConfirmPasswordAjax input', !0, 'required'),
+            Q('#commands .supportLink', '_blank', 'target'),
+            Q('#commands .profileCommand', '_blank', 'target'),
             document.querySelector('.WBValidatedRegistrationForm') &&
                 (!(function (e) {
                     var t = document.querySelector(e);

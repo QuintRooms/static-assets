@@ -2216,10 +2216,8 @@ export default class BasePortal {
         const room_count_el = document.querySelector('meta[name="numberOfRooms"]');
 
         if (!form || !room_count_el) return;
-
         const room_count = room_count_el.content;
-
-        const elements = form.getElements();
+        const elements = form.querySelectorAll('input, select, textarea, a');
 
         elements.forEach((element, i) => {
             if (!element) return;
@@ -2231,7 +2229,6 @@ export default class BasePortal {
             const postal = document.querySelector(`#theZipCode${i}`);
             const state = document.querySelector(`#theStateAjax${i} select`);
             const country = document.querySelector(`#theCountryAjax${i} select`);
-
             const card_name = document.querySelector(`#theCreditCardBillingNameAjax${i} input`);
             const cvv_code = document.querySelector(`.RoomNumber-${i} #theCvvCode`);
             const month = document.querySelector(`.RoomNumber-${i} .cardMonth`);
@@ -2243,7 +2240,6 @@ export default class BasePortal {
             const state_tab_index = state.tabIndex;
             const postal_tab_index = postal.tabIndex;
             const country_tab_index = country.tabIndex;
-
             const card_name_tab_index = card_name.tabIndex;
             const cvv_code_tab_index = cvv_code.tabIndex;
             const month_tab_index = month.tabIndex;
@@ -2253,7 +2249,6 @@ export default class BasePortal {
             state.setAttribute('tabIndex', city_tab_index);
             postal.setAttribute('tabIndex', country_tab_index);
             country.setAttribute('tabIndex', state_tab_index);
-
             card_name.setAttribute('tabIndex', cvv_code_tab_index);
             cvv_code.setAttribute('tabIndex', month_tab_index);
             month.setAttribute('tabIndex', year_tab_index);

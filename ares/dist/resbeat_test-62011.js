@@ -6172,7 +6172,8 @@
             document.body.insertAdjacentHTML(
                 'beforeend',
                 '\n        <style>\n        .yui3-skin-sam .yui3-calendar-day-selected {\n            background-color: '
-                    .concat(Y.primary_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-day:hover{\n            background-color: ')
+                    .concat(Y.primary_color, ' !important;\n            color: ')
+                    .concat(Y.primary_text_color, ' !important;\n        }\n\n        .yui3-skin-sam .yui3-calendar-day:hover{\n            background-color: ')
                     .concat(Y.primary_color, ' !important;\n        }\n        <style>\n        ')
             ),
             J.updateHTML('.static-bookingLink', 'Booking Guide'),

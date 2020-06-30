@@ -405,6 +405,7 @@ function colorCalendardays() {
         <style>
         .yui3-skin-sam .yui3-calendar-day-selected {
             background-color: ${site_config.primary_color} !important;
+            color: ${site_config.primary_text_color} !important;
         }
 
         .yui3-skin-sam .yui3-calendar-day:hover{

@@ -83,6 +83,8 @@ export default class BasePortal {
                 // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+
+                this.reduceHeightOfPropReviewsWhenMissing();
             }
 
             // checkout page methods
@@ -2332,6 +2334,8 @@ export default class BasePortal {
         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
 
         await utilities.waitForSelectorInDOM('.logo');
+        if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
+        // if(document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
         const logo = document.querySelector('.logo');
@@ -2340,5 +2344,17 @@ export default class BasePortal {
         // logo_href += `&memberToken=${member_token}`;
         logo_href += `&_s=${member_token}`;
         logo.setAttribute('href', logo_href);
+    }
+
+    reduceHeightOfPropReviewsWhenMissing() {
+        if (utilities.page_name !== 'property-detail') return;
+
+        const review_iframe = document.querySelector('.propReview');
+        const review_count_element = document.querySelector('.ArnTripAdvisorDetails .reviewCount a');
+
+        if (!review_iframe || !review_count_element) return;
+        if (review_count_element.textContent !== '0 User Reviews') return;
+
+        review_iframe.style.height = '100px';
     }
 }

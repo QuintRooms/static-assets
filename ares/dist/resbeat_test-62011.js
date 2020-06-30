@@ -4420,9 +4420,10 @@
                                     );
                                     var n = document.querySelector('#hamburger');
                                     n &&
-                                        n.addEventListener('click', function () {
+                                        (n.addEventListener('click', function () {
                                             n.classList.toggle('is-active'), e.classList.toggle('active');
-                                        });
+                                        }),
+                                        document.querySelector('header').insertAdjacentElement('beforeend', t));
                                 }
                             },
                         },

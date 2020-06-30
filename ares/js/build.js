@@ -500,6 +500,8 @@ export default class BasePortal {
             menu_button_el.classList.toggle('is-active');
             menu_el.classList.toggle('active');
         });
+
+        document.querySelector('header').insertAdjacentElement('beforeend', header_el);
     }
 
     showAdditionalPolicies() {

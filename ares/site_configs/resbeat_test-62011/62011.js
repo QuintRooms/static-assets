@@ -362,17 +362,17 @@ function createInputMaskToBypassArnValidationForSupportPage(selector) {
 }
 
 if (document.querySelector('.WBSupportFormContainer')) {
-    addAttributeToInput('#theNameAjax input', 'Name', 'placeholder');
-    addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder');
-    addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder');
-    addAttributeToInput('#theNameAjax input', true, 'required');
-    addAttributeToInput('#theDaytimePhoneNumberAjax input', true, 'required');
-    addAttributeToInput('#theEmailAjax input', true, 'required');
-    addAttributeToInput('#theEmailAjax input', 'email', 'type');
-    addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder');
-    addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder');
-    addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder');
-    addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder');
+    addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theNameAjax input', true, 'required', '.WBSupportFormContainer');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', true, 'required', '.WBSupportFormContainer');
+    addAttributeToInput('#theEmailAjax input', true, 'required', '.WBSupportFormContainer');
+    addAttributeToInput('#theEmailAjax input', 'email', 'type', '.WBSupportFormContainer');
+    addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer');
+    addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer');
 
     document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
 

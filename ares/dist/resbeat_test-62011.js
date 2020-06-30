@@ -359,11 +359,11 @@
                     return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            P = function (e) {
+            R = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
-            R = function (e, t) {
+            P = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -384,7 +384,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = R(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -432,7 +432,7 @@
             },
             H = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
             },
             F = function (e) {
                 var t,
@@ -441,7 +441,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = P(e))
+                        (t = R(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -450,7 +450,7 @@
                                       H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), R(n, !1));
+                            : ((n._v = e), (n._s = 1), P(n, !1));
                     } catch (e) {
                         H.call({_w: n, _d: !1}, e);
                     }
@@ -476,7 +476,7 @@
                         (n.domain = C ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && R(this, !1),
+                        this._s && P(this, !1),
                         n.promise
                     );
                 },
@@ -1832,18 +1832,18 @@
             M = n(15),
             q = L.f,
             T = C.f,
-            P = k.f,
-            R = r.Symbol,
+            R = k.f,
+            P = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
             B = h('_hidden'),
             H = h('toPrimitive'),
             F = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
-            N = l('symbols'),
-            D = l('op-symbols'),
+            D = l('symbols'),
+            N = l('op-symbols'),
             $ = Object.prototype,
-            U = 'function' == typeof R && !!E.f,
+            U = 'function' == typeof P && !!E.f,
             W = r.QObject,
             G = !W || !W.prototype || !W.prototype.findChild,
             V =
@@ -1866,24 +1866,24 @@
                       }
                     : T,
             z = function (e) {
-                var t = (N[e] = A(R.prototype));
+                var t = (D[e] = A(P.prototype));
                 return (t._k = e), t;
             },
             Y =
-                U && 'symbol' == typeof R.iterator
+                U && 'symbol' == typeof P.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof R;
+                          return e instanceof P;
                       },
             J = function (e, t, n) {
                 return (
-                    e === $ && J(D, t, n),
+                    e === $ && J(N, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(N, t)
+                    o(D, t)
                         ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
                         : T(e, t, n)
                 );
@@ -1895,29 +1895,29 @@
             },
             K = function (e) {
                 var t = F.call(this, (e = _(e, !0)));
-                return !(this === $ && o(N, e) && !o(D, e)) && (!(t || !o(this, e) || !o(N, e) || (o(this, B) && this[B][e])) || t);
+                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
             Q = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(N, t) || o(D, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = q(e, t);
-                    return !n || !o(N, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
+                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(N, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = R(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = P(n ? D : w(e)), i = [], a = 0; r.length > a; ) !o(N, (t = r[a++])) || (n && !o($, t)) || i.push(N[t]);
+                for (var t, n = e === $, r = R(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
                 return i;
             };
         U ||
             (c(
-                (R = function () {
-                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                (P = function () {
+                    if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(D, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
+                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
                         };
                     return i && G && V($, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -1935,13 +1935,13 @@
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !U, {Symbol: R});
+            a(a.G + a.W + a.F * !U, {Symbol: P});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = P(e));
             },
             keyFor: function (e) {
                 if (!Y(e)) throw TypeError(e + ' is not a symbol!');
@@ -1978,7 +1978,7 @@
                         a.F *
                             (!U ||
                                 u(function () {
-                                    var e = R();
+                                    var e = P();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
@@ -1997,8 +1997,8 @@
                         },
                     }
                 ),
-            R.prototype[H] || n(5)(R.prototype, H, R.prototype.valueOf),
-            d(R, 'Symbol'),
+            P.prototype[H] || n(5)(P.prototype, H, P.prototype.valueOf),
+            d(P, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3813,7 +3813,7 @@
         function T() {
             return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
-        function P(e, t, n, r, o, i, a) {
+        function R(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3822,17 +3822,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function R(e) {
+        function P(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        P(i, r, o, a, c, 'next', e);
+                        R(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        P(i, r, o, a, c, 'throw', e);
+                        R(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3862,7 +3862,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = 'USD');
                 }
-                var t, n, r, o, i, a, c, s, u;
+                var t, n, r, o, i, a, c, s, u, l;
                 return (
                     (t = e),
                     (n = [
@@ -3875,7 +3875,7 @@
                                     H.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = R(
+                                            var t = P(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -3908,7 +3908,7 @@
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
                                                                         H.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            R(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -4013,7 +4013,7 @@
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            R(
+                                                                            P(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -4053,7 +4053,7 @@
                                                                         }),
                                                                         H.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = R(
+                                                                                var t = P(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -4203,7 +4203,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((u = R(
+                                ((l = P(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4228,13 +4228,13 @@
                                     })
                                 )),
                                 function () {
-                                    return u.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((s = R(
+                                ((u = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4260,7 +4260,7 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -4410,22 +4410,51 @@
                         },
                         {
                             key: 'buildMobileMenu',
-                            value: function () {
-                                var e = document.querySelector('#commands'),
-                                    t = document.querySelector('#AdminControlsContainer');
-                                if (e || t) {
-                                    t.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
-                                    );
-                                    var n = document.querySelector('#hamburger');
-                                    n &&
-                                        (n.addEventListener('click', function () {
-                                            n.classList.toggle('is-active'), e.classList.toggle('active');
-                                        }),
-                                        document.querySelector('header').insertAdjacentElement('beforeend', t));
-                                }
-                            },
+                            value:
+                                ((s = P(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('#commands')), (n = document.querySelector('#AdminControlsContainer')), t || n)) {
+                                                            e.next = 4;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 4:
+                                                        if (
+                                                            (n.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
+                                                            ),
+                                                            (r = document.querySelector('#hamburger')))
+                                                        ) {
+                                                            e.next = 8;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 8:
+                                                        return (
+                                                            r.addEventListener('click', function () {
+                                                                r.classList.toggle('is-active'), t.classList.toggle('active');
+                                                            }),
+                                                            (e.next = 11),
+                                                            H.waitForSelectorInDOM('header')
+                                                        );
+                                                    case 11:
+                                                        document.querySelector('header').insertAdjacentElement('beforeend', n);
+                                                    case 12:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return s.apply(this, arguments);
+                                }),
                         },
                         {
                             key: 'showAdditionalPolicies',
@@ -4962,7 +4991,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((c = R(
+                                ((c = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5158,7 +5187,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((a = R(
+                                ((a = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5211,7 +5240,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = R(
+                                    return (i = P(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -5267,7 +5296,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = R(
+                                    return (s = P(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -5299,7 +5328,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = R(
+                                    return (l = P(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -5673,7 +5702,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((i = R(
+                                ((i = P(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5703,7 +5732,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((o = R(
+                                ((o = P(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(
@@ -5745,8 +5774,8 @@
                 );
             })(),
             I = new T(),
-            N = 'resbeat_test-'.concat(62011);
-        function D(e, t, n, r, o, i, a) {
+            D = 'resbeat_test-'.concat(62011);
+        function N(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -5762,10 +5791,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        D(i, r, o, a, c, 'next', e);
+                        N(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        D(i, r, o, a, c, 'throw', e);
+                        N(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -5838,19 +5867,19 @@
                     show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(I.path, '/site_configs/').concat(N, '/img/favicon.png'),
+                    fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
                     has_custom_styles: !0,
-                    custom_styles_url: ''.concat(I.path, '/site_configs/').concat(N, '/').concat(62011, '.css'),
+                    custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(N, '/img/logo.png'),
+                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
                         logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',
                     },
                     banner_image_url: '#fff',
-                    map_marker_image_url: ''.concat(I.path, '/site_configs/').concat(N, '/img/favicon.png'),
+                    map_marker_image_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     primary_color: '#215853',

@@ -484,7 +484,7 @@ export default class BasePortal {
         });
     }
 
-    buildMobileMenu() {
+    async buildMobileMenu() {
         const menu_el = document.querySelector('#commands');
         const header_el = document.querySelector('#AdminControlsContainer');
 
@@ -500,7 +500,7 @@ export default class BasePortal {
             menu_button_el.classList.toggle('is-active');
             menu_el.classList.toggle('active');
         });
-
+        await utilities.waitForSelectorInDOM('header');
         document.querySelector('header').insertAdjacentElement('beforeend', header_el);
     }
 

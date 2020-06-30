@@ -3441,6 +3441,12 @@
                         },
                     },
                     {
+                        key: 'getAttribute',
+                        value: function (e, t) {
+                            if (document.querySelector(e)) return document.querySelector(e).getAttribute(t);
+                        },
+                    },
+                    {
                         key: 'updateHTML',
                         value: function (e, t) {
                             var n = document.querySelectorAll(e);
@@ -4169,10 +4175,38 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.site_config.is_resbeat_client &&
-                                                                            (e.replaceHTMLWithFile(
-                                                                                'https://dev-static.hotelsforhope.com/ares/html/booking-guide.html',
-                                                                                '#booking-guide'
-                                                                            ),
+                                                                            (e
+                                                                                .replaceHTMLWithFile(
+                                                                                    'https://dev-static.hotelsforhope.com/ares/html/booking-guide.html',
+                                                                                    '#booking-guide'
+                                                                                )
+                                                                                .then(
+                                                                                    P(
+                                                                                        regeneratorRuntime.mark(function e() {
+                                                                                            return regeneratorRuntime.wrap(function (e) {
+                                                                                                for (;;)
+                                                                                                    switch ((e.prev = e.next)) {
+                                                                                                        case 0:
+                                                                                                            return (e.next = 2), H.waitForSelectorInDOM('#faq-link');
+                                                                                                        case 2:
+                                                                                                            H.updateAttribute(
+                                                                                                                '#faq-link',
+                                                                                                                H.getAttribute('.faqLink', 'href'),
+                                                                                                                'href'
+                                                                                                            ),
+                                                                                                                H.updateAttribute(
+                                                                                                                    '#customer-support-link',
+                                                                                                                    H.getAttribute('.supportLink', 'href'),
+                                                                                                                    'href'
+                                                                                                                );
+                                                                                                        case 4:
+                                                                                                        case 'end':
+                                                                                                            return e.stop();
+                                                                                                    }
+                                                                                            }, e);
+                                                                                        })
+                                                                                    )
+                                                                                ),
                                                                             e.replaceHTMLWithFile(
                                                                                 'https://dev-static.hotelsforhope.com/ares/html/resbeat-faq.html',
                                                                                 '.ArnSubPage.WBFaq'

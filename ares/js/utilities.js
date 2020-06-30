@@ -41,6 +41,17 @@ export default class Utilities {
     }
 
     /**
+     *@description gets an attribute of a specified selector
+     *@param string selector - selector to get
+     *@param string attribute - attribute to get
+     */
+    getAttribute(selector, attribute) {
+        if (!document.querySelector(selector)) return;
+
+        return document.querySelector(selector).getAttribute(attribute);
+    }
+
+    /**
      *@description updates innerHTML of a node list
      *@param string selector - selector to update
      *@param string html - html to add

@@ -2221,7 +2221,11 @@ export default class BasePortal {
 
         elements.forEach((element, i) => {
             if (!element) return;
-            element.setAttribute('tabIndex', i);
+            if (i === 0) {
+                element.setAttribute('tabindex', 1);
+            } else {
+                element.setAttribute('tabIndex', i);
+            }
         });
 
         for (let i = 1; i <= room_count; i += 1) {

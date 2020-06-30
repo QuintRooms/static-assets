@@ -5618,7 +5618,7 @@
                                 if (e && t) {
                                     var n = t.content;
                                     e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
-                                        e && e.setAttribute('tabIndex', t);
+                                        e && (0 === t ? e.setAttribute('tabindex', 1) : e.setAttribute('tabIndex', t));
                                     });
                                     for (var r = 1; r <= n; r += 1) {
                                         var o = document.querySelector('#theCity'.concat(r)),

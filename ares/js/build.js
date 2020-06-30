@@ -264,6 +264,7 @@ export default class BasePortal {
 
             if (this.site_config.is_resbeat_client) {
                 this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide');
+                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
             }
         });
     }

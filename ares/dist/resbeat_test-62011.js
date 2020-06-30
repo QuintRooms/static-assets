@@ -4169,10 +4169,14 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.site_config.is_resbeat_client &&
-                                                                            e.replaceHTMLWithFile(
+                                                                            (e.replaceHTMLWithFile(
                                                                                 'https://dev-static.hotelsforhope.com/ares/html/booking-guide.html',
                                                                                 '#booking-guide'
-                                                                            );
+                                                                            ),
+                                                                            e.replaceHTMLWithFile(
+                                                                                'https://dev-static.hotelsforhope.com/ares/html/resbeat-faq.html',
+                                                                                '.ArnSubPage.WBFaq'
+                                                                            ));
                                                                 case 45:
                                                                 case 'end':
                                                                     return t.stop();

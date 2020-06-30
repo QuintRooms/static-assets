@@ -5617,7 +5617,7 @@
                                     t = document.querySelector('meta[name="numberOfRooms"]');
                                 if (e && t) {
                                     var n = t.content;
-                                    e.querySelectorAll('input, select, textarea, a').forEach(function (e, t) {
+                                    e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
                                         e && e.setAttribute('tabIndex', t);
                                     });
                                     for (var r = 1; r <= n; r += 1) {

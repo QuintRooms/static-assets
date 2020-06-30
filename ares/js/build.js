@@ -2217,7 +2217,7 @@ export default class BasePortal {
 
         if (!form || !room_count_el) return;
         const room_count = room_count_el.content;
-        const elements = form.querySelectorAll('input, select, textarea, a');
+        const elements = form.querySelectorAll('input, select, textarea');
 
         elements.forEach((element, i) => {
             if (!element) return;

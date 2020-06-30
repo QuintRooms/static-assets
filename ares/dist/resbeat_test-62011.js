@@ -348,15 +348,15 @@
             L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
-            M = function () {},
-            q = (o = b.f),
+            q = function () {},
+            M = (o = b.f),
             T = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(M, M);
+                            e(q, q);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             P = function (e) {
@@ -469,7 +469,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(71)(E.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, E));
+                    var n = M(y(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -488,7 +488,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
             }),
-            (b.f = q = function (e) {
+            (b.f = M = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !T, {Promise: E}),
@@ -497,7 +497,7 @@
             (a = n(8).Promise),
             d(d.S + d.F * !T, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = M(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -512,14 +512,14 @@
                         !(
                             T &&
                             n(73)(function (e) {
-                                E.all(e).catch(M);
+                                E.all(e).catch(q);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = M(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -541,7 +541,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = M(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1321,11 +1321,11 @@
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var M = [A].concat(L, k, f);
-                            void 0 !== C && M.push(C);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(A, f, k, L, C, t);
-                        k >= _ && ((w += f.slice(_, k) + q), (_ = k + A.length));
+                            var q = [A].concat(L, k, f);
+                            void 0 !== C && q.push(C);
+                            var M = String(t.apply(void 0, q));
+                        } else M = m(A, f, k, L, C, t);
+                        k >= _ && ((w += f.slice(_, k) + M), (_ = k + A.length));
                     }
                     return w + f.slice(_);
                 },
@@ -1829,8 +1829,8 @@
             L = n(56),
             E = n(53),
             C = n(9),
-            M = n(15),
-            q = L.f,
+            q = n(15),
+            M = L.f,
             T = C.f,
             P = k.f,
             R = r.Symbol,
@@ -1840,8 +1840,8 @@
             H = h('toPrimitive'),
             F = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
-            D = l('symbols'),
-            N = l('op-symbols'),
+            N = l('symbols'),
+            D = l('op-symbols'),
             $ = Object.prototype,
             U = 'function' == typeof R && !!E.f,
             W = r.QObject,
@@ -1861,12 +1861,12 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q($, t);
+                          var r = M($, t);
                           r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
                       }
                     : T,
             z = function (e) {
-                var t = (D[e] = A(R.prototype));
+                var t = (N[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             Y =
@@ -1879,11 +1879,11 @@
                       },
             J = function (e, t, n) {
                 return (
-                    e === $ && J(N, t, n),
+                    e === $ && J(D, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(D, t)
+                    o(N, t)
                         ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
                         : T(e, t, n)
                 );
@@ -1895,20 +1895,20 @@
             },
             K = function (e) {
                 var t = F.call(this, (e = _(e, !0)));
-                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
+                return !(this === $ && o(N, e) && !o(D, e)) && (!(t || !o(this, e) || !o(N, e) || (o(this, B) && this[B][e])) || t);
             },
             Q = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
-                    var n = q(e, t);
-                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
+                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(N, t) || o(D, t))) {
+                    var n = M(e, t);
+                    return !n || !o(N, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(N, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = P(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
+                for (var t, n = e === $, r = P(n ? D : w(e)), i = [], a = 0; r.length > a; ) !o(N, (t = r[a++])) || (n && !o($, t)) || i.push(N[t]);
                 return i;
             };
         U ||
@@ -1917,7 +1917,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
+                            this === $ && t.call(D, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
                         };
                     return i && G && V($, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -1938,7 +1938,7 @@
             a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
-        for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = R(e));
@@ -2169,9 +2169,9 @@
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 E = L || w(m),
                 C = m ? (x ? w('entries') : E) : void 0,
-                M = ('Array' == t && k.entries) || L;
+                q = ('Array' == t && k.entries) || L;
             if (
-                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
+                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
                     L &&
                     'values' !== L.name &&
@@ -3381,13 +3381,13 @@
                 });
             };
         }
-        function M(e, t) {
+        function q(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var q = (function () {
+        var M = (function () {
             function e() {
                 !(function (e, t) {
                     if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -3805,8 +3805,8 @@
                             t && t.setAttribute('tabindex', -1);
                         },
                     },
-                ]) && M(t.prototype, n),
-                r && M(t, r),
+                ]) && q(t.prototype, n),
+                r && q(t, r),
                 e
             );
         })();
@@ -3846,7 +3846,7 @@
         }
         var O = new T(),
             B = n(102),
-            H = new q(),
+            H = new M(),
             F = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -5743,8 +5743,8 @@
                 );
             })(),
             I = new T(),
-            D = 'resbeat_test-'.concat(62011);
-        function N(e, t, n, r, o, i, a) {
+            N = 'resbeat_test-'.concat(62011);
+        function D(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -5760,10 +5760,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        N(i, r, o, a, c, 'next', e);
+                        D(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        N(i, r, o, a, c, 'throw', e);
+                        D(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -5836,19 +5836,19 @@
                     show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
+                    fav_icon_url: ''.concat(I.path, '/site_configs/').concat(N, '/img/favicon.png'),
                     has_custom_styles: !0,
-                    custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
+                    custom_styles_url: ''.concat(I.path, '/site_configs/').concat(N, '/').concat(62011, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
+                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(N, '/img/logo.png'),
                         logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',
                     },
                     banner_image_url: '#fff',
-                    map_marker_image_url: ''.concat(I.path, '/site_configs/').concat(D, '/img/favicon.png'),
+                    map_marker_image_url: ''.concat(I.path, '/site_configs/').concat(N, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     primary_color: '#215853',
@@ -5871,7 +5871,7 @@
                     confirmation_email_from: 'RESBEAT',
                 };
             })(),
-            J = new q(),
+            J = new M(),
             Z = (function (e) {
                 function t() {
                     var e;
@@ -6126,12 +6126,39 @@
                 (Q('#theNameAjax input', 'Name', 'placeholder'),
                 Q('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder'),
                 Q('#theEmailAjax input', 'Email', 'placeholder'),
+                Q('#theNameAjax input', !0, 'required'),
+                Q('#theDaytimePhoneNumberAjax input', !0, 'required'),
+                Q('#theEmailAjax input', !0, 'required'),
                 Q('#theEmailAjax input', 'email', 'type'),
                 Q('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder'),
                 Q('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder'),
                 Q('#theHotelNameAjax input', 'Hotel', 'placeholder'),
                 Q('#theCommentsAjax textarea', 'Comments', 'placeholder'),
-                (document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry')),
+                (document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry'),
+                (function (e) {
+                    var t = document.querySelector(e);
+                    if (t) {
+                        var n = t.querySelector('input');
+                        t.insertAdjacentHTML(
+                            'beforeBegin',
+                            '<input type="text" placeholder="Booking Number" class="booking-number-mask" required><style>'
+                                .concat(e, ' input, ')
+                                .concat(e, ' label {position:absolute;left:-100000px;}</style>')
+                        );
+                        var r = document.querySelector('.booking-number-mask');
+                        r.addEventListener('blur', function () {
+                            n.value = r.value;
+                            var e = setInterval(function () {
+                                document.querySelector('#'.concat(n.id)) ||
+                                    ((n = document.querySelector('#theReservationConfirmationNumberAjax input')),
+                                    J.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input'),
+                                    clearInterval(e));
+                            }, 500);
+                            n.focus(), n.blur();
+                        });
+                    }
+                })('#theReservationConfirmationNumberAjax'),
+                J.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
             document.querySelector('.SearchHotels') &&
                 document.body.insertAdjacentHTML(
                     'beforeend',

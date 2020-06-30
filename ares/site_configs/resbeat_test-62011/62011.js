@@ -321,10 +321,46 @@ utilities.updateHTML(
 
 `
 );
+
+// This is entirely repeated code... it's late and I don't care right now
+function createInputMaskToBypassArnValidationForSupportPage(selector) {
+    const arn_input_container = document.querySelector(selector);
+
+    if (!arn_input_container) return;
+
+    let arn_input = arn_input_container.querySelector('input');
+
+    arn_input_container.insertAdjacentHTML(
+        'beforeBegin',
+        `<input type="text" placeholder="Booking Number" class="booking-number-mask" required><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+    );
+
+    const new_input = document.querySelector('.booking-number-mask');
+
+    new_input.addEventListener('blur', () => {
+        arn_input.value = new_input.value;
+
+        const interval = setInterval(() => {
+            if (!document.querySelector(`#${arn_input.id}`)) {
+                arn_input = document.querySelector('#theReservationConfirmationNumberAjax input');
+                utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
+
+                clearInterval(interval);
+            }
+        }, 500);
+
+        arn_input.focus();
+        arn_input.blur();
+    });
+}
+
 if (document.querySelector('.WBSupportFormContainer')) {
     addAttributeToInput('#theNameAjax input', 'Name', 'placeholder');
     addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder');
     addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder');
+    addAttributeToInput('#theNameAjax input', true, 'required');
+    addAttributeToInput('#theDaytimePhoneNumberAjax input', true, 'required');
+    addAttributeToInput('#theEmailAjax input', true, 'required');
     addAttributeToInput('#theEmailAjax input', 'email', 'type');
     addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder');
     addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder');
@@ -332,6 +368,9 @@ if (document.querySelector('.WBSupportFormContainer')) {
     addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder');
 
     document.querySelector('#theReasonForInquiryAjax select > option').textContent = 'Reason for Inquiry';
+
+    createInputMaskToBypassArnValidationForSupportPage('#theReservationConfirmationNumberAjax');
+    utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
 }
 
 function styleMapPins() {

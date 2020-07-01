@@ -2350,7 +2350,7 @@ export default class BasePortal {
         // eslint-disable-next-line no-unused-vars
         // let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
-        logo.href += `&_s=${member_token}`;
+        logo.href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
         // logo.href = logo_href;
     }
 }

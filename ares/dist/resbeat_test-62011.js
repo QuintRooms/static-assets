@@ -5817,7 +5817,7 @@
                                                             return e.abrupt('return');
                                                         case 6:
                                                             (t = document.querySelector('#formChangeTheme input[name="_s"]').value),
-                                                                H.updateAttribute('header.logo', ''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(t), 'href');
+                                                                H.updateAttribute('header.logo', '&_s='.concat(t), 'href');
                                                         case 8:
                                                         case 'end':
                                                             return e.stop();

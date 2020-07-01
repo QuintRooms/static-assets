@@ -4580,14 +4580,23 @@
                                         ((t.innerHTML =
                                             '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
                                         t.addEventListener('click', function () {
-                                            t.classList.toggle('closeMap'),
+                                            if (
+                                                (t.classList.toggle('closeMap'),
                                                 e.classList.toggle('showMap'),
                                                 document.body.classList.toggle('fixed'),
                                                 n.classList.toggle('hideElement'),
                                                 r.classList.toggle('hideElement'),
-                                                t.classList.contains('closeMap')
-                                                    ? (t.querySelector('span').textContent = ' Close Map')
-                                                    : (t.querySelector('span').innerHTML = ' Open Map');
+                                                t.classList.contains('closeMap'))
+                                            ) {
+                                                t.querySelector('span').textContent = ' Close Map';
+                                                var o = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
+                                                if (!o) return;
+                                                o.appendChild(t);
+                                            } else {
+                                                var i = document.querySelector('#arnToggleMapDiv');
+                                                if (!i) return;
+                                                i.appendChild(t), (t.querySelector('span').innerHTML = ' Open Map');
+                                            }
                                         }));
                             },
                         },

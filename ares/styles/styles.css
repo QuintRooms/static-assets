@@ -2397,6 +2397,8 @@ legend {
     .closeMap {
         z-index: 9;
         position: relative;
+        margin-top: 10px;
+        margin-right: 10px;
     }
 
     .SearchHotels #arnToggleMapDiv {
@@ -2425,16 +2427,16 @@ legend {
         cursor: pointer;
     }
 
+    .leaflet-top{
+        pointer-events: auto;
+    }
+
     .ArnSortBy {
         float: left;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .closeMap {
-        bottom: 70px;
-    }
-
     .ArnSearchContainerMainTable > tbody > tr {
         display: flex;
         flex-direction: column;
@@ -2451,6 +2453,11 @@ legend {
     #arnCloseAnchorId,
     .sort {
         margin: 0 0 24px 0;
+    }
+
+    #arnCloseAnchorId.closeMap{
+        margin-top: 10px;
+        margin-right: 10px;
     }
 
     .prop-hr {

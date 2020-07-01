@@ -594,7 +594,21 @@ export default class BasePortal {
             header.classList.toggle('hideElement');
             currency.classList.toggle('hideElement');
 
-            map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
+            if (map_btn.classList.contains('closeMap')) {
+                map_btn.querySelector('span').textContent = ' Close Map';
+                const right_controls = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
+
+                if (!right_controls) return;
+
+                right_controls.appendChild(map_btn);
+            } else {
+                const toggle_map_container = document.querySelector('#arnToggleMapDiv');
+
+                if (!toggle_map_container) return;
+
+                toggle_map_container.appendChild(map_btn);
+                map_btn.querySelector('span').innerHTML = ' Open Map';
+            }
         });
     }
 

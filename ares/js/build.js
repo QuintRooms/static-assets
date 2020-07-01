@@ -266,13 +266,13 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
 
             if (this.site_config.is_resbeat_client) {
-                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
+                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
                     await utilities.waitForSelectorInDOM('#faq-link');
 
                     utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
                     utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
                 });
-                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
+                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
             }
         });
     }
@@ -713,7 +713,7 @@ export default class BasePortal {
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
             utilities.updateHTML(
                 `.cardNumber label`,
-                '<div class="creditcards"><img src="https://dev-static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
             );
         });
 
@@ -2190,7 +2190,7 @@ export default class BasePortal {
         document.querySelector('.ArnSupportBottom').insertAdjacentHTML(
             'beforeend',
             `<div class="pb-container">
-            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://dev-static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>
+            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>
             </div>`
         );
     }

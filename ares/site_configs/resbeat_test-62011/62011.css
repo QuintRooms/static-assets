@@ -670,6 +670,10 @@ input[type='email'].email-mask,
         display: none !important;
     }
 
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 0px !important;
+    }
+
     .RootBody #theOtherSubmitButton {
         width: 100%;
         max-width: 400px;
@@ -748,10 +752,6 @@ input[type='email'].email-mask,
 
     .SearchHotels .ArnRateCell {
         width: 100%;
-    }
-
-    .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 0px !important;
     }
 
     .SearchHotels .beat-em {

@@ -5796,7 +5796,7 @@
                             value:
                                 ((o = P(
                                     regeneratorRuntime.mark(function e() {
-                                        var t;
+                                        var t, n, r;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
@@ -5816,10 +5816,12 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 6:
-                                                            (t = document.querySelector('#formChangeTheme input[name="_s"]').value),
-                                                                console.log(''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(t)),
-                                                                H.updateAttribute('header.logo', ''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(t), 'href');
-                                                        case 9:
+                                                            (t = document.querySelector('.logo')),
+                                                                (n = document.querySelector('#formChangeTheme input[name="_s"]').value),
+                                                                console.log(''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(n)),
+                                                                (r = ''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(n)),
+                                                                t.setAttribute('href', r);
+                                                        case 11:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -5938,7 +5940,7 @@
                     has_social_sharing: !0,
                     header: {
                         logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
-                        logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011',
+                        logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',

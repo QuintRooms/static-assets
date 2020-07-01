@@ -2344,13 +2344,15 @@ export default class BasePortal {
         await utilities.waitForSelectorInDOM('.logo');
         if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
         // if(!document.querySelector('meta[name="memberToken"]')) return;
+        const logo = document.querySelector('.logo');
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
         // eslint-disable-next-line no-unused-vars
         // let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
         console.log(`${this.site_config.header.logo_outbound_url}&_s=${member_token}`);
-        utilities.updateAttribute('header.logo', `${this.site_config.header.logo_outbound_url}&_s=${member_token}`, 'href');
+        const new_href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
+        logo.setAttribute('href', new_href);
         // logo.href = logo_href;
     }
 }

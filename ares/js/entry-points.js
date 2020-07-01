@@ -26,6 +26,7 @@ module.exports = () => {
             'innings_21-60093': './src/60093.js', // Innings Fest 2021
             'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             'room_steals-52342': './src/52342.js', // Room Steals
+            'resbeat-60831': './src/60831.js', // Resbeat test
         };
 
         // develop environment
@@ -33,7 +34,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            'resbeat-60831': './src/60831.js', // Resbeat test
             'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 

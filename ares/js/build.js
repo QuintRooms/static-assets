@@ -2333,7 +2333,7 @@ export default class BasePortal {
 
         await utilities.waitForSelectorInDOM('.logo');
         if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
-        // if(document.querySelector('meta[name="memberToken"]')) return;
+        // if(!document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
         const logo = document.querySelector('.logo');

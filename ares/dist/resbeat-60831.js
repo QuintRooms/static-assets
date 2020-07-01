@@ -790,7 +790,7 @@
     function (e, t, n) {
         'use strict';
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         n.d(t, 'a', function () {
             return r;
@@ -824,15 +824,15 @@
             L = (k && k.v8) || '',
             E = s.Promise,
             C = 'process' == l(A),
-            q = function () {},
-            M = (o = b.f),
+            M = function () {},
+            q = (o = b.f),
             R = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(q, q);
+                            e(M, M);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             T = function (e) {
@@ -858,7 +858,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && B(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && O(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -880,7 +880,7 @@
                         n,
                         r,
                         o = e._v,
-                        i = O(e);
+                        i = B(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -890,17 +890,17 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = C || O(e) ? 2 : 1)),
+                            (e._h = C || B(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            O = function (e) {
+            B = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            B = function (e) {
+            O = function (e) {
                 g.call(s, function () {
                     var t;
                     C ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -945,7 +945,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(74)(E.prototype, {
                 then: function (e, t) {
-                    var n = M(y(this, E));
+                    var n = q(y(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -964,7 +964,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
             }),
-            (b.f = M = function (e) {
+            (b.f = q = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !R, {Promise: E}),
@@ -973,7 +973,7 @@
             (a = n(8).Promise),
             d(d.S + d.F * !R, 'Promise', {
                 reject: function (e) {
-                    var t = M(this);
+                    var t = q(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -988,14 +988,14 @@
                         !(
                             R &&
                             n(76)(function (e) {
-                                E.all(e).catch(q);
+                                E.all(e).catch(M);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = M(t),
+                            n = q(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -1017,7 +1017,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = M(t),
+                            n = q(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1797,11 +1797,11 @@
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], E = 1; E < b.length; E++) L.push(void 0 === (S = b[E]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var q = [A].concat(L, k, f);
-                            void 0 !== C && q.push(C);
-                            var M = String(t.apply(void 0, q));
-                        } else M = m(A, f, k, L, C, t);
-                        k >= _ && ((w += f.slice(_, k) + M), (_ = k + A.length));
+                            var M = [A].concat(L, k, f);
+                            void 0 !== C && M.push(C);
+                            var q = String(t.apply(void 0, M));
+                        } else q = m(A, f, k, L, C, t);
+                        k >= _ && ((w += f.slice(_, k) + q), (_ = k + A.length));
                     }
                     return w + f.slice(_);
                 },
@@ -2378,7 +2378,7 @@
         n(101);
         var E = n(29),
             C = n(30);
-        function q(e, t, n, r, o, i, a) {
+        function M(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -2387,17 +2387,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function M(e) {
+        function q(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        q(i, r, o, a, c, 'next', e);
+                        M(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        q(i, r, o, a, c, 'throw', e);
+                        M(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -2410,12 +2410,12 @@
             }
         }
         n.d(t, 'a', function () {
-            return O;
+            return B;
         });
         var T = new C.a(),
             P = n(105),
             j = new E.a(),
-            O = (function () {
+            B = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -2443,7 +2443,7 @@
                                     j.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = M(
+                                            var t = q(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -2476,7 +2476,7 @@
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
                                                                         j.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            M(
+                                                                            q(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -2519,8 +2519,7 @@
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
-                                                                            ),
-                                                                            e.reduceHeightOfPropReviewsWhenMissing()),
+                                                                            )),
                                                                         'checkout' === e.page_name &&
                                                                             (j.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
@@ -2582,7 +2581,7 @@
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            M(
+                                                                            q(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -2607,22 +2606,36 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        jQuery(document).on('ratesReadyEvent', function () {
-                                                                            setTimeout(function () {
-                                                                                e.isPropByGateway(
-                                                                                    e.site_config.exclusive_rate_text,
-                                                                                    e.site_config.host_hotel_text,
-                                                                                    e.site_config.partner_hotel_text,
-                                                                                    e.site_config.lodging.event_name
-                                                                                ),
-                                                                                    'property-detail' === e.page_name &&
-                                                                                        'cug' === e.site_config.site_type.toLowerCase() &&
-                                                                                        e.cugConfigs();
-                                                                            }, 1);
-                                                                        }),
+                                                                        jQuery(document).on(
+                                                                            'ratesReadyEvent',
+                                                                            q(
+                                                                                regeneratorRuntime.mark(function t() {
+                                                                                    return regeneratorRuntime.wrap(function (t) {
+                                                                                        for (;;)
+                                                                                            switch ((t.prev = t.next)) {
+                                                                                                case 0:
+                                                                                                    setTimeout(function () {
+                                                                                                        e.isPropByGateway(
+                                                                                                            e.site_config.exclusive_rate_text,
+                                                                                                            e.site_config.host_hotel_text,
+                                                                                                            e.site_config.partner_hotel_text,
+                                                                                                            e.site_config.lodging.event_name
+                                                                                                        ),
+                                                                                                            'property-detail' === e.page_name &&
+                                                                                                                'cug' === e.site_config.site_type.toLowerCase() &&
+                                                                                                                e.cugConfigs();
+                                                                                                    }, 1);
+                                                                                                case 1:
+                                                                                                case 'end':
+                                                                                                    return t.stop();
+                                                                                            }
+                                                                                    }, t);
+                                                                                })
+                                                                            )
+                                                                        ),
                                                                         j.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = M(
+                                                                                var t = q(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -2640,12 +2653,6 @@
                                                                                                         return t.abrupt('return');
                                                                                                     case 3:
                                                                                                         return (
-                                                                                                            e.map_loaded ||
-                                                                                                                (document.querySelector('.leaflet-control-scale-line') ||
-                                                                                                                    L.control.scale().addTo(window.ArnMap),
-                                                                                                                e.useLogoForVenueMapMarker(),
-                                                                                                                e.highlightMapMarkersOnPropertyHover(),
-                                                                                                                e.changeContractedPropertyPinColor()),
                                                                                                             e.cugConfigs(),
                                                                                                             e.implementAds(),
                                                                                                             e.toggleMap(),
@@ -2683,14 +2690,14 @@
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            (t.next = 31),
+                                                                                                            (t.next = 30),
                                                                                                             j.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
                                                                                                                 j.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                             })
                                                                                                         );
-                                                                                                    case 31:
+                                                                                                    case 30:
                                                                                                         return (
-                                                                                                            (t.next = 33),
+                                                                                                            (t.next = 32),
                                                                                                             j.waitForSelectorInDOM('.ArnSortContainer').then(function () {
                                                                                                                 j.createWrapper(
                                                                                                                     '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
@@ -2707,7 +2714,19 @@
                                                                                                                 });
                                                                                                             })
                                                                                                         );
-                                                                                                    case 33:
+                                                                                                    case 32:
+                                                                                                        if (!window.matchMedia('(min-width: 1105px)')) {
+                                                                                                            t.next = 40;
+                                                                                                            break;
+                                                                                                        }
+                                                                                                        return (t.next = 36), j.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                    case 36:
+                                                                                                        document.querySelector('.leaflet-control-scale-line') ||
+                                                                                                            L.control.scale().addTo(window.ArnMap),
+                                                                                                            e.useLogoForVenueMapMarker(),
+                                                                                                            e.highlightMapMarkersOnPropertyHover(),
+                                                                                                            e.changeContractedPropertyPinColor();
+                                                                                                    case 40:
                                                                                                     case 'end':
                                                                                                         return t.stop();
                                                                                                 }
@@ -2744,7 +2763,7 @@
                                                                                     '#booking-guide'
                                                                                 )
                                                                                 .then(
-                                                                                    M(
+                                                                                    q(
                                                                                         regeneratorRuntime.mark(function e() {
                                                                                             return regeneratorRuntime.wrap(function (e) {
                                                                                                 for (;;)
@@ -2796,7 +2815,9 @@
                                         setTimeout(function () {
                                             jQuery(document).trigger('ratesReadyEvent');
                                         }, 1);
-                                    } catch (e) {}
+                                    } catch (e) {
+                                        console.log(e);
+                                    }
                                 }
                                 Ajax.Responders.register({onComplete: e}), e();
                             },
@@ -2804,7 +2825,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((l = M(
+                                ((l = q(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2835,7 +2856,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((u = M(
+                                ((u = q(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3012,7 +3033,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((s = M(
+                                ((s = q(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3113,21 +3134,23 @@
                                 var e = document.querySelector('#ArnPropertyMap'),
                                     t = document.querySelector('#arnCloseAnchorId'),
                                     n = document.querySelector('header'),
-                                    r = document.querySelector('.config-container');
-                                t &&
-                                    e &&
-                                    ((t.innerHTML =
-                                        '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
-                                    t.addEventListener('click', function () {
-                                        t.classList.toggle('closeMap'),
-                                            e.classList.toggle('showMap'),
-                                            document.body.classList.toggle('fixed'),
-                                            n.classList.toggle('hideElement'),
-                                            r.classList.toggle('hideElement'),
-                                            t.classList.contains('closeMap')
-                                                ? (t.querySelector('span').textContent = ' Close Map')
-                                                : (t.querySelector('span').innerHTML = ' Open Map');
-                                    }));
+                                    r = document.querySelector('.config-container'),
+                                    o = document.querySelector('.ArnToggleMap + .ArnToggleMap');
+                                o && o.click(),
+                                    t &&
+                                        e &&
+                                        ((t.innerHTML =
+                                            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
+                                        t.addEventListener('click', function () {
+                                            t.classList.toggle('closeMap'),
+                                                e.classList.toggle('showMap'),
+                                                document.body.classList.toggle('fixed'),
+                                                n.classList.toggle('hideElement'),
+                                                r.classList.toggle('hideElement'),
+                                                t.classList.contains('closeMap')
+                                                    ? (t.querySelector('span').textContent = ' Close Map')
+                                                    : (t.querySelector('span').innerHTML = ' Open Map');
+                                        }));
                             },
                         },
                         {
@@ -3592,7 +3615,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((c = M(
+                                ((c = q(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3788,7 +3811,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((a = M(
+                                ((a = q(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3841,7 +3864,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = M(
+                                    return (i = q(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -3897,7 +3920,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = M(
+                                    return (s = q(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -3929,7 +3952,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = M(
+                                    return (l = q(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -4303,7 +4326,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((i = M(
+                                ((i = q(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4333,7 +4356,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((o = M(
+                                ((o = q(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(
@@ -4373,16 +4396,6 @@
                                 function () {
                                     return o.apply(this, arguments);
                                 }),
-                        },
-                        {
-                            key: 'reduceHeightOfPropReviewsWhenMissing',
-                            value: function () {
-                                if ('property-detail' === j.page_name) {
-                                    var e = document.querySelector('.propReview'),
-                                        t = document.querySelector('.ArnTripAdvisorDetails .reviewCount a');
-                                    e && t && '0 User Reviews' === t.textContent && (e.style.height = '100px');
-                                }
-                            },
                         },
                     ]) && R(t.prototype, n),
                     r && R(t, r),
@@ -4670,14 +4683,14 @@
             L = n(58),
             E = n(55),
             C = n(9),
-            q = n(15),
-            M = L.f,
+            M = n(15),
+            q = L.f,
             R = C.f,
             T = k.f,
             P = r.Symbol,
             j = r.JSON,
-            O = j && j.stringify,
-            B = h('_hidden'),
+            B = j && j.stringify,
+            O = h('_hidden'),
             H = h('toPrimitive'),
             F = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
@@ -4702,7 +4715,7 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = M($, t);
+                          var r = q($, t);
                           r && delete $[t], R(e, t, n), r && e !== $ && R($, t, r);
                       }
                     : R,
@@ -4725,7 +4738,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || R(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
+                        ? (n.enumerable ? (o(e, O) && e[O][t] && (e[O][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, O) || R(e, O, x(1, {})), (e[O][t] = !0)), V(e, t, n))
                         : R(e, t, n)
                 );
             },
@@ -4736,16 +4749,16 @@
             },
             K = function (e) {
                 var t = F.call(this, (e = _(e, !0)));
-                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
+                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, O) && this[O][e])) || t);
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
-                    var n = M(e, t);
-                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
+                    var n = q(e, t);
+                    return !n || !o(D, t) || (o(e, O) && e[O][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == O || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -4758,7 +4771,7 @@
                     if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
+                            this === $ && t.call(N, n), o(this, O) && o(this[O], e) && (this[O][e] = !1), V(this, e, x(1, n));
                         };
                     return i && G && V($, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -4779,7 +4792,7 @@
             a(a.G + a.W + a.F * !W, {Symbol: P});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
-        for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !W, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = P(e));
@@ -4820,7 +4833,7 @@
                             (!W ||
                                 u(function () {
                                     var e = P();
-                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
+                                    return '[null]' != B([e]) || '{}' != B({a: e}) || '{}' != B(Object(e));
                                 })),
                     'JSON',
                     {
@@ -4833,7 +4846,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !Y(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    O.apply(j, r)
+                                    B.apply(j, r)
                                 );
                         },
                     }
@@ -5010,9 +5023,9 @@
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 E = L || w(m),
                 C = m ? (x ? w('entries') : E) : void 0,
-                q = ('Array' == t && k.entries) || L;
+                M = ('Array' == t && k.entries) || L;
             if (
-                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
+                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
                     L &&
                     'values' !== L.name &&
@@ -5851,7 +5864,7 @@
         n(31), n(34), n(35), n(45), n(50), n(80), n(81), n(89);
         var r = n(62),
             o = new (n(30).a)(),
-            i = 'resbeat-'.concat(60831);
+            i = 'resbeat_test-'.concat(60831);
         var a = n(29);
         function c(e, t, n, r, o, i, a) {
             try {
@@ -6095,32 +6108,35 @@
                                     return (e.next = 4), m.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
                                     (t = document.querySelectorAll('table.ArnRateList')),
-                                        (n = window.matchMedia('(max-width: 500px)')),
+                                        (n = window.matchMedia('(max-width: 800px)')),
                                         (r = '  \n        <style>\n            .points{\n                color: '.concat(
                                             p.secondary_color,
                                             ";\n            }\n\n            div.points-earned span {\n                font-family: 'Avenir';\n                letter-spacing: 1px;\n            }\n        </style>\n        "
                                         )),
-                                        t.forEach(function (e) {
-                                            var t = e.querySelector('.full-stay').textContent;
-                                            t = t.replace(/[^0-9.]/g, '');
-                                            var o = parseInt(t);
-                                            n.matches
-                                                ? e
-                                                      .querySelector('tbody .bookRoomCell')
-                                                      .insertAdjacentHTML(
-                                                          'afterbegin',
-                                                          '\n             '
-                                                              .concat(r, '\n            <div class="points-earned">\n            <span>RE<b>WARDS</b>: ')
-                                                              .concat(o, '</span> \n            </div>\n            ')
-                                                      )
-                                                : e
-                                                      .querySelector('tbody tr td')
-                                                      .insertAdjacentHTML(
-                                                          'beforeend',
-                                                          '\n                  '
-                                                              .concat(r, '\n            <div class="points-earned">\n            Earn <b class="points">')
-                                                              .concat(o, '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            ')
-                                                      );
+                                        t.forEach(function (e, t) {
+                                            var o = e.querySelector('.full-stay').textContent;
+                                            o = o.replace(/[^0-9.]/g, '');
+                                            var i = parseInt(o);
+                                            0 === t && document.body.insertAdjacentHTML('beforeend', r),
+                                                n.matches
+                                                    ? e
+                                                          .querySelector('tbody .bookRoomCell')
+                                                          .insertAdjacentHTML(
+                                                              'afterbegin',
+                                                              '\n            <div class="points-earned">\n            <span>RE<b>WARDS</b>: '.concat(
+                                                                  i,
+                                                                  '</span> \n            </div>\n            '
+                                                              )
+                                                          )
+                                                    : e
+                                                          .querySelector('tbody tr')
+                                                          .insertAdjacentHTML(
+                                                              'afterend',
+                                                              '\n            <div class="points-earned">\n            Earn <b class="points">'.concat(
+                                                                  i,
+                                                                  '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            '
+                                                              )
+                                                          );
                                         });
                                 case 8:
                                 case 'end':
@@ -6322,6 +6338,25 @@
             ),
             m.updateHTML('.static-bookingLink', 'Booking Guide'),
             m.updateHTML('.static-rewardsLink', 'Rewards Guide'),
+            (function () {
+                if (document.querySelector('.config-container')) {
+                    var e = window.matchMedia('(max-width: 800px)'),
+                        t = document.querySelector('.currencies-container');
+                    e.matches &&
+                        document.querySelector('.SearchHotels') &&
+                        (document.querySelector('#theSearchBox').insertAdjacentElement('afterend', t),
+                        t.insertAdjacentHTML('beforebegin', '\n            <span class="currency-label">Currency:</span>\n            ')),
+                        e.matches &&
+                            document.querySelector('.RootBody') &&
+                            (document
+                                .querySelector('.ArnAdults')
+                                .insertAdjacentHTML(
+                                    'afterend',
+                                    '\n            <td class="currency">\n                <span class="currency-label">Currency:</span>\n            </td>\n            '
+                                ),
+                            document.querySelector('.currency').insertAdjacentElement('beforeend', t));
+                }
+            })(),
             new y();
     },
 ]);

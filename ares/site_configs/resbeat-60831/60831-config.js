@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 
 const site_id = 60831;
-const directory_name = `resbeat-${site_id}`;
+const directory_name = `resbeat_test-${site_id}`;
 
 export default function siteConfig() {
     return {

@@ -387,17 +387,17 @@ function styleMapPins() {
         `
     <style>
         .SearchHotels .arnMapMarker {
-            background: ${site_config.secondary_color};
+            background: ${site_config.primary_color};
             border-color:  ${site_config.primary_text_color};
             color: ${site_config.primary_text_color};
         }
         
         .SearchHotels .arnMapMarkerTriangle {
-            border-top-color: ${site_config.secondary_color};
+            border-top-color: ${site_config.primary_color};
         }
 
         .arnMapMarker:hover .arnMapMarkerTriangle {
-            border-top-color: ${site_config.secondary_color};
+            border-top-color: ${site_config.primary_color};
         }
     `
     );

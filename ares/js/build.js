@@ -2351,6 +2351,6 @@ export default class BasePortal {
         let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
         logo_href += `&_s=${member_token}`;
-        logo.setAttribute('href', logo_href);
+        logo.href = logo_href;
     }
 }

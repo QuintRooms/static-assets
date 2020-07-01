@@ -27,6 +27,10 @@
     font-style: normal;
 }
 
+header {
+    border-bottom: 1px solid #e9e9e9;
+}
+
 .logo img {
     padding: 0;
 }
@@ -36,20 +40,20 @@
     padding: 5px 10px 0 0 !important;
 }
 .config-container .config-label {
-    color: #333;
+    color: #666;
 }
 
 .RootBody .ArnPrimarySearchContainer {
     background: #f0f1f2;
-    color: #333;
+    color: #666;
 }
 .ArnSupportLinks {
     background: #f0f1f2;
-    color: #333;
+    color: #666;
 }
 
 .ArnSupportLinks a {
-    color: #333;
+    color: #666;
 }
 
 .SinglePropDetail .SimpleSearch {
@@ -126,7 +130,7 @@ input[type='email'].email-mask,
 }
 
 .ArnSubPage h1 {
-    color: #333;
+    color: #666;
     font-size: 30px;
     font-weight: 100;
     text-transform: uppercase;
@@ -137,7 +141,7 @@ input[type='email'].email-mask,
 }
 
 .RootBody .ArnSecondarySearchOuterContainer {
-    color: #333;
+    color: #666;
 }
 
 .RootBody #PropertyTypesContainer {
@@ -155,12 +159,12 @@ input[type='email'].email-mask,
 
 .RootBody .search-messaging {
     display: block;
-    color: #333 !important;
+    color: #666 !important;
     letter-spacing: 1px;
 }
 
 .RootBody .search-messaging #user-name {
-    color: #333 !important;
+    color: #666 !important;
     display: block !important;
     text-transform: uppercase;
     font-family: 'Avenir';
@@ -474,7 +478,7 @@ input[type='email'].email-mask,
 
 
 .ArnSubPage h1 {
-    color: #333;
+    color: #666;
 }
 
 .ArnSubPage.WBSupportForm {
@@ -635,7 +639,7 @@ input[type='email'].email-mask,
     }
 
     .currencies-container #currency-label {
-        color: #333;
+        color: #666;
         border-bottom: unset;
         justify-content: space-between;
         margin: unset;
@@ -680,7 +684,7 @@ input[type='email'].email-mask,
     .SinglePropDetail .points-earned {
         width: unset;
         background: unset;
-        color: #333;
+        color: #666;
         top: 120px;
         left: 9px;
     }
@@ -767,7 +771,7 @@ input[type='email'].email-mask,
         background: unset;
         position: unset;
         padding: unset;
-        color: #333;
+        color: #666;
         align-self: flex-end;
         justify-self: flex-start;
         margin-bottom: 5px;

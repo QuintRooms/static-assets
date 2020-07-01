@@ -264,6 +264,7 @@ export default class BasePortal {
             this.appendMemberTokenForCug();
             this.hideRemainingRooms();
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
+            this.addLinkToLoginFromRegisterPage();
 
             if (this.site_config.is_resbeat_client) {
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
@@ -2378,5 +2379,23 @@ export default class BasePortal {
         const new_href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
 
         logo.setAttribute('href', new_href);
+    }
+
+    addLinkToLoginFromRegisterPage() {
+        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'cug-registration') return;
+
+        const register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
+        const current_url = window.location.href;
+        const login_url = current_url.replace('register', 'login');
+        console.log(login_url);
+
+        if (!register_btn) return;
+
+        register_btn.insertAdjacentHTML(
+            'afterEnd',
+            `
+            <a class="return-to-login" href="${login_url}">Return to Login.</a>
+        `
+        );
     }
 }

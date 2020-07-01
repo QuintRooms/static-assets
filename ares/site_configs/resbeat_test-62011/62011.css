@@ -123,6 +123,15 @@ input[type='email'].email-mask,
     font-size: 14px;
 }
 
+.return-to-login,
+.CancelAction,
+#theRememberMeAjax label
+{
+    color: #666;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
 #commands,
 #commands .logoutCommand {
     text-transform: uppercase;
@@ -682,7 +691,7 @@ input[type='email'].email-mask,
     .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
         display: none !important;
     }
-
+    
     .SearchHotels .ArnPrimarySearchOuterContainer {
         margin-top: 0px !important;
     }

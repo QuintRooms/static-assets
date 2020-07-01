@@ -4194,6 +4194,7 @@
                                                                             'https://static.hotelsforhope.com/ares/html/terms.html',
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
+                                                                        e.addLinkToLoginFromRegisterPage(),
                                                                         e.site_config.is_resbeat_client &&
                                                                             (e
                                                                                 .replaceHTMLWithFile(
@@ -4231,7 +4232,7 @@
                                                                                 'https://static.hotelsforhope.com/ares/html/resbeat-faq.html',
                                                                                 '.ArnSubPage.WBFaq'
                                                                             ));
-                                                                case 45:
+                                                                case 46:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5848,6 +5849,17 @@
                                 function () {
                                     return o.apply(this, arguments);
                                 }),
+                        },
+                        {
+                            key: 'addLinkToLoginFromRegisterPage',
+                            value: function () {
+                                if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
+                                    var e = document.querySelector('.WBValidatedRegistrationFormActions'),
+                                        t = window.location.href.replace('register', 'login');
+                                    console.log(t),
+                                        e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login.</a>\n        '));
+                                }
+                            },
                         },
                     ]) && j(t.prototype, n),
                     r && j(t, r),

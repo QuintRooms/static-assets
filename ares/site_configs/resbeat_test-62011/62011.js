@@ -486,7 +486,9 @@ function insertHR(element, position) {
     document.querySelector(element).insertAdjacentHTML(position, `<hr class="hr">`);
 }
 if (document.querySelector('.SearchHotels')) {
-    utilities.waitForSelectorInDOM('.sort-wrapper').then(insertHR('.sort-wrapper', 'beforebegin'));
+    utilities.waitForSelectorInDOM('.sort-wrapper').then(() => {
+        insertHR('.sort-wrapper', 'beforebegin');
+    });
     insertHR('#AmentitiesContainer', 'beforebegin');
     insertHR('#PropertyClassesContainer', 'beforebegin');
 }

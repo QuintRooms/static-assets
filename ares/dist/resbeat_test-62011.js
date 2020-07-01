@@ -3817,7 +3817,7 @@
             );
         })();
         function R() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         function T(e, t, n, r, o, i, a) {
             try {
@@ -6360,7 +6360,9 @@
                 }
             })(),
             document.querySelector('.SearchHotels') &&
-                (J.waitForSelectorInDOM('.sort-wrapper').then(re('.sort-wrapper', 'beforebegin')),
+                (J.waitForSelectorInDOM('.sort-wrapper').then(function () {
+                    re('.sort-wrapper', 'beforebegin');
+                }),
                 re('#AmentitiesContainer', 'beforebegin'),
                 re('#PropertyClassesContainer', 'beforebegin')),
             new Z();

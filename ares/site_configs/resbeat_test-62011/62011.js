@@ -206,8 +206,20 @@ displayRewardPoints();
 function totalStayPoints() {
     if (!document.querySelector('.CheckOutForm')) return;
 
-    let total = document.querySelector('.dueNowRow td').textContent;
-    let taxes = document.querySelector('.taxFeeRow td').textContent;
+    let total_el = document.querySelector('.dueNowRow td');
+    const taxes_el = document.querySelector('.taxFeeRow td');
+
+    if (!total_el) {
+        total_el = document.querySelector('.balanceDueRow td');
+
+        document.querySelector('#theRateTotals > tbody > .discountRow').style.display = 'table-row';
+
+        if (!total_el) return;
+    }
+
+    let total = total_el.textContent;
+    let taxes = taxes_el.textContent;
+
     // eslint-disable-next-line radix
     total = parseFloat(total.replace(/[^\d.-]/g, ''));
     // eslint-disable-next-line radix
@@ -226,7 +238,13 @@ function totalStayPoints() {
         `
     );
 
-    document.querySelector('tr .discount th').textContent = "BEAT 'EM BY:";
+    let discount_row = document.querySelector('tr .discount th');
+    if (!discount_row) {
+        discount_row = document.querySelector('tr .discountRow th');
+        if (!discount_row) return;
+    }
+
+    discount_row.textContent = "BEAT 'EM BY:";
 }
 
 totalStayPoints();

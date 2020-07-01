@@ -4233,7 +4233,9 @@
                                         setTimeout(function () {
                                             jQuery(document).trigger('ratesReadyEvent');
                                         }, 1);
-                                    } catch (e) {}
+                                    } catch (e) {
+                                        console.log(e);
+                                    }
                                 }
                                 Ajax.Responders.register({onComplete: e}), e();
                             },

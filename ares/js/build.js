@@ -281,7 +281,9 @@ export default class BasePortal {
                     jQuery(document).trigger('ratesReadyEvent');
                 }, 1);
                 // eslint-disable-next-line no-empty
-            } catch (e) {}
+            } catch (e) {
+                console.log(e);
+            }
         }
         // eslint-disable-next-line no-undef
         Ajax.Responders.register({

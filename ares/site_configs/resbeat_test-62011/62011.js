@@ -209,11 +209,12 @@ function totalStayPoints() {
     let total = document.querySelector('.dueNowRow td').textContent;
     let taxes = document.querySelector('.taxFeeRow td').textContent;
     // eslint-disable-next-line radix
-    total = parseInt(total.replace(/[^0-9.]/g, ''));
+    total = parseFloat(total.replace(/[^\d.-]/g, ''));
     // eslint-disable-next-line radix
-    taxes = parseInt(taxes.replace(/[^0-9.]/g, ''));
+    taxes = parseFloat(taxes.replace(/[^\d.-]/g, ''));
 
-    const points = total - taxes;
+    const points_float = total - taxes;
+    const points = Math.floor(points_float);
 
     document.querySelector('.totalsTable tbody').insertAdjacentHTML(
         'beforeend',

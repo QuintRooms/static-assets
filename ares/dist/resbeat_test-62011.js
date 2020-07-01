@@ -6202,12 +6202,13 @@
                 if (document.querySelector('.CheckOutForm')) {
                     var e = document.querySelector('.dueNowRow td').textContent,
                         t = document.querySelector('.taxFeeRow td').textContent,
-                        n = (e = parseInt(e.replace(/[^0-9.]/g, ''))) - (t = parseInt(t.replace(/[^0-9.]/g, '')));
+                        n = (e = parseFloat(e.replace(/[^\d.-]/g, ''))) - (t = parseFloat(t.replace(/[^\d.-]/g, ''))),
+                        r = Math.floor(n);
                     document
                         .querySelector('.totalsTable tbody')
                         .insertAdjacentHTML(
                             'beforeend',
-                            '\n        <tr class="total-points-earned">\n            <th>Rewards Earned:</th>\n            <td>'.concat(n, '</td>\n        </tr>\n        ')
+                            '\n        <tr class="total-points-earned">\n            <th>Rewards Earned:</th>\n            <td>'.concat(r, '</td>\n        </tr>\n        ')
                         ),
                         (document.querySelector('tr .discount th').textContent = "BEAT 'EM BY:");
                 }

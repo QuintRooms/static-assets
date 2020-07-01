@@ -44,12 +44,12 @@ header {
 }
 
 .RootBody .ArnPrimarySearchContainer {
-    background: #f0f1f2;
-    color: #666;
+    background: #f4f4f4;
+    color: #333;
 }
 .ArnSupportLinks {
-    background: #f0f1f2;
-    color: #666;
+    background: #f4f4f4;
+    color: #333;
 }
 
 .ArnSupportLinks a {
@@ -104,7 +104,7 @@ header {
 .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
 input[type='email'].email-mask,
 .WBLoginFormFields input {
-    background: #f0f1f2 !important;
+    background: #f0f0f0 !important;
     border: unset !important;
     font-family: 'Avenir';
     font-weight: 200;
@@ -375,7 +375,7 @@ input[type='email'].email-mask,
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input {
     border: unset;
-    background-color: #f0f1f2;
+    background-color: #f0f0f0;
     width: 100%;
     padding: 12px !important;
 }

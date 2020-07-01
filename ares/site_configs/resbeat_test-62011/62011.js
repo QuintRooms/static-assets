@@ -50,7 +50,6 @@ async function addAttributeToInput(element, value, attribute, page_name) {
     if (!document.querySelector(page_name)) return;
     try {
         await utilities.waitForSelectorInDOM(element);
-        // if (!document.querySelector(element)) return;
         document.querySelector(element).setAttribute(attribute, value);
     } catch (error) {
         console.error(error);
@@ -161,7 +160,7 @@ async function displayRewardPoints() {
 
     await utilities.waitForSelectorInDOM('.ArnNightlyRate');
     const rooms = document.querySelectorAll('table.ArnRateList');
-    const mq = window.matchMedia('(max-width: 500px)');
+    const mq = window.matchMedia('(max-width: 800px)');
     const style = `  
         <style>
             .points{
@@ -191,8 +190,8 @@ async function displayRewardPoints() {
             </div>
             `
               )
-            : el.querySelector('tbody tr td').insertAdjacentHTML(
-                  'beforeend',
+            : el.querySelector('tbody tr').insertAdjacentHTML(
+                  'afterend',
                   `
             <div class="points-earned">
             Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 

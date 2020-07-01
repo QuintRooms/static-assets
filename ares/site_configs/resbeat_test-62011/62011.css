@@ -319,7 +319,7 @@ input[type='email'].email-mask,
     text-align: center;
     padding: 7px 0;
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     border-radius: 40px;
 }
 
@@ -464,116 +464,6 @@ input[type='email'].email-mask,
     color: #666;
 }
 
-@media screen and (min-width: 900px) {
-    .RootBody .ArnPrimarySearchContainer {
-        width: 60vw;
-        max-width: 800px;
-        min-width: 700px;
-    }
-
-    .RootBody #CitySearchContainer {
-        width: 30vw;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .MemberNotAuthenticated header {
-        display: unset;
-    }
-
-    .MemberNotAuthenticated .info-banner {
-        display: unset;
-    }
-
-    .SearchHotels .ArnRateCell {
-        width: 100%;
-    }
-
-    .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 0px !important;
-    }
-
-    .SearchHotels .beat-em {
-        align-self: center;
-        justify-self: center;
-        margin-left: unset;
-    }
-
-    .SearchHotels .ArnPriceCell {
-        align-self: end;
-        margin-left: 10px;
-    }
-
-    .SearchHotels .ArnRateButton {
-        align-self: center;
-        justify-self: center;
-    }
-
-    .SearchHotels div.beat-em {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        margin: 5px;
-        z-index: 1;
-    }
-
-    .SinglePropDetail .beat-em {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        max-width: 145px;
-        width: 100%;
-        align-self: flex-end;
-        justify-self: flex-end;
-    }
-
-    .SinglePropDetail .bookRoom {
-        grid-row: 2 / 3;
-        max-width: 145px;
-        align-self: center;
-        justify-self: flex-end;
-        margin: unset;
-    }
-
-    .SinglePropDetail .ArnNightlyRate {
-        grid-row: 2 / 3;
-    }
-
-    .SinglePropDetail .holdRoom {
-        max-width: 145px;
-    }
-
-    .SinglePropDetail .bookRoomCell {
-        grid-template-rows: 1fr .5fr .25fr;
-        grid-template-columns: 45% 55%;
-    }
-
-    .SinglePropDetail .points-earned {
-        width: unset;
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        top: 97px;
-        bottom: unset;
-        background: unset;
-        color: #333;
-    }
-
-    .SinglePropDetail .ArnRateCancelAnchor {
-        justify-self: end;
-        padding-right: 15px;
-    }
-
-    .CheckOutForm #confirmCheckBox {
-        width: 26px;
-        border-radius: 3px;
-    }
-
-    .CheckOutForm .confirmationWarning input.checkbox {
-        width: 44px;
-        border-radius: 3px;
-    }
-}
-
 .lowRateLink,
 .lowRateLink + .dvd,
 .cancelLink,
@@ -581,11 +471,6 @@ input[type='email'].email-mask,
     display: none;
 }
 
-@media screen and (max-width: 1200px) {
-    .ArnSubPage {
-        padding: 12px;
-    }
-}
 
 .ArnSubPage h1 {
     color: #333;
@@ -669,6 +554,40 @@ input[type='email'].email-mask,
 
 #AdminControlsContainer {
     justify-content: flex-end;
+}
+
+.static-rewardsLink,
+ #commands .rewards,
+ .static-bookingLink + .dvd{
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .ArnSubPage {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 1105px) {
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 50px;
+    }
+
+    .SinglePropDetail .ArnLeftListContainer {
+        padding-top: 61px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .RootBody .ArnPrimarySearchContainer {
+        width: 60vw;
+        max-width: 800px;
+        min-width: 700px;
+    }
+
+    .RootBody #CitySearchContainer {
+        width: 30vw;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -755,20 +674,115 @@ input[type='email'].email-mask,
         margin: 2% 2%;
         grid-template-columns: 50% 50%;
     }
+
+    .SinglePropDetail .points-earned {
+        width: unset;
+        background: unset;
+        color: #333;
+        top: 120px;
+        left: 9px;
+    }
 }
 
-@media screen and (max-width: 1105px) {
+@media screen and (max-width: 600px) {
+    .MemberNotAuthenticated header {
+        display: unset;
+    }
+
+    .MemberNotAuthenticated .info-banner {
+        display: unset;
+    }
+
+    .SearchHotels .ArnRateCell {
+        width: 100%;
+    }
+
     .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 50px;
+        margin-top: 0px !important;
     }
 
-    .SinglePropDetail .ArnLeftListContainer {
-        padding-top: 61px;
+    .SearchHotels .beat-em {
+        align-self: center;
+        justify-self: center;
+        margin-left: unset;
     }
-}
 
-.static-rewardsLink,
- #commands .rewards,
- .static-bookingLink + .dvd{
-    display: none;
+    .SearchHotels .ArnPriceCell {
+        align-self: end;
+        margin-left: 10px;
+    }
+
+    .SearchHotels .ArnRateButton {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .SearchHotels div.beat-em {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+    }
+
+    .SinglePropDetail .beat-em {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        max-width: 150px;
+        width: 100%;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+
+    .SinglePropDetail .bookRoom {
+        grid-row: 2 / 3;
+        max-width: 150px;
+        align-self: center;
+        justify-self: flex-end;
+        margin: unset;
+    }
+
+    .SinglePropDetail .ArnNightlyRate {
+        grid-row: 2 / 3;
+    }
+
+    .SinglePropDetail .holdRoom {
+        max-width: 145px;
+    }
+
+    .SinglePropDetail .bookRoomCell {
+        grid-template-rows: 1fr .5fr .25fr;
+        grid-template-columns: 45% 55%;
+    }
+
+    .SinglePropDetail .points-earned {
+        width: unset;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        top: unset;
+        bottom: unset;
+        background: unset;
+        position: unset;
+        padding: unset;
+        color: #333;
+        align-self: flex-end;
+        justify-self: flex-start;
+
+    }
+
+    .SinglePropDetail .ArnRateCancelAnchor {
+        justify-self: end;
+        padding-right: 15px;
+    }
+
+    .CheckOutForm #confirmCheckBox {
+        width: 26px;
+        border-radius: 3px;
+    }
+
+    .CheckOutForm .confirmationWarning input.checkbox {
+        width: 44px;
+        border-radius: 3px;
+    }
 }

@@ -6062,7 +6062,7 @@
                                     return (e.next = 4), J.waitForSelectorInDOM('.ArnNightlyRate');
                                 case 4:
                                     (t = document.querySelectorAll('table.ArnRateList')),
-                                        (n = window.matchMedia('(max-width: 500px)')),
+                                        (n = window.matchMedia('(max-width: 800px)')),
                                         (r = '  \n        <style>\n            .points{\n                color: '.concat(
                                             Y.secondary_color,
                                             ";\n            }\n\n            div.points-earned span {\n                font-family: 'Avenir';\n                letter-spacing: 1px;\n            }\n        </style>\n        "
@@ -6083,9 +6083,9 @@
                                                               )
                                                           )
                                                     : e
-                                                          .querySelector('tbody tr td')
+                                                          .querySelector('tbody tr')
                                                           .insertAdjacentHTML(
-                                                              'beforeend',
+                                                              'afterend',
                                                               '\n            <div class="points-earned">\n            Earn <b class="points">'.concat(
                                                                   i,
                                                                   '</b> <span>RES<b>BEAT</b> Rewards</span> \n            </div>\n            '

@@ -150,11 +150,11 @@ function insertBeatEmBy(element) {
 }
 
 insertBeatEmBy('.SinglePropDetail .rateRow');
-jQuery(document).on('ratesReadyEvent', () => {
-    setTimeout(() => {
-        insertBeatEmBy('.SearchHotels .ArnContainer');
-    }, 1);
-});
+// jQuery(document).on('ratesReadyEvent', () => {
+//     setTimeout(() => {
+//         insertBeatEmBy('.SearchHotels .ArnContainer');
+//     }, 1);
+// });
 
 async function displayRewardPoints() {
     if (!document.querySelector('.SinglePropDetail')) return;

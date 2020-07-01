@@ -6029,24 +6029,8 @@
                 })
             )).apply(this, arguments);
         }
-        function ee(e) {
-            if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
-                var t = window.matchMedia('(max-width: 600px)');
-                if (!document.querySelector(e)) return;
-                document.querySelectorAll(e).forEach(function (e) {
-                    if (e.querySelector('.originalPrice')) {
-                        var n = e.querySelector('.originalPrice').getAttribute('percent'),
-                            r = '.ArnRateCell';
-                        t.matches && document.querySelector('.SearchHotels') ? (r = '.ArnPropThumb') : document.querySelector('.SinglePropDetail') && (r = '.bookRoomCell'),
-                            e
-                                .querySelector(r)
-                                .insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(n, '%\n                    </div>'));
-                    }
-                });
-            }
-        }
-        function te() {
-            return (te = $(
+        function ee() {
+            return (ee = $(
                 regeneratorRuntime.mark(function e() {
                     var t, n, r;
                     return regeneratorRuntime.wrap(function (e) {
@@ -6100,7 +6084,7 @@
                 })
             )).apply(this, arguments);
         }
-        function ne(e) {
+        function te(e) {
             document.querySelectorAll(e).forEach(function (e) {
                 if (e) {
                     var t = e.textContent,
@@ -6170,14 +6154,24 @@
                     );
                 }
             })(),
-            ee('.SinglePropDetail .rateRow'),
-            jQuery(document).on('ratesReadyEvent', function () {
-                setTimeout(function () {
-                    ee('.SearchHotels .ArnContainer');
-                }, 1);
-            }),
+            (function (e) {
+                if (!document.querySelector('.beat-em') && (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))) {
+                    var t = window.matchMedia('(max-width: 600px)');
+                    if (!document.querySelector(e)) return;
+                    document.querySelectorAll(e).forEach(function (e) {
+                        if (e.querySelector('.originalPrice')) {
+                            var n = e.querySelector('.originalPrice').getAttribute('percent'),
+                                r = '.ArnRateCell';
+                            t.matches && document.querySelector('.SearchHotels') ? (r = '.ArnPropThumb') : document.querySelector('.SinglePropDetail') && (r = '.bookRoomCell'),
+                                e
+                                    .querySelector(r)
+                                    .insertAdjacentHTML('afterbegin', '<div class="beat-em">\n                    BEAT \'EM BY '.concat(n, '%\n                    </div>'));
+                        }
+                    });
+                }
+            })('.SinglePropDetail .rateRow'),
             (function () {
-                te.apply(this, arguments);
+                ee.apply(this, arguments);
             })(),
             (function () {
                 if (document.querySelector('.CheckOutForm')) {
@@ -6226,10 +6220,10 @@
                             );
                 }
             })(),
-            document.querySelector('.SinglePropDetail') && ne(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
+            document.querySelector('.SinglePropDetail') && te(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
             document.querySelector('.CheckOutForm') &&
                 setTimeout(function () {
-                    ne(['#theConfirmationContainer legend', '#theHotel legend']);
+                    te(['#theConfirmationContainer legend', '#theHotel legend']);
                 }, 1),
             J.updateHTML(
                 '.ArnSupportChatTable',

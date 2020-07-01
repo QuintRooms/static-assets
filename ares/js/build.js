@@ -2346,11 +2346,10 @@ export default class BasePortal {
         // if(!document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
-        const logo = document.querySelector('.logo');
         // eslint-disable-next-line no-unused-vars
         // let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
-        logo.href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
+        utilities.updateAttribute('header.logo', `${this.site_config.header.logo_outbound_url}&_s=${member_token}`, 'href');
         // logo.href = logo_href;
     }
 }

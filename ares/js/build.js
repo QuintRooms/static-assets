@@ -2348,9 +2348,9 @@ export default class BasePortal {
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
         const logo = document.querySelector('.logo');
         // eslint-disable-next-line no-unused-vars
-        let logo_href = logo.getAttribute('href');
+        // let logo_href = logo.getAttribute('href');
         // logo_href += `&memberToken=${member_token}`;
-        logo_href += `&_s=${member_token}`;
-        logo.href = logo_href;
+        logo.href += `&_s=${member_token}`;
+        // logo.href = logo_href;
     }
 }

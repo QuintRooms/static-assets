@@ -5650,7 +5650,13 @@
                                         '&theme=standard">Terms & Conditions</a> found on this website.'
                                     )),
                                     document.querySelector('#policies-fees').addEventListener('click', function () {
-                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal');
+                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('fixed');
+                                    }),
+                                    document.querySelector('span.open-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('fixed');
+                                    }),
+                                    document.querySelector('span.close-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('fixed');
                                     }));
                             },
                         },
@@ -5816,12 +5822,11 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 6:
-                                                            (t = document.querySelector('.logo')),
-                                                                (n = document.querySelector('#formChangeTheme input[name="_s"]').value),
-                                                                console.log(''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(n)),
-                                                                (r = ''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(n)),
-                                                                t.setAttribute('href', r);
-                                                        case 11:
+                                                            (t = document.querySelector('#formChangeTheme input[name="_s"]').value),
+                                                                (n = document.querySelector('.logo')),
+                                                                (r = ''.concat(this.site_config.header.logo_outbound_url, '&_s=').concat(t)),
+                                                                n.setAttribute('href', r);
+                                                        case 10:
                                                         case 'end':
                                                             return e.stop();
                                                     }

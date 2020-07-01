@@ -12,6 +12,11 @@ html {
     font-size: 14px !important;
 }
 
+.fixed {
+    position: absolute;
+    overflow: hidden;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;
@@ -2386,9 +2391,9 @@ legend {
         padding-top: 0;
     }
 
-    .fixed {
+    /* .fixed {
         position: fixed;
-    }
+    } */
 
     .closeMap {
         z-index: 9;

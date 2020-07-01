@@ -2203,9 +2203,20 @@ export default class BasePortal {
             'span.confirmationAgreement'
         ).innerHTML = `By checking this box you agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
 
-        const policies = document.querySelector('#policies-fees');
-        policies.addEventListener('click', () => {
+        const policies_lower = document.querySelector('#policies-fees');
+        policies_lower.addEventListener('click', () => {
             document.querySelector('div.modal-overlay').classList.toggle('show-modal');
+            document.body.classList.toggle('fixed');
+        });
+
+        const policies_header = document.querySelector('span.open-modal');
+        policies_header.addEventListener('click', () => {
+            document.body.classList.toggle('fixed');
+        });
+
+        const close_modal = document.querySelector('span.close-modal');
+        close_modal.addEventListener('click', () => {
+            document.body.classList.toggle('fixed');
         });
     }
 
@@ -2342,17 +2353,16 @@ export default class BasePortal {
         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
 
         await utilities.waitForSelectorInDOM('.logo');
+
         if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
-        // if(!document.querySelector('meta[name="memberToken"]')) return;
-        const logo = document.querySelector('.logo');
-        // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
-        // eslint-disable-next-line no-unused-vars
-        // let logo_href = logo.getAttribute('href');
-        // logo_href += `&memberToken=${member_token}`;
-        console.log(`${this.site_config.header.logo_outbound_url}&_s=${member_token}`);
+
+        // if(!document.querySelector('meta[name="memberToken"]')) return;
+        // const member_token = document.querySelector('meta[name="memberToken"]').content;
+
+        const logo = document.querySelector('.logo');
         const new_href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
+
         logo.setAttribute('href', new_href);
-        // logo.href = logo_href;
     }
 }

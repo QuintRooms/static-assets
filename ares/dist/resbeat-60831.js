@@ -5864,7 +5864,7 @@
         n(31), n(34), n(35), n(45), n(50), n(80), n(81), n(89);
         var r = n(62),
             o = new (n(30).a)(),
-            i = 'resbeat_test-'.concat(60831);
+            i = 'resbeat-'.concat(60831);
         var a = n(29);
         function c(e, t, n, r, o, i, a) {
             try {

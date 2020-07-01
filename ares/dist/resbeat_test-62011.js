@@ -5953,7 +5953,7 @@
                     custom_styles_url: ''.concat(I.path, '/site_configs/').concat(D, '/').concat(62011, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.png'),
+                        logo_file_location: ''.concat(I.path, '/site_configs/').concat(D, '/img/logo.svg'),
                         logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',

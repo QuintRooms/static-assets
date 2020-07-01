@@ -16,7 +16,7 @@ const sites = {
         site_url: 'https://hotels.resbeat.com/v6/',
         primary_color: '#215853',
         secondary_color: '##e2ad37',
-        logo_url: 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png',
+        logo_url: 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.svg',
     },
     60278: {
         client_name: 'Ares Child',
@@ -37,7 +37,7 @@ const sites = {
         site_url: 'https://events.hotelsforhope.com/v6/',
         primary_color: '#215853',
         secondary_color: '##e2ad37',
-        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.svg',
     },
 };
 

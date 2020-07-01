@@ -28,6 +28,20 @@ textarea {
     height: unset !important;
     border: 1px solid #e0e0e0;
     margin-bottom: 6px;
+    outline: none;
+    transition: box-shadow .15s ease-in-out;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+select:focus,
+textarea:focus{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}
+
+input[type="submit"]{
+    outline: none;
 }
 
 textarea {
@@ -610,7 +624,7 @@ select#adults {
     }
 
     #commands.active {
-        transform: translateY(100px);
+        transform: translateY(126px);
         opacity: 1;
         z-index: 1;
         width: 100%;
@@ -3111,7 +3125,7 @@ legend {
     border-color: #e0e0e0;
 }
 
-.HasError{
+.HasError input{
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #ce8483;
     border-color: #843534;
 }

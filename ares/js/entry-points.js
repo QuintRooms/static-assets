@@ -33,6 +33,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
+            'resbeat-60831': './src/60831.js', // Resbeat test
             'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 

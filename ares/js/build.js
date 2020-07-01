@@ -165,7 +165,7 @@ export default class BasePortal {
                 this.changeContractedPropertyPinColor();
             });
 
-            jQuery(document).on('ratesReadyEvent', () => {
+            jQuery(document).on('ratesReadyEvent', async () => {
                 setTimeout(() => {
                     this.isPropByGateway(
                         this.site_config.exclusive_rate_text,
@@ -186,14 +186,6 @@ export default class BasePortal {
                 }
 
                 if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
-
-                if (!this.map_loaded) {
-                    if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
-
-                    this.useLogoForVenueMapMarker();
-                    this.highlightMapMarkersOnPropertyHover();
-                    this.changeContractedPropertyPinColor();
-                }
 
                 this.cugConfigs();
                 this.implementAds();
@@ -243,6 +235,17 @@ export default class BasePortal {
                             utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
                         });
                 });
+
+                const mq = window.matchMedia('(min-width: 1105px)');
+
+                if (mq) {
+                    await utilities.waitForSelectorInDOM('#ArnPropertyMap');
+                    if (!document.querySelector('.leaflet-control-scale-line')) L.control.scale().addTo(window.ArnMap);
+
+                    this.useLogoForVenueMapMarker();
+                    this.highlightMapMarkersOnPropertyHover();
+                    this.changeContractedPropertyPinColor();
+                }
             });
             this.applyDarkTheme();
             this.applyCustomStyles();
@@ -263,7 +266,13 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
 
             if (this.site_config.is_resbeat_client) {
-                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide');
+                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
+                    await utilities.waitForSelectorInDOM('#faq-link');
+
+                    utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
+                    utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
+                });
+                this.replaceHTMLWithFile('https://dev-static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
             }
         });
     }
@@ -275,7 +284,9 @@ export default class BasePortal {
                     jQuery(document).trigger('ratesReadyEvent');
                 }, 1);
                 // eslint-disable-next-line no-empty
-            } catch (e) {}
+            } catch (e) {
+                console.log(e);
+            }
         }
         // eslint-disable-next-line no-undef
         Ajax.Responders.register({
@@ -565,6 +576,11 @@ export default class BasePortal {
         const map_btn = document.querySelector('#arnCloseAnchorId');
         const header = document.querySelector('header');
         const currency = document.querySelector('.config-container');
+
+        const dumb_extra_toggle_btn = document.querySelector('.ArnToggleMap + .ArnToggleMap');
+        if (dumb_extra_toggle_btn) {
+            dumb_extra_toggle_btn.click();
+        }
 
         if (!map_btn || !map) return;
 
@@ -2326,6 +2342,8 @@ export default class BasePortal {
         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
 
         await utilities.waitForSelectorInDOM('.logo');
+        if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
+        // if(!document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
         const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
         const logo = document.querySelector('.logo');

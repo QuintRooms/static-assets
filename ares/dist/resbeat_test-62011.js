@@ -3817,7 +3817,7 @@
             );
         })();
         function R() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         function T(e, t, n, r, o, i, a) {
             try {
@@ -6146,6 +6146,9 @@
                 }
             });
         }
+        function re(e, t) {
+            document.querySelector(e) && document.querySelector(e).insertAdjacentHTML(t, '<hr class="hr">');
+        }
         !(function () {
             K.apply(this, arguments);
         })(),
@@ -6356,6 +6359,10 @@
                             document.querySelector('.currency').insertAdjacentElement('beforeend', t));
                 }
             })(),
+            document.querySelector('.SearchHotels') &&
+                (J.waitForSelectorInDOM('.sort-wrapper').then(re('.sort-wrapper', 'beforebegin')),
+                re('#AmentitiesContainer', 'beforebegin'),
+                re('#PropertyClassesContainer', 'beforebegin')),
             new Z();
     },
 ]);

@@ -193,7 +193,7 @@ input[type='email'].email-mask,
     padding: 6px 12px;
     max-width: 150px;
     margin-left: auto;
-    border-radius: 40px;
+    border-radius: 20px 20px 0px 20px;
     border: 4px solid #e2ad37
 }
 
@@ -247,13 +247,29 @@ input[type='email'].email-mask,
     margin-left: 10px;
 }
 
+.SearchHotels .ArnPropName {
+    padding: 22px 23px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 15px 0 0 15px;
+}
+
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+    bottom: 40px;
+    left: 20px;
+}
+
+.SearchHotels .ArnPropClass {
+    display: none !important;
+}
+
 .SearchHotels .originalPrice,
 .SinglePropDetail .originalPrice {
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;
     font-weight: 500;
-    margin-top: 10px;
 }
 
 .SearchHotels .ArnPrimarySearchContainer {
@@ -270,16 +286,30 @@ input[type='email'].email-mask,
     background-color: #f0f0f0;
 }
 
-.SearchHotels .ArnPrimarySearchOuterContainer div.ArnSearchHeader {
-    display: none;
-}
-
 .SearchHotels .ArnPrimarySearchOuterContainer {
     margin-top: 13px;
 }
 
+.SearchHotels .ArnPropNameLink {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.SearchHotels .arnPrice {
+    color: #e2ad37;
+}
+
+.ArnPropNameLink span {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.SearchHotels .arnUnit + div {
+    display: none;
+}
+
 .ratingCount {
-    padding: 8px !important;
+    padding: 4px !important;
     border-radius: 20px;
 }
 
@@ -440,8 +470,20 @@ input[type='email'].email-mask,
 .SearchHotels .lblAmenities,
 .SearchHotels .lblRating {
     font-family: 'Avenir';
-    font-weight: 700;
+    font-weight: 100;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.SearchHotels .ArnContainer {
+    background: #f0f0f0;
+    border-radius: 15px;
+}
+
+.SearchHotels .prop-hr {
+    visibility: hidden;
+    margin: 10px 0;
 }
 
 .CheckOutForm #theConfirmationPoliciesAjax {

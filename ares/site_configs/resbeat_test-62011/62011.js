@@ -480,4 +480,15 @@ function moveConfigContainer() {
 }
 
 moveConfigContainer();
+
+function insertHR(element, position) {
+    if (!document.querySelector(element)) return;
+    document.querySelector(element).insertAdjacentHTML(position, `<hr class="hr">`);
+}
+if (document.querySelector('.SearchHotels')) {
+    utilities.waitForSelectorInDOM('.sort-wrapper').then(insertHR('.sort-wrapper', 'beforebegin'));
+    insertHR('#AmentitiesContainer', 'beforebegin');
+    insertHR('#PropertyClassesContainer', 'beforebegin');
+}
+
 new ChildPortal();

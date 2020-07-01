@@ -193,9 +193,8 @@ input[type='email'].email-mask,
     color: #fff;
     text-align: center;
     padding: 5px;
-    /* max-width: 150px; */
     margin-left: auto;
-    border-radius: 20px 20px 0px 20px;
+    border-radius: 20px 15px 0px 20px;
     border: 4px solid #e2ad37;
     width: 100%;
     font-weight: 600;
@@ -207,13 +206,26 @@ input[type='email'].email-mask,
     background: transparent;
 }
 
+.SearchHotels .ArnRateButton {
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.SearchHotels .ArnRateCell {
+    text-align: center;
+}
+
+.SearchHotels .ArnLimitedAvail {
+    margin-top: 20px;
+}
+
 .ArnRateButton a,
 .bookRoom,
 .holdRoom {
     border-radius: 40px;
     background: transparent;
     color: #215853;
-    border: 2px solid #215853;
+    border: 3px solid #215853;
     padding: 6px 12px;
 }
 
@@ -222,7 +234,7 @@ input[type='email'].email-mask,
 .holdRoom:hover {
     background: #215853;
     color: #fff;
-    border: 2px solid #215853;
+    border: 3px solid #215853;
 }
 
 .LoginAction.submit,
@@ -280,10 +292,6 @@ input[type='email'].email-mask,
 .SearchHotels .ArnPrimarySearchContainer {
     background: #fff;
     color: #666;
-}
-
-.SearchHotels .ArnPriceCell .mainRate {
-    /* padding-right: 42px; */
 }
 
 .SearchHotels #theSearchBox input,
@@ -484,6 +492,11 @@ input[type='email'].email-mask,
 .SearchHotels .ArnContainer {
     background: #f0f0f0;
     border-radius: 15px;
+    color: #666 !important;
+}
+
+.ArnPropNameLink span, .reviewCount a {
+    color: #666 !important;
 }
 
 .SearchHotels .prop-hr {
@@ -750,33 +763,33 @@ input[type='email'].email-mask,
         display: unset;
     }
 
+    .SearchHotels .ArnPropName {
+        padding: 22px 15px;
+    }
+
     .SearchHotels .ArnRateCell {
         width: 100%;
     }
 
-    .SearchHotels .beat-em {
-        align-self: center;
-        justify-self: center;
-        margin-left: unset;
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 0px !important;
     }
 
     .SearchHotels .ArnPriceCell {
         align-self: end;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     .SearchHotels .ArnRateButton {
-        align-self: center;
-        justify-self: center;
+        margin-right: 15px;
     }
 
     .SearchHotels div.beat-em {
         position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        margin: 5px;
         z-index: 1;
+        width: 50%;
+        right: -2px;
+        top: -1px;
     }
 
     .SinglePropDetail .beat-em {
@@ -837,6 +850,10 @@ input[type='email'].email-mask,
     .CheckOutForm .confirmationWarning input.checkbox {
         width: 44px;
         border-radius: 3px;
+    }
+
+    .SearchHotels .ArnPropThumb {
+        border-radius: 15px 15px 0 0;
     }
 }
 

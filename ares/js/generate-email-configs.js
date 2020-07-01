@@ -53,8 +53,8 @@ for (const [key, value] of entries) {
         logo_url: value.logo_url,
         site_url: value.site_url + '?siteId=' + key,
         faq_url: value.site_url + 'faq?siteId=' + key,
-        booking_guide_url: value.site_url + 'booking-guide?siteId=' + key,
-        rewards_guide_url: value.site_url + 'rewards-guide?siteId=' + key,
+        booking_guide_url: value.site_url + 'booking?siteId=' + key,
+        rewards_guide_url: value.site_url + 'rewards?siteId=' + key,
     };
 
     const data = JSON.stringify(site_details);

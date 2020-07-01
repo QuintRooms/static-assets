@@ -2394,7 +2394,7 @@ export default class BasePortal {
         register_btn.insertAdjacentHTML(
             'afterEnd',
             `
-            <a class="return-to-login" href="${login_url}">Return to Login.</a>
+            <a class="return-to-login" href="${login_url}">Return to Login</a>
         `
         );
     }

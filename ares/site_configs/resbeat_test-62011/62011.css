@@ -687,7 +687,7 @@ body.WBSupportForm {
     flex-grow: 1;
 }
 
-#thePropertyAmenities, .ArnRateTableHeader, .SinglePropDetail .ArnNightlyRate strong > div, .ArnNightlyRate .originalPrice, .ArnPropAddress, .RoomDescription, .SinglePropDetail #theGeneralInfo, #theConfirmationContainer, #new-user-text, .ArnSearchHeader, .sort-wrapper h4, #commands a, #commands .logoutCommand, .RateCalendarPopupContainer a, .ArnRateCancelPolicy, .ArnTermsConditions, .ArnTermsConditions a {
+#thePropertyAmenities, .ArnRateTableHeader, .SinglePropDetail .ArnNightlyRate strong > div, .ArnNightlyRate .originalPrice, .ArnPropAddress, .RoomDescription, .SinglePropDetail #theGeneralInfo, #theConfirmationContainer, #new-user-text, .ArnSearchHeader, .sort-wrapper h4, #commands a, #commands .logoutCommand, .RateCalendarPopupContainer a, .ArnRateCancelPolicy, .ArnTermsConditions, .ArnTermsConditions a, #theBookingPage .GuestForms {
     color: #666
 }
 
@@ -696,7 +696,7 @@ body.WBSupportForm {
 }
 
 /*- - - -  All Buttons - - - - */
-.WBLoginFormActions input, #register-btn a, .WBValidatedRegistrationFormActions input, #theOtherSubmitButton, #theSubmitButton, .ArnShowRatesLink, .SinglePropDetail .CheckRates .submit, .SinglePropDetail .bookRoom, .SinglePropDetail #moreRatesLink, .CheckOutForm #theConfirmationButton, .WBSupportFormActions input, .WBForgotPasswordFormActions input, #theBookingPage .GuestForms {
+.WBLoginFormActions input, #register-btn a, .WBValidatedRegistrationFormActions input, #theOtherSubmitButton, #theSubmitButton, .ArnShowRatesLink, .SinglePropDetail .CheckRates .submit, .SinglePropDetail .bookRoom, .SinglePropDetail #moreRatesLink, .CheckOutForm #theConfirmationButton, .WBSupportFormActions input, .WBForgotPasswordFormActions input {
     border: 3px solid #215853!important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;

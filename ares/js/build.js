@@ -2378,7 +2378,6 @@ export default class BasePortal {
         const register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
         const current_url = window.location.href;
         const login_url = current_url.replace('register', 'login');
-        console.log(login_url);
 
         if (!register_btn) return;
 

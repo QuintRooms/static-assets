@@ -5876,8 +5876,7 @@
                                 if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
                                     var e = document.querySelector('.WBValidatedRegistrationFormActions'),
                                         t = window.location.href.replace('register', 'login');
-                                    console.log(t),
-                                        e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
+                                    e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
                                 }
                             },
                         },

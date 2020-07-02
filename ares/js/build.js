@@ -104,6 +104,8 @@ export default class BasePortal {
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 utilities.emailVerificationSetup();
                 this.fixCheckoutInputTabOrder();
+
+                utilities.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax');
             }
 
             if (this.page_name === 'confirmation') {
@@ -129,6 +131,7 @@ export default class BasePortal {
                     'afterBegin'
                 );
                 utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
+                utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
             }
 
             utilities.updateHTML('#thePassCodeAjax label', 'Promocode');
@@ -208,7 +211,7 @@ export default class BasePortal {
                 utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
 
                 this.movePropClassBelowPropName();
-                this.activateCheckboxByClickingOnAssociatedLabel();
+                utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
                 utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                 utilities.updateHTML('.lblRating', 'Stars');
@@ -1534,20 +1537,6 @@ export default class BasePortal {
         });
     }
 
-    activateCheckboxByClickingOnAssociatedLabel() {
-        const checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
-
-        if (!checkbox_wrappers) return;
-
-        checkbox_wrappers.forEach((wrapper) => {
-            if (!wrapper.querySelector('input[type="checkbox"]')) return;
-
-            wrapper.querySelector('span').addEventListener('click', (e) => {
-                wrapper.querySelector('input[type="checkbox"]').click();
-            });
-        });
-    }
-
     addHRToProperties() {
         const props = document.querySelectorAll('.ArnProperty');
 
@@ -2389,7 +2378,6 @@ export default class BasePortal {
         const register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
         const current_url = window.location.href;
         const login_url = current_url.replace('register', 'login');
-        console.log(login_url);
 
         if (!register_btn) return;
 

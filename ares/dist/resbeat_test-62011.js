@@ -3823,8 +3823,21 @@
                         {
                             key: 'matchMediaQuery',
                             value: function (e) {
-                                var t = window.matchMedia('('.concat(e, ')'));
-                                return console.log(t), t.matches;
+                                return window.matchMedia('('.concat(e, ')')).matches;
+                            },
+                        },
+                        {
+                            key: 'selectCheckboxOnLabelClick',
+                            value: function (e) {
+                                document.querySelectorAll(e).forEach(function (e) {
+                                    if (e.querySelector('input[type="checkbox"]') && e) {
+                                        var t = e.querySelector('span');
+                                        t || (t = e.querySelector('label')),
+                                            t.addEventListener('click', function (t) {
+                                                e.querySelector('input[type="checkbox"]').click();
+                                            });
+                                    }
+                                });
                             },
                         },
                     ]) && C(t.prototype, n),
@@ -3996,7 +4009,8 @@
                                                                             e.setupReservationSummaryContainer(),
                                                                             H.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
                                                                             H.emailVerificationSetup(),
-                                                                            e.fixCheckoutInputTabOrder()),
+                                                                            e.fixCheckoutInputTabOrder(),
+                                                                            H.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
                                                                             (H.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
@@ -4015,7 +4029,8 @@
                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                 '.ArnPrimarySearchContainer',
                                                                                 'beforeEnd'
-                                                                            )),
+                                                                            ),
+                                                                            H.selectCheckboxOnLabelClick('.ArnSearchField div')),
                                                                         H.updateHTML('#thePassCodeAjax label', 'Promocode'),
                                                                         H.updateHTML('#theUserNameAjax label', 'Username/Email'),
                                                                         H.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
@@ -4126,7 +4141,7 @@
                                                                                                             e.moveReviewsIntoPropNameContainer(),
                                                                                                             H.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                             e.movePropClassBelowPropName(),
-                                                                                                            e.activateCheckboxByClickingOnAssociatedLabel(),
+                                                                                                            H.selectCheckboxOnLabelClick('.ArnSearchField div'),
                                                                                                             H.updateHTML('#ShowHotelOnMap', 'Open Map'),
                                                                                                             H.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
                                                                                                             H.updateHTML('.lblRating', 'Stars'),
@@ -5197,19 +5212,6 @@
                             },
                         },
                         {
-                            key: 'activateCheckboxByClickingOnAssociatedLabel',
-                            value: function () {
-                                var e = document.querySelectorAll('.ArnSearchField div');
-                                e &&
-                                    e.forEach(function (e) {
-                                        e.querySelector('input[type="checkbox"]') &&
-                                            e.querySelector('span').addEventListener('click', function (t) {
-                                                e.querySelector('input[type="checkbox"]').click();
-                                            });
-                                    });
-                            },
-                        },
-                        {
                             key: 'addHRToProperties',
                             value: function () {
                                 var e = document.querySelectorAll('.ArnProperty');
@@ -5874,8 +5876,7 @@
                                 if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
                                     var e = document.querySelector('.WBValidatedRegistrationFormActions'),
                                         t = window.location.href.replace('register', 'login');
-                                    console.log(t),
-                                        e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
+                                    e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
                                 }
                             },
                         },

@@ -3114,6 +3114,7 @@ legend {
     position: relative;
     top: -2px;
     left: 4px;
+    cursor: pointer;
 }
 
 .ErrorList,
@@ -3144,6 +3145,11 @@ legend {
 .confirmationWarning,
 #theMarketingOptInAjax {
     display: flex;
+}
+
+.confirmationWarning span,
+.confirmationAgreement span{
+    cursor: pointer;
 }
 
 #theBookingPage #theRateSummaryInfo div{

@@ -27,6 +27,11 @@
     font-style: normal;
 }
 
+.ArnPages a, .ArnPages {
+    font-family: 'Avenir';
+    color: #666;
+}
+
 header {
     border-bottom: 1px solid #e9e9e9;
 }
@@ -425,6 +430,7 @@ input[type='email'].email-mask,
     letter-spacing: 1px;
     font-weight: 100;
 }
+
 .ArnSupportLinks {
     font-family: 'Avenir';
     font-weight: 200;
@@ -512,12 +518,13 @@ input[type='email'].email-mask,
 
 
 .SearchHotels .lblAmenities,
-.SearchHotels .lblRating {
+.SearchHotels .lblRating, .SearchHotels .sort-wrapper h4 {
     font-family: 'Avenir';
     font-weight: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 16px;
+    color: #666;
 }
 
 .SearchHotels .ArnContainer {
@@ -680,7 +687,7 @@ body.WBSupportForm {
     flex-grow: 1;
 }
 
-#thePropertyAmenities, .ArnRateTableHeader, .SinglePropDetail .ArnNightlyRate strong > div, .ArnNightlyRate .originalPrice, .ArnPropAddress, .RoomDescription, .SinglePropDetail #theGeneralInfo, #theConfirmationContainer  {
+#thePropertyAmenities, .ArnRateTableHeader, .SinglePropDetail .ArnNightlyRate strong > div, .ArnNightlyRate .originalPrice, .ArnPropAddress, .RoomDescription, .SinglePropDetail #theGeneralInfo, #theConfirmationContainer, #new-user-text, .ArnSearchHeader, .sort-wrapper h4, #commands a, #commands .logoutCommand, .RateCalendarPopupContainer a, .ArnRateCancelPolicy, .ArnTermsConditions, .ArnTermsConditions a {
     color: #666
 }
 

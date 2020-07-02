@@ -6265,7 +6265,10 @@
                             .querySelector('.totalsTable tbody')
                             .insertAdjacentHTML(
                                 'beforeend',
-                                '\n        <tr class="total-points-earned">\n            <th>Rewards Earned:</th>\n            <td>'.concat(i, '</td>\n        </tr>\n        ')
+                                '\n        <style>\n        .total-points-earned th,\n        .total-points-earned td,\n        .discount th,\n        .discount td{\n            font-weight: 700;\n            text-transform: uppercase;\n        }     \n\n        .total-points-earned th,\n        .total-points-earned td{\n            color: #215853 !important;\n        }  \n        \n        .discount th,\n        .discount td{\n            color: #e2ad37 !important;\n        }\n        </style>\n        <tr class="total-points-earned">\n            <th>Rewards Earned:</th>\n            <td>'.concat(
+                                    i,
+                                    '</td>\n        </tr>\n        '
+                                )
                             );
                         var a = document.querySelector('tr .discount th');
                         (a || (a = document.querySelector('tr .discountRow th'))) && (a.textContent = "BEAT 'EM BY:");

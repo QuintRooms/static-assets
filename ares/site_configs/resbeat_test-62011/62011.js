@@ -246,6 +246,25 @@ function totalStayPoints() {
     document.querySelector('.totalsTable tbody').insertAdjacentHTML(
         'beforeend',
         `
+        <style>
+        .total-points-earned th,
+        .total-points-earned td,
+        .discount th,
+        .discount td{
+            font-weight: 700;
+            text-transform: uppercase;
+        }     
+
+        .total-points-earned th,
+        .total-points-earned td{
+            color: #215853 !important;
+        }  
+        
+        .discount th,
+        .discount td{
+            color: #e2ad37 !important;
+        }
+        </style>
         <tr class="total-points-earned">
             <th>Rewards Earned:</th>
             <td>${points}</td>
@@ -500,6 +519,7 @@ function insertHR(element, position) {
     if (!document.querySelector(element)) return;
     document.querySelector(element).insertAdjacentHTML(position, `<hr class="hr">`);
 }
+
 if (document.querySelector('.SearchHotels')) {
     utilities.waitForSelectorInDOM('.sort-wrapper').then(() => {
         insertHR('.sort-wrapper', 'beforebegin');

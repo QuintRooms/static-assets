@@ -207,7 +207,6 @@ export default class BasePortal {
 
                 this.movePropClassBelowPropName();
                 this.activateCheckboxByClickingOnAssociatedLabel();
-                utilities.updateHTML('.ArnSearchHeader', 'Search');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
                 utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                 utilities.updateHTML('.lblRating', 'Stars');

@@ -75,7 +75,7 @@ header {
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid #215853 !important;
+    border: 3px solid #215853 !important;
     background: #215853 !important;
     color: #fff !important;
     -webkit-appearance: none;
@@ -384,10 +384,6 @@ input[type='email'].email-mask,
     padding-top: 108px;
 }
 
-.SinglePropDetail .translateMe {
-    display: none !important;
-}
-
 .roomCount {
     color: #e2ad37;
 }
@@ -636,6 +632,20 @@ input[type='email'].email-mask,
  .static-bookingLink + .dvd{
     display: none;
 }
+
+/*- - - -  All Buttons - - - - */
+.WBLoginFormActions input, #register-btn, .WBValidatedRegistrationFormActions input, #theOtherSubmitButton, #theSubmitButton, .ArnShowRatesLink, .SinglePropDetail .CheckRates .submit, .SinglePropDetail .bookRoom, .SinglePropDetail #moreRatesLink, .CheckOutForm #theConfirmationButton, .WBSupportFormActions input, .WBForgotPasswordFormActions input {
+    border: 3px solid #215853!important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.8s ease-out !important;
+}
+
+.WBLoginFormActions input:hover, #register-btn:hover, .WBValidatedRegistrationFormActions input:hover, #theOtherSubmitButton:hover, #theSubmitButton:hover, .ArnShowRatesLink:hover, .SinglePropDetail .CheckRates .submit:hover, .SinglePropDetail .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .CheckOutForm #theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBForgotPasswordFormActions input:hover {
+    border: 3px solid #215853 !important;
+}
+
+/*- - - -  All Buttons - - - - */
 
 @media screen and (max-width: 1200px) {
     .ArnSubPage {

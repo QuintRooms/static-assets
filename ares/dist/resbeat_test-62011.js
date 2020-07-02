@@ -4118,7 +4118,6 @@
                                                                                                             F.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                             e.movePropClassBelowPropName(),
                                                                                                             e.activateCheckboxByClickingOnAssociatedLabel(),
-                                                                                                            F.updateHTML('.ArnSearchHeader', 'Search'),
                                                                                                             F.updateHTML('#ShowHotelOnMap', 'Open Map'),
                                                                                                             F.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
                                                                                                             F.updateHTML('.lblRating', 'Stars'),
@@ -4137,14 +4136,14 @@
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            (t.next = 30),
+                                                                                                            (t.next = 29),
                                                                                                             F.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
                                                                                                                 F.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                             })
                                                                                                         );
-                                                                                                    case 30:
+                                                                                                    case 29:
                                                                                                         return (
-                                                                                                            (t.next = 32),
+                                                                                                            (t.next = 31),
                                                                                                             F.waitForSelectorInDOM('.ArnSortContainer').then(function () {
                                                                                                                 F.createWrapper(
                                                                                                                     '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
@@ -4161,19 +4160,19 @@
                                                                                                                 });
                                                                                                             })
                                                                                                         );
-                                                                                                    case 32:
+                                                                                                    case 31:
                                                                                                         if (!window.matchMedia('(min-width: 1105px)')) {
-                                                                                                            t.next = 40;
+                                                                                                            t.next = 39;
                                                                                                             break;
                                                                                                         }
-                                                                                                        return (t.next = 36), F.waitForSelectorInDOM('#ArnPropertyMap');
-                                                                                                    case 36:
+                                                                                                        return (t.next = 35), F.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                    case 35:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
                                                                                                             L.control.scale().addTo(window.ArnMap),
                                                                                                             e.useLogoForVenueMapMarker(),
                                                                                                             e.highlightMapMarkersOnPropertyHover(),
                                                                                                             e.changeContractedPropertyPinColor();
-                                                                                                    case 40:
+                                                                                                    case 39:
                                                                                                     case 'end':
                                                                                                         return t.stop();
                                                                                                 }

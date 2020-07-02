@@ -494,7 +494,19 @@ input[type='email'].email-mask,
     font-size: 25px;
 }
 
-.SearchHotels .sort-wrapper h4,
+.sort-filter-header h3,
+.mobile-filter-container h4,
+.mobile-sort-container .sort-wrapper h4{
+    text-transform: uppercase;
+    color: #666;
+}
+
+.mobile-sort-container .sort-wrapper h4{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
 .SearchHotels .lblAmenities,
 .SearchHotels .lblRating {
     font-family: 'Avenir';
@@ -523,6 +535,11 @@ input[type='email'].email-mask,
     border: none;
     height: 1px;
     background: #ccc;
+}
+
+.mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
+.mobile-filter-container #CitiesNearbyContainer + hr{
+    display: none;
 }
 
 .CheckOutForm #theConfirmationPoliciesAjax {

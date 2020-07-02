@@ -274,10 +274,12 @@ export default class BasePortal {
 
             if (this.site_config.is_resbeat_client) {
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
-                    await utilities.waitForSelectorInDOM('#faq-link');
+                    if (document.querySelector('#booking-guide')) {
+                        await utilities.waitForSelectorInDOM('#faq-link');
 
-                    utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
-                    utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
+                        utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
+                        utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
+                    }
                 });
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
             }

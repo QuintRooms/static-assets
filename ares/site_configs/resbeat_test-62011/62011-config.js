@@ -44,9 +44,9 @@ export default function siteConfig() {
         custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
             // logo_outbound_url: 'http://hotels.resbeat.com/',
-            logo_outbound_url: 'events.hotelsforhope.com/v6/?siteId=62011' /* only for test */,
+            logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011' /* only for test */,
             background: '#fff',
             logo_flex_position: 'space-between',
             logo_max_width: '230px',

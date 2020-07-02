@@ -1,17 +1,27 @@
 <style>
+    .ArnSubPage {
+        max-width: none;
+    }
+
     #booking-guide {
-        max-width: 1000px;
         margin: 0 auto;
         color: #666;
     }
 
     .guide-entry {
-        margin: 56px 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .guide-entry:nth-child(2n) {
+        background: #f0f0f0;
     }
 
     .guide-entry .content {
         display: flex;
         flex-direction: row;
+        max-width: 1000px;
+        padding: 72px 0;
     }
 
     .content div {
@@ -39,7 +49,9 @@
     .guide-entry h3 {
         color: #215853;
         margin-top: 0;
-        font-size: 18px;
+        font-size: 21px;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     .content img {
@@ -56,7 +68,11 @@
         margin-left: 36px;
         margin-right: 0;
     }
-
+    @media screen and (max-width: 1200px) {
+        .ArnSubPage{
+            padding: 0 !important;
+        }
+    }
     @media screen and (max-width: 800px) {
         .guide-entry {
             margin: 0;
@@ -66,7 +82,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 12px;
+            padding: 48px 12px;
         }
 
         .content div {
@@ -90,8 +106,8 @@
             display: block;
         }
     }
-    
-    @media screen and (max-width: 425px){
+
+    @media screen and (max-width: 425px) {
         .content img {
             max-width: 100%;
         }
@@ -109,7 +125,7 @@
                 <p>If you are an existing member, just click LOGIN and enter your email address and password to access your exclusive rates.</p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/access.png" alt="Access your membership" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/access.png" alt="Access your membership" />
             </div>
         </div>
     </div>
@@ -123,7 +139,7 @@
                 <p>You can also filter by the property type, amenities, rating and preferred currency.</p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/start_your_search.png" alt="Start Your Search" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/start_your_search.png" alt="Start Your Search" />
             </div>
         </div>
     </div>
@@ -140,7 +156,7 @@
                 <p>And don’t forget to take note of the significant savings you’ll be making on other travel sites!</p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/select_your_hotel.png" alt="Select Your Hotel" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/select_your_hotel.png" alt="Select Your Hotel" />
             </div>
         </div>
     </div>
@@ -153,7 +169,7 @@
                 <p>Also, look out for how many RES<b>BEAT</b> Rewards you can earn from earn booking!</p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/hotel_details.png" alt="Hotel Details" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/hotel_details.png" alt="Hotel Details" />
             </div>
         </div>
     </div>
@@ -170,7 +186,7 @@
                 <p>This page also contains further details on the hotel’s policies and payment terms. Please review before making your secure purchase.</p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/secure_your_room.png" alt="Secure Your Room" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/secure_your_room.png" alt="Secure Your Room" />
             </div>
         </div>
     </div>
@@ -198,7 +214,7 @@
                 </p>
             </div>
             <div>
-                <img src="https://dev-static.hotelsforhope.com/ares/images/booking_guide/confirmation.png" alt="Hotel Confirmation" />
+                <img src="https://static.hotelsforhope.com/ares/images/booking_guide/confirmation.png" alt="Hotel Confirmation" />
             </div>
         </div>
     </div>

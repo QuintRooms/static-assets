@@ -93,6 +93,8 @@ export default class BasePortal {
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode');
                 utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
@@ -102,6 +104,8 @@ export default class BasePortal {
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 utilities.emailVerificationSetup();
                 this.fixCheckoutInputTabOrder();
+
+                utilities.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax');
             }
 
             if (this.page_name === 'confirmation') {
@@ -127,6 +131,7 @@ export default class BasePortal {
                     'afterBegin'
                 );
                 utilities.moveElementIntoExistingWrapper('.ArnSecondarySearchOuterContainer', '.ArnPrimarySearchContainer', 'beforeEnd');
+                utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
             }
 
             utilities.updateHTML('#thePassCodeAjax label', 'Promocode');
@@ -206,8 +211,7 @@ export default class BasePortal {
                 utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
 
                 this.movePropClassBelowPropName();
-                this.activateCheckboxByClickingOnAssociatedLabel();
-                utilities.updateHTML('.ArnSearchHeader', 'Search');
+                utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
                 utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                 utilities.updateHTML('.lblRating', 'Stars');
@@ -264,6 +268,8 @@ export default class BasePortal {
             this.appendMemberTokenForCug();
             this.hideRemainingRooms();
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
+            this.addLinkToLoginFromRegisterPage();
+            this.setCheckDatesToReadOnlyOnMobile();
 
             if (this.site_config.is_resbeat_client) {
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
@@ -594,7 +600,21 @@ export default class BasePortal {
             header.classList.toggle('hideElement');
             currency.classList.toggle('hideElement');
 
-            map_btn.classList.contains('closeMap') ? (map_btn.querySelector('span').textContent = ' Close Map') : (map_btn.querySelector('span').innerHTML = ' Open Map');
+            if (map_btn.classList.contains('closeMap')) {
+                map_btn.querySelector('span').textContent = ' Close Map';
+                const right_controls = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
+
+                if (!right_controls) return;
+
+                right_controls.appendChild(map_btn);
+            } else {
+                const toggle_map_container = document.querySelector('#arnToggleMapDiv');
+
+                if (!toggle_map_container) return;
+
+                toggle_map_container.appendChild(map_btn);
+                map_btn.querySelector('span').innerHTML = ' Open Map';
+            }
         });
     }
 
@@ -1517,20 +1537,6 @@ export default class BasePortal {
         });
     }
 
-    activateCheckboxByClickingOnAssociatedLabel() {
-        const checkbox_wrappers = document.querySelectorAll('.ArnSearchField div');
-
-        if (!checkbox_wrappers) return;
-
-        checkbox_wrappers.forEach((wrapper) => {
-            if (!wrapper.querySelector('input[type="checkbox"]')) return;
-
-            wrapper.querySelector('span').addEventListener('click', (e) => {
-                wrapper.querySelector('input[type="checkbox"]').click();
-            });
-        });
-    }
-
     addHRToProperties() {
         const props = document.querySelectorAll('.ArnProperty');
 
@@ -2203,9 +2209,20 @@ export default class BasePortal {
             'span.confirmationAgreement'
         ).innerHTML = `By checking this box you agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
 
-        const policies = document.querySelector('#policies-fees');
-        policies.addEventListener('click', () => {
+        const policies_lower = document.querySelector('#policies-fees');
+        policies_lower.addEventListener('click', () => {
             document.querySelector('div.modal-overlay').classList.toggle('show-modal');
+            document.body.classList.toggle('fixed');
+        });
+
+        const policies_header = document.querySelector('span.open-modal');
+        policies_header.addEventListener('click', () => {
+            document.body.classList.toggle('fixed');
+        });
+
+        const close_modal = document.querySelector('span.close-modal');
+        close_modal.addEventListener('click', () => {
+            document.body.classList.toggle('fixed');
         });
     }
 
@@ -2342,15 +2359,46 @@ export default class BasePortal {
         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
 
         await utilities.waitForSelectorInDOM('.logo');
+
         if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
+        const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
+
         // if(!document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
-        const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
+
         const logo = document.querySelector('.logo');
-        // eslint-disable-next-line no-unused-vars
-        let logo_href = logo.getAttribute('href');
-        // logo_href += `&memberToken=${member_token}`;
-        logo_href += `&_s=${member_token}`;
-        logo.setAttribute('href', logo_href);
+        const new_href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
+
+        logo.setAttribute('href', new_href);
+    }
+
+    addLinkToLoginFromRegisterPage() {
+        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'cug-registration') return;
+
+        const register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
+        const current_url = window.location.href;
+        const login_url = current_url.replace('register', 'login');
+
+        if (!register_btn) return;
+
+        register_btn.insertAdjacentHTML(
+            'afterEnd',
+            `
+            <a class="return-to-login" href="${login_url}">Return to Login</a>
+        `
+        );
+    }
+
+    setCheckDatesToReadOnlyOnMobile() {
+        if (!utilities.matchMediaQuery('max-width: 800px')) return;
+
+        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
+            const check_in = document.querySelector('#theCheckIn');
+            const check_out = document.querySelector('#theCheckOut');
+
+            if (!check_in || !check_out) return;
+            check_in.setAttribute('readonly', true);
+            check_out.setAttribute('readonly', true);
+        }
     }
 }

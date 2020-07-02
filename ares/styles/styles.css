@@ -12,6 +12,10 @@ html {
     font-size: 14px !important;
 }
 
+.fixed {
+    position: fixed;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;
@@ -1145,8 +1149,7 @@ select#adults {
     font-size: 19px;
 }
 
-.ArnPrimarySearchContainer,
-.SimpleSearch {
+.ArnPrimarySearchContainer {
     padding: 12px;
 }
 
@@ -2386,13 +2389,15 @@ legend {
         padding-top: 0;
     }
 
-    .fixed {
+    /* .fixed {
         position: fixed;
-    }
+    } */
 
     .closeMap {
         z-index: 9;
         position: relative;
+        margin-top: 10px;
+        margin-right: 10px;
     }
 
     .SearchHotels #arnToggleMapDiv {
@@ -2421,16 +2426,16 @@ legend {
         cursor: pointer;
     }
 
+    .leaflet-top{
+        pointer-events: auto;
+    }
+
     .ArnSortBy {
         float: left;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .closeMap {
-        bottom: 70px;
-    }
-
     .ArnSearchContainerMainTable > tbody > tr {
         display: flex;
         flex-direction: column;
@@ -2447,6 +2452,11 @@ legend {
     #arnCloseAnchorId,
     .sort {
         margin: 0 0 24px 0;
+    }
+
+    #arnCloseAnchorId.closeMap{
+        margin-top: 10px;
+        margin-right: 10px;
     }
 
     .prop-hr {
@@ -2759,6 +2769,7 @@ legend {
 
 .modal-overlay {
     display: none;
+
 }
 
 .show-modal {
@@ -2767,7 +2778,7 @@ legend {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: -20px;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
@@ -2781,7 +2792,7 @@ legend {
     overflow-y: scroll;
     width: 90vw;
     max-width: 600px;
-    height: 90vh;
+    height: 78vh;
 }
 
 .modal-header {
@@ -3103,6 +3114,7 @@ legend {
     position: relative;
     top: -2px;
     left: 4px;
+    cursor: pointer;
 }
 
 .ErrorList,
@@ -3133,6 +3145,11 @@ legend {
 .confirmationWarning,
 #theMarketingOptInAjax {
     display: flex;
+}
+
+.confirmationWarning span,
+.confirmationAgreement span{
+    cursor: pointer;
 }
 
 #theBookingPage #theRateSummaryInfo div{
@@ -3477,6 +3494,7 @@ body.HoldRoomsForm {
 
 .CancelAction {
     color: #333;
+    text-decoration: none;
 }
 
 .redeem-promocode-container {
@@ -3499,6 +3517,18 @@ body.HoldRoomsForm {
 #theWBForgotPasswordFormBody input {
     display: block;
     width: 100%;
+}
+
+.return-to-login{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+#theRememberMeAjax{
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 /* Login and Registration End */

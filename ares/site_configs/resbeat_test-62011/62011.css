@@ -27,8 +27,20 @@
     font-style: normal;
 }
 
+.ArnPages a,
+.ArnPages {
+    font-family: 'Avenir';
+    color: #666;
+}
+
+header {
+    border-bottom: 1px solid #e9e9e9;
+}
+
 .logo img {
+    width: 100%;
     padding: 0;
+    margin: 12px;
 }
 
 .config-container {
@@ -36,20 +48,20 @@
     padding: 5px 10px 0 0 !important;
 }
 .config-container .config-label {
-    color: #333;
+    color: #666;
 }
 
 .RootBody .ArnPrimarySearchContainer {
-    background: #f0f1f2;
-    color: #333;
+    background: #f4f4f4;
+    color: #666;
 }
 .ArnSupportLinks {
-    background: #f0f1f2;
-    color: #333;
+    background: #f4f4f4;
+    color: #666;
 }
 
 .ArnSupportLinks a {
-    color: #333;
+    color: #666;
 }
 
 .SinglePropDetail .SimpleSearch {
@@ -69,10 +81,18 @@
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid #215853 !important;
+    border: 3px solid #215853 !important;
     background: #215853 !important;
     color: #fff !important;
     -webkit-appearance: none;
+}
+
+.total-points-earned th,
+.total-points-earned td,
+.discount th,
+.discount td {
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .WBValidatedRegistrationFormActions input {
@@ -100,7 +120,7 @@
 .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
 input[type='email'].email-mask,
 .WBLoginFormFields input {
-    background: #f0f1f2 !important;
+    background: #f0f0f0 !important;
     border: unset !important;
     font-family: 'Avenir';
     font-weight: 200;
@@ -117,6 +137,14 @@ input[type='email'].email-mask,
     font-size: 14px;
 }
 
+.return-to-login,
+.CancelAction,
+#theRememberMeAjax label {
+    color: #666;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
 #commands,
 #commands .logoutCommand {
     text-transform: uppercase;
@@ -126,7 +154,7 @@ input[type='email'].email-mask,
 }
 
 .ArnSubPage h1 {
-    color: #333;
+    color: #666;
     font-size: 30px;
     font-weight: 100;
     text-transform: uppercase;
@@ -137,7 +165,7 @@ input[type='email'].email-mask,
 }
 
 .RootBody .ArnSecondarySearchOuterContainer {
-    color: #333;
+    color: #666;
 }
 
 .RootBody #PropertyTypesContainer {
@@ -155,16 +183,17 @@ input[type='email'].email-mask,
 
 .RootBody .search-messaging {
     display: block;
-    color: #333 !important;
+    color: #666 !important;
     letter-spacing: 1px;
 }
 
 .RootBody .search-messaging #user-name {
-    color: #333 !important;
+    color: #666 !important;
     display: block !important;
     text-transform: uppercase;
     font-family: 'Avenir';
     font-weight: 200;
+    font-size: 36px;
 }
 
 .RootBody .search-messaging #user-name strong {
@@ -180,31 +209,66 @@ input[type='email'].email-mask,
 .RootBody .search-messaging h4 {
     font-family: 'Avenir';
     font-weight: 200;
+    font-size: 16px;
 }
 
-.beat-em {
+.RootBody .lblAmenities,
+.RootBody .lblRating,
+.RootBody .lblPropertyType {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.SearchHotels .beat-em {
     background: #e2ad37;
     color: #fff;
     text-align: center;
-    padding: 6px 12px;
-    max-width: 150px;
+    padding: 5px;
     margin-left: auto;
-    border-radius: 40px;
-    border: 4px solid #e2ad37
+    border-radius: 20px 15px 0px 20px;
+    border: 4px solid #e2ad37;
+    width: 100%;
+    font-weight: 600;
+}
+
+.SinglePropDetail .beat-em {
+    background: #e2ad37;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border: 4px solid #e2ad37;
+    width: 100%;
+    font-weight: 600;
 }
 
 .ArnRateButton {
     width: 100%;
-    max-width: 150px !important;
+    max-width: 140px !important;
+    background: transparent;
+}
+
+.SearchHotels .ArnRateButton {
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.SearchHotels .ArnRateCell {
+    text-align: center;
+}
+
+.SearchHotels .ArnLimitedAvail {
+    margin-top: 20px;
 }
 
 .ArnRateButton a,
 .bookRoom,
 .holdRoom {
     border-radius: 40px;
-    background: #fff;
+    background: transparent;
     color: #215853;
-    border: 2px solid #215853;
+    border: 3px solid #215853;
     padding: 6px 12px;
 }
 
@@ -213,7 +277,7 @@ input[type='email'].email-mask,
 .holdRoom:hover {
     background: #215853;
     color: #fff;
-    border: 2px solid #215853;
+    border: 3px solid #215853;
 }
 
 .LoginAction.submit,
@@ -225,7 +289,7 @@ input[type='email'].email-mask,
     border-radius: 40px;
     background: #215853;
     color: #fff;
-    border: 2px solid #215853 !important;
+    border: 3px solid #215853 !important;
     padding: 12px;
 }
 
@@ -236,11 +300,24 @@ input[type='email'].email-mask,
 .WBSupportForm .SendRequestAction:hover {
     background: #fff;
     color: #215853;
-    border: 2px solid #215853;
+    border: 3px solid #215853;
 }
 
-.SinglePropDetail .beat-em {
-    margin-left: 10px;
+.SearchHotels .ArnPropName {
+    padding: 22px 23px;
+}
+
+.SearchHotels .ArnPropThumb {
+    border-radius: 15px 0 0 15px;
+}
+
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+    bottom: 40px;
+    left: 20px;
+}
+
+.SearchHotels .ArnPropClass {
+    display: none !important;
 }
 
 .SearchHotels .originalPrice,
@@ -249,7 +326,6 @@ input[type='email'].email-mask,
     text-decoration: line-through;
     font-size: 15px;
     font-weight: 500;
-    margin-top: 10px;
 }
 
 .SearchHotels .ArnPrimarySearchContainer {
@@ -257,25 +333,35 @@ input[type='email'].email-mask,
     color: #666;
 }
 
-.SearchHotels .ArnPriceCell .mainRate {
-    padding-right: 42px;
-}
-
 .SearchHotels #theSearchBox input,
 .SearchHotels #theSearchBox select {
     background-color: #f0f0f0;
-}
-
-.SearchHotels .ArnPrimarySearchOuterContainer div.ArnSearchHeader {
-    display: none;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
     margin-top: 13px;
 }
 
+.SearchHotels .ArnPropNameLink {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.SearchHotels .arnPrice {
+    color: #e2ad37;
+}
+
+.ArnPropNameLink span {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.SearchHotels .arnUnit + div {
+    display: none;
+}
+
 .ratingCount {
-    padding: 8px !important;
+    padding: 4px !important;
     border-radius: 20px;
 }
 
@@ -324,14 +410,6 @@ input[type='email'].email-mask,
     border-radius: 40px;
 }
 
-.SinglePropDetail .ArnLeftListContainer {
-    padding-top: 108px;
-}
-
-.SinglePropDetail .translateMe {
-    display: none !important;
-}
-
 .roomCount {
     color: #e2ad37;
 }
@@ -359,6 +437,7 @@ input[type='email'].email-mask,
     letter-spacing: 1px;
     font-weight: 100;
 }
+
 .ArnSupportLinks {
     font-family: 'Avenir';
     font-weight: 200;
@@ -371,7 +450,7 @@ input[type='email'].email-mask,
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input {
     border: unset;
-    background-color: #f0f1f2;
+    background-color: #f0f0f0;
     width: 100%;
     padding: 12px !important;
 }
@@ -432,12 +511,54 @@ input[type='email'].email-mask,
     font-size: 25px;
 }
 
-.SearchHotels .sort-wrapper h4,
-.SearchHotels .lblAmenities,
-.SearchHotels .lblRating {
-    font-family: 'Avenir';
+.sort-filter-header h3,
+.mobile-filter-container h4,
+.mobile-sort-container .sort-wrapper h4 {
+    text-transform: uppercase;
+    color: #666;
+}
+
+.mobile-sort-container .sort-wrapper h4 {
     font-weight: 700;
+    font-size: 14px;
+}
+
+.SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4 {
+    font-family: 'Avenir';
+    font-weight: 100;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #666;
+}
+
+.SearchHotels .ArnContainer {
+    background: #f0f0f0;
+    border-radius: 15px;
+    color: #666 !important;
+}
+
+.ArnPropNameLink span,
+.reviewCount a {
+    color: #666 !important;
+}
+
+.SearchHotels .prop-hr {
+    visibility: hidden;
+    margin: 10px 0;
+}
+
+.hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+}
+
+.mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
+.mobile-filter-container #CitiesNearbyContainer + hr {
+    display: none;
 }
 
 .CheckOutForm #theConfirmationPoliciesAjax {
@@ -472,9 +593,8 @@ input[type='email'].email-mask,
     display: none;
 }
 
-
 .ArnSubPage h1 {
-    color: #333;
+    color: #666;
 }
 
 .ArnSubPage.WBSupportForm {
@@ -559,10 +679,81 @@ input[type='email'].email-mask,
 }
 
 .static-rewardsLink,
- #commands .rewards,
- .static-bookingLink + .dvd{
+#commands .rewards,
+.static-bookingLink + .dvd {
     display: none;
 }
+
+body.WBSupportForm {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
+    flex-grow: 1;
+}
+
+#thePropertyAmenities,
+.ArnRateTableHeader,
+.SinglePropDetail .ArnNightlyRate strong > div,
+.ArnNightlyRate .originalPrice,
+.ArnPropAddress,
+.RoomDescription,
+.SinglePropDetail #theGeneralInfo,
+#theConfirmationContainer,
+#new-user-text,
+.ArnSearchHeader,
+.sort-wrapper h4,
+#commands a,
+#commands .logoutCommand,
+.RateCalendarPopupContainer a,
+.ArnRateCancelPolicy,
+.ArnTermsConditions,
+.ArnTermsConditions a,
+#theBookingPage .GuestForms {
+    color: #666;
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    color: #e2ad37;
+}
+
+/*- - - -  All Buttons - - - - */
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input {
+    border: 3px solid #215853 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: background 0.8s ease-out !important;
+}
+
+.WBLoginFormActions input:hover,
+#register-btn a:hover,
+.WBValidatedRegistrationFormActions input:hover,
+#theOtherSubmitButton:hover,
+#theSubmitButton:hover,
+.ArnShowRatesLink:hover,
+.SinglePropDetail .CheckRates .submit:hover,
+.SinglePropDetail .bookRoom:hover,
+.SinglePropDetail #moreRatesLink:hover,
+.CheckOutForm #theConfirmationButton:hover,
+.WBSupportFormActions input:hover,
+.WBForgotPasswordFormActions input:hover {
+    border: 3px solid #215853 !important;
+}
+
+/*- - - -  All Buttons - - - - */
 
 @media screen and (max-width: 1200px) {
     .ArnSubPage {
@@ -570,19 +761,8 @@ input[type='email'].email-mask,
     }
 }
 
-@media screen and (max-width: 1105px) {
-    .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 50px;
-    }
-
-    .SinglePropDetail .ArnLeftListContainer {
-        padding-top: 61px;
-    }
-}
-
 @media screen and (min-width: 900px) {
     .RootBody .ArnPrimarySearchContainer {
-        width: 60vw;
         max-width: 800px;
         min-width: 700px;
     }
@@ -619,9 +799,13 @@ input[type='email'].email-mask,
         display: none !important;
     }
 
+    .SearchHotels .ArnPrimarySearchOuterContainer {
+        margin-top: 0px !important;
+    }
+
     .RootBody #theOtherSubmitButton {
         width: 100%;
-        max-width: 400px;
+        max-width: none;
     }
 
     .currencies-container {
@@ -635,7 +819,7 @@ input[type='email'].email-mask,
     }
 
     .currencies-container #currency-label {
-        color: #333;
+        color: #666;
         border-bottom: unset;
         justify-content: space-between;
         margin: unset;
@@ -663,7 +847,7 @@ input[type='email'].email-mask,
         margin: auto;
     }
 
-    .SearchHotels .currencies-container{
+    .SearchHotels .currencies-container {
         position: relative;
         z-index: 8;
     }
@@ -680,7 +864,7 @@ input[type='email'].email-mask,
     .SinglePropDetail .points-earned {
         width: unset;
         background: unset;
-        color: #333;
+        color: #666;
         top: 120px;
         left: 9px;
     }
@@ -695,6 +879,10 @@ input[type='email'].email-mask,
         display: unset;
     }
 
+    .SearchHotels .ArnPropName {
+        padding: 22px 15px;
+    }
+
     .SearchHotels .ArnRateCell {
         width: 100%;
     }
@@ -703,29 +891,21 @@ input[type='email'].email-mask,
         margin-top: 0px !important;
     }
 
-    .SearchHotels .beat-em {
-        align-self: center;
-        justify-self: center;
-        margin-left: unset;
-    }
-
     .SearchHotels .ArnPriceCell {
         align-self: end;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     .SearchHotels .ArnRateButton {
-        align-self: center;
-        justify-self: center;
+        margin-right: 15px;
     }
 
     .SearchHotels div.beat-em {
         position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        margin: 5px;
         z-index: 1;
+        width: 50%;
+        right: -2px;
+        top: -1px;
     }
 
     .SinglePropDetail .beat-em {
@@ -754,7 +934,7 @@ input[type='email'].email-mask,
     }
 
     .SinglePropDetail .bookRoomCell {
-        grid-template-rows: 1fr .5fr .25fr;
+        grid-template-rows: 1fr 0.5fr 0.25fr;
         grid-template-columns: 45% 55%;
     }
 
@@ -767,7 +947,7 @@ input[type='email'].email-mask,
         background: unset;
         position: unset;
         padding: unset;
-        color: #333;
+        color: #666;
         align-self: flex-end;
         justify-self: flex-start;
         margin-bottom: 5px;
@@ -787,4 +967,12 @@ input[type='email'].email-mask,
         width: 44px;
         border-radius: 3px;
     }
+
+    .SearchHotels .ArnPropThumb {
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+#theRateTotals > tbody > .discountRow td {
+    font-family: 'Avenir', 'Helvetica';
 }

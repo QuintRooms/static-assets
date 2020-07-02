@@ -1,3 +1,5 @@
+const dayjs = require('dayjs');
+
 export default class Utilities {
     /**
      *@description forEach polyfill for internet explorer
@@ -348,5 +350,33 @@ export default class Utilities {
 
         if (!element) return;
         element.setAttribute('tabindex', -1);
+    }
+
+    calculateNights() {
+        const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
+        const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+        const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+        return nights;
+    }
+
+    matchMediaQuery(media_query) {
+        const mq = window.matchMedia(`(${media_query})`);
+
+        return mq.matches;
+    }
+
+    selectCheckboxOnLabelClick(node_list) {
+        const checkbox_wrappers = document.querySelectorAll(node_list);
+
+        checkbox_wrappers.forEach((wrapper) => {
+            if (!wrapper.querySelector('input[type="checkbox"]') || !wrapper) return;
+            let label = wrapper.querySelector('span');
+            if (!label) label = wrapper.querySelector('label');
+
+            label.addEventListener('click', (e) => {
+                wrapper.querySelector('input[type="checkbox"]').click();
+            });
+        });
     }
 }

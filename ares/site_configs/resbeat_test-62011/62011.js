@@ -120,13 +120,14 @@ function updateSearchTitle() {
 updateSearchTitle();
 
 function insertBeatEmBy(element) {
-    if (document.querySelector('.beat-em')) return;
+    if (document.querySelector('.beat-em') && utilities.page_name === 'search-results') return;
     if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
         const mq = window.matchMedia('(max-width: 600px)');
 
         if (!document.querySelector(element)) return;
         const rate_cells = document.querySelectorAll(element);
         rate_cells.forEach((el) => {
+            if (el.querySelector('.beat-em')) return;
             if (el.querySelector('.originalPrice')) {
                 const percent = el.querySelector('.originalPrice').getAttribute('percent');
 
@@ -155,11 +156,11 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
-async function displayRewardPoints() {
+async function displayRewardPoints(rooms_element) {
     if (!document.querySelector('.SinglePropDetail')) return;
 
     await utilities.waitForSelectorInDOM('.ArnNightlyRate');
-    const rooms = document.querySelectorAll('table.ArnRateList');
+    const rooms = document.querySelectorAll(rooms_element);
     const mq = window.matchMedia('(max-width: 800px)');
     const style = `  
         <style>
@@ -173,11 +174,25 @@ async function displayRewardPoints() {
             }
         </style>
         `;
+
     rooms.forEach((el, i) => {
-        let full_stay = el.querySelector('.full-stay').textContent;
-        full_stay = full_stay.replace(/[^0-9.]/g, '');
+        if (el.querySelector('.points-earned')) return;
+
+        const original_price_el = el.querySelector('.originalPrice');
+
+        if (!original_price_el) return;
+
+        const savings = original_price_el.getAttribute('amount');
+        const original_price_text = original_price_el.textContent;
+        const original_price_float = original_price_text.replace(/[^0-9.]/g, '');
+        const savings_float = savings.replace(/[^0-9.]/g, '');
+        const nights = utilities.calculateNights();
+
+        const total = nights * (original_price_float - savings_float);
+
         // eslint-disable-next-line radix
-        const reward_points = parseInt(full_stay);
+        const reward_points = parseInt(total);
+
         if (i === 0) {
             document.body.insertAdjacentHTML('beforeend', style);
         }
@@ -201,7 +216,7 @@ async function displayRewardPoints() {
     });
 }
 
-displayRewardPoints();
+displayRewardPoints('table.ArnRateList');
 
 function totalStayPoints() {
     if (!document.querySelector('.CheckOutForm')) return;
@@ -492,5 +507,21 @@ if (document.querySelector('.SearchHotels')) {
     insertHR('#AmentitiesContainer', 'beforebegin');
     insertHR('#PropertyClassesContainer', 'beforebegin');
 }
+
+function rerunFunctionsOnMoreRoomsClick() {
+    if (!document.querySelector('.SinglePropDetail')) return;
+
+    const more_rooms_btn = document.querySelector('#moreRatesLink');
+
+    if (!more_rooms_btn) return;
+
+    more_rooms_btn.addEventListener('click', async () => {
+        await utilities.waitForSelectorInDOM('#moreRates');
+        insertBeatEmBy('.SinglePropDetail .rateRow');
+        displayRewardPoints('table.ArnRateList');
+    });
+}
+
+rerunFunctionsOnMoreRoomsClick();
 
 new ChildPortal();

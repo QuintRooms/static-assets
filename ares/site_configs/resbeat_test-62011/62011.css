@@ -180,6 +180,7 @@ input[type='email'].email-mask,
     text-transform: uppercase;
     font-family: 'Avenir';
     font-weight: 200;
+    font-size: 36px;
 }
 
 .RootBody .search-messaging #user-name strong {
@@ -195,7 +196,16 @@ input[type='email'].email-mask,
 .RootBody .search-messaging h4 {
     font-family: 'Avenir';
     font-weight: 200;
+    font-size: 16px;
 }
+
+.RootBody .lblAmenities,
+.RootBody .lblRating,
+.RootBody .lblPropertyType{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 
 .beat-em {
     background: #e2ad37;
@@ -665,7 +675,6 @@ input[type='email'].email-mask,
 
 @media screen and (min-width: 900px) {
     .RootBody .ArnPrimarySearchContainer {
-        width: 60vw;
         max-width: 800px;
         min-width: 700px;
     }
@@ -708,7 +717,7 @@ input[type='email'].email-mask,
 
     .RootBody #theOtherSubmitButton {
         width: 100%;
-        max-width: 400px;
+        max-width: none;
     }
 
     .currencies-container {

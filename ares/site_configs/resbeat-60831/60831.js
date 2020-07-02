@@ -27,6 +27,8 @@ function styleRegisterContainer() {
 
     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email');
     document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password');
+    document.querySelector('#theUserNameAjax input').setAttribute('required', true);
+    document.querySelector('#thePasswordAjax input').setAttribute('required', true);
 
     document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
         'beforeend',
@@ -61,6 +63,7 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBVa
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm');
 addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm');
+addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', true, 'required', '.WBForgotPasswordForm');
 addAttributeToInput('#theFirstNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theLastNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theEditablePasswordAjax input', true, 'required', '.WBValidatedRegistrationForm');
@@ -120,13 +123,14 @@ function updateSearchTitle() {
 updateSearchTitle();
 
 function insertBeatEmBy(element) {
-    if (document.querySelector('.beat-em')) return;
+    if (document.querySelector('.beat-em') && utilities.page_name === 'search-results') return;
     if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
         const mq = window.matchMedia('(max-width: 600px)');
 
         if (!document.querySelector(element)) return;
         const rate_cells = document.querySelectorAll(element);
         rate_cells.forEach((el) => {
+            if (el.querySelector('.beat-em')) return;
             if (el.querySelector('.originalPrice')) {
                 const percent = el.querySelector('.originalPrice').getAttribute('percent');
 
@@ -155,11 +159,11 @@ jQuery(document).on('ratesReadyEvent', () => {
     }, 1);
 });
 
-async function displayRewardPoints() {
+async function displayRewardPoints(rooms_element) {
     if (!document.querySelector('.SinglePropDetail')) return;
 
     await utilities.waitForSelectorInDOM('.ArnNightlyRate');
-    const rooms = document.querySelectorAll('table.ArnRateList');
+    const rooms = document.querySelectorAll(rooms_element);
     const mq = window.matchMedia('(max-width: 800px)');
     const style = `  
         <style>
@@ -173,11 +177,25 @@ async function displayRewardPoints() {
             }
         </style>
         `;
+
     rooms.forEach((el, i) => {
-        let full_stay = el.querySelector('.full-stay').textContent;
-        full_stay = full_stay.replace(/[^0-9.]/g, '');
+        if (el.querySelector('.points-earned')) return;
+
+        const original_price_el = el.querySelector('.originalPrice');
+
+        if (!original_price_el) return;
+
+        const savings = original_price_el.getAttribute('amount');
+        const original_price_text = original_price_el.textContent;
+        const original_price_float = original_price_text.replace(/[^0-9.]/g, '');
+        const savings_float = savings.replace(/[^0-9.]/g, '');
+        const nights = utilities.calculateNights();
+
+        const total = nights * (original_price_float - savings_float);
+
         // eslint-disable-next-line radix
-        const reward_points = parseInt(full_stay);
+        const reward_points = parseInt(total);
+
         if (i === 0) {
             document.body.insertAdjacentHTML('beforeend', style);
         }
@@ -201,19 +219,32 @@ async function displayRewardPoints() {
     });
 }
 
-displayRewardPoints();
+displayRewardPoints('table.ArnRateList');
 
 function totalStayPoints() {
     if (!document.querySelector('.CheckOutForm')) return;
 
-    let total = document.querySelector('.dueNowRow td').textContent;
-    let taxes = document.querySelector('.taxFeeRow td').textContent;
-    // eslint-disable-next-line radix
-    total = parseInt(total.replace(/[^0-9.]/g, ''));
-    // eslint-disable-next-line radix
-    taxes = parseInt(taxes.replace(/[^0-9.]/g, ''));
+    let total_el = document.querySelector('.dueNowRow td');
+    const taxes_el = document.querySelector('.taxFeeRow td');
 
-    const points = total - taxes;
+    if (!total_el) {
+        total_el = document.querySelector('.balanceDueRow td');
+
+        document.querySelector('#theRateTotals > tbody > .discountRow').style.display = 'table-row';
+
+        if (!total_el) return;
+    }
+
+    let total = total_el.textContent;
+    let taxes = taxes_el.textContent;
+
+    // eslint-disable-next-line radix
+    total = parseFloat(total.replace(/[^\d.-]/g, ''));
+    // eslint-disable-next-line radix
+    taxes = parseFloat(taxes.replace(/[^\d.-]/g, ''));
+
+    const points_float = total - taxes;
+    const points = Math.floor(points_float);
 
     document.querySelector('.totalsTable tbody').insertAdjacentHTML(
         'beforeend',
@@ -225,7 +256,13 @@ function totalStayPoints() {
         `
     );
 
-    document.querySelector('tr .discount th').textContent = "BEAT 'EM BY:";
+    let discount_row = document.querySelector('tr .discount th');
+    if (!discount_row) {
+        discount_row = document.querySelector('tr .discountRow th');
+        if (!discount_row) return;
+    }
+
+    discount_row.textContent = "BEAT 'EM BY:";
 }
 
 totalStayPoints();
@@ -387,17 +424,17 @@ function styleMapPins() {
         `
     <style>
         .SearchHotels .arnMapMarker {
-            background: ${site_config.secondary_color};
+            background: ${site_config.primary_color};
             border-color:  ${site_config.primary_text_color};
             color: ${site_config.primary_text_color};
         }
         
         .SearchHotels .arnMapMarkerTriangle {
-            border-top-color: ${site_config.secondary_color};
+            border-top-color: ${site_config.primary_color};
         }
 
         .arnMapMarker:hover .arnMapMarkerTriangle {
-            border-top-color: ${site_config.secondary_color};
+            border-top-color: ${site_config.primary_color};
         }
     `
     );
@@ -461,4 +498,34 @@ function moveConfigContainer() {
 }
 
 moveConfigContainer();
+
+function insertHR(element, position) {
+    if (!document.querySelector(element)) return;
+    document.querySelector(element).insertAdjacentHTML(position, `<hr class="hr">`);
+}
+
+if (document.querySelector('.SearchHotels')) {
+    utilities.waitForSelectorInDOM('.sort-wrapper').then(() => {
+        insertHR('.sort-wrapper', 'beforebegin');
+    });
+    insertHR('#AmentitiesContainer', 'beforebegin');
+    insertHR('#PropertyClassesContainer', 'beforebegin');
+}
+
+function rerunFunctionsOnMoreRoomsClick() {
+    if (!document.querySelector('.SinglePropDetail')) return;
+
+    const more_rooms_btn = document.querySelector('#moreRatesLink');
+
+    if (!more_rooms_btn) return;
+
+    more_rooms_btn.addEventListener('click', async () => {
+        await utilities.waitForSelectorInDOM('#moreRates');
+        insertBeatEmBy('.SinglePropDetail .rateRow');
+        displayRewardPoints('table.ArnRateList');
+    });
+}
+
+rerunFunctionsOnMoreRoomsClick();
+
 new ChildPortal();

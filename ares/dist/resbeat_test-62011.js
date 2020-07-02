@@ -6189,6 +6189,8 @@
                 if (document.querySelector('#theWBLoginFormBody')) {
                     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email'),
                         document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password'),
+                        document.querySelector('#theUserNameAjax input').setAttribute('required', !0),
+                        document.querySelector('#thePasswordAjax input').setAttribute('required', !0),
                         document
                             .querySelector('#theWBLoginFormBody')
                             .insertAdjacentHTML(
@@ -6204,6 +6206,7 @@
             X('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
             X('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
             X('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
+            X('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
             X('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
             X('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
             X('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),

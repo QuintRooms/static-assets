@@ -27,6 +27,8 @@ function styleRegisterContainer() {
 
     document.querySelector('#theUserNameAjax input').setAttribute('placeholder', 'Email');
     document.querySelector('#thePasswordAjax input').setAttribute('placeholder', 'Password');
+    document.querySelector('#theUserNameAjax input').setAttribute('required', true);
+    document.querySelector('#thePasswordAjax input').setAttribute('required', true);
 
     document.querySelector('#theWBLoginFormBody').insertAdjacentHTML(
         'beforeend',
@@ -61,6 +63,7 @@ addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBVa
 addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm');
 addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm');
+addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', true, 'required', '.WBForgotPasswordForm');
 addAttributeToInput('#theFirstNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theLastNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
 addAttributeToInput('#theEditablePasswordAjax input', true, 'required', '.WBValidatedRegistrationForm');

@@ -362,7 +362,21 @@ export default class Utilities {
 
     matchMediaQuery(media_query) {
         const mq = window.matchMedia(`(${media_query})`);
-        console.log(mq);
+
         return mq.matches;
+    }
+
+    selectCheckboxOnLabelClick(node_list) {
+        const checkbox_wrappers = document.querySelectorAll(node_list);
+
+        checkbox_wrappers.forEach((wrapper) => {
+            if (!wrapper.querySelector('input[type="checkbox"]') || !wrapper) return;
+            let label = wrapper.querySelector('span');
+            if (!label) label = wrapper.querySelector('label');
+
+            label.addEventListener('click', (e) => {
+                wrapper.querySelector('input[type="checkbox"]').click();
+            });
+        });
     }
 }

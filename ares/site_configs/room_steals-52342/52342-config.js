@@ -45,7 +45,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://roomsteals.com/',
+            logo_outbound_url: 'https://roomsteals.com/home/',
             background: '#fff',
             logo_flex_position: 'space-between',
             logo_max_width: '88px',

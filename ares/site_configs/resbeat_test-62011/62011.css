@@ -504,11 +504,18 @@ input[type='email'].email-mask,
     display: block !important;
 }
 
-.ArnSearchHeader {
+.ArnSearchHeader,
+.SinglePropDetail .ArnLeftListContainer > span.translateMe {
     font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
-    font-size: 25px;
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.ArnSearchHeader{
+    margin-left: 12px;
 }
 
 .sort-filter-header h3,

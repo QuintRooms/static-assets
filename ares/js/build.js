@@ -93,6 +93,8 @@ export default class BasePortal {
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode');
                 utilities.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode');
+                utilities.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode');
                 utilities.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax');
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');

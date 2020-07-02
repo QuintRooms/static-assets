@@ -430,11 +430,11 @@
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            H = function (e) {
+            F = function (e) {
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
             },
-            F = function (e) {
+            H = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -445,14 +445,14 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(F, r, 1), u(H, r, 1));
+                                      t.call(e, u(H, r, 1), u(F, r, 1));
                                   } catch (e) {
-                                      H.call(r, e);
+                                      F.call(r, e);
                                   }
                               })
                             : ((n._v = e), (n._s = 1), P(n, !1));
                     } catch (e) {
-                        H.call({_w: n, _d: !1}, e);
+                        F.call({_w: n, _d: !1}, e);
                     }
                 }
             };
@@ -460,9 +460,9 @@
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(F, this, 1), u(H, this, 1));
+                    e(u(H, this, 1), u(F, this, 1));
                 } catch (e) {
-                    H.call(this, e);
+                    F.call(this, e);
                 }
             }),
             ((r = function (e) {
@@ -486,7 +486,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
+                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(F, e, 1));
             }),
             (b.f = M = function (e) {
                 return e === E || e === a ? new i(e) : o(e);
@@ -2213,8 +2213,8 @@
             j = r.JSON,
             B = j && j.stringify,
             O = h('_hidden'),
-            H = h('toPrimitive'),
-            F = {}.propertyIsEnumerable,
+            F = h('toPrimitive'),
+            H = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
             D = l('symbols'),
             N = l('op-symbols'),
@@ -2270,7 +2270,7 @@
                 return e;
             },
             K = function (e) {
-                var t = F.call(this, (e = _(e, !0)));
+                var t = H.call(this, (e = _(e, !0)));
                 return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, O) && this[O][e])) || t);
             },
             Q = function (e, t) {
@@ -2373,7 +2373,7 @@
                         },
                     }
                 ),
-            P.prototype[H] || n(5)(P.prototype, H, P.prototype.valueOf),
+            P.prototype[F] || n(5)(P.prototype, F, P.prototype.valueOf),
             d(P, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
@@ -3860,8 +3860,8 @@
             }
         }
         var O = new T(),
-            H = n(60),
-            F = new R(),
+            F = n(60),
+            H = new R(),
             I = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -3869,7 +3869,7 @@
                     })(this, e),
                         console.log('Output: BasePortal -> constructor -> config', t),
                         (this.site_id = ''),
-                        (this.page_name = F.getPageName()),
+                        (this.page_name = H.getPageName()),
                         (this.site_config = t),
                         (this.currency = ''),
                         (this.svg_arrow =
@@ -3887,7 +3887,7 @@
                                 var e = this;
                                 this.site_config || console.error('No site config found.'),
                                     this.initializeARNRatesReadyEvent(),
-                                    F.ieForEachPolyfill(),
+                                    H.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
                                             var t = j(
@@ -3897,7 +3897,7 @@
                                                             switch ((t.prev = t.next)) {
                                                                 case 0:
                                                                     return (
-                                                                        F.getPageName(),
+                                                                        H.getPageName(),
                                                                         e.applyConfigColors(),
                                                                         e.setRootPageBackgroundImage(),
                                                                         e.setFontFromConfig(),
@@ -3906,13 +3906,13 @@
                                                                         e.buildCurrencyDropdown(),
                                                                         e.showStarsAndFilter(),
                                                                         e.buildMobileMenu(),
-                                                                        F.createHTML(
+                                                                        H.createHTML(
                                                                             '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
                                                                             'head',
                                                                             'beforeEnd'
                                                                         ),
                                                                         (t.next = 12),
-                                                                        F.createHTML(
+                                                                        H.createHTML(
                                                                             '<header><a class="logo" href="'
                                                                                 .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
                                                                                 .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
@@ -3922,14 +3922,14 @@
                                                                     );
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
-                                                                        F.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                        H.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                             j(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
                                                                                             switch ((e.prev = e.next)) {
                                                                                                 case 0:
-                                                                                                    F.appendToParent('#commands', 'header');
+                                                                                                    H.appendToParent('#commands', 'header');
                                                                                                 case 1:
                                                                                                 case 'end':
                                                                                                     return e.stop();
@@ -3938,13 +3938,13 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        F.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                        H.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                         'property-detail' === e.page_name &&
                                                                             (e.addImageSlideshow(),
-                                                                            F.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                            F.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                            F.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                            F.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                            H.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                            H.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                            H.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                            H.updateHTML('.SinglePropDetail .Details a', 'General Info'),
                                                                             e.isPropByGateway(
                                                                                 e.site_config.exclusive_rate_text,
                                                                                 e.site_config.host_hotel_text,
@@ -3957,62 +3957,64 @@
                                                                                     e.showFullStayAndNightlyRates(t, n);
                                                                                 });
                                                                             }),
-                                                                            F.moveElementIntoExistingWrapper(
+                                                                            H.moveElementIntoExistingWrapper(
                                                                                 '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
                                                                                 '.SinglePropDetail .ArnPropAddress',
                                                                                 'afterEnd'
                                                                             ),
-                                                                            F.moveElementIntoExistingWrapper(
+                                                                            H.moveElementIntoExistingWrapper(
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
                                                                             )),
                                                                         'checkout' === e.page_name &&
-                                                                            (F.createModal(
+                                                                            (H.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
                                                                                 'Policies & Fees',
                                                                                 'checkout',
                                                                                 '#theConfirmationContainer',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            F.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                            F.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                            F.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                            F.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                            F.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                            F.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                            F.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                            F.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                            H.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                            H.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                            H.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                            H.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                            H.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                            H.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                            H.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                            H.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                            H.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                            H.updateHTML('#theHotel legend', 'Reservation Summary'),
                                                                             e.formatCheckoutForm(),
                                                                             e.setupReservationSummaryContainer(),
-                                                                            F.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                            F.emailVerificationSetup(),
+                                                                            H.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                            H.emailVerificationSetup(),
                                                                             e.fixCheckoutInputTabOrder()),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
-                                                                            (F.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                            F.createHTML(
+                                                                            (H.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                            H.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
                                                                                 '.RootBody .ArnPrimarySearchContainer',
                                                                                 'beforeBegin'
                                                                             ),
-                                                                            F.moveOrphanedElementsIntoNewWrapper(
+                                                                            H.moveOrphanedElementsIntoNewWrapper(
                                                                                 [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
                                                                                 'root-search-container',
                                                                                 '.RootBody .ArnSearchContainerMainDiv',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            F.moveElementIntoExistingWrapper(
+                                                                            H.moveElementIntoExistingWrapper(
                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                 '.ArnPrimarySearchContainer',
                                                                                 'beforeEnd'
                                                                             )),
-                                                                        F.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                        F.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                        F.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                        F.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                        F.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                        F.createHTML(
+                                                                        H.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                        H.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                        H.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                        H.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                        H.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                        H.createHTML(
                                                                             '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
@@ -4037,7 +4039,7 @@
                                                                                                     return (
                                                                                                         (e.map_loaded = !0),
                                                                                                         (t.next = 3),
-                                                                                                        F.waitForSelectorInDOM('.pollingFinished')
+                                                                                                        H.waitForSelectorInDOM('.pollingFinished')
                                                                                                     );
                                                                                                 case 3:
                                                                                                     document.querySelector('.leaflet-control-scale-line') ||
@@ -4080,7 +4082,7 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        F.waitForSelectorInDOM('.pollingFinished').then(
+                                                                        H.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
                                                                                 var t = j(
                                                                                     regeneratorRuntime.mark(function t(n) {
@@ -4091,7 +4093,7 @@
                                                                                                         if (
                                                                                                             ('hold-rooms' === e.page_name &&
                                                                                                                 (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                F.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                                H.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
                                                                                                             'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
                                                                                                         ) {
                                                                                                             t.next = 3;
@@ -4115,44 +4117,44 @@
                                                                                                             e.showSearchContainerOnMobile(),
                                                                                                             e.moveFooterOutOfSearchContainer(),
                                                                                                             e.moveReviewsIntoPropNameContainer(),
-                                                                                                            F.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                            H.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                             e.movePropClassBelowPropName(),
                                                                                                             e.activateCheckboxByClickingOnAssociatedLabel(),
-                                                                                                            F.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                            F.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                            F.updateHTML('.lblRating', 'Stars'),
-                                                                                                            F.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                            F.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                            F.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                            F.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                            F.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                            F.moveElementIntoExistingWrapper(
+                                                                                                            H.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                            H.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                            H.updateHTML('.lblRating', 'Stars'),
+                                                                                                            H.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                            H.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                            H.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                            H.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                            H.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                            H.moveElementIntoExistingWrapper(
                                                                                                                 '.ArnPropClass',
                                                                                                                 '.ArnPropName',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            F.moveElementIntoExistingWrapper(
+                                                                                                            H.moveElementIntoExistingWrapper(
                                                                                                                 '#theOtherSubmitButton',
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
                                                                                                             ),
                                                                                                             (t.next = 29),
-                                                                                                            F.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                F.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                            H.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                H.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                             })
                                                                                                         );
                                                                                                     case 29:
                                                                                                         return (
                                                                                                             (t.next = 31),
-                                                                                                            F.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                F.createWrapper(
+                                                                                                            H.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                H.createWrapper(
                                                                                                                     '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
                                                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                                                     'sort-wrapper',
                                                                                                                     'afterBegin'
                                                                                                                 ).then(function () {
                                                                                                                     e.createMobileSortAndFilter(),
-                                                                                                                        F.createHTML(
+                                                                                                                        H.createHTML(
                                                                                                                             '<h4>Sort</h4>',
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
@@ -4165,7 +4167,7 @@
                                                                                                             t.next = 39;
                                                                                                             break;
                                                                                                         }
-                                                                                                        return (t.next = 35), F.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                        return (t.next = 35), H.waitForSelectorInDOM('#ArnPropertyMap');
                                                                                                     case 35:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
                                                                                                             L.control.scale().addTo(window.ArnMap),
@@ -4216,16 +4218,16 @@
                                                                                                 for (;;)
                                                                                                     switch ((e.prev = e.next)) {
                                                                                                         case 0:
-                                                                                                            return (e.next = 2), F.waitForSelectorInDOM('#faq-link');
+                                                                                                            return (e.next = 2), H.waitForSelectorInDOM('#faq-link');
                                                                                                         case 2:
-                                                                                                            F.updateAttribute(
+                                                                                                            H.updateAttribute(
                                                                                                                 '#faq-link',
-                                                                                                                F.getAttribute('.faqLink', 'href'),
+                                                                                                                H.getAttribute('.faqLink', 'href'),
                                                                                                                 'href'
                                                                                                             ),
-                                                                                                                F.updateAttribute(
+                                                                                                                H.updateAttribute(
                                                                                                                     '#customer-support-link',
-                                                                                                                    F.getAttribute('.supportLink', 'href'),
+                                                                                                                    H.getAttribute('.supportLink', 'href'),
                                                                                                                     'href'
                                                                                                                 );
                                                                                                         case 4:
@@ -4405,11 +4407,11 @@
                             key: 'createMobileSortAndFilter',
                             value: function () {
                                 if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                    F.updateHTML(
+                                    H.updateHTML(
                                         '.sort',
                                         '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
                                     ),
-                                        F.createHTML(
+                                        H.createHTML(
                                             '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
                                             '#searchForm',
                                             'beforeEnd'
@@ -4461,9 +4463,9 @@
                                     (t = u.getAttribute('content')),
                                     (n = a.getAttribute('content')),
                                     (r = c.getAttribute('content')),
-                                    (o = H(n)),
-                                    (i = H(r)),
-                                    F.createHTML(
+                                    (o = F(n)),
+                                    (i = F(r)),
+                                    H.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                             .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
                                             .concat(o.format('MMMM D'), ' - ')
@@ -4510,7 +4512,7 @@
                                                                 r.classList.toggle('is-active'), t.classList.toggle('active');
                                                             }),
                                                             (e.next = 11),
-                                                            F.waitForSelectorInDOM('header')
+                                                            H.waitForSelectorInDOM('header')
                                                         );
                                                     case 11:
                                                         document.querySelector('header').insertAdjacentElement('beforeend', n);
@@ -4535,7 +4537,7 @@
                                 window.matchMedia('(max-width:800px)').matches &&
                                     document.querySelector('#theBookingPage') &&
                                     (r.insertAdjacentElement('afterEnd', e),
-                                    F.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
+                                    H.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
                                     e.insertAdjacentElement('beforeBegin', t),
                                     e.insertAdjacentHTML(
                                         'beforeEnd',
@@ -4666,10 +4668,10 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = H(t).format(this.site_config.dayjs_date_format)),
-                                    (n = H(r).format(this.site_config.dayjs_date_format)),
-                                    F.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                    F.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                                    (e = F(t).format(this.site_config.dayjs_date_format)),
+                                    (n = F(r).format(this.site_config.dayjs_date_format)),
+                                    H.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                    H.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
                         },
                         {
@@ -4679,12 +4681,12 @@
                                     t = 0;
                                 e.forEach(function (e) {
                                     (t += 1),
-                                        F.moveElementIntoExistingWrapper(
+                                        H.moveElementIntoExistingWrapper(
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
                                             'afterEnd'
                                         ),
-                                        F.createWrapper(
+                                        H.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
                                                 .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
@@ -4694,7 +4696,7 @@
                                             'billing-details-container',
                                             'afterEnd'
                                         ),
-                                        F.createWrapper(
+                                        H.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
                                                 .concat(t, ', \n                 .RoomNumber-')
@@ -4704,12 +4706,12 @@
                                             'credit-card-details',
                                             'afterEnd'
                                         ),
-                                        F.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                        F.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                        F.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                        t > 1 && F.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                        F.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                        F.updateHTML(
+                                        H.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                        H.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                        H.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                        t > 1 && H.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                        H.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                        H.updateHTML(
                                             '.cardNumber label',
                                             '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
                                         );
@@ -4723,8 +4725,8 @@
                                 document.querySelector('#theCopyInfoAjax input') &&
                                     document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
                                         setTimeout(function () {
-                                            F.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                e > 1 && F.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                            H.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                e > 1 && H.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
                                         }, 750);
                                     });
                             },
@@ -4881,7 +4883,7 @@
                             key: 'setFontFromConfig',
                             value: function () {
                                 this.site_config &&
-                                    (F.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    (H.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
                                     document.body.insertAdjacentHTML(
                                         'beforeEnd',
                                         '\n            <style>\n                *,\n                .taxFeeRow td,\n                .discount td,\n                .totalRow td,\n                .balanceDueRow td,\n                .dueNowRow td,\n                .guestNameFields td{\n                    font-family: '.concat(
@@ -5801,7 +5803,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (r = document.querySelector(n)), (e.next = 5), F.fetchHTMLFromFile(t);
+                                                        return (r = document.querySelector(n)), (e.next = 5), H.fetchHTMLFromFile(t);
                                                     case 5:
                                                         (o = e.sent), (r.innerHTML = o);
                                                     case 7:
@@ -5832,7 +5834,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (e.next = 4), F.waitForSelectorInDOM('.logo');
+                                                            return (e.next = 4), H.waitForSelectorInDOM('.logo');
                                                         case 4:
                                                             if (document.querySelector('#formChangeTheme input[name="_s"]')) {
                                                                 e.next = 6;

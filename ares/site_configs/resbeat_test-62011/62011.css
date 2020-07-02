@@ -47,11 +47,11 @@ header {
 
 .RootBody .ArnPrimarySearchContainer {
     background: #f4f4f4;
-    color: #333;
+    color: #666;
 }
 .ArnSupportLinks {
     background: #f4f4f4;
-    color: #333;
+    color: #666;
 }
 
 .ArnSupportLinks a {
@@ -390,10 +390,6 @@ input[type='email'].email-mask,
     border-radius: 40px;
 }
 
-.SinglePropDetail .ArnLeftListContainer {
-    padding-top: 108px;
-}
-
 .roomCount {
     color: #e2ad37;
 }
@@ -643,6 +639,24 @@ input[type='email'].email-mask,
     display: none;
 }
 
+.WBSupportForm {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
+    flex-grow: 1;
+}
+
+#thePropertyAmenities, .ArnRateTableHeader, .SinglePropDetail .ArnNightlyRate strong > div, .ArnNightlyRate .originalPrice, .ArnPropAddress, .RoomDescription, .SinglePropDetail #theGeneralInfo  {
+    color: #666
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    color: #e2ad37;
+}
+
 /*- - - -  All Buttons - - - - */
 .WBLoginFormActions input, #register-btn a, .WBValidatedRegistrationFormActions input, #theOtherSubmitButton, #theSubmitButton, .ArnShowRatesLink, .SinglePropDetail .CheckRates .submit, .SinglePropDetail .bookRoom, .SinglePropDetail #moreRatesLink, .CheckOutForm #theConfirmationButton, .WBSupportFormActions input, .WBForgotPasswordFormActions input {
     border: 3px solid #215853!important;
@@ -660,16 +674,6 @@ input[type='email'].email-mask,
 @media screen and (max-width: 1200px) {
     .ArnSubPage {
         padding: 12px;
-    }
-}
-
-@media screen and (max-width: 1105px) {
-    .SearchHotels .ArnPrimarySearchOuterContainer {
-        margin-top: 50px;
-    }
-
-    .SinglePropDetail .ArnLeftListContainer {
-        padding-top: 61px;
     }
 }
 

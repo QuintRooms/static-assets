@@ -519,6 +519,12 @@ input[type='email'].email-mask,
     margin: 10px 0;
 }
 
+.hr{
+    border: none;
+    height: 1px;
+    background: #ccc;
+}
+
 .CheckOutForm #theConfirmationPoliciesAjax {
     margin-top: 10px;
 }

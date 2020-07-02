@@ -382,7 +382,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && O(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -404,7 +404,7 @@
                         n,
                         r,
                         o = e._v,
-                        i = B(e);
+                        i = O(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -414,17 +414,17 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = q || B(e) ? 2 : 1)),
+                            (e._h = q || O(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            B = function (e) {
+            O = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            O = function (e) {
+            B = function (e) {
                 g.call(s, function () {
                     var t;
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -2211,8 +2211,8 @@
             T = k.f,
             P = r.Symbol,
             j = r.JSON,
-            B = j && j.stringify,
-            O = h('_hidden'),
+            O = j && j.stringify,
+            B = h('_hidden'),
             F = h('toPrimitive'),
             H = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
@@ -2260,7 +2260,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, O) && e[O][t] && (e[O][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, O) || R(e, O, x(1, {})), (e[O][t] = !0)), V(e, t, n))
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || R(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
                         : R(e, t, n)
                 );
             },
@@ -2271,16 +2271,16 @@
             },
             K = function (e) {
                 var t = H.call(this, (e = _(e, !0)));
-                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, O) && this[O][e])) || t);
+                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = M(e, t);
-                    return !n || !o(D, t) || (o(e, O) && e[O][t]) || (n.enumerable = !0), n;
+                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == O || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -2293,7 +2293,7 @@
                     if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(N, n), o(this, O) && o(this[O], e) && (this[O][e] = !1), V(this, e, x(1, n));
+                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
                         };
                     return i && G && V($, e, {configurable: !0, set: t}), Y(e);
                 }).prototype,
@@ -2355,7 +2355,7 @@
                             (!W ||
                                 u(function () {
                                     var e = P();
-                                    return '[null]' != B([e]) || '{}' != B({a: e}) || '{}' != B(Object(e));
+                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
                     {
@@ -2368,7 +2368,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    B.apply(j, r)
+                                    O.apply(j, r)
                                 );
                         },
                     }
@@ -3820,6 +3820,13 @@
                                 return M(t).diff(M(e), 'days');
                             },
                         },
+                        {
+                            key: 'matchMediaQuery',
+                            value: function (e) {
+                                var t = window.matchMedia('('.concat(e, ')'));
+                                return console.log(t), t.matches;
+                            },
+                        },
                     ]) && C(t.prototype, n),
                     r && C(t, r),
                     e
@@ -3853,13 +3860,13 @@
                 });
             };
         }
-        function B(e, t) {
+        function O(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var O = new T(),
+        var B = new T(),
             F = n(60),
             H = new R(),
             I = (function () {
@@ -4205,6 +4212,7 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
+                                                                        e.setCheckDatesToReadOnlyOnMobile(),
                                                                         e.site_config.is_resbeat_client &&
                                                                             (e
                                                                                 .replaceHTMLWithFile(
@@ -4242,7 +4250,7 @@
                                                                                 'https://static.hotelsforhope.com/ares/html/resbeat-faq.html',
                                                                                 '.ArnSubPage.WBFaq'
                                                                             ));
-                                                                case 46:
+                                                                case 47:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4869,7 +4877,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(O.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(B.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -5871,8 +5879,19 @@
                                 }
                             },
                         },
-                    ]) && B(t.prototype, n),
-                    r && B(t, r),
+                        {
+                            key: 'setCheckDatesToReadOnlyOnMobile',
+                            value: function () {
+                                if (H.matchMediaQuery('max-width: 800px') && ('search-results' === this.page_name || 'landing-page' === this.page_name)) {
+                                    var e = document.querySelector('#theCheckIn'),
+                                        t = document.querySelector('#theCheckOut');
+                                    if (!e || !t) return;
+                                    e.setAttribute('readonly', !0), t.setAttribute('readonly', !0);
+                                }
+                            },
+                        },
+                    ]) && O(t.prototype, n),
+                    r && O(t, r),
                     e
                 );
             })(),

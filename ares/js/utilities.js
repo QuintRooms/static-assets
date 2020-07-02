@@ -359,4 +359,10 @@ export default class Utilities {
 
         return nights;
     }
+
+    matchMediaQuery(media_query) {
+        const mq = window.matchMedia(`(${media_query})`);
+        console.log(mq);
+        return mq.matches;
+    }
 }

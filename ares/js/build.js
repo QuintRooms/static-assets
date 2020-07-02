@@ -266,6 +266,7 @@ export default class BasePortal {
             this.hideRemainingRooms();
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
+            this.setCheckDatesToReadOnlyOnMobile();
 
             if (this.site_config.is_resbeat_client) {
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
@@ -2398,5 +2399,18 @@ export default class BasePortal {
             <a class="return-to-login" href="${login_url}">Return to Login</a>
         `
         );
+    }
+
+    setCheckDatesToReadOnlyOnMobile() {
+        if (!utilities.matchMediaQuery('max-width: 800px')) return;
+
+        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
+            const check_in = document.querySelector('#theCheckIn');
+            const check_out = document.querySelector('#theCheckOut');
+
+            if (!check_in || !check_out) return;
+            check_in.setAttribute('readonly', true);
+            check_out.setAttribute('readonly', true);
+        }
     }
 }

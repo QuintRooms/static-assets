@@ -2357,7 +2357,7 @@ export default class BasePortal {
     }
 
     async appendMemberTokenForCug() {
-        if (this.site_config.site_type.toLowerCase() !== 'cug') return;
+        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342') return;
 
         const outbound_url = this.site_config.header.logo_outbound_url;
 
@@ -2377,8 +2377,6 @@ export default class BasePortal {
             new_href = `${outbound_url}v6?siteId=${this.site_id}&_s=${member_token}`;
         } else if (outbound_url.slice(-4) === '.com') {
             new_href = `${outbound_url}/v6?siteId=${this.site_id}&_s=${member_token}`;
-        } else if (this.site_id === '52342') {
-            return;
         } else {
             new_href = `${outbound_url}&_s=${member_token}`;
         }

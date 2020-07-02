@@ -1149,8 +1149,7 @@ select#adults {
     font-size: 19px;
 }
 
-.ArnPrimarySearchContainer,
-.SimpleSearch {
+.ArnPrimarySearchContainer {
     padding: 12px;
 }
 

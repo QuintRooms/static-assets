@@ -356,7 +356,7 @@ export default class Utilities {
         const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
         const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
         const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
-        console.log(nights);
+
         return nights;
     }
 }

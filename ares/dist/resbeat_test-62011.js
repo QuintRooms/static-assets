@@ -3816,9 +3816,8 @@
                             key: 'calculateNights',
                             value: function () {
                                 var e = M(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = M(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                    n = M(t).diff(M(e), 'days');
-                                return console.log(n), n;
+                                    t = M(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return M(t).diff(M(e), 'days');
                             },
                         },
                     ]) && C(t.prototype, n),

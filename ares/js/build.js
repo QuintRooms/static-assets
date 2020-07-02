@@ -220,6 +220,7 @@ export default class BasePortal {
                 utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
                 utilities.updateHTML('.lblPropertyType', 'Property Type');
                 utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
+                utilities.updateHTML('.ArnSearchHeader', 'Update Search');
                 utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                 utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
@@ -2358,16 +2359,29 @@ export default class BasePortal {
     async appendMemberTokenForCug() {
         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
 
+        const outbound_url = this.site_config.header.logo_outbound_url;
+
         await utilities.waitForSelectorInDOM('.logo');
 
-        if (!document.querySelector('#formChangeTheme input[name="_s"]')) return;
-        const member_token = document.querySelector('#formChangeTheme input[name="_s"]').value;
+        if (!document.querySelector('input[name="_s"]')) return;
+        const member_token = document.querySelector('input[name="_s"]').value;
 
         // if(!document.querySelector('meta[name="memberToken"]')) return;
         // const member_token = document.querySelector('meta[name="memberToken"]').content;
 
         const logo = document.querySelector('.logo');
-        const new_href = `${this.site_config.header.logo_outbound_url}&_s=${member_token}`;
+
+        let new_href = '';
+
+        if (outbound_url.slice(-1) === '/') {
+            new_href = `${outbound_url}v6?siteId=${this.site_id}&_s=${member_token}`;
+        } else if (outbound_url.slice(-4) === '.com') {
+            new_href = `${outbound_url}/v6?siteId=${this.site_id}&_s=${member_token}`;
+        } else if (this.site_id === '52342') {
+            return;
+        } else {
+            new_href = `${outbound_url}&_s=${member_token}`;
+        }
 
         logo.setAttribute('href', new_href);
     }

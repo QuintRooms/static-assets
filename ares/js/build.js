@@ -192,6 +192,7 @@ export default class BasePortal {
 
                 if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
 
+                this.styleCUGMapPins();
                 this.cugConfigs();
                 this.implementAds();
                 this.toggleMap();
@@ -1032,6 +1033,19 @@ export default class BasePortal {
                 color: ${this.site_config.primary_text_color} !important;
                 border: 1px solid ${this.site_config.border_color} !important;
             }
+
+            .yui3-skin-sam .yui3-calendar-day-selected {
+                background-color: ${this.site_config.primary_color} !important;
+                color: ${this.site_config.primary_text_color} !important;
+            }
+    
+            .yui3-skin-sam .yui3-calendar-day:hover{
+                background-color: ${this.site_config.primary_color} !important;
+            }
+    
+            .yui3-skin-sam .yui3-calendar-content{
+                border-color: ${this.site_config.border_color} !important;
+            }
         </style>
         `
         );
@@ -1066,6 +1080,29 @@ export default class BasePortal {
                     font-family: ${this.site_config.google_font_name}, 'Helvetica';
                 }
             </style>`
+        );
+    }
+
+    styleCUGMapPins() {
+        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === 'false') return;
+        document.body.insertAdjacentHTML(
+            'beforeend',
+            `
+        <style>
+            .SearchHotels .arnMapMarker {
+                background: ${this.site_config.primary_color};
+                border-color:  ${this.site_config.primary_text_color};
+                color: ${this.site_config.primary_text_color};
+            }
+            
+            .SearchHotels .arnMapMarkerTriangle {
+                border-top-color: ${this.site_config.primary_color};
+            }
+    
+            .arnMapMarker:hover .arnMapMarkerTriangle {
+                border-top-color: ${this.site_config.primary_color};
+            }
+        `
         );
     }
 

@@ -27,6 +27,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
+            percent_off_text: 'off',
             show_percent_savings: true,
         },
         exclusive_rate_text: '',
@@ -87,6 +88,8 @@ export default function siteConfig() {
             },
         },
         // new options
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: true,
         confirmation_email_from: 'RESBEAT',
     };

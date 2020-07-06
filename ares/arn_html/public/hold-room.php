@@ -1414,7 +1414,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</style>
         <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
     </noscript>
-    <script src="//media.travsrv.com/appSkins/60279/v6/themes/standard/footer.js?8255+3116" type="text/javascript"></script>
 </body>
 
 </html>

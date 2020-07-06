@@ -26,6 +26,7 @@ export default function siteConfig() {
             is_cug: false,
             show_points: false,
             allow_registration: false,
+            percent_off_text: 'off',
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rates',
@@ -82,6 +83,8 @@ export default function siteConfig() {
             },
         },
         // new options
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
     };

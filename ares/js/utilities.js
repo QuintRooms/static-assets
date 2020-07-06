@@ -379,4 +379,14 @@ export default class Utilities {
             });
         });
     }
+
+    async addAttributeToInput(element, value, attribute, page_name) {
+        if (!document.querySelector(page_name)) return;
+        try {
+            await this.waitForSelectorInDOM(element);
+            document.querySelector(element).setAttribute(attribute, value);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }

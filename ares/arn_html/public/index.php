@@ -1187,28 +1187,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         </table>
     </div>
     <script type="text/javascript">
-    if (jQuery) {
-        jQuery(document).ready(function() {
-            //insert jquery-UI
-            if (jQuery("#searchForm").length != 0 &&
-                $("theSubmitButton").type != undefined) {
-                insertArnScript("jquery-ui-style", "https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css", true);
-                insertArnScript("jquery-ui-script", "https://code.jquery.com/ui/1.11.3/jquery-ui.js");
-
-                //update the submit button onclick
-                var submitOnclick = "if (!validateSubmitOptions())return false;" + jQuery("#theSubmitButton").attr('onclick');
-
-
-                jQuery("#theSubmitButton").attr('onclick', submitOnclick);
-
-                jQuery(".ArnGoCitySearch").click(clearValidationBorders);
-                jQuery(".ArnGoAddressSearch").click(clearValidationBorders);
-                jQuery(".ArnGoAirportSearch").click(clearValidationBorders);
-                jQuery(".ArnGoLandmarkSearch").click(clearValidationBorders);
-            }
-        });
-    }
-
     function validateSubmitOptions() {
         var retvalue = true;
         if (jQuery('.ArnZipCodeContainer').length != 0) {
@@ -1275,10 +1253,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
             </style>
         <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
     </noscript>
-    <script src="https://media.travsrv.com/appSkins/39624/v6/themes/standard/footer.js?8255+11615" type="text/javascript">
-    /*<![CDATA[*/
-    nil /*]]>*/
-    </script><span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
+    <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
     <script>
     /*<![CDATA[*/
     // (function() {

@@ -1591,13 +1591,14 @@ export default class BasePortal {
 
         const remove_arn_search_bar = (selector) => {
             if (!document.querySelector(selector)) return;
-            if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') document.querySelector(selector).remove();
+            // if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail')
+            document.querySelector(selector).remove();
 
-            if (this.site_config.site_type.toLowerCase() === 'cug') {
-                document.body.append(document.querySelector(selector));
-                document.querySelector(selector).style.display = 'none';
-                // document.querySelector('#CitySearchContainer').style.display = 'none';
-            }
+            // if (this.site_config.site_type.toLowerCase() === 'cug') {
+            //     document.body.append(document.querySelector(selector));
+            //     document.querySelector(selector).style.display = 'none';
+            //     // document.querySelector('#CitySearchContainer').style.display = 'none';
+            // }
         };
 
         const insert_algolia_search = (page, selector, adjacent_location, html) => {

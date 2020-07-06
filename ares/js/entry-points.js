@@ -35,7 +35,7 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
             'resbeat_test-62011': './src/62011.js', // Resbeat test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'ares_child-60279': './src/60279.js', // Ares Child Test
         };
 
         // local environment

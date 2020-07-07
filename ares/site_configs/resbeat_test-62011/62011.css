@@ -882,7 +882,7 @@ body.WBSupportForm {
         padding: 0px
     }
 
-    .theWBLoginFormBody, .theWBValidatedRegistrationFormBody {
+    #theWBLoginFormBody, #theWBValidatedRegistrationFormBody {
         margin: 0 auto;
     }
 

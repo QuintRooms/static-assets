@@ -2247,7 +2247,10 @@ export default class BasePortal {
         document.querySelector('.open-modal').textContent = 'Policies & Fees';
         document.querySelector(
             'span.confirmationAgreement'
-        ).innerHTML = `By checking this box you agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+
+        utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I');
+        utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my');
 
         const policies_lower = document.querySelector('#policies-fees');
         policies_lower.addEventListener('click', () => {
@@ -2373,7 +2376,7 @@ export default class BasePortal {
         const mq = window.matchMedia('(max-width: 560px)');
 
         rooms.forEach((el) => {
-            if (!el.querySelector('.roomCount') && !el.classList.contains('SB16') && !el.classList.contains('SB20')) return;
+            if (!el.querySelector('.roomCount strong') && !el.classList.contains('SB16') && !el.classList.contains('SB20')) return;
 
             const rooms_remaining = parseFloat(el.querySelector('.roomCount strong').textContent);
             if (rooms_remaining < 6) {

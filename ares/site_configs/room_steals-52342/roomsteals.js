@@ -87,32 +87,41 @@ export default class RoomSteals {
         }
     }
 
-    showSubscribeNowButtonsForTrialUsers() {
-        if (this.is_room_steals_trial_user === true) {
-            if (document.querySelector('.SearchHotels')) {
-                const book_now_btns = document.querySelectorAll('.ArnRateButton');
-                if (book_now_btns) {
-                    book_now_btns.forEach((btn) => {
-                        btn.querySelector('.ArnShowRatesLink').textContent = 'Show More';
-                    });
-                }
+    updateBookingButtons() {
+        if (document.querySelector('.SearchHotels')) {
+            const book_now_btns = document.querySelectorAll('.ArnRateButton');
+            if (!book_now_btns) return;
+            if (this.is_room_steals_trial_user === true) {
+                book_now_btns.forEach((btn) => {
+                    btn.querySelector('.ArnShowRatesLink').textContent = 'Show More';
+                });
+            } else {
+                book_now_btns.forEach((btn) => {
+                    btn.querySelector('.ArnShowRatesLink').textContent = 'See My Rate';
+                });
             }
-            if (document.querySelector('.SinglePropDetail')) {
-                const book_now_btns = document.querySelectorAll('.bookRoom');
+        }
+
+        if (document.querySelector('.SinglePropDetail')) {
+            const book_now_btns = document.querySelectorAll('.bookRoom');
+            if (!book_now_btns) return;
+            if (this.is_room_steals_trial_user === true) {
                 let total;
                 let total_el;
 
-                if (book_now_btns) {
-                    book_now_btns.forEach((btn) => {
-                        total_el = btn.parentNode.querySelector('.ArnNightlyRate');
+                book_now_btns.forEach((btn) => {
+                    total_el = btn.parentNode.querySelector('.ArnNightlyRate');
 
-                        if (!total_el) return;
+                    if (!total_el) return;
 
-                        total = total_el.getAttribute('total');
-                        btn.text = 'Subscribe to Book';
-                        btn.setAttribute('href', `${this.subscribe_url}/?return_to=${this.property_url}&total=${total}`);
-                    });
-                }
+                    total = total_el.getAttribute('total');
+                    btn.text = 'Subscribe to Book';
+                    btn.setAttribute('href', `${this.subscribe_url}/?return_to=${this.property_url}&total=${total}`);
+                });
+            } else {
+                book_now_btns.forEach((btn) => {
+                    btn.textContent = 'Book My Room';
+                });
             }
         }
         return false;
@@ -259,7 +268,7 @@ if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.
                 roomsteals.setRoomStealsUser().then(() => {
                     roomsteals.checkIsRoomStealsTrialUser().then(() => {
                         roomsteals.setPropertyURL().then(() => {
-                            roomsteals.showSubscribeNowButtonsForTrialUsers();
+                            roomsteals.updateBookingButtons();
                         });
 
                         if (document.querySelector('.SearchHotels')) {

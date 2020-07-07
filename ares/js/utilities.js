@@ -389,4 +389,13 @@ export default class Utilities {
             console.error(error);
         }
     }
+
+    replaceSpecificText(selector, regex, new_text) {
+        if (!document.querySelector(selector)) return;
+
+        const string = document.querySelector(selector).textContent;
+        const test = string.replace(regex, new_text);
+
+        document.querySelector(selector).textContent = test;
+    }
 }

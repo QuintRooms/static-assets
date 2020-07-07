@@ -873,6 +873,19 @@ body.WBSupportForm {
 }
 
 @media screen and (max-width: 600px) {
+
+    body.RootBody {
+        height: unset;
+    }
+
+    .ArnSubPage { 
+        padding: 0px
+    }
+
+    .theWBLoginFormBody, .theWBValidatedRegistrationFormBody {
+        margin: 0 auto;
+    }
+
     .MemberNotAuthenticated header {
         display: unset;
     }

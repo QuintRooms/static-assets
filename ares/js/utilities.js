@@ -379,4 +379,23 @@ export default class Utilities {
             });
         });
     }
+
+    async addAttributeToInput(element, value, attribute, page_name) {
+        if (!document.querySelector(page_name)) return;
+        try {
+            await this.waitForSelectorInDOM(element);
+            document.querySelector(element).setAttribute(attribute, value);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    replaceSpecificText(selector, regex, new_text) {
+        if (!document.querySelector(selector)) return;
+
+        const string = document.querySelector(selector).textContent;
+        const test = string.replace(regex, new_text);
+
+        document.querySelector(selector).textContent = test;
+    }
 }

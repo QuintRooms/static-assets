@@ -26,6 +26,7 @@ export default function siteConfig() {
             is_cug: false,
             show_points: false,
             allow_registration: true,
+            percent_off_text: 'off',
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rates',

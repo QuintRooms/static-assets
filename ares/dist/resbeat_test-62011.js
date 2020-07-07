@@ -456,17 +456,17 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && j(e);
+                        (e._c = []), (e._n = !1), t && !e._h && O(e);
                     });
                 }
             },
-            j = function (e) {
+            O = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
                         r,
                         o = e._v,
-                        i = O(e);
+                        i = j(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -476,14 +476,14 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = E || O(e) ? 2 : 1)),
+                            (e._h = E || j(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            O = function (e) {
+            j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
             B = function (e) {
@@ -1119,8 +1119,8 @@
             T = E.f,
             R = k.f,
             P = r.Symbol,
-            j = r.JSON,
-            O = j && j.stringify,
+            O = r.JSON,
+            j = O && O.stringify,
             B = h('_hidden'),
             H = h('toPrimitive'),
             F = {}.propertyIsEnumerable,
@@ -1257,14 +1257,14 @@
                 return C.f(S(e));
             },
         }),
-            j &&
+            O &&
                 a(
                     a.S +
                         a.F *
                             (!W ||
                                 u(function () {
                                     var e = P();
-                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
+                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
                     {
@@ -1277,7 +1277,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    O.apply(j, r)
+                                    j.apply(O, r)
                                 );
                         },
                     }
@@ -3394,13 +3394,13 @@
             }
         }
         var P = n(63),
-            j = (function () {
+            O = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, o, i, a, c, s, u, l, d;
+                var t, n, r, o, i, a, c, s, u, l, d, f;
                 return (
                     (t = e),
                     (n = [
@@ -3413,7 +3413,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((d = T(
+                                ((f = T(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3434,7 +3434,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return d.apply(this, arguments);
+                                    return f.apply(this, arguments);
                                 }),
                         },
                         {
@@ -3474,7 +3474,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((l = T(
+                                ((d = T(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3497,6 +3497,35 @@
                                     })
                                 )),
                                 function (e) {
+                                    return d.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'waitForTextInDOM',
+                            value:
+                                ((l = T(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return e.abrupt(
+                                                            'return',
+                                                            new Promise(function (e) {
+                                                                var r = setInterval(function () {
+                                                                    var o = document.querySelector(t).textContent;
+                                                                    if (o === n) return e(o), clearInterval(r), o;
+                                                                }, 500);
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t) {
                                     return l.apply(this, arguments);
                                 }),
                         },
@@ -3897,7 +3926,7 @@
                     e
                 );
             })();
-        function O(e, t, n, r, o, i, a) {
+        function j(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3913,10 +3942,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        O(i, r, o, a, c, 'next', e);
+                        j(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        O(i, r, o, a, c, 'throw', e);
+                        j(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3930,7 +3959,7 @@
         }
         var F = new r(),
             I = n(63),
-            D = new j(),
+            D = new O(),
             N = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -6108,7 +6137,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var Z = new j(),
+        var Z = new O(),
             K = (function (e) {
                 function t(e) {
                     var n;
@@ -6585,67 +6614,68 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var oe = new (function () {
-            return {
-                site_id: 62011,
-                affiliate_id: 16827,
-                master_id: 2143,
-                site_type: 'cug',
-                algolia_app_id: 'plCZXR0GZ7J1',
-                algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-                currency: 'USD',
-                distance_unit: 'useMiles',
-                map_size: '12',
-                radius: '50',
-                lodging: {event_id: '', event_name: '', event_dates: '', is_lrg: ''},
-                cug: {is_cug: !0, show_points: !1, allow_registration: !1, percent_off_text: "BEAT 'EM BY", show_percent_savings: !0},
-                exclusive_rate_text: '',
-                host_hotel_text: '',
-                partner_hotel_text: '',
-                show_tax_inclusive_rates: !1,
-                dayjs_date_format: 'M/D/YYYY',
-                reviews_before_info: !0,
-                show_stars: !0,
-                show_language_select: !1,
-                show_currency_select: !0,
-                show_date_prompt: !1,
-                fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
-                has_custom_styles: !0,
-                custom_styles_url: ''.concat(o.path, '/site_configs/').concat(i, '/').concat(62011, '.css'),
-                has_social_sharing: !0,
-                header: {
-                    logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.svg'),
-                    logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
-                    background: '#fff',
-                    logo_flex_position: 'space-between',
-                    logo_max_width: '230px',
-                },
-                banner_image_url: '#fff',
-                map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
-                theme: 'light',
-                background_color: '#fff',
-                primary_color: '#215853',
-                secondary_color: '#e2ad37',
-                primary_text_color: '#fff',
-                secondary_text_color: '#215853',
-                border_color: '#215853',
-                button_hover_background_color: '#fff',
-                button_hover_text_color: '#215853',
-                button_hover_border_color: '#215853',
-                google_font_url: '',
-                google_font_name: 'Avenir',
-                ads: {
-                    sidebar_ad: {is_active: !1, image_url: '', outbound_url: ''},
-                    between_property_ad: {is_active: !1, image_url: '', outbound_url: ''},
-                    confirmation_page_top: {is_active: !1, image_url: '', outbound_url: ''},
-                    confirmation_page_bottom: {is_active: !1, image_url: '', outbound_url: ''},
-                },
-                root_page_header_text: 'START YOUR <b>SEARCH</b>',
-                root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
-                is_resbeat_client: !0,
-                confirmation_email_from: 'RESBEAT',
-            };
-        })();
+        var oe = new O(),
+            ie = new (function () {
+                return {
+                    site_id: 62011,
+                    affiliate_id: 16827,
+                    master_id: 2143,
+                    site_type: 'cug',
+                    algolia_app_id: 'plCZXR0GZ7J1',
+                    algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+                    currency: 'USD',
+                    distance_unit: 'useMiles',
+                    map_size: '12',
+                    radius: '50',
+                    lodging: {event_id: '', event_name: '', event_dates: '', is_lrg: ''},
+                    cug: {is_cug: !0, show_points: !1, allow_registration: !1, percent_off_text: "BEAT 'EM BY", show_percent_savings: !0},
+                    exclusive_rate_text: '',
+                    host_hotel_text: '',
+                    partner_hotel_text: '',
+                    show_tax_inclusive_rates: !1,
+                    dayjs_date_format: 'M/D/YYYY',
+                    reviews_before_info: !0,
+                    show_stars: !0,
+                    show_language_select: !1,
+                    show_currency_select: !0,
+                    show_date_prompt: !1,
+                    fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    has_custom_styles: !0,
+                    custom_styles_url: ''.concat(o.path, '/site_configs/').concat(i, '/').concat(62011, '.css'),
+                    has_social_sharing: !0,
+                    header: {
+                        logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.svg'),
+                        logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
+                        background: '#fff',
+                        logo_flex_position: 'space-between',
+                        logo_max_width: '230px',
+                    },
+                    banner_image_url: '#fff',
+                    map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    theme: 'light',
+                    background_color: '#fff',
+                    primary_color: '#215853',
+                    secondary_color: '#e2ad37',
+                    primary_text_color: '#fff',
+                    secondary_text_color: '#215853',
+                    border_color: '#215853',
+                    button_hover_background_color: '#fff',
+                    button_hover_text_color: '#215853',
+                    button_hover_border_color: '#215853',
+                    google_font_url: '',
+                    google_font_name: 'Avenir',
+                    ads: {
+                        sidebar_ad: {is_active: !1, image_url: '', outbound_url: ''},
+                        between_property_ad: {is_active: !1, image_url: '', outbound_url: ''},
+                        confirmation_page_top: {is_active: !1, image_url: '', outbound_url: ''},
+                        confirmation_page_bottom: {is_active: !1, image_url: '', outbound_url: ''},
+                    },
+                    root_page_header_text: 'START YOUR <b>SEARCH</b>',
+                    root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
+                    is_resbeat_client: !0,
+                    confirmation_email_from: 'RESBEAT',
+                };
+            })();
         new ((function (e) {
             function t() {
                 var e;
@@ -6655,7 +6685,7 @@
                     })(this, t),
                     (e = (function (e, t) {
                         return !t || ('object' !== Q(t) && 'function' != typeof t) ? ee(e) : t;
-                    })(this, re(t).call(this, oe))),
+                    })(this, re(t).call(this, ie))),
                     ne(re(t.prototype), 'init', ee(e)).call(ee(e)),
                     e.init(),
                     e
@@ -6673,7 +6703,10 @@
                         key: 'init',
                         value: function () {
                             var e = this;
-                            document.querySelector('.SearchHotels') && this.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']),
+                            document.querySelector('.SearchHotels') &&
+                                oe.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
+                                    e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
+                                }),
                                 document.querySelector('.SinglePropDetail') &&
                                     this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend', '.ArnLeftListContainer .translateMe']),
                                 document.querySelector('.CheckOutForm') &&

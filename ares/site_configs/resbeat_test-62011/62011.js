@@ -20,7 +20,10 @@ class ChildPortal extends Resbeat {
             });
         }
         if (document.querySelector('.SinglePropDetail')) {
-            this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend', '.ArnLeftListContainer .translateMe']);
+            this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
+            utilities.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(() => {
+                this.boldLastWord(['.ArnLeftListContainer .translateMe']);
+            });
         }
         if (document.querySelector('.CheckOutForm')) {
             setTimeout(() => {

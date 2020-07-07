@@ -732,7 +732,7 @@ body.WBSupportForm {
 .ArnRateCancelPolicy,
 .ArnTermsConditions,
 .ArnTermsConditions a,
-#theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container{
+#theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container, .SinglePropDetail .translateMe{
     color: #666;
 }
 

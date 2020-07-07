@@ -1770,7 +1770,7 @@ legend {
     padding-left: 24px;
 }
 
-.PropertyAmenities legend {
+.PropertyAmenities span {
     font-size: 17px;
     padding: 0;
     width: initial;
@@ -1812,7 +1812,7 @@ legend {
     overflow: hidden;
 }
 
-#thePropertyAmenities legend {
+#thePropertyAmenities span {
     z-index: 9;
     position: relative;
     background: #fff;
@@ -2424,6 +2424,10 @@ legend {
         transition: all 0.3s ease-out;
         text-decoration: none;
         cursor: pointer;
+    }
+
+    .sort svg {
+        vertical-align: middle;
     }
 
     .leaflet-top{
@@ -3724,6 +3728,10 @@ body.HoldRoomsForm {
 
     #theDatePrompt {
         width: 100%;
+    }
+
+    body.RootBody {
+        height: unset;
     }
 }
 

@@ -11,6 +11,9 @@ class ChildPortal extends Resbeat {
     }
 
     init() {
+        if (document.querySelector('.SearchHotels')) {
+            this.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
+        }
         if (document.querySelector('.SinglePropDetail')) this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
         if (document.querySelector('.CheckOutForm')) {
             setTimeout(() => {

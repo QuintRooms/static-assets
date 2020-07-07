@@ -24,6 +24,10 @@ export default class Resbeat extends BasePortal {
             this.updateSearchTitle();
         }
 
+        if (document.querySelector('.WBLoginForm')) {
+            utilities.selectCheckboxOnLabelClick('#theRememberMeAjax');
+        }
+
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForSelectorInDOM('.sort-wrapper').then(() => {
                 this.insertHR('.sort-wrapper', 'beforebegin');

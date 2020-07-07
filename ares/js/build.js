@@ -60,6 +60,7 @@ export default class BasePortal {
             // single prop detail methods
             if (this.page_name === 'property-detail') {
                 this.addImageSlideshow();
+                this.updateAmenitiesLegendTag();
                 utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
                 utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                 utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
@@ -790,7 +791,7 @@ export default class BasePortal {
                 max-width: ${this.site_config.header.logo_max_width};
             }
             
-            body, #thePropertyAmenities legend, .WBRateGuaranteeForm2 .zsFormClass {
+            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass {
                 background-color: ${this.site_config.background_color};
             }
 
@@ -2454,5 +2455,12 @@ export default class BasePortal {
             check_in.setAttribute('readonly', true);
             check_out.setAttribute('readonly', true);
         }
+    }
+
+    updateAmenitiesLegendTag() {
+        if (this.page_name !== 'property-detail') return;
+
+        const amenities_legend = document.querySelector('#thePropertyAmenities legend');
+        amenities_legend.outerHTML = '<span>Property Amenities</span>';
     }
 }

@@ -47,6 +47,7 @@ header {
     background: #fff !important;
     padding: 5px 10px 0 0 !important;
 }
+
 .config-container .config-label {
     color: #666;
 }
@@ -128,6 +129,7 @@ input[type='email'].email-mask,
     padding: 12px !important;
     color: #666 !important;
 }
+
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
     font-family: 'Avenir';
     font-weight: 200;
@@ -342,7 +344,7 @@ input[type='email'].email-mask,
     margin-top: 13px;
 }
 
-.SearchHotels .ArnPropNameLink {
+.SearchHotels .ArnPropNameLink, .SinglePropDetail .ArnPropName, .modal-header h3 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -406,7 +408,7 @@ input[type='email'].email-mask,
     text-align: center;
     padding: 7px 0;
     position: absolute;
-    bottom: 60px;
+    bottom: 42px;
     border-radius: 40px;
 }
 
@@ -541,13 +543,28 @@ input[type='email'].email-mask,
 }
 
 .ArnPropNameLink span,
-.reviewCount a {
+.reviewCount a, .SearchHotels #AmentitiesContainer span, .SearchHotels .sort-wrapper a, .SearchHotels #PropertyClassesContainer span {
     color: #666 !important;
 }
 
 .SearchHotels .prop-hr {
     visibility: hidden;
     margin: 10px 0;
+}
+
+.SearchHotels #thePropertyAmenities legend {
+    -webkit-appearance: none;
+    -webkit-margin-top-collapse: separate;
+}
+
+.arnMapPopup h1 {
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.arnMapPopup a {
+    text-decoration: none;
 }
 
 .hr {
@@ -568,6 +585,10 @@ input[type='email'].email-mask,
 .CheckOutForm .theHotelAddress {
     display: block;
     text-align: left;
+}
+
+.CheckOutForm #theStayPolicies h4 {
+    letter-spacing: 1px;
 }
 
 #theBookingPage .PaymentPolicies {
@@ -711,7 +732,7 @@ body.WBSupportForm {
 .ArnRateCancelPolicy,
 .ArnTermsConditions,
 .ArnTermsConditions a,
-#theBookingPage .GuestForms {
+#theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container{
     color: #666;
 }
 
@@ -738,6 +759,7 @@ body.WBSupportForm {
     transition-property: color, background;
     transition-duration: 0.8s;
     transition-timing-function: ease-in-out;
+    font-weight: 600;
 }
 
 .WBLoginFormActions input:hover,
@@ -774,7 +796,22 @@ body.WBSupportForm {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .RootBody #PropertyTypesContainer {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: 800px) {
+
+    .SearchHotels .ArnSecondarySearchOuterContainer hr:first-child {
+        display: block;
+    }
+
+    .mobile-filter-container h4 {
+        display: none;
+    }
+
     .ArnSubPage.WBSupportForm {
         grid-template-columns: 1fr;
     }
@@ -874,10 +911,6 @@ body.WBSupportForm {
 
 @media screen and (max-width: 600px) {
 
-    body.RootBody {
-        height: unset;
-    }
-
     .ArnSubPage { 
         padding: 0px
     }
@@ -896,6 +929,10 @@ body.WBSupportForm {
 
     .SearchHotels .ArnPropName {
         padding: 22px 15px;
+    }
+
+    .SearchHotels .ArnPropAddress {
+        display: block !important;
     }
 
     .SearchHotels .ArnRateCell {

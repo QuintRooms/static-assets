@@ -3946,7 +3946,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = 'USD');
                 }
-                var t, n, r, o, i, a, c, s, u, l;
+                var t, n, r, o, i, a, c, s, u, l, d;
                 return (
                     (t = e),
                     (n = [
@@ -4353,7 +4353,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((l = B(
+                                ((d = B(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4378,13 +4378,13 @@
                                     })
                                 )),
                                 function () {
-                                    return l.apply(this, arguments);
+                                    return d.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((u = B(
+                                ((l = B(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4410,7 +4410,7 @@
                                     })
                                 )),
                                 function () {
-                                    return u.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
@@ -4561,7 +4561,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((s = B(
+                                ((u = B(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4603,7 +4603,7 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5187,7 +5187,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((c = B(
+                                ((s = B(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5214,7 +5214,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5370,7 +5370,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((a = B(
+                                ((c = B(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5408,7 +5408,7 @@
                                     })
                                 )),
                                 function () {
-                                    return a.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5893,7 +5893,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((i = B(
+                                ((a = B(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5917,13 +5917,13 @@
                                     })
                                 )),
                                 function (e, t) {
-                                    return i.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((o = B(
+                                ((i = B(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -5966,7 +5966,7 @@
                                     })
                                 )),
                                 function () {
-                                    return o.apply(this, arguments);
+                                    return i.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5981,14 +5981,47 @@
                         },
                         {
                             key: 'setCheckDatesToReadOnlyOnMobile',
-                            value: function () {
-                                if (D.matchMediaQuery('max-width: 800px') && ('search-results' === this.page_name || 'landing-page' === this.page_name)) {
-                                    var e = document.querySelector('#theCheckIn'),
-                                        t = document.querySelector('#theCheckOut');
-                                    if (!e || !t) return;
-                                    e.setAttribute('readonly', !0), t.setAttribute('readonly', !0);
-                                }
-                            },
+                            value:
+                                ((o = B(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (D.matchMediaQuery('max-width: 800px')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), D.waitForSelectorInDOM('#theCheckIn');
+                                                        case 4:
+                                                            if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
+                                                                e.next = 11;
+                                                                break;
+                                                            }
+                                                            if (((t = document.querySelector('#theCheckIn')), (n = document.querySelector('#theCheckOut')), t && n)) {
+                                                                e.next = 9;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 9:
+                                                            t.setAttribute('readonly', !0), n.setAttribute('readonly', !0);
+                                                        case 11:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return o.apply(this, arguments);
+                                }),
                         },
                         {
                             key: 'updateAmenitiesLegendTag',
@@ -6641,7 +6674,8 @@
                         value: function () {
                             var e = this;
                             document.querySelector('.SearchHotels') && this.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']),
-                                document.querySelector('.SinglePropDetail') && this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
+                                document.querySelector('.SinglePropDetail') &&
+                                    this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend', '.ArnLeftListContainer .translateMe']),
                                 document.querySelector('.CheckOutForm') &&
                                     setTimeout(function () {
                                         e.boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);

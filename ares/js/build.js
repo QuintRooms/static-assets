@@ -2444,9 +2444,9 @@ export default class BasePortal {
         );
     }
 
-    setCheckDatesToReadOnlyOnMobile() {
+    async setCheckDatesToReadOnlyOnMobile() {
         if (!utilities.matchMediaQuery('max-width: 800px')) return;
-
+        await utilities.waitForSelectorInDOM('#theCheckIn');
         if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
             const check_in = document.querySelector('#theCheckIn');
             const check_out = document.querySelector('#theCheckOut');

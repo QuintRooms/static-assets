@@ -506,7 +506,7 @@ input[type='email'].email-mask,
     display: block !important;
 }
 
-.ArnSearchHeader {
+.ArnSearchHeader, .SinglePropDetail .translateMe {
     font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
@@ -545,6 +545,10 @@ input[type='email'].email-mask,
 .ArnPropNameLink span,
 .reviewCount a, .SearchHotels #AmentitiesContainer span, .SearchHotels .sort-wrapper a, .SearchHotels #PropertyClassesContainer span {
     color: #666 !important;
+}
+
+.SearchHotels .sort-wrapper a.active {
+    color: #fff;
 }
 
 .SearchHotels .prop-hr {

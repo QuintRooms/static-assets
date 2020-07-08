@@ -27,6 +27,81 @@
     font-style: normal;
 }
 
+/* - - - - - updating password form start - - - - */
+#lightbox {
+    background-color: #fff;
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+#lightbox .WBChangePasswordFormActions {
+    display: flex;
+    flex-direction: column;
+}
+
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction {
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #215853;
+    padding: 6px;
+    background: transparent;
+}
+
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+    background-color: #215853;
+    color: #fff;
+    transition-property: color, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+#lightbox .WBChangePasswordFormFields input[type='password'] {
+    border: unset;
+    background-color: #f0f0f0;
+    width: 60%;
+}
+
+#lightbox .CancelAction {
+    text-decoration: underline;
+}
+
+#lightbox .window-titlebar a, #lightbox .window-close a {
+    color: #666;
+}
+
+#lightbox .window {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#lightbox .dialog-button-ok input {
+    margin-top: 10px;
+    padding: 6px;
+    border-radius: 40px;
+    width: 40%;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: 3px solid #215853;
+    color: #215853;
+    cursor: pointer;
+}
+
+#lightbox .dialog-button-ok input:hover {
+    background-color: #215853;
+    color: #fff;
+}
+
+/* - - - - - updating password form end - - - - */
+
 .ArnPages a,
 .ArnPages {
     font-family: 'Avenir';

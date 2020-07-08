@@ -21,11 +21,8 @@ html {
     margin: 0 auto;
 }
 
-/* - - - - - updating password form start - - - - */
 #lightbox {
-    background-color: #fff;
     text-align: center;
-    color: #666;
     padding: 20px;
     text-transform: uppercase;
     border-radius: 15px;
@@ -42,14 +39,11 @@ html {
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 3px solid #215853;
     padding: 6px;
     background: transparent;
 }
 
 #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
-    background-color: #215853;
-    color: #fff;
     transition-property: color, background;
     transition-duration: 0.8s;
     transition-timing-function: ease-in-out;
@@ -57,7 +51,6 @@ html {
 
 #lightbox .WBChangePasswordFormFields input[type='password'] {
     border: unset;
-    background-color: #f0f0f0;
     width: 60%;
 }
 
@@ -70,7 +63,6 @@ html {
 }
 
 #lightbox .window {
-    background: #fff;
     padding: 10px;
     text-align: center;
 }
@@ -84,17 +76,9 @@ html {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    border: 3px solid #215853;
-    color: #215853;
+    border: 1px solid;
     cursor: pointer;
 }
-
-#lightbox .dialog-button-ok input:hover {
-    background-color: #215853;
-    color: #fff;
-}
-
-/* - - - - - updating password form end - - - - */
 
 input[type='text'],
 input[type='password'],

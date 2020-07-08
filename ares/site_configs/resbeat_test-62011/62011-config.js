@@ -55,6 +55,7 @@ export default function siteConfig() {
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         background_color: '#fff',
+        secondary_background_color: '#f0f0f0',
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         primary_text_color: '#fff',

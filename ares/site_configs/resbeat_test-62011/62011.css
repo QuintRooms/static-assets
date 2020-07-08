@@ -27,10 +27,230 @@
     font-style: normal;
 }
 
+/* - - - - - - - JS - - - - - - - */
+
+
+/* - - - - Fonts Start - - - - */
+
 .ArnPages a,
-.ArnPages {
-    font-family: 'Avenir';
-    color: #666;
+.ArnPages, .WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type='email'].email-mask,
+.WBLoginFormFields input, .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input, .RootBody .search-messaging #user-name strong, .RootBody .search-messaging #user-name, .RootBody .search-messaging h4, .CheckOutForm .total-points-earned td, .MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input,
+.MemberNotAuthenticated #new-user-text,
+.MemberNotAuthenticated #theWBLoginFormBody h1,
+.MemberNotAuthenticated .ForgotPasswordAction, .ArnSupportLinks, .MemberNotAuthenticated #new-user-text strong,
+.MemberNotAuthenticated #theWBLoginFormBody strong, .MemberNotAuthenticated .LoginAction,
+.SendMeNewPasswordAction.submit,
+.ArnShowRatesLink,
+.bookRoom,
+.holdRoom,
+#moreRatesLink,
+.GuestForms legend,
+.WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td {
+    font-family: 'Avenir', 'Helvetica';
+}
+
+#thePropertyAmenities,
+.ArnRateTableHeader,
+.SinglePropDetail .ArnNightlyRate strong > div,
+.ArnNightlyRate .originalPrice,
+.ArnPropAddress,
+.RoomDescription,
+.SinglePropDetail #theGeneralInfo,
+#theConfirmationContainer,
+#new-user-text,
+.ArnSearchHeader,
+.sort-wrapper h4,
+#commands a,
+#commands .logoutCommand,
+.RateCalendarPopupContainer a,
+.ArnRateCancelPolicy,
+.ArnTermsConditions,
+.ArnTermsConditions a,
+#theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container, .SinglePropDetail .translateMe, .config-container .config-label, .RootBody .ArnPrimarySearchContainer, .ArnPages a,
+.ArnPages, .ArnSupportLinks a, .ArnSupportLinks, .SinglePropDetail .SimpleSearch, .WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type='email'].email-mask,
+.WBLoginFormFields input, .return-to-login,
+.CancelAction,
+#theRememberMeAjax label, .RootBody .ArnSecondarySearchOuterContainer, .ArnSubPage h1, .RootBody .search-messaging #user-name, .RootBody .search-messaging, .SearchHotels .ArnPrimarySearchContainer, .support-details, .WBSupportForm input,
+.WBSupportForm select,
+.WBSupportForm textarea, .ArnSubPage h1, .theHotelName, .totalsTable tr th, .totalsTable tr td, #theBookingPage .PaymentPolicies, .arnMapPopup h1, .ArnPropNameLink span,
+.reviewCount a, .SearchHotels #AmentitiesContainer span, .SearchHotels .sort-wrapper a, .SearchHotels #PropertyClassesContainer span, .SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4, .SearchHotels .ArnContainer, .sort-filter-header h3,
+.mobile-filter-container h4,
+.mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox   {
+    color: #666 !important;
+}
+
+.SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong  {
+    color: #e2ad37;
+}
+
+.support-details a, #theSubmitButton:hover,
+#theOtherSubmitButton:hover,
+.CheckRates .submit:hover,
+.CheckOutForm #theConfirmationButton:hover, .ArnRateButton a,
+.bookRoom,
+.holdRoom, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover {
+    color: #215853;
+}
+
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .SinglePropDetail .beat-em, .SearchHotels .beat-em, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active  {
+    color: #fff;
+}
+
+
+/* - - - - Fonts End - - - - */
+
+.WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type='email'].email-mask,
+.WBLoginFormFields input, .SearchHotels #theSearchBox input,
+.SearchHotels #theSearchBox select, #lightbox .WBChangePasswordFormFields input[type='password'], .MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input, .SearchHotels .ArnContainer, .WBSupportForm input,
+.WBSupportForm select,
+.WBSupportForm textarea, .RootBody .ArnPrimarySearchContainer, .ArnSupportLinks, .SinglePropDetail .SimpleSearch input,
+.SinglePropDetail .SimpleSearch select, .totalsTable tr th,
+.totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {
+    background: #f0f0f0 !important;
+}
+
+
+.SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,
+#theOtherSubmitButton:hover,
+.CheckRates .submit:hover,
+.CheckOutForm #theConfirmationButton:hover, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window  {
+    background: #fff !important;
+}
+
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, .SinglePropDetail .points-earned   {
+    background: #215853 !important;
+}
+
+/*- - - - Buttons Start - - - - */
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input, .WBLoginFormActions input:hover,
+#register-btn a:hover,
+.WBValidatedRegistrationFormActions input:hover,
+#theOtherSubmitButton:hover,
+#theSubmitButton:hover,
+.ArnShowRatesLink:hover,
+.SinglePropDetail .CheckRates .submit:hover,
+.SinglePropDetail .bookRoom:hover,
+.SinglePropDetail #moreRatesLink:hover,
+.CheckOutForm #theConfirmationButton:hover,
+.WBSupportFormActions input:hover,
+.WBForgotPasswordFormActions input:hover, #theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, .ArnRateButton a,
+.bookRoom,
+.holdRoom, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input  {
+    border: 3px solid #215853 !important;
+}
+
+/*- - - - Buttons End - - - - */
+
+/* - - - - - - - JS - - - - - - - - - - - - - - - - - - - -  */
+
+.WBSupportForm .ArnSupportChatTable td p:first-of-type,
+.WBSupportForm .ArnSupportChatTable td div + p + p, .WBSupportForm .SSForm .FormFields label, .useCancelFormWarning, .static-rewardsLink,
+#commands .rewards,
+.static-bookingLink + .dvd, .lowRateLink,
+.lowRateLink + .dvd,
+.cancelLink,
+.supportLink + .dvd, .mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
+.mobile-filter-container #CitiesNearbyContainer + hr, .pb-container, .MemberNotAuthenticated #theUserNameAjax label,
+.MemberNotAuthenticated #thePasswordAjax label, .organizationsCommand, .MemberNotAuthenticated .redeem-promocode-container, .WBValidatedRegistrationForm #thePersonalInfoGroup label,
+.WBValidatedRegistrationForm #thePassCodeAjax,
+#availableUser, .RootBody h1,
+.RootBody h3, .SearchHotels .ArnPropClass, .SearchHotels .arnUnit + div, .full-stay  {
+    display: none !important;
+}
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input {
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition-property: color, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+    font-weight: 600;
 }
 
 header {
@@ -44,35 +264,7 @@ header {
 }
 
 .config-container {
-    background: #fff !important;
     padding: 5px 10px 0 0 !important;
-}
-
-.config-container .config-label {
-    color: #666;
-}
-
-.RootBody .ArnPrimarySearchContainer {
-    background: #f4f4f4;
-    color: #666;
-}
-.ArnSupportLinks {
-    background: #f4f4f4;
-    color: #666;
-}
-
-.ArnSupportLinks a {
-    color: #666;
-}
-
-.SinglePropDetail .SimpleSearch {
-    background: #fff;
-    color: #666;
-}
-
-.SinglePropDetail .SimpleSearch input,
-.SinglePropDetail .SimpleSearch select {
-    background-color: #f0f0f0 !important;
 }
 
 #theSubmitButton,
@@ -82,9 +274,6 @@ header {
     border-radius: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 3px solid #215853 !important;
-    background: #215853 !important;
-    color: #fff !important;
     -webkit-appearance: none;
 }
 
@@ -100,20 +289,6 @@ header {
     -webkit-appearance: none;
 }
 
-#theSubmitButton:hover,
-#theOtherSubmitButton:hover,
-.CheckRates .submit:hover,
-.CheckOutForm #theConfirmationButton:hover {
-    background: #fff !important;
-    color: #215853 !important;
-}
-
-.WBValidatedRegistrationForm #thePersonalInfoGroup label,
-.WBValidatedRegistrationForm #thePassCodeAjax,
-#availableUser {
-    display: none;
-}
-
 .WBValidatedRegistrationForm #theUserNameAjax input,
 .WBValidatedRegistrationForm #theFirstNameAjax input,
 .WBValidatedRegistrationForm #theLastNameAjax input,
@@ -121,17 +296,13 @@ header {
 .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
 input[type='email'].email-mask,
 .WBLoginFormFields input {
-    background: #f0f0f0 !important;
     border: unset !important;
-    font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     padding: 12px !important;
-    color: #666 !important;
 }
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
-    font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -142,7 +313,6 @@ input[type='email'].email-mask,
 .return-to-login,
 .CancelAction,
 #theRememberMeAjax label {
-    color: #666;
     font-weight: 100;
     letter-spacing: 1px;
 }
@@ -156,7 +326,6 @@ input[type='email'].email-mask,
 }
 
 .ArnSubPage h1 {
-    color: #666;
     font-size: 30px;
     font-weight: 100;
     text-transform: uppercase;
@@ -164,10 +333,6 @@ input[type='email'].email-mask,
 
 .WBForgotPasswordFormActions {
     text-align: center;
-}
-
-.RootBody .ArnSecondarySearchOuterContainer {
-    color: #666;
 }
 
 .RootBody #PropertyTypesContainer {
@@ -178,28 +343,19 @@ input[type='email'].email-mask,
     margin-top: 6px;
 }
 
-.RootBody h1,
-.RootBody h3 {
-    display: none !important;
-}
-
 .RootBody .search-messaging {
     display: block;
-    color: #666 !important;
     letter-spacing: 1px;
 }
 
 .RootBody .search-messaging #user-name {
-    color: #666 !important;
     display: block !important;
     text-transform: uppercase;
-    font-family: 'Avenir';
     font-weight: 200;
     font-size: 36px;
 }
 
 .RootBody .search-messaging #user-name strong {
-    font-family: 'Avenir';
     font-weight: 700;
 }
 
@@ -209,7 +365,6 @@ input[type='email'].email-mask,
 }
 
 .RootBody .search-messaging h4 {
-    font-family: 'Avenir';
     font-weight: 200;
     font-size: 16px;
 }
@@ -223,7 +378,6 @@ input[type='email'].email-mask,
 
 .SearchHotels .beat-em {
     background: #e2ad37;
-    color: #fff;
     text-align: center;
     padding: 5px;
     margin-left: auto;
@@ -235,7 +389,6 @@ input[type='email'].email-mask,
 
 .SinglePropDetail .beat-em {
     background: #e2ad37;
-    color: #fff;
     text-align: center;
     padding: 5px;
     margin-bottom: 10px;
@@ -269,17 +422,7 @@ input[type='email'].email-mask,
 .holdRoom {
     border-radius: 40px;
     background: transparent;
-    color: #215853;
-    border: 3px solid #215853;
     padding: 6px 12px;
-}
-
-.ArnRateButton a:hover,
-.bookRoom:hover,
-.holdRoom:hover {
-    background: #215853;
-    color: #fff;
-    border: 3px solid #215853;
 }
 
 .LoginAction.submit,
@@ -289,20 +432,7 @@ input[type='email'].email-mask,
 #moreRatesLink,
 .WBSupportForm .SendRequestAction {
     border-radius: 40px;
-    background: #215853;
-    color: #fff;
-    border: 3px solid #215853 !important;
     padding: 12px;
-}
-
-.LoginAction.submit:hover,
-#register-btn a:hover,
-.RegisterAction.submit:hover,
-.SendMeNewPasswordAction.submit:hover,
-.WBSupportForm .SendRequestAction:hover {
-    background: #fff;
-    color: #215853;
-    border: 3px solid #215853;
 }
 
 .SearchHotels .ArnPropName {
@@ -318,26 +448,12 @@ input[type='email'].email-mask,
     left: 20px;
 }
 
-.SearchHotels .ArnPropClass {
-    display: none !important;
-}
-
 .SearchHotels .originalPrice,
 .SinglePropDetail .originalPrice {
     display: block !important;
     text-decoration: line-through;
     font-size: 15px;
     font-weight: 500;
-}
-
-.SearchHotels .ArnPrimarySearchContainer {
-    background: #fff;
-    color: #666;
-}
-
-.SearchHotels #theSearchBox input,
-.SearchHotels #theSearchBox select {
-    background-color: #f0f0f0;
 }
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
@@ -349,17 +465,9 @@ input[type='email'].email-mask,
     letter-spacing: 1px;
 }
 
-.SearchHotels .arnPrice {
-    color: #e2ad37;
-}
-
 .ArnPropNameLink span {
     font-size: 14px;
     font-weight: 800;
-}
-
-.SearchHotels .arnUnit + div {
-    display: none;
 }
 
 .ratingCount {
@@ -379,20 +487,12 @@ input[type='email'].email-mask,
     font-size: 13px;
 }
 
-.CheckOutForm .total-points-earned td {
-    font-family: 'Avenir';
-}
-
 .SinglePropDetail .originalPrice {
     font-size: 15px;
 }
 
 #theBookingPage legend {
     font-weight: normal;
-}
-
-.full-stay {
-    display: none;
 }
 
 .SinglePropDetail #moreRatesLink {
@@ -402,8 +502,6 @@ input[type='email'].email-mask,
 
 .SinglePropDetail .points-earned {
     font-size: 15px;
-    background: #215853;
-    color: #fff;
     width: 300px;
     text-align: center;
     padding: 7px 0;
@@ -412,29 +510,11 @@ input[type='email'].email-mask,
     border-radius: 40px;
 }
 
-.roomCount {
-    color: #e2ad37;
-}
-
-.organizationsCommand {
-    display: none;
-}
-
-.MemberNotAuthenticated .redeem-promocode-container {
-    display: none;
-}
-
-.MemberNotAuthenticated #theUserNameAjax label,
-.MemberNotAuthenticated #thePasswordAjax label {
-    display: none;
-}
-
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input,
 .MemberNotAuthenticated #new-user-text,
 .MemberNotAuthenticated #theWBLoginFormBody h1,
 .MemberNotAuthenticated .ForgotPasswordAction {
-    font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     font-weight: 100;
@@ -516,7 +596,6 @@ input[type='email'].email-mask,
 /* - - - - - updating password form end - - - - */
 
 .ArnSupportLinks {
-    font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     font-weight: 100;
@@ -527,14 +606,12 @@ input[type='email'].email-mask,
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input {
     border: unset;
-    background-color: #f0f0f0;
     width: 100%;
     padding: 12px !important;
 }
 
 .MemberNotAuthenticated #new-user-text strong,
 .MemberNotAuthenticated #theWBLoginFormBody strong {
-    font-family: 'Avenir';
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -563,13 +640,8 @@ input[type='email'].email-mask,
 .WBSupportFormActions .SendRequestAction {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Avenir';
     outline: none;
     -webkit-appearance: none;
-}
-
-.pb-container {
-    display: none;
 }
 
 .MemberNotAuthenticated .WBLoginFormActions {
@@ -582,7 +654,6 @@ input[type='email'].email-mask,
 }
 
 .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe {
-    font-family: 'Avenir';
     font-weight: 200;
     letter-spacing: 1px;
     font-size: 25px;
@@ -592,7 +663,6 @@ input[type='email'].email-mask,
 .mobile-filter-container h4,
 .mobile-sort-container .sort-wrapper h4 {
     text-transform: uppercase;
-    color: #666;
 }
 
 .mobile-sort-container .sort-wrapper h4 {
@@ -603,27 +673,14 @@ input[type='email'].email-mask,
 .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
 .SearchHotels .sort-wrapper h4 {
-    font-family: 'Avenir';
     font-weight: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 16px;
-    color: #666;
 }
 
 .SearchHotels .ArnContainer {
-    background: #f0f0f0;
     border-radius: 15px;
-    color: #666 !important;
-}
-
-.ArnPropNameLink span,
-.reviewCount a, .SearchHotels #AmentitiesContainer span, .SearchHotels .sort-wrapper a, .SearchHotels #PropertyClassesContainer span {
-    color: #666 !important;
-}
-
-.SearchHotels .sort-wrapper a.active {
-    color: #fff !important;
 }
 
 .SearchHotels .prop-hr {
@@ -637,7 +694,6 @@ input[type='email'].email-mask,
 }
 
 .arnMapPopup h1 {
-    color: #666;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -650,11 +706,6 @@ input[type='email'].email-mask,
     border: none;
     height: 1px;
     background: #ccc;
-}
-
-.mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
-.mobile-filter-container #CitiesNearbyContainer + hr {
-    display: none;
 }
 
 .CheckOutForm #theConfirmationPoliciesAjax {
@@ -672,29 +723,6 @@ input[type='email'].email-mask,
 
 #theBookingPage .PaymentPolicies {
     border: none;
-    background: #f4f4f4;
-    color: #666;
-}
-
-.totalsTable tr th,
-.totalsTable tr td {
-    background: #f4f4f4;
-    color: #666;
-}
-
-.theHotelName {
-    color: #666;
-}
-
-.lowRateLink,
-.lowRateLink + .dvd,
-.cancelLink,
-.supportLink + .dvd {
-    display: none;
-}
-
-.ArnSubPage h1 {
-    color: #666;
 }
 
 .ArnSubPage.WBSupportForm {
@@ -714,8 +742,6 @@ input[type='email'].email-mask,
 .WBSupportForm input,
 .WBSupportForm select,
 .WBSupportForm textarea {
-    background: #f0f0f0;
-    color: #666;
     border: none;
     width: 100%;
     padding: 12px !important;
@@ -729,22 +755,7 @@ input[type='email'].email-mask,
     grid-row-start: 2;
 }
 
-.WBSupportForm .ArnSupportChatTable td p:first-of-type,
-.WBSupportForm .ArnSupportChatTable td div + p + p {
-    display: none;
-}
-
-.WBSupportForm .SSForm .FormFields label {
-    display: none;
-}
-
-.useCancelFormWarning {
-    display: none;
-}
-
 .support-details {
-    background: #f4f4f4;
-    color: #666;
     padding: 30px;
     line-height: 1.7;
 }
@@ -756,7 +767,6 @@ input[type='email'].email-mask,
 }
 
 .support-details a {
-    color: #215853;
     text-decoration: none;
 }
 
@@ -778,12 +788,6 @@ input[type='email'].email-mask,
     padding: 12px;
 }
 
-.static-rewardsLink,
-#commands .rewards,
-.static-bookingLink + .dvd {
-    display: none;
-}
-
 body.WBSupportForm {
     display: flex;
     min-height: 100vh;
@@ -793,70 +797,6 @@ body.WBSupportForm {
 .ArnSubPage.WBSupportForm {
     flex-grow: 1;
 }
-
-#thePropertyAmenities,
-.ArnRateTableHeader,
-.SinglePropDetail .ArnNightlyRate strong > div,
-.ArnNightlyRate .originalPrice,
-.ArnPropAddress,
-.RoomDescription,
-.SinglePropDetail #theGeneralInfo,
-#theConfirmationContainer,
-#new-user-text,
-.ArnSearchHeader,
-.sort-wrapper h4,
-#commands a,
-#commands .logoutCommand,
-.RateCalendarPopupContainer a,
-.ArnRateCancelPolicy,
-.ArnTermsConditions,
-.ArnTermsConditions a,
-#theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container, .SinglePropDetail .translateMe{
-    color: #666;
-}
-
-.SinglePropDetail .ArnNightlyRate strong {
-    color: #e2ad37;
-}
-
-/*- - - -  All Buttons - - - - */
-.WBLoginFormActions input,
-#register-btn a,
-.WBValidatedRegistrationFormActions input,
-#theOtherSubmitButton,
-#theSubmitButton,
-.ArnShowRatesLink,
-.SinglePropDetail .CheckRates .submit,
-.SinglePropDetail .bookRoom,
-.SinglePropDetail #moreRatesLink,
-.CheckOutForm #theConfirmationButton,
-.WBSupportFormActions input,
-.WBForgotPasswordFormActions input {
-    border: 3px solid #215853 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition-property: color, background;
-    transition-duration: 0.8s;
-    transition-timing-function: ease-in-out;
-    font-weight: 600;
-}
-
-.WBLoginFormActions input:hover,
-#register-btn a:hover,
-.WBValidatedRegistrationFormActions input:hover,
-#theOtherSubmitButton:hover,
-#theSubmitButton:hover,
-.ArnShowRatesLink:hover,
-.SinglePropDetail .CheckRates .submit:hover,
-.SinglePropDetail .bookRoom:hover,
-.SinglePropDetail #moreRatesLink:hover,
-.CheckOutForm #theConfirmationButton:hover,
-.WBSupportFormActions input:hover,
-.WBForgotPasswordFormActions input:hover {
-    border: 3px solid #215853 !important;
-}
-
-/*- - - -  All Buttons - - - - */
 
 @media screen and (max-width: 1200px) {
     .ArnSubPage {
@@ -930,10 +870,6 @@ body.WBSupportForm {
         margin: 4px auto;
         background: #fff;
         padding: 6px;
-    }
-
-    .SearchHotels .currencies-container {
-        background: #f0f0f0;
     }
 
     .currencies-container #currency-label {
@@ -1102,8 +1038,4 @@ body.WBSupportForm {
     .SearchHotels .ArnPropThumb {
         border-radius: 15px 15px 0 0;
     }
-}
-
-#theRateTotals > tbody > .discountRow td {
-    font-family: 'Avenir', 'Helvetica';
 }

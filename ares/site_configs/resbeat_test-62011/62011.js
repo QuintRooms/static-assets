@@ -1,5 +1,8 @@
 import SiteConfig from './62011-config';
 import Resbeat from '../../js/resbeat';
+import Utilities from '../../js/utilities';
+
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 
@@ -11,7 +14,17 @@ class ChildPortal extends Resbeat {
     }
 
     init() {
-        if (document.querySelector('.SinglePropDetail')) this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
+        if (document.querySelector('.SearchHotels')) {
+            utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
+                this.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
+            });
+        }
+        if (document.querySelector('.SinglePropDetail')) {
+            this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']);
+            utilities.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(() => {
+                this.boldLastWord(['.ArnLeftListContainer .translateMe']);
+            });
+        }
         if (document.querySelector('.CheckOutForm')) {
             setTimeout(() => {
                 this.boldLastWord(['#theConfirmationContainer legend', '#theHotel legend']);

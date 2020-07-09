@@ -30,9 +30,7 @@ export default class BasePortal {
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
             utilities.getPageName();
-            this.applyConfigColors();
-            this.setRootPageBackgroundImage();
-            this.setFontFromConfig();
+            this.applyConfigStyles();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
             this.buildCurrencyDropdown();
@@ -60,6 +58,7 @@ export default class BasePortal {
             // single prop detail methods
             if (this.page_name === 'property-detail') {
                 this.addImageSlideshow();
+                this.updateAmenitiesLegendTag();
                 utilities.updateHTML('.SinglePropDetail .Map a', 'Map');
                 utilities.updateHTML('.SinglePropDetail .Reviews a', 'Reviews');
                 utilities.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms');
@@ -272,18 +271,6 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
-
-            if (this.site_config.is_resbeat_client) {
-                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
-                    if (document.querySelector('#booking-guide')) {
-                        await utilities.waitForSelectorInDOM('#faq-link');
-
-                        utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
-                        utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
-                    }
-                });
-                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
-            }
         });
     }
 
@@ -757,28 +744,34 @@ export default class BasePortal {
         });
     }
 
-    setRootPageBackgroundImage() {
-        if (!this.site_config) return;
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
-            `
-
-            <style>
-                .RootBody{
-                    background: ${this.site_config.banner_image_url};
-                }
-            </style>`
-        );
-    }
-
     // probably a much better way to do this
-    applyConfigColors() {
-        if (!this.site_config) return;
+    applyConfigStyles() {
+        const style_element = document.querySelector('#h4h-styles');
 
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
+        if (!this.site_config || !style_element) return;
+
+        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+
+        style_element.insertAdjacentHTML(
+            'afterBegin',
             `
-        <style>
+            /* Fonts */
+            *,
+            .taxFeeRow td,
+            .discount td,
+            .totalRow td,
+            .balanceDueRow td,
+            .dueNowRow td,
+            .guestNameFields td,
+            .total-points-earned td{
+                font-family: ${this.site_config.google_font_name}, 'Helvetica';
+            }
+
+            /* Root Body */
+            .RootBody{
+                background: ${this.site_config.banner_image_url};
+            }
+
             /* Header */
 
             header {
@@ -790,7 +783,7 @@ export default class BasePortal {
                 max-width: ${this.site_config.header.logo_max_width};
             }
             
-            body, #thePropertyAmenities legend, .WBRateGuaranteeForm2 .zsFormClass {
+            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {
                 background-color: ${this.site_config.background_color};
             }
 
@@ -812,8 +805,8 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
-            .sort-wrapper a:hover {
-                background: ${this.site_config.primary_color}
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+                background: ${this.site_config.primary_color};
             }
 
             @media screen and (max-width:1105px) {
@@ -822,7 +815,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    border: 1px solid ${this.site_config.primary_color}
+                    border: 1px solid ${this.site_config.primary_color};
                 }
 
                 .closeMap {
@@ -843,7 +836,7 @@ export default class BasePortal {
                 .sort-wrapper a:before,
                 .sort-wrapper a.active-filter:before,
                 .sort {
-                    background: ${this.site_config.primary_color}
+                    background: ${this.site_config.primary_color};
                 }
             }
 
@@ -865,8 +858,8 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
             .sort-wrapper .active,
-            .sort-wrapper a:hover {
-                color: ${this.site_config.primary_text_color}
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+                color: ${this.site_config.primary_text_color};
             }
 
             span.exclusive-rate {
@@ -881,7 +874,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    color: ${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color};
                 }
             }
 
@@ -893,7 +886,7 @@ export default class BasePortal {
                 #commands button:focus,
                 #commands button:hover,
                 .sort {
-                    color: ${this.site_config.primary_text_color}
+                    color: ${this.site_config.primary_text_color};
                 }
             }
             .holdRoom,
@@ -929,7 +922,8 @@ export default class BasePortal {
 
             .CheckRates input.submit,
             .CheckRates input.submit,
-            .CheckRates input.submit {
+            .CheckRates input.submit,
+            #lightbox, #lightbox .dialog-button-ok input:hover  {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
             }
@@ -965,7 +959,7 @@ export default class BasePortal {
                 color: ${this.site_config.button_hover_text_color};
             }
 
-            .SinglePropDetail #moreRatesLink {
+            .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
                 color: ${this.site_config.primary_color};
                 border-color: ${this.site_config.primary_color};
             }
@@ -981,7 +975,7 @@ export default class BasePortal {
             }
 
             header {
-                border-bottom:3px solid ${this.site_config.border_color}
+                border-bottom:3px solid ${this.site_config.border_color};
             }
 
             .arnMapMarker.contracted-pin,
@@ -1007,24 +1001,24 @@ export default class BasePortal {
             .RootBody #theOtherSubmitButton,
             .bookRoom,
             .sort,
-            .HoldRoomsForm .submit {
-                border:1px solid ${this.site_config.border_color}
+            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
+                border:1px solid ${this.site_config.border_color};
             }
 
             .holdRoom {
-                border: 1px solid ${this.site_config.border_color}
+                border: 1px solid ${this.site_config.border_color};
             }
 
             @media screen and (max-width:1105px) {
                 #arnCloseAnchorId,
                 .sort {
-                    border:1px solid ${this.site_config.primary_color}
+                    border:1px solid ${this.site_config.primary_color};
                 }
             }
 
             @media screen and (max-width:800px) {
                 .sort-wrapper a:before {
-                    border:2px solid ${this.site_config.primary_color}
+                    border:2px solid ${this.site_config.primary_color};
                 }
             }
 
@@ -1060,27 +1054,6 @@ export default class BasePortal {
     applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
         document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
-    }
-
-    setFontFromConfig() {
-        if (!this.site_config) return;
-
-        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
-            `
-            <style>
-                *,
-                .taxFeeRow td,
-                .discount td,
-                .totalRow td,
-                .balanceDueRow td,
-                .dueNowRow td,
-                .guestNameFields td{
-                    font-family: ${this.site_config.google_font_name}, 'Helvetica';
-                }
-            </style>`
-        );
     }
 
     styleCUGMapPins() {
@@ -2443,9 +2416,9 @@ export default class BasePortal {
         );
     }
 
-    setCheckDatesToReadOnlyOnMobile() {
+    async setCheckDatesToReadOnlyOnMobile() {
         if (!utilities.matchMediaQuery('max-width: 800px')) return;
-
+        await utilities.waitForSelectorInDOM('#theCheckIn');
         if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
             const check_in = document.querySelector('#theCheckIn');
             const check_out = document.querySelector('#theCheckOut');
@@ -2454,5 +2427,12 @@ export default class BasePortal {
             check_in.setAttribute('readonly', true);
             check_out.setAttribute('readonly', true);
         }
+    }
+
+    updateAmenitiesLegendTag() {
+        if (this.page_name !== 'property-detail') return;
+
+        const amenities_legend = document.querySelector('#thePropertyAmenities legend');
+        amenities_legend.outerHTML = '<span>Property Amenities</span>';
     }
 }

@@ -1,5 +1,8 @@
 import BasePortal from './build';
 import Utilities from './utilities';
+import Path from './path';
+
+const env_path = new Path();
 
 const utilities = new Utilities();
 
@@ -11,6 +14,8 @@ export default class Resbeat extends BasePortal {
     }
 
     init() {
+        this.applyResbeatStyles();
+        this.applyResbeatConfigColors();
         this.updateLogin();
         this.styleRegisterContainer();
         this.displayCheckoutRewardPoints();
@@ -19,7 +24,6 @@ export default class Resbeat extends BasePortal {
         this.updateHeaderLinks();
         this.rerunFunctionsOnMoreRoomsClick();
         this.moveConfigContainer();
-        this.applyConfigColors();
 
         if (document.querySelector('.RootBody')) {
             this.updateSearchTitle();
@@ -410,6 +414,10 @@ export default class Resbeat extends BasePortal {
             `;
     }
 
+    applyResbeatStyles() {
+        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
+    }
+
     // showRoomCount() {
     //     if (!document.querySelector('.SinglePropDetail')) return;
     //     const rooms = document.querySelectorAll('table.ArnRateList');
@@ -422,7 +430,7 @@ export default class Resbeat extends BasePortal {
     //     });
     // }
 
-    applyConfigColors() {
+    applyResbeatConfigColors() {
         if (!this.site_config) return;
 
         document.body.insertAdjacentHTML(

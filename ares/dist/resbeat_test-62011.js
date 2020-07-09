@@ -4310,8 +4310,7 @@
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         e.site_config.is_resbeat_client &&
-                                                                            (e.applyResbeatStyles(),
-                                                                            e
+                                                                            (e
                                                                                 .replaceHTMLWithFile(
                                                                                     'https://static.hotelsforhope.com/ares/html/booking-guide.html',
                                                                                     '#booking-guide'
@@ -4995,12 +4994,6 @@
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
                                     document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(H.path, '/styles/dark.css" rel="stylesheet">'));
-                            },
-                        },
-                        {
-                            key: 'applyResbeatStyles',
-                            value: function () {
-                                document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(H.path, '/styles/resbeat.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -6147,8 +6140,9 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var Z = new B(),
-            K = (function (e) {
+        var Z = new r(),
+            K = new B(),
+            Q = (function (e) {
                 function t(e) {
                     var n;
                     return (
@@ -6175,7 +6169,9 @@
                             key: 'init',
                             value: function () {
                                 var e = this;
-                                this.updateLogin(),
+                                this.applyResbeatStyles(),
+                                    this.applyResbeatConfigColors(),
+                                    this.updateLogin(),
                                     this.styleRegisterContainer(),
                                     this.displayCheckoutRewardPoints(),
                                     this.displayRewardPoints('table.ArnRateList'),
@@ -6183,11 +6179,10 @@
                                     this.updateHeaderLinks(),
                                     this.rerunFunctionsOnMoreRoomsClick(),
                                     this.moveConfigContainer(),
-                                    this.applyConfigColors(),
                                     document.querySelector('.RootBody') && this.updateSearchTitle(),
-                                    document.querySelector('.WBLoginForm') && Z.selectCheckboxOnLabelClick('#theRememberMeAjax'),
+                                    document.querySelector('.WBLoginForm') && K.selectCheckboxOnLabelClick('#theRememberMeAjax'),
                                     document.querySelector('.SearchHotels') &&
-                                        (Z.waitForSelectorInDOM('.sort-wrapper').then(function () {
+                                        (K.waitForSelectorInDOM('.sort-wrapper').then(function () {
                                             e.insertHR('.sort-wrapper', 'beforebegin');
                                         }),
                                         this.insertHR('#AmentitiesContainer', 'beforebegin'),
@@ -6200,7 +6195,7 @@
                                     document.querySelector('.SinglePropDetail') && this.insertPercentageOffText('.SinglePropDetail .rateRow'),
                                     document.querySelector('.WBValidatedRegistrationForm') &&
                                         (this.createInputMaskToBypassArnValidation('#theUserNameAjax', 'email-mask', 'email', 'Email', '#theUserNameAjax input'),
-                                        Z.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
+                                        K.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
                                     document.querySelector('.WBSupportFormContainer') &&
                                         (this.createInputMaskToBypassArnValidation(
                                             '#theReservationConfirmationNumberAjax',
@@ -6209,37 +6204,37 @@
                                             'Booking Number',
                                             '#theReservationConfirmationNumberAjax input'
                                         ),
-                                        Z.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
-                                    Z.updateHTML(
+                                        K.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
+                                    K.updateHTML(
                                         '.ArnSupportChatTable',
                                         '\n            <div class="support-details">\n                <h3>Customer Support</h3>\n                <p>Hours: M-F 8:00am - 5:30pm CST</p>\n                <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n                <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n                <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n            </div>'
                                     ),
-                                    Z.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
-                                    Z.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
-                                    Z.addAttributeToInput('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#theEditableConfirmPasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    Z.addAttributeToInput('#commands .supportLink', '_blank', 'target', '.MemberAuthenticated'),
-                                    Z.addAttributeToInput('#commands .profileCommand', '_blank', 'target', '.MemberAuthenticated'),
-                                    Z.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theNameAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theDaytimePhoneNumberAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theEmailAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theEmailAjax input', 'email', 'type', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
-                                    Z.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
-                                    Z.updateHTML('.static-bookingLink', 'Booking Guide'),
-                                    Z.updateHTML('.static-rewardsLink', 'Rewards Guide');
+                                    K.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
+                                    K.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
+                                    K.addAttributeToInput('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#theEditableConfirmPasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    K.addAttributeToInput('#commands .supportLink', '_blank', 'target', '.MemberAuthenticated'),
+                                    K.addAttributeToInput('#commands .profileCommand', '_blank', 'target', '.MemberAuthenticated'),
+                                    K.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theNameAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theDaytimePhoneNumberAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theEmailAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theEmailAjax input', 'email', 'type', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
+                                    K.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
+                                    K.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
+                                    K.updateHTML('.static-bookingLink', 'Booking Guide'),
+                                    K.updateHTML('.static-rewardsLink', 'Rewards Guide');
                             },
                         },
                         {
@@ -6257,7 +6252,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (e.next = 4), Z.waitForSelectorInDOM('#theWBLoginFormBody h1');
+                                                        return (e.next = 4), K.waitForSelectorInDOM('#theWBLoginFormBody h1');
                                                     case 4:
                                                         document.querySelector('#theWBLoginFormBody h1').innerHTML = 'LOG<strong>IN</strong>';
                                                     case 6:
@@ -6338,7 +6333,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (e.next = 4), Z.waitForSelectorInDOM('.ArnNightlyRate');
+                                                            return (e.next = 4), K.waitForSelectorInDOM('.ArnNightlyRate');
                                                         case 4:
                                                             (n = document.querySelectorAll(t)),
                                                                 (r = window.matchMedia('(max-width: 800px)')),
@@ -6353,7 +6348,7 @@
                                                                             var i = n.getAttribute('amount'),
                                                                                 a = n.textContent.replace(/[^0-9.]/g, ''),
                                                                                 c = i.replace(/[^0-9.]/g, ''),
-                                                                                s = Z.calculateNights(),
+                                                                                s = K.calculateNights(),
                                                                                 u = parseInt(s * (a - c));
                                                                             0 === t && document.body.insertAdjacentHTML('beforeend', o),
                                                                                 r.matches
@@ -6445,7 +6440,7 @@
                                                         for (;;)
                                                             switch ((n.prev = n.next)) {
                                                                 case 0:
-                                                                    return (n.next = 2), Z.waitForSelectorInDOM('#moreRates');
+                                                                    return (n.next = 2), K.waitForSelectorInDOM('#moreRates');
                                                                 case 2:
                                                                     z(J(t.prototype), 'insertPercentageOffText', e).call(e, '.SinglePropDetail .rateRow'),
                                                                         e.displayRewardPoints('table.ArnRateList');
@@ -6479,7 +6474,7 @@
                                     c.addEventListener('blur', function () {
                                         a.value = c.value;
                                         var e = setInterval(function () {
-                                            document.querySelector('#'.concat(a.id)) || ((a = document.querySelector(o)), Z.removeMaskedElementFromTabIndex(o), clearInterval(e));
+                                            document.querySelector('#'.concat(a.id)) || ((a = document.querySelector(o)), K.removeMaskedElementFromTabIndex(o), clearInterval(e));
                                         }, 500);
                                         a.focus(), a.blur();
                                     });
@@ -6520,7 +6515,7 @@
                                 var t = this;
                                 if (
                                     !1 !== this.site_config.is_resbeat_client &&
-                                    (!document.querySelector('.beat-em') || 'search-results' !== Z.page_name) &&
+                                    (!document.querySelector('.beat-em') || 'search-results' !== K.page_name) &&
                                     (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                 ) {
                                     var n = window.matchMedia('(max-width: 600px)');
@@ -6569,7 +6564,13 @@
                             },
                         },
                         {
-                            key: 'applyConfigColors',
+                            key: 'applyResbeatStyles',
+                            value: function () {
+                                document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(Z.path, '/styles/resbeat.css" rel="stylesheet">'));
+                            },
+                        },
+                        {
+                            key: 'applyResbeatConfigColors',
                             value: function () {
                                 this.site_config &&
                                     document.body.insertAdjacentHTML(
@@ -6621,8 +6622,8 @@
                     t
                 );
             })(N);
-        function Q(e) {
-            return (Q =
+        function X(e) {
+            return (X =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -6631,30 +6632,30 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function X(e, t) {
+        function ee(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        function ee(e) {
+        function te(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function te(e, t) {
-            return (te =
+        function ne(e, t) {
+            return (ne =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function ne(e, t, n) {
-            return (ne =
+        function re(e, t, n) {
+            return (re =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = re(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = oe(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6663,15 +6664,15 @@
                           }
                       })(e, t, n || e);
         }
-        function re(e) {
-            return (re = Object.setPrototypeOf
+        function oe(e) {
+            return (oe = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var oe = new B(),
-            ie = new (function () {
+        var ie = new B(),
+            ae = new (function () {
                 return {
                     site_id: 62011,
                     affiliate_id: 16827,
@@ -6741,9 +6742,9 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, t),
                     (e = (function (e, t) {
-                        return !t || ('object' !== Q(t) && 'function' != typeof t) ? ee(e) : t;
-                    })(this, re(t).call(this, ie))),
-                    ne(re(t.prototype), 'init', ee(e)).call(ee(e)),
+                        return !t || ('object' !== X(t) && 'function' != typeof t) ? te(e) : t;
+                    })(this, oe(t).call(this, ae))),
+                    re(oe(t.prototype), 'init', te(e)).call(te(e)),
                     e.init(),
                     e
                 );
@@ -6752,7 +6753,7 @@
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && te(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && ne(e, t);
                 })(t, e),
                 (n = t),
                 (r = [
@@ -6761,12 +6762,12 @@
                         value: function () {
                             var e = this;
                             document.querySelector('.SearchHotels') &&
-                                oe.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
+                                ie.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
                                     e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
                                 }),
                                 document.querySelector('.SinglePropDetail') &&
                                     (this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
-                                    oe.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
+                                    ie.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
                                         e.boldLastWord(['.ArnLeftListContainer .translateMe']);
                                     })),
                                 document.querySelector('.CheckOutForm') &&
@@ -6788,11 +6789,11 @@
                             });
                         },
                     },
-                ]) && X(n.prototype, r),
-                o && X(n, o),
+                ]) && ee(n.prototype, r),
+                o && ee(n, o),
                 t
             );
-        })(K))();
+        })(Q))();
     },
 ]);
 //# sourceMappingURL=resbeat_test-62011.map

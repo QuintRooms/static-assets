@@ -27,6 +27,7 @@
 ?>
 
 <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
+<style id="h4h-styles"></style>
 
 <?php
     if(strpos($url, 'index') !== false || 'search-results' !== false){

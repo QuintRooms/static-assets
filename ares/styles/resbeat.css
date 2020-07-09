@@ -298,6 +298,15 @@ input[type='email'].email-mask,
     border-radius: 40px;
 }
 
+.ConfirmationForm .points-earned {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 18px;
+    margin-top: 48px;
+}
+
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input,
 .MemberNotAuthenticated #new-user-text,

@@ -249,18 +249,6 @@ export default class Resbeat extends BasePortal {
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
-                <style>
-                    .points-earned{
-                        background: ${this.site_config.primary_color};
-                        color: ${this.site_config.primary_text_color};
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-content: center;
-                        padding: 18px;
-                        margin-top: 48px;
-                    }
-                </style>
                 <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
                 <div class="points-earned">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
@@ -493,7 +481,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover  {
+            .holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned  {
                 color: ${this.site_config.primary_text_color};
             }
         
@@ -535,7 +523,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover   {
+            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {
                 background: ${this.site_config.primary_color} !important;
             }
             

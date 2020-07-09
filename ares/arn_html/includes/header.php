@@ -25,6 +25,7 @@
         ';
     } 
 ?>
+<style id="h4h-styles"></style>
 
 <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
 

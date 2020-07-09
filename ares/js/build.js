@@ -815,7 +815,7 @@ export default class BasePortal {
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
             .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
-                background: ${this.site_config.primary_color}
+                background: ${this.site_config.primary_color};
             }
 
             @media screen and (max-width:1105px) {
@@ -824,7 +824,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    border: 1px solid ${this.site_config.primary_color}
+                    border: 1px solid ${this.site_config.primary_color};
                 }
 
                 .closeMap {
@@ -845,7 +845,7 @@ export default class BasePortal {
                 .sort-wrapper a:before,
                 .sort-wrapper a.active-filter:before,
                 .sort {
-                    background: ${this.site_config.primary_color}
+                    background: ${this.site_config.primary_color};
                 }
             }
 
@@ -868,7 +868,7 @@ export default class BasePortal {
             .bookRoom,
             .sort-wrapper .active,
             .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
-                color: ${this.site_config.primary_text_color}
+                color: ${this.site_config.primary_text_color};
             }
 
             span.exclusive-rate {
@@ -883,7 +883,7 @@ export default class BasePortal {
                 #arnCloseAnchorId:active,
                 #arnCloseAnchorId:focus,
                 #arnCloseAnchorId:hover {
-                    color: ${this.site_config.secondary_text_color}
+                    color: ${this.site_config.secondary_text_color};
                 }
             }
 
@@ -895,7 +895,7 @@ export default class BasePortal {
                 #commands button:focus,
                 #commands button:hover,
                 .sort {
-                    color: ${this.site_config.primary_text_color}
+                    color: ${this.site_config.primary_text_color};
                 }
             }
             .holdRoom,
@@ -984,7 +984,7 @@ export default class BasePortal {
             }
 
             header {
-                border-bottom:3px solid ${this.site_config.border_color}
+                border-bottom:3px solid ${this.site_config.border_color};
             }
 
             .arnMapMarker.contracted-pin,
@@ -1011,23 +1011,23 @@ export default class BasePortal {
             .bookRoom,
             .sort,
             .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
-                border:1px solid ${this.site_config.border_color}
+                border:1px solid ${this.site_config.border_color};
             }
 
             .holdRoom {
-                border: 1px solid ${this.site_config.border_color}
+                border: 1px solid ${this.site_config.border_color};
             }
 
             @media screen and (max-width:1105px) {
                 #arnCloseAnchorId,
                 .sort {
-                    border:1px solid ${this.site_config.primary_color}
+                    border:1px solid ${this.site_config.primary_color};
                 }
             }
 
             @media screen and (max-width:800px) {
                 .sort-wrapper a:before {
-                    border:2px solid ${this.site_config.primary_color}
+                    border:2px solid ${this.site_config.primary_color};
                 }
             }
 

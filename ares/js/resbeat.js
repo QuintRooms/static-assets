@@ -570,7 +570,7 @@ export default class Resbeat extends BasePortal {
             }
 
             .SearchHotels .beat-em, .SinglePropDetail .beat-em {
-                background-color: ${this.site_config.secondary_color}
+                background-color: ${this.site_config.secondary_color};
             }
 
             header {

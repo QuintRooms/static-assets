@@ -275,6 +275,7 @@ export default class BasePortal {
             this.setCheckDatesToReadOnlyOnMobile();
 
             if (this.site_config.is_resbeat_client) {
+                this.applyResbeatStyles();
                 this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
                     if (document.querySelector('#booking-guide')) {
                         await utilities.waitForSelectorInDOM('#faq-link');
@@ -1057,6 +1058,11 @@ export default class BasePortal {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
         document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/dark.css" rel="stylesheet">`);
+    }
+
+    applyResbeatStyles() {
+        console.log('ehyyy');
+        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet"`);
     }
 
     applyCustomStyles() {

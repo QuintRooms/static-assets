@@ -762,7 +762,8 @@ export default class BasePortal {
             .totalRow td,
             .balanceDueRow td,
             .dueNowRow td,
-            .guestNameFields td{
+            .guestNameFields td,
+            .total-points-earned td{
                 font-family: ${this.site_config.google_font_name}, 'Helvetica';
             }
 

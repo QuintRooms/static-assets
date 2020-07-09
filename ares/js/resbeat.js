@@ -19,6 +19,7 @@ export default class Resbeat extends BasePortal {
         this.updateHeaderLinks();
         this.rerunFunctionsOnMoreRoomsClick();
         this.moveConfigContainer();
+        this.applyConfigColors();
 
         if (document.querySelector('.RootBody')) {
             this.updateSearchTitle();
@@ -248,18 +249,6 @@ export default class Resbeat extends BasePortal {
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
-                <style>
-                    .points-earned{
-                        background: ${this.site_config.primary_color};
-                        color: ${this.site_config.primary_text_color};
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-content: center;
-                        padding: 18px;
-                        margin-top: 48px;
-                    }
-                </style>
                 <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
                 <div class="points-earned">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
@@ -432,4 +421,169 @@ export default class Resbeat extends BasePortal {
     //         }
     //     });
     // }
+
+    applyConfigColors() {
+        if (!this.site_config) return;
+
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            `
+            <style>
+            .ArnPages a,
+            .ArnPages, .WBValidatedRegistrationForm #theUserNameAjax input,
+            .WBValidatedRegistrationForm #theFirstNameAjax input,
+            .WBValidatedRegistrationForm #theLastNameAjax input,
+            .WBValidatedRegistrationForm #theEditablePasswordAjax input,
+            .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+            input[type='email'].email-mask,
+            .WBLoginFormFields input, .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input, .RootBody .search-messaging #user-name strong, .RootBody .search-messaging #user-name, .RootBody .search-messaging h4, .CheckOutForm .total-points-earned td, .MemberNotAuthenticated #theUserNameAjax input,
+            .MemberNotAuthenticated #thePasswordAjax input,
+            .MemberNotAuthenticated #new-user-text,
+            .MemberNotAuthenticated #theWBLoginFormBody h1,
+            .MemberNotAuthenticated .ForgotPasswordAction, .ArnSupportLinks, .MemberNotAuthenticated #new-user-text strong,
+            .MemberNotAuthenticated #theWBLoginFormBody strong, .MemberNotAuthenticated .LoginAction,
+            .SendMeNewPasswordAction.submit,
+            .ArnShowRatesLink,
+            .bookRoom,
+            .holdRoom,
+            #moreRatesLink,
+            .GuestForms legend,
+            .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
+            .SearchHotels .lblRating,
+            .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td {
+                font-family: '${this.site_config.google_font_name}', 'Helvetica';
+            }
+            
+            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong  {
+                color: ${this.site_config.secondary_color};
+            }
+            
+            .support-details a, #theSubmitButton:hover,
+            #theOtherSubmitButton:hover,
+            .CheckRates .submit:hover,
+            .CheckOutForm #theConfirmationButton:hover, .ArnRateButton a,
+            .bookRoom,
+            .holdRoom, .LoginAction.submit:hover,
+            #register-btn a:hover,
+            .RegisterAction.submit:hover,
+            .SendMeNewPasswordAction.submit:hover,
+            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover  {
+                color: ${this.site_config.primary_color} !important;
+            }
+            
+            #theSubmitButton,
+            #theOtherSubmitButton, .RootBody #theOtherSubmitButton
+            .SinglePropDetail .CheckRates .submit,
+            .CheckOutForm #theConfirmationButton, .SinglePropDetail .beat-em, .SearchHotels .beat-em, .LoginAction.submit,
+            #register-btn a,
+            .RegisterAction.submit,
+            .SendMeNewPasswordAction.submit,
+            #moreRatesLink,
+            .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+            .bookRoom:hover,
+            .holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit  {
+                color: ${this.site_config.primary_text_color} !important;
+            }
+        
+            .WBValidatedRegistrationForm #theUserNameAjax input,
+            .WBValidatedRegistrationForm #theFirstNameAjax input,
+            .WBValidatedRegistrationForm #theLastNameAjax input,
+            .WBValidatedRegistrationForm #theEditablePasswordAjax input,
+            .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+            input[type='email'].email-mask,
+            .WBLoginFormFields input, .SearchHotels #theSearchBox input,
+            .SearchHotels #theSearchBox select, #lightbox .WBChangePasswordFormFields input[type='password'], .MemberNotAuthenticated #theUserNameAjax input,
+            .MemberNotAuthenticated #thePasswordAjax input, .SearchHotels .ArnContainer, .WBSupportForm input,
+            .WBSupportForm select,
+            .WBSupportForm textarea, .RootBody .ArnPrimarySearchContainer, .ArnSupportLinks, .SinglePropDetail .SimpleSearch input,
+            .SinglePropDetail .SimpleSearch select, .totalsTable tr th,
+            .totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {
+                background: ${this.site_config.secondary_background_color} !important;
+            }
+            
+            
+            .SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,
+            #theOtherSubmitButton:hover,
+            .CheckRates .submit:hover,
+            .CheckOutForm #theConfirmationButton:hover, .LoginAction.submit:hover,
+            #register-btn a:hover,
+            .RegisterAction.submit:hover,
+            .SendMeNewPasswordAction.submit:hover,
+            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover  {
+                background: ${this.site_config.background_color} !important;
+            }
+            
+            #theSubmitButton,
+            #theOtherSubmitButton,
+            .SinglePropDetail .CheckRates .submit,
+            .CheckOutForm #theConfirmationButton, .LoginAction.submit,
+            #register-btn a,
+            .RegisterAction.submit,
+            .SendMeNewPasswordAction.submit,
+            #moreRatesLink,
+            .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+            .bookRoom:hover,
+            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {
+                background: ${this.site_config.primary_color} !important;
+            }
+            
+            .WBLoginFormActions input,
+            #register-btn a,
+            .WBValidatedRegistrationFormActions input,
+            #theOtherSubmitButton,
+            #theSubmitButton,
+            .ArnShowRatesLink,
+            .SinglePropDetail .CheckRates .submit,
+            .SinglePropDetail .bookRoom,
+            .SinglePropDetail #moreRatesLink,
+            .CheckOutForm #theConfirmationButton,
+            .WBSupportFormActions input,
+            .WBForgotPasswordFormActions input, .WBLoginFormActions input:hover,
+            #register-btn a:hover,
+            .WBValidatedRegistrationFormActions input:hover,
+            #theOtherSubmitButton:hover,
+            #theSubmitButton:hover,
+            .ArnShowRatesLink:hover,
+            .SinglePropDetail .CheckRates .submit:hover,
+            .SinglePropDetail .bookRoom:hover,
+            .SinglePropDetail #moreRatesLink:hover,
+            .CheckOutForm #theConfirmationButton:hover,
+            .WBSupportFormActions input:hover,
+            .WBForgotPasswordFormActions input:hover, #theSubmitButton,
+            #theOtherSubmitButton,
+            .SinglePropDetail .CheckRates .submit,
+            .CheckOutForm #theConfirmationButton, .ArnRateButton a:hover,
+            .bookRoom:hover,
+            .holdRoom:hover, .ArnRateButton a,
+            .bookRoom,
+            .holdRoom, .LoginAction.submit:hover,
+            #register-btn a:hover,
+            .RegisterAction.submit:hover,
+            .SendMeNewPasswordAction.submit:hover,
+            .WBSupportForm .SendRequestAction:hover, .LoginAction.submit,
+            #register-btn a,
+            .RegisterAction.submit,
+            .SendMeNewPasswordAction.submit,
+            #moreRatesLink,
+            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input  {
+                border: 3px solid ${this.site_config.primary_color} !important;
+            }
+
+            .SearchHotels .beat-em, .SinglePropDetail .beat-em {
+                background-color: ${this.site_config.secondary_color}
+            }
+
+            header {
+                border-bottom: 1px solid ${this.site_config.secondary_background_color};
+            }
+
+            @media screen and (max-width: 800px) {
+                .currencies-container {
+                    background: ${this.site_config.background_color};
+                }
+            }
+            </style>
+            `
+        );
+    }
 }

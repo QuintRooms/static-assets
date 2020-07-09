@@ -76,8 +76,8 @@
                 var u,
                     l,
                     d,
-                    f,
-                    h = e & s.F,
+                    h,
+                    f = e & s.F,
                     p = e & s.G,
                     m = e & s.S,
                     y = e & s.P,
@@ -86,10 +86,10 @@
                     b = p ? o : o[t] || (o[t] = {}),
                     S = b.prototype || (b.prototype = {});
                 for (u in (p && (n = t), n))
-                    (d = ((l = !h && v && void 0 !== v[u]) ? v : n)[u]),
-                        (f = g && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
+                    (d = ((l = !f && v && void 0 !== v[u]) ? v : n)[u]),
+                        (h = g && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
                         v && a(v, u, d, e & s.U),
-                        b[u] != d && i(b, u, f),
+                        b[u] != d && i(b, u, h),
                         y && S[u] != d && (S[u] = d);
             };
         (r.core = o), (s.F = 1), (s.G = 2), (s.S = 4), (s.P = 8), (s.B = 16), (s.W = 32), (s.U = 64), (s.R = 128), (e.exports = s);
@@ -393,8 +393,8 @@
             u = n(22),
             l = n(28),
             d = n(3),
-            f = n(4),
-            h = n(23),
+            h = n(4),
+            f = n(23),
             p = n(75),
             m = n(76),
             y = n(55),
@@ -404,28 +404,28 @@
             S = n(82),
             w = n(83),
             _ = n(84),
-            x = s.TypeError,
-            A = s.process,
-            k = A && A.versions,
+            A = s.TypeError,
+            x = s.process,
+            k = x && x.versions,
             L = (k && k.v8) || '',
             C = s.Promise,
-            E = 'process' == l(A),
+            R = 'process' == l(x),
             M = function () {},
-            q = (o = b.f),
-            T = !!(function () {
+            P = (o = b.f),
+            q = !!(function () {
                 try {
                     var e = C.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(M, M);
                         });
-                    return (E || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (R || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            R = function (e) {
+            E = function (e) {
                 var t;
-                return !(!f(e) || 'function' != typeof (t = e.then)) && t;
+                return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
-            P = function (e, t) {
+            T = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -444,9 +444,9 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && B(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && j(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = R(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = E(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -456,89 +456,89 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && O(e);
+                        (e._c = []), (e._n = !1), t && !e._h && B(e);
                     });
                 }
             },
-            O = function (e) {
+            B = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
                         r,
                         o = e._v,
-                        i = j(e);
+                        i = O(e);
                     if (
                         (i &&
                             ((t = S(function () {
-                                E
-                                    ? A.emit('unhandledRejection', o, e)
+                                R
+                                    ? x.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = E || j(e) ? 2 : 1)),
+                            (e._h = R || O(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            j = function (e) {
+            O = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            B = function (e) {
+            j = function (e) {
                 g.call(s, function () {
                     var t;
-                    E ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    R ? x.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            H = function (e) {
-                var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
-            },
             F = function (e) {
+                var t = this;
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
+            },
+            H = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
                     (n._d = !0), (n = n._w || n);
                     try {
-                        if (n === e) throw x("Promise can't be resolved itself");
-                        (t = R(e))
+                        if (n === e) throw A("Promise can't be resolved itself");
+                        (t = E(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(F, r, 1), u(H, r, 1));
+                                      t.call(e, u(H, r, 1), u(F, r, 1));
                                   } catch (e) {
-                                      H.call(r, e);
+                                      F.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), P(n, !1));
+                            : ((n._v = e), (n._s = 1), T(n, !1));
                     } catch (e) {
-                        H.call({_w: n, _d: !1}, e);
+                        F.call({_w: n, _d: !1}, e);
                     }
                 }
             };
-        T ||
+        q ||
             ((C = function (e) {
-                p(this, C, 'Promise', '_h'), h(e), r.call(this);
+                p(this, C, 'Promise', '_h'), f(e), r.call(this);
                 try {
-                    e(u(F, this, 1), u(H, this, 1));
+                    e(u(H, this, 1), u(F, this, 1));
                 } catch (e) {
-                    H.call(this, e);
+                    F.call(this, e);
                 }
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(85)(C.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, C));
+                    var n = P(y(this, C));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = E ? A.domain : void 0),
+                        (n.domain = R ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && P(this, !1),
+                        this._s && T(this, !1),
                         n.promise
                     );
                 },
@@ -548,22 +548,22 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
+                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(F, e, 1));
             }),
-            (b.f = q = function (e) {
+            (b.f = P = function (e) {
                 return e === C || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !T, {Promise: C}),
+            d(d.G + d.W + d.F * !q, {Promise: C}),
             n(24)(C, 'Promise'),
             n(86)('Promise'),
             (a = n(8).Promise),
-            d(d.S + d.F * !T, 'Promise', {
+            d(d.S + d.F * !q, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = P(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !T), 'Promise', {
+            d(d.S + d.F * (c || !q), 'Promise', {
                 resolve: function (e) {
                     return _(c && this === a ? C : this, e);
                 },
@@ -572,7 +572,7 @@
                 d.S +
                     d.F *
                         !(
-                            T &&
+                            q &&
                             n(87)(function (e) {
                                 C.all(e).catch(M);
                             })
@@ -581,7 +581,7 @@
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -603,7 +603,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = P(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -641,8 +641,8 @@
             u = Math.max,
             l = Math.min,
             d = Math.floor,
-            f = /\$([$&`']|\d\d?|<[^>]*>)/g,
-            h = /\$([$&`']|\d\d?)/g;
+            h = /\$([$&`']|\d\d?|<[^>]*>)/g,
+            f = /\$([$&`']|\d\d?)/g;
         n(58)('replace', 2, function (e, t, n, p) {
             return [
                 function (r, o) {
@@ -654,40 +654,40 @@
                     var o = p(n, e, this, t);
                     if (o.done) return o.value;
                     var d = r(e),
-                        f = String(this),
-                        h = 'function' == typeof t;
-                    h || (t = String(t));
+                        h = String(this),
+                        f = 'function' == typeof t;
+                    f || (t = String(t));
                     var y = d.global;
                     if (y) {
                         var g = d.unicode;
                         d.lastIndex = 0;
                     }
                     for (var v = []; ; ) {
-                        var b = s(d, f);
+                        var b = s(d, h);
                         if (null === b) break;
                         if ((v.push(b), !y)) break;
-                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
+                        '' === String(b[0]) && (d.lastIndex = c(h, i(d.lastIndex), g));
                     }
-                    for (var S, w = '', _ = 0, x = 0; x < v.length; x++) {
-                        b = v[x];
-                        for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], C = 1; C < b.length; C++) L.push(void 0 === (S = b[C]) ? S : String(S));
-                        var E = b.groups;
-                        if (h) {
-                            var M = [A].concat(L, k, f);
-                            void 0 !== E && M.push(E);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(A, f, k, L, E, t);
-                        k >= _ && ((w += f.slice(_, k) + q), (_ = k + A.length));
+                    for (var S, w = '', _ = 0, A = 0; A < v.length; A++) {
+                        b = v[A];
+                        for (var x = String(b[0]), k = u(l(a(b.index), h.length), 0), L = [], C = 1; C < b.length; C++) L.push(void 0 === (S = b[C]) ? S : String(S));
+                        var R = b.groups;
+                        if (f) {
+                            var M = [x].concat(L, k, h);
+                            void 0 !== R && M.push(R);
+                            var P = String(t.apply(void 0, M));
+                        } else P = m(x, h, k, L, R, t);
+                        k >= _ && ((w += h.slice(_, k) + P), (_ = k + x.length));
                     }
-                    return w + f.slice(_);
+                    return w + h.slice(_);
                 },
             ];
             function m(e, t, r, i, a, c) {
                 var s = r + e.length,
                     u = i.length,
-                    l = h;
+                    l = f;
                 return (
-                    void 0 !== a && ((a = o(a)), (l = f)),
+                    void 0 !== a && ((a = o(a)), (l = h)),
                     n.call(c, l, function (n, o) {
                         var c;
                         switch (o.charAt(0)) {
@@ -706,8 +706,8 @@
                                 var l = +o;
                                 if (0 === l) return n;
                                 if (l > u) {
-                                    var f = d(l / 10);
-                                    return 0 === f ? n : f <= u ? (void 0 === i[f - 1] ? o.charAt(1) : i[f - 1] + o.charAt(1)) : n;
+                                    var h = d(l / 10);
+                                    return 0 === h ? n : h <= u ? (void 0 === i[h - 1] ? o.charAt(1) : i[h - 1] + o.charAt(1)) : n;
                                 }
                                 c = i[l - 1];
                         }
@@ -737,7 +737,7 @@
                             if ('executing' === r) throw new Error('Generator is already running');
                             if ('completed' === r) {
                                 if ('throw' === o) throw i;
-                                return A();
+                                return x();
                             }
                             for (n.method = o, n.arg = i; ; ) {
                                 var a = n.delegate;
@@ -777,15 +777,15 @@
             var u = {};
             function l() {}
             function d() {}
-            function f() {}
-            var h = {};
-            h[o] = function () {
+            function h() {}
+            var f = {};
+            f[o] = function () {
                 return this;
             };
             var p = Object.getPrototypeOf,
-                m = p && p(p(x([])));
-            m && m !== t && n.call(m, o) && (h = m);
-            var y = (f.prototype = l.prototype = Object.create(h));
+                m = p && p(p(A([])));
+            m && m !== t && n.call(m, o) && (f = m);
+            var y = (h.prototype = l.prototype = Object.create(f));
             function g(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
                     e[t] = function (e) {
@@ -857,7 +857,7 @@
             function _(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(S, this), this.reset(!0);
             }
-            function x(e) {
+            function A(e) {
                 if (e) {
                     var t = e[o];
                     if (t) return t.call(e);
@@ -871,21 +871,21 @@
                         return (i.next = i);
                     }
                 }
-                return {next: A};
+                return {next: x};
             }
-            function A() {
+            function x() {
                 return {value: void 0, done: !0};
             }
             return (
-                (d.prototype = y.constructor = f),
-                (f.constructor = d),
-                (f[a] = d.displayName = 'GeneratorFunction'),
+                (d.prototype = y.constructor = h),
+                (h.constructor = d),
+                (h[a] = d.displayName = 'GeneratorFunction'),
                 (e.isGeneratorFunction = function (e) {
                     var t = 'function' == typeof e && e.constructor;
                     return !!t && (t === d || 'GeneratorFunction' === (t.displayName || t.name));
                 }),
                 (e.mark = function (e) {
-                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, f) : ((e.__proto__ = f), a in e || (e[a] = 'GeneratorFunction')), (e.prototype = Object.create(y)), e;
+                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, h) : ((e.__proto__ = h), a in e || (e[a] = 'GeneratorFunction')), (e.prototype = Object.create(y)), e;
                 }),
                 (e.awrap = function (e) {
                     return {__await: e};
@@ -926,7 +926,7 @@
                         }
                     );
                 }),
-                (e.values = x),
+                (e.values = A),
                 (_.prototype = {
                     constructor: _,
                     reset: function (e) {
@@ -1018,7 +1018,7 @@
                         throw new Error('illegal catch attempt');
                     },
                     delegateYield: function (e, t, n) {
-                        return (this.delegate = {iterator: x(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), u;
+                        return (this.delegate = {iterator: A(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), u;
                     },
                 }),
                 e
@@ -1097,8 +1097,8 @@
             u = n(10),
             l = n(20),
             d = n(24),
-            f = n(17),
-            h = n(0),
+            h = n(17),
+            f = n(0),
             p = n(41),
             m = n(40),
             y = n(66),
@@ -1108,59 +1108,59 @@
             S = n(27),
             w = n(12),
             _ = n(30),
-            x = n(21),
-            A = n(47),
+            A = n(21),
+            x = n(47),
             k = n(71),
             L = n(50),
             C = n(46),
-            E = n(9),
+            R = n(9),
             M = n(13),
-            q = L.f,
-            T = E.f,
-            R = k.f,
-            P = r.Symbol,
-            O = r.JSON,
-            j = O && O.stringify,
-            B = h('_hidden'),
-            H = h('toPrimitive'),
-            F = {}.propertyIsEnumerable,
+            P = L.f,
+            q = R.f,
+            E = k.f,
+            T = r.Symbol,
+            B = r.JSON,
+            O = B && B.stringify,
+            j = f('_hidden'),
+            F = f('toPrimitive'),
+            H = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
             D = l('symbols'),
             N = l('op-symbols'),
             W = Object.prototype,
-            $ = 'function' == typeof P && !!C.f,
+            $ = 'function' == typeof T && !!C.f,
             U = r.QObject,
-            G = !U || !U.prototype || !U.prototype.findChild,
-            V =
+            V = !U || !U.prototype || !U.prototype.findChild,
+            G =
                 i &&
                 u(function () {
                     return (
                         7 !=
-                        A(
-                            T({}, 'a', {
+                        x(
+                            q({}, 'a', {
                                 get: function () {
-                                    return T(this, 'a', {value: 7}).a;
+                                    return q(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q(W, t);
-                          r && delete W[t], T(e, t, n), r && e !== W && T(W, t, r);
+                          var r = P(W, t);
+                          r && delete W[t], q(e, t, n), r && e !== W && q(W, t, r);
                       }
-                    : T,
+                    : q,
             Y = function (e) {
-                var t = (D[e] = A(P.prototype));
+                var t = (D[e] = x(T.prototype));
                 return (t._k = e), t;
             },
             z =
-                $ && 'symbol' == typeof P.iterator
+                $ && 'symbol' == typeof T.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof P;
+                          return e instanceof T;
                       },
             J = function (e, t, n) {
                 return (
@@ -1169,8 +1169,8 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
-                        : T(e, t, n)
+                        ? (n.enumerable ? (o(e, j) && e[j][t] && (e[j][t] = !1), (n = x(n, {enumerable: A(0, !1)}))) : (o(e, j) || q(e, j, A(1, {})), (e[j][t] = !0)), G(e, t, n))
+                        : q(e, t, n)
                 );
             },
             Z = function (e, t) {
@@ -1179,32 +1179,32 @@
                 return e;
             },
             K = function (e) {
-                var t = F.call(this, (e = _(e, !0)));
-                return !(this === W && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
+                var t = H.call(this, (e = _(e, !0)));
+                return !(this === W && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, j) && this[j][e])) || t);
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== W || !o(D, t) || o(N, t))) {
-                    var n = q(e, t);
-                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
+                    var n = P(e, t);
+                    return !n || !o(D, t) || (o(e, j) && e[j][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = R(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = E(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == j || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === W, r = R(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o(W, t)) || i.push(D[t]);
+                for (var t, n = e === W, r = E(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o(W, t)) || i.push(D[t]);
                 return i;
             };
         $ ||
             (c(
-                (P = function () {
-                    if (this instanceof P) throw TypeError('Symbol is not a constructor!');
-                    var e = f(arguments.length > 0 ? arguments[0] : void 0),
+                (T = function () {
+                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
+                    var e = h(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === W && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), V(this, e, x(1, n));
+                            this === W && t.call(N, n), o(this, j) && o(this[j], e) && (this[j][e] = !1), G(this, e, A(1, n));
                         };
-                    return i && G && V(W, e, {configurable: !0, set: t}), Y(e);
+                    return i && V && G(W, e, {configurable: !0, set: t}), Y(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -1212,36 +1212,36 @@
                 }
             ),
             (L.f = Q),
-            (E.f = J),
+            (R.f = J),
             (n(49).f = k.f = X),
             (n(26).f = K),
             (C.f = ee),
             i && !n(16) && c(W, 'propertyIsEnumerable', K, !0),
             (p.f = function (e) {
-                return Y(h(e));
+                return Y(f(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: P});
+            a(a.G + a.W + a.F * !$, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
-            h(te[ne++]);
-        for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+            f(te[ne++]);
+        for (var re = M(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = P(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = T(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
                 for (var t in I) if (I[t] === e) return t;
             },
             useSetter: function () {
-                G = !0;
+                V = !0;
             },
             useSimple: function () {
-                G = !1;
+                V = !1;
             },
         }),
             a(a.S + a.F * !$, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? A(e) : Z(A(e), t);
+                    return void 0 === t ? x(e) : Z(x(e), t);
                 },
                 defineProperty: J,
                 defineProperties: Z,
@@ -1257,14 +1257,14 @@
                 return C.f(S(e));
             },
         }),
-            O &&
+            B &&
                 a(
                     a.S +
                         a.F *
                             (!$ ||
                                 u(function () {
-                                    var e = P();
-                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
+                                    var e = T();
+                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
                     {
@@ -1277,13 +1277,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(O, r)
+                                    O.apply(B, r)
                                 );
                         },
                     }
                 ),
-            P.prototype[H] || n(7)(P.prototype, H, P.prototype.valueOf),
-            d(P, 'Symbol'),
+            T.prototype[F] || n(7)(T.prototype, F, T.prototype.valueOf),
+            d(T, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -1422,8 +1422,8 @@
             u = n(33),
             l = n(10),
             d = Math.min,
-            f = [].push,
-            h = !l(function () {
+            h = [].push,
+            f = !l(function () {
                 RegExp(4294967295, 'y');
             });
         n(58)('split', 2, function (e, t, n, l) {
@@ -1447,17 +1447,17 @@
                                       s = [],
                                       l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
                                       d = 0,
-                                      h = void 0 === t ? 4294967295 : t >>> 0,
+                                      f = void 0 === t ? 4294967295 : t >>> 0,
                                       p = new RegExp(e.source, l + 'g');
                                   (i = u.call(p, o)) &&
                                   !(
                                       (a = p.lastIndex) > d &&
-                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && f.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= h)
+                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && h.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= f)
                                   );
 
                               )
                                   p.lastIndex === i.index && p.lastIndex++;
-                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > h ? s.slice(0, h) : s;
+                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > f ? s.slice(0, f) : s;
                           }
                         : '0'.split(void 0, 0).length
                         ? function (e, t) {
@@ -1474,26 +1474,26 @@
                         var r = l(p, e, this, t, p !== n);
                         if (r.done) return r.value;
                         var u = o(e),
-                            f = String(this),
+                            h = String(this),
                             m = i(u, RegExp),
                             y = u.unicode,
-                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (h ? 'y' : 'g'),
-                            v = new m(h ? u : '^(?:' + u.source + ')', g),
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (f ? 'y' : 'g'),
+                            v = new m(f ? u : '^(?:' + u.source + ')', g),
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
-                        if (0 === f.length) return null === s(v, f) ? [f] : [];
-                        for (var S = 0, w = 0, _ = []; w < f.length; ) {
-                            v.lastIndex = h ? w : 0;
-                            var x,
-                                A = s(v, h ? f : f.slice(w));
-                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : w)), f.length)) === S) w = a(f, w, y);
+                        if (0 === h.length) return null === s(v, h) ? [h] : [];
+                        for (var S = 0, w = 0, _ = []; w < h.length; ) {
+                            v.lastIndex = f ? w : 0;
+                            var A,
+                                x = s(v, f ? h : h.slice(w));
+                            if (null === x || (A = d(c(v.lastIndex + (f ? 0 : w)), h.length)) === S) w = a(h, w, y);
                             else {
-                                if ((_.push(f.slice(S, w)), _.length === b)) return _;
-                                for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
-                                w = S = x;
+                                if ((_.push(h.slice(S, w)), _.length === b)) return _;
+                                for (var k = 1; k <= x.length - 1; k++) if ((_.push(x[k]), _.length === b)) return _;
+                                w = S = A;
                             }
                         }
-                        return _.push(f.slice(S)), _;
+                        return _.push(h.slice(S)), _;
                     },
                 ]
             );
@@ -1570,17 +1570,17 @@
                 return 2 === n.length && 'a' === n[0] && 'b' === n[1];
             })();
         e.exports = function (e, t, n) {
-            var f = c(e),
-                h = !i(function () {
+            var h = c(e),
+                f = !i(function () {
                     var t = {};
                     return (
-                        (t[f] = function () {
+                        (t[h] = function () {
                             return 7;
                         }),
                         7 != ''[e](t)
                     );
                 }),
-                p = h
+                p = f
                     ? !i(function () {
                           var t = !1,
                               n = /a/;
@@ -1593,22 +1593,22 @@
                                   (n.constructor[u] = function () {
                                       return n;
                                   })),
-                              n[f](''),
+                              n[h](''),
                               !t
                           );
                       })
                     : void 0;
-            if (!h || !p || ('replace' === e && !l) || ('split' === e && !d)) {
-                var m = /./[f],
-                    y = n(a, f, ''[e], function (e, t, n, r, o) {
-                        return t.exec === s ? (h && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
+            if (!f || !p || ('replace' === e && !l) || ('split' === e && !d)) {
+                var m = /./[h],
+                    y = n(a, h, ''[e], function (e, t, n, r, o) {
+                        return t.exec === s ? (f && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
                     }),
                     g = y[0],
                     v = y[1];
                 r(String.prototype, e, g),
                     o(
                         RegExp.prototype,
-                        f,
+                        h,
                         2 == t
                             ? function (e, t) {
                                   return v.call(e, this, t);
@@ -1630,8 +1630,8 @@
             u = n(29),
             l = n(1),
             d = l.process,
-            f = l.setImmediate,
-            h = l.clearImmediate,
+            h = l.setImmediate,
+            f = l.clearImmediate,
             p = l.MessageChannel,
             m = l.Dispatch,
             y = 0,
@@ -1646,8 +1646,8 @@
             b = function (e) {
                 v.call(e.data);
             };
-        (f && h) ||
-            ((f = function (e) {
+        (h && f) ||
+            ((h = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
                     (g[++y] = function () {
@@ -1657,7 +1657,7 @@
                     y
                 );
             }),
-            (h = function (e) {
+            (f = function (e) {
                 delete g[e];
             }),
             'process' == n(14)(d)
@@ -1685,7 +1685,7 @@
                           : function (e) {
                                 setTimeout(a(v, e, 1), 0);
                             })),
-            (e.exports = {set: f, clear: h});
+            (e.exports = {set: h, clear: f});
     },
     function (e, t, n) {
         'use strict';
@@ -1714,8 +1714,8 @@
                 u = n(0),
                 l = u('iterator'),
                 d = u('toStringTag'),
-                f = s.Array,
-                h = {
+                h = s.Array,
+                f = {
                     CSSRuleList: !0,
                     CSSStyleDeclaration: !1,
                     CSSValueList: !1,
@@ -1748,17 +1748,17 @@
                     TextTrackList: !1,
                     TouchList: !1,
                 },
-                p = o(h),
+                p = o(f),
                 m = 0;
             m < p.length;
             m++
         ) {
             var y,
                 g = p[m],
-                v = h[g],
+                v = f[g],
                 b = a[g],
                 S = b && b.prototype;
-            if (S && (S[l] || c(S, l, f), S[d] || c(S, d, g), (s[g] = f), v)) for (y in r) S[y] || i(S, y, r[y], !0);
+            if (S && (S[l] || c(S, l, h), S[d] || c(S, d, g), (s[g] = h), v)) for (y in r) S[y] || i(S, y, r[y], !0);
         }
     },
     function (e, t, n) {
@@ -1787,7 +1787,7 @@
                     var r = String(e);
                     return !r || r.length >= t ? e : '' + Array(t + 1 - r.length).join(n) + e;
                 },
-                f = {
+                h = {
                     s: d,
                     z: function (e) {
                         var t = -e.utcOffset(),
@@ -1818,14 +1818,14 @@
                         return void 0 === e;
                     },
                 },
-                h = {
+                f = {
                     name: 'en',
                     weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                     months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                 },
                 p = 'en',
                 m = {};
-            m[p] = h;
+            m[p] = f;
             var y = function (e) {
                     return e instanceof S;
                 },
@@ -1844,7 +1844,7 @@
                     var r = t ? ('string' == typeof t ? {format: t, pl: n} : t) : {};
                     return (r.date = e), new S(r);
                 },
-                b = f;
+                b = h;
             (b.l = g),
                 (b.i = y),
                 (b.w = function (e, t) {
@@ -1854,9 +1854,9 @@
                 function d(e) {
                     (this.$L = this.$L || g(e.locale, null, !0)), this.parse(e);
                 }
-                var f = d.prototype;
+                var h = d.prototype;
                 return (
-                    (f.parse = function (e) {
+                    (h.parse = function (e) {
                         (this.$d = (function (e) {
                             var t = e.date,
                                 n = e.utc;
@@ -1874,7 +1874,7 @@
                         })(e)),
                             this.init();
                     }),
-                    (f.init = function () {
+                    (h.init = function () {
                         var e = this.$d;
                         (this.$y = e.getFullYear()),
                             (this.$M = e.getMonth()),
@@ -1885,64 +1885,64 @@
                             (this.$s = e.getSeconds()),
                             (this.$ms = e.getMilliseconds());
                     }),
-                    (f.$utils = function () {
+                    (h.$utils = function () {
                         return b;
                     }),
-                    (f.isValid = function () {
+                    (h.isValid = function () {
                         return !('Invalid Date' === this.$d.toString());
                     }),
-                    (f.isSame = function (e, t) {
+                    (h.isSame = function (e, t) {
                         var n = v(e);
                         return this.startOf(t) <= n && n <= this.endOf(t);
                     }),
-                    (f.isAfter = function (e, t) {
+                    (h.isAfter = function (e, t) {
                         return v(e) < this.startOf(t);
                     }),
-                    (f.isBefore = function (e, t) {
+                    (h.isBefore = function (e, t) {
                         return this.endOf(t) < v(e);
                     }),
-                    (f.$g = function (e, t, n) {
+                    (h.$g = function (e, t, n) {
                         return b.u(e) ? this[t] : this.set(n, e);
                     }),
-                    (f.year = function (e) {
+                    (h.year = function (e) {
                         return this.$g(e, '$y', s);
                     }),
-                    (f.month = function (e) {
+                    (h.month = function (e) {
                         return this.$g(e, '$M', a);
                     }),
-                    (f.day = function (e) {
+                    (h.day = function (e) {
                         return this.$g(e, '$W', o);
                     }),
-                    (f.date = function (e) {
+                    (h.date = function (e) {
                         return this.$g(e, '$D', 'date');
                     }),
-                    (f.hour = function (e) {
+                    (h.hour = function (e) {
                         return this.$g(e, '$H', r);
                     }),
-                    (f.minute = function (e) {
+                    (h.minute = function (e) {
                         return this.$g(e, '$m', n);
                     }),
-                    (f.second = function (e) {
+                    (h.second = function (e) {
                         return this.$g(e, '$s', t);
                     }),
-                    (f.millisecond = function (t) {
+                    (h.millisecond = function (t) {
                         return this.$g(t, '$ms', e);
                     }),
-                    (f.unix = function () {
+                    (h.unix = function () {
                         return Math.floor(this.valueOf() / 1e3);
                     }),
-                    (f.valueOf = function () {
+                    (h.valueOf = function () {
                         return this.$d.getTime();
                     }),
-                    (f.startOf = function (e, c) {
+                    (h.startOf = function (e, c) {
                         var u = this,
                             l = !!b.u(c) || c,
                             d = b.p(e),
-                            f = function (e, t) {
+                            h = function (e, t) {
                                 var n = b.w(u.$u ? Date.UTC(u.$y, t, e) : new Date(u.$y, t, e), u);
                                 return l ? n : n.endOf(o);
                             },
-                            h = function (e, t) {
+                            f = function (e, t) {
                                 return b.w(u.toDate()[e].apply(u.toDate('s'), (l ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(t)), u);
                             },
                             p = this.$W,
@@ -1951,34 +1951,34 @@
                             g = 'set' + (this.$u ? 'UTC' : '');
                         switch (d) {
                             case s:
-                                return l ? f(1, 0) : f(31, 11);
+                                return l ? h(1, 0) : h(31, 11);
                             case a:
-                                return l ? f(1, m) : f(0, m + 1);
+                                return l ? h(1, m) : h(0, m + 1);
                             case i:
                                 var v = this.$locale().weekStart || 0,
                                     S = (p < v ? p + 7 : p) - v;
-                                return f(l ? y - S : y + (6 - S), m);
+                                return h(l ? y - S : y + (6 - S), m);
                             case o:
                             case 'date':
-                                return h(g + 'Hours', 0);
+                                return f(g + 'Hours', 0);
                             case r:
-                                return h(g + 'Minutes', 1);
+                                return f(g + 'Minutes', 1);
                             case n:
-                                return h(g + 'Seconds', 2);
+                                return f(g + 'Seconds', 2);
                             case t:
-                                return h(g + 'Milliseconds', 3);
+                                return f(g + 'Milliseconds', 3);
                             default:
                                 return this.clone();
                         }
                     }),
-                    (f.endOf = function (e) {
+                    (h.endOf = function (e) {
                         return this.startOf(e, !1);
                     }),
-                    (f.$set = function (i, c) {
+                    (h.$set = function (i, c) {
                         var u,
                             l = b.p(i),
                             d = 'set' + (this.$u ? 'UTC' : ''),
-                            f = ((u = {}),
+                            h = ((u = {}),
                             (u[o] = d + 'Date'),
                             (u.date = d + 'Date'),
                             (u[a] = d + 'Month'),
@@ -1988,40 +1988,40 @@
                             (u[t] = d + 'Seconds'),
                             (u[e] = d + 'Milliseconds'),
                             u)[l],
-                            h = l === o ? this.$D + (c - this.$W) : c;
+                            f = l === o ? this.$D + (c - this.$W) : c;
                         if (l === a || l === s) {
                             var p = this.clone().set('date', 1);
-                            p.$d[f](h), p.init(), (this.$d = p.set('date', Math.min(this.$D, p.daysInMonth())).toDate());
-                        } else f && this.$d[f](h);
+                            p.$d[h](f), p.init(), (this.$d = p.set('date', Math.min(this.$D, p.daysInMonth())).toDate());
+                        } else h && this.$d[h](f);
                         return this.init(), this;
                     }),
-                    (f.set = function (e, t) {
+                    (h.set = function (e, t) {
                         return this.clone().$set(e, t);
                     }),
-                    (f.get = function (e) {
+                    (h.get = function (e) {
                         return this[b.p(e)]();
                     }),
-                    (f.add = function (e, c) {
+                    (h.add = function (e, c) {
                         var u,
                             l = this;
                         e = Number(e);
                         var d = b.p(c),
-                            f = function (t) {
+                            h = function (t) {
                                 var n = v(l);
                                 return b.w(n.date(n.date() + Math.round(t * e)), l);
                             };
                         if (d === a) return this.set(a, this.$M + e);
                         if (d === s) return this.set(s, this.$y + e);
-                        if (d === o) return f(1);
-                        if (d === i) return f(7);
-                        var h = ((u = {}), (u[n] = 6e4), (u[r] = 36e5), (u[t] = 1e3), u)[d] || 1,
-                            p = this.$d.getTime() + e * h;
+                        if (d === o) return h(1);
+                        if (d === i) return h(7);
+                        var f = ((u = {}), (u[n] = 6e4), (u[r] = 36e5), (u[t] = 1e3), u)[d] || 1,
+                            p = this.$d.getTime() + e * f;
                         return b.w(p, this);
                     }),
-                    (f.subtract = function (e, t) {
+                    (h.subtract = function (e, t) {
                         return this.add(-1 * e, t);
                     }),
-                    (f.format = function (e) {
+                    (h.format = function (e) {
                         var t = this;
                         if (!this.isValid()) return 'Invalid Date';
                         var n = e || 'YYYY-MM-DDTHH:mm:ssZ',
@@ -2035,10 +2035,10 @@
                             d = function (e, r, o, i) {
                                 return (e && (e[r] || e(t, n))) || o[r].substr(0, i);
                             },
-                            f = function (e) {
+                            h = function (e) {
                                 return b.s(i % 12 || 12, e, '0');
                             },
-                            h =
+                            f =
                                 o.meridiem ||
                                 function (e, t, n) {
                                     var r = e < 12 ? 'AM' : 'PM';
@@ -2059,10 +2059,10 @@
                                 dddd: s[this.$W],
                                 H: String(i),
                                 HH: b.s(i, 2, '0'),
-                                h: f(1),
-                                hh: f(2),
-                                a: h(i, a, !0),
-                                A: h(i, a, !1),
+                                h: h(1),
+                                hh: h(2),
+                                a: f(i, a, !0),
+                                A: f(i, a, !1),
                                 m: String(a),
                                 mm: b.s(a, 2, '0'),
                                 s: String(this.$s),
@@ -2074,16 +2074,16 @@
                             return t || p[e] || r.replace(':', '');
                         });
                     }),
-                    (f.utcOffset = function () {
+                    (h.utcOffset = function () {
                         return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
                     }),
-                    (f.diff = function (e, u, l) {
+                    (h.diff = function (e, u, l) {
                         var d,
-                            f = b.p(u),
-                            h = v(e),
-                            p = 6e4 * (h.utcOffset() - this.utcOffset()),
-                            m = this - h,
-                            y = b.m(this, h);
+                            h = b.p(u),
+                            f = v(e),
+                            p = 6e4 * (f.utcOffset() - this.utcOffset()),
+                            m = this - f,
+                            y = b.m(this, f);
                         return (
                             (y =
                                 ((d = {}),
@@ -2095,35 +2095,35 @@
                                 (d[r] = m / 36e5),
                                 (d[n] = m / 6e4),
                                 (d[t] = m / 1e3),
-                                d)[f] || m),
+                                d)[h] || m),
                             l ? y : b.a(y)
                         );
                     }),
-                    (f.daysInMonth = function () {
+                    (h.daysInMonth = function () {
                         return this.endOf(a).$D;
                     }),
-                    (f.$locale = function () {
+                    (h.$locale = function () {
                         return m[this.$L];
                     }),
-                    (f.locale = function (e, t) {
+                    (h.locale = function (e, t) {
                         if (!e) return this.$L;
                         var n = this.clone(),
                             r = g(e, t, !0);
                         return r && (n.$L = r), n;
                     }),
-                    (f.clone = function () {
+                    (h.clone = function () {
                         return b.w(this.$d, this);
                     }),
-                    (f.toDate = function () {
+                    (h.toDate = function () {
                         return new Date(this.valueOf());
                     }),
-                    (f.toJSON = function () {
+                    (h.toJSON = function () {
                         return this.isValid() ? this.toISOString() : null;
                     }),
-                    (f.toISOString = function () {
+                    (h.toISOString = function () {
                         return this.$d.toISOString();
                     }),
-                    (f.toString = function () {
+                    (h.toString = function () {
                         return this.$d.toUTCString();
                     }),
                     d
@@ -2307,12 +2307,12 @@
             s = n(79),
             u = {},
             l = {};
-        ((t = e.exports = function (e, t, n, d, f) {
-            var h,
+        ((t = e.exports = function (e, t, n, d, h) {
+            var f,
                 p,
                 m,
                 y,
-                g = f
+                g = h
                     ? function () {
                           return e;
                       }
@@ -2321,7 +2321,7 @@
                 b = 0;
             if ('function' != typeof g) throw TypeError(e + ' is not iterable!');
             if (i(g)) {
-                for (h = c(e.length); h > b; b++) if ((y = t ? v(a((p = e[b]))[0], p[1]) : v(e[b])) === u || y === l) return y;
+                for (f = c(e.length); f > b; b++) if ((y = t ? v(a((p = e[b]))[0], p[1]) : v(e[b])) === u || y === l) return y;
             } else for (m = g.call(e); !(p = m.next()).done; ) if ((y = o(m, v, p.value, t)) === u || y === l) return y;
         }).BREAK = u),
             (t.RETURN = l);
@@ -2410,10 +2410,10 @@
                     };
             else {
                 var d = !0,
-                    f = document.createTextNode('');
-                new i(u).observe(f, {characterData: !0}),
+                    h = document.createTextNode('');
+                new i(u).observe(h, {characterData: !0}),
                     (n = function () {
-                        f.data = d = !d;
+                        h.data = d = !d;
                     });
             }
             return function (r) {
@@ -2516,8 +2516,8 @@
             u = n(24),
             l = n(52),
             d = n(0)('iterator'),
-            f = !([].keys && 'next' in [].keys()),
-            h = function () {
+            h = !([].keys && 'next' in [].keys()),
+            f = function () {
                 return this;
             };
         e.exports = function (e, t, n, p, m, y, g) {
@@ -2526,7 +2526,7 @@
                 b,
                 S,
                 w = function (e) {
-                    if (!f && e in k) return k[e];
+                    if (!h && e in k) return k[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -2539,29 +2539,29 @@
                     };
                 },
                 _ = t + ' Iterator',
-                x = 'values' == m,
-                A = !1,
+                A = 'values' == m,
+                x = !1,
                 k = e.prototype,
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 C = L || w(m),
-                E = m ? (x ? w('entries') : C) : void 0,
+                R = m ? (A ? w('entries') : C) : void 0,
                 M = ('Array' == t && k.entries) || L;
             if (
-                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
-                x &&
+                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, f)),
+                A &&
                     L &&
                     'values' !== L.name &&
-                    ((A = !0),
+                    ((x = !0),
                     (C = function () {
                         return L.call(this);
                     })),
-                (r && !g) || (!f && !A && k[d]) || a(k, d, C),
+                (r && !g) || (!h && !x && k[d]) || a(k, d, C),
                 (c[t] = C),
-                (c[_] = h),
+                (c[_] = f),
                 m)
             )
-                if (((v = {values: x ? C : w('values'), keys: y ? C : w('keys'), entries: E}), g)) for (b in v) b in k || i(k, b, v[b]);
-                else o(o.P + o.F * (f || A), t, v);
+                if (((v = {values: A ? C : w('values'), keys: y ? C : w('keys'), entries: R}), g)) for (b in v) b in k || i(k, b, v[b]);
+                else o(o.P + o.F * (h || x), t, v);
             return v;
         };
     },
@@ -3009,7 +3009,7 @@
         n.r(t);
         n(39), n(43), n(51), n(53);
         function r() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         var o = new r(),
             i = 'resbeat_test-'.concat(62011);
@@ -3040,12 +3040,12 @@
                     '[object Float32Array]',
                     '[object Float64Array]',
                 ],
-                f =
+                h =
                     ArrayBuffer.isView ||
                     function (e) {
                         return e && d.indexOf(Object.prototype.toString.call(e)) > -1;
                     };
-        function h(e) {
+        function f(e) {
             if (('string' != typeof e && (e = String(e)), /[^a-z0-9\-#$%&'*+.^_`|~]/i.test(e))) throw new TypeError('Invalid character in header field name');
             return e.toLowerCase();
         }
@@ -3123,7 +3123,7 @@
                                 ? (this._bodyText = e.toString())
                                 : l && s && (t = e) && DataView.prototype.isPrototypeOf(t)
                                 ? ((this._bodyArrayBuffer = S(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
-                                : l && (ArrayBuffer.prototype.isPrototypeOf(e) || f(e))
+                                : l && (ArrayBuffer.prototype.isPrototypeOf(e) || h(e))
                                 ? (this._bodyArrayBuffer = S(e))
                                 : (this._bodyText = e = Object.prototype.toString.call(e))
                             : (this._bodyText = ''),
@@ -3165,7 +3165,7 @@
                 }),
                 u &&
                     (this.formData = function () {
-                        return this.text().then(A);
+                        return this.text().then(x);
                     }),
                 (this.json = function () {
                     return this.text().then(JSON.parse);
@@ -3174,21 +3174,21 @@
             );
         }
         (y.prototype.append = function (e, t) {
-            (e = h(e)), (t = p(t));
+            (e = f(e)), (t = p(t));
             var n = this.map[e];
             this.map[e] = n ? n + ', ' + t : t;
         }),
             (y.prototype.delete = function (e) {
-                delete this.map[h(e)];
+                delete this.map[f(e)];
             }),
             (y.prototype.get = function (e) {
-                return (e = h(e)), this.has(e) ? this.map[e] : null;
+                return (e = f(e)), this.has(e) ? this.map[e] : null;
             }),
             (y.prototype.has = function (e) {
-                return this.map.hasOwnProperty(h(e));
+                return this.map.hasOwnProperty(f(e));
             }),
             (y.prototype.set = function (e, t) {
-                this.map[h(e)] = p(t);
+                this.map[f(e)] = p(t);
             }),
             (y.prototype.forEach = function (e, t) {
                 for (var n in this.map) this.map.hasOwnProperty(n) && e.call(t, this.map[n], n, this);
@@ -3222,11 +3222,11 @@
             }),
             c && (y.prototype[Symbol.iterator] = y.prototype.entries);
         var _ = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
-        function x(e, t) {
+        function A(e, t) {
             var n,
                 r,
                 o = (t = t || {}).body;
-            if (e instanceof x) {
+            if (e instanceof A) {
                 if (e.bodyUsed) throw new TypeError('Already read');
                 (this.url = e.url),
                     (this.credentials = e.credentials),
@@ -3248,7 +3248,7 @@
                 throw new TypeError('Body not allowed for GET or HEAD requests');
             this._initBody(o);
         }
-        function A(e) {
+        function x(e) {
             var t = new FormData();
             return (
                 e
@@ -3275,10 +3275,10 @@
                 (this.url = t.url || ''),
                 this._initBody(e);
         }
-        (x.prototype.clone = function () {
-            return new x(this, {body: this._bodyInit});
+        (A.prototype.clone = function () {
+            return new A(this, {body: this._bodyInit});
         }),
-            w.call(x.prototype),
+            w.call(A.prototype),
             w.call(k.prototype),
             (k.prototype.clone = function () {
                 return new k(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new y(this.headers), url: this.url});
@@ -3292,21 +3292,21 @@
             if (-1 === C.indexOf(t)) throw new RangeError('Invalid status code');
             return new k(null, {status: t, headers: {location: e}});
         };
-        var E = self.DOMException;
+        var R = self.DOMException;
         try {
-            new E();
+            new R();
         } catch (e) {
-            ((E = function (e, t) {
+            ((R = function (e, t) {
                 (this.message = e), (this.name = t);
                 var n = Error(e);
                 this.stack = n.stack;
             }).prototype = Object.create(Error.prototype)),
-                (E.prototype.constructor = E);
+                (R.prototype.constructor = R);
         }
         function M(e, t) {
             return new Promise(function (n, r) {
-                var o = new x(e, t);
-                if (o.signal && o.signal.aborted) return r(new E('Aborted', 'AbortError'));
+                var o = new A(e, t);
+                if (o.signal && o.signal.aborted) return r(new R('Aborted', 'AbortError'));
                 var i = new XMLHttpRequest();
                 function a() {
                     i.abort();
@@ -3344,7 +3344,7 @@
                         r(new TypeError('Network request failed'));
                     }),
                     (i.onabort = function () {
-                        r(new E('Aborted', 'AbortError'));
+                        r(new R('Aborted', 'AbortError'));
                     }),
                     i.open(o.method, o.url, !0),
                     'include' === o.credentials ? (i.withCredentials = !0) : 'omit' === o.credentials && (i.withCredentials = !1),
@@ -3360,9 +3360,9 @@
                     i.send(void 0 === o._bodyInit ? null : o._bodyInit);
             });
         }
-        (M.polyfill = !0), self.fetch || ((self.fetch = M), (self.Headers = y), (self.Request = x), (self.Response = k));
+        (M.polyfill = !0), self.fetch || ((self.fetch = M), (self.Headers = y), (self.Request = A), (self.Response = k));
         n(99), n(101);
-        function q(e, t, n, r, o, i, a) {
+        function P(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3371,36 +3371,36 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function T(e) {
+        function q(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        q(i, r, o, a, c, 'next', e);
+                        P(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        q(i, r, o, a, c, 'throw', e);
+                        P(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        function R(e, t) {
+        function E(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var P = n(63),
-            O = (function () {
+        var T = n(63),
+            B = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, o, i, a, c, s, u, l, d, f;
+                var t, n, r, o, i, a, c, s, u, l, d, h;
                 return (
                     (t = e),
                     (n = [
@@ -3413,7 +3413,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((f = T(
+                                ((h = q(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3434,7 +3434,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return f.apply(this, arguments);
+                                    return h.apply(this, arguments);
                                 }),
                         },
                         {
@@ -3474,7 +3474,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((d = T(
+                                ((d = q(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3503,7 +3503,7 @@
                         {
                             key: 'waitForTextInDOM',
                             value:
-                                ((l = T(
+                                ((l = q(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3538,7 +3538,7 @@
                         {
                             key: 'moveOrphanedElementsIntoNewWrapper',
                             value:
-                                ((u = T(
+                                ((u = q(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3568,7 +3568,7 @@
                         {
                             key: 'createWrapper',
                             value:
-                                ((s = T(
+                                ((s = q(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         var i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3623,7 +3623,7 @@
                         {
                             key: 'addMultipleHeaderLogos',
                             value:
-                                ((c = T(
+                                ((c = q(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o, i;
                                         return regeneratorRuntime.wrap(
@@ -3705,7 +3705,7 @@
                         {
                             key: 'ratesComingSoon',
                             value:
-                                ((a = T(
+                                ((a = q(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -3803,7 +3803,7 @@
                         {
                             key: 'fetchHTMLFromFile',
                             value:
-                                ((i = T(
+                                ((i = q(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3850,9 +3850,9 @@
                         {
                             key: 'calculateNights',
                             value: function () {
-                                var e = P(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = P(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                                return P(t).diff(P(e), 'days');
+                                var e = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    t = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return T(t).diff(T(e), 'days');
                             },
                         },
                         {
@@ -3878,7 +3878,7 @@
                         {
                             key: 'addAttributeToInput',
                             value:
-                                ((o = T(
+                                ((o = q(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -3921,12 +3921,12 @@
                                 }
                             },
                         },
-                    ]) && R(t.prototype, n),
-                    r && R(t, r),
+                    ]) && E(t.prototype, n),
+                    r && E(t, r),
                     e
                 );
             })();
-        function j(e, t, n, r, o, i, a) {
+        function O(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3935,31 +3935,31 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function B(e) {
+        function j(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        j(i, r, o, a, c, 'next', e);
+                        O(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        j(i, r, o, a, c, 'throw', e);
+                        O(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        function H(e, t) {
+        function F(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var F = new r(),
+        var H = new r(),
             I = n(63),
-            D = new O(),
+            D = new B(),
             N = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -3988,7 +3988,7 @@
                                     D.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = B(
+                                            var t = j(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -4021,7 +4021,7 @@
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
                                                                         D.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            B(
+                                                                            j(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -4131,7 +4131,7 @@
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            B(
+                                                                            j(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -4158,7 +4158,7 @@
                                                                         ),
                                                                         jQuery(document).on(
                                                                             'ratesReadyEvent',
-                                                                            B(
+                                                                            j(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -4185,7 +4185,7 @@
                                                                         ),
                                                                         D.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = B(
+                                                                                var t = j(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -4310,13 +4310,14 @@
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         e.site_config.is_resbeat_client &&
-                                                                            (e
+                                                                            (e.applyResbeatStyles(),
+                                                                            e
                                                                                 .replaceHTMLWithFile(
                                                                                     'https://static.hotelsforhope.com/ares/html/booking-guide.html',
                                                                                     '#booking-guide'
                                                                                 )
                                                                                 .then(
-                                                                                    B(
+                                                                                    j(
                                                                                         regeneratorRuntime.mark(function e() {
                                                                                             return regeneratorRuntime.wrap(function (e) {
                                                                                                 for (;;)
@@ -4382,7 +4383,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((d = B(
+                                ((d = j(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4413,7 +4414,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((l = B(
+                                ((l = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4590,7 +4591,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((u = B(
+                                ((u = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4863,11 +4864,11 @@
                                             .concat(this.site_config.header.background, ';\n            }\n            \n            .logo img{\n                max-width: ')
                                             .concat(
                                                 this.site_config.header.logo_max_width,
-                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass {\n                background-color: '
+                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {\n                background-color: '
                                             )
                                             .concat(
                                                 this.site_config.background_color,
-                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover {\n                background: '
+                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {\n                background: '
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
@@ -4882,7 +4883,7 @@
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
-                                                '\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover {\n                color: '
+                                                '\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {\n                color: '
                                             )
                                             .concat(this.site_config.primary_text_color, '\n            }\n\n            span.exclusive-rate {\n                background: ')
                                             .concat(
@@ -4906,7 +4907,7 @@
                                             .concat(this.site_config.primary_text_color, ';\n                border: 1px solid ')
                                             .concat(
                                                 this.site_config.border_color,
-                                                ';\n            }\n\n            .CheckRates input.submit,\n            .CheckRates input.submit,\n            .CheckRates input.submit {\n                background: '
+                                                ';\n            }\n\n            .CheckRates input.submit,\n            .CheckRates input.submit,\n            .CheckRates input.submit,\n            #lightbox, #lightbox .dialog-button-ok input:hover  {\n                background: '
                                             )
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(
@@ -4922,7 +4923,7 @@
                                             .concat(this.site_config.button_hover_background_color, ';\n                color: ')
                                             .concat(
                                                 this.site_config.button_hover_text_color,
-                                                ';\n            }\n\n            .SinglePropDetail #moreRatesLink {\n                color: '
+                                                ';\n            }\n\n            .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {\n                color: '
                                             )
                                             .concat(this.site_config.primary_color, ';\n                border-color: ')
                                             .concat(
@@ -4955,7 +4956,7 @@
                                             )
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n            }\n\n            #theOtherSubmitButton,\n            .ArnSecondarySearchOuterContainer select,\n            .ArnShowRatesLink,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .sort,\n            .HoldRoomsForm .submit {\n                border:1px solid '
+                                                ';\n            }\n\n            #theOtherSubmitButton,\n            .ArnSecondarySearchOuterContainer select,\n            .ArnShowRatesLink,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .sort,\n            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {\n                border:1px solid '
                                             )
                                             .concat(this.site_config.border_color, '\n            }\n\n            .holdRoom {\n                border: 1px solid ')
                                             .concat(
@@ -4990,7 +4991,13 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(F.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(H.path, '/styles/dark.css" rel="stylesheet">'));
+                            },
+                        },
+                        {
+                            key: 'applyResbeatStyles',
+                            value: function () {
+                                document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(H.path, '/styles/resbeat.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -5216,7 +5223,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((s = B(
+                                ((s = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5399,7 +5406,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((c = B(
+                                ((c = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5452,7 +5459,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = B(
+                                    return (i = j(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -5508,7 +5515,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = B(
+                                    return (s = j(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -5540,7 +5547,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = B(
+                                    return (l = j(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -5850,8 +5857,8 @@
                                             l = document.querySelector('.RoomNumber-'.concat(r, ' .cardMonth')),
                                             d = document.querySelector('.RoomNumber-'.concat(r, ' .cardYear'));
                                         if (!(o && i && a && c && s && u && l && d)) return;
-                                        var f = o.tabIndex,
-                                            h = a.tabIndex,
+                                        var h = o.tabIndex,
+                                            f = a.tabIndex,
                                             p = i.tabIndex,
                                             m = c.tabIndex,
                                             y = s.tabIndex,
@@ -5859,9 +5866,9 @@
                                             v = l.tabIndex,
                                             b = d.tabIndex;
                                         o.setAttribute('tabIndex', p),
-                                            a.setAttribute('tabIndex', f),
+                                            a.setAttribute('tabIndex', h),
                                             i.setAttribute('tabIndex', m),
-                                            c.setAttribute('tabIndex', h),
+                                            c.setAttribute('tabIndex', f),
                                             s.setAttribute('tabIndex', g),
                                             u.setAttribute('tabIndex', v),
                                             l.setAttribute('tabIndex', b),
@@ -5922,7 +5929,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((a = B(
+                                ((a = j(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5952,7 +5959,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((i = B(
+                                ((i = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -6011,7 +6018,7 @@
                         {
                             key: 'setCheckDatesToReadOnlyOnMobile',
                             value:
-                                ((o = B(
+                                ((o = j(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(
@@ -6058,8 +6065,8 @@
                                 'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
                             },
                         },
-                    ]) && H(t.prototype, n),
-                    r && H(t, r),
+                    ]) && F(t.prototype, n),
+                    r && F(t, r),
                     e
                 );
             })();
@@ -6098,13 +6105,13 @@
                 });
             };
         }
-        function G(e, t) {
+        function V(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        function V(e) {
+        function G(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
@@ -6137,7 +6144,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var Z = new O(),
+        var Z = new B(),
             K = (function (e) {
                 function t(e) {
                     var n;
@@ -6146,9 +6153,9 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, t),
                         (n = (function (e, t) {
-                            return !t || ('object' !== W(t) && 'function' != typeof t) ? V(e) : t;
+                            return !t || ('object' !== W(t) && 'function' != typeof t) ? G(e) : t;
                         })(this, J(t).call(this, e))),
-                        z(J(t.prototype), 'init', V(n)).call(V(n)),
+                        z(J(t.prototype), 'init', G(n)).call(G(n)),
                         (n.site_config = e),
                         n
                     );
@@ -6173,6 +6180,7 @@
                                     this.updateHeaderLinks(),
                                     this.rerunFunctionsOnMoreRoomsClick(),
                                     this.moveConfigContainer(),
+                                    this.applyConfigColors(),
                                     document.querySelector('.RootBody') && this.updateSearchTitle(),
                                     document.querySelector('.WBLoginForm') && Z.selectCheckboxOnLabelClick('#theRememberMeAjax'),
                                     document.querySelector('.SearchHotels') &&
@@ -6391,13 +6399,10 @@
                                             .querySelector('.GuestForms')
                                             .insertAdjacentHTML(
                                                 'beforeEnd',
-                                                '\n                <style>\n                    .points-earned{\n                        background: '
-                                                    .concat(this.site_config.primary_color, ';\n                        color: ')
-                                                    .concat(
-                                                        this.site_config.primary_text_color,
-                                                        ';\n                        width: 100%;\n                        display: flex;\n                        justify-content: space-between;\n                        align-content: center;\n                        padding: 18px;\n                        margin-top: 48px;\n                    }\n                </style>\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>\n                <div class="points-earned">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                    <span>'
-                                                    )
-                                                    .concat(e, '</span>\n                </div>\n            ')
+                                                '\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>\n                <div class="points-earned">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                    <span>'.concat(
+                                                    e,
+                                                    '</span>\n                </div>\n            '
+                                                )
                                             );
                                 }
                             },
@@ -6560,8 +6565,56 @@
                                 }
                             },
                         },
-                    ]) && G(n.prototype, r),
-                    o && G(n, o),
+                        {
+                            key: 'applyConfigColors',
+                            value: function () {
+                                this.site_config &&
+                                    document.body.insertAdjacentHTML(
+                                        'beforeEnd',
+                                        "\n            <style>\n            .ArnPages a,\n            .ArnPages, .WBValidatedRegistrationForm #theUserNameAjax input,\n            .WBValidatedRegistrationForm #theFirstNameAjax input,\n            .WBValidatedRegistrationForm #theLastNameAjax input,\n            .WBValidatedRegistrationForm #theEditablePasswordAjax input,\n            .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,\n            input[type='email'].email-mask,\n            .WBLoginFormFields input, .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input, .RootBody .search-messaging #user-name strong, .RootBody .search-messaging #user-name, .RootBody .search-messaging h4, .CheckOutForm .total-points-earned td, .MemberNotAuthenticated #theUserNameAjax input,\n            .MemberNotAuthenticated #thePasswordAjax input,\n            .MemberNotAuthenticated #new-user-text,\n            .MemberNotAuthenticated #theWBLoginFormBody h1,\n            .MemberNotAuthenticated .ForgotPasswordAction, .ArnSupportLinks, .MemberNotAuthenticated #new-user-text strong,\n            .MemberNotAuthenticated #theWBLoginFormBody strong, .MemberNotAuthenticated .LoginAction,\n            .SendMeNewPasswordAction.submit,\n            .ArnShowRatesLink,\n            .bookRoom,\n            .holdRoom,\n            #moreRatesLink,\n            .GuestForms legend,\n            .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,\n            .SearchHotels .lblRating,\n            .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td {\n                font-family: '"
+                                            .concat(
+                                                this.site_config.google_font_name,
+                                                "', 'Helvetica';\n            }\n            \n            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong  {\n                color: "
+                                            )
+                                            .concat(
+                                                this.site_config.secondary_color,
+                                                ';\n            }\n            \n            .support-details a, #theSubmitButton:hover,\n            #theOtherSubmitButton:hover,\n            .CheckRates .submit:hover,\n            .CheckOutForm #theConfirmationButton:hover, .ArnRateButton a,\n            .bookRoom,\n            .holdRoom, .LoginAction.submit:hover,\n            #register-btn a:hover,\n            .RegisterAction.submit:hover,\n            .SendMeNewPasswordAction.submit:hover,\n            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover  {\n                color: '
+                                            )
+                                            .concat(
+                                                this.site_config.primary_color,
+                                                ' !important;\n            }\n            \n            #theSubmitButton,\n            #theOtherSubmitButton, .RootBody #theOtherSubmitButton\n            .SinglePropDetail .CheckRates .submit,\n            .CheckOutForm #theConfirmationButton, .SinglePropDetail .beat-em, .SearchHotels .beat-em, .LoginAction.submit,\n            #register-btn a,\n            .RegisterAction.submit,\n            .SendMeNewPasswordAction.submit,\n            #moreRatesLink,\n            .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,\n            .bookRoom:hover,\n            .holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit  {\n                color: '
+                                            )
+                                            .concat(
+                                                this.site_config.primary_text_color,
+                                                " !important;\n            }\n        \n            .WBValidatedRegistrationForm #theUserNameAjax input,\n            .WBValidatedRegistrationForm #theFirstNameAjax input,\n            .WBValidatedRegistrationForm #theLastNameAjax input,\n            .WBValidatedRegistrationForm #theEditablePasswordAjax input,\n            .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,\n            input[type='email'].email-mask,\n            .WBLoginFormFields input, .SearchHotels #theSearchBox input,\n            .SearchHotels #theSearchBox select, #lightbox .WBChangePasswordFormFields input[type='password'], .MemberNotAuthenticated #theUserNameAjax input,\n            .MemberNotAuthenticated #thePasswordAjax input, .SearchHotels .ArnContainer, .WBSupportForm input,\n            .WBSupportForm select,\n            .WBSupportForm textarea, .RootBody .ArnPrimarySearchContainer, .ArnSupportLinks, .SinglePropDetail .SimpleSearch input,\n            .SinglePropDetail .SimpleSearch select, .totalsTable tr th,\n            .totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {\n                background: "
+                                            )
+                                            .concat(
+                                                this.site_config.secondary_background_color,
+                                                ' !important;\n            }\n            \n            \n            .SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,\n            #theOtherSubmitButton:hover,\n            .CheckRates .submit:hover,\n            .CheckOutForm #theConfirmationButton:hover, .LoginAction.submit:hover,\n            #register-btn a:hover,\n            .RegisterAction.submit:hover,\n            .SendMeNewPasswordAction.submit:hover,\n            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover  {\n                background: '
+                                            )
+                                            .concat(
+                                                this.site_config.background_color,
+                                                ' !important;\n            }\n            \n            #theSubmitButton,\n            #theOtherSubmitButton,\n            .SinglePropDetail .CheckRates .submit,\n            .CheckOutForm #theConfirmationButton, .LoginAction.submit,\n            #register-btn a,\n            .RegisterAction.submit,\n            .SendMeNewPasswordAction.submit,\n            #moreRatesLink,\n            .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,\n            .bookRoom:hover,\n            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {\n                background: '
+                                            )
+                                            .concat(
+                                                this.site_config.primary_color,
+                                                ' !important;\n            }\n            \n            .WBLoginFormActions input,\n            #register-btn a,\n            .WBValidatedRegistrationFormActions input,\n            #theOtherSubmitButton,\n            #theSubmitButton,\n            .ArnShowRatesLink,\n            .SinglePropDetail .CheckRates .submit,\n            .SinglePropDetail .bookRoom,\n            .SinglePropDetail #moreRatesLink,\n            .CheckOutForm #theConfirmationButton,\n            .WBSupportFormActions input,\n            .WBForgotPasswordFormActions input, .WBLoginFormActions input:hover,\n            #register-btn a:hover,\n            .WBValidatedRegistrationFormActions input:hover,\n            #theOtherSubmitButton:hover,\n            #theSubmitButton:hover,\n            .ArnShowRatesLink:hover,\n            .SinglePropDetail .CheckRates .submit:hover,\n            .SinglePropDetail .bookRoom:hover,\n            .SinglePropDetail #moreRatesLink:hover,\n            .CheckOutForm #theConfirmationButton:hover,\n            .WBSupportFormActions input:hover,\n            .WBForgotPasswordFormActions input:hover, #theSubmitButton,\n            #theOtherSubmitButton,\n            .SinglePropDetail .CheckRates .submit,\n            .CheckOutForm #theConfirmationButton, .ArnRateButton a:hover,\n            .bookRoom:hover,\n            .holdRoom:hover, .ArnRateButton a,\n            .bookRoom,\n            .holdRoom, .LoginAction.submit:hover,\n            #register-btn a:hover,\n            .RegisterAction.submit:hover,\n            .SendMeNewPasswordAction.submit:hover,\n            .WBSupportForm .SendRequestAction:hover, .LoginAction.submit,\n            #register-btn a,\n            .RegisterAction.submit,\n            .SendMeNewPasswordAction.submit,\n            #moreRatesLink,\n            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input  {\n                border: 3px solid '
+                                            )
+                                            .concat(
+                                                this.site_config.primary_color,
+                                                ' !important;\n            }\n\n            .SearchHotels .beat-em, .SinglePropDetail .beat-em {\n                background-color: '
+                                            )
+                                            .concat(this.site_config.secondary_color, '\n            }\n\n            header {\n                border-bottom: 1px solid ')
+                                            .concat(
+                                                this.site_config.secondary_background_color,
+                                                ';\n            }\n\n            @media screen and (max-width: 800px) {\n                .currencies-container {\n                    background: '
+                                            )
+                                            .concat(this.site_config.background_color, ';\n                }\n            }\n            </style>\n            ')
+                                    );
+                            },
+                        },
+                    ]) && V(n.prototype, r),
+                    o && V(n, o),
                     t
                 );
             })(N);
@@ -6614,7 +6667,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var oe = new O(),
+        var oe = new B(),
             ie = new (function () {
                 return {
                     site_id: 62011,
@@ -6654,6 +6707,7 @@
                     map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
+                    secondary_background_color: '#f0f0f0',
                     primary_color: '#215853',
                     secondary_color: '#e2ad37',
                     primary_text_color: '#fff',

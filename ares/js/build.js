@@ -30,9 +30,7 @@ export default class BasePortal {
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
             utilities.getPageName();
-            this.applyConfigColors();
-            this.setRootPageBackgroundImage();
-            this.setFontFromConfig();
+            this.applyConfigStyles();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
             this.buildCurrencyDropdown();
@@ -273,18 +271,6 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
-
-            if (this.site_config.is_resbeat_client) {
-                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
-                    if (document.querySelector('#booking-guide')) {
-                        await utilities.waitForSelectorInDOM('#faq-link');
-
-                        utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
-                        utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
-                    }
-                });
-                this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
-            }
         });
     }
 
@@ -758,28 +744,33 @@ export default class BasePortal {
         });
     }
 
-    setRootPageBackgroundImage() {
-        if (!this.site_config) return;
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
-            `
-
-            <style>
-                .RootBody{
-                    background: ${this.site_config.banner_image_url};
-                }
-            </style>`
-        );
-    }
-
     // probably a much better way to do this
-    applyConfigColors() {
-        if (!this.site_config) return;
+    applyConfigStyles() {
+        const style_element = document.querySelector('#h4h-styles');
 
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
+        if (!this.site_config || !style_element) return;
+
+        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+
+        style_element.insertAdjacentHTML(
+            'afterBegin',
             `
-        <style>
+            /* Fonts */
+            *,
+            .taxFeeRow td,
+            .discount td,
+            .totalRow td,
+            .balanceDueRow td,
+            .dueNowRow td,
+            .guestNameFields td{
+                font-family: ${this.site_config.google_font_name}, 'Helvetica';
+            }
+
+            /* Root Body */
+            .RootBody{
+                background: ${this.site_config.banner_image_url};
+            }
+
             /* Header */
 
             header {
@@ -1062,27 +1053,6 @@ export default class BasePortal {
     applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
         document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
-    }
-
-    setFontFromConfig() {
-        if (!this.site_config) return;
-
-        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
-        document.body.insertAdjacentHTML(
-            'beforeEnd',
-            `
-            <style>
-                *,
-                .taxFeeRow td,
-                .discount td,
-                .totalRow td,
-                .balanceDueRow td,
-                .dueNowRow td,
-                .guestNameFields td{
-                    font-family: ${this.site_config.google_font_name}, 'Helvetica';
-                }
-            </style>`
-        );
     }
 
     styleCUGMapPins() {

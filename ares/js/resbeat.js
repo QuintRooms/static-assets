@@ -65,6 +65,17 @@ export default class Resbeat extends BasePortal {
             utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
         }
 
+        this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
+            if (document.querySelector('#booking-guide')) {
+                await utilities.waitForSelectorInDOM('#faq-link');
+
+                utilities.updateAttribute('#faq-link', utilities.getAttribute('.faqLink', 'href'), 'href');
+                utilities.updateAttribute('#customer-support-link', utilities.getAttribute('.supportLink', 'href'), 'href');
+            }
+        });
+
+        this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
+
         utilities.updateHTML(
             '.ArnSupportChatTable',
             `
@@ -431,9 +442,11 @@ export default class Resbeat extends BasePortal {
     // }
 
     applyResbeatConfigColors() {
-        if (!this.site_config) return;
+        const style_element = document.querySelector('#h4h-styles');
 
-        document.body.insertAdjacentHTML(
+        if (!this.site_config || !style_element) return;
+
+        style_element.insertAdjacentHTML(
             'beforeEnd',
             `
             <style>

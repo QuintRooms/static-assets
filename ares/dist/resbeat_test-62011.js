@@ -1423,19 +1423,20 @@
             l = n(10),
             d = Math.min,
             h = [].push,
-            f = !l(function () {
+            f = 'length',
+            p = !l(function () {
                 RegExp(4294967295, 'y');
             });
         n(58)('split', 2, function (e, t, n, l) {
-            var p;
+            var m;
             return (
-                (p =
+                (m =
                     'c' == 'abbc'.split(/(b)*/)[1] ||
-                    4 != 'test'.split(/(?:)/, -1).length ||
-                    2 != 'ab'.split(/(?:ab)*/).length ||
-                    4 != '.'.split(/(.?)(.?)/).length ||
-                    '.'.split(/()()/).length > 1 ||
-                    ''.split(/.?/).length
+                    4 != 'test'.split(/(?:)/, -1)[f] ||
+                    2 != 'ab'.split(/(?:ab)*/)[f] ||
+                    4 != '.'.split(/(.?)(.?)/)[f] ||
+                    '.'.split(/()()/)[f] > 1 ||
+                    ''.split(/.?/)[f]
                         ? function (e, t) {
                               var o = String(this);
                               if (void 0 === e && 0 === t) return [];
@@ -1447,19 +1448,19 @@
                                       s = [],
                                       l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
                                       d = 0,
-                                      f = void 0 === t ? 4294967295 : t >>> 0,
-                                      p = new RegExp(e.source, l + 'g');
-                                  (i = u.call(p, o)) &&
+                                      p = void 0 === t ? 4294967295 : t >>> 0,
+                                      m = new RegExp(e.source, l + 'g');
+                                  (i = u.call(m, o)) &&
                                   !(
-                                      (a = p.lastIndex) > d &&
-                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && h.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= f)
+                                      (a = m.lastIndex) > d &&
+                                      (s.push(o.slice(d, i.index)), i[f] > 1 && i.index < o[f] && h.apply(s, i.slice(1)), (c = i[0][f]), (d = a), s[f] >= p)
                                   );
 
                               )
-                                  p.lastIndex === i.index && p.lastIndex++;
-                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > f ? s.slice(0, f) : s;
+                                  m.lastIndex === i.index && m.lastIndex++;
+                              return d === o[f] ? (!c && m.test('')) || s.push('') : s.push(o.slice(d)), s[f] > p ? s.slice(0, p) : s;
                           }
-                        : '0'.split(void 0, 0).length
+                        : '0'.split(void 0, 0)[f]
                         ? function (e, t) {
                               return void 0 === e && 0 === t ? [] : n.call(this, e, t);
                           }
@@ -1468,25 +1469,25 @@
                     function (n, r) {
                         var o = e(this),
                             i = null == n ? void 0 : n[t];
-                        return void 0 !== i ? i.call(n, o, r) : p.call(String(o), n, r);
+                        return void 0 !== i ? i.call(n, o, r) : m.call(String(o), n, r);
                     },
                     function (e, t) {
-                        var r = l(p, e, this, t, p !== n);
+                        var r = l(m, e, this, t, m !== n);
                         if (r.done) return r.value;
                         var u = o(e),
                             h = String(this),
-                            m = i(u, RegExp),
+                            f = i(u, RegExp),
                             y = u.unicode,
-                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (f ? 'y' : 'g'),
-                            v = new m(f ? u : '^(?:' + u.source + ')', g),
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
+                            v = new f(p ? u : '^(?:' + u.source + ')', g),
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
                         if (0 === h.length) return null === s(v, h) ? [h] : [];
                         for (var S = 0, w = 0, _ = []; w < h.length; ) {
-                            v.lastIndex = f ? w : 0;
+                            v.lastIndex = p ? w : 0;
                             var A,
-                                x = s(v, f ? h : h.slice(w));
-                            if (null === x || (A = d(c(v.lastIndex + (f ? 0 : w)), h.length)) === S) w = a(h, w, y);
+                                x = s(v, p ? h : h.slice(w));
+                            if (null === x || (A = d(c(v.lastIndex + (p ? 0 : w)), h.length)) === S) w = a(h, w, y);
                             else {
                                 if ((_.push(h.slice(S, w)), _.length === b)) return _;
                                 for (var k = 1; k <= x.length - 1; k++) if ((_.push(x[k]), _.length === b)) return _;
@@ -1979,7 +1980,7 @@
                             l = b.p(i),
                             d = 'set' + (this.$u ? 'UTC' : ''),
                             h = ((u = {}),
-                            (u[o] = d + 'Date'),
+                            (u.day = d + 'Date'),
                             (u.date = d + 'Date'),
                             (u[a] = d + 'Month'),
                             (u[s] = d + 'FullYear'),
@@ -2077,26 +2078,26 @@
                     (h.utcOffset = function () {
                         return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
                     }),
-                    (h.diff = function (e, u, l) {
-                        var d,
-                            h = b.p(u),
-                            f = v(e),
-                            p = 6e4 * (f.utcOffset() - this.utcOffset()),
-                            m = this - f,
-                            y = b.m(this, f);
+                    (h.diff = function (e, o, u) {
+                        var l,
+                            d = b.p(o),
+                            h = v(e),
+                            f = 6e4 * (h.utcOffset() - this.utcOffset()),
+                            p = this - h,
+                            m = b.m(this, h);
                         return (
-                            (y =
-                                ((d = {}),
-                                (d[s] = y / 12),
-                                (d[a] = y),
-                                (d[c] = y / 3),
-                                (d[i] = (m - p) / 6048e5),
-                                (d[o] = (m - p) / 864e5),
-                                (d[r] = m / 36e5),
-                                (d[n] = m / 6e4),
-                                (d[t] = m / 1e3),
-                                d)[h] || m),
-                            l ? y : b.a(y)
+                            (m =
+                                ((l = {}),
+                                (l[s] = m / 12),
+                                (l[a] = m),
+                                (l[c] = m / 3),
+                                (l[i] = (p - f) / 6048e5),
+                                (l.day = (p - f) / 864e5),
+                                (l[r] = p / 36e5),
+                                (l[n] = p / 6e4),
+                                (l[t] = p / 1e3),
+                                l)[d] || p),
+                            u ? m : b.a(m)
                         );
                     }),
                     (h.daysInMonth = function () {
@@ -3996,9 +3997,7 @@
                                                                 case 0:
                                                                     return (
                                                                         D.getPageName(),
-                                                                        e.applyConfigColors(),
-                                                                        e.setRootPageBackgroundImage(),
-                                                                        e.setFontFromConfig(),
+                                                                        e.applyConfigStyles(),
                                                                         e.setupDatePrompt(),
                                                                         e.showLanguageFromCongif(),
                                                                         e.buildCurrencyDropdown(),
@@ -4009,7 +4008,7 @@
                                                                             'head',
                                                                             'beforeEnd'
                                                                         ),
-                                                                        (t.next = 12),
+                                                                        (t.next = 10),
                                                                         D.createHTML(
                                                                             '<header><a class="logo" href="'
                                                                                 .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
@@ -4018,7 +4017,7 @@
                                                                             'afterEnd'
                                                                         )
                                                                     );
-                                                                case 12:
+                                                                case 10:
                                                                     'cug' === e.site_config.site_type &&
                                                                         D.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                             j(
@@ -4308,49 +4307,8 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
-                                                                        e.setCheckDatesToReadOnlyOnMobile(),
-                                                                        e.site_config.is_resbeat_client &&
-                                                                            (e
-                                                                                .replaceHTMLWithFile(
-                                                                                    'https://static.hotelsforhope.com/ares/html/booking-guide.html',
-                                                                                    '#booking-guide'
-                                                                                )
-                                                                                .then(
-                                                                                    j(
-                                                                                        regeneratorRuntime.mark(function e() {
-                                                                                            return regeneratorRuntime.wrap(function (e) {
-                                                                                                for (;;)
-                                                                                                    switch ((e.prev = e.next)) {
-                                                                                                        case 0:
-                                                                                                            if (!document.querySelector('#booking-guide')) {
-                                                                                                                e.next = 5;
-                                                                                                                break;
-                                                                                                            }
-                                                                                                            return (e.next = 3), D.waitForSelectorInDOM('#faq-link');
-                                                                                                        case 3:
-                                                                                                            D.updateAttribute(
-                                                                                                                '#faq-link',
-                                                                                                                D.getAttribute('.faqLink', 'href'),
-                                                                                                                'href'
-                                                                                                            ),
-                                                                                                                D.updateAttribute(
-                                                                                                                    '#customer-support-link',
-                                                                                                                    D.getAttribute('.supportLink', 'href'),
-                                                                                                                    'href'
-                                                                                                                );
-                                                                                                        case 5:
-                                                                                                        case 'end':
-                                                                                                            return e.stop();
-                                                                                                    }
-                                                                                            }, e);
-                                                                                        })
-                                                                                    )
-                                                                                ),
-                                                                            e.replaceHTMLWithFile(
-                                                                                'https://static.hotelsforhope.com/ares/html/resbeat-faq.html',
-                                                                                '.ArnSubPage.WBFaq'
-                                                                            ));
-                                                                case 47:
+                                                                        e.setCheckDatesToReadOnlyOnMobile();
+                                                                case 44:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4840,25 +4798,23 @@
                             },
                         },
                         {
-                            key: 'setRootPageBackgroundImage',
+                            key: 'applyConfigStyles',
                             value: function () {
+                                var e = document.querySelector('#h4h-styles');
                                 this.site_config &&
-                                    document.body.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '\n\n            <style>\n                .RootBody{\n                    background: '.concat(
-                                            this.site_config.banner_image_url,
-                                            ';\n                }\n            </style>'
-                                        )
-                                    );
-                            },
-                        },
-                        {
-                            key: 'applyConfigColors',
-                            value: function () {
-                                this.site_config &&
-                                    document.body.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '\n        <style>\n            /* Header */\n\n            header {\n                justify-content: '
+                                    e &&
+                                    (D.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    e.insertAdjacentHTML(
+                                        'afterBegin',
+                                        '\n            /* Fonts */\n            *,\n            .taxFeeRow td,\n            .discount td,\n            .totalRow td,\n            .balanceDueRow td,\n            .dueNowRow td,\n            .guestNameFields td{\n                font-family: '
+                                            .concat(
+                                                this.site_config.google_font_name,
+                                                ", 'Helvetica';\n            }\n\n            /* Root Body */\n            .RootBody{\n                background: "
+                                            )
+                                            .concat(
+                                                this.site_config.banner_image_url,
+                                                ';\n            }\n\n            /* Header */\n\n            header {\n                justify-content: '
+                                            )
                                             .concat(this.site_config.header.logo_flex_position, ';\n                background: ')
                                             .concat(this.site_config.header.background, ';\n            }\n            \n            .logo img{\n                max-width: ')
                                             .concat(
@@ -4986,7 +4942,7 @@
                                                 ' !important;\n            }\n    \n            .yui3-skin-sam .yui3-calendar-content{\n                border-color: '
                                             )
                                             .concat(this.site_config.border_color, ' !important;\n            }\n        </style>\n        ')
-                                    );
+                                    ));
                             },
                         },
                         {
@@ -5001,20 +4957,6 @@
                             value: function () {
                                 this.site_config.has_custom_styles &&
                                     document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(this.site_config.custom_styles_url, '" rel="stylesheet">'));
-                            },
-                        },
-                        {
-                            key: 'setFontFromConfig',
-                            value: function () {
-                                this.site_config &&
-                                    (D.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                    document.body.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '\n            <style>\n                *,\n                .taxFeeRow td,\n                .discount td,\n                .totalRow td,\n                .balanceDueRow td,\n                .dueNowRow td,\n                .guestNameFields td{\n                    font-family: '.concat(
-                                            this.site_config.google_font_name,
-                                            ", 'Helvetica';\n                }\n            </style>"
-                                        )
-                                    ));
                             },
                         },
                         {
@@ -6205,6 +6147,30 @@
                                             '#theReservationConfirmationNumberAjax input'
                                         ),
                                         K.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
+                                    this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(
+                                        U(
+                                            regeneratorRuntime.mark(function e() {
+                                                return regeneratorRuntime.wrap(function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                if (!document.querySelector('#booking-guide')) {
+                                                                    e.next = 5;
+                                                                    break;
+                                                                }
+                                                                return (e.next = 3), K.waitForSelectorInDOM('#faq-link');
+                                                            case 3:
+                                                                K.updateAttribute('#faq-link', K.getAttribute('.faqLink', 'href'), 'href'),
+                                                                    K.updateAttribute('#customer-support-link', K.getAttribute('.supportLink', 'href'), 'href');
+                                                            case 5:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                }, e);
+                                            })
+                                        )
+                                    ),
+                                    this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq'),
                                     K.updateHTML(
                                         '.ArnSupportChatTable',
                                         '\n            <div class="support-details">\n                <h3>Customer Support</h3>\n                <p>Hours: M-F 8:00am - 5:30pm CST</p>\n                <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n                <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n                <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n            </div>'
@@ -6572,8 +6538,10 @@
                         {
                             key: 'applyResbeatConfigColors',
                             value: function () {
+                                var e = document.querySelector('#h4h-styles');
                                 this.site_config &&
-                                    document.body.insertAdjacentHTML(
+                                    e &&
+                                    e.insertAdjacentHTML(
                                         'beforeEnd',
                                         "\n            <style>\n            .ArnPages a,\n            .ArnPages, .WBValidatedRegistrationForm #theUserNameAjax input,\n            .WBValidatedRegistrationForm #theFirstNameAjax input,\n            .WBValidatedRegistrationForm #theLastNameAjax input,\n            .WBValidatedRegistrationForm #theEditablePasswordAjax input,\n            .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,\n            input[type='email'].email-mask,\n            .WBLoginFormFields input, .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input, .RootBody .search-messaging #user-name strong, .RootBody .search-messaging #user-name, .RootBody .search-messaging h4, .CheckOutForm .total-points-earned td, .MemberNotAuthenticated #theUserNameAjax input,\n            .MemberNotAuthenticated #thePasswordAjax input,\n            .MemberNotAuthenticated #new-user-text,\n            .MemberNotAuthenticated #theWBLoginFormBody h1,\n            .MemberNotAuthenticated .ForgotPasswordAction, .ArnSupportLinks, .MemberNotAuthenticated #new-user-text strong,\n            .MemberNotAuthenticated #theWBLoginFormBody strong, .MemberNotAuthenticated .LoginAction,\n            .SendMeNewPasswordAction.submit,\n            .ArnShowRatesLink,\n            .bookRoom,\n            .holdRoom,\n            #moreRatesLink,\n            .GuestForms legend,\n            .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,\n            .SearchHotels .lblRating,\n            .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td {\n                font-family: '"
                                             .concat(

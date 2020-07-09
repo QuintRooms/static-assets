@@ -79,6 +79,10 @@ input[type='email'].email-mask,
     padding: 5px 10px 0 0 !important;
 }
 
+.config-label{
+    background: #fff;
+}
+
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,

@@ -3009,7 +3009,7 @@
         n.r(t);
         n(39), n(43), n(51), n(53);
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         var o = new r(),
             i = 'resbeat_test-'.concat(62011);

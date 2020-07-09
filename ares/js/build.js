@@ -1061,7 +1061,6 @@ export default class BasePortal {
     }
 
     applyResbeatStyles() {
-        console.log('ehyyy');
         document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
     }
 

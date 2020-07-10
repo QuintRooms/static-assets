@@ -267,23 +267,23 @@ function totalStayPoints() {
 
 totalStayPoints();
 
-function headerLinks() {
-    if (!document.querySelector('#commands')) return;
-    const support_link = document.querySelector('.supportLink');
-    const commands = document.querySelector('#commands');
-    commands.insertAdjacentElement('afterbegin', support_link);
-    const booking_href = document.querySelector('.static-bookingLink').href;
-    const rewards_href = document.querySelector('.static-rewardsLink').href;
-    commands.insertAdjacentHTML(
-        'afterbegin',
-        `
-        <a class="rewards" target="_blank" href="${rewards_href}">Rewards Guide</a>
-        <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
-        `
-    );
-}
+// function headerLinks() {
+//     if (!document.querySelector('#commands')) return;
+//     const support_link = document.querySelector('.supportLink');
+//     const commands = document.querySelector('#commands');
+//     commands.insertAdjacentElement('afterbegin', support_link);
+//     const booking_href = document.querySelector('.static-bookingLink').href;
+//     const rewards_href = document.querySelector('.static-rewardsLink').href;
+//     commands.insertAdjacentHTML(
+//         'afterbegin',
+//         `
+//         <a class="rewards" target="_blank" href="${rewards_href}">Rewards Guide</a>
+//         <a class="booking-guide" target="_blank" href="${booking_href}">Booking Guide</a>
+//         `
+//     );
+// }
 
-headerLinks();
+// headerLinks();
 
 function confirmationPointsEarned() {
     if (!document.querySelector('.ConfirmationForm')) return;

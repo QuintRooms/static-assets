@@ -17,6 +17,9 @@ export default class Algolia {
         const original_params = document.querySelector('meta[name="originalParams"]').content;
         const original_params_url = new URLSearchParams(original_params);
 
+        /**
+         *@description gets the member token of the user for CUGs and saves it to the variable "member_token".
+         */
         const grab_member_token = () => {
             if (site_config.site_type.toLowerCase() !== 'cug') return;
             if (page_name === 'landing-page' || page_name === 'search-results') {
@@ -24,11 +27,19 @@ export default class Algolia {
             }
         };
 
+        /**
+         *@description adds the attribute "required" to an element.
+         *@param string the selector for the element that you wish to add "required" to.
+         */
         function setInputToRequired(selector) {
             if (!document.querySelector(selector)) return;
             document.querySelector(selector).required = true;
         }
 
+        /**
+         *@description creates a node list of elements passed in as a string and sets their display to none.
+         *@param string comma seperated selectors.
+         */
         function hideArnSearchElements(selectors) {
             if (!document.querySelector('.SearchHotels')) return;
             const elements = document.querySelectorAll(selectors);
@@ -38,16 +49,30 @@ export default class Algolia {
             });
         }
 
+        /**
+         *@description removes ARN's search bar element from the dom.
+         *@param string dom selector for ARN's seach input.
+         */
         const remove_arn_search_bar = (selector) => {
             if (!document.querySelector(selector)) return;
             document.querySelector(selector).remove();
         };
 
+        /**
+         *@description inserts a new search input.
+         *@param string page - the selector/class of the page.
+         *@param string selector - selector of dom element to insert html on.
+         *@param string adjacent_location - position for html to be inserted on the specified element.
+         *@param string html - markup for new element.
+         */
         const insert_algolia_search = (page, selector, adjacent_location, html) => {
             if (!document.querySelector(page)) return;
             document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
         };
 
+        /**
+         *@description populates the destination search input on the search-results page with the destination and adds clears the input field on click.
+         */
         const prepopulate_inputs_on_search_hotels = () => {
             if (!document.querySelector('.SearchHotels')) return;
             if (site_config.site_type.toLowerCase() !== 'cug' && site_config.site_type.toLowerCase() !== 'retail') return;
@@ -61,6 +86,11 @@ export default class Algolia {
             });
         };
 
+        /**
+         *@description sets and gets the value for a option element.
+         *@param string selector for the option element.
+         *@return string - the current value for the option input (rooms/adults).
+         */
         function setDropdownIndex(dropdown_selector) {
             const dropdown = document.querySelector(dropdown_selector);
             let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
@@ -78,6 +108,9 @@ export default class Algolia {
             return value;
         }
 
+        /**
+         *@description removes the search input for event sites thus keeping the user in the city of the event.
+         */
         const remove_city_search_for_event = () => {
             if (page_name !== 'search-results') return;
             if (site_config.site_type.toLowerCase() === 'cug' || site_config.site_type.toLowerCase() === 'retail') return;
@@ -87,13 +120,23 @@ export default class Algolia {
             });
         };
 
+        /**
+         *@description if on the search-results page, checks for a value in the "optional hotel" input.
+         *@return string - the value of the "optional hotel" input if not an empty string.
+         */
         const get_optional_hotel_name = () => {
             if (page_name !== 'search-results') return;
             if (document.querySelector('input#hotelName').value === '') return;
-            const hotel_name = `&hotelname=${document.querySelector('input#hotelName').value}`;
+            const hotel_name = document.querySelector('input#hotelName').value;
             return hotel_name;
         };
 
+        /**
+         *@description loops through checkboxes in the filter passed in and adds the textContent to a variable.
+         *@param string dom selector for which filter to loop over.
+         *@param string first div of filter child to be ignored due to ARN's interesting markup.
+         *@return string comma seperated strings. The slice method is removing the last comma.
+         */
         function applyFilters(checkboxSelector, lblFilter) {
             let filter_values = '';
             document.querySelectorAll(checkboxSelector).forEach((el) => {
@@ -105,9 +148,14 @@ export default class Algolia {
                 }
                 return filter_values;
             });
-            return filter_values;
+            return filter_values.slice(0, -1);
         }
 
+        /**
+         *@description gets and returns the destination input string for CUG's or retail sites only.
+         *@param string selector of the input to get the value from.
+         *@return string - the destination or input value.
+         */
         function getDestinationForCUG(inputSelector) {
             if (site_config.cug.is_cug || site_config.site_type.toLowerCase() === 'retail') {
                 const destination_value = document.querySelector(inputSelector).value;
@@ -115,11 +163,19 @@ export default class Algolia {
             }
         }
 
+        /**
+         *@description gets the value of an originalParam key.
+         *@param string the key for the originalParam you want the content for.
+         *@return string - the value of the param.
+         */
         function getEventOrginalParams(paramString) {
             const param = original_params_url.get(paramString);
             return param;
         }
 
+        /**
+         *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
+         */
         function removeArnSubmitAttribute() {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
@@ -146,61 +202,77 @@ export default class Algolia {
                 lng = original_params_url.get('longitude');
             }
 
-            function appendParamsToURL(filterFuncObject) {
-                Object.keys(filterFuncObject).forEach((obj) => {
-                    if (filterFuncObject[obj].value !== '' && filterFuncObject[obj].value !== null && filterFuncObject[obj].value !== undefined) {
-                        built_url.searchParams.append(filterFuncObject[obj].string, filterFuncObject[obj].value);
+            /**
+             * @description loops over all each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
+             * @param object paramObject - an object containing one or more parameters to append to a url.
+             * @property string - paramObject[].key - url parameter key.
+             * @property string - paramObject[].value - the value for the parameter key.
+             * @example appendParamsToURL({
+                            longitude: {
+                                key: 'longitude',
+                                value: lng,
+                            },
+                            rooms: {
+                                key: 'rooms',
+                                value: setDropdownIndex('select#rooms'),
+                            },
+                        })    
+            */
+            function appendParamsToURL(paramObject) {
+                Object.keys(paramObject).forEach((obj) => {
+                    if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined) {
+                        built_url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
                     }
                 });
             }
 
             appendParamsToURL({
                 longitude: {
-                    string: 'longitude',
+                    key: 'longitude',
                     value: lng,
                 },
                 latitude: {
-                    string: 'latitude',
+                    key: 'latitude',
                     value: lat,
                 },
                 checkin: {
-                    string: 'checkin',
+                    key: 'checkin',
                     value: check_in_value,
                 },
                 nights: {
-                    string: 'nights',
+                    key: 'nights',
                     value: nights,
                 },
                 rooms: {
-                    string: 'rooms',
+                    key: 'rooms',
                     value: setDropdownIndex('select#rooms'),
                 },
                 adults: {
-                    string: 'adults',
+                    key: 'adults',
                     value: setDropdownIndex('select#adults'),
                 },
                 currency: {
-                    string: 'currency',
+                    key: 'currency',
                     value: site_config.currency,
                 },
                 amenities: {
-                    string: 'amenities',
-                    value: applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities').slice(0, -1),
+                    key: 'amenities',
+                    value: applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities'),
                 },
                 stars: {
-                    string: 'propertyclasses',
-                    value: applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating').slice(0, -1),
+                    key: 'propertyclasses',
+                    value: applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating'),
                 },
                 propertyType: {
-                    string: 'propertytypes',
-                    value: applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType').slice(0, -1),
+                    key: 'propertytypes',
+                    value: applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType'),
                 },
                 destination: {
-                    string: 'destination',
+                    key: 'destination',
                     value: getDestinationForCUG('input#address-input'),
                 },
                 optionalHotel: {
-                    string: 'hotelname',
+                    key: 'hotelname',
                     value: get_optional_hotel_name(),
                 },
             });
@@ -208,27 +280,27 @@ export default class Algolia {
             if (page_name === 'search-results') {
                 appendParamsToURL({
                     properties: {
-                        string: 'properties',
+                        key: 'properties',
                         value: getEventOrginalParams('properties'),
                     },
                     utm_sorce: {
-                        string: 'utm_sorce',
+                        key: 'utm_sorce',
                         value: getEventOrginalParams('utm_sorce'),
                     },
                     locationLabel: {
-                        string: 'locationlabel',
+                        key: 'locationlabel',
                         value: getEventOrginalParams('locationlabel'),
                     },
                     radius: {
-                        string: 'radius',
+                        key: 'radius',
                         value: getEventOrginalParams('radius'),
                     },
                     groupId: {
-                        string: 'groupid',
+                        key: 'groupid',
                         value: getEventOrginalParams('groupid'),
                     },
                     cid: {
-                        string: 'cid',
+                        key: 'cid',
                         value: getEventOrginalParams('cid'),
                     },
                 });
@@ -237,7 +309,7 @@ export default class Algolia {
             if (site_config.site_type.toLowerCase() === 'cug' && member_token !== '') {
                 appendParamsToURL({
                     memberToken: {
-                        string: 'memberToken',
+                        key: 'memberToken',
                         value: member_token,
                     },
                 });

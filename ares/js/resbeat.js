@@ -392,7 +392,7 @@ export default class Resbeat extends BasePortal {
                         insert_pos = '.bookRoomCell';
                     }
 
-                    if (this.site_id === 62011 || this.site_id === 60831) {
+                    if (this.site_id === '62011' || this.site_id === '60831') {
                         el.querySelector(insert_pos).insertAdjacentHTML(
                             'afterbegin',
                             `<div class="beat-em">

@@ -1,11 +1,7 @@
-import Utilities from '../utilities';
-
 const dayjs = require('dayjs');
 
-const utilities = new Utilities();
-
 export default class Algolia {
-    addAlgoliaSearch(site_config, page_name) {
+    addAlgoliaSearch(site_config, page_name, utilities) {
         let lat_lng;
         let default_lat_lng;
         const {origin} = window.location;

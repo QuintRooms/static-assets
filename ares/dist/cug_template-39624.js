@@ -380,23 +380,23 @@
             v = n(69)(),
             b = n(46),
             S = n(70),
-            w = n(71),
-            _ = n(72),
+            _ = n(71),
+            w = n(72),
             x = s.TypeError,
             A = s.process,
             k = A && A.versions,
             L = (k && k.v8) || '',
             q = s.Promise,
-            C = 'process' == l(A),
-            E = function () {},
+            E = 'process' == l(A),
+            C = function () {},
             M = (o = b.f),
             R = !!(function () {
                 try {
                     var e = q.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(E, E);
+                            e(C, C);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (E || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             T = function (e) {
@@ -448,13 +448,13 @@
                     if (
                         (i &&
                             ((t = S(function () {
-                                C
+                                E
                                     ? A.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = C || O(e) ? 2 : 1)),
+                            (e._h = E || O(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
@@ -467,7 +467,7 @@
             B = function (e) {
                 g.call(s, function () {
                     var t;
-                    C ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    E ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
             F = function (e) {
@@ -513,7 +513,7 @@
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = C ? A.domain : void 0),
+                        (n.domain = E ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && P(this, !1),
@@ -543,7 +543,7 @@
             }),
             d(d.S + d.F * (c || !R), 'Promise', {
                 resolve: function (e) {
-                    return _(c && this === a ? q : this, e);
+                    return w(c && this === a ? q : this, e);
                 },
             }),
             d(
@@ -552,7 +552,7 @@
                         !(
                             R &&
                             n(75)(function (e) {
-                                q.all(e).catch(E);
+                                q.all(e).catch(C);
                             })
                         ),
                 'Promise',
@@ -624,7 +624,7 @@
             function c(e, t, n, r) {
                 var o = t && t.prototype instanceof l ? t : l,
                     i = Object.create(o.prototype),
-                    a = new _(r || []);
+                    a = new w(r || []);
                 return (
                     (i._invoke = (function (e, t, n) {
                         var r = 'suspendedStart';
@@ -745,11 +745,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function w(e) {
+            function _(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function _(e) {
+            function w(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(S, this), this.reset(!0);
             }
             function x(e) {
@@ -822,8 +822,8 @@
                     );
                 }),
                 (e.values = x),
-                (_.prototype = {
-                    constructor: _,
+                (w.prototype = {
+                    constructor: w,
                     reset: function (e) {
                         if (
                             ((this.prev = 0),
@@ -833,7 +833,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = void 0),
-                            this.tryEntries.forEach(w),
+                            this.tryEntries.forEach(_),
                             !e)
                         )
                             for (var t in this) 't' === t.charAt(0) && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
@@ -895,7 +895,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), w(n), u;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), _(n), u;
                         }
                     },
                     catch: function (e) {
@@ -905,7 +905,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    w(n);
+                                    _(n);
                                 }
                                 return o;
                             }
@@ -1679,18 +1679,18 @@
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
                         if (0 === f.length) return null === s(v, f) ? [f] : [];
-                        for (var S = 0, w = 0, _ = []; w < f.length; ) {
-                            v.lastIndex = h ? w : 0;
+                        for (var S = 0, _ = 0, w = []; _ < f.length; ) {
+                            v.lastIndex = h ? _ : 0;
                             var x,
-                                A = s(v, h ? f : f.slice(w));
-                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : w)), f.length)) === S) w = a(f, w, y);
+                                A = s(v, h ? f : f.slice(_));
+                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
                             else {
-                                if ((_.push(f.slice(S, w)), _.length === b)) return _;
-                                for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
-                                w = S = x;
+                                if ((w.push(f.slice(S, _)), w.length === b)) return w;
+                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
+                                _ = S = x;
                             }
                         }
-                        return _.push(f.slice(S)), _;
+                        return w.push(f.slice(S)), w;
                     },
                 ]
             );
@@ -1750,18 +1750,18 @@
                         if ((v.push(b), !y)) break;
                         '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
                     }
-                    for (var S, w = '', _ = 0, x = 0; x < v.length; x++) {
+                    for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], q = 1; q < b.length; q++) L.push(void 0 === (S = b[q]) ? S : String(S));
-                        var C = b.groups;
+                        var E = b.groups;
                         if (h) {
-                            var E = [A].concat(L, k, f);
-                            void 0 !== C && E.push(C);
-                            var M = String(t.apply(void 0, E));
-                        } else M = m(A, f, k, L, C, t);
-                        k >= _ && ((w += f.slice(_, k) + M), (_ = k + A.length));
+                            var C = [A].concat(L, k, f);
+                            void 0 !== E && C.push(E);
+                            var M = String(t.apply(void 0, C));
+                        } else M = m(A, f, k, L, E, t);
+                        k >= w && ((_ += f.slice(w, k) + M), (w = k + A.length));
                     }
-                    return w + f.slice(_);
+                    return _ + f.slice(w);
                 },
             ];
             function m(e, t, r, i, a, c) {
@@ -2206,17 +2206,17 @@
             v = n(2),
             b = n(4),
             S = n(28),
-            w = n(12),
-            _ = n(33),
+            _ = n(12),
+            w = n(33),
             x = n(24),
             A = n(56),
             k = n(87),
             L = n(58),
             q = n(55),
-            C = n(9),
-            E = n(15),
+            E = n(9),
+            C = n(15),
             M = L.f,
-            R = C.f,
+            R = E.f,
             T = k.f,
             P = r.Symbol,
             j = r.JSON,
@@ -2228,9 +2228,9 @@
             D = l('symbols'),
             N = l('op-symbols'),
             $ = Object.prototype,
-            W = 'function' == typeof P && !!q.f,
-            U = r.QObject,
-            G = !U || !U.prototype || !U.prototype.findChild,
+            U = 'function' == typeof P && !!q.f,
+            W = r.QObject,
+            G = !W || !W.prototype || !W.prototype.findChild,
             V =
                 i &&
                 u(function () {
@@ -2255,7 +2255,7 @@
                 return (t._k = e), t;
             },
             z =
-                W && 'symbol' == typeof P.iterator
+                U && 'symbol' == typeof P.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
@@ -2266,7 +2266,7 @@
                 return (
                     e === $ && J(N, t, n),
                     v(e),
-                    (t = _(t, !0)),
+                    (t = w(t, !0)),
                     v(n),
                     o(D, t)
                         ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || R(e, B, x(1, {})), (e[B][t] = !0)), V(e, t, n))
@@ -2275,28 +2275,28 @@
             },
             Z = function (e, t) {
                 v(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
+                for (var n, r = y((t = _(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
                 return e;
             },
             K = function (e) {
-                var t = H.call(this, (e = _(e, !0)));
+                var t = H.call(this, (e = w(e, !0)));
                 return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
             Q = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
+                if (((e = _(e)), (t = w(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = M(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = T(_(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = T(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
+                for (var t, n = e === $, r = T(n ? N : _(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
                 return i;
             };
-        W ||
+        U ||
             (c(
                 (P = function () {
                     if (this instanceof P) throw TypeError('Symbol is not a constructor!');
@@ -2312,7 +2312,7 @@
                 }
             ),
             (L.f = Q),
-            (C.f = J),
+            (E.f = J),
             (n(57).f = k.f = X),
             (n(29).f = K),
             (q.f = ee),
@@ -2320,11 +2320,11 @@
             (p.f = function (e) {
                 return Y(h(e));
             })),
-            a(a.G + a.W + a.F * !W, {Symbol: P});
+            a(a.G + a.W + a.F * !U, {Symbol: P});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
-        for (var re = E(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
-        a(a.S + a.F * !W, 'Symbol', {
+        for (var re = C(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = P(e));
             },
@@ -2339,7 +2339,7 @@
                 G = !1;
             },
         }),
-            a(a.S + a.F * !W, 'Object', {
+            a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
                     return void 0 === t ? A(e) : Z(A(e), t);
                 },
@@ -2361,7 +2361,7 @@
                 a(
                     a.S +
                         a.F *
-                            (!W ||
+                            (!U ||
                                 u(function () {
                                     var e = P();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
@@ -2534,7 +2534,7 @@
             var v,
                 b,
                 S,
-                w = function (e) {
+                _ = function (e) {
                     if (!f && e in k) return k[e];
                     switch (e) {
                         case 'keys':
@@ -2547,16 +2547,16 @@
                         return new n(this, e);
                     };
                 },
-                _ = t + ' Iterator',
+                w = t + ' Iterator',
                 x = 'values' == m,
                 A = !1,
                 k = e.prototype,
                 L = k[d] || k['@@iterator'] || (m && k[m]),
-                q = L || w(m),
-                C = m ? (x ? w('entries') : q) : void 0,
-                E = ('Array' == t && k.entries) || L;
+                q = L || _(m),
+                E = m ? (x ? _('entries') : q) : void 0,
+                C = ('Array' == t && k.entries) || L;
             if (
-                (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, h)),
+                (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
                     L &&
                     'values' !== L.name &&
@@ -2566,10 +2566,10 @@
                     })),
                 (r && !g) || (!f && !A && k[d]) || a(k, d, q),
                 (c[t] = q),
-                (c[_] = h),
+                (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? q : w('values'), keys: y ? q : w('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
+                if (((v = {values: x ? q : _('values'), keys: y ? q : _('keys'), entries: E}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (f || A), t, v);
             return v;
         };
@@ -3194,7 +3194,7 @@
                 }),
                 a &&
                     (this.formData = function () {
-                        return this.text().then(w);
+                        return this.text().then(_);
                     }),
                 (this.json = function () {
                     return this.text().then(JSON.parse);
@@ -3277,7 +3277,7 @@
                 throw new TypeError('Body not allowed for GET or HEAD requests');
             this._initBody(o);
         }
-        function w(e) {
+        function _(e) {
             var t = new FormData();
             return (
                 e
@@ -3294,7 +3294,7 @@
                 t
             );
         }
-        function _(e, t) {
+        function w(e, t) {
             t || (t = {}),
                 (this.type = 'default'),
                 (this.status = void 0 === t.status ? 200 : t.status),
@@ -3308,18 +3308,18 @@
             return new S(this, {body: this._bodyInit});
         }),
             v.call(S.prototype),
-            v.call(_.prototype),
-            (_.prototype.clone = function () {
-                return new _(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new h(this.headers), url: this.url});
+            v.call(w.prototype),
+            (w.prototype.clone = function () {
+                return new w(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new h(this.headers), url: this.url});
             }),
-            (_.error = function () {
-                var e = new _(null, {status: 0, statusText: ''});
+            (w.error = function () {
+                var e = new w(null, {status: 0, statusText: ''});
                 return (e.type = 'error'), e;
             });
         var x = [301, 302, 303, 307, 308];
-        _.redirect = function (e, t) {
+        w.redirect = function (e, t) {
             if (-1 === x.indexOf(t)) throw new RangeError('Invalid status code');
-            return new _(null, {status: t, headers: {location: e}});
+            return new w(null, {status: t, headers: {location: e}});
         };
         var A = self.DOMException;
         try {
@@ -3364,7 +3364,7 @@
                         };
                     r.url = 'responseURL' in a ? a.responseURL : r.headers.get('X-Request-URL');
                     var o = 'response' in a ? a.response : a.responseText;
-                    n(new _(o, r));
+                    n(new w(o, r));
                 }),
                     (a.onerror = function () {
                         r(new TypeError('Network request failed'));
@@ -3389,7 +3389,7 @@
                     a.send(void 0 === o._bodyInit ? null : o._bodyInit);
             });
         }
-        (k.polyfill = !0), self.fetch || ((self.fetch = k), (self.Headers = h), (self.Request = S), (self.Response = _));
+        (k.polyfill = !0), self.fetch || ((self.fetch = k), (self.Headers = h), (self.Request = S), (self.Response = w));
         n(100), n(61);
         function q(e, t, n, r, o, i, a) {
             try {
@@ -3400,7 +3400,7 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function C(e) {
+        function E(e) {
             return function () {
                 var t = this,
                     n = arguments;
@@ -3416,7 +3416,7 @@
                 });
             };
         }
-        function E(e, t) {
+        function C(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -3442,7 +3442,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((l = C(
+                                ((l = E(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3503,7 +3503,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((u = C(
+                                ((u = E(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3538,7 +3538,7 @@
                         {
                             key: 'moveOrphanedElementsIntoNewWrapper',
                             value:
-                                ((s = C(
+                                ((s = E(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -3568,7 +3568,7 @@
                         {
                             key: 'createWrapper',
                             value:
-                                ((c = C(
+                                ((c = E(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         var i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3623,7 +3623,7 @@
                         {
                             key: 'addMultipleHeaderLogos',
                             value:
-                                ((a = C(
+                                ((a = E(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o, i;
                                         return regeneratorRuntime.wrap(
@@ -3705,7 +3705,7 @@
                         {
                             key: 'ratesComingSoon',
                             value:
-                                ((i = C(
+                                ((i = E(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -3803,7 +3803,7 @@
                         {
                             key: 'fetchHTMLFromFile',
                             value:
-                                ((o = C(
+                                ((o = E(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3875,8 +3875,8 @@
                                 });
                             },
                         },
-                    ]) && E(t.prototype, n),
-                    r && E(t, r),
+                    ]) && C(t.prototype, n),
+                    r && C(t, r),
                     e
                 );
             })();
@@ -3889,178 +3889,260 @@
         }
         var P = n(41),
             j = (function () {
-                function e() {
+                function e(t, n, r) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                    })(this, e);
+                    })(this, e),
+                        (this.site_config = t),
+                        (this.page_name = n),
+                        (this.utilities = r),
+                        (this.lat_lng = void 0),
+                        (this.this.default_lat_lng = void 0),
+                        (this.params = new URL(window.location.href)),
+                        (this.search_params = new URLSearchParams(this.params.search)),
+                        (this.original_params_url = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
+                        this.init();
                 }
                 var t, n, r;
                 return (
                     (t = e),
                     (n = [
                         {
-                            key: 'addAlgoliaSearch',
-                            value: function (e, t, n) {
-                                var r,
-                                    o,
-                                    i = new URL(window.location.href),
-                                    a = new URLSearchParams(i.search),
-                                    c = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                    s = function () {
-                                        if ('cug' === e.site_type.toLowerCase()) {
-                                            var n = '';
-                                            return ('landing-page' !== t && 'search-results' !== t) || (n = document.querySelector('meta[name="memberToken"]').content), n;
-                                        }
-                                    };
-                                function u(e) {
+                            key: 'init',
+                            value: function () {
+                                var e = this;
+                                this.places_autocomplete(),
+                                    this.removeArnSubmitAttribute(),
+                                    this.remove_arn_search_bar('input#city'),
+                                    this.hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    this.submitListener(),
+                                    this.grab_member_token(),
+                                    this.remove_city_search_for_event(),
+                                    this.setDropdownIndex('select#rooms'),
+                                    this.setDropdownIndex('select#adults'),
+                                    this.setInputToRequired('input#theCheckIn'),
+                                    jQuery('#theBody').on('arnMapLoadedEvent', function () {
+                                        e.search_params.has('locationlabel') || e.search_params.has('points') || e.hideArnSearchElements('img.arn-green-marker-icon');
+                                    }),
+                                    'landing-page' === this.page_name &&
+                                        this.insert_algolia_search(
+                                            '.RootBody',
+                                            'div#CitySearchContainer span',
+                                            'beforeEnd',
+                                            '<input type="search" id="address-input" placeholder="Destination" required="true" />'
+                                        ),
+                                    'search-results' === this.page_name &&
+                                        (this.prepopulate_inputs_on_search_hotels(),
+                                        this.insert_algolia_search(
+                                            '.SearchHotels',
+                                            'div#theSearchBox',
+                                            'afterBegin',
+                                            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
+                                        ));
+                            },
+                        },
+                        {
+                            key: 'grab_member_token',
+                            value: function () {
+                                if ('cug' === this.site_config.site_type.toLowerCase()) {
+                                    var e = '';
+                                    return (
+                                        ('landing-page' !== this.page_name && 'search-results' !== this.page_name) ||
+                                            (e = document.querySelector('meta[name="memberToken"]').content),
+                                        e
+                                    );
+                                }
+                            },
+                        },
+                        {
+                            key: 'setInputToRequired',
+                            value: function (e) {
+                                document.querySelector(e) && (document.querySelector(e).required = !0);
+                            },
+                        },
+                        {
+                            key: 'hideArnSearchElements',
+                            value: function (e) {
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelectorAll(e).forEach(function (e) {
+                                        e.style.display = 'none';
+                                    });
+                            },
+                        },
+                        {
+                            key: 'remove_arn_search_bar',
+                            value: function (e) {
+                                document.querySelector(e) && document.querySelector(e).remove();
+                            },
+                        },
+                        {
+                            key: 'insert_algolia_search',
+                            value: function (e, t, n, r) {
+                                document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
+                            },
+                        },
+                        {
+                            key: 'prepopulate_inputs_on_search_hotels',
+                            value: function () {
+                                if (
                                     document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll(e).forEach(function (e) {
-                                            e.style.display = 'none';
+                                    ('cug' === this.site_config.site_type.toLowerCase() || 'retail' === this.site_config.site_type.toLowerCase())
+                                ) {
+                                    var e;
+                                    e = null !== this.search_params.get('destination') ? this.search_params.get('destination') : this.original_params_url.get('destination');
+                                    var t = document.querySelector('input#address-input');
+                                    (t.value = e),
+                                        t.addEventListener('click', function () {
+                                            t.value = '';
                                         });
                                 }
-                                var l = function (e, t, n, r) {
-                                    document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
-                                };
-                                function d(e) {
-                                    var t = document.querySelector(e),
-                                        n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
-                                    return (
-                                        t.addEventListener('change', function () {
-                                            for (var e = 0; e < t.length; e += 1)
-                                                if (t[e].selected) {
-                                                    (t.selectedIndex = e), (n = t[e].textContent);
-                                                    break;
-                                                }
-                                            return n;
-                                        }),
-                                        n
-                                    );
-                                }
-                                var f,
-                                    h,
-                                    p = function () {
-                                        if ('search-results' === t && '' !== document.querySelector('input#hotelName').value)
-                                            return document.querySelector('input#hotelName').value;
-                                    };
-                                function m(e, t) {
-                                    var n = '';
-                                    return (
-                                        document.querySelectorAll(e).forEach(function (e) {
-                                            if (!e.classList.contains(t)) {
-                                                if (e.querySelector('input').checked) {
-                                                    var r = e.querySelector('span').textContent;
-                                                    n += ''.concat(r, ',');
-                                                }
-                                                return n;
+                            },
+                        },
+                        {
+                            key: 'setDropdownIndex',
+                            value: function (e) {
+                                var t = document.querySelector(e),
+                                    n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
+                                return (
+                                    t.addEventListener('change', function () {
+                                        for (var e = 0; e < t.length; e += 1)
+                                            if (t[e].selected) {
+                                                (t.selectedIndex = e), (n = t[e].textContent);
+                                                break;
                                             }
-                                        }),
-                                        n.slice(0, -1)
-                                    );
-                                }
-                                function y(t) {
-                                    if (e.cug.is_cug || 'retail' === e.site_type.toLowerCase()) return document.querySelector(t).value;
-                                }
-                                function g(e) {
-                                    return c.get(e);
-                                }
-                                document.querySelector('form#searchForm').addEventListener('submit', function (n) {
-                                    n.preventDefault();
-                                    var i,
-                                        a,
-                                        u = window.location.origin,
-                                        l = ''.concat(u, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
-                                        f = new URL(l),
-                                        h = P(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                        v = P(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                        b = P(v).diff(P(h), 'days');
-                                    function S(e) {
+                                        return n;
+                                    }),
+                                    n
+                                );
+                            },
+                        },
+                        {
+                            key: 'remove_city_search_for_event',
+                            value: function () {
+                                'search-results' === this.page_name &&
+                                    'cug' !== this.site_config.site_type.toLowerCase() &&
+                                    'retail' !== this.site_config.site_type.toLowerCase() &&
+                                    this.utilities.waitForSelectorInDOM('.algolia-places').then(function () {
+                                        (document.querySelector('.algolia-places').style.display = 'none'),
+                                            (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'get_optional_hotel_name',
+                            value: function () {
+                                if ('search-results' === this.page_name && '' !== document.querySelector('input#hotelName').value)
+                                    return document.querySelector('input#hotelName').value;
+                            },
+                        },
+                        {
+                            key: 'applyFilters',
+                            value: function (e, t) {
+                                var n = '';
+                                return (
+                                    document.querySelectorAll(e).forEach(function (e) {
+                                        if (!e.classList.contains(t)) {
+                                            if (e.querySelector('input').checked) {
+                                                var r = e.querySelector('span').textContent;
+                                                n += ''.concat(r, ',');
+                                            }
+                                            return n;
+                                        }
+                                    }),
+                                    n.slice(0, -1)
+                                );
+                            },
+                        },
+                        {
+                            key: 'getDestinationForCUG',
+                            value: function (e) {
+                                if (this.site_config.cug.is_cug || 'retail' === this.site_config.site_type.toLowerCase()) return document.querySelector(e).value;
+                            },
+                        },
+                        {
+                            key: 'getEventOrginalParams',
+                            value: function (e) {
+                                return this.original_params_url.get(e);
+                            },
+                        },
+                        {
+                            key: 'removeArnSubmitAttribute',
+                            value: function () {
+                                document.querySelector('input#theSubmitButton').setAttribute('onClick', '');
+                            },
+                        },
+                        {
+                            key: 'submitListener',
+                            value: function () {
+                                var e = this;
+                                document.querySelector('form#searchForm').addEventListener('submit', function (t) {
+                                    t.preventDefault();
+                                    var n,
+                                        r,
+                                        o = window.location.origin,
+                                        i = ''.concat(o, '/v6/?type=geo&siteid=').concat(e.site_config.site_id, '&pagesize=10&').concat(e.site_config.distance_unit),
+                                        a = new URL(i),
+                                        c = P(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                        s = P(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
+                                        u = P(s).diff(P(c), 'days');
+                                    function l(e) {
                                         Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && f.searchParams.append(e[t].key, e[t].value);
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && a.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
-                                    r
-                                        ? ((i = r.lat), (a = r.lng))
-                                        : o
-                                        ? ((i = o.lat), (a = o.lng))
-                                        : r || o || 'search-results' !== t || ((i = c.get('latitude')), (a = c.get('longitude'))),
-                                        S({
-                                            longitude: {key: 'longitude', value: a},
-                                            latitude: {key: 'latitude', value: i},
-                                            checkin: {key: 'checkin', value: h},
-                                            nights: {key: 'nights', value: b},
-                                            rooms: {key: 'rooms', value: d('select#rooms')},
-                                            adults: {key: 'adults', value: d('select#adults')},
-                                            currency: {key: 'currency', value: e.currency},
-                                            amenities: {key: 'amenities', value: m('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                            stars: {key: 'propertyclasses', value: m('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                            propertyType: {key: 'propertytypes', value: m('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            destination: {key: 'destination', value: y('input#address-input')},
-                                            optionalHotel: {key: 'hotelname', value: p()},
+                                    e.lat_lng
+                                        ? ((n = e.lat_lng.lat), (r = e.lat_lng.lng))
+                                        : e.default_lat_lng
+                                        ? ((n = e.default_lat_lng.lat), (r = e.default_lat_lng.lng))
+                                        : e.lat_lng ||
+                                          e.default_lat_lng ||
+                                          'search-results' !== e.page_name ||
+                                          ((n = e.original_params_url.get('latitude')), (r = e.original_params_url.get('longitude'))),
+                                        l({
+                                            longitude: {key: 'longitude', value: r},
+                                            latitude: {key: 'latitude', value: n},
+                                            checkin: {key: 'checkin', value: c},
+                                            nights: {key: 'nights', value: u},
+                                            rooms: {key: 'rooms', value: e.setDropdownIndex('select#rooms')},
+                                            adults: {key: 'adults', value: e.setDropdownIndex('select#adults')},
+                                            currency: {key: 'currency', value: e.site_config.currency},
+                                            amenities: {key: 'amenities', value: e.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: e.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: e.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            destination: {key: 'destination', value: e.getDestinationForCUG('input#address-input')},
+                                            optionalHotel: {key: 'hotelname', value: e.get_optional_hotel_name()},
                                         }),
-                                        'search-results' === t &&
-                                            S({
-                                                properties: {key: 'properties', value: g('properties')},
-                                                utm_sorce: {key: 'utm_sorce', value: g('utm_sorce')},
-                                                locationLabel: {key: 'locationlabel', value: g('locationlabel')},
-                                                radius: {key: 'radius', value: g('radius')},
-                                                groupId: {key: 'groupid', value: g('groupid')},
-                                                cid: {key: 'cid', value: g('cid')},
+                                        'search-results' === e.page_name &&
+                                            l({
+                                                properties: {key: 'properties', value: e.getEventOrginalParams('properties')},
+                                                utm_sorce: {key: 'utm_sorce', value: e.getEventOrginalParams('utm_sorce')},
+                                                locationLabel: {key: 'locationlabel', value: e.getEventOrginalParams('locationlabel')},
+                                                radius: {key: 'radius', value: e.getEventOrginalParams('radius')},
+                                                groupId: {key: 'groupid', value: e.getEventOrginalParams('groupid')},
+                                                cid: {key: 'cid', value: e.getEventOrginalParams('cid')},
                                             }),
-                                        'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: s()}}),
-                                        (window.location.href = decodeURIComponent(f));
-                                }),
-                                    document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    (f = 'input#city'),
-                                    document.querySelector(f) && document.querySelector(f).remove(),
-                                    u('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
-                                    l(
-                                        '.RootBody',
-                                        'div#CitySearchContainer span',
-                                        'beforeEnd',
-                                        '<input type="search" id="address-input" placeholder="Destination" required="true" />'
-                                    ),
-                                    l(
-                                        '.SearchHotels',
-                                        'div#theSearchBox',
-                                        'afterBegin',
-                                        '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
-                                    ),
-                                    s(),
-                                    'search-results' === t &&
-                                        'cug' !== e.site_type.toLowerCase() &&
-                                        'retail' !== e.site_type.toLowerCase() &&
-                                        n.waitForSelectorInDOM('.algolia-places').then(function () {
-                                            (document.querySelector('.algolia-places').style.display = 'none'),
-                                                (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
-                                        }),
-                                    (function () {
-                                        if (document.querySelector('.SearchHotels') && ('cug' === e.site_type.toLowerCase() || 'retail' === e.site_type.toLowerCase())) {
-                                            var t;
-                                            t = null !== a.get('destination') ? a.get('destination') : c.get('destination');
-                                            var n = document.querySelector('input#address-input');
-                                            (n.value = t),
-                                                n.addEventListener('click', function () {
-                                                    n.value = '';
-                                                });
-                                        }
-                                    })(),
-                                    d('select#rooms'),
-                                    d('select#adults'),
-                                    (function (e) {
-                                        document.querySelector(e) && (document.querySelector(e).required = !0);
-                                    })('input#theCheckIn'),
-                                    jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        a.has('locationlabel') || a.has('points') || u('img.arn-green-marker-icon');
+                                        'cug' === e.site_config.site_type.toLowerCase() && l({memberToken: {key: 'memberToken', value: e.grab_member_token()}}),
+                                        (window.location.href = decodeURIComponent(a));
+                                });
+                            },
+                        },
+                        {
+                            key: 'places_autocomplete',
+                            value: function () {
+                                var e = this;
+                                !(function () {
+                                    var t = places({
+                                        appId: e.site_config.algolia_app_id,
+                                        apiKey: e.site_config.algolia_api_key,
+                                        container: document.querySelector('input#address-input'),
+                                    }).configure({aroundLatLngViaIP: 'false', type: 'city'});
+                                    t.on('change', function (e) {
+                                        (document.querySelector('input#address-input').value = e.suggestion.value || ''), (this.lat_lng = e.suggestion.latlng);
                                     }),
-                                    (h = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
-                                        aroundLatLngViaIP: 'false',
-                                        type: 'city',
-                                    })).on('change', function (e) {
-                                        (document.querySelector('input#address-input').value = e.suggestion.value || ''), (r = e.suggestion.latlng);
-                                    }),
-                                    h.on('suggestions', function (e) {
-                                        o = e.rawAnswer.hits[0]._geoloc;
-                                    });
+                                        t.on('suggestions', function (e) {
+                                            this.default_lat_lng = e.rawAnswer.hits[0]._geoloc;
+                                        });
+                                })();
                             },
                         },
                     ]) && T(t.prototype, n),
@@ -4106,7 +4188,7 @@
             D = n(41),
             N = new R(),
             $ = new j(),
-            W = (function () {
+            U = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -4237,7 +4319,7 @@
                                                                             N.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
-                                                                            ($.addAlgoliaSearch(e.site_config, e.page_name, N),
+                                                                            ($(e.site_config, e.page_name, N),
                                                                             N.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             N.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -6123,7 +6205,7 @@
                     e
                 );
             })(),
-            U = new O(),
+            W = new O(),
             G = 'cug_template-'.concat(39624);
         function V(e, t, n, r, o, i, a) {
             try {
@@ -6217,19 +6299,19 @@
                     show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(U.path, '/site_configs/').concat(G, '/img/favicon.png'),
+                    fav_icon_url: ''.concat(W.path, '/site_configs/').concat(G, '/img/favicon.png'),
                     has_custom_styles: !0,
-                    custom_styles_url: ''.concat(U.path, '/site_configs/').concat(G, '/').concat(39624, '.css'),
+                    custom_styles_url: ''.concat(W.path, '/site_configs/').concat(G, '/').concat(39624, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(U.path, '/site_configs/').concat(G, '/img/logo.svg'),
+                        logo_file_location: ''.concat(W.path, '/site_configs/').concat(G, '/img/logo.svg'),
                         logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',
                     },
                     banner_image_url: '#fff',
-                    map_marker_image_url: ''.concat(U.path, '/site_configs/').concat(G, '/img/favicon.png'),
+                    map_marker_image_url: ''.concat(W.path, '/site_configs/').concat(G, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     primary_color: '#215853',
@@ -6274,7 +6356,7 @@
                     })(t, e),
                     t
                 );
-            })(W);
+            })(U);
         function ne() {
             return (ne = Y(
                 regeneratorRuntime.mark(function e() {

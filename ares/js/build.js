@@ -117,7 +117,7 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                algolia.addAlgoliaSearch(this.site_config, this.page_name, utilities);
+                algolia(this.site_config, this.page_name, utilities);
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',

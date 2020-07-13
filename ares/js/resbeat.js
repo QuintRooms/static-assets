@@ -486,8 +486,8 @@ export default class Resbeat extends BasePortal {
                 font-family: '${this.site_config.google_font_name}', 'Helvetica';
             }
             
-            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong  {
-                color: ${this.site_config.secondary_color};
+            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong, .SinglePropDetail .points-earned  {
+                color: ${this.site_config.secondary_color} !important;
             }
             
             .support-details a, #theSubmitButton:hover,
@@ -555,7 +555,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {
+            .holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {
                 background: ${this.site_config.primary_color} !important;
             }
             

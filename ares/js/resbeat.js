@@ -24,6 +24,7 @@ export default class Resbeat extends BasePortal {
         this.updateHeaderLinks();
         this.rerunFunctionsOnMoreRoomsClick();
         this.moveConfigContainer();
+        this.removeAnchorTag();
 
         if (document.querySelector('.RootBody')) {
             this.updateSearchTitle();
@@ -427,6 +428,16 @@ export default class Resbeat extends BasePortal {
 
     applyResbeatStyles() {
         document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
+    }
+
+    async removeAnchorTag() {
+        if (!document.querySelector('.ConfirmationForm')) return;
+        await utilities.waitForSelectorInDOM('.confirmation-messaging a');
+        const strong = document.querySelector('.confirmation-messaging a strong');
+        const anchor = document.querySelector('.confirmation-messaging a');
+
+        anchor.insertAdjacentElement('afterend', strong);
+        anchor.remove();
     }
 
     // showRoomCount() {

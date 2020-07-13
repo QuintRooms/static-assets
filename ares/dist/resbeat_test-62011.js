@@ -6129,6 +6129,7 @@
                                         }),
                                         this.insertHR('#AmentitiesContainer', 'beforebegin'),
                                         this.insertHR('#PropertyClassesContainer', 'beforebegin'),
+                                        this.insertHR('#PropertyTypesContainer', 'beforebegin'),
                                         jQuery(document).on('ratesReadyEvent', function () {
                                             setTimeout(function () {
                                                 e.insertPercentageOffText('.SearchHotels .ArnContainer');

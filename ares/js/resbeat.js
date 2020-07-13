@@ -40,6 +40,7 @@ export default class Resbeat extends BasePortal {
             });
             this.insertHR('#AmentitiesContainer', 'beforebegin');
             this.insertHR('#PropertyClassesContainer', 'beforebegin');
+            this.insertHR('#PropertyTypesContainer', 'beforebegin');
             jQuery(document).on('ratesReadyEvent', () => {
                 setTimeout(() => {
                     this.insertPercentageOffText('.SearchHotels .ArnContainer');

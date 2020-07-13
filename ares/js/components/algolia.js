@@ -7,20 +7,22 @@ export default class Algolia {
         const {origin} = window.location;
         const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
         const built_url = new URL(url);
-        let member_token = '';
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
-        const original_params = document.querySelector('meta[name="originalParams"]').content;
-        const original_params_url = new URLSearchParams(original_params);
+        // const original_params = document.querySelector('meta[name="originalParams"]').content;
+        // const original_params_url = new URLSearchParams(original_params);
+        const original_params_url = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
 
         /**
          *@description gets the member token of the user for CUGs and saves it to the variable "member_token".
          */
         const grab_member_token = () => {
             if (site_config.site_type.toLowerCase() !== 'cug') return;
+            let member_token = '';
             if (page_name === 'landing-page' || page_name === 'search-results') {
                 member_token = document.querySelector('meta[name="memberToken"]').content;
             }
+            return member_token;
         };
 
         /**
@@ -67,13 +69,18 @@ export default class Algolia {
         };
 
         /**
-         *@description populates the destination search input on the search-results page with the destination and adds clears the input field on click.
+         *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
          */
         const prepopulate_inputs_on_search_hotels = () => {
             if (!document.querySelector('.SearchHotels')) return;
             if (site_config.site_type.toLowerCase() !== 'cug' && site_config.site_type.toLowerCase() !== 'retail') return;
 
-            const destination = search_params.get('destination');
+            let destination;
+            if (search_params.get('destination') !== null) {
+                destination = search_params.get('destination');
+            } else {
+                destination = original_params_url.get('destination');
+            }
             const algolia_input = document.querySelector('input#address-input');
             algolia_input.value = destination;
 
@@ -302,11 +309,11 @@ export default class Algolia {
                 });
             }
 
-            if (site_config.site_type.toLowerCase() === 'cug' && member_token !== '') {
+            if (site_config.site_type.toLowerCase() === 'cug') {
                 appendParamsToURL({
                     memberToken: {
                         key: 'memberToken',
-                        value: member_token,
+                        value: grab_member_token(),
                     },
                 });
             }

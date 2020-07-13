@@ -3903,28 +3903,25 @@
                             value: function (e, t, n) {
                                 var r,
                                     o,
-                                    i = window.location.origin,
-                                    a = ''.concat(i, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
-                                    c = new URL(a),
-                                    s = new URL(window.location.href),
-                                    u = new URLSearchParams(s.search),
-                                    l = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                    d = function () {
+                                    i = new URL(window.location.href),
+                                    a = new URLSearchParams(i.search),
+                                    c = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                    s = function () {
                                         if ('cug' === e.site_type.toLowerCase()) {
                                             var n = '';
                                             return ('landing-page' !== t && 'search-results' !== t) || (n = document.querySelector('meta[name="memberToken"]').content), n;
                                         }
                                     };
-                                function f(e) {
+                                function u(e) {
                                     document.querySelector('.SearchHotels') &&
                                         document.querySelectorAll(e).forEach(function (e) {
                                             e.style.display = 'none';
                                         });
                                 }
-                                var h = function (e, t, n, r) {
+                                var l = function (e, t, n, r) {
                                     document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
                                 };
-                                function p(e) {
+                                function d(e) {
                                     var t = document.querySelector(e),
                                         n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
                                     return (
@@ -3939,13 +3936,13 @@
                                         n
                                     );
                                 }
-                                var m,
-                                    y,
-                                    g = function () {
+                                var f,
+                                    h,
+                                    p = function () {
                                         if ('search-results' === t && '' !== document.querySelector('input#hotelName').value)
                                             return document.querySelector('input#hotelName').value;
                                     };
-                                function v(e, t) {
+                                function m(e, t) {
                                     var n = '';
                                     return (
                                         document.querySelectorAll(e).forEach(function (e) {
@@ -3960,71 +3957,75 @@
                                         n.slice(0, -1)
                                     );
                                 }
-                                function b(t) {
+                                function y(t) {
                                     if (e.cug.is_cug || 'retail' === e.site_type.toLowerCase()) return document.querySelector(t).value;
                                 }
-                                function S(e) {
-                                    return l.get(e);
+                                function g(e) {
+                                    return c.get(e);
                                 }
                                 document.querySelector('form#searchForm').addEventListener('submit', function (n) {
-                                    var i, a;
                                     n.preventDefault();
-                                    var s = P(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                        u = P(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                        f = P(u).diff(P(s), 'days');
-                                    function h(e) {
+                                    var i,
+                                        a,
+                                        u = window.location.origin,
+                                        l = ''.concat(u, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
+                                        f = new URL(l),
+                                        h = P(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                        v = P(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
+                                        b = P(v).diff(P(h), 'days');
+                                    function S(e) {
                                         Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && c.searchParams.append(e[t].key, e[t].value);
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && f.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
                                     r
                                         ? ((i = r.lat), (a = r.lng))
                                         : o
                                         ? ((i = o.lat), (a = o.lng))
-                                        : r || o || 'search-results' !== t || ((i = l.get('latitude')), (a = l.get('longitude'))),
-                                        h({
+                                        : r || o || 'search-results' !== t || ((i = c.get('latitude')), (a = c.get('longitude'))),
+                                        S({
                                             longitude: {key: 'longitude', value: a},
                                             latitude: {key: 'latitude', value: i},
-                                            checkin: {key: 'checkin', value: s},
-                                            nights: {key: 'nights', value: f},
-                                            rooms: {key: 'rooms', value: p('select#rooms')},
-                                            adults: {key: 'adults', value: p('select#adults')},
+                                            checkin: {key: 'checkin', value: h},
+                                            nights: {key: 'nights', value: b},
+                                            rooms: {key: 'rooms', value: d('select#rooms')},
+                                            adults: {key: 'adults', value: d('select#adults')},
                                             currency: {key: 'currency', value: e.currency},
-                                            amenities: {key: 'amenities', value: v('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                            stars: {key: 'propertyclasses', value: v('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                            propertyType: {key: 'propertytypes', value: v('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            destination: {key: 'destination', value: b('input#address-input')},
-                                            optionalHotel: {key: 'hotelname', value: g()},
+                                            amenities: {key: 'amenities', value: m('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: m('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: m('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            destination: {key: 'destination', value: y('input#address-input')},
+                                            optionalHotel: {key: 'hotelname', value: p()},
                                         }),
                                         'search-results' === t &&
-                                            h({
-                                                properties: {key: 'properties', value: S('properties')},
-                                                utm_sorce: {key: 'utm_sorce', value: S('utm_sorce')},
-                                                locationLabel: {key: 'locationlabel', value: S('locationlabel')},
-                                                radius: {key: 'radius', value: S('radius')},
-                                                groupId: {key: 'groupid', value: S('groupid')},
-                                                cid: {key: 'cid', value: S('cid')},
+                                            S({
+                                                properties: {key: 'properties', value: g('properties')},
+                                                utm_sorce: {key: 'utm_sorce', value: g('utm_sorce')},
+                                                locationLabel: {key: 'locationlabel', value: g('locationlabel')},
+                                                radius: {key: 'radius', value: g('radius')},
+                                                groupId: {key: 'groupid', value: g('groupid')},
+                                                cid: {key: 'cid', value: g('cid')},
                                             }),
-                                        'cug' === e.site_type.toLowerCase() && h({memberToken: {key: 'memberToken', value: d()}}),
-                                        (window.location.href = decodeURIComponent(c));
+                                        'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: s()}}),
+                                        (window.location.href = decodeURIComponent(f));
                                 }),
                                     document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    (m = 'input#city'),
-                                    document.querySelector(m) && document.querySelector(m).remove(),
-                                    f('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
-                                    h(
+                                    (f = 'input#city'),
+                                    document.querySelector(f) && document.querySelector(f).remove(),
+                                    u('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    l(
                                         '.RootBody',
                                         'div#CitySearchContainer span',
                                         'beforeEnd',
                                         '<input type="search" id="address-input" placeholder="Destination" required="true" />'
                                     ),
-                                    h(
+                                    l(
                                         '.SearchHotels',
                                         'div#theSearchBox',
                                         'afterBegin',
                                         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
                                     ),
-                                    d(),
+                                    s(),
                                     'search-results' === t &&
                                         'cug' !== e.site_type.toLowerCase() &&
                                         'retail' !== e.site_type.toLowerCase() &&
@@ -4035,7 +4036,7 @@
                                     (function () {
                                         if (document.querySelector('.SearchHotels') && ('cug' === e.site_type.toLowerCase() || 'retail' === e.site_type.toLowerCase())) {
                                             var t;
-                                            t = null !== u.get('destination') ? u.get('destination') : l.get('destination');
+                                            t = null !== a.get('destination') ? a.get('destination') : c.get('destination');
                                             var n = document.querySelector('input#address-input');
                                             (n.value = t),
                                                 n.addEventListener('click', function () {
@@ -4043,21 +4044,21 @@
                                                 });
                                         }
                                     })(),
-                                    p('select#rooms'),
-                                    p('select#adults'),
+                                    d('select#rooms'),
+                                    d('select#adults'),
                                     (function (e) {
                                         document.querySelector(e) && (document.querySelector(e).required = !0);
                                     })('input#theCheckIn'),
                                     jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        u.has('locationlabel') || u.has('points') || f('img.arn-green-marker-icon');
+                                        a.has('locationlabel') || a.has('points') || u('img.arn-green-marker-icon');
                                     }),
-                                    (y = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
+                                    (h = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
                                         aroundLatLngViaIP: 'false',
                                         type: 'city',
                                     })).on('change', function (e) {
                                         (document.querySelector('input#address-input').value = e.suggestion.value || ''), (r = e.suggestion.latlng);
                                     }),
-                                    y.on('suggestions', function (e) {
+                                    h.on('suggestions', function (e) {
                                         o = e.rawAnswer.hits[0]._geoloc;
                                     });
                             },

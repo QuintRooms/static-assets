@@ -4,13 +4,8 @@ export default class Algolia {
     addAlgoliaSearch(site_config, page_name, utilities) {
         let lat_lng;
         let default_lat_lng;
-        const {origin} = window.location;
-        const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
-        const built_url = new URL(url);
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
-        // const original_params = document.querySelector('meta[name="originalParams"]').content;
-        // const original_params_url = new URLSearchParams(original_params);
         const original_params_url = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
 
         /**
@@ -188,6 +183,9 @@ export default class Algolia {
 
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
+            const {origin} = window.location;
+            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
+            const built_url = new URL(url);
             let lat;
             let lng;
             const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');

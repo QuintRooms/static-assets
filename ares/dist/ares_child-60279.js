@@ -1046,11 +1046,11 @@
                     return (E || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            R = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
-            R = function (e, t) {
+            T = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -1071,7 +1071,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = R(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -1119,7 +1119,7 @@
             },
             H = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
             },
             F = function (e) {
                 var t,
@@ -1128,7 +1128,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = R(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -1137,7 +1137,7 @@
                                       H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), R(n, !1));
+                            : ((n._v = e), (n._s = 1), T(n, !1));
                     } catch (e) {
                         H.call({_w: n, _d: !1}, e);
                     }
@@ -1163,7 +1163,7 @@
                         (n.domain = E ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && R(this, !1),
+                        this._s && T(this, !1),
                         n.promise
                     );
                 },
@@ -2642,8 +2642,8 @@
         n.d(t, 'a', function () {
             return j;
         });
-        var T = new E.a(),
-            R = n(60),
+        var R = new E.a(),
+            T = n(60),
             O = new C.a(),
             j = (function () {
                 function e(t) {
@@ -3255,8 +3255,8 @@
                                     (t = u.getAttribute('content')),
                                     (n = a.getAttribute('content')),
                                     (r = c.getAttribute('content')),
-                                    (o = R(n)),
-                                    (i = R(r)),
+                                    (o = T(n)),
+                                    (i = T(r)),
                                     O.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                             .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
@@ -3460,8 +3460,8 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = R(t).format(this.site_config.dayjs_date_format)),
-                                    (n = R(r).format(this.site_config.dayjs_date_format)),
+                                    (e = T(t).format(this.site_config.dayjs_date_format)),
+                                    (n = T(r).format(this.site_config.dayjs_date_format)),
                                     O.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     O.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -3661,7 +3661,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(T.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(R.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -4015,10 +4015,7 @@
                                 var p,
                                     m,
                                     y = function (e, t, n, r) {
-                                        document.querySelector(e) &&
-                                            (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
-                                                document.querySelector(t).insertAdjacentHTML(n, r),
-                                            'cug' === o.site_config.site_type.toLowerCase() && document.querySelector(t).parentNode.insertAdjacentHTML(n, r));
+                                        document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
                                     };
                                 function g(e) {
                                     var t = document.querySelector(e),
@@ -4043,15 +4040,13 @@
                                         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
                                     ),
                                     'cug' === o.site_config.site_type.toLowerCase() &&
-                                        (('landing-page' !== o.page_name && 'search-results' !== o.page_name) || (c = document.querySelector('meta[name="memberToken"]').content)),
+                                        (('landing-page' !== o.page_name && 'search-results' !== o.page_name) || (c = document.querySelector('meta[name="sessionId"]').content)),
                                     (p = 'input#city'),
                                     document.querySelector(p) &&
                                         (('lodging' !== o.site_config.site_type.toLowerCase() && 'retail' !== o.site_config.site_type.toLowerCase()) ||
                                             document.querySelector(p).remove(),
                                         'cug' === o.site_config.site_type.toLowerCase() &&
-                                            (document.body.append(document.querySelector(p)),
-                                            (document.querySelector(p).style.display = 'none'),
-                                            (document.querySelector('#CitySearchContainer').style.display = 'none'))),
+                                            (document.body.append(document.querySelector(p)), (document.querySelector(p).style.display = 'none'))),
                                     'search-results' === o.page_name &&
                                         'cug' !== o.site_config.site_type.toLowerCase() &&
                                         'retail' !== o.site_config.site_type.toLowerCase() &&
@@ -4060,11 +4055,7 @@
                                                 (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
                                         }),
                                     (function () {
-                                        if (
-                                            document.querySelector('.SearchHotels') &&
-                                            'cug' === o.site_config.site_type.toLowerCase() &&
-                                            'retail' === o.site_config.site_type.toLowerCase()
-                                        ) {
+                                        if (document.querySelector('.SearchHotels')) {
                                             var e = l.get('destination'),
                                                 t = document.querySelector('input#address-input');
                                             (t.value = e),
@@ -4087,9 +4078,9 @@
                                         u.preventDefault();
                                         var l = g('select#rooms'),
                                             d = g('select#adults'),
-                                            h = R(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                            p = R(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
-                                            m = R(p).diff(R(h), 'days'),
+                                            h = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                            p = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
+                                            m = T(p).diff(T(h), 'days'),
                                             y = [
                                                 '&properties='.concat(f.get('properties')),
                                                 '&utm_source='.concat(f.get('utm_source')),
@@ -4138,7 +4129,7 @@
                                             _ = a.slice(0, -1);
                                         '' !== S && b.searchParams.append('amenities', S),
                                             '' !== _ && b.searchParams.append('propertyclasses', _),
-                                            'cug' === o.site_config.site_type.toLowerCase() && '' !== c && b.searchParams.append('memberToken', c),
+                                            'cug' === o.site_config.site_type.toLowerCase() && '' !== c && b.searchParams.append('_s', c),
                                             'search-results' === o.page_name
                                                 ? (y.forEach(function (e) {
                                                       e.includes('null') || (b += e);
@@ -5289,8 +5280,8 @@
             M = n(15),
             q = L.f,
             P = E.f,
-            T = k.f,
-            R = r.Symbol,
+            R = k.f,
+            T = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
             B = h('_hidden'),
@@ -5300,7 +5291,7 @@
             D = l('symbols'),
             N = l('op-symbols'),
             $ = Object.prototype,
-            U = 'function' == typeof R && !!C.f,
+            U = 'function' == typeof T && !!C.f,
             W = r.QObject,
             G = !W || !W.prototype || !W.prototype.findChild,
             Y =
@@ -5323,16 +5314,16 @@
                       }
                     : P,
             z = function (e) {
-                var t = (D[e] = A(R.prototype));
+                var t = (D[e] = A(T.prototype));
                 return (t._k = e), t;
             },
             V =
-                U && 'symbol' == typeof R.iterator
+                U && 'symbol' == typeof T.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof R;
+                          return e instanceof T;
                       },
             J = function (e, t, n) {
                 return (
@@ -5361,17 +5352,17 @@
                 }
             },
             X = function (e) {
-                for (var t, n = T(_(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = R(_(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = T(n ? N : _(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
+                for (var t, n = e === $, r = R(n ? N : _(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o($, t)) || i.push(D[t]);
                 return i;
             };
         U ||
             (c(
-                (R = function () {
-                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                (T = function () {
+                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), Y(this, e, x(1, n));
@@ -5392,13 +5383,13 @@
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !U, {Symbol: R});
+            a(a.G + a.W + a.F * !U, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = M(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = T(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
@@ -5435,7 +5426,7 @@
                         a.F *
                             (!U ||
                                 u(function () {
-                                    var e = R();
+                                    var e = T();
                                     return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
@@ -5454,8 +5445,8 @@
                         },
                     }
                 ),
-            R.prototype[H] || n(5)(R.prototype, H, R.prototype.valueOf),
-            d(R, 'Symbol'),
+            T.prototype[H] || n(5)(T.prototype, H, T.prototype.valueOf),
+            d(T, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },

@@ -1068,11 +1068,11 @@
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            H = function (e) {
+            F = function (e) {
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
             },
-            F = function (e) {
+            H = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -1083,14 +1083,14 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(F, r, 1), u(H, r, 1));
+                                      t.call(e, u(H, r, 1), u(F, r, 1));
                                   } catch (e) {
-                                      H.call(r, e);
+                                      F.call(r, e);
                                   }
                               })
                             : ((n._v = e), (n._s = 1), P(n, !1));
                     } catch (e) {
-                        H.call({_w: n, _d: !1}, e);
+                        F.call({_w: n, _d: !1}, e);
                     }
                 }
             };
@@ -1098,9 +1098,9 @@
             ((C = function (e) {
                 p(this, C, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(F, this, 1), u(H, this, 1));
+                    e(u(H, this, 1), u(F, this, 1));
                 } catch (e) {
-                    H.call(this, e);
+                    F.call(this, e);
                 }
             }),
             ((r = function (e) {
@@ -1124,7 +1124,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
+                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(F, e, 1));
             }),
             (b.f = M = function (e) {
                 return e === C || e === a ? new i(e) : o(e);
@@ -1747,12 +1747,18 @@
             o = n(23),
             i = n(0)('species');
         e.exports = function (e, t) {
-            var n,
-                a = r(e).constructor;
-            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
+            var n = e.exec;
+            if ('function' == typeof n) {
+                var i = n.call(e, t);
+                if ('object' != typeof i) throw new TypeError('RegExp exec method returned something other than an Object or null');
+                return i;
+            }
+            if ('RegExp' !== r(e)) throw new TypeError('RegExp#exec called on incompatible receiver');
+            return o.call(e, t);
         };
     },
     function (e, t, n) {
+        'use strict';
         var r,
             o,
             i,
@@ -1782,11 +1788,17 @@
             ((f = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
-                    (g[++y] = function () {
-                        c('function' == typeof e ? e : Function(e), t);
-                    }),
-                    r(y),
-                    y
+                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
+                    u && (t = s.lastIndex),
+                    (r = a.call(s, e)),
+                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
+                    l &&
+                        r &&
+                        r.length > 1 &&
+                        c.call(r[0], n, function () {
+                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
+                        }),
+                    r
                 );
             }),
             (h = function (e) {
@@ -2389,6 +2401,101 @@
         })();
     },
     function (e, t, n) {
+        e.exports =
+            !n(6) &&
+            !n(10)(function () {
+                return (
+                    7 !=
+                    Object.defineProperty(n(32)('div'), 'a', {
+                        get: function () {
+                            return 7;
+                        },
+                    }).a
+                );
+            });
+    },
+    function (e, t, n) {
+        var r = n(2),
+            o = n(21),
+            i = n(0)('species');
+        e.exports = function (e, t) {
+            var n,
+                a = r(e).constructor;
+            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
+        };
+    },
+    function (e, t, n) {
+        var r,
+            o,
+            i,
+            a = n(20),
+            c = n(68),
+            s = n(45),
+            u = n(32),
+            l = n(1),
+            d = l.process,
+            f = l.setImmediate,
+            h = l.clearImmediate,
+            p = l.MessageChannel,
+            m = l.Dispatch,
+            y = 0,
+            g = {},
+            v = function () {
+                var e = +this;
+                if (g.hasOwnProperty(e)) {
+                    var t = g[e];
+                    delete g[e], t();
+                }
+            },
+            b = function (e) {
+                v.call(e.data);
+            };
+        (f && h) ||
+            ((f = function (e) {
+                for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
+                return (
+                    (g[++y] = function () {
+                        c('function' == typeof e ? e : Function(e), t);
+                    }),
+                    r(y),
+                    y
+                );
+            }),
+            (h = function (e) {
+                delete g[e];
+            }),
+            'process' == n(13)(d)
+                ? (r = function (e) {
+                      d.nextTick(a(v, e, 1));
+                  })
+                : m && m.now
+                ? (r = function (e) {
+                      m.now(a(v, e, 1));
+                  })
+                : p
+                ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
+                : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
+                ? ((r = function (e) {
+                      l.postMessage(e + '', '*');
+                  }),
+                  l.addEventListener('message', b, !1))
+                : (r =
+                      'onreadystatechange' in u('script')
+                          ? function (e) {
+                                s.appendChild(u('script')).onreadystatechange = function () {
+                                    s.removeChild(this), v.call(e);
+                                };
+                            }
+                          : function (e) {
+                                setTimeout(a(v, e, 1), 0);
+                            })),
+            (e.exports = {set: f, clear: h});
+    },
+    function (e, t, n) {
+        var r = n(1).document;
+        e.exports = r && r.documentElement;
+    },
+    function (e, t, n) {
         'use strict';
         n(37), n(55), n(35), n(38), n(91), n(93), n(39), n(98), n(99), n(66), n(40);
         var r = 'URLSearchParams' in self,
@@ -2750,17 +2857,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function M(e) {
+        function C(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        E(i, r, o, a, c, 'next', e);
+                        q(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        E(i, r, o, a, c, 'throw', e);
+                        q(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -2785,7 +2892,7 @@
                     })(this, e),
                         console.log('Output: BasePortal -> constructor -> config', t),
                         (this.site_id = ''),
-                        (this.page_name = j.getPageName()),
+                        (this.page_name = N.getPageName()),
                         (this.site_config = t),
                         (this.currency = ''),
                         (this.svg_arrow =
@@ -2803,17 +2910,17 @@
                                 var e = this;
                                 this.site_config || console.error('No site config found.'),
                                     this.initializeARNRatesReadyEvent(),
-                                    j.ieForEachPolyfill(),
+                                    N.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = M(
+                                            var t = F(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
                                                             switch ((t.prev = t.next)) {
                                                                 case 0:
                                                                     return (
-                                                                        j.getPageName(),
+                                                                        N.getPageName(),
                                                                         e.applyConfigColors(),
                                                                         e.setRootPageBackgroundImage(),
                                                                         e.setFontFromConfig(),
@@ -2822,13 +2929,13 @@
                                                                         e.buildCurrencyDropdown(),
                                                                         e.showStarsAndFilter(),
                                                                         e.buildMobileMenu(),
-                                                                        j.createHTML(
+                                                                        N.createHTML(
                                                                             '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
                                                                             'head',
                                                                             'beforeEnd'
                                                                         ),
                                                                         (t.next = 12),
-                                                                        j.createHTML(
+                                                                        N.createHTML(
                                                                             '<header><a class="logo" href="'
                                                                                 .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
                                                                                 .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
@@ -2838,14 +2945,14 @@
                                                                     );
                                                                 case 12:
                                                                     'cug' === e.site_config.site_type &&
-                                                                        j.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            M(
+                                                                        N.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                            F(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
                                                                                             switch ((e.prev = e.next)) {
                                                                                                 case 0:
-                                                                                                    j.appendToParent('#commands', 'header');
+                                                                                                    N.appendToParent('#commands', 'header');
                                                                                                 case 1:
                                                                                                 case 'end':
                                                                                                     return e.stop();
@@ -2854,13 +2961,13 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        j.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                        N.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                         'property-detail' === e.page_name &&
                                                                             (e.addImageSlideshow(),
-                                                                            j.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                            j.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                            j.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                            j.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                            N.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                            N.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                            N.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                            N.updateHTML('.SinglePropDetail .Details a', 'General Info'),
                                                                             e.isPropByGateway(
                                                                                 e.site_config.exclusive_rate_text,
                                                                                 e.site_config.host_hotel_text,
@@ -2873,40 +2980,40 @@
                                                                                     e.showFullStayAndNightlyRates(t, n);
                                                                                 });
                                                                             }),
-                                                                            j.moveElementIntoExistingWrapper(
+                                                                            N.moveElementIntoExistingWrapper(
                                                                                 '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
                                                                                 '.SinglePropDetail .ArnPropAddress',
                                                                                 'afterEnd'
                                                                             ),
-                                                                            j.moveElementIntoExistingWrapper(
+                                                                            N.moveElementIntoExistingWrapper(
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
                                                                             )),
                                                                         'checkout' === e.page_name &&
-                                                                            (j.createModal(
+                                                                            (N.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
                                                                                 'Policies & Fees',
                                                                                 'checkout',
                                                                                 '#theConfirmationContainer',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            j.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                            j.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                            j.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                            j.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                            j.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                            j.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                            j.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                            j.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                            j.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                            j.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                            N.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                            N.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                            N.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                            N.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                            N.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                            N.updateHTML('#theHotel legend', 'Reservation Summary'),
                                                                             e.formatCheckoutForm(),
                                                                             e.setupReservationSummaryContainer(),
-                                                                            j.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                            j.emailVerificationSetup(),
+                                                                            N.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                            N.emailVerificationSetup(),
                                                                             e.fixCheckoutInputTabOrder(),
-                                                                            j.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
+                                                                            N.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
                                                                             (j.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
@@ -2915,24 +3022,24 @@
                                                                                 '.RootBody .ArnPrimarySearchContainer',
                                                                                 'beforeBegin'
                                                                             ),
-                                                                            j.moveOrphanedElementsIntoNewWrapper(
+                                                                            N.moveOrphanedElementsIntoNewWrapper(
                                                                                 [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
                                                                                 'root-search-container',
                                                                                 '.RootBody .ArnSearchContainerMainDiv',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            j.moveElementIntoExistingWrapper(
+                                                                            N.moveElementIntoExistingWrapper(
                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                 '.ArnPrimarySearchContainer',
                                                                                 'beforeEnd'
                                                                             ),
-                                                                            j.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                        j.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                        j.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                        j.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                        j.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                        j.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                        j.createHTML(
+                                                                            N.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                        N.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                        N.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                        N.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                        N.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                        N.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                        N.createHTML(
                                                                             '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
@@ -2948,7 +3055,7 @@
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            M(
+                                                                            F(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -2957,7 +3064,7 @@
                                                                                                     return (
                                                                                                         (e.map_loaded = !0),
                                                                                                         (t.next = 3),
-                                                                                                        j.waitForSelectorInDOM('.pollingFinished')
+                                                                                                        N.waitForSelectorInDOM('.pollingFinished')
                                                                                                     );
                                                                                                 case 3:
                                                                                                     document.querySelector('.leaflet-control-scale-line') ||
@@ -2975,7 +3082,7 @@
                                                                         ),
                                                                         jQuery(document).on(
                                                                             'ratesReadyEvent',
-                                                                            M(
+                                                                            F(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -3000,9 +3107,9 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        j.waitForSelectorInDOM('.pollingFinished').then(
+                                                                        N.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = M(
+                                                                                var t = F(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -3011,7 +3118,7 @@
                                                                                                         if (
                                                                                                             ('hold-rooms' === e.page_name &&
                                                                                                                 (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                j.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                                N.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
                                                                                                             'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
                                                                                                         ) {
                                                                                                             t.next = 3;
@@ -3036,24 +3143,24 @@
                                                                                                             e.showSearchContainerOnMobile(),
                                                                                                             e.moveFooterOutOfSearchContainer(),
                                                                                                             e.moveReviewsIntoPropNameContainer(),
-                                                                                                            j.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                            N.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                             e.movePropClassBelowPropName(),
-                                                                                                            j.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                            j.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                            j.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                            j.updateHTML('.lblRating', 'Stars'),
-                                                                                                            j.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                            j.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                            j.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                            j.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                            j.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                            j.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                            j.moveElementIntoExistingWrapper(
+                                                                                                            N.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                            N.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                            N.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                            N.updateHTML('.lblRating', 'Stars'),
+                                                                                                            N.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                            N.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                            N.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                            N.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                            N.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                            N.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                            N.moveElementIntoExistingWrapper(
                                                                                                                 '.ArnPropClass',
                                                                                                                 '.ArnPropName',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            j.moveElementIntoExistingWrapper(
+                                                                                                            N.moveElementIntoExistingWrapper(
                                                                                                                 '#theOtherSubmitButton',
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
@@ -3074,7 +3181,7 @@
                                                                                                                     'afterBegin'
                                                                                                                 ).then(function () {
                                                                                                                     e.createMobileSortAndFilter(),
-                                                                                                                        j.createHTML(
+                                                                                                                        N.createHTML(
                                                                                                                             '<h4>Sort</h4>',
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
@@ -3133,7 +3240,7 @@
                                                                                     '#booking-guide'
                                                                                 )
                                                                                 .then(
-                                                                                    M(
+                                                                                    F(
                                                                                         regeneratorRuntime.mark(function e() {
                                                                                             return regeneratorRuntime.wrap(function (e) {
                                                                                                 for (;;)
@@ -3143,16 +3250,16 @@
                                                                                                                 e.next = 5;
                                                                                                                 break;
                                                                                                             }
-                                                                                                            return (e.next = 3), j.waitForSelectorInDOM('#faq-link');
+                                                                                                            return (e.next = 3), N.waitForSelectorInDOM('#faq-link');
                                                                                                         case 3:
-                                                                                                            j.updateAttribute(
+                                                                                                            N.updateAttribute(
                                                                                                                 '#faq-link',
-                                                                                                                j.getAttribute('.faqLink', 'href'),
+                                                                                                                N.getAttribute('.faqLink', 'href'),
                                                                                                                 'href'
                                                                                                             ),
-                                                                                                                j.updateAttribute(
+                                                                                                                N.updateAttribute(
                                                                                                                     '#customer-support-link',
-                                                                                                                    j.getAttribute('.supportLink', 'href'),
+                                                                                                                    N.getAttribute('.supportLink', 'href'),
                                                                                                                     'href'
                                                                                                                 );
                                                                                                         case 5:
@@ -3199,7 +3306,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((l = M(
+                                ((l = F(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -3230,7 +3337,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((u = M(
+                                ((u = F(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -3332,11 +3439,11 @@
                             key: 'createMobileSortAndFilter',
                             value: function () {
                                 if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                    j.updateHTML(
+                                    N.updateHTML(
                                         '.sort',
                                         '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
                                     ),
-                                        j.createHTML(
+                                        N.createHTML(
                                             '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
                                             '#searchForm',
                                             'beforeEnd'
@@ -3388,9 +3495,9 @@
                                     (t = u.getAttribute('content')),
                                     (n = a.getAttribute('content')),
                                     (r = c.getAttribute('content')),
-                                    (o = P(n)),
-                                    (i = P(r)),
-                                    j.createHTML(
+                                    (o = D(n)),
+                                    (i = D(r)),
+                                    N.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                             .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
                                             .concat(o.format('MMMM D'), ' - ')
@@ -3407,7 +3514,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((s = M(
+                                ((s = F(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -3437,7 +3544,7 @@
                                                                 r.classList.toggle('is-active'), t.classList.toggle('active');
                                                             }),
                                                             (e.next = 11),
-                                                            j.waitForSelectorInDOM('header')
+                                                            N.waitForSelectorInDOM('header')
                                                         );
                                                     case 11:
                                                         document.querySelector('header').insertAdjacentElement('beforeend', n);
@@ -3462,7 +3569,7 @@
                                 window.matchMedia('(max-width:800px)').matches &&
                                     document.querySelector('#theBookingPage') &&
                                     (r.insertAdjacentElement('afterEnd', e),
-                                    j.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
+                                    N.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
                                     e.insertAdjacentElement('beforeBegin', t),
                                     e.insertAdjacentHTML(
                                         'beforeEnd',
@@ -3593,10 +3700,10 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = P(t).format(this.site_config.dayjs_date_format)),
-                                    (n = P(r).format(this.site_config.dayjs_date_format)),
-                                    j.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                    j.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                                    (e = D(t).format(this.site_config.dayjs_date_format)),
+                                    (n = D(r).format(this.site_config.dayjs_date_format)),
+                                    N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                    N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
                         },
                         {
@@ -3606,12 +3713,12 @@
                                     t = 0;
                                 e.forEach(function (e) {
                                     (t += 1),
-                                        j.moveElementIntoExistingWrapper(
+                                        N.moveElementIntoExistingWrapper(
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
                                             'afterEnd'
                                         ),
-                                        j.createWrapper(
+                                        N.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
                                                 .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
@@ -3621,7 +3728,7 @@
                                             'billing-details-container',
                                             'afterEnd'
                                         ),
-                                        j.createWrapper(
+                                        N.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
                                                 .concat(t, ', \n                 .RoomNumber-')
@@ -3631,12 +3738,12 @@
                                             'credit-card-details',
                                             'afterEnd'
                                         ),
-                                        j.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                        j.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                        j.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                        t > 1 && j.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                        j.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                        j.updateHTML(
+                                        N.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                        N.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                        N.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                        t > 1 && N.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                        N.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                        N.updateHTML(
                                             '.cardNumber label',
                                             '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
                                         );
@@ -3650,8 +3757,8 @@
                                 document.querySelector('#theCopyInfoAjax input') &&
                                     document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
                                         setTimeout(function () {
-                                            j.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                e > 1 && j.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                            N.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                e > 1 && N.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
                                         }, 750);
                                     });
                             },
@@ -3821,7 +3928,7 @@
                             key: 'setFontFromConfig',
                             value: function () {
                                 this.site_config &&
-                                    (j.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    (N.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
                                     document.body.insertAdjacentHTML(
                                         'beforeEnd',
                                         '\n            <style>\n                *,\n                .taxFeeRow td,\n                .discount td,\n                .totalRow td,\n                .balanceDueRow td,\n                .dueNowRow td,\n                .guestNameFields td{\n                    font-family: '.concat(
@@ -4033,7 +4140,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((c = M(
+                                ((c = F(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4216,7 +4323,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((a = M(
+                                ((a = F(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4269,7 +4376,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = M(
+                                    return (i = F(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -4325,7 +4432,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = M(
+                                    return (s = F(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -4357,7 +4464,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = M(
+                                    return (l = F(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -4739,7 +4846,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((i = M(
+                                ((i = F(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4752,7 +4859,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (r = document.querySelector(n)), (e.next = 5), j.fetchHTMLFromFile(t);
+                                                        return (r = document.querySelector(n)), (e.next = 5), N.fetchHTMLFromFile(t);
                                                     case 5:
                                                         (o = e.sent), (r.innerHTML = o);
                                                     case 7:
@@ -4769,7 +4876,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((o = M(
+                                ((o = F(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -4783,15 +4890,15 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), j.waitForSelectorInDOM('.logo');
+                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), N.waitForSelectorInDOM('.logo');
                                                         case 5:
-                                                            if (document.querySelector('input[name="_s"]')) {
+                                                            if (document.querySelector('meta[name="memberToken"]')) {
                                                                 e.next = 7;
                                                                 break;
                                                             }
                                                             return e.abrupt('return');
                                                         case 7:
-                                                            (n = document.querySelector('input[name="_s"]').value),
+                                                            (n = document.querySelector('meta[name="memberToken"]').content),
                                                                 (r = document.querySelector('.logo')),
                                                                 (o = ''),
                                                                 (o =
@@ -4828,7 +4935,7 @@
                         {
                             key: 'setCheckDatesToReadOnlyOnMobile',
                             value: function () {
-                                if (j.matchMediaQuery('max-width: 800px') && ('search-results' === this.page_name || 'landing-page' === this.page_name)) {
+                                if (N.matchMediaQuery('max-width: 800px') && ('search-results' === this.page_name || 'landing-page' === this.page_name)) {
                                     var e = document.querySelector('#theCheckIn'),
                                         t = document.querySelector('#theCheckOut');
                                     if (!e || !t) return;

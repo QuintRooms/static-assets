@@ -35,12 +35,12 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
             'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'ares_child-60279': './src/60279.js', // Ares Child Test
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
         };
     }

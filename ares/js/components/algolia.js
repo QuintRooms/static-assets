@@ -155,6 +155,7 @@ export default class Algolia {
          *@return string - the value of the param.
          */
         function getEventOrginalParams(paramString) {
+            if (!original_params_url.has(paramString)) return;
             const param = original_params_url.get(paramString);
             return param;
         }
@@ -171,7 +172,7 @@ export default class Algolia {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const {origin} = window.location;
-            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
+            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10`;
             const built_url = new URL(url);
             let lat;
             let lng;

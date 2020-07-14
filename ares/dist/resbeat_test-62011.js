@@ -2852,14 +2852,14 @@
                                     if (e.cug.is_cug || 'retail' === e.site_type.toLowerCase()) return document.querySelector(t).value;
                                 }
                                 function y(e) {
-                                    return u.get(e);
+                                    if (u.has(e)) return u.get(e);
                                 }
                                 document.querySelector('form#searchForm').addEventListener('submit', function (i) {
                                     i.preventDefault();
                                     var a,
                                         c,
                                         s = window.location.origin,
-                                        l = ''.concat(s, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
+                                        l = ''.concat(s, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10'),
                                         d = new URL(l),
                                         g = q(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
                                         v = q(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),

@@ -37,6 +37,7 @@ export default class Algolia {
         function remove_arn_search_bar(selector) {
             if (!document.querySelector(selector)) return;
             document.querySelector(selector).remove();
+            // document.querySelector(selector).style.display = 'none';
         }
 
         /**
@@ -56,7 +57,7 @@ export default class Algolia {
          */
         function prepopulate_inputs_on_search_hotels() {
             if (!document.querySelector('.SearchHotels')) return;
-            if (site_config.site_type.toLowerCase() !== 'cug' && site_config.site_type.toLowerCase() !== 'retail') return;
+            // if (site_config.site_type.toLowerCase() !== 'cug' && site_config.site_type.toLowerCase() !== 'retail') return;
 
             let destination;
             if (search_params.get('destination') !== null) {
@@ -314,6 +315,7 @@ export default class Algolia {
             window.location.href = decodeURIComponent(built_url);
         });
 
+        remove_arn_search_bar('input#city');
         if (page_name === 'landing-page') {
             insert_algolia_search('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         }
@@ -328,7 +330,6 @@ export default class Algolia {
             prepopulate_inputs_on_search_hotels();
         }
         removeArnSubmitAttribute();
-        remove_arn_search_bar('input#city');
         hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch');
         remove_city_search_for_event();
         setDropdownIndex('select#rooms');

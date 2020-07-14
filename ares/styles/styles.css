@@ -1249,8 +1249,8 @@ div.autocomplete ul li.selected {
     margin: 4px 0;
 }
 
-.SearchHotels .ap-input-icon {
-    top: 0px;
+.ap-input-icon {
+    display: none;
 }
 
 .SearchHotels #CheckInContainer,
@@ -3423,10 +3423,6 @@ legend {
     padding: 0;
     }
 
-    .RootBody .ap-input-icon {
-        bottom: 4px;
-    }
-
     .RootBody .ArnPrimarySearchContainer {
         flex-direction: column;
     }
@@ -3894,12 +3890,6 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-address {
     color: #aaaaaa;
-}
-
-.ap-input-icon {
-    right: 6px;
-    top: 6px;
-    background-color: #fff;
 }
 
 /* autocomplete styles end */

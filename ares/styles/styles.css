@@ -3898,9 +3898,10 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-input-icon {
     right: 6px;
-    top: 0px;
+    top: 15px;
     background-color: #fff;
     padding: 8px;
+    height: 7px;
 }
 
 /* autocomplete styles end */

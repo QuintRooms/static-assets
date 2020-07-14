@@ -151,3 +151,8 @@ footer a + span {
         order: 2;
     }
 }
+
+/* Single Prop Detail */
+.SinglePropDetail .SimpleSearch{
+    padding: 8px;
+}

@@ -27,6 +27,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
+            percent_off_text: "BEAT 'EM BY",
             show_percent_savings: true,
         },
         exclusive_rate_text: '',
@@ -45,7 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
-            logo_outbound_url: 'https://hotels.resbeat.com/',
+            logo_outbound_url: 'https://hotels.resbeat.com',
             background: '#fff',
             logo_flex_position: 'space-between',
             logo_max_width: '230px',
@@ -54,6 +55,7 @@ export default function siteConfig() {
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         background_color: '#fff',
+        secondary_background_color: '#f0f0f0',
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         primary_text_color: '#fff',
@@ -87,6 +89,8 @@ export default function siteConfig() {
             },
         },
         // new options
+        root_page_header_text: 'START YOUR <b>SEARCH</b>',
+        root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
         is_resbeat_client: true,
         confirmation_email_from: 'RESBEAT',
     };

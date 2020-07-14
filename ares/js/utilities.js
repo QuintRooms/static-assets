@@ -96,6 +96,24 @@ export default class Utilities {
         });
     }
 
+    /**
+     * @description checks every 500 miliseconds for the textContent of the element passed in to equeal the text in the dom after the page loads. This method is used for when an element's textContent is updated multiple times before the page finishes loading and you want to update it again.
+     * @param element - the element you are waiting on to load the expected textContent
+     * @param string - The string that the element's textContent will equal when the page has loaded.
+     */
+    async waitForTextInDOM(selector, text) {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                const dom_text = document.querySelector(selector).textContent;
+                if (dom_text === text) {
+                    resolve(dom_text);
+                    clearInterval(interval);
+                    return dom_text;
+                }
+            }, 500);
+        });
+    }
+
     moveElementIntoExistingWrapper(element_to_move, wrapper, adjacent_position) {
         if (!document.querySelector(wrapper) || !document.querySelector(element_to_move)) return;
 
@@ -385,5 +403,24 @@ export default class Utilities {
                 wrapper.querySelector('input[type="checkbox"]').click();
             });
         });
+    }
+
+    async addAttributeToInput(element, value, attribute, page_name) {
+        if (!document.querySelector(page_name)) return;
+        try {
+            await this.waitForSelectorInDOM(element);
+            document.querySelector(element).setAttribute(attribute, value);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    replaceSpecificText(selector, regex, new_text) {
+        if (!document.querySelector(selector)) return;
+
+        const string = document.querySelector(selector).textContent;
+        const test = string.replace(regex, new_text);
+
+        document.querySelector(selector).textContent = test;
     }
 }

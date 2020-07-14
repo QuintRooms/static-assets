@@ -27,6 +27,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
+            percent_off_text: 'off',
             show_percent_savings: true,
         },
         exclusive_rate_text: '',
@@ -45,8 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
-            // logo_outbound_url: 'http://hotels.resbeat.com/',
-            logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011' /* only for test */,
+            logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=39624' /* only for test */,
             background: '#fff',
             logo_flex_position: 'space-between',
             logo_max_width: '230px',
@@ -88,6 +88,8 @@ export default function siteConfig() {
             },
         },
         // new options
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: true,
         confirmation_email_from: 'RESBEAT',
     };

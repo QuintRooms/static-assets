@@ -2458,14 +2458,8 @@ if (!window.console) window.console = { log: function() {} };
         </style>
         <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
     </noscript>
-    <script src="//media.travsrv.com/appSkins/62011/v6/themes/standard/footer.js?8255+17081" type="text/javascript">
-        /*<![CDATA[*/
-        nil /*]]>*/
-    </script><span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
-    <script>
-        /*<![CDATA[*/
-        (function() {})() /*]]>*/
-    </script>
+    <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
+
     <style>
         /* Header */
 

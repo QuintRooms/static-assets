@@ -11,8 +11,8 @@ export default function siteConfig() {
         affiliate_id: 16827,
         master_id: 2143,
         site_type: 'cug',
-        algolia_app_id: 'plCZXR0GZ7J1',
-        algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        algolia_app_id: 'plWGD1F03898',
+        algolia_api_key: '42284062316b4a4d8c672fbf5d6b5cf0',
         currency: 'USD',
         distance_unit: 'useMiles',
         map_size: '12',
@@ -27,6 +27,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
+            percent_off_text: 'off',
             show_percent_savings: true,
         },
         exclusive_rate_text: 'Exclusive Rates',
@@ -87,6 +88,8 @@ export default function siteConfig() {
             },
         },
         // new options
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Room Steals',
     };

@@ -21,6 +21,65 @@ html {
     margin: 0 auto;
 }
 
+#lightbox {
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+#lightbox .WBChangePasswordFormActions {
+    display: flex;
+    flex-direction: column;
+}
+
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction {
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px;
+    background: transparent;
+}
+
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+    transition-property: color, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+#lightbox .WBChangePasswordFormFields input[type='password'] {
+    border: unset;
+    width: 60%;
+}
+
+#lightbox .CancelAction {
+    text-decoration: underline;
+}
+
+#lightbox .window-titlebar a, #lightbox .window-close a {
+    color: #666;
+}
+
+#lightbox .window {
+    padding: 10px;
+    text-align: center;
+}
+
+#lightbox .dialog-button-ok input {
+    margin-top: 10px;
+    padding: 6px;
+    border-radius: 40px;
+    width: 40%;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: 1px solid;
+    cursor: pointer;
+}
+
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -1770,7 +1829,7 @@ legend {
     padding-left: 24px;
 }
 
-.PropertyAmenities legend {
+.PropertyAmenities span {
     font-size: 17px;
     padding: 0;
     width: initial;
@@ -1812,7 +1871,7 @@ legend {
     overflow: hidden;
 }
 
-#thePropertyAmenities legend {
+#thePropertyAmenities span {
     z-index: 9;
     position: relative;
     background: #fff;
@@ -2426,6 +2485,10 @@ legend {
         cursor: pointer;
     }
 
+    .sort svg {
+        vertical-align: middle;
+    }
+
     .leaflet-top{
         pointer-events: auto;
     }
@@ -2955,7 +3018,7 @@ legend {
     font-weight: 500;
     width: 100%;
     margin-top: 18px;
-    max-width: 225px;
+    max-width: 250px;
     -webkit-appearance: none;
 }
 
@@ -3724,6 +3787,10 @@ body.HoldRoomsForm {
 
     #theDatePrompt {
         width: 100%;
+    }
+
+    body.RootBody {
+        height: unset;
     }
 }
 

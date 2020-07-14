@@ -118,3 +118,6 @@ input[type='email'].email-mask,
     transition-duration: 0.8s;
 }
 
+.ap-input-icon {
+    background-color: #f0f0f0;
+}

@@ -37,7 +37,6 @@ export default class Algolia {
         function remove_arn_search_bar(selector) {
             if (!document.querySelector(selector)) return;
             document.querySelector(selector).remove();
-            // document.querySelector(selector).style.display = 'none';
         }
 
         /**
@@ -57,7 +56,6 @@ export default class Algolia {
          */
         function prepopulate_inputs_on_search_hotels() {
             if (!document.querySelector('.SearchHotels')) return;
-            // if (site_config.site_type.toLowerCase() !== 'cug' && site_config.site_type.toLowerCase() !== 'retail') return;
 
             let destination;
             if (search_params.get('destination') !== null) {

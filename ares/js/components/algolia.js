@@ -172,7 +172,7 @@ export default class Algolia {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const {origin} = window.location;
-            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10`;
+            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
             const built_url = new URL(url);
             let lat;
             let lng;
@@ -256,10 +256,6 @@ export default class Algolia {
                     key: 'propertytypes',
                     value: applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType'),
                 },
-                destination: {
-                    key: 'destination',
-                    value: getDestinationForCUG('input#address-input'),
-                },
                 optionalHotel: {
                     key: 'hotelname',
                     value: get_optional_hotel_name(),
@@ -292,6 +288,14 @@ export default class Algolia {
                         key: 'cid',
                         value: getEventOrginalParams('cid'),
                     },
+                    points: {
+                        key: 'points',
+                        value: getEventOrginalParams('points'),
+                    },
+                    destination: {
+                        key: 'destination',
+                        value: getEventOrginalParams('destination'),
+                    },
                 });
             }
 
@@ -300,6 +304,10 @@ export default class Algolia {
                     memberToken: {
                         key: 'memberToken',
                         value: utilities.getMetaTagContent('memberToken'),
+                    },
+                    destination: {
+                        key: 'destination',
+                        value: getDestinationForCUG('input#address-input'),
                     },
                 });
             }

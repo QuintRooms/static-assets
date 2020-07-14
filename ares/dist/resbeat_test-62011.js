@@ -2859,7 +2859,7 @@
                                     var a,
                                         c,
                                         s = window.location.origin,
-                                        l = ''.concat(s, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10'),
+                                        l = ''.concat(s, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
                                         d = new URL(l),
                                         g = q(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
                                         v = q(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
@@ -2885,7 +2885,6 @@
                                             amenities: {key: 'amenities', value: p('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                             stars: {key: 'propertyclasses', value: p('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
                                             propertyType: {key: 'propertytypes', value: p('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            destination: {key: 'destination', value: m('input#address-input')},
                                             optionalHotel: {key: 'hotelname', value: f()},
                                         }),
                                         'search-results' === t &&
@@ -2896,8 +2895,14 @@
                                                 radius: {key: 'radius', value: y('radius')},
                                                 groupId: {key: 'groupid', value: y('groupid')},
                                                 cid: {key: 'cid', value: y('cid')},
+                                                points: {key: 'points', value: y('points')},
+                                                destination: {key: 'destination', value: y('destination')},
                                             }),
-                                        'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        'cug' === e.site_type.toLowerCase() &&
+                                            S({
+                                                memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')},
+                                                destination: {key: 'destination', value: m('input#address-input')},
+                                            }),
                                         (window.location.href = decodeURIComponent(d));
                                 }),
                                     'landing-page' === t &&

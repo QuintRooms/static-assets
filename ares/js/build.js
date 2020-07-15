@@ -1917,7 +1917,7 @@ export default class BasePortal {
     }
 
     showCoronavirusInfoBanner() {
-        if (this.site_id === 52342) return;
+        if (this.site_id === '52342') return;
 
         if (localStorage.getItem('covidAlertBanner') === 'closed') return;
 

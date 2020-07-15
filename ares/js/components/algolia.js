@@ -141,10 +141,14 @@ export default class Algolia {
          *@param string selector of the input to get the value from.
          *@return string - the destination or input value.
          */
-        function getDestinationForCUG(inputSelector) {
-            if (site_config.cug.is_cug || site_config.site_type.toLowerCase() === 'retail') {
+        function getDestination(inputSelector) {
+            if (document.querySelector(inputSelector).value !== null) {
                 const destination_value = document.querySelector(inputSelector).value;
                 return destination_value;
+            }
+            if (original_params_url.has('destination')) {
+                const param = original_params_url.get('destination');
+                return param;
             }
         }
 
@@ -191,10 +195,10 @@ export default class Algolia {
             }
 
             /**
-             * @description loops over all each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
+             * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
              * @param object paramObject - an object containing one or more parameters to append to a url.
-             * @property string - paramObject[].key - url parameter key.
-             * @property string - paramObject[].value - the value for the parameter key.
+             * @property string - paramObject[i].key - url parameter key.
+             * @property string - paramObject[i].value - the value for the parameter key.
              * @example appendParamsToURL({
                             longitude: {
                                 key: 'longitude',
@@ -222,6 +226,10 @@ export default class Algolia {
                 latitude: {
                     key: 'latitude',
                     value: lat,
+                },
+                destination: {
+                    key: 'destination',
+                    value: getDestination('input#address-input'),
                 },
                 checkin: {
                     key: 'checkin',
@@ -261,7 +269,7 @@ export default class Algolia {
                 },
             });
 
-            if (page_name === 'search-results') {
+            if (page_name === 'search-results' && site_config.site_type.toLowerCase() === 'lodging') {
                 appendParamsToURL({
                     properties: {
                         key: 'properties',
@@ -291,10 +299,6 @@ export default class Algolia {
                         key: 'points',
                         value: getEventOrginalParams('points'),
                     },
-                    destination: {
-                        key: 'destination',
-                        value: getEventOrginalParams('destination'),
-                    },
                 });
             }
 
@@ -303,10 +307,6 @@ export default class Algolia {
                     memberToken: {
                         key: 'memberToken',
                         value: utilities.getMetaTagContent('memberToken'),
-                    },
-                    destination: {
-                        key: 'destination',
-                        value: getDestinationForCUG('input#address-input'),
                     },
                 });
             }

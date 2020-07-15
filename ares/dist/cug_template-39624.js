@@ -2848,25 +2848,23 @@
                                         n.slice(0, -1)
                                     );
                                 }
-                                function m(t) {
-                                    if (e.cug.is_cug || 'retail' === e.site_type.toLowerCase()) return document.querySelector(t).value;
-                                }
-                                function y(e) {
+                                function m(e) {
                                     if (u.has(e)) return u.get(e);
                                 }
                                 document.querySelector('form#searchForm').addEventListener('submit', function (i) {
                                     i.preventDefault();
                                     var a,
                                         c,
-                                        s = window.location.origin,
-                                        l = ''.concat(s, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
-                                        d = new URL(l),
+                                        s,
+                                        l = window.location.origin,
+                                        d = ''.concat(l, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
+                                        y = new URL(d),
                                         g = q(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
                                         v = q(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY'),
                                         b = q(v).diff(q(g), 'days');
                                     function S(e) {
                                         Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && d.searchParams.append(e[t].key, e[t].value);
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && y.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
                                     r
@@ -2877,6 +2875,16 @@
                                         S({
                                             longitude: {key: 'longitude', value: c},
                                             latitude: {key: 'latitude', value: a},
+                                            destination: {
+                                                key: 'destination',
+                                                value:
+                                                    ((s = 'input#address-input'),
+                                                    null !== document.querySelector(s).value
+                                                        ? document.querySelector(s).value
+                                                        : u.has('destination')
+                                                        ? u.get('destination')
+                                                        : void 0),
+                                            },
                                             checkin: {key: 'checkin', value: g},
                                             nights: {key: 'nights', value: b},
                                             rooms: {key: 'rooms', value: h('select#rooms')},
@@ -2888,22 +2896,18 @@
                                             optionalHotel: {key: 'hotelname', value: f()},
                                         }),
                                         'search-results' === t &&
+                                            'lodging' === e.site_type.toLowerCase() &&
                                             S({
-                                                properties: {key: 'properties', value: y('properties')},
-                                                utm_sorce: {key: 'utm_sorce', value: y('utm_sorce')},
-                                                locationLabel: {key: 'locationlabel', value: y('locationlabel')},
-                                                radius: {key: 'radius', value: y('radius')},
-                                                groupId: {key: 'groupid', value: y('groupid')},
-                                                cid: {key: 'cid', value: y('cid')},
-                                                points: {key: 'points', value: y('points')},
-                                                destination: {key: 'destination', value: y('destination')},
+                                                properties: {key: 'properties', value: m('properties')},
+                                                utm_sorce: {key: 'utm_sorce', value: m('utm_sorce')},
+                                                locationLabel: {key: 'locationlabel', value: m('locationlabel')},
+                                                radius: {key: 'radius', value: m('radius')},
+                                                groupId: {key: 'groupid', value: m('groupid')},
+                                                cid: {key: 'cid', value: m('cid')},
+                                                points: {key: 'points', value: m('points')},
                                             }),
-                                        'cug' === e.site_type.toLowerCase() &&
-                                            S({
-                                                memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')},
-                                                destination: {key: 'destination', value: m('input#address-input')},
-                                            }),
-                                        (window.location.href = decodeURIComponent(d));
+                                        'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        (window.location.href = decodeURIComponent(y));
                                 }),
                                     (i = 'input#city'),
                                     document.querySelector(i) && document.querySelector(i).remove(),

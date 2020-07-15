@@ -18,9 +18,9 @@ export default function siteConfig() {
         map_size: '12',
         radius: '50',
         lodging: {
-            event_id: 32970,
+            event_id: 43056,
             event_name: 'Austin City Limits Music Festival',
-            event_dates: '10/2/2020 - 10/4/2020 & 10/9/2020 - 10/11/2020',
+            event_dates: '10/1/2021 - 10/3/2021 & 10/8/2021 - 10/10/2021',
             is_lrg: true,
         },
         cug: {
@@ -44,7 +44,7 @@ export default function siteConfig() {
         showStarRatings: false,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         has_custom_styles: true,
-        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/53336.css`,
+        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,

@@ -2,7 +2,7 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
-import Algolia from './components/algolia';
+// import Algolia from './components/algolia';
 import Path from './path';
 
 const env_path = new Path();
@@ -10,7 +10,7 @@ const env_path = new Path();
 const dayjs = require('dayjs');
 
 const utilities = new Utilities();
-const algolia = new Algolia();
+// const algolia = new Algolia();
 
 export default class BasePortal {
     constructor(config) {
@@ -116,7 +116,7 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                algolia.init(this.site_config, this.page_name, utilities);
+                // algolia.init(this.site_config, this.page_name, utilities);
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -154,9 +154,9 @@ export default class BasePortal {
                 this.replaceLRGForm();
             }
 
-            if (this.page_name === 'search-results') {
-                algolia.init(this.site_config, this.page_name, utilities);
-            }
+            // if (this.page_name === 'search-results') {
+            //     algolia.init(this.site_config, this.page_name, utilities);
+            // }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                 this.map_loaded = true;

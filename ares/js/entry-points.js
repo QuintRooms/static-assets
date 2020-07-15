@@ -26,7 +26,7 @@ module.exports = () => {
             'innings_21-60093': './src/60093.js', // Innings Fest 2021
             'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             'room_steals-52342': './src/52342.js', // Room Steals
-            'resbeat-60831': './src/60831.js', // Resbeat test
+            'resbeat-60831': './src/60831.js', // Resbeat
         };
 
         // develop environment
@@ -36,14 +36,14 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
-            'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            'acl_21-60311': './src/60311.js', // ACL 2021
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            // 'acl_21-60311': './src/60311.js', // ACL 2021
         };
     }
 

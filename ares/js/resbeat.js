@@ -266,11 +266,13 @@ export default class Resbeat extends BasePortal {
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
-                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
-                <div class="points-earned">
+            <div class="points-earned">
+                <div class="rewards-span">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
-                    <span>${points_earned}</span>
+                 <span>${points_earned}</span>
                 </div>
+                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
+            </div>
             `
         );
     }

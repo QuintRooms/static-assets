@@ -43,6 +43,7 @@ module.exports = () => {
     } else if (process.env.environment === 'local') {
         entry_points = {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+            // 'acl_21-60311': './src/60311.js', // ACL 2021
         };
     }
 

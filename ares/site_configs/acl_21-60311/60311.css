@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+
+header .logo {
+    margin-left: 15px;
+}
+.event-week{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.event-week a{
+	color: #fff;
+	background: #00a081;
+	font-family: 'Paytone One';
+	font-size: 17px;
+	padding: 6px;
+	margin: 6px 0;
+	transition: all .5s ease;
+    box-shadow: 2px 2px 1px 0px #ccc;
+}
+
+.event-week a:hover{
+	background: #00886d;
+}
+
+@media screen and (max-width: 750px){
+    header {
+        flex-direction: column;
+    }
+    .event-week {
+        flex-direction: row;
+    }
+    
+    .event-week a {
+        margin: 6px;
+	}
+}

@@ -36,7 +36,7 @@ export default class BasePortal {
             this.setupDatePrompt();
             this.showLanguageFromCongif();
             this.buildCurrencyDropdown();
-            this.showStarsAndFilter();
+            this.showFilters();
 
             // all pages
             // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -1906,10 +1906,14 @@ export default class BasePortal {
         showPercentSavingsOnProperties();
     }
 
-    showStarsAndFilter() {
-        if (!this.site_config.show_stars) return;
+    showFilters() {
+        if (this.site_config.show_stars) {
+            document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+        }
 
-        document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+        if (this.site_config.show_property_type) {
+            document.body.insertAdjacentHTML('beforeEnd', `<style> #PropertyTypesContainer{display:block !important;}</style>`);
+        }
     }
 
     showCoronavirusInfoBanner() {

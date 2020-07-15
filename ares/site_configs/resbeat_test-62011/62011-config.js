@@ -37,6 +37,7 @@ export default function siteConfig() {
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: true,
+        show_property_type: true,
         show_language_select: false,
         show_currency_select: true,
         show_date_prompt: false,

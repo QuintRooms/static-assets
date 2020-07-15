@@ -51,9 +51,9 @@ input[type='email'].email-mask,
     display: none !important;
 }
 
-#PropertyTypesContainer {
+/* #PropertyTypesContainer {
     display: unset;
-}
+} */
 
 .WBLoginFormActions input,
 #register-btn a,

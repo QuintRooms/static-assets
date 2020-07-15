@@ -4227,7 +4227,7 @@
                                                                         e.setupDatePrompt(),
                                                                         e.showLanguageFromCongif(),
                                                                         e.buildCurrencyDropdown(),
-                                                                        e.showStarsAndFilter(),
+                                                                        e.showFilters(),
                                                                         e.buildMobileMenu(),
                                                                         $.createHTML(
                                                                             '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
@@ -5899,10 +5899,12 @@
                             },
                         },
                         {
-                            key: 'showStarsAndFilter',
+                            key: 'showFilters',
                             value: function () {
                                 this.site_config.show_stars &&
-                                    document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>');
+                                    document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>'),
+                                    this.site_config.show_property_type &&
+                                        document.body.insertAdjacentHTML('beforeEnd', '<style> #PropertyTypesContainer{display:block !important;}</style>');
                             },
                         },
                         {
@@ -6913,6 +6915,7 @@
                     dayjs_date_format: 'M/D/YYYY',
                     reviews_before_info: !0,
                     show_stars: !0,
+                    show_property_type: !0,
                     show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,

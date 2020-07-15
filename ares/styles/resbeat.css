@@ -51,10 +51,6 @@ input[type='email'].email-mask,
     display: none !important;
 }
 
-/* #PropertyTypesContainer {
-    display: unset;
-} */
-
 .WBLoginFormActions input,
 #register-btn a,
 .WBValidatedRegistrationFormActions input,
@@ -214,6 +210,10 @@ input[type='email'].email-mask,
 
 .SearchHotels .ArnRateCell {
     text-align: center;
+}
+
+.SearchHotels .ArnPriceCell:first-child {
+    padding-top: 40px;
 }
 
 .SearchHotels .ArnLimitedAvail {

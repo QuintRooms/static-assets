@@ -516,7 +516,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover  {
+            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input  {
                 color: ${this.site_config.primary_text_color} !important;
             }
         
@@ -544,7 +544,7 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover  {
+            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input  {
                 background: ${this.site_config.background_color} !important;
             }
             

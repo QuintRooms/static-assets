@@ -84,7 +84,7 @@ input[type='email'].email-mask,
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
-.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit {
+.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     border-radius: 40px;
     -webkit-appearance: none;
 }

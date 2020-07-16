@@ -918,7 +918,7 @@ export default class BasePortal {
             .bookRoom,
             .arn-leaflet-reset-button,
             input#theConfirmationButton,
-            a.ArnShowRatesLink, .WBConfirmedBooking .submit {
+            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
                 border: 1px solid ${this.site_config.border_color};

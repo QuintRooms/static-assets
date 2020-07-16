@@ -3252,6 +3252,17 @@ legend {
     display: none;
 }
 
+.theWBResendOrCancelForm {
+    max-width: 60vw;
+}
+
+.theEmailAddressAjax input {
+    max-width: 50%;
+}
+.WBResendOrCancelFormActions input {
+    padding: 9px;
+}
+
 @media screen and (max-width: 800px) {
     #theReservationFormContainer {
         padding: 8px;

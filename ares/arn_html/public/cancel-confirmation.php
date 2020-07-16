@@ -131,6 +131,7 @@ if (!window.jQuery) {
 if (!window.console) window.console = { log: function() {} };
 </script> -->
 <link rel="stylesheet" type="text/css" href="https://dev-static.hotelsforhope.com/ares/styles/styles.css">
+<style id="h4h-styles"></style>
 <div class="config-container">
     <div class="currencies-container">
         <div class="config-label" id="currency-label">

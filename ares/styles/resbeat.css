@@ -32,7 +32,7 @@ input[type='email'].email-mask,
 .SearchHotels .lblRating,
 .SearchHotels .sort-wrapper h4, .SearchHotels .ArnContainer, .sort-filter-header h3,
 .mobile-filter-container h4,
-.mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox, #standardAvail legend, .ArnRateList .ArnRateCancelAnchor, .ArnRateList .RateCalendarPopupAnchor, .SearchHotels .lblPropertyType, .SearchHotels #PropertyTypesContainer span {
+.mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox, #standardAvail legend, .ArnRateList .ArnRateCancelAnchor, .ArnRateList .RateCalendarPopupAnchor, .SearchHotels .lblPropertyType, .SearchHotels #PropertyTypesContainer span, .WBConfirmedBooking .informMessage, .WBResendOrCancelFormActions input {
     color: #666 !important;
 }
 
@@ -62,7 +62,7 @@ input[type='email'].email-mask,
 .SinglePropDetail #moreRatesLink,
 .CheckOutForm #theConfirmationButton,
 .WBSupportFormActions input,
-.WBForgotPasswordFormActions input {
+.WBForgotPasswordFormActions input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     transition-property: color, background;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
@@ -86,7 +86,7 @@ input[type='email'].email-mask,
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
-.CheckOutForm #theConfirmationButton {
+.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit {
     border-radius: 40px;
     -webkit-appearance: none;
 }

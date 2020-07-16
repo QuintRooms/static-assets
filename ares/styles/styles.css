@@ -174,7 +174,7 @@ header {
 .bookRoom,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
-a.ArnShowRatesLink {
+a.ArnShowRatesLink, .WBConfirmedBooking .submit {
     background: #fff;
     color: #333;
     border: 1px solid #333;
@@ -206,7 +206,7 @@ input#theSubmitButton:active,
 input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
-a.ArnShowRatesLink:hover {
+a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover {
     background: rgb(227, 224, 224);
     color: #333;
     border: 1px solid #333;
@@ -219,6 +219,9 @@ a.ArnShowRatesLink:hover {
     color: #333;
 }
 
+.WBResendOrCancelFormActions input {
+    margin: 0 10px;
+}
 /* Buttons End */
 
 select#rooms,
@@ -3230,6 +3233,10 @@ legend {
     align-items: center;
 }
 
+.WBConfirmedBooking .dialog-buttons .dialog-button-ok input {
+    padding: 8px;
+}
+
 .WBConfirmedBooking .dialog-button-cancel {
     margin: 5px;
     display: flex;
@@ -3239,6 +3246,10 @@ legend {
 
 .WBConfirmedBooking .dialog-button-cancel a {
     margin-top: 5px;
+}
+
+.WBConfirmedBooking .informMessage .message, .WBConfirmedBooking .mailHeader {
+    display: none;
 }
 
 @media screen and (max-width: 800px) {

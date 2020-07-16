@@ -809,7 +809,7 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit {
                 background: ${this.site_config.primary_color};
             }
 
@@ -862,7 +862,7 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit {
                 color: ${this.site_config.primary_text_color};
             }
 
@@ -918,7 +918,7 @@ export default class BasePortal {
             .bookRoom,
             .arn-leaflet-reset-button,
             input#theConfirmationButton,
-            a.ArnShowRatesLink {
+            a.ArnShowRatesLink, .WBConfirmedBooking .submit {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
                 border: 1px solid ${this.site_config.border_color};
@@ -950,7 +950,7 @@ export default class BasePortal {
             input#theConfirmationButton:hover,
             input#theConfirmationButton:focus,
             input#theConfirmationButton:active,
-            a.ArnShowRatesLink:hover {
+            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
                 border: 1px solid ${this.site_config.button_hover_border_color};

@@ -271,6 +271,10 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
+
+            if (document.querySelector('.WBConfirmedBooking')) {
+                this.cancelConfirmUpdate();
+            }
         });
     }
 
@@ -2204,5 +2208,12 @@ export default class BasePortal {
 
         const amenities_legend = document.querySelector('#thePropertyAmenities legend');
         amenities_legend.outerHTML = '<span>Property Amenities</span>';
+    }
+
+    cancelConfirmUpdate() {
+        if (!document.querySelector('.WBConfirmedBooking')) return;
+
+        const do_nothing = document.querySelector('.dialog-button-cancel a');
+        do_nothing.textContent = 'Go Back';
     }
 }

@@ -1657,9 +1657,9 @@
             D = l('symbols'),
             N = l('op-symbols'),
             W = Object.prototype,
-            $ = 'function' == typeof T && !!C.f,
-            U = r.QObject,
-            V = !U || !U.prototype || !U.prototype.findChild,
+            U = 'function' == typeof T && !!C.f,
+            $ = r.QObject,
+            V = !$ || !$.prototype || !$.prototype.findChild,
             G =
                 i &&
                 u(function () {
@@ -1684,7 +1684,7 @@
                 return (t._k = e), t;
             },
             z =
-                $ && 'symbol' == typeof T.iterator
+                U && 'symbol' == typeof T.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
@@ -1725,7 +1725,7 @@
                 for (var t, n = e === W, r = E(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o(W, t)) || i.push(D[t]);
                 return i;
             };
-        $ ||
+        U ||
             (c(
                 (T = function () {
                     if (this instanceof T) throw TypeError('Symbol is not a constructor!');
@@ -1749,11 +1749,11 @@
             (p.f = function (e) {
                 return Y(f(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: T});
+            a(a.G + a.W + a.F * !U, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
         for (var re = q(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
-        a(a.S + a.F * !$, 'Symbol', {
+        a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = T(e));
             },
@@ -1768,7 +1768,7 @@
                 V = !1;
             },
         }),
-            a(a.S + a.F * !$, 'Object', {
+            a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
                     return void 0 === t ? x(e) : Q(x(e), t);
                 },
@@ -1790,7 +1790,7 @@
                 a(
                     a.S +
                         a.F *
-                            (!$ ||
+                            (!U ||
                                 u(function () {
                                     var e = T();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
@@ -4185,8 +4185,8 @@
         }
         var N = new r(),
             W = n(42),
-            $ = new B(),
-            U = new F(),
+            U = new B(),
+            $ = new F(),
             V = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -4194,7 +4194,7 @@
                     })(this, e),
                         console.log('Output: BasePortal -> constructor -> config', t),
                         (this.site_id = ''),
-                        (this.page_name = $.getPageName()),
+                        (this.page_name = U.getPageName()),
                         (this.site_config = t),
                         (this.currency = ''),
                         (this.svg_arrow =
@@ -4212,7 +4212,7 @@
                                 var e = this;
                                 this.site_config || console.error('No site config found.'),
                                     this.initializeARNRatesReadyEvent(),
-                                    $.ieForEachPolyfill(),
+                                    U.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
                                             var t = I(
@@ -4222,20 +4222,20 @@
                                                             switch ((t.prev = t.next)) {
                                                                 case 0:
                                                                     return (
-                                                                        $.getPageName(),
+                                                                        U.getPageName(),
                                                                         e.applyConfigStyles(),
                                                                         e.setupDatePrompt(),
                                                                         e.showLanguageFromCongif(),
                                                                         e.buildCurrencyDropdown(),
                                                                         e.showFilters(),
                                                                         e.buildMobileMenu(),
-                                                                        $.createHTML(
+                                                                        U.createHTML(
                                                                             '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
                                                                             'head',
                                                                             'beforeEnd'
                                                                         ),
                                                                         (t.next = 10),
-                                                                        $.createHTML(
+                                                                        U.createHTML(
                                                                             '<header><a class="logo" href="'
                                                                                 .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
                                                                                 .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
@@ -4245,14 +4245,14 @@
                                                                     );
                                                                 case 10:
                                                                     'cug' === e.site_config.site_type &&
-                                                                        $.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                        U.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                             I(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
                                                                                             switch ((e.prev = e.next)) {
                                                                                                 case 0:
-                                                                                                    $.appendToParent('#commands', 'header');
+                                                                                                    U.appendToParent('#commands', 'header');
                                                                                                 case 1:
                                                                                                 case 'end':
                                                                                                     return e.stop();
@@ -4261,14 +4261,14 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        $.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                        U.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                         'property-detail' === e.page_name &&
                                                                             (e.addImageSlideshow(),
                                                                             e.updateAmenitiesLegendTag(),
-                                                                            $.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                            $.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                            $.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                            $.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                            U.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                            U.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                            U.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                            U.updateHTML('.SinglePropDetail .Details a', 'General Info'),
                                                                             e.isPropByGateway(
                                                                                 e.site_config.exclusive_rate_text,
                                                                                 e.site_config.host_hotel_text,
@@ -4281,67 +4281,67 @@
                                                                                     e.showFullStayAndNightlyRates(t, n);
                                                                                 });
                                                                             }),
-                                                                            $.moveElementIntoExistingWrapper(
+                                                                            U.moveElementIntoExistingWrapper(
                                                                                 '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
                                                                                 '.SinglePropDetail .ArnPropAddress',
                                                                                 'afterEnd'
                                                                             ),
-                                                                            $.moveElementIntoExistingWrapper(
+                                                                            U.moveElementIntoExistingWrapper(
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
                                                                             )),
                                                                         'checkout' === e.page_name &&
-                                                                            ($.createModal(
+                                                                            (U.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
                                                                                 'Policies & Fees',
                                                                                 'checkout',
                                                                                 '#theConfirmationContainer',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            $.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                            $.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                            $.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                            $.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                            $.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                            $.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                            $.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                            $.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                            $.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                            $.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                            U.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                            U.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                            U.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                            U.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                            U.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                            U.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                            U.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                            U.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                            U.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                            U.updateHTML('#theHotel legend', 'Reservation Summary'),
                                                                             e.formatCheckoutForm(),
                                                                             e.setupReservationSummaryContainer(),
-                                                                            $.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                            $.emailVerificationSetup(),
+                                                                            U.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                            U.emailVerificationSetup(),
                                                                             e.fixCheckoutInputTabOrder(),
-                                                                            $.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
+                                                                            U.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
-                                                                            (U.init(e.site_config, e.page_name, $),
-                                                                            $.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                            $.createHTML(
+                                                                            ($.init(e.site_config, e.page_name, U),
+                                                                            U.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                            U.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
                                                                                 '.RootBody .ArnPrimarySearchContainer',
                                                                                 'beforeBegin'
                                                                             ),
-                                                                            $.moveOrphanedElementsIntoNewWrapper(
+                                                                            U.moveOrphanedElementsIntoNewWrapper(
                                                                                 [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
                                                                                 'root-search-container',
                                                                                 '.RootBody .ArnSearchContainerMainDiv',
                                                                                 'afterBegin'
                                                                             ),
-                                                                            $.moveElementIntoExistingWrapper(
+                                                                            U.moveElementIntoExistingWrapper(
                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                 '.ArnPrimarySearchContainer',
                                                                                 'beforeEnd'
                                                                             ),
-                                                                            $.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                        $.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                        $.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                        $.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                        $.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                        $.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                        $.createHTML(
+                                                                            U.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                        U.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                        U.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                        U.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                        U.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                        U.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                        U.createHTML(
                                                                             '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
@@ -4355,7 +4355,7 @@
                                                                                 });
                                                                             }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && U.init(e.site_config, e.page_name, $),
+                                                                        'search-results' === e.page_name && $.init(e.site_config, e.page_name, U),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             I(
@@ -4367,7 +4367,7 @@
                                                                                                     return (
                                                                                                         (e.map_loaded = !0),
                                                                                                         (t.next = 3),
-                                                                                                        $.waitForSelectorInDOM('.pollingFinished')
+                                                                                                        U.waitForSelectorInDOM('.pollingFinished')
                                                                                                     );
                                                                                                 case 3:
                                                                                                     document.querySelector('.leaflet-control-scale-line') ||
@@ -4410,7 +4410,7 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        $.waitForSelectorInDOM('.pollingFinished').then(
+                                                                        U.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
                                                                                 var t = I(
                                                                                     regeneratorRuntime.mark(function t(n) {
@@ -4421,7 +4421,7 @@
                                                                                                         if (
                                                                                                             ('hold-rooms' === e.page_name &&
                                                                                                                 (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                $.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                                U.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
                                                                                                             'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
                                                                                                         ) {
                                                                                                             t.next = 3;
@@ -4446,45 +4446,45 @@
                                                                                                             e.showSearchContainerOnMobile(),
                                                                                                             e.moveFooterOutOfSearchContainer(),
                                                                                                             e.moveReviewsIntoPropNameContainer(),
-                                                                                                            $.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                            U.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                             e.movePropClassBelowPropName(),
-                                                                                                            $.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                            $.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                            $.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                            $.updateHTML('.lblRating', 'Stars'),
-                                                                                                            $.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                            $.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                            $.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                            $.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                            $.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                            $.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                            $.moveElementIntoExistingWrapper(
+                                                                                                            U.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                            U.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                            U.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                            U.updateHTML('.lblRating', 'Stars'),
+                                                                                                            U.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                            U.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                            U.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                            U.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                            U.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                            U.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                            U.moveElementIntoExistingWrapper(
                                                                                                                 '.ArnPropClass',
                                                                                                                 '.ArnPropName',
                                                                                                                 'beforeEnd'
                                                                                                             ),
-                                                                                                            $.moveElementIntoExistingWrapper(
+                                                                                                            U.moveElementIntoExistingWrapper(
                                                                                                                 '#theOtherSubmitButton',
                                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                                 'beforeEnd'
                                                                                                             ),
                                                                                                             (t.next = 31),
-                                                                                                            $.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                $.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                            U.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                U.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                             })
                                                                                                         );
                                                                                                     case 31:
                                                                                                         return (
                                                                                                             (t.next = 33),
-                                                                                                            $.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                $.createWrapper(
+                                                                                                            U.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                U.createWrapper(
                                                                                                                     '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
                                                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                                                     'sort-wrapper',
                                                                                                                     'afterBegin'
                                                                                                                 ).then(function () {
                                                                                                                     e.createMobileSortAndFilter(),
-                                                                                                                        $.createHTML(
+                                                                                                                        U.createHTML(
                                                                                                                             '<h4>Sort</h4>',
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
@@ -4497,7 +4497,7 @@
                                                                                                             t.next = 41;
                                                                                                             break;
                                                                                                         }
-                                                                                                        return (t.next = 37), $.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                        return (t.next = 37), U.waitForSelectorInDOM('#ArnPropertyMap');
                                                                                                     case 37:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
                                                                                                             L.control.scale().addTo(window.ArnMap),
@@ -4534,8 +4534,9 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
-                                                                        e.setCheckDatesToReadOnlyOnMobile();
-                                                                case 44:
+                                                                        e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
+                                                                case 45:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4700,11 +4701,11 @@
                             key: 'createMobileSortAndFilter',
                             value: function () {
                                 if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                    $.updateHTML(
+                                    U.updateHTML(
                                         '.sort',
                                         '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
                                     ),
-                                        $.createHTML(
+                                        U.createHTML(
                                             '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
                                             '#searchForm',
                                             'beforeEnd'
@@ -4758,7 +4759,7 @@
                                     (r = c.getAttribute('content')),
                                     (o = W(n)),
                                     (i = W(r)),
-                                    $.createHTML(
+                                    U.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                             .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
                                             .concat(o.format('MMMM D'), ' - ')
@@ -4805,7 +4806,7 @@
                                                                 r.classList.toggle('is-active'), t.classList.toggle('active');
                                                             }),
                                                             (e.next = 11),
-                                                            $.waitForSelectorInDOM('header')
+                                                            U.waitForSelectorInDOM('header')
                                                         );
                                                     case 11:
                                                         document.querySelector('header').insertAdjacentElement('beforeend', n);
@@ -4830,7 +4831,7 @@
                                 window.matchMedia('(max-width:800px)').matches &&
                                     document.querySelector('#theBookingPage') &&
                                     (r.insertAdjacentElement('afterEnd', e),
-                                    $.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
+                                    U.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
                                     e.insertAdjacentElement('beforeBegin', t),
                                     e.insertAdjacentHTML(
                                         'beforeEnd',
@@ -4963,8 +4964,8 @@
                                     (r = i.textContent),
                                     (e = W(t).format(this.site_config.dayjs_date_format)),
                                     (n = W(r).format(this.site_config.dayjs_date_format)),
-                                    $.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                    $.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                                    U.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                    U.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
                         },
                         {
@@ -4974,12 +4975,12 @@
                                     t = 0;
                                 e.forEach(function (e) {
                                     (t += 1),
-                                        $.moveElementIntoExistingWrapper(
+                                        U.moveElementIntoExistingWrapper(
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
                                             '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
                                             'afterEnd'
                                         ),
-                                        $.createWrapper(
+                                        U.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
                                                 .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
@@ -4989,7 +4990,7 @@
                                             'billing-details-container',
                                             'afterEnd'
                                         ),
-                                        $.createWrapper(
+                                        U.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
                                                 .concat(t, ', \n                 .RoomNumber-')
@@ -4999,12 +5000,12 @@
                                             'credit-card-details',
                                             'afterEnd'
                                         ),
-                                        $.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                        $.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                        $.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                        t > 1 && $.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                        $.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                        $.updateHTML(
+                                        U.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                        U.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                        U.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                        t > 1 && U.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                        U.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                        U.updateHTML(
                                             '.cardNumber label',
                                             '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
                                         );
@@ -5018,8 +5019,8 @@
                                 document.querySelector('#theCopyInfoAjax input') &&
                                     document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
                                         setTimeout(function () {
-                                            $.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                e > 1 && $.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                            U.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                e > 1 && U.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
                                         }, 750);
                                     });
                             },
@@ -5030,7 +5031,7 @@
                                 var e = document.querySelector('#h4h-styles');
                                 this.site_config &&
                                     e &&
-                                    ($.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    (U.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
                                     e.insertAdjacentHTML(
                                         'afterBegin',
                                         '\n            /* Fonts */\n            *,\n            .taxFeeRow td,\n            .discount td,\n            .totalRow td,\n            .balanceDueRow td,\n            .dueNowRow td,\n            .guestNameFields td,\n            .total-points-earned td{\n                font-family: '
@@ -5964,8 +5965,8 @@
                                         this.site_id,
                                         '&theme=standard">Terms & Conditions</a> found on this website.'
                                     )),
-                                    $.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                    $.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                    U.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                    U.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                     document.querySelector('#policies-fees').addEventListener('click', function () {
                                         document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('fixed');
                                     }),
@@ -6100,7 +6101,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (r = document.querySelector(n)), (e.next = 5), $.fetchHTMLFromFile(t);
+                                                        return (r = document.querySelector(n)), (e.next = 5), U.fetchHTMLFromFile(t);
                                                     case 5:
                                                         (o = e.sent), (r.innerHTML = o);
                                                     case 7:
@@ -6131,7 +6132,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), $.waitForSelectorInDOM('.logo');
+                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), U.waitForSelectorInDOM('.logo');
                                                         case 5:
                                                             if (document.querySelector('meta[name="memberToken"]')) {
                                                                 e.next = 7;
@@ -6184,13 +6185,13 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if ($.matchMediaQuery('max-width: 800px')) {
+                                                            if (U.matchMediaQuery('max-width: 800px')) {
                                                                 e.next = 2;
                                                                 break;
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (e.next = 4), $.waitForSelectorInDOM('#theCheckIn');
+                                                            return (e.next = 4), U.waitForSelectorInDOM('#theCheckIn');
                                                         case 4:
                                                             if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
                                                                 e.next = 11;
@@ -6221,6 +6222,12 @@
                             key: 'updateAmenitiesLegendTag',
                             value: function () {
                                 'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
+                            },
+                        },
+                        {
+                            key: 'cancelConfirmUpdate',
+                            value: function () {
+                                document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
                             },
                         },
                     ]) && D(t.prototype, n),

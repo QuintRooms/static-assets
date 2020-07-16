@@ -1529,6 +1529,7 @@ div.autocomplete ul li.selected {
 
 .SinglePropDetail .SimpleSearch {
     margin-bottom: 18px;
+    padding: 12px;
 }
 
 .SinglePropDetail .ArnLeftListContainer {
@@ -3217,6 +3218,27 @@ legend {
 
 #theBookingPage #theRateSummaryInfo div{
     font-weight: bold;
+}
+
+.informMessage.WBConfirmedBookingMessage {
+    padding: 10px 70px;
+}
+
+.WBConfirmedBooking .dialog-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.WBConfirmedBooking .dialog-button-cancel {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.WBConfirmedBooking .dialog-button-cancel a {
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 800px) {

@@ -11,3 +11,7 @@ svg.arrow polyline {
     background: unset;
     border-bottom: 1px solid #fff;
 }
+
+.CheckOutForm .modal-container {
+    color: #000;
+}

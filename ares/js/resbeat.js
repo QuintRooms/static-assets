@@ -502,7 +502,7 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input, .WBResendOrCancelFormActions input {
+            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input {
                 color: ${this.site_config.primary_color} !important;
             }
             
@@ -516,7 +516,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input  {
+            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover  {
                 color: ${this.site_config.primary_text_color} !important;
             }
         

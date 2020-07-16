@@ -37,7 +37,8 @@ module.exports = () => {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
-            'acl_21-60311': './src/60311.js', // ACL 2021
+            // 'acl_21-60311': './src/60311.js', // ACL 2021
+            'buku_21-56297': './src/56297.js', // Buku 2021
         };
 
         // local environment

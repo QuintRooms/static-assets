@@ -787,7 +787,7 @@ export default class BasePortal {
                 max-width: ${this.site_config.header.logo_max_width};
             }
             
-            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {
+            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
                 background-color: ${this.site_config.background_color};
             }
 
@@ -918,7 +918,7 @@ export default class BasePortal {
             .bookRoom,
             .arn-leaflet-reset-button,
             input#theConfirmationButton,
-            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
+            a.ArnShowRatesLink, .WBConfirmedBooking .submit {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
                 border: 1px solid ${this.site_config.border_color};

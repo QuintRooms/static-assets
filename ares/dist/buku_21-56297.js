@@ -5044,7 +5044,7 @@
                                             .concat(this.site_config.header.background, ';\n            }\n            \n            .logo img{\n                max-width: ')
                                             .concat(
                                                 this.site_config.header.logo_max_width,
-                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {\n                background-color: '
+                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {\n                background-color: '
                                             )
                                             .concat(
                                                 this.site_config.background_color,
@@ -5081,7 +5081,7 @@
                                             .concat(this.site_config.secondary_text_color, ';\n            }\n            \n            .percentSavings{\n                color: ')
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {\n                background: '
+                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink, .WBConfirmedBooking .submit {\n                background: '
                                             )
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(this.site_config.primary_text_color, ';\n                border: 1px solid ')

@@ -1,9 +1,9 @@
 import BasePortal from '../../js/build';
 import SiteConfig from './60512-config';
-import Utilities from '../../js/utilities';
+// import Utilities from '../../js/utilities';
 
 const site_config = new SiteConfig();
-const utilities = new Utilities();
+// const utilities = new Utilities();
 
 class ChildPortal extends BasePortal {
     constructor() {
@@ -14,4 +14,4 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-utilities.addHeaderButtonLink('https://stay22.com/embed/republic-of-texas-motorcycle-rally?hidebrandlogo=true', 'Find Your Airbnb Rental');
+// utilities.addHeaderButtonLink('https://stay22.com/embed/republic-of-texas-motorcycle-rally?hidebrandlogo=true', 'Find Your Airbnb Rental');

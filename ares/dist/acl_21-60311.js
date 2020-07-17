@@ -422,7 +422,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && H(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -464,13 +464,13 @@
             j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            H = function (e) {
+            B = function (e) {
                 g.call(s, function () {
                     var t;
                     M ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            B = function (e) {
+            H = function (e) {
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
@@ -485,14 +485,14 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(I, r, 1), u(B, r, 1));
+                                      t.call(e, u(I, r, 1), u(H, r, 1));
                                   } catch (e) {
-                                      B.call(r, e);
+                                      H.call(r, e);
                                   }
                               })
                             : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
-                        B.call({_w: n, _d: !1}, e);
+                        H.call({_w: n, _d: !1}, e);
                     }
                 }
             };
@@ -500,9 +500,9 @@
             ((C = function (e) {
                 p(this, C, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(I, this, 1), u(B, this, 1));
+                    e(u(I, this, 1), u(H, this, 1));
                 } catch (e) {
-                    B.call(this, e);
+                    H.call(this, e);
                 }
             }),
             ((r = function (e) {
@@ -526,7 +526,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(B, e, 1));
+                (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
             }),
             (b.f = q = function (e) {
                 return e === C || e === a ? new i(e) : o(e);
@@ -2095,8 +2095,8 @@
             R = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
-            H = h('_hidden'),
-            B = h('toPrimitive'),
+            B = h('_hidden'),
+            H = h('toPrimitive'),
             I = {}.propertyIsEnumerable,
             F = l('symbol-registry'),
             D = l('symbols'),
@@ -2143,7 +2143,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(D, t)
-                        ? (n.enumerable ? (o(e, H) && e[H][t] && (e[H][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, H) || P(e, H, x(1, {})), (e[H][t] = !0)), Y(e, t, n))
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), Y(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -2154,16 +2154,16 @@
             },
             K = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
-                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, H) && this[H][e])) || t);
+                return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = q(e, t);
-                    return !n || !o(D, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
+                    return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == H || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -2176,7 +2176,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === $ && t.call(N, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), Y(this, e, x(1, n));
+                            this === $ && t.call(N, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), Y(this, e, x(1, n));
                         };
                     return i && G && Y($, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -2256,7 +2256,7 @@
                         },
                     }
                 ),
-            R.prototype[B] || n(5)(R.prototype, B, R.prototype.valueOf),
+            R.prototype[H] || n(5)(R.prototype, H, R.prototype.valueOf),
             d(R, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
@@ -4149,7 +4149,7 @@
         function j() {
             return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
-        function H(e, t, n, r, o, i, a) {
+        function B(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -4158,17 +4158,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function B(e) {
+        function H(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        H(i, r, o, a, c, 'next', e);
+                        B(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        H(i, r, o, a, c, 'throw', e);
+                        B(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -4212,7 +4212,7 @@
                                     N.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = B(
+                                            var t = H(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -4243,7 +4243,7 @@
                                                                 case 10:
                                                                     'cug' === e.site_config.site_type &&
                                                                         N.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            B(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -4355,7 +4355,7 @@
                                                                         'search-results' === e.page_name && $.init(e.site_config, e.page_name, N),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            B(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -4382,7 +4382,7 @@
                                                                         ),
                                                                         jQuery(document).on(
                                                                             'ratesReadyEvent',
-                                                                            B(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -4409,7 +4409,7 @@
                                                                         ),
                                                                         N.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = B(
+                                                                                var t = H(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -4531,8 +4531,9 @@
                                                                             '.ArnSubPage.ArnTermsConditions'
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
-                                                                        e.setCheckDatesToReadOnlyOnMobile();
-                                                                case 44:
+                                                                        e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
+                                                                case 45:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4564,7 +4565,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((d = B(
+                                ((d = H(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4595,7 +4596,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((l = B(
+                                ((l = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4772,7 +4773,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((u = B(
+                                ((u = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5043,11 +5044,11 @@
                                             .concat(this.site_config.header.background, ';\n            }\n            \n            .logo img{\n                max-width: ')
                                             .concat(
                                                 this.site_config.header.logo_max_width,
-                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {\n                background-color: '
+                                                ';\n            }\n            \n            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {\n                background-color: '
                                             )
                                             .concat(
                                                 this.site_config.background_color,
-                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {\n                background: '
+                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit {\n                background: '
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
@@ -5062,7 +5063,7 @@
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
-                                                ';\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {\n                color: '
+                                                ';\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit {\n                color: '
                                             )
                                             .concat(this.site_config.primary_text_color, ';\n            }\n\n            span.exclusive-rate {\n                background: ')
                                             .concat(
@@ -5080,7 +5081,7 @@
                                             .concat(this.site_config.secondary_text_color, ';\n            }\n            \n            .percentSavings{\n                color: ')
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink {\n                background: '
+                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink, .WBConfirmedBooking .submit {\n                background: '
                                             )
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(this.site_config.primary_text_color, ';\n                border: 1px solid ')
@@ -5091,7 +5092,7 @@
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(
                                                 this.site_config.primary_text_color,
-                                                ';\n            }\n\n            input#theSubmitButton:hover,\n            input#theSubmitButton:focus,\n            input#theSubmitButton:active,\n            #theOtherSubmitButton:hover,\n            #theOtherSubmitButton:focus,\n            #theOtherSubmitButton:active,\n            .RootBody #theOtherSubmitButton:hover,\n            .RootBody #theOtherSubmitButton:focus,\n            .RootBody #theOtherSubmitButton:active,\n            .bookRoom:hover,\n            .bookRoom:focus,\n            .bookRoom:active,\n            .arn-leaflet-reset-button:hover,\n            .arn-leaflet-reset-button:focus,\n            .arn-leaflet-reset-button:active,\n            input#theConfirmationButton:hover,\n            input#theConfirmationButton:focus,\n            input#theConfirmationButton:active,\n            a.ArnShowRatesLink:hover {\n                background: '
+                                                ';\n            }\n\n            input#theSubmitButton:hover,\n            input#theSubmitButton:focus,\n            input#theSubmitButton:active,\n            #theOtherSubmitButton:hover,\n            #theOtherSubmitButton:focus,\n            #theOtherSubmitButton:active,\n            .RootBody #theOtherSubmitButton:hover,\n            .RootBody #theOtherSubmitButton:focus,\n            .RootBody #theOtherSubmitButton:active,\n            .bookRoom:hover,\n            .bookRoom:focus,\n            .bookRoom:active,\n            .arn-leaflet-reset-button:hover,\n            .arn-leaflet-reset-button:focus,\n            .arn-leaflet-reset-button:active,\n            input#theConfirmationButton:hover,\n            input#theConfirmationButton:focus,\n            input#theConfirmationButton:active,\n            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover {\n                background: '
                                             )
                                             .concat(this.site_config.button_hover_background_color, ';\n                color: ')
                                             .concat(this.site_config.button_hover_text_color, ';\n                border: 1px solid ')
@@ -5385,7 +5386,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((s = B(
+                                ((s = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5568,7 +5569,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((c = B(
+                                ((c = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -5621,7 +5622,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = B(
+                                    return (i = H(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -5677,7 +5678,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = B(
+                                    return (s = H(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -5709,7 +5710,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = B(
+                                    return (l = H(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -6084,7 +6085,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((a = B(
+                                ((a = H(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -6114,7 +6115,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((i = B(
+                                ((i = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -6173,7 +6174,7 @@
                         {
                             key: 'setCheckDatesToReadOnlyOnMobile',
                             value:
-                                ((o = B(
+                                ((o = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(
@@ -6218,6 +6219,12 @@
                             key: 'updateAmenitiesLegendTag',
                             value: function () {
                                 'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
+                            },
+                        },
+                        {
+                            key: 'cancelConfirmUpdate',
+                            value: function () {
+                                document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
                             },
                         },
                     ]) && I(t.prototype, n),
@@ -6373,7 +6380,7 @@
                                         .querySelector('header')
                                         .insertAdjacentHTML(
                                             'beforeend',
-                                            '<div class="event-week pull-right">\n            <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=43056">Book Weekend One</a>\n            <a id="week-two" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=">Book Weekend Two</a>\n        </div>'
+                                            '<div class="event-week pull-right">\n            <a id="week-one" target="_blank" href="https://aclfestival.hotelsforhope.com/group-event?id=43056">Book Weekend One</a>\n            <a id="week-two" target="_blank" href="https://aclfestival.\n            hotelsforhope.com/group-event?id=43290">Book Weekend Two</a>\n        </div>'
                                         );
                                 case 3:
                                 case 'end':

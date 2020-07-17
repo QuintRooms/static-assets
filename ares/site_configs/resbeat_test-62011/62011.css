@@ -121,3 +121,9 @@ input[type='email'].email-mask,
 .SearchHotels .ap-input-icon {
     background-color: #f0f0f0;
 }
+
+@media screen and (max-width: 800px){
+    .config-label{
+        background: transparent;
+    }
+}

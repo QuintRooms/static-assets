@@ -142,13 +142,20 @@ export default class Algolia {
          *@return string - the destination or input value.
          */
         function getDestination(inputSelector) {
+            let destination_value;
             if (document.querySelector(inputSelector).value !== null) {
-                const destination_value = document.querySelector(inputSelector).value;
+                destination_value = document.querySelector(inputSelector).value;
                 return destination_value;
             }
             if (original_params_url.has('destination')) {
                 const param = original_params_url.get('destination');
                 return param;
+            }
+            if (!original_params_url.has('destination') && document.querySelector(inputSelector).value === null) {
+                destination_value = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${
+                    document.querySelector('span[itemprop="addressRegion"]').textContent
+                }`;
+                return destination_value;
             }
         }
 

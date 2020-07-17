@@ -2917,11 +2917,7 @@
                                                         ? document.querySelector(s).value
                                                         : u.has('destination')
                                                         ? u.get('destination')
-                                                        : u.has('destination') || null !== document.querySelector(s).value
-                                                        ? void 0
-                                                        : ''
-                                                              .concat(document.querySelector('span[itemprop="addressLocality"]').textContent, ', ')
-                                                              .concat(document.querySelector('span[itemprop="addressRegion"]').textContent)),
+                                                        : void 0),
                                             },
                                             checkin: {key: 'checkin', value: g},
                                             nights: {key: 'nights', value: b},
@@ -2966,7 +2962,13 @@
                                         (function () {
                                             if (document.querySelector('.SearchHotels')) {
                                                 var e;
-                                                e = null !== s.get('destination') ? s.get('destination') : u.get('destination');
+                                                null !== s.get('destination') && (e = s.get('destination')),
+                                                    (e =
+                                                        null !== u.get('destination')
+                                                            ? u.get('destination')
+                                                            : ''
+                                                                  .concat(document.querySelector('span[itemprop="addressLocality"]').textContent, ', ')
+                                                                  .concat(document.querySelector('span[itemprop="addressRegion"]').textContent));
                                                 var t = document.querySelector('input#address-input');
                                                 (t.value = e),
                                                     t.addEventListener('click', function () {

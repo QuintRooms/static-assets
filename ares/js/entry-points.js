@@ -35,7 +35,7 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
+            'resbeat_test-62011': './src/62011.js', // Resbeat test
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'acl_21-60311': './src/60311.js', // ACL 2021
             'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021

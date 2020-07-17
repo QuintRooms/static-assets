@@ -4184,6 +4184,19 @@ input[type='search']::-webkit-search-results-decoration {
 
 /* Pagination End */
 
+/* Stay 22 header button start */
+
+.custom-button {
+    margin: 25px;
+    max-width: 250px;
+}
+
+.custom-button a {
+    text-decoration: none;
+    padding: 12px;
+    transition: all 0.4s ease;
+}
+
 /* - - - - Covid-19 banner start - - - -  */
 
 .info-banner {

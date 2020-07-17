@@ -60,8 +60,11 @@ export default class Algolia {
             let destination;
             if (search_params.get('destination') !== null) {
                 destination = search_params.get('destination');
-            } else {
+            }
+            if (original_params_url.get('destination') !== null) {
                 destination = original_params_url.get('destination');
+            } else {
+                destination = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${document.querySelector('span[itemprop="addressRegion"]').textContent}`;
             }
             const algolia_input = document.querySelector('input#address-input');
             algolia_input.value = destination;
@@ -150,12 +153,6 @@ export default class Algolia {
             if (original_params_url.has('destination')) {
                 const param = original_params_url.get('destination');
                 return param;
-            }
-            if (!original_params_url.has('destination') && document.querySelector(inputSelector).value === null) {
-                destination_value = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${
-                    document.querySelector('span[itemprop="addressRegion"]').textContent
-                }`;
-                return destination_value;
             }
         }
 

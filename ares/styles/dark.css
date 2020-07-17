@@ -12,6 +12,6 @@ svg.arrow polyline {
     border-bottom: 1px solid #fff;
 }
 
-.CheckOutForm .modal-container, .SinglePropDetail .ArnRateCancelPolicy, .SinglePropDetail .ArnRateCancelPolicyContainer .close {
+.CheckOutForm .modal-container, .SinglePropDetail .ArnRateCancelPolicy, .SinglePropDetail .ArnRateCancelPolicyContainer .close, .HoldRoomsForm .success {
     color: #000;
 }

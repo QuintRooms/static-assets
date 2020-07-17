@@ -175,7 +175,8 @@ header {
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink,
-.WBConfirmedBooking .submit {
+.WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton
+{
     background: #fff;
     color: #333;
     border: 1px solid #333;
@@ -207,7 +208,7 @@ input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover,
-.WBConfirmedBooking .submit:hover {
+.WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
     background: rgb(227, 224, 224);
     color: #333;
     border: 1px solid #333;
@@ -3318,6 +3319,14 @@ legend {
 .RootBody .ArnRooms,
 .RootBody #CheckInContainer {
     padding: 0 15px;
+}
+
+.GroupHoldForm .ArnProperty {
+    max-width: 60vw;
+}
+
+.GroupHoldForm .ArnContentButtonContainer {
+    display: none;
 }
 
 @media screen and (max-width: 920px) {

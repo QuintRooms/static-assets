@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 
 const site_id = 60831;
-const directory_name = `resbeat-${site_id}`;
+const directory_name = `resbeat_test-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -37,7 +37,7 @@ export default function siteConfig() {
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: true,
-        show_property_type: false,
+        show_property_type: true,
         show_language_select: false,
         show_currency_select: true,
         show_date_prompt: false,

@@ -58,7 +58,7 @@
 .mobile-sort-container .sort-wrapper h4, .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
 .SearchHotels .sort-wrapper h4, .arnMapPopup h1, .support-details h3,
-#theHotel legend {
+#theHotel legend, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit {
     text-transform: uppercase !important;
 }
 
@@ -99,7 +99,7 @@ input[type='email'].email-mask,
 .GuestForms legend,
 .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
-.SearchHotels .sort-wrapper h4, .arnMapPopup h1, .CheckOutForm #theStayPolicies h4   {
+.SearchHotels .sort-wrapper h4, .arnMapPopup h1, .CheckOutForm #theStayPolicies h4, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     letter-spacing: 1px !important;
 }
 
@@ -114,8 +114,12 @@ input[type='email'].email-mask,
 .SinglePropDetail #moreRatesLink,
 .CheckOutForm #theConfirmationButton,
 .WBSupportFormActions input,
-.WBForgotPasswordFormActions input, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+.WBForgotPasswordFormActions input, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     transition-duration: 0.8s;
+}
+
+.SearchHotels .ap-input-icon {
+    background-color: #f0f0f0;
 }
 
 @media screen and (max-width: 800px){

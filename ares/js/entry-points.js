@@ -27,6 +27,10 @@ module.exports = () => {
             'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             'room_steals-52342': './src/52342.js', // Room Steals
             'resbeat-60831': './src/60831.js', // Resbeat
+            'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            'acl_21-60311': './src/60311.js', // ACL 2021
+            'buku_21-56297': './src/56297.js', // Buku 2021
+            'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
         };
 
         // develop environment
@@ -36,10 +40,6 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             'resbeat_test-62011': './src/62011.js', // Resbeat test
-            'tortuga_21-62309': './src/62309.js', // Tortuga 2021
-            'acl_21-60311': './src/60311.js', // ACL 2021
-            'buku_21-56297': './src/56297.js', // Buku 2021
-            'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
         };
 
         // local environment

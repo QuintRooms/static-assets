@@ -46,7 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.voodoofestival.com/',
+            logo_outbound_url: 'https://www.profootballhof.com/',
             background: '#000',
             logo_flex_position: 'center',
             logo_max_width: '250px',

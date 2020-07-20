@@ -11,7 +11,7 @@ html {
     font-size: 14px !important;
 }
 
-.MemberAuthenticated .distanceLabel {
+.MemberAuthenticated.SearchHotels .distanceLabel {
     display: none;
 }
 

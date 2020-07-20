@@ -21,3 +21,17 @@ svg.arrow polyline {
     background: rgba(255, 255, 255, .3);
     color: #333;
 }
+
+@media screen and (max-width: 800px) {
+    .sort-filter-container {
+    color: #000 !important;
+    }
+
+    .search-close svg polyline {
+        stroke: #fff;
+    }
+
+    .sort-filter-container .theOtherSubmitButton  {
+        color: #000 !important;
+    }
+}

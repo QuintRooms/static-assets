@@ -15,6 +15,10 @@ html {
     position: fixed;
 }
 
+.hide {
+    overflow: hidden;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;
@@ -2312,10 +2316,6 @@ legend {
     .ArnRightListContainer {
         padding-top: 0;
     }
-
-    /* .fixed {
-        position: fixed;
-    } */
 
     .closeMap {
         z-index: 9;

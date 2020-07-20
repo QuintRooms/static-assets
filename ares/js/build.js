@@ -1919,12 +1919,12 @@ export default class BasePortal {
 
         const policies_header = document.querySelector('span.open-modal');
         policies_header.addEventListener('click', () => {
-            document.body.classList.toggle('fixed');
+            document.body.classList.toggle('hide');
         });
 
         const close_modal = document.querySelector('span.close-modal');
         close_modal.addEventListener('click', () => {
-            document.body.classList.toggle('fixed');
+            document.body.classList.toggle('hide');
         });
     }
 

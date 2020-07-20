@@ -6528,7 +6528,7 @@
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
-                                    if (60311 === m.site_id) {
+                                    if ('60311' === document.querySelector('meta[name="siteId"]').content) {
                                         e.next = 2;
                                         break;
                                     }

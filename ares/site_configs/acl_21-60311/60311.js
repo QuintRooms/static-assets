@@ -14,7 +14,7 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 async function addWeekendButtons() {
-    if (site_config.site_id !== 60311) return;
+    if (document.querySelector('meta[name="siteId"]').content !== '60311') return;
 
     await utilities.waitForSelectorInDOM('header');
     document.querySelector('header').insertAdjacentHTML(

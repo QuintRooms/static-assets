@@ -36,8 +36,9 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             'resbeat_test-62011': './src/62011.js', // Resbeat test
-            // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
-            // 'acl_21-60311': './src/60311.js', // ACL 2021
+            'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            'acl_21-60311': './src/60311.js', // ACL 2021
+            'buku_21-56297': './src/56297.js', // Buku 2021
             'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
         };
 
@@ -45,7 +46,6 @@ module.exports = () => {
     } else if (process.env.environment === 'local') {
         entry_points = {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            // 'buku_21-56297': './src/56297.js', // Buku 2021
         };
     }
 

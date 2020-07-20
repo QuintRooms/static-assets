@@ -4912,10 +4912,10 @@
                                         document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('fixed');
                                     }),
                                     document.querySelector('span.open-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('fixed');
+                                        document.body.classList.toggle('hide');
                                     }),
                                     document.querySelector('span.close-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('fixed');
+                                        document.body.classList.toggle('hide');
                                     }));
                             },
                         },

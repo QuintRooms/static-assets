@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 111));
+        n((n.s = 115));
 })([
     function (e, t, n) {
         var r = n(21)('wks'),
@@ -331,11 +331,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(63),
-            o = n(97),
+        var r = n(61),
+            o = n(96),
             i = n(19),
             a = n(12);
-        (e.exports = n(98)(
+        (e.exports = n(97)(
             Array,
             'Array',
             function (e, t) {
@@ -356,10 +356,25 @@
     },
     function (e, t, n) {
         'use strict';
+        var r = n(29),
+            o = {};
+        (o[n(0)('toStringTag')] = 'z'),
+            o + '' != '[object z]' &&
+                n(10)(
+                    Object.prototype,
+                    'toString',
+                    function () {
+                        return '[object ' + r(this) + ']';
+                    },
+                    !0
+                );
+    },
+    function (e, t, n) {
+        'use strict';
         n.d(t, 'a', function () {
             return c;
         });
-        n(45), n(41), n(30), n(64), n(43), n(32), n(44);
+        n(44), n(41), n(30), n(64), n(43), n(31), n(45);
         function r(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -964,21 +979,6 @@
             })();
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(29),
-            o = {};
-        (o[n(0)('toStringTag')] = 'z'),
-            o + '' != '[object z]' &&
-                n(10)(
-                    Object.prototype,
-                    'toString',
-                    function () {
-                        return '[object ' + r(this) + ']';
-                    },
-                    !0
-                );
-    },
-    function (e, t, n) {
         var r = n(6),
             o = n(1).document,
             i = r(o) && r(o.createElement);
@@ -1009,6 +1009,15 @@
     },
     function (e, t, n) {
         'use strict';
+        var r = n(2);
+        e.exports = function () {
+            var e = r(this),
+                t = '';
+            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
+        };
+    },
+    function (e, t, n) {
+        'use strict';
         var r = n(29),
             o = RegExp.prototype.exec;
         e.exports = function (e, t) {
@@ -1024,55 +1033,13 @@
     },
     function (e, t, n) {
         'use strict';
-        var r,
-            o,
-            i = n(39),
-            a = RegExp.prototype.exec,
-            c = String.prototype.replace,
-            s = a,
-            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
-            l = void 0 !== /()??/.exec('')[1];
-        (u || l) &&
-            (s = function (e) {
-                var t,
-                    n,
-                    r,
-                    o,
-                    s = this;
-                return (
-                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
-                    u && (t = s.lastIndex),
-                    (r = a.call(s, e)),
-                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
-                    l &&
-                        r &&
-                        r.length > 1 &&
-                        c.call(r[0], n, function () {
-                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
-                        }),
-                    r
-                );
-            }),
-            (e.exports = s);
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(2);
-        e.exports = function () {
-            var e = r(this),
-                t = '';
-            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        n(79);
+        n(94);
         var r = n(10),
             o = n(9),
             i = n(7),
             a = n(15),
             c = n(0),
-            s = n(38),
+            s = n(40),
             u = c('species'),
             l = !i(function () {
                 var e = /./;
@@ -1143,6 +1110,39 @@
                     );
             }
         };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r,
+            o,
+            i = n(37),
+            a = RegExp.prototype.exec,
+            c = String.prototype.replace,
+            s = a,
+            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
+            l = void 0 !== /()??/.exec('')[1];
+        (u || l) &&
+            (s = function (e) {
+                var t,
+                    n,
+                    r,
+                    o,
+                    s = this;
+                return (
+                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
+                    u && (t = s.lastIndex),
+                    (r = a.call(s, e)),
+                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
+                    l &&
+                        r &&
+                        r.length > 1 &&
+                        c.call(r[0], n, function () {
+                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
+                        }),
+                    r
+                );
+            }),
+            (e.exports = s);
     },
     function (e, t, n) {
         for (
@@ -1591,15 +1591,15 @@
             d = n(4),
             h = n(6),
             f = n(24),
-            p = n(80),
-            m = n(81),
-            y = n(58),
-            g = n(60).set,
-            v = n(86)(),
-            b = n(61),
-            S = n(87),
-            w = n(88),
-            _ = n(89),
+            p = n(78),
+            m = n(79),
+            y = n(57),
+            g = n(58).set,
+            v = n(84)(),
+            b = n(59),
+            S = n(85),
+            w = n(86),
+            _ = n(87),
             A = s.TypeError,
             x = s.process,
             k = x && x.versions,
@@ -1725,7 +1725,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(90)(L.prototype, {
+            }).prototype = n(88)(L.prototype, {
                 then: function (e, t) {
                     var n = M(y(this, L));
                     return (
@@ -1751,7 +1751,7 @@
             })),
             d(d.G + d.W + d.F * !P, {Promise: L}),
             n(25)(L, 'Promise'),
-            n(91)('Promise'),
+            n(89)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
@@ -1769,7 +1769,7 @@
                     d.F *
                         !(
                             P &&
-                            n(92)(function (e) {
+                            n(90)(function (e) {
                                 L.all(e).catch(q);
                             })
                         ),
@@ -1810,6 +1810,93 @@
                     },
                 }
             );
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(2),
+            o = n(28),
+            i = n(26),
+            a = n(18),
+            c = n(62),
+            s = n(38),
+            u = Math.max,
+            l = Math.min,
+            d = Math.floor,
+            h = /\$([$&`']|\d\d?|<[^>]*>)/g,
+            f = /\$([$&`']|\d\d?)/g;
+        n(39)('replace', 2, function (e, t, n, p) {
+            return [
+                function (r, o) {
+                    var i = e(this),
+                        a = null == r ? void 0 : r[t];
+                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
+                },
+                function (e, t) {
+                    var o = p(n, e, this, t);
+                    if (o.done) return o.value;
+                    var d = r(e),
+                        h = String(this),
+                        f = 'function' == typeof t;
+                    f || (t = String(t));
+                    var y = d.global;
+                    if (y) {
+                        var g = d.unicode;
+                        d.lastIndex = 0;
+                    }
+                    for (var v = []; ; ) {
+                        var b = s(d, h);
+                        if (null === b) break;
+                        if ((v.push(b), !y)) break;
+                        '' === String(b[0]) && (d.lastIndex = c(h, i(d.lastIndex), g));
+                    }
+                    for (var S, w = '', _ = 0, A = 0; A < v.length; A++) {
+                        b = v[A];
+                        for (var x = String(b[0]), k = u(l(a(b.index), h.length), 0), C = [], L = 1; L < b.length; L++) C.push(void 0 === (S = b[L]) ? S : String(S));
+                        var R = b.groups;
+                        if (f) {
+                            var q = [x].concat(C, k, h);
+                            void 0 !== R && q.push(R);
+                            var M = String(t.apply(void 0, q));
+                        } else M = m(x, h, k, C, R, t);
+                        k >= _ && ((w += h.slice(_, k) + M), (_ = k + x.length));
+                    }
+                    return w + h.slice(_);
+                },
+            ];
+            function m(e, t, r, i, a, c) {
+                var s = r + e.length,
+                    u = i.length,
+                    l = f;
+                return (
+                    void 0 !== a && ((a = o(a)), (l = h)),
+                    n.call(c, l, function (n, o) {
+                        var c;
+                        switch (o.charAt(0)) {
+                            case '$':
+                                return '$';
+                            case '&':
+                                return e;
+                            case '`':
+                                return t.slice(0, r);
+                            case "'":
+                                return t.slice(s);
+                            case '<':
+                                c = a[o.slice(1, -1)];
+                                break;
+                            default:
+                                var l = +o;
+                                if (0 === l) return n;
+                                if (l > u) {
+                                    var h = d(l / 10);
+                                    return 0 === h ? n : h <= u ? (void 0 === i[h - 1] ? o.charAt(1) : i[h - 1] + o.charAt(1)) : n;
+                                }
+                                c = i[l - 1];
+                        }
+                        return void 0 === c ? '' : c;
+                    })
+                );
+            }
+        });
     },
     function (e, t, n) {
         var r = (function (e) {
@@ -2125,93 +2212,6 @@
         }
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(2),
-            o = n(28),
-            i = n(26),
-            a = n(18),
-            c = n(59),
-            s = n(37),
-            u = Math.max,
-            l = Math.min,
-            d = Math.floor,
-            h = /\$([$&`']|\d\d?|<[^>]*>)/g,
-            f = /\$([$&`']|\d\d?)/g;
-        n(40)('replace', 2, function (e, t, n, p) {
-            return [
-                function (r, o) {
-                    var i = e(this),
-                        a = null == r ? void 0 : r[t];
-                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
-                },
-                function (e, t) {
-                    var o = p(n, e, this, t);
-                    if (o.done) return o.value;
-                    var d = r(e),
-                        h = String(this),
-                        f = 'function' == typeof t;
-                    f || (t = String(t));
-                    var y = d.global;
-                    if (y) {
-                        var g = d.unicode;
-                        d.lastIndex = 0;
-                    }
-                    for (var v = []; ; ) {
-                        var b = s(d, h);
-                        if (null === b) break;
-                        if ((v.push(b), !y)) break;
-                        '' === String(b[0]) && (d.lastIndex = c(h, i(d.lastIndex), g));
-                    }
-                    for (var S, w = '', _ = 0, A = 0; A < v.length; A++) {
-                        b = v[A];
-                        for (var x = String(b[0]), k = u(l(a(b.index), h.length), 0), C = [], L = 1; L < b.length; L++) C.push(void 0 === (S = b[L]) ? S : String(S));
-                        var R = b.groups;
-                        if (f) {
-                            var q = [x].concat(C, k, h);
-                            void 0 !== R && q.push(R);
-                            var M = String(t.apply(void 0, q));
-                        } else M = m(x, h, k, C, R, t);
-                        k >= _ && ((w += h.slice(_, k) + M), (_ = k + x.length));
-                    }
-                    return w + h.slice(_);
-                },
-            ];
-            function m(e, t, r, i, a, c) {
-                var s = r + e.length,
-                    u = i.length,
-                    l = f;
-                return (
-                    void 0 !== a && ((a = o(a)), (l = h)),
-                    n.call(c, l, function (n, o) {
-                        var c;
-                        switch (o.charAt(0)) {
-                            case '$':
-                                return '$';
-                            case '&':
-                                return e;
-                            case '`':
-                                return t.slice(0, r);
-                            case "'":
-                                return t.slice(s);
-                            case '<':
-                                c = a[o.slice(1, -1)];
-                                break;
-                            default:
-                                var l = +o;
-                                if (0 === l) return n;
-                                if (l > u) {
-                                    var h = d(l / 10);
-                                    return 0 === h ? n : h <= u ? (void 0 === i[h - 1] ? o.charAt(1) : i[h - 1] + o.charAt(1)) : n;
-                                }
-                                c = i[l - 1];
-                        }
-                        return void 0 === c ? '' : c;
-                    })
-                );
-            }
-        });
-    },
-    function (e, t, n) {
         var r = n(1),
             o = n(11),
             i = n(16),
@@ -2348,15 +2348,6 @@
             };
     },
     function (e, t, n) {
-        var r = n(6),
-            o = n(14),
-            i = n(0)('match');
-        e.exports = function (e) {
-            var t;
-            return r(e) && (void 0 !== (t = e[i]) ? !!t : 'RegExp' == o(e));
-        };
-    },
-    function (e, t, n) {
         var r = n(2),
             o = n(24),
             i = n(0)('species');
@@ -2367,18 +2358,11 @@
         };
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(78)(!0);
-        e.exports = function (e, t, n) {
-            return t + (n ? r(e, t).length : 1);
-        };
-    },
-    function (e, t, n) {
         var r,
             o,
             i,
             a = n(23),
-            c = n(85),
+            c = n(83),
             s = n(53),
             u = n(33),
             l = n(1),
@@ -2459,9 +2443,9 @@
     function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(95),
-            i = n(37);
-        n(40)('search', 1, function (e, t, n, a) {
+            o = n(93),
+            i = n(38);
+        n(39)('search', 1, function (e, t, n, a) {
             return [
                 function (n) {
                     var r = e(this),
@@ -2490,6 +2474,22 @@
             });
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(103)(!0);
+        e.exports = function (e, t, n) {
+            return t + (n ? r(e, t).length : 1);
+        };
+    },
+    function (e, t, n) {
+        var r = n(6),
+            o = n(14),
+            i = n(0)('match');
+        e.exports = function (e) {
+            var t;
+            return r(e) && (void 0 !== (t = e[i]) ? !!t : 'RegExp' == o(e));
+        };
+    },
+    function (e, t, n) {
         var r = n(28),
             o = n(13);
         n(110)('keys', function () {
@@ -2500,7 +2500,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(43), n(93), n(62), n(96), n(41), n(30), n(32), n(100), n(102), n(45), n(104), n(105), n(69), n(44);
+        n(43), n(91), n(60), n(95), n(41), n(30), n(31), n(99), n(101), n(44), n(104), n(105), n(69), n(45);
         var r = 'URLSearchParams' in self,
             o = 'Symbol' in self && 'iterator' in Symbol,
             i =
@@ -2849,7 +2849,7 @@
         }
         (k.polyfill = !0), self.fetch || ((self.fetch = k), (self.Headers = f), (self.Request = S), (self.Response = _));
         n(108);
-        var C = n(31);
+        var C = n(32);
         n(64);
         function R(e, t) {
             for (var n = 0; n < t.length; n++) {
@@ -4912,10 +4912,10 @@
                                         document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('fixed');
                                     }),
                                     document.querySelector('span.open-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('fixed');
+                                        document.body.classList.toggle('hide');
                                     }),
                                     document.querySelector('span.close-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('fixed');
+                                        document.body.classList.toggle('hide');
                                     }));
                             },
                         },
@@ -4924,8 +4924,9 @@
                             value: function () {
                                 if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
                                     var e = window.arnCustomerEmailAddress,
-                                        t = this.site_config.confirmation_email_from,
-                                        n = document.querySelector('.supportInfo');
+                                        t = this.site_config.confirmation_email_from;
+                                    (null != t && '' !== t) || (t = 'reservations@hotelsforhope.com');
+                                    var n = document.querySelector('.supportInfo');
                                     e &&
                                         n &&
                                         n.insertAdjacentHTML(
@@ -5399,20 +5400,20 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(57),
+        var r = n(63),
             o = n(2),
-            i = n(58),
-            a = n(59),
+            i = n(57),
+            a = n(62),
             c = n(26),
-            s = n(37),
-            u = n(38),
+            s = n(38),
+            u = n(40),
             l = n(7),
             d = Math.min,
             h = [].push,
             f = !l(function () {
                 RegExp(4294967295, 'y');
             });
-        n(40)('split', 2, function (e, t, n, l) {
+        n(39)('split', 2, function (e, t, n, l) {
             var p;
             return (
                 (p =
@@ -5594,35 +5595,6 @@
                 : o(r(e));
         };
     },
-    function (e, t, n) {
-        var r = n(18),
-            o = n(15);
-        e.exports = function (e) {
-            return function (t, n) {
-                var i,
-                    a,
-                    c = String(o(t)),
-                    s = r(n),
-                    u = c.length;
-                return s < 0 || s >= u
-                    ? e
-                        ? ''
-                        : void 0
-                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
-                    ? e
-                        ? c.charAt(s)
-                        : i
-                    : e
-                    ? c.slice(s, s + 2)
-                    : a - 56320 + ((i - 55296) << 10) + 65536;
-            };
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(38);
-        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
-    },
     function (e, t) {
         e.exports = function (e, t, n, r) {
             if (!(e instanceof t) || (void 0 !== r && r in e)) throw TypeError(n + ': incorrect invocation!');
@@ -5631,11 +5603,11 @@
     },
     function (e, t, n) {
         var r = n(23),
-            o = n(82),
-            i = n(83),
+            o = n(80),
+            i = n(81),
             a = n(2),
             c = n(26),
-            s = n(84),
+            s = n(82),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, h) {
@@ -5704,7 +5676,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(60).set,
+            o = n(58).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
@@ -5769,7 +5741,7 @@
     function (e, t, n) {
         var r = n(2),
             o = n(6),
-            i = n(61);
+            i = n(59);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -5833,9 +5805,9 @@
     },
     function (e, t, n) {
         'use strict';
-        n(94);
+        n(92);
         var r = n(2),
-            o = n(39),
+            o = n(37),
             i = n(3),
             a = /./.toString,
             c = function (e) {
@@ -5854,7 +5826,7 @@
               });
     },
     function (e, t, n) {
-        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(39)});
+        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(37)});
     },
     function (e, t) {
         e.exports =
@@ -5862,6 +5834,11 @@
             function (e, t) {
                 return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
             };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(40);
+        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
     },
     function (e, t, n) {
         var r = n(5).f,
@@ -5892,7 +5869,7 @@
             i = n(10),
             a = n(9),
             c = n(19),
-            s = n(99),
+            s = n(98),
             u = n(25),
             l = n(56),
             d = n(0)('iterator'),
@@ -5960,7 +5937,7 @@
     },
     function (e, t, n) {
         var r = n(4),
-            o = n(101)(!0);
+            o = n(100)(!0);
         r(r.S, 'Object', {
             entries: function (e) {
                 return o(e);
@@ -5981,7 +5958,7 @@
     },
     function (e, t, n) {
         var r = n(4);
-        r(r.P, 'String', {repeat: n(103)});
+        r(r.P, 'String', {repeat: n(102)});
     },
     function (e, t, n) {
         'use strict';
@@ -5997,6 +5974,30 @@
         };
     },
     function (e, t, n) {
+        var r = n(18),
+            o = n(15);
+        e.exports = function (e) {
+            return function (t, n) {
+                var i,
+                    a,
+                    c = String(o(t)),
+                    s = r(n),
+                    u = c.length;
+                return s < 0 || s >= u
+                    ? e
+                        ? ''
+                        : void 0
+                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
+                    ? e
+                        ? c.charAt(s)
+                        : i
+                    : e
+                    ? c.slice(s, s + 2)
+                    : a - 56320 + ((i - 55296) << 10) + 65536;
+            };
+        };
+    },
+    function (e, t, n) {
         'use strict';
         var r = n(4),
             o = n(50)(!0);
@@ -6005,7 +6006,7 @@
                 return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
             },
         }),
-            n(63)('includes');
+            n(61)('includes');
     },
     function (e, t, n) {
         'use strict';
@@ -6018,7 +6019,7 @@
         });
     },
     function (e, t, n) {
-        var r = n(57),
+        var r = n(63),
             o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
@@ -6380,16 +6381,14 @@
     },
     function (e, t, n) {
         'use strict';
-        n.r(t);
-        n(66), n(67), n(68), n(69);
-        var r = n(20),
-            o = new r.a(),
-            i = 'resbeat_test-'.concat(62011);
-        n(43), n(32), n(45), n(44);
-        var a = n(65),
-            c = n(31);
-        function s(e) {
-            return (s =
+        n.d(t, 'a', function () {
+            return m;
+        });
+        n(66), n(67), n(43), n(31), n(68), n(44), n(45);
+        var r = n(65),
+            o = n(32);
+        function i(e) {
+            return (i =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -6398,7 +6397,7 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function u(e, t, n, r, o, i, a) {
+        function a(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -6407,46 +6406,46 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function l(e) {
+        function c(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
-                    function a(e) {
-                        u(i, r, o, a, c, 'next', e);
-                    }
                     function c(e) {
-                        u(i, r, o, a, c, 'throw', e);
+                        a(i, r, o, c, s, 'next', e);
                     }
-                    a(void 0);
+                    function s(e) {
+                        a(i, r, o, c, s, 'throw', e);
+                    }
+                    c(void 0);
                 });
             };
         }
-        function d(e, t) {
+        function s(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        function h(e) {
+        function u(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function f(e, t) {
-            return (f =
+        function l(e, t) {
+            return (l =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function p(e, t, n) {
-            return (p =
+        function d(e, t, n) {
+            return (d =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = m(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = h(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6455,16 +6454,16 @@
                           }
                       })(e, t, n || e);
         }
-        function m(e) {
-            return (m = Object.setPrototypeOf
+        function h(e) {
+            return (h = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var y = new r.a(),
-            g = new c.a(),
-            v = (function (e) {
+        var f = new (n(20).a)(),
+            p = new o.a(),
+            m = (function (e) {
                 function t(e) {
                     var n;
                     return (
@@ -6472,18 +6471,18 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, t),
                         (n = (function (e, t) {
-                            return !t || ('object' !== s(t) && 'function' != typeof t) ? h(e) : t;
-                        })(this, m(t).call(this, e))),
-                        p(m(t.prototype), 'init', h(n)).call(h(n)),
+                            return !t || ('object' !== i(t) && 'function' != typeof t) ? u(e) : t;
+                        })(this, h(t).call(this, e))),
+                        d(h(t.prototype), 'init', u(n)).call(u(n)),
                         (n.site_config = e),
                         n
                     );
                 }
-                var n, r, o, i, a, c;
+                var n, r, o, a, m, y;
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && f(e, t);
+                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && l(e, t);
                     })(t, e),
                     (n = t),
                     (r = [
@@ -6503,9 +6502,9 @@
                                     this.moveConfigContainer(),
                                     this.removeAnchorTag(),
                                     document.querySelector('.RootBody') && this.updateSearchTitle(),
-                                    document.querySelector('.WBLoginForm') && g.selectCheckboxOnLabelClick('#theRememberMeAjax'),
+                                    document.querySelector('.WBLoginForm') && p.selectCheckboxOnLabelClick('#theRememberMeAjax'),
                                     document.querySelector('.SearchHotels') &&
-                                        (g.waitForSelectorInDOM('.sort-wrapper').then(function () {
+                                        (p.waitForSelectorInDOM('.sort-wrapper').then(function () {
                                             e.insertHR('.sort-wrapper', 'beforebegin');
                                         }),
                                         this.insertHR('#AmentitiesContainer', 'beforebegin'),
@@ -6519,7 +6518,7 @@
                                     document.querySelector('.SinglePropDetail') && this.insertPercentageOffText('.SinglePropDetail .rateRow'),
                                     document.querySelector('.WBValidatedRegistrationForm') &&
                                         (this.createInputMaskToBypassArnValidation('#theUserNameAjax', 'email-mask', 'email', 'Email', '#theUserNameAjax input'),
-                                        g.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
+                                        p.removeMaskedElementFromTabIndex('#theUserNameAjax input')),
                                     document.querySelector('.WBSupportFormContainer') &&
                                         (this.createInputMaskToBypassArnValidation(
                                             '#theReservationConfirmationNumberAjax',
@@ -6528,9 +6527,9 @@
                                             'Booking Number',
                                             '#theReservationConfirmationNumberAjax input'
                                         ),
-                                        g.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
+                                        p.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
                                     this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(
-                                        l(
+                                        c(
                                             regeneratorRuntime.mark(function e() {
                                                 return regeneratorRuntime.wrap(function (e) {
                                                     for (;;)
@@ -6540,10 +6539,10 @@
                                                                     e.next = 5;
                                                                     break;
                                                                 }
-                                                                return (e.next = 3), g.waitForSelectorInDOM('#faq-link');
+                                                                return (e.next = 3), p.waitForSelectorInDOM('#faq-link');
                                                             case 3:
-                                                                g.updateAttribute('#faq-link', g.getAttribute('.faqLink', 'href'), 'href'),
-                                                                    g.updateAttribute('#customer-support-link', g.getAttribute('.supportLink', 'href'), 'href');
+                                                                p.updateAttribute('#faq-link', p.getAttribute('.faqLink', 'href'), 'href'),
+                                                                    p.updateAttribute('#customer-support-link', p.getAttribute('.supportLink', 'href'), 'href');
                                                             case 5:
                                                             case 'end':
                                                                 return e.stop();
@@ -6553,42 +6552,42 @@
                                         )
                                     ),
                                     this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq'),
-                                    g.updateHTML(
+                                    p.updateHTML(
                                         '.ArnSupportChatTable',
                                         '\n            <div class="support-details">\n                <h3>Customer Support</h3>\n                <p>Hours: M-F 8:00am - 5:30pm CST</p>\n                <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n                <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n                <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n            </div>'
                                     ),
-                                    g.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
-                                    g.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
-                                    g.addAttributeToInput('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#theEditableConfirmPasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
-                                    g.addAttributeToInput('#commands .supportLink', '_blank', 'target', '.MemberAuthenticated'),
-                                    g.addAttributeToInput('#commands .profileCommand', '_blank', 'target', '.MemberAuthenticated'),
-                                    g.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theNameAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theDaytimePhoneNumberAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theEmailAjax input', !0, 'required', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theEmailAjax input', 'email', 'type', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
-                                    g.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
-                                    g.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
-                                    g.updateHTML('.static-bookingLink', 'Booking Guide'),
-                                    g.updateHTML('.static-rewardsLink', 'Rewards Guide');
+                                    p.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
+                                    p.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
+                                    p.addAttributeToInput('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#theEditableConfirmPasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
+                                    p.addAttributeToInput('#commands .supportLink', '_blank', 'target', '.MemberAuthenticated'),
+                                    p.addAttributeToInput('#commands .profileCommand', '_blank', 'target', '.MemberAuthenticated'),
+                                    p.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone Number', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theNameAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theDaytimePhoneNumberAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theEmailAjax input', !0, 'required', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theEmailAjax input', 'email', 'type', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Booking Number', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
+                                    p.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
+                                    p.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
+                                    p.updateHTML('.static-bookingLink', 'Booking Guide'),
+                                    p.updateHTML('.static-rewardsLink', 'Rewards Guide');
                             },
                         },
                         {
                             key: 'updateLogin',
                             value:
-                                ((c = l(
+                                ((y = c(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -6600,7 +6599,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (e.next = 4), g.waitForSelectorInDOM('#theWBLoginFormBody h1');
+                                                        return (e.next = 4), p.waitForSelectorInDOM('#theWBLoginFormBody h1');
                                                     case 4:
                                                         document.querySelector('#theWBLoginFormBody h1').innerHTML = 'LOG<strong>IN</strong>';
                                                     case 6:
@@ -6611,7 +6610,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return y.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6667,7 +6666,7 @@
                         {
                             key: 'displayRewardPoints',
                             value:
-                                ((a = l(
+                                ((m = c(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -6681,7 +6680,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (e.next = 4), g.waitForSelectorInDOM('.ArnNightlyRate');
+                                                            return (e.next = 4), p.waitForSelectorInDOM('.ArnNightlyRate');
                                                         case 4:
                                                             (n = document.querySelectorAll(t)),
                                                                 (r = window.matchMedia('(max-width: 800px)')),
@@ -6696,7 +6695,7 @@
                                                                             var i = n.getAttribute('amount'),
                                                                                 a = n.textContent.replace(/[^0-9.]/g, ''),
                                                                                 c = i.replace(/[^0-9.]/g, ''),
-                                                                                s = g.calculateNights(),
+                                                                                s = p.calculateNights(),
                                                                                 u = parseInt(s * (a - c));
                                                                             0 === t && document.body.insertAdjacentHTML('beforeend', o),
                                                                                 r.matches
@@ -6732,7 +6731,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return a.apply(this, arguments);
+                                    return m.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6782,15 +6781,15 @@
                                     n &&
                                         n.addEventListener(
                                             'click',
-                                            l(
+                                            c(
                                                 regeneratorRuntime.mark(function n() {
                                                     return regeneratorRuntime.wrap(function (n) {
                                                         for (;;)
                                                             switch ((n.prev = n.next)) {
                                                                 case 0:
-                                                                    return (n.next = 2), g.waitForSelectorInDOM('#moreRates');
+                                                                    return (n.next = 2), p.waitForSelectorInDOM('#moreRates');
                                                                 case 2:
-                                                                    p(m(t.prototype), 'insertPercentageOffText', e).call(e, '.SinglePropDetail .rateRow'),
+                                                                    d(h(t.prototype), 'insertPercentageOffText', e).call(e, '.SinglePropDetail .rateRow'),
                                                                         e.displayRewardPoints('table.ArnRateList');
                                                                 case 4:
                                                                 case 'end':
@@ -6822,7 +6821,7 @@
                                     c.addEventListener('blur', function () {
                                         a.value = c.value;
                                         var e = setInterval(function () {
-                                            document.querySelector('#'.concat(a.id)) || ((a = document.querySelector(o)), g.removeMaskedElementFromTabIndex(o), clearInterval(e));
+                                            document.querySelector('#'.concat(a.id)) || ((a = document.querySelector(o)), p.removeMaskedElementFromTabIndex(o), clearInterval(e));
                                         }, 500);
                                         a.focus(), a.blur();
                                     });
@@ -6863,7 +6862,7 @@
                                 var t = this;
                                 if (
                                     !1 !== this.site_config.is_resbeat_client &&
-                                    (!document.querySelector('.beat-em') || 'search-results' !== g.page_name) &&
+                                    (!document.querySelector('.beat-em') || 'search-results' !== p.page_name) &&
                                     (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                 ) {
                                     var n = window.matchMedia('(max-width: 600px)');
@@ -6914,13 +6913,13 @@
                         {
                             key: 'applyResbeatStyles',
                             value: function () {
-                                document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(y.path, '/styles/resbeat.css" rel="stylesheet">'));
+                                document.body.insertAdjacentHTML('beforeend', '<link href="'.concat(f.path, '/styles/resbeat.css" rel="stylesheet">'));
                             },
                         },
                         {
                             key: 'removeAnchorTag',
                             value:
-                                ((i = l(
+                                ((a = c(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -6933,7 +6932,7 @@
                                                         }
                                                         return e.abrupt('return');
                                                     case 2:
-                                                        return (e.next = 4), g.waitForSelectorInDOM('.confirmation-messaging a');
+                                                        return (e.next = 4), p.waitForSelectorInDOM('.confirmation-messaging a');
                                                     case 4:
                                                         (t = document.querySelector('.confirmation-messaging a strong')),
                                                             (n = document.querySelector('.confirmation-messaging a')).insertAdjacentElement('afterend', t),
@@ -6946,7 +6945,7 @@
                                     })
                                 )),
                                 function () {
-                                    return i.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6999,13 +6998,24 @@
                                     );
                             },
                         },
-                    ]) && d(n.prototype, r),
-                    o && d(n, o),
+                    ]) && s(n.prototype, r),
+                    o && s(n, o),
                     t
                 );
-            })(a.a);
-        function b(e) {
-            return (b =
+            })(r.a);
+    },
+    ,
+    ,
+    ,
+    function (e, t, n) {
+        'use strict';
+        n.r(t);
+        n(66), n(67), n(68), n(69);
+        var r = new (n(20).a)(),
+            o = 'resbeat_test-'.concat(62011);
+        var i = n(111);
+        function a(e) {
+            return (a =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -7014,30 +7024,30 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function S(e, t) {
+        function c(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        function w(e) {
+        function s(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function _(e, t) {
-            return (_ =
+        function u(e, t) {
+            return (u =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function A(e, t, n) {
-            return (A =
+        function l(e, t, n) {
+            return (l =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = x(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = d(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -7046,15 +7056,15 @@
                           }
                       })(e, t, n || e);
         }
-        function x(e) {
-            return (x = Object.setPrototypeOf
+        function d(e) {
+            return (d = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var k = new c.a(),
-            C = new (function () {
+        var h = new (n(32).a)(),
+            f = new (function () {
                 return {
                     site_id: 62011,
                     affiliate_id: 16827,
@@ -7079,19 +7089,19 @@
                     show_language_select: !1,
                     show_currency_select: !0,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    fav_icon_url: ''.concat(r.path, '/site_configs/').concat(o, '/img/favicon.png'),
                     has_custom_styles: !0,
-                    custom_styles_url: ''.concat(o.path, '/site_configs/').concat(i, '/').concat(62011, '.css'),
+                    custom_styles_url: ''.concat(r.path, '/site_configs/').concat(o, '/').concat(62011, '.css'),
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.svg'),
-                        logo_outbound_url: 'https://events.hotelsforhope.com/v6/?siteId=62011',
+                        logo_file_location: ''.concat(r.path, '/site_configs/').concat(o, '/img/logo.svg'),
+                        logo_outbound_url: 'https://hotels.resbeat.com',
                         background: '#fff',
                         logo_flex_position: 'space-between',
                         logo_max_width: '230px',
                     },
                     banner_image_url: '#fff',
-                    map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(o, '/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     secondary_background_color: '#f0f0f0',
@@ -7125,9 +7135,9 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, t),
                     (e = (function (e, t) {
-                        return !t || ('object' !== b(t) && 'function' != typeof t) ? w(e) : t;
-                    })(this, x(t).call(this, C))),
-                    A(x(t.prototype), 'init', w(e)).call(w(e)),
+                        return !t || ('object' !== a(t) && 'function' != typeof t) ? s(e) : t;
+                    })(this, d(t).call(this, f))),
+                    l(d(t.prototype), 'init', s(e)).call(s(e)),
                     e.init(),
                     e
                 );
@@ -7136,7 +7146,7 @@
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && _(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && u(e, t);
                 })(t, e),
                 (n = t),
                 (r = [
@@ -7145,12 +7155,12 @@
                         value: function () {
                             var e = this;
                             document.querySelector('.SearchHotels') &&
-                                k.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
+                                h.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
                                     e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
                                 }),
                                 document.querySelector('.SinglePropDetail') &&
                                     (this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
-                                    k.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
+                                    h.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
                                         e.boldLastWord(['.ArnLeftListContainer .translateMe']);
                                     })),
                                 document.querySelector('.CheckOutForm') &&
@@ -7172,11 +7182,11 @@
                             });
                         },
                     },
-                ]) && S(n.prototype, r),
-                o && S(n, o),
+                ]) && c(n.prototype, r),
+                o && c(n, o),
                 t
             );
-        })(v))();
+        })(i.a))();
     },
 ]);
 //# sourceMappingURL=resbeat_test-62011.map

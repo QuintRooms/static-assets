@@ -4924,8 +4924,9 @@
                             value: function () {
                                 if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
                                     var e = window.arnCustomerEmailAddress,
-                                        t = this.site_config.confirmation_email_from,
-                                        n = document.querySelector('.supportInfo');
+                                        t = this.site_config.confirmation_email_from;
+                                    (null != t && '' !== t) || (t = 'reservations@hotelsforhope.com');
+                                    var n = document.querySelector('.supportInfo');
                                     e &&
                                         n &&
                                         n.insertAdjacentHTML(

@@ -1932,7 +1932,10 @@ export default class BasePortal {
         if (this.page_name !== 'confirmation' || this.site_config.confirmation_email_from === null || this.site_config.confirmation_email_from === '') return;
 
         const user_email = window.arnCustomerEmailAddress;
-        const email_from = this.site_config.confirmation_email_from;
+        let email_from = this.site_config.confirmation_email_from;
+
+        if (email_from === undefined || email_from === null || email_from === '') email_from = 'reservations@hotelsforhope.com';
+
         const support_info = document.querySelector('.supportInfo');
 
         if (!user_email || !support_info) return;

@@ -4198,6 +4198,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 /* TODO style Stay 22 button for mobile
+
+
 /* Stay 22 header button end */
 
 
@@ -4269,6 +4271,11 @@ input[type='search']::-webkit-search-results-decoration {
         position: absolute;
         top: 0;
         right: 0;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
     }
 }
 /* - - - - Covid-19 banner end - - - -  */

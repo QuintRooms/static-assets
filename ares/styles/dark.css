@@ -16,3 +16,8 @@ svg.arrow polyline {
 .CheckOutForm .modal-container, .SinglePropDetail .ArnRateCancelPolicy, .SinglePropDetail .ArnRateCancelPolicyContainer .close, .HoldRoomsForm .success {
     color: #000;
 }
+
+.SearchHotels .custom-tag {
+    background: rgba(255, 255, 255, .3);
+    color: #333;
+}

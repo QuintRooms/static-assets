@@ -2936,7 +2936,7 @@
                                         b = E(v).diff(E(g), 'days');
                                     function S(e) {
                                         Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && y.searchParams.append(e[t].key, e[t].value);
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && y.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
                                     r
@@ -2971,7 +2971,7 @@
                                             'lodging' === e.site_type.toLowerCase() &&
                                             S({
                                                 properties: {key: 'properties', value: m('properties')},
-                                                utm_sorce: {key: 'utm_sorce', value: m('utm_sorce')},
+                                                utm_source: {key: 'utm_source', value: m('utm_source')},
                                                 locationLabel: {key: 'locationlabel', value: m('locationlabel')},
                                                 radius: {key: 'radius', value: m('radius')},
                                                 groupId: {key: 'groupid', value: m('groupid')},

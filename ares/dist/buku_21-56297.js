@@ -2936,7 +2936,7 @@
                                         b = E(v).diff(E(g), 'days');
                                     function S(e) {
                                         Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && y.searchParams.append(e[t].key, e[t].value);
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && y.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
                                     r
@@ -2971,7 +2971,7 @@
                                             'lodging' === e.site_type.toLowerCase() &&
                                             S({
                                                 properties: {key: 'properties', value: m('properties')},
-                                                utm_sorce: {key: 'utm_sorce', value: m('utm_sorce')},
+                                                utm_source: {key: 'utm_source', value: m('utm_source')},
                                                 locationLabel: {key: 'locationlabel', value: m('locationlabel')},
                                                 radius: {key: 'radius', value: m('radius')},
                                                 groupId: {key: 'groupid', value: m('groupid')},
@@ -4461,17 +4461,18 @@
                                 function i(e, t) {
                                     t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
                                 }
-                                'search-results' === this.page_name &&
-                                    document.querySelectorAll('div.ArnProperty').forEach(function (r) {
-                                        var a, c;
-                                        r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
-                                            r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
-                                            (r.classList.contains('S16') || (r.classList.contains('S20') && '' !== e)) &&
-                                                ((a = e),
-                                                (c = r),
-                                                '' !== o.site_config.exclusive_rate_text &&
-                                                    c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
-                                    }),
+                                document.querySelector('.exclusive-rate') ||
+                                    ('search-results' === this.page_name &&
+                                        document.querySelectorAll('div.ArnProperty').forEach(function (r) {
+                                            var a, c;
+                                            r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
+                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
+                                                (r.classList.contains('S16') || (r.classList.contains('S20') && '' !== e)) &&
+                                                    ((a = e),
+                                                    (c = r),
+                                                    '' !== o.site_config.exclusive_rate_text &&
+                                                        c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
+                                        }),
                                     'property-detail' === this.page_name &&
                                         document.querySelectorAll('div.rateRow').forEach(function (t) {
                                             (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
@@ -4484,7 +4485,7 @@
                                                         );
                                                     }
                                                 })(t, r, e);
-                                        });
+                                        }));
                             },
                         },
                         {

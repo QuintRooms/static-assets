@@ -1482,6 +1482,7 @@ export default class BasePortal {
      @param string takes the text for the partner hotel custom tag text
      */
     isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName) {
+        if (document.querySelector('.exclusive-rate')) return;
         /**
         *@description adds a sash to a property
         @param string DOM selector 

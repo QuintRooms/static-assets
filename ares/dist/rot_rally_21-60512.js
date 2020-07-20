@@ -6441,6 +6441,8 @@
                     site_type: 'lodging',
                     algolia_app_id: 'plCZXR0GZ7J1',
                     algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+                    currency: 'USD',
+                    distance_unit: 'useMiles',
                     lodging: {event_id: 41596, event_name: 'Republic of Texas Rally 2021', event_dates: '06/10/2021 - 06/13/2021', is_lrg: !1},
                     cug: {is_cug: !1, show_points: !1, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !1},
                     exclusive_rate_text: 'Exclusive Rate',

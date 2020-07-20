@@ -39,6 +39,13 @@ const sites = {
         secondary_color: '#e2ad37',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
     },
+    62309: {
+        client_name: 'Republic of Texas Motorcycle Rally',
+        site_url: 'https://events.hotelsforhope.com/v6/',
+        primary_color: '#d01c1f',
+        secondary_color: '#d01c1f',
+        logo_url: 'https://static.hotelsforhope.com/ares/site_configs/rot_rally_21-60512/img/logo.png',
+    },
 };
 
 const entries = Object.entries(sites);

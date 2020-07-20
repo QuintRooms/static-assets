@@ -11,6 +11,10 @@ html {
     font-size: 14px !important;
 }
 
+.MemberAuthenticated .distanceLabel {
+    display: none;
+}
+
 .fixed {
     position: fixed;
 }

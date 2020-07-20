@@ -216,7 +216,7 @@ export default class Algolia {
             */
             function appendParamsToURL(paramObject) {
                 Object.keys(paramObject).forEach((obj) => {
-                    if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined) {
+                    if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined && paramObject[obj].key !== undefined) {
                         built_url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
                     }
                 });
@@ -279,9 +279,9 @@ export default class Algolia {
                         key: 'properties',
                         value: getEventOrginalParams('properties'),
                     },
-                    utm_sorce: {
-                        key: 'utm_sorce',
-                        value: getEventOrginalParams('utm_sorce'),
+                    utm_source: {
+                        key: 'utm_source',
+                        value: getEventOrginalParams('utm_source'),
                     },
                     locationLabel: {
                         key: 'locationlabel',

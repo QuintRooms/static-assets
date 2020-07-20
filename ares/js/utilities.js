@@ -171,10 +171,17 @@ export default class Utilities {
 
     /**
      * @description adds extra logos to the header, will only insert if window size is greater that 1200px
-     * @param {object} images - an object with one or more images, their class names and insertAdjacentHtml position
-     * @property {string} images[].insertPosition - position for insertAdjacentHTML to insert element into header
-     * @property {string} images[].className - name of class tag for each element being insterted
-     * @property {string} images[].imageUrl - url for image src
+     * @param object images - an object with one or more images, their class names and insertAdjacentHtml position
+     * @property string - images[].insertPosition - position for insertAdjacentHTML to insert element into header
+     * @property string - images[].className - name of class tag for each element being insterted
+     * @property string - images[].imageUrl - url for image src
+     * @example addMultipleHeaderLogos({
+                    image1: {
+                        insertPosition: 'afterbegin',
+                        className: 'logo-left',
+                        imageUrl: 'https://...',
+                    },
+                })    
      */
     async addMultipleHeaderLogos(images) {
         await this.waitForSelectorInDOM('header');
@@ -415,5 +422,23 @@ export default class Utilities {
         const test = string.replace(regex, new_text);
 
         document.querySelector(selector).textContent = test;
+    }
+
+    /**
+     *@description Adds a button to the header on the search-results and landing-page with the href and text passed in.
+     *@param string link - the outbound href.
+     *@param string text - the text for the button.]
+     *@example utilities.addHeaderButtonLink('https://stay22.com/embed/republic-of-texas-motorcycle-rally?hidebrandlogo=true', 'Find Your Airbnb Rental');
+     */
+    async addHeaderButtonLink(link, text) {
+        if (document.querySelector('.RootBody') || document.querySelector('.SearchHotels')) {
+            await this.waitForSelectorInDOM('header');
+            document.querySelector('header').insertAdjacentHTML(
+                'beforeend',
+                `<div class="custom-button">
+                    <a id="custom-link" target="_blank" href="${link}">${text}</a>
+                </div>`
+            );
+        }
     }
 }

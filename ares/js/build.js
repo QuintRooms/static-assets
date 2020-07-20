@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
+import Algolia from './components/algolia';
 import Path from './path';
 
 const env_path = new Path();
@@ -9,6 +10,7 @@ const env_path = new Path();
 const dayjs = require('dayjs');
 
 const utilities = new Utilities();
+const algolia = new Algolia();
 
 export default class BasePortal {
     constructor(config) {
@@ -33,8 +35,7 @@ export default class BasePortal {
             this.applyConfigStyles();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
-            this.buildCurrencyDropdown();
-            this.showStarsAndFilter();
+            this.showFilters();
 
             // all pages
             // this.addSocialMetaTags(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
@@ -114,9 +115,7 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                // if (this.site_config.site_type.toLowerCase() !== 'cug') {
-                // this.addAlgoliaSearch();
-                // }
+                algolia.init(this.site_config, this.page_name, utilities);
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -154,9 +153,9 @@ export default class BasePortal {
                 this.replaceLRGForm();
             }
 
-            // if (this.page_name === 'search-results') {
-            //     this.addAlgoliaSearch();
-            // }
+            if (this.page_name === 'search-results') {
+                algolia.init(this.site_config, this.page_name, utilities);
+            }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
                 this.map_loaded = true;
@@ -190,7 +189,7 @@ export default class BasePortal {
                 }
 
                 if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
-
+                this.buildCurrencyDropdown();
                 this.styleCUGMapPins();
                 this.cugConfigs();
                 this.implementAds();
@@ -256,7 +255,7 @@ export default class BasePortal {
             this.applyCustomStyles();
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
-            this.forceClickOnCitySearch();
+            // this.forceClickOnCitySearch();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -271,6 +270,10 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
+
+            if (document.querySelector('.WBConfirmedBooking')) {
+                this.cancelConfirmUpdate();
+            }
         });
     }
 
@@ -783,7 +786,7 @@ export default class BasePortal {
                 max-width: ${this.site_config.header.logo_max_width};
             }
             
-            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window {
+            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
                 background-color: ${this.site_config.background_color};
             }
 
@@ -805,7 +808,8 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+            {
                 background: ${this.site_config.primary_color};
             }
 
@@ -858,8 +862,13 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+            {
                 color: ${this.site_config.primary_text_color};
+            }
+
+            .custom-button a:hover {
+                color: ${this.site_config.primary_color}
             }
 
             span.exclusive-rate {
@@ -914,7 +923,7 @@ export default class BasePortal {
             .bookRoom,
             .arn-leaflet-reset-button,
             input#theConfirmationButton,
-            a.ArnShowRatesLink {
+            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
                 border: 1px solid ${this.site_config.border_color};
@@ -946,7 +955,7 @@ export default class BasePortal {
             input#theConfirmationButton:hover,
             input#theConfirmationButton:focus,
             input#theConfirmationButton:active,
-            a.ArnShowRatesLink:hover {
+            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
                 border: 1px solid ${this.site_config.button_hover_border_color};
@@ -1001,7 +1010,7 @@ export default class BasePortal {
             .RootBody #theOtherSubmitButton,
             .bookRoom,
             .sort,
-            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
+            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
                 border:1px solid ${this.site_config.border_color};
             }
 
@@ -1124,191 +1133,97 @@ export default class BasePortal {
         });
     }
 
-    // async buildCurrencyDropdown() {
-    //     const get_currency_j_s_o_n = () => {
-    //         fetch(`${env_path.path}/js/json/currencies.json`)
-    //             .then((response) => {
-    //                 if (!response.ok) {
-    //                     throw response;
-    //                 }
-    //                 return response.json();
-    //             })
-    //             .then((currencies_json) => {
-    //                 setup_content_for_dropdown(currencies_json);
-    //                 update_param_on_currency_click();
-    //                 style_active_currency();
-    //             })
-    //             .catch((err) => {
-    //                 err.text().then((error) => {
-    //                     console.error('Could not fetch currencies.json', error);
-    //                 });
-    //             });
-    //     };
+    async buildCurrencyDropdown() {
+        const get_currency_j_s_o_n = () => {
+            fetch(`${env_path.path}/js/json/currencies.json`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then((currencies_json) => {
+                    setup_content_for_dropdown(currencies_json);
+                    update_param_on_currency_click();
+                    style_active_currency();
+                })
+                .catch((err) => {
+                    err.text().then((error) => {
+                        console.error('Could not fetch currencies.json', error);
+                    });
+                });
+        };
 
-    //     const setup_content_for_dropdown = (currencies_json) => {
-    //         // eslint-disable-next-line no-unused-vars
-    //         const currencies = Object.entries(currencies_json);
+        const setup_content_for_dropdown = (currencies_json) => {
+            // eslint-disable-next-line no-unused-vars
+            const currencies = Object.entries(currencies_json);
 
-    //         const menu_container = document.createElement('div');
-    //         const all_currencies_container = document.createElement('div');
+            const menu_container = document.createElement('div');
+            const all_currencies_container = document.createElement('div');
 
-    //         const top_currencies = `
-    //         <h4>Top Currencies</h4>
-    //         <div class="top-currencies">
-    //             <span id="AUD"><strong>${currencies_json.AUD.code}</strong> - ${currencies_json.AUD.name}</span>
-    //             <span id="CAD"><strong>${currencies_json.CAD.code}</strong> - ${currencies_json.CAD.name}</span>
-    //             <span id="EUR"><strong>${currencies_json.EUR.code}</strong> - ${currencies_json.EUR.name}</span>
-    //             <span id="MXN"><strong>${currencies_json.MXN.code}</strong> - ${currencies_json.MXN.name}</span>
-    //             <span id="GBP"><strong>${currencies_json.GBP.code}</strong> - ${currencies_json.GBP.name}</span>
-    //             <span id="USD"><strong>${currencies_json.USD.code}</strong> - ${currencies_json.USD.name}</span>
-    //         </div>
-    //         <h4>All Currencies</h4>
-    //         `;
+            const top_currencies = `
+            <h4>Top Currencies</h4>
+            <div class="top-currencies">
+                <span id="AUD"><strong>${currencies_json.AUD.code}</strong> - ${currencies_json.AUD.name}</span>
+                <span id="CAD"><strong>${currencies_json.CAD.code}</strong> - ${currencies_json.CAD.name}</span>
+                <span id="EUR"><strong>${currencies_json.EUR.code}</strong> - ${currencies_json.EUR.name}</span>
+                <span id="MXN"><strong>${currencies_json.MXN.code}</strong> - ${currencies_json.MXN.name}</span>
+                <span id="GBP"><strong>${currencies_json.GBP.code}</strong> - ${currencies_json.GBP.name}</span>
+                <span id="USD"><strong>${currencies_json.USD.code}</strong> - ${currencies_json.USD.name}</span>
+            </div>
+            <h4>All Currencies</h4>
+            `;
 
-    //         menu_container.insertAdjacentHTML('afterBegin', top_currencies);
-    //         menu_container.classList.add('currency-content');
+            menu_container.insertAdjacentHTML('afterBegin', top_currencies);
+            menu_container.classList.add('currency-content');
 
-    //         all_currencies_container.classList.add('all-currencies');
+            all_currencies_container.classList.add('all-currencies');
 
-    //         for (const currency in currencies_json) {
-    //             all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency].name}</span>`);
-    //         }
-
-    //         menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
-
-    //         utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
-    //     };
-
-    //     const update_param_on_currency_click = () => {
-    //         const params = new URLSearchParams(window.location.search);
-    //         const dropdown = document.querySelector('.dropdown');
-
-    //         if (!dropdown) return;
-
-    //         dropdown.addEventListener('click', (e) => {
-    //             this.selected_currency = e.target.id;
-    //             if (!this.selected_currency) return;
-
-    //             document.querySelector('.active-currency').classList.remove('active-currency');
-    //             document.querySelector(`#${e.target.id}`).classList.add('active-currency');
-
-    //             document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
-
-    //             if (this.page_name !== 'search-results') return;
-    //             params.set('currency', this.selected_currency);
-    //             window.location.search = params.toString();
-    //         });
-    //     };
-
-    //     const style_active_currency = () => {
-    //         const active_currency_meta = document.querySelector('meta[name="currency"]');
-
-    //         if (!active_currency_meta) return;
-
-    //         const active_currency = active_currency_meta.content;
-
-    //         this.selected_currency = active_currency;
-
-    //         document.querySelector(`#${active_currency}`).classList.add('active-currency');
-
-    //         document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
-    //     };
-
-    //     await get_currency_j_s_o_n();
-    // }
-    buildCurrencyDropdown() {
-        let currencies = '';
-        let clicked_currency;
-        const currencies_obj = {};
-        let selected_currency = '';
-        let submit;
-        let currencies_select;
-        let currencies_node_list;
-
-        const currency_label = document.querySelector('#currency-label');
-        const currencies_container = document.querySelector('.dropdown');
-        const config_container = document.querySelector('.config-container');
-        // const top_currencies_container = document.querySelector('.top-currencies');
-
-        if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
-            submit = document.querySelector('#theOtherSubmitButton');
-            currencies_select = document.querySelector('#CurrenciesContainer select');
-            currencies_node_list = document.querySelectorAll('#CurrenciesContainer select option');
-        } else if (this.page_name === 'property-detail') {
-            submit = document.querySelector('.CheckRates .submit');
-            currencies_select = document.querySelector('.ArnCurrency select');
-            currencies_node_list = document.querySelectorAll('.ArnCurrency select option');
-        }
-
-        if (!currencies_node_list || !config_container || !currency_label || !currencies_select) return;
-
-        currencies_node_list.forEach((currency) => {
-            if (currency.getAttribute('selected')) {
-                selected_currency = currency.value;
+            for (const currency in currencies_json) {
+                all_currencies_container.insertAdjacentHTML('beforeEnd', `<span id="${currency}"><strong>${currency}</strong> - ${currencies_json[currency].name}</span>`);
             }
 
-            currencies_obj[currency.label] = currency.value;
-        });
+            menu_container.insertAdjacentElement('beforeEnd', all_currencies_container);
 
-        currencies = Object.entries(currencies_obj);
+            utilities.createDropdownMenu('#currency-label', menu_container, '.currency-content', '.dropdown');
+        };
 
-        currencies.forEach((currency) => {
-            // if (
-            //     currency[0] === 'United States Dollars' ||
-            //     currency[0] === 'Euro' ||
-            //     currency[0] === 'United Kingdom Pounds' ||
-            //     currency[0] === 'Mexico Pesos' ||
-            //     currency[0] === 'Canada Dollars' ||
-            //     currency[0] === 'Australia Dollars'
-            // ) {
-            //     top_currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-            // }
+        const update_param_on_currency_click = () => {
+            const params = new URLSearchParams(window.location.search);
+            const dropdown = document.querySelector('.dropdown');
 
-            currencies_container.insertAdjacentHTML('beforeEnd', `<div id=${currency[1]}>${currency[0]}</div>`);
-        });
+            if (!dropdown) return;
 
-        currency_label.addEventListener('click', () => {
-            currencies_container.classList.toggle('show-currencies-container');
+            dropdown.addEventListener('click', (e) => {
+                this.selected_currency = e.target.id;
+                if (!this.selected_currency) return;
 
-            // return if ie - ie can't toggle an svg
-            if (window.document.documentMode) return;
+                document.querySelector('.active-currency').classList.remove('active-currency');
+                document.querySelector(`#${e.target.id}`).classList.add('active-currency');
 
-            currency_label.querySelector('svg').classList.toggle('flip-svg');
-        });
+                document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
 
-        currencies_container.addEventListener('click', (e) => {
-            if (!e.target.getAttribute('id')) return;
+                if (this.page_name !== 'search-results') return;
+                params.set('currency', this.selected_currency);
+                window.location.search = params.toString();
+            });
+        };
 
-            clicked_currency = e.target.getAttribute('id');
-            document.querySelector('.active-currency').classList.remove('active-currency');
-            document.getElementById(clicked_currency).classList.add('active-currency');
-            currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
-            currencies_select.value = clicked_currency;
+        const style_active_currency = () => {
+            const active_currency_meta = document.querySelector('meta[name="currency"]');
 
-            if (document.querySelector('.SearchHotels')) submit.click();
-        });
+            if (!active_currency_meta) return;
 
-        document.getElementById(selected_currency).classList.add('active-currency');
+            const active_currency = active_currency_meta.content;
 
-        window.addEventListener('click', (e) => {
-            if (document.querySelector('.show-currencies-container')) {
-                if (
-                    e.target === document.querySelector('.currencies') ||
-                    e.target === document.querySelector('#currency-label') ||
-                    e.target.parentNode === document.querySelector('.currencies') ||
-                    e.target.parentNode === document.querySelector('.top-currencies')
-                )
-                    return;
+            this.selected_currency = active_currency;
 
-                currencies_container.classList.toggle('show-currencies-container');
+            document.querySelector(`#${active_currency}`).classList.add('active-currency');
 
-                // return if ie - ie can't toggle svgs
-                if (window.document.documentMode) return;
-                currency_label.querySelector('svg').classList.toggle('flip-svg');
-            }
-        });
+            document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
+        };
 
-        currency_label.querySelector('span').textContent = document.querySelector('.active-currency').textContent;
+        await get_currency_j_s_o_n();
     }
 
     setupDatePrompt() {
@@ -1561,246 +1476,13 @@ export default class BasePortal {
     }
 
     /**
-     *@description Swaps out the city search for lat/lng geo search and autocomplete for Algolia's autocomplete.
-     */
-    // addAlgoliaSearch() {
-    //     let lat_lng;
-    //     let default_lat_lng;
-    //     let url;
-    //     let destination_value;
-    //     let checked_amenities = '';
-    //     let checked_stars = '';
-    //     let member_token = '';
-    //     const {origin} = window.location;
-    //     const params = new URL(window.location.href);
-    //     const search_params = new URLSearchParams(params.search);
-    //     const original_params = document.querySelector('meta[name="originalParams"]').content;
-    //     const original_params_url = new URLSearchParams(original_params);
-
-    //     const grab_member_token = () => {
-    //         if (this.site_config.site_type.toLowerCase() !== 'cug') return;
-    //         if (this.page_name === 'landing-page' || this.page_name === 'search-results') {
-    //             member_token = document.querySelector('meta[name="memberToken"]').content;
-    //         }
-    //     };
-
-    //     function setInputToRequired(selector) {
-    //         if (!document.querySelector(selector)) return;
-    //         document.querySelector(selector).required = true;
-    //     }
-
-    //     function hideArnSearchElements(selectors) {
-    //         if (!document.querySelector('.SearchHotels')) return;
-    //         const elements = document.querySelectorAll(selectors);
-
-    //         elements.forEach((element) => {
-    //             element.style.display = 'none';
-    //         });
-    //     }
-
-    //     const remove_arn_search_bar = (selector) => {
-    //         if (!document.querySelector(selector)) return;
-    //         if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') document.querySelector(selector).remove();
-
-    //         if (this.site_config.site_type.toLowerCase() === 'cug') {
-    //             document.body.append(document.querySelector(selector));
-    //             document.querySelector(selector).style.display = 'none';
-    //             document.querySelector('#CitySearchContainer').style.display = 'none';
-    //         }
-    //     };
-
-    //     const insert_algolia_search = (page, selector, adjacent_location, html) => {
-    //         if (!document.querySelector(page)) return;
-
-    //         // if (this.site_config.site_type.toLowerCase() === 'lodging' || this.site_config.site_type.toLowerCase() === 'retail') {
-    //         //     document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
-    //         // }
-    //         // if (this.site_config.site_type.toLowerCase() === 'cug') {
-    //         document.querySelector(selector).parentNode.insertAdjacentHTML(adjacent_location, html);
-    //         // }
-    //     };
-
-    //     const prepopulate_inputs_on_search_hotels = () => {
-    //         if (!document.querySelector('.SearchHotels')) return;
-    //         if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_config.site_type.toLowerCase() !== 'retail') return;
-
-    //         const destination = search_params.get('destination');
-    //         const algolia_input = document.querySelector('input#address-input');
-    //         algolia_input.value = destination;
-
-    //         algolia_input.addEventListener('click', () => {
-    //             algolia_input.value = '';
-    //         });
-    //     };
-
-    //     function setDropdownIndex(dropdown_selector) {
-    //         const dropdown = document.querySelector(dropdown_selector);
-    //         let value = dropdown.querySelector(`option[value="${dropdown.value}"]`).textContent;
-
-    //         dropdown.addEventListener('change', () => {
-    //             for (let i = 0; i < dropdown.length; i += 1) {
-    //                 if (dropdown[i].selected) {
-    //                     dropdown.selectedIndex = i;
-    //                     value = dropdown[i].textContent;
-    //                     break;
-    //                 }
-    //             }
-    //             return value;
-    //         });
-    //         return value;
-    //     }
-
-    //     const remove_city_search_for_event = () => {
-    //         if (this.page_name !== 'search-results') return;
-    //         if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
-    //         utilities.waitForSelectorInDOM('.algolia-places').then(() => {
-    //             document.querySelector('.algolia-places').style.display = 'none';
-    //             document.querySelector('#theSearchBox').firstChild.style.display = 'none';
-    //         });
-    //     };
-
-    //     const construct_url_on_submit = () => {
-    //         const arn_submit_btn = document.querySelector('input#theSubmitButton');
-    //         arn_submit_btn.setAttribute('onClick', '');
-
-    //         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
-    //             e.preventDefault();
-    //             const rooms_value = setDropdownIndex('select#rooms');
-    //             const adults_value = setDropdownIndex('select#adults');
-    //             const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
-    //             const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-    //             const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
-
-    //             const properties = `&properties=${original_params_url.get('properties')}`;
-    //             const utm_source = `&utm_source=${original_params_url.get('utm_source')}`;
-    //             const location_label = `&locationlabel=${original_params_url.get('locationlabel')}`;
-    //             const radius = `&radius=${original_params_url.get('radius')}`;
-    //             const group_id = `&groupid=${original_params_url.get('groupid')}`;
-    //             const page_size = `&pageSize=${original_params_url.get('pageSize')}`;
-    //             const cid = `&cid=${original_params_url.get('cid')}`;
-
-    //             const no_null_params = [properties, utm_source, location_label, radius, group_id, page_size, cid];
-
-    //             const build_url = (lat, lng) => {
-    //                 url = `${origin}/v6/?type=geo&siteid=${this.site_id}&longitude=${lng}&latitude=${lat}&checkin=${check_in_value}&nights=${nights}&map&pagesize=10&${this.site_config.distance_unit}&rooms=${rooms_value}&adults=${adults_value}&currency=${this.selected_currency}`;
-    //             };
-
-    //             if (lat_lng) build_url(lat_lng.lat, lat_lng.lng);
-    //             else if (default_lat_lng) build_url(default_lat_lng.lat, default_lat_lng.lng);
-    //             else if (!lat_lng && !default_lat_lng && this.page_name === 'search-results') {
-    //                 build_url(original_params_url.get('latitude'), original_params_url.get('longitude'));
-    //             }
-
-    //             if (this.site_config.cug.is_cug || this.site_config.site_type.toLowerCase() === 'retail') {
-    //                 destination_value = document.querySelector('input#address-input').value;
-    //                 url += `&destination=${destination_value}`;
-    //             }
-
-    //             const get_optional_hotel_name = () => {
-    //                 if (this.page_name !== 'search-results') return;
-    //                 if (document.querySelector('input#hotelName').value === '') return;
-    //                 const hotel_name = `&hotelname=${document.querySelector('input#hotelName').value}`;
-    //                 url += hotel_name;
-    //             };
-
-    //             get_optional_hotel_name();
-
-    //             function applyFilters() {
-    //                 const amenity_filters = document.querySelectorAll('#AmentitiesContainer .ArnSearchField div');
-
-    //                 amenity_filters.forEach((el) => {
-    //                     if (el.classList.contains('lblAmenities')) return;
-    //                     if (el.querySelector('input').checked) {
-    //                         const label = el.querySelector('span').textContent;
-    //                         checked_amenities += `${label},`;
-    //                     }
-    //                 });
-
-    //                 const star_filters = document.querySelectorAll('#PropertyClassesContainer .ArnSearchField div');
-
-    //                 star_filters.forEach((el) => {
-    //                     if (el.classList.contains('lblRating')) return;
-    //                     if (el.querySelector('input').checked) {
-    //                         const label = el.querySelector('span').textContent;
-    //                         checked_stars += `${label},`;
-    //                     }
-    //                 });
-    //             }
-
-    //             applyFilters();
-
-    //             let built_url = new URL(url);
-    //             const amenities = checked_amenities.slice(0, -1);
-    //             const stars = checked_stars.slice(0, -1);
-
-    //             if (amenities !== '') {
-    //                 built_url.searchParams.append('amenities', amenities);
-    //             }
-    //             if (stars !== '') {
-    //                 built_url.searchParams.append('propertyclasses', stars);
-    //             }
-    //             if (this.site_config.site_type.toLowerCase() === 'cug' && member_token !== '') {
-    //                 built_url.searchParams.append('memberToken', member_token);
-    //             }
-    //             if (this.page_name === 'search-results') {
-    //                 no_null_params.forEach((param) => {
-    //                     if (!param.includes('null')) {
-    //                         built_url += param;
-    //                     }
-    //                 });
-    //                 window.location.href = decodeURIComponent(built_url);
-    //             } else window.location.href = decodeURIComponent(built_url);
-    //         });
-    //     };
-    //     insert_algolia_search('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
-    //     insert_algolia_search(
-    //         '.SearchHotels',
-    //         'div#theSearchBox',
-    //         'afterBegin',
-    //         '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
-    //     );
-    //     grab_member_token();
-    //     remove_arn_search_bar('input#city');
-    //     remove_city_search_for_event();
-    //     prepopulate_inputs_on_search_hotels();
-    //     setDropdownIndex('select#rooms');
-    //     setDropdownIndex('select#adults');
-    //     setInputToRequired('input#theCheckIn');
-    //     jQuery('#theBody').on('arnMapLoadedEvent', () => {
-    //         if (search_params.has('locationlabel') || search_params.has('points')) return;
-    //         hideArnSearchElements('img.arn-green-marker-icon');
-    //     });
-
-    //     hideArnSearchElements('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch');
-    //     construct_url_on_submit();
-
-    //     (() => {
-    //         const places_autocomplete = places({
-    //             appId: this.site_config.algolia_app_id,
-    //             apiKey: this.site_config.algolia_api_key,
-    //             container: document.querySelector('input#address-input'),
-    //         }).configure({
-    //             aroundLatLngViaIP: 'false',
-    //             type: 'city',
-    //         });
-    //         places_autocomplete.on('change', function resultSelected(e) {
-    //             document.querySelector('input#address-input').value = e.suggestion.value || '';
-    //             lat_lng = e.suggestion.latlng;
-    //         });
-    //         places_autocomplete.on('suggestions', function saveDefaultGeo(e) {
-    //             // eslint-disable-next-line no-underscore-dangle
-    //             default_lat_lng = e.rawAnswer.hits[0]._geoloc;
-    //         });
-    //     })();
-    // }
-
-    /**
      *@description Looks at the prop id and checks if it should have a custom tag or sash
      @param string takes the text for the exclusive rate sash
      @param string takes the text for the host hotel custom tag text
      @param string takes the text for the partner hotel custom tag text
      */
     isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName) {
+        if (document.querySelector('.exclusive-rate')) return;
         /**
         *@description adds a sash to a property
         @param string DOM selector 
@@ -2018,11 +1700,11 @@ export default class BasePortal {
         }
     }
 
-    forceClickOnCitySearch() {
-        if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
-            document.querySelector('.ArnGoCitySearch').click();
-        }
-    }
+    // forceClickOnCitySearch() {
+    //     if (this.page_name === 'search-results' && document.querySelector('meta[name="SearchType"]').content === 'City' && this.site_config.site_type.toLowerCase() === 'cug') {
+    //         document.querySelector('.ArnGoCitySearch').click();
+    //     }
+    // }
 
     setInputToRequired(selector) {
         if (!document.querySelector(selector)) return;
@@ -2140,14 +1822,18 @@ export default class BasePortal {
         showPercentSavingsOnProperties();
     }
 
-    showStarsAndFilter() {
-        if (!this.site_config.show_stars) return;
+    showFilters() {
+        if (this.site_config.show_stars) {
+            document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+        }
 
-        document.body.insertAdjacentHTML('beforeEnd', `<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>`);
+        if (this.site_config.show_property_type) {
+            document.body.insertAdjacentHTML('beforeEnd', `<style> #PropertyTypesContainer{display:block !important;}</style>`);
+        }
     }
 
     showCoronavirusInfoBanner() {
-        if (this.site_id === 52342) return;
+        if (this.site_id === '52342') return;
 
         if (localStorage.getItem('covidAlertBanner') === 'closed') return;
 
@@ -2378,11 +2064,11 @@ export default class BasePortal {
 
         await utilities.waitForSelectorInDOM('.logo');
 
-        if (!document.querySelector('input[name="_s"]')) return;
-        const member_token = document.querySelector('input[name="_s"]').value;
+        // if (!document.querySelector('input[name="_s"]')) return;
+        // const member_token = document.querySelector('input[name="_s"]').value;
 
-        // if(!document.querySelector('meta[name="memberToken"]')) return;
-        // const member_token = document.querySelector('meta[name="memberToken"]').content;
+        if (!document.querySelector('meta[name="memberToken"]')) return;
+        const member_token = document.querySelector('meta[name="memberToken"]').content;
 
         const logo = document.querySelector('.logo');
 
@@ -2434,5 +2120,12 @@ export default class BasePortal {
 
         const amenities_legend = document.querySelector('#thePropertyAmenities legend');
         amenities_legend.outerHTML = '<span>Property Amenities</span>';
+    }
+
+    cancelConfirmUpdate() {
+        if (!document.querySelector('.WBConfirmedBooking')) return;
+
+        const do_nothing = document.querySelector('.dialog-button-cancel a');
+        do_nothing.textContent = 'Go Back';
     }
 }

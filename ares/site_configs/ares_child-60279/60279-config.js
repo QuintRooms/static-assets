@@ -12,6 +12,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        distance_unit: 'useMiles',
         lodging: {
             event_id: 41555,
             event_name: 'Arizona Bike Week 2020',
@@ -32,6 +33,7 @@ export default function siteConfig() {
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: false,
+        show_property_type: false,
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,

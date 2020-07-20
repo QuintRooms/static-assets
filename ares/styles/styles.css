@@ -1,4 +1,3 @@
-
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -58,7 +57,8 @@ html {
     text-decoration: underline;
 }
 
-#lightbox .window-titlebar a, #lightbox .window-close a {
+#lightbox .window-titlebar a,
+#lightbox .window-close a {
     color: #666;
 }
 
@@ -92,18 +92,18 @@ textarea {
     border: 1px solid #e0e0e0;
     margin-bottom: 6px;
     outline: none;
-    transition: box-shadow .15s ease-in-out;
+    transition: box-shadow 0.15s ease-in-out;
 }
 
 input[type='text']:focus,
 input[type='password']:focus,
 input[type='email']:focus,
 select:focus,
-textarea:focus{
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+textarea:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-input[type="submit"]{
+input[type='submit'] {
     outline: none;
 }
 
@@ -174,7 +174,9 @@ header {
 .bookRoom,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
-a.ArnShowRatesLink {
+a.ArnShowRatesLink,
+.WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton
+{
     background: #fff;
     color: #333;
     border: 1px solid #333;
@@ -186,7 +188,6 @@ a.ArnShowRatesLink {
     color: #333;
     -webkit-appearance: none;
 }
-
 
 input#theSubmitButton:hover,
 input#theSubmitButton:focus,
@@ -206,7 +207,8 @@ input#theSubmitButton:active,
 input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
-a.ArnShowRatesLink:hover {
+a.ArnShowRatesLink:hover,
+.WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
     background: rgb(227, 224, 224);
     color: #333;
     border: 1px solid #333;
@@ -219,6 +221,9 @@ a.ArnShowRatesLink:hover {
     color: #333;
 }
 
+.WBResendOrCancelFormActions input {
+    margin: 0 10px;
+}
 /* Buttons End */
 
 select#rooms,
@@ -288,9 +293,7 @@ select#adults {
     display: none;
 }
 
-
-.SearchHotels .config-container,
-.RootBody .config-container {
+.SearchHotels .config-container {
     background: #333;
     width: 100%;
     display: flex;
@@ -313,8 +316,7 @@ select#adults {
     display: flex;
 }
 
-.config-label
- {
+.config-label {
     cursor: pointer;
     color: #fff;
     border-bottom: 1px solid #868686;
@@ -322,7 +324,7 @@ select#adults {
     justify-content: space-between;
 }
 
-.config-label span{
+.config-label span {
     pointer-events: none;
     padding: 2px;
     margin-right: 12px;
@@ -330,7 +332,7 @@ select#adults {
     white-space: nowrap;
     overflow: hidden;
 }
- 
+
 #language-label span {
     overflow: visible;
 }
@@ -355,7 +357,7 @@ select#adults {
 
 /* Dropdown Start */
 
-.show-dropdown{
+.show-dropdown {
     display: block !important;
     background: #fff;
     position: absolute;
@@ -375,7 +377,7 @@ select#adults {
     left: 0;
     background: #fff;
     width: 100%;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 .show-language-container {
@@ -406,16 +408,16 @@ select#adults {
 /* Language Dropdown End */
 
 /* Currency Dropdown Start */
-/* #CurrenciesContainer{
+#CurrenciesContainer {
     display: none;
 }
 
-.currency-content{
+.currency-content {
     padding: 12px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
-.currencies-container .dropdown{
+.currencies-container .dropdown {
     width: 100%;
     max-width: 800px;
     position: absolute;
@@ -423,163 +425,29 @@ select#adults {
     top: 42px;
 }
 
-.currency-content h4{
+.currency-content h4 {
     margin: 12px 0 6px 0;
 }
 
-.currency-content div{
+.currency-content div {
     padding: 6px 6px 6px 0;
     display: grid;
     grid-column-gap: 18px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.currency-content div span{
+.currency-content div span {
     white-space: nowrap;
     overflow: hidden;
     padding: 6px 24px 6px 6px;
     color: #333;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .currency-content div span:hover,
-.active-currency{
+.active-currency {
     background: #ccc;
-} */
-
-.config-container #CurrenciesContainer {
-    margin-right: 24px;
-    position: relative;
-}
-
-.config-container .lblCurrency {
-    color: #fff;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField {
-    position: absolute;
-    right: 0;
-    overflow: unset !important;
-    padding: unset;
-    border-bottom: unset;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField select {
-    display: none;
-}
-
-.lblCurrency {
-    border-bottom: 1px solid #868686 !important;
-    width: 226px;
-}
-
-.config-container #CurrenciesContainer .ArnSearchField select.show-currency {
-    display: block;
-}
-
-.config-label {
-    cursor: pointer;
-    color: #fff;
-    border-bottom: 1px solid #868686;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#currency-label span {
-    pointer-events: none;
-    padding: 2px;
-    display: flex;
-}
-
-#currency-label {
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.RootBody #currency-label,
-.SearchHotels #currency-label {
-    display: flex;
-}
-
-#currency-label polyline {
-    stroke: #868686;
-    transform: scale(0.85);
-}
-
-#CurrenciesContainer {
-    display: none;
-}
-
-.currencies-container {
-    position: relative;
-    margin-right: 12px;
-    left: 0;
-}
-
-.dropdown div {
-    cursor: pointer;
-    padding: 6px 8px;
-    transition: all 0.3s ease;
-    font-size: 13px;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 24px;
-    background: #fff;
-    grid-template-columns: 25% 25% 25% 25%;
-    box-shadow: 0 2px 12px 0 #000;
-    width: 800px;
-}
-
-.show-currencies-container {
-    display: grid;
-}
-
-.language-container div:hover,
-.dropdown div:hover,
-.active-currency,
-.active-language {
-    background: #e2e2e2;
-    color: #333;
-}
-
-.top-currencies {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    padding: 0 !important;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-
-.top-currencies:hover {
-    background: unset !important;
-    color: unset !important;
-}
-
-.top-currencies h4 {
-    padding: 0 8px;
-    font-size: 14px;
-    margin-bottom: 4px;
-    grid-column-start: 1;
-    grid-column-end: 5;
-}
-
-.top-currencies div:first-child {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-}
-
-.top-currencies + h4 {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    padding: 0 8px;
-    margin-bottom: 4px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -618,14 +486,11 @@ select#adults {
     .dropdown div {
         width: 25%;
     }
-
 }
-
 
 /* Currency Dropdown End */
 
 /* Dropdown End */
-
 
 /* Header End */
 
@@ -769,16 +634,17 @@ select#adults {
 /* Map End */
 
 /* Calendar Start */
-@media screen and (max-width: 600px){
-    .yui3-u-1-2, .yui3-u-12-24{
+@media screen and (max-width: 600px) {
+    .yui3-u-1-2,
+    .yui3-u-12-24 {
         display: block !important;
     }
 
-    .yui3-skin-sam .yui3-calendar-header-label{
+    .yui3-skin-sam .yui3-calendar-header-label {
         font-size: 11px;
     }
 
-    .yui3-calendar-content{
+    .yui3-calendar-content {
         left: 0;
     }
 }
@@ -837,7 +703,7 @@ select#adults {
 /* Sort Container End*/
 
 /* Search Results Layout Start */
-#Properties{
+#Properties {
     display: flex;
 }
 
@@ -860,10 +726,10 @@ select#adults {
 
 .SearchHotels .ArnPropertyMapInner {
     z-index: 8;
-    height: 100vh!important;
+    height: 100vh !important;
 }
 
-.SearchHotels .ArnLeftSearchContainer{
+.SearchHotels .ArnLeftSearchContainer {
     margin-left: 12px;
 }
 
@@ -873,26 +739,25 @@ select#adults {
     display: block;
 }
 
-.ArnNoResults{
+.ArnNoResults {
     width: 100%;
 }
 
-@media screen and (max-width: 1105px){
-    .SearchHotels .ArnLeftSearchContainer{
+@media screen and (max-width: 1105px) {
+    .SearchHotels .ArnLeftSearchContainer {
         margin-left: 0;
     }
 
     #Properties {
         display: block;
         padding: 0 18px;
-
     }
     #currentPropertyPage {
         width: calc(100vw - 253px);
         padding: 0;
     }
 
-    #ArnPropertyMap{
+    #ArnPropertyMap {
         width: 100vw;
         transform: translateX(100%);
         transition: all 0.5s ease;
@@ -913,23 +778,23 @@ select#adults {
     }
 }
 
-@media screen and (max-width: 800px){
-    #Properties{
+@media screen and (max-width: 800px) {
+    #Properties {
         padding: 0 8px;
     }
 
-    #currentPropertyPage{
+    #currentPropertyPage {
         width: 100%;
     }
 
-    .SearchHotels .ArnSearchContainerMainTable{
+    .SearchHotels .ArnSearchContainerMainTable {
         table-layout: fixed;
         width: 100%;
     }
 
     .SearchHotels .ArnPropertyMapInner {
-            height: 100vh!important; 
-            height: calc(var(--vh, 1vh) * 100)!important;   
+        height: 100vh !important;
+        height: calc(var(--vh, 1vh) * 100) !important;
     }
 
     .rate {
@@ -1194,7 +1059,7 @@ select#adults {
     }
 }
 
-.ArnLeftListContainer{
+.ArnLeftListContainer {
     padding-top: 48px;
 }
 
@@ -1241,7 +1106,7 @@ div.autocomplete ul li.selected {
 .SearchHotels #hotelName {
     width: 100%;
     margin: 4px 0;
-    -webkit-appearance: none ;
+    -webkit-appearance: none;
     border-radius: 0;
 }
 
@@ -1249,8 +1114,8 @@ div.autocomplete ul li.selected {
     margin: 4px 0;
 }
 
-.SearchHotels .ap-input-icon {
-    top: 0px;
+.ap-icon-pin {
+    display: none;
 }
 
 .SearchHotels #CheckInContainer,
@@ -1301,12 +1166,12 @@ div.autocomplete ul li.selected {
 }
 
 .SearchHotels .ArnPropClass,
-#PropertyClassesContainer{
+#PropertyClassesContainer {
     display: none;
 }
 
 .propThumbTag {
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, 0.75);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -1354,16 +1219,16 @@ div.autocomplete ul li.selected {
         position: relative;
     }
 
-    .search-close{
+    .search-close {
         position: absolute;
         top: 12px;
         right: 0;
         width: 32px;
         opacity: 0;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 
-    .show-search-close{
+    .show-search-close {
         opacity: 1;
     }
 
@@ -1516,10 +1381,10 @@ div.autocomplete ul li.selected {
 
 .errors li {
     list-style-type: none;
-    border: 1px solid #FCD1D1;
-    background-color: #FBE7E7;
+    border: 1px solid #fcd1d1;
+    background-color: #fbe7e7;
     padding: 10px;
-    color: #F5484F;
+    color: #f5484f;
     width: 100%;
 }
 
@@ -1529,6 +1394,7 @@ div.autocomplete ul li.selected {
 
 .SinglePropDetail .SimpleSearch {
     margin-bottom: 18px;
+    padding: 12px;
 }
 
 .SinglePropDetail .ArnLeftListContainer {
@@ -1592,13 +1458,13 @@ legend {
     flex-direction: column;
 }
 
-.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2), 
-.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3){
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2),
+.SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3) {
     display: none;
 }
 
 .show-amenities {
-    display: block!important;
+    display: block !important;
 }
 
 .SinglePropDetail #show-more-or-less {
@@ -1613,7 +1479,7 @@ legend {
     grid-column-gap: 3%;
 }
 
-.SinglePropDetail .CheckRates{
+.SinglePropDetail .CheckRates {
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -1756,7 +1622,7 @@ legend {
 }
 
 .SinglePropDetail #moreRatesLink:hover {
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .SinglePropDetail .ArnRateCancelPolicyContainer .close {
@@ -1780,7 +1646,7 @@ legend {
     font-size: 12px;
 }
 
-.SinglePropDetail .bookRoom + br{
+.SinglePropDetail .bookRoom + br {
     display: none;
 }
 
@@ -1884,7 +1750,6 @@ legend {
 /* .ArnAmenityContainer {
     opacity: 0;
 } */
-
 
 /* Amenities End */
 /* Single Prop Search */
@@ -1997,7 +1862,7 @@ legend {
         align-items: center;
     }
 
-    .SinglePropDetail .rateRow{
+    .SinglePropDetail .rateRow {
         margin: 36px 0;
     }
 
@@ -2017,11 +1882,12 @@ legend {
     .SinglePropDetail .bookRoomCell {
         display: grid;
         grid-template-columns: 2fr 2fr;
-        grid-template-rows: 1fr .5fr .25fr;
+        grid-template-rows: 1fr 0.5fr 0.25fr;
     }
 
-    .SinglePropDetail table.SB16 .bookRoomCell, .SinglePropDetail table.SB20 .bookRoomCell {
-        grid-template-rows: 6fr .5fr .25fr;
+    .SinglePropDetail table.SB16 .bookRoomCell,
+    .SinglePropDetail table.SB20 .bookRoomCell {
+        grid-template-rows: 6fr 0.5fr 0.25fr;
     }
 
     .SinglePropDetail .bookRoom {
@@ -2066,7 +1932,7 @@ legend {
         margin-right: 7px;
     }
 
-    .roomCount{
+    .roomCount {
         padding-top: 8px;
         grid-row: 2 / 3;
         grid-column: 2 / 3;
@@ -2082,7 +1948,7 @@ legend {
 
 @media screen and (max-width: 412px) {
     .SinglePropDetail .bookRoomCell {
-        grid-template-rows: 2fr .5fr .25fr;
+        grid-template-rows: 2fr 0.5fr 0.25fr;
     }
 }
 
@@ -2215,7 +2081,7 @@ legend {
     }
 
     .SearchHotels .ArnPages #batch {
-        text-align: center!important;
+        text-align: center !important;
     }
 }
 
@@ -2244,7 +2110,6 @@ legend {
     padding: 6px;
     display: none;
 }
-
 
 .SearchHotels .ArnPropName {
     width: 50%;
@@ -2345,11 +2210,11 @@ legend {
     width: 65px;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none
+    -ms-user-select: none;
 }
 
 #rs-tax-inclusive {
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     z-index: 9;
@@ -2358,7 +2223,7 @@ legend {
     margin-right: 15px;
 }
 
-#rs-tax-inclusive>label {
+#rs-tax-inclusive > label {
     margin-right: 12px;
 }
 
@@ -2369,7 +2234,7 @@ legend {
 }
 
 .rs-toggle-checkbox {
-    display: none
+    display: none;
 }
 
 .rs-toggle-label {
@@ -2377,14 +2242,14 @@ legend {
     overflow: hidden;
     cursor: pointer;
     border: 1px solid #535c79;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .rs-toggle-inner {
     display: block;
     width: 200%;
     margin-left: -100%;
-    transition: margin .3s ease-in 0s
+    transition: margin 0.3s ease-in 0s;
 }
 
 .rs-toggle-inner:after,
@@ -2398,14 +2263,14 @@ legend {
     font-size: 12px;
     color: #fff;
     font-weight: 700;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .rs-toggle-inner:before {
     content: 'On';
     padding-left: 10px;
     background: #23305a;
-    color: #fff
+    color: #fff;
 }
 
 .rs-toggle-inner:after {
@@ -2413,7 +2278,7 @@ legend {
     padding-right: 10px;
     background-color: #eee;
     color: #999;
-    text-align: right
+    text-align: right;
 }
 
 .rs-toggle-switch {
@@ -2428,19 +2293,19 @@ legend {
     right: 37px;
     border: 2px solid #999;
     border-radius: 20px;
-    transition: all .3s ease-in 0s
+    transition: all 0.3s ease-in 0s;
 }
 
 .rs-toggle-checkbox {
     pointer-events: none;
 }
 
-.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-inner {
-    margin-left: 0
+.rs-toggle-checkbox:checked + .rs-toggle-label .rs-toggle-inner {
+    margin-left: 0;
 }
 
-.rs-toggle-checkbox:checked+.rs-toggle-label .rs-toggle-switch {
-    right: 0
+.rs-toggle-checkbox:checked + .rs-toggle-label .rs-toggle-switch {
+    right: 0;
 }
 
 @media screen and (max-width: 1105px) {
@@ -2489,7 +2354,7 @@ legend {
         vertical-align: middle;
     }
 
-    .leaflet-top{
+    .leaflet-top {
         pointer-events: auto;
     }
 
@@ -2517,7 +2382,7 @@ legend {
         margin: 0 0 24px 0;
     }
 
-    #arnCloseAnchorId.closeMap{
+    #arnCloseAnchorId.closeMap {
         margin-top: 10px;
         margin-right: 10px;
     }
@@ -2637,7 +2502,8 @@ legend {
         width: unset;
     }
 
-    .SearchHotels .config-container, .RootBody .config-container {
+    .SearchHotels .config-container,
+    .RootBody .config-container {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -2692,7 +2558,8 @@ legend {
     cursor: pointer;
 }
 
-#policies-fees, #t-and-cs{
+#policies-fees,
+#t-and-cs {
     text-decoration: underline;
     cursor: pointer;
     color: #333;
@@ -2832,7 +2699,6 @@ legend {
 
 .modal-overlay {
     display: none;
-
 }
 
 .show-modal {
@@ -2947,7 +2813,7 @@ legend {
 
 #theHotelAddress {
     text-align: center;
-    -webkit-appearance: none ;
+    -webkit-appearance: none;
 }
 
 #mainHotelImage {
@@ -2964,7 +2830,7 @@ legend {
     display: inline-block;
 }
 
-#theHotel .discount{
+#theHotel .discount {
     display: none;
 }
 
@@ -3107,7 +2973,8 @@ legend {
     grid-row-start: 1;
 }
 
-.billing-details-container .guestCountryList, .billing-details-container .guestStateList {
+.billing-details-container .guestCountryList,
+.billing-details-container .guestStateList {
     margin-top: 4px;
 }
 
@@ -3196,12 +3063,12 @@ legend {
     list-style: none;
 }
 
-.FieldError{
+.FieldError {
     border-color: #e0e0e0;
 }
 
-.HasError input{
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #ce8483;
+.HasError input {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
     border-color: #843534;
 }
 
@@ -3211,12 +3078,53 @@ legend {
 }
 
 .confirmationWarning span,
-.confirmationAgreement span{
+.confirmationAgreement span {
     cursor: pointer;
 }
 
-#theBookingPage #theRateSummaryInfo div{
+#theBookingPage #theRateSummaryInfo div {
     font-weight: bold;
+}
+
+.informMessage.WBConfirmedBookingMessage {
+    padding: 10px 70px;
+}
+
+.WBConfirmedBooking .dialog-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.WBConfirmedBooking .dialog-buttons .dialog-button-ok input {
+    padding: 8px;
+}
+
+.WBConfirmedBooking .dialog-button-cancel {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.WBConfirmedBooking .dialog-button-cancel a {
+    margin-top: 5px;
+}
+
+.WBConfirmedBooking .informMessage .message,
+.WBConfirmedBooking .mailHeader {
+    display: none;
+}
+
+.theWBResendOrCancelForm {
+    max-width: 60vw;
+}
+
+.theEmailAddressAjax input {
+    max-width: 50%;
+}
+.WBResendOrCancelFormActions input {
+    padding: 9px;
 }
 
 @media screen and (max-width: 800px) {
@@ -3229,14 +3137,13 @@ legend {
         flex-direction: column;
     }
 
-    #theBookingPage fieldset{
+    #theBookingPage fieldset {
         margin-top: 36px;
     }
 
-
     fieldset#theCharges,
     fieldset#theHotel,
-    #theHotel legend{
+    #theHotel legend {
         margin-top: 0;
     }
 
@@ -3337,12 +3244,11 @@ legend {
     display: none;
 }
 
-
 #theCheckIn,
 #theCheckOut,
 #rooms,
 #adults {
-    -webkit-appearance: none ;
+    -webkit-appearance: none;
     border-radius: 0;
 }
 
@@ -3410,8 +3316,17 @@ legend {
     display: none;
 }
 
-.RootBody .ArnRooms, .RootBody #CheckInContainer {
-    padding: 0 15px
+.RootBody .ArnRooms,
+.RootBody #CheckInContainer {
+    padding: 0 15px;
+}
+
+.GroupHoldForm .ArnProperty {
+    max-width: 60vw;
+}
+
+.GroupHoldForm .ArnContentButtonContainer {
+    display: none;
 }
 
 @media screen and (max-width: 920px) {
@@ -3419,8 +3334,9 @@ legend {
         margin: 0 12px;
     }
 
-    .RootBody .ArnRooms, .RootBody #CheckInContainer {
-    padding: 0;
+    .RootBody .ArnRooms,
+    .RootBody #CheckInContainer {
+        padding: 0;
     }
 
     .RootBody .ap-input-icon {
@@ -3473,11 +3389,10 @@ legend {
 
 @media screen and (max-width: 375px) {
     body.RootBody {
-        display: block!important;
+        display: block !important;
         background-size: auto;
     }
 }
-
 
 /* Root Page End */
 
@@ -3582,13 +3497,13 @@ body.HoldRoomsForm {
     width: 100%;
 }
 
-.return-to-login{
+.return-to-login {
     display: block;
     text-align: center;
     text-decoration: none;
 }
 
-#theRememberMeAjax{
+#theRememberMeAjax {
     line-height: 1;
     display: flex;
     align-items: center;
@@ -3609,8 +3524,8 @@ body.HoldRoomsForm {
 .leaflet-bar,
 .leaflet-bar a:first-child,
 .leaflet-bar a:last-child,
-.arnMapMarker{
-    border-radius: 0
+.arnMapMarker {
+    border-radius: 0;
 }
 
 .arnMapPopup .imageContainer img {
@@ -3657,7 +3572,7 @@ body.HoldRoomsForm {
 
 .leaflet-container .leaflet-marker-pane img {
     max-width: 50px !important;
-    z-index: 8001!important;
+    z-index: 8001 !important;
     border-radius: 50%;
 }
 
@@ -3676,7 +3591,7 @@ body.HoldRoomsForm {
         z-index: 1;
         padding: 3px 24px;
     }
-    
+
     #arnMapPopupMobile .imageContainer img {
         width: 300px !important;
         height: 235px !important;
@@ -3711,18 +3626,18 @@ body.HoldRoomsForm {
 
 @media screen and (max-width: 350px) {
     #arnMapPopupMobile .imageContainer img {
-        width: 250px!important;
-        height: 200px!important;
+        width: 250px !important;
+        height: 200px !important;
     }
 }
 
 @media screen and (max-width: 800px) {
     .hideElement {
-        display: none!important;
+        display: none !important;
     }
 
-    #arnMapPopupMobile  {
-        border-radius: 5px;     
+    #arnMapPopupMobile {
+        border-radius: 5px;
     }
 }
 
@@ -3805,23 +3720,23 @@ body.HoldRoomsForm {
     border: none !important;
 }
 
-.confirmation-messaging + hr{
+.confirmation-messaging + hr {
     margin: 42px 0;
     border: none;
     height: 1px;
     background: #ccc;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     .confirmation-messaging {
         margin-top: 42px;
     }
 
-    #theBookingPage.ConfirmationPage .GuestForms{
+    #theBookingPage.ConfirmationPage .GuestForms {
         margin-bottom: 42px;
     }
 
-    #theBookingPage.ConfirmationPage #theAjaxPaymentPolicies{
+    #theBookingPage.ConfirmationPage #theAjaxPaymentPolicies {
         order: 2;
     }
 }
@@ -3898,8 +3813,10 @@ input[type='search']::-webkit-search-results-decoration {
 
 .ap-input-icon {
     right: 6px;
-    top: 6px;
+    top: 15px;
     background-color: #fff;
+    padding: 8px;
+    height: 7px;
 }
 
 /* autocomplete styles end */
@@ -4138,7 +4055,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 /* Ads */
 
-.sidebar-ad img{
+.sidebar-ad img {
     width: 100%;
     max-width: 185px;
     display: block;
@@ -4146,7 +4063,7 @@ input[type='search']::-webkit-search-results-decoration {
     margin-left: 8px;
 }
 
-.between-property-ad img{
+.between-property-ad img {
     width: 100%;
     max-width: 800px;
     max-height: 200px;
@@ -4154,7 +4071,7 @@ input[type='search']::-webkit-search-results-decoration {
     margin: 0 auto;
 }
 
-.confirmation-bottom-ad img{
+.confirmation-bottom-ad img {
     margin-top: 36px;
     display: block;
     width: 100%;
@@ -4176,38 +4093,37 @@ input[type='search']::-webkit-search-results-decoration {
     max-width: 900px;
 }
 
-#roomHoldForm input.text{
+#roomHoldForm input.text {
     margin: 0 6px 6px 0;
 }
 
-#roomHoldForm table tr{
+#roomHoldForm table tr {
     display: flex;
 }
 
-#roomHoldForm table td{
+#roomHoldForm table td {
     margin-right: 14px;
     text-align: center;
 }
 
-#roomHoldForm table td select{
+#roomHoldForm table td select {
     width: 75px;
 }
 
-.HoldRoomsForm .ArnPropClass{
+.HoldRoomsForm .ArnPropClass {
     display: none;
 }
 
-.HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews{
+.HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews {
     position: static;
 }
 
-@media screen and (max-width: 1105px){
+@media screen and (max-width: 1105px) {
     .HoldRoomsForm .ArnBodyWithSearchPages {
         margin-top: 48px;
     }
 }
-@media screen and (max-width: 1140px){
-
+@media screen and (max-width: 1140px) {
     .HoldRoomsForm #Properties {
         display: block;
         padding: 0 18px;
@@ -4227,7 +4143,7 @@ input[type='search']::-webkit-search-results-decoration {
 /* Hold Rooms End */
 
 /* Percent Savings Start */
-.percentSavings{
+.percentSavings {
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
@@ -4236,12 +4152,12 @@ input[type='search']::-webkit-search-results-decoration {
     font-size: 1rem;
 }
 
-.SinglePropDetail .percentSavings{
+.SinglePropDetail .percentSavings {
     text-align: center;
 }
 
-@media screen and (max-width: 600px){
-    .ArnRateButton{
+@media screen and (max-width: 600px) {
+    .ArnRateButton {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -4251,14 +4167,14 @@ input[type='search']::-webkit-search-results-decoration {
 /* Percent Savings End */
 
 /* Pagination Start */
-#batch{
+#batch {
     display: flex;
     align-items: center;
 }
 
 .ArnPages a,
-.active-page{
-    border: 1px solid #AAAAAA;
+.active-page {
+    border: 1px solid #aaaaaa;
     padding: 2px 6px;
     font-size: 1em;
     margin: 2px 6px;
@@ -4268,6 +4184,25 @@ input[type='search']::-webkit-search-results-decoration {
 
 /* Pagination End */
 
+/* Stay 22 header button start */
+
+.custom-button {
+    margin: 25px;
+    max-width: 250px;
+}
+
+.custom-button a {
+    text-decoration: none;
+    padding: 12px;
+    transition: all 0.4s ease;
+}
+
+/* TODO style Stay 22 button for mobile
+
+
+/* Stay 22 header button end */
+
+
 /* - - - - Covid-19 banner start - - - -  */
 
 .info-banner {
@@ -4276,14 +4211,13 @@ input[type='search']::-webkit-search-results-decoration {
     justify-content: space-between;
     width: 100%;
     height: auto;
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
     order: -1;
     padding: 10px;
     font-family: inherit;
     position: relative;
     z-index: 4;
 }
-
 
 .message-content {
     display: flex;
@@ -4321,14 +4255,13 @@ input[type='search']::-webkit-search-results-decoration {
     color: #fff;
     border: none;
     font-size: 20px;
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
     margin: 8px;
     font-weight: 700;
     font-size: 22px;
 }
 
 @media screen and (max-width: 600px) {
-
     .info-banner,
     .info-banner .message-content {
         flex-direction: column;
@@ -4338,6 +4271,11 @@ input[type='search']::-webkit-search-results-decoration {
         position: absolute;
         top: 0;
         right: 0;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
     }
 }
 /* - - - - Covid-19 banner end - - - -  */

@@ -24,6 +24,7 @@ export default class Resbeat extends BasePortal {
         this.updateHeaderLinks();
         this.rerunFunctionsOnMoreRoomsClick();
         this.moveConfigContainer();
+        this.removeAnchorTag();
 
         if (document.querySelector('.RootBody')) {
             this.updateSearchTitle();
@@ -39,6 +40,7 @@ export default class Resbeat extends BasePortal {
             });
             this.insertHR('#AmentitiesContainer', 'beforebegin');
             this.insertHR('#PropertyClassesContainer', 'beforebegin');
+            this.insertHR('#PropertyTypesContainer', 'beforebegin');
             jQuery(document).on('ratesReadyEvent', () => {
                 setTimeout(() => {
                     this.insertPercentageOffText('.SearchHotels .ArnContainer');
@@ -264,11 +266,13 @@ export default class Resbeat extends BasePortal {
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
-                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
-                <div class="points-earned">
+            <div class="points-earned">
+                <div class="rewards-span">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
-                    <span>${points_earned}</span>
+                 <span>${points_earned}</span>
                 </div>
+                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
+            </div>
             `
         );
     }
@@ -429,6 +433,16 @@ export default class Resbeat extends BasePortal {
         document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
     }
 
+    async removeAnchorTag() {
+        if (!document.querySelector('.ConfirmationForm')) return;
+        await utilities.waitForSelectorInDOM('.confirmation-messaging a');
+        const strong = document.querySelector('.confirmation-messaging a strong');
+        const anchor = document.querySelector('.confirmation-messaging a');
+
+        anchor.insertAdjacentElement('afterend', strong);
+        anchor.remove();
+    }
+
     // showRoomCount() {
     //     if (!document.querySelector('.SinglePropDetail')) return;
     //     const rooms = document.querySelectorAll('table.ArnRateList');
@@ -471,12 +485,12 @@ export default class Resbeat extends BasePortal {
             .GuestForms legend,
             .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
             .SearchHotels .lblRating,
-            .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td {
+            .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td, .WBResendOrCancelFormActions input {
                 font-family: '${this.site_config.google_font_name}', 'Helvetica';
             }
             
-            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong  {
-                color: ${this.site_config.secondary_color};
+            .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong, .SinglePropDetail .points-earned, .CheckOutForm tr.discount th, .CheckOutForm tr.discount td  {
+                color: ${this.site_config.secondary_color} !important;
             }
             
             .support-details a, #theSubmitButton:hover,
@@ -488,7 +502,7 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover  {
+            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input {
                 color: ${this.site_config.primary_color} !important;
             }
             
@@ -502,7 +516,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SinglePropDetail .points-earned, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit  {
+            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover  {
                 color: ${this.site_config.primary_text_color} !important;
             }
         
@@ -530,7 +544,7 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover  {
+            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input  {
                 background: ${this.site_config.background_color} !important;
             }
             
@@ -544,7 +558,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SinglePropDetail .points-earned, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned   {
+            .holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input:hover   {
                 background: ${this.site_config.primary_color} !important;
             }
             
@@ -586,7 +600,7 @@ export default class Resbeat extends BasePortal {
             .RegisterAction.submit,
             .SendMeNewPasswordAction.submit,
             #moreRatesLink,
-            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input  {
+            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input  {
                 border: 3px solid ${this.site_config.primary_color} !important;
             }
 

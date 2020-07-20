@@ -32,7 +32,7 @@ input[type='email'].email-mask,
 .SearchHotels .lblRating,
 .SearchHotels .sort-wrapper h4, .SearchHotels .ArnContainer, .sort-filter-header h3,
 .mobile-filter-container h4,
-.mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox, #standardAvail legend, .ArnRateList .ArnRateCancelAnchor, .ArnRateList .RateCalendarPopupAnchor {
+.mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox, #standardAvail legend, .ArnRateList .ArnRateCancelAnchor, .ArnRateList .RateCalendarPopupAnchor, .SearchHotels .lblPropertyType, .SearchHotels #PropertyTypesContainer span, .WBConfirmedBooking .informMessage, .emailWarningHeading {
     color: #666 !important;
 }
 
@@ -40,9 +40,7 @@ input[type='email'].email-mask,
 .WBSupportForm .ArnSupportChatTable td div + p + p, .WBSupportForm .SSForm .FormFields label, .useCancelFormWarning, .static-rewardsLink,
 #commands .rewards,
 .static-bookingLink + .dvd, .lowRateLink,
-.lowRateLink + .dvd,
-.cancelLink,
-.supportLink + .dvd, .mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
+.lowRateLink + .dvd, .mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
 .mobile-filter-container #CitiesNearbyContainer + hr, .pb-container, .MemberNotAuthenticated #theUserNameAjax label,
 .MemberNotAuthenticated #thePasswordAjax label, .organizationsCommand, .MemberNotAuthenticated .redeem-promocode-container, .WBValidatedRegistrationForm #thePersonalInfoGroup label,
 .WBValidatedRegistrationForm #thePassCodeAjax,
@@ -62,7 +60,7 @@ input[type='email'].email-mask,
 .SinglePropDetail #moreRatesLink,
 .CheckOutForm #theConfirmationButton,
 .WBSupportFormActions input,
-.WBForgotPasswordFormActions input {
+.WBForgotPasswordFormActions input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     transition-property: color, background;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
@@ -86,7 +84,7 @@ input[type='email'].email-mask,
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
-.CheckOutForm #theConfirmationButton {
+.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
     border-radius: 40px;
     -webkit-appearance: none;
 }
@@ -212,6 +210,10 @@ input[type='email'].email-mask,
     text-align: center;
 }
 
+.SearchHotels .ArnPriceCell:first-child {
+    padding-top: 40px;
+}
+
 .SearchHotels .ArnLimitedAvail {
     margin-top: 20px;
 }
@@ -295,7 +297,7 @@ input[type='email'].email-mask,
 .SinglePropDetail .points-earned {
     font-size: 15px;
     width: 300px;
-    text-align: center;
+    text-align: left;
     padding: 7px 0;
     position: absolute;
     bottom: 42px;
@@ -305,10 +307,19 @@ input[type='email'].email-mask,
 .ConfirmationForm .points-earned {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-content: center;
     padding: 18px;
     margin-top: 48px;
+}
+
+.ConfirmationForm .rewards-span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ConfirmationForm .awarded-after-checkout {
+    margin: 20px 0 0 0;
 }
 
 .MemberNotAuthenticated #theUserNameAjax input,
@@ -432,6 +443,7 @@ input[type='email'].email-mask,
 
 .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
+.SearchHotels .lblPropertyType,
 .SearchHotels .sort-wrapper h4 {
     font-weight: 100;
     font-size: 16px;

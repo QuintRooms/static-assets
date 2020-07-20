@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 
 const site_id = 60831;
-const directory_name = `resbeat-${site_id}`;
+const directory_name = `resbeat_test-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -11,8 +11,8 @@ export default function siteConfig() {
         affiliate_id: 16827,
         master_id: 2143,
         site_type: 'cug',
-        algolia_app_id: 'plCZXR0GZ7J1',
-        algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        algolia_app_id: 'pl58QCMXHS4C',
+        algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
         currency: 'USD',
         distance_unit: 'useMiles',
         map_size: '12',
@@ -37,6 +37,7 @@ export default function siteConfig() {
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: true,
+        show_property_type: true,
         show_language_select: false,
         show_currency_select: true,
         show_date_prompt: false,

@@ -3823,6 +3823,10 @@ input[type='search']::-webkit-search-results-decoration {
     height: 7px;
 }
 
+.RootBody .ap-input-icon {
+    top: 15px;
+}
+
 /* autocomplete styles end */
 
 /* Image slideshow start */

@@ -31,7 +31,7 @@ svg.arrow polyline {
         stroke: #fff;
     }
 
-    .sort-filter-container .theOtherSubmitButton  {
+    .SearchHotels .mobile-filter-container input.theOtherSubmitButton, .sort-wrapper a {
         color: #000 !important;
     }
 }

@@ -897,6 +897,10 @@ export default class BasePortal {
                 .sort {
                     color: ${this.site_config.primary_text_color};
                 }
+
+                .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+                    color: ${this.site_config.primary_color};
+                }
             }
             .holdRoom,
             .reviewCount a,

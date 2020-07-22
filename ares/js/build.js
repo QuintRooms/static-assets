@@ -1918,7 +1918,7 @@ export default class BasePortal {
         const policies_lower = document.querySelector('#policies-fees');
         policies_lower.addEventListener('click', () => {
             document.querySelector('div.modal-overlay').classList.toggle('show-modal');
-            document.body.classList.toggle('fixed');
+            document.body.classList.toggle('hide');
         });
 
         const policies_header = document.querySelector('span.open-modal');

@@ -15,7 +15,6 @@ module.exports = () => {
             'housing_template-60265': './src/60265.js', // Housing Template
             'bj_west_palm_beach_20-60292': './src/60292.js', // BJ W Palm Beach 2020
             'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
-            'hof_retail-60037': './src/60037.js', // HOF Retail
             'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
@@ -31,14 +30,15 @@ module.exports = () => {
             'buku_21-56297': './src/56297.js', // Buku 2021
             'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             'resbeat-60831': './src/60831.js', // Resbeat
+            'hof_retail-60037': './src/60037.js', // HOF retail
         };
 
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
-            // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            'ares_child-60278': './src/60278.js', // Ares Child Test
+            'cug_template-39624': './src/39624.js', // CUG Template
+            'ares_child-60279': './src/60279.js', // Ares Child Test
             'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 

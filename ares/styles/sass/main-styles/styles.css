@@ -4,4 +4,8 @@ header {
   header a {
     background: #ccc; }
   header li {
-    color: #000; }
+    color: #000;
+    text-transform: uppercase; }
+
+a {
+  color: pink; }

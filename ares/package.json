@@ -8,9 +8,13 @@
     "build": "npm run compile-css && node js/production-checklist.js && webpack --mode production && node js/generate-email-configs.js",
     "email": "node js/generate-email-configs.js",
     "compile-css": "npm run compile-styles && npm run compile-resbeat && npm run compile-dark",
-    "compile-styles": "node-sass ./styles/sass/main-styles/styles.scss ./styles/sass/main-styles/styles.css && concat -o ./styles/styles.css ./styles/styles.css ./styles/sass/main-styles/styles.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/styles.css -o ./styles/prefix-css/styles.prefix.css && node-sass ./styles/styles.css styles/compressed/styles.css --output-style compressed",
-    "compile-resbeat": "node-sass ./styles/sass/resbeat-styles/resbeat.scss ./styles/sass/resbeat-styles/resbeat.css && concat -o ./styles/resbeat.css ./styles/resbeat.css ./styles/sass/resbeat-styles/resbeat.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/resbeat.css -o ./styles/prefix-css/resbeat.prefix.css && node-sass ./styles/resbeat.css styles/compressed/resbeat.css --output-style compressed",
-    "compile-dark": "node-sass ./styles/sass/dark-styles/dark.scss ./styles/sass/dark-styles/dark.css && concat -o ./styles/dark.css ./styles/dark.css ./styles/sass/dark-styles/dark.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/dark.css -o ./styles/prefix-css/dark.prefix.css && node-sass ./styles/dark.css styles/compressed/dark.css --output-style compressed"
+    "compile-styles": "node-sass ./styles/sass/main-styles/styles.scss ./styles/sass/main-styles/styles.css && concat -o ./styles/concat-css/styles.concat.css ./styles/styles.css ./styles/sass/main-styles/styles.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/concat-css/styles.concat.css -o ./styles/prefix-css/styles.prefix.css && node-sass ./styles/prefix-css/styles.prefix.css styles/compressed/styles.css --output-style compressed",
+
+
+    "compile-resbeat": "node-sass ./styles/sass/resbeat-styles/resbeat.scss ./styles/sass/resbeat-styles/resbeat.css && concat -o ./styles/concat-css/resbeat.concat.css ./styles/resbeat.css ./styles/sass/resbeat-styles/resbeat.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/concat-css/resbeat.concat.css -o ./styles/prefix-css/resbeat.prefix.css && node-sass ./styles/resbeat.css styles/compressed/resbeat.css --output-style compressed",
+
+
+    "compile-dark": "node-sass ./styles/sass/dark-styles/dark.scss ./styles/sass/dark-styles/dark.css && concat -o ./styles/concat-css/dark.concat.css ./styles/dark.css ./styles/sass/dark-styles/dark.css && postcss --use autoprefixer -b 'last 4 versions' ./styles/concat-css/dark.concat.css -o ./styles/prefix-css/dark.prefix.css && node-sass ./styles/dark.css styles/compressed/dark.css --output-style compressed"
   },
   "author": "",
   "license": "ISC",

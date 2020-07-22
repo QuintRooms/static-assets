@@ -9,5 +9,10 @@ header {
     }
     li {
         color: #000;
+        text-transform: uppercase;
     }
+}
+
+a {
+    color: $primary-color;
 }

@@ -1,0 +1,7 @@
+/* ----- SASS STYLES -----*/
+header {
+  background-color: pink !important; }
+  header a {
+    background: #ccc; }
+  header li {
+    color: #000; }

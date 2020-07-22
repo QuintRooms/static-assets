@@ -3888,7 +3888,7 @@ input[type='search']::-webkit-search-results-decoration {
 #previousBtn:hover,
 #nextBtn:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    color: rgba(0, 0, 0);
+    color: rgba(0, 0, 0, 1);
     transition: all 0.5s ease-out;
 }
 
@@ -4287,3 +4287,35 @@ input[type='search']::-webkit-search-results-decoration {
     }
 }
 /* - - - - Covid-19 banner end - - - -  */
+
+/* ----- SASS STYLES -----*/
+header {
+  background-color: pink !important; }
+  header a {
+    background: #ccc; }
+  header li {
+    color: #000; }
+
+/* ----- SASS STYLES -----*/
+header {
+  background-color: pink !important; }
+  header a {
+    background: #ccc; }
+  header li {
+    color: #000; }
+
+/* ----- SASS STYLES -----*/
+header {
+  background-color: pink !important; }
+  header a {
+    background: #ccc; }
+  header li {
+    color: #000; }
+
+/* ----- SASS STYLES -----*/
+header {
+  background-color: pink !important; }
+  header a {
+    background: #ccc; }
+  header li {
+    color: #000; }

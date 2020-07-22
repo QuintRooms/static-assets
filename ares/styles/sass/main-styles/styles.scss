@@ -1,0 +1,13 @@
+/* ----- SASS STYLES -----*/
+
+$primary-color: pink;
+
+header {
+    background-color: $primary-color !important;
+    a {
+        background: #ccc;
+    }
+    li {
+        color: #000;
+    }
+}

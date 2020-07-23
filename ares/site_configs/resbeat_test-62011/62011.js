@@ -14,9 +14,7 @@ class ChildPortal extends Resbeat {
     }
 
     init() {
-        // setTimeout(() => {
         this.addLinkToRewardsPlatform();
-        // }, 2500);
 
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {

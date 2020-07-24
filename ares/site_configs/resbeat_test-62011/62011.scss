@@ -1,6 +1,7 @@
-$background: '#fff';
+$header_background: '#fff';
 $logo_flex_position: 'space-between';
 $logo_max_width: '230px';
+$banner_image_url: '#fff';
 $background_color: '#fff';
 $secondary_background_color: '#f0f0f0';
 $primary_color: '#215853';
@@ -11,9 +12,40 @@ $border_color: '#215853';
 $button_hover_background_color: '#fff';
 $button_hover_text_color: '#215853';
 $button_hover_border_color: '#215853';
+$google_font_name: 'Avenir';
 
 
+@import '../../styles/sass/config.scss';
 
+/* - - - - - RESBEAT STYLES - - - - - - */
+/* Fonts */
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 
 .WBLoginFormActions input,
 #register-btn a,

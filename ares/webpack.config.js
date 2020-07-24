@@ -35,8 +35,7 @@ module.exports = (env) => {
                 sourceRoot: SourceMapPath(),
             }),
             new MiniCssExtractPlugin({
-                // filename: './styles/site-styles/[name].css',
-                filename: './site_configs/[name]/[name].css',
+                moduleFilename: ({name}) => `./site_configs/[name]/${name.slice(-5)}.css`,
             }),
         ],
     };

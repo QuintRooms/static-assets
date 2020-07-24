@@ -1066,6 +1066,9 @@ export default class BasePortal {
 
     applyCustomStyles() {
         if (!this.site_config.has_custom_styles) return;
+        // const style_element = document.querySelector('#h4h-styles');
+
+        // if (!this.site_config || !style_element) return;
         document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
     }
 

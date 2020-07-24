@@ -3087,7 +3087,7 @@
         n.r(t);
         n(44), n(48), n(29), n(20), n(59), n(31), n(61);
         function r() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         var o = new r(),
             i = 'resbeat_test-'.concat(62011);

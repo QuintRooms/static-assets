@@ -1,0 +1,14 @@
+
+.event-dates {
+    font-family: futura-bold,helvetica;
+    margin-left: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    .event-dates {
+        margin: 0 0 15px 0;
+    }
+}

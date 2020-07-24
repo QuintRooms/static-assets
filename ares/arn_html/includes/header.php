@@ -27,7 +27,7 @@ if (getenv('isCUG') == true && strpos($url, 'auth') == false) {
 ?>
 
 <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
-<style id="h4h-styles"></style>
+<div id="h4h-styles"></div>
 
 <?php
 if (strpos($url, 'index') !== false || 'search-results' !== false) {

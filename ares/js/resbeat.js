@@ -430,7 +430,11 @@ export default class Resbeat extends BasePortal {
     }
 
     applyResbeatStyles() {
-        document.body.insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
+        const style_element = document.querySelector('#h4h-styles');
+
+        if (!style_element) return;
+
+        style_element.insertAdjacentHTML('afterbegin', `<link href="${env_path.path}/styles/resbeat.css" rel="stylesheet">`);
     }
 
     async removeAnchorTag() {

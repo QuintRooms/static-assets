@@ -32,7 +32,7 @@ export default class BasePortal {
         utilities.ieForEachPolyfill();
         this.getSiteID().then(async (site_id) => {
             utilities.getPageName();
-            this.applyConfigStyles();
+            // this.applyConfigStyles();
             this.setupDatePrompt();
             this.showLanguageFromCongif();
             this.showFilters();
@@ -748,315 +748,314 @@ export default class BasePortal {
     }
 
     // probably a much better way to do this
-    applyConfigStyles() {
-        const style_element = document.querySelector('#h4h-styles');
+    // applyConfigStyles() {
+    //     const style_element = document.querySelector('#h4h-styles');
 
-        if (!this.site_config || !style_element) return;
+    //     if (!this.site_config || !style_element) return;
 
-        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+    //     utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
-        style_element.insertAdjacentHTML(
-            'afterBegin',
-            `
-            /* Fonts */
-            *,
-            .taxFeeRow td,
-            .discount td,
-            .totalRow td,
-            .balanceDueRow td,
-            .dueNowRow td,
-            .guestNameFields td,
-            .total-points-earned td{
-                font-family: ${this.site_config.google_font_name}, 'Helvetica';
-            }
+    //     style_element.insertAdjacentHTML(
+    //         'afterBegin',
+    //         `
+    //         /* Fonts */
+    //         *,
+    //         .taxFeeRow td,
+    //         .discount td,
+    //         .totalRow td,
+    //         .balanceDueRow td,
+    //         .dueNowRow td,
+    //         .guestNameFields td,
+    //         .total-points-earned td{
+    //             font-family: ${this.site_config.google_font_name}, 'Helvetica';
+    //         }
 
-            /* Root Body */
-            .RootBody{
-                background: ${this.site_config.banner_image_url};
-            }
+    //         /* Root Body */
+    //         .RootBody{
+    //             background: ${this.site_config.banner_image_url};
+    //         }
 
-            /* Header */
+    //         /* Header */
 
-            header {
-                justify-content: ${this.site_config.header.logo_flex_position};
-                background: ${this.site_config.header.background};
-            }
-            
-            .logo img{
-                max-width: ${this.site_config.header.logo_max_width};
-            }
-            
-            body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
-                background-color: ${this.site_config.background_color};
-            }
+    //         header {
+    //             justify-content: ${this.site_config.header.logo_flex_position};
+    //             background: ${this.site_config.header.background};
+    //         }
 
-        /* Primary Background Color */
-            #searching h2:after,
-            #theConfirmationButton,
-            .ArnPrimarySearchContainer,
-            .ArnShowRatesLink,
-            .ArnTripAdvisorDetails.HasReviews .ratingCount,
-            .CreateAnAccountAction,
-            .RootBody #theOtherSubmitButton,
-            .SimpleSearch,
-            .WBForgotPasswordFormActions .submit,
-            .WBLoginFormActions .submit,
-            .WBValidatedRegistrationFormActions .submit,
-            .arn-leaflet-reset-button,
-            .bookRoom,
-            .HoldRoomsForm .submit,
-            #datePromptContainer+.SimpleSearch .CheckRates .submit,
-            .yui3-skin-sam .yui3-calendar-day:hover,
-            .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
-            {
-                background: ${this.site_config.primary_color};
-            }
+    //         .logo img{
+    //             max-width: ${this.site_config.header.logo_max_width};
+    //         }
 
-            @media screen and (max-width:1105px) {
+    //         body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
+    //             background-color: ${this.site_config.background_color};
+    //         }
 
-                #arnCloseAnchorId,
-                #arnCloseAnchorId:active,
-                #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover {
-                    border: 1px solid ${this.site_config.primary_color};
-                }
+    //     /* Primary Background Color */
+    //         #searching h2:after,
+    //         #theConfirmationButton,
+    //         .ArnPrimarySearchContainer,
+    //         .ArnShowRatesLink,
+    //         .ArnTripAdvisorDetails.HasReviews .ratingCount,
+    //         .CreateAnAccountAction,
+    //         .RootBody #theOtherSubmitButton,
+    //         .SimpleSearch,
+    //         .WBForgotPasswordFormActions .submit,
+    //         .WBLoginFormActions .submit,
+    //         .WBValidatedRegistrationFormActions .submit,
+    //         .arn-leaflet-reset-button,
+    //         .bookRoom,
+    //         .HoldRoomsForm .submit,
+    //         #datePromptContainer+.SimpleSearch .CheckRates .submit,
+    //         .yui3-skin-sam .yui3-calendar-day:hover,
+    //         .sort-wrapper .active,
+    //         .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+    //         {
+    //             background: ${this.site_config.primary_color};
+    //         }
 
-                .closeMap {
-                    border: 1px solid ${this.site_config.primary_text_color}!important;
-                    background-color: ${this.site_config.primary_color}!important;
-                    color: ${this.site_config.primary_text_color}!important;
-                }
-            }
+    //         @media screen and (max-width:1105px) {
 
-            @media screen and (max-width:800px) {
+    //             #arnCloseAnchorId,
+    //             #arnCloseAnchorId:active,
+    //             #arnCloseAnchorId:focus,
+    //             #arnCloseAnchorId:hover {
+    //                 border: 1px solid ${this.site_config.primary_color};
+    //             }
 
-                #commands a:active,
-                #commands a:focus,
-                #commands a:hover,
-                #commands button:active,
-                #commands button:focus,
-                #commands button:hover,
-                .sort-wrapper a:before,
-                .sort-wrapper a.active-filter:before,
-                .sort {
-                    background: ${this.site_config.primary_color};
-                }
-            }
+    //             .closeMap {
+    //                 border: 1px solid ${this.site_config.primary_text_color}!important;
+    //                 background-color: ${this.site_config.primary_color}!important;
+    //                 color: ${this.site_config.primary_text_color}!important;
+    //             }
+    //         }
 
-            #searching,
-            #theConfirmationButton,
-            .HoldRoomsForm .submit,
-            .ArnPrimarySearchContainer,
-            .ArnShowRatesLink,
-            .ArnTripAdvisorDetails.HasReviews .ratingCount,
-            .SinglePropDetail .CheckRates .submit,
-            .CreateAnAccountAction,
-            .RootBody #theOtherSubmitButton,
-            .SearchHotels #theSubmitButton,
-            .SimpleSearch,
-            .WBForgotPasswordFormActions .submit,
-            .WBLoginFormActions .submit,
-            .WBValidatedRegistrationFormActions .submit,
-            .arnMapPopup .rate,
-            #datePromptContainer+.SimpleSearch .CheckRates .submit,
-            .bookRoom,
-            .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
-            {
-                color: ${this.site_config.primary_text_color};
-            }
+    //         @media screen and (max-width:800px) {
 
-            .custom-button a:hover {
-                color: ${this.site_config.primary_color}
-            }
+    //             #commands a:active,
+    //             #commands a:focus,
+    //             #commands a:hover,
+    //             #commands button:active,
+    //             #commands button:focus,
+    //             #commands button:hover,
+    //             .sort-wrapper a:before,
+    //             .sort-wrapper a.active-filter:before,
+    //             .sort {
+    //                 background: ${this.site_config.primary_color};
+    //             }
+    //         }
 
-            span.exclusive-rate {
-                background: ${this.site_config.secondary_color};
-                color: #fff;
-            }
+    //         #searching,
+    //         #theConfirmationButton,
+    //         .HoldRoomsForm .submit,
+    //         .ArnPrimarySearchContainer,
+    //         .ArnShowRatesLink,
+    //         .ArnTripAdvisorDetails.HasReviews .ratingCount,
+    //         .SinglePropDetail .CheckRates .submit,
+    //         .CreateAnAccountAction,
+    //         .RootBody #theOtherSubmitButton,
+    //         .SearchHotels #theSubmitButton,
+    //         .SimpleSearch,
+    //         .WBForgotPasswordFormActions .submit,
+    //         .WBLoginFormActions .submit,
+    //         .WBValidatedRegistrationFormActions .submit,
+    //         .arnMapPopup .rate,
+    //         #datePromptContainer+.SimpleSearch .CheckRates .submit,
+    //         .bookRoom,
+    //         .sort-wrapper .active,
+    //         .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+    //         {
+    //             color: ${this.site_config.primary_text_color};
+    //         }
 
+    //         .custom-button a:hover {
+    //             color: ${this.site_config.primary_color}
+    //         }
 
-            @media screen and (max-width:1105px) {
+    //         span.exclusive-rate {
+    //             background: ${this.site_config.secondary_color};
+    //             color: #fff;
+    //         }
 
-                #arnCloseAnchorId,
-                #arnCloseAnchorId:active,
-                #arnCloseAnchorId:focus,
-                #arnCloseAnchorId:hover {
-                    color: ${this.site_config.secondary_text_color};
-                }
-            }
+    //         @media screen and (max-width:1105px) {
 
-            @media screen and (max-width: 800px) {
-                #commands a:active,
-                #commands a:focus,
-                #commands a:hover,
-                #commands button:active,
-                #commands button:focus,
-                #commands button:hover,
-                .sort {
-                    color: ${this.site_config.primary_text_color};
-                }
+    //             #arnCloseAnchorId,
+    //             #arnCloseAnchorId:active,
+    //             #arnCloseAnchorId:focus,
+    //             #arnCloseAnchorId:hover {
+    //                 color: ${this.site_config.secondary_text_color};
+    //             }
+    //         }
 
-                .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
-                    color: ${this.site_config.primary_color};
-                }
-            }
-            .holdRoom,
-            .reviewCount a,
-            #theAdditionalEmailsLink a,
-            #theOtherSubmitButton,
-            .SinglePropDetail .ArnRateCancelAnchor,
-            .open-modal,
-            .lowest-rate-link,
-            .SinglePropDetail .RateCalendarPopupAnchor,
-            .ArnContentContainer legend, #theRoomsOnHold h2,
-            .confirmation-messaging a,
-            .receiptLink,
-            .returnResultsInfo a,
-            .supportInfo a, .SinglePropDetail #show-more-or-less {
-                color: ${this.site_config.secondary_text_color};
-            }
-            
-            .percentSavings{
-                color: ${this.site_config.secondary_color};
-            }
+    //         @media screen and (max-width: 800px) {
+    //             #commands a:active,
+    //             #commands a:focus,
+    //             #commands a:hover,
+    //             #commands button:active,
+    //             #commands button:focus,
+    //             #commands button:hover,
+    //             .sort {
+    //                 color: ${this.site_config.primary_text_color};
+    //             }
 
-            input#theSubmitButton,
-            .RootBody #theOtherSubmitButton,
-            .bookRoom,
-            .arn-leaflet-reset-button,
-            input#theConfirmationButton,
-            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {
-                background: ${this.site_config.primary_color};
-                color: ${this.site_config.primary_text_color};
-                border: 1px solid ${this.site_config.border_color};
-            }
+    //             .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    //                 color: ${this.site_config.primary_color};
+    //             }
+    //         }
+    //         .holdRoom,
+    //         .reviewCount a,
+    //         #theAdditionalEmailsLink a,
+    //         #theOtherSubmitButton,
+    //         .SinglePropDetail .ArnRateCancelAnchor,
+    //         .open-modal,
+    //         .lowest-rate-link,
+    //         .SinglePropDetail .RateCalendarPopupAnchor,
+    //         .ArnContentContainer legend, #theRoomsOnHold h2,
+    //         .confirmation-messaging a,
+    //         .receiptLink,
+    //         .returnResultsInfo a,
+    //         .supportInfo a, .SinglePropDetail #show-more-or-less {
+    //             color: ${this.site_config.secondary_text_color};
+    //         }
 
-            .CheckRates input.submit,
-            .CheckRates input.submit,
-            .CheckRates input.submit,
-            #lightbox, #lightbox .dialog-button-ok input:hover  {
-                background: ${this.site_config.primary_color};
-                color: ${this.site_config.primary_text_color};
-            }
+    //         .percentSavings{
+    //             color: ${this.site_config.secondary_color};
+    //         }
 
-            input#theSubmitButton:hover,
-            input#theSubmitButton:focus,
-            input#theSubmitButton:active,
-            #theOtherSubmitButton:hover,
-            #theOtherSubmitButton:focus,
-            #theOtherSubmitButton:active,
-            .RootBody #theOtherSubmitButton:hover,
-            .RootBody #theOtherSubmitButton:focus,
-            .RootBody #theOtherSubmitButton:active,
-            .bookRoom:hover,
-            .bookRoom:focus,
-            .bookRoom:active,
-            .arn-leaflet-reset-button:hover,
-            .arn-leaflet-reset-button:focus,
-            .arn-leaflet-reset-button:active,
-            input#theConfirmationButton:hover,
-            input#theConfirmationButton:focus,
-            input#theConfirmationButton:active,
-            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {
-                background: ${this.site_config.button_hover_background_color};
-                color: ${this.site_config.button_hover_text_color};
-                border: 1px solid ${this.site_config.button_hover_border_color};
-            }
+    //         input#theSubmitButton,
+    //         .RootBody #theOtherSubmitButton,
+    //         .bookRoom,
+    //         .arn-leaflet-reset-button,
+    //         input#theConfirmationButton,
+    //         a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {
+    //             background: ${this.site_config.primary_color};
+    //             color: ${this.site_config.primary_text_color};
+    //             border: 1px solid ${this.site_config.border_color};
+    //         }
 
-            .CheckRates input.submit:hover,
-            .CheckRates input.submit:focus,
-            .CheckRates input.submit:active {
-                background: ${this.site_config.button_hover_background_color};
-                color: ${this.site_config.button_hover_text_color};
-            }
+    //         .CheckRates input.submit,
+    //         .CheckRates input.submit,
+    //         .CheckRates input.submit,
+    //         #lightbox, #lightbox .dialog-button-ok input:hover  {
+    //             background: ${this.site_config.primary_color};
+    //             color: ${this.site_config.primary_text_color};
+    //         }
 
-            .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
-                color: ${this.site_config.primary_color};
-                border-color: ${this.site_config.primary_color};
-            }
-            
-            .SinglePropDetail #moreRatesLink:hover {
-                background-color: ${this.site_config.primary_color}
-            }
+    //         input#theSubmitButton:hover,
+    //         input#theSubmitButton:focus,
+    //         input#theSubmitButton:active,
+    //         #theOtherSubmitButton:hover,
+    //         #theOtherSubmitButton:focus,
+    //         #theOtherSubmitButton:active,
+    //         .RootBody #theOtherSubmitButton:hover,
+    //         .RootBody #theOtherSubmitButton:focus,
+    //         .RootBody #theOtherSubmitButton:active,
+    //         .bookRoom:hover,
+    //         .bookRoom:focus,
+    //         .bookRoom:active,
+    //         .arn-leaflet-reset-button:hover,
+    //         .arn-leaflet-reset-button:focus,
+    //         .arn-leaflet-reset-button:active,
+    //         input#theConfirmationButton:hover,
+    //         input#theConfirmationButton:focus,
+    //         input#theConfirmationButton:active,
+    //         a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {
+    //             background: ${this.site_config.button_hover_background_color};
+    //             color: ${this.site_config.button_hover_text_color};
+    //             border: 1px solid ${this.site_config.button_hover_border_color};
+    //         }
 
-            @media screen and (max-width:800px) {
-                #theBookingPage legend#policies-legend {
-                    color: ${this.site_config.secondary_text_color}
-                }
-            }
+    //         .CheckRates input.submit:hover,
+    //         .CheckRates input.submit:focus,
+    //         .CheckRates input.submit:active {
+    //             background: ${this.site_config.button_hover_background_color};
+    //             color: ${this.site_config.button_hover_text_color};
+    //         }
 
-            header {
-                border-bottom:3px solid ${this.site_config.border_color};
-            }
+    //         .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
+    //             color: ${this.site_config.primary_color};
+    //             border-color: ${this.site_config.primary_color};
+    //         }
 
-            .arnMapMarker.contracted-pin,
-            .arnMapMarker.contracted-pin.highlight{
-                border: 1px solid ${this.site_config.primary_text_color};
-                background: ${this.site_config.secondary_color};
-                color: ${this.site_config.primary_text_color};
-            }
+    //         .SinglePropDetail #moreRatesLink:hover {
+    //             background-color: ${this.site_config.primary_color}
+    //         }
 
-            .arnMapMarker.contracted-pin:hover {
-                border: 1px solid ${this.site_config.secondary_color};
-                background: ${this.site_config.primary_text_color};
-                color: ${this.site_config.secondary_color};
-            }
+    //         @media screen and (max-width:800px) {
+    //             #theBookingPage legend#policies-legend {
+    //                 color: ${this.site_config.secondary_text_color}
+    //             }
+    //         }
 
-            .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-                border-top-color: ${this.site_config.secondary_color};
-            }
+    //         header {
+    //             border-bottom:3px solid ${this.site_config.border_color};
+    //         }
 
-            #theOtherSubmitButton,
-            .ArnSecondarySearchOuterContainer select,
-            .ArnShowRatesLink,
-            .RootBody #theOtherSubmitButton,
-            .bookRoom,
-            .sort,
-            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-                border:1px solid ${this.site_config.border_color};
-            }
+    //         .arnMapMarker.contracted-pin,
+    //         .arnMapMarker.contracted-pin.highlight{
+    //             border: 1px solid ${this.site_config.primary_text_color};
+    //             background: ${this.site_config.secondary_color};
+    //             color: ${this.site_config.primary_text_color};
+    //         }
 
-            .holdRoom {
-                border: 1px solid ${this.site_config.border_color};
-            }
+    //         .arnMapMarker.contracted-pin:hover {
+    //             border: 1px solid ${this.site_config.secondary_color};
+    //             background: ${this.site_config.primary_text_color};
+    //             color: ${this.site_config.secondary_color};
+    //         }
 
-            @media screen and (max-width:1105px) {
-                #arnCloseAnchorId,
-                .sort {
-                    border:1px solid ${this.site_config.primary_color};
-                }
-            }
+    //         .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
+    //             border-top-color: ${this.site_config.secondary_color};
+    //         }
 
-            @media screen and (max-width:800px) {
-                .sort-wrapper a:before {
-                    border:2px solid ${this.site_config.primary_color};
-                }
-            }
+    //         #theOtherSubmitButton,
+    //         .ArnSecondarySearchOuterContainer select,
+    //         .ArnShowRatesLink,
+    //         .RootBody #theOtherSubmitButton,
+    //         .bookRoom,
+    //         .sort,
+    //         .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
+    //             border:1px solid ${this.site_config.border_color};
+    //         }
 
-            .active-page{
-                background: ${this.site_config.primary_color} !important;
-                color: ${this.site_config.primary_text_color} !important;
-                border: 1px solid ${this.site_config.border_color} !important;
-            }
+    //         .holdRoom {
+    //             border: 1px solid ${this.site_config.border_color};
+    //         }
 
-            .yui3-skin-sam .yui3-calendar-day-selected {
-                background-color: ${this.site_config.primary_color} !important;
-                color: ${this.site_config.primary_text_color} !important;
-            }
-    
-            .yui3-skin-sam .yui3-calendar-day:hover{
-                background-color: ${this.site_config.primary_color} !important;
-            }
-    
-            .yui3-skin-sam .yui3-calendar-content{
-                border-color: ${this.site_config.border_color} !important;
-            }
-        </style>
-        `
-        );
-    }
+    //         @media screen and (max-width:1105px) {
+    //             #arnCloseAnchorId,
+    //             .sort {
+    //                 border:1px solid ${this.site_config.primary_color};
+    //             }
+    //         }
+
+    //         @media screen and (max-width:800px) {
+    //             .sort-wrapper a:before {
+    //                 border:2px solid ${this.site_config.primary_color};
+    //             }
+    //         }
+
+    //         .active-page{
+    //             background: ${this.site_config.primary_color} !important;
+    //             color: ${this.site_config.primary_text_color} !important;
+    //             border: 1px solid ${this.site_config.border_color} !important;
+    //         }
+
+    //         .yui3-skin-sam .yui3-calendar-day-selected {
+    //             background-color: ${this.site_config.primary_color} !important;
+    //             color: ${this.site_config.primary_text_color} !important;
+    //         }
+
+    //         .yui3-skin-sam .yui3-calendar-day:hover{
+    //             background-color: ${this.site_config.primary_color} !important;
+    //         }
+
+    //         .yui3-skin-sam .yui3-calendar-content{
+    //             border-color: ${this.site_config.border_color} !important;
+    //         }
+    //     </style>
+    //     `
+    //     );
+    // }
 
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
@@ -1065,11 +1064,16 @@ export default class BasePortal {
     }
 
     applyCustomStyles() {
-        if (!this.site_config.has_custom_styles) return;
-        // const style_element = document.querySelector('#h4h-styles');
+        const style_element = document.querySelector('#h4h-styles');
 
-        // if (!this.site_config || !style_element) return;
-        document.body.insertAdjacentHTML('beforeend', `<link href="${this.site_config.custom_styles_url}" rel="stylesheet">`);
+        if (!this.site_config || !style_element) return;
+
+        utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
+
+        style_element.insertAdjacentHTML(
+            'beforeend',
+            `<link href="${env_path.path}/site_configs/${this.site_config.directory_name}/${this.site_config.site_id}.css" rel="stylesheet">`
+        );
     }
 
     styleCUGMapPins() {

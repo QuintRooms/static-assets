@@ -23,7 +23,21 @@ module.exports = (env) => {
                 {
                     test: /\.scss$/,
                     exclude: /node_modules/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: false,
+                            },
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: false,
+                            },
+                        },
+                    ],
                 },
             ],
         },

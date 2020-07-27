@@ -437,7 +437,16 @@ export default class Utilities {
                 'beforeend',
                 `<div class="custom-button">
                     <a id="custom-link" target="_blank" href="${link}">${text}</a>
-                </div>`
+                </div>
+                <style class="stay-22-header-styles">
+                    @media screen and (max-width: 600px) {
+                    header {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                <style>    
+                `
             );
         }
     }

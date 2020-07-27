@@ -301,7 +301,8 @@ select#adults {
     display: none;
 }
 
-.SearchHotels .config-container {
+.SearchHotels .config-container,
+.RootBody .config-container {
     background: #333;
     width: 100%;
     display: flex;

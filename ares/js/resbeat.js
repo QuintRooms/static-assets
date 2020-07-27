@@ -25,6 +25,7 @@ export default class Resbeat extends BasePortal {
         this.rerunFunctionsOnMoreRoomsClick();
         this.moveConfigContainer();
         this.removeAnchorTag();
+        this.confPageSavings();
 
         if (document.querySelector('.RootBody')) {
             this.updateSearchTitle();
@@ -443,6 +444,23 @@ export default class Resbeat extends BasePortal {
         anchor.remove();
     }
 
+    confPageSavings() {
+        if (!document.querySelector('.ConfirmationForm')) return;
+
+        const beat_em_value = document.querySelector('#theRateTotals .discount td').textContent;
+
+        const conf_form = document.querySelector('.ConfirmationForm .GuestForms');
+        conf_form.insertAdjacentHTML(
+            'beforeend',
+            `
+            <div class="beat-em-value">
+                <span>WE BEAT 'EM BY</span>
+                <span>${beat_em_value}</span>
+            </div>
+        `
+        );
+    }
+
     // showRoomCount() {
     //     if (!document.querySelector('.SinglePropDetail')) return;
     //     const rooms = document.querySelectorAll('table.ArnRateList');
@@ -516,7 +534,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover  {
+            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover, .ConfirmationForm .beat-em-value  {
                 color: ${this.site_config.primary_text_color} !important;
             }
         
@@ -604,7 +622,7 @@ export default class Resbeat extends BasePortal {
                 border: 3px solid ${this.site_config.primary_color} !important;
             }
 
-            .SearchHotels .beat-em, .SinglePropDetail .beat-em {
+            .SearchHotels .beat-em, .SinglePropDetail .beat-em, .ConfirmationForm .beat-em-value {
                 background-color: ${this.site_config.secondary_color};
             }
 

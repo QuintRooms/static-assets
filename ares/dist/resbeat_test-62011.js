@@ -883,11 +883,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(65),
-            o = n(94),
+        var r = n(64),
+            o = n(93),
             i = n(19),
             a = n(12);
-        (e.exports = n(95)(
+        (e.exports = n(94)(
             Array,
             'Array',
             function (e, t) {
@@ -2147,9 +2147,17 @@
         };
     },
     function (e, t, n) {
+        var r = n(0)('unscopables'),
+            o = Array.prototype;
+        null == o[r] && n(9)(o, r, {}),
+            (e.exports = function (e) {
+                o[r][e] = !0;
+            });
+    },
+    function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(92),
+            o = n(98),
             i = n(37);
         n(40)('search', 1, function (e, t, n, a) {
             return [
@@ -2170,14 +2178,6 @@
                 },
             ];
         });
-    },
-    function (e, t, n) {
-        var r = n(0)('unscopables'),
-            o = Array.prototype;
-        null == o[r] && n(9)(o, r, {}),
-            (e.exports = function (e) {
-                o[r][e] = !0;
-            });
     },
     function (e, t, n) {
         var r = n(28),
@@ -2559,13 +2559,6 @@
     function (e, t, n) {
         n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(39)});
     },
-    function (e, t) {
-        e.exports =
-            Object.is ||
-            function (e, t) {
-                return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
-            };
-    },
     function (e, t, n) {
         var r = n(5).f,
             o = Function.prototype,
@@ -2595,7 +2588,7 @@
             i = n(10),
             a = n(9),
             c = n(19),
-            s = n(96),
+            s = n(95),
             u = n(25),
             l = n(60),
             d = n(0)('iterator'),
@@ -2663,7 +2656,7 @@
     },
     function (e, t, n) {
         var r = n(4),
-            o = n(98)(!0);
+            o = n(97)(!0);
         r(r.S, 'Object', {
             entries: function (e) {
                 return o(e);
@@ -2681,6 +2674,13 @@
                 return d;
             };
         };
+    },
+    function (e, t) {
+        e.exports =
+            Object.is ||
+            function (e, t) {
+                return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
+            };
     },
     function (e, t, n) {
         var r = n(4);
@@ -2708,7 +2708,7 @@
                 return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
             },
         }),
-            n(65)('includes');
+            n(64)('includes');
     },
     function (e, t, n) {
         'use strict';
@@ -3090,7 +3090,7 @@
         }
         var o = new r(),
             i = 'resbeat_test-'.concat(62011);
-        n(41), n(90), n(64), n(93), n(42), n(32), n(97), n(99), n(101), n(102);
+        n(41), n(90), n(92), n(42), n(32), n(96), n(65), n(99), n(101), n(102);
         var a = 'URLSearchParams' in self,
             c = 'Symbol' in self && 'iterator' in Symbol,
             s =
@@ -4826,35 +4826,40 @@
                                 var e,
                                     t,
                                     n,
-                                    r,
-                                    o = '',
+                                    r = new URL(window.location.href),
+                                    o = new URLSearchParams(r.search),
                                     i = '',
-                                    a = document.querySelector('meta[name="checkIn"]'),
-                                    c = document.querySelector('meta[name="checkOut"]'),
-                                    s = document.querySelector('meta[name="numberOfAdults"]'),
-                                    u = document.querySelector('meta[name="SearchLocation"]'),
-                                    l = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                a &&
-                                    c &&
+                                    a = '',
+                                    c = '',
+                                    s = document.querySelector('meta[name="checkIn"]'),
+                                    u = document.querySelector('meta[name="checkOut"]'),
+                                    l = document.querySelector('meta[name="numberOfAdults"]'),
+                                    d = document.querySelector('meta[name="SearchLocation"]'),
+                                    h = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                s &&
                                     u &&
-                                    s &&
-                                    ((e = s.getAttribute('content')),
-                                    (t = u.getAttribute('content')),
-                                    (n = a.getAttribute('content')),
-                                    (r = c.getAttribute('content')),
-                                    (o = W(n)),
-                                    (i = W(r)),
+                                    d &&
+                                    l &&
+                                    ((e = l.getAttribute('content')),
+                                    (i = d.getAttribute('content')),
+                                    (t = s.getAttribute('content')),
+                                    (n = u.getAttribute('content')),
+                                    (a = W(t)),
+                                    (c = W(n)),
+                                    ('cug' === this.site_config.site_type.toLowerCase() ||
+                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
+                                        (i = o.get('destination')),
                                     U.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                            .concat(t, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                            .concat(o.format('MMMM D'), ' - ')
-                                            .concat(i.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                            .concat(i, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                            .concat(a.format('MMMM D'), ' - ')
+                                            .concat(c.format('MMMM D'), '</span>\n                        <span class="adults-count">')
                                             .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
                                         '.SearchHotels .ArnPrimarySearchOuterContainer',
                                         'beforeBegin'
                                     ),
                                     document.querySelector('.show-search-container').addEventListener('click', function () {
-                                        l.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                        h.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
                                     }));
                             },
                         },

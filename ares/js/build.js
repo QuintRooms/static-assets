@@ -442,6 +442,9 @@ export default class BasePortal {
     }
 
     showSearchContainerOnMobile() {
+        const params = new URL(window.location.href);
+        const search_params = new URLSearchParams(params.search);
+
         let adults_text = '';
         let location_text = '';
         let check_in_text = '';
@@ -458,11 +461,16 @@ export default class BasePortal {
 
         adults_text = adults_el.getAttribute('content');
         location_text = location_el.getAttribute('content');
+
         check_in_text = check_in_el.getAttribute('content');
         check_out_text = check_out_el.getAttribute('content');
 
         check_in_date = dayjs(check_in_text);
         check_out_date = dayjs(check_out_text);
+
+        if (this.site_config.site_type.toLowerCase() === 'cug' || (this.site_config.site_type.toLowerCase() === 'retail' && search_params.get('destination') !== null)) {
+            location_text = search_params.get('destination');
+        }
 
         utilities.createHTML(
             `

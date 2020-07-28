@@ -301,7 +301,8 @@ select#adults {
     display: none;
 }
 
-.SearchHotels .config-container {
+.SearchHotels .config-container,
+.RootBody .config-container {
     background: #333;
     width: 100%;
     display: flex;
@@ -4279,11 +4280,6 @@ input[type='search']::-webkit-search-results-decoration {
         position: absolute;
         top: 0;
         right: 0;
-    }
-
-    header {
-        display: flex;
-        flex-direction: column;
     }
 }
 /* - - - - Covid-19 banner end - - - -  */

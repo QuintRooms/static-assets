@@ -1,17 +1,17 @@
 <?php
-	require_once '../../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
-	$dotenv = Dotenv\Dotenv::createImmutable('../../');
-    $dotenv->load();
+$dotenv = Dotenv\Dotenv::createImmutable('../../');
+$dotenv->load();
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
 
 <?php
-    $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-    
-    if(getenv('isCUG') === true && strpos($url, 'auth') === false){
-        echo '
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+if (getenv('isCUG') == true && strpos($url, 'auth') == false) {
+    echo '
             <div id="AdminControlsContainer">
                 <div id="commands"><a class="profileCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;1">My Profile</a><a class="organizationsCommand" href="https://events.hotelsforhope.com/v6/search?_s=i9OeMFOgz_0aLKzN&amp;_k=X1p01Dcn&amp;siteId=39624&amp;theme=standard&amp;2">My Organizations</a>
                     <form accept-charset="utf-8"  action="../auth/login.php"><button class="logoutCommand submit" name="3" type="submit">Logout</button>
@@ -23,15 +23,15 @@
                 <div><input name="_s" value="i9OeMFOgz_0aLKzN" type="hidden" class="hidden" /><input name="_k" value="X1p01Dcn" type="hidden" class="hidden" /><input name="siteId" value="39624" type="hidden" class="hidden" /><input name="theme" value="standard" type="hidden" class="hidden" /></div>
             </form>
         ';
-    } 
+}
 ?>
 
 <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
 <style id="h4h-styles"></style>
 
 <?php
-    if(strpos($url, 'index') !== false || 'search-results' !== false){
-        echo '
+if (strpos($url, 'index') !== false || 'search-results' !== false) {
+    echo '
             <div class="config-container">
                 <div class="currencies-container">
                     <div class="config-label" id="currency-label"><span>Currency</span>
@@ -62,5 +62,5 @@
                 </div>
             </div>
         ';
-    }
+}
 ?>

@@ -34,9 +34,15 @@ export default class Algolia {
          *@description removes ARN's search bar element from the dom.
          *@param string dom selector for ARN's seach input.
          */
-        function remove_arn_search_bar(selector) {
+        async function remove_arn_search_bar(selector) {
             if (!document.querySelector(selector)) return;
-            document.querySelector(selector).remove();
+
+            document.querySelector(selector).style.position = 'absolute';
+            document.querySelector(selector).style.left = '-10000px';
+
+            await utilities.waitForSelectorInDOM('#city');
+
+            document.querySelector(selector).removeAttribute('required');
         }
 
         /**
@@ -183,8 +189,14 @@ export default class Algolia {
             const built_url = new URL(url);
             let lat;
             let lng;
-            const check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY');
-            const check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+            let check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format(site_config.dayjs_date_format);
+            let check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format(site_config.dayjs_date_format);
+
+            if (utilities.getMetaTagContent('theme') !== 'standard') {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('D/M/YYYY');
+            }
+
             const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
 
             if (lat_lng) {

@@ -37,7 +37,7 @@ export default function siteConfig() {
         reviews_before_info: true,
         show_stars: false,
         show_property_type: false,
-        show_language_select: false,
+        show_language_select: true,
         show_currency_select: true,
         show_date_prompt: false,
         showStarRatings: false,

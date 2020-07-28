@@ -6429,9 +6429,8 @@
                     e
                 );
             })(),
-            Y = new H(),
-            V = 'f1_portugal_20-'.concat(54494);
-        function z(e, t, n, r, o, i, a) {
+            Y = new H();
+        function V(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -6440,35 +6439,57 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function J(e) {
+        function z(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        z(i, r, o, a, c, 'next', e);
+                        V(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        z(i, r, o, a, c, 'throw', e);
+                        V(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        var Z = new P(),
-            K = new H();
-        function Q() {
-            return (Q = J(
+        var J = new P(),
+            Z = new H();
+        function K() {
+            return (K = z(
                 regeneratorRuntime.mark(function e(t) {
-                    var n, r, o, i, a, c;
+                    var n, r, o, i, a, c, s, u;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     return (
+                                        (u = function () {
+                                            return (u = z(
+                                                regeneratorRuntime.mark(function e() {
+                                                    var t;
+                                                    return regeneratorRuntime.wrap(function (e) {
+                                                        for (;;)
+                                                            switch ((e.prev = e.next)) {
+                                                                case 0:
+                                                                    return (e.next = 2), J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/footer.html'));
+                                                                case 2:
+                                                                    (t = e.sent), document.querySelector('.ArnSupportLinks .ArnSupportBottom').insertAdjacentHTML('afterend', t);
+                                                                case 4:
+                                                                case 'end':
+                                                                    return e.stop();
+                                                            }
+                                                    }, e);
+                                                })
+                                            )).apply(this, arguments);
+                                        }),
+                                        (s = function () {
+                                            return u.apply(this, arguments);
+                                        }),
                                         (c = function () {
-                                            return (c = J(
+                                            return (c = z(
                                                 regeneratorRuntime.mark(function e(t) {
                                                     var o, i, a;
                                                     return regeneratorRuntime.wrap(function (e) {
@@ -6484,7 +6505,7 @@
                                                                                 : document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r);
                                                                         }),
                                                                         (e.next = 3),
-                                                                        Z.fetchHTMLFromFile(''.concat(K.path, '/html/f1/mobile-hamburger-menu.html'))
+                                                                        J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/mobile-hamburger-menu.html'))
                                                                     );
                                                                 case 3:
                                                                     return (
@@ -6494,7 +6515,7 @@
                                                                             '.mobile-nav-upper-ul #contactUs'
                                                                         ).href = 'href="https://events.hotelsforhope.com/v6/support?siteId='.concat(t, '"')),
                                                                         (e.next = 8),
-                                                                        Z.waitForSelectorInDOM('.navbar-hamburger')
+                                                                        J.waitForSelectorInDOM('.navbar-hamburger')
                                                                     );
                                                                 case 8:
                                                                     document.querySelector('.navbar-hamburger').addEventListener('click', function () {
@@ -6515,14 +6536,14 @@
                                             return c.apply(this, arguments);
                                         }),
                                         (i = function () {
-                                            return (i = J(
+                                            return (i = z(
                                                 regeneratorRuntime.mark(function e(t) {
                                                     var o;
                                                     return regeneratorRuntime.wrap(function (e) {
                                                         for (;;)
                                                             switch ((e.prev = e.next)) {
                                                                 case 0:
-                                                                    return (e.next = 2), Z.fetchHTMLFromFile(''.concat(K.path, '/html/f1/f1-header.html'));
+                                                                    return (e.next = 2), J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/f1-header.html'));
                                                                 case 2:
                                                                     (o = e.sent),
                                                                         n.insertAdjacentHTML('beforebegin', o),
@@ -6545,12 +6566,12 @@
                                         (o = function (e) {
                                             return i.apply(this, arguments);
                                         }),
-                                        (e.next = 6),
-                                        Z.waitForSelectorInDOM('header')
+                                        (e.next = 8),
+                                        J.waitForSelectorInDOM('header')
                                     );
-                                case 6:
-                                    (n = document.querySelector('header')), (r = document.querySelector('#language')), o(t.site_id), a(t.site_id);
-                                case 10:
+                                case 8:
+                                    (n = document.querySelector('header')), (r = document.querySelector('#language')), o(t.site_id), a(t.site_id), s();
+                                case 13:
                                 case 'end':
                                     return e.stop();
                             }
@@ -6558,8 +6579,8 @@
                 })
             )).apply(this, arguments);
         }
-        function X(e) {
-            return (X =
+        function Q(e) {
+            return (Q =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -6568,24 +6589,24 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function ee(e) {
+        function X(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function te(e, t) {
-            return (te =
+        function ee(e, t) {
+            return (ee =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function ne(e, t, n) {
-            return (ne =
+        function te(e, t, n) {
+            return (te =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = re(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = ne(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6594,14 +6615,14 @@
                           }
                       })(e, t, n || e);
         }
-        function re(e) {
-            return (re = Object.setPrototypeOf
+        function ne(e) {
+            return (ne = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var oe = new (function () {
+        var re = new (function () {
                 return {
                     site_id: 54494,
                     affiliate_id: 16980,
@@ -6624,21 +6645,19 @@
                     show_language_select: !0,
                     show_currency_select: !1,
                     show_date_prompt: !1,
-                    fav_icon_url: ''.concat(Y.path, '/site_configs/').concat(V, '/img/favicon.png'),
+                    fav_icon_url: ''.concat(Y.path, '/html/f1/img/favicon.png'),
                     has_custom_styles: !1,
                     custom_styles_url: '',
                     has_social_sharing: !0,
                     header: {
-                        logo_file_location: ''.concat(Y.path, '/site_configs/').concat(V, '/img/logo.png'),
+                        logo_file_location: ''.concat(Y.path, '/html/f1/img/logo.png'),
                         logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
                         background: '#e10600',
                         logo_flex_position: 'space-between',
                         logo_max_width: '300px',
                     },
-                    banner_image_url: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('
-                        .concat(Y.path, '/site_configs/')
-                        .concat(V, '/img/f1-bg-1.jpg) no-repeat center center /cover'),
-                    map_marker_image_url: ''.concat(Y.path, '/site_configs/').concat(V, '/img/favicon.png'),
+                    banner_image_url: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('.concat(Y.path, '/html/f1/img/f1-bg-1.jpg) no-repeat center center /cover'),
+                    map_marker_image_url: ''.concat(Y.path, '/html/f1/img/favicon.png'),
                     theme: 'light',
                     background_color: '#fff',
                     primary_color: '#e10600',
@@ -6661,7 +6680,7 @@
                     is_resbeat_client: !1,
                 };
             })(),
-            ie = (function (e) {
+            oe = (function (e) {
                 function t() {
                     var e;
                     return (
@@ -6669,24 +6688,24 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, t),
                         (e = (function (e, t) {
-                            return !t || ('object' !== X(t) && 'function' != typeof t) ? ee(e) : t;
-                        })(this, re(t).call(this, oe))),
-                        ne(re(t.prototype), 'init', ee(e)).call(ee(e)),
+                            return !t || ('object' !== Q(t) && 'function' != typeof t) ? X(e) : t;
+                        })(this, ne(t).call(this, re))),
+                        te(ne(t.prototype), 'init', X(e)).call(X(e)),
                         e
                     );
                 }
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && te(e, t);
+                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && ee(e, t);
                     })(t, e),
                     t
                 );
             })(G);
         !(function (e) {
-            Q.apply(this, arguments);
-        })(oe),
-            new ie();
+            K.apply(this, arguments);
+        })(re),
+            new oe();
     },
 ]);
 //# sourceMappingURL=f1_portugal_20-54494.map

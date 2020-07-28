@@ -60,6 +60,13 @@ export default async function f1Styles(site_config) {
         mq.addListener(widthChange);
     }
 
+    async function addFooter() {
+        const footer_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/footer.html`);
+
+        document.querySelector('.ArnSupportLinks .ArnSupportBottom').insertAdjacentHTML('afterend', footer_html);
+    }
+
     addHeader(site_config.site_id);
     addHamburgerMenu(site_config.site_id);
+    addFooter();
 }

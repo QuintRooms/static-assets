@@ -6668,8 +6668,8 @@
                     button_hover_background_color: '#fff',
                     button_hover_text_color: '#e10600',
                     button_hover_border_color: '#e10600',
-                    google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
-                    google_font_name: 'Montserrat',
+                    google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
+                    google_font_name: 'Titillium Web',
                     ads: {
                         sidebar_ad: {is_active: !1, image_url: '', outbound_url: ''},
                         between_property_ad: {is_active: !1, image_url: '', outbound_url: ''},

@@ -1,0 +1,298 @@
+<nav class="header-upper">
+    <ul id="f1-com">
+        <li>
+            <a href="https://www.formula1.com" target="_blank">Formula1.com</a>
+        </li>
+    </ul>
+    <ul id="tickets">
+        <li>
+            <a href="https://www.formula1.com/en/buy/tickets.html" target="_blank">F1 Tickets </a>
+        </li>
+        <li>
+            <a href="https://www.formula1.com/en/buy/paddock-club.html" target="_blank">F1 Hospitality </a>
+        </li>
+        <li>
+            <a href="https://www.formula1.com/en/buy/f1-experiences.html" target="_blank">F1 Experiences </a>
+        </li>
+        <li>
+            <div class="language"></div>
+        </li>
+    </ul>
+</nav>
+
+<style>
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
+        url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Black_web.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
+        url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Bold_web.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
+        url('https://dev-static.hotelsforhope.com/ares/site_configs/f1_portugal_20-54494/fonts/Formula1-Display-Regular_web.ttf') format('truetype');
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGIVzY4SY.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPecZTIAOhVxoMyOr9n_E7fdM3mDbRS.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPecZTIAOhVxoMyOr9n_E7fdMPmDQ.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGIVzY4SY.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGItzYw.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+    .header-upper {
+        color: #333;
+        padding: 0 5px 0 5px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 8%;
+        align-items: center;
+    }
+
+    .header-upper a {
+        text-decoration: none;
+        color: #333;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: .2px;
+        font-weight: 600;
+        margin: 0 6px;
+        font-family: 'Titillium Web', 'sans-serif';
+    }
+
+    .header-upper a:hover {
+        color: #e10600;
+        border-bottom: 3px solid #e10600;
+    }
+
+    .header-upper li {
+        list-style: none;
+        margin: 7px;
+    }
+
+    .header-upper #tickets {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    header {
+        justify-content: space-between;
+        border-bottom: unset !important;
+    }
+
+    header #races-contact {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 20%;
+    }
+
+    #races-contact li {
+        list-style: none;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #races-contact a {
+        text-decoration: none;
+        padding: 0 5px 0 5px;
+        color: #fff;
+        font-family: 'F1-Regular', 'Helvetica';
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    #races-contact li:hover {
+        background-color: #15151e;
+        transition: all .3s ease;
+    }
+
+    .config-label#language-label {
+        color: #333;
+    }
+
+    .config-container {
+        display: none !important;
+    }
+
+    .show-language-container {
+        z-index: 5;
+    }
+
+    #AdminControlsContainer {
+        display: none !important;
+    }
+
+    /* mobile styles */
+
+    .navbar-hamburger {
+        border: none;
+        cursor: pointer;
+        float: none;
+        margin: 0 25px;
+        display: none;
+    }
+
+    .toggle-bar {
+        display: block;
+        height: 2px;
+        background-color: #fff;
+        position: relative;
+        margin-top: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .top-bar {
+        width: 16px;
+    }
+
+    .middle-bar {
+        width: 19px;
+    }
+
+    .bottom-bar {
+        width: 22px;
+    }
+
+    .mobile-nav-container {
+        background-color: #fff;
+    }
+
+    .mobile-nav-container svg {
+        float: right;
+    }
+
+    .mobile-nav-container li {
+        list-style: none;
+        padding: 12px;
+    }
+
+    .mobile-nav-container a {
+        text-decoration: none;
+        padding: 12px;
+        font-size: 15px;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .mobile-nav-container, .hide {
+        display: none;
+    }
+
+    .show-mobile-nav {
+        display: block;
+        width: 100vw;
+        height: auto;
+    }
+
+    .mobile-nav-upper-ul {
+        background-color: #e10600;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-nav-upper-ul a {
+        color: #fff;
+        border-right: 1px solid #f08380;
+        border-bottom: 1px solid #f08380;
+        border-bottom-right-radius: 15px;
+        font-family: 'F1-Regular', 'Helvetica' !important;
+        font-weight: 400;
+    }
+
+    .mobile-nav-lower-ul {
+        background-color: #fff;
+        margin: 0;
+        padding: 10px 0;
+        font-family: 'Titillium Web', 'sans-serif' !important;
+        font-weight: 400;
+    }
+
+    .mobile-nav-lower-ul a {
+        color: #15151E;
+        border-right: 1px solid #d0d0d2;
+        border-bottom: 1px solid #d0d0d2;
+        border-bottom-right-radius: 15px;
+        letter-spacing: .2px;
+    }
+
+    .mobile-nav-lower-ul #language {
+        border-right: 1px solid #d0d0d2;
+        border-bottom: 1px solid #d0d0d2;
+        border-bottom-right-radius: 15px;
+        margin: 0;
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
+
+
+    @media screen and (max-width: 1100px){
+        header #races-contact, .header-upper {
+            display: none;
+        }
+
+        .navbar-hamburger {
+            display: block;
+        }
+    }
+
+</style>

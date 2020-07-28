@@ -6476,7 +6476,7 @@
                                                                 case 0:
                                                                     return (e.next = 2), J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/footer.html'));
                                                                 case 2:
-                                                                    (t = e.sent), document.querySelector('.ArnSupportLinks .ArnSupportBottom').insertAdjacentHTML('afterend', t);
+                                                                    (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
                                                                 case 4:
                                                                 case 'end':
                                                                     return e.stop();

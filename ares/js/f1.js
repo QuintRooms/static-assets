@@ -37,7 +37,7 @@ export default async function f1Styles(site_config) {
 
     async function addHamburgerMenu(siteId) {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/mobile-hamburger-menu.html`);
-        header.insertAdjacentHTML('afterend', burger_html);
+        header.insertAdjacentHTML('beforeend', burger_html);
 
         document.querySelector('.mobile-nav-upper-ul #contactUs').href = `href="https://events.hotelsforhope.com/v6/support?siteId=${siteId}"`;
 

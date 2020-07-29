@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Wide';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Titillium Web', 'sans-serif';
+    font-size: 14px;
+    background: #f7f4f1;
+}
+
+.secondary-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.secondary-nav a {
+    color: #15151e;
+    text-transform: uppercase;
+}
+
+.primary-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #e10600;
+    color: #fff;
+    padding: 24px;
+}
+
+.primary-nav img {
+    max-width: 300px;
+    margin-right: 64px;
+}
+
+.primary-nav a {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'F1-Regular', 'Helvetica';
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background: url('images/banner.jpg') no-repeat center center /cover;
+    height: 500px;
+    text-transform: uppercase
+}
+
+.banner h1 {
+    font-family: 'F1-Bold', 'Helvetica';
+}
+
+.banner a {
+    background: #fff;
+    color: #15151e;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 18px;
+    display: inline-block;
+}
+
+section {
+    margin-top: 42px;
+}
+
+section p {
+    padding: 8px 0;
+}
+
+section h1 {
+    font-family: 'F1-Bold', 'Helvetica';
+
+}
+
+section h3 {
+    text-transform: uppercase;
+    font-family: 'F1-Regular', 'Helvetica';
+
+}
+
+.race,
+.race-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    margin-right: 48px;
+}
+
+.month {
+    text-transform: uppercase;
+}
+
+.name {
+    text-transform: uppercase;
+    font-family: 'F1-Bold', 'Helvetica';
+}
+
+.race a {
+    text-transform: uppercase;
+}
+
+
+.country-flag {
+    width: 48px;
+    border-radius: 5px;
+    margin-right: 18px;
+}
+
+
+
+fieldset {
+    border-top: 10px solid #e10600;
+    border-right: 10px solid #e10600;
+    border-bottom: 10px solid #e10600;
+    border-radius: 0 25px 25px 0;
+    padding: 24px;
+}
+
+footer fieldset {
+    border-top: 10px solid transparent;
+    border-right: 10px solid #38383f;
+    border-bottom: 10px solid #38383f;
+    border-radius: 0 0 25px 0;
+}

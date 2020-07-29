@@ -106,19 +106,46 @@ section h3 {
 
 }
 
+.race {
+    background-color: #fff;
+    margin: 6px 0;
+    justify-content: space-between;
+    height: 90px;
+}
+
 .race,
 .race-info {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
+.race-info {
+    width: 65%;
+}
+
+.race-location {
+    display: flex;
+    margin-right: 5px;
+}
+
 .date {
-    margin-right: 48px;
+    border-right: 2px dotted #E7E7E7;
+    width: 20%;
+}
+
+.days {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'F1-Regular', 'Helvetica';
 }
 
 .month {
     text-transform: uppercase;
+    text-align: center;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
 }
 
 .name {
@@ -128,16 +155,18 @@ section h3 {
 
 .race a {
     text-transform: uppercase;
+    color: #333;
+    border: 1px solid #E7E7E7;
+    padding: 7px 10px;
+    border-radius: 7px;
+    margin-right: 15px;
 }
-
 
 .country-flag {
-    width: 48px;
+    width: 11%;
     border-radius: 5px;
-    margin-right: 18px;
+    margin: 0 12px 0 20px;
 }
-
-
 
 fieldset {
     border-top: 10px solid #e10600;
@@ -147,9 +176,106 @@ fieldset {
     padding: 24px;
 }
 
+#page-lower {
+    background: #fff;
+    width: 100%;
+}
+
+.why-book-here {
+    padding-top: 50px;
+}
+
+.why-book-here h4 {
+    font-family: 'F1-Bold', 'Helvetica';
+    padding-bottom: 5px;
+    border-bottom: 4px solid #121117;
+}
+
+.tiles {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.tile {
+    border-bottom: 1px solid #D5D5D6;
+    border-right: 1px solid #D5D5D6;
+    border-radius: 0 0 15px 0;
+}
+
+.tile-content {
+    padding: 15px;
+}
+
+.tile-content h5 {
+    font-family: 'F1-Regular';
+}
+
+.f1-experiences {
+    margin-top: 70px;
+    height: 250px;
+}
+
+.f1-experiences img {
+    margin-bottom: 15px;
+}
+
+.f1-experiences p {
+    border-top: 4px solid #121117;
+    padding: 25px 0;
+}
+
+.f1-experiences a {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #e10600;
+    border: 1px solid #E7E7E7;
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+
+.footer-bottom {
+    background: #121117;
+}
+
 footer fieldset {
-    border-top: 10px solid transparent;
+    border: none;
+    padding: 0;
+}
+
+.mobile-app {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.footer-nav {
+    margin-top: 50px;
+    background-color: #121117;
+    color: #fff;
     border-right: 10px solid #38383f;
     border-bottom: 10px solid #38383f;
     border-radius: 0 0 25px 0;
+}
+
+.footer-nav li {
+    list-style: none;
+}
+
+hr {
+    color: #38383f;
+    width: 100%;
+}
+
+.privacy-links {
+    margin-top: 15px;
+}
+
+.privacy-links a {
+    margin: 5px;
+    color: #fff;
+}
+
+.trademark-details {
+    color: #333;
 }

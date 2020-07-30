@@ -173,12 +173,18 @@ fieldset {
     border-right: 10px solid #e10600;
     border-bottom: 10px solid #e10600;
     border-radius: 0 25px 25px 0;
-    padding: 24px;
+    padding: 24px 24px 24px 0;
+}
+
+#lower-section {
+    background-color: #fff;
 }
 
 #page-lower {
     background: #fff;
     width: 100%;
+    max-width: 1140px;
+    margin: auto;
 }
 
 .why-book-here {
@@ -194,17 +200,23 @@ fieldset {
 .tiles {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin-top: 15px;
 }
 
-.tile {
-    border-bottom: 1px solid #D5D5D6;
-    border-right: 1px solid #D5D5D6;
-    border-radius: 0 0 15px 0;
+.tile img {
+    width: 100%;
+    height: 40%;
+}
+
+#rewards {
+    margin: 0 25px;
 }
 
 .tile-content {
-    padding: 15px;
+    padding: 15px 15px 15px 0;
+    border-bottom: 1px solid #D5D5D6;
+    border-right: 1px solid #D5D5D6;
+    border-radius: 0 0 15px 0;
 }
 
 .tile-content h5 {
@@ -212,7 +224,6 @@ fieldset {
 }
 
 .f1-experiences {
-    margin-top: 70px;
     height: 250px;
 }
 
@@ -243,28 +254,91 @@ footer fieldset {
     padding: 0;
 }
 
+.footer-top {
+    background-color: #333;
+}
+
+.footer-top .container {
+    display: flex;
+    justify-content: space-;
+}
+
 .mobile-app {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.download {
+    width: 10%;
+    text-align: center;
+    font-family: 'Titillium Web', 'sans-serif';
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-top: 7px;
+}
+
+#google-play {
+    width: 14%;
+}
+
+.social-media {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.social-logo {
+    border: 2px solid #000;
+    border-radius: 12px;
+    height: 60px;
+    width: 60px;
+    margin: auto 5px;
+}
+
+.social-logo img {
+    width: 70%;
+    padding: 5px;
 }
 
 .footer-nav {
-    margin-top: 50px;
+    margin-top: 35px;
     background-color: #121117;
     color: #fff;
     border-right: 10px solid #38383f;
     border-bottom: 10px solid #38383f;
     border-radius: 0 0 25px 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'F1-Regular';
+    font-size: 12px;
+}
+
+.footer-nav h4 {
+    font-size: 14px;
+}
+
+.footer-nav img {
+    height: 10%;
+    margin-right: 20px;
 }
 
 .footer-nav li {
     list-style: none;
+    padding: 7px 0;
 }
 
 hr {
-    color: #38383f;
-    width: 100%;
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#38383f;
+    height: 1px;
+    margin: 40px 0;
 }
 
 .privacy-links {
@@ -274,8 +348,14 @@ hr {
 .privacy-links a {
     margin: 5px;
     color: #fff;
+    text-transform: uppercase;
 }
 
 .trademark-details {
     color: #333;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    
 }

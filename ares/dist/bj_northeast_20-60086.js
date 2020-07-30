@@ -48,7 +48,7 @@
 })([
     function (e, t, n) {
         var r = n(24)('wks'),
-            o = n(18),
+            o = n(17),
             i = n(1).Symbol,
             a = 'function' == typeof i;
         (e.exports = function (e) {
@@ -151,7 +151,7 @@
         var r = n(1),
             o = n(7),
             i = n(10),
-            a = n(18)('src'),
+            a = n(17)('src'),
             c = n(71),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
@@ -178,19 +178,10 @@
     },
     function (e, t, n) {
         var r = n(87),
-            o = n(16);
+            o = n(15);
         e.exports = function (e) {
             return r(o(e));
         };
-    },
-    function (e, t, n) {
-        'use strict';
-        function r() {
-            return {path: 'https://static.hotelsforhope.com/ares'};
-        }
-        n.d(t, 'a', function () {
-            return r;
-        });
     },
     function (e, t) {
         var n = {}.toString;
@@ -234,6 +225,15 @@
         };
     },
     function (e, t, n) {
+        'use strict';
+        function r() {
+            return {path: 'https://static.hotelsforhope.com/ares'};
+        }
+        n.d(t, 'a', function () {
+            return r;
+        });
+    },
+    function (e, t, n) {
         var r = n(22);
         e.exports = function (e, t, n) {
             if ((r(e), void 0 === t)) return e;
@@ -263,7 +263,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(14),
+        var r = n(13),
             o = n(0)('toStringTag'),
             i =
                 'Arguments' ==
@@ -298,7 +298,7 @@
             i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
         (e.exports = function (e, t) {
             return i[e] || (i[e] = void 0 !== t ? t : {});
-        })('versions', []).push({version: r.version, mode: n(17) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
+        })('versions', []).push({version: r.version, mode: n(16) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
     },
     function (e, t) {
         e.exports = function (e, t) {
@@ -306,7 +306,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(20),
+        var r = n(19),
             o = Math.min;
         e.exports = function (e) {
             return e > 0 ? o(r(e), 9007199254740991) : 0;
@@ -324,7 +324,7 @@
         t.f = {}.propertyIsEnumerable;
     },
     function (e, t, n) {
-        var r = n(16);
+        var r = n(15);
         e.exports = function (e) {
             return Object(r(e));
         };
@@ -333,7 +333,7 @@
         'use strict';
         var r = n(60),
             o = n(94),
-            i = n(19),
+            i = n(18),
             a = n(12);
         (e.exports = n(95)(
             Array,
@@ -360,7 +360,7 @@
             o,
             i,
             a,
-            c = n(17),
+            c = n(16),
             s = n(1),
             u = n(21),
             l = n(23),
@@ -936,7 +936,7 @@
     },
     function (e, t, n) {
         var r = n(24)('keys'),
-            o = n(18);
+            o = n(17);
         e.exports = function (e) {
             return r[e] || (r[e] = o(e));
         };
@@ -956,11 +956,11 @@
     function (e, t, n) {
         for (
             var r = n(30),
-                o = n(15),
+                o = n(14),
                 i = n(9),
                 a = n(1),
                 c = n(7),
-                s = n(19),
+                s = n(18),
                 u = n(0),
                 l = u('iterator'),
                 d = u('toStringTag'),
@@ -1032,7 +1032,7 @@
         var r = n(9),
             o = n(7),
             i = n(8),
-            a = n(16),
+            a = n(15),
             c = n(0),
             s = n(42),
             u = c('species'),
@@ -1518,11 +1518,10 @@
     function (e, t, n) {
         'use strict';
         n.d(t, 'a', function () {
-            return u;
+            return c;
         });
         n(45), n(39), n(30), n(64), n(31), n(32), n(33);
-        var r = n(13);
-        function o(e, t, n, r, o, i, a) {
+        function r(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -1531,37 +1530,36 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function i(e) {
+        function o(e) {
             return function () {
                 var t = this,
                     n = arguments;
-                return new Promise(function (r, i) {
+                return new Promise(function (o, i) {
                     var a = e.apply(t, n);
                     function c(e) {
-                        o(a, r, i, c, s, 'next', e);
+                        r(a, o, i, c, s, 'next', e);
                     }
                     function s(e) {
-                        o(a, r, i, c, s, 'throw', e);
+                        r(a, o, i, c, s, 'throw', e);
                     }
                     c(void 0);
                 });
             };
         }
-        function a(e, t) {
+        function i(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var c = n(43),
-            s = new r.a(),
-            u = (function () {
+        var a = n(43),
+            c = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, o, u, l, d, f, h, p, m, y, g, v;
+                var t, n, r, c, s, u, l, d, f, h, p, m, y;
                 return (
                     (t = e),
                     (n = [
@@ -1574,7 +1572,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((v = i(
+                                ((y = o(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1595,7 +1593,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return v.apply(this, arguments);
+                                    return y.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1635,7 +1633,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((g = i(
+                                ((m = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1658,13 +1656,13 @@
                                     })
                                 )),
                                 function (e) {
-                                    return g.apply(this, arguments);
+                                    return m.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'waitForTextInDOM',
                             value:
-                                ((y = i(
+                                ((p = o(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1687,7 +1685,7 @@
                                     })
                                 )),
                                 function (e, t) {
-                                    return y.apply(this, arguments);
+                                    return p.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1699,7 +1697,7 @@
                         {
                             key: 'moveOrphanedElementsIntoNewWrapper',
                             value:
-                                ((m = i(
+                                ((h = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1723,13 +1721,13 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return m.apply(this, arguments);
+                                    return h.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'createWrapper',
                             value:
-                                ((p = i(
+                                ((f = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         var i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -1755,7 +1753,7 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return p.apply(this, arguments);
+                                    return f.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1784,7 +1782,7 @@
                         {
                             key: 'addMultipleHeaderLogos',
                             value:
-                                ((h = i(
+                                ((d = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o, i;
                                         return regeneratorRuntime.wrap(
@@ -1823,7 +1821,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return h.apply(this, arguments);
+                                    return d.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1866,7 +1864,7 @@
                         {
                             key: 'ratesComingSoon',
                             value:
-                                ((f = i(
+                                ((l = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -1896,7 +1894,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return f.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1964,7 +1962,7 @@
                         {
                             key: 'fetchHTMLFromFile',
                             value:
-                                ((d = i(
+                                ((u = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -1998,7 +1996,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return d.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2011,9 +2009,9 @@
                         {
                             key: 'calculateNights',
                             value: function () {
-                                var e = c(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = c(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                                return c(t).diff(c(e), 'days');
+                                var e = a(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    t = a(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return a(t).diff(a(e), 'days');
                             },
                         },
                         {
@@ -2039,7 +2037,7 @@
                         {
                             key: 'addAttributeToInput',
                             value:
-                                ((l = i(
+                                ((s = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2070,7 +2068,7 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return l.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2085,7 +2083,7 @@
                         {
                             key: 'addHeaderButtonLink',
                             value:
-                                ((u = i(
+                                ((c = o(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2120,49 +2118,11 @@
                                     })
                                 )),
                                 function (e, t) {
-                                    return u.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
-                        {
-                            key: 'addF1Styles',
-                            value:
-                                ((o = i(
-                                    regeneratorRuntime.mark(function e(t) {
-                                        var n, r, o;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            return (e.next = 2), this.fetchHTMLFromFile(''.concat(s.path, '/html/f1-header.html'));
-                                                        case 2:
-                                                            (n = e.sent),
-                                                                (r = document.querySelector('header')).insertAdjacentHTML('beforebegin', n),
-                                                                r.insertAdjacentHTML(
-                                                                    'beforeend',
-                                                                    '\n            <ul id="races-contact">\n                <li>\n                    <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>\n                </li>\n                <li>\n                    <a href="https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                                                                        t,
-                                                                        '" id="contactUs" target="_blank">Contact Us</a>\n                </li>\n            </ul>\n        '
-                                                                    )
-                                                                ),
-                                                                (o = document.querySelector('#language')),
-                                                                document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', o);
-                                                        case 8:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function (e) {
-                                    return o.apply(this, arguments);
-                                }),
-                        },
-                    ]) && a(t.prototype, n),
-                    r && a(t, r),
+                    ]) && i(t.prototype, n),
+                    r && i(t, r),
                     e
                 );
             })();
@@ -2172,7 +2132,7 @@
         var r = n(2),
             o = n(29),
             i = n(26),
-            a = n(20),
+            a = n(19),
             c = n(62),
             s = n(40),
             u = Math.max,
@@ -2318,7 +2278,7 @@
             (h = function (e) {
                 delete g[e];
             }),
-            'process' == n(14)(d)
+            'process' == n(13)(d)
                 ? (r = function (e) {
                       d.nextTick(a(v, e, 1));
                   })
@@ -2368,7 +2328,7 @@
     function (e, t, n) {
         var r = n(1),
             o = n(11),
-            i = n(17),
+            i = n(16),
             a = n(52),
             c = n(5).f;
         e.exports = function (e) {
@@ -2525,7 +2485,7 @@
     },
     function (e, t, n) {
         var r = n(6),
-            o = n(14),
+            o = n(13),
             i = n(0)('match');
         e.exports = function (e) {
             var t;
@@ -2534,7 +2494,7 @@
     },
     function (e, t, n) {
         var r = n(29),
-            o = n(15);
+            o = n(14);
         n(110)('keys', function () {
             return function (e) {
                 return o(r(e));
@@ -3147,7 +3107,7 @@
                     e
                 );
             })(),
-            T = n(13);
+            T = n(20);
         function O(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -3316,6 +3276,7 @@
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
                                                                             (D.init(e.site_config, e.page_name, I),
+                                                                            e.buildCurrencyDropdown(),
                                                                             I.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             I.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -4200,7 +4161,7 @@
                             key: 'styleCUGMapPins',
                             value: function () {
                                 document.querySelector('.SearchHotels') &&
-                                    'false' !== this.site_config.cug.is_cug &&
+                                    !1 !== this.site_config.cug.is_cug &&
                                     document.body.insertAdjacentHTML(
                                         'beforeend',
                                         '\n        <style>\n            .SearchHotels .arnMapMarker {\n                background: '
@@ -5389,7 +5350,7 @@
             u = n(8),
             l = n(24),
             d = n(27),
-            f = n(18),
+            f = n(17),
             h = n(0),
             p = n(52),
             m = n(51),
@@ -5406,7 +5367,7 @@
             L = n(58),
             C = n(55),
             M = n(5),
-            E = n(15),
+            E = n(14),
             q = L.f,
             P = M.f,
             R = A.f,
@@ -5508,7 +5469,7 @@
             (n(57).f = A.f = X),
             (n(28).f = K),
             (C.f = ee),
-            i && !n(17) && c($, 'propertyIsEnumerable', K, !0),
+            i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
             (p.f = function (e) {
                 return z(h(e));
             })),
@@ -5666,7 +5627,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(19),
+        var r = n(18),
             o = n(0)('iterator'),
             i = Array.prototype;
         e.exports = function (e) {
@@ -5676,7 +5637,7 @@
     function (e, t, n) {
         var r = n(23),
             o = n(0)('iterator'),
-            i = n(19);
+            i = n(18);
         e.exports = n(11).getIteratorMethod = function (e) {
             if (null != e) return e[o] || e['@@iterator'] || i[r(e)];
         };
@@ -5705,7 +5666,7 @@
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
-            s = 'process' == n(14)(a);
+            s = 'process' == n(13)(a);
         e.exports = function () {
             var e,
                 t,
@@ -5829,7 +5790,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(18)('meta'),
+        var r = n(17)('meta'),
             o = n(6),
             i = n(10),
             a = n(5).f,
@@ -5871,7 +5832,7 @@
             });
     },
     function (e, t, n) {
-        var r = n(15),
+        var r = n(14),
             o = n(55),
             i = n(28);
         e.exports = function (e) {
@@ -5882,7 +5843,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(14);
+        var r = n(13);
         e.exports = Object('z').propertyIsEnumerable(0)
             ? Object
             : function (e) {
@@ -5890,7 +5851,7 @@
               };
     },
     function (e, t, n) {
-        var r = n(20),
+        var r = n(19),
             o = Math.max,
             i = Math.min;
         e.exports = function (e, t) {
@@ -5898,7 +5859,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(14);
+        var r = n(13);
         e.exports =
             Array.isArray ||
             function (e) {
@@ -5908,7 +5869,7 @@
     function (e, t, n) {
         var r = n(5),
             o = n(2),
-            i = n(15);
+            i = n(14);
         e.exports = n(3)
             ? Object.defineProperties
             : function (e, t) {
@@ -5961,11 +5922,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(17),
+        var r = n(16),
             o = n(4),
             i = n(9),
             a = n(7),
-            c = n(19),
+            c = n(18),
             s = n(96),
             u = n(27),
             l = n(59),
@@ -6043,7 +6004,7 @@
     },
     function (e, t, n) {
         var r = n(3),
-            o = n(15),
+            o = n(14),
             i = n(12),
             a = n(28).f;
         e.exports = function (e) {
@@ -6071,8 +6032,8 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(20),
-            o = n(16);
+        var r = n(19),
+            o = n(15);
         e.exports = function (e) {
             var t = String(o(this)),
                 n = '',
@@ -6083,8 +6044,8 @@
         };
     },
     function (e, t, n) {
-        var r = n(20),
-            o = n(16);
+        var r = n(19),
+            o = n(15);
         e.exports = function (e) {
             return function (t, n) {
                 var i,
@@ -6129,7 +6090,7 @@
     },
     function (e, t, n) {
         var r = n(63),
-            o = n(16);
+            o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
             return String(o(e));
@@ -6505,7 +6466,7 @@
         n.r(t);
         n(67), n(68), n(69);
         var r = n(65),
-            o = new (n(13).a)(),
+            o = new (n(20).a)(),
             i = 'bj_northeast_20-'.concat(60086);
         function a(e) {
             return (a =

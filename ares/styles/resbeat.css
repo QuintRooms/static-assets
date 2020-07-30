@@ -208,6 +208,11 @@ input[type='email'].email-mask,
 
 .SearchHotels .ArnRateCell {
     text-align: center;
+    justify-content: space-around;
+}
+
+.SearchHotels .OnSale .ArnRateCell {
+    justify-content: space-between;
 }
 
 .SearchHotels .ArnLimitedAvail {

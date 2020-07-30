@@ -47,7 +47,7 @@
         n((n.s = 108));
 })([
     function (e, t, n) {
-        var r = n(23)('wks'),
+        var r = n(20)('wks'),
             o = n(17),
             i = n(1).Symbol,
             a = 'function' == typeof i;
@@ -83,7 +83,7 @@
             o = n(11),
             i = n(9),
             a = n(10),
-            c = n(25),
+            c = n(22),
             s = function (e, t, n) {
                 var u,
                     l,
@@ -144,7 +144,7 @@
     },
     function (e, t, n) {
         var r = n(5),
-            o = n(24);
+            o = n(21);
         e.exports = n(3)
             ? function (e, t, n) {
                   return r.f(e, t, o(1, n));
@@ -221,6 +221,105 @@
             return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
         };
     },
+    function (e, t) {
+        e.exports = {};
+    },
+    function (e, t, n) {
+        var r = n(11),
+            o = n(1),
+            i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
+        (e.exports = function (e, t) {
+            return i[e] || (i[e] = void 0 !== t ? t : {});
+        })('versions', []).push({version: r.version, mode: n(16) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
+    },
+    function (e, t) {
+        e.exports = function (e, t) {
+            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
+        };
+    },
+    function (e, t, n) {
+        var r = n(23);
+        e.exports = function (e, t, n) {
+            if ((r(e), void 0 === t)) return e;
+            switch (n) {
+                case 1:
+                    return function (n) {
+                        return e.call(t, n);
+                    };
+                case 2:
+                    return function (n, r) {
+                        return e.call(t, n, r);
+                    };
+                case 3:
+                    return function (n, r, o) {
+                        return e.call(t, n, r, o);
+                    };
+            }
+            return function () {
+                return e.apply(t, arguments);
+            };
+        };
+    },
+    function (e, t) {
+        e.exports = function (e) {
+            if ('function' != typeof e) throw TypeError(e + ' is not a function!');
+            return e;
+        };
+    },
+    function (e, t, n) {
+        var r = n(5).f,
+            o = n(8),
+            i = n(0)('toStringTag');
+        e.exports = function (e, t, n) {
+            e && !o((e = n ? e : e.prototype), i) && r(e, i, {configurable: !0, value: t});
+        };
+    },
+    function (e, t, n) {
+        var r = n(18),
+            o = Math.min;
+        e.exports = function (e) {
+            return e > 0 ? o(r(e), 9007199254740991) : 0;
+        };
+    },
+    function (e, t) {
+        t.f = {}.propertyIsEnumerable;
+    },
+    function (e, t, n) {
+        var r = n(15);
+        e.exports = function (e) {
+            return Object(r(e));
+        };
+    },
+    function (e, t, n) {
+        var r = n(14),
+            o = n(0)('toStringTag'),
+            i =
+                'Arguments' ==
+                r(
+                    (function () {
+                        return arguments;
+                    })()
+                );
+        e.exports = function (e) {
+            var t, n, a;
+            return void 0 === e
+                ? 'Undefined'
+                : null === e
+                ? 'Null'
+                : 'string' ==
+                  typeof (n = (function (e, t) {
+                      try {
+                          return e[t];
+                      } catch (e) {}
+                  })((t = Object(e)), o))
+                ? n
+                : i
+                ? r(t)
+                : 'Object' == (a = r(t)) && 'function' == typeof t.callee
+                ? 'Arguments'
+                : a;
+        };
+    },
     function (e, t, n) {
         'use strict';
         var r,
@@ -229,20 +328,20 @@
             a,
             c = n(16),
             s = n(1),
-            u = n(25),
-            l = n(31),
+            u = n(22),
+            l = n(28),
             d = n(4),
             h = n(6),
-            f = n(26),
-            p = n(75),
-            m = n(76),
-            y = n(56),
-            g = n(57).set,
-            v = n(81)(),
-            b = n(58),
-            S = n(82),
-            w = n(83),
-            _ = n(84),
+            f = n(23),
+            p = n(77),
+            m = n(78),
+            y = n(60),
+            g = n(62).set,
+            v = n(83)(),
+            b = n(63),
+            S = n(84),
+            w = n(85),
+            _ = n(86),
             A = s.TypeError,
             x = s.process,
             k = x && x.versions,
@@ -368,7 +467,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(85)(L.prototype, {
+            }).prototype = n(87)(L.prototype, {
                 then: function (e, t) {
                     var n = q(y(this, L));
                     return (
@@ -393,8 +492,8 @@
                 return e === L || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !P, {Promise: L}),
-            n(27)(L, 'Promise'),
-            n(86)('Promise'),
+            n(24)(L, 'Promise'),
+            n(88)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
@@ -412,7 +511,7 @@
                     d.F *
                         !(
                             P &&
-                            n(87)(function (e) {
+                            n(89)(function (e) {
                                 L.all(e).catch(M);
                             })
                         ),
@@ -454,12 +553,9 @@
                 }
             );
     },
-    function (e, t) {
-        e.exports = {};
-    },
     function (e, t, n) {
         'use strict';
-        var r = n(31),
+        var r = n(28),
             o = {};
         (o[n(0)('toStringTag')] = 'z'),
             o + '' != '[object z]' &&
@@ -786,106 +882,10 @@
         }
     },
     function (e, t, n) {
-        var r = n(11),
-            o = n(1),
-            i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
-        (e.exports = function (e, t) {
-            return i[e] || (i[e] = void 0 !== t ? t : {});
-        })('versions', []).push({version: r.version, mode: n(16) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
-    },
-    function (e, t) {
-        e.exports = function (e, t) {
-            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
-        };
-    },
-    function (e, t, n) {
-        var r = n(26);
-        e.exports = function (e, t, n) {
-            if ((r(e), void 0 === t)) return e;
-            switch (n) {
-                case 1:
-                    return function (n) {
-                        return e.call(t, n);
-                    };
-                case 2:
-                    return function (n, r) {
-                        return e.call(t, n, r);
-                    };
-                case 3:
-                    return function (n, r, o) {
-                        return e.call(t, n, r, o);
-                    };
-            }
-            return function () {
-                return e.apply(t, arguments);
-            };
-        };
-    },
-    function (e, t) {
-        e.exports = function (e) {
-            if ('function' != typeof e) throw TypeError(e + ' is not a function!');
-            return e;
-        };
-    },
-    function (e, t, n) {
-        var r = n(5).f,
-            o = n(8),
-            i = n(0)('toStringTag');
-        e.exports = function (e, t, n) {
-            e && !o((e = n ? e : e.prototype), i) && r(e, i, {configurable: !0, value: t});
-        };
-    },
-    function (e, t, n) {
-        var r = n(18),
-            o = Math.min;
-        e.exports = function (e) {
-            return e > 0 ? o(r(e), 9007199254740991) : 0;
-        };
-    },
-    function (e, t) {
-        t.f = {}.propertyIsEnumerable;
-    },
-    function (e, t, n) {
-        var r = n(15);
-        e.exports = function (e) {
-            return Object(r(e));
-        };
-    },
-    function (e, t, n) {
-        var r = n(14),
-            o = n(0)('toStringTag'),
-            i =
-                'Arguments' ==
-                r(
-                    (function () {
-                        return arguments;
-                    })()
-                );
-        e.exports = function (e) {
-            var t, n, a;
-            return void 0 === e
-                ? 'Undefined'
-                : null === e
-                ? 'Null'
-                : 'string' ==
-                  typeof (n = (function (e, t) {
-                      try {
-                          return e[t];
-                      } catch (e) {}
-                  })((t = Object(e)), o))
-                ? n
-                : i
-                ? r(t)
-                : 'Object' == (a = r(t)) && 'function' == typeof t.callee
-                ? 'Arguments'
-                : a;
-        };
-    },
-    function (e, t, n) {
         'use strict';
         var r = n(64),
             o = n(93),
-            i = n(20),
+            i = n(19),
             a = n(12);
         (e.exports = n(94)(
             Array,
@@ -926,7 +926,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(23)('keys'),
+        var r = n(20)('keys'),
             o = n(17);
         e.exports = function (e) {
             return r[e] || (r[e] = o(e));
@@ -937,7 +937,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(31),
+        var r = n(28),
             o = RegExp.prototype.exec;
         e.exports = function (e, t) {
             var n = e.exec;
@@ -994,7 +994,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(89);
+        n(76);
         var r = n(10),
             o = n(9),
             i = n(7),
@@ -1075,10 +1075,10 @@
     function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(30),
-            i = n(28),
+            o = n(27),
+            i = n(25),
             a = n(18),
-            c = n(63),
+            c = n(61),
             s = n(37),
             u = Math.max,
             l = Math.min,
@@ -1166,7 +1166,7 @@
                 i = n(10),
                 a = n(1),
                 c = n(9),
-                s = n(20),
+                s = n(19),
                 u = n(0),
                 l = u('iterator'),
                 d = u('toStringTag'),
@@ -1633,8 +1633,8 @@
             c = n(10),
             s = n(68).KEY,
             u = n(7),
-            l = n(23),
-            d = n(27),
+            l = n(20),
+            d = n(24),
             h = n(17),
             f = n(0),
             p = n(46),
@@ -1643,10 +1643,10 @@
             g = n(72),
             v = n(2),
             b = n(6),
-            S = n(30),
+            S = n(27),
             w = n(12),
             _ = n(34),
-            A = n(24),
+            A = n(21),
             x = n(52),
             k = n(74),
             C = n(55),
@@ -1752,7 +1752,7 @@
             (C.f = Z),
             (R.f = J),
             (n(54).f = k.f = X),
-            (n(29).f = K),
+            (n(26).f = K),
             (L.f = ee),
             i && !n(16) && c(W, 'propertyIsEnumerable', K, !0),
             (p.f = function (e) {
@@ -1842,7 +1842,7 @@
     },
     function (e, t, n) {
         var r = n(12),
-            o = n(28),
+            o = n(25),
             i = n(71);
         e.exports = function (e) {
             return function (t, n, a) {
@@ -1905,8 +1905,8 @@
             };
     },
     function (e, t, n) {
-        var r = n(29),
-            o = n(24),
+        var r = n(26),
+            o = n(21),
             i = n(12),
             a = n(34),
             c = n(8),
@@ -1923,101 +1923,8 @@
               };
     },
     function (e, t, n) {
-        var r = n(2),
-            o = n(26),
-            i = n(0)('species');
-        e.exports = function (e, t) {
-            var n,
-                a = r(e).constructor;
-            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
-        };
-    },
-    function (e, t, n) {
-        var r,
-            o,
-            i,
-            a = n(25),
-            c = n(80),
-            s = n(53),
-            u = n(33),
-            l = n(1),
-            d = l.process,
-            h = l.setImmediate,
-            f = l.clearImmediate,
-            p = l.MessageChannel,
-            m = l.Dispatch,
-            y = 0,
-            g = {},
-            v = function () {
-                var e = +this;
-                if (g.hasOwnProperty(e)) {
-                    var t = g[e];
-                    delete g[e], t();
-                }
-            },
-            b = function (e) {
-                v.call(e.data);
-            };
-        (h && f) ||
-            ((h = function (e) {
-                for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
-                return (
-                    (g[++y] = function () {
-                        c('function' == typeof e ? e : Function(e), t);
-                    }),
-                    r(y),
-                    y
-                );
-            }),
-            (f = function (e) {
-                delete g[e];
-            }),
-            'process' == n(14)(d)
-                ? (r = function (e) {
-                      d.nextTick(a(v, e, 1));
-                  })
-                : m && m.now
-                ? (r = function (e) {
-                      m.now(a(v, e, 1));
-                  })
-                : p
-                ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
-                : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
-                ? ((r = function (e) {
-                      l.postMessage(e + '', '*');
-                  }),
-                  l.addEventListener('message', b, !1))
-                : (r =
-                      'onreadystatechange' in u('script')
-                          ? function (e) {
-                                s.appendChild(u('script')).onreadystatechange = function () {
-                                    s.removeChild(this), v.call(e);
-                                };
-                            }
-                          : function (e) {
-                                setTimeout(a(v, e, 1), 0);
-                            })),
-            (e.exports = {set: h, clear: f});
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(26);
-        function o(e) {
-            var t, n;
-            (this.promise = new e(function (e, r) {
-                if (void 0 !== t || void 0 !== n) throw TypeError('Bad Promise constructor');
-                (t = e), (n = r);
-            })),
-                (this.resolve = r(t)),
-                (this.reject = r(n));
-        }
-        e.exports.f = function (e) {
-            return new o(e);
-        };
-    },
-    function (e, t, n) {
         var r = n(55),
-            o = n(60),
+            o = n(57),
             i = n(8),
             a = n(4),
             c = n(6),
@@ -2033,7 +1940,7 @@
     },
     function (e, t, n) {
         var r = n(8),
-            o = n(30),
+            o = n(27),
             i = n(35)('IE_PROTO'),
             a = Object.prototype;
         e.exports =
@@ -2044,11 +1951,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(62),
+        var r = n(59),
             o = n(2),
-            i = n(56),
-            a = n(63),
-            c = n(28),
+            i = n(60),
+            a = n(61),
+            c = n(25),
             s = n(37),
             u = n(38),
             l = n(7),
@@ -2140,10 +2047,103 @@
         };
     },
     function (e, t, n) {
+        var r = n(2),
+            o = n(23),
+            i = n(0)('species');
+        e.exports = function (e, t) {
+            var n,
+                a = r(e).constructor;
+            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
+        };
+    },
+    function (e, t, n) {
         'use strict';
-        var r = n(88)(!0);
+        var r = n(75)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
+        };
+    },
+    function (e, t, n) {
+        var r,
+            o,
+            i,
+            a = n(22),
+            c = n(82),
+            s = n(53),
+            u = n(33),
+            l = n(1),
+            d = l.process,
+            h = l.setImmediate,
+            f = l.clearImmediate,
+            p = l.MessageChannel,
+            m = l.Dispatch,
+            y = 0,
+            g = {},
+            v = function () {
+                var e = +this;
+                if (g.hasOwnProperty(e)) {
+                    var t = g[e];
+                    delete g[e], t();
+                }
+            },
+            b = function (e) {
+                v.call(e.data);
+            };
+        (h && f) ||
+            ((h = function (e) {
+                for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
+                return (
+                    (g[++y] = function () {
+                        c('function' == typeof e ? e : Function(e), t);
+                    }),
+                    r(y),
+                    y
+                );
+            }),
+            (f = function (e) {
+                delete g[e];
+            }),
+            'process' == n(14)(d)
+                ? (r = function (e) {
+                      d.nextTick(a(v, e, 1));
+                  })
+                : m && m.now
+                ? (r = function (e) {
+                      m.now(a(v, e, 1));
+                  })
+                : p
+                ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
+                : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
+                ? ((r = function (e) {
+                      l.postMessage(e + '', '*');
+                  }),
+                  l.addEventListener('message', b, !1))
+                : (r =
+                      'onreadystatechange' in u('script')
+                          ? function (e) {
+                                s.appendChild(u('script')).onreadystatechange = function () {
+                                    s.removeChild(this), v.call(e);
+                                };
+                            }
+                          : function (e) {
+                                setTimeout(a(v, e, 1), 0);
+                            })),
+            (e.exports = {set: h, clear: f});
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(23);
+        function o(e) {
+            var t, n;
+            (this.promise = new e(function (e, r) {
+                if (void 0 !== t || void 0 !== n) throw TypeError('Bad Promise constructor');
+                (t = e), (n = r);
+            })),
+                (this.resolve = r(t)),
+                (this.reject = r(n));
+        }
+        e.exports.f = function (e) {
+            return new o(e);
         };
     },
     function (e, t, n) {
@@ -2180,7 +2180,7 @@
         });
     },
     function (e, t, n) {
-        var r = n(30),
+        var r = n(27),
             o = n(13);
         n(107)('keys', function () {
             return function (e) {
@@ -2189,7 +2189,7 @@
         });
     },
     function (e, t, n) {
-        e.exports = n(23)('native-function-to-string', Function.toString);
+        e.exports = n(20)('native-function-to-string', Function.toString);
     },
     function (e, t, n) {
         var r = n(17)('meta'),
@@ -2236,7 +2236,7 @@
     function (e, t, n) {
         var r = n(13),
             o = n(51),
-            i = n(29);
+            i = n(26);
         e.exports = function (e) {
             var t = r(e),
                 n = o.f;
@@ -2297,6 +2297,35 @@
                 : o(r(e));
         };
     },
+    function (e, t, n) {
+        var r = n(18),
+            o = n(15);
+        e.exports = function (e) {
+            return function (t, n) {
+                var i,
+                    a,
+                    c = String(o(t)),
+                    s = r(n),
+                    u = c.length;
+                return s < 0 || s >= u
+                    ? e
+                        ? ''
+                        : void 0
+                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
+                    ? e
+                        ? c.charAt(s)
+                        : i
+                    : e
+                    ? c.slice(s, s + 2)
+                    : a - 56320 + ((i - 55296) << 10) + 65536;
+            };
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(38);
+        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
+    },
     function (e, t) {
         e.exports = function (e, t, n, r) {
             if (!(e instanceof t) || (void 0 !== r && r in e)) throw TypeError(n + ': incorrect invocation!');
@@ -2304,12 +2333,12 @@
         };
     },
     function (e, t, n) {
-        var r = n(25),
-            o = n(77),
-            i = n(78),
+        var r = n(22),
+            o = n(79),
+            i = n(80),
             a = n(2),
-            c = n(28),
-            s = n(79),
+            c = n(25),
+            s = n(81),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, h) {
@@ -2343,7 +2372,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(20),
+        var r = n(19),
             o = n(0)('iterator'),
             i = Array.prototype;
         e.exports = function (e) {
@@ -2351,9 +2380,9 @@
         };
     },
     function (e, t, n) {
-        var r = n(31),
+        var r = n(28),
             o = n(0)('iterator'),
-            i = n(20);
+            i = n(19);
         e.exports = n(11).getIteratorMethod = function (e) {
             if (null != e) return e[o] || e['@@iterator'] || i[r(e)];
         };
@@ -2378,7 +2407,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(57).set,
+            o = n(62).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
@@ -2443,7 +2472,7 @@
     function (e, t, n) {
         var r = n(2),
             o = n(6),
-            i = n(58);
+            i = n(63);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -2506,35 +2535,6 @@
         };
     },
     function (e, t, n) {
-        var r = n(18),
-            o = n(15);
-        e.exports = function (e) {
-            return function (t, n) {
-                var i,
-                    a,
-                    c = String(o(t)),
-                    s = r(n),
-                    u = c.length;
-                return s < 0 || s >= u
-                    ? e
-                        ? ''
-                        : void 0
-                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
-                    ? e
-                        ? c.charAt(s)
-                        : i
-                    : e
-                    ? c.slice(s, s + 2)
-                    : a - 56320 + ((i - 55296) << 10) + 65536;
-            };
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(38);
-        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
-    },
-    function (e, t, n) {
         'use strict';
         n(91);
         var r = n(2),
@@ -2587,10 +2587,10 @@
             o = n(4),
             i = n(10),
             a = n(9),
-            c = n(20),
+            c = n(19),
             s = n(95),
-            u = n(27),
-            l = n(60),
+            u = n(24),
+            l = n(57),
             d = n(0)('iterator'),
             h = !([].keys && 'next' in [].keys()),
             f = function () {
@@ -2644,8 +2644,8 @@
     function (e, t, n) {
         'use strict';
         var r = n(52),
-            o = n(24),
-            i = n(27),
+            o = n(21),
+            i = n(24),
             a = {};
         n(9)(a, n(0)('iterator'), function () {
             return this;
@@ -2667,7 +2667,7 @@
         var r = n(3),
             o = n(13),
             i = n(12),
-            a = n(29).f;
+            a = n(26).f;
         e.exports = function (e) {
             return function (t) {
                 for (var n, c = i(t), s = o(c), u = s.length, l = 0, d = []; u > l; ) (n = s[l++]), (r && !a.call(c, n)) || d.push(e ? [n, c[n]] : c[n]);
@@ -2721,7 +2721,7 @@
         });
     },
     function (e, t, n) {
-        var r = n(62),
+        var r = n(59),
             o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
@@ -3084,13 +3084,13 @@
     function (e, t, n) {
         'use strict';
         n.r(t);
-        n(44), n(48), n(19), n(21), n(59), n(22), n(61);
+        n(44), n(48), n(56), n(58);
         function r() {
             return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         var o = new r(),
             i = 'resbeat_test-'.concat(62011);
-        n(41), n(90), n(92), n(42), n(32), n(96), n(65), n(99), n(101), n(102);
+        n(29), n(30), n(41), n(31), n(90), n(92), n(42), n(32), n(96), n(65), n(99), n(101), n(102);
         var a = 'URLSearchParams' in self,
             c = 'Symbol' in self && 'iterator' in Symbol,
             s =
@@ -6524,7 +6524,7 @@
                         n
                     );
                 }
-                var n, r, o, i, a, c;
+                var n, r, o, i, a, c, s;
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
@@ -6536,7 +6536,8 @@
                             key: 'init',
                             value: function () {
                                 var e = this;
-                                this.applyResbeatStyles(),
+                                this.addLinkToRewardsPlatform(),
+                                    this.applyResbeatStyles(),
                                     this.applyResbeatConfigColors(),
                                     this.updateLogin(),
                                     this.styleRegisterContainer(),
@@ -6634,7 +6635,7 @@
                         {
                             key: 'updateLogin',
                             value:
-                                ((c = Q(
+                                ((s = Q(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -6657,7 +6658,7 @@
                                     })
                                 )),
                                 function () {
-                                    return c.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6713,7 +6714,7 @@
                         {
                             key: 'displayRewardPoints',
                             value:
-                                ((a = Q(
+                                ((c = Q(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -6778,7 +6779,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return a.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6966,7 +6967,7 @@
                         {
                             key: 'removeAnchorTag',
                             value:
-                                ((i = Q(
+                                ((a = Q(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -6992,7 +6993,7 @@
                                     })
                                 )),
                                 function () {
-                                    return i.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -7062,6 +7063,74 @@
                                     );
                             },
                         },
+                        {
+                            key: 'getMemberUsername',
+                            value: function () {
+                                var e,
+                                    t = re.getMetaTagContent('memberMetaTag');
+                                if (t && (e = JSON.parse(t)).MemberUsername) return e.MemberUsername;
+                            },
+                        },
+                        {
+                            key: 'setLoginRedirectUrl',
+                            value: function () {
+                                var e = window.location.host;
+                                return ''.concat(e, '/v6/login');
+                            },
+                        },
+                        {
+                            key: 'getLoginRedirectUrl',
+                            value: function () {
+                                return this.setLoginRedirectUrl();
+                            },
+                        },
+                        {
+                            key: 'addLinkToRewardsPlatform',
+                            value:
+                                ((i = Q(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o, i;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), re.waitForSelectorInDOM('header #commands');
+                                                        case 2:
+                                                            if (
+                                                                ((t = this.getLoginRedirectUrl()),
+                                                                (n = encodeURIComponent(t)),
+                                                                (r = this.getMemberUsername()),
+                                                                (o = btoa('member_username='.concat(r, '&site_id=').concat(this.site_config.site_id, '&redirect_url=').concat(n))),
+                                                                (i = document.querySelector('header #commands')),
+                                                                document.querySelector('.MemberAuthenticated') && i)
+                                                            ) {
+                                                                e.next = 9;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 9:
+                                                            i.insertAdjacentHTML(
+                                                                'afterBegin',
+                                                                '<a href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                    o,
+                                                                    '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                )
+                                                            );
+                                                        case 10:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
                     ]) && K(n.prototype, r),
                     o && K(n, o),
                     t
@@ -7077,39 +7146,30 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function ae(e, t, n, r, o, i, a) {
-            try {
-                var c = e[i](a),
-                    s = c.value;
-            } catch (e) {
-                return void n(e);
-            }
-            c.done ? t(s) : Promise.resolve(s).then(r, o);
-        }
-        function ce(e, t) {
+        function ae(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        function se(e) {
+        function ce(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function ue(e, t) {
-            return (ue =
+        function se(e, t) {
+            return (se =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function le(e, t, n) {
-            return (le =
+        function ue(e, t, n) {
+            return (ue =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = de(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = le(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -7118,15 +7178,15 @@
                           }
                       })(e, t, n || e);
         }
-        function de(e) {
-            return (de = Object.setPrototypeOf
+        function le(e) {
+            return (le = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var he = new B(),
-            fe = new (function () {
+        var de = new B(),
+            he = new (function () {
                 return {
                     site_id: 62011,
                     affiliate_id: 16827,
@@ -7197,18 +7257,18 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, t),
                     (e = (function (e, t) {
-                        return !t || ('object' !== ie(t) && 'function' != typeof t) ? se(e) : t;
-                    })(this, de(t).call(this, fe))),
-                    le(de(t.prototype), 'init', se(e)).call(se(e)),
+                        return !t || ('object' !== ie(t) && 'function' != typeof t) ? ce(e) : t;
+                    })(this, le(t).call(this, he))),
+                    ue(le(t.prototype), 'init', ce(e)).call(ce(e)),
                     e.init(),
                     e
                 );
             }
-            var n, r, o, i, a;
+            var n, r, o;
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && ue(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && se(e, t);
                 })(t, e),
                 (n = t),
                 (r = [
@@ -7216,14 +7276,13 @@
                         key: 'init',
                         value: function () {
                             var e = this;
-                            this.addLinkToRewardsPlatform(),
-                                document.querySelector('.SearchHotels') &&
-                                    he.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
-                                        e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
-                                    }),
+                            document.querySelector('.SearchHotels') &&
+                                de.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
+                                    e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
+                                }),
                                 document.querySelector('.SinglePropDetail') &&
                                     (this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
-                                    he.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
+                                    de.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
                                         e.boldLastWord(['.ArnLeftListContainer .translateMe']);
                                     })),
                                 document.querySelector('.CheckOutForm') &&
@@ -7245,70 +7304,8 @@
                             });
                         },
                     },
-                    {
-                        key: 'getMemberUsername',
-                        value: function () {
-                            var e,
-                                t = he.getMetaTagContent('memberMetaTag');
-                            if (t && (e = JSON.parse(t)).MemberUsername) return e.MemberUsername;
-                        },
-                    },
-                    {
-                        key: 'addLinkToRewardsPlatform',
-                        value:
-                            ((i = regeneratorRuntime.mark(function e() {
-                                var t, n, r;
-                                return regeneratorRuntime.wrap(
-                                    function (e) {
-                                        for (;;)
-                                            switch ((e.prev = e.next)) {
-                                                case 0:
-                                                    return (e.next = 2), he.waitForSelectorInDOM('header #commands');
-                                                case 2:
-                                                    if (
-                                                        ((t = this.getMemberUsername()),
-                                                        (n = btoa('member_username='.concat(t))),
-                                                        (r = document.querySelector('header #commands')),
-                                                        document.querySelector('.MemberAuthenticated') && r)
-                                                    ) {
-                                                        e.next = 7;
-                                                        break;
-                                                    }
-                                                    return e.abrupt('return');
-                                                case 7:
-                                                    r.insertAdjacentHTML(
-                                                        'afterBegin',
-                                                        '<a href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(n, '" target="_blank">RES<b>BEAT</b> Rewards</a>')
-                                                    );
-                                                case 8:
-                                                case 'end':
-                                                    return e.stop();
-                                            }
-                                    },
-                                    e,
-                                    this
-                                );
-                            })),
-                            (a = function () {
-                                var e = this,
-                                    t = arguments;
-                                return new Promise(function (n, r) {
-                                    var o = i.apply(e, t);
-                                    function a(e) {
-                                        ae(o, n, r, a, c, 'next', e);
-                                    }
-                                    function c(e) {
-                                        ae(o, n, r, a, c, 'throw', e);
-                                    }
-                                    a(void 0);
-                                });
-                            }),
-                            function () {
-                                return a.apply(this, arguments);
-                            }),
-                    },
-                ]) && ce(n.prototype, r),
-                o && ce(n, o),
+                ]) && ae(n.prototype, r),
+                o && ae(n, o),
                 t
             );
         })(oe))();

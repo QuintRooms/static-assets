@@ -1079,7 +1079,7 @@ export default class BasePortal {
     }
 
     styleCUGMapPins() {
-        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === 'false') return;
+        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === false) return;
         document.body.insertAdjacentHTML(
             'beforeend',
             `

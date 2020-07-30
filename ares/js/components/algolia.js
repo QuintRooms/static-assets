@@ -1,5 +1,7 @@
 const dayjs = require('dayjs');
 
+const customParseFormat = require('dayjs/plugin/customParseFormat');
+
 export default class Algolia {
     init(site_config, page_name, utilities) {
         let lat_lng;
@@ -189,15 +191,24 @@ export default class Algolia {
             const built_url = new URL(url);
             let lat;
             let lng;
-            let check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format(site_config.dayjs_date_format);
-            let check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format(site_config.dayjs_date_format);
+            let check_in_value;
+            let check_out_value;
 
-            if (utilities.getMetaTagContent('theme') !== 'standard') {
-                check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('D/M/YYYY');
-                check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('D/M/YYYY');
+            if (utilities.getMetaTagContent('theme') === 'standard') {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
+                console.log('=== standard', check_in_value);
+            } else {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
             }
 
             const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+            if (utilities.getMetaTagContent('theme') !== 'standard') {
+                this.check_in_value = document.querySelector('input#theCheckIn').value;
+                this.check_out_value = document.querySelector('input#theCheckOut').value;
+            }
 
             if (lat_lng) {
                 lat = lat_lng.lat;

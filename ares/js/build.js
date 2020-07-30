@@ -9,6 +9,8 @@ const env_path = new Path();
 
 const dayjs = require('dayjs');
 
+const customParseFormat = require('dayjs/plugin/customParseFormat');
+
 const utilities = new Utilities();
 const algolia = new Algolia();
 
@@ -1109,6 +1111,8 @@ export default class BasePortal {
         const config_container = document.querySelector('.config-container');
         const active_language_el = document.querySelector('meta[name="theme"]');
 
+        const params = new URLSearchParams(window.location.search);
+
         if (!this.site_config || !config_container || !active_language_el || !language_container_el) return;
         if (!this.site_config.show_language_select) {
             language_container_el.style.display = 'none';
@@ -1129,6 +1133,36 @@ export default class BasePortal {
             if (window.document.documentMode) return;
 
             language_label.querySelector('svg').classList.toggle('flip-svg');
+        });
+
+        language_container_el.querySelector('.language-container').addEventListener('click', (e) => {
+            if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
+                const clicked_language = document.getElementById(e.target.id).getAttribute('value');
+
+                let check_in_value;
+                let check_out_value;
+                console.log(this.site_config.dayjs_date_format);
+                if (active_language === 'standard') {
+                    // correctly formats dates on search results, need to test root page and need to fix night calculation
+                    check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
+                    check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
+
+                    console.log('=== standard', check_in_value);
+                } else {
+                    check_in_value = dayjs(document.querySelector('input#theCheckIn').value, this.site_config.dayjs_date_format).format(this.site_config.dayjs_date_format);
+                    check_out_value = dayjs(document.querySelector('input#theCheckOut').value, this.site_config.dayjs_date_format).format(this.site_config.dayjs_date_format);
+                }
+
+                const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                params.set('nights', nights);
+                params.set('checkin', check_in_value);
+                params.set('theme', clicked_language);
+                console.log(nights);
+                console.log(check_in_value);
+                console.log(decodeURIComponent(params.toString()));
+                window.location.search = params.toString();
+            }
         });
 
         window.addEventListener('click', (e) => {

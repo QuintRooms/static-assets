@@ -1,8 +1,6 @@
 import BasePortal from '../../js/build';
 import SiteConfig from './54494-config';
-import Utilities from '../../js/utilities';
-
-const utilities = new Utilities();
+import f1Styles from '../../js/f1';
 
 const site_config = new SiteConfig();
 
@@ -13,6 +11,6 @@ class ChildPortal extends BasePortal {
     }
 }
 
-utilities.addF1Styles(site_config.site_id);
+f1Styles(site_config);
 
 new ChildPortal();

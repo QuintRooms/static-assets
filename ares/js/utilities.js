@@ -1,8 +1,4 @@
-import Path from './path';
-
 const dayjs = require('dayjs');
-
-const env_path = new Path();
 
 export default class Utilities {
     /**
@@ -453,28 +449,5 @@ export default class Utilities {
                 `
             );
         }
-    }
-
-    async addF1Styles(siteId) {
-        const html = await this.fetchHTMLFromFile(`${env_path.path}/html/f1-header.html`);
-        // await this.waitForSelectorInDOM('header');
-
-        const header = document.querySelector('header');
-        header.insertAdjacentHTML('beforebegin', html);
-        header.insertAdjacentHTML(
-            'beforeend',
-            `
-            <ul id="races-contact">
-                <li>
-                    <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
-                </li>
-                <li>
-                    <a href="https://events.hotelsforhope.com/v6/support?siteId=${siteId}" id="contactUs" target="_blank">Contact Us</a>
-                </li>
-            </ul>
-        `
-        );
-        const language_el = document.querySelector('#language');
-        document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
     }
 }

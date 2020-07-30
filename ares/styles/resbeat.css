@@ -45,7 +45,7 @@ input[type='email'].email-mask,
 .MemberNotAuthenticated #thePasswordAjax label, .organizationsCommand, .MemberNotAuthenticated .redeem-promocode-container, .WBValidatedRegistrationForm #thePersonalInfoGroup label,
 .WBValidatedRegistrationForm #thePassCodeAjax,
 #availableUser, .RootBody h1,
-.RootBody h3, .SearchHotels .ArnPropClass, .SearchHotels .arnUnit + div, .full-stay, .ConfirmationForm .supportInfo, #theRateTotals .discount {
+.RootBody h3, .SearchHotels .arnUnit + div, .full-stay, .ConfirmationForm .supportInfo, #theRateTotals .discount {
     display: none !important;
 }
 

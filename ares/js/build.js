@@ -116,6 +116,7 @@ export default class BasePortal {
             // root page methods
             if (document.querySelector('.RootBody')) {
                 algolia.init(this.site_config, this.page_name, utilities);
+                this.buildCurrencyDropdown();
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',

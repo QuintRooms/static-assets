@@ -49,31 +49,32 @@ class ChildPortal extends Resbeat {
         });
     }
 
-    getMemberToken() {
-        const member_token_meta = document.querySelector('meta[name="memberToken"]');
+    getMemberUsername() {
+        const member_metatag_content = utilities.getMetaTagContent('memberMetaTag');
+        let member_json = '';
 
-        if (!member_token_meta) return;
+        if (!member_metatag_content) return;
 
-        const member_token = member_token_meta.content;
+        member_json = JSON.parse(member_metatag_content);
 
-        return member_token;
+        if (!member_json.MemberUsername) return;
+
+        return member_json.MemberUsername;
     }
 
     async addLinkToRewardsPlatform() {
         await utilities.waitForSelectorInDOM('header #commands');
 
-        const member_token = this.getMemberToken();
-        const login_url = 'https://hotels.resbeat.com/v6/login';
-
-        const query_string = `member_token=${member_token}&login_url=${login_url}`;
-
-        const encoded_query_string = btoa(query_string);
-
+        const member_username = this.getMemberUsername();
+        const encoded_query_string = btoa(`member_username=${member_username}`);
         const header_links = document.querySelector('header #commands');
 
         if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
 
-        header_links.insertAdjacentHTML('afterBegin', `<a href="http://e2e-redirect.localhost/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`);
+        header_links.insertAdjacentHTML(
+            'afterBegin',
+            `<a href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
+        );
     }
 }
 

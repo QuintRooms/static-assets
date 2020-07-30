@@ -260,43 +260,47 @@ footer fieldset {
 
 .footer-top .container {
     display: flex;
-    justify-content: space-;
+    justify-content: space-between;
 }
 
 .mobile-app {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
     display: flex;
     justify-content: flex-start;
-    align-content: center;
+    align-items: center;
 }
 
 .download {
-    width: 10%;
+    width: 25%;
     text-align: center;
     font-family: 'Titillium Web', 'sans-serif';
     text-transform: uppercase;
     font-size: 14px;
-    padding-top: 7px;
 }
 
-#google-play {
-    width: 14%;
+.mobile-app img {
+    margin: 0 5px;
+    cursor: pointer;
 }
 
 .social-media {
     display: flex;
     align-content: center;
     justify-content: space-evenly;
+    padding: 10px 0;
 }
 
 .social-logo {
-    border: 2px solid #000;
-    border-radius: 12px;
-    height: 60px;
-    width: 60px;
-    margin: auto 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 8px;
+    cursor: pointer;
 }
 
 .social-logo img {
@@ -329,6 +333,11 @@ footer fieldset {
 .footer-nav li {
     list-style: none;
     padding: 7px 0;
+    cursor: pointer;
+}
+
+.footer-nav li:hover {
+    text-decoration: underline;
 }
 
 hr {
@@ -357,5 +366,81 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-    
+    .race {
+        height: unset;
+        padding: 10px 0;
+    }
+
+    .race-location {
+        align-items: center;
+    }
+
+    .date {
+        padding-right: 20px;
+        width: 100%;
+    }
+
+    .days {
+        font-size: 12px;
+    }
+
+    .country-flag {
+        width: 20%;
+        height: 15%;
+    }
+
+    .book-btn {
+        display: none;
+    }
+
+    .why-book-here {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tiles {
+        flex-direction: column;
+    }
+
+    .f1-experiences {
+        margin: 50px 0
+    }
+
+    .footer-top .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .download {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .mobile-app {
+        flex-direction: column;
+        padding-bottom: 15px;
+        border-bottom: 2px solid black;
+        width: 100%;
+    }
+
+    .footer-nav img {
+        display: none;
+    }
+
+    .footer-nav ul {
+        width: 100%;
+    }
+
+    .footer-nav li {
+        border-bottom: 1px solid #38383f;
+    }
+
+    .tile-content {
+        margin-top: 15px;
+    }
+
+    #rewards {
+        margin: 25px 0;
+    }
 }

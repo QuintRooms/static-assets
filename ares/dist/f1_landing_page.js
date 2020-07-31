@@ -1115,17 +1115,17 @@
 
                         )
                             c(n[i++]);
-                        (t._c = []), (t._n = !1), e && !t._h && q(t);
+                        (t._c = []), (t._n = !1), e && !t._h && D(t);
                     });
                 }
             },
-            q = function (t) {
+            D = function (t) {
                 m.call(u, function () {
                     var e,
                         n,
                         r,
                         o = t._v,
-                        i = D(t);
+                        i = q(t);
                     if (
                         (i &&
                             ((e = w(function () {
@@ -1135,14 +1135,14 @@
                                     ? n({promise: t, reason: o})
                                     : (r = u.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = E || D(t) ? 2 : 1)),
+                            (t._h = E || q(t) ? 2 : 1)),
                         (t._a = void 0),
                         i && e.e)
                     )
                         throw e.v;
                 });
             },
-            D = function (t) {
+            q = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
             R = function (t) {
@@ -1151,11 +1151,11 @@
                     E ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
                 });
             },
-            C = function (t) {
+            F = function (t) {
                 var e = this;
                 e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), A(e, !0));
             },
-            F = function (t) {
+            C = function (t) {
                 var e,
                     n = this;
                 if (!n._d) {
@@ -1166,14 +1166,14 @@
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      e.call(t, s(F, r, 1), s(C, r, 1));
+                                      e.call(t, s(C, r, 1), s(F, r, 1));
                                   } catch (t) {
-                                      C.call(r, t);
+                                      F.call(r, t);
                                   }
                               })
                             : ((n._v = t), (n._s = 1), A(n, !1));
                     } catch (t) {
-                        C.call({_w: n, _d: !1}, t);
+                        F.call({_w: n, _d: !1}, t);
                     }
                 }
             };
@@ -1181,9 +1181,9 @@
             ((O = function (t) {
                 p(this, O, 'Promise', '_h'), d(t), r.call(this);
                 try {
-                    t(s(F, this, 1), s(C, this, 1));
+                    t(s(C, this, 1), s(F, this, 1));
                 } catch (t) {
-                    C.call(this, t);
+                    F.call(this, t);
                 }
             }),
             ((r = function (t) {
@@ -1207,7 +1207,7 @@
             })),
             (i = function () {
                 var t = new r();
-                (this.promise = t), (this.resolve = s(F, t, 1)), (this.reject = s(C, t, 1));
+                (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(F, t, 1));
             }),
             (x.f = $ = function (t) {
                 return t === O || t === c ? new i(t) : o(t);
@@ -2196,7 +2196,7 @@
                         race_expiry: '2020-07-20',
                         name: 'Aramco Magyar Nagydíj 2020',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/images/hungary.gif'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
@@ -2206,7 +2206,7 @@
                         race_expiry: '2020-08-03',
                         name: 'Pirelli British Grand Prix 2020',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/images/britain.gif'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2216,7 +2216,7 @@
                         race_expiry: '2020-10-26',
                         name: 'Heineken Portuguese Grand Prix 2020',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/images/australia.jpg'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2228,7 +2228,7 @@
                         race_expiry: '2020-07-20',
                         name: 'Aramco Magyar Nagydíj 2021',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/images/hungary.gif'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
@@ -2238,7 +2238,7 @@
                         race_expiry: '2020-08-03',
                         name: 'Pirelli British Grand Prix 2021',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/images/britain.gif'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2248,7 +2248,7 @@
                         race_expiry: '2021-10-26',
                         name: 'Heineken Portuguese Grand Prix 2021',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(r, '/html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2855,6 +2855,14 @@
                                 return o.apply(this, arguments);
                             }),
                     },
+                    {
+                        key: 'checkForPastDate',
+                        value: function (t) {
+                            t || console.error('No date passed into checkForPastDate()');
+                            var e = u();
+                            return u(t).diff(e, 'milliseconds') < 0;
+                        },
+                    },
                 ]) && a(e.prototype, n),
                 r && a(e, r),
                 t
@@ -2863,9 +2871,9 @@
         Object.keys(o).forEach(function (t) {
             var e = t.slice(-4);
             document
-                .querySelector('.banner')
+                .querySelector('#lower-section')
                 .insertAdjacentHTML(
-                    'afterend',
+                    'beforebegin',
                     '\n            <div class="container" id="races-container">\n                <section>\n                    <h1>'
                         .concat(
                             e,
@@ -2881,7 +2889,7 @@
                     var e = document.querySelector('.races');
                     Object.keys(t).forEach(function (n) {
                         e.insertAdjacentHTML(
-                            'afterbegin',
+                            'beforeend',
                             '\n            <div class="race">\n                <div class="race-info">\n                    <div class="date">\n                        <div class="days">'
                                 .concat(t[n].days, '</div>\n                        <div class="month">')
                                 .concat(

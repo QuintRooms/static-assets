@@ -10,7 +10,7 @@ function populateRaces(obj) {
     const races_list = document.querySelector('.races');
     Object.keys(obj).forEach((i) => {
         races_list.insertAdjacentHTML(
-            'afterbegin',
+            'beforeend',
             `
             <div class="race">
                 <div class="race-info">
@@ -36,8 +36,8 @@ function populateRaces(obj) {
 function populateRaceSeasons() {
     Object.keys(races).forEach((i) => {
         const year = i.slice(-4);
-        document.querySelector('.banner').insertAdjacentHTML(
-            'afterend',
+        document.querySelector('#lower-section').insertAdjacentHTML(
+            'beforebegin',
             `
             <div class="container" id="races-container">
                 <section>

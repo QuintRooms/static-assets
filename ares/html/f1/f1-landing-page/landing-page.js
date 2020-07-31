@@ -11,6 +11,7 @@ const utilities = new Utilities();
 function populateRaces(obj, year) {
     const races_list = document.querySelector(`.races-${year}`);
     Object.keys(obj).forEach((i) => {
+        if (utilities.checkForPastDate(obj[i].race_expiry)) return;
         races_list.insertAdjacentHTML(
             'beforeend',
             `
@@ -58,9 +59,4 @@ function populateRaceSeasons() {
     });
 }
 
-// loop over object and insert html for each race in object
-
-// function removePastRaces() {
-//     // get date from date class and check agains Date.now, if today's date is greater, remove the race from the dom/ display none.
-// }
 populateRaceSeasons();

@@ -1103,7 +1103,7 @@
                                         l = e.domain;
                                     try {
                                         a
-                                            ? (o || (2 == t._h && R(t), (t._h = 1)),
+                                            ? (o || (2 == t._h && F(t), (t._h = 1)),
                                               !0 === a ? (n = r) : (l && l.enter(), (n = a(r)), l && (l.exit(), (c = !0))),
                                               n === e.promise ? s(_('Promise-chain cycle')) : (i = P(n)) ? i.call(n, u, s) : u(n))
                                             : s(r);
@@ -1145,13 +1145,13 @@
             q = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
-            R = function (t) {
+            F = function (t) {
                 m.call(u, function () {
                     var e;
                     E ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
                 });
             },
-            F = function (t) {
+            R = function (t) {
                 var e = this;
                 e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), A(e, !0));
             },
@@ -1166,14 +1166,14 @@
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      e.call(t, s(C, r, 1), s(F, r, 1));
+                                      e.call(t, s(C, r, 1), s(R, r, 1));
                                   } catch (t) {
-                                      F.call(r, t);
+                                      R.call(r, t);
                                   }
                               })
                             : ((n._v = t), (n._s = 1), A(n, !1));
                     } catch (t) {
-                        F.call({_w: n, _d: !1}, t);
+                        R.call({_w: n, _d: !1}, t);
                     }
                 }
             };
@@ -1181,9 +1181,9 @@
             ((O = function (t) {
                 p(this, O, 'Promise', '_h'), d(t), r.call(this);
                 try {
-                    t(s(C, this, 1), s(F, this, 1));
+                    t(s(C, this, 1), s(R, this, 1));
                 } catch (t) {
-                    F.call(this, t);
+                    R.call(this, t);
                 }
             }),
             ((r = function (t) {
@@ -1207,7 +1207,7 @@
             })),
             (i = function () {
                 var t = new r();
-                (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(F, t, 1));
+                (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(R, t, 1));
             }),
             (x.f = $ = function (t) {
                 return t === O || t === c ? new i(t) : o(t);
@@ -2196,7 +2196,7 @@
                         race_expiry: '2020-07-20',
                         name: 'Aramco Magyar Nagydíj 2020',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/hungary.gif'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
@@ -2206,7 +2206,7 @@
                         race_expiry: '2020-08-03',
                         name: 'Pirelli British Grand Prix 2020',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/britain.gif'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2216,7 +2216,7 @@
                         race_expiry: '2020-10-26',
                         name: 'Heineken Portuguese Grand Prix 2020',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2225,20 +2225,20 @@
                     hungary: {
                         days: '17-19',
                         month: 'Jul',
-                        race_expiry: '2020-07-20',
+                        race_expiry: '2021-07-21',
                         name: 'Aramco Magyar Nagydíj 2021',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/hungary.gif'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
                     britain: {
                         days: '31-02',
                         month: 'Jul',
-                        race_expiry: '2020-08-03',
+                        race_expiry: '2021-08-03',
                         name: 'Pirelli British Grand Prix 2021',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/britain.gif'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2248,7 +2248,7 @@
                         race_expiry: '2021-10-26',
                         name: 'Heineken Portuguese Grand Prix 2021',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(r.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2286,588 +2286,588 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(t, r.key, r);
             }
         }
-        var u = n(78);
-        new ((function () {
-            function t() {
-                !(function (t, e) {
-                    if (!(t instanceof e)) throw new TypeError('Cannot call a class as a function');
-                })(this, t);
-            }
-            var e, n, r, o, i, s, l, f, h, d, p, v, y;
-            return (
-                (e = t),
-                (n = [
-                    {
-                        key: 'ieForEachPolyfill',
-                        value: function () {
-                            window.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = Array.prototype.forEach);
+        var u = n(78),
+            s = new ((function () {
+                function t() {
+                    !(function (t, e) {
+                        if (!(t instanceof e)) throw new TypeError('Cannot call a class as a function');
+                    })(this, t);
+                }
+                var e, n, r, o, i, s, l, f, h, d, p, v, y;
+                return (
+                    (e = t),
+                    (n = [
+                        {
+                            key: 'ieForEachPolyfill',
+                            value: function () {
+                                window.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = Array.prototype.forEach);
+                            },
                         },
-                    },
-                    {
-                        key: 'createHTML',
-                        value:
-                            ((y = c(
-                                regeneratorRuntime.mark(function t(e, n, r) {
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    return t.abrupt(
-                                                        'return',
-                                                        new Promise(function (t) {
-                                                            var o = document.querySelector(n);
-                                                            o && null != o && (o.insertAdjacentHTML(r, e), t());
-                                                        })
-                                                    );
-                                                case 1:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t, e, n) {
-                                return y.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'updateAttribute',
-                        value: function (t, e, n) {
-                            var r = document.querySelectorAll(t);
-                            r &&
-                                r.forEach(function (t, r) {
-                                    t.setAttribute(n, e);
-                                });
+                        {
+                            key: 'createHTML',
+                            value:
+                                ((y = c(
+                                    regeneratorRuntime.mark(function t(e, n, r) {
+                                        return regeneratorRuntime.wrap(function (t) {
+                                            for (;;)
+                                                switch ((t.prev = t.next)) {
+                                                    case 0:
+                                                        return t.abrupt(
+                                                            'return',
+                                                            new Promise(function (t) {
+                                                                var o = document.querySelector(n);
+                                                                o && null != o && (o.insertAdjacentHTML(r, e), t());
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return t.stop();
+                                                }
+                                        }, t);
+                                    })
+                                )),
+                                function (t, e, n) {
+                                    return y.apply(this, arguments);
+                                }),
                         },
-                    },
-                    {
-                        key: 'getAttribute',
-                        value: function (t, e) {
-                            if (document.querySelector(t)) return document.querySelector(t).getAttribute(e);
+                        {
+                            key: 'updateAttribute',
+                            value: function (t, e, n) {
+                                var r = document.querySelectorAll(t);
+                                r &&
+                                    r.forEach(function (t, r) {
+                                        t.setAttribute(n, e);
+                                    });
+                            },
                         },
-                    },
-                    {
-                        key: 'updateHTML',
-                        value: function (t, e) {
-                            var n = document.querySelectorAll(t);
-                            n &&
-                                n.forEach(function (t, n) {
-                                    t.innerHTML = e;
-                                });
+                        {
+                            key: 'getAttribute',
+                            value: function (t, e) {
+                                if (document.querySelector(t)) return document.querySelector(t).getAttribute(e);
+                            },
                         },
-                    },
-                    {
-                        key: 'appendToParent',
-                        value: function (t, e) {
-                            var n = document.querySelector(t),
-                                r = document.querySelector(e);
-                            n && r && r.appendChild(n);
+                        {
+                            key: 'updateHTML',
+                            value: function (t, e) {
+                                var n = document.querySelectorAll(t);
+                                n &&
+                                    n.forEach(function (t, n) {
+                                        t.innerHTML = e;
+                                    });
+                            },
                         },
-                    },
-                    {
-                        key: 'waitForSelectorInDOM',
-                        value:
-                            ((v = c(
-                                regeneratorRuntime.mark(function t(e) {
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    return t.abrupt(
-                                                        'return',
-                                                        new Promise(function (t) {
-                                                            var n = setInterval(function () {
-                                                                var r = document.querySelector(e);
-                                                                if (r) return t(r), clearInterval(n), r;
-                                                            }, 500);
-                                                        })
-                                                    );
-                                                case 1:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t) {
-                                return v.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'waitForTextInDOM',
-                        value:
-                            ((p = c(
-                                regeneratorRuntime.mark(function t(e, n) {
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    return t.abrupt(
-                                                        'return',
-                                                        new Promise(function (t) {
-                                                            var r = setInterval(function () {
-                                                                var o = document.querySelector(e).textContent;
-                                                                if (o === n) return t(o), clearInterval(r), o;
-                                                            }, 500);
-                                                        })
-                                                    );
-                                                case 1:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t, e) {
-                                return p.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'moveElementIntoExistingWrapper',
-                        value: function (t, e, n) {
-                            document.querySelector(e) && document.querySelector(t) && document.querySelector(e).insertAdjacentElement(n, document.querySelector(t));
+                        {
+                            key: 'appendToParent',
+                            value: function (t, e) {
+                                var n = document.querySelector(t),
+                                    r = document.querySelector(e);
+                                n && r && r.appendChild(n);
+                            },
                         },
-                    },
-                    {
-                        key: 'moveOrphanedElementsIntoNewWrapper',
-                        value:
-                            ((d = c(
-                                regeneratorRuntime.mark(function t(e, n, r, o) {
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    return t.abrupt(
-                                                        'return',
-                                                        new Promise(function (t) {
-                                                            document.querySelector(r) &&
-                                                                (document.querySelector(r).insertAdjacentHTML(o, '<div class id="'.concat(n, '"></div>')),
-                                                                e.forEach(function (e) {
-                                                                    document.getElementById(n).insertAdjacentElement('beforeEnd', e), t();
-                                                                }));
-                                                        })
-                                                    );
-                                                case 1:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t, e, n, r) {
-                                return d.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'createWrapper',
-                        value:
-                            ((h = c(
-                                regeneratorRuntime.mark(function t(e, n, r, o) {
-                                    var i;
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    if ((i = document.createElement('div'))) {
-                                                        t.next = 3;
-                                                        break;
+                        {
+                            key: 'waitForSelectorInDOM',
+                            value:
+                                ((v = c(
+                                    regeneratorRuntime.mark(function t(e) {
+                                        return regeneratorRuntime.wrap(function (t) {
+                                            for (;;)
+                                                switch ((t.prev = t.next)) {
+                                                    case 0:
+                                                        return t.abrupt(
+                                                            'return',
+                                                            new Promise(function (t) {
+                                                                var n = setInterval(function () {
+                                                                    var r = document.querySelector(e);
+                                                                    if (r) return t(r), clearInterval(n), r;
+                                                                }, 500);
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return t.stop();
+                                                }
+                                        }, t);
+                                    })
+                                )),
+                                function (t) {
+                                    return v.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'waitForTextInDOM',
+                            value:
+                                ((p = c(
+                                    regeneratorRuntime.mark(function t(e, n) {
+                                        return regeneratorRuntime.wrap(function (t) {
+                                            for (;;)
+                                                switch ((t.prev = t.next)) {
+                                                    case 0:
+                                                        return t.abrupt(
+                                                            'return',
+                                                            new Promise(function (t) {
+                                                                var r = setInterval(function () {
+                                                                    var o = document.querySelector(e).textContent;
+                                                                    if (o === n) return t(o), clearInterval(r), o;
+                                                                }, 500);
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return t.stop();
+                                                }
+                                        }, t);
+                                    })
+                                )),
+                                function (t, e) {
+                                    return p.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'moveElementIntoExistingWrapper',
+                            value: function (t, e, n) {
+                                document.querySelector(e) && document.querySelector(t) && document.querySelector(e).insertAdjacentElement(n, document.querySelector(t));
+                            },
+                        },
+                        {
+                            key: 'moveOrphanedElementsIntoNewWrapper',
+                            value:
+                                ((d = c(
+                                    regeneratorRuntime.mark(function t(e, n, r, o) {
+                                        return regeneratorRuntime.wrap(function (t) {
+                                            for (;;)
+                                                switch ((t.prev = t.next)) {
+                                                    case 0:
+                                                        return t.abrupt(
+                                                            'return',
+                                                            new Promise(function (t) {
+                                                                document.querySelector(r) &&
+                                                                    (document.querySelector(r).insertAdjacentHTML(o, '<div class id="'.concat(n, '"></div>')),
+                                                                    e.forEach(function (e) {
+                                                                        document.getElementById(n).insertAdjacentElement('beforeEnd', e), t();
+                                                                    }));
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return t.stop();
+                                                }
+                                        }, t);
+                                    })
+                                )),
+                                function (t, e, n, r) {
+                                    return d.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'createWrapper',
+                            value:
+                                ((h = c(
+                                    regeneratorRuntime.mark(function t(e, n, r, o) {
+                                        var i;
+                                        return regeneratorRuntime.wrap(function (t) {
+                                            for (;;)
+                                                switch ((t.prev = t.next)) {
+                                                    case 0:
+                                                        if ((i = document.createElement('div'))) {
+                                                            t.next = 3;
+                                                            break;
+                                                        }
+                                                        return t.abrupt('return');
+                                                    case 3:
+                                                        i.setAttribute('class', r),
+                                                            Array.prototype.forEach.call(document.querySelectorAll(e), function (t) {
+                                                                i.appendChild(t);
+                                                            }),
+                                                            document.querySelector(n).insertAdjacentElement(o, i);
+                                                    case 6:
+                                                    case 'end':
+                                                        return t.stop();
+                                                }
+                                        }, t);
+                                    })
+                                )),
+                                function (t, e, n, r) {
+                                    return h.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'createModal',
+                            value: function (t, e, n, r, o) {
+                                n &&
+                                    (document.querySelector(r).insertAdjacentHTML(o, '<span class="open-modal">Show '.concat(e, '</span>')),
+                                    document.body.insertAdjacentHTML(
+                                        'beforeEnd',
+                                        '<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>'.concat(
+                                            e,
+                                            '</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>'
+                                        )
+                                    ),
+                                    t.forEach(function (t) {
+                                        document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', t);
+                                    }),
+                                    document.querySelector('.open-modal').addEventListener('click', function () {
+                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
+                                    }),
+                                    document.querySelector('.close-modal').addEventListener('click', function () {
+                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'addMultipleHeaderLogos',
+                            value:
+                                ((f = c(
+                                    regeneratorRuntime.mark(function t(e) {
+                                        var n, r, o, i;
+                                        return regeneratorRuntime.wrap(
+                                            function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            return (
+                                                                (o = function (t) {
+                                                                    if (t.matches && !r)
+                                                                        try {
+                                                                            Object.keys(e).forEach(function (t) {
+                                                                                n.insertAdjacentHTML(
+                                                                                    e[t].insertPosition,
+                                                                                    '<img class="'.concat(e[t].className, '" src="').concat(e[t].imageUrl, '">')
+                                                                                ),
+                                                                                    (r = !0);
+                                                                            });
+                                                                        } catch (t) {
+                                                                            console.error(t);
+                                                                        }
+                                                                }),
+                                                                (t.next = 3),
+                                                                this.waitForSelectorInDOM('header')
+                                                            );
+                                                        case 3:
+                                                            (n = document.querySelector('header')), (i = window.matchMedia('(min-width: 1200px)')), o(i), i.addListener(o);
+                                                        case 7:
+                                                        case 'end':
+                                                            return t.stop();
                                                     }
-                                                    return t.abrupt('return');
-                                                case 3:
-                                                    i.setAttribute('class', r),
-                                                        Array.prototype.forEach.call(document.querySelectorAll(e), function (t) {
-                                                            i.appendChild(t);
-                                                        }),
-                                                        document.querySelector(n).insertAdjacentElement(o, i);
-                                                case 6:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t, e, n, r) {
-                                return h.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'createModal',
-                        value: function (t, e, n, r, o) {
-                            n &&
-                                (document.querySelector(r).insertAdjacentHTML(o, '<span class="open-modal">Show '.concat(e, '</span>')),
-                                document.body.insertAdjacentHTML(
-                                    'beforeEnd',
-                                    '<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>'.concat(
-                                        e,
-                                        '</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>'
-                                    )
-                                ),
-                                t.forEach(function (t) {
-                                    document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', t);
+                                            },
+                                            t,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (t) {
+                                    return f.apply(this, arguments);
                                 }),
-                                document.querySelector('.open-modal').addEventListener('click', function () {
-                                    document.querySelector('.modal-overlay').classList.toggle('show-modal');
-                                }),
-                                document.querySelector('.close-modal').addEventListener('click', function () {
-                                    document.querySelector('.modal-overlay').classList.toggle('show-modal');
-                                }));
                         },
-                    },
-                    {
-                        key: 'addMultipleHeaderLogos',
-                        value:
-                            ((f = c(
-                                regeneratorRuntime.mark(function t(e) {
-                                    var n, r, o, i;
-                                    return regeneratorRuntime.wrap(
-                                        function (t) {
+                        {
+                            key: 'emailVerificationSetup',
+                            value: function () {
+                                var t = document.createElement('script');
+                                (t.text =
+                                    "\n            const DeBounce_APIKEY = 'public_T0tSVklSNEZRTEtkc1c5MFZoUWhKZz09';\n            const DeBounce_BlockFreeEmails = 'false';\n        "),
+                                    document.body.appendChild(t);
+                                var e = document.createElement('script');
+                                e.setAttribute('src', 'https://cdn.debounce.io/widget/DeBounce.js'), e.setAttribute('async', !0), document.body.appendChild(e);
+                            },
+                        },
+                        {
+                            key: 'createDropdownMenu',
+                            value: function (t, e, n, r) {
+                                var o = document.querySelector(t),
+                                    i = document.querySelector(r);
+                                if (o && i) {
+                                    i.insertAdjacentHTML('beforeEnd', '<style>'.concat(n, '{display: none;}').concat(r, '{position: relative;}</style>').concat(e.outerHTML));
+                                    var c = document.querySelector(n);
+                                    document.addEventListener('click', function (t) {
+                                        var e = t.target;
+                                        e === o && c.classList.toggle('show-dropdown'),
+                                            document.querySelector(''.concat(n, '.show-dropdown')) && e !== o && c.classList.toggle('show-dropdown');
+                                    });
+                                }
+                            },
+                        },
+                        {
+                            key: 'addPropThumbTag',
+                            value: function (t, e) {
+                                !document.querySelector('#theArnProperty'.concat(e, ' .ArnPropThumb > .propThumbTag')) &&
+                                    document.querySelector('#theArnProperty'.concat(e)) &&
+                                    document
+                                        .querySelector('#theArnProperty'.concat(e, ' .ArnPropThumb'))
+                                        .insertAdjacentHTML('afterbegin', '<div class="propThumbTag">'.concat(t, '</div>'));
+                            },
+                        },
+                        {
+                            key: 'ratesComingSoon',
+                            value:
+                                ((l = c(
+                                    regeneratorRuntime.mark(function t(e) {
+                                        return regeneratorRuntime.wrap(
+                                            function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            if (document.querySelector('.SearchHotels')) {
+                                                                t.next = 2;
+                                                                break;
+                                                            }
+                                                            return t.abrupt('return');
+                                                        case 2:
+                                                            return (t.next = 4), this.waitForSelectorInDOM('.pollingFinished');
+                                                        case 4:
+                                                            e.forEach(function (t) {
+                                                                document.querySelector('#theArnProperty'.concat(t, ' .ArnLimitedAvail')) &&
+                                                                    (document.querySelector('#theArnProperty'.concat(t, ' .ArnLimitedAvail')).textContent = 'Rates Coming Soon');
+                                                            });
+                                                        case 5:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            },
+                                            t,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (t) {
+                                    return l.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addClass',
+                            value: function (t, e) {
+                                document.querySelector('.'.concat(t)).classList.add(e);
+                            },
+                        },
+                        {
+                            key: 'getMetaTagContent',
+                            value: function (t) {
+                                if (document.querySelector('meta[name="'.concat(t, '"]'))) return document.querySelector('meta[name="'.concat(t, '"]')).content;
+                            },
+                        },
+                        {
+                            key: 'parseJSON',
+                            value: function (t) {
+                                if (t) return JSON.parse(t);
+                            },
+                        },
+                        {
+                            key: 'getPageName',
+                            value: function () {
+                                var t,
+                                    e = document.body;
+                                return (
+                                    e.classList.contains('SearchHotels') && !e.classList.contains('HoldRoomsForm') && (t = 'search-results'),
+                                    e.classList.contains('SinglePropDetail') && (t = 'property-detail'),
+                                    e.classList.contains('CheckOutForm') && (t = 'checkout'),
+                                    e.classList.contains('ConfirmationForm') && (t = 'confirmation'),
+                                    e.classList.contains('RootBody') && (t = 'landing-page'),
+                                    e.classList.contains('WBFaq') && (t = 'faq'),
+                                    e.classList.contains('WBTermsAndConditions') && (t = 'terms-conditions'),
+                                    e.classList.contains('WBPrivacyPolicy') && (t = 'privacy-policy'),
+                                    e.classList.contains('WBRateGuaranteeForm2') && (t = 'lrg-page'),
+                                    e.classList.contains('WBValidatedRegistrationForm') && (t = 'cug-registration'),
+                                    e.classList.contains('HoldRoomsForm') && e.classList.contains('SearchHotels') && (t = 'hold-rooms'),
+                                    t
+                                );
+                            },
+                        },
+                        {
+                            key: 'getElementTextContent',
+                            value: function (t) {
+                                if (document.querySelector(t)) return document.querySelector(t).textContent;
+                            },
+                        },
+                        {
+                            key: 'fetchJSON',
+                            value: function (t) {
+                                return function () {
+                                    fetch(t)
+                                        .then(function (t) {
+                                            if (!t.ok) throw t;
+                                            return t.json();
+                                        })
+                                        .catch(function (e) {
+                                            e.text().then(function (e) {
+                                                console.error('Could not fetch json from '.concat(t), e);
+                                            });
+                                        });
+                                };
+                            },
+                        },
+                        {
+                            key: 'fetchHTMLFromFile',
+                            value:
+                                ((s = c(
+                                    regeneratorRuntime.mark(function t(e) {
+                                        var n;
+                                        return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
                                                 switch ((t.prev = t.next)) {
                                                     case 0:
                                                         return (
-                                                            (o = function (t) {
-                                                                if (t.matches && !r)
-                                                                    try {
-                                                                        Object.keys(e).forEach(function (t) {
-                                                                            n.insertAdjacentHTML(
-                                                                                e[t].insertPosition,
-                                                                                '<img class="'.concat(e[t].className, '" src="').concat(e[t].imageUrl, '">')
-                                                                            ),
-                                                                                (r = !0);
-                                                                        });
-                                                                    } catch (t) {
-                                                                        console.error(t);
-                                                                    }
-                                                            }),
+                                                            (n = ''),
                                                             (t.next = 3),
-                                                            this.waitForSelectorInDOM('header')
+                                                            fetch(e)
+                                                                .then(function (t) {
+                                                                    if (!t.ok) throw t;
+                                                                    return t.text();
+                                                                })
+                                                                .then(function (t) {
+                                                                    n = t;
+                                                                })
+                                                                .catch(function (t) {
+                                                                    t.text().then(function (t) {
+                                                                        console.error('Could not fetch text from '.concat(e), t);
+                                                                    });
+                                                                })
                                                         );
                                                     case 3:
-                                                        (n = document.querySelector('header')), (i = window.matchMedia('(min-width: 1200px)')), o(i), i.addListener(o);
-                                                    case 7:
-                                                    case 'end':
-                                                        return t.stop();
-                                                }
-                                        },
-                                        t,
-                                        this
-                                    );
-                                })
-                            )),
-                            function (t) {
-                                return f.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'emailVerificationSetup',
-                        value: function () {
-                            var t = document.createElement('script');
-                            (t.text =
-                                "\n            const DeBounce_APIKEY = 'public_T0tSVklSNEZRTEtkc1c5MFZoUWhKZz09';\n            const DeBounce_BlockFreeEmails = 'false';\n        "),
-                                document.body.appendChild(t);
-                            var e = document.createElement('script');
-                            e.setAttribute('src', 'https://cdn.debounce.io/widget/DeBounce.js'), e.setAttribute('async', !0), document.body.appendChild(e);
-                        },
-                    },
-                    {
-                        key: 'createDropdownMenu',
-                        value: function (t, e, n, r) {
-                            var o = document.querySelector(t),
-                                i = document.querySelector(r);
-                            if (o && i) {
-                                i.insertAdjacentHTML('beforeEnd', '<style>'.concat(n, '{display: none;}').concat(r, '{position: relative;}</style>').concat(e.outerHTML));
-                                var c = document.querySelector(n);
-                                document.addEventListener('click', function (t) {
-                                    var e = t.target;
-                                    e === o && c.classList.toggle('show-dropdown'),
-                                        document.querySelector(''.concat(n, '.show-dropdown')) && e !== o && c.classList.toggle('show-dropdown');
-                                });
-                            }
-                        },
-                    },
-                    {
-                        key: 'addPropThumbTag',
-                        value: function (t, e) {
-                            !document.querySelector('#theArnProperty'.concat(e, ' .ArnPropThumb > .propThumbTag')) &&
-                                document.querySelector('#theArnProperty'.concat(e)) &&
-                                document
-                                    .querySelector('#theArnProperty'.concat(e, ' .ArnPropThumb'))
-                                    .insertAdjacentHTML('afterbegin', '<div class="propThumbTag">'.concat(t, '</div>'));
-                        },
-                    },
-                    {
-                        key: 'ratesComingSoon',
-                        value:
-                            ((l = c(
-                                regeneratorRuntime.mark(function t(e) {
-                                    return regeneratorRuntime.wrap(
-                                        function (t) {
-                                            for (;;)
-                                                switch ((t.prev = t.next)) {
-                                                    case 0:
-                                                        if (document.querySelector('.SearchHotels')) {
-                                                            t.next = 2;
-                                                            break;
-                                                        }
-                                                        return t.abrupt('return');
-                                                    case 2:
-                                                        return (t.next = 4), this.waitForSelectorInDOM('.pollingFinished');
+                                                        return t.abrupt('return', n);
                                                     case 4:
-                                                        e.forEach(function (t) {
-                                                            document.querySelector('#theArnProperty'.concat(t, ' .ArnLimitedAvail')) &&
-                                                                (document.querySelector('#theArnProperty'.concat(t, ' .ArnLimitedAvail')).textContent = 'Rates Coming Soon');
-                                                        });
-                                                    case 5:
                                                     case 'end':
                                                         return t.stop();
                                                 }
-                                        },
-                                        t,
-                                        this
-                                    );
-                                })
-                            )),
-                            function (t) {
-                                return l.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'addClass',
-                        value: function (t, e) {
-                            document.querySelector('.'.concat(t)).classList.add(e);
-                        },
-                    },
-                    {
-                        key: 'getMetaTagContent',
-                        value: function (t) {
-                            if (document.querySelector('meta[name="'.concat(t, '"]'))) return document.querySelector('meta[name="'.concat(t, '"]')).content;
-                        },
-                    },
-                    {
-                        key: 'parseJSON',
-                        value: function (t) {
-                            if (t) return JSON.parse(t);
-                        },
-                    },
-                    {
-                        key: 'getPageName',
-                        value: function () {
-                            var t,
-                                e = document.body;
-                            return (
-                                e.classList.contains('SearchHotels') && !e.classList.contains('HoldRoomsForm') && (t = 'search-results'),
-                                e.classList.contains('SinglePropDetail') && (t = 'property-detail'),
-                                e.classList.contains('CheckOutForm') && (t = 'checkout'),
-                                e.classList.contains('ConfirmationForm') && (t = 'confirmation'),
-                                e.classList.contains('RootBody') && (t = 'landing-page'),
-                                e.classList.contains('WBFaq') && (t = 'faq'),
-                                e.classList.contains('WBTermsAndConditions') && (t = 'terms-conditions'),
-                                e.classList.contains('WBPrivacyPolicy') && (t = 'privacy-policy'),
-                                e.classList.contains('WBRateGuaranteeForm2') && (t = 'lrg-page'),
-                                e.classList.contains('WBValidatedRegistrationForm') && (t = 'cug-registration'),
-                                e.classList.contains('HoldRoomsForm') && e.classList.contains('SearchHotels') && (t = 'hold-rooms'),
-                                t
-                            );
-                        },
-                    },
-                    {
-                        key: 'getElementTextContent',
-                        value: function (t) {
-                            if (document.querySelector(t)) return document.querySelector(t).textContent;
-                        },
-                    },
-                    {
-                        key: 'fetchJSON',
-                        value: function (t) {
-                            return function () {
-                                fetch(t)
-                                    .then(function (t) {
-                                        if (!t.ok) throw t;
-                                        return t.json();
+                                        }, t);
                                     })
-                                    .catch(function (e) {
-                                        e.text().then(function (e) {
-                                            console.error('Could not fetch json from '.concat(t), e);
-                                        });
-                                    });
-                            };
+                                )),
+                                function (t) {
+                                    return s.apply(this, arguments);
+                                }),
                         },
-                    },
-                    {
-                        key: 'fetchHTMLFromFile',
-                        value:
-                            ((s = c(
-                                regeneratorRuntime.mark(function t(e) {
-                                    var n;
-                                    return regeneratorRuntime.wrap(function (t) {
-                                        for (;;)
-                                            switch ((t.prev = t.next)) {
-                                                case 0:
-                                                    return (
-                                                        (n = ''),
-                                                        (t.next = 3),
-                                                        fetch(e)
-                                                            .then(function (t) {
-                                                                if (!t.ok) throw t;
-                                                                return t.text();
-                                                            })
-                                                            .then(function (t) {
-                                                                n = t;
-                                                            })
-                                                            .catch(function (t) {
-                                                                t.text().then(function (t) {
-                                                                    console.error('Could not fetch text from '.concat(e), t);
-                                                                });
-                                                            })
-                                                    );
-                                                case 3:
-                                                    return t.abrupt('return', n);
-                                                case 4:
-                                                case 'end':
-                                                    return t.stop();
-                                            }
-                                    }, t);
-                                })
-                            )),
-                            function (t) {
-                                return s.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'removeMaskedElementFromTabIndex',
-                        value: function (t) {
-                            var e = document.querySelector(t);
-                            e && e.setAttribute('tabindex', -1);
+                        {
+                            key: 'removeMaskedElementFromTabIndex',
+                            value: function (t) {
+                                var e = document.querySelector(t);
+                                e && e.setAttribute('tabindex', -1);
+                            },
                         },
-                    },
-                    {
-                        key: 'calculateNights',
-                        value: function () {
-                            var t = u(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                e = u(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                            return u(e).diff(u(t), 'days');
+                        {
+                            key: 'calculateNights',
+                            value: function () {
+                                var t = u(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    e = u(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return u(e).diff(u(t), 'days');
+                            },
                         },
-                    },
-                    {
-                        key: 'matchMediaQuery',
-                        value: function (t) {
-                            return window.matchMedia('('.concat(t, ')')).matches;
+                        {
+                            key: 'matchMediaQuery',
+                            value: function (t) {
+                                return window.matchMedia('('.concat(t, ')')).matches;
+                            },
                         },
-                    },
-                    {
-                        key: 'selectCheckboxOnLabelClick',
-                        value: function (t) {
-                            document.querySelectorAll(t).forEach(function (t) {
-                                if (t.querySelector('input[type="checkbox"]') && t) {
-                                    var e = t.querySelector('span');
-                                    e || (e = t.querySelector('label')),
-                                        e.addEventListener('click', function (e) {
-                                            t.querySelector('input[type="checkbox"]').click();
-                                        });
+                        {
+                            key: 'selectCheckboxOnLabelClick',
+                            value: function (t) {
+                                document.querySelectorAll(t).forEach(function (t) {
+                                    if (t.querySelector('input[type="checkbox"]') && t) {
+                                        var e = t.querySelector('span');
+                                        e || (e = t.querySelector('label')),
+                                            e.addEventListener('click', function (e) {
+                                                t.querySelector('input[type="checkbox"]').click();
+                                            });
+                                    }
+                                });
+                            },
+                        },
+                        {
+                            key: 'addAttributeToInput',
+                            value:
+                                ((i = c(
+                                    regeneratorRuntime.mark(function t(e, n, r, o) {
+                                        return regeneratorRuntime.wrap(
+                                            function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            if (document.querySelector(o)) {
+                                                                t.next = 2;
+                                                                break;
+                                                            }
+                                                            return t.abrupt('return');
+                                                        case 2:
+                                                            return (t.prev = 2), (t.next = 5), this.waitForSelectorInDOM(e);
+                                                        case 5:
+                                                            document.querySelector(e).setAttribute(r, n), (t.next = 11);
+                                                            break;
+                                                        case 8:
+                                                            (t.prev = 8), (t.t0 = t.catch(2)), console.error(t.t0);
+                                                        case 11:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            },
+                                            t,
+                                            this,
+                                            [[2, 8]]
+                                        );
+                                    })
+                                )),
+                                function (t, e, n, r) {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'replaceSpecificText',
+                            value: function (t, e, n) {
+                                if (document.querySelector(t)) {
+                                    var r = document.querySelector(t).textContent.replace(e, n);
+                                    document.querySelector(t).textContent = r;
                                 }
-                            });
+                            },
                         },
-                    },
-                    {
-                        key: 'addAttributeToInput',
-                        value:
-                            ((i = c(
-                                regeneratorRuntime.mark(function t(e, n, r, o) {
-                                    return regeneratorRuntime.wrap(
-                                        function (t) {
-                                            for (;;)
-                                                switch ((t.prev = t.next)) {
-                                                    case 0:
-                                                        if (document.querySelector(o)) {
-                                                            t.next = 2;
-                                                            break;
-                                                        }
-                                                        return t.abrupt('return');
-                                                    case 2:
-                                                        return (t.prev = 2), (t.next = 5), this.waitForSelectorInDOM(e);
-                                                    case 5:
-                                                        document.querySelector(e).setAttribute(r, n), (t.next = 11);
-                                                        break;
-                                                    case 8:
-                                                        (t.prev = 8), (t.t0 = t.catch(2)), console.error(t.t0);
-                                                    case 11:
-                                                    case 'end':
-                                                        return t.stop();
-                                                }
-                                        },
-                                        t,
-                                        this,
-                                        [[2, 8]]
-                                    );
-                                })
-                            )),
-                            function (t, e, n, r) {
-                                return i.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'replaceSpecificText',
-                        value: function (t, e, n) {
-                            if (document.querySelector(t)) {
-                                var r = document.querySelector(t).textContent.replace(e, n);
-                                document.querySelector(t).textContent = r;
-                            }
+                        {
+                            key: 'addHeaderButtonLink',
+                            value:
+                                ((o = c(
+                                    regeneratorRuntime.mark(function t(e, n) {
+                                        return regeneratorRuntime.wrap(
+                                            function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) {
+                                                                t.next = 4;
+                                                                break;
+                                                            }
+                                                            return (t.next = 3), this.waitForSelectorInDOM('header');
+                                                        case 3:
+                                                            document
+                                                                .querySelector('header')
+                                                                .insertAdjacentHTML(
+                                                                    'beforeend',
+                                                                    '<div class="custom-button">\n                    <a id="custom-link" target="_blank" href="'
+                                                                        .concat(e, '">')
+                                                                        .concat(
+                                                                            n,
+                                                                            '</a>\n                </div>\n                <style class="stay-22-header-styles">\n                    @media screen and (max-width: 600px) {\n                    header {\n                            display: flex;\n                            flex-direction: column;\n                        }\n                    }\n                <style>    \n                '
+                                                                        )
+                                                                );
+                                                        case 4:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            },
+                                            t,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (t, e) {
+                                    return o.apply(this, arguments);
+                                }),
                         },
-                    },
-                    {
-                        key: 'addHeaderButtonLink',
-                        value:
-                            ((o = c(
-                                regeneratorRuntime.mark(function t(e, n) {
-                                    return regeneratorRuntime.wrap(
-                                        function (t) {
-                                            for (;;)
-                                                switch ((t.prev = t.next)) {
-                                                    case 0:
-                                                        if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) {
-                                                            t.next = 4;
-                                                            break;
-                                                        }
-                                                        return (t.next = 3), this.waitForSelectorInDOM('header');
-                                                    case 3:
-                                                        document
-                                                            .querySelector('header')
-                                                            .insertAdjacentHTML(
-                                                                'beforeend',
-                                                                '<div class="custom-button">\n                    <a id="custom-link" target="_blank" href="'
-                                                                    .concat(e, '">')
-                                                                    .concat(
-                                                                        n,
-                                                                        '</a>\n                </div>\n                <style class="stay-22-header-styles">\n                    @media screen and (max-width: 600px) {\n                    header {\n                            display: flex;\n                            flex-direction: column;\n                        }\n                    }\n                <style>    \n                '
-                                                                    )
-                                                            );
-                                                    case 4:
-                                                    case 'end':
-                                                        return t.stop();
-                                                }
-                                        },
-                                        t,
-                                        this
-                                    );
-                                })
-                            )),
-                            function (t, e) {
-                                return o.apply(this, arguments);
-                            }),
-                    },
-                    {
-                        key: 'checkForPastDate',
-                        value: function (t) {
-                            t || console.error('No date passed into checkForPastDate()');
-                            var e = u();
-                            return u(t).diff(e, 'milliseconds') < 0;
+                        {
+                            key: 'checkForPastDate',
+                            value: function (t) {
+                                t || console.error('No date passed into checkForPastDate()');
+                                var e = u();
+                                return u(t).diff(e, 'milliseconds') < 0;
+                            },
                         },
-                    },
-                ]) && a(e.prototype, n),
-                r && a(e, r),
-                t
-            );
-        })())();
+                    ]) && a(e.prototype, n),
+                    r && a(e, r),
+                    t
+                );
+            })())();
         Object.keys(o).forEach(function (t) {
             var e = t.slice(-4);
             document
@@ -2885,26 +2885,30 @@
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));
                     Object.keys(t).forEach(function (e) {
-                        n.insertAdjacentHTML(
-                            'beforeend',
-                            '\n            <div class="race">\n                <div class="race-info">\n                    <div class="date">\n                        <div class="days">'
-                                .concat(t[e].days, '</div>\n                        <div class="month">')
-                                .concat(
-                                    t[e].month,
-                                    '</div>\n                    </div>\n                    <div class="race-location">\n                        <img class="country-flag" src="'
-                                )
-                                .concat(t[e].country_flag_url, '" alt="')
-                                .concat(t[e].flag_alt_text, ' flag">\n                        <div class="race-details">\n                            <div class="name">Formula 1 ')
-                                .concat(t[e].name, '</div>\n                            <div class="location">')
-                                .concat(
-                                    t[e].location,
-                                    '</div>\n                        </div>\n                    </div>\n                </div>\n            <a class="book-btn" href="'
-                                )
-                                .concat(
-                                    t[e].book_url,
-                                    '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n        </div>\n        '
-                                )
-                        );
+                        s.checkForPastDate(t[e].race_expiry) ||
+                            n.insertAdjacentHTML(
+                                'beforeend',
+                                '\n            <div class="race">\n                <div class="race-info">\n                    <div class="date">\n                        <div class="days">'
+                                    .concat(t[e].days, '</div>\n                        <div class="month">')
+                                    .concat(
+                                        t[e].month,
+                                        '</div>\n                    </div>\n                    <div class="race-location">\n                        <img class="country-flag" src="'
+                                    )
+                                    .concat(t[e].country_flag_url, '" alt="')
+                                    .concat(
+                                        t[e].flag_alt_text,
+                                        ' flag">\n                        <div class="race-details">\n                            <div class="name">Formula 1 '
+                                    )
+                                    .concat(t[e].name, '</div>\n                            <div class="location">')
+                                    .concat(
+                                        t[e].location,
+                                        '</div>\n                        </div>\n                    </div>\n                </div>\n            <a class="book-btn" href="'
+                                    )
+                                    .concat(
+                                        t[e].book_url,
+                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n        </div>\n        '
+                                    )
+                            );
                     });
                 })(o[t], e);
         });

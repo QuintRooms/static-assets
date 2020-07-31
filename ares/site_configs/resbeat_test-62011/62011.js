@@ -14,6 +14,8 @@ class ChildPortal extends Resbeat {
     }
 
     init() {
+        this.addDemoSiteTextToHeader();
+
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
                 this.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
@@ -45,6 +47,16 @@ class ChildPortal extends Resbeat {
 
             string.innerHTML = `${text.substring(0, last_word_length)} <b>${last_word}</b>`;
         });
+    }
+
+    async addDemoSiteTextToHeader() {
+        await utilities.waitForSelectorInDOM('header');
+
+        const header = document.querySelector('header');
+
+        if (!header) return;
+
+        header.insertAdjacentHTML('afterEnd', `<h1 id="demo-messaging">DEMO</h1>`);
     }
 }
 

@@ -31,6 +31,17 @@
     min-width: 200px;
 }
 
+#demo-messaging{
+    display: block !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: #666;
+}
+
 .WBLoginFormActions input,
 #register-btn a,
 .WBValidatedRegistrationFormActions input,

@@ -5,9 +5,8 @@ import Utilities from '../../../js/utilities';
 // eslint-disable-next-line no-unused-vars
 const utilities = new Utilities();
 
-function populateRaces(obj) {
-    document.querySelector('.season').textContent = races.season;
-    const races_list = document.querySelector('.races');
+function populateRaces(obj, year) {
+    const races_list = document.querySelector(`.races-${year}`);
     Object.keys(obj).forEach((i) => {
         races_list.insertAdjacentHTML(
             'beforeend',
@@ -45,14 +44,14 @@ function populateRaceSeasons() {
                     <p>Choose your race below to see all available hotel options.</p>
                     <fieldset>
                         <h3 class="season">${year} Races</h3>
-                        <div class="races">
+                        <div class="races-${year}">
                         </div>
                     </fieldset>
                 </section>
             </div>
             `
         );
-        populateRaces(races[i]);
+        populateRaces(races[i], year);
     });
 }
 

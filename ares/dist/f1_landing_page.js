@@ -2879,37 +2879,34 @@
                             e,
                             ' FIA Formula One World Championship&trade; Races</h1>\n                    <p>Choose your race below to see all available hotel options.</p>\n                    <fieldset>\n                        <h3 class="season">'
                         )
-                        .concat(
-                            e,
-                            ' Races</h3>\n                        <div class="races">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            '
-                        )
+                        .concat(e, ' Races</h3>\n                        <div class="races-')
+                        .concat(e, '">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            ')
                 ),
-                (function (t) {
-                    document.querySelector('.season').textContent = o.season;
-                    var e = document.querySelector('.races');
-                    Object.keys(t).forEach(function (n) {
-                        e.insertAdjacentHTML(
+                (function (t, e) {
+                    var n = document.querySelector('.races-'.concat(e));
+                    Object.keys(t).forEach(function (e) {
+                        n.insertAdjacentHTML(
                             'beforeend',
                             '\n            <div class="race">\n                <div class="race-info">\n                    <div class="date">\n                        <div class="days">'
-                                .concat(t[n].days, '</div>\n                        <div class="month">')
+                                .concat(t[e].days, '</div>\n                        <div class="month">')
                                 .concat(
-                                    t[n].month,
+                                    t[e].month,
                                     '</div>\n                    </div>\n                    <div class="race-location">\n                        <img class="country-flag" src="'
                                 )
-                                .concat(t[n].country_flag_url, '" alt="')
-                                .concat(t[n].flag_alt_text, ' flag">\n                        <div class="race-details">\n                            <div class="name">Formula 1 ')
-                                .concat(t[n].name, '</div>\n                            <div class="location">')
+                                .concat(t[e].country_flag_url, '" alt="')
+                                .concat(t[e].flag_alt_text, ' flag">\n                        <div class="race-details">\n                            <div class="name">Formula 1 ')
+                                .concat(t[e].name, '</div>\n                            <div class="location">')
                                 .concat(
-                                    t[n].location,
+                                    t[e].location,
                                     '</div>\n                        </div>\n                    </div>\n                </div>\n            <a class="book-btn" href="'
                                 )
                                 .concat(
-                                    t[n].book_url,
+                                    t[e].book_url,
                                     '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n        </div>\n        '
                                 )
                         );
                     });
-                })(o[t]);
+                })(o[t], e);
         });
     },
 ]);

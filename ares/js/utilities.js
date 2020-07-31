@@ -450,4 +450,15 @@ export default class Utilities {
             );
         }
     }
+
+    checkForPastDate(date) {
+        if (!date) console.error('No date passed into checkForPastDate()');
+
+        const now = dayjs();
+        const date_to_check = dayjs(date);
+
+        const diff = date_to_check.diff(now, 'milliseconds');
+
+        return diff < 0;
+    }
 }

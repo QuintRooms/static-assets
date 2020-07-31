@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/extensions
 import races from './races.js';
 import Utilities from '../../../js/utilities';
+// import f1Styles from '../../../js/f1';
+
+// f1Styles('54494');
 
 // eslint-disable-next-line no-unused-vars
 const utilities = new Utilities();
@@ -44,7 +47,7 @@ function populateRaceSeasons() {
                     <p>Choose your race below to see all available hotel options.</p>
                     <fieldset>
                         <h3 class="season">${year} Races</h3>
-                        <div class="races-${year}">
+                        <div class="races-${year} races">
                         </div>
                     </fieldset>
                 </section>

@@ -2880,7 +2880,7 @@
                             ' FIA Formula One World Championship&trade; Races</h1>\n                    <p>Choose your race below to see all available hotel options.</p>\n                    <fieldset>\n                        <h3 class="season">'
                         )
                         .concat(e, ' Races</h3>\n                        <div class="races-')
-                        .concat(e, '">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            ')
+                        .concat(e, ' races">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            ')
                 ),
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));

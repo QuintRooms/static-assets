@@ -140,16 +140,6 @@ export default class BasePortal {
             utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
             utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
 
-            if (this.site_config.show_tax_inclusive_rates) {
-                jQuery('#theBody').on('arnMapLoadedEvent', () => {
-                    this.getTotalNights().then((nights) => {
-                        this.getCurrency().then((currency) => {
-                            this.getNightlyRateForMapMarkers(nights, currency);
-                        });
-                    });
-                });
-            }
-
             if (this.page_name === 'lrg-page') {
                 this.replaceLRGForm();
             }
@@ -719,8 +709,8 @@ export default class BasePortal {
 
             utilities.createWrapper(
                 `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
-                 .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
-                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
+                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
+                .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,
                 'afterEnd'

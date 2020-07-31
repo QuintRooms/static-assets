@@ -27,6 +27,10 @@
     font-style: normal;
 }
 
+.logo img{
+    min-width: 200px;
+}
+
 .WBLoginFormActions input,
 #register-btn a,
 .WBValidatedRegistrationFormActions input,

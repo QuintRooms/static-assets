@@ -451,6 +451,11 @@ export default class Utilities {
         }
     }
 
+    /**
+     *@description Checks whether the date passed in is in the past
+     *@param string date - date to check
+     *@return bool
+     */
     checkForPastDate(date) {
         if (!date) console.error('No date passed into checkForPastDate()');
 

@@ -47,6 +47,7 @@ module.exports = () => {
         entry_points = {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
+            f1_landing_page: './src/f1_landing_page.js',
         };
     }
 

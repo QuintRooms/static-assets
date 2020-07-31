@@ -677,9 +677,56 @@ export default class Resbeat extends BasePortal {
 
         if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
 
-        header_links.insertAdjacentHTML(
+        await header_links.insertAdjacentHTML(
             'afterBegin',
-            `<a href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
+            `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
+        );
+
+        this.showResbeatRewardsComingSoonMessagingOnHover();
+    }
+
+    async showResbeatRewardsComingSoonMessagingOnHover() {
+        const rewards_link = document.querySelector('#rewards-link');
+
+        if (!utilities.checkForPastDate('2020-07-31T18:00:00-05:00') || !rewards_link) return;
+
+        rewards_link.href = '#';
+        rewards_link.target = '';
+
+        rewards_link.insertAdjacentHTML(
+            'beforeEnd',
+            `
+            <div id="coming-soon">Coming <span>Soon!</span></div>
+            <style>
+                #coming-soon{
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 35px;
+                    transition: all .6s ease-in-out;
+                    padding: 9px;
+                    box-shadow: 0 0 12px 1px rgba(0,0,0,.35);
+                    border-radius: 5px;
+                    background: #f0f0f0;
+                }
+
+                #coming-soon span{
+                    font-weight: bold;
+                }
+
+                #rewards-link:hover #coming-soon{
+                    opacity: 1;
+                    pointer-events: unset;
+                }
+
+                @media screen and (max-width: 600px){
+                    #rewards-link{
+                        display: none;
+                    }
+                }
+                
+            </style>
+        `
         );
     }
 }

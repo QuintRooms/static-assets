@@ -348,15 +348,15 @@
             C = (k && k.v8) || '',
             L = s.Promise,
             R = 'process' == l(x),
-            M = function () {},
-            q = (o = b.f),
+            q = function () {},
+            M = (o = b.f),
             P = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(M, M);
+                            e(q, q);
                         });
-                    return (R || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (R || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             E = function (e) {
@@ -469,7 +469,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(87)(L.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, L));
+                    var n = M(y(this, L));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -488,7 +488,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(j, e, 1));
             }),
-            (b.f = q = function (e) {
+            (b.f = M = function (e) {
                 return e === L || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !P, {Promise: L}),
@@ -497,7 +497,7 @@
             (a = n(11).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = M(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -512,14 +512,14 @@
                         !(
                             P &&
                             n(89)(function (e) {
-                                L.all(e).catch(M);
+                                L.all(e).catch(q);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = M(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -541,7 +541,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = M(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1115,11 +1115,11 @@
                         for (var x = String(b[0]), k = u(l(a(b.index), h.length), 0), C = [], L = 1; L < b.length; L++) C.push(void 0 === (S = b[L]) ? S : String(S));
                         var R = b.groups;
                         if (f) {
-                            var M = [x].concat(C, k, h);
-                            void 0 !== R && M.push(R);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(x, h, k, C, R, t);
-                        k >= _ && ((w += h.slice(_, k) + q), (_ = k + x.length));
+                            var q = [x].concat(C, k, h);
+                            void 0 !== R && q.push(R);
+                            var M = String(t.apply(void 0, q));
+                        } else M = m(x, h, k, C, R, t);
+                        k >= _ && ((w += h.slice(_, k) + M), (_ = k + x.length));
                     }
                     return w + h.slice(_);
                 },
@@ -1652,8 +1652,8 @@
             C = n(55),
             L = n(51),
             R = n(5),
-            M = n(13),
-            q = C.f,
+            q = n(13),
+            M = C.f,
             P = R.f,
             E = k.f,
             T = r.Symbol,
@@ -1684,7 +1684,7 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q(W, t);
+                          var r = M(W, t);
                           r && delete W[t], P(e, t, n), r && e !== W && P(W, t, r);
                       }
                     : P,
@@ -1711,18 +1711,18 @@
                         : P(e, t, n)
                 );
             },
-            Q = function (e, t) {
+            K = function (e, t) {
                 v(e);
                 for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
                 return e;
             },
-            K = function (e) {
+            Q = function (e) {
                 var t = H.call(this, (e = _(e, !0)));
                 return !(this === W && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, O) && this[O][e])) || t);
             },
             Z = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== W || !o(D, t) || o(N, t))) {
-                    var n = q(e, t);
+                    var n = M(e, t);
                     return !n || !o(D, t) || (o(e, O) && e[O][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -1752,16 +1752,16 @@
             (C.f = Z),
             (R.f = J),
             (n(54).f = k.f = X),
-            (n(26).f = K),
+            (n(26).f = Q),
             (L.f = ee),
-            i && !n(16) && c(W, 'propertyIsEnumerable', K, !0),
+            i && !n(16) && c(W, 'propertyIsEnumerable', Q, !0),
             (p.f = function (e) {
                 return Y(f(e));
             })),
             a(a.G + a.W + a.F * !U, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
-        for (var re = M(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = q(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = T(e));
@@ -1779,10 +1779,10 @@
         }),
             a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? x(e) : Q(x(e), t);
+                    return void 0 === t ? x(e) : K(x(e), t);
                 },
                 defineProperty: J,
-                defineProperties: Q,
+                defineProperties: K,
                 getOwnPropertyDescriptor: Z,
                 getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
@@ -2621,9 +2621,9 @@
                 C = k[d] || k['@@iterator'] || (m && k[m]),
                 L = C || w(m),
                 R = m ? (A ? w('entries') : L) : void 0,
-                M = ('Array' == t && k.entries) || C;
+                q = ('Array' == t && k.entries) || C;
             if (
-                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, f)),
+                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, f)),
                 A &&
                     C &&
                     'values' !== C.name &&
@@ -3380,7 +3380,7 @@
             }).prototype = Object.create(Error.prototype)),
                 (R.prototype.constructor = R);
         }
-        function M(e, t) {
+        function q(e, t) {
             return new Promise(function (n, r) {
                 var o = new A(e, t);
                 if (o.signal && o.signal.aborted) return r(new R('Aborted', 'AbortError'));
@@ -3437,9 +3437,9 @@
                     i.send(void 0 === o._bodyInit ? null : o._bodyInit);
             });
         }
-        (M.polyfill = !0), self.fetch || ((self.fetch = M), (self.Headers = y), (self.Request = A), (self.Response = k));
+        (q.polyfill = !0), self.fetch || ((self.fetch = q), (self.Headers = y), (self.Request = A), (self.Response = k));
         n(105), n(66);
-        function q(e, t, n, r, o, i, a) {
+        function M(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3455,10 +3455,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        q(i, r, o, a, c, 'next', e);
+                        M(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        q(i, r, o, a, c, 'throw', e);
+                        M(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -4039,6 +4039,14 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
+                        {
+                            key: 'checkForPastDate',
+                            value: function (e) {
+                                e || console.error('No date passed into checkForPastDate()');
+                                var t = T();
+                                return T(e).diff(t, 'milliseconds') < 0;
+                            },
+                        },
                     ]) && E(t.prototype, n),
                     r && E(t, r),
                     e
@@ -4491,14 +4499,6 @@
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
                                                                         ),
-                                                                        e.site_config.show_tax_inclusive_rates &&
-                                                                            jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                                                                e.getTotalNights().then(function (t) {
-                                                                                    e.getCurrency().then(function (n) {
-                                                                                        e.getNightlyRateForMapMarkers(t, n);
-                                                                                    });
-                                                                                });
-                                                                            }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name && G.init(e.site_config, e.page_name, V),
                                                                         jQuery('#theBody').on(
@@ -4682,7 +4682,7 @@
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5144,8 +5144,8 @@
                                         V.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
-                                                .concat(t, ', \n                 .RoomNumber-')
-                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                 .RoomNumber-')
+                                                .concat(t, ', \n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                .RoomNumber-')
                                                 .concat(t, ' #theCardVerificationAjax'),
                                             '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
                                             'credit-card-details',
@@ -6452,7 +6452,7 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function Q(e) {
+        function K(e) {
             return function () {
                 var t = this,
                     n = arguments;
@@ -6468,7 +6468,7 @@
                 });
             };
         }
-        function K(e, t) {
+        function Q(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -6524,7 +6524,7 @@
                         n
                     );
                 }
-                var n, r, o, i, a, c, s;
+                var n, r, o, i, a, c, s, u;
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
@@ -6577,7 +6577,7 @@
                                         ),
                                         re.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input')),
                                     this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(
-                                        Q(
+                                        K(
                                             regeneratorRuntime.mark(function e() {
                                                 return regeneratorRuntime.wrap(function (e) {
                                                     for (;;)
@@ -6635,7 +6635,7 @@
                         {
                             key: 'updateLogin',
                             value:
-                                ((s = Q(
+                                ((u = K(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -6658,7 +6658,7 @@
                                     })
                                 )),
                                 function () {
-                                    return s.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6714,7 +6714,7 @@
                         {
                             key: 'displayRewardPoints',
                             value:
-                                ((c = Q(
+                                ((s = K(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -6779,7 +6779,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return c.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6829,7 +6829,7 @@
                                     n &&
                                         n.addEventListener(
                                             'click',
-                                            Q(
+                                            K(
                                                 regeneratorRuntime.mark(function n() {
                                                     return regeneratorRuntime.wrap(function (n) {
                                                         for (;;)
@@ -6967,7 +6967,7 @@
                         {
                             key: 'removeAnchorTag',
                             value:
-                                ((a = Q(
+                                ((c = K(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -6993,7 +6993,7 @@
                                     })
                                 )),
                                 function () {
-                                    return a.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -7087,7 +7087,7 @@
                         {
                             key: 'addLinkToRewardsPlatform',
                             value:
-                                ((i = Q(
+                                ((a = K(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(
@@ -7110,14 +7110,19 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 9:
-                                                            i.insertAdjacentHTML(
-                                                                'afterBegin',
-                                                                '<a href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
-                                                                    o,
-                                                                    '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                            return (
+                                                                (e.next = 11),
+                                                                i.insertAdjacentHTML(
+                                                                    'afterBegin',
+                                                                    '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                        o,
+                                                                        '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                    )
                                                                 )
                                                             );
-                                                        case 10:
+                                                        case 11:
+                                                            this.showResbeatRewardsComingSoonMessagingOnHover();
+                                                        case 12:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -7128,11 +7133,44 @@
                                     })
                                 )),
                                 function () {
+                                    return a.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'showResbeatRewardsComingSoonMessagingOnHover',
+                            value:
+                                ((i = K(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('#rewards-link')), re.checkForPastDate('2020-07-31T18:00:00-05:00') && t)) {
+                                                            e.next = 3;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 3:
+                                                        (t.href = '#'),
+                                                            (t.target = ''),
+                                                            t.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '\n            <div id="coming-soon">Coming <span>Soon!</span></div>\n            <style>\n                #coming-soon{\n                    opacity: 0;\n                    pointer-events: none;\n                    position: absolute;\n                    top: 35px;\n                    transition: all .6s ease-in-out;\n                    padding: 9px;\n                    box-shadow: 0 0 12px 1px rgba(0,0,0,.35);\n                    border-radius: 5px;\n                    background: #f0f0f0;\n                }\n\n                #coming-soon span{\n                    font-weight: bold;\n                }\n\n                #rewards-link:hover #coming-soon{\n                    opacity: 1;\n                    pointer-events: unset;\n                }\n\n                @media screen and (max-width: 600px){\n                    #rewards-link{\n                        display: none;\n                    }\n                }\n                \n            </style>\n        '
+                                                            );
+                                                    case 6:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
                                     return i.apply(this, arguments);
                                 }),
                         },
-                    ]) && K(n.prototype, r),
-                    o && K(n, o),
+                    ]) && Q(n.prototype, r),
+                    o && Q(n, o),
                     t
                 );
             })(Y);

@@ -61,6 +61,7 @@ export default async function f1Styles(siteId) {
     }
 
     async function addFooter() {
+        if (document.querySelector('meta[name="landing-page"]')) return;
         const footer_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/footer.html`);
 
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);

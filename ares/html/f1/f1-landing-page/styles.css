@@ -32,7 +32,13 @@ body {
     background: #f7f4f1;
 }
 
-.secondary-nav .container {
+header {
+    justify-content: space-between;
+    background: #e10600;
+    padding: 30px 10px;
+}
+
+/* .secondary-nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +68,7 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-family: 'F1-Regular', 'Helvetica';
-}
+} */
 
 .banner {
     display: flex;
@@ -106,11 +112,30 @@ section h3 {
 
 }
 
+.races {
+    height: 75vh;
+    overflow: scroll;
+}
+
 .race {
     background-color: #fff;
     margin: 6px 0;
     justify-content: space-between;
     height: 90px;
+    border-radius: 5px;
+}
+
+.race:hover {
+    background-color: #15151e;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    color: #fff;
+}
+
+.race:hover .book-btn {
+    border: 2px solid #e10600;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    background-color: #fff;
+    color: #38383f;
 }
 
 .race,
@@ -120,7 +145,11 @@ section h3 {
 }
 
 .race-info {
-    width: 65%;
+    width: 75%;
+}
+
+.race-details #mobile-year {
+    display: none;
 }
 
 .race-location {
@@ -153,13 +182,17 @@ section h3 {
     font-family: 'F1-Bold', 'Helvetica';
 }
 
-.race a {
+.race .book-btn {
     text-transform: uppercase;
     color: #333;
     border: 1px solid #E7E7E7;
     padding: 7px 10px;
     border-radius: 7px;
     margin-right: 15px;
+}
+
+.race .mobile-book-btn {
+    display: none;
 }
 
 .country-flag {
@@ -305,7 +338,7 @@ footer fieldset {
 }
 
 .social-logo {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -378,22 +411,40 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-    .race {
-        height: unset;
-        padding: 10px 0;
+
+    .race-info {
+        width: 100%;
     }
 
     .race-location {
         align-items: center;
+        padding: 10px 0;
+    }
+
+    .race-details {
+        width: 180px;
+    }
+
+    .race-details #mobile-year {
+        display: block;
+    }
+
+    .race-details #F1-title, .race-details #sponsor, #desktop-year {
+        display: none;
     }
 
     .date {
-        padding-right: 20px;
-        width: 100%;
+        padding: 10px;
+        width: 40%;
+        height: 80px;
     }
 
     .days {
         font-size: 12px;
+    }
+
+    .month {
+        width: 40px;
     }
 
     .country-flag {
@@ -404,6 +455,17 @@ hr {
     .book-btn {
         display: none;
     }
+    
+    .race .mobile-book-btn {
+        background: #E7E7E7;
+        height: 100%;
+        display: flex;
+        border-radius: 0px 5px 5px 0px;
+    }
+
+    .race .mobile-book-btn svg {
+        margin: auto 5px;
+    }
 
     .why-book-here {
         display: flex;
@@ -412,6 +474,11 @@ hr {
 
     .tiles {
         flex-direction: column;
+    }
+
+    .tile {
+        width: 100%;
+        max-width: 100%;
     }
 
     .f1-experiences {
@@ -434,6 +501,14 @@ hr {
         padding-bottom: 15px;
         border-bottom: 2px solid black;
         width: 100%;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+    
+    .footer-nav div {
+        width: 95%;
     }
 
     .footer-nav img {

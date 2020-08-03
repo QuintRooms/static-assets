@@ -33,9 +33,9 @@ body {
 }
 
 header {
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
     background: #e10600;
-    padding: 30px 10px;
 }
 
 #tickets li:last-child {

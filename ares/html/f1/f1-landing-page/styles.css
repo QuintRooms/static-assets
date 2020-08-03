@@ -97,6 +97,11 @@ header {
     display: inline-block;
 }
 
+.banner a:hover {
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+
 section {
     margin-top: 42px;
 }
@@ -117,13 +122,13 @@ section h3 {
 }
 
 .races {
-    height: 75vh;
+    max-height: 350px;
     overflow: scroll;
 }
 
 .race {
     background-color: #fff;
-    margin: 6px 0;
+    margin: 4px 0;
     justify-content: space-between;
     height: 90px;
     border-radius: 5px;
@@ -136,9 +141,15 @@ section h3 {
 }
 
 .race:hover .book-btn {
-    border: 2px solid #e10600;
+    border: unset;
+    box-shadow: 0 0 0 2px #e10600 inset;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
     background-color: #fff;
+    color: #38383f;
+    text-decoration: none;
+}
+
+.race:hover .month {
     color: #38383f;
 }
 
@@ -163,7 +174,7 @@ section h3 {
 
 .date {
     border-right: 2px dotted #E7E7E7;
-    width: 20%;
+    width: 15%;
 }
 
 .days {
@@ -200,7 +211,8 @@ section h3 {
 }
 
 .country-flag {
-    width: 11%;
+    width: 60px;
+    height: 35px;
     border-radius: 5px;
     margin: 0 12px 0 20px;
 }
@@ -295,6 +307,12 @@ fieldset {
     border-radius: 7px;
 }
 
+.f1-experiences a:hover {
+    background-color: #ae0500;
+    border-color: 1px solid #ae0500;
+    text-decoration: none;
+}
+
 .footer-bottom {
     background: #121117;
 }
@@ -326,7 +344,7 @@ footer fieldset {
     text-align: center;
     font-family: 'Titillium Web', 'sans-serif';
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .mobile-app img {
@@ -376,17 +394,26 @@ footer fieldset {
 
 .footer-nav img {
     height: 10%;
-    margin-right: 20px;
+    margin: 20px;
 }
 
 .footer-nav li {
     list-style: none;
     padding: 7px 0;
     cursor: pointer;
+    border-bottom: 2px solid #121117;
 }
 
-.footer-nav li:hover {
-    text-decoration: underline;
+.footer-nav a {
+    color: #fff;
+}
+
+.footer-nav a:hover, .privacy-links a:hover {
+    text-decoration: none;
+}
+
+.footer-nav li:hover, .privacy-links a:hover {
+    border-bottom: solid 2px #e10600;
 }
 
 hr {
@@ -486,7 +513,7 @@ hr {
     }
 
     .f1-experiences {
-        margin: 50px 0
+        margin: 50px 0 0 0;
     }
 
     .footer-top .container {

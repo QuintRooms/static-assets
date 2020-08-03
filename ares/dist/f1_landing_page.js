@@ -201,7 +201,7 @@
     function (t, e, n) {
         'use strict';
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         n.d(e, 'a', function () {
             return r;
@@ -1063,7 +1063,7 @@
                                         l = e.domain;
                                     try {
                                         c
-                                            ? (o || (2 == t._h && R(t), (t._h = 1)),
+                                            ? (o || (2 == t._h && F(t), (t._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === e.promise ? s(S('Promise-chain cycle')) : (i = $(n)) ? i.call(n, u, s) : u(n))
                                             : s(r);
@@ -1105,13 +1105,13 @@
             D = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
-            R = function (t) {
+            F = function (t) {
                 y.call(u, function () {
                     var e;
                     O ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
                 });
             },
-            F = function (t) {
+            R = function (t) {
                 var e = this;
                 e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), A(e, !0));
             },
@@ -1126,14 +1126,14 @@
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      e.call(t, s(H, r, 1), s(F, r, 1));
+                                      e.call(t, s(H, r, 1), s(R, r, 1));
                                   } catch (t) {
-                                      F.call(r, t);
+                                      R.call(r, t);
                                   }
                               })
                             : ((n._v = t), (n._s = 1), A(n, !1));
                     } catch (t) {
-                        F.call({_w: n, _d: !1}, t);
+                        R.call({_w: n, _d: !1}, t);
                     }
                 }
             };
@@ -1141,9 +1141,9 @@
             ((P = function (t) {
                 d(this, P, 'Promise', '_h'), p(t), r.call(this);
                 try {
-                    t(s(H, this, 1), s(F, this, 1));
+                    t(s(H, this, 1), s(R, this, 1));
                 } catch (t) {
-                    F.call(this, t);
+                    R.call(this, t);
                 }
             }),
             ((r = function (t) {
@@ -1167,7 +1167,7 @@
             })),
             (i = function () {
                 var t = new r();
-                (this.promise = t), (this.resolve = s(H, t, 1)), (this.reject = s(F, t, 1));
+                (this.promise = t), (this.resolve = s(H, t, 1)), (this.reject = s(R, t, 1));
             }),
             (x.f = E = function (t) {
                 return t === P || t === a ? new i(t) : o(t);
@@ -2288,10 +2288,10 @@
                                                                     }
                                                                     return t.abrupt('return');
                                                                 case 2:
-                                                                    return console.log('RUNNING'), (t.next = 5), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
-                                                                case 5:
+                                                                    return (t.next = 4), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
+                                                                case 4:
                                                                     (e = t.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', e);
-                                                                case 7:
+                                                                case 6:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }

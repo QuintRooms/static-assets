@@ -201,7 +201,7 @@
     function (e, t, n) {
         'use strict';
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         n.d(t, 'a', function () {
             return r;
@@ -2288,10 +2288,10 @@
                                                                     }
                                                                     return e.abrupt('return');
                                                                 case 2:
-                                                                    return console.log('RUNNING'), (e.next = 5), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
-                                                                case 5:
+                                                                    return (e.next = 4), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
+                                                                case 4:
                                                                     (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
-                                                                case 7:
+                                                                case 6:
                                                                 case 'end':
                                                                     return e.stop();
                                                             }

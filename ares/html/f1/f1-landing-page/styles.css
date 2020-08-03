@@ -38,6 +38,10 @@ header {
     padding: 30px 10px;
 }
 
+#tickets li:last-child {
+    display: none;
+}
+
 /* .secondary-nav .container {
     display: flex;
     justify-content: space-between;

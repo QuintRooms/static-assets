@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/extensions
 import races from './races.js';
 import Utilities from '../../../js/utilities';
-// import f1Styles from '../../../js/f1';
+import f1Styles from '../../../js/f1';
 
-// f1Styles('54494');
+f1Styles('54494');
 
 // eslint-disable-next-line no-unused-vars
 const utilities = new Utilities();

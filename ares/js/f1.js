@@ -32,6 +32,7 @@ export default async function f1Styles(siteId) {
             </div>
         `
         );
+        if (language_el === null) return;
         document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
     }
 
@@ -48,6 +49,7 @@ export default async function f1Styles(siteId) {
         });
 
         function widthChange(mq) {
+            if (language_el === null) return;
             if (mq.matches) {
                 document.querySelector('.mobile-nav-lower-ul .language-mobile-li').insertAdjacentElement('afterbegin', language_el);
             } else {
@@ -61,7 +63,7 @@ export default async function f1Styles(siteId) {
     }
 
     async function addFooter() {
-        if (document.querySelector('meta[name="landing-page"]')) return;
+        if (document.querySelector('meta[name="landing-page"]') !== null) return;
         const footer_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/footer.html`);
 
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);

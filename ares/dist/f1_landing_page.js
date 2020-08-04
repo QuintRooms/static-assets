@@ -201,7 +201,7 @@
     function (t, e, n) {
         'use strict';
         function r() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         n.d(e, 'a', function () {
             return r;
@@ -3223,7 +3223,10 @@
                             );
                     });
                 })(o[t], e);
-        });
+        }),
+            document.querySelector('.more').addEventListener('click', function () {
+                document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
+            });
     },
 ]);
 //# sourceMappingURL=f1_landing_page.map

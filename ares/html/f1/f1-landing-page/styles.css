@@ -126,6 +126,25 @@ section h3 {
     overflow: scroll;
 }
 
+.races::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.races::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.races::-webkit-scrollbar:horizontal {
+    height: 0px;
+}
+
+.races::-webkit-scrollbar-thumb {
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid #f7f4f1; 
+    background-color: rgba(0, 0, 0, .5);
+}
+
 .race {
     background-color: #fff;
     margin: 4px 0;
@@ -441,6 +460,10 @@ hr {
     padding-bottom: 30px;
 }
 
+.mobile-privacy-links, .more {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
 
     .race-info {
@@ -449,11 +472,10 @@ hr {
 
     .race-location {
         align-items: center;
-        padding: 10px 0;
     }
 
     .race-details {
-        width: 180px;
+        width: 120px;
     }
 
     .race-details #mobile-year {
@@ -466,7 +488,7 @@ hr {
 
     .date {
         padding: 10px;
-        width: 40%;
+        width: 25%;
         height: 80px;
     }
 
@@ -479,8 +501,10 @@ hr {
     }
 
     .country-flag {
-        width: 20%;
-        height: 15%;
+        width: 35px;
+        height: 19px;
+        border-radius: 5px;
+        margin: 0 12px 0 20px;
     }
 
     .book-btn {
@@ -560,5 +584,52 @@ hr {
 
     #rewards {
         margin: 25px 0;
+    }
+
+    .privacy-links {
+        display: none;
+    }
+
+    .more {
+        color: #fff;
+        font-family: 'F1-Regular';
+        font-size: 12px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #38383f;
+        width: 95%;
+    }
+
+    .more.open svg {
+        transform: rotate(90deg);
+    }
+
+    hr {
+        display: none;
+    }
+
+    .mobile-privacy-links {
+        display: none;
+    }
+
+    .mobile-privacy-links p {
+        width: 95%;
+        padding: 10px 0;
+        border-bottom: 1px solid #38383f;
+        margin: 0;
+    }
+
+    .mobile-privacy-links a {
+        color: #fff;
+        padding: 5px 0 5px 30px;
+        font-family: 'F1-Regular';
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .show {
+        display: block;
     }
 }

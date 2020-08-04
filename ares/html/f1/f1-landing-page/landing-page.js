@@ -67,4 +67,12 @@ function populateRaceSeasons() {
     });
 }
 
+function showMoreOnMobile() {
+    document.querySelector('.more').addEventListener('click', () => {
+        document.querySelector('.more').classList.toggle('open');
+        document.querySelector('.mobile-privacy-links').classList.toggle('show');
+    });
+}
+
 populateRaceSeasons();
+showMoreOnMobile();

@@ -201,7 +201,7 @@
     function (e, t, n) {
         'use strict';
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         n.d(t, 'a', function () {
             return r;

@@ -1,11 +1,9 @@
-// eslint-disable-next-line import/extensions
-import races from './races.js';
+import races from './races';
 import Utilities from '../../../js/utilities';
 import f1Styles from '../../../js/f1';
 
 f1Styles('54494');
 
-// eslint-disable-next-line no-unused-vars
 const utilities = new Utilities();
 
 function populateRaces(obj, year) {
@@ -74,5 +72,11 @@ function showMoreOnMobile() {
     });
 }
 
+function findMyRace() {
+    const next_race_url = document.querySelector('.race .book-btn').href;
+    document.querySelector('.banner a').href = next_race_url;
+}
+
 populateRaceSeasons();
 showMoreOnMobile();
+findMyRace();

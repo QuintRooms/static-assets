@@ -14,6 +14,7 @@ export default class Resbeat extends BasePortal {
     }
 
     init() {
+        this.addLinkToRewardsPlatform();
         this.applyResbeatStyles();
         this.applyResbeatConfigColors();
         this.updateLogin();
@@ -534,7 +535,7 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover, .ConfirmationForm .beat-em-value  {
+            .holdRoom:hover, .SearchHotels .sort-wrapper a.active, .sort-wrapper a:hover div, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover, .ConfirmationForm .beat-em-value  {
                 color: ${this.site_config.primary_text_color} !important;
             }
         
@@ -637,6 +638,95 @@ export default class Resbeat extends BasePortal {
             }
             </style>
             `
+        );
+    }
+
+    getMemberUsername() {
+        const member_metatag_content = utilities.getMetaTagContent('memberMetaTag');
+        let member_json = '';
+
+        if (!member_metatag_content) return;
+
+        member_json = JSON.parse(member_metatag_content);
+
+        if (!member_json.MemberUsername) return;
+
+        return member_json.MemberUsername;
+    }
+
+    setLoginRedirectUrl() {
+        const domain = window.location.host;
+
+        return `${domain}/v6/login`;
+    }
+
+    getLoginRedirectUrl() {
+        return this.setLoginRedirectUrl();
+    }
+
+    async addLinkToRewardsPlatform() {
+        await utilities.waitForSelectorInDOM('header #commands');
+
+        const redirect_url = this.getLoginRedirectUrl();
+        const encoded_redirect_url = encodeURIComponent(redirect_url);
+
+        const member_username = this.getMemberUsername();
+        const encoded_query_string = btoa(`member_username=${member_username}&site_id=${this.site_config.site_id}&redirect_url=${encoded_redirect_url}`);
+
+        const header_links = document.querySelector('header #commands');
+
+        if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
+
+        await header_links.insertAdjacentHTML(
+            'afterBegin',
+            `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
+        );
+
+        this.showResbeatRewardsComingSoonMessagingOnHover();
+    }
+
+    async showResbeatRewardsComingSoonMessagingOnHover() {
+        const rewards_link = document.querySelector('#rewards-link');
+
+        if (!utilities.checkForPastDate('2020-07-31T18:00:00-05:00') || !rewards_link) return;
+
+        rewards_link.href = '#';
+        rewards_link.target = '';
+
+        rewards_link.insertAdjacentHTML(
+            'beforeEnd',
+            `
+            <div id="coming-soon">Coming <span>Soon!</span></div>
+            <style>
+                #coming-soon{
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 35px;
+                    transition: all .6s ease-in-out;
+                    padding: 9px;
+                    box-shadow: 0 0 12px 1px rgba(0,0,0,.35);
+                    border-radius: 5px;
+                    background: #f0f0f0;
+                }
+
+                #coming-soon span{
+                    font-weight: bold;
+                }
+
+                #rewards-link:hover #coming-soon{
+                    opacity: 1;
+                    pointer-events: unset;
+                }
+
+                @media screen and (max-width: 600px){
+                    #rewards-link{
+                        display: none;
+                    }
+                }
+                
+            </style>
+        `
         );
     }
 }

@@ -8,8 +8,11 @@ import Path from './path';
 const env_path = new Path();
 
 const dayjs = require('dayjs');
+require('dayjs/locale/zh-cn');
 
-const customParseFormat = require('dayjs/plugin/customParseFormat');
+const custom_parse_format = require('dayjs/plugin/customParseFormat');
+
+dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 const algolia = new Algolia();
@@ -1136,31 +1139,80 @@ export default class BasePortal {
         });
 
         language_container_el.querySelector('.language-container').addEventListener('click', (e) => {
-            if (this.page_name === 'search-results' || this.page_name === 'landing-page') {
-                const clicked_language = document.getElementById(e.target.id).getAttribute('value');
+            const clicked_language = document.getElementById(e.target.id).getAttribute('value');
 
+            if ((this.page_name === 'search-results' || this.page_name === 'landing-page') && clicked_language !== active_language) {
+                params.set('theme', clicked_language);
+                const check_in_el = document.querySelector('input#theCheckIn');
+                const check_out_el = document.querySelector('input#theCheckOut');
                 let check_in_value;
                 let check_out_value;
-                console.log(this.site_config.dayjs_date_format);
-                if (active_language === 'standard') {
-                    // correctly formats dates on search results, need to test root page and need to fix night calculation
-                    check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
-                    check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
+                let nights;
+                const us_format = 'M/D/YYYY';
+                const euro_format = 'D/M/YYYY';
 
-                    console.log('=== standard', check_in_value);
-                } else {
-                    check_in_value = dayjs(document.querySelector('input#theCheckIn').value, this.site_config.dayjs_date_format).format(this.site_config.dayjs_date_format);
-                    check_out_value = dayjs(document.querySelector('input#theCheckOut').value, this.site_config.dayjs_date_format).format(this.site_config.dayjs_date_format);
+                if (clicked_language !== 'standard' && clicked_language !== 'mandarin' && clicked_language !== 'tw_mandarin' && active_language === 'standard') {
+                    check_in_value = dayjs(check_in_el.value, us_format).format(us_format);
+                    check_out_value = dayjs(check_out_el.value, us_format).format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                    check_in_value = dayjs(check_in_el.value, us_format).format(euro_format);
+                    check_out_value = dayjs(check_out_el.value, us_format).format(euro_format);
+                } else if (clicked_language === 'standard' && active_language !== 'standard') {
+                    check_in_value = dayjs(check_in_el.value, euro_format).format(us_format);
+                    check_out_value = dayjs(check_out_el.value, euro_format).format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+                } else if (clicked_language !== 'standard' && clicked_language !== 'mandarin' && clicked_language !== 'tw_mandarin' && active_language !== 'standard') {
+                    check_in_value = dayjs(check_in_el.value, euro_format).format(us_format);
+                    check_out_value = dayjs(check_out_el.value, euro_format).format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                    check_in_value = dayjs(check_in_el.value, euro_format).format(euro_format);
+                    check_out_value = dayjs(check_out_el.value, euro_format).format(euro_format);
+                } else if ((clicked_language === 'mandarin' || clicked_language === 'tw_mandarin') && active_language !== 'standard') {
+                    check_in_value = dayjs(check_in_el.value, euro_format).format(us_format);
+                    check_out_value = dayjs(check_out_el.value, euro_format).format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                    check_in_value = dayjs(check_in_el.value, euro_format).format('YYYY/M/D');
+                    check_out_value = dayjs(check_out_el.value, euro_format).format('YYYY/M/D');
+                } else if (((clicked_language === 'mandarin' || clicked_language === 'tw_mandarin') && active_language === 'mandarin') || active_language === 'tw_mandarin') {
+                    check_in_value = dayjs(check_in_el.value, 'YYYY/M/D').format(us_format);
+                    check_out_value = dayjs(check_out_el.value, 'YYYY/M/D').format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                    check_in_value = dayjs(check_in_el.value, 'YYYY/M/D').format('YYYY/M/D');
+                    check_out_value = dayjs(check_out_el.value, 'YYYY/M/D').format('YYYY/M/D');
+                } else if ((clicked_language === 'mandarin' || clicked_language === 'tw_mandarin') && active_language === 'standard') {
+                    check_in_value = dayjs(check_in_el.value, us_format).format('YYYY/M/D');
+                    check_out_value = dayjs(check_out_el.value, us_format).format('YYYY/M/D');
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+                } else if (clicked_language === 'standard' && (active_language === 'mandarin' || active_language === 'tw_mandarin')) {
+                    check_in_value = dayjs(check_in_el.value, 'YYYY/M/D').format(us_format);
+                    check_out_value = dayjs(check_out_el.value, 'YYYY/M/D').format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+                } else if (clicked_language !== 'standard' && (active_language === 'mandarin' || active_language === 'tw_mandarin')) {
+                    check_in_value = dayjs(check_in_el.value, 'YYYY/M/D').format(us_format);
+                    check_out_value = dayjs(check_out_el.value, 'YYYY/M/D').format(us_format);
+
+                    nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                    check_in_value = dayjs(check_in_el.value, 'YYYY/M/D').format(euro_format);
+                    check_out_value = dayjs(check_out_el.value, 'YYYY/M/D').format(euro_format);
                 }
 
-                const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+                if (this.page_name === 'search-results') {
+                    params.set('nights', nights);
+                    params.set('checkin', check_in_value);
+                }
 
-                params.set('nights', nights);
-                params.set('checkin', check_in_value);
-                params.set('theme', clicked_language);
-                console.log(nights);
-                console.log(check_in_value);
-                console.log(decodeURIComponent(params.toString()));
                 window.location.search = params.toString();
             }
         });

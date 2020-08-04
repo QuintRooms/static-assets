@@ -11,7 +11,8 @@ html {
     font-size: 14px !important;
 }
 
-.MemberAuthenticated.SearchHotels .distanceLabel {
+.MemberAuthenticated.SearchHotels .distanceLabel,
+.MemberAuthenticated.SearchHotels .ArnSortByDistance{
     display: none;
 }
 
@@ -2030,9 +2031,12 @@ legend {
     transition: all 0.3s ease-out;
 }
 
-.ArnSortByPrice,
 .ArnSortByDistance,
 .ArnSortByClass {
+    display: block;
+}
+
+.ArnSortByPrice{
     display: block !important;
 }
 
@@ -3579,6 +3583,7 @@ body.HoldRoomsForm {
     max-width: 50px !important;
     z-index: 8001 !important;
     border-radius: 50%;
+    display: block !important;
 }
 
 .discountPercent {

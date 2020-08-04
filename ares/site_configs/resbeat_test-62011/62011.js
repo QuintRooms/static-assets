@@ -14,7 +14,7 @@ class ChildPortal extends Resbeat {
     }
 
     init() {
-        this.addLinkToRewardsPlatform();
+        this.addDemoSiteTextToHeader();
 
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
@@ -49,31 +49,14 @@ class ChildPortal extends Resbeat {
         });
     }
 
-    getMemberToken() {
-        const member_token_meta = document.querySelector('meta[name="memberToken"]');
+    async addDemoSiteTextToHeader() {
+        await utilities.waitForSelectorInDOM('header');
 
-        if (!member_token_meta) return;
+        const header = document.querySelector('header');
 
-        const member_token = member_token_meta.content;
+        if (!header) return;
 
-        return member_token;
-    }
-
-    async addLinkToRewardsPlatform() {
-        await utilities.waitForSelectorInDOM('header #commands');
-
-        const member_token = this.getMemberToken();
-        const login_url = 'https://hotels.resbeat.com/v6/login';
-
-        const query_string = `member_token=${member_token}&login_url=${login_url}`;
-
-        const encoded_query_string = btoa(query_string);
-
-        const header_links = document.querySelector('header #commands');
-
-        if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
-
-        header_links.insertAdjacentHTML('afterBegin', `<a href="http://e2e-redirect.localhost/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`);
+        header.insertAdjacentHTML('afterEnd', `<h1 id="demo-messaging">DEMO</h1>`);
     }
 }
 

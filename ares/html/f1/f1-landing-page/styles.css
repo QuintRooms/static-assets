@@ -38,41 +38,13 @@ header {
     background: #e10600;
 }
 
+.logo {
+    padding: 5px 0 5px 30px;
+}
+
 #tickets li:last-child {
     display: none;
 }
-
-/* .secondary-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-}
-
-.secondary-nav a {
-    color: #15151e;
-    text-transform: uppercase;
-}
-
-.primary-nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background: #e10600;
-    color: #fff;
-    padding: 24px;
-}
-
-.primary-nav img {
-    max-width: 300px;
-    margin-right: 64px;
-}
-
-.primary-nav a {
-    color: #fff;
-    text-transform: uppercase;
-    font-family: 'F1-Regular', 'Helvetica';
-} */
 
 .banner {
     display: flex;
@@ -126,6 +98,25 @@ section h3 {
     overflow: scroll;
 }
 
+.races::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.races::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.races::-webkit-scrollbar:horizontal {
+    height: 0px;
+}
+
+.races::-webkit-scrollbar-thumb {
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid #f7f4f1; 
+    background-color: rgba(0, 0, 0, .5);
+}
+
 .race {
     background-color: #fff;
     margin: 4px 0;
@@ -169,6 +160,7 @@ section h3 {
 
 .race-location {
     display: flex;
+    align-items: center;
     margin-right: 5px;
 }
 
@@ -302,7 +294,6 @@ fieldset {
     text-transform: uppercase;
     color: #fff;
     background-color: #e10600;
-    border: 1px solid #E7E7E7;
     padding: 7px 10px;
     border-radius: 7px;
 }
@@ -437,11 +428,64 @@ hr {
 }
 
 .trademark-details {
-    color: #333;
+    color: #d0d0d2;
     padding-bottom: 30px;
 }
 
-@media screen and (max-width: 600px) {
+.mobile-privacy-links, .more {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    header {
+        padding: 10px 0 10px 10px
+    }
+
+    .show-mobile-nav {
+        transform: translateY(300px) !important;
+        left: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .tile-content {
+        min-height: 170px;
+    }
+
+    #rates {
+        margin-right: 10px;
+    }
+
+    #rewards {
+        margin: 0 10px;
+    }
+
+    #give {
+        margin-left: 10px
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .date {
+        width: 30%;
+    }
+
+    .country-flag {
+        width: 45px;
+        height: 25px;
+    }
+
+    .tile-content {
+        min-height: 185px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .logo {
+        padding: 15px 0;
+    }
 
     .race-info {
         width: 100%;
@@ -449,11 +493,10 @@ hr {
 
     .race-location {
         align-items: center;
-        padding: 10px 0;
     }
 
     .race-details {
-        width: 180px;
+        width: 120px;
     }
 
     .race-details #mobile-year {
@@ -466,8 +509,10 @@ hr {
 
     .date {
         padding: 10px;
-        width: 40%;
+        width: 25%;
         height: 80px;
+        display: flex;
+        flex-direction: column;
     }
 
     .days {
@@ -479,8 +524,10 @@ hr {
     }
 
     .country-flag {
-        width: 20%;
-        height: 15%;
+        width: 35px;
+        height: 19px;
+        border-radius: 5px;
+        margin: 0 12px 0 20px;
     }
 
     .book-btn {
@@ -510,6 +557,14 @@ hr {
     .tile {
         width: 100%;
         max-width: 100%;
+    }
+
+    .tile-content {
+        min-height: 100px;
+    }
+
+    #rates, #rewards, #give  {
+        margin: 10px 0;
     }
 
     .f1-experiences {
@@ -560,5 +615,62 @@ hr {
 
     #rewards {
         margin: 25px 0;
+    }
+
+    .privacy-links {
+        display: none;
+    }
+
+    .more {
+        color: #fff;
+        font-family: 'F1-Regular';
+        font-size: 12px;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #38383f;
+        width: 95%;
+    }
+
+    .more.open {
+        margin: 30px 0 0 0;
+    }
+
+    .more.open svg {
+        transform: rotate(90deg);
+    }
+
+    hr {
+        display: none;
+    }
+
+    .mobile-privacy-links {
+        /* display: none; */
+        height: 0;
+        transition: height 1s;
+    }
+
+    .mobile-privacy-links.show {
+        height: auto;
+    }
+
+    .mobile-privacy-links p {
+        width: 95%;
+        padding: 10px 0;
+        border-bottom: 1px solid #38383f;
+        margin: 0;
+    }
+
+    .mobile-privacy-links a {
+        color: #fff;
+        padding: 5px 0 5px 30px;
+        font-family: 'F1-Regular';
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .show {
+        display: block;
     }
 }

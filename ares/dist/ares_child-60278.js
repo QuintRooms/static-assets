@@ -2155,13 +2155,13 @@
                 var t = H.call(this, (e = w(e, !0)));
                 return !(this === N && o(I, e) && !o(F, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, D) && this[D][e])) || t);
             },
-            Q = function (e, t) {
+            X = function (e, t) {
                 if (((e = S(e)), (t = w(t, !0)), e !== N || !o(I, t) || o(F, t))) {
                     var n = q(e, t);
                     return !n || !o(I, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
-            X = function (e) {
+            Q = function (e) {
                 for (var t, n = P(S(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
@@ -2184,9 +2184,9 @@
                     return this._k;
                 }
             ),
-            (M.f = Q),
+            (M.f = X),
             (C.f = Z),
-            (n(51).f = A.f = X),
+            (n(51).f = A.f = Q),
             (n(26).f = K),
             (L.f = ee),
             i && !n(16) && c(N, 'propertyIsEnumerable', K, !0),
@@ -2218,8 +2218,8 @@
                 },
                 defineProperty: Z,
                 defineProperties: J,
-                getOwnPropertyDescriptor: Q,
-                getOwnPropertyNames: X,
+                getOwnPropertyDescriptor: X,
+                getOwnPropertyNames: Q,
                 getOwnPropertySymbols: ee,
             });
         var ie = u(function () {
@@ -4716,6 +4716,7 @@
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
                                                                             (G.init(e.site_config, e.page_name, W),
+                                                                            e.buildCurrencyDropdown(),
                                                                             W.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             W.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -4744,14 +4745,6 @@
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
                                                                         ),
-                                                                        e.site_config.show_tax_inclusive_rates &&
-                                                                            jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                                                                e.getTotalNights().then(function (t) {
-                                                                                    e.getCurrency().then(function (n) {
-                                                                                        e.getNightlyRateForMapMarkers(t, n);
-                                                                                    });
-                                                                                });
-                                                                            }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name && G.init(e.site_config, e.page_name, W),
                                                                         jQuery('#theBody').on(
@@ -4935,7 +4928,7 @@
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5397,8 +5390,8 @@
                                         W.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
-                                                .concat(t, ', \n                 .RoomNumber-')
-                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                 .RoomNumber-')
+                                                .concat(t, ', \n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                .RoomNumber-')
                                                 .concat(t, ' #theCardVerificationAjax'),
                                             '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
                                             'credit-card-details',
@@ -5600,7 +5593,7 @@
                             key: 'styleCUGMapPins',
                             value: function () {
                                 document.querySelector('.SearchHotels') &&
-                                    'false' !== this.site_config.cug.is_cug &&
+                                    !1 !== this.site_config.cug.is_cug &&
                                     document.body.insertAdjacentHTML(
                                         'beforeend',
                                         '\n        <style>\n            .SearchHotels .arnMapMarker {\n                background: '
@@ -6760,15 +6753,15 @@
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function Q(e, t) {
-            return (Q =
+        function X(e, t) {
+            return (X =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function X(e, t, n) {
-            return (X =
+        function Q(e, t, n) {
+            return (Q =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
@@ -6863,14 +6856,14 @@
                     (e = (function (e, t) {
                         return !t || ('object' !== J(t) && 'function' != typeof t) ? K(e) : t;
                     })(this, ee(t).call(this, te))),
-                    X(ee(t.prototype), 'init', K(e)).call(K(e)),
+                    Q(ee(t.prototype), 'init', K(e)).call(K(e)),
                     e
                 );
             }
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && Q(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && X(e, t);
                 })(t, e),
                 t
             );

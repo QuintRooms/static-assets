@@ -121,6 +121,7 @@ export default class BasePortal {
             // root page methods
             if (document.querySelector('.RootBody')) {
                 algolia.init(this.site_config, this.page_name, utilities);
+                this.buildCurrencyDropdown();
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -143,16 +144,6 @@ export default class BasePortal {
             utilities.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin');
             utilities.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin');
             utilities.createHTML('<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>', '#theWBLoginFormBody .ForgotPasswordAction', 'afterEnd');
-
-            if (this.site_config.show_tax_inclusive_rates) {
-                jQuery('#theBody').on('arnMapLoadedEvent', () => {
-                    this.getTotalNights().then((nights) => {
-                        this.getCurrency().then((currency) => {
-                            this.getNightlyRateForMapMarkers(nights, currency);
-                        });
-                    });
-                });
-            }
 
             if (this.page_name === 'lrg-page') {
                 this.replaceLRGForm();
@@ -723,8 +714,8 @@ export default class BasePortal {
 
             utilities.createWrapper(
                 `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
-                 .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
-                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
+                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
+                .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,
                 'afterEnd'
@@ -1083,7 +1074,7 @@ export default class BasePortal {
     }
 
     styleCUGMapPins() {
-        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === 'false') return;
+        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === false) return;
         document.body.insertAdjacentHTML(
             'beforeend',
             `

@@ -19,6 +19,7 @@ class ChildPortal extends Resbeat {
     init() {
         this.addDemoSiteTextToHeader();
         this.showGatewaySupplier();
+        this.showGDSRatesButton();
 
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
@@ -64,44 +65,83 @@ class ChildPortal extends Resbeat {
     }
 
     showGatewaySupplier() {
-        // if (!document.querySelector('.SinglePropDetail')) return;
+        if (!document.querySelector('.SinglePropDetail')) return;
 
-        // fetch the gateway json
-        // eslint-disable-next-line no-unused-vars
         async function fetchGatewayJson() {
             const gateway_json = await fetch(`${env_path.path}/site_configs/resbeat_squad_test-62686/gateways.json`);
             const gateways = await gateway_json.json();
             return gateways;
         }
 
-        // get node list of rates on single prop page
-        async function getPropRates() {
-            const rates = document.querySelectorAll('table .ArnRateList');
-            console.log(rates);
-            rates.forEach((e) => {
-                for (let i = 0, l = e.classList.length; i < l; i += 1) {
-                    if (/^(S|SB)([1-9]|[1-9][0-9]){0,4}$/) {
-                        console.log('after regex: ', e.className);
-                    }
+        async function findMatchInGatewayJson(gateway_string) {
+            let supplier_name;
+            let gateway_match;
+            const gateway_obj = await fetchGatewayJson();
+            Object.entries(gateway_obj).forEach((el) => {
+                if (el[0] === gateway_string) {
+                    // eslint-disable-next-line prefer-destructuring
+                    supplier_name = el[1];
+                    // eslint-disable-next-line prefer-destructuring
+                    gateway_match = el[0];
                 }
-                // console.log(e.classList);
-                // if (e.classList.contains(/^(S|SB)([1-9]|[1-9][0-9]){0,4}$/)) {
-                //     console.log('after regex: ', e.classList);
-                // }
             });
-
-            // const gateways = await fetchGatewayJson();
-            // Object.entries(gateways).forEach((el) => {
-
-            // })
+            return [gateway_match, supplier_name];
         }
 
-        getPropRates();
+        function appendGatewayNameToPage(element, name, gateway) {
+            element.querySelector('.RoomDescription').insertAdjacentHTML(
+                'beforeend',
+                `
+                <div id="gatewayData">
+                    <div class="supplierName">Supplier Name: ${name}</div>
+                    <div class="gateway">Gateway: ${gateway}</div>
+                </div>
+            <style>
+                #gatewayData {
+                    padding: 20px 0;
+                    font-weight: 800;
+                }
+            </style>
+            `
+            );
+        }
 
-        // For each node list entry, loop through gateway json and check for matches in gateway numbers.
+        async function getGatewayName() {
+            const rates = document.querySelectorAll('table .ArnRateList');
+            rates.forEach((e) => {
+                for (let i = 0; i < e.classList.length; i += 1) {
+                    if (/\S[B][1-9]|[1-9][0-9]$/.test(e.classList[i])) {
+                        const str = e.classList[i];
+                        // eslint-disable-next-line no-loop-func
+                        findMatchInGatewayJson(str.replace(/\D/g, '')).then((res) => {
+                            appendGatewayNameToPage(e, res[1], res[0]);
+                        });
+                    }
+                }
+            });
+        }
+        getGatewayName();
+    }
 
-        // if there's a match, save the value asscociated with the key to later display on room rate container
+    showGDSRatesButton() {
+        if (!document.querySelector('.SinglePropDetail')) return;
+        // let gds_url;
+        const orig_params = document.querySelector('meta[name="originalParams"]').content;
+        let url = new URL(`https://events.hotelsforhope.com/v6/?${orig_params}`);
+        const params = new URLSearchParams(url.search.slice(1));
+        url = params.delete('type');
+        params.delete('siteid');
+        const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
+        document.querySelector('#standardAvail').insertAdjacentHTML(
+            'beforeend',
+            `
+            <span id="check-gds-rates">
+                <a href="${url}siteId=39560&type=property&property=${prop_id}" target="_blank">Check GDS Rates</a>
+            </span>
+        `
+        );
     }
 }
+// URL= https://events.hotelsforhope.com/v6/?siteid=39560nights=1&type=property&property=20498&useMiles=&latitude=30.2711&checkin=8/21/2020&s&destination=Austin,%20Texas,%20United%20States%20of%20America&pagesize=10&adults=2&currency=USD&rooms=1&longitude=-97.7437
 
 new ChildPortal();

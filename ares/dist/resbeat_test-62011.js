@@ -7121,8 +7121,14 @@
                                                                 )
                                                             );
                                                         case 11:
+                                                            if ('62011' !== this.site_config.site_id) {
+                                                                e.next = 13;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 13:
                                                             this.showResbeatRewardsComingSoonMessagingOnHover();
-                                                        case 12:
+                                                        case 14:
                                                         case 'end':
                                                             return e.stop();
                                                     }

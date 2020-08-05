@@ -7254,9 +7254,9 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var fe = new r(),
-            pe = new B(),
-            me = new (function () {
+        new r();
+        var fe = new B(),
+            pe = new (function () {
                 return {
                     site_id: 62686,
                     affiliate_id: 16827,
@@ -7328,13 +7328,13 @@
                     })(this, t),
                     (e = (function (e, t) {
                         return !t || ('object' !== ie(t) && 'function' != typeof t) ? ue(e) : t;
-                    })(this, he(t).call(this, me))),
+                    })(this, he(t).call(this, pe))),
                     de(he(t.prototype), 'init', ue(e)).call(ue(e)),
                     e.init(),
                     e
                 );
             }
-            var n, r, o, i, a;
+            var n, r, o, i;
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
@@ -7349,12 +7349,12 @@
                             this.addDemoSiteTextToHeader(),
                                 this.showGatewaySupplier(),
                                 document.querySelector('.SearchHotels') &&
-                                    pe.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
+                                    fe.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(function () {
                                         e.boldLastWord(['.ArnPrimarySearchOuterContainer div.ArnSearchHeader']);
                                     }),
                                 document.querySelector('.SinglePropDetail') &&
                                     (this.boldLastWord(['#standardAvail legend', '#thePropertyReviews legend', '#theGeneralInfo legend']),
-                                    pe.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
+                                    fe.waitForTextInDOM('.ArnLeftListContainer .translateMe', 'Update Search').then(function () {
                                         e.boldLastWord(['.ArnLeftListContainer .translateMe']);
                                     })),
                                 document.querySelector('.CheckOutForm') &&
@@ -7379,14 +7379,14 @@
                     {
                         key: 'addDemoSiteTextToHeader',
                         value:
-                            ((a = ce(
+                            ((i = ce(
                                 regeneratorRuntime.mark(function e() {
                                     var t;
                                     return regeneratorRuntime.wrap(function (e) {
                                         for (;;)
                                             switch ((e.prev = e.next)) {
                                                 case 0:
-                                                    return (e.next = 2), pe.waitForSelectorInDOM('header');
+                                                    return (e.next = 2), fe.waitForSelectorInDOM('header');
                                                 case 2:
                                                     if ((t = document.querySelector('header'))) {
                                                         e.next = 5;
@@ -7403,34 +7403,37 @@
                                 })
                             )),
                             function () {
-                                return a.apply(this, arguments);
+                                return i.apply(this, arguments);
                             }),
                     },
                     {
                         key: 'showGatewaySupplier',
-                        value:
-                            ((i = ce(
-                                regeneratorRuntime.mark(function e() {
-                                    var t, n;
-                                    return regeneratorRuntime.wrap(function (e) {
-                                        for (;;)
-                                            switch ((e.prev = e.next)) {
-                                                case 0:
-                                                    return (e.next = 2), fetch(''.concat(fe.path, '/site_configs/resbeat_squad_test-62686/gateways.json'));
-                                                case 2:
-                                                    return (t = e.sent), (e.next = 5), t.json();
-                                                case 5:
-                                                    (n = e.sent), console.log(n);
-                                                case 7:
-                                                case 'end':
-                                                    return e.stop();
-                                            }
-                                    }, e);
-                                })
-                            )),
-                            function () {
-                                return i.apply(this, arguments);
-                            }),
+                        value: function () {
+                            function e() {
+                                return (e = ce(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        (t = document.querySelectorAll('table .ArnRateList')),
+                                                            console.log(t),
+                                                            t.forEach(function (e) {
+                                                                for (var t = 0, n = e.classList.length; t < n; t += 1) console.log('after regex: ', e.className);
+                                                            });
+                                                    case 3:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )).apply(this, arguments);
+                            }
+                            !(function () {
+                                e.apply(this, arguments);
+                            })();
+                        },
                     },
                 ]) && se(n.prototype, r),
                 o && se(n, o),

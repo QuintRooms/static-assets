@@ -1,6 +1,9 @@
 import SiteConfig from './62686-config';
 import Resbeat from '../../js/resbeat';
 import Utilities from '../../js/utilities';
+import Path from '../../js/path';
+
+const env_path = new Path();
 
 const utilities = new Utilities();
 
@@ -15,6 +18,7 @@ class ChildPortal extends Resbeat {
 
     init() {
         this.addDemoSiteTextToHeader();
+        this.showGatewaySupplier();
 
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
@@ -57,6 +61,12 @@ class ChildPortal extends Resbeat {
         if (!header) return;
 
         header.insertAdjacentHTML('afterEnd', `<h1 id="demo-messaging">DEMO</h1>`);
+    }
+
+    async showGatewaySupplier() {
+        const gateway_json = await fetch(`${env_path.path}/site_configs/resbeat_squad_test-62686/gateways.json`);
+        const gateways = await gateway_json.json();
+        console.log(gateways);
     }
 }
 

@@ -125,23 +125,51 @@ class ChildPortal extends Resbeat {
 
     showGDSRatesButton() {
         if (!document.querySelector('.SinglePropDetail')) return;
-        // let gds_url;
-        const orig_params = document.querySelector('meta[name="originalParams"]').content;
-        let url = new URL(`https://events.hotelsforhope.com/v6/?${orig_params}`);
-        const params = new URLSearchParams(url.search.slice(1));
-        url = params.delete('type');
-        params.delete('siteid');
-        const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
-        document.querySelector('#standardAvail').insertAdjacentHTML(
-            'beforeend',
+
+        function buildUrl() {
+            const url = 'https://events.hotelsforhope.com/v6/?';
+            const orig_params = document.querySelector('meta[name="originalParams"]').content;
+            const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
+
+            const url_params = new URL(`${url}${orig_params}`);
+            const params = new URLSearchParams(url_params.search);
+            params.forEach((value, key) => {
+                if (key === 'type' || key === 'siteid') {
+                    params.delete(key);
+                }
+            });
+            return `${url}siteid=39560&type=property&property=${prop_id}&${params.toString()}`;
+        }
+        document.querySelector('#standardAvail legend').insertAdjacentHTML(
+            'afterend',
             `
             <span id="check-gds-rates">
-                <a href="${url}siteId=39560&type=property&property=${prop_id}" target="_blank">Check GDS Rates</a>
+                <a href="${buildUrl()}" target="_blank">Check GDS Rates</a>
             </span>
+            <style>
+                #check-gds-rates {
+                    float: right;
+                    border: 1px solid #ccc;
+                    margin: 10px 33px 10px 10px;
+                }
+
+                #check-gds-rates a {
+                    padding: 10px;
+                    color: #666;
+                    text-decoration: none;
+                }
+
+                #check-gds-rates:hover {
+                    background: #ccc;
+                }
+
+                #check-gds-rates:hover a {
+                    color:#fff;
+                }
+            </style>
         `
         );
     }
 }
-// URL= https://events.hotelsforhope.com/v6/?siteid=39560nights=1&type=property&property=20498&useMiles=&latitude=30.2711&checkin=8/21/2020&s&destination=Austin,%20Texas,%20United%20States%20of%20America&pagesize=10&adults=2&currency=USD&rooms=1&longitude=-97.7437
 
 new ChildPortal();

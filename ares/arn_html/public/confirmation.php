@@ -294,6 +294,10 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <th>Total:</th>
                                         <td>872.00 USD</td>
                                     </tr>
+                                    <tr class="discount">
+                                        <th nowrap="nowrap">Total Member Savings:</th>
+                                        <td>40.98 USD</td>
+                                    </tr>
                                 </table>
                                 <table class="totalsTable" border="0" cellspacing="0" cellpadding="0">
                                     <tr class="paymentRow">

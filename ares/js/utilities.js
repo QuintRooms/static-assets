@@ -437,8 +437,33 @@ export default class Utilities {
                 'beforeend',
                 `<div class="custom-button">
                     <a id="custom-link" target="_blank" href="${link}">${text}</a>
-                </div>`
+                </div>
+                <style class="stay-22-header-styles">
+                    @media screen and (max-width: 600px) {
+                    header {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                <style>    
+                `
             );
         }
+    }
+
+    /**
+     *@description Checks whether the date passed in is in the past
+     *@param string date - date to check
+     *@return bool
+     */
+    checkForPastDate(date) {
+        if (!date) console.error('No date passed into checkForPastDate()');
+
+        const now = dayjs();
+        const date_to_check = dayjs(date);
+
+        const diff = date_to_check.diff(now, 'milliseconds');
+
+        return diff < 0;
     }
 }

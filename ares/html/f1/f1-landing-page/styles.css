@@ -1,0 +1,676 @@
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Wide';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Titillium Web', 'sans-serif';
+    font-size: 14px;
+    background: #f7f4f1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #e10600;
+}
+
+.logo {
+    padding: 5px 0 5px 30px;
+}
+
+#tickets li:last-child {
+    display: none;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background: url('images/banner.jpg') no-repeat center center /cover;
+    height: 500px;
+    text-transform: uppercase
+}
+
+.banner h1 {
+    font-family: 'F1-Bold', 'Helvetica';
+}
+
+.banner a {
+    background: #fff;
+    color: #15151e;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 18px;
+    display: inline-block;
+}
+
+.banner a:hover {
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+
+section {
+    margin-top: 42px;
+}
+
+section p {
+    padding: 8px 0;
+}
+
+section h1 {
+    font-family: 'F1-Bold', 'Helvetica';
+
+}
+
+section h3 {
+    text-transform: uppercase;
+    font-family: 'F1-Regular', 'Helvetica';
+
+}
+
+.races {
+    max-height: 350px;
+    overflow: scroll;
+}
+
+.races::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.races::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.races::-webkit-scrollbar:horizontal {
+    height: 0px;
+}
+
+.races::-webkit-scrollbar-thumb {
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid #f7f4f1; 
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.race {
+    background-color: #fff;
+    margin: 4px 0;
+    justify-content: space-between;
+    height: 90px;
+    border-radius: 5px;
+}
+
+.race:hover {
+    background-color: #15151e;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    color: #fff;
+}
+
+.race:hover .book-btn {
+    border: unset;
+    box-shadow: 0 0 0 2px #e10600 inset;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    background-color: #fff;
+    color: #38383f;
+    text-decoration: none;
+}
+
+.race:hover .month {
+    color: #38383f;
+}
+
+.race,
+.race-info {
+    display: flex;
+    align-items: center;
+}
+
+.race-info {
+    width: 75%;
+}
+
+.race-details #mobile-year {
+    display: none;
+}
+
+.race-location {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.date {
+    border-right: 2px dotted #E7E7E7;
+    width: 15%;
+}
+
+.days {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'F1-Regular', 'Helvetica';
+}
+
+.month {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
+}
+
+.name {
+    text-transform: uppercase;
+    font-family: 'F1-Bold', 'Helvetica';
+}
+
+.race .book-btn {
+    text-transform: uppercase;
+    color: #333;
+    border: 1px solid #E7E7E7;
+    padding: 7px 10px;
+    border-radius: 7px;
+    margin-right: 15px;
+}
+
+.race .mobile-book-btn {
+    display: none;
+}
+
+.country-flag {
+    width: 60px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 0 12px 0 20px;
+}
+
+fieldset {
+    border-top: 10px solid #e10600;
+    border-right: 10px solid #e10600;
+    border-bottom: 10px solid #e10600;
+    border-radius: 0 25px 25px 0;
+    padding: 24px 24px 24px 0;
+}
+
+#lower-section {
+    background-color: #fff;
+}
+
+#page-lower {
+    background: #fff;
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.why-book-here {
+    padding-top: 50px;
+}
+
+.why-book-here h4 {
+    font-family: 'F1-Bold', 'Helvetica';
+    padding-bottom: 5px;
+    border-bottom: 4px solid #121117;
+}
+
+.tiles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.tile{
+    max-width: 33%;
+}
+
+.tile img {
+    width: 100%;
+    height: 150px;
+    align-self: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+#rewards {
+    margin: 0 25px;
+}
+
+.tile-content {
+    padding: 15px 15px 15px 0;
+    border-bottom: 1px solid #D5D5D6;
+    border-right: 1px solid #D5D5D6;
+    border-radius: 0 0 15px 0;
+    margin-top: 25px;
+    min-height: 130px;
+}
+
+.tile-content p {
+    padding: 5px 0 0 0;
+}
+
+.tile-content h5 {
+    font-family: 'F1-Regular';
+}
+
+.f1-experiences {
+    padding: 60px 0;
+}
+
+.f1-experiences img {
+    margin-bottom: 15px;
+}
+
+.f1-experiences p {
+    border-top: 4px solid #121117;
+    padding: 25px 0;
+}
+
+.f1-experiences a {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #e10600;
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+
+.f1-experiences a:hover {
+    background-color: #ae0500;
+    border-color: 1px solid #ae0500;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background: #121117;
+}
+
+footer fieldset {
+    border: none;
+    padding: 0;
+}
+
+.footer-top {
+    background-color: #333;
+}
+
+.footer-top .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-app {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.download {
+    width: 25%;
+    text-align: center;
+    font-family: 'Titillium Web', 'sans-serif';
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.mobile-app img {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.social-media {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+.social-logo {
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.social-logo img {
+    align-self: center;
+}
+
+.footer-nav {
+    margin-top: 35px;
+    background-color: #121117;
+    color: #fff;
+    border-right: 10px solid #38383f;
+    border-bottom: 10px solid #38383f;
+    border-radius: 0 0 25px 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'F1-Regular';
+    font-size: 12px;
+}
+
+.footer-nav h4 {
+    font-size: 14px;
+}
+
+.footer-nav img {
+    height: 10%;
+    margin: 20px;
+}
+
+.footer-nav li {
+    list-style: none;
+    padding: 7px 0;
+    cursor: pointer;
+    border-bottom: 2px solid #121117;
+}
+
+.footer-nav a {
+    color: #fff;
+}
+
+.footer-nav a:hover, .privacy-links a:hover {
+    text-decoration: none;
+}
+
+.footer-nav li:hover, .privacy-links a:hover {
+    border-bottom: solid 2px #e10600;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#38383f;
+    height: 1px;
+    margin: 40px 0;
+}
+
+.privacy-links {
+    margin-top: 15px;
+}
+
+.privacy-links a {
+    margin: 5px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.trademark-details {
+    color: #d0d0d2;
+    padding-bottom: 30px;
+}
+
+.mobile-privacy-links, .more {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    header {
+        padding: 10px 0 10px 10px
+    }
+
+    .show-mobile-nav {
+        transform: translateY(300px) !important;
+        left: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .tile-content {
+        min-height: 170px;
+    }
+
+    #rates {
+        margin-right: 10px;
+    }
+
+    #rewards {
+        margin: 0 10px;
+    }
+
+    #give {
+        margin-left: 10px
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .date {
+        width: 30%;
+    }
+
+    .country-flag {
+        width: 45px;
+        height: 25px;
+    }
+
+    .tile-content {
+        min-height: 185px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .logo {
+        padding: 15px 0;
+    }
+
+    .race-info {
+        width: 100%;
+    }
+
+    .race-location {
+        align-items: center;
+    }
+
+    .race-details {
+        width: 120px;
+    }
+
+    .race-details #mobile-year {
+        display: block;
+    }
+
+    .race-details #F1-title, .race-details #sponsor, #desktop-year {
+        display: none;
+    }
+
+    .date {
+        padding: 10px;
+        width: 25%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .days {
+        font-size: 12px;
+    }
+
+    .month {
+        width: 40px;
+    }
+
+    .country-flag {
+        width: 35px;
+        height: 19px;
+        border-radius: 5px;
+        margin: 0 12px 0 20px;
+    }
+
+    .book-btn {
+        display: none;
+    }
+    
+    .race .mobile-book-btn {
+        background: #E7E7E7;
+        height: 100%;
+        display: flex;
+        border-radius: 0px 5px 5px 0px;
+    }
+
+    .race .mobile-book-btn svg {
+        margin: auto 5px;
+    }
+
+    .why-book-here {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tiles {
+        flex-direction: column;
+    }
+
+    .tile {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tile-content {
+        min-height: 100px;
+    }
+
+    #rates, #rewards, #give  {
+        margin: 10px 0;
+    }
+
+    .f1-experiences {
+        margin: 50px 0 0 0;
+    }
+
+    .footer-top .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .download {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .mobile-app {
+        flex-direction: column;
+        padding-bottom: 15px;
+        border-bottom: 2px solid black;
+        width: 100%;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+    
+    .footer-nav div {
+        width: 95%;
+    }
+
+    .footer-nav img {
+        display: none;
+    }
+
+    .footer-nav ul {
+        width: 100%;
+    }
+
+    .footer-nav li {
+        border-bottom: 1px solid #38383f;
+    }
+
+    .tile-content {
+        margin-top: 15px;
+    }
+
+    #rewards {
+        margin: 25px 0;
+    }
+
+    .privacy-links {
+        display: none;
+    }
+
+    .more {
+        color: #fff;
+        font-family: 'F1-Regular';
+        font-size: 12px;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #38383f;
+        width: 95%;
+    }
+
+    .more.open {
+        margin: 30px 0 0 0;
+    }
+
+    .more.open svg {
+        transform: rotate(90deg);
+    }
+
+    hr {
+        display: none;
+    }
+
+    .mobile-privacy-links {
+        /* display: none; */
+        height: 0;
+        transition: height 1s;
+    }
+
+    .mobile-privacy-links.show {
+        height: auto;
+    }
+
+    .mobile-privacy-links p {
+        width: 95%;
+        padding: 10px 0;
+        border-bottom: 1px solid #38383f;
+        margin: 0;
+    }
+
+    .mobile-privacy-links a {
+        color: #fff;
+        padding: 5px 0 5px 30px;
+        font-family: 'F1-Regular';
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .show {
+        display: block;
+    }
+}

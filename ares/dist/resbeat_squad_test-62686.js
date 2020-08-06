@@ -7463,18 +7463,34 @@
                                 )).apply(this, arguments);
                             }
                             function o(e, t, n) {
-                                e.querySelector('.RoomDescription').insertAdjacentHTML(
-                                    'beforeend',
-                                    '\n                <div id="gatewayData">\n                    <div class="supplierName">Supplier Name: '
-                                        .concat(t, '</div>\n                    <div class="gateway">Gateway: ')
-                                        .concat(
-                                            n,
-                                            '</div>\n                </div>\n            <style>\n                #gatewayData {\n                    padding: 20px 0;\n                    font-weight: 800;\n                }\n            </style>\n            '
-                                        )
-                                );
+                                return i.apply(this, arguments);
                             }
                             function i() {
                                 return (i = ce(
+                                    regeneratorRuntime.mark(function e(t, n, r) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        t.querySelector('td').insertAdjacentHTML(
+                                                            'beforeend',
+                                                            '\n                <div id="gatewayData">\n                    <div class="supplierName">Supplier Name: '
+                                                                .concat(n, '</div>\n                    <div class="gateway">Gateway: ')
+                                                                .concat(
+                                                                    r,
+                                                                    '</div>\n                </div>\n            <style>\n                #gatewayData {\n                    padding: 20px 0;\n                    font-weight: 800;\n                }\n            </style>\n            '
+                                                                )
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )).apply(this, arguments);
+                            }
+                            function a() {
+                                return (a = ce(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -7497,7 +7513,7 @@
                             }
                             document.querySelector('.SinglePropDetail') &&
                                 (function () {
-                                    i.apply(this, arguments);
+                                    a.apply(this, arguments);
                                 })();
                         },
                     },

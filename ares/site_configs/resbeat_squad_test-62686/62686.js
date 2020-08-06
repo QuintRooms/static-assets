@@ -88,8 +88,8 @@ class ChildPortal extends Resbeat {
             return [gateway_match, supplier_name];
         }
 
-        function appendGatewayNameToPage(element, name, gateway) {
-            element.querySelector('.RoomDescription').insertAdjacentHTML(
+        async function appendGatewayNameToPage(element, name, gateway) {
+            element.querySelector('td').insertAdjacentHTML(
                 'beforeend',
                 `
                 <div id="gatewayData">

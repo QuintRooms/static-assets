@@ -3086,7 +3086,7 @@
         n.r(t);
         n(45), n(49), n(19), n(60), n(62), n(40), n(33), n(34), n(21), n(22), n(65), n(23), n(66);
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         var o = new r(),
             i = 'resbeat_squad_test-'.concat(62686);

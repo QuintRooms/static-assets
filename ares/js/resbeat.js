@@ -681,7 +681,6 @@ export default class Resbeat extends BasePortal {
             'afterBegin',
             `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
         );
-        console.log(this.site_config.site_id);
         if (this.site_config.site_id === 62011) return;
 
         this.showResbeatRewardsComingSoonMessagingOnHover();

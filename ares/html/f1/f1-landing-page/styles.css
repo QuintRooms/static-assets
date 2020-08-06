@@ -123,6 +123,7 @@ section h3 {
     justify-content: space-between;
     height: 90px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .race:hover {
@@ -245,7 +246,7 @@ fieldset {
 }
 
 .tile{
-    max-width: 33%;
+    max-width: 31%;
 }
 
 .tile img {
@@ -464,9 +465,27 @@ hr {
     #give {
         margin-left: 10px
     }
+
+    .country-flag {
+        width: 48px;
+        height: 32px;
+    }
+
+    .date {
+        width: 30%;
+    }
 }
 
 @media screen and (max-width: 800px) {
+
+    .days {
+        font-size: 12px;
+    }
+
+    .month {
+        width: 40px;
+    }
+
     .date {
         width: 30%;
     }
@@ -479,9 +498,6 @@ hr {
     .tile-content {
         min-height: 185px;
     }
-}
-
-@media screen and (max-width: 700px) {
 
     .logo {
         padding: 15px 0;
@@ -516,7 +532,7 @@ hr {
     }
 
     .days {
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .month {
@@ -543,6 +559,13 @@ hr {
 
     .race .mobile-book-btn svg {
         margin: auto 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .days {
+        font-size: 14px;
     }
 
     .why-book-here {

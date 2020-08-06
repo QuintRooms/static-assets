@@ -42,14 +42,13 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
             // f1_landing_page: './src/f1_landing_page.js',
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
+            'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+            // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
-        entry_points = {
-            // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
-        };
+        entry_points = {};
     }
 
     return entry_points;

@@ -3,10 +3,10 @@ import Resbeat from '../../js/resbeat';
 import Utilities from '../../js/utilities';
 import Path from '../../js/path';
 
+const dayjs = require('dayjs');
+
 const env_path = new Path();
-
 const utilities = new Utilities();
-
 const site_config = new SiteConfig();
 
 class ChildPortal extends Resbeat {
@@ -127,19 +127,14 @@ class ChildPortal extends Resbeat {
         if (!document.querySelector('.SinglePropDetail')) return;
 
         function buildUrl() {
-            const url = 'https://events.hotelsforhope.com/v6/?';
-            const orig_params = document.querySelector('meta[name="originalParams"]').content;
             const prop_id = document.querySelector('meta[name="aPropertyId"]').content;
+            const check_in = dayjs(document.querySelector('meta[name="checkIn"]').content).format('M/D/YYYY');
+            const check_out = dayjs(document.querySelector('meta[name="checkOut"]').content).format('M/D/YYYY');
+            const nights = dayjs(check_out).diff(dayjs(check_in), 'days');
 
-            const url_params = new URL(`${url}${orig_params}`);
-            const params = new URLSearchParams(url_params.search);
-            params.forEach((value, key) => {
-                if (key === 'type' || key === 'siteid') {
-                    params.delete(key);
-                }
-            });
-            return `${url}siteid=39560&type=property&property=${prop_id}&${params.toString()}`;
+            return `https://events.hotelsforhope.com/v6/?&type=property&property=${prop_id}&checkIn=${check_in}&nights=${nights}&siteid=39560`;
         }
+
         document.querySelector('#standardAvail legend').insertAdjacentHTML(
             'afterend',
             `

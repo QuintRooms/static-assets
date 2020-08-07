@@ -39,6 +39,17 @@ module.exports = (env) => {
                         },
                     ],
                 },
+                {
+                    test: /\.(png|jp(e*)g|svg)$/,
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                name: 'images/[name].[ext]',
+                            },
+                        },
+                    ],
+                },
             ],
         },
         devtool: 'hidden-source-map',

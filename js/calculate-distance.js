@@ -12,12 +12,17 @@ class Distance {
     }
 
     init() {
-        this.getFromLatLong();
+        this.getVenueLatLng();
         this.getVenueName();
         this.getUnit();
     }
 
-    getFromLatLong() {
+    /**
+     * Gets the lat and long from the venue
+     * {return} void
+     */
+    // Todo: We need this to have the option of selecting the venue lat/lng or the track pin when we don't see any inventory in the city. Maybe if "points" parameter exists in the URL, use it, otherwise default to the main lat/lng.
+    getVenueLatLng() {
         this.from_lat = document.querySelector('meta[name="aLatitude"]');
         this.from_long = document.querySelector('meta[name="aLongitude"]');
 

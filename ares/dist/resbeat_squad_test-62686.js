@@ -6197,7 +6197,7 @@
                             key: 'setLoginRedirectUrl',
                             value: function () {
                                 var e = window.location.host;
-                                return ''.concat(e, '/v6/login');
+                                return 'https://'.concat(e, '/v6/login');
                             },
                         },
                         {

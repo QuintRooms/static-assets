@@ -657,7 +657,7 @@ export default class Resbeat extends BasePortal {
     setLoginRedirectUrl() {
         const domain = window.location.host;
 
-        return `${domain}/v6/login`;
+        return `https://${domain}/v6/login`;
     }
 
     getLoginRedirectUrl() {

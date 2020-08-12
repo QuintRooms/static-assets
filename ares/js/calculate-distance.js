@@ -27,10 +27,10 @@ class Distance {
     getVenueLatLng() {
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
-        if (search_params.has('eventPin')) {
-            const lat_lng = search_params.get('eventPin').split(' | ');
-            this.from_lat = lat_lng[0];
-            this.from_long = lat_lng[1];
+        if (search_params.has('points')) {
+            const lat_lng = search_params.get('points').split('|');
+            this.from_long = lat_lng[0];
+            this.from_lat = lat_lng[1];
         } else {
             this.from_lat = document.querySelector('meta[name="aLatitude"]');
             this.from_long = document.querySelector('meta[name="aLongitude"]');

@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 
 const site_id = 54494;
-// const directory_name = `f1_portugal_20-${site_id}`;
+const directory_name = `f1_portugal_20-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -40,8 +40,8 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,
-        has_custom_styles: false,
-        custom_styles_url: '',
+        has_custom_styles: true,
+        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/html/f1/img/logo.png`,

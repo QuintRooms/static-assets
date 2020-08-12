@@ -657,6 +657,8 @@ export default class Resbeat extends BasePortal {
     setLoginRedirectUrl() {
         const domain = window.location.host;
 
+        if (domain.includes('events.hotelsforhope')) return `https://${domain}/v6/login?siteId=${this.site_config.site_id}`;
+
         return `https://${domain}/v6/login`;
     }
 

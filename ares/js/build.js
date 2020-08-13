@@ -8,8 +8,6 @@ import Path from './path';
 const env_path = new Path();
 
 const dayjs = require('dayjs');
-require('dayjs/locale/zh-cn');
-
 const custom_parse_format = require('dayjs/plugin/customParseFormat');
 
 dayjs.extend(custom_parse_format);
@@ -1328,39 +1326,47 @@ export default class BasePortal {
         let full_stay_rate;
         let fixed_full_stay;
 
-        // if (this.site_config.show_tax_inclusive_rates) {
-        //     if (document.querySelector('.SearchHotels')) {
-        //         properties = document.querySelectorAll('.ArnContainer');
-        //         properties.forEach((property) => {
-        //             average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
-        //             full_stay_rate = property.querySelector('.arnPrice .arnUnit');
+        if (utilities.getMetaTagContent('showFullTotals')) {
+            if (document.querySelector('.SearchHotels')) {
+                properties = document.querySelectorAll('.ArnContainer');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('.ArnRateCell .ArnPriceCell .averageNightly');
+                    full_stay_rate = property.querySelector('.arnPrice .arnUnit');
 
-        //             if (!average_rate || !full_stay_rate) return;
+                    if (!average_rate || !full_stay_rate) return;
 
-        //             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-        //             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                    average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                    full_stay_rate.insertAdjacentHTML('beforeEnd', `<span style="font-size:13px; font-weight:normal;"><br> for ${nights} nights </span>`);
 
-        //             if (nights === 1) property.querySelector('.arnPrice').style.display = 'none';
-        //         });
-        //     }
+                    if (nights === 1) {
+                        property.querySelector('.arnPrice').style.display = 'none';
+                        property.querySelector('.averageNightly').style.display = 'block';
+                    }
 
-        //     if (document.querySelector('.SinglePropDetail')) {
-        //         properties = document.querySelectorAll('.ArnNightlyRate');
-        //         properties.forEach((property) => {
-        //             average_rate = property.querySelector('.averageNightly');
-        //             full_stay_rate = property.querySelector('strong');
+                    if (nights > 1) property.querySelector('.averageNightly + div').style.display = 'none';
+                });
+            }
 
-        //             if (!average_rate || !full_stay_rate) return;
+            if (document.querySelector('.SinglePropDetail')) {
+                properties = document.querySelectorAll('.ArnNightlyRate');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('.averageNightly');
+                    full_stay_rate = property.querySelector('strong');
 
-        //             average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-        //             full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                    if (!average_rate || !full_stay_rate) return;
 
-        //             if (nights === 1) property.querySelector('.averageNightly').style.display = 'none';
-        //         });
-        //     }
-        // }
-
-        if (!this.site_config.show_tax_inclusive_rates) {
+                    if (nights === 1) {
+                        average_rate.insertAdjacentHTML('afterEnd', `<div style="order: 1;">per night</div>`);
+                        property.querySelector('.averageNightly').style.display = 'none';
+                    }
+                    if (nights > 1) {
+                        full_stay_rate.insertAdjacentHTML('beforeEnd', `<span style="font-size:13px; font-weight:normal;"><br> for ${nights} nights </span>`);
+                        property.querySelector('.averageNightly + div').style.display = 'none';
+                    }
+                });
+            }
+        }
+        if (!utilities.getMetaTagContent('showFullTotals')) {
             if (document.querySelector('.SearchHotels')) {
                 properties = document.querySelectorAll('.ArnContainer');
                 properties.forEach((property) => {

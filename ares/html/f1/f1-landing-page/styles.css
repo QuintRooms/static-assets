@@ -32,36 +32,18 @@ body {
     background: #f7f4f1;
 }
 
-.secondary-nav .container {
+header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-}
-
-.secondary-nav a {
-    color: #15151e;
-    text-transform: uppercase;
-}
-
-.primary-nav {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
     background: #e10600;
-    color: #fff;
-    padding: 24px;
 }
 
-.primary-nav img {
-    max-width: 300px;
-    margin-right: 64px;
+.logo {
+    padding: 5px 0 5px 30px;
 }
 
-.primary-nav a {
-    color: #fff;
-    text-transform: uppercase;
-    font-family: 'F1-Regular', 'Helvetica';
+#tickets li:last-child {
+    display: none;
 }
 
 .banner {
@@ -87,6 +69,11 @@ body {
     display: inline-block;
 }
 
+.banner a:hover {
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+
 section {
     margin-top: 42px;
 }
@@ -106,11 +93,56 @@ section h3 {
 
 }
 
+.races {
+    max-height: 350px;
+    overflow: scroll;
+}
+
+.races::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.races::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.races::-webkit-scrollbar:horizontal {
+    height: 0px;
+}
+
+.races::-webkit-scrollbar-thumb {
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid #f7f4f1; 
+    background-color: rgba(0, 0, 0, .5);
+}
+
 .race {
     background-color: #fff;
-    margin: 6px 0;
+    margin: 4px 0;
     justify-content: space-between;
     height: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.race:hover {
+    background-color: #15151e;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    color: #fff;
+}
+
+.race:hover .book-btn {
+    border: unset;
+    box-shadow: 0 0 0 2px #e10600 inset;
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+    background-color: #fff;
+    color: #38383f;
+    text-decoration: none;
+}
+
+.race:hover .month {
+    color: #38383f;
 }
 
 .race,
@@ -120,17 +152,22 @@ section h3 {
 }
 
 .race-info {
-    width: 65%;
+    width: 75%;
+}
+
+.race-details #mobile-year {
+    display: none;
 }
 
 .race-location {
     display: flex;
+    align-items: center;
     margin-right: 5px;
 }
 
 .date {
     border-right: 2px dotted #E7E7E7;
-    width: 20%;
+    width: 15%;
 }
 
 .days {
@@ -153,7 +190,7 @@ section h3 {
     font-family: 'F1-Bold', 'Helvetica';
 }
 
-.race a {
+.race .book-btn {
     text-transform: uppercase;
     color: #333;
     border: 1px solid #E7E7E7;
@@ -162,8 +199,13 @@ section h3 {
     margin-right: 15px;
 }
 
+.race .mobile-book-btn {
+    display: none;
+}
+
 .country-flag {
-    width: 11%;
+    width: 60px;
+    height: 35px;
     border-radius: 5px;
     margin: 0 12px 0 20px;
 }
@@ -203,9 +245,16 @@ fieldset {
     margin-top: 15px;
 }
 
+.tile{
+    max-width: 31%;
+}
+
 .tile img {
     width: 100%;
-    height: 40%;
+    height: 150px;
+    align-self: center;
+    object-fit: cover;
+    object-position: center;
 }
 
 #rewards {
@@ -217,6 +266,12 @@ fieldset {
     border-bottom: 1px solid #D5D5D6;
     border-right: 1px solid #D5D5D6;
     border-radius: 0 0 15px 0;
+    margin-top: 25px;
+    min-height: 130px;
+}
+
+.tile-content p {
+    padding: 5px 0 0 0;
 }
 
 .tile-content h5 {
@@ -224,7 +279,7 @@ fieldset {
 }
 
 .f1-experiences {
-    height: 250px;
+    padding: 60px 0;
 }
 
 .f1-experiences img {
@@ -240,9 +295,14 @@ fieldset {
     text-transform: uppercase;
     color: #fff;
     background-color: #e10600;
-    border: 1px solid #E7E7E7;
     padding: 7px 10px;
     border-radius: 7px;
+}
+
+.f1-experiences a:hover {
+    background-color: #ae0500;
+    border-color: 1px solid #ae0500;
+    text-decoration: none;
 }
 
 .footer-bottom {
@@ -276,7 +336,7 @@ footer fieldset {
     text-align: center;
     font-family: 'Titillium Web', 'sans-serif';
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .mobile-app img {
@@ -292,20 +352,19 @@ footer fieldset {
 }
 
 .social-logo {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin: 0 8px;
     cursor: pointer;
 }
 
 .social-logo img {
-    width: 70%;
-    padding: 5px;
+    align-self: center;
 }
 
 .footer-nav {
@@ -327,17 +386,26 @@ footer fieldset {
 
 .footer-nav img {
     height: 10%;
-    margin-right: 20px;
+    margin: 20px;
 }
 
 .footer-nav li {
     list-style: none;
     padding: 7px 0;
     cursor: pointer;
+    border-bottom: 2px solid #121117;
 }
 
-.footer-nav li:hover {
-    text-decoration: underline;
+.footer-nav a {
+    color: #fff;
+}
+
+.footer-nav a:hover, .privacy-links a:hover {
+    text-decoration: none;
+}
+
+.footer-nav li:hover, .privacy-links a:hover {
+    border-bottom: solid 2px #e10600;
 }
 
 hr {
@@ -361,36 +429,143 @@ hr {
 }
 
 .trademark-details {
-    color: #333;
+    color: #d0d0d2;
     padding-bottom: 30px;
 }
 
-@media screen and (max-width: 600px) {
-    .race {
-        height: unset;
-        padding: 10px 0;
+.mobile-privacy-links, .more {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    header {
+        padding: 10px 0 10px 10px
+    }
+
+    .show-mobile-nav {
+        transform: translateY(300px) !important;
+        left: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .tile-content {
+        min-height: 170px;
+    }
+
+    #rates {
+        margin-right: 10px;
+    }
+
+    #rewards {
+        margin: 0 10px;
+    }
+
+    #give {
+        margin-left: 10px
+    }
+
+    .country-flag {
+        width: 48px;
+        height: 32px;
+    }
+
+    .date {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .days {
+        font-size: 12px;
+    }
+
+    .month {
+        width: 40px;
+    }
+
+    .date {
+        width: 30%;
+    }
+
+    .country-flag {
+        width: 45px;
+        height: 25px;
+    }
+
+    .tile-content {
+        min-height: 185px;
+    }
+
+    .logo {
+        padding: 15px 0;
+    }
+
+    .race-info {
+        width: 100%;
     }
 
     .race-location {
         align-items: center;
     }
 
+    .race-details {
+        width: 120px;
+    }
+
+    .race-details #mobile-year {
+        display: block;
+    }
+
+    .race-details #F1-title, .race-details #sponsor, #desktop-year {
+        display: none;
+    }
+
     .date {
-        padding-right: 20px;
-        width: 100%;
+        padding: 10px;
+        width: 25%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
     }
 
     .days {
-        font-size: 12px;
+        font-size: 20px;
+    }
+
+    .month {
+        width: 40px;
     }
 
     .country-flag {
-        width: 20%;
-        height: 15%;
+        width: 35px;
+        height: 19px;
+        border-radius: 5px;
+        margin: 0 12px 0 20px;
     }
 
     .book-btn {
         display: none;
+    }
+    
+    .race .mobile-book-btn {
+        background: #E7E7E7;
+        height: 100%;
+        display: flex;
+        border-radius: 0px 5px 5px 0px;
+    }
+
+    .race .mobile-book-btn svg {
+        margin: auto 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .days {
+        font-size: 14px;
     }
 
     .why-book-here {
@@ -402,8 +577,21 @@ hr {
         flex-direction: column;
     }
 
+    .tile {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tile-content {
+        min-height: 100px;
+    }
+
+    #rates, #rewards, #give  {
+        margin: 10px 0;
+    }
+
     .f1-experiences {
-        margin: 50px 0
+        margin: 50px 0 0 0;
     }
 
     .footer-top .container {
@@ -424,6 +612,14 @@ hr {
         width: 100%;
     }
 
+    .social-media {
+        justify-content: center;
+    }
+    
+    .footer-nav div {
+        width: 95%;
+    }
+
     .footer-nav img {
         display: none;
     }
@@ -442,5 +638,62 @@ hr {
 
     #rewards {
         margin: 25px 0;
+    }
+
+    .privacy-links {
+        display: none;
+    }
+
+    .more {
+        color: #fff;
+        font-family: 'F1-Regular';
+        font-size: 12px;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #38383f;
+        width: 95%;
+    }
+
+    .more.open {
+        margin: 30px 0 0 0;
+    }
+
+    .more.open svg {
+        transform: rotate(90deg);
+    }
+
+    hr {
+        display: none;
+    }
+
+    .mobile-privacy-links {
+        /* display: none; */
+        height: 0;
+        transition: height 1s;
+    }
+
+    .mobile-privacy-links.show {
+        height: auto;
+    }
+
+    .mobile-privacy-links p {
+        width: 95%;
+        padding: 10px 0;
+        border-bottom: 1px solid #38383f;
+        margin: 0;
+    }
+
+    .mobile-privacy-links a {
+        color: #fff;
+        padding: 5px 0 5px 30px;
+        font-family: 'F1-Regular';
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .show {
+        display: block;
     }
 }

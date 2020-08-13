@@ -31,22 +31,25 @@ module.exports = () => {
             'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             'transportation_short_course_20-56735': './src/56735.js', // TSC 2020
             'voodoo_21-60792': './src/60792.js', // Voodoo
+            'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
         };
 
         // develop environment
     } else if (process.env.environment === 'develop') {
         entry_points = {
-            // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'cug_template-39624': './src/39624.js', // CUG Template
+            'ares_child-60278': './src/60278.js', // Ares Child Test
+            'ares_child-60279': './src/60279.js', // Ares Child Test
+            'cug_template-39624': './src/39624.js', // CUG Template
             'resbeat_test-62011': './src/62011.js', // Resbeat test
+            f1_landing_page: './src/f1_landing_page.js',
+            'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
-            // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
+            'cfp_21-60797': './src/60797.js', // CFP 2021
         };
     }
 

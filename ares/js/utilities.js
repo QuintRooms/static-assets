@@ -181,7 +181,7 @@ export default class Utilities {
                         className: 'logo-left',
                         imageUrl: 'https://...',
                     },
-                })    
+                })
      */
     async addMultipleHeaderLogos(images) {
         await this.waitForSelectorInDOM('header');
@@ -385,6 +385,11 @@ export default class Utilities {
         return nights;
     }
 
+    /**
+     * Checks the browser width and compares against what is passed in
+     * @param string media_query The width to check, for example 'max-width: 800px'
+     * @return bool
+     */
     matchMediaQuery(media_query) {
         const mq = window.matchMedia(`(${media_query})`);
 
@@ -445,7 +450,7 @@ export default class Utilities {
                             flex-direction: column;
                         }
                     }
-                <style>    
+                <style>
                 `
             );
         }

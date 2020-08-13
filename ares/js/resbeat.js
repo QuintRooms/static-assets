@@ -146,7 +146,7 @@ export default class Resbeat extends BasePortal {
                 <h2 id="new-user-text">NEW <strong>USER</strong>?</h2>
                 <div id="register-btn">
                 </div>
-            </div>    
+            </div>
         `
         );
 
@@ -205,12 +205,12 @@ export default class Resbeat extends BasePortal {
         await utilities.waitForSelectorInDOM('.ArnNightlyRate');
         const rooms = document.querySelectorAll(rooms_element);
         const mq = window.matchMedia('(max-width: 800px)');
-        const style = `  
+        const style = `
             <style>
                 .points{
                     color: ${this.site_config.secondary_color};
                 }
-    
+
                 div.points-earned span {
                     font-family: 'Avenir';
                     letter-spacing: 1px;
@@ -244,7 +244,7 @@ export default class Resbeat extends BasePortal {
                       'afterbegin',
                       `
                 <div class="points-earned">
-                <span>RE<b>WARDS</b>: ${reward_points}</span> 
+                <span>RE<b>WARDS</b>: ${reward_points}</span>
                 </div>
                 `
                   )
@@ -252,7 +252,7 @@ export default class Resbeat extends BasePortal {
                       'afterend',
                       `
                 <div class="points-earned">
-                Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span> 
+                Earn <b class="points">${reward_points}</b> <span>RES<b>BEAT</b> Rewards</span>
                 </div>
                 `
                   );
@@ -507,11 +507,11 @@ export default class Resbeat extends BasePortal {
             .SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td, .WBResendOrCancelFormActions input {
                 font-family: '${this.site_config.google_font_name}', 'Helvetica';
             }
-            
+
             .SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong, .CheckOutForm tr.discount th, .CheckOutForm tr.discount td  {
                 color: ${this.site_config.secondary_color} !important;
             }
-            
+
             .support-details a, #theSubmitButton:hover,
             #theOtherSubmitButton:hover,
             .CheckRates .submit:hover,
@@ -521,10 +521,10 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input, .SinglePropDetail .points-earned {
+            .WBSupportForm .SendRequestAction:hover, #lightbox .dialog-button-ok input, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input, .SinglePropDetail .points-earned, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover {
                 color: ${this.site_config.primary_color} !important;
             }
-            
+
             #theSubmitButton,
             #theOtherSubmitButton, .RootBody #theOtherSubmitButton
             .SinglePropDetail .CheckRates .submit,
@@ -538,7 +538,7 @@ export default class Resbeat extends BasePortal {
             .holdRoom:hover, .SearchHotels .sort-wrapper a.active, .sort-wrapper a:hover div, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover, .ConfirmationForm .beat-em-value  {
                 color: ${this.site_config.primary_text_color} !important;
             }
-        
+
             .WBValidatedRegistrationForm #theUserNameAjax input,
             .WBValidatedRegistrationForm #theFirstNameAjax input,
             .WBValidatedRegistrationForm #theLastNameAjax input,
@@ -554,8 +554,8 @@ export default class Resbeat extends BasePortal {
             .totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {
                 background: ${this.site_config.secondary_background_color} !important;
             }
-            
-            
+
+
             .SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,
             #theOtherSubmitButton:hover,
             .CheckRates .submit:hover,
@@ -563,10 +563,10 @@ export default class Resbeat extends BasePortal {
             #register-btn a:hover,
             .RegisterAction.submit:hover,
             .SendMeNewPasswordAction.submit:hover,
-            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input  {
+            .WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input, .WBForgotPasswordFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover  {
                 background: ${this.site_config.background_color} !important;
             }
-            
+
             #theSubmitButton,
             #theOtherSubmitButton,
             .SinglePropDetail .CheckRates .submit,
@@ -577,10 +577,10 @@ export default class Resbeat extends BasePortal {
             #moreRatesLink,
             .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
             .bookRoom:hover,
-            .holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input:hover   {
+            .holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit   {
                 background: ${this.site_config.primary_color} !important;
             }
-            
+
             .WBLoginFormActions input,
             #register-btn a,
             .WBValidatedRegistrationFormActions input,
@@ -619,7 +619,7 @@ export default class Resbeat extends BasePortal {
             .RegisterAction.submit,
             .SendMeNewPasswordAction.submit,
             #moreRatesLink,
-            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input  {
+            .WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit  {
                 border: 3px solid ${this.site_config.primary_color} !important;
             }
 
@@ -657,7 +657,9 @@ export default class Resbeat extends BasePortal {
     setLoginRedirectUrl() {
         const domain = window.location.host;
 
-        return `${domain}/v6/login`;
+        if (domain.includes('events.hotelsforhope')) return `https://${domain}/v6/login?siteId=${this.site_config.site_id}`;
+
+        return `https://${domain}/v6/login`;
     }
 
     getLoginRedirectUrl() {
@@ -670,8 +672,11 @@ export default class Resbeat extends BasePortal {
         const redirect_url = this.getLoginRedirectUrl();
         const encoded_redirect_url = encodeURIComponent(redirect_url);
 
+        const member_token = utilities.getMetaTagContent('memberToken');
         const member_username = this.getMemberUsername();
-        const encoded_query_string = btoa(`member_username=${member_username}&site_id=${this.site_config.site_id}&redirect_url=${encoded_redirect_url}`);
+        const encoded_query_string = btoa(
+            `member_token=${member_token}&member_username=${member_username}&site_id=${this.site_config.site_id}&redirect_url=${encoded_redirect_url}`
+        );
 
         const header_links = document.querySelector('header #commands');
 
@@ -681,6 +686,8 @@ export default class Resbeat extends BasePortal {
             'afterBegin',
             `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
         );
+
+        if (this.site_config.site_id === 62011) return;
 
         this.showResbeatRewardsComingSoonMessagingOnHover();
     }
@@ -724,7 +731,7 @@ export default class Resbeat extends BasePortal {
                         display: none;
                     }
                 }
-                
+
             </style>
         `
         );

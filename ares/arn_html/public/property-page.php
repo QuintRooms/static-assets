@@ -1231,7 +1231,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </table>
                                     </div>
                                     <div class="rateRow even"><a name="ratesSection"></a>
-                                        <table class="ArnContentGeneralInfo ArnRateList SB61">
+                                        <table class="ArnContentGeneralInfo ArnRateList SB35">
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 - 11/9/2020</div>Traditional Room, 1 King Bed - Traditional Room, 1 King Bed 1 King Bed Breakfast for 2. Rate for 2 people per room

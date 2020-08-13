@@ -60,7 +60,7 @@ input[type='email'].email-mask,
 .SinglePropDetail #moreRatesLink,
 .CheckOutForm #theConfirmationButton,
 .WBSupportFormActions input,
-.WBForgotPasswordFormActions input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
+.WBForgotPasswordFormActions input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .WBForgotPasswordFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit {
     transition-property: color, background;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
@@ -84,7 +84,7 @@ input[type='email'].email-mask,
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
-.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
+.CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .WBForgotPasswordFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit {
     border-radius: 40px;
     -webkit-appearance: none;
 }
@@ -566,6 +566,19 @@ body.WBSupportForm {
 
 .ArnSubPage.WBSupportForm {
     flex-grow: 1;
+}
+
+.errorList.Login.Failed {
+    padding: 0 !important;
+}
+
+.errors li {
+    text-align: center;
+    border: unset;
+}
+
+.MemberNotAuthenticated .errors {
+    border: unset;
 }
 
 @media screen and (max-width: 1200px) {

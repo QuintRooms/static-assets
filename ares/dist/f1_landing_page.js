@@ -2186,7 +2186,7 @@
         n.r(e);
         n(41), n(31), n(20), n(30), n(35);
         function r() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         var o = new r(),
             i = {
@@ -2198,7 +2198,7 @@
                         sponsor: 'Aramco',
                         name: 'Magyar Nagydíj',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/hungary.gif'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
@@ -2209,7 +2209,7 @@
                         sponsor: 'Pirelli',
                         name: 'British Grand Prix',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/britain.gif'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2220,7 +2220,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2233,7 +2233,7 @@
                         sponsor: 'Aramco',
                         name: 'Magyar Nagydíj',
                         location: 'Budapest, Hungary',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/hungary.gif'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36968',
                     },
@@ -2244,7 +2244,7 @@
                         sponsor: 'Pirelli',
                         name: 'British Grand Prix',
                         location: 'Silverston, England',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/britain.gif'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36967',
                     },
@@ -2255,7 +2255,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2266,7 +2266,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2277,7 +2277,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2288,7 +2288,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2299,7 +2299,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2310,7 +2310,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2321,7 +2321,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -2332,7 +2332,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Portimao, Portugal',
-                        country_flag_url: ''.concat(o.path, '/../html/f1/f1-landing-page/images/australia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/australia.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://events.hotelsforhope.com/group-event?id=43381',
                     },
@@ -3119,7 +3119,8 @@
         !(function (t) {
             v.apply(this, arguments);
         })('54494');
-        var m = new l();
+        var m,
+            y = new l();
         Object.keys(i).forEach(function (t) {
             var e = t.slice(-4);
             document
@@ -3137,40 +3138,45 @@
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));
                     Object.keys(t).forEach(function (r) {
-                        m.checkForPastDate(t[r].race_expiry) ||
+                        y.checkForPastDate(t[r].race_expiry) ||
                             n.insertAdjacentHTML(
                                 'beforeend',
-                                '\n            <div class="race">\n                <div class="race-info">\n                    <div class="date">\n                        <div class="days">'
-                                    .concat(t[r].days, '</div>\n                        <div class="month">')
+                                '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
+                                    .concat(t[r].days, '</div>\n                            <div class="month">')
                                     .concat(
                                         t[r].month,
-                                        '</div>\n                    </div>\n                    <div class="race-location">\n                        <img class="country-flag" src="'
+                                        '</div>\n                        </div>\n                        <div class="race-location">\n                            <img class="country-flag" src="'
                                     )
                                     .concat(t[r].country_flag_url, '" alt="')
                                     .concat(
                                         t[r].flag_alt_text,
-                                        ' flag">\n                        <div class="race-details">\n                            <div class="name">\n                            <span id="F1-title">Formula 1</span>\n                            <span id="mobile-year">'
+                                        ' flag">\n                            <div class="race-details">\n                                <div class="name">\n                                <span id="F1-title">Formula 1</span>\n                                <span id="mobile-year">'
                                     )
-                                    .concat(e, '</span>\n                            <span id="sponsor">')
-                                    .concat(t[r].sponsor, '</span>\n                            ')
-                                    .concat(t[r].name, '\n                            <span id="desktop-year">')
-                                    .concat(e, '</span>\n                            </div>\n                            <div class="location">')
+                                    .concat(e, '</span>\n                                <span id="sponsor">')
+                                    .concat(t[r].sponsor, '</span>\n                                ')
+                                    .concat(t[r].name, '\n                                <span id="desktop-year">')
+                                    .concat(e, '</span>\n                                </div>\n                                <div class="location">')
                                     .concat(
                                         t[r].location,
-                                        '</div>\n                        </div>\n                    </div>\n                </div>\n            <a class="book-btn" href="'
+                                        '</div>\n                            </div>\n                        </div>\n                    </div>\n                <a class="book-btn" href="'
                                     )
                                     .concat(
                                         t[r].book_url,
-                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n            <a class="mobile-book-btn" href="'
+                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n                <a class="mobile-book-btn" href="'
                                     )
                                     .concat(
                                         t[r].book_url,
-                                        '"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n\n        </div>\n        '
+                                        '"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n            </div>\n        '
                                     )
                             );
                     });
                 })(i[t], e);
-        });
+        }),
+            document.querySelector('.more').addEventListener('click', function () {
+                document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
+            }),
+            (m = document.querySelector('.race .book-btn').href),
+            (document.querySelector('.banner a').href = m);
     },
 ]);
 //# sourceMappingURL=f1_landing_page.map

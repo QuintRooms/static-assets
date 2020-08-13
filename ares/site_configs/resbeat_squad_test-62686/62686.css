@@ -73,7 +73,7 @@
 .mobile-sort-container .sort-wrapper h4, .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
 .SearchHotels .sort-wrapper h4, .arnMapPopup h1, .support-details h3,
-#theHotel legend, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit {
+#theHotel legend, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit, .WBChangePasswordFormInform .dialog-button-ok input.submit {
     text-transform: uppercase !important;
 }
 
@@ -114,7 +114,7 @@ input[type='email'].email-mask,
 .GuestForms legend,
 .WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
-.SearchHotels .sort-wrapper h4, .arnMapPopup h1, .CheckOutForm #theStayPolicies h4, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .ConfirmationForm .beat-em-value {
+.SearchHotels .sort-wrapper h4, .arnMapPopup h1, .CheckOutForm #theStayPolicies h4, .SearchHotels .lblPropertyType, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .ConfirmationForm .beat-em-value, .WBChangePasswordFormInform .dialog-button-ok input.submit {
     letter-spacing: 1px !important;
 }
 
@@ -129,7 +129,7 @@ input[type='email'].email-mask,
 .SinglePropDetail #moreRatesLink,
 .CheckOutForm #theConfirmationButton,
 .WBSupportFormActions input,
-.WBForgotPasswordFormActions input, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
+.WBForgotPasswordFormActions input, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit {
     transition-duration: 0.8s;
 }
 

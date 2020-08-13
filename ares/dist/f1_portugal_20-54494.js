@@ -1979,13 +1979,13 @@
                 var t = F.call(this, (e = _(e, !0)));
                 return !(this === $ && o(D, e) && !o(N, e)) && (!(t || !o(this, e) || !o(D, e) || (o(this, B) && this[B][e])) || t);
             },
-            Q = function (e, t) {
+            X = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(D, t) || o(N, t))) {
                     var n = q(e, t);
                     return !n || !o(D, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
-            X = function (e) {
+            Q = function (e) {
                 for (var t, n = R(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
@@ -2008,9 +2008,9 @@
                     return this._k;
                 }
             ),
-            (L.f = Q),
+            (L.f = X),
             (M.f = J),
-            (n(51).f = A.f = X),
+            (n(51).f = A.f = Q),
             (n(26).f = K),
             (C.f = ee),
             i && !n(16) && c($, 'propertyIsEnumerable', K, !0),
@@ -2042,8 +2042,8 @@
                 },
                 defineProperty: J,
                 defineProperties: Z,
-                getOwnPropertyDescriptor: Q,
-                getOwnPropertyNames: X,
+                getOwnPropertyDescriptor: X,
+                getOwnPropertyNames: Q,
                 getOwnPropertySymbols: ee,
             });
         var ie = u(function () {
@@ -4033,6 +4033,14 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
+                        {
+                            key: 'checkForPastDate',
+                            value: function (e) {
+                                e || console.error('No date passed into checkForPastDate()');
+                                var t = q();
+                                return q(e).diff(t, 'milliseconds') < 0;
+                            },
+                        },
                     ]) && E(t.prototype, n),
                     r && E(t, r),
                     e
@@ -4459,6 +4467,7 @@
                                                                         'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                         document.querySelector('.RootBody') &&
                                                                             (W.init(e.site_config, e.page_name, U),
+                                                                            e.buildCurrencyDropdown(),
                                                                             U.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             U.createHTML(
                                                                                 '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
@@ -4487,14 +4496,6 @@
                                                                             '#theWBLoginFormBody .ForgotPasswordAction',
                                                                             'afterEnd'
                                                                         ),
-                                                                        e.site_config.show_tax_inclusive_rates &&
-                                                                            jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                                                                e.getTotalNights().then(function (t) {
-                                                                                    e.getCurrency().then(function (n) {
-                                                                                        e.getNightlyRateForMapMarkers(t, n);
-                                                                                    });
-                                                                                });
-                                                                            }),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name && W.init(e.site_config, e.page_name, U),
                                                                         jQuery('#theBody').on(
@@ -4678,7 +4679,7 @@
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5140,8 +5141,8 @@
                                         U.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
-                                                .concat(t, ', \n                 .RoomNumber-')
-                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                 .RoomNumber-')
+                                                .concat(t, ', \n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                .RoomNumber-')
                                                 .concat(t, ' #theCardVerificationAjax'),
                                             '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
                                             'credit-card-details',
@@ -5343,7 +5344,7 @@
                             key: 'styleCUGMapPins',
                             value: function () {
                                 document.querySelector('.SearchHotels') &&
-                                    'false' !== this.site_config.cug.is_cug &&
+                                    !1 !== this.site_config.cug.is_cug &&
                                     document.body.insertAdjacentHTML(
                                         'beforeend',
                                         '\n        <style>\n            .SearchHotels .arnMapMarker {\n                background: '
@@ -6429,8 +6430,9 @@
                     e
                 );
             })(),
-            Y = new H();
-        function V(e, t, n, r, o, i, a) {
+            Y = new H(),
+            V = 'f1_portugal_20-'.concat(54494);
+        function z(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -6439,26 +6441,26 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function z(e) {
+        function J(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        V(i, r, o, a, c, 'next', e);
+                        z(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        V(i, r, o, a, c, 'throw', e);
+                        z(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        var J = new P(),
-            Z = new H();
-        function K() {
-            return (K = z(
+        var Z = new P(),
+            K = new H();
+        function X() {
+            return (X = J(
                 regeneratorRuntime.mark(function e(t) {
                     var n, r, o, i, a, c, s, u;
                     return regeneratorRuntime.wrap(function (e) {
@@ -6467,17 +6469,23 @@
                                 case 0:
                                     return (
                                         (u = function () {
-                                            return (u = z(
+                                            return (u = J(
                                                 regeneratorRuntime.mark(function e() {
                                                     var t;
                                                     return regeneratorRuntime.wrap(function (e) {
                                                         for (;;)
                                                             switch ((e.prev = e.next)) {
                                                                 case 0:
-                                                                    return (e.next = 2), J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/footer.html'));
+                                                                    if (null === document.querySelector('meta[name="landing-page"]')) {
+                                                                        e.next = 2;
+                                                                        break;
+                                                                    }
+                                                                    return e.abrupt('return');
                                                                 case 2:
-                                                                    (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
+                                                                    return (e.next = 4), Z.fetchHTMLFromFile(''.concat(K.path, '/html/f1/footer.html'));
                                                                 case 4:
+                                                                    (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
+                                                                case 6:
                                                                 case 'end':
                                                                     return e.stop();
                                                             }
@@ -6489,7 +6497,7 @@
                                             return u.apply(this, arguments);
                                         }),
                                         (c = function () {
-                                            return (c = z(
+                                            return (c = J(
                                                 regeneratorRuntime.mark(function e(t) {
                                                     var o, i, a;
                                                     return regeneratorRuntime.wrap(function (e) {
@@ -6498,14 +6506,15 @@
                                                                 case 0:
                                                                     return (
                                                                         (i = function (e) {
-                                                                            e.matches
-                                                                                ? document
-                                                                                      .querySelector('.mobile-nav-lower-ul .language-mobile-li')
-                                                                                      .insertAdjacentElement('afterbegin', r)
-                                                                                : document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r);
+                                                                            null !== r &&
+                                                                                (e.matches
+                                                                                    ? document
+                                                                                          .querySelector('.mobile-nav-lower-ul .language-mobile-li')
+                                                                                          .insertAdjacentElement('afterbegin', r)
+                                                                                    : document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r));
                                                                         }),
                                                                         (e.next = 3),
-                                                                        J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/mobile-hamburger-menu.html'))
+                                                                        Z.fetchHTMLFromFile(''.concat(K.path, '/html/f1/mobile-hamburger-menu.html'))
                                                                     );
                                                                 case 3:
                                                                     return (
@@ -6515,7 +6524,7 @@
                                                                             '.mobile-nav-upper-ul #contactUs'
                                                                         ).href = 'href="https://events.hotelsforhope.com/v6/support?siteId='.concat(t, '"')),
                                                                         (e.next = 8),
-                                                                        J.waitForSelectorInDOM('.navbar-hamburger')
+                                                                        Z.waitForSelectorInDOM('.navbar-hamburger')
                                                                     );
                                                                 case 8:
                                                                     document.querySelector('.navbar-hamburger').addEventListener('click', function () {
@@ -6536,16 +6545,17 @@
                                             return c.apply(this, arguments);
                                         }),
                                         (i = function () {
-                                            return (i = z(
+                                            return (i = J(
                                                 regeneratorRuntime.mark(function e(t) {
                                                     var o;
                                                     return regeneratorRuntime.wrap(function (e) {
                                                         for (;;)
                                                             switch ((e.prev = e.next)) {
                                                                 case 0:
-                                                                    return (e.next = 2), J.fetchHTMLFromFile(''.concat(Z.path, '/html/f1/f1-header.html'));
+                                                                    return (e.next = 2), Z.fetchHTMLFromFile(''.concat(K.path, '/html/f1/f1-header.html'));
                                                                 case 2:
-                                                                    (o = e.sent),
+                                                                    if (
+                                                                        ((o = e.sent),
                                                                         n.insertAdjacentHTML('beforebegin', o),
                                                                         n.insertAdjacentHTML(
                                                                             'beforeend',
@@ -6554,8 +6564,15 @@
                                                                                 '" id="contactUs" target="_blank">Contact Us</a>\n                </li>\n            </ul>\n            <div class="navbar-hamburger">\n                <span class="toggle-bar top-bar"></span> \n                <span class="toggle-bar middle-bar"></span> \n                <span class="toggle-bar bottom-bar"></span>\n            </div>\n        '
                                                                             )
                                                                         ),
-                                                                        document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r);
-                                                                case 6:
+                                                                        null !== r)
+                                                                    ) {
+                                                                        e.next = 7;
+                                                                        break;
+                                                                    }
+                                                                    return e.abrupt('return');
+                                                                case 7:
+                                                                    document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r);
+                                                                case 8:
                                                                 case 'end':
                                                                     return e.stop();
                                                             }
@@ -6567,10 +6584,10 @@
                                             return i.apply(this, arguments);
                                         }),
                                         (e.next = 8),
-                                        J.waitForSelectorInDOM('header')
+                                        Z.waitForSelectorInDOM('header')
                                     );
                                 case 8:
-                                    (n = document.querySelector('header')), (r = document.querySelector('#language')), o(t.site_id), a(t.site_id), s();
+                                    (n = document.querySelector('header')), (r = document.querySelector('#language')), o(t), a(t), s();
                                 case 13:
                                 case 'end':
                                     return e.stop();
@@ -6589,24 +6606,24 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function X(e) {
+        function ee(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function ee(e, t) {
-            return (ee =
+        function te(e, t) {
+            return (te =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function te(e, t, n) {
-            return (te =
+        function ne(e, t, n) {
+            return (ne =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = ne(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = re(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6615,14 +6632,14 @@
                           }
                       })(e, t, n || e);
         }
-        function ne(e) {
-            return (ne = Object.setPrototypeOf
+        function re(e) {
+            return (re = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var re = new (function () {
+        var oe = new (function () {
                 return {
                     site_id: 54494,
                     affiliate_id: 16980,
@@ -6646,8 +6663,8 @@
                     show_currency_select: !1,
                     show_date_prompt: !1,
                     fav_icon_url: ''.concat(Y.path, '/html/f1/img/favicon.png'),
-                    has_custom_styles: !1,
-                    custom_styles_url: '',
+                    has_custom_styles: !0,
+                    custom_styles_url: ''.concat(Y.path, '/site_configs/').concat(V, '/').concat(54494, '.css'),
                     has_social_sharing: !0,
                     header: {
                         logo_file_location: ''.concat(Y.path, '/html/f1/img/logo.png'),
@@ -6680,7 +6697,7 @@
                     is_resbeat_client: !1,
                 };
             })(),
-            oe = (function (e) {
+            ie = (function (e) {
                 function t() {
                     var e;
                     return (
@@ -6688,24 +6705,24 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, t),
                         (e = (function (e, t) {
-                            return !t || ('object' !== Q(t) && 'function' != typeof t) ? X(e) : t;
-                        })(this, ne(t).call(this, re))),
-                        te(ne(t.prototype), 'init', X(e)).call(X(e)),
+                            return !t || ('object' !== Q(t) && 'function' != typeof t) ? ee(e) : t;
+                        })(this, re(t).call(this, oe))),
+                        ne(re(t.prototype), 'init', ee(e)).call(ee(e)),
                         e
                     );
                 }
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && ee(e, t);
+                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && te(e, t);
                     })(t, e),
                     t
                 );
             })(G);
         !(function (e) {
-            K.apply(this, arguments);
-        })(re),
-            new oe();
+            X.apply(this, arguments);
+        })(oe.site_id),
+            new ie();
     },
 ]);
 //# sourceMappingURL=f1_portugal_20-54494.map

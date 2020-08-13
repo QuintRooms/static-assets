@@ -711,8 +711,8 @@ export default class BasePortal {
             );
 
             utilities.createWrapper(
-                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count},
-                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax,
+                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
+                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,

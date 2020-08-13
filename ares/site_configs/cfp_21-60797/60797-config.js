@@ -48,7 +48,8 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
-            background: `#000 url(../../site_configs/cfp_21-60797/img/logo_bg.svg) left / 35% 170px no-repeat;`,
+            background: `#000`,
+            // background: `#000 url(../../site_configs/cfp_21-60797/img/logo_bg.svg) left / 35% 170px no-repeat;`,
             logo_flex_position: 'flex-start',
             logo_max_width: '350px',
         },
@@ -58,15 +59,15 @@ export default function siteConfig() {
         background_color: '#fff',
         secondary_background_color: '#f0f0f0',
         primary_color: '#c9920e',
-        secondary_color: '',
+        secondary_color: '#000',
         primary_text_color: '#fff',
-        secondary_text_color: '#fff',
+        secondary_text_color: '#000',
         border_color: '#c9920e',
         button_hover_background_color: '#fff',
         button_hover_text_color: '#c9920e',
         button_hover_border_color: '#c9920e',
         google_font_url: '',
-        google_font_name: 'Avenir',
+        google_font_name: 'Graphik-Regular',
         ads: {
             sidebar_ad: {
                 is_active: false,

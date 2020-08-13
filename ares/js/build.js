@@ -220,6 +220,7 @@ export default class BasePortal {
                 await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
                     utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                 });
+
                 await utilities.waitForSelectorInDOM('.ArnSortContainer').then(() => {
                     utilities
                         .createWrapper(
@@ -231,6 +232,12 @@ export default class BasePortal {
                         .then(() => {
                             this.createMobileSortAndFilter();
                             utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+
+                            if (utilities.matchMediaQuery('min-width: 1105px'))
+                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>');
+
+                            if (utilities.matchMediaQuery('max-width: 800px'))
+                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer{display: flex !important;}</style>');
                         });
                 });
 
@@ -711,8 +718,8 @@ export default class BasePortal {
             );
 
             utilities.createWrapper(
-                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
-                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
+                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count},
+                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax,
                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,

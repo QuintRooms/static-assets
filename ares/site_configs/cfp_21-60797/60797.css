@@ -68,7 +68,7 @@
     font-size: 15px;
 }
 
-.SearchHotels a.ArnShowRatesLink, .SinglePropDetail a.bookRoom, .SinglePropDetail a.holdRoom {
+.SearchHotels a.ArnShowRatesLink, .SinglePropDetail a.bookRoom, .SinglePropDetail a.holdRoom, .RootBody #theOtherSubmitButton, #theConfirmationButton, .CheckOutForm legend, .FinalConfirmation legend {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'UnitedSansReg-Heavy';
@@ -115,8 +115,6 @@ header {
 header a {
     width: 30%;
     background: url(../../site_configs/cfp_21-60797/img/logo_bg.svg) top left / 117% 150% no-repeat;
-    overflow: visible;
-
 }
 
 .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
@@ -125,6 +123,11 @@ header a {
     height: 95%;
     background-color: #fff;
     margin: 70px;
+}
+
+.RootBody .ArnSearchContainerMainDiv {
+    background-color: unset;
+    border: unset;
 }
 
 .SinglePropDetail .ArnSubPage, #theBookingPage {
@@ -153,6 +156,23 @@ span.exclusive-rate {
     .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
         width: unset;
         }
+
+    header a {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
+        margin: 70px 0;
+    }
+
+    .logo img {
+        max-width: 250px;
+    }
+
+    .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+        color: #000;
+    }
 }
 
 @media screen and (max-width: 600px) {

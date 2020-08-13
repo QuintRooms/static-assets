@@ -53,7 +53,7 @@ export default function siteConfig() {
             logo_flex_position: 'flex-start',
             logo_max_width: '350px',
         },
-        banner_image_url: `url(${env_path.path}/site_configs/${directory_name}/img/banner.png) no-repeat center center /cover`,
+        banner_image_url: `url(${env_path.path}/site_configs/${directory_name}/img/banner.png) no-repeat`,
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         theme: 'light',
         background_color: '#fff',

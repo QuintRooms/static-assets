@@ -1371,8 +1371,16 @@ div.autocomplete ul li.selected {
 }
 
 .ArnSortContainer,
-.sort-wrapper{
+.ArnSortContainer > a{
     display: none;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1105px){
+    .ArnSortContainer,
+    .ArnSortContainer > a{
+        display: block;
+        visibility: hidden;
+    }
 }
 /* Search Container End */
 

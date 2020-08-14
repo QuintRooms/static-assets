@@ -6778,7 +6778,7 @@
                 custom_styles_url: ''.concat(V.path, '/site_configs/').concat(Z, '/').concat(60797, '.css'),
                 has_social_sharing: !0,
                 header: {
-                    logo_file_location: ''.concat(V.path, '/site_configs/').concat(Z, '/img/logo_copy.png'),
+                    logo_file_location: ''.concat(V.path, '/site_configs/').concat(Z, '/img/logo.png'),
                     logo_outbound_url: 'https://collegefootballplayoff.com/',
                     background: '#000',
                     logo_flex_position: 'flex-start',

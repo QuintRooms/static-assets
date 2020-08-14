@@ -114,10 +114,10 @@ header {
     height: 115px
 }
 
-/* header a {
+header a {
     width: 30%;
     background: url(../../site_configs/cfp_21-60797/img/logo_bg.svg) top left / 117% 150% no-repeat;
-} */
+}
 
 .logo img {
     margin-top: 40px;
@@ -126,10 +126,9 @@ header {
 
 .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
     border: 1px solid #e5e5e5;
-    width: 95vw;
-    height: 95%;
+    width: 96vw;
     background-color: #fff;
-    margin: 70px;
+    margin: 84px 0 5px 0;
 }
 
 .RootBody .ArnSearchContainerMainDiv {
@@ -159,6 +158,18 @@ span.exclusive-rate {
     color: #000;
 }
 
+.ArnSupportLinks {
+    background:#fff;
+}
+
+.ArnSupportLinks .dvd {
+    color: #000;
+}
+
+.ArnSupportLinks a {
+    color: #000;
+}
+
 @media screen and (max-width: 1100px) {
     .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
         width: unset;
@@ -168,10 +179,8 @@ span.exclusive-rate {
         width: 40%;
     }
 }
-@media screen and (max-width: 800px) {
-    .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
-        margin: 70px 0;
-    }
+
+@media screen and (max-width: 900px) {
 
     .logo img {
         max-width: 250px;
@@ -194,4 +203,22 @@ span.exclusive-rate {
         height: unset;
         margin: unset;
         }
+
+    header {
+        height: unset;
+    }
+    
+    header a {
+        width: 75%;
+    }
+
+    .logo img {
+        margin-top: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo img {
+        max-width: 200px;
+    }
 }

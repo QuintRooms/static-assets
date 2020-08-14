@@ -46,7 +46,7 @@ export default function siteConfig() {
         custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo_copy.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
             background: `#000`,
             logo_flex_position: 'flex-start',

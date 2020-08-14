@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
-class Distance {
+export default class Distance {
     constructor(params, venueName, unit, from_lat, from_long) {
         this.params = [];
         this.venueName = venueName;
@@ -17,12 +17,6 @@ class Distance {
         this.getVenueName();
         this.getUnit();
     }
-
-    /**
-     * Gets the lat and long from the venue
-     * {return} void
-     */
-    // Todo: We need this to have the option of selecting the venue lat/lng or the track pin when we don't see any inventory in the city. Maybe if "points" parameter exists in the URL, use it, otherwise default to the main lat/lng.
 
     getVenueLatLng() {
         const params = new URL(window.location.href);
@@ -139,6 +133,25 @@ class Distance {
             });
         }
     }
+
+    sortPropsByDistance() {
+        const prop_container = document.querySelector('#pagerBottomAjax');
+        const props = document.querySelectorAll('.ArnProperty');
+        const hr_list = document.querySelectorAll('.prop-hr');
+
+        function extractNumber(str) {
+            return str.substring(0, str.indexOf(' '));
+        }
+
+        const props_array = [].slice.call(props).sort((a, b) => {
+            return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
+        });
+
+        props_array.forEach((property, i) => {
+            prop_container.insertAdjacentElement('beforebegin', property);
+            document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
+        });
+    }
 }
 const distance = new Distance();
 
@@ -152,9 +165,9 @@ async function pollingFinished() {
                         distance.updateDistance();
                     }
                 });
-
                 resolve();
                 clearInterval(interval);
+                // distance.sortPropsByDistance();
             }
         }, 250);
     });

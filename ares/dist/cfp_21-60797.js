@@ -4824,15 +4824,20 @@
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
                                                                                                                         ),
-                                                                                                                        W.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                        W.matchMediaQuery('min-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
                                                                                                                                 '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                             ),
+                                                                                                                        W.matchMediaQuery('max-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:visible !important;}</style>'
+                                                                                                                            ),
                                                                                                                         W.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}#arnToggleMapDiv{margin-left: auto;}</style>'
                                                                                                                             );
                                                                                                                 });
                                                                                                             })
@@ -6773,11 +6778,11 @@
                 custom_styles_url: ''.concat(V.path, '/site_configs/').concat(Z, '/').concat(60797, '.css'),
                 has_social_sharing: !0,
                 header: {
-                    logo_file_location: ''.concat(V.path, '/site_configs/').concat(Z, '/img/logo.png'),
+                    logo_file_location: ''.concat(V.path, '/site_configs/').concat(Z, '/img/logo_copy.png'),
                     logo_outbound_url: 'https://collegefootballplayoff.com/',
                     background: '#000',
                     logo_flex_position: 'flex-start',
-                    logo_max_width: '350px',
+                    logo_max_width: '330px',
                 },
                 banner_image_url: 'url('.concat(V.path, '/site_configs/').concat(Z, '/img/banner.png) no-repeat'),
                 map_marker_image_url: ''.concat(V.path, '/site_configs/').concat(Z, '/img/favicon.jpg'),

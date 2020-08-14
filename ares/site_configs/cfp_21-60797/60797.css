@@ -31,7 +31,7 @@
     padding: 12px;
 }
 
-.ArnPropNameLink span, .arnCurrency, .arnUnit, .sort-wrapper h4, .lblAmenities, #moreRatesLink, #show-more-or-less, #thePropertyAmenities span {
+.ArnPropNameLink span, .arnCurrency, .arnUnit, .sort-wrapper h4, .lblAmenities, #moreRatesLink, #show-more-or-less, #thePropertyAmenities span, .SinglePropDetail legend {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'UnitedSansReg-Heavy';
@@ -101,9 +101,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/img/banner.png') no-repeat;
-    /* background-color: #ABABAB; */
+    background: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/img/banner.jpg') no-repeat top center;
     font-family: 'Graphik-Regular';
+    background-attachment: fixed;
+    background-size: 100% auto;
+    overflow-x: hidden;
 
 }
 
@@ -112,9 +114,14 @@ header {
     height: 115px
 }
 
-header a {
+/* header a {
     width: 30%;
     background: url(../../site_configs/cfp_21-60797/img/logo_bg.svg) top left / 117% 150% no-repeat;
+} */
+
+.logo img {
+    margin-top: 40px;
+    padding: 5px;
 }
 
 .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {

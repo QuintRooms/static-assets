@@ -3645,15 +3645,20 @@
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
                                                                                                                         ),
-                                                                                                                        Y.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                        Y.matchMediaQuery('min-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
                                                                                                                                 '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                             ),
+                                                                                                                        Y.matchMediaQuery('max-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:visible !important;}</style>'
+                                                                                                                            ),
                                                                                                                         Y.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}#arnToggleMapDiv{margin-left: auto;}</style>'
                                                                                                                             );
                                                                                                                 });
                                                                                                             })

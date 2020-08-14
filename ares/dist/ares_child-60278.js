@@ -3645,15 +3645,20 @@
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
                                                                                                                         ),
-                                                                                                                        Y.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                        Y.matchMediaQuery('min-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
                                                                                                                                 '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                             ),
+                                                                                                                        Y.matchMediaQuery('max-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:visible !important;}</style>'
+                                                                                                                            ),
                                                                                                                         Y.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}#arnToggleMapDiv{margin-left: auto;}</style>'
                                                                                                                             );
                                                                                                                 });
                                                                                                             })
@@ -5615,11 +5620,11 @@
                 for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
-            K = function (e) {
+            Q = function (e) {
                 var t = D.call(this, (e = _(e, !0)));
                 return !(this === N && o(F, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, B) && this[B][e])) || t);
             },
-            Q = function (e, t) {
+            K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(Y, t))) {
                     var n = q(e, t);
                     return !n || !o(F, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
@@ -5648,12 +5653,12 @@
                     return this._k;
                 }
             ),
-            (M.f = Q),
+            (M.f = K),
             (C.f = Z),
             (n(61).f = A.f = X),
-            (n(34).f = K),
+            (n(34).f = Q),
             (L.f = ee),
-            i && !n(19) && c(N, 'propertyIsEnumerable', K, !0),
+            i && !n(19) && c(N, 'propertyIsEnumerable', Q, !0),
             (p.f = function (e) {
                 return z(h(e));
             })),
@@ -5682,7 +5687,7 @@
                 },
                 defineProperty: Z,
                 defineProperties: J,
-                getOwnPropertyDescriptor: Q,
+                getOwnPropertyDescriptor: K,
                 getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
             });

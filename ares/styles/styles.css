@@ -1375,7 +1375,7 @@ div.autocomplete ul li.selected {
     display: none;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1105px){
+@media screen and (max-width: 1105px) and (min-width: 800px){
     .ArnSortContainer,
     .ArnSortContainer > a{
         display: block;

@@ -404,7 +404,7 @@
             C = 'process' == l(k),
             E = function () {},
             q = (o = b.f),
-            P = !!(function () {
+            T = !!(function () {
                 try {
                     var e = M.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -413,7 +413,7 @@
                     return (C || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            P = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -438,7 +438,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -495,7 +495,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = P(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -510,7 +510,7 @@
                     }
                 }
             };
-        P ||
+        T ||
             ((M = function (e) {
                 p(this, M, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -545,17 +545,17 @@
             (b.f = q = function (e) {
                 return e === M || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !P, {Promise: M}),
+            d(d.G + d.W + d.F * !T, {Promise: M}),
             n(24)(M, 'Promise'),
             n(86)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !P, 'Promise', {
+            d(d.S + d.F * !T, 'Promise', {
                 reject: function (e) {
                     var t = q(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !P), 'Promise', {
+            d(d.S + d.F * (c || !T), 'Promise', {
                 resolve: function (e) {
                     return w(c && this === a ? M : this, e);
                 },
@@ -564,7 +564,7 @@
                 d.S +
                     d.F *
                         !(
-                            P &&
+                            T &&
                             n(87)(function (e) {
                                 M.all(e).catch(E);
                             })
@@ -2089,8 +2089,8 @@
             C = n(5),
             E = n(13),
             q = L.f,
-            P = C.f,
-            T = A.f,
+            T = C.f,
+            P = A.f,
             R = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
@@ -2110,9 +2110,9 @@
                     return (
                         7 !=
                         k(
-                            P({}, 'a', {
+                            T({}, 'a', {
                                 get: function () {
-                                    return P(this, 'a', {value: 7}).a;
+                                    return T(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -2120,9 +2120,9 @@
                 })
                     ? function (e, t, n) {
                           var r = q(N, t);
-                          r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
+                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
                       }
-                    : P,
+                    : T,
             z = function (e) {
                 var t = (F[e] = k(R.prototype));
                 return (t._k = e), t;
@@ -2142,8 +2142,8 @@
                     (t = w(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), G(e, t, n))
-                        : P(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), G(e, t, n))
+                        : T(e, t, n)
                 );
             },
             J = function (e, t) {
@@ -2151,22 +2151,22 @@
                 for (var n, r = y((t = _(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
-            K = function (e) {
+            Q = function (e) {
                 var t = D.call(this, (e = w(e, !0)));
                 return !(this === N && o(F, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, B) && this[B][e])) || t);
             },
-            X = function (e, t) {
+            K = function (e, t) {
                 if (((e = _(e)), (t = w(t, !0)), e !== N || !o(F, t) || o(Y, t))) {
                     var n = q(e, t);
                     return !n || !o(F, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
                 }
             },
-            Q = function (e) {
-                for (var t, n = T(_(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == B || t == s || r.push(t);
+            X = function (e) {
+                for (var t, n = P(_(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? Y : _(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = P(n ? Y : _(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         $ ||
@@ -2184,12 +2184,12 @@
                     return this._k;
                 }
             ),
-            (L.f = X),
+            (L.f = K),
             (C.f = Z),
-            (n(51).f = A.f = Q),
-            (n(26).f = K),
+            (n(51).f = A.f = X),
+            (n(26).f = Q),
             (M.f = ee),
-            i && !n(16) && c(N, 'propertyIsEnumerable', K, !0),
+            i && !n(16) && c(N, 'propertyIsEnumerable', Q, !0),
             (p.f = function (e) {
                 return z(h(e));
             })),
@@ -2218,8 +2218,8 @@
                 },
                 defineProperty: Z,
                 defineProperties: J,
-                getOwnPropertyDescriptor: X,
-                getOwnPropertyNames: Q,
+                getOwnPropertyDescriptor: K,
+                getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
             });
         var ie = u(function () {
@@ -3641,7 +3641,7 @@
             }
         }
         var q = n(42),
-            P = (function () {
+            T = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -4192,7 +4192,7 @@
                                                                         .concat(t, '">')
                                                                         .concat(
                                                                             n,
-                                                                            '</a>\n                </div>\n                <style class="stay-22-header-styles">\n                    @media screen and (max-width: 600px) {\n                    header {\n                            display: flex;\n                            flex-direction: column;\n                        }\n                    }\n                <style>    \n                '
+                                                                            '</a>\n                </div>\n                <style class="stay-22-header-styles">\n                    @media screen and (max-width: 600px) {\n                    header {\n                            display: flex;\n                            flex-direction: column;\n                        }\n                    }\n                <style>\n                '
                                                                         )
                                                                 );
                                                         case 4:
@@ -4222,7 +4222,7 @@
                     e
                 );
             })();
-        function T(e, t, n, r, o, i, a) {
+        function P(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -4238,10 +4238,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        T(i, r, o, a, c, 'next', e);
+                        P(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        T(i, r, o, a, c, 'throw', e);
+                        P(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -4527,7 +4527,7 @@
             $ = n(42),
             U = n(63);
         $.extend(U);
-        var W = new P(),
+        var W = new T(),
             G = new H(),
             z = (function () {
                 function e(t) {
@@ -4823,7 +4823,17 @@
                                                                                                                             '<h4>Sort</h4>',
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
-                                                                                                                        );
+                                                                                                                        ),
+                                                                                                                        W.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
+                                                                                                                            ),
+                                                                                                                        W.matchMediaQuery('max-width: 800px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                            );
                                                                                                                 });
                                                                                                             })
                                                                                                         );
@@ -5333,8 +5343,8 @@
                                         W.createWrapper(
                                             '.RoomNumber-'
                                                 .concat(t, ' #theCreditCardBillingNameAjax')
-                                                .concat(t, ', \n                .RoomNumber-')
-                                                .concat(t, ' #theCardExpirationFieldsAjax, \n                .RoomNumber-')
+                                                .concat(t, ',\n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
                                                 .concat(t, ' #theCardVerificationAjax'),
                                             '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
                                             'credit-card-details',
@@ -6700,19 +6710,19 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function K(e) {
+        function Q(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function X(e, t) {
-            return (X =
+        function K(e, t) {
+            return (K =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function Q(e, t, n) {
-            return (Q =
+        function X(e, t, n) {
+            return (X =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
@@ -6804,16 +6814,16 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, t),
                     (e = (function (e, t) {
-                        return !t || ('object' !== J(t) && 'function' != typeof t) ? K(e) : t;
+                        return !t || ('object' !== J(t) && 'function' != typeof t) ? Q(e) : t;
                     })(this, ee(t).call(this, te))),
-                    Q(ee(t.prototype), 'init', K(e)).call(K(e)),
+                    X(ee(t.prototype), 'init', Q(e)).call(Q(e)),
                     e
                 );
             }
             return (
                 (function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && X(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && K(e, t);
                 })(t, e),
                 t
             );

@@ -237,7 +237,7 @@ export default class BasePortal {
                                 document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>');
 
                             if (utilities.matchMediaQuery('max-width: 800px'))
-                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer{display: flex !important;}</style>');
+                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>');
                         });
                 });
 

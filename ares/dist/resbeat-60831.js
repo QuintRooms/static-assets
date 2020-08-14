@@ -3653,7 +3653,7 @@
                                                                                                                         N.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
                                                                                                                             );
                                                                                                                 });
                                                                                                             })

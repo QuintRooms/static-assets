@@ -381,16 +381,16 @@
             k = x && x.versions,
             C = (k && k.v8) || '',
             L = s.Promise,
-            R = 'process' == l(x),
-            M = function () {},
+            M = 'process' == l(x),
+            R = function () {},
             q = (o = b.f),
             P = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(M, M);
+                            e(R, R);
                         });
-                    return (R || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (M || 'function' == typeof PromiseRejectionEvent) && e.then(R) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             E = function (e) {
@@ -442,13 +442,13 @@
                     if (
                         (i &&
                             ((t = S(function () {
-                                R
+                                M
                                     ? x.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = R || j(e) ? 2 : 1)),
+                            (e._h = M || j(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
@@ -461,7 +461,7 @@
             F = function (e) {
                 g.call(s, function () {
                     var t;
-                    R ? x.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    M ? x.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
             O = function (e) {
@@ -507,7 +507,7 @@
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = R ? x.domain : void 0),
+                        (n.domain = M ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && T(this, !1),
@@ -546,7 +546,7 @@
                         !(
                             P &&
                             n(88)(function (e) {
-                                L.all(e).catch(M);
+                                L.all(e).catch(R);
                             })
                         ),
                 'Promise',
@@ -2176,12 +2176,12 @@
                     for (var S, w = '', _ = 0, A = 0; A < v.length; A++) {
                         b = v[A];
                         for (var x = String(b[0]), k = u(l(a(b.index), h.length), 0), C = [], L = 1; L < b.length; L++) C.push(void 0 === (S = b[L]) ? S : String(S));
-                        var R = b.groups;
+                        var M = b.groups;
                         if (f) {
-                            var M = [x].concat(C, k, h);
-                            void 0 !== R && M.push(R);
-                            var q = String(t.apply(void 0, M));
-                        } else q = m(x, h, k, C, R, t);
+                            var R = [x].concat(C, k, h);
+                            void 0 !== M && R.push(M);
+                            var q = String(t.apply(void 0, R));
+                        } else q = m(x, h, k, C, M, t);
                         k >= _ && ((w += h.slice(_, k) + q), (_ = k + x.length));
                     }
                     return w + h.slice(_);
@@ -3038,7 +3038,7 @@
         n(109);
         var C = n(44);
         n(64);
-        function R(e, t, n, r, o, i, a) {
+        function M(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3047,17 +3047,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function M(e) {
+        function R(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        R(i, r, o, a, c, 'next', e);
+                        M(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        R(i, r, o, a, c, 'throw', e);
+                        M(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3100,7 +3100,7 @@
                                         });
                                 }
                                 function h() {
-                                    return (h = M(
+                                    return (h = R(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -3645,15 +3645,20 @@
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
                                                                                                                         ),
-                                                                                                                        N.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                        N.matchMediaQuery('min-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
                                                                                                                                 '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                             ),
+                                                                                                                        N.matchMediaQuery('max-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:visible !important;}</style>'
+                                                                                                                            ),
                                                                                                                         N.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}#arnToggleMapDiv{margin-left: auto;}</style>'
                                                                                                                             );
                                                                                                                 });
                                                                                                             })
@@ -5638,10 +5643,10 @@
             k = n(95),
             C = n(58),
             L = n(55),
-            R = n(5),
-            M = n(14),
+            M = n(5),
+            R = n(14),
             q = C.f,
-            P = R.f,
+            P = M.f,
             E = k.f,
             T = r.Symbol,
             B = r.JSON,
@@ -5737,7 +5742,7 @@
                 }
             ),
             (C.f = K),
-            (R.f = Z),
+            (M.f = Z),
             (n(57).f = k.f = X),
             (n(29).f = Q),
             (L.f = ee),
@@ -5748,7 +5753,7 @@
             a(a.G + a.W + a.F * !W, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
-        for (var re = M(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = R(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !W, 'Symbol', {
             for: function (e) {
                 return o(D, (e += '')) ? D[e] : (D[e] = T(e));
@@ -6258,10 +6263,10 @@
                 k = e.prototype,
                 C = k[d] || k['@@iterator'] || (m && k[m]),
                 L = C || w(m),
-                R = m ? (A ? w('entries') : L) : void 0,
-                M = ('Array' == t && k.entries) || C;
+                M = m ? (A ? w('entries') : L) : void 0,
+                R = ('Array' == t && k.entries) || C;
             if (
-                (M && (S = l(M.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, f)),
+                (R && (S = l(R.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, f)),
                 A &&
                     C &&
                     'values' !== C.name &&
@@ -6274,7 +6279,7 @@
                 (c[_] = f),
                 m)
             )
-                if (((v = {values: A ? L : w('values'), keys: y ? L : w('keys'), entries: R}), g)) for (b in v) b in k || i(k, b, v[b]);
+                if (((v = {values: A ? L : w('values'), keys: y ? L : w('keys'), entries: M}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (h || x), t, v);
             return v;
         };

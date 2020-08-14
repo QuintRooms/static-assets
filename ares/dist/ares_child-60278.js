@@ -4824,7 +4824,7 @@
                                                                                                                             '.sort-wrapper',
                                                                                                                             'afterBegin'
                                                                                                                         ),
-                                                                                                                        W.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                        W.matchMediaQuery('min-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
                                                                                                                                 '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
@@ -4832,7 +4832,7 @@
                                                                                                                         W.matchMediaQuery('max-width: 1105px') &&
                                                                                                                             document.body.insertAdjacentHTML(
                                                                                                                                 'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:unset !important;}</style>'
+                                                                                                                                '<style>.ArnSortContainer,.ArnSortContainer > a{visibility:visible !important;}</style>'
                                                                                                                             ),
                                                                                                                         W.matchMediaQuery('max-width: 800px') &&
                                                                                                                             document.body.insertAdjacentHTML(

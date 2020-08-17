@@ -1,5 +1,4 @@
 /* eslint-disable prefer-destructuring */
-/* eslint-disable no-shadow */
 
 export default class Distance {
     constructor(params, venueName, unit, from_lat, from_long) {
@@ -116,7 +115,6 @@ export default class Distance {
                     fetch(url)
                         .then((response) => {
                             const data = response.json();
-                            console.log('Output: Distance -> updateDistance -> data', data);
 
                             return data;
                         })

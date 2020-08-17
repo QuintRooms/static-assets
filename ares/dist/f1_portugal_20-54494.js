@@ -6918,7 +6918,6 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        new P();
         var oe = (function () {
             function e(t, n, r, o, i) {
                 !(function (e, t) {
@@ -7019,11 +7018,13 @@
                             function r(e) {
                                 return e.substring(0, e.indexOf(' '));
                             }
-                            var o = [].slice.call(n).sort(function (e, t) {
-                                return r(e.querySelector('.distanceLabel').textContent) > r(t.querySelector('.distanceLabel').textContent) ? 1 : -1;
-                            });
-                            console.log('Output: sortPropsByDistance -> props_array', o),
-                                o.reverse().forEach(function (n, r) {
+                            [].slice
+                                .call(n)
+                                .sort(function (e, t) {
+                                    return r(e.querySelector('.distanceLabel').textContent) > r(t.querySelector('.distanceLabel').textContent) ? 1 : -1;
+                                })
+                                .reverse()
+                                .forEach(function (n, r) {
                                     t.insertAdjacentElement('afterbegin', n), document.querySelector('#'.concat(n.id)).insertAdjacentElement('afterend', e[r]);
                                 });
                         },
@@ -7066,10 +7067,7 @@
                                                                                                     new Promise(function (e) {
                                                                                                         fetch(i)
                                                                                                             .then(function (e) {
-                                                                                                                var t = e.json();
-                                                                                                                return (
-                                                                                                                    console.log('Output: Distance -> updateDistance -> data', t), t
-                                                                                                                );
+                                                                                                                return e.json();
                                                                                                             })
                                                                                                             .then(function (n) {
                                                                                                                 t &&

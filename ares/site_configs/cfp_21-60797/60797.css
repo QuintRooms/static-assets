@@ -50,13 +50,26 @@
     font-size: 17px;
 }
 
-.arnPrice .full-stay {
+.full-stay {
     font-family: 'Graphik-Bold';
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.RootBody #theSearchBox span {
+    color: #fff;
 }
 
 /*  Fonts End */
 
 /* Buttons */
+
+input[type=submit] {
+    -webkit-border-radius:0px;
+    -webkit-appearance: none;
+}
 
 .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates .submit {
     border: 3px solid #000;
@@ -88,6 +101,15 @@
 }
 
 /* Buttons End */
+
+.info-banner {
+    z-index: 5;
+}
+
+.SearchHotels .ArnPropertyMapInner {
+    width: 92%;
+    height: 96vh !important;
+}
 
 .ArnPrimarySearchContainer input, .ArnPrimarySearchContainer select, .SimpleSearch input, .SimpleSearch select {
     border: 1px solid #e5e5e5;
@@ -168,6 +190,10 @@ span.exclusive-rate {
 
 .ArnSupportLinks a {
     color: #000;
+}
+
+.pb-container img {
+    filter: invert(0.5);
 }
 
 @media screen and (max-width: 1100px) {

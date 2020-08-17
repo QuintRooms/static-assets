@@ -1,3 +1,7 @@
+import Utilities from './utilities';
+
+const utilities = new Utilities();
+
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
@@ -133,25 +137,6 @@ export default class Distance {
             });
         }
     }
-
-    sortPropsByDistance() {
-        const prop_container = document.querySelector('#pagerBottomAjax');
-        const props = document.querySelectorAll('.ArnProperty');
-        const hr_list = document.querySelectorAll('.prop-hr');
-
-        function extractNumber(str) {
-            return str.substring(0, str.indexOf(' '));
-        }
-
-        const props_array = [].slice.call(props).sort((a, b) => {
-            return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
-        });
-
-        props_array.forEach((property, i) => {
-            prop_container.insertAdjacentElement('beforebegin', property);
-            document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
-        });
-    }
 }
 const distance = new Distance();
 
@@ -167,10 +152,32 @@ async function pollingFinished() {
                 });
                 resolve();
                 clearInterval(interval);
-                // distance.sortPropsByDistance();
             }
         }, 250);
     });
 }
 
-pollingFinished();
+async function sortPropsByDistance() {
+    await pollingFinished();
+    await utilities.waitForSelectorInDOM('.prop-hr');
+    const hr_list = document.querySelectorAll('.prop-hr');
+    console.log(hr_list);
+
+    const prop_container = document.querySelector('#currentPropertyPage');
+    const props = document.querySelectorAll('.ArnProperty');
+
+    function extractNumber(str) {
+        return str.substring(0, str.indexOf(' '));
+    }
+
+    const props_array = [].slice.call(props).sort((a, b) => {
+        return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
+    });
+
+    props_array.forEach((property, i) => {
+        prop_container.insertAdjacentElement('afterbegin', property);
+        document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
+    });
+}
+
+sortPropsByDistance();

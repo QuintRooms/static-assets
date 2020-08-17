@@ -6900,7 +6900,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var oe = (function () {
+        var oe = new P(),
+            ie = (function () {
                 function e(t, n, r, o, i) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -7063,33 +7064,17 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
-                        {
-                            key: 'sortPropsByDistance',
-                            value: function () {
-                                var e = document.querySelector('#pagerBottomAjax'),
-                                    t = document.querySelectorAll('.ArnProperty'),
-                                    n = document.querySelectorAll('.prop-hr');
-                                function r(e) {
-                                    return e.substring(0, e.indexOf(' '));
-                                }
-                                [].slice
-                                    .call(t)
-                                    .sort(function (e, t) {
-                                        return r(e.querySelector('.distanceLabel').textContent) > r(t.querySelector('.distanceLabel').textContent) ? 1 : -1;
-                                    })
-                                    .forEach(function (t, r) {
-                                        e.insertAdjacentElement('beforebegin', t), document.querySelector('#'.concat(t.id)).insertAdjacentElement('afterend', n[r]);
-                                    });
-                            },
-                        },
                     ]) && re(t.prototype, n),
                     r && re(t, r),
                     e
                 );
             })(),
-            ie = new oe();
-        function ae() {
-            return (ae = ne(
+            ae = new ie();
+        function ce() {
+            return se.apply(this, arguments);
+        }
+        function se() {
+            return (se = ne(
                 regeneratorRuntime.mark(function e() {
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
@@ -7100,13 +7085,12 @@
                                         new Promise(function (e) {
                                             var t = setInterval(function () {
                                                 document.querySelector('.pollingFinished') &&
-                                                    ((ie.params = []),
-                                                    ie.getPropertyLatLong().then(function () {
-                                                        null != ie.from_lat && null != ie.from_long && ie.updateDistance();
+                                                    ((ae.params = []),
+                                                    ae.getPropertyLatLong().then(function () {
+                                                        null != ae.from_lat && null != ae.from_long && ae.updateDistance();
                                                     }),
                                                     e(),
-                                                    clearInterval(t),
-                                                    ie.sortPropsByDistance());
+                                                    clearInterval(t));
                                             }, 250);
                                         })
                                     );
@@ -7118,8 +7102,46 @@
                 })
             )).apply(this, arguments);
         }
-        function ce(e) {
-            return (ce =
+        function ue() {
+            return (ue = ne(
+                regeneratorRuntime.mark(function e() {
+                    var t, n, r, o;
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    return (
+                                        (o = function (e) {
+                                            return e.substring(0, e.indexOf(' '));
+                                        }),
+                                        (e.next = 3),
+                                        ce()
+                                    );
+                                case 3:
+                                    return (e.next = 5), oe.waitForSelectorInDOM('.prop-hr');
+                                case 5:
+                                    (t = document.querySelectorAll('.prop-hr')),
+                                        console.log(t),
+                                        (n = document.querySelector('#currentPropertyPage')),
+                                        (r = document.querySelectorAll('.ArnProperty')),
+                                        [].slice
+                                            .call(r)
+                                            .sort(function (e, t) {
+                                                return o(e.querySelector('.distanceLabel').textContent) > o(t.querySelector('.distanceLabel').textContent) ? 1 : -1;
+                                            })
+                                            .forEach(function (e, r) {
+                                                n.insertAdjacentElement('afterbegin', e), document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', t[r]);
+                                            });
+                                case 11:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+        function le(e) {
+            return (le =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -7128,24 +7150,24 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function se(e) {
+        function de(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function ue(e, t) {
-            return (ue =
+        function fe(e, t) {
+            return (fe =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function le(e, t, n) {
-            return (le =
+        function he(e, t, n) {
+            return (he =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = de(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = pe(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -7154,17 +7176,17 @@
                           }
                       })(e, t, n || e);
         }
-        function de(e) {
-            return (de = Object.setPrototypeOf
+        function pe(e) {
+            return (pe = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
         !(function () {
-            ae.apply(this, arguments);
+            ue.apply(this, arguments);
         })();
-        var fe = new (function () {
+        var me = new (function () {
                 return {
                     site_id: 54494,
                     affiliate_id: 16980,
@@ -7222,7 +7244,7 @@
                     is_resbeat_client: !1,
                 };
             })(),
-            he = (function (e) {
+            ye = (function (e) {
                 function t() {
                     var e;
                     return (
@@ -7230,25 +7252,25 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, t),
                         (e = (function (e, t) {
-                            return !t || ('object' !== ce(t) && 'function' != typeof t) ? se(e) : t;
-                        })(this, de(t).call(this, fe))),
-                        le(de(t.prototype), 'init', se(e)).call(se(e)),
+                            return !t || ('object' !== le(t) && 'function' != typeof t) ? de(e) : t;
+                        })(this, pe(t).call(this, me))),
+                        he(pe(t.prototype), 'init', de(e)).call(de(e)),
                         e
                     );
                 }
                 return (
                     (function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && ue(e, t);
+                        (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && fe(e, t);
                     })(t, e),
                     t
                 );
             })(z);
         !(function (e) {
             ee.apply(this, arguments);
-        })(fe.site_id),
-            new he(),
-            new oe();
+        })(me.site_id),
+            new ye(),
+            new ie();
     },
 ]);
 //# sourceMappingURL=f1_portugal_20-54494.map

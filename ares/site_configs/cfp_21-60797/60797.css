@@ -107,7 +107,7 @@ input[type=submit] {
 }
 
 .SearchHotels .ArnPropertyMapInner {
-    width: 92%;
+    width: 92% !important;
     height: 96vh !important;
 }
 

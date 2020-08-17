@@ -14,7 +14,7 @@ export default class LandingPage {
         if (!document.querySelector('.RootBody')) return;
 
         this.insertStyles();
-        this.generateEvents();
+        this.generateEventHtml();
         this.removeArnSearchContainer();
     }
 
@@ -36,7 +36,7 @@ export default class LandingPage {
      *@description Generates the events in HTML
      *@return void
      */
-    async generateEvents() {
+    async generateEventHtml() {
         await utilities.waitForSelectorInDOM('.ArnSearchContainerMainDiv');
 
         const container = document.querySelector('.ArnSearchContainerMainDiv');
@@ -60,12 +60,21 @@ export default class LandingPage {
         });
     }
 
-    calculateEventColumns() {
+    /**
+     *@description Sets the number of columns for the grid
+     *@return string
+     */
+    setUpEventColumns() {
         if (this.landing_page_events.length === 1) return `1fr`;
+        if (this.landing_page_events.length === 2) return `1fr 1fr`;
 
-        return `1fr 1fr`;
+        return `1fr 1fr 1fr`;
     }
 
+    /**
+     *@description Inserts styles into the body
+     *@return void
+     */
     insertStyles() {
         document.body.insertAdjacentHTML(
             'afterBegin',
@@ -73,7 +82,7 @@ export default class LandingPage {
             <style>
                 .events{
                     display: grid;
-                    grid-template-columns: ${this.calculateEventColumns()};
+                    grid-template-columns: ${this.setUpEventColumns()};
                     max-width: 75vw;
                 }
 
@@ -86,7 +95,7 @@ export default class LandingPage {
                     position: relative;
                     background: linear-gradient(
                         to right,
-                        ${this.primary_color}c9,
+                        ${this.secondary_color}c9,
                         ${this.secondary_color}c9
                     );
                     text-decoration: none;

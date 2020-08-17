@@ -43,14 +43,14 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // f1_landing_page: './src/f1_landing_page.js',
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
-            'hof_landing_page-62678': './src/62678.js', // HOF Landing Page
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
-            'cfp_21-60797': './src/60797.js', // CFP 2021
+            'hof_landing_page-62678': './src/62678.js', // HOF Landing Page
+            // 'cfp_21-60797': './src/60797.js', // CFP 2021
         };
     }
 

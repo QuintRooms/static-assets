@@ -4490,7 +4490,7 @@
             );
         })();
         function D() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         function F(e, t, n, r, o, i, a) {
             try {
@@ -6754,7 +6754,7 @@
                         {
                             key: 'init',
                             value: function () {
-                                document.querySelector('.RootBody') && (this.insertStyles(), this.generateEvents(), this.removeArnSearchContainer());
+                                document.querySelector('.RootBody') && (this.insertStyles(), this.generateEventHtml(), this.removeArnSearchContainer());
                             },
                         },
                         {
@@ -6791,7 +6791,7 @@
                                 }),
                         },
                         {
-                            key: 'generateEvents',
+                            key: 'generateEventHtml',
                             value:
                                 ((o = Q(
                                     regeneratorRuntime.mark(function e() {
@@ -6837,9 +6837,9 @@
                                 }),
                         },
                         {
-                            key: 'calculateEventColumns',
+                            key: 'setUpEventColumns',
                             value: function () {
-                                return 1 === this.landing_page_events.length ? '1fr' : '1fr 1fr';
+                                return 1 === this.landing_page_events.length ? '1fr' : 2 === this.landing_page_events.length ? '1fr 1fr' : '1fr 1fr 1fr';
                             },
                         },
                         {
@@ -6849,7 +6849,7 @@
                                     'afterBegin',
                                     '\n            <style>\n                .events{\n                    display: grid;\n                    grid-template-columns: '
                                         .concat(
-                                            this.calculateEventColumns(),
+                                            this.setUpEventColumns(),
                                             ';\n                    max-width: 75vw;\n                }\n\n                .event-container{\n                    margin: 18px;\n                    padding: 18px;\n                    text-align: center;\n                    color: '
                                         )
                                         .concat(this.primary_text_color, ';\n                    border: 1px solid ')
@@ -6857,7 +6857,7 @@
                                             this.primary_text_color,
                                             ';\n                    position: relative;\n                    background: linear-gradient(\n                        to right,\n                        '
                                         )
-                                        .concat(this.primary_color, 'c9,\n                        ')
+                                        .concat(this.secondary_color, 'c9,\n                        ')
                                         .concat(
                                             this.secondary_color,
                                             'c9\n                    );\n                    text-decoration: none;\n                    z-index: 1;\n                }\n                .event-container::before{\n                    position: absolute;\n                    content: "";\n                    top: 0;\n                    right: 0;\n                    bottom: 0;\n                    left: 0;\n                    background: linear-gradient(\n                        to bottom,\n                        '

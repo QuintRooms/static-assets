@@ -250,8 +250,8 @@ span.exclusive-rate {
     }
 
     .SearchHotels .ArnPropertyMapInner {
-        width: unset !important;
-        height: unset !important;
+        width: 100% !important;
+        height: 100vh !important;
     }
 
 }

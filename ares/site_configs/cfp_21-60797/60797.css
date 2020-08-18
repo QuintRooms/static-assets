@@ -228,6 +228,10 @@ span.exclusive-rate {
     margin-top: 12px;
 }
 
+.SinglePropDetail .PropDetailView {
+    margin: 84px 0 5px 0;
+}
+
 @media screen and (max-width: 1100px) {
     .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
         width: unset;
@@ -240,6 +244,11 @@ span.exclusive-rate {
     .ArnSubPage {
         margin: 0 auto;
     }
+
+    .SinglePropDetail .ArnPropName {
+        padding: 15px 0;
+    }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -251,6 +260,7 @@ span.exclusive-rate {
     .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
         color: #000;
     }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -263,7 +273,8 @@ span.exclusive-rate {
         border: unset;
         width: unset;
         height: unset;
-        margin: unset;
+        margin: unset !important;
+        padding: unset !important;
         }
 
     header {
@@ -277,6 +288,8 @@ span.exclusive-rate {
     .logo img {
         margin-top: unset;
     }
+
+
 }
 
 @media screen and (max-width: 400px) {

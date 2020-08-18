@@ -88,6 +88,7 @@ export default class BasePortal {
                 // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                this.hideReviewContainer();
             }
 
             // checkout page methods
@@ -2241,5 +2242,14 @@ export default class BasePortal {
             </style>
         `
         );
+    }
+
+    hideReviewContainer() {
+        if (this.page_name !== 'property-detail') return;
+        if (!document.querySelector('#p_cdspropertydetail')) return;
+
+        if (document.querySelector('#p_cdspropertydetail').textContent === 'Sorry! We can’t find the content you’re looking for.') {
+            document.querySelector('.PropertyReviews .propReview').style.height = '160px';
+        }
     }
 }

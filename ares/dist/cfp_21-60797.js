@@ -399,18 +399,18 @@
             x = s.TypeError,
             k = s.process,
             A = k && k.versions,
-            L = (A && A.v8) || '',
-            M = s.Promise,
+            M = (A && A.v8) || '',
+            L = s.Promise,
             C = 'process' == l(k),
             E = function () {},
             q = (o = b.f),
             T = !!(function () {
                 try {
-                    var e = M.resolve(1),
+                    var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(E, E);
                         });
-                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
+                    return (C || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== M.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             P = function (e) {
@@ -511,8 +511,8 @@
                 }
             };
         T ||
-            ((M = function (e) {
-                p(this, M, 'Promise', '_h'), h(e), r.call(this);
+            ((L = function (e) {
+                p(this, L, 'Promise', '_h'), h(e), r.call(this);
                 try {
                     e(u(D, this, 1), u(H, this, 1));
                 } catch (e) {
@@ -521,9 +521,9 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(85)(M.prototype, {
+            }).prototype = n(85)(L.prototype, {
                 then: function (e, t) {
-                    var n = q(y(this, M));
+                    var n = q(y(this, L));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -543,10 +543,10 @@
                 (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(H, e, 1));
             }),
             (b.f = q = function (e) {
-                return e === M || e === a ? new i(e) : o(e);
+                return e === L || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !T, {Promise: M}),
-            n(24)(M, 'Promise'),
+            d(d.G + d.W + d.F * !T, {Promise: L}),
+            n(24)(L, 'Promise'),
             n(86)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !T, 'Promise', {
@@ -557,7 +557,7 @@
             }),
             d(d.S + d.F * (c || !T), 'Promise', {
                 resolve: function (e) {
-                    return w(c && this === a ? M : this, e);
+                    return w(c && this === a ? L : this, e);
                 },
             }),
             d(
@@ -566,7 +566,7 @@
                         !(
                             T &&
                             n(87)(function (e) {
-                                M.all(e).catch(E);
+                                L.all(e).catch(E);
                             })
                         ),
                 'Promise',
@@ -1808,13 +1808,13 @@
                     }
                     for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var k = String(b[0]), A = u(l(a(b.index), f.length), 0), L = [], M = 1; M < b.length; M++) L.push(void 0 === (S = b[M]) ? S : String(S));
+                        for (var k = String(b[0]), A = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var E = [k].concat(L, A, f);
+                            var E = [k].concat(M, A, f);
                             void 0 !== C && E.push(C);
                             var q = String(t.apply(void 0, E));
-                        } else q = m(k, f, A, L, C, t);
+                        } else q = m(k, f, A, M, C, t);
                         A >= w && ((_ += f.slice(w, A) + q), (w = A + k.length));
                     }
                     return _ + f.slice(w);
@@ -2084,11 +2084,11 @@
             x = n(21),
             k = n(49),
             A = n(73),
-            L = n(52),
-            M = n(48),
+            M = n(52),
+            L = n(48),
             C = n(5),
             E = n(13),
-            q = L.f,
+            q = M.f,
             T = C.f,
             P = A.f,
             R = r.Symbol,
@@ -2101,7 +2101,7 @@
             F = l('symbols'),
             Y = l('op-symbols'),
             N = Object.prototype,
-            $ = 'function' == typeof R && !!M.f,
+            $ = 'function' == typeof R && !!L.f,
             U = r.QObject,
             W = !U || !U.prototype || !U.prototype.findChild,
             G =
@@ -2184,11 +2184,11 @@
                     return this._k;
                 }
             ),
-            (L.f = K),
+            (M.f = K),
             (C.f = Z),
             (n(51).f = A.f = X),
             (n(26).f = Q),
-            (M.f = ee),
+            (L.f = ee),
             i && !n(16) && c(N, 'propertyIsEnumerable', Q, !0),
             (p.f = function (e) {
                 return z(h(e));
@@ -2223,11 +2223,11 @@
                 getOwnPropertySymbols: ee,
             });
         var ie = u(function () {
-            M.f(1);
+            L.f(1);
         });
         a(a.S + a.F * ie, 'Object', {
             getOwnPropertySymbols: function (e) {
-                return M.f(S(e));
+                return L.f(S(e));
             },
         }),
             O &&
@@ -2652,25 +2652,25 @@
                 x = 'values' == m,
                 k = !1,
                 A = e.prototype,
-                L = A[d] || A['@@iterator'] || (m && A[m]),
-                M = L || _(m),
-                C = m ? (x ? _('entries') : M) : void 0,
-                E = ('Array' == t && A.entries) || L;
+                M = A[d] || A['@@iterator'] || (m && A[m]),
+                L = M || _(m),
+                C = m ? (x ? _('entries') : L) : void 0,
+                E = ('Array' == t && A.entries) || M;
             if (
                 (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
-                    L &&
-                    'values' !== L.name &&
+                    M &&
+                    'values' !== M.name &&
                     ((k = !0),
-                    (M = function () {
-                        return L.call(this);
+                    (L = function () {
+                        return M.call(this);
                     })),
-                (r && !g) || (!f && !k && A[d]) || a(A, d, M),
-                (c[t] = M),
+                (r && !g) || (!f && !k && A[d]) || a(A, d, L),
+                (c[t] = L),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? M : _('values'), keys: y ? M : _('keys'), entries: C}), g)) for (b in v) b in A || i(A, b, v[b]);
+                if (((v = {values: x ? L : _('values'), keys: y ? L : _('keys'), entries: C}), g)) for (b in v) b in A || i(A, b, v[b]);
                 else o(o.P + o.F * (f || k), t, v);
             return v;
         };
@@ -4586,7 +4586,7 @@
                                                                     );
                                                                 case 9:
                                                                     'cug' === e.site_config.site_type &&
-                                                                        W.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                        (W.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                             F(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
@@ -4602,6 +4602,7 @@
                                                                                 })
                                                                             )
                                                                         ),
+                                                                        e.showUsersCugPoints()),
                                                                         W.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                         'property-detail' === e.page_name &&
                                                                             (e.addImageSlideshow(),
@@ -4631,7 +4632,8 @@
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
-                                                                            )),
+                                                                            ),
+                                                                            e.hideReviewContainer()),
                                                                         'checkout' === e.page_name &&
                                                                             (W.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
@@ -6696,6 +6698,35 @@
                             key: 'cancelConfirmUpdate',
                             value: function () {
                                 document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
+                            },
+                        },
+                        {
+                            key: 'showUsersCugPoints',
+                            value: function () {
+                                if (this.site_config.cug.show_points && this.site_config.cug.is_cug) {
+                                    var e = W.getMetaTagContent('memberMetaTag');
+                                    if (e) {
+                                        var t = JSON.parse(e).Points;
+                                        document
+                                            .querySelector('header')
+                                            .insertAdjacentHTML(
+                                                'afterEnd',
+                                                '\n            <div class="points-container">Points: <span class="points">'.concat(
+                                                    t,
+                                                    '</span></div>\n            <style>\n                .points-container{\n                    text-align: right;\n                    margin: 12px 12px 12px 0;\n                    text-transform: uppercase;\n                }\n\n                .points{\n                    font-weight: 700;\n                }\n            </style>\n        '
+                                                )
+                                            );
+                                    }
+                                }
+                            },
+                        },
+                        {
+                            key: 'hideReviewContainer',
+                            value: function () {
+                                'property-detail' === this.page_name &&
+                                    document.querySelector('#p_cdspropertydetail') &&
+                                    'Sorry! We can’t find the content you’re looking for.' === document.querySelector('#p_cdspropertydetail').textContent &&
+                                    (document.querySelector('.PropertyReviews .propReview').style.height = '160px');
                             },
                         },
                     ]) && Y(t.prototype, n),

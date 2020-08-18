@@ -2043,12 +2043,11 @@ legend {
     transition: all 0.3s ease-out;
 }
 
-.ArnSortByDistance,
 .ArnSortByClass {
     display: block;
 }
 
-.ArnSortByPrice{
+.ArnSortByPrice, .ArnSortByDistance {
     display: block !important;
 }
 

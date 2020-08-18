@@ -58,8 +58,12 @@
     font-family: 'UnitedSansReg-Heavy';
 }
 
-.RootBody #theSearchBox span {
+.RootBody #CitySearchContainer span:first-of-type, .RootBody #CheckInContainer span, .RootBody #CheckInContainer span, .RootBody .ArnSearchHolderBoth span {
     color: #fff;
+}
+
+.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h4 {
+    color: #333;
 }
 
 /*  Fonts End */
@@ -196,6 +200,34 @@ span.exclusive-rate {
     filter: invert(0.5);
 }
 
+.SinglePropDetail .PropertyAmenities li {
+    padding: 3px 0;
+}
+
+.SinglePropDetail .ArnNightlyRate strong div:first-child {
+    padding: 5px 0;
+}
+
+.ArnSubPage {
+    margin: 65px auto;
+}
+
+.WBRateGuaranteeForm2 .zsFormClass {
+    background: transparent;
+}
+
+.SearchHotels .ArnSearchHeader {
+    padding: 35px 12px 12px 12px;
+}
+
+.SearchHotels .ArnSecondarySearchOuterContainer {
+    padding: 0 8px;
+}
+
+.sort-wrapper h4 {
+    margin-top: 12px;
+}
+
 @media screen and (max-width: 1100px) {
     .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
         width: unset;
@@ -203,6 +235,10 @@ span.exclusive-rate {
 
     header a {
         width: 40%;
+    }
+
+    .ArnSubPage {
+        margin: 0 auto;
     }
 }
 

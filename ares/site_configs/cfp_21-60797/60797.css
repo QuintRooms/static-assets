@@ -58,7 +58,7 @@
     font-family: 'UnitedSansReg-Heavy';
 }
 
-.RootBody #CitySearchContainer span:first-of-type, .RootBody #CheckInContainer span, .RootBody #CheckInContainer span, .RootBody .ArnSearchHolderBoth span {
+.RootBody #CitySearchContainer span:first-of-type, .RootBody #CheckInContainer span, .RootBody #CheckOutContainer span, .RootBody .ArnSearchHolderBoth span {
     color: #fff;
 }
 
@@ -247,6 +247,11 @@ span.exclusive-rate {
 
     .SinglePropDetail .ArnPropName {
         padding: 15px 0;
+    }
+
+    .SearchHotels .ArnPropertyMapInner {
+        width: unset;
+        height: unset;
     }
 
 }

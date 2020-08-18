@@ -2244,12 +2244,14 @@ export default class BasePortal {
         );
     }
 
-    hideReviewContainer() {
+    async hideReviewContainer() {
         if (this.page_name !== 'property-detail') return;
+        await utilities.waitForSelectorInDOM('.propReview');
+        console.log(document.querySelector('#p_cdspropertydetail'));
         if (!document.querySelector('#p_cdspropertydetail')) return;
 
         if (document.querySelector('#p_cdspropertydetail').textContent === 'Sorry! We can’t find the content you’re looking for.') {
-            document.querySelector('.PropertyReviews .propReview').style.height = '160px';
+            document.querySelector('.PropertyReviews .propReview').classList.add('review-height');
         }
     }
 }

@@ -100,9 +100,7 @@ class ChildPortal extends Resbeat {
             );
         }
 
-        function showPointsAppliedToOnRate() {
-            // if (!document.querySelector('.SearchHotels')) return;
-
+        function showPointsAppliedOnRate() {
             let rate_containers = '';
 
             if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
@@ -112,7 +110,6 @@ class ChildPortal extends Resbeat {
                 const savings_element = container.querySelector('.originalPrice');
                 if (!savings_element) return;
                 const savings = savings_element.getAttribute('amount');
-                console.log(savings);
 
                 savings_element.insertAdjacentHTML(
                     'afterEnd',
@@ -143,7 +140,15 @@ class ChildPortal extends Resbeat {
         if (document.querySelector('.CheckOutForm')) document.querySelector('.discount th').textContent = 'Points Applied:';
 
         showBelowHeader();
-        showPointsAppliedToOnRate();
+
+        if (document.querySelector('.SinglePropDetail')) showPointsAppliedOnRate();
+        if (document.querySelector('.SearchHotels')) {
+            jQuery(document).on('ratesReadyEvent', () => {
+                setTimeout(() => {
+                    showPointsAppliedOnRate();
+                }, 1);
+            });
+        }
     }
 }
 

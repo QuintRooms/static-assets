@@ -4637,7 +4637,8 @@
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
-                                                                            )),
+                                                                            ),
+                                                                            e.moveOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                         'checkout' === e.page_name &&
                                                                             (G.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
@@ -4695,7 +4696,8 @@
                                                                             'afterEnd'
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && z.init(e.site_config, e.page_name, G),
+                                                                        'search-results' === e.page_name &&
+                                                                            (z.init(e.site_config, e.page_name, G), e.moveOriginalPrice('.ArnProperty', '.arnPrice')),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             Y(
@@ -7669,14 +7671,13 @@
                                                                         var t = e.querySelector('.originalPrice');
                                                                         if (t) {
                                                                             var n = t.getAttribute('amount');
-                                                                            console.log(n),
-                                                                                t.insertAdjacentHTML(
-                                                                                    'afterEnd',
-                                                                                    '\n                <div class="points-applied">Points Applied: <span>'.concat(
-                                                                                        n,
-                                                                                        ' </span></div>\n                <style>\n                    .points-applied{\n                        font-weight: 500;\n                        padding: 4px 0;\n                        font-size: 15px;\n                        color: #666;\n                    }\n\n                    .points-applied span{\n                        font-weight: 700;\n                    }\n\n                    .SearchHotels .originalPrice{\n                        margin-top: 10px;\n                    }\n                </style>\n            '
-                                                                                    )
-                                                                                );
+                                                                            t.insertAdjacentHTML(
+                                                                                'afterEnd',
+                                                                                '\n                <div class="points-applied">Points Applied: <span>'.concat(
+                                                                                    n,
+                                                                                    ' </span></div>\n                <style>\n                    .points-applied{\n                        font-weight: 500;\n                        padding: 4px 0;\n                        font-size: 15px;\n                        color: #666;\n                    }\n\n                    .points-applied span{\n                        font-weight: 700;\n                    }\n\n                    .SearchHotels .originalPrice{\n                        margin-top: 10px;\n                    }\n                </style>\n            '
+                                                                                )
+                                                                            );
                                                                         }
                                                                     });
                                                             }),
@@ -7709,8 +7710,14 @@
                                                     case 6:
                                                         document.querySelector('.CheckOutForm') && (document.querySelector('.discount th').textContent = 'Points Applied:'),
                                                             t(),
-                                                            n();
-                                                    case 9:
+                                                            document.querySelector('.SinglePropDetail') && n(),
+                                                            document.querySelector('.SearchHotels') &&
+                                                                jQuery(document).on('ratesReadyEvent', function () {
+                                                                    setTimeout(function () {
+                                                                        n();
+                                                                    }, 1);
+                                                                });
+                                                    case 10:
                                                     case 'end':
                                                         return e.stop();
                                                 }

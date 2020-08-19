@@ -4493,7 +4493,7 @@
             );
         })();
         function D() {
-            return {path: '../..'};
+            return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         function I(e, t, n, r, o, i, a) {
             try {

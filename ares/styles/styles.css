@@ -11,11 +11,6 @@ html {
     font-size: 14px !important;
 }
 
-.MemberAuthenticated.SearchHotels .distanceLabel,
-.MemberAuthenticated.SearchHotels .ArnSortByDistance{
-    display: none;
-}
-
 .fixed {
     position: fixed;
 }
@@ -2050,6 +2045,11 @@ legend {
 
 .ArnSortByPrice, .ArnSortByDistance {
     display: block !important;
+}
+
+.MemberAuthenticated.SearchHotels .distanceLabel,
+.MemberAuthenticated.SearchHotels .ArnSortByDistance{
+    display: none!important;
 }
 
 /* Secondary Search Container End */

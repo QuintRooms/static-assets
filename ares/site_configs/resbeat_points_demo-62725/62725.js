@@ -106,33 +106,49 @@ class ChildPortal extends Resbeat {
             if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
             if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnNightlyRate');
 
-            rate_containers.forEach((container) => {
+            rate_containers.forEach((container, i) => {
                 const savings_element = container.querySelector('.originalPrice');
-                if (!savings_element) return;
+
+                if (!savings_element || container.querySelector('.points-applied')) return;
+
                 const savings = savings_element.getAttribute('amount');
 
                 savings_element.insertAdjacentHTML(
                     'afterEnd',
                     `
                 <div class="points-applied">Points Applied: <span>${savings} </span></div>
-                <style>
-                    .points-applied{
-                        font-weight: 500;
-                        padding: 4px 0;
-                        font-size: 15px;
-                        color: #666;
-                    }
-
-                    .points-applied span{
-                        font-weight: 700;
-                    }
-
-                    .SearchHotels .originalPrice{
-                        margin-top: 10px;
-                    }
-                </style>
             `
                 );
+
+                if (i === 0) {
+                    savings_element.insertAdjacentHTML(
+                        'afterEnd',
+                        `<style>
+                            .points-applied{
+                                font-weight: 500;
+                                padding: 4px 0;
+                                font-size: 15px;
+                                color: #666;
+                            }
+
+                            .points-applied span{
+                                font-weight: 700;
+                            }
+
+                            @media screen and (min-width: 800px){
+                                .SearchHotels .originalPrice{
+                                    margin-top: 10px;
+                                }
+                            }
+
+                            @media screen and (max-width: 1340px){
+                                .ArnRateCell{
+                                    width: 36%;
+                                }
+                            }
+                        </style>`
+                    );
+                }
             });
         }
 

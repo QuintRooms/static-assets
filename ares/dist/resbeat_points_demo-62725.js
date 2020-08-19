@@ -260,11 +260,11 @@
                     return (M || 'function' == typeof PromiseRejectionEvent) && e.then(R) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            E = function (e) {
                 var t;
                 return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
-            E = function (e, t) {
+            T = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -283,9 +283,9 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && O(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && F(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = E(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -305,7 +305,7 @@
                         n,
                         r,
                         o = e._v,
-                        i = F(e);
+                        i = O(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -315,17 +315,17 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = M || F(e) ? 2 : 1)),
+                            (e._h = M || O(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            F = function (e) {
+            O = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            O = function (e) {
+            F = function (e) {
                 g.call(s, function () {
                     var t;
                     M ? x.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -333,7 +333,7 @@
             },
             j = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), E(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
             },
             H = function (e) {
                 var t,
@@ -342,7 +342,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw A("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = E(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -351,7 +351,7 @@
                                       j.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), E(n, !1));
+                            : ((n._v = e), (n._s = 1), T(n, !1));
                     } catch (e) {
                         j.call({_w: n, _d: !1}, e);
                     }
@@ -377,7 +377,7 @@
                         (n.domain = M ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && E(this, !1),
+                        this._s && T(this, !1),
                         n.promise
                     );
                 },
@@ -1655,18 +1655,18 @@
             R = n(13),
             q = C.f,
             P = M.f,
-            T = k.f,
-            E = r.Symbol,
+            E = k.f,
+            T = r.Symbol,
             B = r.JSON,
-            F = B && B.stringify,
-            O = f('_hidden'),
+            O = B && B.stringify,
+            F = f('_hidden'),
             j = f('toPrimitive'),
             H = {}.propertyIsEnumerable,
             D = l('symbol-registry'),
             I = l('symbols'),
             N = l('op-symbols'),
             Y = Object.prototype,
-            W = 'function' == typeof E && !!L.f,
+            W = 'function' == typeof T && !!L.f,
             U = r.QObject,
             $ = !U || !U.prototype || !U.prototype.findChild,
             V =
@@ -1689,16 +1689,16 @@
                       }
                     : P,
             G = function (e) {
-                var t = (I[e] = x(E.prototype));
+                var t = (I[e] = x(T.prototype));
                 return (t._k = e), t;
             },
             z =
-                W && 'symbol' == typeof E.iterator
+                W && 'symbol' == typeof T.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof E;
+                          return e instanceof T;
                       },
             Z = function (e, t, n) {
                 return (
@@ -1707,7 +1707,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(I, t)
-                        ? (n.enumerable ? (o(e, O) && e[O][t] && (e[O][t] = !1), (n = x(n, {enumerable: A(0, !1)}))) : (o(e, O) || P(e, O, A(1, {})), (e[O][t] = !0)), V(e, t, n))
+                        ? (n.enumerable ? (o(e, F) && e[F][t] && (e[F][t] = !1), (n = x(n, {enumerable: A(0, !1)}))) : (o(e, F) || P(e, F, A(1, {})), (e[F][t] = !0)), V(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -1718,29 +1718,29 @@
             },
             Q = function (e) {
                 var t = H.call(this, (e = _(e, !0)));
-                return !(this === Y && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, O) && this[O][e])) || t);
+                return !(this === Y && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, F) && this[F][e])) || t);
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== Y || !o(I, t) || o(N, t))) {
                     var n = q(e, t);
-                    return !n || !o(I, t) || (o(e, O) && e[O][t]) || (n.enumerable = !0), n;
+                    return !n || !o(I, t) || (o(e, F) && e[F][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == O || t == s || r.push(t);
+                for (var t, n = E(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == F || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === Y, r = T(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
+                for (var t, n = e === Y, r = E(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
                 return i;
             };
         W ||
             (c(
-                (E = function () {
-                    if (this instanceof E) throw TypeError('Symbol is not a constructor!');
+                (T = function () {
+                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
                     var e = h(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === Y && t.call(N, n), o(this, O) && o(this[O], e) && (this[O][e] = !1), V(this, e, A(1, n));
+                            this === Y && t.call(N, n), o(this, F) && o(this[F], e) && (this[F][e] = !1), V(this, e, A(1, n));
                         };
                     return i && $ && V(Y, e, {configurable: !0, set: t}), G(e);
                 }).prototype,
@@ -1758,13 +1758,13 @@
             (p.f = function (e) {
                 return G(f(e));
             })),
-            a(a.G + a.W + a.F * !W, {Symbol: E});
+            a(a.G + a.W + a.F * !W, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
         for (var re = R(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !W, 'Symbol', {
             for: function (e) {
-                return o(D, (e += '')) ? D[e] : (D[e] = E(e));
+                return o(D, (e += '')) ? D[e] : (D[e] = T(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
@@ -1801,8 +1801,8 @@
                         a.F *
                             (!W ||
                                 u(function () {
-                                    var e = E();
-                                    return '[null]' != F([e]) || '{}' != F({a: e}) || '{}' != F(Object(e));
+                                    var e = T();
+                                    return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
                     {
@@ -1815,13 +1815,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    F.apply(B, r)
+                                    O.apply(B, r)
                                 );
                         },
                     }
                 ),
-            E.prototype[j] || n(9)(E.prototype, j, E.prototype.valueOf),
-            d(E, 'Symbol'),
+            T.prototype[j] || n(9)(T.prototype, j, T.prototype.valueOf),
+            d(T, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3640,13 +3640,13 @@
                 });
             };
         }
-        function T(e, t) {
+        function E(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var E = n(43),
+        var T = n(43),
             B = (function () {
                 function e() {
                     !(function (e, t) {
@@ -4103,9 +4103,9 @@
                         {
                             key: 'calculateNights',
                             value: function () {
-                                var e = E(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = E(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                                return E(t).diff(E(e), 'days');
+                                var e = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    t = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return T(t).diff(T(e), 'days');
                             },
                         },
                         {
@@ -4219,16 +4219,16 @@
                             key: 'checkForPastDate',
                             value: function (e) {
                                 e || console.error('No date passed into checkForPastDate()');
-                                var t = E();
-                                return E(e).diff(t, 'milliseconds') < 0;
+                                var t = T();
+                                return T(e).diff(t, 'milliseconds') < 0;
                             },
                         },
-                    ]) && T(t.prototype, n),
-                    r && T(t, r),
+                    ]) && E(t.prototype, n),
+                    r && E(t, r),
                     e
                 );
             })();
-        function F(e, t, n, r, o, i, a) {
+        function O(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -4237,17 +4237,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function O(e) {
+        function F(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        F(i, r, o, a, c, 'next', e);
+                        O(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        F(i, r, o, a, c, 'throw', e);
+                        O(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -4290,7 +4290,7 @@
                                     });
                             }
                             function h() {
-                                return (h = O(
+                                return (h = F(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -6706,6 +6706,15 @@
                                 document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
                             },
                         },
+                        {
+                            key: 'moveOriginalPrice',
+                            value: function (e, t) {
+                                'cug' !== this.site_type &&
+                                    document.querySelectorAll(e).forEach(function (e) {
+                                        e.querySelector('div.originalPrice') && e.querySelector(t).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                    });
+                            },
+                        },
                     ]) && W(t.prototype, n),
                     r && W(t, r),
                     e
@@ -7667,17 +7676,22 @@
                                                                 var e = '';
                                                                 document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
                                                                     document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
-                                                                    e.forEach(function (e) {
-                                                                        var t = e.querySelector('.originalPrice');
-                                                                        if (t) {
-                                                                            var n = t.getAttribute('amount');
-                                                                            t.insertAdjacentHTML(
+                                                                    e.forEach(function (e, t) {
+                                                                        var n = e.querySelector('.originalPrice');
+                                                                        if (n && !e.querySelector('.points-applied')) {
+                                                                            var r = n.getAttribute('amount');
+                                                                            n.insertAdjacentHTML(
                                                                                 'afterEnd',
                                                                                 '\n                <div class="points-applied">Points Applied: <span>'.concat(
-                                                                                    n,
-                                                                                    ' </span></div>\n                <style>\n                    .points-applied{\n                        font-weight: 500;\n                        padding: 4px 0;\n                        font-size: 15px;\n                        color: #666;\n                    }\n\n                    .points-applied span{\n                        font-weight: 700;\n                    }\n\n                    .SearchHotels .originalPrice{\n                        margin-top: 10px;\n                    }\n                </style>\n            '
+                                                                                    r,
+                                                                                    ' </span></div>\n            '
                                                                                 )
-                                                                            );
+                                                                            ),
+                                                                                0 === t &&
+                                                                                    n.insertAdjacentHTML(
+                                                                                        'afterEnd',
+                                                                                        '<style>\n                            .points-applied{\n                                font-weight: 500;\n                                padding: 4px 0;\n                                font-size: 15px;\n                                color: #666;\n                            }\n\n                            .points-applied span{\n                                font-weight: 700;\n                            }\n\n                            @media screen and (min-width: 800px){\n                                .SearchHotels .originalPrice{\n                                    margin-top: 10px;\n                                }\n                            }\n\n                            @media screen and (max-width: 1340px){\n                                .ArnRateCell{\n                                    width: 36%;\n                                }\n                            }\n                        </style>'
+                                                                                    );
                                                                         }
                                                                     });
                                                             }),

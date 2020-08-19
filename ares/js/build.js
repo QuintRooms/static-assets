@@ -2214,4 +2214,12 @@ export default class BasePortal {
         const do_nothing = document.querySelector('.dialog-button-cancel a');
         do_nothing.textContent = 'Go Back';
     }
+
+    moveOriginalPrice(nodeList, element) {
+        if (this.site_type === 'cug') return;
+        document.querySelectorAll(nodeList).forEach((e) => {
+            if (!e.querySelector('div.originalPrice')) return;
+            e.querySelector(element).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+        });
+    }
 }

@@ -1185,6 +1185,25 @@ div.autocomplete ul li.selected {
     text-align: center;
 }
 
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
+
+.SearchHotels .originalPrice {
+    display: inline !important;
+    margin-right: 5px;
+}
+
+.SinglePropDetail .originalPrice {
+    display: block;
+    padding: 0;
+}
+
 @media screen and (max-width: 800px) {
     .propThumbTag {
         width: inherit;

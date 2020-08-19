@@ -15,7 +15,7 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
             event_id: 40966,
-            event_name: 'Innings fest',
+            event_name: 'Innings Fest',
             event_dates: '2/27/2021 - 2/28/2021',
             is_lrg: false,
         },

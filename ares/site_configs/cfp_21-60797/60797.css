@@ -204,8 +204,8 @@ span.exclusive-rate {
     padding: 3px 0;
 }
 
-.SinglePropDetail .ArnNightlyRate strong div:first-child {
-    padding: 5px 0;
+.SinglePropDetail .ArnNightlyRate strong div:nth-last-child(2) {
+    padding: 7px 0;
 }
 
 .ArnSubPage {

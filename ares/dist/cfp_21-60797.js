@@ -4360,7 +4360,10 @@
                                     f,
                                     h,
                                     v = window.location.origin,
-                                    b = ''.concat(v, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
+                                    b = ''
+                                        .concat(v, '/v6/?type=geo&siteid=')
+                                        .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                        .concat(e.distance_unit),
                                     S = new URL(b);
                                 function _(e) {
                                     Object.keys(e).forEach(function (t) {
@@ -4490,7 +4493,7 @@
             );
         })();
         function D() {
-            return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            return {path: '../..'};
         }
         function I(e, t, n, r, o, i, a) {
             try {

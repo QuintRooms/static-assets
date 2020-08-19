@@ -6797,7 +6797,7 @@
                 show_language_select: !1,
                 show_currency_select: !1,
                 show_date_prompt: !1,
-                fav_icon_url: ''.concat(V.path, '/site_configs/').concat(Z, '/img/favicon.png'),
+                fav_icon_url: ''.concat(V.path, '/site_configs/').concat(Z, '/img/favicon.png?v2'),
                 has_custom_styles: !0,
                 custom_styles_url: ''.concat(V.path, '/site_configs/').concat(Z, '/').concat(60797, '.css'),
                 has_social_sharing: !0,

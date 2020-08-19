@@ -184,12 +184,11 @@ export default class Algolia {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
         }
-
         /* - - - - - Submit click function - - - - - */
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const {origin} = window.location;
-            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
+            const url = `${origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${site_config.distance_unit}`;
             const built_url = new URL(url);
             let lat;
             let lng;

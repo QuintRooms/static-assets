@@ -55,6 +55,8 @@ export default class BasePortal {
                 utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
                     utilities.appendToParent('#commands', 'header');
                 });
+
+                this.showUsersCugPoints();
             }
 
             utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
@@ -2211,5 +2213,33 @@ export default class BasePortal {
 
         const do_nothing = document.querySelector('.dialog-button-cancel a');
         do_nothing.textContent = 'Go Back';
+    }
+
+    showUsersCugPoints() {
+        if (!this.site_config.cug.show_points || !this.site_config.cug.is_cug) return;
+
+        const member_data_meta = utilities.getMetaTagContent('memberMetaTag');
+
+        if (!member_data_meta) return;
+
+        const points = JSON.parse(member_data_meta).Points;
+
+        document.querySelector('header').insertAdjacentHTML(
+            'afterEnd',
+            `
+            <div class="points-container">Points: <span class="points">${points}</span></div>
+            <style>
+                .points-container{
+                    text-align: right;
+                    margin: 12px 12px 12px 0;
+                    text-transform: uppercase;
+                }
+
+                .points{
+                    font-weight: 700;
+                }
+            </style>
+        `
+        );
     }
 }

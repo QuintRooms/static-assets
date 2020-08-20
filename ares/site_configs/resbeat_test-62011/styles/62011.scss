@@ -14,11 +14,11 @@ $button_hover_text_color: #215853;
 $button_hover_border_color: #215853;
 $google_font_name: 'Avenir';
 
-@import '../../styles/sass/config.scss';
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
 
 /* - - - - - RESBEAT STYLES - - - - - - */
 
-// @import '../../styles/sass/resbeat-config.scss';
+@import '../../../styles/sass/config-styles/resbeat.config.scss';
 
 /* - - - - - SITE STYLES - - - - - - */
 /* Fonts */
@@ -143,6 +143,17 @@ input[type='email'].email-mask,
 
 .SearchHotels .ap-input-icon {
     background-color: #f0f0f0;
+}
+
+#demo-messaging {
+    display: block !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: #666;
 }
 
 @media screen and (max-width: 800px){

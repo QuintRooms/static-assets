@@ -128,6 +128,10 @@ class ChildPortal extends Resbeat {
                                 font-weight: 700;
                             }
 
+                            .ArnCurrency + div{
+                                display: none;
+                            }
+
                             @media screen and (min-width: 800px){
                                 .SearchHotels .originalPrice{
                                     margin-top: 10px;

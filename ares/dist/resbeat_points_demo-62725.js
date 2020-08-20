@@ -109,7 +109,7 @@
     function (e, t, n) {
         var r = n(2),
             o = n(47),
-            i = n(34),
+            i = n(35),
             a = Object.defineProperty;
         t.f = n(3)
             ? Object.defineProperty
@@ -185,7 +185,7 @@
     },
     function (e, t, n) {
         var r = n(49),
-            o = n(36);
+            o = n(37);
         e.exports =
             Object.keys ||
             function (e) {
@@ -883,209 +883,18 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(65),
-            o = n(96),
-            i = n(20),
-            a = n(12);
-        (e.exports = n(97)(
-            Array,
-            'Array',
-            function (e, t) {
-                (this._t = a(e)), (this._i = 0), (this._k = t);
-            },
-            function () {
-                var e = this._t,
-                    t = this._k,
-                    n = this._i++;
-                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
-            },
-            'values'
-        )),
-            (i.Arguments = i.Array),
-            r('keys'),
-            r('values'),
-            r('entries');
-    },
-    function (e, t, n) {
-        var r = n(6),
-            o = n(1).document,
-            i = r(o) && r(o.createElement);
-        e.exports = function (e) {
-            return i ? o.createElement(e) : {};
-        };
-    },
-    function (e, t, n) {
-        var r = n(6);
-        e.exports = function (e, t) {
-            if (!r(e)) return e;
-            var n, o;
-            if (t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
-            if ('function' == typeof (n = e.valueOf) && !r((o = n.call(e)))) return o;
-            if (!t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
-            throw TypeError("Can't convert object to primitive value");
-        };
-    },
-    function (e, t, n) {
-        var r = n(23)('keys'),
-            o = n(17);
-        e.exports = function (e) {
-            return r[e] || (r[e] = o(e));
-        };
-    },
-    function (e, t) {
-        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(31),
-            o = RegExp.prototype.exec;
-        e.exports = function (e, t) {
-            var n = e.exec;
-            if ('function' == typeof n) {
-                var i = n.call(e, t);
-                if ('object' != typeof i) throw new TypeError('RegExp exec method returned something other than an Object or null');
-                return i;
-            }
-            if ('RegExp' !== r(e)) throw new TypeError('RegExp#exec called on incompatible receiver');
-            return o.call(e, t);
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r,
-            o,
-            i = n(39),
-            a = RegExp.prototype.exec,
-            c = String.prototype.replace,
-            s = a,
-            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
-            l = void 0 !== /()??/.exec('')[1];
-        (u || l) &&
-            (s = function (e) {
-                var t,
-                    n,
-                    r,
-                    o,
-                    s = this;
-                return (
-                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
-                    u && (t = s.lastIndex),
-                    (r = a.call(s, e)),
-                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
-                    l &&
-                        r &&
-                        r.length > 1 &&
-                        c.call(r[0], n, function () {
-                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
-                        }),
-                    r
-                );
-            }),
-            (e.exports = s);
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(2);
-        e.exports = function () {
-            var e = r(this),
-                t = '';
-            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        n(92);
-        var r = n(10),
-            o = n(9),
-            i = n(7),
-            a = n(15),
-            c = n(0),
-            s = n(38),
-            u = c('species'),
-            l = !i(function () {
-                var e = /./;
-                return (
-                    (e.exec = function () {
-                        var e = [];
-                        return (e.groups = {a: '7'}), e;
-                    }),
-                    '7' !== ''.replace(e, '$<a>')
-                );
-            }),
-            d = (function () {
-                var e = /(?:)/,
-                    t = e.exec;
-                e.exec = function () {
-                    return t.apply(this, arguments);
-                };
-                var n = 'ab'.split(e);
-                return 2 === n.length && 'a' === n[0] && 'b' === n[1];
-            })();
-        e.exports = function (e, t, n) {
-            var h = c(e),
-                f = !i(function () {
-                    var t = {};
-                    return (
-                        (t[h] = function () {
-                            return 7;
-                        }),
-                        7 != ''[e](t)
-                    );
-                }),
-                p = f
-                    ? !i(function () {
-                          var t = !1,
-                              n = /a/;
-                          return (
-                              (n.exec = function () {
-                                  return (t = !0), null;
-                              }),
-                              'split' === e &&
-                                  ((n.constructor = {}),
-                                  (n.constructor[u] = function () {
-                                      return n;
-                                  })),
-                              n[h](''),
-                              !t
-                          );
-                      })
-                    : void 0;
-            if (!f || !p || ('replace' === e && !l) || ('split' === e && !d)) {
-                var m = /./[h],
-                    y = n(a, h, ''[e], function (e, t, n, r, o) {
-                        return t.exec === s ? (f && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
-                    }),
-                    g = y[0],
-                    v = y[1];
-                r(String.prototype, e, g),
-                    o(
-                        RegExp.prototype,
-                        h,
-                        2 == t
-                            ? function (e, t) {
-                                  return v.call(e, this, t);
-                              }
-                            : function (e) {
-                                  return v.call(e, this);
-                              }
-                    );
-            }
-        };
-    },
-    function (e, t, n) {
-        'use strict';
         var r = n(2),
             o = n(30),
             i = n(28),
             a = n(18),
-            c = n(63),
-            s = n(37),
+            c = n(61),
+            s = n(38),
             u = Math.max,
             l = Math.min,
             d = Math.floor,
             h = /\$([$&`']|\d\d?|<[^>]*>)/g,
             f = /\$([$&`']|\d\d?)/g;
-        n(40)('replace', 2, function (e, t, n, p) {
+        n(39)('replace', 2, function (e, t, n, p) {
             return [
                 function (r, o) {
                     var i = e(this),
@@ -1160,8 +969,199 @@
         });
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(65),
+            o = n(96),
+            i = n(20),
+            a = n(12);
+        (e.exports = n(97)(
+            Array,
+            'Array',
+            function (e, t) {
+                (this._t = a(e)), (this._i = 0), (this._k = t);
+            },
+            function () {
+                var e = this._t,
+                    t = this._k,
+                    n = this._i++;
+                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
+            },
+            'values'
+        )),
+            (i.Arguments = i.Array),
+            r('keys'),
+            r('values'),
+            r('entries');
+    },
+    function (e, t, n) {
+        var r = n(6),
+            o = n(1).document,
+            i = r(o) && r(o.createElement);
+        e.exports = function (e) {
+            return i ? o.createElement(e) : {};
+        };
+    },
+    function (e, t, n) {
+        var r = n(6);
+        e.exports = function (e, t) {
+            if (!r(e)) return e;
+            var n, o;
+            if (t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
+            if ('function' == typeof (n = e.valueOf) && !r((o = n.call(e)))) return o;
+            if (!t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
+            throw TypeError("Can't convert object to primitive value");
+        };
+    },
+    function (e, t, n) {
+        var r = n(23)('keys'),
+            o = n(17);
+        e.exports = function (e) {
+            return r[e] || (r[e] = o(e));
+        };
+    },
+    function (e, t) {
+        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(31),
+            o = RegExp.prototype.exec;
+        e.exports = function (e, t) {
+            var n = e.exec;
+            if ('function' == typeof n) {
+                var i = n.call(e, t);
+                if ('object' != typeof i) throw new TypeError('RegExp exec method returned something other than an Object or null');
+                return i;
+            }
+            if ('RegExp' !== r(e)) throw new TypeError('RegExp#exec called on incompatible receiver');
+            return o.call(e, t);
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        n(92);
+        var r = n(10),
+            o = n(9),
+            i = n(7),
+            a = n(15),
+            c = n(0),
+            s = n(40),
+            u = c('species'),
+            l = !i(function () {
+                var e = /./;
+                return (
+                    (e.exec = function () {
+                        var e = [];
+                        return (e.groups = {a: '7'}), e;
+                    }),
+                    '7' !== ''.replace(e, '$<a>')
+                );
+            }),
+            d = (function () {
+                var e = /(?:)/,
+                    t = e.exec;
+                e.exec = function () {
+                    return t.apply(this, arguments);
+                };
+                var n = 'ab'.split(e);
+                return 2 === n.length && 'a' === n[0] && 'b' === n[1];
+            })();
+        e.exports = function (e, t, n) {
+            var h = c(e),
+                f = !i(function () {
+                    var t = {};
+                    return (
+                        (t[h] = function () {
+                            return 7;
+                        }),
+                        7 != ''[e](t)
+                    );
+                }),
+                p = f
+                    ? !i(function () {
+                          var t = !1,
+                              n = /a/;
+                          return (
+                              (n.exec = function () {
+                                  return (t = !0), null;
+                              }),
+                              'split' === e &&
+                                  ((n.constructor = {}),
+                                  (n.constructor[u] = function () {
+                                      return n;
+                                  })),
+                              n[h](''),
+                              !t
+                          );
+                      })
+                    : void 0;
+            if (!f || !p || ('replace' === e && !l) || ('split' === e && !d)) {
+                var m = /./[h],
+                    y = n(a, h, ''[e], function (e, t, n, r, o) {
+                        return t.exec === s ? (f && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
+                    }),
+                    g = y[0],
+                    v = y[1];
+                r(String.prototype, e, g),
+                    o(
+                        RegExp.prototype,
+                        h,
+                        2 == t
+                            ? function (e, t) {
+                                  return v.call(e, this, t);
+                              }
+                            : function (e) {
+                                  return v.call(e, this);
+                              }
+                    );
+            }
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r,
+            o,
+            i = n(41),
+            a = RegExp.prototype.exec,
+            c = String.prototype.replace,
+            s = a,
+            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
+            l = void 0 !== /()??/.exec('')[1];
+        (u || l) &&
+            (s = function (e) {
+                var t,
+                    n,
+                    r,
+                    o,
+                    s = this;
+                return (
+                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
+                    u && (t = s.lastIndex),
+                    (r = a.call(s, e)),
+                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
+                    l &&
+                        r &&
+                        r.length > 1 &&
+                        c.call(r[0], n, function () {
+                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
+                        }),
+                    r
+                );
+            }),
+            (e.exports = s);
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(2);
+        e.exports = function () {
+            var e = r(this),
+                t = '';
+            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
+        };
+    },
+    function (e, t, n) {
         for (
-            var r = n(32),
+            var r = n(33),
                 o = n(13),
                 i = n(10),
                 a = n(1),
@@ -1616,7 +1616,7 @@
             !n(7)(function () {
                 return (
                     7 !=
-                    Object.defineProperty(n(33)('div'), 'a', {
+                    Object.defineProperty(n(34)('div'), 'a', {
                         get: function () {
                             return 7;
                         },
@@ -1645,7 +1645,7 @@
             b = n(6),
             S = n(30),
             w = n(12),
-            _ = n(34),
+            _ = n(35),
             A = n(24),
             x = n(52),
             k = n(77),
@@ -1829,7 +1829,7 @@
         var r = n(8),
             o = n(12),
             i = n(50)(!1),
-            a = n(35)('IE_PROTO');
+            a = n(36)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
                 c = o(e),
@@ -1863,12 +1863,12 @@
     function (e, t, n) {
         var r = n(2),
             o = n(76),
-            i = n(36),
-            a = n(35)('IE_PROTO'),
+            i = n(37),
+            a = n(36)('IE_PROTO'),
             c = function () {},
             s = function () {
                 var e,
-                    t = n(33)('iframe'),
+                    t = n(34)('iframe'),
                     r = i.length;
                 for (
                     t.style.display = 'none',
@@ -1897,7 +1897,7 @@
     },
     function (e, t, n) {
         var r = n(49),
-            o = n(36).concat('length', 'prototype');
+            o = n(37).concat('length', 'prototype');
         t.f =
             Object.getOwnPropertyNames ||
             function (e) {
@@ -1908,7 +1908,7 @@
         var r = n(29),
             o = n(24),
             i = n(12),
-            a = n(34),
+            a = n(35),
             c = n(8),
             s = n(47),
             u = Object.getOwnPropertyDescriptor;
@@ -1939,7 +1939,7 @@
             a = n(25),
             c = n(83),
             s = n(53),
-            u = n(33),
+            u = n(34),
             l = n(1),
             d = l.process,
             h = l.setImmediate,
@@ -2034,7 +2034,7 @@
     function (e, t, n) {
         var r = n(8),
             o = n(30),
-            i = n(35)('IE_PROTO'),
+            i = n(36)('IE_PROTO'),
             a = Object.prototype;
         e.exports =
             Object.getPrototypeOf ||
@@ -2044,20 +2044,27 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(62),
+        var r = n(91)(!0);
+        e.exports = function (e, t, n) {
+            return t + (n ? r(e, t).length : 1);
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(63),
             o = n(2),
             i = n(56),
-            a = n(63),
+            a = n(61),
             c = n(28),
-            s = n(37),
-            u = n(38),
+            s = n(38),
+            u = n(40),
             l = n(7),
             d = Math.min,
             h = [].push,
             f = !l(function () {
                 RegExp(4294967295, 'y');
             });
-        n(40)('split', 2, function (e, t, n, l) {
+        n(39)('split', 2, function (e, t, n, l) {
             var p;
             return (
                 (p =
@@ -2141,13 +2148,6 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(91)(!0);
-        e.exports = function (e, t, n) {
-            return t + (n ? r(e, t).length : 1);
-        };
-    },
-    function (e, t, n) {
-        'use strict';
         var r = n(4),
             o = n(50)(!0);
         r(r.P, 'Array', {
@@ -2179,8 +2179,8 @@
         'use strict';
         var r = n(2),
             o = n(103),
-            i = n(37);
-        n(40)('search', 1, function (e, t, n, a) {
+            i = n(38);
+        n(39)('search', 1, function (e, t, n, a) {
             return [
                 function (n) {
                     var r = e(this),
@@ -2728,11 +2728,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(38);
+        var r = n(40);
         n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
     },
     function (e, t, n) {
-        var r = n(62),
+        var r = n(63),
             o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
@@ -2873,7 +2873,7 @@
         'use strict';
         n(102);
         var r = n(2),
-            o = n(39),
+            o = n(41),
             i = n(3),
             a = /./.toString,
             c = function (e) {
@@ -2892,7 +2892,7 @@
               });
     },
     function (e, t, n) {
-        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(39)});
+        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(41)});
     },
     function (e, t) {
         e.exports =
@@ -3260,13 +3260,13 @@
     function (e, t, n) {
         'use strict';
         n.r(t);
-        n(44), n(48), n(19), n(21), n(59), n(22), n(61);
+        n(44), n(48), n(19), n(21), n(59), n(32), n(22), n(62);
         function r() {
             return {path: 'https://dev-static.hotelsforhope.com/ares'};
         }
         var o = new r(),
             i = 'resbeat_points_demo-'.concat(62725);
-        n(64), n(66), n(41), n(95), n(42), n(32), n(99), n(101), n(67), n(104);
+        n(64), n(66), n(95), n(42), n(33), n(99), n(101), n(67), n(104);
         var a = 'URLSearchParams' in self,
             c = 'Symbol' in self && 'iterator' in Symbol,
             s =
@@ -7665,65 +7665,69 @@
                         value:
                             ((i = ue(
                                 regeneratorRuntime.mark(function e() {
-                                    var t, n;
+                                    var t, n, r;
                                     return regeneratorRuntime.wrap(
                                         function (e) {
                                             for (;;)
                                                 switch ((e.prev = e.next)) {
                                                     case 0:
                                                         if (
-                                                            ((n = function () {
+                                                            ((r = function () {
+                                                                if (document.querySelector('.CheckOutForm') && document.querySelector('.discount')) {
+                                                                    var e = document.querySelector('.discount td').textContent.replace(/[^0-9.]/g, '');
+                                                                    (document.querySelector('.discount td').textContent = Math.floor(e)),
+                                                                        (document.querySelector('.discount th').textContent = 'Credits Applied:');
+                                                                }
+                                                            }),
+                                                            (n = function () {
                                                                 var e = '';
                                                                 document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
                                                                     document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
                                                                     e.forEach(function (e, t) {
                                                                         var n = e.querySelector('.originalPrice');
                                                                         if (n && !e.querySelector('.points-applied')) {
-                                                                            var r = n.getAttribute('amount');
+                                                                            var r = n.getAttribute('amount').replace(/[^0-9.]/g, '');
                                                                             n.insertAdjacentHTML(
                                                                                 'afterEnd',
-                                                                                '\n                <div class="points-applied">Points Applied: <span>'.concat(
-                                                                                    r,
+                                                                                '\n                <div class="points-applied">Credits Applied: <span>'.concat(
+                                                                                    Math.floor(r),
                                                                                     ' </span></div>\n            '
                                                                                 )
                                                                             ),
                                                                                 0 === t &&
                                                                                     n.insertAdjacentHTML(
                                                                                         'afterEnd',
-                                                                                        '<style>\n                            .points-applied{\n                                font-weight: 500;\n                                padding: 4px 0;\n                                font-size: 15px;\n                                color: #666;\n                            }\n\n                            .points-applied span{\n                                font-weight: 700;\n                            }\n\n                            @media screen and (min-width: 800px){\n                                .SearchHotels .originalPrice{\n                                    margin-top: 10px;\n                                }\n                            }\n\n                            @media screen and (max-width: 1340px){\n                                .ArnRateCell{\n                                    width: 36%;\n                                }\n                            }\n                        </style>'
+                                                                                        '<style>\n                            .points-applied{\n                                font-weight: 500;\n                                padding: 4px 0;\n                                font-size: 15px;\n                                color: #666;\n                            }\n\n                            .points-applied span{\n                                font-weight: 700;\n                            }\n\n                            @media screen and (min-width: 800px){\n                                .SearchHotels .originalPrice{\n                                    margin-top: 10px;\n                                }\n                            }\n\n                            @media screen and (max-width: 1340px){\n                                .ArnRateCell{\n                                    width: 36%;\n                                }\n                                #currentPropertyPage{\n                                    padding: 0 18px 0 12px;\n                                }\n                            }\n                        </style>'
                                                                                     );
                                                                         }
                                                                     });
                                                             }),
                                                             (t = function () {
-                                                                var e = me.getMetaTagContent('memberMetaTag'),
-                                                                    t = me.getMetaTagContent('currency'),
-                                                                    n = '';
+                                                                var e = me.getMetaTagContent('memberMetaTag');
                                                                 if (e) {
-                                                                    var r = JSON.parse(e).Points;
-                                                                    (n = 'USD' === t ? '$'.concat(r) : ''.concat(r, ' ').concat(t)),
-                                                                        document
-                                                                            .querySelector('header')
-                                                                            .insertAdjacentHTML(
-                                                                                'afterEnd',
-                                                                                '\n                <div class="arn-points-container">Points: <span class="arn-points">'.concat(
-                                                                                    n,
-                                                                                    '</span></div>\n                <style>\n                    .arn-points-container{\n                        text-align: right;\n                        margin: 12px 12px 12px 0;\n                        text-transform: uppercase;\n                        font-size: 19px;\n                        color: #666;\n                    }\n\n                    .arn-points{\n                        font-weight: 700;\n                    }\n                </style>\n                '
-                                                                                )
-                                                                            );
+                                                                    var t = JSON.parse(e).Points;
+                                                                    document
+                                                                        .querySelector('header')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterEnd',
+                                                                            '\n                <div class="arn-points-container">Credits: <span class="arn-points">'.concat(
+                                                                                t,
+                                                                                '</span></div>\n                <style>\n                    .arn-points-container{\n                        text-align: right;\n                        margin: 12px 12px 12px 0;\n                        text-transform: uppercase;\n                        font-size: 19px;\n                        color: #666;\n                    }\n\n                    .arn-points{\n                        font-weight: 700;\n                    }\n                </style>\n                '
+                                                                            )
+                                                                        );
                                                                 }
                                                             }),
                                                             this.site_config.cug.show_points && this.site_config.cug.is_cug)
                                                         ) {
-                                                            e.next = 4;
+                                                            e.next = 5;
                                                             break;
                                                         }
                                                         return e.abrupt('return');
-                                                    case 4:
-                                                        return (e.next = 6), me.waitForSelectorInDOM('header');
-                                                    case 6:
-                                                        document.querySelector('.CheckOutForm') && (document.querySelector('.discount th').textContent = 'Points Applied:'),
-                                                            t(),
+                                                    case 5:
+                                                        return (e.next = 7), me.waitForSelectorInDOM('header');
+                                                    case 7:
+                                                        t(),
+                                                            r(),
                                                             document.querySelector('.SinglePropDetail') && n(),
                                                             document.querySelector('.SearchHotels') &&
                                                                 jQuery(document).on('ratesReadyEvent', function () {
@@ -7731,7 +7735,7 @@
                                                                         n();
                                                                     }, 1);
                                                                 });
-                                                    case 10:
+                                                    case 11:
                                                     case 'end':
                                                         return e.stop();
                                                 }

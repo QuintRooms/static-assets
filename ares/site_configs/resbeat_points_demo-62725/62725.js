@@ -67,22 +67,15 @@ class ChildPortal extends Resbeat {
 
         function showBelowHeader() {
             const member_data_meta = utilities.getMetaTagContent('memberMetaTag');
-            const currency = utilities.getMetaTagContent('currency');
-            let currency_text = '';
 
             if (!member_data_meta) return;
 
             const points = JSON.parse(member_data_meta).Points;
-            if (currency === 'USD') {
-                currency_text = `$${points}`;
-            } else {
-                currency_text = `${points} ${currency}`;
-            }
 
             document.querySelector('header').insertAdjacentHTML(
                 'afterEnd',
                 `
-                <div class="arn-points-container">Points: <span class="arn-points">${currency_text}</span></div>
+                <div class="arn-points-container">Credits: <span class="arn-points">${points}</span></div>
                 <style>
                     .arn-points-container{
                         text-align: right;
@@ -111,12 +104,12 @@ class ChildPortal extends Resbeat {
 
                 if (!savings_element || container.querySelector('.points-applied')) return;
 
-                const savings = savings_element.getAttribute('amount');
+                const savings = savings_element.getAttribute('amount').replace(/[^0-9.]/g, '');
 
                 savings_element.insertAdjacentHTML(
                     'afterEnd',
                     `
-                <div class="points-applied">Points Applied: <span>${savings} </span></div>
+                <div class="points-applied">Credits Applied: <span>${Math.floor(savings)} </span></div>
             `
                 );
 
@@ -145,6 +138,9 @@ class ChildPortal extends Resbeat {
                                 .ArnRateCell{
                                     width: 36%;
                                 }
+                                #currentPropertyPage{
+                                    padding: 0 18px 0 12px;
+                                }
                             }
                         </style>`
                     );
@@ -152,12 +148,21 @@ class ChildPortal extends Resbeat {
             });
         }
 
-        // I'm being lazy with this. Will fix if the points site ends up being used...
-        if (document.querySelector('.CheckOutForm')) document.querySelector('.discount th').textContent = 'Points Applied:';
+        function showPointsAppliedOnCheckout() {
+            if (!document.querySelector('.CheckOutForm') || !document.querySelector('.discount')) return;
+
+            const savings = document.querySelector('.discount td').textContent.replace(/[^0-9.]/g, '');
+
+            document.querySelector('.discount td').textContent = Math.floor(savings);
+
+            document.querySelector('.discount th').textContent = 'Credits Applied:';
+        }
 
         showBelowHeader();
+        showPointsAppliedOnCheckout();
 
         if (document.querySelector('.SinglePropDetail')) showPointsAppliedOnRate();
+
         if (document.querySelector('.SearchHotels')) {
             jQuery(document).on('ratesReadyEvent', () => {
                 setTimeout(() => {

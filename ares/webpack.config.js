@@ -39,17 +39,6 @@ module.exports = (env) => {
                         },
                     ],
                 },
-                {
-                    test: /\.(png|jp(e*)g|svg)$/,
-                    use: [
-                        {
-                            loader: 'url-loader',
-                            options: {
-                                name: 'images/[name].[ext]',
-                            },
-                        },
-                    ],
-                },
             ],
         },
         devtool: 'hidden-source-map',
@@ -60,7 +49,7 @@ module.exports = (env) => {
                 sourceRoot: SourceMapPath(),
             }),
             new MiniCssExtractPlugin({
-                moduleFilename: ({name}) => `./site_configs/[name]/${name.slice(-5)}.css`,
+                moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
             }),
         ],
     };

@@ -128,7 +128,7 @@ class ChildPortal extends Resbeat {
                                 font-weight: 700;
                             }
 
-                            .ArnCurrency + div{
+                            .arnCurrency + div{
                                 display: none;
                             }
 

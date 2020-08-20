@@ -1,8 +1,8 @@
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EntryPoints = require('./js/entry-points');
-const SourceMapPath = require('./js/source-map-path');
+// const SourceMapPath = require('./js/source-map-path');
 
 module.exports = (env) => {
     return {
@@ -41,13 +41,13 @@ module.exports = (env) => {
                 },
             ],
         },
-        devtool: 'hidden-source-map',
+        // devtool: 'hidden-source-map',
         plugins: [
             new Dotenv(),
-            new webpack.SourceMapDevToolPlugin({
-                filename: 'dist/[name].map',
-                sourceRoot: SourceMapPath(),
-            }),
+            // new webpack.SourceMapDevToolPlugin({
+            //     filename: 'dist/[name].map',
+            //     sourceRoot: SourceMapPath(),
+            // }),
             new MiniCssExtractPlugin({
                 moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
             }),

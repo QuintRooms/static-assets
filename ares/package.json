@@ -8,9 +8,9 @@
     "build": "npm run compile-css && node js/production-checklist.js && webpack --mode production && node js/generate-email-configs.js",
     "email": "node js/generate-email-configs.js",
     "compile-css": "npm run compile-styles && npm run compile-resbeat && npm run compile-dark",
-    "compile-styles": "node-sass ./styles/sass/styles.scss ./styles/styles.css",
-    "compile-resbeat": "node-sass ./styles/sass/resbeat.scss ./styles/resbeat.css",
-    "compile-dark": "node-sass ./styles/sass/dark.scss ./styles/dark.css"
+    "compile-styles": "node-sass ./styles/sass/base-styles/styles.scss ./styles/styles.css",
+    "compile-resbeat": "node-sass ./styles/sass/base-styles/resbeat.scss ./styles/resbeat.css",
+    "compile-dark": "node-sass ./styles/sass/base-styles/dark.scss ./styles/dark.css"
   },
   "author": "",
   "license": "ISC",

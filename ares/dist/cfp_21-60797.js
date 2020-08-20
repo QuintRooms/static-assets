@@ -397,14 +397,14 @@
             _ = n(83),
             w = n(84),
             x = s.TypeError,
-            k = s.process,
-            A = k && k.versions,
-            M = (A && A.v8) || '',
+            A = s.process,
+            k = A && A.versions,
+            M = (k && k.v8) || '',
             L = s.Promise,
-            C = 'process' == l(k),
+            C = 'process' == l(A),
             E = function () {},
             q = (o = b.f),
-            T = !!(function () {
+            P = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -413,7 +413,7 @@
                     return (C || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== M.indexOf('6.6') && -1 === _.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            P = function (e) {
+            T = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -438,7 +438,7 @@
                                         c
                                             ? (o || (2 == e._h && B(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -463,7 +463,7 @@
                         (i &&
                             ((t = S(function () {
                                 C
-                                    ? k.emit('unhandledRejection', o, e)
+                                    ? A.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
@@ -481,7 +481,7 @@
             B = function (e) {
                 g.call(s, function () {
                     var t;
-                    C ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    C ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
             H = function (e) {
@@ -495,7 +495,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = P(e))
+                        (t = T(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -510,7 +510,7 @@
                     }
                 }
             };
-        T ||
+        P ||
             ((L = function (e) {
                 p(this, L, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -527,7 +527,7 @@
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = C ? k.domain : void 0),
+                        (n.domain = C ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && R(this, !1),
@@ -545,17 +545,17 @@
             (b.f = q = function (e) {
                 return e === L || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !T, {Promise: L}),
+            d(d.G + d.W + d.F * !P, {Promise: L}),
             n(24)(L, 'Promise'),
             n(86)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !T, 'Promise', {
+            d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
                     var t = q(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !T), 'Promise', {
+            d(d.S + d.F * (c || !P), 'Promise', {
                 resolve: function (e) {
                     return w(c && this === a ? L : this, e);
                 },
@@ -564,7 +564,7 @@
                 d.S +
                     d.F *
                         !(
-                            T &&
+                            P &&
                             n(87)(function (e) {
                                 L.all(e).catch(E);
                             })
@@ -837,7 +837,7 @@
                             if ('executing' === r) throw new Error('Generator is already running');
                             if ('completed' === r) {
                                 if ('throw' === o) throw i;
-                                return k();
+                                return A();
                             }
                             for (n.method = o, n.arg = i; ; ) {
                                 var a = n.delegate;
@@ -971,9 +971,9 @@
                         return (i.next = i);
                     }
                 }
-                return {next: k};
+                return {next: A};
             }
-            function k() {
+            function A() {
                 return {value: void 0, done: !0};
             }
             return (
@@ -1808,14 +1808,14 @@
                     }
                     for (var S, _ = '', w = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var k = String(b[0]), A = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
+                        for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
                         var C = b.groups;
                         if (h) {
-                            var E = [k].concat(M, A, f);
+                            var E = [A].concat(M, k, f);
                             void 0 !== C && E.push(C);
                             var q = String(t.apply(void 0, E));
-                        } else q = m(k, f, A, M, C, t);
-                        A >= w && ((_ += f.slice(w, A) + q), (w = A + k.length));
+                        } else q = m(A, f, k, M, C, t);
+                        k >= w && ((_ += f.slice(w, k) + q), (w = k + A.length));
                     }
                     return _ + f.slice(w);
                 },
@@ -2082,15 +2082,15 @@
             _ = n(12),
             w = n(31),
             x = n(21),
-            k = n(49),
-            A = n(73),
+            A = n(49),
+            k = n(73),
             M = n(52),
             L = n(48),
             C = n(5),
             E = n(13),
             q = M.f,
-            T = C.f,
-            P = A.f,
+            P = C.f,
+            T = k.f,
             R = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
@@ -2109,10 +2109,10 @@
                 u(function () {
                     return (
                         7 !=
-                        k(
-                            T({}, 'a', {
+                        A(
+                            P({}, 'a', {
                                 get: function () {
-                                    return T(this, 'a', {value: 7}).a;
+                                    return P(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -2120,11 +2120,11 @@
                 })
                     ? function (e, t, n) {
                           var r = q(N, t);
-                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
+                          r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
                       }
-                    : T,
+                    : P,
             z = function (e) {
-                var t = (F[e] = k(R.prototype));
+                var t = (F[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -2142,8 +2142,8 @@
                     (t = w(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, B) || T(e, B, x(1, {})), (e[B][t] = !0)), G(e, t, n))
-                        : T(e, t, n)
+                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), G(e, t, n))
+                        : P(e, t, n)
                 );
             },
             J = function (e, t) {
@@ -2162,11 +2162,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = P(_(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = T(_(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == B || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = P(n ? Y : _(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = T(n ? Y : _(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         $ ||
@@ -2186,7 +2186,7 @@
             ),
             (M.f = K),
             (C.f = Z),
-            (n(51).f = A.f = X),
+            (n(51).f = k.f = X),
             (n(26).f = Q),
             (L.f = ee),
             i && !n(16) && c(N, 'propertyIsEnumerable', Q, !0),
@@ -2214,7 +2214,7 @@
         }),
             a(a.S + a.F * !$, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? k(e) : J(k(e), t);
+                    return void 0 === t ? A(e) : J(A(e), t);
                 },
                 defineProperty: Z,
                 defineProperties: J,
@@ -2636,7 +2636,7 @@
                 b,
                 S,
                 _ = function (e) {
-                    if (!f && e in A) return A[e];
+                    if (!f && e in k) return k[e];
                     switch (e) {
                         case 'keys':
                         case 'values':
@@ -2650,28 +2650,28 @@
                 },
                 w = t + ' Iterator',
                 x = 'values' == m,
-                k = !1,
-                A = e.prototype,
-                M = A[d] || A['@@iterator'] || (m && A[m]),
+                A = !1,
+                k = e.prototype,
+                M = k[d] || k['@@iterator'] || (m && k[m]),
                 L = M || _(m),
                 C = m ? (x ? _('entries') : L) : void 0,
-                E = ('Array' == t && A.entries) || M;
+                E = ('Array' == t && k.entries) || M;
             if (
                 (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, w, !0), r || 'function' == typeof S[d] || a(S, d, h)),
                 x &&
                     M &&
                     'values' !== M.name &&
-                    ((k = !0),
+                    ((A = !0),
                     (L = function () {
                         return M.call(this);
                     })),
-                (r && !g) || (!f && !k && A[d]) || a(A, d, L),
+                (r && !g) || (!f && !A && k[d]) || a(k, d, L),
                 (c[t] = L),
                 (c[w] = h),
                 m)
             )
-                if (((v = {values: x ? L : _('values'), keys: y ? L : _('keys'), entries: C}), g)) for (b in v) b in A || i(A, b, v[b]);
-                else o(o.P + o.F * (f || k), t, v);
+                if (((v = {values: x ? L : _('values'), keys: y ? L : _('keys'), entries: C}), g)) for (b in v) b in k || i(k, b, v[b]);
+                else o(o.P + o.F * (f || A), t, v);
             return v;
         };
     },
@@ -2904,11 +2904,11 @@
                         for (var S = 0, _ = 0, w = []; _ < f.length; ) {
                             v.lastIndex = h ? _ : 0;
                             var x,
-                                k = s(v, h ? f : f.slice(_));
-                            if (null === k || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
+                                A = s(v, h ? f : f.slice(_));
+                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : _)), f.length)) === S) _ = a(f, _, y);
                             else {
                                 if ((w.push(f.slice(S, _)), w.length === b)) return w;
-                                for (var A = 1; A <= k.length - 1; A++) if ((w.push(k[A]), w.length === b)) return w;
+                                for (var k = 1; k <= A.length - 1; k++) if ((w.push(A[k]), w.length === b)) return w;
                                 _ = S = x;
                             }
                         }
@@ -3539,21 +3539,21 @@
             if (-1 === x.indexOf(t)) throw new RangeError('Invalid status code');
             return new w(null, {status: t, headers: {location: e}});
         };
-        var k = self.DOMException;
+        var A = self.DOMException;
         try {
-            new k();
+            new A();
         } catch (e) {
-            ((k = function (e, t) {
+            ((A = function (e, t) {
                 (this.message = e), (this.name = t);
                 var n = Error(e);
                 this.stack = n.stack;
             }).prototype = Object.create(Error.prototype)),
-                (k.prototype.constructor = k);
+                (A.prototype.constructor = A);
         }
-        function A(e, t) {
+        function k(e, t) {
             return new Promise(function (n, r) {
                 var o = new S(e, t);
-                if (o.signal && o.signal.aborted) return r(new k('Aborted', 'AbortError'));
+                if (o.signal && o.signal.aborted) return r(new A('Aborted', 'AbortError'));
                 var a = new XMLHttpRequest();
                 function c() {
                     a.abort();
@@ -3591,7 +3591,7 @@
                         r(new TypeError('Network request failed'));
                     }),
                     (a.onabort = function () {
-                        r(new k('Aborted', 'AbortError'));
+                        r(new A('Aborted', 'AbortError'));
                     }),
                     a.open(o.method, o.url, !0),
                     'include' === o.credentials ? (a.withCredentials = !0) : 'omit' === o.credentials && (a.withCredentials = !1),
@@ -3607,7 +3607,7 @@
                     a.send(void 0 === o._bodyInit ? null : o._bodyInit);
             });
         }
-        (A.polyfill = !0), self.fetch || ((self.fetch = A), (self.Headers = h), (self.Request = S), (self.Response = w));
+        (k.polyfill = !0), self.fetch || ((self.fetch = k), (self.Headers = h), (self.Request = S), (self.Response = w));
         n(106), n(62);
         function M(e, t, n, r, o, i, a) {
             try {
@@ -3641,7 +3641,7 @@
             }
         }
         var q = n(42),
-            T = (function () {
+            P = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -4222,7 +4222,7 @@
                     e
                 );
             })();
-        function P(e, t, n, r, o, i, a) {
+        function T(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -4238,10 +4238,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        P(i, r, o, a, c, 'next', e);
+                        T(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        P(i, r, o, a, c, 'throw', e);
+                        T(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -4360,7 +4360,10 @@
                                     f,
                                     h,
                                     v = window.location.origin,
-                                    b = ''.concat(v, '/v6/?type=geo&siteid=').concat(e.site_id, '&pagesize=10&').concat(e.distance_unit),
+                                    b = ''
+                                        .concat(v, '/v6/?type=geo&siteid=')
+                                        .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                        .concat(e.distance_unit),
                                     S = new URL(b);
                                 function _(e) {
                                     Object.keys(e).forEach(function (t) {
@@ -4527,7 +4530,7 @@
             $ = n(42),
             U = n(63);
         $.extend(U);
-        var W = new T(),
+        var W = new P(),
             G = new H(),
             z = (function () {
                 function e(t) {
@@ -4632,7 +4635,8 @@
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
-                                                                            )),
+                                                                            ),
+                                                                            e.moveOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                         'checkout' === e.page_name &&
                                                                             (W.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
@@ -4690,7 +4694,8 @@
                                                                             'afterEnd'
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && G.init(e.site_config, e.page_name, W),
+                                                                        'search-results' === e.page_name &&
+                                                                            (G.init(e.site_config, e.page_name, W), e.moveOriginalPrice('.ArnProperty', '.arnPrice')),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             F(
@@ -6719,6 +6724,15 @@
                                 }
                             },
                         },
+                        {
+                            key: 'moveOriginalPrice',
+                            value: function (e, t) {
+                                'cug' !== this.site_type &&
+                                    document.querySelectorAll(e).forEach(function (e) {
+                                        e.querySelector('div.originalPrice') && e.querySelector(t).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                    });
+                            },
+                        },
                     ]) && Y(t.prototype, n),
                     r && Y(t, r),
                     e
@@ -6794,7 +6808,7 @@
                 show_language_select: !1,
                 show_currency_select: !1,
                 show_date_prompt: !1,
-                fav_icon_url: ''.concat(V.path, '/site_configs/').concat(Z, '/img/favicon.png'),
+                fav_icon_url: ''.concat(V.path, '/site_configs/').concat(Z, '/img/favicon.png?v2'),
                 has_custom_styles: !0,
                 custom_styles_url: ''.concat(V.path, '/site_configs/').concat(Z, '/').concat(60797, '.css'),
                 has_social_sharing: !0,

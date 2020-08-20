@@ -1,5 +1,9 @@
 const dayjs = require('dayjs');
 
+const custom_parse_format = require('dayjs/plugin/customParseFormat');
+
+dayjs.extend(custom_parse_format);
+
 export default class Algolia {
     init(site_config, page_name, utilities) {
         let lat_lng;
@@ -180,24 +184,45 @@ export default class Algolia {
             const arn_submit_btn = document.querySelector('input#theSubmitButton');
             arn_submit_btn.setAttribute('onClick', '');
         }
-
         /* - - - - - Submit click function - - - - - */
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const {origin} = window.location;
-            const url = `${origin}/v6/?type=geo&siteid=${site_config.site_id}&pagesize=10&${site_config.distance_unit}`;
+            const url = `${origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${site_config.distance_unit}`;
             const built_url = new URL(url);
             let lat;
             let lng;
-            let check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format(site_config.dayjs_date_format);
-            let check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format(site_config.dayjs_date_format);
+            let check_in_value;
+            let check_out_value;
+            let nights;
 
-            if (utilities.getMetaTagContent('theme') !== 'standard') {
-                check_in_value = dayjs(document.querySelector('input#theCheckIn').value).format('D/M/YYYY');
-                check_out_value = dayjs(document.querySelector('input#theCheckOut').value).format('D/M/YYYY');
+            if (utilities.getMetaTagContent('theme') === 'standard') {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
+
+                nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+            } else if (utilities.getMetaTagContent('theme') === 'mandarin' || utilities.getMetaTagContent('theme') === 'tw_mandarin') {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(site_config.dayjs_date_format);
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(site_config.dayjs_date_format);
+
+                nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D');
+            } else {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
+
+                nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
             }
 
-            const nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+            if (utilities.getMetaTagContent('theme') !== 'standard') {
+                this.check_in_value = document.querySelector('input#theCheckIn').value;
+                this.check_out_value = document.querySelector('input#theCheckOut').value;
+            }
 
             if (lat_lng) {
                 lat = lat_lng.lat;

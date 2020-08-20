@@ -13,30 +13,29 @@ function populateRaces(obj, year) {
         races_list.insertAdjacentHTML(
             'beforeend',
             `
-            <div class="race">
-                <div class="race-info">
-                    <div class="date">
-                        <div class="days">${obj[i].days}</div>
-                        <div class="month">${obj[i].month}</div>
-                    </div>
-                    <div class="race-location">
-                        <img class="country-flag" src="${obj[i].country_flag_url}" alt="${obj[i].flag_alt_text} flag">
-                        <div class="race-details">
-                            <div class="name">
-                            <span id="F1-title">Formula 1</span>
-                            <span id="mobile-year">${year}</span>
-                            <span id="sponsor">${obj[i].sponsor}</span>
-                            ${obj[i].name}
-                            <span id="desktop-year">${year}</span>
+                <div class="race">
+                    <div class="race-info">
+                        <div class="date">
+                            <div class="days">${obj[i].days}</div>
+                            <div class="month">${obj[i].month}</div>
+                        </div>
+                        <div class="race-location">
+                            <img class="country-flag" src="${obj[i].country_flag_url}" alt="${obj[i].flag_alt_text} flag">
+                            <div class="race-details">
+                                <div class="name">
+                                <span id="F1-title">Formula 1</span>
+                                <span id="mobile-year">${year}</span>
+                                <span id="sponsor">${obj[i].sponsor}</span>
+                                ${obj[i].name}
+                                <span id="desktop-year">${year}</span>
+                                </div>
+                                <div class="location">${obj[i].location}</div>
                             </div>
-                            <div class="location">${obj[i].location}</div>
                         </div>
                     </div>
-                </div>
-            <a class="book-btn" href="${obj[i].book_url}">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>
-            <a class="mobile-book-btn" href="${obj[i].book_url}"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>
-
-        </div>
+                <a class="book-btn" href="${obj[i].book_url}">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>
+                <a class="mobile-book-btn" href="${obj[i].book_url}"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>
+            </div>
         `
         );
     });

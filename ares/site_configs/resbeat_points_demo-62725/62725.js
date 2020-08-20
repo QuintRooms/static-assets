@@ -15,6 +15,7 @@ class ChildPortal extends Resbeat {
 
     init() {
         this.addDemoSiteTextToHeader();
+        this.showUsersCugPoints();
 
         if (document.querySelector('.SearchHotels')) {
             utilities.waitForTextInDOM('.ArnSearchHeader', 'Update Search').then(() => {
@@ -57,6 +58,113 @@ class ChildPortal extends Resbeat {
         if (!subheader) return;
 
         subheader.insertAdjacentHTML('beforeBegin', `<h1 id="demo-messaging">DEMO</h1>`);
+    }
+
+    async showUsersCugPoints() {
+        if (!this.site_config.cug.show_points || !this.site_config.cug.is_cug) return;
+
+        await utilities.waitForSelectorInDOM('header');
+
+        function showBelowHeader() {
+            const member_data_meta = utilities.getMetaTagContent('memberMetaTag');
+            const currency = utilities.getMetaTagContent('currency');
+            let currency_text = '';
+
+            if (!member_data_meta) return;
+
+            const points = JSON.parse(member_data_meta).Points;
+            if (currency === 'USD') {
+                currency_text = `$${points}`;
+            } else {
+                currency_text = `${points} ${currency}`;
+            }
+
+            document.querySelector('header').insertAdjacentHTML(
+                'afterEnd',
+                `
+                <div class="arn-points-container">Points: <span class="arn-points">${currency_text}</span></div>
+                <style>
+                    .arn-points-container{
+                        text-align: right;
+                        margin: 12px 12px 12px 0;
+                        text-transform: uppercase;
+                        font-size: 19px;
+                        color: #666;
+                    }
+
+                    .arn-points{
+                        font-weight: 700;
+                    }
+                </style>
+                `
+            );
+        }
+
+        function showPointsAppliedOnRate() {
+            let rate_containers = '';
+
+            if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
+            if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnNightlyRate');
+
+            rate_containers.forEach((container, i) => {
+                const savings_element = container.querySelector('.originalPrice');
+
+                if (!savings_element || container.querySelector('.points-applied')) return;
+
+                const savings = savings_element.getAttribute('amount');
+
+                savings_element.insertAdjacentHTML(
+                    'afterEnd',
+                    `
+                <div class="points-applied">Points Applied: <span>${savings} </span></div>
+            `
+                );
+
+                if (i === 0) {
+                    savings_element.insertAdjacentHTML(
+                        'afterEnd',
+                        `<style>
+                            .points-applied{
+                                font-weight: 500;
+                                padding: 4px 0;
+                                font-size: 15px;
+                                color: #666;
+                            }
+
+                            .points-applied span{
+                                font-weight: 700;
+                            }
+
+                            @media screen and (min-width: 800px){
+                                .SearchHotels .originalPrice{
+                                    margin-top: 10px;
+                                }
+                            }
+
+                            @media screen and (max-width: 1340px){
+                                .ArnRateCell{
+                                    width: 36%;
+                                }
+                            }
+                        </style>`
+                    );
+                }
+            });
+        }
+
+        // I'm being lazy with this. Will fix if the points site ends up being used...
+        if (document.querySelector('.CheckOutForm')) document.querySelector('.discount th').textContent = 'Points Applied:';
+
+        showBelowHeader();
+
+        if (document.querySelector('.SinglePropDetail')) showPointsAppliedOnRate();
+        if (document.querySelector('.SearchHotels')) {
+            jQuery(document).on('ratesReadyEvent', () => {
+                setTimeout(() => {
+                    showPointsAppliedOnRate();
+                }, 1);
+            });
+        }
     }
 }
 

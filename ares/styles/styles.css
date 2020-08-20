@@ -9,9 +9,6 @@ html {
   padding: 0;
   font-size: 14px !important; }
 
-.MemberAuthenticated.SearchHotels .distanceLabel {
-  display: none; }
-
 .fixed {
   position: fixed; }
 
@@ -933,6 +930,25 @@ div.autocomplete ul li.selected {
   font-size: 15px;
   text-align: center; }
 
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
+
+.SearchHotels .originalPrice {
+    display: inline !important;
+    margin-right: 5px;
+}
+
+.SinglePropDetail .originalPrice {
+    display: block;
+    padding: 0;
+}
+
 @media screen and (max-width: 800px) {
   .propThumbTag {
     width: inherit; }
@@ -1049,8 +1065,95 @@ div.autocomplete ul li.selected {
     width: 18px;
     height: 18px; } }
 
+    .sort-filter-container {
+        background: #fff;
+        overflow: scroll;
+        position: relative;
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .mobile-sort-container,
+    .mobile-filter-container {
+        padding: 12px;
+    }
+
+    .mobile-sort-container h4,
+    .mobile-filter-container h4 {
+        margin-bottom: 0;
+    }
+
+    .show-sort-filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .sort-wrapper {
+        position: static;
+        display: none;
+        width: unset;
+    }
+
+    .sort-wrapper a {
+        padding: 8px;
+    }
+
+    .sort-wrapper a:hover,
+    .sort-wrapper a:focus,
+    .sort-wrapper a:active,
+    .sort-wrapper.sort-open .active {
+        background: unset;
+    }
+
+    .sort-wrapper .accordion svg {
+        display: none;
+    }
+
+    .sort-wrapper a div {
+        pointer-events: none;
+    }
+
+    .sort-filter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .sort-filter-header h3 {
+        margin: 0;
+    }
+
+    .sort-filter-close {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .sort-filter-close svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.ArnSortContainer,
+.ArnSortContainer > a{
+    display: none;
+}
+
+@media screen and (max-width: 1105px) and (min-width: 800px){
+    .ArnSortContainer,
+    .ArnSortContainer > a{
+        display: block;
+        visibility: hidden;
+    }
+}
 /* Search Container End */
 /* Single Prop Page Start */
+
 .SinglePropDetail .ArnPropThumb,
 .SinglePropDetail .PropertyImages legend,
 .SinglePropDetail .ArnProperty > legend,
@@ -1558,10 +1661,17 @@ legend {
   background: transparent;
   transition: all 0.3s ease-out; }
 
-.ArnSortByPrice,
-.ArnSortByDistance,
 .ArnSortByClass {
   display: block !important; }
+
+.ArnSortByPrice, .ArnSortByDistance {
+    display: block !important;
+}
+
+.MemberAuthenticated.SearchHotels .distanceLabel,
+.MemberAuthenticated.SearchHotels .ArnSortByDistance{
+    display: none!important;
+}
 
 /* Secondary Search Container End */
 /* Properties Container */
@@ -1852,6 +1962,39 @@ legend {
   .SearchHotels .ArnSortContainer {
     display: flex;
     justify-content: space-between; } }
+
+    .ArnLeftSearchContainer {
+        display: block !important;
+    }
+
+    .ArnProperty {
+        margin-left: 0;
+    }
+
+    #arnCloseAnchorId,
+    .sort {
+        margin: 0 0 24px 0;
+    }
+
+    #arnCloseAnchorId.closeMap {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .prop-hr {
+        margin: 42px 0;
+    }
+
+    .SearchHotels #arnToggleMapDiv {
+        width: 125px;
+    }
+
+    .SearchHotels .ArnSortContainer {
+        display: flex;
+        justify-content: space-between;
+        visibility: hidden;
+    }
+}
 
 @media screen and (max-width: 600px) {
   .SearchHotels #Properties {

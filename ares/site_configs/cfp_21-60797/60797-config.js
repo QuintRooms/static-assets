@@ -41,7 +41,7 @@ export default function siteConfig() {
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,
-        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png?v2`,
         has_custom_styles: true,
         custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,

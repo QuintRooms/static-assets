@@ -260,11 +260,11 @@
                     return (M || 'function' == typeof PromiseRejectionEvent) && e.then(R) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            E = function (e) {
+            T = function (e) {
                 var t;
                 return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
-            T = function (e, t) {
+            E = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -285,7 +285,7 @@
                                         c
                                             ? (o || (2 == e._h && F(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = E(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -333,7 +333,7 @@
             },
             j = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), E(t, !0));
             },
             H = function (e) {
                 var t,
@@ -342,7 +342,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw A("Promise can't be resolved itself");
-                        (t = E(e))
+                        (t = T(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -351,7 +351,7 @@
                                       j.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), T(n, !1));
+                            : ((n._v = e), (n._s = 1), E(n, !1));
                     } catch (e) {
                         j.call({_w: n, _d: !1}, e);
                     }
@@ -377,7 +377,7 @@
                         (n.domain = M ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && T(this, !1),
+                        this._s && E(this, !1),
                         n.promise
                     );
                 },
@@ -1655,8 +1655,8 @@
             R = n(13),
             q = C.f,
             P = M.f,
-            E = k.f,
-            T = r.Symbol,
+            T = k.f,
+            E = r.Symbol,
             B = r.JSON,
             O = B && B.stringify,
             F = f('_hidden'),
@@ -1666,7 +1666,7 @@
             I = l('symbols'),
             N = l('op-symbols'),
             Y = Object.prototype,
-            W = 'function' == typeof T && !!L.f,
+            W = 'function' == typeof E && !!L.f,
             U = r.QObject,
             $ = !U || !U.prototype || !U.prototype.findChild,
             V =
@@ -1689,16 +1689,16 @@
                       }
                     : P,
             G = function (e) {
-                var t = (I[e] = x(T.prototype));
+                var t = (I[e] = x(E.prototype));
                 return (t._k = e), t;
             },
             z =
-                W && 'symbol' == typeof T.iterator
+                W && 'symbol' == typeof E.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof T;
+                          return e instanceof E;
                       },
             Z = function (e, t, n) {
                 return (
@@ -1727,17 +1727,17 @@
                 }
             },
             X = function (e) {
-                for (var t, n = E(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == F || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == F || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === Y, r = E(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
+                for (var t, n = e === Y, r = T(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
                 return i;
             };
         W ||
             (c(
-                (T = function () {
-                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
+                (E = function () {
+                    if (this instanceof E) throw TypeError('Symbol is not a constructor!');
                     var e = h(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === Y && t.call(N, n), o(this, F) && o(this[F], e) && (this[F][e] = !1), V(this, e, A(1, n));
@@ -1758,13 +1758,13 @@
             (p.f = function (e) {
                 return G(f(e));
             })),
-            a(a.G + a.W + a.F * !W, {Symbol: T});
+            a(a.G + a.W + a.F * !W, {Symbol: E});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
         for (var re = R(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !W, 'Symbol', {
             for: function (e) {
-                return o(D, (e += '')) ? D[e] : (D[e] = T(e));
+                return o(D, (e += '')) ? D[e] : (D[e] = E(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
@@ -1801,7 +1801,7 @@
                         a.F *
                             (!W ||
                                 u(function () {
-                                    var e = T();
+                                    var e = E();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
@@ -1820,8 +1820,8 @@
                         },
                     }
                 ),
-            T.prototype[j] || n(9)(T.prototype, j, T.prototype.valueOf),
-            d(T, 'Symbol'),
+            E.prototype[j] || n(9)(E.prototype, j, E.prototype.valueOf),
+            d(E, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3640,13 +3640,13 @@
                 });
             };
         }
-        function E(e, t) {
+        function T(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var T = n(43),
+        var E = n(43),
             B = (function () {
                 function e() {
                     !(function (e, t) {
@@ -4103,9 +4103,9 @@
                         {
                             key: 'calculateNights',
                             value: function () {
-                                var e = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                                return T(t).diff(T(e), 'days');
+                                var e = E(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    t = E(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return E(t).diff(E(e), 'days');
                             },
                         },
                         {
@@ -4219,12 +4219,12 @@
                             key: 'checkForPastDate',
                             value: function (e) {
                                 e || console.error('No date passed into checkForPastDate()');
-                                var t = T();
-                                return T(e).diff(t, 'milliseconds') < 0;
+                                var t = E();
+                                return E(e).diff(t, 'milliseconds') < 0;
                             },
                         },
-                    ]) && E(t.prototype, n),
-                    r && E(t, r),
+                    ]) && T(t.prototype, n),
+                    r && T(t, r),
                     e
                 );
             })();
@@ -6970,7 +6970,7 @@
                         {
                             key: 'displayCheckoutRewardPoints',
                             value: function () {
-                                if (document.querySelector('.CheckOutForm')) {
+                                if (document.querySelector('.CheckOutForm') && '62725' !== ie.getMetaTagContent('siteId')) {
                                     var e = document.querySelector('.dueNowRow td'),
                                         t = document.querySelector('.taxFeeRow td');
                                     if (
@@ -7009,7 +7009,7 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if (document.querySelector('.SinglePropDetail')) {
+                                                            if (document.querySelector('.SinglePropDetail') && '62725' !== ie.getMetaTagContent('siteId')) {
                                                                 e.next = 2;
                                                                 break;
                                                             }
@@ -7197,6 +7197,7 @@
                                 var t = this;
                                 if (
                                     !1 !== this.site_config.is_resbeat_client &&
+                                    '62725' !== ie.getMetaTagContent('siteId') &&
                                     (!document.querySelector('.beat-em') || 'search-results' !== ie.page_name) &&
                                     (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                 ) {
@@ -7682,23 +7683,23 @@
                                                             (n = function () {
                                                                 var e = '';
                                                                 document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
-                                                                    document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
+                                                                    document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnRateList')),
                                                                     e.forEach(function (e, t) {
-                                                                        var n = e.querySelector('.originalPrice');
-                                                                        if (n && !e.querySelector('.points-applied')) {
-                                                                            var r = n.getAttribute('amount').replace(/[^0-9.]/g, '');
-                                                                            n.insertAdjacentHTML(
-                                                                                'afterEnd',
-                                                                                '\n                <div class="points-applied">Credits Applied: <span>'.concat(
-                                                                                    Math.floor(r),
-                                                                                    ' </span></div>\n            '
+                                                                        var n = e.querySelector('.originalPrice'),
+                                                                            r = '';
+                                                                        if (
+                                                                            (document.querySelector('.SearchHotels') && (r = e.querySelector('.ArnRateCell')),
+                                                                            document.querySelector('.SinglePropDetail') && (r = e.querySelector('.bookRoomCell')),
+                                                                            n && !e.querySelector('.points-applied'))
+                                                                        ) {
+                                                                            var o = n.getAttribute('amount').replace(/[^0-9.]/g, '');
+                                                                            r.insertAdjacentHTML(
+                                                                                'afterBegin',
+                                                                                '\n                        <span class="beat-em points-applied">\n                            Credits Applied <span>'.concat(
+                                                                                    Math.floor(o),
+                                                                                    '</span>\n                            <span class="tooltip-wrapper">\n                                <span>\n                                    <b class="tooltip">i\n                                        <span>These Credits equal the total discount offered per night for this property.</span>\n                                    </b>\n                                </span>\n                            </span>\n                        </span>\n                    '
                                                                                 )
-                                                                            ),
-                                                                                0 === t &&
-                                                                                    n.insertAdjacentHTML(
-                                                                                        'afterEnd',
-                                                                                        '<style>\n                            .points-applied{\n                                font-weight: 500;\n                                padding: 4px 0;\n                                font-size: 15px;\n                                color: #666;\n                            }\n\n                            .points-applied span{\n                                font-weight: 700;\n                            }\n\n                            .arnCurrency + div{\n                                display: none;\n                            }\n\n                            @media screen and (min-width: 800px){\n                                .SearchHotels .originalPrice{\n                                    margin-top: 10px;\n                                }\n                            }\n\n                            @media screen and (max-width: 1340px){\n                                .ArnRateCell{\n                                    width: 36%;\n                                }\n                                #currentPropertyPage{\n                                    padding: 0 18px 0 12px;\n                                }\n                            }\n                        </style>'
-                                                                                    );
+                                                                            );
                                                                         }
                                                                     });
                                                             }),

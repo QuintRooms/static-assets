@@ -97,58 +97,35 @@ class ChildPortal extends Resbeat {
             let rate_containers = '';
 
             if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
-            if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnNightlyRate');
+            if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnRateList');
 
             rate_containers.forEach((container, i) => {
                 const savings_element = container.querySelector('.originalPrice');
+
+                let rate_cell = '';
+
+                if (document.querySelector('.SearchHotels')) rate_cell = container.querySelector('.ArnRateCell');
+                if (document.querySelector('.SinglePropDetail')) rate_cell = container.querySelector('.bookRoomCell');
 
                 if (!savings_element || container.querySelector('.points-applied')) return;
 
                 const savings = savings_element.getAttribute('amount').replace(/[^0-9.]/g, '');
 
-                savings_element.insertAdjacentHTML(
-                    'afterEnd',
+                rate_cell.insertAdjacentHTML(
+                    'afterBegin',
                     `
-                <div class="points-applied">Credits Applied: <span>${Math.floor(savings)} </span></div>
-            `
+                        <span class="beat-em points-applied">
+                            Credits Applied <span>${Math.floor(savings)}</span>
+                            <span class="tooltip-wrapper">
+                                <span>
+                                    <b class="tooltip">i
+                                        <span>These Credits equal the total discount offered per night for this property.</span>
+                                    </b>
+                                </span>
+                            </span>
+                        </span>
+                    `
                 );
-
-                if (i === 0) {
-                    savings_element.insertAdjacentHTML(
-                        'afterEnd',
-                        `<style>
-                            .points-applied{
-                                font-weight: 500;
-                                padding: 4px 0;
-                                font-size: 15px;
-                                color: #666;
-                            }
-
-                            .points-applied span{
-                                font-weight: 700;
-                            }
-
-                            .arnCurrency + div{
-                                display: none;
-                            }
-
-                            @media screen and (min-width: 800px){
-                                .SearchHotels .originalPrice{
-                                    margin-top: 10px;
-                                }
-                            }
-
-                            @media screen and (max-width: 1340px){
-                                .ArnRateCell{
-                                    width: 36%;
-                                }
-                                #currentPropertyPage{
-                                    padding: 0 18px 0 12px;
-                                }
-                            }
-                        </style>`
-                    );
-                }
             });
         }
 

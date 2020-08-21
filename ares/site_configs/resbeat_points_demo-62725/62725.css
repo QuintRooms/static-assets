@@ -223,6 +223,7 @@ input[type='email'].email-mask,
     font-size: 11px;
     width: 14px;
     height: 14px;
+    line-height: 14px;
     text-align: center;
     border-radius: 100%;
     display: inline-block;
@@ -284,5 +285,27 @@ input[type='email'].email-mask,
 @media screen and (min-width: 800px) {
     .SearchHotels .originalPrice {
         margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 600px){
+    .SearchHotels .ArnRateCell{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .SearchHotels .points-applied{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .SinglePropDetail .points-applied,
+    .SinglePropDetail .bookRoom{
+        max-width: 175px;
     }
 }

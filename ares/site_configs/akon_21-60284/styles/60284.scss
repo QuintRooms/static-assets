@@ -1,17 +1,17 @@
-$header_background: ;
-$logo_flex_position: ;
-$logo_max_width: ;
-$background_color: ;
-$secondary_background_color: ;
-$primary_color: ;
-$secondary_color: ;
-$primary_text_color: ;
-$secondary_text_color: ;
-$border_color: ;
-$button_hover_background_color: ;
-$button_hover_text_color: ;
-$button_hover_border_color: ;
-$google_font_name: '';
+$header_background: #638cc2;
+$logo_flex_position: center;
+$logo_max_width: 250px;
+$background_color: #fff;
+$secondary_background_color: '';
+$primary_color: #ed1d24;
+$secondary_color: #638cc2;
+$primary_text_color: #fff;
+$secondary_text_color: #ed1d24;
+$border_color: #ed1d24;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #ed1d24;
+$button_hover_border_color: #ed1d24;
+$google_font_name: 'Montserrat';
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 

@@ -27,23 +27,51 @@ function appendFile(filePath, dataToWrite, fileVar) {
     });
 }
 
-const directory_path = path.join(__dirname, '../site_configs');
-fs.readdir(directory_path, (err, files) => {
-    if (err) {
-        return console.log(`Unable to scan directory: ${err}`);
-    }
-    files.forEach((file) => {
-        const file_path = `${process.cwd()}/site_configs/${file}/`;
+function addDirs() {
+    const directory_path = path.join(__dirname, '../site_configs');
+    fs.readdir(directory_path, (err, files) => {
+        if (err) {
+            return console.log(`Unable to scan directory: ${err}`);
+        }
+        files.forEach((file) => {
+            const file_path = `${process.cwd()}/site_configs/${file}/`;
 
-        fs.readdir(file_path, (error) => {
-            if (error) return;
-            if (!fs.existsSync(`${file_path}/styles`)) {
-                fs.mkdirSync(`${file_path}/styles`);
-                console.log(`- - - - - Directory made in ${file} - - - - - -`);
-                appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
-            } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-5)}.scss`)) {
-                appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
-            }
+            fs.readdir(file_path, (error) => {
+                if (error) return;
+                if (!fs.existsSync(`${file_path}/styles`)) {
+                    fs.mkdirSync(`${file_path}/styles`);
+                    console.log(`- - - - - Directory made in ${file} - - - - - -`);
+                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-5)}.scss`)) {
+                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                }
+            });
         });
     });
-});
+}
+
+function addToSrc() {
+    const directory_path = path.join(__dirname, '../src');
+    fs.readdir(directory_path, (err, files) => {
+        if (err) {
+            return console.log(`Unable to scan directory: ${err}`);
+        }
+        files.forEach((file) => {
+            const file_path = `${process.cwd()}/site_configs/${file}/`;
+
+            fs.readdir(file_path, (error) => {
+                if (error) return;
+                if (!fs.existsSync(`${file_path}/styles`)) {
+                    fs.mkdirSync(`${file_path}/styles`);
+                    console.log(`- - - - - Directory made in ${file} - - - - - -`);
+                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-5)}.scss`)) {
+                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                }
+            });
+        });
+    });
+}
+
+addDirs();
+addToSrc();

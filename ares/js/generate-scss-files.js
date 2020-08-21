@@ -15,6 +15,9 @@ $button_hover_background_color: ;
 $button_hover_text_color: ;
 $button_hover_border_color: ;
 $google_font_name: '';
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+
 `;
 
 function appendFile(filePath, dataToWrite, fileVar) {
@@ -25,7 +28,7 @@ function appendFile(filePath, dataToWrite, fileVar) {
 }
 
 const directory_path = path.join(__dirname, '../site_configs');
-fs.readdir(directory_path, function (err, files) {
+fs.readdir(directory_path, (err, files) => {
     if (err) {
         return console.log(`Unable to scan directory: ${err}`);
     }

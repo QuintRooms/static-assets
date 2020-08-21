@@ -50,7 +50,7 @@ module.exports = () => {
     } else if (process.env.environment === 'local') {
         entry_points = {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
     }
 

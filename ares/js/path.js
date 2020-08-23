@@ -1,4 +1,4 @@
-export default function setupPath() {
+module.exports = () => {
     let path = '';
 
     if (process.env.environment === 'production') {
@@ -10,4 +10,4 @@ export default function setupPath() {
     }
 
     return {path};
-}
+};

@@ -1,8 +1,10 @@
 // const webpack = require('webpack');
+// const SourceMapPath = require('./js/source-map-path');
+
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const EnvPath = require('./js/path');
 const EntryPoints = require('./js/entry-points');
-// const SourceMapPath = require('./js/source-map-path');
 
 module.exports = (env) => {
     return {
@@ -35,6 +37,7 @@ module.exports = (env) => {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: false,
+                                // additionalData: '$env: ' + process.env.environment + ';',
                             },
                         },
                     ],

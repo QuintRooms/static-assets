@@ -16,6 +16,10 @@ $google_font_name: 'Montserrat';
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
+body {
+    background: $env;
+}
+
 .event-dates {
     font-family: futura-bold,helvetica;
     margin-left: 18px;

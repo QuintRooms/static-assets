@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SourceMapPath = require('./js/source-map-path');
 const EntryPoints = require('./js/entry-points');
 
-const env = process.env.NODE_ENV;
+// const env = process.env.NODE_ENV;
 
 module.exports = () => {
     console.log('Webpack: ', process.env.NODE_ENV);
@@ -17,9 +17,9 @@ module.exports = () => {
             filename: 'dist/[name].js',
             path: `${__dirname}`,
         },
-        // optimization: {
-        //     nodeEnv: false,
-        // },
+        optimization: {
+            nodeEnv: false,
+        },
         module: {
             rules: [
                 {
@@ -43,15 +43,18 @@ module.exports = () => {
                             options: {
                                 sourceMap: false,
                                 // eslint-disable-next-line prefer-template
-                                additionalData: '$env: ' + env + ';',
+                                additionalData: '$env: ' + process.env.NODE_ENV + ';',
                             },
                         },
                     ],
                 },
             ],
         },
-        devtool: env === 'production' ? '' : 'hidden-source-map',
+        // devtool: env === 'production' ? '' : 'hidden-source-map',
         plugins: [
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            }),
             new Dotenv(),
             new webpack.SourceMapDevToolPlugin({
                 filename: 'dist/[name].map',

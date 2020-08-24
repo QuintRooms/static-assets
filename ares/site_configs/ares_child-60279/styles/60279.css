@@ -275,6 +275,10 @@ header {
   border-color: #BA2024 !important;
 }
 
+body {
+  background: local;
+}
+
 .event-dates {
   font-family: futura-bold, helvetica;
   margin-left: 18px;
@@ -290,4 +294,4 @@ header {
   }
 }
 
-/*# sourceMappingURL=../../../dist/ares_child-60279.map*/
+/*# sourceMappingURL=60279.css.map*/

@@ -347,7 +347,7 @@
     },
     function (e, t, n) {
         e.exports = function () {
-            return {path: '../..'};
+            return {path: 'https://static.hotelsforhope.com/ares'};
         };
     },
     function (e, t, n) {
@@ -6683,4 +6683,3 @@
         n(112);
     },
 ]);
-//# sourceMappingURL=acl_20-53336.map

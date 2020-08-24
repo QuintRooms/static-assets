@@ -2,13 +2,14 @@ const webpack = require('webpack');
 
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const SourceMapPath = require('./js/source-map-path');
+const Path = require('./js/path');
+// const SourceMapPath = require('./js/source-map-path');
 const EntryPoints = require('./js/entry-points');
 
-// const env = process.env.NODE_ENV;
-
+const path = Path();
+console.log(path.path);
+console.log(typeof path.path);
 module.exports = () => {
-    console.log('Webpack: ', process.env.NODE_ENV);
     return {
         entry() {
             return EntryPoints();
@@ -43,23 +44,23 @@ module.exports = () => {
                             options: {
                                 sourceMap: false,
                                 // eslint-disable-next-line prefer-template
-                                additionalData: '$env: ' + process.env.NODE_ENV + ';',
+                                additionalData: `$env: ${path.path};`,
                             },
                         },
                     ],
                 },
             ],
         },
-        // devtool: env === 'production' ? '' : 'hidden-source-map',
+        devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
         plugins: [
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             }),
             new Dotenv(),
-            new webpack.SourceMapDevToolPlugin({
-                filename: 'dist/[name].map',
-                sourceRoot: SourceMapPath(),
-            }),
+            // new webpack.SourceMapDevToolPlugin({
+            //     filename: 'dist/[name].map',
+            //     sourceRoot: SourceMapPath(),
+            // }),
             new MiniCssExtractPlugin({
                 moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
             }),

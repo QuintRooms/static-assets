@@ -1,7 +1,4 @@
-// require('dotenv').config({path: '.env'});
-
 module.exports = () => {
-    console.log('entry points: ', process.env);
     let entry_points = {};
 
     // production environment
@@ -45,12 +42,13 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js',
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
-        entry_points = {};
+        entry_points = {
+            'ares_child-60279': './src/60279.js', // Ares Child Test
+        };
     }
 
     return entry_points;

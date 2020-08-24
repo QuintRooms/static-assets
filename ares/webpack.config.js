@@ -1,12 +1,14 @@
-// const webpack = require('webpack');
-// const SourceMapPath = require('./js/source-map-path');
+const webpack = require('webpack');
 
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const EnvPath = require('./js/path');
+const SourceMapPath = require('./js/source-map-path');
 const EntryPoints = require('./js/entry-points');
 
-module.exports = (env) => {
+const env = process.env.NODE_ENV;
+
+module.exports = () => {
+    console.log('Webpack: ', process.env.NODE_ENV);
     return {
         entry() {
             return EntryPoints();
@@ -15,6 +17,9 @@ module.exports = (env) => {
             filename: 'dist/[name].js',
             path: `${__dirname}`,
         },
+        // optimization: {
+        //     nodeEnv: false,
+        // },
         module: {
             rules: [
                 {
@@ -37,20 +42,21 @@ module.exports = (env) => {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: false,
-                                // additionalData: '$env: ' + process.env.environment + ';',
+                                // eslint-disable-next-line prefer-template
+                                additionalData: '$env: ' + env + ';',
                             },
                         },
                     ],
                 },
             ],
         },
-        // devtool: 'hidden-source-map',
+        devtool: env === 'production' ? '' : 'hidden-source-map',
         plugins: [
             new Dotenv(),
-            // new webpack.SourceMapDevToolPlugin({
-            //     filename: 'dist/[name].map',
-            //     sourceRoot: SourceMapPath(),
-            // }),
+            new webpack.SourceMapDevToolPlugin({
+                filename: 'dist/[name].map',
+                sourceRoot: SourceMapPath(),
+            }),
             new MiniCssExtractPlugin({
                 moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
             }),

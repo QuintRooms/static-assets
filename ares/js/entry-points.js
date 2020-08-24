@@ -1,12 +1,14 @@
 require('dotenv').config({path: '.env'});
 
 module.exports = () => {
+    console.log('entry points: ', process.env.NODE_ENV);
+    console.log('entry points type: ', typeof process.env.NODE_ENV);
     let entry_points = {};
 
     // production environment
-    if (process.env.environment === 'production') {
+    if (process.env.NODE_ENV === 'production') {
         entry_points = {
-            // 'acl_20-53336': './src/53336.js', // acl 2020
+            'acl_20-53336': './src/53336.js', // acl 2020
             // 'acl_21-60311': './src/60311.js', // ACL 2021
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
@@ -36,7 +38,7 @@ module.exports = () => {
         };
 
         // develop environment
-    } else if (process.env.environment === 'develop') {
+    } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
@@ -47,7 +49,7 @@ module.exports = () => {
         };
 
         // local environment
-    } else if (process.env.environment === 'local') {
+    } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             'ares_child-60279': './src/60279.js', // Ares Child Test
         };

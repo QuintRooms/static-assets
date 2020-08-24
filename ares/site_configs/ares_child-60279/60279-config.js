@@ -3,7 +3,7 @@ import Path from '../../js/path';
 const env_path = new Path();
 const site_id = 60279;
 const directory_name = `ares_child-${site_id}`;
-
+console.log(process.env.NODE_ENV);
 export default function siteConfig() {
     return {
         site_id,

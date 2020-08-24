@@ -276,7 +276,7 @@ header {
 }
 
 body {
-  background: local;
+  background: "../../";
 }
 
 .event-dates {

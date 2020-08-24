@@ -13,11 +13,12 @@ $button_hover_text_color: #BA2024;
 $button_hover_border_color: #BA2024;
 $google_font_name: 'Montserrat';
 
-
+@import '../../../styles/sass/sass-functions/func.scss';
+$path: set-path($env);
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
 body {
-    background: url($env/ares_child-60279/img/logo.png);
+    background: $path;
 }
 
 .event-dates {

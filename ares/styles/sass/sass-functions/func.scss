@@ -1,0 +1,15 @@
+@function set-path($env) {
+    @if ($env == 'local') {
+        $path: '../../';
+        @return $path;
+    }
+    @if ($env == 'develop') {
+        $path: 'https://dev-static.hotelsforhope.com/ares';
+        @return $path;
+    }
+    @if ($env == 'production') {
+        $path: 'https://static.hotelsforhope.com/ares';
+        @return $path;
+    }
+}
+

@@ -2,13 +2,11 @@ const webpack = require('webpack');
 
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Path = require('./js/path');
+// const Path = require('./js/path');
 // const SourceMapPath = require('./js/source-map-path');
 const EntryPoints = require('./js/entry-points');
 
-const path = Path();
-console.log(path.path);
-console.log(typeof path.path);
+// const path = Path();
 module.exports = () => {
     return {
         entry() {
@@ -44,7 +42,7 @@ module.exports = () => {
                             options: {
                                 sourceMap: false,
                                 // eslint-disable-next-line prefer-template
-                                additionalData: `$env: ${path.path};`,
+                                additionalData: `$env: ${process.env.NODE_ENV};`,
                             },
                         },
                     ],

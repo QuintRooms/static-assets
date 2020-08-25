@@ -47,7 +47,7 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-white.png`,
             logo_outbound_url: 'https://www.rotrally.com/',
             background: '#000',
-            logo_flex_position: 'space-between',
+            logo_flex_position: 'center',
             logo_max_width: '350px',
         },
         banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/site_configs/${directory_name}/img/banner.jpg) no-repeat center center /cover`,

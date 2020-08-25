@@ -37,7 +37,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'cfp_21-60797': './src/60797.js', // CFP 2021
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // f1_landing_page: './src/f1_landing_page.js',
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
@@ -48,6 +47,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'cfp_21-60797': './src/60797.js', // CFP 2021/
         };
     }
 

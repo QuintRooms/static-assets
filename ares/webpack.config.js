@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const SourceMapPath = require('./js/source-map-path');
 const EntryPoints = require('./js/entry-points');
 
-// const path = Path();
 module.exports = () => {
     return {
         entry() {
@@ -42,7 +41,20 @@ module.exports = () => {
                             options: {
                                 sourceMap: false,
                                 // eslint-disable-next-line prefer-template
-                                additionalData: `$env: ${process.env.NODE_ENV};`,
+                                additionalData: `
+                                $env: ${process.env.NODE_ENV};
+                                `,
+                            },
+                        },
+                    ],
+                },
+                {
+                    test: /\.(png|jpg|gif)$/,
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 50000,
                             },
                         },
                     ],

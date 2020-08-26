@@ -1,3 +1,5 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
 $header_background: #fff;
 $logo_flex_position: center;
 $logo_max_width: 300px;
@@ -12,6 +14,8 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #5dc3ac;
 $button_hover_border_color: #5dc3ac;
 $google_font_name: 'Montserrat';
+$site_name: 'ares_child-60278';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-

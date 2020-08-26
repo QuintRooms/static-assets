@@ -181,7 +181,6 @@ export default class BasePortal {
 
                 if (this.page_name !== 'search-results' || this.page_name === 'hold-rooms') return;
                 this.buildCurrencyDropdown();
-                this.styleCUGMapPins();
                 this.cugConfigs();
                 this.implementAds();
                 this.toggleMap();
@@ -757,47 +756,12 @@ export default class BasePortal {
             'beforeend',
             `<link href="${env_path.path}/site_configs/${this.site_config.directory_name}/styles/${this.site_config.site_id}.css" rel="stylesheet">`
         );
-
-        style_element.insertAdjacentHTML(
-            'afterBegin',
-            `          
-            <style>  
-            /* Root Body */
-            .RootBody{
-                background: ${this.site_config.banner_image_url};
-            }
-            </style>
-            `
-        );
     }
 
     applyDarkTheme() {
         if (this.site_config.theme.toLowerCase() === 'light') return;
 
         document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', `<link href="${env_path.path}/styles/dark.css" rel="stylesheet">`);
-    }
-
-    styleCUGMapPins() {
-        if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === false) return;
-        document.body.insertAdjacentHTML(
-            'beforeend',
-            `
-        <style>
-            .SearchHotels .arnMapMarker {
-                background: ${this.site_config.primary_color};
-                border-color:  ${this.site_config.primary_text_color};
-                color: ${this.site_config.primary_text_color};
-            }
-            
-            .SearchHotels .arnMapMarkerTriangle {
-                border-top-color: ${this.site_config.primary_color};
-            }
-    
-            .arnMapMarker:hover .arnMapMarkerTriangle {
-                border-top-color: ${this.site_config.primary_color};
-            }
-        `
-        );
     }
 
     // refactor me, please!

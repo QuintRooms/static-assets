@@ -50,7 +50,6 @@ export default function siteConfig() {
             logo_file_location: 'https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png',
             logo_outbound_url: 'https://hotelsforhope.com',
         },
-        banner_image_url: 'url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg)',
         map_marker_image_url: 'https://static.hotelsforhope.com/portals/images/h4h-fav.ico',
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

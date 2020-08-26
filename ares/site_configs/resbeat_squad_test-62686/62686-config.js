@@ -48,7 +48,6 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
             logo_outbound_url: 'https://hotels.resbeat.com',
         },
-        banner_image_url: '#fff',
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '',

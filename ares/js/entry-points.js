@@ -4,7 +4,7 @@ module.exports = () => {
     // production environment
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
-            'acl_20-53336': './src/53336.js', // acl 2020
+            // 'acl_20-53336': './src/53336.js', // acl 2020
             // 'acl_21-60311': './src/60311.js', // ACL 2021
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
@@ -37,6 +37,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
+            // 'cfp_21-60797': './src/60797.js', // CFP 2021/
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // f1_landing_page: './src/f1_landing_page.js',
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
@@ -47,7 +48,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'cfp_21-60797': './src/60797.js', // CFP 2021/
         };
     }
 

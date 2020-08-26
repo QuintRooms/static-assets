@@ -1,7 +1,6 @@
 import BasePortal from '../../js/build';
 import SiteConfig from './60279-config';
 
-console.log(process.env.NODE_ENV);
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
     constructor() {

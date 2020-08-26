@@ -1,3 +1,5 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
 $header_background: #000;
 $logo_flex_position: flex-start;
 $logo_max_width: 330px;
@@ -12,6 +14,9 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #c9920e;
 $button_hover_border_color: #c9920e;
 $google_font_name: 'Graphik-Regular';
+$site_name: 'cfp_21-60797';
+$path: set-path($env);
+$banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
@@ -40,7 +45,8 @@ $google_font_name: 'Graphik-Regular';
     font-style: normal;
 }
 
-.ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe {
+.ArnSearchHeader,
+.SinglePropDetail .ArnLeftListContainer > span.translateMe {
     font-family: 'UnitedSansReg-Heavy';
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -48,7 +54,15 @@ $google_font_name: 'Graphik-Regular';
     padding: 12px;
 }
 
-.ArnPropNameLink span, .arnCurrency, .arnUnit, .sort-wrapper h4, .lblAmenities, #moreRatesLink, #show-more-or-less, #thePropertyAmenities span, .SinglePropDetail legend {
+.ArnPropNameLink span,
+.arnCurrency,
+.arnUnit,
+.sort-wrapper h4,
+.lblAmenities,
+#moreRatesLink,
+#show-more-or-less,
+#thePropertyAmenities span,
+.SinglePropDetail legend {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'UnitedSansReg-Heavy';
@@ -63,7 +77,8 @@ $google_font_name: 'Graphik-Regular';
     text-decoration: underline;
 }
 
-.sort-wrapper h4, .lblAmenities {
+.sort-wrapper h4,
+.lblAmenities {
     font-size: 17px;
 }
 
@@ -75,11 +90,15 @@ $google_font_name: 'Graphik-Regular';
     font-family: 'UnitedSansReg-Heavy';
 }
 
-.RootBody #CitySearchContainer span:first-of-type, .RootBody #CheckInContainer span, .RootBody #CheckOutContainer span, .RootBody .ArnSearchHolderBoth span {
+.RootBody #CitySearchContainer span:first-of-type,
+.RootBody #CheckInContainer span,
+.RootBody #CheckOutContainer span,
+.RootBody .ArnSearchHolderBoth span {
     color: #fff;
 }
 
-.RootBody .ArnPrimarySearchOuterContainer h1, .RootBody .ArnPrimarySearchOuterContainer h3 {
+.RootBody .ArnPrimarySearchOuterContainer h1,
+.RootBody .ArnPrimarySearchOuterContainer h3 {
     color: #333;
 }
 
@@ -87,12 +106,14 @@ $google_font_name: 'Graphik-Regular';
 
 /* Buttons */
 
-input[type=submit] {
-    -webkit-border-radius:0px;
+input[type='submit'] {
+    -webkit-border-radius: 0px;
     -webkit-appearance: none;
 }
 
-.SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates .submit {
+.SearchHotels #theSubmitButton,
+.SearchHotels #theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit {
     border: 3px solid #000;
     background-color: #fff;
     color: #000;
@@ -102,7 +123,13 @@ input[type=submit] {
     font-size: 15px;
 }
 
-.SearchHotels a.ArnShowRatesLink, .SinglePropDetail a.bookRoom, .SinglePropDetail a.holdRoom, .RootBody #theOtherSubmitButton, #theConfirmationButton, .CheckOutForm legend, .FinalConfirmation legend {
+.SearchHotels a.ArnShowRatesLink,
+.SinglePropDetail a.bookRoom,
+.SinglePropDetail a.holdRoom,
+.RootBody #theOtherSubmitButton,
+#theConfirmationButton,
+.CheckOutForm legend,
+.FinalConfirmation legend {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'UnitedSansReg-Heavy';
@@ -112,7 +139,9 @@ input[type=submit] {
     max-width: 130px;
 }
 
-.SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .SinglePropDetail .CheckRates .submit:hover {
+.SearchHotels #theSubmitButton:hover,
+.SearchHotels #theOtherSubmitButton:hover,
+.SinglePropDetail .CheckRates .submit:hover {
     border: 3px solid #000;
     background-color: #000;
     color: #fff;
@@ -132,7 +161,10 @@ input[type=submit] {
     height: 96vh !important;
 }
 
-.ArnPrimarySearchContainer input, .ArnPrimarySearchContainer select, .SimpleSearch input, .SimpleSearch select {
+.ArnPrimarySearchContainer input,
+.ArnPrimarySearchContainer select,
+.SimpleSearch input,
+.SimpleSearch select {
     border: 1px solid #e5e5e5;
 }
 
@@ -149,12 +181,11 @@ body {
     background-attachment: fixed;
     background-size: 100% auto;
     overflow-x: hidden;
-
 }
 
 header {
     border-bottom: unset;
-    height: 115px
+    height: 115px;
 }
 
 header a {
@@ -167,7 +198,9 @@ header a {
     padding: 5px;
 }
 
-.ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
+.ArnSearchContainerMainDiv,
+.PropDetailView,
+#theBookingPage {
     border: 1px solid #e5e5e5;
     width: 96vw;
     background-color: #fff;
@@ -179,7 +212,8 @@ header a {
     border: unset;
 }
 
-.SinglePropDetail .ArnSubPage, #theBookingPage {
+.SinglePropDetail .ArnSubPage,
+#theBookingPage {
     max-width: unset;
     padding: 0 40px;
 }
@@ -196,13 +230,14 @@ span.exclusive-rate {
     font-family: 'UnitedSansReg-Heavy';
 }
 
-.ArnPrimarySearchContainer, .SimpleSearch {
+.ArnPrimarySearchContainer,
+.SimpleSearch {
     background-color: transparent;
     color: #000;
 }
 
 .ArnSupportLinks {
-    background:#fff;
+    background: #fff;
 }
 
 .ArnSupportLinks .dvd {
@@ -250,9 +285,11 @@ span.exclusive-rate {
 }
 
 @media screen and (max-width: 1100px) {
-    .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
+    .ArnSearchContainerMainDiv,
+    .PropDetailView,
+    #theBookingPage {
         width: unset;
-        }
+    }
 
     header a {
         width: 40%;
@@ -270,11 +307,9 @@ span.exclusive-rate {
         width: 100% !important;
         height: 100vh !important;
     }
-
 }
 
 @media screen and (max-width: 900px) {
-
     .logo img {
         max-width: 250px;
     }
@@ -282,27 +317,27 @@ span.exclusive-rate {
     .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
         color: #000;
     }
-
 }
 
 @media screen and (max-width: 600px) {
-
     body {
         background: #fff;
     }
 
-    .ArnSearchContainerMainDiv, .PropDetailView, #theBookingPage {
+    .ArnSearchContainerMainDiv,
+    .PropDetailView,
+    #theBookingPage {
         border: unset;
         width: unset;
         height: unset;
         margin: unset !important;
         padding: unset !important;
-        }
+    }
 
     header {
         height: unset;
     }
-    
+
     header a {
         width: 75%;
     }
@@ -310,8 +345,6 @@ span.exclusive-rate {
     .logo img {
         margin-top: unset;
     }
-
-
 }
 
 @media screen and (max-width: 400px) {

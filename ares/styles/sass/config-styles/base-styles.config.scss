@@ -16,6 +16,10 @@ header {
     background: $header_background;
 }
 
+.RootBody {
+    background: $banner_image;
+}
+
 .logo img{
     max-width: $logo_max_width;
 }
@@ -286,4 +290,18 @@ header {
 
 .yui3-skin-sam .yui3-calendar-content{
     border-color: $border_color !important;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarker {
+    background: $primary_color;
+    border-color:  $primary_text_color;
+    color: $primary_text_color;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
+    border-top-color: $primary_color;
+}
+
+.MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
+    border-top-color: $primary_color;
 }

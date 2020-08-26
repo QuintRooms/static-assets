@@ -1,10 +1,9 @@
 const webpack = require('webpack');
-
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const EntryPoints = require('./js/entry-points');
 // const Path = require('./js/path');
 // const SourceMapPath = require('./js/source-map-path');
-const EntryPoints = require('./js/entry-points');
 
 module.exports = () => {
     return {
@@ -40,24 +39,14 @@ module.exports = () => {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: false,
-                                // eslint-disable-next-line prefer-template
-                                additionalData: `
-                                $env: ${process.env.NODE_ENV};
-                                `,
+                                additionalData: `$env: ${process.env.NODE_ENV};`,
                             },
                         },
                     ],
                 },
                 {
                     test: /\.(png|jpg|svg)$/,
-                    use: [
-                        {
-                            loader: 'url-loader',
-                            options: {
-                                limit: 50000,
-                            },
-                        },
-                    ],
+                    use: [{loader: 'url-loader'}],
                 },
             ],
         },

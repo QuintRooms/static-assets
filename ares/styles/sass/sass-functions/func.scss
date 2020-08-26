@@ -1,6 +1,6 @@
 @function set-path($env) {
     @if ($env == 'local') {
-        $path: '../../';
+        $path: '../../..';
         @return $path;
     }
     @if ($env == 'develop') {

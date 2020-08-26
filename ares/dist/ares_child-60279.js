@@ -210,7 +210,6 @@
                 return _getPrototypeOf(o);
             }
 
-            console.log('local');
             var site_config = new _60279_config__WEBPACK_IMPORTED_MODULE_4__['default']();
 
             var ChildPortal = /*#__PURE__*/ (function (_BasePortal) {
@@ -1798,8 +1797,6 @@
                                                                                         case 3:
                                                                                             _this.buildCurrencyDropdown();
 
-                                                                                            _this.styleCUGMapPins();
-
                                                                                             _this.cugConfigs();
 
                                                                                             _this.implementAds();
@@ -1846,13 +1843,13 @@
                                                                                                 '.ArnSecondarySearchOuterContainer',
                                                                                                 'beforeEnd'
                                                                                             );
-                                                                                            _context4.next = 32;
+                                                                                            _context4.next = 31;
                                                                                             return utilities.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
                                                                                                 utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                             });
 
-                                                                                        case 32:
-                                                                                            _context4.next = 34;
+                                                                                        case 31:
+                                                                                            _context4.next = 33;
                                                                                             return utilities.waitForSelectorInDOM('.ArnSortContainer').then(function () {
                                                                                                 utilities
                                                                                                     .createWrapper(
@@ -1868,18 +1865,18 @@
                                                                                                     });
                                                                                             });
 
-                                                                                        case 34:
+                                                                                        case 33:
                                                                                             mq = window.matchMedia('(min-width: 1105px)');
 
                                                                                             if (!mq) {
-                                                                                                _context4.next = 42;
+                                                                                                _context4.next = 41;
                                                                                                 break;
                                                                                             }
 
-                                                                                            _context4.next = 38;
+                                                                                            _context4.next = 37;
                                                                                             return utilities.waitForSelectorInDOM('#ArnPropertyMap');
 
-                                                                                        case 38:
+                                                                                        case 37:
                                                                                             if (!document.querySelector('.leaflet-control-scale-line'))
                                                                                                 L.control.scale().addTo(window.ArnMap);
 
@@ -1889,7 +1886,7 @@
 
                                                                                             _this.changeContractedPropertyPinColor();
 
-                                                                                        case 42:
+                                                                                        case 41:
                                                                                         case 'end':
                                                                                             return _context4.stop();
                                                                                     }
@@ -2537,13 +2534,6 @@
                                     .concat(this.site_config.directory_name, '/styles/')
                                     .concat(this.site_config.site_id, '.css" rel="stylesheet">')
                             );
-                            style_element.insertAdjacentHTML(
-                                'afterBegin',
-                                '          \n            <style>  \n            /* Root Body */\n            .RootBody{\n                background: '.concat(
-                                    this.site_config.banner_image_url,
-                                    ';\n            }\n            </style>\n            '
-                                )
-                            );
                         },
                     },
                     {
@@ -2551,27 +2541,6 @@
                         value: function applyDarkTheme() {
                             if (this.site_config.theme.toLowerCase() === 'light') return;
                             document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(env_path.path, '/styles/dark.css" rel="stylesheet">'));
-                        },
-                    },
-                    {
-                        key: 'styleCUGMapPins',
-                        value: function styleCUGMapPins() {
-                            if (!document.querySelector('.SearchHotels') || this.site_config.cug.is_cug === false) return;
-                            document.body.insertAdjacentHTML(
-                                'beforeend',
-                                '\n        <style>\n            .SearchHotels .arnMapMarker {\n                background: '
-                                    .concat(this.site_config.primary_color, ';\n                border-color:  ')
-                                    .concat(this.site_config.primary_text_color, ';\n                color: ')
-                                    .concat(
-                                        this.site_config.primary_text_color,
-                                        ';\n            }\n            \n            .SearchHotels .arnMapMarkerTriangle {\n                border-top-color: '
-                                    )
-                                    .concat(
-                                        this.site_config.primary_color,
-                                        ';\n            }\n    \n            .arnMapMarker:hover .arnMapMarkerTriangle {\n                border-top-color: '
-                                    )
-                                    .concat(this.site_config.primary_color, ';\n            }\n        ')
-                            );
                         }, // refactor me, please!
                     },
                     {
@@ -9618,9 +9587,6 @@
                         logo_file_location: ''.concat(env_path.path, '/site_configs/').concat(directory_name, '/img/logo.png'),
                         logo_outbound_url: 'http://www.azbikeweek.com/',
                     },
-                    banner_image_url: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('
-                        .concat(env_path.path, '/site_configs/')
-                        .concat(directory_name, '/img/banner.jpg) no-repeat center center /cover'),
                     map_marker_image_url: ''.concat(env_path.path, '/site_configs/').concat(directory_name, '/img/favicon.png'),
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

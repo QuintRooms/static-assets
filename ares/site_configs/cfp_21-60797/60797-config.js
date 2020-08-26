@@ -48,7 +48,6 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
         },
-        banner_image_url: `url(${env_path.path}/site_configs/${directory_name}/img/banner.png) no-repeat`,
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '',

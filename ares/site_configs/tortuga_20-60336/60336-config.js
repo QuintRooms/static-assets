@@ -45,7 +45,6 @@ export default function siteConfig() {
             logo_outbound_url: 'https://www.tortugamusicfestival.com',
             background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
         },
-        banner_image_url: `center/cover no-repeat url(${env_path.path}/site_configs/${directory_name}/img/banner.jpg)`,
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

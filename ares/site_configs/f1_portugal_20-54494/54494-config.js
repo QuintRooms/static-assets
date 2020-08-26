@@ -46,7 +46,6 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/html/f1/img/logo.png`,
             logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
         },
-        banner_image_url: `linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(${env_path.path}/html/f1/img/f1-bg-1.jpg) no-repeat center center /cover`,
         map_marker_image_url: `${env_path.path}/html/f1/img/favicon.png`,
         theme: 'light',
         google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',

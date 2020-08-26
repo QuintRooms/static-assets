@@ -25,7 +25,7 @@ export default async function addStay22Banner(link) {
                     <span>Looking for an Airbnb rental? Check out the options in ${destination}!</span>     
                 </div>
                 <div class="custom-button">
-                    <a id="custom-link" target="_blank" href="${link}">BOOK AND AIRBNB</a>
+                    <a id="custom-link" target="_blank" href="${link}">Book an Airbnb</a>
                 </div>
             </div>
             <style>

@@ -67,22 +67,15 @@ class ChildPortal extends Resbeat {
 
         function showBelowHeader() {
             const member_data_meta = utilities.getMetaTagContent('memberMetaTag');
-            const currency = utilities.getMetaTagContent('currency');
-            let currency_text = '';
 
             if (!member_data_meta) return;
 
             const points = JSON.parse(member_data_meta).Points;
-            if (currency === 'USD') {
-                currency_text = `$${points}`;
-            } else {
-                currency_text = `${points} ${currency}`;
-            }
 
             document.querySelector('header').insertAdjacentHTML(
                 'afterEnd',
                 `
-                <div class="arn-points-container">Points: <span class="arn-points">${currency_text}</span></div>
+                <div class="arn-points-container">Credits: <span class="arn-points">${points}</span></div>
                 <style>
                     .arn-points-container{
                         text-align: right;
@@ -104,60 +97,53 @@ class ChildPortal extends Resbeat {
             let rate_containers = '';
 
             if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
-            if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnNightlyRate');
+            if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnRateList');
 
             rate_containers.forEach((container, i) => {
                 const savings_element = container.querySelector('.originalPrice');
 
+                let rate_cell = '';
+
+                if (document.querySelector('.SearchHotels')) rate_cell = container.querySelector('.ArnRateCell');
+                if (document.querySelector('.SinglePropDetail')) rate_cell = container.querySelector('.bookRoomCell');
+
                 if (!savings_element || container.querySelector('.points-applied')) return;
 
-                const savings = savings_element.getAttribute('amount');
+                const savings = savings_element.getAttribute('amount').replace(/[^0-9.]/g, '');
 
-                savings_element.insertAdjacentHTML(
-                    'afterEnd',
+                rate_cell.insertAdjacentHTML(
+                    'afterBegin',
                     `
-                <div class="points-applied">Points Applied: <span>${savings} </span></div>
-            `
+                        <span class="beat-em points-applied">
+                            Credits Applied <span>${Math.floor(savings)}</span>
+                            <span class="tooltip-wrapper">
+                                <span>
+                                    <b class="tooltip">i
+                                        <span>These Credits equal the total discount offered per night for this property.</span>
+                                    </b>
+                                </span>
+                            </span>
+                        </span>
+                    `
                 );
-
-                if (i === 0) {
-                    savings_element.insertAdjacentHTML(
-                        'afterEnd',
-                        `<style>
-                            .points-applied{
-                                font-weight: 500;
-                                padding: 4px 0;
-                                font-size: 15px;
-                                color: #666;
-                            }
-
-                            .points-applied span{
-                                font-weight: 700;
-                            }
-
-                            @media screen and (min-width: 800px){
-                                .SearchHotels .originalPrice{
-                                    margin-top: 10px;
-                                }
-                            }
-
-                            @media screen and (max-width: 1340px){
-                                .ArnRateCell{
-                                    width: 36%;
-                                }
-                            }
-                        </style>`
-                    );
-                }
             });
         }
 
-        // I'm being lazy with this. Will fix if the points site ends up being used...
-        if (document.querySelector('.CheckOutForm')) document.querySelector('.discount th').textContent = 'Points Applied:';
+        function showPointsAppliedOnCheckout() {
+            if (!document.querySelector('.CheckOutForm') || !document.querySelector('.discount')) return;
+
+            const savings = document.querySelector('.discount td').textContent.replace(/[^0-9.]/g, '');
+
+            document.querySelector('.discount td').textContent = Math.floor(savings);
+
+            document.querySelector('.discount th').textContent = 'Credits Applied:';
+        }
 
         showBelowHeader();
+        showPointsAppliedOnCheckout();
 
         if (document.querySelector('.SinglePropDetail')) showPointsAppliedOnRate();
+
         if (document.querySelector('.SearchHotels')) {
             jQuery(document).on('ratesReadyEvent', () => {
                 setTimeout(() => {

@@ -430,33 +430,6 @@ export default class Utilities {
     }
 
     /**
-     *@description Adds a button to the header on the search-results and landing-page with the href and text passed in.
-     *@param string link - the outbound href.
-     *@param string text - the text for the button.]
-     *@example utilities.addHeaderButtonLink('https://stay22.com/embed/republic-of-texas-motorcycle-rally?hidebrandlogo=true', 'Find Your Airbnb Rental');
-     */
-    async addHeaderButtonLink(link, text) {
-        if (document.querySelector('.RootBody') || document.querySelector('.SearchHotels')) {
-            await this.waitForSelectorInDOM('header');
-            document.querySelector('header').insertAdjacentHTML(
-                'beforeend',
-                `<div class="custom-button">
-                    <a id="custom-link" target="_blank" href="${link}">${text}</a>
-                </div>
-                <style class="stay-22-header-styles">
-                    @media screen and (max-width: 600px) {
-                    header {
-                            display: flex;
-                            flex-direction: column;
-                        }
-                    }
-                <style>
-                `
-            );
-        }
-    }
-
-    /**
      *@description Checks whether the date passed in is in the past
      *@param string date - date to check
      *@return bool

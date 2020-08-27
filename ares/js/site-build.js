@@ -6,6 +6,19 @@ const fs = require('fs');
 let site_name;
 let site_id;
 
+function waitForFile(filePath) {
+    return new Promise((resolve) => {
+        const interval = setInterval(() => {
+            const file = fs.existsSync(filePath);
+            if (file) {
+                resolve(file);
+                clearInterval(interval);
+                return file;
+            }
+        }, 50);
+    });
+}
+
 function getSiteVars() {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -52,13 +65,17 @@ import '../site_configs/${site_name}-${site_id}/styles/${site_id}.scss';
     editFiles();
 }
 
-function editFiles() {
+async function editFiles() {
     const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
     // Child file
-    fs.readFile(`${directory_path}/js/${site_id}.js`, (data) => {
-        console.log('Data: ', data);
-        const formatted = data.replace(/import SiteConfig from '.\/template-/g, `import SiteConfig from './${site_name}-config'`);
-        fs.writeFile(`${directory_path}/js/${site_id}.js`, formatted, 'utf8');
+    await waitForFile(`${directory_path}/js/${site_id}.js`);
+    fs.readFile(`${directory_path}/js/${site_id}.js`, 'utf8', (err, data) => {
+        if (err) throw err;
+        const formatted = data.replace(/import SiteConfig from '.\/template-config'/g, `import SiteConfig from './${site_id}-config'`);
+        fs.writeFile(`${directory_path}/js/${site_id}.js`, formatted, (er) => {
+            if (er) throw er;
+            console.log('File has been edited');
+        });
     });
     // Config
 
@@ -74,7 +91,7 @@ function nameFiles() {
         fs.rename(`${directory_path}/js/template.js`, `${directory_path}/js/${site_id}.js`, (error) => {
             if (error) throw error;
         });
-        fs.rename(`${directory_path}/js/template-config.js`, `${directory_path}/js/${site_name}-${site_id}.js`, (error) => {
+        fs.rename(`${directory_path}/js/template-config.js`, `${directory_path}/js/${site_id}-config.js`, (error) => {
             if (error) throw error;
         });
         fs.rename(`${directory_path}/styles/template.scss`, `${directory_path}/styles/${site_id}.scss`, (error) => {

@@ -1,4 +1,6 @@
 const readline = require('readline');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const fsx = require('fs-extra');
 // const fs = require('fs');
 
 let site_name;
@@ -25,13 +27,22 @@ function getSiteVars() {
         });
     });
     rl.on('close', () => {
+        // process.exit(0);
         buildSiteDir();
-        process.exit(0);
     });
 }
 
 function buildSiteDir() {
-    console.log('this is the build site func');
+    const source = `${process.cwd()}/site_configs/template_site`;
+    const destination = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
+    console.log(process.cwd());
+    fsx.copy(source, destination, (err) => {
+        if (err) {
+            console.log('An error occured while copying the folder.');
+            return console.error(err);
+        }
+        console.log('Copy completed!');
+    });
 }
 
 getSiteVars();

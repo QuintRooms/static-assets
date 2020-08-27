@@ -12,7 +12,8 @@
     "compile-css": "npm run compile-styles && npm run compile-resbeat && npm run compile-dark",
     "compile-styles": "node-sass ./styles/sass/base-styles/styles.scss ./styles/styles.css",
     "compile-resbeat": "node-sass ./styles/sass/base-styles/resbeat.scss ./styles/resbeat.css",
-    "compile-dark": "node-sass ./styles/sass/base-styles/dark.scss ./styles/dark.css"
+    "compile-dark": "node-sass ./styles/sass/base-styles/dark.scss ./styles/dark.css",
+    "build-site": "node js/site-build.js"
   },
   "author": "",
   "license": "ISC",

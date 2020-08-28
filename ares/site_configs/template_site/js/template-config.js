@@ -8,14 +8,14 @@ export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 11111,
+        affiliate_id: '',
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         distance_unit: 'useMiles',
         lodging: {
-            event_id: 11111,
+            event_id: '',
             event_name: '',
             event_dates: '',
             is_lrg: false,
@@ -23,7 +23,7 @@ export default function siteConfig() {
         cug: {
             is_cug: false,
             show_points: false,
-            allow_registration: true,
+            allow_registration: false,
             percent_off_text: 'off',
             show_percent_savings: false,
         },
@@ -54,6 +54,11 @@ export default function siteConfig() {
                 outbound_url: '',
             },
             between_property_ad: {
+                is_active: false,
+                image_url: '',
+                outbound_url: '',
+            },
+            confirmation_page_top: {
                 is_active: false,
                 image_url: '',
                 outbound_url: '',

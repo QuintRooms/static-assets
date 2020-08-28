@@ -44,12 +44,65 @@ function editConfigForResbeat(data, path) {
     let config_data = data;
     const resbeat_data = [
         {
+            old: "affiliate_id: ''",
+            new: 'affiliate_id: 16827',
+        },
+        {
+            old: 'master_id: 920',
+            new: 'master_id: 2143',
+        },
+        {
+            old: "site_type: 'lodging'",
+            new: "site_type: 'cug'",
+        },
+        {
             old: 'plCZXR0GZ7J1',
             new: 'pl58QCMXHS4C',
         },
         {
             old: 'b9763a419845b59957b8cc5c9b13440c',
             new: '1514caaca583b1ed25dad3b0c6addf0a',
+        },
+        {
+            old: 'is_cug: false',
+            new: 'is_cug: true',
+        },
+        {
+            old: "percent_off_text: 'off'",
+            new: `percent_off_text: "BEAT 'EM BY"`,
+        },
+        {
+            old: 'show_percent_savings: false',
+            new: 'show_percent_savings: true',
+        },
+        {
+            old: "exclusive_rate_text: 'Exclusive Rate'",
+            new: "exclusive_rate_text: ''",
+        },
+        {
+            old: "host_hotel_text: 'Host Hotel'",
+            new: "host_hotel_text: ''",
+        },
+        {
+            old: "partner_hotel_text: 'Partner Hotel'",
+            new: "partner_hotel_text: ''",
+        },
+        {
+            old: 'show_stars: false',
+            new: 'show_stars: true',
+        },
+        {
+            old: 'show_property_type: false',
+            new: 'show_property_type: true',
+        },
+        {
+            old: 'show_currency_select: false',
+            new: 'show_currency_select: true',
+        },
+        {
+            // TODO below not updating
+            old: "google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700'",
+            new: "google_font_url: ''",
         },
         {
             old: 'is_resbeat_client: false',
@@ -59,29 +112,18 @@ function editConfigForResbeat(data, path) {
             old: "confirmation_email_from: 'Hotels for Hope'",
             new: "confirmation_email_from: 'RESBEAT'",
         },
-        {
-            old: "site_type: 'lodging'",
-            new: "site_type: 'cug'",
-        },
-        {
-            old: 'is_cug: false',
-            new: 'is_cug: true',
-        },
-        {
-            old: "percent_off_text: 'off'",
-            new: 'percent_off_text: "BEAT \'EM BY"',
-        },
     ];
 
     resbeat_data.forEach((el) => {
-        const old_string = `${el.old}`;
+        const old_string = el.old;
         const regex = new RegExp(old_string, 'g');
-        config_data = config_data.replace(regex, `${el.new}`);
-        fs.writeFile(`${path}`, config_data, (er) => {
-            if (er) throw er;
-        });
+        config_data = config_data.replace(regex, el.new);
+    });
+    fs.writeFile(path, config_data, (er) => {
+        if (er) throw er;
     });
     console.log(`\n - Resbeat config variables have been added to ${site_name}'s config.`);
+    console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
 }
 
 async function editConfig() {
@@ -122,6 +164,7 @@ import '../site_configs/${site_name}-${site_id}/styles/${site_id}.scss';
     const directory_path = `${process.cwd()}/src`;
     fs.appendFile(`${directory_path}/${site_id}.js`, src_content, (err) => {
         if (err) throw err;
+        console.log('\n - SRC file updated with imports');
     });
     editChildJs();
     editScss();

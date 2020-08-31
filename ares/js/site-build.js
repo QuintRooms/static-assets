@@ -27,6 +27,7 @@ function waitForFile(filePath) {
 // }
 
 async function editScss() {
+    // TODO if Resbeat site, import resbeat.config.scss
     const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
 
     await waitForFile(`${directory_path}/styles/${site_id}.scss`);
@@ -119,9 +120,11 @@ function editConfigForResbeat(data, path) {
         const regex = new RegExp(old_string, 'g');
         config_data = config_data.replace(regex, el.new);
     });
+
     fs.writeFile(path, config_data, (er) => {
         if (er) throw er;
     });
+
     console.log(`\n - Resbeat config variables have been added to ${site_name}'s config.`);
     console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
 }

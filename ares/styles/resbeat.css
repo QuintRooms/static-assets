@@ -84,7 +84,7 @@ input[type='email'].email-mask,
 .total-points-earned th,
 .total-points-earned td,
 .discount th,
-.discount td {
+.discount td, .ConfirmationForm .beat-em-value {
   font-weight: 700; }
 
 .WBValidatedRegistrationFormActions input {
@@ -272,6 +272,13 @@ a.ArnShowRatesLink,
 
 .ConfirmationForm .awarded-after-checkout {
   margin: 20px 0 0 0; }
+
+.ConfirmationForm .beat-em-value {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  margin-top: 12px; }
 
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input,

@@ -7,6 +7,7 @@ const fs = require('fs');
 let site_name;
 let site_id;
 let resbeat_client;
+let update_env;
 
 function waitForFile(filePath) {
     return new Promise((resolve) => {
@@ -21,21 +22,34 @@ function waitForFile(filePath) {
     });
 }
 
+function updateEnv() {
+    if (!update_env) return;
+    const env = `${process.cwd()}/.env`;
+    const env_data = `environment=local
+site_id=${site_id}
+directory_name=${site_name}
+isCUG=false`;
+    const resbeat_env = `environment=local
+site_id=${site_name}
+directory_name=${site_name}
+isCUG=true`;
+
+    fs.readFile(env, 'utf8', (error, data) => {
+        if (error) throw error;
+        const data_update = resbeat_client ? resbeat_env : env_data;
+        fs.writeFile(env, data_update, (err) => {
+            if (err) throw err;
+            console.log(`\n - .env has been updated`);
+        });
+    });
+}
+
 function addToEntryPoints() {
     const entry_points = `${process.cwd()}/js/entry-points.js`;
 
     const new_line = `// new sites populate below
             '${site_name}-${site_id}': './src/${site_id}.js', // ${site_name.replace('_', ' ')}`;
     const regex = new RegExp(`// new sites populate below`, 'g');
-
-    // const new_line = `(process.env.NODE_ENV === 'local') {
-    //     entry_points = {
-    //         '${site_name}-${site_id}': './src/${site_id}.js',  ${site_name.replace('_', ' ')}`;
-    // const regex = new RegExp(
-    //     `(process.env.NODE_ENV === 'local') {
-    //     entry_points = {`,
-    //     'g'
-    // );
 
     fs.readFile(entry_points, 'utf8', (err, data) => {
         if (err) throw err;
@@ -45,6 +59,7 @@ function addToEntryPoints() {
             console.log(`\n - New site added to 'local' in 'entry-points.js'`);
         });
     });
+    updateEnv();
 }
 
 async function editScss() {
@@ -265,15 +280,16 @@ function getSiteVars() {
     console.log(' - - - - - - - - - - - - - - - - - - - - - - - - - -');
     rl.question('\nPlease enter the site ID:  ', (id) => {
         rl.question('\nPlease enter the site name:  ', (name) => {
-            rl.question('\nIs this site for a Resbeat client? (Y/N):  ', (response) => {
-                console.log(response);
-                console.log(typeof response);
-                resbeat_client = response === 'y';
-                site_id = id;
-                site_name = name;
-                console.log(`\nThank you, building files for ${site_name}-${site_id} now.`);
-                console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
-                rl.close();
+            rl.question('\nIs this site for a Resbeat client? (Y/N):  ', (resbeat_response) => {
+                rl.question('\nWould you like to update the .env file to new site name and ID? (Y/N): ', (env_response) => {
+                    resbeat_client = resbeat_response.toLowerCase() === 'y';
+                    site_id = id;
+                    site_name = name;
+                    update_env = env_response.toLowerCase() === 'y';
+                    console.log(`\nThank you, building files for ${site_name}-${site_id} now.`);
+                    console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
+                    rl.close();
+                });
             });
         });
     });

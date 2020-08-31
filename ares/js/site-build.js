@@ -27,13 +27,21 @@ function waitForFile(filePath) {
 // }
 
 async function editScss() {
-    // TODO if Resbeat site, import resbeat.config.scss
+    let scss_var;
+    const resbeat_config_imports = `@import '../../../styles/sass/config-styles/base-styles.config.scss';
+    @import '../../../styles/sass/config-styles/resbeat.config.scss';`;
+
     const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
 
     await waitForFile(`${directory_path}/styles/${site_id}.scss`);
     fs.readFile(`${directory_path}/styles/${site_id}.scss`, 'utf8', (err, data) => {
         if (err) throw err;
-        const scss_var = data.replace(/template-11111/g, `${site_name}-${site_id}`);
+        if (resbeat_client) {
+            const regex = new RegExp(`@import '../../../styles/sass/config-styles/base-styles.config.scss';`, 'g');
+            scss_var = data.replace(/template-11111/g, `${site_name}-${site_id}`).replace(regex, resbeat_config_imports);
+        } else {
+            scss_var = data.replace(/template-11111/g, `${site_name}-${site_id}`);
+        }
         fs.writeFile(`${directory_path}/styles/${site_id}.scss`, scss_var, (er) => {
             if (er) throw er;
             console.log('\n - Scss file updated with new site ID');
@@ -145,18 +153,39 @@ async function editConfig() {
 }
 
 async function editChildJs() {
-    // TODO add ternary for if Resbeat client to then pull in resbeat.js
-    // TODO if Resbeat client, 'extends Resbeat'
+    let formatted;
+    const resbeat_child = `import Resbeat from '../../../js/resbeat';
+import SiteConfig from './${site_id}-config';
+
+const site_config = new SiteConfig();
+class ChildPortal extends Resbeat {
+    constructor() {
+        super(site_config);
+        super.init();
+    }
+}
+
+new ChildPortal();
+`;
+
     const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
     await waitForFile(`${directory_path}/js/${site_id}.js`);
     fs.readFile(`${directory_path}/js/${site_id}.js`, 'utf8', (err, data) => {
         if (err) throw err;
-        const formatted = data.replace(/import SiteConfig from '.\/template-config'/g, `import SiteConfig from './${site_id}-config'`);
-        fs.writeFile(`${directory_path}/js/${site_id}.js`, formatted, (er) => {
-            if (er) throw er;
-            console.log('\n - Child JS file updated with new site ID and name');
-            editConfig();
-        });
+        if (resbeat_client) {
+            fs.writeFile(`${directory_path}/js/${site_id}.js`, resbeat_child, (error) => {
+                if (error) throw error;
+                console.log('\n - Child JS file updated site ID, site name and Resbeat import');
+                editConfig();
+            });
+        } else {
+            formatted = data.replace(/import SiteConfig from '.\/template-config'/g, `import SiteConfig from './${site_id}-config'`);
+            fs.writeFile(`${directory_path}/js/${site_id}.js`, formatted, (er) => {
+                if (er) throw er;
+                console.log('\n - Child JS file updated with new site ID and name');
+                editConfig();
+            });
+        }
     });
 }
 

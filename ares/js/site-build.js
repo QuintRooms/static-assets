@@ -21,10 +21,31 @@ function waitForFile(filePath) {
     });
 }
 
-// TODO write function to add new line to 'local' object in EntryPoins.js with new site id and name
-// function addToEntryPoints(){
+function addToEntryPoints() {
+    const entry_points = `${process.cwd()}/js/entry-points.js`;
 
-// }
+    const new_line = `// new sites populate below
+            '${site_name}-${site_id}': './src/${site_id}.js', // ${site_name.replace('_', ' ')}`;
+    const regex = new RegExp(`// new sites populate below`, 'g');
+
+    // const new_line = `(process.env.NODE_ENV === 'local') {
+    //     entry_points = {
+    //         '${site_name}-${site_id}': './src/${site_id}.js',  ${site_name.replace('_', ' ')}`;
+    // const regex = new RegExp(
+    //     `(process.env.NODE_ENV === 'local') {
+    //     entry_points = {`,
+    //     'g'
+    // );
+
+    fs.readFile(entry_points, 'utf8', (err, data) => {
+        if (err) throw err;
+        const formatted_data = data.replace(regex, new_line);
+        fs.writeFile(entry_points, formatted_data, (error) => {
+            if (error) throw error;
+            console.log(`\n - New site added to 'local' in 'entry-points.js'`);
+        });
+    });
+}
 
 async function editScss() {
     let scss_var;
@@ -109,7 +130,7 @@ function editConfigForResbeat(data, path) {
             new: 'show_currency_select: true',
         },
         {
-            // TODO below not updating
+            // TODO below not updating - probably because '//' escapes a character in Regex
             old: "google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700'",
             new: "google_font_url: ''",
         },
@@ -200,6 +221,7 @@ import '../site_configs/${site_name}-${site_id}/styles/${site_id}.scss';
     });
     editChildJs();
     editScss();
+    addToEntryPoints();
 }
 
 function renameFiles() {

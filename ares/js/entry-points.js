@@ -22,6 +22,7 @@ module.exports = () => {
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
+            // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
@@ -46,8 +47,8 @@ module.exports = () => {
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
+            // new sites populate below
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            'resbeat-60831': './src/60831.js', // Resbeat
         };
     }
 

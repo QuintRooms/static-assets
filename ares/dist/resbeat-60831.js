@@ -2545,13 +2545,14 @@
                             var points_earned = document.querySelector('.discountRow td').textContent; // eslint-disable-next-line radix
 
                             points_earned = parseInt(points_earned.replace(/[^0-9.]/g, ''));
+                            document.querySelector('.confirmNum').textContent = 'Booking Number:';
                             document
                                 .querySelector('.GuestForms')
                                 .insertAdjacentHTML(
                                     'beforeEnd',
-                                    '\n            <div class="points-earned">\n                <div class="rewards-span">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                 <span>'.concat(
+                                    '\n            <div class="points-earned">\n                <div class="rewards-span">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                    <span>'.concat(
                                         points_earned,
-                                        '</span>\n                </div>\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>\n            </div>\n            '
+                                        '</span>\n                </div>\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be redeemable 48 hours after hotel checkout.\n                We\'ll send you an email once they have been added to your Rewards account.</p>\n            </div>\n            '
                                     )
                                 );
                         },

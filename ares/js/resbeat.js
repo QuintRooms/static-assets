@@ -265,15 +265,17 @@ export default class Resbeat extends BasePortal {
         let points_earned = document.querySelector('.discountRow td').textContent;
         // eslint-disable-next-line radix
         points_earned = parseInt(points_earned.replace(/[^0-9.]/g, ''));
+        document.querySelector('.confirmNum').textContent = 'Booking Number:';
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
             <div class="points-earned">
                 <div class="rewards-span">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
-                 <span>${points_earned}</span>
+                    <span>${points_earned}</span>
                 </div>
-                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
+                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be redeemable 48 hours after hotel checkout.
+                We'll send you an email once they have been added to your Rewards account.</p>
             </div>
             `
         );

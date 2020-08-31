@@ -3314,10 +3314,7 @@ input[type='search']::-webkit-search-results-decoration {
   .info-banner .close-alert {
     position: absolute;
     top: 0;
-    right: 0; }
-  header {
-    display: flex;
-    flex-direction: column; } }
+    right: 0; } }
 
 /* - - - - Covid-19 banner end - - - -  */
 /* ----- CSS STYLES END -----*/

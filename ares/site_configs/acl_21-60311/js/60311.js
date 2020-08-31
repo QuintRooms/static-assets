@@ -17,6 +17,7 @@ async function addWeekendButtons() {
     if (document.querySelector('meta[name="siteId"]').content !== '60311') return;
 
     await utilities.waitForSelectorInDOM('header');
+    // TODO update button hrefs before site goes live
     document.querySelector('header').insertAdjacentHTML(
         'beforeend',
         `<div class="event-week pull-right">

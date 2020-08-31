@@ -187,11 +187,11 @@ input[type='email'].email-mask,
 .SearchHotels .ArnLimitedAvail {
   margin-top: 20px; }
 
-.ArnRateButton a,
+a.ArnShowRatesLink,
 .bookRoom,
 .holdRoom {
   border-radius: 40px;
-  background: transparent;
+  background: transparent !important;
   padding: 6px 10px; }
 
 .LoginAction.submit,

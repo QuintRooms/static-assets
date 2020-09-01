@@ -30,7 +30,7 @@ site_id=${site_id}
 directory_name=${site_name}
 isCUG=false`;
     const resbeat_env = `environment=local
-site_id=${site_name}
+site_id=${site_id}
 directory_name=${site_name}
 isCUG=true`;
 

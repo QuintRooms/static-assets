@@ -8,9 +8,9 @@ module.exports = () => {
         entry_points = {
             // 'acl_20-53336': './src/53336.js', // acl 2020
             // 'acl_21-60311': './src/60311.js', // ACL 2021
+            // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
@@ -50,7 +50,9 @@ module.exports = () => {
 
         // local environment
     } else if (process.env.environment === 'local') {
-        entry_points = {};
+        entry_points = {
+            'f1_bahrain_20-63341': './src/63341.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+        };
     }
 
     return entry_points;

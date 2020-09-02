@@ -1,5 +1,4 @@
 export default function popUp(config) {
-    console.log('CONFIG: ', config);
     function showWeekendTwoPopUp() {
         document.body.classList.toggle('fixed');
         window.localStorage.setItem('weekendTwoPopup', 'true');

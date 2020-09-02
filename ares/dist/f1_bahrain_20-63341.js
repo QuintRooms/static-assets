@@ -283,7 +283,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && B(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && H(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -325,13 +325,13 @@
             j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            B = function (e) {
+            H = function (e) {
                 g.call(s, function () {
                     var t;
                     C ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            H = function (e) {
+            B = function (e) {
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
@@ -346,14 +346,14 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(D, r, 1), u(H, r, 1));
+                                      t.call(e, u(D, r, 1), u(B, r, 1));
                                   } catch (e) {
-                                      H.call(r, e);
+                                      B.call(r, e);
                                   }
                               })
                             : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
-                        H.call({_w: n, _d: !1}, e);
+                        B.call({_w: n, _d: !1}, e);
                     }
                 }
             };
@@ -361,9 +361,9 @@
             ((M = function (e) {
                 p(this, M, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(D, this, 1), u(H, this, 1));
+                    e(u(D, this, 1), u(B, this, 1));
                 } catch (e) {
-                    H.call(this, e);
+                    B.call(this, e);
                 }
             }),
             ((r = function (e) {
@@ -387,7 +387,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(H, e, 1));
+                (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(B, e, 1));
             }),
             (b.f = E = function (e) {
                 return e === M || e === a ? new i(e) : o(e);
@@ -2288,8 +2288,8 @@
             R = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
-            B = h('_hidden'),
-            H = h('toPrimitive'),
+            H = h('_hidden'),
+            B = h('toPrimitive'),
             D = {}.propertyIsEnumerable,
             F = l('symbol-registry'),
             I = l('symbols'),
@@ -2336,7 +2336,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(I, t)
-                        ? (n.enumerable ? (o(e, B) && e[B][t] && (e[B][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, B) || P(e, B, x(1, {})), (e[B][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, H) && e[H][t] && (e[H][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, H) || P(e, H, x(1, {})), (e[H][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -2347,16 +2347,16 @@
             },
             Q = function (e) {
                 var t = D.call(this, (e = _(e, !0)));
-                return !(this === N && o(I, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, B) && this[B][e])) || t);
+                return !(this === N && o(I, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, H) && this[H][e])) || t);
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(I, t) || o(Y, t))) {
                     var n = E(e, t);
-                    return !n || !o(I, t) || (o(e, B) && e[B][t]) || (n.enumerable = !0), n;
+                    return !n || !o(I, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == B || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == H || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -2369,7 +2369,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(Y, n), o(this, B) && o(this[B], e) && (this[B][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(Y, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -2449,7 +2449,7 @@
                         },
                     }
                 ),
-            R.prototype[H] || n(9)(R.prototype, H, R.prototype.valueOf),
+            R.prototype[B] || n(9)(R.prototype, B, R.prototype.valueOf),
             d(R, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
@@ -4231,9 +4231,9 @@
             }
         }
         var j = n(43),
-            B = n(68);
-        j.extend(B);
-        var H = (function () {
+            H = n(68);
+        j.extend(H);
+        var B = (function () {
             function e() {
                 !(function (e, t) {
                     if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -4508,7 +4508,7 @@
             $ = n(68);
         U.extend($);
         var W = new P(),
-            G = new H(),
+            G = new B(),
             z = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -7206,6 +7206,7 @@
         var de = new (function () {
                 return {
                     site_id: 63341,
+                    directory_name: Z,
                     affiliate_id: 17415,
                     master_id: 920,
                     site_type: 'lodging',
@@ -7227,8 +7228,8 @@
                     show_currency_select: !1,
                     show_date_prompt: !1,
                     fav_icon_url: ''.concat(V.path, '/html/f1/img/favicon.png'),
-                    has_custom_styles: !0,
-                    custom_styles_url: ''.concat(V.path, '/site_configs/').concat(Z, '/').concat(63341, '.css'),
+                    has_custom_styles: !1,
+                    custom_styles_url: '',
                     has_social_sharing: !0,
                     header: {
                         logo_file_location: ''.concat(V.path, '/html/f1/img/logo.png'),
@@ -7288,17 +7289,17 @@
         })(de.site_id),
             (function (e) {
                 function t() {
-                    document.body.classList.toggle('fixed'),
-                        window.localStorage.setItem('weekendTwoPopup', 'true'),
-                        document
-                            .querySelector('.ArnSearchContainerMainDiv')
-                            .insertAdjacentHTML(
-                                'afterbegin',
-                                '\n            <div class="modal-overlay show-modal">\n                <div id="weekend-popup" class="modal-container">\n                    <div class="modal-header">\n                        <h3>Weekend Two?</h3>\n                        <span class="close-modal">\n                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                                <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                                <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                            </svg>\n                        </span>\n                    </div>\n                    <span>Do you want to view exclusive hotel rates for weekend two?</span>\n                    <a target="_blank" href="">Check Rates</a>\n                    <a id="close-popup">Don\'t show this message again</a>\n                </div>\n            </div>\n            <style>\n\n\n            #weekend-popup {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n                justify-content: center;\n                width: 30vw;\n                height: 20vh;\n                border: 2px solid '.concat(
-                                    e.primary_color,
-                                    ';\n            }\n\n            #close-popup {\n                cursor: pointer;\n            }\n\n            #close-popup:hover {\n                text-decoration: underline\n            }\n            .modal-header {\n                width: 100%;\n            }\n            </style>\n            '
-                                )
-                            ),
+                    document.body.classList.toggle('fixed'), window.localStorage.setItem('weekendTwoPopup', 'true');
+                    var t = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
+                    document
+                        .querySelector(t)
+                        .insertAdjacentHTML(
+                            'afterbegin',
+                            '\n            <div id="popup-modal" class="modal-overlay show-modal">\n                <div id="weekend-popup" class="modal-container">\n                    <div class="modal-header">\n                        <h3>Weekend Two?</h3>\n                        <span class="close-modal">\n                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                                <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                                <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                            </svg>\n                        </span>\n                    </div>\n                    <span>Do you want to view exclusive hotel rates for weekend two?</span>\n                    <a target="_blank" href="">Check Rates</a>\n                    <a id="close-popup">Don\'t show this message again</a>\n                </div>\n            </div>\n            <style>\n\n\n            #weekend-popup {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n                justify-content: center;\n                width: 30vw;\n                height: 20vh;\n                border: 2px solid '.concat(
+                                e.primary_color,
+                                ';\n            }\n\n            #close-popup {\n                cursor: pointer;\n            }\n\n            #close-popup:hover {\n                text-decoration: underline\n            }\n\n            #popup-modal.show-modal {\n                z-index: 501;\n                top: 0px;\n            }\n\n            #popup-modal .modal-header {\n                width: 100%;\n            }\n            </style>\n            '
+                            )
+                        ),
                         document.querySelector('#close-popup').addEventListener('click', function () {
                             document.body.classList.toggle('fixed'), (document.querySelector('.modal-overlay').style.display = 'none');
                         }),
@@ -7306,12 +7307,13 @@
                             document.body.classList.toggle('fixed'), (document.querySelector('.modal-overlay').style.display = 'none');
                         });
                 }
-                document.querySelector('#theCheckIn').addEventListener('click', function () {
-                    localStorage.getItem('weekendTwoPopup') || t();
-                }),
+                (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) &&
+                    (document.querySelector('#theCheckIn').addEventListener('click', function () {
+                        localStorage.getItem('weekendTwoPopup') || t();
+                    }),
                     document.querySelector('#theCheckOut').addEventListener('click', function () {
                         localStorage.getItem('weekendTwoPopup') || t();
-                    });
+                    }));
             })(de),
             new fe(),
             new oe();

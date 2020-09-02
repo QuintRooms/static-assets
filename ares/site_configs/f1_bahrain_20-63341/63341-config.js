@@ -8,6 +8,7 @@ const directory_name = `f1_bahrain_20-${site_id}`;
 export default function siteConfig() {
     return {
         site_id,
+        directory_name,
         affiliate_id: 17415,
         master_id: 920,
         site_type: 'lodging',
@@ -40,8 +41,8 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,
-        has_custom_styles: true,
-        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
+        has_custom_styles: false,
+        custom_styles_url: ``,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/html/f1/img/logo.png`,

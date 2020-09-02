@@ -1,11 +1,14 @@
 export default function popUp(config) {
+    if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) return;
+
     function showWeekendTwoPopUp() {
         document.body.classList.toggle('fixed');
         window.localStorage.setItem('weekendTwoPopup', 'true');
-        document.querySelector('.ArnSearchContainerMainDiv').insertAdjacentHTML(
+        const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
+        document.querySelector(page_element).insertAdjacentHTML(
             'afterbegin',
             `
-            <div class="modal-overlay show-modal">
+            <div id="popup-modal" class="modal-overlay show-modal">
                 <div id="weekend-popup" class="modal-container">
                     <div class="modal-header">
                         <h3>Weekend Two?</h3>
@@ -41,7 +44,13 @@ export default function popUp(config) {
             #close-popup:hover {
                 text-decoration: underline
             }
-            .modal-header {
+
+            #popup-modal.show-modal {
+                z-index: 501;
+                top: 0px;
+            }
+
+            #popup-modal .modal-header {
                 width: 100%;
             }
             </style>

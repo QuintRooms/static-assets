@@ -2214,11 +2214,28 @@ export default class BasePortal {
         do_nothing.textContent = 'Go Back';
     }
 
+    // TODO check which percentage to use (the below calc or arn "percent")
     moveOriginalPrice(nodeList, element) {
         if (this.site_type === 'cug') return;
+
+        function percentDiff(num1, num2) {
+            const percent_value = ((num1 - num2) / num2) * 100;
+            if (Math.floor(percent_value) > 5) {
+                return true;
+            }
+            return false;
+        }
+
         document.querySelectorAll(nodeList).forEach((e) => {
             if (!e.querySelector('div.originalPrice')) return;
             e.querySelector(element).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+            const original_price = parseFloat(e.querySelector('.originalPrice').textContent);
+            const lower_price = parseFloat(
+                document.querySelector('.SearchHotels') ? e.querySelector('.arnUnit').textContent : e.querySelector('.ArnNightlyRate strong').textContent
+            );
+            if (percentDiff(original_price, lower_price)) {
+                e.querySelector('.originalPrice').style.display = 'none';
+            }
         });
     }
 }

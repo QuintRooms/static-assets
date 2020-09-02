@@ -7290,7 +7290,7 @@
             (function (e) {
                 function t() {
                     document.body.classList.toggle('fixed'), window.localStorage.setItem('weekendTwoPopup', 'true');
-                    var t = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
+                    var t = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '#theBody';
                     document
                         .querySelector(t)
                         .insertAdjacentHTML(

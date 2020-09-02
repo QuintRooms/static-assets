@@ -4,7 +4,8 @@ export default function popUp(config) {
     function showWeekendTwoPopUp() {
         document.body.classList.toggle('fixed');
         window.localStorage.setItem('weekendTwoPopup', 'true');
-        const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
+        const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '#theBody';
+        // const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
         document.querySelector(page_element).insertAdjacentHTML(
             'afterbegin',
             `

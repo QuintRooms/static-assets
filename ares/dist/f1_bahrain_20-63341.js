@@ -97,7 +97,11 @@
         /***/ function (module, __webpack_exports__, __webpack_require__) {
             'use strict';
             __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _site_configs_f1_bahrain_20_63341_63341__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+            /* harmony import */ var _site_configs_f1_bahrain_20_63341_js_63341__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+            /* harmony import */ var _site_configs_f1_bahrain_20_63341_styles_63341_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(121);
+            /* harmony import */ var _site_configs_f1_bahrain_20_63341_styles_63341_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/ __webpack_require__.n(
+                _site_configs_f1_bahrain_20_63341_styles_63341_scss__WEBPACK_IMPORTED_MODULE_1__
+            );
 
             /***/
         },
@@ -121,7 +125,7 @@
             /* harmony import */ var _63341_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(116);
             /* harmony import */ var _js_f1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(117);
             /* harmony import */ var _js_calculate_distance__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(118);
-            /* harmony import */ var _js_components_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(120);
+            /* harmony import */ var _js_components_event_popup_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(120);
 
             function _typeof(obj) {
                 '@babel/helpers - typeof';
@@ -230,7 +234,7 @@
             })(_js_build__WEBPACK_IMPORTED_MODULE_3__['default']);
 
             Object(_js_f1__WEBPACK_IMPORTED_MODULE_5__['default'])(site_config.site_id);
-            Object(_js_components_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__['default'])(site_config);
+            Object(_js_components_event_popup_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__['default'])(site_config);
             new ChildPortal();
             new _js_calculate_distance__WEBPACK_IMPORTED_MODULE_6__['default']();
 
@@ -9528,31 +9532,15 @@
                     show_language_select: true,
                     show_currency_select: false,
                     show_date_prompt: false,
-                    fav_icon_url: ''.concat(env_path.path, '/html/f1/img/favicon.png'),
-                    has_custom_styles: false,
-                    custom_styles_url: '',
                     has_social_sharing: true,
+                    fav_icon_url: ''.concat(env_path.path, '/html/f1/img/favicon.png'),
                     header: {
                         logo_file_location: ''.concat(env_path.path, '/html/f1/img/logo.png'),
                         logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
-                        background: '#e10600',
-                        logo_flex_position: 'space-between',
-                        logo_max_width: '300px',
                     },
-                    banner_image_url: 'linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('.concat(env_path.path, '/html/f1/img/f1-bg-1.jpg) no-repeat center center /cover'),
                     map_marker_image_url: ''.concat(env_path.path, '/html/f1/img/favicon.png'),
                     theme: 'light',
-                    background_color: '#fff',
-                    primary_color: '#e10600',
-                    secondary_color: '#333',
-                    primary_text_color: '#fff',
-                    secondary_text_color: '#333',
-                    border_color: '#e10600',
-                    button_hover_background_color: '#fff',
-                    button_hover_text_color: '#e10600',
-                    button_hover_border_color: '#e10600',
                     google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
-                    google_font_name: 'Titillium Web',
                     ads: {
                         sidebar_ad: {
                             is_active: false,
@@ -10289,10 +10277,7 @@
                         .querySelector(page_element)
                         .insertAdjacentHTML(
                             'afterbegin',
-                            '\n            <div id="popup-modal" class="modal-overlay show-modal">\n                <div id="weekend-popup" class="modal-container">\n                    <div class="modal-header">\n                        <h3>Weekend Two?</h3>\n                        <span class="close-modal">\n                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                                <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                                <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                            </svg>\n                        </span>\n                    </div>\n                    <span>Do you want to view exclusive hotel rates for weekend two?</span>\n                    <a target="_blank" href="">Check Rates</a>\n                    <a id="close-popup">Don\'t show this message again</a>\n                </div>\n            </div>\n            <style>\n\n\n            #weekend-popup {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n                justify-content: center;\n                width: 30vw;\n                height: 20vh;\n                border: 2px solid '.concat(
-                                config.primary_color,
-                                ';\n            }\n\n            #close-popup {\n                cursor: pointer;\n            }\n\n            #close-popup:hover {\n                text-decoration: underline\n            }\n\n            #popup-modal.show-modal {\n                z-index: 501;\n                top: 0px;\n            }\n\n            #popup-modal .modal-header {\n                width: 100%;\n            }\n            </style>\n            '
-                            )
+                            '\n            <div id="popup-modal" class="modal-overlay show-modal">\n                <div id="weekend-popup" class="modal-container">\n                    <div class="modal-header">\n                        <h3>Weekend Two?</h3>\n                        <span class="close-modal">\n                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                                <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                                <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                            </svg>\n                        </span>\n                    </div>\n                    <span>Do you want to view exclusive hotel rates for weekend two?</span>\n                    <a target="_blank" href="">Check Rates</a>\n                    <a id="close-popup">Don\'t show this message again</a>\n                </div>\n            </div>\n            '
                         );
                     document.querySelector('#close-popup').addEventListener('click', function () {
                         document.body.classList.toggle('fixed');
@@ -10314,6 +10299,11 @@
                 });
             }
 
+            /***/
+        },
+        /* 121 */
+        /***/ function (module, exports, __webpack_require__) {
+            // extracted by mini-css-extract-plugin
             /***/
         },
         /******/

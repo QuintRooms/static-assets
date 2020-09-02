@@ -25,36 +25,6 @@ export default function popUp(config) {
                     <a id="close-popup">Don't show this message again</a>
                 </div>
             </div>
-            <style>
-
-
-            #weekend-popup {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 30vw;
-                height: 20vh;
-                border: 2px solid ${config.primary_color};
-            }
-
-            #close-popup {
-                cursor: pointer;
-            }
-
-            #close-popup:hover {
-                text-decoration: underline
-            }
-
-            #popup-modal.show-modal {
-                z-index: 501;
-                top: 0px;
-            }
-
-            #popup-modal .modal-header {
-                width: 100%;
-            }
-            </style>
             `
         );
         document.querySelector('#close-popup').addEventListener('click', () => {

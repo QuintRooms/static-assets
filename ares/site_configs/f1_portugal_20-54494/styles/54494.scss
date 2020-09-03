@@ -39,6 +39,10 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/ht
     src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
 }
 
+body {
+    font-size: 13px !important;
+}
+
 .SearchHotels .leaflet-pane.leaflet-marker-pane img:last-child {
     display: none !important;
 }

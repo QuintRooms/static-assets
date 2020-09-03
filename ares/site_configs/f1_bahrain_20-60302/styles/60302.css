@@ -133,7 +133,6 @@ span.exclusive-rate {
 .holdRoom,
 .reviewCount a,
 #theAdditionalEmailsLink a,
-#theOtherSubmitButton,
 .SinglePropDetail .ArnRateCancelAnchor,
 .open-modal,
 .lowest-rate-link,
@@ -151,7 +150,7 @@ span.exclusive-rate {
 }
 
 input#theSubmitButton,
-.RootBody #theOtherSubmitButton,
+#theOtherSubmitButton,
 .bookRoom,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
@@ -372,6 +371,9 @@ header {
 @font-face {
   font-family: "F1-Wide";
   src: url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix") format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+}
+body {
+  font-size: 13px !important;
 }
 
 /*# sourceMappingURL=60302.css.map*/

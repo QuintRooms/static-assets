@@ -41,8 +41,8 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,
-        has_custom_styles: false,
-        custom_styles_url: ``,
+        has_custom_styles: true,
+        custom_styles_url: `${env_path.path}/site_configs/${directory_name}/${site_id}.css`,
         has_social_sharing: true,
         header: {
             logo_file_location: `${env_path.path}/html/f1/img/logo.png`,
@@ -63,8 +63,8 @@ export default function siteConfig() {
         button_hover_background_color: '#fff',
         button_hover_text_color: '#e10600',
         button_hover_border_color: '#e10600',
-        google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
-        google_font_name: 'Titillium Web',
+        google_font_url: '',
+        google_font_name: 'F1-Regular',
         ads: {
             sidebar_ad: {
                 is_active: false,

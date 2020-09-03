@@ -18,6 +18,4 @@
     src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
 }
 
-.SearchHotels .leaflet-pane.leaflet-marker-pane img:last-child {
-    display: none !important;
-}
+

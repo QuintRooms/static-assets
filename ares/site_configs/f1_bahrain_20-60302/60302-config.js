@@ -2,7 +2,7 @@ import Path from '../../js/path';
 
 const env_path = new Path();
 
-const site_id = 63341;
+const site_id = 60302;
 const directory_name = `f1_bahrain_20-${site_id}`;
 
 export default function siteConfig() {

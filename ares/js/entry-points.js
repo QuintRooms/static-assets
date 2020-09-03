@@ -51,7 +51,7 @@ module.exports = () => {
         // local environment
     } else if (process.env.environment === 'local') {
         entry_points = {
-            'f1_bahrain_20-63341': './src/63341.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+            'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
         };
     }
 

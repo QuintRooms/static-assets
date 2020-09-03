@@ -1,20 +1,65 @@
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+}
 
 #weekend-popup {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    height: 40vh;
+    border: 5px solid $primary_color;
+    border-radius: 20px;
+}
+
+#weekend-popup .modal-header {
+    border-bottom: 3px solid #6C6C6C;
     justify-content: center;
-    width: 30vw;
-    height: 20vh;
+}
+
+#header-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#weekend-popup .modal-header h3 {
+    font-size: 20px;
+    font-family: 'F1-Regular', 'Helvetica';
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#weekend-popup #popup-message {
+    font-family: 'F1-Regular', 'Helvetica';
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+#check-rates {
     border: 2px solid $primary_color;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background: $primary_color;
+    font-family: 'F1-Regular', 'Helvetica';
 }
 
-#close-popup {
-    cursor: pointer;
-}
-
-#close-popup:hover {
-    text-decoration: underline
+#check-rates:hover {
+    color: #000;
+    background: #fff;
 }
 
 #popup-modal.show-modal {

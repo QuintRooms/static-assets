@@ -2,7 +2,7 @@ import Path from '../../../js/path';
 
 const env_path = new Path();
 
-const site_id = 63341;
+const site_id = 60302;
 const directory_name = `f1_bahrain_20-${site_id}`;
 
 export default function siteConfig() {
@@ -48,7 +48,7 @@ export default function siteConfig() {
         },
         map_marker_image_url: `${env_path.path}/html/f1/img/favicon.png`,
         theme: 'light',
-        google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
+        google_font_url: '',
         ads: {
             sidebar_ad: {
                 is_active: false,

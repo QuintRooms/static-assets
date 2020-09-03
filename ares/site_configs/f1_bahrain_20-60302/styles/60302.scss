@@ -13,11 +13,12 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #e10600;
 $button_hover_border_color: #e10600;
 $google_font_name: 'F1-Regular';
-$site_name: 'f1_portugal_20-54494';
+$site_name: 'f1_bahrain_20-63341';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/html/f1/img/f1-bg-1.jpg) no-repeat center center /cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/event-popup/popup.scss';
 
 @font-face {
     font-family: 'F1-Black';
@@ -39,6 +40,4 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/ht
     src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
 }
 
-.SearchHotels .leaflet-pane.leaflet-marker-pane img:last-child {
-    display: none !important;
-}
+

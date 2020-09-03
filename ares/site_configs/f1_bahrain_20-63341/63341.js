@@ -14,7 +14,7 @@ class ChildPortal extends BasePortal {
 }
 
 f1Styles(site_config.site_id);
-popUp(site_config);
+popUp(site_config, 'Sakhir Grand Prix', 'url1', 'url2');
 
 new ChildPortal();
 new Distance();

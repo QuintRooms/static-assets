@@ -18,7 +18,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: 11111,
-            event_name: '2020 - Formula 1 - Bahrain',
+            event_name: 'Bahrain Grand Prix',
             event_dates: '11/27/2020 - 11/29/2020',
             is_lrg: false,
         },

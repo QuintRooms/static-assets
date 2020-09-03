@@ -47,9 +47,9 @@ module.exports = () => {
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
+            // new sites populate below
             'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // new sites populate below
         };
     }
 

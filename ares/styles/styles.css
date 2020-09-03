@@ -594,7 +594,7 @@ select#adults {
 
 .arnMapMarker {
     border: 1px solid rgb(77, 77, 77);
-    background: rgb(206, 206, 206);
+    background: #fff;
     color: #333;
 }
 .arnMapMarkerTriangle {

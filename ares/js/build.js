@@ -227,6 +227,12 @@ export default class BasePortal {
                         .then(() => {
                             this.createMobileSortAndFilter();
                             utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+
+                            if (utilities.matchMediaQuery('min-width: 1105px'))
+                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>');
+
+                            if (utilities.matchMediaQuery('max-width: 800px'))
+                                document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>');
                         });
                 });
 
@@ -707,8 +713,8 @@ export default class BasePortal {
             );
 
             utilities.createWrapper(
-                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count}, 
-                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax, 
+                `.RoomNumber-${reservation_count} #theCreditCardBillingNameAjax${reservation_count},
+                .RoomNumber-${reservation_count} #theCardExpirationFieldsAjax,
                 .RoomNumber-${reservation_count} #theCardVerificationAjax`,
                 `.RoomNumber-${reservation_count} #theCreditCardNumberAjax`,
                 `credit-card-details`,
@@ -1161,8 +1167,8 @@ export default class BasePortal {
         if (document.querySelector('.exclusive-rate')) return;
         /**
         *@description adds a sash to a property
-        @param string DOM selector 
-        @param string Event name from site_config 
+        @param string DOM selector
+        @param string Event name from site_config
         @param string Exclusive rate text
         */
         function updateRoomDescription(selector, name, text) {
@@ -1174,7 +1180,7 @@ export default class BasePortal {
         /**
         *@description adds a sash to a property
         @param string takes the text for the exclusive rate sash
-        @param string is the parent element for the current iteration 
+        @param string is the parent element for the current iteration
         */
         const add_exclusive_rates_sash = (text, selector) => {
             if (this.site_config.exclusive_rate_text === '') return;
@@ -1184,8 +1190,8 @@ export default class BasePortal {
         /**
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
-        @param string is the parent element for the current iteration 
-        @param string will be either 'x' or 'y'. Determines if Host or Partner hotel. 
+        @param string is the parent element for the current iteration
+        @param string will be either 'x' or 'y'. Determines if Host or Partner hotel.
         */
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
@@ -1363,7 +1369,7 @@ export default class BasePortal {
             'afterbegin',
             `<div class="social-share-buttons-container">
                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                
+
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
                 </div>`
         );
@@ -1520,14 +1526,14 @@ export default class BasePortal {
                 <div class="message-content">
                     <h1>Book with Confidence:</h1>
                     <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">
-                        <h1>COVID-19 Update</h1> 
+                        <h1>COVID-19 Update</h1>
                         <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
                             <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
                             </path>
                         </svg>
                     </a>
                     <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">
-                        <h1>Cleaning Policies</h1>                    
+                        <h1>Cleaning Policies</h1>
                         <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">
                             <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">
                             </path>

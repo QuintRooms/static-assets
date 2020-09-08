@@ -617,6 +617,16 @@
                                                                                                             _this.createMobileSortAndFilter();
 
                                                                                                             utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                                                                                                            if (utilities.matchMediaQuery('min-width: 1105px'))
+                                                                                                                document.body.insertAdjacentHTML(
+                                                                                                                    'afterBegin',
+                                                                                                                    '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
+                                                                                                                );
+                                                                                                            if (utilities.matchMediaQuery('max-width: 800px'))
+                                                                                                                document.body.insertAdjacentHTML(
+                                                                                                                    'afterBegin',
+                                                                                                                    '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                );
                                                                                                         });
                                                                                                 });
 
@@ -1245,8 +1255,8 @@
                                     utilities.createWrapper(
                                         '.RoomNumber-'
                                             .concat(reservation_count, ' #theCreditCardBillingNameAjax')
-                                            .concat(reservation_count, ', \n                .RoomNumber-')
-                                            .concat(reservation_count, ' #theCardExpirationFieldsAjax, \n                .RoomNumber-')
+                                            .concat(reservation_count, ',\n                .RoomNumber-')
+                                            .concat(reservation_count, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
                                             .concat(reservation_count, ' #theCardVerificationAjax'),
                                         '.RoomNumber-'.concat(reservation_count, ' #theCreditCardNumberAjax'),
                                         'credit-card-details',
@@ -1752,8 +1762,8 @@
                                 if (document.querySelector('.exclusive-rate')) return;
                                 /**
       *@description adds a sash to a property
-      @param string DOM selector 
-      @param string Event name from site_config 
+      @param string DOM selector
+      @param string Event name from site_config
       @param string Exclusive rate text
       */
 
@@ -1768,7 +1778,7 @@
                                 /**
       *@description adds a sash to a property
       @param string takes the text for the exclusive rate sash
-      @param string is the parent element for the current iteration 
+      @param string is the parent element for the current iteration
       */
 
                                 var add_exclusive_rates_sash = function add_exclusive_rates_sash(text, selector) {
@@ -1778,8 +1788,8 @@
                                 /**
       *@description adds a custom tag to a property thumbnail image
       @param string takes the text for custom tag
-      @param string is the parent element for the current iteration 
-      @param string will be either 'x' or 'y'. Determines if Host or Partner hotel. 
+      @param string is the parent element for the current iteration
+      @param string will be either 'x' or 'y'. Determines if Host or Partner hotel.
       */
 
                                 function addCustomTag(text, selector) {
@@ -2092,7 +2102,7 @@
                                     '<div class="social-share-buttons-container">\n                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D'
                                         .concat(
                                             event_id,
-                                            '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n                \n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
+                                            '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
                                         )
                                         .concat(event_name, ' through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=')
                                         .concat(event_id, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
@@ -2239,7 +2249,7 @@
                                 if (localStorage.getItem('covidAlertBanner') === 'closed') return;
                                 document.body.insertAdjacentHTML(
                                     'afterBegin',
-                                    '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1> \n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>                    \n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
+                                    '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
                                 );
                                 document.querySelector('.close-banner-button').addEventListener('click', function (evt) {
                                     document.querySelector('.info-banner').style.display = 'none';
@@ -3297,46 +3307,58 @@
                 /* harmony import */ var core_js_modules_es6_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(
                     core_js_modules_es6_promise__WEBPACK_IMPORTED_MODULE_2__
                 );
-                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+                    /*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'
+                );
+                /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__
+                );
+                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
                     /*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'
                 );
-                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3__
+                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4__
                 );
-                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+                    /*! core-js/modules/es6.reflect.construct */ './node_modules/core-js/modules/es6.reflect.construct.js'
+                );
+                /* harmony import */ var core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5__
+                );
+                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
                     /*! core-js/modules/es6.reflect.get */ './node_modules/core-js/modules/es6.reflect.get.js'
                 );
-                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4__
+                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6__
                 );
-                /* harmony import */ var core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
                     /*! core-js/modules/es7.array.includes */ './node_modules/core-js/modules/es7.array.includes.js'
                 );
-                /* harmony import */ var core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_5__
+                /* harmony import */ var core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es7_array_includes__WEBPACK_IMPORTED_MODULE_7__
                 );
-                /* harmony import */ var core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
                     /*! core-js/modules/es6.string.includes */ './node_modules/core-js/modules/es6.string.includes.js'
                 );
-                /* harmony import */ var core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_6__
+                /* harmony import */ var core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_string_includes__WEBPACK_IMPORTED_MODULE_8__
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
                     /*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7__
+                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_9__
                 );
-                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
                     /*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js'
                 );
-                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/ __webpack_require__.n(
-                    regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8__
+                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/ __webpack_require__.n(
+                    regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_10__
                 );
-                /* harmony import */ var _build__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./build */ './js/build.js');
-                /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utilities */ './js/utilities.js');
-                /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./path */ './js/path.js');
-                /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/ __webpack_require__.n(_path__WEBPACK_IMPORTED_MODULE_11__);
+                /* harmony import */ var _build__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./build */ './js/build.js');
+                /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./utilities */ './js/utilities.js');
+                /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./path */ './js/path.js');
+                /* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/ __webpack_require__.n(_path__WEBPACK_IMPORTED_MODULE_13__);
 
                 function _typeof(obj) {
                     '@babel/helpers - typeof';
@@ -3406,20 +3428,6 @@
                     return Constructor;
                 }
 
-                function _possibleConstructorReturn(self, call) {
-                    if (call && (_typeof(call) === 'object' || typeof call === 'function')) {
-                        return call;
-                    }
-                    return _assertThisInitialized(self);
-                }
-
-                function _assertThisInitialized(self) {
-                    if (self === void 0) {
-                        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    }
-                    return self;
-                }
-
                 function _inherits(subClass, superClass) {
                     if (typeof superClass !== 'function' && superClass !== null) {
                         throw new TypeError('Super expression must either be null or a function');
@@ -3436,6 +3444,47 @@
                             return o;
                         };
                     return _setPrototypeOf(o, p);
+                }
+
+                function _createSuper(Derived) {
+                    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+                    return function _createSuperInternal() {
+                        var Super = _getPrototypeOf(Derived),
+                            result;
+                        if (hasNativeReflectConstruct) {
+                            var NewTarget = _getPrototypeOf(this).constructor;
+                            result = Reflect.construct(Super, arguments, NewTarget);
+                        } else {
+                            result = Super.apply(this, arguments);
+                        }
+                        return _possibleConstructorReturn(this, result);
+                    };
+                }
+
+                function _possibleConstructorReturn(self, call) {
+                    if (call && (_typeof(call) === 'object' || typeof call === 'function')) {
+                        return call;
+                    }
+                    return _assertThisInitialized(self);
+                }
+
+                function _assertThisInitialized(self) {
+                    if (self === void 0) {
+                        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    }
+                    return self;
+                }
+
+                function _isNativeReflectConstruct() {
+                    if (typeof Reflect === 'undefined' || !Reflect.construct) return false;
+                    if (Reflect.construct.sham) return false;
+                    if (typeof Proxy === 'function') return true;
+                    try {
+                        Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+                        return true;
+                    } catch (e) {
+                        return false;
+                    }
                 }
 
                 function _get(target, property, receiver) {
@@ -3472,20 +3521,22 @@
                     return _getPrototypeOf(o);
                 }
 
-                var env_path = new _path__WEBPACK_IMPORTED_MODULE_11___default.a();
-                var utilities = new _utilities__WEBPACK_IMPORTED_MODULE_10__['default']();
+                var env_path = new _path__WEBPACK_IMPORTED_MODULE_13___default.a();
+                var utilities = new _utilities__WEBPACK_IMPORTED_MODULE_12__['default']();
 
                 var Resbeat = /*#__PURE__*/ (function (_BasePortal) {
                     _inherits(Resbeat, _BasePortal);
 
+                    var _super = _createSuper(Resbeat);
+
                     function Resbeat(config) {
-                        var _this;
+                        var _thisSuper, _this;
 
                         _classCallCheck(this, Resbeat);
 
-                        _this = _possibleConstructorReturn(this, _getPrototypeOf(Resbeat).call(this, config));
+                        _this = _super.call(this, config);
 
-                        _get(_getPrototypeOf(Resbeat.prototype), 'init', _assertThisInitialized(_this)).call(_assertThisInitialized(_this));
+                        _get(((_thisSuper = _assertThisInitialized(_this)), _getPrototypeOf(Resbeat.prototype)), 'init', _thisSuper).call(_thisSuper);
 
                         _this.site_config = config;
                         return _this;
@@ -4163,7 +4214,7 @@
                     ]);
 
                     return Resbeat;
-                })(_build__WEBPACK_IMPORTED_MODULE_9__['default']);
+                })(_build__WEBPACK_IMPORTED_MODULE_11__['default']);
 
                 /***/
             },
@@ -4619,7 +4670,7 @@
                                                 while (1) {
                                                     switch ((_context6.prev = _context6.next)) {
                                                         case 0:
-                                                            widthChange = function _ref(mq) {
+                                                            widthChange = function _widthChange(mq) {
                                                                 if (!mq.matches || logos_loaded) return;
 
                                                                 try {
@@ -5152,6 +5203,45 @@
                         return !IS_INCLUDES && -1;
                     };
                 };
+
+                /***/
+            },
+
+        /***/ './node_modules/core-js/modules/_bind.js':
+            /*!***********************************************!*\
+  !*** ./node_modules/core-js/modules/_bind.js ***!
+  \***********************************************/
+            /*! no static exports found */
+            /***/ function (module, exports, __webpack_require__) {
+                'use strict';
+
+                var aFunction = __webpack_require__(/*! ./_a-function */ './node_modules/core-js/modules/_a-function.js');
+                var isObject = __webpack_require__(/*! ./_is-object */ './node_modules/core-js/modules/_is-object.js');
+                var invoke = __webpack_require__(/*! ./_invoke */ './node_modules/core-js/modules/_invoke.js');
+                var arraySlice = [].slice;
+                var factories = {};
+
+                var construct = function (F, len, args) {
+                    if (!(len in factories)) {
+                        for (var n = [], i = 0; i < len; i++) n[i] = 'a[' + i + ']';
+                        // eslint-disable-next-line no-new-func
+                        factories[len] = Function('F,a', 'return new F(' + n.join(',') + ')');
+                    }
+                    return factories[len](F, args);
+                };
+
+                module.exports =
+                    Function.bind ||
+                    function bind(that /* , ...args */) {
+                        var fn = aFunction(this);
+                        var partArgs = arraySlice.call(arguments, 1);
+                        var bound = function (/* args... */) {
+                            var args = partArgs.concat(arraySlice.call(arguments));
+                            return this instanceof bound ? construct(fn, args.length, args) : invoke(fn, args, that);
+                        };
+                        if (isObject(fn.prototype)) bound.prototype = fn.prototype;
+                        return bound;
+                    };
 
                 /***/
             },
@@ -7717,6 +7807,80 @@
                 /***/
             },
 
+        /***/ './node_modules/core-js/modules/es6.reflect.construct.js':
+            /*!***************************************************************!*\
+  !*** ./node_modules/core-js/modules/es6.reflect.construct.js ***!
+  \***************************************************************/
+            /*! no static exports found */
+            /***/ function (module, exports, __webpack_require__) {
+                // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
+                var $export = __webpack_require__(/*! ./_export */ './node_modules/core-js/modules/_export.js');
+                var create = __webpack_require__(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js');
+                var aFunction = __webpack_require__(/*! ./_a-function */ './node_modules/core-js/modules/_a-function.js');
+                var anObject = __webpack_require__(/*! ./_an-object */ './node_modules/core-js/modules/_an-object.js');
+                var isObject = __webpack_require__(/*! ./_is-object */ './node_modules/core-js/modules/_is-object.js');
+                var fails = __webpack_require__(/*! ./_fails */ './node_modules/core-js/modules/_fails.js');
+                var bind = __webpack_require__(/*! ./_bind */ './node_modules/core-js/modules/_bind.js');
+                var rConstruct = (__webpack_require__(/*! ./_global */ './node_modules/core-js/modules/_global.js').Reflect || {}).construct;
+
+                // MS Edge supports only 2 arguments and argumentsList argument is optional
+                // FF Nightly sets third argument as `new.target`, but does not create `this` from it
+                var NEW_TARGET_BUG = fails(function () {
+                    function F() {
+                        /* empty */
+                    }
+                    return !(
+                        rConstruct(
+                            function () {
+                                /* empty */
+                            },
+                            [],
+                            F
+                        ) instanceof F
+                    );
+                });
+                var ARGS_BUG = !fails(function () {
+                    rConstruct(function () {
+                        /* empty */
+                    });
+                });
+
+                $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
+                    construct: function construct(Target, args /* , newTarget */) {
+                        aFunction(Target);
+                        anObject(args);
+                        var newTarget = arguments.length < 3 ? Target : aFunction(arguments[2]);
+                        if (ARGS_BUG && !NEW_TARGET_BUG) return rConstruct(Target, args, newTarget);
+                        if (Target == newTarget) {
+                            // w/o altered newTarget, optimization for 0-4 arguments
+                            switch (args.length) {
+                                case 0:
+                                    return new Target();
+                                case 1:
+                                    return new Target(args[0]);
+                                case 2:
+                                    return new Target(args[0], args[1]);
+                                case 3:
+                                    return new Target(args[0], args[1], args[2]);
+                                case 4:
+                                    return new Target(args[0], args[1], args[2], args[3]);
+                            }
+                            // w/o altered newTarget, lot of arguments case
+                            var $args = [null];
+                            $args.push.apply($args, args);
+                            return new (bind.apply(Target, $args))();
+                        }
+                        // with altered newTarget, not support built-in constructors
+                        var proto = newTarget.prototype;
+                        var instance = create(isObject(proto) ? proto : Object.prototype);
+                        var result = Function.apply.call(Target, instance, args);
+                        return isObject(result) ? result : instance;
+                    },
+                });
+
+                /***/
+            },
+
         /***/ './node_modules/core-js/modules/es6.reflect.get.js':
             /*!*********************************************************!*\
   !*** ./node_modules/core-js/modules/es6.reflect.get.js ***!
@@ -8586,47 +8750,49 @@
   \*****************************************/
             /*! no static exports found */
             /***/ function (module, exports, __webpack_require__) {
-                !(function (t, n) {
-                    true ? (module.exports = n()) : undefined;
+                !(function (t, e) {
+                    true ? (module.exports = e()) : undefined;
                 })(this, function () {
                     'use strict';
                     var t = 'millisecond',
-                        n = 'second',
-                        e = 'minute',
+                        e = 'second',
+                        n = 'minute',
                         r = 'hour',
                         i = 'day',
                         s = 'week',
                         u = 'month',
-                        o = 'quarter',
-                        a = 'year',
-                        h = /^(\d{4})-?(\d{1,2})-?(\d{0,2})[^0-9]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?.?(\d{1,3})?$/,
-                        f = /\[([^\]]+)]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,
-                        c = function (t, n, e) {
+                        a = 'quarter',
+                        o = 'year',
+                        f = 'date',
+                        h = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[^0-9]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?.?(\d+)?$/,
+                        c = /\[([^\]]+)]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,
+                        d = function (t, e, n) {
                             var r = String(t);
-                            return !r || r.length >= n ? t : '' + Array(n + 1 - r.length).join(e) + t;
+                            return !r || r.length >= e ? t : '' + Array(e + 1 - r.length).join(n) + t;
                         },
-                        d = {
-                            s: c,
+                        $ = {
+                            s: d,
                             z: function (t) {
-                                var n = -t.utcOffset(),
-                                    e = Math.abs(n),
-                                    r = Math.floor(e / 60),
-                                    i = e % 60;
-                                return (n <= 0 ? '+' : '-') + c(r, 2, '0') + ':' + c(i, 2, '0');
+                                var e = -t.utcOffset(),
+                                    n = Math.abs(e),
+                                    r = Math.floor(n / 60),
+                                    i = n % 60;
+                                return (e <= 0 ? '+' : '-') + d(r, 2, '0') + ':' + d(i, 2, '0');
                             },
-                            m: function (t, n) {
-                                var e = 12 * (n.year() - t.year()) + (n.month() - t.month()),
-                                    r = t.clone().add(e, u),
-                                    i = n - r < 0,
-                                    s = t.clone().add(e + (i ? -1 : 1), u);
-                                return Number(-(e + (n - r) / (i ? r - s : s - r)) || 0);
+                            m: function t(e, n) {
+                                if (e.date() < n.date()) return -t(n, e);
+                                var r = 12 * (n.year() - e.year()) + (n.month() - e.month()),
+                                    i = e.add(r, u),
+                                    s = n - i < 0,
+                                    a = e.add(r + (s ? -1 : 1), u);
+                                return +(-(r + (n - i) / (s ? i - a : a - i)) || 0);
                             },
                             a: function (t) {
                                 return t < 0 ? Math.ceil(t) || 0 : Math.floor(t);
                             },
                             p: function (h) {
                                 return (
-                                    {M: u, y: a, w: s, d: i, D: 'date', h: r, m: e, s: n, ms: t, Q: o}[h] ||
+                                    {M: u, y: o, w: s, d: i, D: f, h: r, m: n, s: e, ms: t, Q: a}[h] ||
                                     String(h || '')
                                         .toLowerCase()
                                         .replace(/s$/, '')
@@ -8636,330 +8802,324 @@
                                 return void 0 === t;
                             },
                         },
-                        $ = {
+                        l = {
                             name: 'en',
                             weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                             months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                         },
-                        l = 'en',
-                        m = {};
-                    m[l] = $;
-                    var y = function (t) {
-                            return t instanceof v;
+                        y = 'en',
+                        M = {};
+                    M[y] = l;
+                    var m = function (t) {
+                            return t instanceof S;
                         },
-                        M = function (t, n, e) {
+                        D = function (t, e, n) {
                             var r;
-                            if (!t) return l;
-                            if ('string' == typeof t) m[t] && (r = t), n && ((m[t] = n), (r = t));
+                            if (!t) return y;
+                            if ('string' == typeof t) M[t] && (r = t), e && ((M[t] = e), (r = t));
                             else {
                                 var i = t.name;
-                                (m[i] = t), (r = i);
+                                (M[i] = t), (r = i);
                             }
-                            return !e && r && (l = r), r || (!e && l);
+                            return !n && r && (y = r), r || (!n && y);
                         },
-                        g = function (t, n, e) {
-                            if (y(t)) return t.clone();
-                            var r = n ? ('string' == typeof n ? {format: n, pl: e} : n) : {};
-                            return (r.date = t), new v(r);
+                        v = function (t, e) {
+                            if (m(t)) return t.clone();
+                            var n = 'object' == typeof e ? e : {};
+                            return (n.date = t), (n.args = arguments), new S(n);
                         },
-                        D = d;
-                    (D.l = M),
-                        (D.i = y),
-                        (D.w = function (t, n) {
-                            return g(t, {locale: n.$L, utc: n.$u, $offset: n.$offset});
+                        g = $;
+                    (g.l = D),
+                        (g.i = m),
+                        (g.w = function (t, e) {
+                            return v(t, {locale: e.$L, utc: e.$u, $offset: e.$offset});
                         });
-                    var v = (function () {
-                        function c(t) {
-                            (this.$L = this.$L || M(t.locale, null, !0)), this.parse(t);
-                        }
-                        var d = c.prototype;
-                        return (
-                            (d.parse = function (t) {
-                                (this.$d = (function (t) {
-                                    var n = t.date,
-                                        e = t.utc;
-                                    if (null === n) return new Date(NaN);
-                                    if (D.u(n)) return new Date();
-                                    if (n instanceof Date) return new Date(n);
-                                    if ('string' == typeof n && !/Z$/i.test(n)) {
-                                        var r = n.match(h);
-                                        if (r)
-                                            return e
-                                                ? new Date(Date.UTC(r[1], r[2] - 1, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, r[7] || 0))
-                                                : new Date(r[1], r[2] - 1, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, r[7] || 0);
-                                    }
-                                    return new Date(n);
-                                })(t)),
-                                    this.init();
-                            }),
-                            (d.init = function () {
-                                var t = this.$d;
-                                (this.$y = t.getFullYear()),
-                                    (this.$M = t.getMonth()),
-                                    (this.$D = t.getDate()),
-                                    (this.$W = t.getDay()),
-                                    (this.$H = t.getHours()),
-                                    (this.$m = t.getMinutes()),
-                                    (this.$s = t.getSeconds()),
-                                    (this.$ms = t.getMilliseconds());
-                            }),
-                            (d.$utils = function () {
-                                return D;
-                            }),
-                            (d.isValid = function () {
-                                return !('Invalid Date' === this.$d.toString());
-                            }),
-                            (d.isSame = function (t, n) {
-                                var e = g(t);
-                                return this.startOf(n) <= e && e <= this.endOf(n);
-                            }),
-                            (d.isAfter = function (t, n) {
-                                return g(t) < this.startOf(n);
-                            }),
-                            (d.isBefore = function (t, n) {
-                                return this.endOf(n) < g(t);
-                            }),
-                            (d.$g = function (t, n, e) {
-                                return D.u(t) ? this[n] : this.set(e, t);
-                            }),
-                            (d.year = function (t) {
-                                return this.$g(t, '$y', a);
-                            }),
-                            (d.month = function (t) {
-                                return this.$g(t, '$M', u);
-                            }),
-                            (d.day = function (t) {
-                                return this.$g(t, '$W', i);
-                            }),
-                            (d.date = function (t) {
-                                return this.$g(t, '$D', 'date');
-                            }),
-                            (d.hour = function (t) {
-                                return this.$g(t, '$H', r);
-                            }),
-                            (d.minute = function (t) {
-                                return this.$g(t, '$m', e);
-                            }),
-                            (d.second = function (t) {
-                                return this.$g(t, '$s', n);
-                            }),
-                            (d.millisecond = function (n) {
-                                return this.$g(n, '$ms', t);
-                            }),
-                            (d.unix = function () {
-                                return Math.floor(this.valueOf() / 1e3);
-                            }),
-                            (d.valueOf = function () {
-                                return this.$d.getTime();
-                            }),
-                            (d.startOf = function (t, o) {
-                                var h = this,
-                                    f = !!D.u(o) || o,
-                                    c = D.p(t),
-                                    d = function (t, n) {
-                                        var e = D.w(h.$u ? Date.UTC(h.$y, n, t) : new Date(h.$y, n, t), h);
-                                        return f ? e : e.endOf(i);
-                                    },
-                                    $ = function (t, n) {
-                                        return D.w(h.toDate()[t].apply(h.toDate('s'), (f ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(n)), h);
-                                    },
-                                    l = this.$W,
-                                    m = this.$M,
-                                    y = this.$D,
-                                    M = 'set' + (this.$u ? 'UTC' : '');
-                                switch (c) {
-                                    case a:
-                                        return f ? d(1, 0) : d(31, 11);
-                                    case u:
-                                        return f ? d(1, m) : d(0, m + 1);
-                                    case s:
-                                        var g = this.$locale().weekStart || 0,
-                                            v = (l < g ? l + 7 : l) - g;
-                                        return d(f ? y - v : y + (6 - v), m);
-                                    case i:
-                                    case 'date':
-                                        return $(M + 'Hours', 0);
-                                    case r:
-                                        return $(M + 'Minutes', 1);
-                                    case e:
-                                        return $(M + 'Seconds', 2);
-                                    case n:
-                                        return $(M + 'Milliseconds', 3);
-                                    default:
-                                        return this.clone();
-                                }
-                            }),
-                            (d.endOf = function (t) {
-                                return this.startOf(t, !1);
-                            }),
-                            (d.$set = function (s, o) {
-                                var h,
-                                    f = D.p(s),
-                                    c = 'set' + (this.$u ? 'UTC' : ''),
-                                    d = ((h = {}),
-                                    (h[i] = c + 'Date'),
-                                    (h.date = c + 'Date'),
-                                    (h[u] = c + 'Month'),
-                                    (h[a] = c + 'FullYear'),
-                                    (h[r] = c + 'Hours'),
-                                    (h[e] = c + 'Minutes'),
-                                    (h[n] = c + 'Seconds'),
-                                    (h[t] = c + 'Milliseconds'),
-                                    h)[f],
-                                    $ = f === i ? this.$D + (o - this.$W) : o;
-                                if (f === u || f === a) {
-                                    var l = this.clone().set('date', 1);
-                                    l.$d[d]($), l.init(), (this.$d = l.set('date', Math.min(this.$D, l.daysInMonth())).toDate());
-                                } else d && this.$d[d]($);
-                                return this.init(), this;
-                            }),
-                            (d.set = function (t, n) {
-                                return this.clone().$set(t, n);
-                            }),
-                            (d.get = function (t) {
-                                return this[D.p(t)]();
-                            }),
-                            (d.add = function (t, o) {
-                                var h,
-                                    f = this;
-                                t = Number(t);
-                                var c = D.p(o),
-                                    d = function (n) {
-                                        var e = g(f);
-                                        return D.w(e.date(e.date() + Math.round(n * t)), f);
-                                    };
-                                if (c === u) return this.set(u, this.$M + t);
-                                if (c === a) return this.set(a, this.$y + t);
-                                if (c === i) return d(1);
-                                if (c === s) return d(7);
-                                var $ = ((h = {}), (h[e] = 6e4), (h[r] = 36e5), (h[n] = 1e3), h)[c] || 1,
-                                    l = this.$d.getTime() + t * $;
-                                return D.w(l, this);
-                            }),
-                            (d.subtract = function (t, n) {
-                                return this.add(-1 * t, n);
-                            }),
-                            (d.format = function (t) {
-                                var n = this;
-                                if (!this.isValid()) return 'Invalid Date';
-                                var e = t || 'YYYY-MM-DDTHH:mm:ssZ',
-                                    r = D.z(this),
-                                    i = this.$locale(),
-                                    s = this.$H,
-                                    u = this.$m,
-                                    o = this.$M,
-                                    a = i.weekdays,
-                                    h = i.months,
-                                    c = function (t, r, i, s) {
-                                        return (t && (t[r] || t(n, e))) || i[r].substr(0, s);
-                                    },
-                                    d = function (t) {
-                                        return D.s(s % 12 || 12, t, '0');
-                                    },
-                                    $ =
-                                        i.meridiem ||
-                                        function (t, n, e) {
-                                            var r = t < 12 ? 'AM' : 'PM';
-                                            return e ? r.toLowerCase() : r;
+                    var S = (function () {
+                            function d(t) {
+                                (this.$L = this.$L || D(t.locale, null, !0)), this.parse(t);
+                            }
+                            var $ = d.prototype;
+                            return (
+                                ($.parse = function (t) {
+                                    (this.$d = (function (t) {
+                                        var e = t.date,
+                                            n = t.utc;
+                                        if (null === e) return new Date(NaN);
+                                        if (g.u(e)) return new Date();
+                                        if (e instanceof Date) return new Date(e);
+                                        if ('string' == typeof e && !/Z$/i.test(e)) {
+                                            var r = e.match(h);
+                                            if (r) {
+                                                var i = r[2] - 1 || 0,
+                                                    s = (r[7] || '0').substring(0, 3);
+                                                return n
+                                                    ? new Date(Date.UTC(r[1], i, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, s))
+                                                    : new Date(r[1], i, r[3] || 1, r[4] || 0, r[5] || 0, r[6] || 0, s);
+                                            }
+                                        }
+                                        return new Date(e);
+                                    })(t)),
+                                        this.init();
+                                }),
+                                ($.init = function () {
+                                    var t = this.$d;
+                                    (this.$y = t.getFullYear()),
+                                        (this.$M = t.getMonth()),
+                                        (this.$D = t.getDate()),
+                                        (this.$W = t.getDay()),
+                                        (this.$H = t.getHours()),
+                                        (this.$m = t.getMinutes()),
+                                        (this.$s = t.getSeconds()),
+                                        (this.$ms = t.getMilliseconds());
+                                }),
+                                ($.$utils = function () {
+                                    return g;
+                                }),
+                                ($.isValid = function () {
+                                    return !('Invalid Date' === this.$d.toString());
+                                }),
+                                ($.isSame = function (t, e) {
+                                    var n = v(t);
+                                    return this.startOf(e) <= n && n <= this.endOf(e);
+                                }),
+                                ($.isAfter = function (t, e) {
+                                    return v(t) < this.startOf(e);
+                                }),
+                                ($.isBefore = function (t, e) {
+                                    return this.endOf(e) < v(t);
+                                }),
+                                ($.$g = function (t, e, n) {
+                                    return g.u(t) ? this[e] : this.set(n, t);
+                                }),
+                                ($.unix = function () {
+                                    return Math.floor(this.valueOf() / 1e3);
+                                }),
+                                ($.valueOf = function () {
+                                    return this.$d.getTime();
+                                }),
+                                ($.startOf = function (t, a) {
+                                    var h = this,
+                                        c = !!g.u(a) || a,
+                                        d = g.p(t),
+                                        $ = function (t, e) {
+                                            var n = g.w(h.$u ? Date.UTC(h.$y, e, t) : new Date(h.$y, e, t), h);
+                                            return c ? n : n.endOf(i);
                                         },
-                                    l = {
-                                        YY: String(this.$y).slice(-2),
-                                        YYYY: this.$y,
-                                        M: o + 1,
-                                        MM: D.s(o + 1, 2, '0'),
-                                        MMM: c(i.monthsShort, o, h, 3),
-                                        MMMM: h[o] || h(this, e),
-                                        D: this.$D,
-                                        DD: D.s(this.$D, 2, '0'),
-                                        d: String(this.$W),
-                                        dd: c(i.weekdaysMin, this.$W, a, 2),
-                                        ddd: c(i.weekdaysShort, this.$W, a, 3),
-                                        dddd: a[this.$W],
-                                        H: String(s),
-                                        HH: D.s(s, 2, '0'),
-                                        h: d(1),
-                                        hh: d(2),
-                                        a: $(s, u, !0),
-                                        A: $(s, u, !1),
-                                        m: String(u),
-                                        mm: D.s(u, 2, '0'),
-                                        s: String(this.$s),
-                                        ss: D.s(this.$s, 2, '0'),
-                                        SSS: D.s(this.$ms, 3, '0'),
-                                        Z: r,
-                                    };
-                                return e.replace(f, function (t, n) {
-                                    return n || l[t] || r.replace(':', '');
-                                });
-                            }),
-                            (d.utcOffset = function () {
-                                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
-                            }),
-                            (d.diff = function (t, h, f) {
-                                var c,
-                                    d = D.p(h),
-                                    $ = g(t),
-                                    l = 6e4 * ($.utcOffset() - this.utcOffset()),
-                                    m = this - $,
-                                    y = D.m(this, $);
-                                return (
-                                    (y =
-                                        ((c = {}),
-                                        (c[a] = y / 12),
-                                        (c[u] = y),
-                                        (c[o] = y / 3),
-                                        (c[s] = (m - l) / 6048e5),
-                                        (c[i] = (m - l) / 864e5),
-                                        (c[r] = m / 36e5),
-                                        (c[e] = m / 6e4),
-                                        (c[n] = m / 1e3),
-                                        c)[d] || m),
-                                    f ? y : D.a(y)
-                                );
-                            }),
-                            (d.daysInMonth = function () {
-                                return this.endOf(u).$D;
-                            }),
-                            (d.$locale = function () {
-                                return m[this.$L];
-                            }),
-                            (d.locale = function (t, n) {
-                                if (!t) return this.$L;
-                                var e = this.clone(),
-                                    r = M(t, n, !0);
-                                return r && (e.$L = r), e;
-                            }),
-                            (d.clone = function () {
-                                return D.w(this.$d, this);
-                            }),
-                            (d.toDate = function () {
-                                return new Date(this.valueOf());
-                            }),
-                            (d.toJSON = function () {
-                                return this.isValid() ? this.toISOString() : null;
-                            }),
-                            (d.toISOString = function () {
-                                return this.$d.toISOString();
-                            }),
-                            (d.toString = function () {
-                                return this.$d.toUTCString();
-                            }),
-                            c
-                        );
-                    })();
+                                        l = function (t, e) {
+                                            return g.w(h.toDate()[t].apply(h.toDate('s'), (c ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e)), h);
+                                        },
+                                        y = this.$W,
+                                        M = this.$M,
+                                        m = this.$D,
+                                        D = 'set' + (this.$u ? 'UTC' : '');
+                                    switch (d) {
+                                        case o:
+                                            return c ? $(1, 0) : $(31, 11);
+                                        case u:
+                                            return c ? $(1, M) : $(0, M + 1);
+                                        case s:
+                                            var v = this.$locale().weekStart || 0,
+                                                S = (y < v ? y + 7 : y) - v;
+                                            return $(c ? m - S : m + (6 - S), M);
+                                        case i:
+                                        case f:
+                                            return l(D + 'Hours', 0);
+                                        case r:
+                                            return l(D + 'Minutes', 1);
+                                        case n:
+                                            return l(D + 'Seconds', 2);
+                                        case e:
+                                            return l(D + 'Milliseconds', 3);
+                                        default:
+                                            return this.clone();
+                                    }
+                                }),
+                                ($.endOf = function (t) {
+                                    return this.startOf(t, !1);
+                                }),
+                                ($.$set = function (s, a) {
+                                    var h,
+                                        c = g.p(s),
+                                        d = 'set' + (this.$u ? 'UTC' : ''),
+                                        $ = ((h = {}),
+                                        (h[i] = d + 'Date'),
+                                        (h[f] = d + 'Date'),
+                                        (h[u] = d + 'Month'),
+                                        (h[o] = d + 'FullYear'),
+                                        (h[r] = d + 'Hours'),
+                                        (h[n] = d + 'Minutes'),
+                                        (h[e] = d + 'Seconds'),
+                                        (h[t] = d + 'Milliseconds'),
+                                        h)[c],
+                                        l = c === i ? this.$D + (a - this.$W) : a;
+                                    if (c === u || c === o) {
+                                        var y = this.clone().set(f, 1);
+                                        y.$d[$](l), y.init(), (this.$d = y.set(f, Math.min(this.$D, y.daysInMonth())).$d);
+                                    } else $ && this.$d[$](l);
+                                    return this.init(), this;
+                                }),
+                                ($.set = function (t, e) {
+                                    return this.clone().$set(t, e);
+                                }),
+                                ($.get = function (t) {
+                                    return this[g.p(t)]();
+                                }),
+                                ($.add = function (t, a) {
+                                    var f,
+                                        h = this;
+                                    t = Number(t);
+                                    var c = g.p(a),
+                                        d = function (e) {
+                                            var n = v(h);
+                                            return g.w(n.date(n.date() + Math.round(e * t)), h);
+                                        };
+                                    if (c === u) return this.set(u, this.$M + t);
+                                    if (c === o) return this.set(o, this.$y + t);
+                                    if (c === i) return d(1);
+                                    if (c === s) return d(7);
+                                    var $ = ((f = {}), (f[n] = 6e4), (f[r] = 36e5), (f[e] = 1e3), f)[c] || 1,
+                                        l = this.$d.getTime() + t * $;
+                                    return g.w(l, this);
+                                }),
+                                ($.subtract = function (t, e) {
+                                    return this.add(-1 * t, e);
+                                }),
+                                ($.format = function (t) {
+                                    var e = this;
+                                    if (!this.isValid()) return 'Invalid Date';
+                                    var n = t || 'YYYY-MM-DDTHH:mm:ssZ',
+                                        r = g.z(this),
+                                        i = this.$locale(),
+                                        s = this.$H,
+                                        u = this.$m,
+                                        a = this.$M,
+                                        o = i.weekdays,
+                                        f = i.months,
+                                        h = function (t, r, i, s) {
+                                            return (t && (t[r] || t(e, n))) || i[r].substr(0, s);
+                                        },
+                                        d = function (t) {
+                                            return g.s(s % 12 || 12, t, '0');
+                                        },
+                                        $ =
+                                            i.meridiem ||
+                                            function (t, e, n) {
+                                                var r = t < 12 ? 'AM' : 'PM';
+                                                return n ? r.toLowerCase() : r;
+                                            },
+                                        l = {
+                                            YY: String(this.$y).slice(-2),
+                                            YYYY: this.$y,
+                                            M: a + 1,
+                                            MM: g.s(a + 1, 2, '0'),
+                                            MMM: h(i.monthsShort, a, f, 3),
+                                            MMMM: h(f, a),
+                                            D: this.$D,
+                                            DD: g.s(this.$D, 2, '0'),
+                                            d: String(this.$W),
+                                            dd: h(i.weekdaysMin, this.$W, o, 2),
+                                            ddd: h(i.weekdaysShort, this.$W, o, 3),
+                                            dddd: o[this.$W],
+                                            H: String(s),
+                                            HH: g.s(s, 2, '0'),
+                                            h: d(1),
+                                            hh: d(2),
+                                            a: $(s, u, !0),
+                                            A: $(s, u, !1),
+                                            m: String(u),
+                                            mm: g.s(u, 2, '0'),
+                                            s: String(this.$s),
+                                            ss: g.s(this.$s, 2, '0'),
+                                            SSS: g.s(this.$ms, 3, '0'),
+                                            Z: r,
+                                        };
+                                    return n.replace(c, function (t, e) {
+                                        return e || l[t] || r.replace(':', '');
+                                    });
+                                }),
+                                ($.utcOffset = function () {
+                                    return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
+                                }),
+                                ($.diff = function (t, f, h) {
+                                    var c,
+                                        d = g.p(f),
+                                        $ = v(t),
+                                        l = 6e4 * ($.utcOffset() - this.utcOffset()),
+                                        y = this - $,
+                                        M = g.m(this, $);
+                                    return (
+                                        (M =
+                                            ((c = {}),
+                                            (c[o] = M / 12),
+                                            (c[u] = M),
+                                            (c[a] = M / 3),
+                                            (c[s] = (y - l) / 6048e5),
+                                            (c[i] = (y - l) / 864e5),
+                                            (c[r] = y / 36e5),
+                                            (c[n] = y / 6e4),
+                                            (c[e] = y / 1e3),
+                                            c)[d] || y),
+                                        h ? M : g.a(M)
+                                    );
+                                }),
+                                ($.daysInMonth = function () {
+                                    return this.endOf(u).$D;
+                                }),
+                                ($.$locale = function () {
+                                    return M[this.$L];
+                                }),
+                                ($.locale = function (t, e) {
+                                    if (!t) return this.$L;
+                                    var n = this.clone(),
+                                        r = D(t, e, !0);
+                                    return r && (n.$L = r), n;
+                                }),
+                                ($.clone = function () {
+                                    return g.w(this.$d, this);
+                                }),
+                                ($.toDate = function () {
+                                    return new Date(this.valueOf());
+                                }),
+                                ($.toJSON = function () {
+                                    return this.isValid() ? this.toISOString() : null;
+                                }),
+                                ($.toISOString = function () {
+                                    return this.$d.toISOString();
+                                }),
+                                ($.toString = function () {
+                                    return this.$d.toUTCString();
+                                }),
+                                d
+                            );
+                        })(),
+                        p = S.prototype;
                     return (
-                        (g.prototype = v.prototype),
-                        (g.extend = function (t, n) {
-                            return t(n, v, g), g;
+                        (v.prototype = p),
+                        [
+                            ['$ms', t],
+                            ['$s', e],
+                            ['$m', n],
+                            ['$H', r],
+                            ['$W', i],
+                            ['$M', u],
+                            ['$y', o],
+                            ['$D', f],
+                        ].forEach(function (t) {
+                            p[t[1]] = function (e) {
+                                return this.$g(e, t[0], t[1]);
+                            };
                         }),
-                        (g.locale = M),
-                        (g.isDayjs = y),
-                        (g.unix = function (t) {
-                            return g(1e3 * t);
+                        (v.extend = function (t, e) {
+                            return t(e, S, v), v;
                         }),
-                        (g.en = m[l]),
-                        (g.Ls = m),
-                        g
+                        (v.locale = D),
+                        (v.isDayjs = m),
+                        (v.unix = function (t) {
+                            return v(1e3 * t);
+                        }),
+                        (v.en = M[y]),
+                        (v.Ls = M),
+                        v
                     );
                 });
 
@@ -8972,28 +9132,32 @@
   \********************************************************/
             /*! no static exports found */
             /***/ function (module, exports, __webpack_require__) {
-                !(function (t, n) {
-                    true ? (module.exports = n()) : undefined;
+                !(function (t, e) {
+                    true ? (module.exports = e()) : undefined;
                 })(this, function () {
                     'use strict';
                     var t,
-                        n = /(\[[^[]*\])|([-:/.()\s]+)|(A|a|YYYY|YY?|MM?M?M?|Do|DD?|hh?|HH?|mm?|ss?|S{1,3}|z|ZZ?)/g,
-                        e = /\d\d/,
-                        o = /\d\d?/,
-                        r = /\d*[^\s\d-:/.()]+/;
-                    var s = function (t) {
-                            return function (n) {
-                                this[t] = +n;
+                        e = /(\[[^[]*\])|([-:/.()\s]+)|(A|a|YYYY|YY?|MM?M?M?|Do|DD?|hh?|HH?|mm?|ss?|S{1,3}|z|ZZ?)/g,
+                        n = /\d\d/,
+                        r = /\d\d?/,
+                        o = /\d*[^\s\d-:/()]+/;
+                    var i = function (t) {
+                            return function (e) {
+                                this[t] = +e;
                             };
                         },
-                        i = [
+                        s = [
                             /[+-]\d\d:?\d\d/,
                             function (t) {
-                                var n, e;
-                                (this.zone || (this.zone = {})).offset = ((n = t.match(/([+-]|\d\d)/g)), 0 === (e = 60 * n[1] + +n[2]) ? 0 : '+' === n[0] ? -e : e);
+                                var e, n;
+                                (this.zone || (this.zone = {})).offset = ((e = t.match(/([+-]|\d\d)/g)), 0 === (n = 60 * e[1] + +e[2]) ? 0 : '+' === e[0] ? -n : n);
                             },
                         ],
-                        a = {
+                        a = function (e) {
+                            var n = t[e];
+                            return n && (n.indexOf ? n : n.s.concat(n.f));
+                        },
+                        h = {
                             A: [
                                 /[AP]M/,
                                 function (t) {
@@ -9013,7 +9177,7 @@
                                 },
                             ],
                             SS: [
-                                e,
+                                n,
                                 function (t) {
                                     this.milliseconds = 10 * +t;
                                 },
@@ -9024,127 +9188,147 @@
                                     this.milliseconds = +t;
                                 },
                             ],
-                            s: [o, s('seconds')],
-                            ss: [o, s('seconds')],
-                            m: [o, s('minutes')],
-                            mm: [o, s('minutes')],
-                            H: [o, s('hours')],
-                            h: [o, s('hours')],
-                            HH: [o, s('hours')],
-                            hh: [o, s('hours')],
-                            D: [o, s('day')],
-                            DD: [e, s('day')],
+                            s: [r, i('seconds')],
+                            ss: [r, i('seconds')],
+                            m: [r, i('minutes')],
+                            mm: [r, i('minutes')],
+                            H: [r, i('hours')],
+                            h: [r, i('hours')],
+                            HH: [r, i('hours')],
+                            hh: [r, i('hours')],
+                            D: [r, i('day')],
+                            DD: [n, i('day')],
                             Do: [
-                                r,
-                                function (n) {
-                                    var e = t.ordinal,
-                                        o = n.match(/\d+/);
-                                    if (((this.day = o[0]), e)) for (var r = 1; r <= 31; r += 1) e(r).replace(/\[|\]/g, '') === n && (this.day = r);
+                                o,
+                                function (e) {
+                                    var n = t.ordinal,
+                                        r = e.match(/\d+/);
+                                    if (((this.day = r[0]), n)) for (var o = 1; o <= 31; o += 1) n(o).replace(/\[|\]/g, '') === e && (this.day = o);
                                 },
                             ],
-                            M: [o, s('month')],
-                            MM: [e, s('month')],
+                            M: [r, i('month')],
+                            MM: [n, i('month')],
                             MMM: [
-                                r,
-                                function (n) {
-                                    var e = t,
-                                        o = e.months,
-                                        r = e.monthsShort,
-                                        s = r
-                                            ? r.findIndex(function (t) {
-                                                  return t === n;
-                                              })
-                                            : o.findIndex(function (t) {
-                                                  return t.substr(0, 3) === n;
-                                              });
-                                    if (s < 0) throw new Error();
-                                    this.month = s + 1;
+                                o,
+                                function (t) {
+                                    var e = a('months'),
+                                        n =
+                                            (
+                                                a('monthsShort') ||
+                                                e.map(function (t) {
+                                                    return t.substr(0, 3);
+                                                })
+                                            ).indexOf(t) + 1;
+                                    if (n < 1) throw new Error();
+                                    this.month = n % 12 || n;
                                 },
                             ],
                             MMMM: [
-                                r,
-                                function (n) {
-                                    var e = t.months.indexOf(n);
-                                    if (e < 0) throw new Error();
-                                    this.month = e + 1;
+                                o,
+                                function (t) {
+                                    var e = a('months').indexOf(t) + 1;
+                                    if (e < 1) throw new Error();
+                                    this.month = e % 12 || e;
                                 },
                             ],
-                            Y: [/[+-]?\d+/, s('year')],
+                            Y: [/[+-]?\d+/, i('year')],
                             YY: [
-                                e,
+                                n,
                                 function (t) {
                                     (t = +t), (this.year = t + (t > 68 ? 1900 : 2e3));
                                 },
                             ],
-                            YYYY: [/\d{4}/, s('year')],
-                            Z: i,
-                            ZZ: i,
+                            YYYY: [/\d{4}/, i('year')],
+                            Z: s,
+                            ZZ: s,
                         };
-                    var u = function (t, e, o) {
+                    var f = function (t, n, r) {
                         try {
-                            var r = (function (t) {
-                                    for (var e = t.match(n), o = e.length, r = 0; r < o; r += 1) {
-                                        var s = e[r],
-                                            i = a[s],
-                                            u = i && i[0],
-                                            f = i && i[1];
-                                        e[r] = f ? {regex: u, parser: f} : s.replace(/^\[|\]$/g, '');
+                            var o = (function (t) {
+                                    for (var n = t.match(e), r = n.length, o = 0; o < r; o += 1) {
+                                        var i = n[o],
+                                            s = h[i],
+                                            a = s && s[0],
+                                            f = s && s[1];
+                                        n[o] = f ? {regex: a, parser: f} : i.replace(/^\[|\]$/g, '');
                                     }
                                     return function (t) {
-                                        for (var n = {}, r = 0, s = 0; r < o; r += 1) {
-                                            var i = e[r];
-                                            if ('string' == typeof i) s += i.length;
+                                        for (var e = {}, o = 0, i = 0; o < r; o += 1) {
+                                            var s = n[o];
+                                            if ('string' == typeof s) i += s.length;
                                             else {
-                                                var a = i.regex,
-                                                    u = i.parser,
-                                                    f = t.substr(s),
-                                                    h = a.exec(f)[0];
-                                                u.call(n, h), (t = t.replace(h, ''));
+                                                var a = s.regex,
+                                                    h = s.parser,
+                                                    f = t.substr(i),
+                                                    u = a.exec(f)[0];
+                                                h.call(e, u), (t = t.replace(u, ''));
                                             }
                                         }
                                         return (
                                             (function (t) {
-                                                var n = t.afternoon;
-                                                if (void 0 !== n) {
-                                                    var e = t.hours;
-                                                    n ? e < 12 && (t.hours += 12) : 12 === e && (t.hours = 0), delete t.afternoon;
+                                                var e = t.afternoon;
+                                                if (void 0 !== e) {
+                                                    var n = t.hours;
+                                                    e ? n < 12 && (t.hours += 12) : 12 === n && (t.hours = 0), delete t.afternoon;
                                                 }
-                                            })(n),
-                                            n
+                                            })(e),
+                                            e
                                         );
                                     };
-                                })(e)(t),
-                                s = r.year,
-                                i = r.month,
-                                u = r.day,
-                                f = r.hours,
-                                h = r.minutes,
-                                d = r.seconds,
-                                c = r.milliseconds,
-                                m = r.zone,
-                                l = new Date(),
-                                v = u || (s || i ? 1 : l.getDate()),
-                                p = s || l.getFullYear(),
-                                M = 0;
-                            (s && !i) || (M = i > 0 ? i - 1 : l.getMonth());
-                            var y = f || 0,
-                                D = h || 0,
-                                Y = d || 0,
-                                g = c || 0;
-                            return m ? new Date(Date.UTC(p, M, v, y, D, Y, g + 60 * m.offset * 1e3)) : o ? new Date(Date.UTC(p, M, v, y, D, Y, g)) : new Date(p, M, v, y, D, Y, g);
+                                })(n)(t),
+                                i = o.year,
+                                s = o.month,
+                                a = o.day,
+                                f = o.hours,
+                                u = o.minutes,
+                                d = o.seconds,
+                                c = o.milliseconds,
+                                l = o.zone,
+                                m = new Date(),
+                                v = a || (i || s ? 1 : m.getDate()),
+                                p = i || m.getFullYear(),
+                                y = 0;
+                            (i && !s) || (y = s > 0 ? s - 1 : m.getMonth());
+                            var D = f || 0,
+                                M = u || 0,
+                                g = d || 0,
+                                Y = c || 0;
+                            return l ? new Date(Date.UTC(p, y, v, D, M, g, Y + 60 * l.offset * 1e3)) : r ? new Date(Date.UTC(p, y, v, D, M, g, Y)) : new Date(p, y, v, D, M, g, Y);
                         } catch (t) {
                             return new Date('');
                         }
                     };
-                    return function (n, e, o) {
-                        var r = e.prototype,
-                            s = r.parse;
-                        r.parse = function (n) {
-                            var e = n.date,
-                                r = n.format,
-                                i = n.pl,
-                                a = n.utc;
-                            (this.$u = a), r ? ((t = i ? o.Ls[i] : this.$locale()), (this.$d = u(e, r, a)), this.init(n), i && (this.$L = i)) : s.call(this, n);
+                    return function (e, n, r) {
+                        var o = n.prototype,
+                            i = o.parse;
+                        o.parse = function (e) {
+                            var n = e.date,
+                                o = e.utc,
+                                s = e.args;
+                            this.$u = o;
+                            var a = s[1];
+                            if ('string' == typeof a) {
+                                var h = !0 === s[2],
+                                    u = !0 === s[3],
+                                    d = h || u,
+                                    c = s[2];
+                                u && (c = s[2]),
+                                    h || (t = c ? r.Ls[c] : this.$locale()),
+                                    (this.$d = f(n, a, o)),
+                                    this.init(),
+                                    c && !0 !== c && (this.$L = this.locale(c).$L),
+                                    d && n !== this.format(a) && (this.$d = new Date(''));
+                            } else if (a instanceof Array)
+                                for (var l = a.length, m = 1; m <= l; m += 1) {
+                                    s[1] = a[m - 1];
+                                    var v = r.apply(this, s);
+                                    if (v.isValid()) {
+                                        (this.$d = v.$d), (this.$L = v.$L), this.init();
+                                        break;
+                                    }
+                                    m === l && (this.$d = new Date(''));
+                                }
+                            else i.call(this, e);
                         };
                     };
                 });
@@ -9175,6 +9359,24 @@
                     var iteratorSymbol = $Symbol.iterator || '@@iterator';
                     var asyncIteratorSymbol = $Symbol.asyncIterator || '@@asyncIterator';
                     var toStringTagSymbol = $Symbol.toStringTag || '@@toStringTag';
+
+                    function define(obj, key, value) {
+                        Object.defineProperty(obj, key, {
+                            value: value,
+                            enumerable: true,
+                            configurable: true,
+                            writable: true,
+                        });
+                        return obj[key];
+                    }
+                    try {
+                        // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+                        define({}, '');
+                    } catch (err) {
+                        define = function (obj, key, value) {
+                            return (obj[key] = value);
+                        };
+                    }
 
                     function wrap(innerFn, outerFn, self, tryLocsList) {
                         // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
@@ -9243,15 +9445,15 @@
                     var Gp = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype));
                     GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
                     GeneratorFunctionPrototype.constructor = GeneratorFunction;
-                    GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = 'GeneratorFunction';
+                    GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, 'GeneratorFunction');
 
                     // Helper for defining the .next, .throw, and .return methods of the
                     // Iterator interface in terms of a single ._invoke method.
                     function defineIteratorMethods(prototype) {
                         ['next', 'throw', 'return'].forEach(function (method) {
-                            prototype[method] = function (arg) {
+                            define(prototype, method, function (arg) {
                                 return this._invoke(method, arg);
-                            };
+                            });
                         });
                     }
 
@@ -9270,9 +9472,7 @@
                             Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
                         } else {
                             genFun.__proto__ = GeneratorFunctionPrototype;
-                            if (!(toStringTagSymbol in genFun)) {
-                                genFun[toStringTagSymbol] = 'GeneratorFunction';
-                            }
+                            define(genFun, toStringTagSymbol, 'GeneratorFunction');
                         }
                         genFun.prototype = Object.create(Gp);
                         return genFun;
@@ -9538,7 +9738,7 @@
                     // unified ._invoke helper method.
                     defineIteratorMethods(Gp);
 
-                    Gp[toStringTagSymbol] = 'Generator';
+                    define(Gp, toStringTagSymbol, 'Generator');
 
                     // A Generator should always return itself as the iterator object when the
                     // @@iterator function is called on it. Some browsers' implementations of the
@@ -10047,7 +10247,11 @@
                             try {
                                 var URLSearchParams = global.URLSearchParams;
 
-                                return new URLSearchParams('?a=1').toString() === 'a=1' && typeof URLSearchParams.prototype.set === 'function';
+                                return (
+                                    new URLSearchParams('?a=1').toString() === 'a=1' &&
+                                    typeof URLSearchParams.prototype.set === 'function' &&
+                                    typeof URLSearchParams.prototype.entries === 'function'
+                                );
                             } catch (e) {
                                 return false;
                             }
@@ -10165,7 +10369,11 @@
                                     anchorElement.href = anchorElement.href; // force href to refresh
                                 }
 
-                                if (anchorElement.protocol === ':' || !/:/.test(anchorElement.href)) {
+                                var inputElement = doc.createElement('input');
+                                inputElement.type = 'url';
+                                inputElement.value = url;
+
+                                if (anchorElement.protocol === ':' || !/:/.test(anchorElement.href) || (!inputElement.checkValidity() && !base)) {
                                     throw new TypeError('Invalid URL');
                                 }
 
@@ -10398,12 +10606,14 @@
                 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'fetch', function () {
                     return fetch;
                 });
+                var global = (typeof globalThis !== 'undefined' && globalThis) || (typeof self !== 'undefined' && self) || (typeof global !== 'undefined' && global);
+
                 var support = {
-                    searchParams: 'URLSearchParams' in self,
-                    iterable: 'Symbol' in self && 'iterator' in Symbol,
+                    searchParams: 'URLSearchParams' in global,
+                    iterable: 'Symbol' in global && 'iterator' in Symbol,
                     blob:
-                        'FileReader' in self &&
-                        'Blob' in self &&
+                        'FileReader' in global &&
+                        'Blob' in global &&
                         (function () {
                             try {
                                 new Blob();
@@ -10412,8 +10622,8 @@
                                 return false;
                             }
                         })(),
-                    formData: 'FormData' in self,
-                    arrayBuffer: 'ArrayBuffer' in self,
+                    formData: 'FormData' in global,
+                    arrayBuffer: 'ArrayBuffer' in global,
                 };
 
                 function isDataView(obj) {
@@ -10444,7 +10654,7 @@
                     if (typeof name !== 'string') {
                         name = String(name);
                     }
-                    if (/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(name)) {
+                    if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === '') {
                         throw new TypeError('Invalid character in header field name');
                     }
                     return name.toLowerCase();
@@ -10609,6 +10819,17 @@
                     this.bodyUsed = false;
 
                     this._initBody = function (body) {
+                        /*
+      fetch-mock wraps the Response object in an ES6 Proxy to
+      provide useful test harness features such as flush. However, on
+      ES5 browsers without fetch or Proxy support pollyfills must be used;
+      the proxy-pollyfill is unable to proxy an attribute unless it exists
+      on the object before the Proxy is created. This change ensures
+      Response.bodyUsed exists on the instance, while maintaining the
+      semantic of setting Request.bodyUsed in the constructor before
+      _initBody is called.
+    */
+                        this.bodyUsed = this.bodyUsed;
                         this._bodyInit = body;
                         if (!body) {
                             this._bodyText = '';
@@ -10661,7 +10882,17 @@
 
                         this.arrayBuffer = function () {
                             if (this._bodyArrayBuffer) {
-                                return consumed(this) || Promise.resolve(this._bodyArrayBuffer);
+                                var isConsumed = consumed(this);
+                                if (isConsumed) {
+                                    return isConsumed;
+                                }
+                                if (ArrayBuffer.isView(this._bodyArrayBuffer)) {
+                                    return Promise.resolve(
+                                        this._bodyArrayBuffer.buffer.slice(this._bodyArrayBuffer.byteOffset, this._bodyArrayBuffer.byteOffset + this._bodyArrayBuffer.byteLength)
+                                    );
+                                } else {
+                                    return Promise.resolve(this._bodyArrayBuffer);
+                                }
                             } else {
                                 return this.blob().then(readBlobAsArrayBuffer);
                             }
@@ -10707,6 +10938,10 @@
                 }
 
                 function Request(input, options) {
+                    if (!(this instanceof Request)) {
+                        throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+                    }
+
                     options = options || {};
                     var body = options.body;
 
@@ -10743,6 +10978,21 @@
                         throw new TypeError('Body not allowed for GET or HEAD requests');
                     }
                     this._initBody(body);
+
+                    if (this.method === 'GET' || this.method === 'HEAD') {
+                        if (options.cache === 'no-store' || options.cache === 'no-cache') {
+                            // Search for a '_' parameter in the query string
+                            var reParamSearch = /([?&])_=[^&]*/;
+                            if (reParamSearch.test(this.url)) {
+                                // If it already exists then set the value with the current time
+                                this.url = this.url.replace(reParamSearch, '$1_=' + new Date().getTime());
+                            } else {
+                                // Otherwise add a new '_' parameter to the end with the current time
+                                var reQueryString = /\?/;
+                                this.url += (reQueryString.test(this.url) ? '&' : '?') + '_=' + new Date().getTime();
+                            }
+                        }
+                    }
                 }
 
                 Request.prototype.clone = function () {
@@ -10783,6 +11033,9 @@
                 Body.call(Request.prototype);
 
                 function Response(bodyInit, options) {
+                    if (!(this instanceof Response)) {
+                        throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+                    }
                     if (!options) {
                         options = {};
                     }
@@ -10790,7 +11043,7 @@
                     this.type = 'default';
                     this.status = options.status === undefined ? 200 : options.status;
                     this.ok = this.status >= 200 && this.status < 300;
-                    this.statusText = 'statusText' in options ? options.statusText : 'OK';
+                    this.statusText = 'statusText' in options ? options.statusText : '';
                     this.headers = new Headers(options.headers);
                     this.url = options.url || '';
                     this._initBody(bodyInit);
@@ -10823,7 +11076,7 @@
                     return new Response(null, {status: status, headers: {location: url}});
                 };
 
-                var DOMException = self.DOMException;
+                var DOMException = global.DOMException;
                 try {
                     new DOMException();
                 } catch (err) {
@@ -10859,22 +11112,38 @@
                             };
                             options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
                             var body = 'response' in xhr ? xhr.response : xhr.responseText;
-                            resolve(new Response(body, options));
+                            setTimeout(function () {
+                                resolve(new Response(body, options));
+                            }, 0);
                         };
 
                         xhr.onerror = function () {
-                            reject(new TypeError('Network request failed'));
+                            setTimeout(function () {
+                                reject(new TypeError('Network request failed'));
+                            }, 0);
                         };
 
                         xhr.ontimeout = function () {
-                            reject(new TypeError('Network request failed'));
+                            setTimeout(function () {
+                                reject(new TypeError('Network request failed'));
+                            }, 0);
                         };
 
                         xhr.onabort = function () {
-                            reject(new DOMException('Aborted', 'AbortError'));
+                            setTimeout(function () {
+                                reject(new DOMException('Aborted', 'AbortError'));
+                            }, 0);
                         };
 
-                        xhr.open(request.method, request.url, true);
+                        function fixUrl(url) {
+                            try {
+                                return url === '' && global.location.href ? global.location.href : url;
+                            } catch (e) {
+                                return url;
+                            }
+                        }
+
+                        xhr.open(request.method, fixUrl(request.url), true);
 
                         if (request.credentials === 'include') {
                             xhr.withCredentials = true;
@@ -10882,13 +11151,27 @@
                             xhr.withCredentials = false;
                         }
 
-                        if ('responseType' in xhr && support.blob) {
-                            xhr.responseType = 'blob';
+                        if ('responseType' in xhr) {
+                            if (support.blob) {
+                                xhr.responseType = 'blob';
+                            } else if (
+                                support.arrayBuffer &&
+                                request.headers.get('Content-Type') &&
+                                request.headers.get('Content-Type').indexOf('application/octet-stream') !== -1
+                            ) {
+                                xhr.responseType = 'arraybuffer';
+                            }
                         }
 
-                        request.headers.forEach(function (value, name) {
-                            xhr.setRequestHeader(name, value);
-                        });
+                        if (init && typeof init.headers === 'object' && !(init.headers instanceof Headers)) {
+                            Object.getOwnPropertyNames(init.headers).forEach(function (name) {
+                                xhr.setRequestHeader(name, normalizeValue(init.headers[name]));
+                            });
+                        } else {
+                            request.headers.forEach(function (value, name) {
+                                xhr.setRequestHeader(name, value);
+                            });
+                        }
 
                         if (request.signal) {
                             request.signal.addEventListener('abort', abortXhr);
@@ -10907,11 +11190,11 @@
 
                 fetch.polyfill = true;
 
-                if (!self.fetch) {
-                    self.fetch = fetch;
-                    self.Headers = Headers;
-                    self.Request = Request;
-                    self.Response = Response;
+                if (!global.fetch) {
+                    global.fetch = fetch;
+                    global.Headers = Headers;
+                    global.Request = Request;
+                    global.Response = Response;
                 }
 
                 /***/
@@ -11039,41 +11322,53 @@
                 /* harmony import */ var core_js_modules_es6_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(
                     core_js_modules_es6_promise__WEBPACK_IMPORTED_MODULE_2__
                 );
-                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+                    /*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'
+                );
+                /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__
+                );
+                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
                     /*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'
                 );
-                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_3__
+                /* harmony import */ var core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_object_to_string__WEBPACK_IMPORTED_MODULE_4__
                 );
-                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+                    /*! core-js/modules/es6.reflect.construct */ './node_modules/core-js/modules/es6.reflect.construct.js'
+                );
+                /* harmony import */ var core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_reflect_construct__WEBPACK_IMPORTED_MODULE_5__
+                );
+                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
                     /*! core-js/modules/es6.reflect.get */ './node_modules/core-js/modules/es6.reflect.get.js'
                 );
-                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_4__
+                /* harmony import */ var core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_reflect_get__WEBPACK_IMPORTED_MODULE_6__
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
                     /*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_5__
+                /* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_7__
                 );
-                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
                     /*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js'
                 );
-                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/ __webpack_require__.n(
-                    regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6__
+                /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/ __webpack_require__.n(
+                    regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_8__
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+                /* harmony import */ var core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
                     /*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'
                 );
-                /* harmony import */ var core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/ __webpack_require__.n(
-                    core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_7__
+                /* harmony import */ var core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/ __webpack_require__.n(
+                    core_js_modules_es6_regexp_split__WEBPACK_IMPORTED_MODULE_9__
                 );
-                /* harmony import */ var _62725_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+                /* harmony import */ var _62725_config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
                     /*! ./62725-config */ './site_configs/resbeat_points_demo-62725/js/62725-config.js'
                 );
-                /* harmony import */ var _js_resbeat__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../js/resbeat */ './js/resbeat.js');
-                /* harmony import */ var _js_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../js/utilities */ './js/utilities.js');
+                /* harmony import */ var _js_resbeat__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../js/resbeat */ './js/resbeat.js');
+                /* harmony import */ var _js_utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../js/utilities */ './js/utilities.js');
 
                 function _typeof(obj) {
                     '@babel/helpers - typeof';
@@ -11143,20 +11438,6 @@
                     return Constructor;
                 }
 
-                function _possibleConstructorReturn(self, call) {
-                    if (call && (_typeof(call) === 'object' || typeof call === 'function')) {
-                        return call;
-                    }
-                    return _assertThisInitialized(self);
-                }
-
-                function _assertThisInitialized(self) {
-                    if (self === void 0) {
-                        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                    }
-                    return self;
-                }
-
                 function _inherits(subClass, superClass) {
                     if (typeof superClass !== 'function' && superClass !== null) {
                         throw new TypeError('Super expression must either be null or a function');
@@ -11173,6 +11454,47 @@
                             return o;
                         };
                     return _setPrototypeOf(o, p);
+                }
+
+                function _createSuper(Derived) {
+                    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+                    return function _createSuperInternal() {
+                        var Super = _getPrototypeOf(Derived),
+                            result;
+                        if (hasNativeReflectConstruct) {
+                            var NewTarget = _getPrototypeOf(this).constructor;
+                            result = Reflect.construct(Super, arguments, NewTarget);
+                        } else {
+                            result = Super.apply(this, arguments);
+                        }
+                        return _possibleConstructorReturn(this, result);
+                    };
+                }
+
+                function _possibleConstructorReturn(self, call) {
+                    if (call && (_typeof(call) === 'object' || typeof call === 'function')) {
+                        return call;
+                    }
+                    return _assertThisInitialized(self);
+                }
+
+                function _assertThisInitialized(self) {
+                    if (self === void 0) {
+                        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    }
+                    return self;
+                }
+
+                function _isNativeReflectConstruct() {
+                    if (typeof Reflect === 'undefined' || !Reflect.construct) return false;
+                    if (Reflect.construct.sham) return false;
+                    if (typeof Proxy === 'function') return true;
+                    try {
+                        Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+                        return true;
+                    } catch (e) {
+                        return false;
+                    }
                 }
 
                 function _get(target, property, receiver) {
@@ -11209,20 +11531,22 @@
                     return _getPrototypeOf(o);
                 }
 
-                var utilities = new _js_utilities__WEBPACK_IMPORTED_MODULE_10__['default']();
-                var site_config = new _62725_config__WEBPACK_IMPORTED_MODULE_8__['default']();
+                var utilities = new _js_utilities__WEBPACK_IMPORTED_MODULE_12__['default']();
+                var site_config = new _62725_config__WEBPACK_IMPORTED_MODULE_10__['default']();
 
                 var ChildPortal = /*#__PURE__*/ (function (_Resbeat) {
                     _inherits(ChildPortal, _Resbeat);
 
+                    var _super = _createSuper(ChildPortal);
+
                     function ChildPortal() {
-                        var _this;
+                        var _thisSuper, _this;
 
                         _classCallCheck(this, ChildPortal);
 
-                        _this = _possibleConstructorReturn(this, _getPrototypeOf(ChildPortal).call(this, site_config));
+                        _this = _super.call(this, site_config);
 
-                        _get(_getPrototypeOf(ChildPortal.prototype), 'init', _assertThisInitialized(_this)).call(_assertThisInitialized(_this));
+                        _get(((_thisSuper = _assertThisInitialized(_this)), _getPrototypeOf(ChildPortal.prototype)), 'init', _thisSuper).call(_thisSuper);
 
                         _this.init();
 
@@ -11324,14 +11648,14 @@
                                                 while (1) {
                                                     switch ((_context2.prev = _context2.next)) {
                                                         case 0:
-                                                            showPointsAppliedOnCheckout = function _ref3() {
+                                                            showPointsAppliedOnCheckout = function _showPointsAppliedOnC() {
                                                                 if (!document.querySelector('.CheckOutForm') || !document.querySelector('.discount')) return;
                                                                 var savings = document.querySelector('.discount td').textContent.replace(/[^0-9.]/g, '');
                                                                 document.querySelector('.discount td').textContent = Math.floor(savings);
                                                                 document.querySelector('.discount th').textContent = 'Credits Applied:';
                                                             };
 
-                                                            showPointsAppliedOnRate = function _ref2() {
+                                                            showPointsAppliedOnRate = function _showPointsAppliedOnR() {
                                                                 var rate_containers = '';
                                                                 if (document.querySelector('.SearchHotels')) rate_containers = document.querySelectorAll('.ArnProperty');
                                                                 if (document.querySelector('.SinglePropDetail')) rate_containers = document.querySelectorAll('.ArnRateList');
@@ -11352,7 +11676,7 @@
                                                                 });
                                                             };
 
-                                                            showBelowHeader = function _ref() {
+                                                            showBelowHeader = function _showBelowHeader() {
                                                                 var member_data_meta = utilities.getMetaTagContent('memberMetaTag');
                                                                 if (!member_data_meta) return;
                                                                 var points = JSON.parse(member_data_meta).Points;
@@ -11413,7 +11737,7 @@
                     ]);
 
                     return ChildPortal;
-                })(_js_resbeat__WEBPACK_IMPORTED_MODULE_9__['default']);
+                })(_js_resbeat__WEBPACK_IMPORTED_MODULE_11__['default']);
 
                 new ChildPortal();
 

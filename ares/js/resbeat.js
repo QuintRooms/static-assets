@@ -156,7 +156,7 @@ export default class Resbeat extends BasePortal {
     }
 
     displayCheckoutRewardPoints() {
-        if (!document.querySelector('.CheckOutForm')) return;
+        if (!document.querySelector('.CheckOutForm') || utilities.getMetaTagContent('siteId') === '62725') return;
 
         let total_el = document.querySelector('.dueNowRow td');
         const taxes_el = document.querySelector('.taxFeeRow td');
@@ -200,7 +200,7 @@ export default class Resbeat extends BasePortal {
     }
 
     async displayRewardPoints(rooms_element) {
-        if (!document.querySelector('.SinglePropDetail')) return;
+        if (!document.querySelector('.SinglePropDetail') || utilities.getMetaTagContent('siteId') === '62725') return;
 
         await utilities.waitForSelectorInDOM('.ArnNightlyRate');
         const rooms = document.querySelectorAll(rooms_element);
@@ -265,15 +265,17 @@ export default class Resbeat extends BasePortal {
         let points_earned = document.querySelector('.discountRow td').textContent;
         // eslint-disable-next-line radix
         points_earned = parseInt(points_earned.replace(/[^0-9.]/g, ''));
+        document.querySelector('.confirmNum').textContent = 'Booking Number:';
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
             <div class="points-earned">
                 <div class="rewards-span">
                     <span>RES<b>BEAT</b> Rewards Earned</span>
-                 <span>${points_earned}</span>
+                    <span>${points_earned}</span>
                 </div>
-                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>
+                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be redeemable 48 hours after hotel checkout.
+                We'll send you an email once they have been added to your Rewards account.</p>
             </div>
             `
         );
@@ -378,7 +380,7 @@ export default class Resbeat extends BasePortal {
     }
 
     insertPercentageOffText(element) {
-        if (this.site_config.is_resbeat_client === false) return;
+        if (this.site_config.is_resbeat_client === false || utilities.getMetaTagContent('siteId') === '62725') return;
         if (document.querySelector('.beat-em') && utilities.page_name === 'search-results') return;
         if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
             const mq = window.matchMedia('(max-width: 600px)');
@@ -681,6 +683,17 @@ export default class Resbeat extends BasePortal {
         const header_links = document.querySelector('header #commands');
 
         if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
+
+        // if (document.referrer.includes('register')) {
+        //     setTimeout(async () => {
+        //         await header_links.insertAdjacentHTML(
+        //             'afterBegin',
+        //             `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
+        //         );
+        //     }, 8000);
+
+        //     return;
+        // }
 
         await header_links.insertAdjacentHTML(
             'afterBegin',

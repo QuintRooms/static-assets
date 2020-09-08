@@ -19,6 +19,10 @@ html {
     overflow: hidden;
 }
 
+.hidden {
+    overflow: hidden;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;
@@ -594,7 +598,7 @@ select#adults {
 
 .arnMapMarker {
     border: 1px solid rgb(77, 77, 77);
-    background: rgb(206, 206, 206);
+    background: #fff;
     color: #333;
 }
 .arnMapMarkerTriangle {
@@ -607,7 +611,7 @@ select#adults {
 
 .arnMapMarker:hover {
     border: 1px solid rgb(77, 77, 77);
-    background: rgb(206, 206, 206);
+    background: #fff;
     color: #333;
 }
 
@@ -1183,6 +1187,25 @@ div.autocomplete ul li.selected {
     color: #fff;
     font-size: 15px;
     text-align: center;
+}
+
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
+
+.SearchHotels .originalPrice {
+    display: inline !important;
+    margin-right: 5px;
+}
+
+.SinglePropDetail .originalPrice {
+    display: block;
+    padding: 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -4213,20 +4236,100 @@ input[type='search']::-webkit-search-results-decoration {
 
 /* Stay 22 header button start */
 
+.stay-22-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.banner-content a {
+    max-width: 130px;
+    margin-left: 40px;
+}
+
+.banner-content img {
+    width: 100%;
+    padding: 10px;
+}
+
+.banner-content span {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: 600;
+}
+
 .custom-button {
-    margin: 25px;
-    max-width: 250px;
+    background: #fff;
+    display: flex;
+    margin-right: 50px;
+    width: 150px;
+    height: 30px;
 }
 
 .custom-button a {
     text-decoration: none;
-    padding: 12px;
     transition: all 0.4s ease;
+    color: #333;
+    font-size: 13px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* TODO style Stay 22 button for mobile
+@media screen and (max-width: 1080px) {
+    .banner-content {
+        display: flex;
+        align-items: center;
+        width: 75%;
+    }
 
+    .banner-content span {
+        color: #fff;
+        font-size: 16px;
+        margin-left: 30px;
+        font-weight: 600;
+    }
+}
 
+@media screen and (max-width: 960px) {
+
+    .stay-22-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+    }
+
+    .banner-content span {
+        display: none;
+    }
+
+    .banner-content a {
+        margin-left: 0;
+    }
+    
+    .custom-button {
+        width: 180px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .banner-content a {
+        margin-left: 10px;
+    }
+}
 /* Stay 22 header button end */
 
 

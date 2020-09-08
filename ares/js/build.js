@@ -55,8 +55,6 @@ export default class BasePortal {
                 utilities.waitForSelectorInDOM('#AdminControlsContainer').then(async () => {
                     utilities.appendToParent('#commands', 'header');
                 });
-
-                this.showUsersCugPoints();
             }
 
             utilities.updateAttribute('.ArnSupportLinks a', '_blank', 'target');
@@ -88,6 +86,7 @@ export default class BasePortal {
                 // this.accordion('#thePropertyAmenities', '.ArnAmenityContainer', 'legend');
                 utilities.moveElementIntoExistingWrapper('.SinglePropDetail .ArnTripAdvisorDetails.HasReviews', '.SinglePropDetail .ArnPropAddress', 'afterEnd');
                 utilities.moveElementIntoExistingWrapper('div.subHeaderContainer > div > a > span.translateMe', '.SinglePropDetail .ArnLeftListContainer', 'afterBegin');
+                this.moveOriginalPrice('.rateRow', '.ArnNightlyRate strong');
             }
 
             // checkout page methods
@@ -151,6 +150,7 @@ export default class BasePortal {
 
             if (this.page_name === 'search-results') {
                 algolia.init(this.site_config, this.page_name, utilities);
+                this.moveOriginalPrice('.ArnProperty', '.arnPrice');
             }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
@@ -825,7 +825,7 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .yui3-skin-sam .yui3-calendar-day:hover,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner
             {
                 background: ${this.site_config.primary_color};
             }
@@ -879,20 +879,19 @@ export default class BasePortal {
             #datePromptContainer+.SimpleSearch .CheckRates .submit,
             .bookRoom,
             .sort-wrapper .active,
-            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a
+            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton
             {
                 color: ${this.site_config.primary_text_color};
             }
 
             .custom-button a:hover {
-                color: ${this.site_config.primary_color}
+                color: ${this.site_config.primary_color};
             }
 
             span.exclusive-rate {
                 background: ${this.site_config.secondary_color};
                 color: #fff;
             }
-
 
             @media screen and (max-width:1105px) {
 
@@ -944,7 +943,7 @@ export default class BasePortal {
             .bookRoom,
             .arn-leaflet-reset-button,
             input#theConfirmationButton,
-            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {
+            a.ArnShowRatesLink, .WBConfirmedBooking .submit {
                 background: ${this.site_config.primary_color};
                 color: ${this.site_config.primary_text_color};
                 border: 1px solid ${this.site_config.border_color};
@@ -976,7 +975,7 @@ export default class BasePortal {
             input#theConfirmationButton:hover,
             input#theConfirmationButton:focus,
             input#theConfirmationButton:active,
-            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {
+            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
                 background: ${this.site_config.button_hover_background_color};
                 color: ${this.site_config.button_hover_text_color};
                 border: 1px solid ${this.site_config.button_hover_border_color};
@@ -1031,7 +1030,7 @@ export default class BasePortal {
             .RootBody #theOtherSubmitButton,
             .bookRoom,
             .sort,
-            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
+            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
                 border:1px solid ${this.site_config.border_color};
             }
 
@@ -2215,31 +2214,28 @@ export default class BasePortal {
         do_nothing.textContent = 'Go Back';
     }
 
-    showUsersCugPoints() {
-        if (!this.site_config.cug.show_points || !this.site_config.cug.is_cug) return;
+    // TODO check which percentage to use (the below calc or arn "percent")
+    moveOriginalPrice(nodeList, element) {
+        if (this.site_type === 'cug') return;
 
-        const member_data_meta = utilities.getMetaTagContent('memberMetaTag');
+        function percentDiff(num1, num2) {
+            const percent_value = ((num1 - num2) / num2) * 100;
+            if (Math.floor(percent_value) > 5) {
+                return true;
+            }
+            return false;
+        }
 
-        if (!member_data_meta) return;
-
-        const points = JSON.parse(member_data_meta).Points;
-
-        document.querySelector('header').insertAdjacentHTML(
-            'afterEnd',
-            `
-            <div class="points-container">Points: <span class="points">${points}</span></div>
-            <style>
-                .points-container{
-                    text-align: right;
-                    margin: 12px 12px 12px 0;
-                    text-transform: uppercase;
-                }
-
-                .points{
-                    font-weight: 700;
-                }
-            </style>
-        `
-        );
+        document.querySelectorAll(nodeList).forEach((e) => {
+            if (!e.querySelector('div.originalPrice')) return;
+            e.querySelector(element).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+            const original_price = parseFloat(e.querySelector('.originalPrice').textContent);
+            const lower_price = parseFloat(
+                document.querySelector('.SearchHotels') ? e.querySelector('.arnUnit').textContent : e.querySelector('.ArnNightlyRate strong').textContent
+            );
+            if (percentDiff(original_price, lower_price)) {
+                e.querySelector('.originalPrice').style.display = 'none';
+            }
+        });
     }
 }

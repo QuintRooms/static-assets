@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Wide';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+}
+
+body {
+    font-size: 13px !important;
+}

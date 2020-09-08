@@ -62,8 +62,9 @@ export default function siteConfig() {
         button_hover_background_color: '#fff',
         button_hover_text_color: '#e10600',
         button_hover_border_color: '#e10600',
-        google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
-        google_font_name: 'Titillium Web',
+        google_font_url: '',
+        // google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
+        google_font_name: 'F1-Regular',
         ads: {
             sidebar_ad: {
                 is_active: false,

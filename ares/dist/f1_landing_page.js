@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(t, e);
         }),
         (n.p = ''),
-        n((n.s = 137));
+        n((n.s = 165));
 })([
     function (t, e, n) {
         var r = n(25)('wks'),
@@ -143,7 +143,7 @@
             o = n(7),
             i = n(10),
             a = n(19)('src'),
-            c = n(72),
+            c = n(71),
             u = ('' + c).split('toString');
         (n(11).inspectSource = function (t) {
             return c.call(t);
@@ -177,7 +177,7 @@
         'number' == typeof __e && (__e = n);
     },
     function (t, e, n) {
-        var r = n(88),
+        var r = n(87),
             o = n(14);
         t.exports = function (t) {
             return r(o(t));
@@ -225,13 +225,9 @@
         };
     },
     function (t, e, n) {
-        'use strict';
-        function r() {
+        t.exports = function () {
             return {path: 'https://static.hotelsforhope.com/ares'};
-        }
-        n.d(e, 'a', function () {
-            return r;
-        });
+        };
     },
     function (t, e, n) {
         'use strict';
@@ -239,7 +235,7 @@
             o = n(93),
             i = n(16),
             a = n(12);
-        (t.exports = n(68)(
+        (t.exports = n(67)(
             Array,
             'Array',
             function (t, e) {
@@ -380,15 +376,15 @@
             f = n(4),
             h = n(6),
             d = n(23),
-            p = n(73),
-            v = n(74),
+            p = n(72),
+            v = n(73),
             m = n(51),
             y = n(46).set,
-            g = n(79)(),
+            g = n(78)(),
             x = n(48),
-            b = n(80),
-            w = n(81),
-            S = n(82),
+            b = n(79),
+            w = n(80),
+            S = n(81),
             _ = u.TypeError,
             k = u.process,
             L = k && k.versions,
@@ -514,7 +510,7 @@
             }),
             ((r = function (t) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(83)(E.prototype, {
+            }).prototype = n(82)(E.prototype, {
                 then: function (t, e) {
                     var n = T(m(this, E));
                     return (
@@ -540,7 +536,7 @@
             })),
             f(f.G + f.W + f.F * !$, {Promise: E}),
             n(27)(E, 'Promise'),
-            n(84)('Promise'),
+            n(83)('Promise'),
             (a = n(11).Promise),
             f(f.S + f.F * !$, 'Promise', {
                 reject: function (t) {
@@ -558,7 +554,7 @@
                     f.F *
                         !(
                             $ &&
-                            n(85)(function (t) {
+                            n(84)(function (t) {
                                 E.all(t).catch(j);
                             })
                         ),
@@ -1435,7 +1431,7 @@
     },
     function (t, e, n) {
         'use strict';
-        n(96);
+        n(95);
         var r = n(8),
             o = n(7),
             i = n(9),
@@ -2184,7 +2180,7 @@
             o,
             i,
             a = n(22),
-            c = n(78),
+            c = n(77),
             u = n(47),
             s = n(35),
             l = n(1),
@@ -2269,7 +2265,7 @@
     function (t, e, n) {
         var r = n(28),
             o = n(15);
-        n(97)('keys', function () {
+        n(96)('keys', function () {
             return function (t) {
                 return o(r(t));
             };
@@ -2317,7 +2313,7 @@
     function (t, e, n) {
         var r = n(12),
             o = n(26),
-            i = n(89);
+            i = n(88);
         t.exports = function (t) {
             return function (e, n, a) {
                 var c,
@@ -2333,7 +2329,7 @@
     },
     function (t, e, n) {
         var r = n(2),
-            o = n(90),
+            o = n(89),
             i = n(37),
             a = n(36)('IE_PROTO'),
             c = function () {},
@@ -2384,12 +2380,11 @@
     ,
     function (t, e, n) {
         'use strict';
-        var r = n(69)(!0);
+        var r = n(68)(!0);
         t.exports = function (t, e, n) {
             return e + (n ? r(t, e).length : 1);
         };
     },
-    ,
     ,
     ,
     ,
@@ -2495,11 +2490,11 @@
     },
     function (t, e, n) {
         var r = n(22),
-            o = n(75),
-            i = n(76),
+            o = n(74),
+            i = n(75),
             a = n(2),
             c = n(26),
-            u = n(77),
+            u = n(76),
             s = {},
             l = {};
         ((e = t.exports = function (t, e, n, f, h) {
@@ -2726,6 +2721,7 @@
               };
     },
     ,
+    ,
     function (t, e, n) {
         var r = n(5).f,
             o = Function.prototype,
@@ -2761,7 +2757,6 @@
                 (t.prototype = r(a, {next: o(1, n)})), i(t, e + ' Iterator');
             });
     },
-    ,
     function (t, e, n) {
         'use strict';
         var r = n(38);
@@ -2800,14 +2795,16 @@
     ,
     ,
     ,
+    ,
     function (t, e, n) {
         'use strict';
         n.d(e, 'a', function () {
-            return u;
+            return s;
         });
         n(33), n(32), n(31);
-        var r = n(20);
-        function o(t, e, n, r, o, i, a) {
+        var r = n(20),
+            o = n.n(r);
+        function i(t, e, n, r, o, i, a) {
             try {
                 var c = t[i](a),
                     u = c.value;
@@ -2816,38 +2813,38 @@
             }
             c.done ? e(u) : Promise.resolve(u).then(r, o);
         }
-        function i(t) {
+        function a(t) {
             return function () {
                 var e = this,
                     n = arguments;
-                return new Promise(function (r, i) {
+                return new Promise(function (r, o) {
                     var a = t.apply(e, n);
                     function c(t) {
-                        o(a, r, i, c, u, 'next', t);
+                        i(a, r, o, c, u, 'next', t);
                     }
                     function u(t) {
-                        o(a, r, i, c, u, 'throw', t);
+                        i(a, r, o, c, u, 'throw', t);
                     }
                     c(void 0);
                 });
             };
         }
-        var a = new (n(44).a)(),
-            c = new r.a();
-        function u(t) {
-            return s.apply(this, arguments);
+        var c = new (n(44).a)(),
+            u = new o.a();
+        function s(t) {
+            return l.apply(this, arguments);
         }
-        function s() {
-            return (s = i(
+        function l() {
+            return (l = a(
                 regeneratorRuntime.mark(function t(e) {
-                    var n, r, o, u, s, l, f, h;
+                    var n, r, o, i, s, l, f, h;
                     return regeneratorRuntime.wrap(function (t) {
                         for (;;)
                             switch ((t.prev = t.next)) {
                                 case 0:
                                     return (
                                         (h = function () {
-                                            return (h = i(
+                                            return (h = a(
                                                 regeneratorRuntime.mark(function t() {
                                                     var e;
                                                     return regeneratorRuntime.wrap(function (t) {
@@ -2860,7 +2857,7 @@
                                                                     }
                                                                     return t.abrupt('return');
                                                                 case 2:
-                                                                    return (t.next = 4), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
+                                                                    return (t.next = 4), c.fetchHTMLFromFile(''.concat(u.path, '/html/f1/footer.html'));
                                                                 case 4:
                                                                     (e = t.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', e);
                                                                 case 6:
@@ -2875,9 +2872,9 @@
                                             return h.apply(this, arguments);
                                         }),
                                         (l = function () {
-                                            return (l = i(
+                                            return (l = a(
                                                 regeneratorRuntime.mark(function t(e) {
-                                                    var o, i, u;
+                                                    var o, i, a;
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
                                                             switch ((t.prev = t.next)) {
@@ -2892,7 +2889,7 @@
                                                                                     : document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r));
                                                                         }),
                                                                         (t.next = 3),
-                                                                        a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/mobile-hamburger-menu.html'))
+                                                                        c.fetchHTMLFromFile(''.concat(u.path, '/html/f1/mobile-hamburger-menu.html'))
                                                                     );
                                                                 case 3:
                                                                     return (
@@ -2902,15 +2899,15 @@
                                                                             '.mobile-nav-upper-ul #contactUs'
                                                                         ).href = 'href="https://events.hotelsforhope.com/v6/support?siteId='.concat(e, '"')),
                                                                         (t.next = 8),
-                                                                        a.waitForSelectorInDOM('.navbar-hamburger')
+                                                                        c.waitForSelectorInDOM('.navbar-hamburger')
                                                                     );
                                                                 case 8:
                                                                     document.querySelector('.navbar-hamburger').addEventListener('click', function () {
                                                                         document.querySelector('.mobile-nav-container').classList.toggle('show-mobile-nav');
                                                                     }),
-                                                                        (u = window.matchMedia('(max-width: 1100px)')),
-                                                                        i(u),
-                                                                        u.addListener(i);
+                                                                        (a = window.matchMedia('(max-width: 1100px)')),
+                                                                        i(a),
+                                                                        a.addListener(i);
                                                                 case 12:
                                                                 case 'end':
                                                                     return t.stop();
@@ -2922,15 +2919,15 @@
                                         (s = function (t) {
                                             return l.apply(this, arguments);
                                         }),
-                                        (u = function () {
-                                            return (u = i(
+                                        (i = function () {
+                                            return (i = a(
                                                 regeneratorRuntime.mark(function t(e) {
                                                     var o;
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
                                                             switch ((t.prev = t.next)) {
                                                                 case 0:
-                                                                    return (t.next = 2), a.fetchHTMLFromFile(''.concat(c.path, '/html/f1/f1-header.html'));
+                                                                    return (t.next = 2), c.fetchHTMLFromFile(''.concat(u.path, '/html/f1/f1-header.html'));
                                                                 case 2:
                                                                     if (
                                                                         ((o = t.sent),
@@ -2959,10 +2956,10 @@
                                             )).apply(this, arguments);
                                         }),
                                         (o = function (t) {
-                                            return u.apply(this, arguments);
+                                            return i.apply(this, arguments);
                                         }),
                                         (t.next = 8),
-                                        a.waitForSelectorInDOM('header')
+                                        c.waitForSelectorInDOM('header')
                                     );
                                 case 8:
                                     (n = document.querySelector('header')), (r = document.querySelector('#language')), o(e), s(e), f();
@@ -2999,12 +2996,41 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (t, e, n) {
         'use strict';
         n.r(e);
         n(92), n(34), n(21), n(31), n(49);
-        var r = new (n(20).a)(),
-            o = {
+        var r = n(20),
+            o = new (n.n(r).a)(),
+            i = {
                 races_2020: {
                     russia: {
                         days: '25-27',
@@ -3013,7 +3039,7 @@
                         sponsor: 'VTB',
                         name: 'Russian Grand Prix',
                         location: 'Sochi, Russia',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/russia.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/russia.jpg'),
                         flag_alt_text: 'Russian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36972&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Russia%202020',
                     },
@@ -3024,7 +3050,7 @@
                         sponsor: 'Gulf Air',
                         name: 'Bahrain Grand Prix',
                         location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/bahrain.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44125&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202020',
                     },
@@ -3035,7 +3061,7 @@
                         sponsor: 'Rolex',
                         name: 'Turkish Grand Prix',
                         location: 'Skahir, Bahrain',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/bahrain.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44126&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Sakhir%202020',
                     },
@@ -3046,7 +3072,7 @@
                         sponsor: 'Etihad Airways',
                         name: 'Abu Dhabi Grand Prix',
                         location: 'Yas Island, Abu Dhabi',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/abu-dhabi.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/abu-dhabi.jpg'),
                         flag_alt_text: 'United Arab Emirates',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36977&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Abu%20Dhabi%202020',
                     },
@@ -3057,18 +3083,18 @@
                         sponsor: 'Vinfast',
                         name: 'Vietnam Grand Prix',
                         location: 'Hanoi, Vietnam',
-                        country_flag_url: ''.concat(r.path, '/html/f1/f1-landing-page/images/vietnam.jpg'),
+                        country_flag_url: ''.concat(o.path, '/html/f1/f1-landing-page/images/vietnam.jpg'),
                         flag_alt_text: 'Vietnamese',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36361&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Vietnam%202020',
                     },
                 },
             },
-            i = n(44),
-            a = n(112);
-        Object(a.a)('54494');
-        var c,
-            u = new i.a();
-        Object.keys(o).forEach(function (t) {
+            a = n(44),
+            c = n(112);
+        Object(c.a)('54494');
+        var u,
+            s = new a.a();
+        Object.keys(i).forEach(function (t) {
             var e = t.slice(-4);
             document
                 .querySelector('#lower-section')
@@ -3085,7 +3111,7 @@
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));
                     Object.keys(t).forEach(function (r) {
-                        u.checkForPastDate(t[r].race_expiry) ||
+                        s.checkForPastDate(t[r].race_expiry) ||
                             n.insertAdjacentHTML(
                                 'beforeend',
                                 '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
@@ -3117,13 +3143,12 @@
                                     )
                             );
                     });
-                })(o[t], e);
+                })(i[t], e);
         }),
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),
-            (c = document.querySelector('.race .book-btn').href),
-            (document.querySelector('.banner a').href = c);
+            (u = document.querySelector('.race .book-btn').href),
+            (document.querySelector('.banner a').href = u);
     },
 ]);
-//# sourceMappingURL=f1_landing_page.map

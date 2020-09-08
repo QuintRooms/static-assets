@@ -1,10 +1,8 @@
-require('dotenv').config({path: '.env'});
-
 module.exports = () => {
     let entry_points = {};
 
     // production environment
-    if (process.env.environment === 'production') {
+    if (process.env.NODE_ENV === 'production') {
         entry_points = {
             // 'acl_20-53336': './src/53336.js', // acl 2020
             // 'acl_21-60311': './src/60311.js', // ACL 2021
@@ -16,7 +14,6 @@ module.exports = () => {
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // BJ W Palm Beach 2020
-            // 'breeders_cup_20-59788': './src/59788.js', // Breeder's Cup 2020
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
             // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
@@ -40,18 +37,20 @@ module.exports = () => {
         };
 
         // develop environment
-    } else if (process.env.environment === 'develop') {
+    } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
-            // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
-            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
+            'ares_child-60278': './src/60278.js', // Ares Child Test
+            'ares_child-60279': './src/60279.js', // Ares Child Test
+            'cug_template-39624': './src/39624.js', // CUG Template
+            'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
+            'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 
         // local environment
     } else if (process.env.environment === 'local') {
-        entry_points = {};
+        entry_points = {
+            // new sites populate below
+        };
     }
 
     return entry_points;

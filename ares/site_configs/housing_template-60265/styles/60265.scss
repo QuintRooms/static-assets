@@ -1,0 +1,21 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: flex-start;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #9c6aad;
+$secondary_color: #333;
+$primary_text_color: #fff;
+$secondary_text_color: #9c6aad;
+$border_color: #9c6aad;
+$button_hover_background_color: transparent;
+$button_hover_text_color: #333;
+$button_hover_border_color: #9c6aad;
+$google_font_name: 'Montserrat';
+$site_name: 'housing_template-60265';
+$path: set-path($env);
+$banner_image: url(https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg);
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+

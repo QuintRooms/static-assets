@@ -1,0 +1,334 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: space-between;
+$logo_max_width: 230px;
+$background_color: #fff;
+$secondary_background_color: #f0f0f0;
+$primary_color: #215853;
+$secondary_color: #e2ad37;
+$primary_text_color: #fff;
+$secondary_text_color: #215853;
+$border_color: #215853;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #215853;
+$button_hover_border_color: #215853;
+$google_font_name: 'Avenir';
+$site_name: 'resbeat_points_demo-62725';
+$path: set-path($env);
+$banner_image: #fff;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../styles/sass/config-styles/resbeat.config.scss';
+
+/* Fonts */
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('https://static.hotelsforhope.com/portals/child-portals/cug/60831/fonts/Avenir-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.logo img {
+    min-width: 200px;
+}
+
+#demo-messaging {
+    display: block !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 28px;
+}
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input,
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton,
+.total-points-earned th,
+.total-points-earned td,
+.discount th,
+.discount td,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input,
+#commands,
+#commands .logoutCommand,
+.ArnSubPage h1,
+.RootBody .search-messaging #user-name,
+.RootBody .lblAmenities,
+.RootBody .lblRating,
+.RootBody .lblPropertyType,
+.SearchHotels .ArnPropNameLink,
+.SinglePropDetail .ArnPropName,
+.modal-header h3,
+#lightbox,
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction,
+#lightbox .dialog-button-ok input,
+.ArnSupportLinks,
+.MemberNotAuthenticated .LoginAction,
+.SendMeNewPasswordAction.submit,
+.ArnShowRatesLink,
+.bookRoom,
+.holdRoom,
+#moreRatesLink,
+.GuestForms legend,
+.WBSupportFormActions .SendRequestAction,
+.ArnSearchHeader,
+.SinglePropDetail .ArnLeftListContainer > span.translateMe,
+.sort-filter-header h3,
+.mobile-filter-container h4,
+.mobile-sort-container .sort-wrapper h4,
+.SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4,
+.arnMapPopup h1,
+.support-details h3,
+#theHotel legend,
+.SearchHotels .lblPropertyType,
+.WBConfirmedBooking .submit,
+.WBChangePasswordFormInform .dialog-button-ok input.submit {
+    text-transform: uppercase !important;
+}
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input,
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton,
+.WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type='email'].email-mask,
+.WBLoginFormFields input,
+.WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input,
+.return-to-login,
+.CancelAction,
+#theRememberMeAjax label,
+#commands,
+#commands .logoutCommand,
+.RootBody .search-messaging,
+.SearchHotels .ArnPropNameLink,
+.SinglePropDetail .ArnPropName,
+.modal-header h3,
+.reviewCount,
+.MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input,
+.MemberNotAuthenticated #new-user-text,
+.MemberNotAuthenticated #theWBLoginFormBody h1,
+.MemberNotAuthenticated .ForgotPasswordAction,
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction,
+#lightbox .dialog-button-ok input,
+.ArnSupportLinks,
+.MemberNotAuthenticated #new-user-text strong,
+.MemberNotAuthenticated #theWBLoginFormBody strong,
+.MemberNotAuthenticated .CreateAnAccountAction,
+.MemberNotAuthenticated .LoginAction,
+.SendMeNewPasswordAction.submit,
+.ArnShowRatesLink,
+.bookRoom,
+.holdRoom,
+#moreRatesLink,
+.GuestForms legend,
+.WBSupportFormActions .SendRequestAction,
+.ArnSearchHeader,
+.SinglePropDetail .ArnLeftListContainer > span.translateMe,
+.SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4,
+.arnMapPopup h1,
+.CheckOutForm #theStayPolicies h4,
+.SearchHotels .lblPropertyType,
+.WBConfirmedBooking .submit,
+.WBResendOrCancelFormActions input,
+.ConfirmationForm .beat-em-value,
+.WBChangePasswordFormInform .dialog-button-ok input.submit {
+    letter-spacing: 1px !important;
+}
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input,
+#lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover,
+.WBConfirmedBooking .submit,
+.WBResendOrCancelFormActions input,
+.WBChangePasswordFormInform .dialog-button-ok input.submit {
+    transition-duration: 0.8s;
+}
+
+.SearchHotels .ap-input-icon {
+    background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 800px) {
+    .config-label {
+        background: transparent;
+    }
+}
+
+/* Tooltip */
+.tooltip-wrapper {
+    position: relative;
+}
+
+.tooltip:hover span {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    top: -7em;
+    left: -14em;
+    z-index: 99;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.tooltip-wrapper > span b {
+    color: #215853;
+    background: #fff;
+    font-family: 'Times New Roman', serif;
+    font-size: 11px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 100%;
+    display: inline-block;
+    position: relative;
+    top: -4px;
+}
+
+.tooltip span {
+    background: none repeat scroll 0 0 #fff;
+    color: #666;
+    font-weight: 500;
+    padding: 12px;
+    top: -4em;
+    left: -14em;
+    margin-left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    text-transform: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
+    font-family: 'Avenir', 'Helvetica';
+    font-size: 12px;
+}
+
+.tooltip span:after {
+    border-color: #fff rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 15px 15px 0;
+    bottom: -15px;
+    content: '';
+    display: block;
+    left: 31px;
+    position: absolute;
+    width: 0;
+}
+
+.points-applied {
+    font-weight: 500;
+    padding: 4px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.points-applied > span {
+    font-weight: 700;
+}
+
+.arnCurrency + div {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    .SearchHotels .originalPrice {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 600px){
+    .SearchHotels .ArnRateCell{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .SearchHotels .points-applied{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .SinglePropDetail .points-applied,
+    .SinglePropDetail .bookRoom{
+        max-width: 175px;
+    }
+}

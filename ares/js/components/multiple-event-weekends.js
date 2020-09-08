@@ -48,7 +48,7 @@ export default function popUp(config, event2_name, url1, url2) {
                 align-items: center;
                 justify-content: space-between;
                 width: 50vw;
-                height: 40vh;
+                height: 25vh;
                 border: 5px solid ${config.primary_color};
                 border-radius: 20px;
             }

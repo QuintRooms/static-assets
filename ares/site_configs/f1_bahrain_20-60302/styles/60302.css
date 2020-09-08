@@ -122,12 +122,8 @@ span.exclusive-rate {
 #commands button:active,
 #commands button:focus,
 #commands button:hover,
-.sort {
+.sort, .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
     color: #fff;
-  }
-
-  .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
-    color: #e10600;
   }
 }
 .holdRoom,

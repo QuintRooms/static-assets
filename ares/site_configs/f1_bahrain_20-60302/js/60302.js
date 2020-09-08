@@ -14,7 +14,12 @@ class ChildPortal extends BasePortal {
 }
 
 f1Styles(site_config.site_id);
-popUp(site_config, 'Sakhir Grand Prix', 'url1', 'url2');
+popUp(
+    site_config,
+    'Sakhir Grand Prix',
+    'https://bookrooms.formula1.com/group-event?id=44125&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202020',
+    'https://bookrooms.formula1.com/group-event?id=44126&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Sakhir%202020'
+);
 
 new ChildPortal();
 new Distance();

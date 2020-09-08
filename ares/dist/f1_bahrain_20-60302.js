@@ -234,7 +234,12 @@
             })(_js_build__WEBPACK_IMPORTED_MODULE_3__['default']);
 
             Object(_js_f1__WEBPACK_IMPORTED_MODULE_5__['default'])(site_config.site_id);
-            Object(_js_components_event_popup_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__['default'])(site_config, 'Sakhir Grand Prix', 'url1', 'url2');
+            Object(_js_components_event_popup_multiple_event_weekends__WEBPACK_IMPORTED_MODULE_7__['default'])(
+                site_config,
+                'Sakhir Grand Prix',
+                'https://bookrooms.formula1.com/group-event?id=44125&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202020',
+                'https://bookrooms.formula1.com/group-event?id=44126&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Sakhir%202020'
+            );
             new ChildPortal();
             new _js_calculate_distance__WEBPACK_IMPORTED_MODULE_6__['default']();
 

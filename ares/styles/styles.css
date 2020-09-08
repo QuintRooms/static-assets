@@ -19,6 +19,10 @@ html {
     overflow: hidden;
 }
 
+.hidden {
+    overflow: hidden;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;

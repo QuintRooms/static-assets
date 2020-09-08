@@ -1052,6 +1052,10 @@ div.autocomplete ul li.selected {
     width: 18px;
     height: 18px; } }
 
+.ArnSortContainer,
+.sort-wrapper {
+  display: none; }
+
 /* Search Container End */
 /* Single Prop Page Start */
 .SinglePropDetail .ArnPropThumb,
@@ -1854,7 +1858,8 @@ legend {
     width: 125px; }
   .SearchHotels .ArnSortContainer {
     display: flex;
-    justify-content: space-between; } }
+    justify-content: space-between;
+    visibility: hidden; } }
 
 @media screen and (max-width: 600px) {
   .SearchHotels #Properties {

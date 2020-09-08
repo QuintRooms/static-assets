@@ -1372,6 +1372,10 @@ div.autocomplete ul li.selected {
     }
 }
 
+.ArnSortContainer,
+.sort-wrapper{
+    display: none;
+}
 /* Search Container End */
 
 /* Single Prop Page Start */
@@ -2406,6 +2410,7 @@ legend {
     .SearchHotels .ArnSortContainer {
         display: flex;
         justify-content: space-between;
+        visibility: hidden;
     }
 }
 

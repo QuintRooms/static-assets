@@ -1816,8 +1816,6 @@ export default class BasePortal {
 
     // TODO check which percentage to use (the below calc or arn "percent")
     moveOriginalPrice(nodeList, element) {
-        if (this.site_type === 'cug') return;
-
         function percentDiff(num1, num2) {
             const percent_value = ((num1 - num2) / num2) * 100;
             if (Math.floor(percent_value) >= 5) {

@@ -8,6 +8,7 @@ const directory_name = `lolla_21-${site_id}`;
 export default function siteConfig() {
     return {
         site_id,
+        directory_name,
         affiliate_id: 16067,
         master_id: 1816,
         site_type: 'lodging',

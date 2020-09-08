@@ -2,7 +2,7 @@ export default function popUp(config, event2_name, url1, url2) {
     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) return;
 
     function showWeekendTwoPopUp(url, event) {
-        document.body.classList.toggle('fixed');
+        document.body.classList.toggle('hidden');
         window.localStorage.setItem('weekendTwoPopup', 'true');
         const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '#theBody';
         // const page_element = document.querySelector('.SearchHotels') ? '.ArnSearchContainerMainDiv' : '.ArnSubPage.PropDetailView';
@@ -104,7 +104,7 @@ export default function popUp(config, event2_name, url1, url2) {
         );
 
         document.querySelector('.close-modal').addEventListener('click', () => {
-            document.body.classList.toggle('fixed');
+            document.body.classList.toggle('hidden');
             document.querySelector('.modal-overlay').style.display = 'none';
         });
     }

@@ -44,11 +44,11 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 135));
+        n((n.s = 141));
 })([
     function (e, t, n) {
         var r = n(25)('wks'),
-            o = n(17),
+            o = n(19),
             i = n(1).Symbol,
             a = 'function' == typeof i;
         (e.exports = function (e) {
@@ -67,7 +67,7 @@
         };
     },
     function (e, t, n) {
-        e.exports = !n(8)(function () {
+        e.exports = !n(9)(function () {
             return (
                 7 !=
                 Object.defineProperty({}, 'a', {
@@ -82,7 +82,7 @@
         var r = n(1),
             o = n(11),
             i = n(7),
-            a = n(9),
+            a = n(8),
             c = n(22),
             s = function (e, t, n) {
                 var u,
@@ -108,8 +108,8 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(47),
-            i = n(37),
+            o = n(50),
+            i = n(40),
             a = Object.defineProperty;
         t.f = n(3)
             ? Object.defineProperty
@@ -129,7 +129,7 @@
     },
     function (e, t, n) {
         var r = n(5),
-            o = n(26);
+            o = n(29);
         e.exports = n(3)
             ? function (e, t, n) {
                   return r.f(e, t, o(1, n));
@@ -138,21 +138,12 @@
                   return (e[t] = n), e;
               };
     },
-    function (e, t) {
-        e.exports = function (e) {
-            try {
-                return !!e();
-            } catch (e) {
-                return !0;
-            }
-        };
-    },
     function (e, t, n) {
         var r = n(1),
             o = n(7),
             i = n(10),
-            a = n(17)('src'),
-            c = n(77),
+            a = n(19)('src'),
+            c = n(72),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -167,6 +158,15 @@
             });
     },
     function (e, t) {
+        e.exports = function (e) {
+            try {
+                return !!e();
+            } catch (e) {
+                return !0;
+            }
+        };
+    },
+    function (e, t) {
         var n = {}.hasOwnProperty;
         e.exports = function (e, t) {
             return n.call(e, t);
@@ -177,8 +177,8 @@
         'number' == typeof __e && (__e = n);
     },
     function (e, t, n) {
-        var r = n(93),
-            o = n(15);
+        var r = n(88),
+            o = n(14);
         e.exports = function (e) {
             return r(o(e));
         };
@@ -189,9 +189,15 @@
             return n.call(e).slice(8, -1);
         };
     },
+    function (e, t) {
+        e.exports = function (e) {
+            if (null == e) throw TypeError("Can't call method on  " + e);
+            return e;
+        };
+    },
     function (e, t, n) {
-        var r = n(54),
-            o = n(39);
+        var r = n(52),
+            o = n(37);
         e.exports =
             Object.keys ||
             function (e) {
@@ -199,9 +205,13 @@
             };
     },
     function (e, t) {
+        e.exports = {};
+    },
+    function (e, t) {
+        var n = Math.ceil,
+            r = Math.floor;
         e.exports = function (e) {
-            if (null == e) throw TypeError("Can't call method on  " + e);
-            return e;
+            return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
         };
     },
     function (e, t) {
@@ -212,16 +222,6 @@
             r = Math.random();
         e.exports = function (e) {
             return 'Symbol('.concat(void 0 === e ? '' : e, ')_', (++n + r).toString(36));
-        };
-    },
-    function (e, t) {
-        e.exports = {};
-    },
-    function (e, t) {
-        var n = Math.ceil,
-            r = Math.floor;
-        e.exports = function (e) {
-            return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
         };
     },
     function (e, t, n) {
@@ -235,11 +235,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(61),
-            o = n(99),
-            i = n(18),
+        var r = n(56),
+            o = n(93),
+            i = n(16),
             a = n(12);
-        (e.exports = n(73)(
+        (e.exports = n(68)(
             Array,
             'Array',
             function (e, t) {
@@ -323,15 +323,10 @@
             i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
         (e.exports = function (e, t) {
             return i[e] || (i[e] = void 0 !== t ? t : {});
-        })('versions', []).push({version: r.version, mode: n(16) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
-    },
-    function (e, t) {
-        e.exports = function (e, t) {
-            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
-        };
+        })('versions', []).push({version: r.version, mode: n(18) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
     },
     function (e, t, n) {
-        var r = n(19),
+        var r = n(17),
             o = Math.min;
         e.exports = function (e) {
             return e > 0 ? o(r(e), 9007199254740991) : 0;
@@ -345,14 +340,34 @@
             e && !o((e = n ? e : e.prototype), i) && r(e, i, {configurable: !0, value: t});
         };
     },
+    function (e, t, n) {
+        var r = n(14);
+        e.exports = function (e) {
+            return Object(r(e));
+        };
+    },
+    function (e, t) {
+        e.exports = function (e, t) {
+            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
+        };
+    },
     function (e, t) {
         t.f = {}.propertyIsEnumerable;
     },
     function (e, t, n) {
-        var r = n(15);
-        e.exports = function (e) {
-            return Object(r(e));
-        };
+        'use strict';
+        var r = n(24),
+            o = {};
+        (o[n(0)('toStringTag')] = 'z'),
+            o + '' != '[object z]' &&
+                n(8)(
+                    Object.prototype,
+                    'toString',
+                    function () {
+                        return '[object ' + r(this) + ']';
+                    },
+                    !0
+                );
     },
     function (e, t, n) {
         'use strict';
@@ -360,22 +375,22 @@
             o,
             i,
             a,
-            c = n(16),
+            c = n(18),
             s = n(1),
             u = n(22),
             l = n(24),
             d = n(4),
             h = n(6),
             f = n(23),
-            p = n(78),
-            m = n(79),
-            y = n(48),
-            g = n(49).set,
-            v = n(84)(),
-            b = n(51),
-            S = n(85),
-            w = n(86),
-            _ = n(87),
+            p = n(73),
+            m = n(74),
+            y = n(51),
+            g = n(46).set,
+            v = n(79)(),
+            b = n(48),
+            S = n(80),
+            w = n(81),
+            _ = n(82),
             A = s.TypeError,
             x = s.process,
             k = x && x.versions,
@@ -393,11 +408,11 @@
                     return (M || 'function' == typeof PromiseRejectionEvent) && e.then(R) instanceof t && 0 !== C.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            E = function (e) {
                 var t;
                 return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
-            E = function (e, t) {
+            T = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -418,7 +433,7 @@
                                         c
                                             ? (o || (2 == e._h && F(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(A('Promise-chain cycle')) : (i = E(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -466,7 +481,7 @@
             },
             O = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), E(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
             },
             H = function (e) {
                 var t,
@@ -475,7 +490,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw A("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = E(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -484,7 +499,7 @@
                                       O.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), E(n, !1));
+                            : ((n._v = e), (n._s = 1), T(n, !1));
                     } catch (e) {
                         O.call({_w: n, _d: !1}, e);
                     }
@@ -501,7 +516,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(88)(L.prototype, {
+            }).prototype = n(83)(L.prototype, {
                 then: function (e, t) {
                     var n = q(y(this, L));
                     return (
@@ -510,7 +525,7 @@
                         (n.domain = M ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && E(this, !1),
+                        this._s && T(this, !1),
                         n.promise
                     );
                 },
@@ -526,8 +541,8 @@
                 return e === L || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !P, {Promise: L}),
-            n(28)(L, 'Promise'),
-            n(89)('Promise'),
+            n(27)(L, 'Promise'),
+            n(84)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
@@ -545,7 +560,7 @@
                     d.F *
                         !(
                             P &&
-                            n(90)(function (e) {
+                            n(85)(function (e) {
                                 L.all(e).catch(R);
                             })
                         ),
@@ -586,21 +601,6 @@
                     },
                 }
             );
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(24),
-            o = {};
-        (o[n(0)('toStringTag')] = 'z'),
-            o + '' != '[object z]' &&
-                n(9)(
-                    Object.prototype,
-                    'toString',
-                    function () {
-                        return '[object ' + r(this) + ']';
-                    },
-                    !0
-                );
     },
     function (e, t, n) {
         var r = (function (e) {
@@ -918,11 +918,11 @@
     function (e, t, n) {
         for (
             var r = n(21),
-                o = n(14),
-                i = n(9),
+                o = n(15),
+                i = n(8),
                 a = n(1),
                 c = n(7),
-                s = n(18),
+                s = n(16),
                 u = n(0),
                 l = u('iterator'),
                 d = u('toStringTag'),
@@ -972,6 +972,57 @@
                 S = b && b.prototype;
             if (S && (S[l] || c(S, l, h), S[d] || c(S, d, g), (s[g] = h), v)) for (y in r) S[y] || i(S, y, r[y], !0);
         }
+    },
+    function (e, t, n) {
+        var r = n(6),
+            o = n(1).document,
+            i = r(o) && r(o.createElement);
+        e.exports = function (e) {
+            return i ? o.createElement(e) : {};
+        };
+    },
+    function (e, t, n) {
+        var r = n(25)('keys'),
+            o = n(19);
+        e.exports = function (e) {
+            return r[e] || (r[e] = o(e));
+        };
+    },
+    function (e, t) {
+        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r,
+            o,
+            i = n(41),
+            a = RegExp.prototype.exec,
+            c = String.prototype.replace,
+            s = a,
+            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
+            l = void 0 !== /()??/.exec('')[1];
+        (u || l) &&
+            (s = function (e) {
+                var t,
+                    n,
+                    r,
+                    o,
+                    s = this;
+                return (
+                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
+                    u && (t = s.lastIndex),
+                    (r = a.call(s, e)),
+                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
+                    l &&
+                        r &&
+                        r.length > 1 &&
+                        c.call(r[0], n, function () {
+                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
+                        }),
+                    r
+                );
+            }),
+            (e.exports = s);
     },
     function (e, t, n) {
         e.exports = (function () {
@@ -1183,7 +1234,7 @@
                             l = b.p(i),
                             d = 'set' + (this.$u ? 'UTC' : ''),
                             h = ((u = {}),
-                            (u[o] = d + 'Date'),
+                            (u.day = d + 'Date'),
                             (u.date = d + 'Date'),
                             (u[a] = d + 'Month'),
                             (u[s] = d + 'FullYear'),
@@ -1281,26 +1332,26 @@
                     (h.utcOffset = function () {
                         return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
                     }),
-                    (h.diff = function (e, u, l) {
-                        var d,
-                            h = b.p(u),
-                            f = v(e),
-                            p = 6e4 * (f.utcOffset() - this.utcOffset()),
-                            m = this - f,
-                            y = b.m(this, f);
+                    (h.diff = function (e, o, u) {
+                        var l,
+                            d = b.p(o),
+                            h = v(e),
+                            f = 6e4 * (h.utcOffset() - this.utcOffset()),
+                            p = this - h,
+                            m = b.m(this, h);
                         return (
-                            (y =
-                                ((d = {}),
-                                (d[s] = y / 12),
-                                (d[a] = y),
-                                (d[c] = y / 3),
-                                (d[i] = (m - p) / 6048e5),
-                                (d[o] = (m - p) / 864e5),
-                                (d[r] = m / 36e5),
-                                (d[n] = m / 6e4),
-                                (d[t] = m / 1e3),
-                                d)[h] || m),
-                            l ? y : b.a(y)
+                            (m =
+                                ((l = {}),
+                                (l[s] = m / 12),
+                                (l[a] = m),
+                                (l[c] = m / 3),
+                                (l[i] = (p - f) / 6048e5),
+                                (l.day = (p - f) / 864e5),
+                                (l[r] = p / 36e5),
+                                (l[n] = p / 6e4),
+                                (l[t] = p / 1e3),
+                                l)[d] || p),
+                            u ? m : b.a(m)
                         );
                     }),
                     (h.daysInMonth = function () {
@@ -1350,14 +1401,6 @@
         })();
     },
     function (e, t, n) {
-        var r = n(6),
-            o = n(1).document,
-            i = r(o) && r(o.createElement);
-        e.exports = function (e) {
-            return i ? o.createElement(e) : {};
-        };
-    },
-    function (e, t, n) {
         var r = n(6);
         e.exports = function (e, t) {
             if (!r(e)) return e;
@@ -1367,16 +1410,6 @@
             if (!t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
             throw TypeError("Can't convert object to primitive value");
         };
-    },
-    function (e, t, n) {
-        var r = n(25)('keys'),
-            o = n(17);
-        e.exports = function (e) {
-            return r[e] || (r[e] = o(e));
-        };
-    },
-    function (e, t) {
-        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
     },
     function (e, t, n) {
         'use strict';
@@ -1404,13 +1437,13 @@
     },
     function (e, t, n) {
         'use strict';
-        n(104);
-        var r = n(9),
+        n(96);
+        var r = n(8),
             o = n(7),
-            i = n(8),
-            a = n(15),
+            i = n(9),
+            a = n(14),
             c = n(0),
-            s = n(43),
+            s = n(38),
             u = c('species'),
             l = !i(function () {
                 var e = /./;
@@ -1484,43 +1517,10 @@
     },
     function (e, t, n) {
         'use strict';
-        var r,
-            o,
-            i = n(40),
-            a = RegExp.prototype.exec,
-            c = String.prototype.replace,
-            s = a,
-            u = ((r = /a/), (o = /b*/g), a.call(r, 'a'), a.call(o, 'a'), 0 !== r.lastIndex || 0 !== o.lastIndex),
-            l = void 0 !== /()??/.exec('')[1];
-        (u || l) &&
-            (s = function (e) {
-                var t,
-                    n,
-                    r,
-                    o,
-                    s = this;
-                return (
-                    l && (n = new RegExp('^' + s.source + '$(?!\\s)', i.call(s))),
-                    u && (t = s.lastIndex),
-                    (r = a.call(s, e)),
-                    u && r && (s.lastIndex = s.global ? r.index + r[0].length : t),
-                    l &&
-                        r &&
-                        r.length > 1 &&
-                        c.call(r[0], n, function () {
-                            for (o = 1; o < arguments.length - 2; o++) void 0 === arguments[o] && (r[o] = void 0);
-                        }),
-                    r
-                );
-            }),
-            (e.exports = s);
-    },
-    function (e, t, n) {
-        'use strict';
         n.d(t, 'a', function () {
             return c;
         });
-        n(45), n(34), n(21), n(64), n(31), n(32), n(33);
+        n(45), n(34), n(21), n(49), n(32), n(31), n(33);
         function r(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -1552,14 +1552,14 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var a = n(35),
+        var a = n(39),
             c = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, c, s, u, l, d, h, f, p, m, y;
+                var t, n, r, c, s, u, l, d, h, f, p, m;
                 return (
                     (t = e),
                     (n = [
@@ -1572,7 +1572,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((y = o(
+                                ((m = o(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1593,7 +1593,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return y.apply(this, arguments);
+                                    return m.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1633,7 +1633,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((m = o(
+                                ((p = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1656,13 +1656,13 @@
                                     })
                                 )),
                                 function (e) {
-                                    return m.apply(this, arguments);
+                                    return p.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'waitForTextInDOM',
                             value:
-                                ((p = o(
+                                ((f = o(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1685,7 +1685,7 @@
                                     })
                                 )),
                                 function (e, t) {
-                                    return p.apply(this, arguments);
+                                    return f.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1697,7 +1697,7 @@
                         {
                             key: 'moveOrphanedElementsIntoNewWrapper',
                             value:
-                                ((f = o(
+                                ((h = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1721,13 +1721,13 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return f.apply(this, arguments);
+                                    return h.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'createWrapper',
                             value:
-                                ((h = o(
+                                ((d = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         var i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -1753,7 +1753,7 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return h.apply(this, arguments);
+                                    return d.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1782,7 +1782,7 @@
                         {
                             key: 'addMultipleHeaderLogos',
                             value:
-                                ((d = o(
+                                ((l = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n, r, o, i;
                                         return regeneratorRuntime.wrap(
@@ -1821,7 +1821,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return d.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1864,7 +1864,7 @@
                         {
                             key: 'ratesComingSoon',
                             value:
-                                ((l = o(
+                                ((u = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -1894,7 +1894,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return l.apply(this, arguments);
+                                    return u.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1962,7 +1962,7 @@
                         {
                             key: 'fetchHTMLFromFile',
                             value:
-                                ((u = o(
+                                ((s = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         var n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -1996,7 +1996,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return u.apply(this, arguments);
+                                    return s.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2037,7 +2037,7 @@
                         {
                             key: 'addAttributeToInput',
                             value:
-                                ((s = o(
+                                ((c = o(
                                     regeneratorRuntime.mark(function e(t, n, r, o) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -2068,7 +2068,7 @@
                                     })
                                 )),
                                 function (e, t, n, r) {
-                                    return s.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2079,47 +2079,6 @@
                                     document.querySelector(e).textContent = r;
                                 }
                             },
-                        },
-                        {
-                            key: 'addHeaderButtonLink',
-                            value:
-                                ((c = o(
-                                    regeneratorRuntime.mark(function e(t, n) {
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) {
-                                                                e.next = 4;
-                                                                break;
-                                                            }
-                                                            return (e.next = 3), this.waitForSelectorInDOM('header');
-                                                        case 3:
-                                                            document
-                                                                .querySelector('header')
-                                                                .insertAdjacentHTML(
-                                                                    'beforeend',
-                                                                    '<div class="custom-button">\n                    <a id="custom-link" target="_blank" href="'
-                                                                        .concat(t, '">')
-                                                                        .concat(
-                                                                            n,
-                                                                            '</a>\n                </div>\n                <style class="stay-22-header-styles">\n                    @media screen and (max-width: 600px) {\n                    header {\n                            display: flex;\n                            flex-direction: column;\n                        }\n                    }\n                <style>\n                '
-                                                                        )
-                                                                );
-                                                        case 4:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function (e, t) {
-                                    return c.apply(this, arguments);
-                                }),
                         },
                         {
                             key: 'checkForPastDate',
@@ -2138,17 +2097,17 @@
     function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(30),
-            i = n(27),
-            a = n(19),
-            c = n(62),
-            s = n(41),
+            o = n(28),
+            i = n(26),
+            a = n(17),
+            c = n(58),
+            s = n(42),
             u = Math.max,
             l = Math.min,
             d = Math.floor,
             h = /\$([$&`']|\d\d?|<[^>]*>)/g,
             f = /\$([$&`']|\d\d?)/g;
-        n(42)('replace', 2, function (e, t, n, p) {
+        n(43)('replace', 2, function (e, t, n, p) {
             return [
                 function (r, o) {
                     var i = e(this),
@@ -2223,62 +2182,13 @@
         });
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(2),
-            o = n(103),
-            i = n(41);
-        n(42)('search', 1, function (e, t, n, a) {
-            return [
-                function (n) {
-                    var r = e(this),
-                        o = null == n ? void 0 : n[t];
-                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
-                },
-                function (e) {
-                    var t = a(n, e, this);
-                    if (t.done) return t.value;
-                    var c = r(e),
-                        s = String(this),
-                        u = c.lastIndex;
-                    o(u, 0) || (c.lastIndex = 0);
-                    var l = i(c, s);
-                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
-                },
-            ];
-        });
-    },
-    function (e, t, n) {
-        e.exports =
-            !n(3) &&
-            !n(8)(function () {
-                return (
-                    7 !=
-                    Object.defineProperty(n(36)('div'), 'a', {
-                        get: function () {
-                            return 7;
-                        },
-                    }).a
-                );
-            });
-    },
-    function (e, t, n) {
-        var r = n(2),
-            o = n(23),
-            i = n(0)('species');
-        e.exports = function (e, t) {
-            var n,
-                a = r(e).constructor;
-            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
-        };
-    },
-    function (e, t, n) {
         var r,
             o,
             i,
             a = n(22),
-            c = n(83),
-            s = n(50),
-            u = n(36),
+            c = n(78),
+            s = n(47),
+            u = n(35),
             l = n(1),
             d = l.process,
             h = l.setImmediate,
@@ -2359,24 +2269,43 @@
         };
     },
     function (e, t, n) {
-        var r = n(1),
-            o = n(11),
-            i = n(16),
-            a = n(53),
-            c = n(5).f;
-        e.exports = function (e) {
-            var t = o.Symbol || (o.Symbol = i ? {} : r.Symbol || {});
-            '_' == e.charAt(0) || e in t || c(t, e, {value: a.f(e)});
-        };
+        var r = n(28),
+            o = n(15);
+        n(97)('keys', function () {
+            return function (e) {
+                return o(r(e));
+            };
+        });
     },
     function (e, t, n) {
-        t.f = n(0);
+        e.exports =
+            !n(3) &&
+            !n(9)(function () {
+                return (
+                    7 !=
+                    Object.defineProperty(n(35)('div'), 'a', {
+                        get: function () {
+                            return 7;
+                        },
+                    }).a
+                );
+            });
+    },
+    function (e, t, n) {
+        var r = n(2),
+            o = n(23),
+            i = n(0)('species');
+        e.exports = function (e, t) {
+            var n,
+                a = r(e).constructor;
+            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
+        };
     },
     function (e, t, n) {
         var r = n(10),
             o = n(12),
-            i = n(55)(!1),
-            a = n(38)('IE_PROTO');
+            i = n(53)(!1),
+            a = n(36)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
                 c = o(e),
@@ -2389,8 +2318,8 @@
     },
     function (e, t, n) {
         var r = n(12),
-            o = n(27),
-            i = n(94);
+            o = n(26),
+            i = n(89);
         e.exports = function (e) {
             return function (t, n, a) {
                 var c,
@@ -2404,22 +2333,19 @@
             };
         };
     },
-    function (e, t) {
-        t.f = Object.getOwnPropertySymbols;
-    },
     function (e, t, n) {
         var r = n(2),
-            o = n(96),
-            i = n(39),
-            a = n(38)('IE_PROTO'),
+            o = n(90),
+            i = n(37),
+            a = n(36)('IE_PROTO'),
             c = function () {},
             s = function () {
                 var e,
-                    t = n(36)('iframe'),
+                    t = n(35)('iframe'),
                     r = i.length;
                 for (
                     t.style.display = 'none',
-                        n(50).appendChild(t),
+                        n(47).appendChild(t),
                         t.src = 'javascript:',
                         (e = t.contentWindow.document).open(),
                         e.write('<script>document.F=Object</script>'),
@@ -2439,36 +2365,9 @@
             };
     },
     function (e, t, n) {
-        var r = n(54),
-            o = n(39).concat('length', 'prototype');
-        t.f =
-            Object.getOwnPropertyNames ||
-            function (e) {
-                return r(e, o);
-            };
-    },
-    function (e, t, n) {
-        var r = n(29),
-            o = n(26),
-            i = n(12),
-            a = n(37),
-            c = n(10),
-            s = n(47),
-            u = Object.getOwnPropertyDescriptor;
-        t.f = n(3)
-            ? u
-            : function (e, t) {
-                  if (((e = i(e)), (t = a(t, !0)), s))
-                      try {
-                          return u(e, t);
-                      } catch (e) {}
-                  if (c(e, t)) return o(!r.f.call(e, t), e[t]);
-              };
-    },
-    function (e, t, n) {
         var r = n(10),
-            o = n(30),
-            i = n(38)('IE_PROTO'),
+            o = n(28),
+            i = n(36)('IE_PROTO'),
             a = Object.prototype;
         e.exports =
             Object.getPrototypeOf ||
@@ -2486,10 +2385,79 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(76)(!0);
+        var r = n(2),
+            o = n(105),
+            i = n(42);
+        n(43)('search', 1, function (e, t, n, a) {
+            return [
+                function (n) {
+                    var r = e(this),
+                        o = null == n ? void 0 : n[t];
+                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
+                },
+                function (e) {
+                    var t = a(n, e, this);
+                    if (t.done) return t.value;
+                    var c = r(e),
+                        s = String(this),
+                        u = c.lastIndex;
+                    o(u, 0) || (c.lastIndex = 0);
+                    var l = i(c, s);
+                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
+                },
+            ];
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(69)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
+    },
+    function (e, t, n) {
+        var r = n(1),
+            o = n(11),
+            i = n(18),
+            a = n(60),
+            c = n(5).f;
+        e.exports = function (e) {
+            var t = o.Symbol || (o.Symbol = i ? {} : r.Symbol || {});
+            '_' == e.charAt(0) || e in t || c(t, e, {value: a.f(e)});
+        };
+    },
+    function (e, t, n) {
+        t.f = n(0);
+    },
+    function (e, t) {
+        t.f = Object.getOwnPropertySymbols;
+    },
+    function (e, t, n) {
+        var r = n(52),
+            o = n(37).concat('length', 'prototype');
+        t.f =
+            Object.getOwnPropertyNames ||
+            function (e) {
+                return r(e, o);
+            };
+    },
+    function (e, t, n) {
+        var r = n(30),
+            o = n(29),
+            i = n(12),
+            a = n(40),
+            c = n(10),
+            s = n(50),
+            u = Object.getOwnPropertyDescriptor;
+        t.f = n(3)
+            ? u
+            : function (e, t) {
+                  if (((e = i(e)), (t = a(t, !0)), s))
+                      try {
+                          return u(e, t);
+                      } catch (e) {}
+                  if (c(e, t)) return o(!r.f.call(e, t), e[t]);
+              };
     },
     function (e, t, n) {
         var r = n(6),
@@ -2499,15 +2467,6 @@
             var t;
             return r(e) && (void 0 !== (t = e[i]) ? !!t : 'RegExp' == o(e));
         };
-    },
-    function (e, t, n) {
-        var r = n(30),
-            o = n(14);
-        n(111)('keys', function () {
-            return function (e) {
-                return o(r(e));
-            };
-        });
     },
     function (e, t, n) {
         e.exports = (function () {
@@ -2687,7 +2646,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(31), n(98), n(34), n(21), n(74), n(75), n(32), n(46), n(105), n(45), n(68), n(69), n(67), n(33);
+        n(32), n(92), n(34), n(21), n(98), n(95), n(31), n(57), n(106), n(45), n(70), n(71), n(67), n(33);
         var r = 'URLSearchParams' in self,
             o = 'Symbol' in self && 'iterator' in Symbol,
             i =
@@ -3035,9 +2994,9 @@
             });
         }
         (k.polyfill = !0), self.fetch || ((self.fetch = k), (self.Headers = f), (self.Request = S), (self.Response = _));
-        n(109);
+        n(110);
         var C = n(44);
-        n(64);
+        n(49);
         function M(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -3069,10 +3028,10 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var P = n(35),
-            T = n(65);
-        P.extend(T);
-        var E = (function () {
+        var P = n(39),
+            E = n(65);
+        P.extend(E);
+        var T = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -3348,11 +3307,11 @@
             return W;
         });
         var H = new B.a(),
-            D = n(35),
+            D = n(39),
             I = n(65);
         D.extend(I);
         var N = new C.a(),
-            Y = new E(),
+            Y = new T(),
             W = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -3410,7 +3369,7 @@
                                                                     );
                                                                 case 9:
                                                                     'cug' === e.site_config.site_type &&
-                                                                        (N.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                        N.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                             F(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
@@ -3426,7 +3385,6 @@
                                                                                 })
                                                                             )
                                                                         ),
-                                                                        e.showUsersCugPoints()),
                                                                         N.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                         'property-detail' === e.page_name &&
                                                                             (e.addImageSlideshow(),
@@ -3456,7 +3414,8 @@
                                                                                 'div.subHeaderContainer > div > a > span.translateMe',
                                                                                 '.SinglePropDetail .ArnLeftListContainer',
                                                                                 'afterBegin'
-                                                                            )),
+                                                                            ),
+                                                                            e.moveOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                         'checkout' === e.page_name &&
                                                                             (N.createModal(
                                                                                 [document.querySelector('#theStayPolicies')],
@@ -3514,7 +3473,8 @@
                                                                             'afterEnd'
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && Y.init(e.site_config, e.page_name, N),
+                                                                        'search-results' === e.page_name &&
+                                                                            (Y.init(e.site_config, e.page_name, N), e.moveOriginalPrice('.ArnProperty', '.arnPrice')),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
                                                                             F(
@@ -4231,7 +4191,7 @@
                                             )
                                             .concat(
                                                 this.site_config.background_color,
-                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a\n            {\n                background: '
+                                                ';\n            }\n\n        /* Primary Background Color */\n            #searching h2:after,\n            #theConfirmationButton,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arn-leaflet-reset-button,\n            .bookRoom,\n            .HoldRoomsForm .submit,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .yui3-skin-sam .yui3-calendar-day:hover,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner\n            {\n                background: '
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
@@ -4246,13 +4206,13 @@
                                             )
                                             .concat(
                                                 this.site_config.primary_color,
-                                                ';\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a\n            {\n                color: '
+                                                ';\n                }\n            }\n\n            #searching,\n            #theConfirmationButton,\n            .HoldRoomsForm .submit,\n            .ArnPrimarySearchContainer,\n            .ArnShowRatesLink,\n            .ArnTripAdvisorDetails.HasReviews .ratingCount,\n            .SinglePropDetail .CheckRates .submit,\n            .CreateAnAccountAction,\n            .RootBody #theOtherSubmitButton,\n            .SearchHotels #theSubmitButton,\n            .SimpleSearch,\n            .WBForgotPasswordFormActions .submit,\n            .WBLoginFormActions .submit,\n            .WBValidatedRegistrationFormActions .submit,\n            .arnMapPopup .rate,\n            #datePromptContainer+.SimpleSearch .CheckRates .submit,\n            .bookRoom,\n            .sort-wrapper .active,\n            .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton\n            {\n                color: '
                                             )
                                             .concat(this.site_config.primary_text_color, ';\n            }\n\n            .custom-button a:hover {\n                color: ')
-                                            .concat(this.site_config.primary_color, '\n            }\n\n            span.exclusive-rate {\n                background: ')
+                                            .concat(this.site_config.primary_color, ';\n            }\n\n            span.exclusive-rate {\n                background: ')
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n                color: #fff;\n            }\n\n\n            @media screen and (max-width:1105px) {\n\n                #arnCloseAnchorId,\n                #arnCloseAnchorId:active,\n                #arnCloseAnchorId:focus,\n                #arnCloseAnchorId:hover {\n                    color: '
+                                                ';\n                color: #fff;\n            }\n\n            @media screen and (max-width:1105px) {\n\n                #arnCloseAnchorId,\n                #arnCloseAnchorId:active,\n                #arnCloseAnchorId:focus,\n                #arnCloseAnchorId:hover {\n                    color: '
                                             )
                                             .concat(
                                                 this.site_config.secondary_text_color,
@@ -4269,7 +4229,7 @@
                                             .concat(this.site_config.secondary_text_color, ';\n            }\n\n            .percentSavings{\n                color: ')
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {\n                background: '
+                                                ';\n            }\n\n            input#theSubmitButton,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .arn-leaflet-reset-button,\n            input#theConfirmationButton,\n            a.ArnShowRatesLink, .WBConfirmedBooking .submit {\n                background: '
                                             )
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(this.site_config.primary_text_color, ';\n                border: 1px solid ')
@@ -4280,7 +4240,7 @@
                                             .concat(this.site_config.primary_color, ';\n                color: ')
                                             .concat(
                                                 this.site_config.primary_text_color,
-                                                ';\n            }\n\n            input#theSubmitButton:hover,\n            input#theSubmitButton:focus,\n            input#theSubmitButton:active,\n            #theOtherSubmitButton:hover,\n            #theOtherSubmitButton:focus,\n            #theOtherSubmitButton:active,\n            .RootBody #theOtherSubmitButton:hover,\n            .RootBody #theOtherSubmitButton:focus,\n            .RootBody #theOtherSubmitButton:active,\n            .bookRoom:hover,\n            .bookRoom:focus,\n            .bookRoom:active,\n            .arn-leaflet-reset-button:hover,\n            .arn-leaflet-reset-button:focus,\n            .arn-leaflet-reset-button:active,\n            input#theConfirmationButton:hover,\n            input#theConfirmationButton:focus,\n            input#theConfirmationButton:active,\n            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {\n                background: '
+                                                ';\n            }\n\n            input#theSubmitButton:hover,\n            input#theSubmitButton:focus,\n            input#theSubmitButton:active,\n            #theOtherSubmitButton:hover,\n            #theOtherSubmitButton:focus,\n            #theOtherSubmitButton:active,\n            .RootBody #theOtherSubmitButton:hover,\n            .RootBody #theOtherSubmitButton:focus,\n            .RootBody #theOtherSubmitButton:active,\n            .bookRoom:hover,\n            .bookRoom:focus,\n            .bookRoom:active,\n            .arn-leaflet-reset-button:hover,\n            .arn-leaflet-reset-button:focus,\n            .arn-leaflet-reset-button:active,\n            input#theConfirmationButton:hover,\n            input#theConfirmationButton:focus,\n            input#theConfirmationButton:active,\n            a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {\n                background: '
                                             )
                                             .concat(this.site_config.button_hover_background_color, ';\n                color: ')
                                             .concat(this.site_config.button_hover_text_color, ';\n                border: 1px solid ')
@@ -4324,7 +4284,7 @@
                                             )
                                             .concat(
                                                 this.site_config.secondary_color,
-                                                ';\n            }\n\n            #theOtherSubmitButton,\n            .ArnSecondarySearchOuterContainer select,\n            .ArnShowRatesLink,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .sort,\n            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {\n                border:1px solid '
+                                                ';\n            }\n\n            #theOtherSubmitButton,\n            .ArnSecondarySearchOuterContainer select,\n            .ArnShowRatesLink,\n            .RootBody #theOtherSubmitButton,\n            .bookRoom,\n            .sort,\n            .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction {\n                border:1px solid '
                                             )
                                             .concat(this.site_config.border_color, ';\n            }\n\n            .holdRoom {\n                border: 1px solid ')
                                             .concat(
@@ -5524,23 +5484,23 @@
                             },
                         },
                         {
-                            key: 'showUsersCugPoints',
-                            value: function () {
-                                if (this.site_config.cug.show_points && this.site_config.cug.is_cug) {
-                                    var e = N.getMetaTagContent('memberMetaTag');
-                                    if (e) {
-                                        var t = JSON.parse(e).Points;
-                                        document
-                                            .querySelector('header')
-                                            .insertAdjacentHTML(
-                                                'afterEnd',
-                                                '\n            <div class="points-container">Points: <span class="points">'.concat(
-                                                    t,
-                                                    '</span></div>\n            <style>\n                .points-container{\n                    text-align: right;\n                    margin: 12px 12px 12px 0;\n                    text-transform: uppercase;\n                }\n\n                .points{\n                    font-weight: 700;\n                }\n            </style>\n        '
-                                                )
-                                            );
-                                    }
-                                }
+                            key: 'moveOriginalPrice',
+                            value: function (e, t) {
+                                'cug' !== this.site_type &&
+                                    document.querySelectorAll(e).forEach(function (e) {
+                                        if (e.querySelector('div.originalPrice')) {
+                                            e.querySelector(t).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                            var n,
+                                                r,
+                                                o = parseFloat(e.querySelector('.originalPrice').textContent),
+                                                i = parseFloat(
+                                                    document.querySelector('.SearchHotels')
+                                                        ? e.querySelector('.arnUnit').textContent
+                                                        : e.querySelector('.ArnNightlyRate strong').textContent
+                                                );
+                                            (r = ((o - (n = i)) / n) * 100), Math.floor(r) > 5 && (e.querySelector('.originalPrice').style.display = 'none');
+                                        }
+                                    });
                             },
                         },
                     ]) && O(t.prototype, n),
@@ -5551,29 +5511,30 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(63),
+        var r = n(64),
             o = n(2),
-            i = n(48),
-            a = n(62),
-            c = n(27),
-            s = n(41),
-            u = n(43),
-            l = n(8),
+            i = n(51),
+            a = n(58),
+            c = n(26),
+            s = n(42),
+            u = n(38),
+            l = n(9),
             d = Math.min,
             h = [].push,
-            f = !l(function () {
+            f = 'length',
+            p = !l(function () {
                 RegExp(4294967295, 'y');
             });
-        n(42)('split', 2, function (e, t, n, l) {
-            var p;
+        n(43)('split', 2, function (e, t, n, l) {
+            var m;
             return (
-                (p =
+                (m =
                     'c' == 'abbc'.split(/(b)*/)[1] ||
-                    4 != 'test'.split(/(?:)/, -1).length ||
-                    2 != 'ab'.split(/(?:ab)*/).length ||
-                    4 != '.'.split(/(.?)(.?)/).length ||
-                    '.'.split(/()()/).length > 1 ||
-                    ''.split(/.?/).length
+                    4 != 'test'.split(/(?:)/, -1)[f] ||
+                    2 != 'ab'.split(/(?:ab)*/)[f] ||
+                    4 != '.'.split(/(.?)(.?)/)[f] ||
+                    '.'.split(/()()/)[f] > 1 ||
+                    ''.split(/.?/)[f]
                         ? function (e, t) {
                               var o = String(this);
                               if (void 0 === e && 0 === t) return [];
@@ -5585,19 +5546,19 @@
                                       s = [],
                                       l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
                                       d = 0,
-                                      f = void 0 === t ? 4294967295 : t >>> 0,
-                                      p = new RegExp(e.source, l + 'g');
-                                  (i = u.call(p, o)) &&
+                                      p = void 0 === t ? 4294967295 : t >>> 0,
+                                      m = new RegExp(e.source, l + 'g');
+                                  (i = u.call(m, o)) &&
                                   !(
-                                      (a = p.lastIndex) > d &&
-                                      (s.push(o.slice(d, i.index)), i.length > 1 && i.index < o.length && h.apply(s, i.slice(1)), (c = i[0].length), (d = a), s.length >= f)
+                                      (a = m.lastIndex) > d &&
+                                      (s.push(o.slice(d, i.index)), i[f] > 1 && i.index < o[f] && h.apply(s, i.slice(1)), (c = i[0][f]), (d = a), s[f] >= p)
                                   );
 
                               )
-                                  p.lastIndex === i.index && p.lastIndex++;
-                              return d === o.length ? (!c && p.test('')) || s.push('') : s.push(o.slice(d)), s.length > f ? s.slice(0, f) : s;
+                                  m.lastIndex === i.index && m.lastIndex++;
+                              return d === o[f] ? (!c && m.test('')) || s.push('') : s.push(o.slice(d)), s[f] > p ? s.slice(0, p) : s;
                           }
-                        : '0'.split(void 0, 0).length
+                        : '0'.split(void 0, 0)[f]
                         ? function (e, t) {
                               return void 0 === e && 0 === t ? [] : n.call(this, e, t);
                           }
@@ -5606,25 +5567,25 @@
                     function (n, r) {
                         var o = e(this),
                             i = null == n ? void 0 : n[t];
-                        return void 0 !== i ? i.call(n, o, r) : p.call(String(o), n, r);
+                        return void 0 !== i ? i.call(n, o, r) : m.call(String(o), n, r);
                     },
                     function (e, t) {
-                        var r = l(p, e, this, t, p !== n);
+                        var r = l(m, e, this, t, m !== n);
                         if (r.done) return r.value;
                         var u = o(e),
                             h = String(this),
-                            m = i(u, RegExp),
+                            f = i(u, RegExp),
                             y = u.unicode,
-                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (f ? 'y' : 'g'),
-                            v = new m(f ? u : '^(?:' + u.source + ')', g),
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
+                            v = new f(p ? u : '^(?:' + u.source + ')', g),
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
                         if (0 === h.length) return null === s(v, h) ? [h] : [];
                         for (var S = 0, w = 0, _ = []; w < h.length; ) {
-                            v.lastIndex = f ? w : 0;
+                            v.lastIndex = p ? w : 0;
                             var A,
-                                x = s(v, f ? h : h.slice(w));
-                            if (null === x || (A = d(c(v.lastIndex + (f ? 0 : w)), h.length)) === S) w = a(h, w, y);
+                                x = s(v, p ? h : h.slice(w));
+                            if (null === x || (A = d(c(v.lastIndex + (p ? 0 : w)), h.length)) === S) w = a(h, w, y);
                             else {
                                 if ((_.push(h.slice(S, w)), _.length === b)) return _;
                                 for (var k = 1; k <= x.length - 1; k++) if ((_.push(x[k]), _.length === b)) return _;
@@ -5639,255 +5600,14 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(4),
-            o = n(55)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(61)('includes');
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(4),
-            o = n(107);
-        r(r.P + r.F * n(108)('includes'), 'String', {
-            includes: function (e) {
-                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
-    },
-    function (e, t, n) {
-        n(52)('asyncIterator');
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(1),
-            o = n(10),
-            i = n(3),
-            a = n(4),
-            c = n(9),
-            s = n(91).KEY,
-            u = n(8),
-            l = n(25),
-            d = n(28),
-            h = n(17),
-            f = n(0),
-            p = n(53),
-            m = n(52),
-            y = n(92),
-            g = n(95),
-            v = n(2),
-            b = n(6),
-            S = n(30),
-            w = n(12),
-            _ = n(37),
-            A = n(26),
-            x = n(57),
-            k = n(97),
-            C = n(59),
-            L = n(56),
-            M = n(5),
-            R = n(14),
-            q = C.f,
-            P = M.f,
-            T = k.f,
-            E = r.Symbol,
-            B = r.JSON,
-            j = B && B.stringify,
-            F = f('_hidden'),
-            O = f('toPrimitive'),
-            H = {}.propertyIsEnumerable,
-            D = l('symbol-registry'),
-            I = l('symbols'),
-            N = l('op-symbols'),
-            Y = Object.prototype,
-            W = 'function' == typeof E && !!L.f,
-            U = r.QObject,
-            $ = !U || !U.prototype || !U.prototype.findChild,
-            G =
-                i &&
-                u(function () {
-                    return (
-                        7 !=
-                        x(
-                            P({}, 'a', {
-                                get: function () {
-                                    return P(this, 'a', {value: 7}).a;
-                                },
-                            })
-                        ).a
-                    );
-                })
-                    ? function (e, t, n) {
-                          var r = q(Y, t);
-                          r && delete Y[t], P(e, t, n), r && e !== Y && P(Y, t, r);
-                      }
-                    : P,
-            V = function (e) {
-                var t = (I[e] = x(E.prototype));
-                return (t._k = e), t;
-            },
-            z =
-                W && 'symbol' == typeof E.iterator
-                    ? function (e) {
-                          return 'symbol' == typeof e;
-                      }
-                    : function (e) {
-                          return e instanceof E;
-                      },
-            Z = function (e, t, n) {
-                return (
-                    e === Y && Z(N, t, n),
-                    v(e),
-                    (t = _(t, !0)),
-                    v(n),
-                    o(I, t)
-                        ? (n.enumerable ? (o(e, F) && e[F][t] && (e[F][t] = !1), (n = x(n, {enumerable: A(0, !1)}))) : (o(e, F) || P(e, F, A(1, {})), (e[F][t] = !0)), G(e, t, n))
-                        : P(e, t, n)
-                );
-            },
-            J = function (e, t) {
-                v(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
-                return e;
-            },
-            Q = function (e) {
-                var t = H.call(this, (e = _(e, !0)));
-                return !(this === Y && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, F) && this[F][e])) || t);
-            },
-            K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== Y || !o(I, t) || o(N, t))) {
-                    var n = q(e, t);
-                    return !n || !o(I, t) || (o(e, F) && e[F][t]) || (n.enumerable = !0), n;
-                }
-            },
-            X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == F || t == s || r.push(t);
-                return r;
-            },
-            ee = function (e) {
-                for (var t, n = e === Y, r = T(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
-                return i;
-            };
-        W ||
-            (c(
-                (E = function () {
-                    if (this instanceof E) throw TypeError('Symbol is not a constructor!');
-                    var e = h(arguments.length > 0 ? arguments[0] : void 0),
-                        t = function (n) {
-                            this === Y && t.call(N, n), o(this, F) && o(this[F], e) && (this[F][e] = !1), G(this, e, A(1, n));
-                        };
-                    return i && $ && G(Y, e, {configurable: !0, set: t}), V(e);
-                }).prototype,
-                'toString',
-                function () {
-                    return this._k;
-                }
-            ),
-            (C.f = K),
-            (M.f = Z),
-            (n(58).f = k.f = X),
-            (n(29).f = Q),
-            (L.f = ee),
-            i && !n(16) && c(Y, 'propertyIsEnumerable', Q, !0),
-            (p.f = function (e) {
-                return V(f(e));
-            })),
-            a(a.G + a.W + a.F * !W, {Symbol: E});
-        for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
-            f(te[ne++]);
-        for (var re = R(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
-        a(a.S + a.F * !W, 'Symbol', {
-            for: function (e) {
-                return o(D, (e += '')) ? D[e] : (D[e] = E(e));
-            },
-            keyFor: function (e) {
-                if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in D) if (D[t] === e) return t;
-            },
-            useSetter: function () {
-                $ = !0;
-            },
-            useSimple: function () {
-                $ = !1;
-            },
-        }),
-            a(a.S + a.F * !W, 'Object', {
-                create: function (e, t) {
-                    return void 0 === t ? x(e) : J(x(e), t);
-                },
-                defineProperty: Z,
-                defineProperties: J,
-                getOwnPropertyDescriptor: K,
-                getOwnPropertyNames: X,
-                getOwnPropertySymbols: ee,
-            });
-        var ie = u(function () {
-            L.f(1);
-        });
-        a(a.S + a.F * ie, 'Object', {
-            getOwnPropertySymbols: function (e) {
-                return L.f(S(e));
-            },
-        }),
-            B &&
-                a(
-                    a.S +
-                        a.F *
-                            (!W ||
-                                u(function () {
-                                    var e = E();
-                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
-                                })),
-                    'JSON',
-                    {
-                        stringify: function (e) {
-                            for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
-                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !z(e)))
-                                return (
-                                    g(t) ||
-                                        (t = function (e, t) {
-                                            if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
-                                        }),
-                                    (r[1] = t),
-                                    j.apply(B, r)
-                                );
-                        },
-                    }
-                ),
-            E.prototype[O] || n(7)(E.prototype, O, E.prototype.valueOf),
-            d(E, 'Symbol'),
-            d(Math, 'Math', !0),
-            d(r.JSON, 'JSON', !0);
-    },
-    function (e, t, n) {
-        var r = n(59),
-            o = n(60),
-            i = n(10),
-            a = n(4),
-            c = n(6),
-            s = n(2);
-        a(a.S, 'Reflect', {
-            get: function e(t, n) {
-                var a,
-                    u,
-                    l = arguments.length < 3 ? t : arguments[2];
-                return s(t) === l ? t[n] : (a = r.f(t, n)) ? (i(a, 'value') ? a.value : void 0 !== a.get ? a.get.call(l) : void 0) : c((u = o(t))) ? e(u, n, l) : void 0;
-            },
-        });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(16),
+        var r = n(18),
             o = n(4),
-            i = n(9),
+            i = n(8),
             a = n(7),
-            c = n(18),
-            s = n(100),
-            u = n(28),
-            l = n(60),
+            c = n(16),
+            s = n(94),
+            u = n(27),
+            l = n(55),
             d = n(0)('iterator'),
             h = !([].keys && 'next' in [].keys()),
             f = function () {
@@ -5939,39 +5659,8 @@
         };
     },
     function (e, t, n) {
-        var r = n(4),
-            o = n(101)(!0);
-        r(r.S, 'Object', {
-            entries: function (e) {
-                return o(e);
-            },
-        });
-    },
-    function (e, t, n) {
-        'use strict';
-        n(102);
-        var r = n(2),
-            o = n(40),
-            i = n(3),
-            a = /./.toString,
-            c = function (e) {
-                n(9)(RegExp.prototype, 'toString', e, !0);
-            };
-        n(8)(function () {
-            return '/a/b' != a.call({source: 'a', flags: 'b'});
-        })
-            ? c(function () {
-                  var e = r(this);
-                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
-              })
-            : 'toString' != a.name &&
-              c(function () {
-                  return a.call(this);
-              });
-    },
-    function (e, t, n) {
-        var r = n(19),
-            o = n(15);
+        var r = n(17),
+            o = n(14);
         e.exports = function (e) {
             return function (t, n) {
                 var i,
@@ -5994,6 +5683,27 @@
         };
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            o = n(53)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(56)('includes');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            o = n(108);
+        r(r.P + r.F * n(109)('includes'), 'String', {
+            includes: function (e) {
+                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        });
+    },
+    function (e, t, n) {
         e.exports = n(25)('native-function-to-string', Function.toString);
     },
     function (e, t) {
@@ -6004,11 +5714,11 @@
     },
     function (e, t, n) {
         var r = n(22),
-            o = n(80),
-            i = n(81),
+            o = n(75),
+            i = n(76),
             a = n(2),
-            c = n(27),
-            s = n(82),
+            c = n(26),
+            s = n(77),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, h) {
@@ -6042,7 +5752,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(18),
+        var r = n(16),
             o = n(0)('iterator'),
             i = Array.prototype;
         e.exports = function (e) {
@@ -6052,7 +5762,7 @@
     function (e, t, n) {
         var r = n(24),
             o = n(0)('iterator'),
-            i = n(18);
+            i = n(16);
         e.exports = n(11).getIteratorMethod = function (e) {
             if (null != e) return e[o] || e['@@iterator'] || i[r(e)];
         };
@@ -6077,7 +5787,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(49).set,
+            o = n(46).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
@@ -6142,7 +5852,7 @@
     function (e, t, n) {
         var r = n(2),
             o = n(6),
-            i = n(51);
+            i = n(48);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -6150,7 +5860,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(9);
+        var r = n(8);
         e.exports = function (e, t, n) {
             for (var o in t) r(e, o, t[o], n);
             return e;
@@ -6205,7 +5915,345 @@
         };
     },
     function (e, t, n) {
-        var r = n(17)('meta'),
+        n(59)('asyncIterator');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(1),
+            o = n(10),
+            i = n(3),
+            a = n(4),
+            c = n(8),
+            s = n(99).KEY,
+            u = n(9),
+            l = n(25),
+            d = n(27),
+            h = n(19),
+            f = n(0),
+            p = n(60),
+            m = n(59),
+            y = n(100),
+            g = n(101),
+            v = n(2),
+            b = n(6),
+            S = n(28),
+            w = n(12),
+            _ = n(40),
+            A = n(29),
+            x = n(54),
+            k = n(102),
+            C = n(63),
+            L = n(61),
+            M = n(5),
+            R = n(15),
+            q = C.f,
+            P = M.f,
+            E = k.f,
+            T = r.Symbol,
+            B = r.JSON,
+            j = B && B.stringify,
+            F = f('_hidden'),
+            O = f('toPrimitive'),
+            H = {}.propertyIsEnumerable,
+            D = l('symbol-registry'),
+            I = l('symbols'),
+            N = l('op-symbols'),
+            Y = Object.prototype,
+            W = 'function' == typeof T && !!L.f,
+            U = r.QObject,
+            $ = !U || !U.prototype || !U.prototype.findChild,
+            G =
+                i &&
+                u(function () {
+                    return (
+                        7 !=
+                        x(
+                            P({}, 'a', {
+                                get: function () {
+                                    return P(this, 'a', {value: 7}).a;
+                                },
+                            })
+                        ).a
+                    );
+                })
+                    ? function (e, t, n) {
+                          var r = q(Y, t);
+                          r && delete Y[t], P(e, t, n), r && e !== Y && P(Y, t, r);
+                      }
+                    : P,
+            V = function (e) {
+                var t = (I[e] = x(T.prototype));
+                return (t._k = e), t;
+            },
+            z =
+                W && 'symbol' == typeof T.iterator
+                    ? function (e) {
+                          return 'symbol' == typeof e;
+                      }
+                    : function (e) {
+                          return e instanceof T;
+                      },
+            Z = function (e, t, n) {
+                return (
+                    e === Y && Z(N, t, n),
+                    v(e),
+                    (t = _(t, !0)),
+                    v(n),
+                    o(I, t)
+                        ? (n.enumerable ? (o(e, F) && e[F][t] && (e[F][t] = !1), (n = x(n, {enumerable: A(0, !1)}))) : (o(e, F) || P(e, F, A(1, {})), (e[F][t] = !0)), G(e, t, n))
+                        : P(e, t, n)
+                );
+            },
+            J = function (e, t) {
+                v(e);
+                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
+                return e;
+            },
+            Q = function (e) {
+                var t = H.call(this, (e = _(e, !0)));
+                return !(this === Y && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, F) && this[F][e])) || t);
+            },
+            K = function (e, t) {
+                if (((e = w(e)), (t = _(t, !0)), e !== Y || !o(I, t) || o(N, t))) {
+                    var n = q(e, t);
+                    return !n || !o(I, t) || (o(e, F) && e[F][t]) || (n.enumerable = !0), n;
+                }
+            },
+            X = function (e) {
+                for (var t, n = E(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == F || t == s || r.push(t);
+                return r;
+            },
+            ee = function (e) {
+                for (var t, n = e === Y, r = E(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(Y, t)) || i.push(I[t]);
+                return i;
+            };
+        W ||
+            (c(
+                (T = function () {
+                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
+                    var e = h(arguments.length > 0 ? arguments[0] : void 0),
+                        t = function (n) {
+                            this === Y && t.call(N, n), o(this, F) && o(this[F], e) && (this[F][e] = !1), G(this, e, A(1, n));
+                        };
+                    return i && $ && G(Y, e, {configurable: !0, set: t}), V(e);
+                }).prototype,
+                'toString',
+                function () {
+                    return this._k;
+                }
+            ),
+            (C.f = K),
+            (M.f = Z),
+            (n(62).f = k.f = X),
+            (n(30).f = Q),
+            (L.f = ee),
+            i && !n(18) && c(Y, 'propertyIsEnumerable', Q, !0),
+            (p.f = function (e) {
+                return V(f(e));
+            })),
+            a(a.G + a.W + a.F * !W, {Symbol: T});
+        for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
+            f(te[ne++]);
+        for (var re = R(f.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        a(a.S + a.F * !W, 'Symbol', {
+            for: function (e) {
+                return o(D, (e += '')) ? D[e] : (D[e] = T(e));
+            },
+            keyFor: function (e) {
+                if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                for (var t in D) if (D[t] === e) return t;
+            },
+            useSetter: function () {
+                $ = !0;
+            },
+            useSimple: function () {
+                $ = !1;
+            },
+        }),
+            a(a.S + a.F * !W, 'Object', {
+                create: function (e, t) {
+                    return void 0 === t ? x(e) : J(x(e), t);
+                },
+                defineProperty: Z,
+                defineProperties: J,
+                getOwnPropertyDescriptor: K,
+                getOwnPropertyNames: X,
+                getOwnPropertySymbols: ee,
+            });
+        var ie = u(function () {
+            L.f(1);
+        });
+        a(a.S + a.F * ie, 'Object', {
+            getOwnPropertySymbols: function (e) {
+                return L.f(S(e));
+            },
+        }),
+            B &&
+                a(
+                    a.S +
+                        a.F *
+                            (!W ||
+                                u(function () {
+                                    var e = T();
+                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
+                                })),
+                    'JSON',
+                    {
+                        stringify: function (e) {
+                            for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
+                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !z(e)))
+                                return (
+                                    g(t) ||
+                                        (t = function (e, t) {
+                                            if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
+                                        }),
+                                    (r[1] = t),
+                                    j.apply(B, r)
+                                );
+                        },
+                    }
+                ),
+            T.prototype[O] || n(7)(T.prototype, O, T.prototype.valueOf),
+            d(T, 'Symbol'),
+            d(Math, 'Math', !0),
+            d(r.JSON, 'JSON', !0);
+    },
+    function (e, t, n) {
+        var r = n(13);
+        e.exports = Object('z').propertyIsEnumerable(0)
+            ? Object
+            : function (e) {
+                  return 'String' == r(e) ? e.split('') : Object(e);
+              };
+    },
+    function (e, t, n) {
+        var r = n(17),
+            o = Math.max,
+            i = Math.min;
+        e.exports = function (e, t) {
+            return (e = r(e)) < 0 ? o(e + t, 0) : i(e, t);
+        };
+    },
+    function (e, t, n) {
+        var r = n(5),
+            o = n(2),
+            i = n(15);
+        e.exports = n(3)
+            ? Object.defineProperties
+            : function (e, t) {
+                  o(e);
+                  for (var n, a = i(t), c = a.length, s = 0; c > s; ) r.f(e, (n = a[s++]), t[n]);
+                  return e;
+              };
+    },
+    function (e, t, n) {
+        var r = n(63),
+            o = n(55),
+            i = n(10),
+            a = n(4),
+            c = n(6),
+            s = n(2);
+        a(a.S, 'Reflect', {
+            get: function e(t, n) {
+                var a,
+                    u,
+                    l = arguments.length < 3 ? t : arguments[2];
+                return s(t) === l ? t[n] : (a = r.f(t, n)) ? (i(a, 'value') ? a.value : void 0 !== a.get ? a.get.call(l) : void 0) : c((u = o(t))) ? e(u, n, l) : void 0;
+            },
+        });
+    },
+    function (e, t, n) {
+        var r = n(5).f,
+            o = Function.prototype,
+            i = /^\s*function ([^ (]*)/;
+        'name' in o ||
+            (n(3) &&
+                r(o, 'name', {
+                    configurable: !0,
+                    get: function () {
+                        try {
+                            return ('' + this).match(i)[1];
+                        } catch (e) {
+                            return '';
+                        }
+                    },
+                }));
+    },
+    function (e, t) {
+        e.exports = function (e, t) {
+            return {value: t, done: !!e};
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(54),
+            o = n(29),
+            i = n(27),
+            a = {};
+        n(7)(a, n(0)('iterator'), function () {
+            return this;
+        }),
+            (e.exports = function (e, t, n) {
+                (e.prototype = r(a, {next: o(1, n)})), i(e, t + ' Iterator');
+            });
+    },
+    function (e, t, n) {
+        'use strict';
+        n(104);
+        var r = n(2),
+            o = n(41),
+            i = n(3),
+            a = /./.toString,
+            c = function (e) {
+                n(8)(RegExp.prototype, 'toString', e, !0);
+            };
+        n(9)(function () {
+            return '/a/b' != a.call({source: 'a', flags: 'b'});
+        })
+            ? c(function () {
+                  var e = r(this);
+                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
+              })
+            : 'toString' != a.name &&
+              c(function () {
+                  return a.call(this);
+              });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(38);
+        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
+    },
+    function (e, t, n) {
+        var r = n(4),
+            o = n(11),
+            i = n(9);
+        e.exports = function (e, t) {
+            var n = (o.Object || {})[e] || Object[e],
+                a = {};
+            (a[e] = t(n)),
+                r(
+                    r.S +
+                        r.F *
+                            i(function () {
+                                n(1);
+                            }),
+                    'Object',
+                    a
+                );
+        };
+    },
+    function (e, t, n) {
+        var r = n(4),
+            o = n(103)(!0);
+        r(r.S, 'Object', {
+            entries: function (e) {
+                return o(e);
+            },
+        });
+    },
+    function (e, t, n) {
+        var r = n(19)('meta'),
             o = n(6),
             i = n(10),
             a = n(5).f,
@@ -6215,7 +6263,7 @@
                 function () {
                     return !0;
                 },
-            u = !n(8)(function () {
+            u = !n(9)(function () {
                 return s(Object.preventExtensions({}));
             }),
             l = function (e) {
@@ -6247,30 +6295,14 @@
             });
     },
     function (e, t, n) {
-        var r = n(14),
-            o = n(56),
-            i = n(29);
+        var r = n(15),
+            o = n(61),
+            i = n(30);
         e.exports = function (e) {
             var t = r(e),
                 n = o.f;
             if (n) for (var a, c = n(e), s = i.f, u = 0; c.length > u; ) s.call(e, (a = c[u++])) && t.push(a);
             return t;
-        };
-    },
-    function (e, t, n) {
-        var r = n(13);
-        e.exports = Object('z').propertyIsEnumerable(0)
-            ? Object
-            : function (e) {
-                  return 'String' == r(e) ? e.split('') : Object(e);
-              };
-    },
-    function (e, t, n) {
-        var r = n(19),
-            o = Math.max,
-            i = Math.min;
-        e.exports = function (e, t) {
-            return (e = r(e)) < 0 ? o(e + t, 0) : i(e, t);
         };
     },
     function (e, t, n) {
@@ -6282,20 +6314,8 @@
             };
     },
     function (e, t, n) {
-        var r = n(5),
-            o = n(2),
-            i = n(14);
-        e.exports = n(3)
-            ? Object.defineProperties
-            : function (e, t) {
-                  o(e);
-                  for (var n, a = i(t), c = a.length, s = 0; c > s; ) r.f(e, (n = a[s++]), t[n]);
-                  return e;
-              };
-    },
-    function (e, t, n) {
         var r = n(12),
-            o = n(58).f,
+            o = n(62).f,
             i = {}.toString,
             a = 'object' == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
         e.exports.f = function (e) {
@@ -6311,45 +6331,10 @@
         };
     },
     function (e, t, n) {
-        var r = n(5).f,
-            o = Function.prototype,
-            i = /^\s*function ([^ (]*)/;
-        'name' in o ||
-            (n(3) &&
-                r(o, 'name', {
-                    configurable: !0,
-                    get: function () {
-                        try {
-                            return ('' + this).match(i)[1];
-                        } catch (e) {
-                            return '';
-                        }
-                    },
-                }));
-    },
-    function (e, t) {
-        e.exports = function (e, t) {
-            return {value: t, done: !!e};
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(57),
-            o = n(26),
-            i = n(28),
-            a = {};
-        n(7)(a, n(0)('iterator'), function () {
-            return this;
-        }),
-            (e.exports = function (e, t, n) {
-                (e.prototype = r(a, {next: o(1, n)})), i(e, t + ' Iterator');
-            });
-    },
-    function (e, t, n) {
         var r = n(3),
-            o = n(14),
+            o = n(15),
             i = n(12),
-            a = n(29).f;
+            a = n(30).f;
         e.exports = function (e) {
             return function (t) {
                 for (var n, c = i(t), s = o(c), u = s.length, l = 0, d = []; u > l; ) (n = s[l++]), (r && !a.call(c, n)) || d.push(e ? [n, c[n]] : c[n]);
@@ -6358,7 +6343,7 @@
         };
     },
     function (e, t, n) {
-        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(40)});
+        n(3) && 'g' != /./g.flags && n(5).f(RegExp.prototype, 'flags', {configurable: !0, get: n(41)});
     },
     function (e, t) {
         e.exports =
@@ -6368,18 +6353,13 @@
             };
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(43);
-        n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
-    },
-    function (e, t, n) {
         var r = n(4);
-        r(r.P, 'String', {repeat: n(106)});
+        r(r.P, 'String', {repeat: n(107)});
     },
     function (e, t, n) {
         'use strict';
-        var r = n(19),
-            o = n(15);
+        var r = n(17),
+            o = n(14);
         e.exports = function (e) {
             var t = String(o(this)),
                 n = '',
@@ -6390,8 +6370,8 @@
         };
     },
     function (e, t, n) {
-        var r = n(63),
-            o = n(15);
+        var r = n(64),
+            o = n(14);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
             return String(o(e));
@@ -6717,7 +6697,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }.call(this, n(110)));
+        }.call(this, n(111)));
     },
     function (e, t) {
         var n;
@@ -6731,31 +6711,14 @@
         }
         e.exports = n;
     },
-    function (e, t, n) {
-        var r = n(4),
-            o = n(11),
-            i = n(8);
-        e.exports = function (e, t) {
-            var n = (o.Object || {})[e] || Object[e],
-                a = {};
-            (a[e] = t(n)),
-                r(
-                    r.S +
-                        r.F *
-                            i(function () {
-                                n(1);
-                            }),
-                    'Object',
-                    a
-                );
-        };
-    },
+    ,
+    ,
     function (e, t, n) {
         'use strict';
         n.d(t, 'a', function () {
             return m;
         });
-        n(70), n(71), n(31), n(32), n(72), n(68), n(69), n(45), n(33);
+        n(86), n(87), n(32), n(31), n(91), n(70), n(71), n(45), n(33);
         var r = n(66),
             o = n(44);
         function i(e) {
@@ -7008,7 +6971,7 @@
                         {
                             key: 'displayCheckoutRewardPoints',
                             value: function () {
-                                if (document.querySelector('.CheckOutForm')) {
+                                if (document.querySelector('.CheckOutForm') && '62725' !== p.getMetaTagContent('siteId')) {
                                     var e = document.querySelector('.dueNowRow td'),
                                         t = document.querySelector('.taxFeeRow td');
                                     if (
@@ -7047,7 +7010,7 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if (document.querySelector('.SinglePropDetail')) {
+                                                            if (document.querySelector('.SinglePropDetail') && '62725' !== p.getMetaTagContent('siteId')) {
                                                                 e.next = 2;
                                                                 break;
                                                             }
@@ -7113,13 +7076,14 @@
                                 if (document.querySelector('.ConfirmationForm')) {
                                     var e = document.querySelector('.discountRow td').textContent;
                                     (e = parseInt(e.replace(/[^0-9.]/g, ''))),
+                                        (document.querySelector('.confirmNum').textContent = 'Booking Number:'),
                                         document
                                             .querySelector('.GuestForms')
                                             .insertAdjacentHTML(
                                                 'beforeEnd',
-                                                '\n            <div class="points-earned">\n                <div class="rewards-span">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                 <span>'.concat(
+                                                '\n            <div class="points-earned">\n                <div class="rewards-span">\n                    <span>RES<b>BEAT</b> Rewards Earned</span>\n                    <span>'.concat(
                                                     e,
-                                                    '</span>\n                </div>\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be added to your Rewards account 48 hours after checkout.</p>\n            </div>\n            '
+                                                    '</span>\n                </div>\n                <p class="awarded-after-checkout">Your RES<b>BEAT</b> Rewards will be redeemable 48 hours after hotel checkout.\n                We\'ll send you an email once they have been added to your Rewards account.</p>\n            </div>\n            '
                                                 )
                                             );
                                 }
@@ -7235,6 +7199,7 @@
                                 var t = this;
                                 if (
                                     !1 !== this.site_config.is_resbeat_client &&
+                                    '62725' !== p.getMetaTagContent('siteId') &&
                                     (!document.querySelector('.beat-em') || 'search-results' !== p.page_name) &&
                                     (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                 ) {
@@ -7496,14 +7461,18 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
         n.r(t);
-        n(70), n(71), n(31), n(72), n(45), n(34), n(21), n(32), n(74), n(33), n(67);
+        n(86), n(87), n(32), n(91), n(45), n(34), n(21), n(31), n(98), n(33), n(67);
         var r = n(20),
             o = new r.a(),
             i = 'resbeat_squad_test-'.concat(62686);
-        var a = n(112),
+        var a = n(114),
             c = n(44);
         function s(e) {
             return (s =
@@ -7579,7 +7548,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var y = n(35),
+        var y = n(39),
             g = new r.a(),
             v = new c.a(),
             b = new (function () {

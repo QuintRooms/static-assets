@@ -1814,10 +1814,10 @@ export default class BasePortal {
 
         function percentDiff(num1, num2) {
             const percent_value = ((num1 - num2) / num2) * 100;
-            if (Math.floor(percent_value) > 5) {
-                return true;
+            if (Math.floor(percent_value) >= 5) {
+                return false;
             }
-            return false;
+            return true;
         }
 
         document.querySelectorAll(nodeList).forEach((e) => {

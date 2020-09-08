@@ -23,6 +23,10 @@ html {
     overflow: hidden;
 }
 
+.hidden {
+    overflow: hidden;
+}
+
 .ArnSubPage {
     max-width: 1170px;
     margin: 0 auto;
@@ -597,7 +601,7 @@ select#adults {
 
 .arnMapMarker {
     border: 1px solid rgb(77, 77, 77);
-    background: rgb(206, 206, 206);
+    background: #fff;
     color: #333;
 }
 .arnMapMarkerTriangle {
@@ -610,7 +614,7 @@ select#adults {
 
 .arnMapMarker:hover {
     border: 1px solid rgb(77, 77, 77);
-    background: rgb(206, 206, 206);
+    background: #fff;
     color: #333;
 }
 

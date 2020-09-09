@@ -2213,7 +2213,7 @@
                         sponsor: 'Heineken',
                         name: 'Portugese Grand Prix',
                         location: 'Algarve, Portugal',
-                        country_flag_url: ''.concat(i.path, '/html/f1/f1-landing-page/images/'),
+                        country_flag_url: ''.concat(i.path, '/html/f1/f1-landing-page/images/portugal.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44099&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Portugal%202020',
                     },
@@ -3042,11 +3042,11 @@
                                     .concat(e, '</span>\n                                </div>\n                                <div class="location">')
                                     .concat(
                                         t[r].location,
-                                        '</div>\n                            </div>\n                        </div>\n                    </div>\n                <a class="book-btn" href="'
+                                        '</div>\n                            </div>\n                        </div>\n                    </div>\n                <a class="book-btn" target="_blank" href="'
                                     )
                                     .concat(
                                         t[r].book_url,
-                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n                <a class="mobile-book-btn" href="'
+                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n                <a class="mobile-book-btn" target="_blank" href="'
                                     )
                                     .concat(
                                         t[r].book_url,

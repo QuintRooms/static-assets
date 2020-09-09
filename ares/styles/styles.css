@@ -522,7 +522,7 @@ select#adults {
 
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
-  background-color: #cecece;
+  background-color: #fff;
   border: 1px solid #444f74; }
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {

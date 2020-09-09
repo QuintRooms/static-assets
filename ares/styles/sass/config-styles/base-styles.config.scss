@@ -105,7 +105,8 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
     color: $primary_text_color;
 }
 
-.custom-button a {
+
+.custom-button a, .WBForgotPasswordFormActions input:hover {
     color: $primary_color
 }
 

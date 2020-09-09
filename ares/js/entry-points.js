@@ -26,10 +26,10 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js',
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
+            'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'room_steals-52342': './src/52342.js', // Room Steals
-            // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees
             // 'tortuga_20-60336': './src/60336.js', // Tortuga
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
@@ -40,15 +40,15 @@ module.exports = () => {
         // develop environment
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
-            'ares_child-60278': './src/60278.js', // Ares Child Test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
-            'cug_template-39624': './src/39624.js', // CUG Template
-            'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
-            'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'ares_child-60278': './src/60278.js', // Ares Child Test
+            // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'cug_template-39624': './src/39624.js', // CUG Template
+            // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
+            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 
         // local environment
-    } else if (process.env.environment === 'local') {
+    } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
         };

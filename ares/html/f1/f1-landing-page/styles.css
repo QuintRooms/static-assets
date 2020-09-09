@@ -512,7 +512,7 @@ hr {
     }
 
     .race-details {
-        width: 120px;
+        width: 170px;
     }
 
     .race-details #mobile-year {
@@ -695,5 +695,23 @@ hr {
 
     .show {
         display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .race-details {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .country-flag, #mobile-year {
+        display: none;
+    }
+
+    .race-details {
+        margin-left: 10px;
     }
 }

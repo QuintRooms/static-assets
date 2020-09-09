@@ -32,6 +32,10 @@ body {
     background: #f7f4f1;
 }
 
+.ArnSupportLinks, .subHeaderContainer {
+    display: none;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -361,6 +365,10 @@ footer fieldset {
     height: 40px;
     margin: 0 8px;
     cursor: pointer;
+}
+
+.social-logo a {
+    display: flex;
 }
 
 .social-logo img {

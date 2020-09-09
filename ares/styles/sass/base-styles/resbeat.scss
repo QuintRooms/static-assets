@@ -66,6 +66,10 @@ input[type='email'].email-mask,
     font-weight: 700;
 }
 
+.MemberNotAuthenticated .errorList.Login.Failed {
+    padding: 0 10px;
+}
+
 .logo img {
     width: 100%;
     padding: 0;
@@ -810,3 +814,6 @@ body.WBSupportForm {
 /* ----- Resbeat css end -----*/
 /* ----- Sass start ----- */
 
+.WBForgotPasswordFormActions input {
+    border-radius: 40px;
+}

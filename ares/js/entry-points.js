@@ -18,7 +18,7 @@ module.exports = () => {
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
             // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
-            'f1_template-46972': './src/46972.js', // F1 Template
+            // 'f1_template-46972': './src/46972.js', // F1 Template
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             // 'hof_retail-60037': './src/60037.js', // HOF retail

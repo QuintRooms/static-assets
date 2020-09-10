@@ -309,7 +309,7 @@ export default class Utilities {
         if (body_classes.classList.contains('WBTermsAndConditions')) page_name = 'terms-conditions';
         if (body_classes.classList.contains('WBPrivacyPolicy')) page_name = 'privacy-policy';
         if (body_classes.classList.contains('WBRateGuaranteeForm2')) page_name = 'lrg-page';
-        if (body_classes.classList.contains('WBClub365HeroRegistrationForm')) page_name = 'cug-registration';
+        if (body_classes.classList.contains('WBValidatedRegistrationForm')) page_name = 'cug-registration';
         if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) page_name = 'hold-rooms';
 
         return page_name;

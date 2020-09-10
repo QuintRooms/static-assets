@@ -18,6 +18,7 @@ module.exports = () => {
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
             // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+            // 'f1_template-46972': './src/46972.js', // F1 Template
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             // 'hof_retail-60037': './src/60037.js', // HOF retail
@@ -26,7 +27,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js',
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
-            'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
+            // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'room_steals-52342': './src/52342.js', // Room Steals

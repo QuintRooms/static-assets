@@ -50,3 +50,13 @@ body {
 .SearchHotels .leaflet-pane.leaflet-marker-pane img:last-child {
     display: none !important;
 }
+
+.show-mobile-nav{
+    transform: translateY(357px);
+}
+
+@media screen and (max-width: 400px){
+    .show-mobile-nav {
+        transform: translateY(357px);
+    }
+}

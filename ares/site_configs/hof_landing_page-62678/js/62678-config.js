@@ -68,5 +68,18 @@ export default function siteConfig() {
                 outbound_url: '',
             },
         },
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
+        is_resbeat_client: false,
+        confirmation_email_from: 'Hotels for Hope',
+        has_landing_page: true,
+        landing_page_events: [
+            {
+                name: 'Hall of Fame Enshrinement Weekend 2021',
+                display_date: 'August 5-8, 2021', // August 5-8, 2021
+                end_date: '8/8/2021', // M/D/YYYY
+                portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+            },
+        ],
     };
 }

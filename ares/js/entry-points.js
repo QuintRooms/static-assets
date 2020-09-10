@@ -52,6 +52,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
         };
     }
 

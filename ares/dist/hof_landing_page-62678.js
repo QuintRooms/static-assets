@@ -9600,18 +9600,18 @@
                     has_landing_page: true,
                     landing_page_events: [
                         {
-                            name: 'Hall of Fame Enshrinement Class Of 2021',
-                            display_date: 'August 5-8, 2021',
-                            // August 5-8, 2021
-                            end_date: '8/8/2021',
-                            // M/D/YYYY
-                            portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
-                        },
-                        {
                             name: 'Super Bowl 2021',
                             display_date: 'February 7, 2021',
                             // August 5-8, 2021
                             end_date: '2/7/2021',
+                            // M/D/YYYY
+                            portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+                        },
+                        {
+                            name: 'Hall of Fame Enshrinement Class Of 2021',
+                            display_date: 'August 5-8, 2021',
+                            // August 5-8, 2021
+                            end_date: '8/8/2021',
                             // M/D/YYYY
                             portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
                         },
@@ -9799,9 +9799,15 @@
                                                                 'beforeEnd',
                                                                 '\n                <a class="event-container event-'
                                                                     .concat(i + 1, '" href="')
-                                                                    .concat(event.portal_url, '" target="_blank">\n                        <h2 class="event-name">')
+                                                                    .concat(
+                                                                        event.portal_url,
+                                                                        '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
+                                                                    )
                                                                     .concat(event.name, '</h2>\n                        <div class="display-date">')
-                                                                    .concat(event.display_date, '</div>\n                </a>\n                ')
+                                                                    .concat(
+                                                                        event.display_date,
+                                                                        '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
+                                                                    )
                                                             );
                                                         });
 

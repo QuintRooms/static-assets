@@ -2557,7 +2557,7 @@
                             key: 'addLinkToLoginFromRegisterPage',
                             value: function addLinkToLoginFromRegisterPage() {
                                 if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'cug-registration') return;
-                                var register_btn = document.querySelector('.WBClub365HeroRegistrationFormActions');
+                                var register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
                                 var current_url = window.location.href;
                                 var login_url = current_url.replace('register', 'login');
                                 if (!register_btn) return;
@@ -4828,7 +4828,7 @@
                                 if (body_classes.classList.contains('WBTermsAndConditions')) page_name = 'terms-conditions';
                                 if (body_classes.classList.contains('WBPrivacyPolicy')) page_name = 'privacy-policy';
                                 if (body_classes.classList.contains('WBRateGuaranteeForm2')) page_name = 'lrg-page';
-                                if (body_classes.classList.contains('WBClub365HeroRegistrationForm')) page_name = 'cug-registration';
+                                if (body_classes.classList.contains('WBValidatedRegistrationForm')) page_name = 'cug-registration';
                                 if (body_classes.classList.contains('HoldRoomsForm') && body_classes.classList.contains('SearchHotels')) page_name = 'hold-rooms';
                                 return page_name;
                             },

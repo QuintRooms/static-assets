@@ -624,7 +624,7 @@
                                     t.classList.contains('WBTermsAndConditions') && (e = 'terms-conditions'),
                                     t.classList.contains('WBPrivacyPolicy') && (e = 'privacy-policy'),
                                     t.classList.contains('WBRateGuaranteeForm2') && (e = 'lrg-page'),
-                                    t.classList.contains('WBClub365HeroRegistrationForm') && (e = 'cug-registration'),
+                                    t.classList.contains('WBValidatedRegistrationForm') && (e = 'cug-registration'),
                                     t.classList.contains('HoldRoomsForm') && t.classList.contains('SearchHotels') && (e = 'hold-rooms'),
                                     e
                                 );
@@ -5326,7 +5326,7 @@
                             key: 'addLinkToLoginFromRegisterPage',
                             value: function () {
                                 if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
-                                    var e = document.querySelector('.WBClub365HeroRegistrationFormActions'),
+                                    var e = document.querySelector('.WBValidatedRegistrationFormActions'),
                                         t = window.location.href.replace('register', 'login');
                                     e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
                                 }

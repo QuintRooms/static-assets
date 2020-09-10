@@ -74,5 +74,14 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
+        has_landing_page: false,
+        landing_page_events: [
+            {
+                name: '',
+                display_date: '', // August 5-8, 2021
+                end_date: '', // M/D/YYYY
+                portal_url: '',
+            },
+        ],
     };
 }

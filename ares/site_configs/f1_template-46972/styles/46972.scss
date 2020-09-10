@@ -13,12 +13,11 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #e10600;
 $button_hover_border_color: #e10600;
 $google_font_name: 'F1-Regular';
-$site_name: 'f1_bahrain_20-63341';
+$site_name: 'f1_template-46972';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/html/f1/img/f1-bg-1.jpg) no-repeat center center /cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-@import '../../../js/components/event-popup/popup.scss';
 
 @font-face {
     font-family: 'F1-Black';

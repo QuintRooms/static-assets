@@ -1773,7 +1773,7 @@ export default class BasePortal {
     addLinkToLoginFromRegisterPage() {
         if (this.site_config.site_type.toLowerCase() !== 'cug' || this.page_name !== 'cug-registration') return;
 
-        const register_btn = document.querySelector('.WBValidatedRegistrationFormActions');
+        const register_btn = document.querySelector('.WBClub365HeroRegistrationFormActions');
         const current_url = window.location.href;
         const login_url = current_url.replace('register', 'login');
 

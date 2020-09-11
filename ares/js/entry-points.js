@@ -20,6 +20,7 @@ module.exports = () => {
             // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'f1_template-46972': './src/46972.js', // F1 Template
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
+            // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             // 'hof_retail-60037': './src/60037.js', // HOF retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
@@ -52,7 +53,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
         };
     }
 

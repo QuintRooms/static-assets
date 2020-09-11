@@ -7177,10 +7177,7 @@
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(Z.path, '/html/f1/img/favicon.png'),
-                    header: {
-                        logo_file_location: ''.concat(Z.path, '/site_configs/').concat(J, '/img/logo.png'),
-                        logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
-                    },
+                    header: {logo_file_location: ''.concat(Z.path, '/site_configs/').concat(J, '/img/logo.png'), logo_outbound_url: 'https://autodromodoalgarve.com/'},
                     map_marker_image_url: ''.concat(Z.path, '/html/f1/img/favicon.png'),
                     theme: 'light',
                     google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',

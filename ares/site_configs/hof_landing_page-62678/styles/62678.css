@@ -292,18 +292,6 @@ header {
   background: url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_landing_page-62678/img/player.jpg);
 }
 
-.event-2 {
-  background: no-repeat;
-}
-
-.event-3 {
-  background: center;
-}
-
-.event-4 {
-  background: center/cover;
-}
-
 .RootBody .ArnSearchContainerMainDiv {
   justify-content: space-around;
 }
@@ -319,7 +307,7 @@ header {
 
 .events {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 15px;
   max-width: 75vw;
 }
@@ -339,6 +327,9 @@ header {
   flex-direction: column;
   justify-content: space-around;
   margin: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .event-container h2 {
   font-weight: normal;

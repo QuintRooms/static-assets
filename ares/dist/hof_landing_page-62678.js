@@ -9575,7 +9575,7 @@
                     },
                     map_marker_image_url: ''.concat(env_path.path, '/site_configs/').concat(directory_name, '/img/logo.png'),
                     theme: 'dark',
-                    google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
+                    google_font_url: '//fonts.googleapis.com/css?family=Oswald:100,500,700',
                     ads: {
                         sidebar_ad: {
                             is_active: false,

@@ -289,7 +289,7 @@ header {
 }
 
 .event-1 {
-  background: url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_landing_page-62678/img/player.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_landing_page-62678/img/player.jpg);
 }
 
 .RootBody .ArnSearchContainerMainDiv {

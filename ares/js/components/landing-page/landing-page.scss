@@ -23,26 +23,28 @@
     }
 }
 
-.RootBody h1 {
-    text-transform: uppercase;
-    color: #000;
-    font-size: 50px;
-    font-weight: 600;
-    margin: 0 ;
-}
-
 .RootBody .ArnSearchContainerMainDiv {
     justify-content: space-around;
+
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #000;
+        font-size: 50px;
+        font-weight: 400;
+        margin: 40px 0 ;
+        text-align: center;
+    }
 }
 
 .events {
     display: grid;
     grid-template-columns: setUpEventColumns($bg-images);
+    grid-gap: 15px;
     max-width: 75vw;
 }
 
 .event-container {
-    margin: 18px;
     padding: 18px;
     text-align: center;
     color: $primary_text_color;
@@ -51,19 +53,29 @@
     text-decoration: none;
     z-index: 1;
     height: 35vh;
-    width: 70%;
+    width: 100%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h2 {
+        font-weight: normal;
+    }
 }
 
 .event-container:hover {
     border: 2px solid $primary_color;
 }
 
-.event-container h2{
-    font-weight: normal;
+.event-details, .view-hotels {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 800px){

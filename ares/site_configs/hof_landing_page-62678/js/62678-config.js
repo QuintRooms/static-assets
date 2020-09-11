@@ -50,7 +50,7 @@ export default function siteConfig() {
 
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
         theme: 'dark',
-        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
+        google_font_url: '//fonts.googleapis.com/css?family=Oswald:100,500,700',
         ads: {
             sidebar_ad: {
                 is_active: false,
@@ -74,12 +74,6 @@ export default function siteConfig() {
         confirmation_email_from: 'Hotels for Hope',
         has_landing_page: true,
         landing_page_events: [
-            {
-                name: 'Super Bowl 2021',
-                display_date: 'February 7, 2021', // August 5-8, 2021
-                end_date: '2/7/2021', // M/D/YYYY
-                portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
-            },
             {
                 name: 'Hall of Fame Enshrinement Class Of 2021',
                 display_date: 'August 5-8, 2021', // August 5-8, 2021

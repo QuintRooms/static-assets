@@ -3,7 +3,7 @@
     @each $image in $bg-images {
         $i: $i +1;
         .event-#{$i} {
-            background: $image;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $image;
         }
     }
 }

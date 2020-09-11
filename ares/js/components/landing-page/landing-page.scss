@@ -1,34 +1,65 @@
-.events{
+@mixin append-images {
+    $i: 0;
+    @each $image in $bg-images {
+        $i: $i +1;
+        .event-#{$i} {
+            background: $image;
+        }
+    }
+}
+
+@include append-images();
+
+@function setUpEventColumns($bg-images) {
+    @if (length($bg-images) == 1) {
+        @return 1fr;
+    }
+    @if (length($bg-images) == 2) {
+        @return 1fr 1fr;
+    }
+    
+    @else {
+        @return 1fr 1fr 1fr;
+    }
+}
+
+.RootBody h1 {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0 ;
+}
+
+.RootBody .ArnSearchContainerMainDiv {
+    justify-content: space-around;
+}
+
+.events {
     display: grid;
+    grid-template-columns: setUpEventColumns($bg-images);
     max-width: 75vw;
 }
 
-.event-container{
+.event-container {
     margin: 18px;
     padding: 18px;
     text-align: center;
     color: $primary_text_color;
-    border: 1px solid $primary_text_color;
+    border: 2px solid $primary_text_color;
     position: relative;
-    background: linear-gradient(to right, #{$secondary_color}c9,#{$secondary_color}c9);
     text-decoration: none;
     z-index: 1;
-}
-.event-container::before{
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to bottom, #{$secondary_color}c9, #{$primary_color}c9);
-    z-index: -1;
-    transition: opacity 0.45s ease-in-out;
-    opacity: 0;
+    height: 35vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
 }
 
-.event-container:hover::before{
-    opacity: 1;
+.event-container:hover {
+    border: 2px solid $primary_color;
 }
 
 .event-container h2{
@@ -40,3 +71,5 @@
         grid-template-columns: 1fr;
     }
 }
+
+

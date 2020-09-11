@@ -9600,7 +9600,15 @@
                     has_landing_page: true,
                     landing_page_events: [
                         {
-                            name: 'Hall of Fame Enshrinement Weekend 2021',
+                            name: 'Super Bowl 2021',
+                            display_date: 'February 7, 2021',
+                            // August 5-8, 2021
+                            end_date: '2/7/2021',
+                            // M/D/YYYY
+                            portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+                        },
+                        {
+                            name: 'Hall of Fame Enshrinement Class Of 2021',
                             display_date: 'August 5-8, 2021',
                             // August 5-8, 2021
                             end_date: '8/8/2021',
@@ -9706,7 +9714,6 @@
                         key: 'init',
                         value: function init() {
                             if (!document.querySelector('.RootBody')) return;
-                            this.insertStyles();
                             this.generateEventHtml();
                             this.removeArnSearchContainer();
                         },
@@ -9785,17 +9792,23 @@
 
                                                     case 5:
                                                         this.landing_page_events.forEach(function (event, i) {
-                                                            if (i === 0) container.insertAdjacentHTML('afterBegin', '<h1>Upcoming Events</h1><div class="events"></div>');
+                                                            if (i === 0)
+                                                                container.insertAdjacentHTML('afterBegin', '<h1>Choose Your Upcoming Event</h1><div class="events"></div>');
                                                             if (utilities.checkForPastDate(event.end_date)) return;
-                                                            document
-                                                                .querySelector('.events')
-                                                                .insertAdjacentHTML(
-                                                                    'beforeEnd',
-                                                                    '\n                <a class="event-container" href="'
-                                                                        .concat(event.portal_url, '" target="_blank">\n                        <h2 class="event-name">')
-                                                                        .concat(event.name, '</h2>\n                        <div class="display-date">')
-                                                                        .concat(event.display_date, '</div>\n                </a>\n                ')
-                                                                );
+                                                            document.querySelector('.events').insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '\n                <a class="event-container event-'
+                                                                    .concat(i + 1, '" href="')
+                                                                    .concat(
+                                                                        event.portal_url,
+                                                                        '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
+                                                                    )
+                                                                    .concat(event.name, '</h2>\n                        <div class="display-date">')
+                                                                    .concat(
+                                                                        event.display_date,
+                                                                        '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
+                                                                    )
+                                                            );
                                                         });
 
                                                     case 6:
@@ -9816,34 +9829,6 @@
 
                             return generateEventHtml;
                         })(),
-                        /**
-                         *@description Sets the number of columns for the grid
-                         *@return string
-                         */
-                    },
-                    {
-                        key: 'setUpEventColumns',
-                        value: function setUpEventColumns() {
-                            if (this.landing_page_events.length === 1) return '1fr';
-                            if (this.landing_page_events.length === 2) return '1fr 1fr';
-                            return '1fr 1fr 1fr';
-                        },
-                        /**
-                         *@description Inserts styles into the body
-                         *@return void
-                         */
-                    },
-                    {
-                        key: 'insertStyles',
-                        value: function insertStyles() {
-                            document.body.insertAdjacentHTML(
-                                'afterBegin',
-                                '\n            <style>\n                .events{\n                    grid-template-columns: '.concat(
-                                    this.setUpEventColumns(),
-                                    ';\n                }\n            </style>\n        '
-                                )
-                            );
-                        },
                     },
                 ]);
 

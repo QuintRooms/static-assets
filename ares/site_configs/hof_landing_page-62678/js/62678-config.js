@@ -75,7 +75,13 @@ export default function siteConfig() {
         has_landing_page: true,
         landing_page_events: [
             {
-                name: 'Hall of Fame Enshrinement Weekend 2021',
+                name: 'Super Bowl 2021',
+                display_date: 'February 7, 2021', // August 5-8, 2021
+                end_date: '2/7/2021', // M/D/YYYY
+                portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+            },
+            {
+                name: 'Hall of Fame Enshrinement Class Of 2021',
                 display_date: 'August 5-8, 2021', // August 5-8, 2021
                 end_date: '8/8/2021', // M/D/YYYY
                 portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',

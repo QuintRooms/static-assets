@@ -44,7 +44,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
+            logo_outbound_url: 'https://autodromodoalgarve.com/',
         },
         map_marker_image_url: `${env_path.path}/html/f1/img/favicon.png`,
         theme: 'light',

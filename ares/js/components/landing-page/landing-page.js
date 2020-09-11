@@ -10,7 +10,6 @@ export default class LandingPage {
     init() {
         if (!document.querySelector('.RootBody')) return;
 
-        this.insertStyles();
         this.generateEventHtml();
         this.removeArnSearchContainer();
     }
@@ -48,40 +47,15 @@ export default class LandingPage {
             document.querySelector('.events').insertAdjacentHTML(
                 'beforeEnd',
                 `
-                <a class="event-container" href="${event.portal_url}" target="_blank">
+                <a class="event-container event-${i + 1}" href="${event.portal_url}" target="_blank">
+                    <div class="event-details">
                         <h2 class="event-name">${event.name}</h2>
                         <div class="display-date">${event.display_date}</div>
+                    </div>
+                        <div class="view-hotels">View Hotels</div>
                 </a>
                 `
             );
         });
-    }
-
-    /**
-     *@description Sets the number of columns for the grid
-     *@return string
-     */
-    setUpEventColumns() {
-        if (this.landing_page_events.length === 1) return `1fr`;
-        if (this.landing_page_events.length === 2) return `1fr 1fr`;
-
-        return `1fr 1fr 1fr`;
-    }
-
-    /**
-     *@description Inserts styles into the body
-     *@return void
-     */
-    insertStyles() {
-        document.body.insertAdjacentHTML(
-            'afterBegin',
-            `
-            <style>
-                .events{
-                    grid-template-columns: ${this.setUpEventColumns()};
-                }
-            </style>
-        `
-        );
     }
 }

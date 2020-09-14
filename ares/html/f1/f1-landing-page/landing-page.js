@@ -71,11 +71,5 @@ function showMoreOnMobile() {
     });
 }
 
-function findMyRace() {
-    const next_race_url = document.querySelector('.race .book-btn').href;
-    document.querySelector('.banner a').href = next_race_url;
-}
-
 populateRaceSeasons();
 showMoreOnMobile();
-findMyRace();

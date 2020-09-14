@@ -52,7 +52,7 @@ export default {
             month: 'Dec',
             race_expiry: '2020-12-06',
             sponsor: 'Rolex',
-            name: 'Turkish Grand Prix',
+            name: 'Sakhir Grand Prix',
             location: 'Skahir, Bahrain',
             country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/bahrain.jpg`,
             flag_alt_text: 'Bahrain',

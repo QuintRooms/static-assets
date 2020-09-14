@@ -21,6 +21,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js',
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // F1 Template
+            // 'hof_enshrinement_21-60041': './src/60041.js', // HOF Enshrinement 2021
             // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             // 'hof_retail-60037': './src/60037.js', // HOF retail
@@ -45,9 +46,9 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
+            // 'lib_21-63504': './src/63504.js', // lib 21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
-            'lib_21-63504': './src/63504.js', // lib 21
         };
 
         // local environment

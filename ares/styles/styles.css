@@ -296,7 +296,6 @@ select#adults {
   pointer-events: none;
   padding: 2px;
   margin-right: 12px;
-  display: flex;
   white-space: nowrap;
   overflow: hidden; }
 
@@ -304,7 +303,13 @@ select#adults {
   overflow: visible; }
 
 .config-label {
-  width: 200px; }
+  width: 200px;
+  display: flex;
+  justify-content: space-between; }
+
+.RootBody .config-label,
+.SearchHotels .config-label {
+  display: flex; }
 
 .config-label polyline,
 .config-label polyline {

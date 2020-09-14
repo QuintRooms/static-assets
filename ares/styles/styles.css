@@ -304,13 +304,7 @@ select#adults {
   overflow: visible; }
 
 .config-label {
-  width: 200px;
-  display: flex;
-  justify-content: space-between; }
-
-.RootBody .config-label,
-.SearchHotels .config-label {
-  display: flex; }
+  width: 200px; }
 
 .config-label polyline,
 .config-label polyline {

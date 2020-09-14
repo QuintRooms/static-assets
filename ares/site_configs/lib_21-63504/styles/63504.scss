@@ -1,0 +1,30 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #ff1d52;
+$secondary_color: #23232d;
+$primary_text_color: #fff;
+$secondary_text_color: #ff1d52;
+$border_color: #ff1d52;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #ff1d52;
+$button_hover_border_color: #ff1d52;
+$google_font_name: 'Montserrat';
+$site_name: 'lib_21-63504';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+header{
+    background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png) no-repeat center center / cover;
+    border-bottom: none;
+
+    .logo img{
+        width: 100%;
+        max-width: 600px;
+    }
+}

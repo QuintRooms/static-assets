@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 114));
+        n((n.s = 113));
 })([
     function (e, t, n) {
         var r = n(20)('wks'),
@@ -6455,7 +6455,6 @@
             };
         })();
     },
-    ,
     function (e, t, n) {},
     ,
     function (e, t, n) {
@@ -6465,7 +6464,7 @@
         var r = n(64),
             o = n(30),
             i = new (n.n(o).a)(),
-            a = 'hof_retail-'.concat(60037);
+            a = 'hof_enshrinement_21-'.concat(60041);
         function c(e) {
             return (c =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -6511,7 +6510,7 @@
         }
         var d = new (function () {
             return {
-                site_id: 60037,
+                site_id: 60041,
                 directory_name: a,
                 affiliate_id: 17464,
                 master_id: 920,
@@ -6522,7 +6521,7 @@
                 distance_unit: 'useMiles',
                 map_size: '12',
                 radius: '50',
-                lodging: {event_id: 10001, event_name: 'Pro Football Hall of Fame', event_dates: '', is_lrg: !1},
+                lodging: {event_id: 42991, event_name: 'Pro Football Hall of Fame Enshrinement 2021', event_dates: '', is_lrg: !1},
                 cug: {is_cug: !1, show_points: !1, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !1},
                 exclusive_rate_text: 'Exclusive Rates',
                 host_hotel_text: 'Host Hotel',
@@ -6570,6 +6569,6 @@
                 t
             );
         })(r.a))();
-        n(112);
+        n(111);
     },
 ]);

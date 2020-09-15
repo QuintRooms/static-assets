@@ -71,16 +71,11 @@ function showMoreOnMobile() {
     });
 }
 
-async function removeHrefs() {
-    await utilities.waitForSelectorInDOM('#races');
-    const races_tab = document.querySelector('#races');
-    races_tab.href = '#races-container';
-    races_tab.target = '';
-}
-
 function addHref() {
     utilities.waitForSelectorInDOM('.footer-nav ul li:last-child');
-    document.querySelector('.footer-nav ul li:last-child').href = `https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}`;
+    document
+        .querySelector('.footer-nav ul li:last-child a')
+        .setAttribute('href', `https:"//events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}"`);
 }
 
 function updateTitle(text) {
@@ -99,5 +94,4 @@ populateRaceSeasons();
 addHref();
 showMoreOnMobile();
 changeLogoHtml();
-removeHrefs();
 updateTitle('F1® Rooms');

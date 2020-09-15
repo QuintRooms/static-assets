@@ -12,26 +12,40 @@ export default async function f1Styles(siteId) {
 
     async function addHeader(id) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
-
+        const races_contact =
+            document.querySelector(document.querySelector('meta[name="siteId"]').content) === '46451'
+                ? `
+        <ul id="races-contact">
+            <li>
+                <a href="#races-container" id="races">Races</a>
+            </li>
+            <li>
+                <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+            </li>
+        </ul>
+        <div class="navbar-hamburger">
+            <span class="toggle-bar top-bar"></span> 
+            <span class="toggle-bar middle-bar"></span> 
+            <span class="toggle-bar bottom-bar"></span>
+        </div>
+    `
+                : `
+    <ul id="races-contact">
+        <li>
+            <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
+        </li>
+        <li>
+            <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+        </li>
+    </ul>
+    <div class="navbar-hamburger">
+        <span class="toggle-bar top-bar"></span> 
+        <span class="toggle-bar middle-bar"></span> 
+        <span class="toggle-bar bottom-bar"></span>
+    </div>
+`;
         header.insertAdjacentHTML('beforebegin', html);
-        header.insertAdjacentHTML(
-            'beforeend',
-            `
-            <ul id="races-contact">
-                <li>
-                    <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
-                </li>
-                <li>
-                    <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
-                </li>
-            </ul>
-            <div class="navbar-hamburger">
-                <span class="toggle-bar top-bar"></span> 
-                <span class="toggle-bar middle-bar"></span> 
-                <span class="toggle-bar bottom-bar"></span>
-            </div>
-        `
-        );
+        header.insertAdjacentHTML('beforeend', races_contact);
         if (language_el === null) return;
         document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
     }

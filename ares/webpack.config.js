@@ -16,6 +16,7 @@ module.exports = () => {
         },
         optimization: {
             nodeEnv: false,
+            minimize: true,
         },
         module: {
             rules: [

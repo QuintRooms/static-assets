@@ -3014,7 +3014,9 @@
         !(function (t) {
             m.apply(this, arguments);
         })(document.querySelector('meta[name="siteId"]').content);
-        var y = new f();
+        var y,
+            g,
+            x = new f();
         Object.keys(a).forEach(function (t) {
             var e = t.slice(-4);
             document
@@ -3032,7 +3034,7 @@
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));
                     Object.keys(t).forEach(function (r) {
-                        y.checkForPastDate(t[r].race_expiry) ||
+                        x.checkForPastDate(t[r].race_expiry) ||
                             n.insertAdjacentHTML(
                                 'beforeend',
                                 '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
@@ -3068,6 +3070,12 @@
         }),
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
-            });
+            }),
+            (y = document.querySelector('.logo')),
+            (g = document.querySelector('#races')),
+            (y.href = ''),
+            (y.target = ''),
+            (g.href = '#races-container'),
+            (g.target = '');
     },
 ]);

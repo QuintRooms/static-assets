@@ -71,5 +71,15 @@ function showMoreOnMobile() {
     });
 }
 
+function removeHrefs() {
+    const logo = document.querySelector('.logo');
+    const races_tab = document.querySelector('#races');
+    logo.href = '';
+    logo.target = '';
+    races_tab.href = '#races-container';
+    races_tab.target = '';
+}
+
 populateRaceSeasons();
 showMoreOnMobile();
+removeHrefs();

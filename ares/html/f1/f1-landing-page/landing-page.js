@@ -79,6 +79,7 @@ async function removeHrefs() {
 }
 
 function addHref() {
+    utilities.waitForSelectorInDOM('.footer-nav ul li:last-child');
     document.querySelector('.footer-nav ul li:last-child').href = `https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}`;
 }
 
@@ -95,8 +96,8 @@ function changeLogoHtml() {
 }
 
 populateRaceSeasons();
+addHref();
 showMoreOnMobile();
 changeLogoHtml();
-addHref();
 removeHrefs();
 updateTitle('F1® Rooms');

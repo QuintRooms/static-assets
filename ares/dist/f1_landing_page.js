@@ -3111,14 +3111,15 @@
                     });
                 })(a[t], e);
         }),
+            b.waitForSelectorInDOM('.footer-nav ul li:last-child'),
+            (document.querySelector('.footer-nav ul li:last-child').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
+                document.querySelector('meta[name="siteId"]').content
+            )),
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),
             (document.querySelector('.logo').outerHTML =
                 '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '),
-            (document.querySelector('.footer-nav ul li:last-child').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                document.querySelector('meta[name="siteId"]').content
-            )),
             (function () {
                 w.apply(this, arguments);
             })(),

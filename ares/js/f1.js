@@ -5,12 +5,12 @@ const utilities = new Utilities();
 
 const env_path = new Path();
 
-export default async function f1Styles(siteId) {
+export default async function f1Styles() {
     await utilities.waitForSelectorInDOM('header');
     const header = document.querySelector('header');
     const language_el = document.querySelector('#language');
 
-    async function addHeader(id) {
+    async function addHeader() {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
 
         header.insertAdjacentHTML('beforebegin', html);
@@ -22,7 +22,7 @@ export default async function f1Styles(siteId) {
                     <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
                 </li>
                 <li>
-                    <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
+                    <a href="https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}" id="contactUs">Contact Us</a>
                 </li>
             </ul>
             <div class="navbar-hamburger">
@@ -36,11 +36,13 @@ export default async function f1Styles(siteId) {
         document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
     }
 
-    async function addHamburgerMenu(id) {
+    async function addHamburgerMenu() {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/mobile-hamburger-menu.html`);
         header.insertAdjacentHTML('beforeend', burger_html);
 
-        document.querySelector('.mobile-nav-upper-ul #contactUs').href = `href="https://events.hotelsforhope.com/v6/support?siteId=${id}"`;
+        document.querySelector('.mobile-nav-upper-ul #contactUs').href = `href="https://events.hotelsforhope.com/v6/support?siteId=${
+            document.querySelector('meta[name="siteId"]').content
+        }"`;
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 
@@ -69,7 +71,7 @@ export default async function f1Styles(siteId) {
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
-    addHeader(siteId);
-    addHamburgerMenu(siteId);
+    addHeader();
+    addHamburgerMenu();
     addFooter();
 }

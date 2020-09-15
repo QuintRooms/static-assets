@@ -81,6 +81,28 @@ async function removeHrefs() {
     races_tab.target = '';
 }
 
+function addHref() {
+    document.querySelector('.footer-nav ul li:last-child').href = `https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}`;
+}
+
+function updateTitle(text) {
+    document.querySelector('title').textContent = text;
+}
+
+function changeLogoHtml() {
+    utilities.updateHTML(
+        '.logo',
+        `
+        <span class="logo">
+            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">
+        </span>
+        `
+    );
+}
+
 populateRaceSeasons();
 showMoreOnMobile();
+addHref();
+changeLogoHtml();
 removeHrefs();
+updateTitle('F1® Rooms');

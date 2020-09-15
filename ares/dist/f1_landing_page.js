@@ -3039,16 +3039,17 @@
         !(function (t) {
             m.apply(this, arguments);
         })(document.querySelector('meta[name="siteId"]').content);
-        var x = new f();
-        function b() {
-            return (b = g(
+        var x,
+            b = new f();
+        function w() {
+            return (w = g(
                 regeneratorRuntime.mark(function t() {
                     var e, n;
                     return regeneratorRuntime.wrap(function (t) {
                         for (;;)
                             switch ((t.prev = t.next)) {
                                 case 0:
-                                    return (t.next = 2), x.waitForSelectorInDOM('#races');
+                                    return (t.next = 2), b.waitForSelectorInDOM('#races');
                                 case 2:
                                     (e = document.querySelector('.logo')),
                                         (n = document.querySelector('#races')),
@@ -3081,7 +3082,7 @@
                 (function (t, e) {
                     var n = document.querySelector('.races-'.concat(e));
                     Object.keys(t).forEach(function (r) {
-                        x.checkForPastDate(t[r].race_expiry) ||
+                        b.checkForPastDate(t[r].race_expiry) ||
                             n.insertAdjacentHTML(
                                 'beforeend',
                                 '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
@@ -3118,8 +3119,17 @@
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),
+            (document.querySelector('.footer-nav ul li:last-child').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
+                document.querySelector('meta[name="siteId"]').content
+            )),
+            b.updateHTML(
+                '.logo',
+                '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '
+            ),
             (function () {
-                b.apply(this, arguments);
-            })();
+                w.apply(this, arguments);
+            })(),
+            (x = 'F1® Rooms'),
+            (document.querySelector('title').textContent = x);
     },
 ]);

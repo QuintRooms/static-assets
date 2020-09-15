@@ -266,6 +266,7 @@ export default class BasePortal {
             this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
+            this.updateSupportPageText();
 
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
@@ -1835,5 +1836,12 @@ export default class BasePortal {
                 e.querySelector('.originalPrice').style.display = 'none';
             }
         });
+    }
+
+    updateSupportPageText() {
+        if (this.site_config.is_resbeat_client) return;
+        if (!document.querySelector('.WBSupportForm')) return;
+
+        document.querySelector('.ArnSupportChatTable p').textContent = 'If you would like to speak with a representative, please call + 1 512-691-9555';
     }
 }

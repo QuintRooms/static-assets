@@ -71,7 +71,8 @@ function showMoreOnMobile() {
     });
 }
 
-function removeHrefs() {
+async function removeHrefs() {
+    await utilities.waitForSelectorInDOM('#races-container');
     const logo = document.querySelector('.logo');
     const races_tab = document.querySelector('#races');
     logo.href = '';

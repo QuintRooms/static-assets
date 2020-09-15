@@ -38,9 +38,9 @@ export default class LandingPage {
         const container = document.querySelector('.ArnSearchContainerMainDiv');
 
         if (!container) return;
-
+        const header_text = this.landing_page_events.length > 1 ? 'Choose Your Upcoming Event' : 'Your Upcoming Event';
         this.landing_page_events.forEach((event, i) => {
-            if (i === 0) container.insertAdjacentHTML('afterBegin', '<h1>Choose Your Upcoming Event</h1><div class="events"></div>');
+            if (i === 0) container.insertAdjacentHTML('afterBegin', `<h1>${header_text}</h1><div class="events"></div>`);
 
             if (utilities.checkForPastDate(event.end_date)) return;
 

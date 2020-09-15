@@ -23,6 +23,10 @@
     }
 }
 
+.ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type {
+    display: none;
+}
+
 .RootBody .ArnSearchContainerMainDiv {
     justify-content: space-around;
 
@@ -52,7 +56,7 @@
     position: relative;
     text-decoration: none;
     z-index: 1;
-    height: 35vh;
+    height: 45vh;
     width: 100%;
     max-width: 300px;
     display: flex;
@@ -74,7 +78,7 @@
 
 .event-details, .view-hotels {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 

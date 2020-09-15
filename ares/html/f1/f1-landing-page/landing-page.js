@@ -72,10 +72,7 @@ function showMoreOnMobile() {
 }
 
 function addHref() {
-    utilities.waitForSelectorInDOM('.footer-nav ul li:last-child');
-    document
-        .querySelector('.footer-nav ul li:last-child a')
-        .setAttribute('href', `https:"//events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}"`);
+    document.querySelector('.footer-nav ul li:last-child a').href = `https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}`;
 }
 
 function updateTitle(text) {

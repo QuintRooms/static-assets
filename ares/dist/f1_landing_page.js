@@ -523,11 +523,11 @@
                     return (O || 'function' == typeof PromiseRejectionEvent) && t.then(j) instanceof e && 0 !== M.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (t) {}
             })(),
-            A = function (t) {
+            $ = function (t) {
                 var e;
                 return !(!h(t) || 'function' != typeof (e = t.then)) && e;
             },
-            $ = function (t, e) {
+            A = function (t, e) {
                 if (!t._n) {
                     t._n = !0;
                     var n = t._c;
@@ -548,7 +548,7 @@
                                         c
                                             ? (o || (2 == t._h && R(t), (t._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === e.promise ? s(_('Promise-chain cycle')) : (i = A(n)) ? i.call(n, u, s) : u(n))
+                                              n === e.promise ? s(_('Promise-chain cycle')) : (i = $(n)) ? i.call(n, u, s) : u(n))
                                             : s(r);
                                     } catch (t) {
                                         l && !a && l.exit(), s(t);
@@ -596,7 +596,7 @@
             },
             F = function (t) {
                 var e = this;
-                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), $(e, !0));
+                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), A(e, !0));
             },
             I = function (t) {
                 var e,
@@ -605,7 +605,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === t) throw _("Promise can't be resolved itself");
-                        (e = A(t))
+                        (e = $(t))
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -614,7 +614,7 @@
                                       F.call(r, t);
                                   }
                               })
-                            : ((n._v = t), (n._s = 1), $(n, !1));
+                            : ((n._v = t), (n._s = 1), A(n, !1));
                     } catch (t) {
                         F.call({_w: n, _d: !1}, t);
                     }
@@ -640,7 +640,7 @@
                         (n.domain = O ? k.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && $(this, !1),
+                        this._s && A(this, !1),
                         n.promise
                     );
                 },
@@ -3071,10 +3071,9 @@
                     });
                 })(a[t], e);
         }),
-            g.waitForSelectorInDOM('.footer-nav ul li:last-child'),
-            document
-                .querySelector('.footer-nav ul li:last-child a')
-                .setAttribute('href', 'https:"//events.hotelsforhope.com/v6/support?siteId='.concat(document.querySelector('meta[name="siteId"]').content, '"')),
+            (document.querySelector('.footer-nav ul li:last-child a').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
+                document.querySelector('meta[name="siteId"]').content
+            )),
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),

@@ -3048,7 +3048,7 @@
                         for (;;)
                             switch ((t.prev = t.next)) {
                                 case 0:
-                                    return (t.next = 2), x.waitForSelectorInDOM('#races-container');
+                                    return (t.next = 2), x.waitForSelectorInDOM('#races');
                                 case 2:
                                     (e = document.querySelector('.logo')),
                                         (n = document.querySelector('#races')),

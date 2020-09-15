@@ -72,7 +72,7 @@ function showMoreOnMobile() {
 }
 
 async function removeHrefs() {
-    await utilities.waitForSelectorInDOM('#races-container');
+    await utilities.waitForSelectorInDOM('#races');
     const logo = document.querySelector('.logo');
     const races_tab = document.querySelector('#races');
     logo.href = '';

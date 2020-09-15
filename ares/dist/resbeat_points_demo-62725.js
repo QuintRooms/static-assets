@@ -461,8 +461,9 @@
                                                                             ),
                                                                             e.addLinkToLoginFromRegisterPage(),
                                                                             e.setCheckDatesToReadOnlyOnMobile(),
+                                                                            e.updateSupportPageText(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 42:
+                                                                    case 43:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -2072,6 +2073,15 @@
                                     });
                                 },
                             },
+                            {
+                                key: 'updateSupportPageText',
+                                value: function () {
+                                    this.site_config.is_resbeat_client ||
+                                        (document.querySelector('.WBSupportForm') &&
+                                            (document.querySelector('.ArnSupportChatTable p').textContent =
+                                                'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                                },
+                            },
                         ]) && c(t.prototype, o),
                         n && c(t, n),
                         e
@@ -3075,32 +3085,15 @@
                                                                     break;
                                                                 }
                                                                 return (
-                                                                    setTimeout(
-                                                                        c(
-                                                                            regeneratorRuntime.mark(function e() {
-                                                                                return regeneratorRuntime.wrap(function (e) {
-                                                                                    for (;;)
-                                                                                        switch ((e.prev = e.next)) {
-                                                                                            case 0:
-                                                                                                return (
-                                                                                                    (e.next = 2),
-                                                                                                    i.insertAdjacentHTML(
-                                                                                                        'afterBegin',
-                                                                                                        '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
-                                                                                                            s,
-                                                                                                            '" target="_blank">RES<b>BEAT</b> Rewards</a>'
-                                                                                                        )
-                                                                                                    )
-                                                                                                );
-                                                                                            case 2:
-                                                                                            case 'end':
-                                                                                                return e.stop();
-                                                                                        }
-                                                                                }, e);
-                                                                            })
-                                                                        ),
-                                                                        8e3
-                                                                    ),
+                                                                    setTimeout(function () {
+                                                                        i.insertAdjacentHTML(
+                                                                            'afterBegin',
+                                                                            '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                                s,
+                                                                                '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                            )
+                                                                        );
+                                                                    }, 1e4),
                                                                     e.abrupt('return')
                                                                 );
                                                             case 13:

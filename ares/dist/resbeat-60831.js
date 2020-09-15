@@ -857,22 +857,22 @@
             L = (k && k.v8) || '',
             q = s.Promise,
             M = 'process' == l(A),
-            E = function () {},
-            C = (o = b.f),
+            C = function () {},
+            E = (o = b.f),
             T = !!(function () {
                 try {
                     var e = q.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(E, E);
+                            e(C, C);
                         });
-                    return (M || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (M || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            R = function (e) {
+            P = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
-            P = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -893,7 +893,7 @@
                                         c
                                             ? (o || (2 == e._h && H(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = R(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -941,7 +941,7 @@
             },
             F = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
             B = function (e) {
                 var t,
@@ -950,7 +950,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = R(e))
+                        (t = P(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -959,7 +959,7 @@
                                       F.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), P(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
                         F.call({_w: n, _d: !1}, e);
                     }
@@ -978,14 +978,14 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(97)(q.prototype, {
                 then: function (e, t) {
-                    var n = C(y(this, q));
+                    var n = E(y(this, q));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
                         (n.domain = M ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && P(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -997,7 +997,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
             }),
-            (b.f = C = function (e) {
+            (b.f = E = function (e) {
                 return e === q || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !T, {Promise: q}),
@@ -1006,7 +1006,7 @@
             (a = n(11).Promise),
             d(d.S + d.F * !T, 'Promise', {
                 reject: function (e) {
-                    var t = C(this);
+                    var t = E(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -1021,14 +1021,14 @@
                         !(
                             T &&
                             n(99)(function (e) {
-                                q.all(e).catch(E);
+                                q.all(e).catch(C);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = C(t),
+                            n = E(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -1050,7 +1050,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = C(t),
+                            n = E(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1543,11 +1543,11 @@
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], q = 1; q < b.length; q++) L.push(void 0 === (S = b[q]) ? S : String(S));
                         var M = b.groups;
                         if (p) {
-                            var E = [A].concat(L, k, f);
-                            void 0 !== M && E.push(M);
-                            var C = String(t.apply(void 0, E));
-                        } else C = m(A, f, k, L, M, t);
-                        k >= _ && ((w += f.slice(_, k) + C), (_ = k + A.length));
+                            var C = [A].concat(L, k, f);
+                            void 0 !== M && C.push(M);
+                            var E = String(t.apply(void 0, C));
+                        } else E = m(A, f, k, L, M, t);
+                        k >= _ && ((w += f.slice(_, k) + E), (_ = k + A.length));
                     }
                     return w + f.slice(_);
                 },
@@ -2295,11 +2295,11 @@
             L = n(58),
             q = n(55),
             M = n(6),
-            E = n(15),
-            C = L.f,
+            C = n(15),
+            E = L.f,
             T = M.f,
-            R = k.f,
-            P = r.Symbol,
+            P = k.f,
+            R = r.Symbol,
             j = r.JSON,
             O = j && j.stringify,
             H = p('_hidden'),
@@ -2309,7 +2309,7 @@
             D = l('symbols'),
             N = l('op-symbols'),
             U = Object.prototype,
-            $ = 'function' == typeof P && !!q.f,
+            $ = 'function' == typeof R && !!q.f,
             Y = r.QObject,
             W = !Y || !Y.prototype || !Y.prototype.findChild,
             G =
@@ -2327,21 +2327,21 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = C(U, t);
+                          var r = E(U, t);
                           r && delete U[t], T(e, t, n), r && e !== U && T(U, t, r);
                       }
                     : T,
             V = function (e) {
-                var t = (D[e] = A(P.prototype));
+                var t = (D[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             z =
-                $ && 'symbol' == typeof P.iterator
+                $ && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof P;
+                          return e instanceof R;
                       },
             Z = function (e, t, n) {
                 return (
@@ -2365,22 +2365,22 @@
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== U || !o(D, t) || o(N, t))) {
-                    var n = C(e, t);
+                    var n = E(e, t);
                     return !n || !o(D, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = R(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == H || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(D, (t = n[i++])) || t == H || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === U, r = R(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o(U, t)) || i.push(D[t]);
+                for (var t, n = e === U, r = P(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(D, (t = r[a++])) || (n && !o(U, t)) || i.push(D[t]);
                 return i;
             };
         $ ||
             (c(
-                (P = function () {
-                    if (this instanceof P) throw TypeError('Symbol is not a constructor!');
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === U && t.call(N, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), G(this, e, x(1, n));
@@ -2401,13 +2401,13 @@
             (h.f = function (e) {
                 return V(p(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: P});
+            a(a.G + a.W + a.F * !$, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             p(te[ne++]);
-        for (var re = E(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = C(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = P(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
@@ -2444,7 +2444,7 @@
                         a.F *
                             (!$ ||
                                 u(function () {
-                                    var e = P();
+                                    var e = R();
                                     return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                 })),
                     'JSON',
@@ -2463,8 +2463,8 @@
                         },
                     }
                 ),
-            P.prototype[F] || n(9)(P.prototype, F, P.prototype.valueOf),
-            d(P, 'Symbol'),
+            R.prototype[F] || n(9)(R.prototype, F, R.prototype.valueOf),
+            d(R, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3286,7 +3286,7 @@
         n(110);
         var M = n(18);
         n(73);
-        function E(e, t, n, r, o, i, a) {
+        function C(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3295,17 +3295,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function C(e) {
+        function E(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        E(i, r, o, a, c, 'next', e);
+                        C(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        E(i, r, o, a, c, 'throw', e);
+                        C(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3317,9 +3317,9 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var R = n(37),
-            P = n(113);
-        R.extend(P);
+        var P = n(37),
+            R = n(113);
+        P.extend(R);
         var j = (function () {
                 function e() {
                     !(function (e, t) {
@@ -3348,7 +3348,7 @@
                                         });
                                 }
                                 function f() {
-                                    return (f = C(
+                                    return (f = E(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -3435,20 +3435,20 @@
                                         });
                                     }
                                     'standard' === n.getMetaTagContent('theme')
-                                        ? ((u = R(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (d = R(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (f = R(d).diff(R(u), 'days')))
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (d = P(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (f = P(d).diff(P(u), 'days')))
                                         : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                        ? ((u = R(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (d = R(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (f = R(d).diff(R(u), 'days')),
-                                          (u = R(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                          (d = R(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : ((u = R(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (d = R(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (f = R(d).diff(R(u), 'days')),
-                                          (u = R(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = R(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (d = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (f = P(d).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (d = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (d = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (f = P(d).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (d = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
                                         'standard' !== n.getMetaTagContent('theme') &&
                                             ((c.check_in_value = document.querySelector('input#theCheckIn').value),
                                             (c.check_out_value = document.querySelector('input#theCheckOut').value)),
@@ -3946,8 +3946,9 @@
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        e.updateSupportPageText(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 42:
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5546,6 +5547,15 @@
                                 });
                             },
                         },
+                        {
+                            key: 'updateSupportPageText',
+                            value: function () {
+                                this.site_config.is_resbeat_client ||
+                                    (document.querySelector('.WBSupportForm') &&
+                                        (document.querySelector('.ArnSupportChatTable p').textContent =
+                                            'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                            },
+                        },
                     ]) && I(t.prototype, n),
                     r && I(t, r),
                     e
@@ -6222,32 +6232,15 @@
                                                                 break;
                                                             }
                                                             return (
-                                                                setTimeout(
-                                                                    V(
-                                                                        regeneratorRuntime.mark(function e() {
-                                                                            return regeneratorRuntime.wrap(function (e) {
-                                                                                for (;;)
-                                                                                    switch ((e.prev = e.next)) {
-                                                                                        case 0:
-                                                                                            return (
-                                                                                                (e.next = 2),
-                                                                                                a.insertAdjacentHTML(
-                                                                                                    'afterBegin',
-                                                                                                    '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
-                                                                                                        i,
-                                                                                                        '" target="_blank">RES<b>BEAT</b> Rewards</a>'
-                                                                                                    )
-                                                                                                )
-                                                                                            );
-                                                                                        case 2:
-                                                                                        case 'end':
-                                                                                            return e.stop();
-                                                                                    }
-                                                                            }, e);
-                                                                        })
-                                                                    ),
-                                                                    8e3
-                                                                ),
+                                                                setTimeout(function () {
+                                                                    a.insertAdjacentHTML(
+                                                                        'afterBegin',
+                                                                        '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                            i,
+                                                                            '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                        )
+                                                                    );
+                                                                }, 1e4),
                                                                 e.abrupt('return')
                                                             );
                                                         case 13:
@@ -6731,9 +6724,9 @@
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 q = L || w(m),
                 M = m ? (x ? w('entries') : q) : void 0,
-                E = ('Array' == t && k.entries) || L;
+                C = ('Array' == t && k.entries) || L;
             if (
-                (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, p)),
+                (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, p)),
                 x &&
                     L &&
                     'values' !== L.name &&

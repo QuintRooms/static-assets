@@ -520,14 +520,13 @@ export default class Resbeat extends BasePortal {
         const header_links = document.querySelector('header #commands');
 
         if (!document.querySelector('.MemberAuthenticated') || !header_links) return;
-
         if (document.referrer.includes('register')) {
-            setTimeout(async () => {
-                await header_links.insertAdjacentHTML(
+            setTimeout(() => {
+                header_links.insertAdjacentHTML(
                     'afterBegin',
                     `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
                 );
-            }, 8000);
+            }, 10000);
 
             return;
         }

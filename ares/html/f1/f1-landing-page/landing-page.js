@@ -73,10 +73,7 @@ function showMoreOnMobile() {
 
 async function removeHrefs() {
     await utilities.waitForSelectorInDOM('#races');
-    const logo = document.querySelector('.logo');
     const races_tab = document.querySelector('#races');
-    logo.href = '';
-    logo.target = '';
     races_tab.href = '#races-container';
     races_tab.target = '';
 }
@@ -90,19 +87,16 @@ function updateTitle(text) {
 }
 
 function changeLogoHtml() {
-    utilities.updateHTML(
-        '.logo',
-        `
+    document.querySelector('.logo').outerHTML = `
         <span class="logo">
             <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">
         </span>
-        `
-    );
+        `;
 }
 
 populateRaceSeasons();
 showMoreOnMobile();
-addHref();
 changeLogoHtml();
+addHref();
 removeHrefs();
 updateTitle('F1® Rooms');

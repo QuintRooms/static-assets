@@ -3044,20 +3044,15 @@
         function w() {
             return (w = g(
                 regeneratorRuntime.mark(function t() {
-                    var e, n;
+                    var e;
                     return regeneratorRuntime.wrap(function (t) {
                         for (;;)
                             switch ((t.prev = t.next)) {
                                 case 0:
                                     return (t.next = 2), b.waitForSelectorInDOM('#races');
                                 case 2:
-                                    (e = document.querySelector('.logo')),
-                                        (n = document.querySelector('#races')),
-                                        (e.href = ''),
-                                        (e.target = ''),
-                                        (n.href = '#races-container'),
-                                        (n.target = '');
-                                case 8:
+                                    ((e = document.querySelector('#races')).href = '#races-container'), (e.target = '');
+                                case 5:
                                 case 'end':
                                     return t.stop();
                             }
@@ -3119,13 +3114,11 @@
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),
+            (document.querySelector('.logo').outerHTML =
+                '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '),
             (document.querySelector('.footer-nav ul li:last-child').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
                 document.querySelector('meta[name="siteId"]').content
             )),
-            b.updateHTML(
-                '.logo',
-                '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '
-            ),
             (function () {
                 w.apply(this, arguments);
             })(),

@@ -1,5 +1,9 @@
 /* eslint-disable prefer-destructuring */
 
+import Utilities from './utilities';
+
+const utilities = new Utilities();
+
 export default class Distance {
     constructor(params, venueName, unit, from_lat, from_long) {
         this.params = [];
@@ -81,7 +85,9 @@ export default class Distance {
         if (units.includes('kilometers')) this.unit = 'kilometers';
     }
 
-    sortPropsByDistance() {
+    async sortPropsByDistance() {
+        await utilities.waitForSelectorInDOM('.prop-hr');
+
         const hr_list = document.querySelectorAll('.prop-hr');
 
         const prop_container = document.querySelector('#currentPropertyPage');
@@ -155,10 +161,10 @@ export default class Distance {
 }
 
 async function pollingFinished() {
+    if (!document.querySelector('.SearchHotels')) return;
     return new Promise((resolve) => {
         const interval = setInterval(async () => {
             if (!document.querySelector('.pollingFinished')) return;
-
             const distance = new Distance();
             distance.params = [];
             await distance.getPropertyLatLong();

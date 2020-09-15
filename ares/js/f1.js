@@ -13,7 +13,7 @@ export default async function f1Styles(siteId) {
     async function addHeader(id) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
         const races_contact =
-            document.querySelector(document.querySelector('meta[name="siteId"]').content) === '46451'
+            siteId === '46451'
                 ? `
         <ul id="races-contact">
             <li>

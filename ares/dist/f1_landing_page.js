@@ -2961,8 +2961,8 @@
                                         }),
                                         (i = function () {
                                             return (i = p(
-                                                regeneratorRuntime.mark(function t(e) {
-                                                    var o, i;
+                                                regeneratorRuntime.mark(function t(o) {
+                                                    var i, a;
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
                                                             switch ((t.prev = t.next)) {
@@ -2970,19 +2970,19 @@
                                                                     return (t.next = 2), d.fetchHTMLFromFile(''.concat(v.path, '/html/f1/f1-header.html'));
                                                                 case 2:
                                                                     if (
-                                                                        ((o = t.sent),
-                                                                        (i =
-                                                                            '46451' === document.querySelector(document.querySelector('meta[name="siteId"]').content)
+                                                                        ((i = t.sent),
+                                                                        (a =
+                                                                            '46451' === e
                                                                                 ? '\n        <ul id="races-contact">\n            <li>\n                <a href="#races-container" id="races">Races</a>\n            </li>\n            <li>\n                <a href="https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                                                                                      e,
+                                                                                      o,
                                                                                       '" id="contactUs">Contact Us</a>\n            </li>\n        </ul>\n        <div class="navbar-hamburger">\n            <span class="toggle-bar top-bar"></span> \n            <span class="toggle-bar middle-bar"></span> \n            <span class="toggle-bar bottom-bar"></span>\n        </div>\n    '
                                                                                   )
                                                                                 : '\n    <ul id="races-contact">\n        <li>\n            <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>\n        </li>\n        <li>\n            <a href="https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                                                                                      e,
+                                                                                      o,
                                                                                       '" id="contactUs">Contact Us</a>\n        </li>\n    </ul>\n    <div class="navbar-hamburger">\n        <span class="toggle-bar top-bar"></span> \n        <span class="toggle-bar middle-bar"></span> \n        <span class="toggle-bar bottom-bar"></span>\n    </div>\n'
                                                                                   )),
-                                                                        n.insertAdjacentHTML('beforebegin', o),
-                                                                        n.insertAdjacentHTML('beforeend', i),
+                                                                        n.insertAdjacentHTML('beforebegin', i),
+                                                                        n.insertAdjacentHTML('beforeend', a),
                                                                         null !== r)
                                                                     ) {
                                                                         t.next = 8;

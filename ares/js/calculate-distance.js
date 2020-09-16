@@ -150,6 +150,7 @@ export default class Distance {
                 new Promise((resolve) => {
                     fetch(url)
                         .then((response) => {
+                            console.log(response);
                             const data = response.json();
 
                             return data;

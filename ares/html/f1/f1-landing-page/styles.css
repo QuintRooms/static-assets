@@ -32,6 +32,10 @@ body {
     background: #f7f4f1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .ArnSupportLinks, .subHeaderContainer {
     display: none;
 }

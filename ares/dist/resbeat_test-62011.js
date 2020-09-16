@@ -461,8 +461,9 @@
                                                                             ),
                                                                             e.addLinkToLoginFromRegisterPage(),
                                                                             e.setCheckDatesToReadOnlyOnMobile(),
+                                                                            e.updateSupportPageText(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 42:
+                                                                    case 43:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -2072,6 +2073,15 @@
                                     });
                                 },
                             },
+                            {
+                                key: 'updateSupportPageText',
+                                value: function () {
+                                    this.site_config.is_resbeat_client ||
+                                        (document.querySelector('.WBSupportForm') &&
+                                            (document.querySelector('.ArnSupportChatTable p').textContent =
+                                                'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                                },
+                            },
                         ]) && c(t.prototype, o),
                         n && c(t, n),
                         e
@@ -3075,32 +3085,15 @@
                                                                     break;
                                                                 }
                                                                 return (
-                                                                    setTimeout(
-                                                                        c(
-                                                                            regeneratorRuntime.mark(function e() {
-                                                                                return regeneratorRuntime.wrap(function (e) {
-                                                                                    for (;;)
-                                                                                        switch ((e.prev = e.next)) {
-                                                                                            case 0:
-                                                                                                return (
-                                                                                                    (e.next = 2),
-                                                                                                    i.insertAdjacentHTML(
-                                                                                                        'afterBegin',
-                                                                                                        '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
-                                                                                                            s,
-                                                                                                            '" target="_blank">RES<b>BEAT</b> Rewards</a>'
-                                                                                                        )
-                                                                                                    )
-                                                                                                );
-                                                                                            case 2:
-                                                                                            case 'end':
-                                                                                                return e.stop();
-                                                                                        }
-                                                                                }, e);
-                                                                            })
-                                                                        ),
-                                                                        8e3
-                                                                    ),
+                                                                    setTimeout(function () {
+                                                                        i.insertAdjacentHTML(
+                                                                            'afterBegin',
+                                                                            '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                                s,
+                                                                                '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                            )
+                                                                        );
+                                                                    }, 1e4),
                                                                     e.abrupt('return')
                                                                 );
                                                             case 13:
@@ -5400,8 +5393,8 @@
                 L = c.Promise,
                 q = 'process' == l(x),
                 M = function () {},
-                E = (r = v.f),
-                T = !!(function () {
+                T = (r = v.f),
+                E = !!(function () {
                     try {
                         var e = L.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
@@ -5414,7 +5407,7 @@
                     var t;
                     return !(!m(e) || 'function' != typeof (t = e.then)) && t;
                 },
-                R = function (e, t) {
+                P = function (e, t) {
                     if (!e._n) {
                         e._n = !0;
                         var o = e._c;
@@ -5445,11 +5438,11 @@
 
                             )
                                 i(o[s++]);
-                            (e._c = []), (e._n = !1), t && !e._h && P(e);
+                            (e._c = []), (e._n = !1), t && !e._h && R(e);
                         });
                     }
                 },
-                P = function (e) {
+                R = function (e) {
                     g.call(c, function () {
                         var t,
                             o,
@@ -5483,7 +5476,7 @@
                 },
                 F = function (e) {
                     var t = this;
-                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
                 B = function (e) {
                     var t,
@@ -5501,13 +5494,13 @@
                                           F.call(n, e);
                                       }
                                   })
-                                : ((o._v = e), (o._s = 1), R(o, !1));
+                                : ((o._v = e), (o._s = 1), P(o, !1));
                         } catch (e) {
                             F.call({_w: o, _d: !1}, e);
                         }
                     }
                 };
-            T ||
+            E ||
                 ((L = function (e) {
                     p(this, L, 'Promise', '_h'), f(e), n.call(this);
                     try {
@@ -5520,14 +5513,14 @@
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
                 }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(L.prototype, {
                     then: function (e, t) {
-                        var o = E(y(this, L));
+                        var o = T(y(this, L));
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
                             (o.domain = q ? x.domain : void 0),
                             this._c.push(o),
                             this._a && this._a.push(o),
-                            this._s && R(this, !1),
+                            this._s && P(this, !1),
                             o.promise
                         );
                     },
@@ -5539,20 +5532,20 @@
                     var e = new n();
                     (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
                 }),
-                (v.f = E = function (e) {
+                (v.f = T = function (e) {
                     return e === L || e === i ? new s(e) : r(e);
                 })),
-                d(d.G + d.W + d.F * !T, {Promise: L}),
+                d(d.G + d.W + d.F * !E, {Promise: L}),
                 o(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(L, 'Promise'),
                 o(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = o(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
-                d(d.S + d.F * !T, 'Promise', {
+                d(d.S + d.F * !E, 'Promise', {
                     reject: function (e) {
-                        var t = E(this);
+                        var t = T(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
-                d(d.S + d.F * (a || !T), 'Promise', {
+                d(d.S + d.F * (a || !E), 'Promise', {
                     resolve: function (e) {
                         return S(a && this === i ? L : this, e);
                     },
@@ -5561,7 +5554,7 @@
                     d.S +
                         d.F *
                             !(
-                                T &&
+                                E &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
                                     L.all(e).catch(M);
                                 })
@@ -5570,7 +5563,7 @@
                     {
                         all: function (e) {
                             var t = this,
-                                o = E(t),
+                                o = T(t),
                                 n = o.resolve,
                                 r = o.reject,
                                 s = j(function () {
@@ -5592,7 +5585,7 @@
                         },
                         race: function (e) {
                             var t = this,
-                                o = E(t),
+                                o = T(t),
                                 n = o.reject,
                                 r = j(function () {
                                     h(e, !1, function (e) {
@@ -5742,9 +5735,9 @@
                             if (f) {
                                 var M = [x].concat(k, A, m);
                                 void 0 !== q && M.push(q);
-                                var E = String(t.apply(void 0, M));
-                            } else E = h(x, m, A, k, q, t);
-                            A >= S && ((b += m.slice(S, A) + E), (S = A + x.length));
+                                var T = String(t.apply(void 0, M));
+                            } else T = h(x, m, A, k, q, t);
+                            A >= S && ((b += m.slice(S, A) + T), (S = A + x.length));
                         }
                         return b + m.slice(S);
                     },
@@ -5987,12 +5980,12 @@
                 L = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 q = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 M = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                E = k.f,
-                T = q.f,
+                T = k.f,
+                E = q.f,
                 C = A.f,
-                R = n.Symbol,
-                P = n.JSON,
-                O = P && P.stringify,
+                P = n.Symbol,
+                R = n.JSON,
+                O = R && R.stringify,
                 H = f('_hidden'),
                 F = f('toPrimitive'),
                 B = {}.propertyIsEnumerable,
@@ -6000,7 +5993,7 @@
                 D = l('symbols'),
                 N = l('op-symbols'),
                 U = Object.prototype,
-                $ = 'function' == typeof R && !!L.f,
+                $ = 'function' == typeof P && !!L.f,
                 Y = n.QObject,
                 W = !Y || !Y.prototype || !Y.prototype.findChild,
                 G =
@@ -6009,30 +6002,30 @@
                         return (
                             7 !=
                             x(
-                                T({}, 'a', {
+                                E({}, 'a', {
                                     get: function () {
-                                        return T(this, 'a', {value: 7}).a;
+                                        return E(this, 'a', {value: 7}).a;
                                     },
                                 })
                             ).a
                         );
                     })
                         ? function (e, t, o) {
-                              var n = E(U, t);
-                              n && delete U[t], T(e, t, o), n && e !== U && T(U, t, n);
+                              var n = T(U, t);
+                              n && delete U[t], E(e, t, o), n && e !== U && E(U, t, n);
                           }
-                        : T,
+                        : E,
                 V = function (e) {
-                    var t = (D[e] = x(R.prototype));
+                    var t = (D[e] = x(P.prototype));
                     return (t._k = e), t;
                 },
                 z =
-                    $ && 'symbol' == typeof R.iterator
+                    $ && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
                         : function (e) {
-                              return e instanceof R;
+                              return e instanceof P;
                           },
                 Z = function (e, t, o) {
                     return (
@@ -6041,9 +6034,9 @@
                         (t = S(t, !0)),
                         _(o),
                         r(D, t)
-                            ? (o.enumerable ? (r(e, H) && e[H][t] && (e[H][t] = !1), (o = x(o, {enumerable: w(0, !1)}))) : (r(e, H) || T(e, H, w(1, {})), (e[H][t] = !0)),
+                            ? (o.enumerable ? (r(e, H) && e[H][t] && (e[H][t] = !1), (o = x(o, {enumerable: w(0, !1)}))) : (r(e, H) || E(e, H, w(1, {})), (e[H][t] = !0)),
                               G(e, t, o))
-                            : T(e, t, o)
+                            : E(e, t, o)
                     );
                 },
                 J = function (e, t) {
@@ -6057,7 +6050,7 @@
                 },
                 K = function (e, t) {
                     if (((e = b(e)), (t = S(t, !0)), e !== U || !r(D, t) || r(N, t))) {
-                        var o = E(e, t);
+                        var o = T(e, t);
                         return !o || !r(D, t) || (r(e, H) && e[H][t]) || (o.enumerable = !0), o;
                     }
                 },
@@ -6071,8 +6064,8 @@
                 };
             $ ||
                 (a(
-                    (R = function () {
-                        if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                    (P = function () {
+                        if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (o) {
                                 this === U && t.call(N, o), r(this, H) && r(this[H], e) && (this[H][e] = !1), G(this, e, w(1, o));
@@ -6093,13 +6086,13 @@
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !$, {Symbol: R});
+                i(i.G + i.W + i.F * !$, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
             for (var ne = M(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
-                    return r(I, (e += '')) ? I[e] : (I[e] = R(e));
+                    return r(I, (e += '')) ? I[e] : (I[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
@@ -6130,13 +6123,13 @@
                     return L.f(j(e));
                 },
             }),
-                P &&
+                R &&
                     i(
                         i.S +
                             i.F *
                                 (!$ ||
                                     u(function () {
-                                        var e = R();
+                                        var e = P();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                     })),
                         'JSON',
@@ -6150,13 +6143,13 @@
                                                 if (('function' == typeof o && (t = o.call(this, e, t)), !z(t))) return t;
                                             }),
                                         (n[1] = t),
-                                        O.apply(P, n)
+                                        O.apply(R, n)
                                     );
                             },
                         }
                     ),
-                R.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(R.prototype, F, R.prototype.valueOf),
-                d(R, 'Symbol'),
+                P.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, F, P.prototype.valueOf),
+                d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);
         },

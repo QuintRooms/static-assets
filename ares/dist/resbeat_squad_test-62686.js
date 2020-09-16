@@ -857,15 +857,15 @@
             L = (k && k.v8) || '',
             q = s.Promise,
             M = 'process' == l(A),
-            E = function () {},
-            T = (o = b.f),
+            T = function () {},
+            E = (o = b.f),
             C = !!(function () {
                 try {
                     var e = q.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(E, E);
+                            e(T, T);
                         });
-                    return (M || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (M || 'function' == typeof PromiseRejectionEvent) && e.then(T) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             R = function (e) {
@@ -978,7 +978,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(97)(q.prototype, {
                 then: function (e, t) {
-                    var n = T(y(this, q));
+                    var n = E(y(this, q));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -997,7 +997,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
             }),
-            (b.f = T = function (e) {
+            (b.f = E = function (e) {
                 return e === q || e === a ? new i(e) : o(e);
             })),
             d(d.G + d.W + d.F * !C, {Promise: q}),
@@ -1006,7 +1006,7 @@
             (a = n(11).Promise),
             d(d.S + d.F * !C, 'Promise', {
                 reject: function (e) {
-                    var t = T(this);
+                    var t = E(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -1021,14 +1021,14 @@
                         !(
                             C &&
                             n(99)(function (e) {
-                                q.all(e).catch(E);
+                                q.all(e).catch(T);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = T(t),
+                            n = E(t),
                             r = n.resolve,
                             o = n.reject,
                             i = S(function () {
@@ -1050,7 +1050,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = T(t),
+                            n = E(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -1543,11 +1543,11 @@
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), L = [], q = 1; q < b.length; q++) L.push(void 0 === (S = b[q]) ? S : String(S));
                         var M = b.groups;
                         if (p) {
-                            var E = [A].concat(L, k, f);
-                            void 0 !== M && E.push(M);
-                            var T = String(t.apply(void 0, E));
-                        } else T = m(A, f, k, L, M, t);
-                        k >= x && ((w += f.slice(x, k) + T), (x = k + A.length));
+                            var T = [A].concat(L, k, f);
+                            void 0 !== M && T.push(M);
+                            var E = String(t.apply(void 0, T));
+                        } else E = m(A, f, k, L, M, t);
+                        k >= x && ((w += f.slice(x, k) + E), (x = k + A.length));
                     }
                     return w + f.slice(x);
                 },
@@ -2295,8 +2295,8 @@
             L = n(58),
             q = n(55),
             M = n(6),
-            E = n(15),
-            T = L.f,
+            T = n(15),
+            E = L.f,
             C = M.f,
             R = k.f,
             P = r.Symbol,
@@ -2327,7 +2327,7 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = T(U, t);
+                          var r = E(U, t);
                           r && delete U[t], C(e, t, n), r && e !== U && C(U, t, r);
                       }
                     : C,
@@ -2365,7 +2365,7 @@
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = x(t, !0)), e !== U || !o(D, t) || o(N, t))) {
-                    var n = T(e, t);
+                    var n = E(e, t);
                     return !n || !o(D, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -2404,7 +2404,7 @@
             a(a.G + a.W + a.F * !Y, {Symbol: P});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             p(te[ne++]);
-        for (var re = E(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = T(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !Y, 'Symbol', {
             for: function (e) {
                 return o(I, (e += '')) ? I[e] : (I[e] = P(e));
@@ -3286,7 +3286,7 @@
         n(110);
         var M = n(18);
         n(73);
-        function E(e, t, n, r, o, i, a) {
+        function T(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3295,17 +3295,17 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function T(e) {
+        function E(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        E(i, r, o, a, c, 'next', e);
+                        T(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        E(i, r, o, a, c, 'throw', e);
+                        T(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3348,7 +3348,7 @@
                                         });
                                 }
                                 function f() {
-                                    return (f = T(
+                                    return (f = E(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -3946,8 +3946,9 @@
                                                                         ),
                                                                         e.addLinkToLoginFromRegisterPage(),
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        e.updateSupportPageText(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 42:
+                                                                case 43:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -5546,6 +5547,15 @@
                                 });
                             },
                         },
+                        {
+                            key: 'updateSupportPageText',
+                            value: function () {
+                                this.site_config.is_resbeat_client ||
+                                    (document.querySelector('.WBSupportForm') &&
+                                        (document.querySelector('.ArnSupportChatTable p').textContent =
+                                            'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                            },
+                        },
                     ]) && I(t.prototype, n),
                     r && I(t, r),
                     e
@@ -6222,32 +6232,15 @@
                                                                 break;
                                                             }
                                                             return (
-                                                                setTimeout(
-                                                                    V(
-                                                                        regeneratorRuntime.mark(function e() {
-                                                                            return regeneratorRuntime.wrap(function (e) {
-                                                                                for (;;)
-                                                                                    switch ((e.prev = e.next)) {
-                                                                                        case 0:
-                                                                                            return (
-                                                                                                (e.next = 2),
-                                                                                                a.insertAdjacentHTML(
-                                                                                                    'afterBegin',
-                                                                                                    '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
-                                                                                                        i,
-                                                                                                        '" target="_blank">RES<b>BEAT</b> Rewards</a>'
-                                                                                                    )
-                                                                                                )
-                                                                                            );
-                                                                                        case 2:
-                                                                                        case 'end':
-                                                                                            return e.stop();
-                                                                                    }
-                                                                            }, e);
-                                                                        })
-                                                                    ),
-                                                                    8e3
-                                                                ),
+                                                                setTimeout(function () {
+                                                                    a.insertAdjacentHTML(
+                                                                        'afterBegin',
+                                                                        '<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/'.concat(
+                                                                            i,
+                                                                            '" target="_blank">RES<b>BEAT</b> Rewards</a>'
+                                                                        )
+                                                                    );
+                                                                }, 1e4),
                                                                 e.abrupt('return')
                                                             );
                                                         case 13:
@@ -6731,9 +6724,9 @@
                 L = k[d] || k['@@iterator'] || (m && k[m]),
                 q = L || w(m),
                 M = m ? (_ ? w('entries') : q) : void 0,
-                E = ('Array' == t && k.entries) || L;
+                T = ('Array' == t && k.entries) || L;
             if (
-                (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, x, !0), r || 'function' == typeof S[d] || a(S, d, p)),
+                (T && (S = l(T.call(new e()))) !== Object.prototype && S.next && (u(S, x, !0), r || 'function' == typeof S[d] || a(S, d, p)),
                 _ &&
                     L &&
                     'values' !== L.name &&

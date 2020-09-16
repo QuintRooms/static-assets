@@ -2,7 +2,7 @@ import races from './races';
 import Utilities from '../../../js/utilities';
 import f1Styles from '../../../js/f1';
 
-f1Styles();
+f1Styles(document.querySelector('meta[name="siteId"]').content);
 
 const utilities = new Utilities();
 
@@ -71,5 +71,24 @@ function showMoreOnMobile() {
     });
 }
 
+function addHref() {
+    document.querySelector('.footer-nav ul li:last-child a').href = `https://events.hotelsforhope.com/v6/support?siteId=${document.querySelector('meta[name="siteId"]').content}`;
+}
+
+function updateTitle(text) {
+    document.querySelector('title').textContent = text;
+}
+
+function changeLogoHtml() {
+    document.querySelector('.logo').outerHTML = `
+        <span class="logo">
+            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">
+        </span>
+        `;
+}
+
 populateRaceSeasons();
+addHref();
 showMoreOnMobile();
+changeLogoHtml();
+updateTitle('F1® Rooms');

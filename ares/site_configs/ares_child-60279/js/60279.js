@@ -1,5 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './60279-config';
+import Distance from '../../../js/calculate-distance';
 
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
@@ -10,3 +11,4 @@ class ChildPortal extends BasePortal {
 }
 
 new ChildPortal();
+new Distance();

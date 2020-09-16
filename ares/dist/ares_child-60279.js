@@ -2268,6 +2268,7 @@
                                                             );
                                                         case 5:
                                                             (t = []),
+                                                                (r = []),
                                                                 s(),
                                                                 document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                                                     e.classList.contains('S16') || e.classList.contains('S20') || t.push(e);
@@ -2281,7 +2282,7 @@
                                                                 u.reverse().forEach(function (e, t) {
                                                                     o.insertAdjacentElement(n, e), document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', r[t]);
                                                                 });
-                                                        case 12:
+                                                        case 13:
                                                         case 'end':
                                                             return e.stop();
                                                     }

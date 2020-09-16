@@ -90,7 +90,7 @@ export default class Distance {
         const sort_array = [];
         let insert_element;
         let insert_position;
-        let hr_list;
+        let hr_list = [];
 
         function createHrNodeList() {
             if (document.querySelector('S16') || document.querySelector('S20')) {

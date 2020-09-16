@@ -1,17 +1,27 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
+
+// $primary_color: #04539e;
+// $secondary_color: #00a3df;
+// $primary_text_color: #fff;
+// $secondary_text_color: #04539e;
+// $border_color: #04539e;
+// $button_hover_background_color: #fff;
+// $button_hover_text_color: #04539e;
+// $button_hover_border_color: #04539e;
+
 $header_background: #000;
 $logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
 $primary_color: #2afbaa;
-$secondary_color: #23232d;
+$secondary_color: #f42c72;
 $primary_text_color: #000;
-$secondary_text_color: #2afbaa;
+$secondary_text_color: #2541b7;
 $border_color: #2afbaa;
-$button_hover_background_color: #fff;
-$button_hover_text_color: #2afbaa;
-$button_hover_border_color: #2afbaa;
+$button_hover_background_color: #2541b7;
+$button_hover_text_color: #fff;
+$button_hover_border_color: #2541b7;
 $google_font_name: 'Montserrat';
 $site_name: 'lib_21-63504';
 $path: set-path($env);
@@ -21,4 +31,27 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 .logo img{
     max-width: 700px;
+}
+
+.RootBody #CitySearchContainer > span,
+.RootBody #CheckInContainer > span,
+.RootBody #CheckOutContainer > span,
+.RootBody .ArnRooms > span,
+.RootBody .ArnAdults > span,
+.arnMapMarker.contracted-pin,
+.arnMapMarker.contracted-pin.highlight{
+    color: #fff;
+}
+
+.arnMapMarker.contracted-pin:hover{
+    background: #fff;
+    color: $secondary_color;
+}
+
+.contracted-pin:hover .arnMapMarkerTriangle{
+    border-top-color: $secondary_color;
+}
+
+.arnMapMarker:hover .arnMapMarkerTriangle{
+    border-top-color: #fff;
 }

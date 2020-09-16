@@ -154,8 +154,6 @@ export default class Distance {
                             console.log(response);
                             const data = response.json();
 
-                            console.log(response.json());
-
                             return data;
                         })
                         .then((data) => {

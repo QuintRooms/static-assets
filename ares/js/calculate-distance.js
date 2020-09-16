@@ -118,8 +118,8 @@ export default class Distance {
         });
         hasContractedInventory();
         props_array.reverse().forEach((property, i) => {
-            insert_element.insertAdjacentElement('afterend', property);
-            document.querySelector(`#${property.id}`).insertAdjacentElement(insert_position, hr_list[i]);
+            insert_element.insertAdjacentElement(insert_position, property);
+            document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
         });
     }
 

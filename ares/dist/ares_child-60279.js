@@ -2270,7 +2270,7 @@
                                                                 })),
                                                                 s(),
                                                                 a.reverse().forEach(function (e, t) {
-                                                                    o.insertAdjacentElement('afterend', e), document.querySelector('#'.concat(e.id)).insertAdjacentElement(n, r[t]);
+                                                                    o.insertAdjacentElement(n, e), document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', r[t]);
                                                                 });
                                                         case 11:
                                                         case 'end':

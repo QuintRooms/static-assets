@@ -45,7 +45,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 #datePromptContainer + .SimpleSearch .CheckRates .submit,
 .yui3-skin-sam .yui3-calendar-day:hover,
 .sort-wrapper .active,
-.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a {
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
   background: #ba2024;
 }
 
@@ -94,11 +94,11 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 #datePromptContainer + .SimpleSearch .CheckRates .submit,
 .bookRoom,
 .sort-wrapper .active,
-.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .custom-button a {
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton {
   color: #fff;
 }
 
-.custom-button a:hover {
+.custom-button a, .WBForgotPasswordFormActions input:hover {
   color: #ba2024;
 }
 
@@ -150,7 +150,7 @@ input#theSubmitButton,
 .bookRoom,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
-a.ArnShowRatesLink, .WBConfirmedBooking .submit, .custom-button a {
+a.ArnShowRatesLink, .WBConfirmedBooking .submit {
   background: #ba2024;
   color: #fff;
   border: 1px solid #ba2024;
@@ -182,7 +182,7 @@ input#theSubmitButton:active,
 input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
-a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover, .custom-button a:hover {
+a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
   background: #fff;
   color: #ba2024;
   border: 1px solid #ba2024;

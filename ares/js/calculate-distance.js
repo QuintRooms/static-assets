@@ -87,22 +87,38 @@ export default class Distance {
 
     async sortPropsByDistance() {
         await utilities.waitForSelectorInDOM('.prop-hr');
-
+        const sort_array = [];
+        let insert_element;
+        let insert_position;
         const hr_list = document.querySelectorAll('.prop-hr');
 
-        const prop_container = document.querySelector('#currentPropertyPage');
+        function hasContractedInventory() {
+            if (document.querySelector('S16') || document.querySelector('S20')) {
+                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16')).concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
+                insert_element = node_list[node_list.length - 1];
+                insert_position = 'afterend';
+            } else {
+                insert_element = document.querySelector('#currentPropertyPage');
+                insert_position = 'afterbegin';
+            }
+        }
+
         const props = document.querySelectorAll('.ArnProperty');
+        props.forEach((el) => {
+            if (el.classList.contains('S16') || el.classList.contains('S20')) return;
+            sort_array.push(el);
+        });
 
         function extractNumber(str) {
             return str.substring(0, str.indexOf(' '));
         }
 
-        const props_array = [].slice.call(props).sort((a, b) => {
+        const props_array = [].slice.call(sort_array).sort((a, b) => {
             return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
         });
-
+        hasContractedInventory();
         props_array.reverse().forEach((property, i) => {
-            prop_container.insertAdjacentElement('afterbegin', property);
+            insert_element.insertAdjacentElement(insert_position, property);
             document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
         });
     }

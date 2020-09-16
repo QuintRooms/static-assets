@@ -2237,29 +2237,29 @@
                                 value:
                                     ((a = r(
                                         regeneratorRuntime.mark(function e() {
-                                            var t, o, n, r, s, c, a, u;
+                                            var t, o, n, r, s, c, a, u, l;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
-                                                                (a = function (e) {
+                                                                (u = function (e) {
                                                                     return e.substring(0, e.indexOf(' '));
                                                                 }),
-                                                                (c = function () {
+                                                                (a = function () {
                                                                     if (document.querySelector('.S16') || document.querySelector('.S20')) {
                                                                         var e = Array.prototype.slice
                                                                             .call(document.querySelectorAll('.S16'))
                                                                             .concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
-                                                                        (o = e[e.length - 1]), (n = 'afterend');
+                                                                        (o = e[e.length - 1]), (n = 'afterend'), (s = 'beforebegin');
                                                                     } else (o = document.querySelector('#currentPropertyPage')), (n = 'afterbegin');
                                                                 }),
-                                                                (s = function () {
+                                                                (c = function () {
                                                                     document.querySelector('.S16') || document.querySelector('.S20')
                                                                         ? document.querySelectorAll('.prop-hr').forEach(function (e) {
                                                                               e.previousSibling.classList.contains('S16') ||
                                                                                   e.previousSibling.classList.contains('S20') ||
-                                                                                  (r.push(e), console.log('HR LIST: ', r));
+                                                                                  r.push(e);
                                                                           })
                                                                         : (r = document.querySelectorAll('.prop-hr'));
                                                                 }),
@@ -2269,21 +2269,21 @@
                                                         case 5:
                                                             (t = []),
                                                                 (r = []),
-                                                                s(),
+                                                                (s = 'afterend'),
+                                                                c(),
                                                                 document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                                                     e.classList.contains('S16') || e.classList.contains('S20') || t.push(e);
                                                                 }),
-                                                                (u = [].slice.call(t).sort(function (e, t) {
-                                                                    return a(e.querySelector('.distanceLabel').textContent) > a(t.querySelector('.distanceLabel').textContent)
+                                                                (l = [].slice.call(t).sort(function (e, t) {
+                                                                    return u(e.querySelector('.distanceLabel').textContent) > u(t.querySelector('.distanceLabel').textContent)
                                                                         ? 1
                                                                         : -1;
                                                                 })),
-                                                                c(),
-                                                                u.reverse().forEach(function (e, t) {
-                                                                    o.insertAdjacentElement(n, e),
-                                                                        document.querySelector('#'.concat(e.id)).insertAdjacentElement('beforebegin', r[t]);
+                                                                a(),
+                                                                l.reverse().forEach(function (e, t) {
+                                                                    o.insertAdjacentElement(n, e), document.querySelector('#'.concat(e.id)).insertAdjacentElement(s, r[t]);
                                                                 });
-                                                        case 13:
+                                                        case 14:
                                                         case 'end':
                                                             return e.stop();
                                                     }

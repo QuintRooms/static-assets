@@ -2254,12 +2254,21 @@
                                                                         (o = e[e.length - 1]), (n = 'afterend');
                                                                     } else (o = document.querySelector('#currentPropertyPage')), (n = 'afterbegin');
                                                                 }),
-                                                                (e.next = 4),
+                                                                (r = function () {
+                                                                    (document.querySelector('S16') || document.querySelector('S20')) &&
+                                                                        document.querySelectorAll('.prop-hr').forEach(function (e) {
+                                                                            e.previousSibling.classList.contains('S16') ||
+                                                                                e.previousSibling.classList.contains('S20') ||
+                                                                                (void 0).push(e);
+                                                                        }),
+                                                                        document.querySelectorAll('.prop-hr');
+                                                                }),
+                                                                (e.next = 5),
                                                                 i.waitForSelectorInDOM('.prop-hr')
                                                             );
-                                                        case 4:
+                                                        case 5:
                                                             (t = []),
-                                                                (r = document.querySelectorAll('.prop-hr')),
+                                                                r(),
                                                                 document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                                                     e.classList.contains('S16') || e.classList.contains('S20') || t.push(e);
                                                                 }),
@@ -2270,9 +2279,10 @@
                                                                 })),
                                                                 s(),
                                                                 a.reverse().forEach(function (e, t) {
-                                                                    o.insertAdjacentElement(n, e), document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', r[t]);
+                                                                    o.insertAdjacentElement(n, e),
+                                                                        document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', (void 0)[t]);
                                                                 });
-                                                        case 11:
+                                                        case 12:
                                                         case 'end':
                                                             return e.stop();
                                                     }

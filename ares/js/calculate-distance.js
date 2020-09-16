@@ -90,7 +90,19 @@ export default class Distance {
         const sort_array = [];
         let insert_element;
         let insert_position;
-        const hr_list = document.querySelectorAll('.prop-hr');
+        let hr_list;
+
+        function createHrNodeList() {
+            if (document.querySelector('S16') || document.querySelector('S20')) {
+                document.querySelectorAll('.prop-hr').forEach((el) => {
+                    if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
+                    hr_list.push(el);
+                });
+            }
+            document.querySelectorAll('.prop-hr');
+        }
+
+        createHrNodeList();
 
         function hasContractedInventory() {
             if (document.querySelector('S16') || document.querySelector('S20')) {

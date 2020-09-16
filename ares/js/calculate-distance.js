@@ -87,23 +87,54 @@ export default class Distance {
 
     async sortPropsByDistance() {
         await utilities.waitForSelectorInDOM('.prop-hr');
+        const sort_array = [];
+        let insert_element;
+        let insert_position;
+        let hr_list = [];
+        let hr_insert_position = 'afterend';
 
-        const hr_list = document.querySelectorAll('.prop-hr');
+        function createHrNodeList() {
+            if (document.querySelector('.S16') || document.querySelector('.S20')) {
+                document.querySelectorAll('.prop-hr').forEach((el) => {
+                    if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
+                    hr_list.push(el);
+                });
+            } else {
+                hr_list = document.querySelectorAll('.prop-hr');
+            }
+        }
 
-        const prop_container = document.querySelector('#currentPropertyPage');
+        createHrNodeList();
+
+        function hasContractedInventory() {
+            if (document.querySelector('.S16') || document.querySelector('.S20')) {
+                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16')).concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
+                insert_element = node_list[node_list.length - 1];
+                insert_position = 'afterend';
+                hr_insert_position = 'beforebegin';
+            } else {
+                insert_element = document.querySelector('#currentPropertyPage');
+                insert_position = 'afterbegin';
+            }
+        }
+
         const props = document.querySelectorAll('.ArnProperty');
+        props.forEach((el) => {
+            if (el.classList.contains('S16') || el.classList.contains('S20')) return;
+            sort_array.push(el);
+        });
 
         function extractNumber(str) {
             return str.substring(0, str.indexOf(' '));
         }
 
-        const props_array = [].slice.call(props).sort((a, b) => {
+        const props_array = [].slice.call(sort_array).sort((a, b) => {
             return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
         });
-
+        hasContractedInventory();
         props_array.reverse().forEach((property, i) => {
-            prop_container.insertAdjacentElement('afterbegin', property);
-            document.querySelector(`#${property.id}`).insertAdjacentElement('afterend', hr_list[i]);
+            insert_element.insertAdjacentElement(insert_position, property);
+            document.querySelector(`#${property.id}`).insertAdjacentElement(hr_insert_position, hr_list[i]);
         });
     }
 
@@ -120,6 +151,7 @@ export default class Distance {
                 new Promise((resolve) => {
                     fetch(url)
                         .then((response) => {
+                            console.log(response);
                             const data = response.json();
 
                             return data;
@@ -147,8 +179,9 @@ export default class Distance {
 
                             resolve();
                         })
-                        .catch(() => {
+                        .catch((error) => {
                             console.log('There was an error trying to make your request');
+                            console.log('Error: ', error);
                         });
                 })
             );

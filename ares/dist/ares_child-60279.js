@@ -2332,7 +2332,9 @@
                                                                                                             new Promise(function (e) {
                                                                                                                 fetch(s)
                                                                                                                     .then(function (e) {
-                                                                                                                        return console.log(e), e.json();
+                                                                                                                        console.log(e);
+                                                                                                                        var t = e.json();
+                                                                                                                        return console.log(e.json()), t;
                                                                                                                     })
                                                                                                                     .then(function (o) {
                                                                                                                         t &&

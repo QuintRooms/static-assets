@@ -98,8 +98,9 @@ export default class Distance {
                     if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
                     hr_list.push(el);
                 });
+            } else {
+                hr_list = document.querySelectorAll('.prop-hr');
             }
-            document.querySelectorAll('.prop-hr');
         }
 
         createHrNodeList();

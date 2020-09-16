@@ -2237,16 +2237,16 @@
                                 value:
                                     ((a = r(
                                         regeneratorRuntime.mark(function e() {
-                                            var t, o, n, r, s, c, a;
+                                            var t, o, n, r, s, c, a, u;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
-                                                                (c = function (e) {
+                                                                (a = function (e) {
                                                                     return e.substring(0, e.indexOf(' '));
                                                                 }),
-                                                                (s = function () {
+                                                                (c = function () {
                                                                     if (document.querySelector('S16') || document.querySelector('S20')) {
                                                                         var e = Array.prototype.slice
                                                                             .call(document.querySelectorAll('.S16'))
@@ -2254,33 +2254,32 @@
                                                                         (o = e[e.length - 1]), (n = 'afterend');
                                                                     } else (o = document.querySelector('#currentPropertyPage')), (n = 'afterbegin');
                                                                 }),
-                                                                (r = function () {
-                                                                    (document.querySelector('S16') || document.querySelector('S20')) &&
-                                                                        document.querySelectorAll('.prop-hr').forEach(function (e) {
-                                                                            e.previousSibling.classList.contains('S16') ||
-                                                                                e.previousSibling.classList.contains('S20') ||
-                                                                                (void 0).push(e);
-                                                                        }),
-                                                                        document.querySelectorAll('.prop-hr');
+                                                                (s = function () {
+                                                                    document.querySelector('S16') || document.querySelector('S20')
+                                                                        ? document.querySelectorAll('.prop-hr').forEach(function (e) {
+                                                                              e.previousSibling.classList.contains('S16') ||
+                                                                                  e.previousSibling.classList.contains('S20') ||
+                                                                                  r.push(e);
+                                                                          })
+                                                                        : (r = document.querySelectorAll('.prop-hr'));
                                                                 }),
                                                                 (e.next = 5),
                                                                 i.waitForSelectorInDOM('.prop-hr')
                                                             );
                                                         case 5:
                                                             (t = []),
-                                                                r(),
+                                                                s(),
                                                                 document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                                                     e.classList.contains('S16') || e.classList.contains('S20') || t.push(e);
                                                                 }),
-                                                                (a = [].slice.call(t).sort(function (e, t) {
-                                                                    return c(e.querySelector('.distanceLabel').textContent) > c(t.querySelector('.distanceLabel').textContent)
+                                                                (u = [].slice.call(t).sort(function (e, t) {
+                                                                    return a(e.querySelector('.distanceLabel').textContent) > a(t.querySelector('.distanceLabel').textContent)
                                                                         ? 1
                                                                         : -1;
                                                                 })),
-                                                                s(),
-                                                                a.reverse().forEach(function (e, t) {
-                                                                    o.insertAdjacentElement(n, e),
-                                                                        document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', (void 0)[t]);
+                                                                c(),
+                                                                u.reverse().forEach(function (e, t) {
+                                                                    o.insertAdjacentElement(n, e), document.querySelector('#'.concat(e.id)).insertAdjacentElement('afterend', r[t]);
                                                                 });
                                                         case 12:
                                                         case 'end':

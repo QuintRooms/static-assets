@@ -95,6 +95,7 @@ export default class Distance {
         function createHrNodeList() {
             if (document.querySelector('S16') || document.querySelector('S20')) {
                 document.querySelectorAll('.prop-hr').forEach((el) => {
+                    console.log(el.previousSibling.classList);
                     if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
                     console.log('HR LIST: ', hr_list);
                     hr_list.push(el);

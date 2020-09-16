@@ -2257,9 +2257,10 @@
                                                                 (s = function () {
                                                                     document.querySelector('S16') || document.querySelector('S20')
                                                                         ? document.querySelectorAll('.prop-hr').forEach(function (e) {
-                                                                              e.previousSibling.classList.contains('S16') ||
-                                                                                  e.previousSibling.classList.contains('S20') ||
-                                                                                  (console.log('HR LIST: ', r), r.push(e));
+                                                                              console.log(e.previousSibling.classList),
+                                                                                  e.previousSibling.classList.contains('S16') ||
+                                                                                      e.previousSibling.classList.contains('S20') ||
+                                                                                      (console.log('HR LIST: ', r), r.push(e));
                                                                           })
                                                                         : (r = document.querySelectorAll('.prop-hr'));
                                                                 }),

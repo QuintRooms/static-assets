@@ -91,13 +91,13 @@ export default class Distance {
         let insert_element;
         let insert_position;
         let hr_list = [];
+        let hr_insert_position = 'afterend';
 
         function createHrNodeList() {
             if (document.querySelector('.S16') || document.querySelector('.S20')) {
                 document.querySelectorAll('.prop-hr').forEach((el) => {
                     if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
                     hr_list.push(el);
-                    console.log('HR LIST: ', hr_list);
                 });
             } else {
                 hr_list = document.querySelectorAll('.prop-hr');
@@ -111,6 +111,7 @@ export default class Distance {
                 const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16')).concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
                 insert_element = node_list[node_list.length - 1];
                 insert_position = 'afterend';
+                hr_insert_position = 'beforebegin';
             } else {
                 insert_element = document.querySelector('#currentPropertyPage');
                 insert_position = 'afterbegin';
@@ -133,7 +134,7 @@ export default class Distance {
         hasContractedInventory();
         props_array.reverse().forEach((property, i) => {
             insert_element.insertAdjacentElement(insert_position, property);
-            document.querySelector(`#${property.id}`).insertAdjacentElement('beforebegin', hr_list[i]);
+            document.querySelector(`#${property.id}`).insertAdjacentElement(hr_insert_position, hr_list[i]);
         });
     }
 

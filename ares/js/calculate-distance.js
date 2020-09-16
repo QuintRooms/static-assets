@@ -96,6 +96,7 @@ export default class Distance {
             if (document.querySelector('S16') || document.querySelector('S20')) {
                 document.querySelectorAll('.prop-hr').forEach((el) => {
                     if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
+                    console.log('HR LIST: ', hr_list);
                     hr_list.push(el);
                 });
             } else {

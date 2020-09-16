@@ -2259,7 +2259,7 @@
                                                                         ? document.querySelectorAll('.prop-hr').forEach(function (e) {
                                                                               e.previousSibling.classList.contains('S16') ||
                                                                                   e.previousSibling.classList.contains('S20') ||
-                                                                                  r.push(e);
+                                                                                  (console.log('HR LIST: ', r), r.push(e));
                                                                           })
                                                                         : (r = document.querySelectorAll('.prop-hr'));
                                                                 }),

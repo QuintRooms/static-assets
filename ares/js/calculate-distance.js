@@ -177,8 +177,9 @@ export default class Distance {
 
                             resolve();
                         })
-                        .catch(() => {
+                        .catch((error) => {
                             console.log('There was an error trying to make your request');
+                            console.log('Error: ', error);
                         });
                 })
             );

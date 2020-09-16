@@ -2357,10 +2357,11 @@
                                                                                                                             }),
                                                                                                                             e());
                                                                                                                     })
-                                                                                                                    .catch(function () {
+                                                                                                                    .catch(function (e) {
                                                                                                                         console.log(
                                                                                                                             'There was an error trying to make your request'
-                                                                                                                        );
+                                                                                                                        ),
+                                                                                                                            console.log('Error: ', e);
                                                                                                                     });
                                                                                                             })
                                                                                                         );

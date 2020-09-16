@@ -93,7 +93,7 @@ export default class Distance {
         let hr_list = [];
 
         function createHrNodeList() {
-            if (document.querySelector('S16') || document.querySelector('S20')) {
+            if (document.querySelector('.S16') || document.querySelector('.S20')) {
                 document.querySelectorAll('.prop-hr').forEach((el) => {
                     console.log(el.previousSibling.classList);
                     if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
@@ -108,7 +108,7 @@ export default class Distance {
         createHrNodeList();
 
         function hasContractedInventory() {
-            if (document.querySelector('S16') || document.querySelector('S20')) {
+            if (document.querySelector('.S16') || document.querySelector('.S20')) {
                 const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16')).concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
                 insert_element = node_list[node_list.length - 1];
                 insert_position = 'afterend';

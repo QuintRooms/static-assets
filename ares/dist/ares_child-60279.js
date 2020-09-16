@@ -2247,7 +2247,7 @@
                                                                     return e.substring(0, e.indexOf(' '));
                                                                 }),
                                                                 (c = function () {
-                                                                    if (document.querySelector('S16') || document.querySelector('S20')) {
+                                                                    if (document.querySelector('.S16') || document.querySelector('.S20')) {
                                                                         var e = Array.prototype.slice
                                                                             .call(document.querySelectorAll('.S16'))
                                                                             .concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
@@ -2255,7 +2255,7 @@
                                                                     } else (o = document.querySelector('#currentPropertyPage')), (n = 'afterbegin');
                                                                 }),
                                                                 (s = function () {
-                                                                    document.querySelector('S16') || document.querySelector('S20')
+                                                                    document.querySelector('.S16') || document.querySelector('.S20')
                                                                         ? document.querySelectorAll('.prop-hr').forEach(function (e) {
                                                                               console.log(e.previousSibling.classList),
                                                                                   e.previousSibling.classList.contains('S16') ||

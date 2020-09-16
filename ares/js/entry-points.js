@@ -27,6 +27,7 @@ module.exports = () => {
             // 'hof_retail-60037': './src/60037.js', // HOF retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
+            'lib_21-63504': './src/63504.js', // lib 21
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
             // 'resbeat-60831': './src/60831.js', // Resbeat
@@ -48,7 +49,6 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
             // 'hof_cug-63710': './src/63710.js', // hof cug
-            // 'lib_21-63504': './src/63504.js', // lib 21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
         };

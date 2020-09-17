@@ -326,7 +326,7 @@ input[type=email].email-mask,
 #register-btn a:hover,
 .RegisterAction.submit:hover,
 .SendMeNewPasswordAction.submit:hover,
-.WBSupportForm .SendRequestAction:hover, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input, .SinglePropDetail .points-earned, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
+.WBSupportForm .SendRequestAction:hover, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input:hover, .SinglePropDetail .points-earned, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
   color: #215853 !important;
 }
 
@@ -339,7 +339,7 @@ input[type=email].email-mask,
 #moreRatesLink,
 .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
 .bookRoom:hover,
-.holdRoom:hover, .SearchHotels .sort-wrapper a.active, .sort-wrapper a:hover div, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input:hover, .ConfirmationForm .beat-em-value, #lightbox .dialog-button-ok input {
+.holdRoom:hover, .SearchHotels .sort-wrapper a.active, .sort-wrapper a:hover div, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input, .ConfirmationForm .beat-em-value, #lightbox .dialog-button-ok input {
   color: #fff !important;
 }
 
@@ -366,7 +366,7 @@ input[type=email].email-mask,
 #register-btn a:hover,
 .RegisterAction.submit:hover,
 .SendMeNewPasswordAction.submit:hover,
-.WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input, .WBForgotPasswordFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
+.WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input:hover, .WBForgotPasswordFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
   background: #fff !important;
 }
 
@@ -380,7 +380,7 @@ input[type=email].email-mask,
 #moreRatesLink,
 .WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
 .bookRoom:hover,
-.holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit {
+.holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit {
   background: #215853 !important;
 }
 

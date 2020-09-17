@@ -116,6 +116,8 @@ export default class Resbeat extends BasePortal {
         utilities.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer');
         utilities.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer');
+        utilities.addAttributeToInput('#theEmailAddressAjax input', 'Email Address', 'placeholder', '.WBResendOrCancelForm');
+        utilities.addAttributeToInput('#WBResendOrCancelForm input', 'Confirmation or Reference Number', 'placeholder', '.WBResendOrCancelForm');
 
         utilities.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry');
 

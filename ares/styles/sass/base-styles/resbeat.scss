@@ -817,3 +817,16 @@ body.WBSupportForm {
 .WBForgotPasswordFormActions input {
     border-radius: 40px;
 }
+
+.WBResendOrCancelForm {
+    .WBResendOrCancelFormFields {
+        label {
+            display: none;
+        }
+
+        input {
+            width: 40% !important;
+            background: #f0f0f0 !important;
+        }
+    }
+}

@@ -633,3 +633,10 @@ body.WBSupportForm {
 /* ----- Sass start ----- */
 .WBForgotPasswordFormActions input {
   border-radius: 40px; }
+
+.WBResendOrCancelForm .WBResendOrCancelFormFields label {
+  display: none; }
+
+.WBResendOrCancelForm .WBResendOrCancelFormFields input {
+  width: 40% !important;
+  background: #f0f0f0 !important; }

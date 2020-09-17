@@ -3074,9 +3074,7 @@
                     });
                 })(a[t], e);
         }),
-            (document.querySelector('.footer-nav ul li:last-child a').href = 'https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                document.querySelector('meta[name="siteId"]').content
-            )),
+            (document.querySelector('.footer-nav ul li:last-child a').href = 'https://events.hotelsforhope.com/v6/support?siteId=46973'),
             document.querySelector('.more').addEventListener('click', function () {
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),

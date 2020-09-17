@@ -21,7 +21,7 @@ export default async function f1Styles(siteId) {
                 <a href="#races-container" id="races">Races</a>
             </li>
             <li>
-                <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+                <a href="https://events.hotelsforhope.com/v6/support?siteId=46973" id="contactUs">Contact Us</a>
             </li>
         </ul>
         <div class="navbar-hamburger">

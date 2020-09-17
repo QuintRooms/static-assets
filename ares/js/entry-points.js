@@ -17,17 +17,17 @@ module.exports = () => {
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
-            // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+            'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // f1_landing_page: './src/f1_landing_page.js',
-            // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
-            // 'f1_template-46972': './src/46972.js', // F1 Template
+            'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
+            'f1_template-46972': './src/46972.js', // F1 Template
             // 'hof_enshrinement_21-60041': './src/60041.js', // HOF Enshrinement 2021
             // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
             // 'hof_retail-60037': './src/60037.js', // HOF retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
-            'lib_21-63504': './src/63504.js', // lib 21
+            // 'lib_21-63504': './src/63504.js', // lib 21
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
             // 'resbeat-60831': './src/60831.js', // Resbeat

@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'F1-Black';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Bold';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Regular';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'F1-Wide';
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+}
+
 h1,
 h2,
 h3,
@@ -6,8 +34,6 @@ h5,
 h6,
 .ArnSearchHeader,
 .ArnSearchField > div,
-#theOtherSubmitButton,
-.ArnShowRatesLink,
 .ArnPropNameLink span,
 .arnCurrency,
 .arnUnit,
@@ -15,9 +41,7 @@ h6,
 .SinglePropDetail .ArnLeftListContainer > span,
 legend,
 #thePropertyAmenities > span,
-.holdRoom,
 .bookRoom
-.submit,
-#theConfirmationButton{
+.submit {
     font-family: $header_font_name, $google_font_name, 'Helvetica' !important;
 }

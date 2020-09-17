@@ -31,7 +31,7 @@ export default function siteConfig() {
         },
         exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Host Hotel',
-        partner_hotel_text: 'Partner Hotel',
+        partner_hotel_text: '5 night min',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'D/M/YYYY',
         reviews_before_info: true,

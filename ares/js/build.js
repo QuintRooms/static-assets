@@ -1154,7 +1154,7 @@ export default class BasePortal {
         if (!props) return;
 
         props.forEach((prop) => {
-            prop.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');
+            prop.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
         });
     }
 
@@ -1411,26 +1411,28 @@ export default class BasePortal {
         const {ads} = this.site_config;
 
         if (this.page_name === 'search-results') {
-            if (!document.querySelector('.ArnSecondarySearchOuterContainer') || !ads.sidebar_ad.is_active) return;
-            document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
-                'afterEnd',
-                `
+            if (document.querySelector('.ArnSecondarySearchOuterContainer') && ads.sidebar_ad.is_active) {
+                document.querySelector('.ArnSecondarySearchOuterContainer').insertAdjacentHTML(
+                    'afterEnd',
+                    `
                 <a class="sidebar-ad" href="${ads.sidebar_ad.outbound_url}" target="_blank">
                     <img src="${ads.sidebar_ad.image_url}" alt="Advertisement">
                 </a>
             `
-            );
+                );
+            }
 
-            if (!document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') || !ads.between_property_ad.is_active) return;
-            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
-                'afterEnd',
-                `
+            if (document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') && ads.between_property_ad.is_active) {
+                document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)').insertAdjacentHTML(
+                    'afterEnd',
+                    `
                 <a class="between-property-ad" href="${ads.between_property_ad.outbound_url}" target="_blank">
                     <img src="${ads.between_property_ad.image_url}" alt="Advertisement">
                 </a>
                 <hr class="prop-hr">
             `
-            );
+                );
+            }
         }
 
         if (this.page_name === 'confirmation') {

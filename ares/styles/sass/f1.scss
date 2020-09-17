@@ -45,3 +45,9 @@ legend,
 .submit {
     font-family: $header_font_name, $google_font_name, 'Helvetica' !important;
 }
+
+@media screen and (max-width: 1100px) {
+    .ArnSubPage.WBSupportForm {
+        margin-left: 30px;
+    }
+}

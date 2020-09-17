@@ -281,7 +281,7 @@ fieldset {
     border-right: 1px solid #D5D5D6;
     border-radius: 0 0 15px 0;
     margin-top: 25px;
-    min-height: 140px;
+    min-height: 165px;
 }
 
 .tile-content p {
@@ -464,7 +464,6 @@ hr {
         transform: translateY(300px) !important;
         left: 0;
     }
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -514,7 +513,7 @@ hr {
     }
 
     .tile-content {
-        min-height: 185px;
+        min-height: 210px;
     }
 
     .logo {

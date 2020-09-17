@@ -91,39 +91,49 @@ export default class Distance {
         const sort_array = [];
         let insert_element;
         let insert_position;
-        let hr_list = [];
-        let hr_insert_position = 'afterend';
 
-        function createHrNodeList() {
-            if (document.querySelector('.S16') || document.querySelector('.S20')) {
-                document.querySelectorAll('.prop-hr').forEach((el) => {
-                    if (el.previousSibling.classList.contains('S16') || el.previousSibling.classList.contains('S20')) return;
-                    hr_list.push(el);
-                });
-            } else {
-                hr_list = document.querySelectorAll('.prop-hr');
-            }
+        function getPropertyIdsFromOriginalParams() {
+            const original_params = new URLSearchParams(utilities.getMetaTagContent('originalParams'));
+            let prop_ids_array = original_params.get('properties');
+
+            if (!prop_ids_array) return;
+
+            prop_ids_array = prop_ids_array.split(',');
+
+            return prop_ids_array.map((prop_id) => {
+                return prop_id.replace(/\D/g, '');
+            });
         }
 
-        createHrNodeList();
-
-        function hasContractedInventory() {
+        async function hasContractedInventory() {
             if (document.querySelector('.S16') || document.querySelector('.S20')) {
-                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16')).concat(Array.prototype.slice.call(document.querySelectorAll('.S20')));
+                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16, .S20'));
+
                 insert_element = node_list[node_list.length - 1];
                 insert_position = 'afterend';
-                hr_insert_position = 'beforebegin';
             } else {
                 insert_element = document.querySelector('#currentPropertyPage');
                 insert_position = 'afterbegin';
             }
         }
 
-        const props = document.querySelectorAll('.ArnProperty');
-        props.forEach((el) => {
-            if (el.classList.contains('S16') || el.classList.contains('S20')) return;
-            sort_array.push(el);
-        });
+        async function isOriginalParamPropIdInDom() {
+            const original_param_prop_ids = getPropertyIdsFromOriginalParams();
+            const properties = document.querySelectorAll('.ArnProperty');
+
+            properties.forEach((property) => {
+                if (!original_param_prop_ids) {
+                    if (property.classList.contains('S16') || property.classList.contains('S20')) return;
+                    sort_array.push(property);
+                } else {
+                    if (original_param_prop_ids.includes(property.querySelector('.propId').textContent) || property.classList.contains('S16') || property.classList.contains('S20'))
+                        return;
+                    sort_array.push(property);
+                }
+            });
+        }
+
+        isOriginalParamPropIdInDom();
 
         function extractNumber(str) {
             return str.substring(0, str.indexOf(' '));
@@ -132,10 +142,11 @@ export default class Distance {
         const props_array = [].slice.call(sort_array).sort((a, b) => {
             return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
         });
+
         hasContractedInventory();
+
         props_array.reverse().forEach((property, i) => {
             insert_element.insertAdjacentElement(insert_position, property);
-            document.querySelector(`#${property.id}`).insertAdjacentElement(hr_insert_position, hr_list[i]);
         });
     }
 
@@ -158,7 +169,6 @@ export default class Distance {
                     new Promise((resolve) => {
                         fetch(url)
                             .then((response) => {
-                                console.log(response);
                                 const data = response.json();
 
                                 return data;

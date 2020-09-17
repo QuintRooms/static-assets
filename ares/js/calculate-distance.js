@@ -158,7 +158,6 @@ export default class Distance {
         const promises = [];
 
         const limiter = new Bottleneck({
-            maxConcurrent: 1,
             minTime: 333,
         });
 

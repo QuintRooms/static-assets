@@ -14,7 +14,7 @@ export default async function f1Styles(siteId) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
         const races_contact =
             // TODO update below site id when moved to new site id
-            siteId === '46451'
+            siteId === '46451' || siteId === '45246'
                 ? `
         <ul id="races-contact">
             <li>
@@ -55,7 +55,10 @@ export default async function f1Styles(siteId) {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/mobile-hamburger-menu.html`);
         header.insertAdjacentHTML('beforeend', burger_html);
 
-        document.querySelector('.mobile-nav-upper-ul #contactUs').href = `href="https://events.hotelsforhope.com/v6/support?siteId=${id}"`;
+        const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
+        id === '46451' || id === '45246'
+            ? (mobile_contact_url.href = 'href="https://events.hotelsforhope.com/v6/support?siteId=46973"')
+            : (mobile_contact_url.href = `href="https://events.hotelsforhope.com/v6/support?siteId=${id}"`);
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 

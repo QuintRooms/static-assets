@@ -2247,7 +2247,7 @@
                                                         case 0:
                                                             return (
                                                                 (d = function (e) {
-                                                                    return e.substring(0, e.indexOf(' '));
+                                                                    return parseFloat(e.substring(0, e.indexOf(' ')));
                                                                 }),
                                                                 (l = function () {
                                                                     return (l = i(
@@ -2361,7 +2361,7 @@
                                                                 return e.abrupt('return');
                                                             case 3:
                                                                 (n = []),
-                                                                    (r = new o.a({minTime: 333})),
+                                                                    (r = new o.a({maxConcurrent: 1, minTime: 333})),
                                                                     this.params.forEach(
                                                                         (function () {
                                                                             var e = i(

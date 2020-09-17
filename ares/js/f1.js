@@ -13,6 +13,7 @@ export default async function f1Styles(siteId) {
     async function addHeader(id) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
         const races_contact =
+            // TODO update below site id when moved to new site id
             siteId === '46451'
                 ? `
         <ul id="races-contact">
@@ -20,7 +21,7 @@ export default async function f1Styles(siteId) {
                 <a href="#races-container" id="races">Races</a>
             </li>
             <li>
-                <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+                <a href="https://events.hotelsforhope.com/v6/support?siteId=46973" id="contactUs">Contact Us</a>
             </li>
         </ul>
         <div class="navbar-hamburger">

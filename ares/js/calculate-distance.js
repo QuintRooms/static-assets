@@ -136,7 +136,7 @@ export default class Distance {
         isOriginalParamPropIdInDom();
 
         function extractNumber(str) {
-            return str.substring(0, str.indexOf(' '));
+            return parseFloat(str.substring(0, str.indexOf(' ')));
         }
 
         const props_array = [].slice.call(sort_array).sort((a, b) => {
@@ -158,6 +158,7 @@ export default class Distance {
         const promises = [];
 
         const limiter = new Bottleneck({
+            maxConcurrent: 1,
             minTime: 333,
         });
 

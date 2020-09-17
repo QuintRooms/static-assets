@@ -13,6 +13,7 @@ export default async function f1Styles(siteId) {
     async function addHeader(id) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
         const races_contact =
+            // TODO update below site id when moved to new site id
             siteId === '46451'
                 ? `
         <ul id="races-contact">

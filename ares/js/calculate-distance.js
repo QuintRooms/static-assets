@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 
+import Bottleneck from 'bottleneck';
 import Utilities from './utilities';
 
 const utilities = new Utilities();
@@ -145,44 +146,50 @@ export default class Distance {
 
         const promises = [];
 
+        const limiter = new Bottleneck({
+            minTime: 333,
+        });
+
         this.params.forEach(async (param) => {
             const url = `https://distance.hotelsforhope.com?from_lat=${param[0][0]}&from_long=${param[0][1]}&to_lat=${param[1][0]}&to_long=${param[1][1]}`;
+
             promises.push(
-                new Promise((resolve) => {
-                    fetch(url)
-                        .then((response) => {
-                            console.log(response);
-                            const data = response.json();
+                limiter.schedule(() => {
+                    new Promise((resolve) => {
+                        fetch(url)
+                            .then((response) => {
+                                console.log(response);
+                                const data = response.json();
 
-                            return data;
-                        })
-                        .then((data) => {
-                            if (!distance_element) return;
+                                return data;
+                            })
+                            .then((data) => {
+                                if (!distance_element) return;
 
-                            distance_element.forEach((element) => {
-                                const parent = element.closest('.ArnProperty');
+                                distance_element.forEach((element) => {
+                                    const parent = element.closest('.ArnProperty');
 
-                                if (data.to_lat !== parent.getAttribute('latitude') || data.to_long !== parent.getAttribute('longitude')) return;
+                                    if (data.to_lat !== parent.getAttribute('latitude') || data.to_long !== parent.getAttribute('longitude')) return;
 
-                                if (this.unit === 'miles') {
-                                    data.mi = parseFloat(data.mi);
-                                    data.mi = data.mi.toFixed(1);
-                                    element.textContent = `${data.mi} ${this.unit} to ${this.venueName}`;
-                                }
+                                    if (this.unit === 'miles') {
+                                        data.mi = parseFloat(data.mi);
+                                        data.mi = data.mi.toFixed(1);
+                                        element.textContent = `${data.mi} ${this.unit} to ${this.venueName}`;
+                                    }
 
-                                if (this.unit === 'kilometers') {
-                                    data.km = parseFloat(data.km);
-                                    data.km = data.km.toFixed(1);
-                                    element.textContent = `${data.km} ${this.unit} to ${this.venueName}`;
-                                }
+                                    if (this.unit === 'kilometers') {
+                                        data.km = parseFloat(data.km);
+                                        data.km = data.km.toFixed(1);
+                                        element.textContent = `${data.km} ${this.unit} to ${this.venueName}`;
+                                    }
+                                });
+
+                                resolve();
+                            })
+                            .catch((error) => {
+                                console.log('There was an error trying to make your request:', error);
                             });
-
-                            resolve();
-                        })
-                        .catch((error) => {
-                            console.log('There was an error trying to make your request');
-                            console.log('Error: ', error);
-                        });
+                    });
                 })
             );
         });

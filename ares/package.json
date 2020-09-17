@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "bottleneck": "^2.19.5",
     "dayjs": "^1.8.25",
     "dotenv": "^8.2.0",
     "promise-polyfill": "8.1.3",

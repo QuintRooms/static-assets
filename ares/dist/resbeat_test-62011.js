@@ -2634,6 +2634,8 @@
                                         g.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportFormContainer'),
                                         g.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
                                         g.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
+                                        g.addAttributeToInput('#theEmailAddressAjax input', 'Email Address', 'placeholder', '.WBResendOrCancelForm'),
+                                        g.addAttributeToInput('#theConfirmationNumberAjax input', 'Confirmation or Reference Number', 'placeholder', '.WBResendOrCancelForm'),
                                         g.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
                                         g.updateHTML('.static-bookingLink', 'Booking Guide'),
                                         g.updateHTML('.static-rewardsLink', 'Rewards Guide');
@@ -6285,9 +6287,9 @@
                         m: function e(t, o) {
                             if (t.date() < o.date()) return -e(o, t);
                             var n = 12 * (o.year() - t.year()) + (o.month() - t.month()),
-                                r = t.add(n, i),
+                                r = t.clone().add(n, i),
                                 s = o - r < 0,
-                                a = t.add(n + (s ? -1 : 1), i);
+                                a = t.clone().add(n + (s ? -1 : 1), i);
                             return +(-(n + (o - r) / (s ? r - a : a - r)) || 0);
                         },
                         a: function (e) {

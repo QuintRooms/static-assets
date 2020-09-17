@@ -824,6 +824,10 @@ body.WBSupportForm {
             display: none;
         }
 
+        #theEmailAddressAjax input {
+            width: 40% !important;
+        }
+
         input {
             width: 40% !important;
             background: #f0f0f0 !important;

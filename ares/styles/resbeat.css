@@ -637,6 +637,9 @@ body.WBSupportForm {
 .WBResendOrCancelForm .WBResendOrCancelFormFields label {
   display: none; }
 
+.WBResendOrCancelForm .WBResendOrCancelFormFields #theEmailAddressAjax input {
+  width: 40% !important; }
+
 .WBResendOrCancelForm .WBResendOrCancelFormFields input {
   width: 40% !important;
   background: #f0f0f0 !important; }

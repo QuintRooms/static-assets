@@ -2635,7 +2635,7 @@
                                         g.addAttributeToInput('#theHotelNameAjax input', 'Hotel', 'placeholder', '.WBSupportFormContainer'),
                                         g.addAttributeToInput('#theCommentsAjax textarea', 'Comments', 'placeholder', '.WBSupportFormContainer'),
                                         g.addAttributeToInput('#theEmailAddressAjax input', 'Email Address', 'placeholder', '.WBResendOrCancelForm'),
-                                        g.addAttributeToInput('#WBResendOrCancelForm input', 'Confirmation or Reference Number', 'placeholder', '.WBResendOrCancelForm'),
+                                        g.addAttributeToInput('#theConfirmationNumberAjax input', 'Confirmation or Reference Number', 'placeholder', '.WBResendOrCancelForm'),
                                         g.updateHTML('#theReasonForInquiryAjax select > option:first-child', 'Reason for Inquiry'),
                                         g.updateHTML('.static-bookingLink', 'Booking Guide'),
                                         g.updateHTML('.static-rewardsLink', 'Rewards Guide');
@@ -5409,7 +5409,7 @@
                     var t;
                     return !(!m(e) || 'function' != typeof (t = e.then)) && t;
                 },
-                R = function (e, t) {
+                P = function (e, t) {
                     if (!e._n) {
                         e._n = !0;
                         var o = e._c;
@@ -5440,11 +5440,11 @@
 
                             )
                                 i(o[s++]);
-                            (e._c = []), (e._n = !1), t && !e._h && P(e);
+                            (e._c = []), (e._n = !1), t && !e._h && R(e);
                         });
                     }
                 },
-                P = function (e) {
+                R = function (e) {
                     g.call(c, function () {
                         var t,
                             o,
@@ -5478,7 +5478,7 @@
                 },
                 F = function (e) {
                     var t = this;
-                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
                 B = function (e) {
                     var t,
@@ -5496,7 +5496,7 @@
                                           F.call(n, e);
                                       }
                                   })
-                                : ((o._v = e), (o._s = 1), R(o, !1));
+                                : ((o._v = e), (o._s = 1), P(o, !1));
                         } catch (e) {
                             F.call({_w: o, _d: !1}, e);
                         }
@@ -5522,7 +5522,7 @@
                             (o.domain = q ? x.domain : void 0),
                             this._c.push(o),
                             this._a && this._a.push(o),
-                            this._s && R(this, !1),
+                            this._s && P(this, !1),
                             o.promise
                         );
                     },
@@ -5985,9 +5985,9 @@
                 T = k.f,
                 E = q.f,
                 C = A.f,
-                R = n.Symbol,
-                P = n.JSON,
-                O = P && P.stringify,
+                P = n.Symbol,
+                R = n.JSON,
+                O = R && R.stringify,
                 H = f('_hidden'),
                 F = f('toPrimitive'),
                 B = {}.propertyIsEnumerable,
@@ -5995,7 +5995,7 @@
                 D = l('symbols'),
                 N = l('op-symbols'),
                 U = Object.prototype,
-                $ = 'function' == typeof R && !!L.f,
+                $ = 'function' == typeof P && !!L.f,
                 Y = n.QObject,
                 W = !Y || !Y.prototype || !Y.prototype.findChild,
                 G =
@@ -6018,16 +6018,16 @@
                           }
                         : E,
                 V = function (e) {
-                    var t = (D[e] = x(R.prototype));
+                    var t = (D[e] = x(P.prototype));
                     return (t._k = e), t;
                 },
                 z =
-                    $ && 'symbol' == typeof R.iterator
+                    $ && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
                         : function (e) {
-                              return e instanceof R;
+                              return e instanceof P;
                           },
                 Z = function (e, t, o) {
                     return (
@@ -6066,8 +6066,8 @@
                 };
             $ ||
                 (a(
-                    (R = function () {
-                        if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                    (P = function () {
+                        if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (o) {
                                 this === U && t.call(N, o), r(this, H) && r(this[H], e) && (this[H][e] = !1), G(this, e, w(1, o));
@@ -6088,13 +6088,13 @@
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !$, {Symbol: R});
+                i(i.G + i.W + i.F * !$, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
             for (var ne = M(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
-                    return r(I, (e += '')) ? I[e] : (I[e] = R(e));
+                    return r(I, (e += '')) ? I[e] : (I[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
@@ -6125,13 +6125,13 @@
                     return L.f(j(e));
                 },
             }),
-                P &&
+                R &&
                     i(
                         i.S +
                             i.F *
                                 (!$ ||
                                     u(function () {
-                                        var e = R();
+                                        var e = P();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                     })),
                         'JSON',
@@ -6145,13 +6145,13 @@
                                                 if (('function' == typeof o && (t = o.call(this, e, t)), !z(t))) return t;
                                             }),
                                         (n[1] = t),
-                                        O.apply(P, n)
+                                        O.apply(R, n)
                                     );
                             },
                         }
                     ),
-                R.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(R.prototype, F, R.prototype.valueOf),
-                d(R, 'Symbol'),
+                P.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, F, P.prototype.valueOf),
+                d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);
         },

@@ -73,6 +73,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_landing_page: true,
+        hide_search_on_landing_page: true,
         landing_page_events: [
             {
                 name: 'Fall Auction 2020 Scottsdale',

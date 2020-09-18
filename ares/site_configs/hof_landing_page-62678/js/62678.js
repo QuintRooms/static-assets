@@ -31,5 +31,5 @@ class ChildPortal extends BasePortal {
     }
 }
 
-new LandingPage(site_config.landing_page_events, site_config.hide_search_on_landing_page).init();
+new LandingPage(site_config.landing_page_events).init();
 new ChildPortal();

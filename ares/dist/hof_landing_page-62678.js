@@ -226,7 +226,7 @@
                     f
                 );
             })(r.default);
-        new i.default(y.landing_page_events, y.hide_search_on_landing_page).init(), new v();
+        new i.default(y.landing_page_events).init(), new v();
     },
     function (e, t, n) {
         n(3)('asyncIterator');
@@ -394,9 +394,9 @@
             C = L.f,
             T = E.f,
             P = k.f,
-            R = r.Symbol,
-            O = r.JSON,
-            j = O && O.stringify,
+            O = r.Symbol,
+            R = r.JSON,
+            j = R && R.stringify,
             H = h('_hidden'),
             D = h('toPrimitive'),
             F = {}.propertyIsEnumerable,
@@ -404,7 +404,7 @@
             I = l('symbols'),
             N = l('op-symbols'),
             $ = Object.prototype,
-            Y = 'function' == typeof R && !!M.f,
+            Y = 'function' == typeof O && !!M.f,
             U = r.QObject,
             W = !U || !U.prototype || !U.prototype.findChild,
             G =
@@ -427,16 +427,16 @@
                       }
                     : T,
             z = function (e) {
-                var t = (I[e] = A(R.prototype));
+                var t = (I[e] = A(O.prototype));
                 return (t._k = e), t;
             },
             V =
-                Y && 'symbol' == typeof R.iterator
+                Y && 'symbol' == typeof O.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof R;
+                          return e instanceof O;
                       },
             Z = function (e, t, n) {
                 return (
@@ -474,8 +474,8 @@
             };
         Y ||
             (c(
-                (R = function () {
-                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                (O = function () {
+                    if (this instanceof O) throw TypeError('Symbol is not a constructor!');
                     var e = d(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === $ && t.call(N, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), G(this, e, x(1, n));
@@ -496,13 +496,13 @@
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !Y, {Symbol: R});
+            a(a.G + a.W + a.F * !Y, {Symbol: O});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !Y, 'Symbol', {
             for: function (e) {
-                return o(B, (e += '')) ? B[e] : (B[e] = R(e));
+                return o(B, (e += '')) ? B[e] : (B[e] = O(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
@@ -533,13 +533,13 @@
                 return M.f(S(e));
             },
         }),
-            O &&
+            R &&
                 a(
                     a.S +
                         a.F *
                             (!Y ||
                                 u(function () {
-                                    var e = R();
+                                    var e = O();
                                     return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
@@ -553,13 +553,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(O, r)
+                                    j.apply(R, r)
                                 );
                         },
                     }
                 ),
-            R.prototype[D] || n(22)(R.prototype, D, R.prototype.valueOf),
-            f(R, 'Symbol'),
+            O.prototype[D] || n(22)(O.prototype, D, O.prototype.valueOf),
+            f(O, 'Symbol'),
             f(Math, 'Math', !0),
             f(r.JSON, 'JSON', !0);
     },
@@ -979,7 +979,7 @@
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
-            R = function (e, t) {
+            O = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -1010,11 +1010,11 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && O(e);
+                        (e._c = []), (e._n = !1), t && !e._h && R(e);
                     });
                 }
             },
-            O = function (e) {
+            R = function (e) {
                 v.call(s, function () {
                     var t,
                         n,
@@ -1048,7 +1048,7 @@
             },
             D = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), O(t, !0));
             },
             F = function (e) {
                 var t,
@@ -1066,7 +1066,7 @@
                                       D.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), R(n, !1));
+                            : ((n._v = e), (n._s = 1), O(n, !1));
                     } catch (e) {
                         D.call({_w: n, _d: !1}, e);
                     }
@@ -1092,7 +1092,7 @@
                         (n.domain = E ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && R(this, !1),
+                        this._s && O(this, !1),
                         n.promise
                     );
                 },
@@ -3186,7 +3186,7 @@
                                     var n = [],
                                         r = [];
                                     e.forEach(function (e) {
-                                        e.classList.contains('S16') || e.classList.contains('S20') ? n.push(!0) : n.push(!1);
+                                        e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
                                     }),
                                         n.forEach(function (e, t) {
                                             e && r.push(t);
@@ -3244,7 +3244,7 @@
                                             var a, c;
                                             r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
                                                 r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
-                                                (r.classList.contains('S16') || (r.classList.contains('S20') && '' !== e)) &&
+                                                (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
                                                     ((a = e),
                                                     (c = r),
                                                     '' !== o.site_config.exclusive_rate_text &&
@@ -5503,9 +5503,8 @@
                                                             'return',
                                                             new Promise(function (e) {
                                                                 var n = setInterval(function () {
-                                                                    console.log(t);
                                                                     var r = document.querySelector(t);
-                                                                    if (r) return console.log(r), e(r), clearInterval(n), r;
+                                                                    if (r) return e(r), clearInterval(n), r;
                                                                 }, 500);
                                                             })
                                                         );
@@ -6889,12 +6888,19 @@
                 is_resbeat_client: !1,
                 confirmation_email_from: 'Hotels for Hope',
                 has_landing_page: !0,
-                hide_search_on_landing_page: !1,
                 landing_page_events: [
                     {
+                        is_city_search_header_link: !1,
                         name: 'Hall of Fame Enshrinement Class Of 2021',
                         display_date: 'August 5-8, 2021',
                         end_date: '8/8/2021',
+                        portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+                    },
+                    {
+                        is_city_search_header_link: !0,
+                        name: 'Search Canton, OH',
+                        display_date: '',
+                        end_date: '',
                         portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
                     },
                 ],
@@ -6941,12 +6947,12 @@
         }
         var a = new (n(111).default)(),
             c = (function () {
-                function e(t, n) {
+                function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e),
                         (this.landing_page_events = t),
-                        (this.hide_search = n);
+                        (this.header_search_container_built = !1);
                 }
                 var t, n, r, c, s;
                 return (
@@ -6963,38 +6969,28 @@
                             value:
                                 ((s = o(
                                     regeneratorRuntime.mark(function e() {
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (this.hide_search) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (
-                                                                document.body.insertAdjacentHTML('afterBegin', '<style>#root-search-container{display: none;}'),
-                                                                (e.next = 5),
-                                                                a.waitForSelectorInDOM('#root-search-container')
-                                                            );
-                                                        case 5:
-                                                            if (document.querySelector('#root-search-container')) {
-                                                                e.next = 7;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 7:
-                                                            document.querySelector('#root-search-container').remove();
-                                                        case 8:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (
+                                                            document.body.insertAdjacentHTML('afterBegin', '<style>#root-search-container{display: none;}'),
+                                                            (e.next = 3),
+                                                            a.waitForSelectorInDOM('#root-search-container')
+                                                        );
+                                                    case 3:
+                                                        if (document.querySelector('#root-search-container')) {
+                                                            e.next = 5;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 5:
+                                                        document.querySelector('#root-search-container').remove();
+                                                    case 6:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
                                     })
                                 )),
                                 function () {
@@ -7002,43 +6998,68 @@
                                 }),
                         },
                         {
+                            key: 'buildCitySearchElement',
+                            value: function (e) {
+                                this.header_search_container_built ||
+                                    (document.querySelector('.ArnSearchContainerMainTable').insertAdjacentHTML('afterend', '<div class="header-events"></div>'),
+                                    (this.header_search_container_built = !0));
+                                var t = 1;
+                                document
+                                    .querySelector('.header-events')
+                                    .insertAdjacentHTML(
+                                        'afterbegin',
+                                        '\n            <a class="header-container search-header-'
+                                            .concat(t, '" href="')
+                                            .concat(e.portal_url, '" target="_blank">\n                <div class="event-details">\n                    <h2 class="event-name">')
+                                            .concat(e.name, '</h2>\n                </div>\n                <div class="view-hotels">View Hotels</div>\n            </a>\n        ')
+                                    ),
+                                    (t += 1);
+                            },
+                        },
+                        {
                             key: 'generateEventHtml',
                             value:
                                 ((c = o(
                                     regeneratorRuntime.mark(function e() {
-                                        var t;
+                                        var t,
+                                            n,
+                                            r = this;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (e.next = 2), a.waitForSelectorInDOM('.ArnSearchContainerMainDiv');
-                                                        case 2:
-                                                            if ((t = document.querySelector('.ArnSearchContainerMainDiv'))) {
-                                                                e.next = 5;
+                                                            return (t = 0), (e.next = 3), a.waitForSelectorInDOM('.ArnSearchContainerMainDiv');
+                                                        case 3:
+                                                            if ((n = document.querySelector('.ArnSearchContainerMainDiv'))) {
+                                                                e.next = 6;
                                                                 break;
                                                             }
                                                             return e.abrupt('return');
-                                                        case 5:
-                                                            this.landing_page_events.forEach(function (e, n) {
-                                                                0 === n && t.insertAdjacentHTML('beforeEnd', '<h1>Upcoming Events</h1><div class="events"></div>'),
-                                                                    a.checkForPastDate(e.end_date) ||
-                                                                        document.querySelector('.events').insertAdjacentHTML(
-                                                                            'beforeEnd',
-                                                                            '\n                <a class="event-container event-'
-                                                                                .concat(n + 1, '" href="')
-                                                                                .concat(
-                                                                                    e.portal_url,
-                                                                                    '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
-                                                                                )
-                                                                                .concat(e.name, '</h2>\n                        <div class="display-date">')
-                                                                                .concat(
-                                                                                    e.display_date,
-                                                                                    '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
-                                                                                )
-                                                                        );
-                                                            });
                                                         case 6:
+                                                            this.landing_page_events.forEach(function (e) {
+                                                                console.log(e),
+                                                                    e.is_city_search_header_link
+                                                                        ? r.buildCitySearchElement(e)
+                                                                        : (0 === t && n.insertAdjacentHTML('beforeEnd', '<h1>Upcoming Events</h1><div class="events"></div>'),
+                                                                          a.checkForPastDate(e.end_date) ||
+                                                                              (document.querySelector('.events').insertAdjacentHTML(
+                                                                                  'beforeEnd',
+                                                                                  '\n                <a class="event-container event-'
+                                                                                      .concat(t + 1, '" href="')
+                                                                                      .concat(
+                                                                                          e.portal_url,
+                                                                                          '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
+                                                                                      )
+                                                                                      .concat(e.name, '</h2>\n                        <div class="display-date">')
+                                                                                      .concat(
+                                                                                          e.display_date,
+                                                                                          '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
+                                                                                      )
+                                                                              ),
+                                                                              (t += 1)));
+                                                            });
+                                                        case 7:
                                                         case 'end':
                                                             return e.stop();
                                                     }

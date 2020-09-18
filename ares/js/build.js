@@ -1104,7 +1104,7 @@ export default class BasePortal {
         const contracted_properties_index = [];
 
         property_elements.forEach((property) => {
-            if (property.classList.contains('S16') || property.classList.contains('S20')) {
+            if (property.classList.contains('S16') || property.classList.contains('S20') || property.classList.contains('S33')) {
                 properties_array.push(true);
             } else {
                 properties_array.push(false);
@@ -1208,7 +1208,7 @@ export default class BasePortal {
                 if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '') {
                     addCustomTag(hostHotelText, el);
                 }
-                if (el.classList.contains('S16') || (el.classList.contains('S20') && exclusiveRateText !== '')) {
+                if (el.classList.contains('S16') || el.classList.contains('S20') || (el.classList.contains('S33') && exclusiveRateText !== '')) {
                     add_exclusive_rates_sash(exclusiveRateText, el);
                 }
             });

@@ -462,8 +462,9 @@
                                                                             e.addLinkToLoginFromRegisterPage(),
                                                                             e.setCheckDatesToReadOnlyOnMobile(),
                                                                             e.updateSupportPageText(),
+                                                                            e.removeLrgFooterLink(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 43:
+                                                                    case 44:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -1330,7 +1331,7 @@
                                     var e = document.querySelectorAll('.ArnProperty');
                                     e &&
                                         e.forEach(function (e) {
-                                            e.insertAdjacentHTML('afterEnd', '<hr class="prop-hr">');
+                                            e.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
                                         });
                                 },
                             },
@@ -1645,33 +1646,33 @@
                                 value: function () {
                                     if (this.site_config.ads && !window.matchMedia('(max-width:800px)').matches) {
                                         var e = this.site_config.ads;
-                                        if ('search-results' === this.page_name) {
-                                            if (!document.querySelector('.ArnSecondarySearchOuterContainer') || !e.sidebar_ad.is_active) return;
-                                            if (
-                                                (document
-                                                    .querySelector('.ArnSecondarySearchOuterContainer')
-                                                    .insertAdjacentHTML(
-                                                        'afterEnd',
-                                                        '\n                <a class="sidebar-ad" href="'
-                                                            .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                            .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
-                                                    ),
-                                                !document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') || !e.between_property_ad.is_active)
-                                            )
-                                                return;
-                                            document
-                                                .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
-                                                .insertAdjacentHTML(
-                                                    'afterEnd',
-                                                    '\n                <a class="between-property-ad" href="'
-                                                        .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                        .concat(
-                                                            e.between_property_ad.image_url,
-                                                            '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
-                                                        )
-                                                );
-                                        }
-                                        if ('confirmation' === this.page_name) {
+                                        if (
+                                            ('search-results' === this.page_name &&
+                                                (document.querySelector('.ArnSecondarySearchOuterContainer') &&
+                                                    e.sidebar_ad.is_active &&
+                                                    document
+                                                        .querySelector('.ArnSecondarySearchOuterContainer')
+                                                        .insertAdjacentHTML(
+                                                            'afterEnd',
+                                                            '\n                <a class="sidebar-ad" href="'
+                                                                .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                                .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
+                                                        ),
+                                                document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') &&
+                                                    e.between_property_ad.is_active &&
+                                                    document
+                                                        .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
+                                                        .insertAdjacentHTML(
+                                                            'afterEnd',
+                                                            '\n                <a class="between-property-ad" href="'
+                                                                .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                                .concat(
+                                                                    e.between_property_ad.image_url,
+                                                                    '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
+                                                                )
+                                                        )),
+                                            'confirmation' === this.page_name)
+                                        ) {
                                             if (!document.querySelector('.GuestForms') || !e.confirmation_page_bottom.is_active) return;
                                             document
                                                 .querySelector('.GuestForms')
@@ -2080,6 +2081,14 @@
                                         (document.querySelector('.WBSupportForm') &&
                                             (document.querySelector('.ArnSupportChatTable p').textContent =
                                                 'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                                },
+                            },
+                            {
+                                key: 'removeLrgFooterLink',
+                                value: function () {
+                                    this.site_config.lodging.is_lrg ||
+                                        ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
+                                        (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                                 },
                             },
                         ]) && c(t.prototype, o),

@@ -267,6 +267,7 @@ export default class BasePortal {
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
             this.updateSupportPageText();
+            this.removeLrgFooterLink();
 
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
@@ -1192,7 +1193,7 @@ export default class BasePortal {
         *@description adds a custom tag to a property thumbnail image
         @param string takes the text for custom tag
         @param string is the parent element for the current iteration
-        @param string will be either 'x' or 'y'. Determines if Host or Partner hotel.
+        @param string will be either 'x' or 'y'. Determines if Host (y) or Partner hotel (x).
         */
         function addCustomTag(text, selector) {
             selector.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', `<div class="custom-tag">${text} </div>`);
@@ -1845,5 +1846,12 @@ export default class BasePortal {
         if (!document.querySelector('.WBSupportForm')) return;
 
         document.querySelector('.ArnSupportChatTable p').textContent = 'If you would like to speak with a representative, please call + 1 512-691-9555';
+    }
+
+    removeLrgFooterLink() {
+        if (this.site_config.lodging.is_lrg) return;
+
+        document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none';
+        document.querySelector('.ArnSupportBottom .dvd').style.display = 'none';
     }
 }

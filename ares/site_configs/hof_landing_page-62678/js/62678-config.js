@@ -73,6 +73,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_landing_page: true,
+        hide_search_on_landing_page: false,
         landing_page_events: [
             {
                 name: 'Hall of Fame Enshrinement Class Of 2021',

@@ -61,7 +61,6 @@ export default class LandingPage {
 
         if (!container) return;
         this.landing_page_events.forEach((event) => {
-            console.log(event);
             if (event.is_city_search_header_link) {
                 this.buildCitySearchElement(event);
                 return;

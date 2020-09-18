@@ -86,7 +86,7 @@ export default function siteConfig() {
                 name: 'Search Canton, OH',
                 display_date: '', // August 5-8, 2021
                 end_date: '', // M/D/YYYY
-                portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+                portal_url: 'https://book.hofhotels.com/group-event?id=44347',
             },
         ],
     };

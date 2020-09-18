@@ -32,7 +32,7 @@ export default function siteConfig() {
         exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
-        show_tax_inclusive_rates: false,
+        show_tax_inclusive_rates: true,
         dayjs_date_format: 'D/M/YYYY',
         reviews_before_info: true,
         show_stars: false,

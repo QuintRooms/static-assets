@@ -1849,7 +1849,7 @@ export default class BasePortal {
     }
 
     removeLrgFooterLink() {
-        if (this.site_config.lodging.is_lrg) return;
+        if (this.site_config.lodging.is_lrg || this.site_config.is_resbeat_client) return;
 
         document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none';
         document.querySelector('.ArnSupportBottom .dvd').style.display = 'none';

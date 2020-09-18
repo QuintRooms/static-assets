@@ -19,6 +19,9 @@ $banner_image: #fff;
 $bg-images: url(#{$path}/site_configs/#{$site_name}/img/player.jpg);
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-@import '../../../js/components/landing-page/landing-page.scss'
+@import '../../../js/components/landing-page/landing-page.scss';
 
-
+#AmentitiesContainer,
+.RootBody h3{
+    display: none;
+}

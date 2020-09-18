@@ -75,6 +75,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_landing_page: false,
+        hide_search_on_landing_page: true,
         landing_page_events: [
             {
                 name: '',

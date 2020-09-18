@@ -17,7 +17,7 @@
     @if (length($bg-images) == 2) {
         @return 1fr 1fr;
     }
-    
+
     @else {
         @return 1fr 1fr 1fr;
     }
@@ -67,6 +67,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
 
     h2 {
         font-weight: normal;
@@ -88,5 +89,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-

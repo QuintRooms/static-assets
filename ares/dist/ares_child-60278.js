@@ -462,8 +462,9 @@
                                                                             e.addLinkToLoginFromRegisterPage(),
                                                                             e.setCheckDatesToReadOnlyOnMobile(),
                                                                             e.updateSupportPageText(),
+                                                                            e.removeLrgFooterLink(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 43:
+                                                                    case 44:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -2082,6 +2083,14 @@
                                                 'If you would like to speak with a representative, please call + 1 512-691-9555'));
                                 },
                             },
+                            {
+                                key: 'removeLrgFooterLink',
+                                value: function () {
+                                    this.site_config.lodging.is_lrg ||
+                                        ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
+                                        (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
+                                },
+                            },
                         ]) && c(t.prototype, n),
                         r && c(t, r),
                         e
@@ -2361,7 +2370,7 @@
                                                                 return e.abrupt('return');
                                                             case 3:
                                                                 (n = []),
-                                                                    (r = new o.a({maxConcurrent: 1, minTime: 333})),
+                                                                    (r = new o.a({minTime: 333})),
                                                                     this.params.forEach(
                                                                         (function () {
                                                                             var e = i(

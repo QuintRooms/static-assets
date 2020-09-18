@@ -57,6 +57,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson landing page
         };
     }
 

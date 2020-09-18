@@ -73,13 +73,20 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_landing_page: true,
-        hide_search_on_landing_page: false,
         landing_page_events: [
             {
+                is_city_search_header_link: false,
                 name: 'Hall of Fame Enshrinement Class Of 2021',
                 display_date: 'August 5-8, 2021', // August 5-8, 2021
                 end_date: '8/8/2021', // M/D/YYYY
                 portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+            },
+            {
+                is_city_search_header_link: true,
+                name: 'Search Canton, OH',
+                display_date: '', // August 5-8, 2021
+                end_date: '', // M/D/YYYY
+                portal_url: 'https://book.hofhotels.com/group-event?id=44347',
             },
         ],
     };

@@ -3,6 +3,8 @@ import SiteConfig from './62678-config';
 import LandingPage from '../../../js/components/landing-page/landing-page';
 import Utilities from '../../../js/utilities';
 
+const dayjs = require('dayjs');
+
 const utilities = new Utilities();
 
 const site_config = new SiteConfig();
@@ -15,21 +17,21 @@ class ChildPortal extends BasePortal {
     }
 
     init() {
-        this.prepopulateSearchCity();
+        this.prepopulateSearchDate();
     }
 
-    async prepopulateSearchCity() {
-        if (!document.querySelector('.RootBody')) return;
+    async prepopulateSearchDate() {
+        if (utilities.getPageName !== 'search-results') return;
 
-        await utilities.waitForSelectorInDOM('#address-input');
+        await utilities.waitForSelectorInDOM('#theQuickCheckIn');
 
-        const city_input = document.querySelector('#address-input');
+        const check_in_input = document.querySelector('#theDatePrompt #theQuickCheckIn');
 
-        if (!city_input) return;
+        if (!check_in_input) return;
 
-        city_input.value = 'Canton, OH';
+        check_in_input.value = dayjs().format('MM/DD/YYYY');
     }
 }
 
-new LandingPage(site_config.landing_page_events, site_config.hide_search_on_landing_page).init();
+new LandingPage(site_config.landing_page_events).init();
 new ChildPortal();

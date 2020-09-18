@@ -4378,3 +4378,32 @@ input[type='search']::-webkit-search-results-decoration {
 /* ----- CSS STYLES END -----*/
 
 /* ----- SASS STYLES START -----*/
+
+// Date popup container start
+
+#theDatePrompt {
+
+    #datePromptContainer{
+        padding: 20px 0;
+    }
+
+    td {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        input, select {
+            border: 1px solid #ccc;
+        }
+    } 
+
+    .ArnChildren {
+        display: none;
+    }
+
+    .CheckRates {
+        margin-bottom: 20px;
+    }
+}
+
+// Date popup container end

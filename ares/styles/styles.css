@@ -3388,3 +3388,18 @@ input[type='search']::-webkit-search-results-decoration {
 /* - - - - Covid-19 banner end - - - -  */
 /* ----- CSS STYLES END -----*/
 /* ----- SASS STYLES START -----*/
+#theDatePrompt #datePromptContainer {
+  padding: 20px 0; }
+
+#theDatePrompt td {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  #theDatePrompt td input, #theDatePrompt td select {
+    border: 1px solid #ccc; }
+
+#theDatePrompt .ArnChildren {
+  display: none; }
+
+#theDatePrompt .CheckRates {
+  margin-bottom: 20px; }

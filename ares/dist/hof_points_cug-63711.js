@@ -2087,6 +2087,7 @@
                                 key: 'removeLrgFooterLink',
                                 value: function () {
                                     this.site_config.lodging.is_lrg ||
+                                        this.site_config.is_resbeat_client ||
                                         ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
                                         (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                                 },

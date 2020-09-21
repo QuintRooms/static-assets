@@ -4411,7 +4411,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 #lightbox {
-    top: calc(100vh - 90%) !important;
+    top: 0 !important;
+    margin-top: 20px;
 }
 
 // Date popup container end

@@ -3407,4 +3407,5 @@ input[type='search']::-webkit-search-results-decoration {
   margin-bottom: 20px; }
 
 #lightbox {
-  top: calc(100vh - 90%) !important; }
+  top: 0 !important;
+  margin-top: 20px; }

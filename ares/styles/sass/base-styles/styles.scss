@@ -4385,6 +4385,10 @@ input[type='search']::-webkit-search-results-decoration {
 
     #datePromptContainer{
         padding: 20px 0;
+
+        img {
+            width: 50%;
+        }
     }
 
     td.CheckIn, td.CheckOut, td.ArnRooms, td.ArnAdults {
@@ -4404,6 +4408,10 @@ input[type='search']::-webkit-search-results-decoration {
     .CheckRates {
         margin-bottom: 20px;
     }
+}
+
+#lightbox {
+    top: calc(100vh - 10%) !important;
 }
 
 // Date popup container end

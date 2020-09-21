@@ -42,14 +42,14 @@ const sites = {
     63710: {
         client_name: 'Pro Football Hall of Fame Gold Jackets Club',
         site_url: 'https://events.hotelsforhope.com/v6/',
-        primary_color: '#0078a8',
+        primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_cug-63710/img/logo.png',
     },
     63711: {
         client_name: 'Pro Football Hall of Fame Travel Club',
         site_url: 'https://events.hotelsforhope.com/v6/',
-        primary_color: '#0078a8',
+        primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_points_cug-63711/img/logo.png',
     },

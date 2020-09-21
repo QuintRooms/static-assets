@@ -3391,14 +3391,14 @@ input[type='search']::-webkit-search-results-decoration {
 #theDatePrompt #datePromptContainer {
   padding: 20px 0; }
 
-#theDatePrompt td {
+#theDatePrompt td.CheckIn, #theDatePrompt td.CheckOut, #theDatePrompt td.ArnRooms, #theDatePrompt td.ArnAdults {
   display: flex;
   flex-direction: column;
   align-items: flex-start; }
-  #theDatePrompt td input, #theDatePrompt td select {
+  #theDatePrompt td.CheckIn input, #theDatePrompt td.CheckIn select, #theDatePrompt td.CheckOut input, #theDatePrompt td.CheckOut select, #theDatePrompt td.ArnRooms input, #theDatePrompt td.ArnRooms select, #theDatePrompt td.ArnAdults input, #theDatePrompt td.ArnAdults select {
     border: 1px solid #ccc; }
 
-#theDatePrompt .ArnChildren {
+#theDatePrompt .ArnChildren, #theDatePrompt .ArnAdults br {
   display: none; }
 
 #theDatePrompt .CheckRates {

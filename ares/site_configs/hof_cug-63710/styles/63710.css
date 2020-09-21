@@ -11,8 +11,8 @@
 
 /* Header */
 header {
-  justify-content: center;
-  background: #000;
+  justify-content: space-between;
+  background: #fff;
 }
 
 .RootBody {
@@ -20,11 +20,11 @@ header {
 }
 
 .logo img {
-  max-width: 250px;
+  max-width: 400px;
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
-  background-color: #000;
+  background-color: #fff;
 }
 
 /* Primary Background Color */
@@ -112,7 +112,7 @@ span.exclusive-rate {
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    color: #fff;
+    color: #333;
   }
 }
 @media screen and (max-width: 800px) {
@@ -138,7 +138,7 @@ span.exclusive-rate {
 .receiptLink,
 .returnResultsInfo a,
 .supportInfo a, .SinglePropDetail #show-more-or-less {
-  color: #fff;
+  color: #333;
 }
 
 .percentSavings {
@@ -206,7 +206,7 @@ a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .boo
 
 @media screen and (max-width: 800px) {
   #theBookingPage legend#policies-legend {
-    color: #fff;
+    color: #333;
   }
 }
 header {

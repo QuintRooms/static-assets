@@ -1290,7 +1290,7 @@
                                         var o = [],
                                             n = [];
                                         e.forEach(function (e) {
-                                            e.classList.contains('S16') || e.classList.contains('S20') ? o.push(!0) : o.push(!1);
+                                            e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? o.push(!0) : o.push(!1);
                                         }),
                                             o.forEach(function (e, t) {
                                                 e && n.push(t);
@@ -1348,7 +1348,7 @@
                                                 var i, c;
                                                 n.classList.contains('ArnPropertyTierTwo') && '' !== o && s(o, n),
                                                     n.classList.contains('ArnPropertyTierThree') && '' !== t && s(t, n),
-                                                    (n.classList.contains('S16') || (n.classList.contains('S20') && '' !== e)) &&
+                                                    (n.classList.contains('S16') || n.classList.contains('S20') || (n.classList.contains('S33') && '' !== e)) &&
                                                         ((i = e),
                                                         (c = n),
                                                         '' !== r.site_config.exclusive_rate_text &&
@@ -7221,7 +7221,7 @@
                     fav_icon_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                     header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo.png'), logo_outbound_url: 'http://www..com/'},
                     map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
-                    theme: 'dark',
+                    theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
                     ads: {
                         sidebar_ad: {is_active: !1, image_url: '', outbound_url: ''},
@@ -7234,6 +7234,7 @@
                     is_resbeat_client: !1,
                     confirmation_email_from: 'Hotels for Hope',
                     has_landing_page: !1,
+                    hide_search_on_landing_page: !0,
                     landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],
                 };
             }

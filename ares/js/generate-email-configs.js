@@ -39,6 +39,20 @@ const sites = {
         secondary_color: '#e2ad37',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
     },
+    63710: {
+        client_name: 'Pro Football Hall of Fame Gold Jackets Club',
+        site_url: 'https://events.hotelsforhope.com/v6/',
+        primary_color: '#da2128',
+        secondary_color: '#0078a8',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_cug-63710/img/logo.png',
+    },
+    63711: {
+        client_name: 'Pro Football Hall of Fame Travel Club',
+        site_url: 'https://events.hotelsforhope.com/v6/',
+        primary_color: '#da2128',
+        secondary_color: '#0078a8',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_points_cug-63711/img/logo.png',
+    },
 };
 
 const entries = Object.entries(sites);

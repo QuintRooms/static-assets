@@ -3390,6 +3390,8 @@ input[type='search']::-webkit-search-results-decoration {
 /* ----- SASS STYLES START -----*/
 #theDatePrompt #datePromptContainer {
   padding: 20px 0; }
+  #theDatePrompt #datePromptContainer img {
+    width: 50%; }
 
 #theDatePrompt td.CheckIn, #theDatePrompt td.CheckOut, #theDatePrompt td.ArnRooms, #theDatePrompt td.ArnAdults {
   display: flex;
@@ -3403,3 +3405,6 @@ input[type='search']::-webkit-search-results-decoration {
 
 #theDatePrompt .CheckRates {
   margin-bottom: 20px; }
+
+#lightbox {
+  top: calc(100vh - 10%) !important; }

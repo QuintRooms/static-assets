@@ -28,7 +28,9 @@ class ChildPortal extends BasePortal {
 
         if (!check_in_input) return;
 
-        check_in_input.value = dayjs().format('MM/DD/YYYY');
+        console.log('day js value: ', dayjs().format('MM/DD/YYYY'), 'Type: ', typeof dayjs().format('MM/DD/YYYY'));
+        check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
+        console.log(check_in_input);
     }
 }
 

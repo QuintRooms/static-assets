@@ -9819,26 +9819,26 @@
                 !(function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
                     (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && l(e, t);
-                })(a, e);
+                })(h, e);
                 var t,
                     n,
                     r,
                     o,
                     s,
-                    i = d(a);
-                function a() {
+                    i = d(h);
+                function h() {
                     var e, t;
                     return (
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                        })(this, a),
-                        f(((e = m((t = i.call(this, v)))), p(a.prototype)), 'init', e).call(e),
+                        })(this, h),
+                        f(((e = m((t = i.call(this, v)))), p(h.prototype)), 'init', e).call(e),
                         t.init(),
                         t
                     );
                 }
                 return (
-                    (t = a),
+                    (t = h),
                     (n = [
                         {
                             key: 'init',
@@ -9869,8 +9869,10 @@
                                                     }
                                                     return e.abrupt('return');
                                                 case 7:
-                                                    t.value = _().format('MM/DD/YYYY');
-                                                case 8:
+                                                    console.log('day js value: ', _().format('MM/DD/YYYY'), 'Type: ', a(_().format('MM/DD/YYYY'))),
+                                                        t.setAttribute('value', _().format('MM/DD/YYYY')),
+                                                        console.log(t);
+                                                case 10:
                                                 case 'end':
                                                     return e.stop();
                                             }
@@ -9896,7 +9898,7 @@
                         },
                     ]) && u(t.prototype, n),
                     r && u(t, r),
-                    a
+                    h
                 );
             })(r.default))(),
                 new s.default();

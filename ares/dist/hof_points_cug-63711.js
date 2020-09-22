@@ -7933,10 +7933,10 @@
                 });
             var n = o(/*! ../../../js/path */ './js/path.js'),
                 r = new (o.n(n).a)(),
-                s = 'hof_cug-'.concat(63710);
+                s = 'hof_points_cug-'.concat(63711);
             function i() {
                 return {
-                    site_id: 63710,
+                    site_id: 63711,
                     directory_name: s,
                     affiliate_id: 16827,
                     master_id: 2143,

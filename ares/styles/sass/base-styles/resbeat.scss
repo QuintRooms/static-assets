@@ -99,6 +99,11 @@ input[type='email'].email-mask,
     font-weight: 700;
 }
 
+.SinglePropDetail .points-applied{
+    display: block;
+    margin-bottom: 12px;
+}
+
 .WBValidatedRegistrationFormActions input {
     -webkit-appearance: none;
 }
@@ -697,7 +702,7 @@ body.WBSupportForm {
 
 @media screen and (max-width: 600px) {
 
-    .ArnSubPage { 
+    .ArnSubPage {
         padding: 0px
     }
 

@@ -90,6 +90,10 @@ input[type='email'].email-mask,
 .discount td, .ConfirmationForm .beat-em-value {
   font-weight: 700; }
 
+.SinglePropDetail .points-applied {
+  display: block;
+  margin-bottom: 12px; }
+
 .WBValidatedRegistrationFormActions input {
   -webkit-appearance: none; }
 

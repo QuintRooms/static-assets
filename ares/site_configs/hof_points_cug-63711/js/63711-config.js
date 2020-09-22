@@ -25,7 +25,7 @@ export default function siteConfig() {
             show_points: true,
             allow_registration: true,
             percent_off_text: 'off',
-            show_percent_savings: false,
+            show_percent_savings: true,
         },
         exclusive_rate_text: '',
         host_hotel_text: '',

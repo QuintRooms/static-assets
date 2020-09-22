@@ -7945,7 +7945,7 @@
                     algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
                     distance_unit: 'useMiles',
                     lodging: {event_id: '', event_name: '', event_dates: '', is_lrg: !1},
-                    cug: {is_cug: !0, show_points: !0, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !1},
+                    cug: {is_cug: !0, show_points: !0, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !0},
                     exclusive_rate_text: '',
                     host_hotel_text: '',
                     partner_hotel_text: '',

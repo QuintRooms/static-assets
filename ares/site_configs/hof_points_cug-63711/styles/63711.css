@@ -671,5 +671,8 @@ input[type=email].email-mask,
     max-width: 175px;
   }
 }
+.points-applied + .beat-em {
+  display: none;
+}
 
 /*# sourceMappingURL=63711.css.map*/

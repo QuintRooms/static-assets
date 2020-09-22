@@ -6898,7 +6898,7 @@
                     landing_page_events: [
                         {
                             is_city_search_header_link: !1,
-                            name: 'Hall of Fame Enshrinement Class Of 2021',
+                            name: 'Hall of Fame Enshrinement Week',
                             display_date: 'August 5-8, 2021',
                             end_date: '8/8/2021',
                             portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',

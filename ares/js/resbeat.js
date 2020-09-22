@@ -158,7 +158,7 @@ export default class Resbeat extends BasePortal {
     }
 
     displayCheckoutRewardPoints() {
-        if (!document.querySelector('.CheckOutForm') || utilities.getMetaTagContent('siteId') === '62725') return;
+        if (!document.querySelector('.CheckOutForm') || utilities.getMetaTagContent('siteId') === '62725' || utilities.getMetaTagContent('siteId') === '63711') return;
 
         let total_el = document.querySelector('.dueNowRow td');
         const taxes_el = document.querySelector('.taxFeeRow td');
@@ -202,7 +202,7 @@ export default class Resbeat extends BasePortal {
     }
 
     async displayRewardPoints(rooms_element) {
-        if (!document.querySelector('.SinglePropDetail') || utilities.getMetaTagContent('siteId') === '62725') return;
+        if (!document.querySelector('.SinglePropDetail') || utilities.getMetaTagContent('siteId') === '62725' || utilities.getMetaTagContent('siteId') === '63711') return;
 
         await utilities.waitForSelectorInDOM('.ArnNightlyRate');
         const rooms = document.querySelectorAll(rooms_element);
@@ -382,7 +382,7 @@ export default class Resbeat extends BasePortal {
     }
 
     insertPercentageOffText(element) {
-        if (this.site_config.is_resbeat_client === false || utilities.getMetaTagContent('siteId') === '62725') return;
+        if (this.site_config.is_resbeat_client === false || utilities.getMetaTagContent('siteId') === '62725' || utilities.getMetaTagContent('siteId') === '63711') return;
         if (document.querySelector('.beat-em') && utilities.page_name === 'search-results') return;
         if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
             const mq = window.matchMedia('(max-width: 600px)');

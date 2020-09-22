@@ -1,8 +1,8 @@
 import Path from '../../../js/path';
 
 const env_path = new Path();
-const site_id = 63710;
-const directory_name = `hof_cug-${site_id}`;
+const site_id = 63711;
+const directory_name = `hof_points_cug-${site_id}`;
 
 export default function siteConfig() {
     return {

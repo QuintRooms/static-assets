@@ -1,8 +1,8 @@
 import Path from '../../../js/path';
 
 const env_path = new Path();
-const site_id = 63711;
-const directory_name = `hof_points_cug-${site_id}`;
+const site_id = 63710;
+const directory_name = `hof_cug-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -70,10 +70,10 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'Start Your Search',
-        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
-        is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        root_page_header_text: 'START YOUR <b>SEARCH</b>',
+        root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
+        is_resbeat_client: true,
+        confirmation_email_from: 'RESBEAT',
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

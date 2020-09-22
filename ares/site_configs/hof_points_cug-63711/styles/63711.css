@@ -16,11 +16,11 @@ header {
 }
 
 .RootBody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_points_cug-63711/img/banner.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/hof_cug-63710/img/banner.jpg) no-repeat center center/cover;
 }
 
 .logo img {
-  max-width: 400px;
+  max-width: 300px;
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
@@ -286,6 +286,162 @@ header {
 
 .MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
   border-top-color: #da2128;
+}
+
+.ArnPages a,
+.ArnPages, .WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type=email].email-mask,
+.WBLoginFormFields input, .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input, .RootBody .search-messaging #user-name strong, .RootBody .search-messaging #user-name, .RootBody .search-messaging h4, .CheckOutForm .total-points-earned td, .MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input,
+.MemberNotAuthenticated #new-user-text,
+.MemberNotAuthenticated #theWBLoginFormBody h1,
+.MemberNotAuthenticated .ForgotPasswordAction, .ArnSupportLinks, .MemberNotAuthenticated #new-user-text strong,
+.MemberNotAuthenticated #theWBLoginFormBody strong, .MemberNotAuthenticated .LoginAction,
+.SendMeNewPasswordAction.submit,
+.ArnShowRatesLink,
+.bookRoom,
+.holdRoom,
+#moreRatesLink,
+.GuestForms legend,
+.WBSupportFormActions .SendRequestAction, .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe, .SearchHotels .lblAmenities,
+.SearchHotels .lblRating,
+.SearchHotels .sort-wrapper h4, #theRateTotals > tbody > .discountRow td, .WBResendOrCancelFormActions input {
+  font-family: "Montserrat", "Helvetica";
+}
+
+.SearchHotels .arnPrice, .roomCount, .SinglePropDetail .ArnNightlyRate strong, .CheckOutForm tr.discount th, .CheckOutForm tr.discount td {
+  color: #166497 !important;
+}
+
+.support-details a, #theSubmitButton:hover,
+#theOtherSubmitButton:hover,
+.CheckRates .submit:hover,
+.CheckOutForm #theConfirmationButton:hover, .ArnRateButton a,
+.bookRoom,
+.holdRoom, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover, .SinglePropDetail .CheckRates .submit:hover, .CheckOutForm .total-points-earned th, .CheckOutForm .total-points-earned td, .WBResendOrCancelFormActions input:hover, .SinglePropDetail .points-earned, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
+  color: #da2128 !important;
+}
+
+#theSubmitButton,
+#theOtherSubmitButton, .RootBody #theOtherSubmitButton .SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .SinglePropDetail .beat-em, .SearchHotels .beat-em, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, .SearchHotels .sort-wrapper a.active, .sort-wrapper a:hover div, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .SinglePropDetail .SimpleSearch input.submit, .WBResendOrCancelFormActions input, .ConfirmationForm .beat-em-value, #lightbox .dialog-button-ok input {
+  color: #fff !important;
+}
+
+.WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #theFirstNameAjax input,
+.WBValidatedRegistrationForm #theLastNameAjax input,
+.WBValidatedRegistrationForm #theEditablePasswordAjax input,
+.WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
+input[type=email].email-mask,
+.WBLoginFormFields input, .SearchHotels #theSearchBox input,
+.SearchHotels #theSearchBox select, #lightbox .WBChangePasswordFormFields input[type=password], .MemberNotAuthenticated #theUserNameAjax input,
+.MemberNotAuthenticated #thePasswordAjax input, .SearchHotels .ArnContainer, .WBSupportForm input,
+.WBSupportForm select,
+.WBSupportForm textarea, .RootBody .ArnPrimarySearchContainer, .ArnSupportLinks, .SinglePropDetail .SimpleSearch input,
+.SinglePropDetail .SimpleSearch select, .totalsTable tr th,
+.totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {
+  background: #f0f0f0 !important;
+}
+
+.SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,
+#theOtherSubmitButton:hover,
+.CheckRates .submit:hover,
+.CheckOutForm #theConfirmationButton:hover, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover, .SearchHotels .ArnPrimarySearchContainer, #lightbox .window, #lightbox, .SinglePropDetail .CheckRates .submit:hover, .WBResendOrCancelFormActions input:hover, .WBForgotPasswordFormActions input:hover, .WBChangePasswordFormInform .dialog-button-ok input.submit:hover, #lightbox .dialog-button-ok input:hover {
+  background: #fff !important;
+}
+
+#theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, #lightbox .dialog-button-ok input:hover, .ConfirmationForm .points-earned, .WBResendOrCancelFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit {
+  background: #da2128 !important;
+}
+
+.WBLoginFormActions input,
+#register-btn a,
+.WBValidatedRegistrationFormActions input,
+#theOtherSubmitButton,
+#theSubmitButton,
+.ArnShowRatesLink,
+.SinglePropDetail .CheckRates .submit,
+.SinglePropDetail .bookRoom,
+.SinglePropDetail #moreRatesLink,
+.CheckOutForm #theConfirmationButton,
+.WBSupportFormActions input,
+.WBForgotPasswordFormActions input, .WBLoginFormActions input:hover,
+#register-btn a:hover,
+.WBValidatedRegistrationFormActions input:hover,
+#theOtherSubmitButton:hover,
+#theSubmitButton:hover,
+.ArnShowRatesLink:hover,
+.SinglePropDetail .CheckRates .submit:hover,
+.SinglePropDetail .bookRoom:hover,
+.SinglePropDetail #moreRatesLink:hover,
+.CheckOutForm #theConfirmationButton:hover,
+.WBSupportFormActions input:hover,
+.WBForgotPasswordFormActions input:hover, #theSubmitButton,
+#theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit,
+.CheckOutForm #theConfirmationButton, .ArnRateButton a:hover,
+.bookRoom:hover,
+.holdRoom:hover, .ArnRateButton a,
+.bookRoom,
+.holdRoom, .LoginAction.submit:hover,
+#register-btn a:hover,
+.RegisterAction.submit:hover,
+.SendMeNewPasswordAction.submit:hover,
+.WBSupportForm .SendRequestAction:hover, .LoginAction.submit,
+#register-btn a,
+.RegisterAction.submit,
+.SendMeNewPasswordAction.submit,
+#moreRatesLink,
+.WBSupportForm .SendRequestAction, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, #lightbox .dialog-button-ok input, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input, .WBChangePasswordFormInform .dialog-button-ok input.submit, .WBForgotPasswordFormActions input {
+  border: 3px solid #da2128 !important;
+}
+
+.SearchHotels .beat-em, .SinglePropDetail .beat-em, .ConfirmationForm .beat-em-value {
+  background-color: #166497;
+}
+
+header {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+@media screen and (max-width: 800px) {
+  .currencies-container {
+    background: #fff;
+  }
+}
+.SearchHotels .lblAmenities, .SearchHotels .lblRating, .SearchHotels .lblPropertyType, .SearchHotels .sort-wrapper h4,
+.ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=63711.css.map*/

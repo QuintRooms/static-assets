@@ -2702,7 +2702,7 @@
                             {
                                 key: 'displayCheckoutRewardPoints',
                                 value: function () {
-                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId')) {
+                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId') && '63711' !== g.getMetaTagContent('siteId')) {
                                         var e = document.querySelector('.dueNowRow td'),
                                             t = document.querySelector('.taxFeeRow td');
                                         if (
@@ -2936,6 +2936,7 @@
                                     if (
                                         !1 !== this.site_config.is_resbeat_client &&
                                         '62725' !== g.getMetaTagContent('siteId') &&
+                                        '63711' !== g.getMetaTagContent('siteId') &&
                                         (!document.querySelector('.beat-em') || 'search-results' !== g.page_name) &&
                                         (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                     ) {

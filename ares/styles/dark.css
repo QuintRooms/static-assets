@@ -12,8 +12,8 @@ svg.arrow polyline {
   color: #000; }
 
 .SearchHotels .custom-tag {
-  background: rgba(255, 255, 255, 0.3);
-  color: #333; }
+  background: rgba(255, 255, 255, 0.8);
+  color: #000; }
 
 @media screen and (max-width: 800px) {
   .sort-filter-container {

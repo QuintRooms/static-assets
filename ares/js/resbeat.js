@@ -202,7 +202,7 @@ export default class Resbeat extends BasePortal {
     }
 
     async displayRewardPoints(rooms_element) {
-        if (!document.querySelector('.SinglePropDetail') || utilities.getMetaTagContent('siteId') === '62725') return;
+        if (!document.querySelector('.SinglePropDetail') || utilities.getMetaTagContent('siteId') === '62725' || utilities.getMetaTagContent('siteId') === '63711') return;
 
         await utilities.waitForSelectorInDOM('.ArnNightlyRate');
         const rooms = document.querySelectorAll(rooms_element);

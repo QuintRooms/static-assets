@@ -261,12 +261,3 @@ input[type='email'].email-mask,
         max-width: 175px;
     }
 }
-
-.points-applied + .beat-em{
-    display: none;
-}
-
-.SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2){
-    display: flex;
-    flex-direction: column;
-}

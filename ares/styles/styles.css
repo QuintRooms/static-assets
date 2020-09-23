@@ -346,7 +346,8 @@ select#adults {
 .language-container img,
 .config-label img {
   max-width: 24px;
-  margin-right: 8px; }
+  margin-right: 8px;
+  margin-bottom: -4px; }
 
 .language-container div {
   margin-bottom: 0;
@@ -1193,7 +1194,7 @@ legend {
 
 .SinglePropDetail .ArnNightlyRate strong {
   display: block;
-  font-size: 1rem;
+  font-size: 13px;
   font-weight: 700;
   order: 1;
   margin-top: 8px; }
@@ -1201,7 +1202,7 @@ legend {
 .arnPrice {
   font-size: 17px; }
 
-.arnUnit + div {
+.arnUnit + div, .arnCurrency + div {
   font-weight: 500;
   font-size: 13px; }
 

@@ -400,6 +400,7 @@ select#adults {
 .config-label img {
     max-width: 24px;
     margin-right: 8px;
+    margin-bottom: -4px;
 }
 
 .language-container div {
@@ -1546,7 +1547,7 @@ legend {
 
 .SinglePropDetail .ArnNightlyRate strong {
     display: block;
-    font-size: 1rem;
+    font-size: 13px;
     font-weight: 700;
     order: 1;
     margin-top: 8px;
@@ -1556,7 +1557,7 @@ legend {
     font-size: 17px;
 }
 
-.arnUnit + div {
+.arnUnit + div, .arnCurrency + div {
     font-weight: 500;
     font-size: 13px;
 }
@@ -4284,7 +4285,7 @@ input[type='search']::-webkit-search-results-decoration {
     .banner-content a {
         margin-left: 0;
     }
-    
+
     .custom-button {
         width: 180px;
         height: 30px;
@@ -4395,12 +4396,12 @@ input[type='search']::-webkit-search-results-decoration {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        
+
         input, select {
             border: 1px solid #ccc;
         }
     }
-    
+
     .ArnChildren, .ArnAdults br {
         display: none;
     }

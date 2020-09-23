@@ -42,7 +42,9 @@ h6,
 legend,
 #thePropertyAmenities > span,
 .bookRoom
-.submit {
+.submit,
+.averageNightly,
+.ArnNightlyRate strong {
     font-family: $header_font_name, $google_font_name, 'Helvetica' !important;
 }
 

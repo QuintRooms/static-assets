@@ -9295,7 +9295,7 @@
                     show_stars: !1,
                     show_property_type: !1,
                     show_language_select: !0,
-                    show_currency_select: !1,
+                    show_currency_select: !0,
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(o.path, '/html/f1/img/favicon.png'),

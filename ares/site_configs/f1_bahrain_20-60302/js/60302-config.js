@@ -38,7 +38,7 @@ export default function siteConfig() {
         show_stars: false,
         show_property_type: false,
         show_language_select: true,
-        show_currency_select: false,
+        show_currency_select: true,
         show_date_prompt: false,
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,

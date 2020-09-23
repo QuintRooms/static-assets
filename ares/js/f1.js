@@ -9,6 +9,7 @@ export default async function f1Styles(siteId) {
     await utilities.waitForSelectorInDOM('header');
     const header = document.querySelector('header');
     const language_el = document.querySelector('#language');
+    const currency_el = document.querySelector('.currencies-container');
 
     async function addHeader(id) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
@@ -25,8 +26,8 @@ export default async function f1Styles(siteId) {
             </li>
         </ul>
         <div class="navbar-hamburger">
-            <span class="toggle-bar top-bar"></span> 
-            <span class="toggle-bar middle-bar"></span> 
+            <span class="toggle-bar top-bar"></span>
+            <span class="toggle-bar middle-bar"></span>
             <span class="toggle-bar bottom-bar"></span>
         </div>
     `
@@ -40,15 +41,16 @@ export default async function f1Styles(siteId) {
         </li>
     </ul>
     <div class="navbar-hamburger">
-        <span class="toggle-bar top-bar"></span> 
-        <span class="toggle-bar middle-bar"></span> 
+        <span class="toggle-bar top-bar"></span>
+        <span class="toggle-bar middle-bar"></span>
         <span class="toggle-bar bottom-bar"></span>
     </div>
 `;
         header.insertAdjacentHTML('beforebegin', html);
         header.insertAdjacentHTML('beforeend', races_contact);
-        if (language_el === null) return;
+        if (language_el === null || currency_el === null) return;
         document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
+        document.querySelector('.currency').insertAdjacentElement('afterBegin', currency_el);
     }
 
     async function addHamburgerMenu(id) {
@@ -70,8 +72,10 @@ export default async function f1Styles(siteId) {
             if (language_el === null) return;
             if (mq.matches) {
                 document.querySelector('.mobile-nav-lower-ul .language-mobile-li').insertAdjacentElement('afterbegin', language_el);
+                document.querySelector('.mobile-nav-lower-ul .currency-mobile-li').insertAdjacentElement('afterBegin', currency_el);
             } else {
                 document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
+                document.querySelector('.currency').insertAdjacentElement('afterBegin', currency_el);
             }
         }
 

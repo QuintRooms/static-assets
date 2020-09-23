@@ -14,51 +14,57 @@
         <li>
             <a href="https://www.formula1.com/en/buy/f1-experiences.html" target="_blank">F1 Experiences </a>
         </li>
-        <li>
+        <li class="header-configs">
+            <div class="currency"></div>
             <div class="language"></div>
         </li>
     </ul>
 </nav>
 
 <style>
-@font-face {
-    font-family: 'F1-Black';
-    src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
-        url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Black_web.ttf') format('truetype');
-}
+    @font-face {
+        font-family: 'F1-Black';
+        src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
+            url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Black_web.ttf') format('truetype');
+    }
 
-@font-face {
-    font-family: 'F1-Bold';
-    src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
-        url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Bold_web.ttf') format('truetype');
-}
+    @font-face {
+        font-family: 'F1-Bold';
+        src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
+            url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Bold_web.ttf') format('truetype');
+    }
 
-@font-face {
-    font-family: 'F1-Regular';
-    src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
-        url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Regular_web.ttf') format('truetype');
-}
+    @font-face {
+        font-family: 'F1-Regular';
+        src: url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
+            url('https://dev-static.hotelsforhope.com/ares/html/f1/fonts/Formula1-Display-Regular_web.ttf') format('truetype');
+    }
 
-/* latin-ext */
-@font-face {
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGIVzY4SY.woff2') format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+    /* latin-ext */
+    @font-face {
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Titillium Web Light'), local('TitilliumWeb-Light'),
+            url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGIVzY4SY.woff2') format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
 
-/* latin */
-@font-face {
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+    /* latin */
+    @font-face {
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Titillium Web Light'), local('TitilliumWeb-Light'), url('https://fonts.gstatic.com/s/titilliumweb/v7/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
 
     .ArnSupportLinks {
         z-index: 3;
+    }
+
+    header {
+        z-index: 10 !important;
     }
 
     .header-upper {
@@ -81,7 +87,7 @@
         color: #333;
         text-transform: uppercase;
         font-size: 12px;
-        letter-spacing: .2px;
+        letter-spacing: 0.2px;
         font-weight: 600;
         margin: 0 6px;
         font-family: 'Titillium Web', 'sans-serif';
@@ -100,6 +106,10 @@
     .header-upper #tickets {
         display: flex;
         justify-content: space-evenly;
+    }
+
+    .header-upper .header-configs {
+        display: flex;
     }
 
     header {
@@ -139,19 +149,39 @@
 
     #races-contact li:hover {
         background-color: #15151e;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 
-    .config-label#language-label {
+    .config-label#language-label,
+    .config-label#currency-label {
         color: #333;
+    }
+
+    @media screen and (max-width: 1000px) {
+        #currency-label {
+            margin-left: unset !important;
+        }
+
+        .show-dropdown {
+            width: 100%;
+        }
+
+        .currency-content span {
+            font-size: 0;
+        }
+
+        .currency-content span strong {
+            font-size: 13px;
+        }
     }
 
     .config-container {
         display: none !important;
     }
 
-    .show-language-container {
-        z-index: 5;
+    .show-language-container,
+    .show-dropdown {
+        z-index: 11;
     }
 
     /* #AdminControlsContainer {
@@ -210,13 +240,15 @@
         margin: 0 auto 10px auto;
     }
 
-    .mobile-nav-container, .hide, .pb-container a {
+    .mobile-nav-container,
+    .hide,
+    .pb-container a {
         display: none;
     }
 
     .show-mobile-nav {
         display: block;
-        width: 100vw;
+        width: 100%;
         height: auto;
         position: absolute;
         transform: translateY(320px);
@@ -247,14 +279,15 @@
     }
 
     .mobile-nav-lower-ul a {
-        color: #15151E;
+        color: #15151e;
         border-right: 1px solid #d0d0d2;
         border-bottom: 1px solid #d0d0d2;
         border-bottom-right-radius: 15px;
-        letter-spacing: .2px;
+        letter-spacing: 0.2px;
     }
 
-    .mobile-nav-lower-ul #language {
+    .mobile-nav-lower-ul #language,
+    .mobile-nav-lower-ul .currencies-container {
         border-right: 1px solid #d0d0d2;
         border-bottom: 1px solid #d0d0d2;
         border-bottom-right-radius: 15px;
@@ -264,16 +297,28 @@
         padding: 12px;
     }
 
+    .mobile-nav-lower-ul .currencies-container {
+        position: relative;
+        right: unset;
+        left: 0;
+    }
+
     .language-container {
         top: 40px !important;
+    }
+
+    .show-dropdown {
+        top: 18px !important;
+        left: 12px;
     }
 
     .SinglePropDetail #thePropertyAmenities span {
         z-index: 3;
     }
 
-    @media screen and (max-width: 1100px){
-        header #races-contact, .header-upper {
+    @media screen and (max-width: 1100px) {
+        header #races-contact,
+        .header-upper {
             display: none;
         }
 
@@ -282,10 +327,9 @@
         }
     }
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 400px) {
         .show-mobile-nav {
-        transform: translateY(328px);
+            transform: translateY(328px);
+        }
     }
-    }
-
 </style>

@@ -872,7 +872,7 @@
             q = 'process' == l(k),
             C = function () {},
             R = (i = _.f),
-            T = !!(function () {
+            P = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -881,7 +881,7 @@
                     return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== E.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            P = function (e) {
+            T = function (e) {
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -906,7 +906,7 @@
                                         a
                                             ? (i || (2 == e._h && I(e), (e._h = 1)),
                                               !0 === a ? (n = r) : (l && l.enter(), (n = a(r)), l && (l.exit(), (s = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (o = P(n)) ? o.call(n, c, u) : c(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (o = T(n)) ? o.call(n, c, u) : c(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !s && l.exit(), u(e);
@@ -963,7 +963,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = P(e))
+                        (t = T(e))
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -978,7 +978,7 @@
                     }
                 }
             };
-        T ||
+        P ||
             ((L = function (e) {
                 p(this, L, 'Promise', '_h'), f(e), r.call(this);
                 try {
@@ -1013,17 +1013,17 @@
             (_.f = R = function (e) {
                 return e === L || e === s ? new o(e) : i(e);
             })),
-            h(h.G + h.W + h.F * !T, {Promise: L}),
+            h(h.G + h.W + h.F * !P, {Promise: L}),
             n(31)(L, 'Promise'),
             n(103)('Promise'),
             (s = n(11).Promise),
-            h(h.S + h.F * !T, 'Promise', {
+            h(h.S + h.F * !P, 'Promise', {
                 reject: function (e) {
                     var t = R(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            h(h.S + h.F * (a || !T), 'Promise', {
+            h(h.S + h.F * (a || !P), 'Promise', {
                 resolve: function (e) {
                     return S(a && this === s ? L : this, e);
                 },
@@ -1032,7 +1032,7 @@
                 h.S +
                     h.F *
                         !(
-                            T &&
+                            P &&
                             n(104)(function (e) {
                                 L.all(e).catch(C);
                             })
@@ -3127,15 +3127,15 @@
                 });
             };
         }
-        function T(e, t) {
+        function P(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var P = n(48),
+        var T = n(48),
             M = n(119);
-        P.extend(M);
+        T.extend(M);
         var O = (function () {
                 function e() {
                     !(function (e, t) {
@@ -3251,20 +3251,20 @@
                                         });
                                     }
                                     'standard' === n.getMetaTagContent('theme')
-                                        ? ((u = P(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (h = P(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (d = P(h).diff(P(u), 'days')))
+                                        ? ((u = T(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (h = T(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (d = T(h).diff(T(u), 'days')))
                                         : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (h = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (d = P(h).diff(P(u), 'days')),
-                                          (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                          (h = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (h = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (d = P(h).diff(P(u), 'days')),
-                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (h = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        ? ((u = T(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (h = T(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (d = T(h).diff(T(u), 'days')),
+                                          (u = T(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (h = T(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : ((u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (d = T(h).diff(T(u), 'days')),
+                                          (u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
                                         'standard' !== n.getMetaTagContent('theme') &&
                                             ((a.check_in_value = document.querySelector('input#theCheckIn').value),
                                             (a.check_out_value = document.querySelector('input#theCheckOut').value)),
@@ -3371,8 +3371,8 @@
                                     });
                             },
                         },
-                    ]) && T(t.prototype, n),
-                    r && T(t, r),
+                    ]) && P(t.prototype, n),
+                    r && P(t, r),
                     e
                 );
             })(),
@@ -4454,77 +4454,68 @@
                                     i,
                                     o,
                                     s = N.getMetaTagContent('showFullTotals');
-                                s &&
+                                s ||
                                     (document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll('.ArnContainer').forEach(function (t) {
-                                            (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
-                                                (i = t.querySelector('.arnPrice .arnUnit')),
-                                                r &&
-                                                    i &&
-                                                    ((r.style.display = 'block'),
-                                                    (i.style.fontSize = '13px'),
-                                                    (t.querySelector('.arnCurrency').style.fontSize = '13px'),
-                                                    r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                    i.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                    1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                        (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                            (n = t.querySelector('.arnPrice')),
+                                                (r = t.querySelector('.arnPrice .arnUnit')) &&
+                                                    n &&
+                                                    ((i = parseFloat(r.textContent) * e),
+                                                    (o = i.toFixed(2)),
+                                                    r &&
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(o, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                         }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
+                                        )),
                                     document.querySelector('.SinglePropDetail') &&
-                                        document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
-                                            (r = t.querySelector('.averageNightly')),
-                                                (i = t.querySelector('strong')),
+                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                            (r = t.querySelector('strong')),
+                                                (i = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                 r &&
                                                     i &&
-                                                    ((r.style.display = 'block'),
-                                                    r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                    i.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                    1 === e && (t.querySelector('strong').style.display = 'none'));
-                                        })),
-                                    s ||
+                                                    (o = i.toFixed(2)) &&
+                                                    (r.insertAdjacentHTML(
+                                                        'beforeEnd',
+                                                        '<div>per night</div><div class="full-stay">'.concat(o, ' for ').concat(e, ' nights </div>')
+                                                    ),
+                                                    1 === e && (t.querySelector('.full-stay').style.display = 'none'));
+                                        }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                                        ))),
+                                    s &&
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (s) {
-                                                (n = s.querySelector('.arnPrice')),
-                                                    (r = s.querySelector('.arnPrice .arnUnit')) &&
-                                                        n &&
-                                                        ((i = parseFloat(r.textContent) * e),
-                                                        (o = i.toFixed(2)),
-                                                        r &&
-                                                            ('USD' === t
-                                                                ? n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(o, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(o, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (s.querySelector('.full-stay').style.display = 'none')));
-                                            }),
-                                            document.body.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
-                                            )),
-                                        document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (n) {
-                                                (r = n.querySelector('strong')),
-                                                    (i = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
+                                            document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                    (i = t.querySelector('.arnPrice .arnUnit')),
                                                     r &&
                                                         i &&
-                                                        (o = i.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(o, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(o, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (n.querySelector('.full-stay').style.display = 'none'));
+                                                        ((r.style.display = 'block'),
+                                                        (i.style.fontSize = '13px'),
+                                                        (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        i.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
                                             }),
-                                            document.body.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                        document.querySelector('.SinglePropDetail') &&
+                                            document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('.averageNightly')),
+                                                    (i = t.querySelector('strong')),
+                                                    r &&
+                                                        i &&
+                                                        ((r.style.display = 'block'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        (i.textContent = i.textContent.replace(/[^\d.-]/g, '')),
+                                                        i.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('strong').style.display = 'none'));
+                                            }));
                             },
                         },
                         {
@@ -5909,8 +5900,8 @@
             q = n(6),
             C = n(14),
             R = E.f,
-            T = q.f,
-            P = A.f,
+            P = q.f,
+            T = A.f,
             M = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
@@ -5930,9 +5921,9 @@
                     return (
                         7 !=
                         k(
-                            T({}, 'a', {
+                            P({}, 'a', {
                                 get: function () {
-                                    return T(this, 'a', {value: 7}).a;
+                                    return P(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -5940,9 +5931,9 @@
                 })
                     ? function (e, t, n) {
                           var r = R($, t);
-                          r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
+                          r && delete $[t], P(e, t, n), r && e !== $ && P($, t, r);
                       }
-                    : T,
+                    : P,
             z = function (e) {
                 var t = (B[e] = k(M.prototype));
                 return (t._k = e), t;
@@ -5962,8 +5953,8 @@
                     (t = S(t, !0)),
                     g(n),
                     i(B, t)
-                        ? (n.enumerable ? (i(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (i(e, I) || T(e, I, x(1, {})), (e[I][t] = !0)), W(e, t, n))
-                        : T(e, t, n)
+                        ? (n.enumerable ? (i(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (i(e, I) || P(e, I, x(1, {})), (e[I][t] = !0)), W(e, t, n))
+                        : P(e, t, n)
                 );
             },
             Q = function (e, t) {
@@ -5982,11 +5973,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], o = 0; n.length > o; ) i(B, (t = n[o++])) || t == I || t == c || r.push(t);
+                for (var t, n = T(w(e)), r = [], o = 0; n.length > o; ) i(B, (t = n[o++])) || t == I || t == c || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === $, r = P(n ? N : w(e)), o = [], s = 0; r.length > s; ) !i(B, (t = r[s++])) || (n && !i($, t)) || o.push(B[t]);
+                for (var t, n = e === $, r = T(n ? N : w(e)), o = [], s = 0; r.length > s; ) !i(B, (t = r[s++])) || (n && !i($, t)) || o.push(B[t]);
                 return o;
             };
         U ||

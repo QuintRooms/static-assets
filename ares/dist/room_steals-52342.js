@@ -4356,77 +4356,68 @@
                                     o,
                                     i,
                                     a = N.getMetaTagContent('showFullTotals');
-                                a &&
+                                a ||
                                     (document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll('.ArnContainer').forEach(function (t) {
-                                            (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
-                                                (o = t.querySelector('.arnPrice .arnUnit')),
-                                                r &&
-                                                    o &&
-                                                    ((r.style.display = 'block'),
-                                                    (o.style.fontSize = '13px'),
-                                                    (t.querySelector('.arnCurrency').style.fontSize = '13px'),
-                                                    r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                    o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                    1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                        (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                            (n = t.querySelector('.arnPrice')),
+                                                (r = t.querySelector('.arnPrice .arnUnit')) &&
+                                                    n &&
+                                                    ((o = parseFloat(r.textContent) * e),
+                                                    (i = o.toFixed(2)),
+                                                    r &&
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                         }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
+                                        )),
                                     document.querySelector('.SinglePropDetail') &&
-                                        document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
-                                            (r = t.querySelector('.averageNightly')),
-                                                (o = t.querySelector('strong')),
+                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                            (r = t.querySelector('strong')),
+                                                (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                 r &&
                                                     o &&
-                                                    ((r.style.display = 'block'),
-                                                    r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                    o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                    1 === e && (t.querySelector('strong').style.display = 'none'));
-                                        })),
-                                    a ||
+                                                    (i = o.toFixed(2)) &&
+                                                    (r.insertAdjacentHTML(
+                                                        'beforeEnd',
+                                                        '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                    ),
+                                                    1 === e && (t.querySelector('.full-stay').style.display = 'none'));
+                                        }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                                        ))),
+                                    a &&
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (a) {
-                                                (n = a.querySelector('.arnPrice')),
-                                                    (r = a.querySelector('.arnPrice .arnUnit')) &&
-                                                        n &&
-                                                        ((o = parseFloat(r.textContent) * e),
-                                                        (i = o.toFixed(2)),
-                                                        r &&
-                                                            ('USD' === t
-                                                                ? n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (a.querySelector('.full-stay').style.display = 'none')));
-                                            }),
-                                            document.body.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
-                                            )),
-                                        document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (n) {
-                                                (r = n.querySelector('strong')),
-                                                    (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
+                                            document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                    (o = t.querySelector('.arnPrice .arnUnit')),
                                                     r &&
                                                         o &&
-                                                        (i = o.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (n.querySelector('.full-stay').style.display = 'none'));
+                                                        ((r.style.display = 'block'),
+                                                        (o.style.fontSize = '13px'),
+                                                        (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
                                             }),
-                                            document.body.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                        document.querySelector('.SinglePropDetail') &&
+                                            document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('.averageNightly')),
+                                                    (o = t.querySelector('strong')),
+                                                    r &&
+                                                        o &&
+                                                        ((r.style.display = 'block'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('strong').style.display = 'none'));
+                                            }));
                             },
                         },
                         {

@@ -951,6 +951,52 @@ export default class BasePortal {
         let fixed_full_stay;
         const show_tax_inclusive_rates = utilities.getMetaTagContent('showFullTotals');
 
+        if (!show_tax_inclusive_rates) {
+            if (document.querySelector('.SearchHotels')) {
+                properties = document.querySelectorAll('.ArnContainer');
+                properties.forEach((property) => {
+                    rate = property.querySelector('.arnPrice');
+                    average_rate = property.querySelector('.arnPrice .arnUnit');
+
+                    if (!average_rate || !rate) return;
+
+                    full_stay_rate = parseFloat(average_rate.textContent) * nights;
+                    fixed_full_stay = full_stay_rate.toFixed(2);
+
+                    if (!average_rate) return;
+
+                    rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+
+                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
+                });
+
+                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>');
+            }
+
+            if (document.querySelector('.SinglePropDetail')) {
+                properties = document.querySelectorAll('.ArnNightlyRate');
+                properties.forEach((property) => {
+                    average_rate = property.querySelector('strong');
+                    full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * nights;
+
+                    if (!average_rate || !full_stay_rate) return;
+
+                    fixed_full_stay = full_stay_rate.toFixed(2);
+
+                    if (!fixed_full_stay) return;
+
+                    average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+
+                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
+                });
+
+                document.body.insertAdjacentHTML(
+                    'beforeEnd',
+                    '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                );
+            }
+        }
+
         if (show_tax_inclusive_rates) {
             if (document.querySelector('.SearchHotels')) {
                 properties = document.querySelectorAll('.ArnContainer');
@@ -962,7 +1008,7 @@ export default class BasePortal {
 
                     average_rate.style.display = 'block';
                     full_stay_rate.style.fontSize = '13px';
-                    property.querySelector('.arnCurrency').style.fontSize = '13px';
+                    property.querySelector('.arnCurrency').style.display = 'none';
 
                     average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
                     full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
@@ -982,60 +1028,13 @@ export default class BasePortal {
                     average_rate.style.display = 'block';
 
                     average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                    full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
                     full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
 
                     if (nights === 1) {
                         property.querySelector('strong').style.display = 'none';
                     }
                 });
-            }
-        }
-
-        if (!show_tax_inclusive_rates) {
-            if (document.querySelector('.SearchHotels')) {
-                properties = document.querySelectorAll('.ArnContainer');
-                properties.forEach((property) => {
-                    rate = property.querySelector('.arnPrice');
-                    average_rate = property.querySelector('.arnPrice .arnUnit');
-
-                    if (!average_rate || !rate) return;
-
-                    full_stay_rate = parseFloat(average_rate.textContent) * nights;
-                    fixed_full_stay = full_stay_rate.toFixed(2);
-
-                    if (!average_rate) return;
-
-                    currency === 'USD'
-                        ? rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`)
-                        : rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
-                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
-                });
-
-                document.body.insertAdjacentHTML('beforeEnd', '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>');
-            }
-
-            if (document.querySelector('.SinglePropDetail')) {
-                properties = document.querySelectorAll('.ArnNightlyRate');
-                properties.forEach((property) => {
-                    average_rate = property.querySelector('strong');
-                    full_stay_rate = parseFloat(average_rate.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * nights;
-
-                    if (!average_rate || !full_stay_rate) return;
-
-                    fixed_full_stay = full_stay_rate.toFixed(2);
-
-                    if (!fixed_full_stay) return;
-
-                    currency === 'USD'
-                        ? average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">$${fixed_full_stay} for ${nights} nights </div>`)
-                        : average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} ${currency} for ${nights} nights </div>`);
-                    if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
-                });
-
-                document.body.insertAdjacentHTML(
-                    'beforeEnd',
-                    '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                );
             }
         }
     }

@@ -2180,7 +2180,7 @@ legend {
   width: 30%;
   text-align: right; }
 
-.MemberNotAuthenticated #theHotel .discount {
+.MemberNotAuthenticated.CheckOutForm .discount {
   display: none; }
 
 #theHotel img {

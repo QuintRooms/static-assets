@@ -1154,53 +1154,73 @@
                             {
                                 key: 'showFullStayAndNightlyRates',
                                 value: function (e, t) {
-                                    var o, n, r, s;
-                                    this.site_config.show_tax_inclusive_rates ||
+                                    var o,
+                                        n,
+                                        r,
+                                        s,
+                                        i = d.getMetaTagContent('showFullTotals');
+                                    i ||
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (i) {
-                                                (o = i.querySelector('.arnPrice')),
-                                                    (n = i.querySelector('.arnPrice .arnUnit')) &&
+                                            (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (o = t.querySelector('.arnPrice')),
+                                                    (n = t.querySelector('.arnPrice .arnUnit')) &&
                                                         o &&
                                                         ((r = parseFloat(n.textContent) * e),
                                                         (s = r.toFixed(2)),
                                                         n &&
-                                                            ('USD' === t
-                                                                ? o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (i.querySelector('.full-stay').style.display = 'none')));
+                                                            (o.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                            ),
+                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
                                             )),
                                         document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (o) {
-                                                (n = o.querySelector('strong')),
+                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (n = t.querySelector('strong')),
                                                     (r = parseFloat(n.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                     n &&
                                                         r &&
                                                         (s = r.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (o.querySelector('.full-stay').style.display = 'none'));
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                            ))),
+                                        i &&
+                                            (document.querySelector('.SearchHotels') &&
+                                                document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                    (n = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                        (r = t.querySelector('.arnPrice .arnUnit')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            (r.style.fontSize = '13px'),
+                                                            (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                                }),
+                                            document.querySelector('.SinglePropDetail') &&
+                                                document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                    (n = t.querySelector('.averageNightly')),
+                                                        (r = t.querySelector('strong')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            (r.textContent = r.textContent.replace(/[^\d.-]/g, '')),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('strong').style.display = 'none'));
+                                                }));
                                 },
                             },
                             {
@@ -3648,9 +3668,9 @@
                     A = k[d] || k['@@iterator'] || (h && k[h]),
                     L = A || b(h),
                     M = h ? (S ? b('entries') : L) : void 0,
-                    E = ('Array' == t && k.entries) || A;
+                    q = ('Array' == t && k.entries) || A;
                 if (
-                    (E && (j = l(E.call(new e()))) !== Object.prototype && j.next && (u(j, w, !0), n || 'function' == typeof j[d] || i(j, d, f)),
+                    (q && (j = l(q.call(new e()))) !== Object.prototype && j.next && (u(j, w, !0), n || 'function' == typeof j[d] || i(j, d, f)),
                     S &&
                         A &&
                         'values' !== A.name &&
@@ -4664,15 +4684,15 @@
                 A = (k && k.v8) || '',
                 L = a.Promise,
                 M = 'process' == l(x),
-                E = function () {},
-                q = (r = v.f),
+                q = function () {},
+                E = (r = v.f),
                 C = !!(function () {
                     try {
                         var e = L.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(E, E);
+                                e(q, q);
                             });
-                        return (M || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (M || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -4785,7 +4805,7 @@
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
                 }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(L.prototype, {
                     then: function (e, t) {
-                        var o = q(y(this, L));
+                        var o = E(y(this, L));
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
@@ -4804,7 +4824,7 @@
                     var e = new n();
                     (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
                 }),
-                (v.f = q = function (e) {
+                (v.f = E = function (e) {
                     return e === L || e === i ? new s(e) : r(e);
                 })),
                 d(d.G + d.W + d.F * !C, {Promise: L}),
@@ -4813,7 +4833,7 @@
                 (i = o(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !C, 'Promise', {
                     reject: function (e) {
-                        var t = q(this);
+                        var t = E(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
@@ -4828,14 +4848,14 @@
                             !(
                                 C &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    L.all(e).catch(E);
+                                    L.all(e).catch(q);
                                 })
                             ),
                     'Promise',
                     {
                         all: function (e) {
                             var t = this,
-                                o = q(t),
+                                o = E(t),
                                 n = o.resolve,
                                 r = o.reject,
                                 s = j(function () {
@@ -4857,7 +4877,7 @@
                         },
                         race: function (e) {
                             var t = this,
-                                o = q(t),
+                                o = E(t),
                                 n = o.reject,
                                 r = j(function () {
                                     h(e, !1, function (e) {
@@ -5005,11 +5025,11 @@
                             for (var x = String(v[0]), k = u(l(i(v.index), m.length), 0), A = [], L = 1; L < v.length; L++) A.push(void 0 === (j = v[L]) ? j : String(j));
                             var M = v.groups;
                             if (f) {
-                                var E = [x].concat(A, k, m);
-                                void 0 !== M && E.push(M);
-                                var q = String(t.apply(void 0, E));
-                            } else q = h(x, m, k, A, M, t);
-                            k >= w && ((b += m.slice(w, k) + q), (w = k + x.length));
+                                var q = [x].concat(A, k, m);
+                                void 0 !== M && q.push(M);
+                                var E = String(t.apply(void 0, q));
+                            } else E = h(x, m, k, A, M, t);
+                            k >= w && ((b += m.slice(w, k) + E), (w = k + x.length));
                         }
                         return b + m.slice(w);
                     },
@@ -5251,8 +5271,8 @@
                 A = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 L = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 M = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                E = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                q = A.f,
+                q = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                E = A.f,
                 C = M.f,
                 T = k.f,
                 P = n.Symbol,
@@ -5283,7 +5303,7 @@
                         );
                     })
                         ? function (e, t, o) {
-                              var n = q(Y, t);
+                              var n = E(Y, t);
                               n && delete Y[t], C(e, t, o), n && e !== Y && C(Y, t, n);
                           }
                         : C,
@@ -5322,7 +5342,7 @@
                 },
                 X = function (e, t) {
                     if (((e = b(e)), (t = w(t, !0)), e !== Y || !r(B, t) || r(N, t))) {
-                        var o = q(e, t);
+                        var o = E(e, t);
                         return !o || !r(B, t) || (r(e, H) && e[H][t]) || (o.enumerable = !0), o;
                     }
                 },
@@ -5361,7 +5381,7 @@
                 i(i.G + i.W + i.F * !$, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
-            for (var ne = E(f.store), re = 0; ne.length > re; ) h(ne[re++]);
+            for (var ne = q(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
                     return r(I, (e += '')) ? I[e] : (I[e] = P(e));

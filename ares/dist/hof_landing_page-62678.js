@@ -44,11 +44,11 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 113));
+        n((n.s = 172));
 })([
     function (e, t, n) {
-        var r = n(22)('wks'),
-            o = n(18),
+        var r = n(26)('wks'),
+            o = n(20),
             i = n(1).Symbol,
             a = 'function' == typeof i;
         (e.exports = function (e) {
@@ -60,15 +60,10 @@
         'number' == typeof __g && (__g = n);
     },
     function (e, t, n) {
-        var r = n(3);
+        var r = n(4);
         e.exports = function (e) {
             if (!r(e)) throw TypeError(e + ' is not an object!');
             return e;
-        };
-    },
-    function (e, t) {
-        e.exports = function (e) {
-            return 'object' == typeof e ? null !== e : 'function' == typeof e;
         };
     },
     function (e, t, n) {
@@ -83,11 +78,16 @@
             );
         });
     },
+    function (e, t) {
+        e.exports = function (e) {
+            return 'object' == typeof e ? null !== e : 'function' == typeof e;
+        };
+    },
     function (e, t, n) {
         var r = n(1),
             o = n(11),
-            i = n(9),
-            a = n(10),
+            i = n(8),
+            a = n(9),
             c = n(24),
             s = function (e, t, n) {
                 var u,
@@ -96,27 +96,27 @@
                     d,
                     h = e & s.F,
                     p = e & s.G,
-                    m = e & s.S,
-                    y = e & s.P,
+                    y = e & s.S,
+                    m = e & s.P,
                     v = e & s.B,
-                    g = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
+                    g = p ? r : y ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
                     b = p ? o : o[t] || (o[t] = {}),
                     S = b.prototype || (b.prototype = {});
                 for (u in (p && (n = t), n))
                     (f = ((l = !h && g && void 0 !== g[u]) ? g : n)[u]),
-                        (d = v && l ? c(f, r) : y && 'function' == typeof f ? c(Function.call, f) : f),
+                        (d = v && l ? c(f, r) : m && 'function' == typeof f ? c(Function.call, f) : f),
                         g && a(g, u, f, e & s.U),
                         b[u] != f && i(b, u, d),
-                        y && S[u] != f && (S[u] = f);
+                        m && S[u] != f && (S[u] = f);
             };
         (r.core = o), (s.F = 1), (s.G = 2), (s.S = 4), (s.P = 8), (s.B = 16), (s.W = 32), (s.U = 64), (s.R = 128), (e.exports = s);
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(47),
-            i = n(35),
+            o = n(53),
+            i = n(41),
             a = Object.defineProperty;
-        t.f = n(4)
+        t.f = n(3)
             ? Object.defineProperty
             : function (e, t, n) {
                   if ((r(e), (t = i(t, !0)), r(n), o))
@@ -136,16 +136,10 @@
             }
         };
     },
-    function (e, t) {
-        var n = {}.hasOwnProperty;
-        e.exports = function (e, t) {
-            return n.call(e, t);
-        };
-    },
     function (e, t, n) {
         var r = n(6),
-            o = n(23);
-        e.exports = n(4)
+            o = n(30);
+        e.exports = n(3)
             ? function (e, t, n) {
                   return r.f(e, t, o(1, n));
               }
@@ -155,10 +149,10 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(9),
-            i = n(8),
-            a = n(18)('src'),
-            c = n(69),
+            o = n(8),
+            i = n(10),
+            a = n(20)('src'),
+            c = n(74),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -173,12 +167,18 @@
             });
     },
     function (e, t) {
+        var n = {}.hasOwnProperty;
+        e.exports = function (e, t) {
+            return n.call(e, t);
+        };
+    },
+    function (e, t) {
         var n = (e.exports = {version: '2.6.11'});
         'number' == typeof __e && (__e = n);
     },
     function (e, t, n) {
-        var r = n(72),
-            o = n(16);
+        var r = n(89),
+            o = n(15);
         e.exports = function (e) {
             return r(o(e));
         };
@@ -188,15 +188,6 @@
             if ('function' != typeof e) throw TypeError(e + ' is not a function!');
             return e;
         };
-    },
-    function (e, t, n) {
-        var r = n(48),
-            o = n(37);
-        e.exports =
-            Object.keys ||
-            function (e) {
-                return r(e, o);
-            };
     },
     function (e, t) {
         var n = {}.toString;
@@ -210,6 +201,25 @@
             return e;
         };
     },
+    function (e, t, n) {
+        var r = n(56),
+            o = n(38);
+        e.exports =
+            Object.keys ||
+            function (e) {
+                return r(e, o);
+            };
+    },
+    function (e, t) {
+        e.exports = {};
+    },
+    function (e, t) {
+        var n = Math.ceil,
+            r = Math.floor;
+        e.exports = function (e) {
+            return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
+        };
+    },
     function (e, t) {
         e.exports = !1;
     },
@@ -220,20 +230,18 @@
             return 'Symbol('.concat(void 0 === e ? '' : e, ')_', (++n + r).toString(36));
         };
     },
-    function (e, t) {
-        var n = Math.ceil,
-            r = Math.floor;
-        e.exports = function (e) {
-            return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
+    function (e, t, n) {
+        e.exports = function () {
+            return {path: 'https://static.hotelsforhope.com/ares'};
         };
     },
     function (e, t, n) {
         'use strict';
-        var r = n(29),
+        var r = n(25),
             o = {};
         (o[n(0)('toStringTag')] = 'z'),
             o + '' != '[object z]' &&
-                n(10)(
+                n(9)(
                     Object.prototype,
                     'toString',
                     function () {
@@ -242,21 +250,30 @@
                     !0
                 );
     },
-    function (e, t) {
-        e.exports = {};
-    },
     function (e, t, n) {
-        var r = n(11),
-            o = n(1),
-            i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
-        (e.exports = function (e, t) {
-            return i[e] || (i[e] = void 0 !== t ? t : {});
-        })('versions', []).push({version: r.version, mode: n(17) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
-    },
-    function (e, t) {
-        e.exports = function (e, t) {
-            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
-        };
+        'use strict';
+        var r = n(59),
+            o = n(94),
+            i = n(17),
+            a = n(12);
+        (e.exports = n(69)(
+            Array,
+            'Array',
+            function (e, t) {
+                (this._t = a(e)), (this._i = 0), (this._k = t);
+            },
+            function () {
+                var e = this._t,
+                    t = this._k,
+                    n = this._i++;
+                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
+            },
+            'values'
+        )),
+            (i.Arguments = i.Array),
+            r('keys'),
+            r('values'),
+            r('entries');
     },
     function (e, t, n) {
         var r = n(13);
@@ -282,31 +299,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(6).f,
-            o = n(8),
-            i = n(0)('toStringTag');
-        e.exports = function (e, t, n) {
-            e && !o((e = n ? e : e.prototype), i) && r(e, i, {configurable: !0, value: t});
-        };
-    },
-    function (e, t, n) {
-        var r = n(19),
-            o = Math.min;
-        e.exports = function (e) {
-            return e > 0 ? o(r(e), 9007199254740991) : 0;
-        };
-    },
-    function (e, t) {
-        t.f = {}.propertyIsEnumerable;
-    },
-    function (e, t, n) {
-        var r = n(16);
-        e.exports = function (e) {
-            return Object(r(e));
-        };
-    },
-    function (e, t, n) {
-        var r = n(15),
+        var r = n(14),
             o = n(0)('toStringTag'),
             i =
                 'Arguments' ==
@@ -336,27 +329,64 @@
         };
     },
     function (e, t, n) {
+        var r = n(11),
+            o = n(1),
+            i = o['__core-js_shared__'] || (o['__core-js_shared__'] = {});
+        (e.exports = function (e, t) {
+            return i[e] || (i[e] = void 0 !== t ? t : {});
+        })('versions', []).push({version: r.version, mode: n(19) ? 'pure' : 'global', copyright: '© 2019 Denis Pushkarev (zloirock.ru)'});
+    },
+    function (e, t, n) {
+        var r = n(18),
+            o = Math.min;
+        e.exports = function (e) {
+            return e > 0 ? o(r(e), 9007199254740991) : 0;
+        };
+    },
+    function (e, t, n) {
+        var r = n(6).f,
+            o = n(10),
+            i = n(0)('toStringTag');
+        e.exports = function (e, t, n) {
+            e && !o((e = n ? e : e.prototype), i) && r(e, i, {configurable: !0, value: t});
+        };
+    },
+    function (e, t, n) {
+        var r = n(15);
+        e.exports = function (e) {
+            return Object(r(e));
+        };
+    },
+    function (e, t) {
+        e.exports = function (e, t) {
+            return {enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t};
+        };
+    },
+    function (e, t) {
+        t.f = {}.propertyIsEnumerable;
+    },
+    function (e, t, n) {
         'use strict';
         var r,
             o,
             i,
             a,
-            c = n(17),
+            c = n(19),
             s = n(1),
             u = n(24),
-            l = n(29),
+            l = n(25),
             f = n(5),
-            d = n(3),
+            d = n(4),
             h = n(13),
-            p = n(81),
-            m = n(82),
-            y = n(57),
-            v = n(58).set,
-            g = n(86)(),
-            b = n(59),
-            S = n(87),
-            w = n(88),
-            _ = n(89),
+            p = n(75),
+            y = n(76),
+            m = n(54),
+            v = n(48).set,
+            g = n(80)(),
+            b = n(50),
+            S = n(81),
+            w = n(82),
+            _ = n(83),
             x = s.TypeError,
             A = s.process,
             k = A && A.versions,
@@ -378,7 +408,7 @@
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
-            O = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -409,11 +439,11 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && R(e);
+                        (e._c = []), (e._n = !1), t && !e._h && O(e);
                     });
                 }
             },
-            R = function (e) {
+            O = function (e) {
                 v.call(s, function () {
                     var t,
                         n,
@@ -447,7 +477,7 @@
             },
             D = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), O(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
             F = function (e) {
                 var t,
@@ -465,7 +495,7 @@
                                       D.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), O(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
                         D.call({_w: n, _d: !1}, e);
                     }
@@ -482,16 +512,16 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(90)(M.prototype, {
+            }).prototype = n(84)(M.prototype, {
                 then: function (e, t) {
-                    var n = C(y(this, M));
+                    var n = C(m(this, M));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
                         (n.domain = E ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && O(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -507,8 +537,8 @@
                 return e === M || e === a ? new i(e) : o(e);
             })),
             f(f.G + f.W + f.F * !T, {Promise: M}),
-            n(25)(M, 'Promise'),
-            n(91)('Promise'),
+            n(28)(M, 'Promise'),
+            n(85)('Promise'),
             (a = n(11).Promise),
             f(f.S + f.F * !T, 'Promise', {
                 reject: function (e) {
@@ -526,7 +556,7 @@
                     f.F *
                         !(
                             T &&
-                            n(92)(function (e) {
+                            n(86)(function (e) {
                                 M.all(e).catch(q);
                             })
                         ),
@@ -541,7 +571,7 @@
                                 var n = [],
                                     i = 0,
                                     a = 1;
-                                m(e, !1, function (e) {
+                                y(e, !1, function (e) {
                                     var c = i++,
                                         s = !1;
                                     n.push(void 0),
@@ -559,7 +589,7 @@
                             n = C(t),
                             r = n.reject,
                             o = S(function () {
-                                m(e, !1, function (e) {
+                                y(e, !1, function (e) {
                                     t.resolve(e).then(n.resolve, r);
                                 });
                             });
@@ -567,31 +597,6 @@
                     },
                 }
             );
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(61),
-            o = n(93),
-            i = n(21),
-            a = n(12);
-        (e.exports = n(94)(
-            Array,
-            'Array',
-            function (e, t) {
-                (this._t = a(e)), (this._i = 0), (this._k = t);
-            },
-            function () {
-                var e = this._t,
-                    t = this._k,
-                    n = this._i++;
-                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
-            },
-            'values'
-        )),
-            (i.Arguments = i.Array),
-            r('keys'),
-            r('values'),
-            r('entries');
     },
     function (e, t, n) {
         var r = (function (e) {
@@ -668,9 +673,9 @@
             p[o] = function () {
                 return this;
             };
-            var m = Object.getPrototypeOf,
-                y = m && m(m(A([])));
-            y && y !== t && n.call(y, o) && (p = y);
+            var y = Object.getPrototypeOf,
+                m = y && y(y(A([])));
+            m && m !== t && n.call(m, o) && (p = m);
             var v = (h.prototype = f.prototype = Object.create(p));
             function g(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
@@ -917,87 +922,13 @@
         }
     },
     function (e, t, n) {
-        e.exports = function () {
-            return {path: 'https://static.hotelsforhope.com/ares'};
-        };
-    },
-    function (e, t, n) {
-        var r = n(3),
-            o = n(1).document,
-            i = r(o) && r(o.createElement);
-        e.exports = function (e) {
-            return i ? o.createElement(e) : {};
-        };
-    },
-    function (e, t, n) {
-        var r = n(3);
-        e.exports = function (e, t) {
-            if (!r(e)) return e;
-            var n, o;
-            if (t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
-            if ('function' == typeof (n = e.valueOf) && !r((o = n.call(e)))) return o;
-            if (!t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
-            throw TypeError("Can't convert object to primitive value");
-        };
-    },
-    function (e, t, n) {
-        var r = n(22)('keys'),
-            o = n(18);
-        e.exports = function (e) {
-            return r[e] || (r[e] = o(e));
-        };
-    },
-    function (e, t) {
-        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
-    },
-    function (e, t, n) {
-        var r = n(2),
-            o = n(75),
-            i = n(37),
-            a = n(36)('IE_PROTO'),
-            c = function () {},
-            s = function () {
-                var e,
-                    t = n(34)('iframe'),
-                    r = i.length;
-                for (
-                    t.style.display = 'none',
-                        n(51).appendChild(t),
-                        t.src = 'javascript:',
-                        (e = t.contentWindow.document).open(),
-                        e.write('<script>document.F=Object</script>'),
-                        e.close(),
-                        s = e.F;
-                    r--;
-
-                )
-                    delete s.prototype[i[r]];
-                return s();
-            };
-        e.exports =
-            Object.create ||
-            function (e, t) {
-                var n;
-                return null !== e ? ((c.prototype = r(e)), (n = new c()), (c.prototype = null), (n[a] = e)) : (n = s()), void 0 === t ? n : o(n, t);
-            };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(2);
-        e.exports = function () {
-            var e = r(this),
-                t = '';
-            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
-        };
-    },
-    function (e, t, n) {
         for (
-            var r = n(31),
-                o = n(14),
-                i = n(10),
+            var r = n(23),
+                o = n(16),
+                i = n(9),
                 a = n(1),
-                c = n(9),
-                s = n(21),
+                c = n(8),
+                s = n(17),
                 u = n(0),
                 l = u('iterator'),
                 f = u('toStringTag'),
@@ -1036,118 +967,620 @@
                     TouchList: !1,
                 },
                 p = o(h),
-                m = 0;
-            m < p.length;
-            m++
+                y = 0;
+            y < p.length;
+            y++
         ) {
-            var y,
-                v = p[m],
+            var m,
+                v = p[y],
                 g = h[v],
                 b = a[v],
                 S = b && b.prototype;
-            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, v), (s[v] = d), g)) for (y in r) S[y] || i(S, y, r[y], !0);
+            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, v), (s[v] = d), g)) for (m in r) S[m] || i(S, m, r[m], !0);
         }
     },
     function (e, t, n) {
         'use strict';
-        var r = n(29),
-            o = RegExp.prototype.exec;
-        e.exports = function (e, t) {
-            var n = e.exec;
-            if ('function' == typeof n) {
-                var i = n.call(e, t);
-                if ('object' != typeof i) throw new TypeError('RegExp exec method returned something other than an Object or null');
-                return i;
+        n.d(t, 'a', function () {
+            return c;
+        });
+        n(46), n(34), n(23), n(52), n(32), n(22), n(33);
+        function r(e, t, n, r, o, i, a) {
+            try {
+                var c = e[i](a),
+                    s = c.value;
+            } catch (e) {
+                return void n(e);
             }
-            if ('RegExp' !== r(e)) throw new TypeError('RegExp#exec called on incompatible receiver');
-            return o.call(e, t);
+            c.done ? t(s) : Promise.resolve(s).then(r, o);
+        }
+        function o(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (o, i) {
+                    var a = e.apply(t, n);
+                    function c(e) {
+                        r(a, o, i, c, s, 'next', e);
+                    }
+                    function s(e) {
+                        r(a, o, i, c, s, 'throw', e);
+                    }
+                    c(void 0);
+                });
+            };
+        }
+        function i(e, t) {
+            for (var n = 0; n < t.length; n++) {
+                var r = t[n];
+                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
+            }
+        }
+        var a = n(40),
+            c = (function () {
+                function e() {
+                    !(function (e, t) {
+                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                    })(this, e);
+                }
+                var t, n, r, c, s, u, l, f, d, h, p, y;
+                return (
+                    (t = e),
+                    (n = [
+                        {
+                            key: 'ieForEachPolyfill',
+                            value: function () {
+                                window.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = Array.prototype.forEach);
+                            },
+                        },
+                        {
+                            key: 'createHTML',
+                            value:
+                                ((y = o(
+                                    regeneratorRuntime.mark(function e(t, n, r) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return e.abrupt(
+                                                            'return',
+                                                            new Promise(function (e) {
+                                                                var o = document.querySelector(n);
+                                                                o && null != o && (o.insertAdjacentHTML(r, t), e());
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t, n) {
+                                    return y.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'updateAttribute',
+                            value: function (e, t, n) {
+                                var r = document.querySelectorAll(e);
+                                r &&
+                                    r.forEach(function (e, r) {
+                                        e.setAttribute(n, t);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'getAttribute',
+                            value: function (e, t) {
+                                if (document.querySelector(e)) return document.querySelector(e).getAttribute(t);
+                            },
+                        },
+                        {
+                            key: 'updateHTML',
+                            value: function (e, t) {
+                                var n = document.querySelectorAll(e);
+                                n &&
+                                    n.forEach(function (e, n) {
+                                        e.innerHTML = t;
+                                    });
+                            },
+                        },
+                        {
+                            key: 'appendToParent',
+                            value: function (e, t) {
+                                var n = document.querySelector(e),
+                                    r = document.querySelector(t);
+                                n && r && r.appendChild(n);
+                            },
+                        },
+                        {
+                            key: 'waitForSelectorInDOM',
+                            value:
+                                ((p = o(
+                                    regeneratorRuntime.mark(function e(t) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return e.abrupt(
+                                                            'return',
+                                                            new Promise(function (e) {
+                                                                var n = setInterval(function () {
+                                                                    var r = document.querySelector(t);
+                                                                    if (r) return e(r), clearInterval(n), r;
+                                                                }, 500);
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e) {
+                                    return p.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'waitForTextInDOM',
+                            value:
+                                ((h = o(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return e.abrupt(
+                                                            'return',
+                                                            new Promise(function (e) {
+                                                                var r = setInterval(function () {
+                                                                    var o = document.querySelector(t).textContent;
+                                                                    if (o === n) return e(o), clearInterval(r), o;
+                                                                }, 500);
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t) {
+                                    return h.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'moveElementIntoExistingWrapper',
+                            value: function (e, t, n) {
+                                document.querySelector(t) && document.querySelector(e) && document.querySelector(t).insertAdjacentElement(n, document.querySelector(e));
+                            },
+                        },
+                        {
+                            key: 'moveOrphanedElementsIntoNewWrapper',
+                            value:
+                                ((d = o(
+                                    regeneratorRuntime.mark(function e(t, n, r, o) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return e.abrupt(
+                                                            'return',
+                                                            new Promise(function (e) {
+                                                                document.querySelector(r) &&
+                                                                    (document.querySelector(r).insertAdjacentHTML(o, '<div class id="'.concat(n, '"></div>')),
+                                                                    t.forEach(function (t) {
+                                                                        document.getElementById(n).insertAdjacentElement('beforeEnd', t), e();
+                                                                    }));
+                                                            })
+                                                        );
+                                                    case 1:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t, n, r) {
+                                    return d.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'createWrapper',
+                            value:
+                                ((f = o(
+                                    regeneratorRuntime.mark(function e(t, n, r, o) {
+                                        var i;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if ((i = document.createElement('div'))) {
+                                                            e.next = 3;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 3:
+                                                        i.setAttribute('class', r),
+                                                            Array.prototype.forEach.call(document.querySelectorAll(t), function (e) {
+                                                                i.appendChild(e);
+                                                            }),
+                                                            document.querySelector(n).insertAdjacentElement(o, i);
+                                                    case 6:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t, n, r) {
+                                    return f.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'createModal',
+                            value: function (e, t, n, r, o) {
+                                n &&
+                                    (document.querySelector(r).insertAdjacentHTML(o, '<span class="open-modal">Show '.concat(t, '</span>')),
+                                    document.body.insertAdjacentHTML(
+                                        'beforeEnd',
+                                        '<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>'.concat(
+                                            t,
+                                            '</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>'
+                                        )
+                                    ),
+                                    e.forEach(function (e) {
+                                        document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', e);
+                                    }),
+                                    document.querySelector('.open-modal').addEventListener('click', function () {
+                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
+                                    }),
+                                    document.querySelector('.close-modal').addEventListener('click', function () {
+                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'addMultipleHeaderLogos',
+                            value:
+                                ((l = o(
+                                    regeneratorRuntime.mark(function e(t) {
+                                        var n, r, o, i;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (
+                                                                (o = function (e) {
+                                                                    if (e.matches && !r)
+                                                                        try {
+                                                                            Object.keys(t).forEach(function (e) {
+                                                                                n.insertAdjacentHTML(
+                                                                                    t[e].insertPosition,
+                                                                                    '<img class="'.concat(t[e].className, '" src="').concat(t[e].imageUrl, '">')
+                                                                                ),
+                                                                                    (r = !0);
+                                                                            });
+                                                                        } catch (e) {
+                                                                            console.error(e);
+                                                                        }
+                                                                }),
+                                                                (e.next = 3),
+                                                                this.waitForSelectorInDOM('header')
+                                                            );
+                                                        case 3:
+                                                            (n = document.querySelector('header')), (i = window.matchMedia('(min-width: 1200px)')), o(i), i.addListener(o);
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (e) {
+                                    return l.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'emailVerificationSetup',
+                            value: function () {
+                                var e = document.createElement('script');
+                                (e.text =
+                                    "\n            const DeBounce_APIKEY = 'public_T0tSVklSNEZRTEtkc1c5MFZoUWhKZz09';\n            const DeBounce_BlockFreeEmails = 'false';\n        "),
+                                    document.body.appendChild(e);
+                                var t = document.createElement('script');
+                                t.setAttribute('src', 'https://cdn.debounce.io/widget/DeBounce.js'), t.setAttribute('async', !0), document.body.appendChild(t);
+                            },
+                        },
+                        {
+                            key: 'createDropdownMenu',
+                            value: function (e, t, n, r) {
+                                var o = document.querySelector(e),
+                                    i = document.querySelector(r);
+                                if (o && i) {
+                                    i.insertAdjacentHTML('beforeEnd', '<style>'.concat(n, '{display: none;}').concat(r, '{position: relative;}</style>').concat(t.outerHTML));
+                                    var a = document.querySelector(n);
+                                    document.addEventListener('click', function (e) {
+                                        var t = e.target;
+                                        t === o && a.classList.toggle('show-dropdown'),
+                                            document.querySelector(''.concat(n, '.show-dropdown')) && t !== o && a.classList.toggle('show-dropdown');
+                                    });
+                                }
+                            },
+                        },
+                        {
+                            key: 'addPropThumbTag',
+                            value: function (e, t) {
+                                !document.querySelector('#theArnProperty'.concat(t, ' .ArnPropThumb > .propThumbTag')) &&
+                                    document.querySelector('#theArnProperty'.concat(t)) &&
+                                    document
+                                        .querySelector('#theArnProperty'.concat(t, ' .ArnPropThumb'))
+                                        .insertAdjacentHTML('afterbegin', '<div class="propThumbTag">'.concat(e, '</div>'));
+                            },
+                        },
+                        {
+                            key: 'ratesComingSoon',
+                            value:
+                                ((u = o(
+                                    regeneratorRuntime.mark(function e(t) {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (document.querySelector('.SearchHotels')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), this.waitForSelectorInDOM('.pollingFinished');
+                                                        case 4:
+                                                            t.forEach(function (e) {
+                                                                document.querySelector('#theArnProperty'.concat(e, ' .ArnLimitedAvail')) &&
+                                                                    (document.querySelector('#theArnProperty'.concat(e, ' .ArnLimitedAvail')).textContent = 'Rates Coming Soon');
+                                                            });
+                                                        case 5:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (e) {
+                                    return u.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addClass',
+                            value: function (e, t) {
+                                document.querySelector('.'.concat(e)).classList.add(t);
+                            },
+                        },
+                        {
+                            key: 'getMetaTagContent',
+                            value: function (e) {
+                                if (document.querySelector('meta[name="'.concat(e, '"]'))) return document.querySelector('meta[name="'.concat(e, '"]')).content;
+                            },
+                        },
+                        {
+                            key: 'parseJSON',
+                            value: function (e) {
+                                if (e) return JSON.parse(e);
+                            },
+                        },
+                        {
+                            key: 'getPageName',
+                            value: function () {
+                                var e,
+                                    t = document.body;
+                                return (
+                                    t.classList.contains('SearchHotels') && !t.classList.contains('HoldRoomsForm') && (e = 'search-results'),
+                                    t.classList.contains('SinglePropDetail') && (e = 'property-detail'),
+                                    t.classList.contains('CheckOutForm') && (e = 'checkout'),
+                                    t.classList.contains('ConfirmationForm') && (e = 'confirmation'),
+                                    t.classList.contains('RootBody') && (e = 'landing-page'),
+                                    t.classList.contains('WBFaq') && (e = 'faq'),
+                                    t.classList.contains('WBTermsAndConditions') && (e = 'terms-conditions'),
+                                    t.classList.contains('WBPrivacyPolicy') && (e = 'privacy-policy'),
+                                    t.classList.contains('WBRateGuaranteeForm2') && (e = 'lrg-page'),
+                                    t.classList.contains('WBValidatedRegistrationForm') && (e = 'cug-registration'),
+                                    t.classList.contains('HoldRoomsForm') && t.classList.contains('SearchHotels') && (e = 'hold-rooms'),
+                                    e
+                                );
+                            },
+                        },
+                        {
+                            key: 'getElementTextContent',
+                            value: function (e) {
+                                if (document.querySelector(e)) return document.querySelector(e).textContent;
+                            },
+                        },
+                        {
+                            key: 'fetchJSON',
+                            value: function (e) {
+                                return function () {
+                                    fetch(e)
+                                        .then(function (e) {
+                                            if (!e.ok) throw e;
+                                            return e.json();
+                                        })
+                                        .catch(function (t) {
+                                            t.text().then(function (t) {
+                                                console.error('Could not fetch json from '.concat(e), t);
+                                            });
+                                        });
+                                };
+                            },
+                        },
+                        {
+                            key: 'fetchHTMLFromFile',
+                            value:
+                                ((s = o(
+                                    regeneratorRuntime.mark(function e(t) {
+                                        var n;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (
+                                                            (n = ''),
+                                                            (e.next = 3),
+                                                            fetch(t)
+                                                                .then(function (e) {
+                                                                    if (!e.ok) throw e;
+                                                                    return e.text();
+                                                                })
+                                                                .then(function (e) {
+                                                                    n = e;
+                                                                })
+                                                                .catch(function (e) {
+                                                                    e.text().then(function (e) {
+                                                                        console.error('Could not fetch text from '.concat(t), e);
+                                                                    });
+                                                                })
+                                                        );
+                                                    case 3:
+                                                        return e.abrupt('return', n);
+                                                    case 4:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e) {
+                                    return s.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'removeMaskedElementFromTabIndex',
+                            value: function (e) {
+                                var t = document.querySelector(e);
+                                t && t.setAttribute('tabindex', -1);
+                            },
+                        },
+                        {
+                            key: 'calculateNights',
+                            value: function () {
+                                var e = a(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
+                                    t = a(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
+                                return a(t).diff(a(e), 'days');
+                            },
+                        },
+                        {
+                            key: 'matchMediaQuery',
+                            value: function (e) {
+                                return window.matchMedia('('.concat(e, ')')).matches;
+                            },
+                        },
+                        {
+                            key: 'selectCheckboxOnLabelClick',
+                            value: function (e) {
+                                document.querySelectorAll(e).forEach(function (e) {
+                                    if (e.querySelector('input[type="checkbox"]') && e) {
+                                        var t = e.querySelector('span');
+                                        t || (t = e.querySelector('label')),
+                                            t.addEventListener('click', function (t) {
+                                                e.querySelector('input[type="checkbox"]').click();
+                                            });
+                                    }
+                                });
+                            },
+                        },
+                        {
+                            key: 'addAttributeToInput',
+                            value:
+                                ((c = o(
+                                    regeneratorRuntime.mark(function e(t, n, r, o) {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (document.querySelector(o)) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.prev = 2), (e.next = 5), this.waitForSelectorInDOM(t);
+                                                        case 5:
+                                                            document.querySelector(t).setAttribute(r, n), (e.next = 11);
+                                                            break;
+                                                        case 8:
+                                                            (e.prev = 8), (e.t0 = e.catch(2)), console.error(e.t0);
+                                                        case 11:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this,
+                                            [[2, 8]]
+                                        );
+                                    })
+                                )),
+                                function (e, t, n, r) {
+                                    return c.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'replaceSpecificText',
+                            value: function (e, t, n) {
+                                if (document.querySelector(e)) {
+                                    var r = document.querySelector(e).textContent.replace(t, n);
+                                    document.querySelector(e).textContent = r;
+                                }
+                            },
+                        },
+                        {
+                            key: 'checkForPastDate',
+                            value: function (e) {
+                                e || console.error('No date passed into checkForPastDate()');
+                                var t = a();
+                                return a(e).diff(t, 'milliseconds') < 0;
+                            },
+                        },
+                    ]) && i(t.prototype, n),
+                    r && i(t, r),
+                    e
+                );
+            })();
+    },
+    function (e, t, n) {
+        var r = n(4),
+            o = n(1).document,
+            i = r(o) && r(o.createElement);
+        e.exports = function (e) {
+            return i ? o.createElement(e) : {};
         };
     },
     function (e, t, n) {
-        'use strict';
-        n(99);
-        var r = n(10),
-            o = n(9),
-            i = n(7),
-            a = n(16),
-            c = n(0),
-            s = n(43),
-            u = c('species'),
-            l = !i(function () {
-                var e = /./;
-                return (
-                    (e.exec = function () {
-                        var e = [];
-                        return (e.groups = {a: '7'}), e;
-                    }),
-                    '7' !== ''.replace(e, '$<a>')
-                );
-            }),
-            f = (function () {
-                var e = /(?:)/,
-                    t = e.exec;
-                e.exec = function () {
-                    return t.apply(this, arguments);
-                };
-                var n = 'ab'.split(e);
-                return 2 === n.length && 'a' === n[0] && 'b' === n[1];
-            })();
-        e.exports = function (e, t, n) {
-            var d = c(e),
-                h = !i(function () {
-                    var t = {};
-                    return (
-                        (t[d] = function () {
-                            return 7;
-                        }),
-                        7 != ''[e](t)
-                    );
-                }),
-                p = h
-                    ? !i(function () {
-                          var t = !1,
-                              n = /a/;
-                          return (
-                              (n.exec = function () {
-                                  return (t = !0), null;
-                              }),
-                              'split' === e &&
-                                  ((n.constructor = {}),
-                                  (n.constructor[u] = function () {
-                                      return n;
-                                  })),
-                              n[d](''),
-                              !t
-                          );
-                      })
-                    : void 0;
-            if (!h || !p || ('replace' === e && !l) || ('split' === e && !f)) {
-                var m = /./[d],
-                    y = n(a, d, ''[e], function (e, t, n, r, o) {
-                        return t.exec === s ? (h && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
-                    }),
-                    v = y[0],
-                    g = y[1];
-                r(String.prototype, e, v),
-                    o(
-                        RegExp.prototype,
-                        d,
-                        2 == t
-                            ? function (e, t) {
-                                  return g.call(e, this, t);
-                              }
-                            : function (e) {
-                                  return g.call(e, this);
-                              }
-                    );
-            }
+        var r = n(26)('keys'),
+            o = n(20);
+        e.exports = function (e) {
+            return r[e] || (r[e] = o(e));
         };
+    },
+    function (e, t) {
+        e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
     },
     function (e, t, n) {
         'use strict';
         var r,
             o,
-            i = n(39),
+            i = n(43),
             a = RegExp.prototype.exec,
             c = String.prototype.replace,
             s = a,
@@ -1232,21 +1665,21 @@
                     weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                     months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                 },
-                m = 'en',
-                y = {};
-            y[m] = p;
+                y = 'en',
+                m = {};
+            m[y] = p;
             var v = function (e) {
                     return e instanceof w;
                 },
                 g = function (e, t, n) {
                     var r;
-                    if (!e) return m;
-                    if ('string' == typeof e) y[e] && (r = e), t && ((y[e] = t), (r = e));
+                    if (!e) return y;
+                    if ('string' == typeof e) m[e] && (r = e), t && ((m[e] = t), (r = e));
                     else {
                         var o = e.name;
-                        (y[o] = e), (r = o);
+                        (m[o] = e), (r = o);
                     }
-                    return !n && r && (m = r), r || (!n && m);
+                    return !n && r && (y = r), r || (!n && y);
                 },
                 b = function (e, t) {
                     if (v(e)) return e.clone();
@@ -1333,19 +1766,19 @@
                                 p = function (e, t) {
                                     return S.w(l.toDate()[e].apply(l.toDate('s'), (f ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(t)), l);
                                 },
-                                m = this.$W,
-                                y = this.$M,
+                                y = this.$W,
+                                m = this.$M,
                                 v = this.$D,
                                 g = 'set' + (this.$u ? 'UTC' : '');
                             switch (d) {
                                 case s:
                                     return f ? h(1, 0) : h(31, 11);
                                 case a:
-                                    return f ? h(1, y) : h(0, y + 1);
+                                    return f ? h(1, m) : h(0, m + 1);
                                 case i:
                                     var b = this.$locale().weekStart || 0,
-                                        w = (m < b ? m + 7 : m) - b;
-                                    return h(f ? v - w : v + (6 - w), y);
+                                        w = (y < b ? y + 7 : y) - b;
+                                    return h(f ? v - w : v + (6 - w), m);
                                 case o:
                                 case u:
                                     return p(g + 'Hours', 0);
@@ -1378,8 +1811,8 @@
                                 l)[f],
                                 p = f === o ? this.$D + (c - this.$W) : c;
                             if (f === a || f === s) {
-                                var m = this.clone().set(u, 1);
-                                m.$d[h](p), m.init(), (this.$d = m.set(u, Math.min(this.$D, m.daysInMonth())).$d);
+                                var y = this.clone().set(u, 1);
+                                y.$d[h](p), y.init(), (this.$d = y.set(u, Math.min(this.$D, y.daysInMonth())).$d);
                             } else h && this.$d[h](p);
                             return this.init(), this;
                         }),
@@ -1470,28 +1903,28 @@
                                 d = S.p(u),
                                 h = b(e),
                                 p = 6e4 * (h.utcOffset() - this.utcOffset()),
-                                m = this - h,
-                                y = S.m(this, h);
+                                y = this - h,
+                                m = S.m(this, h);
                             return (
-                                (y =
+                                (m =
                                     ((f = {}),
-                                    (f[s] = y / 12),
-                                    (f[a] = y),
-                                    (f[c] = y / 3),
-                                    (f[i] = (m - p) / 6048e5),
-                                    (f[o] = (m - p) / 864e5),
-                                    (f[r] = m / 36e5),
-                                    (f[n] = m / 6e4),
-                                    (f[t] = m / 1e3),
-                                    f)[d] || m),
-                                l ? y : S.a(y)
+                                    (f[s] = m / 12),
+                                    (f[a] = m),
+                                    (f[c] = m / 3),
+                                    (f[i] = (y - p) / 6048e5),
+                                    (f[o] = (y - p) / 864e5),
+                                    (f[r] = y / 36e5),
+                                    (f[n] = y / 6e4),
+                                    (f[t] = y / 1e3),
+                                    f)[d] || y),
+                                l ? m : S.a(m)
                             );
                         }),
                         (h.daysInMonth = function () {
                             return this.endOf(a).$D;
                         }),
                         (h.$locale = function () {
-                            return y[this.$L];
+                            return m[this.$L];
                         }),
                         (h.locale = function (e, t) {
                             if (!e) return this.$L;
@@ -1542,314 +1975,172 @@
                 (b.unix = function (e) {
                     return b(1e3 * e);
                 }),
-                (b.en = y[m]),
-                (b.Ls = y),
+                (b.en = m[y]),
+                (b.Ls = m),
                 b
             );
         })();
     },
     function (e, t, n) {
-        var r = n(1),
-            o = n(11),
-            i = n(17),
-            a = n(46),
-            c = n(6).f;
-        e.exports = function (e) {
-            var t = o.Symbol || (o.Symbol = i ? {} : r.Symbol || {});
-            '_' == e.charAt(0) || e in t || c(t, e, {value: a.f(e)});
-        };
-    },
-    function (e, t, n) {
-        t.f = n(0);
-    },
-    function (e, t, n) {
-        e.exports =
-            !n(4) &&
-            !n(7)(function () {
-                return (
-                    7 !=
-                    Object.defineProperty(n(34)('div'), 'a', {
-                        get: function () {
-                            return 7;
-                        },
-                    }).a
-                );
-            });
-    },
-    function (e, t, n) {
-        var r = n(8),
-            o = n(12),
-            i = n(49)(!1),
-            a = n(36)('IE_PROTO');
+        var r = n(4);
         e.exports = function (e, t) {
-            var n,
-                c = o(e),
-                s = 0,
-                u = [];
-            for (n in c) n != a && r(c, n) && u.push(n);
-            for (; t.length > s; ) r(c, (n = t[s++])) && (~i(u, n) || u.push(n));
-            return u;
+            if (!r(e)) return e;
+            var n, o;
+            if (t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
+            if ('function' == typeof (n = e.valueOf) && !r((o = n.call(e)))) return o;
+            if (!t && 'function' == typeof (n = e.toString) && !r((o = n.call(e)))) return o;
+            throw TypeError("Can't convert object to primitive value");
         };
     },
     function (e, t, n) {
-        var r = n(12),
-            o = n(26),
-            i = n(73);
-        e.exports = function (e) {
-            return function (t, n, a) {
-                var c,
-                    s = r(t),
-                    u = o(s.length),
-                    l = i(a, u);
-                if (e && n != n) {
-                    for (; u > l; ) if ((c = s[l++]) != c) return !0;
-                } else for (; u > l; l++) if ((e || l in s) && s[l] === n) return e || l || 0;
-                return !e && -1;
+        var r = n(2),
+            o = n(91),
+            i = n(38),
+            a = n(37)('IE_PROTO'),
+            c = function () {},
+            s = function () {
+                var e,
+                    t = n(36)('iframe'),
+                    r = i.length;
+                for (
+                    t.style.display = 'none',
+                        n(49).appendChild(t),
+                        t.src = 'javascript:',
+                        (e = t.contentWindow.document).open(),
+                        e.write('<script>document.F=Object</script>'),
+                        e.close(),
+                        s = e.F;
+                    r--;
+
+                )
+                    delete s.prototype[i[r]];
+                return s();
             };
-        };
-    },
-    function (e, t) {
-        t.f = Object.getOwnPropertySymbols;
-    },
-    function (e, t, n) {
-        var r = n(1).document;
-        e.exports = r && r.documentElement;
-    },
-    function (e, t, n) {
-        var r = n(48),
-            o = n(37).concat('length', 'prototype');
-        t.f =
-            Object.getOwnPropertyNames ||
-            function (e) {
-                return r(e, o);
+        e.exports =
+            Object.create ||
+            function (e, t) {
+                var n;
+                return null !== e ? ((c.prototype = r(e)), (n = new c()), (c.prototype = null), (n[a] = e)) : (n = s()), void 0 === t ? n : o(n, t);
             };
-    },
-    function (e, t, n) {
-        var r = n(27),
-            o = n(23),
-            i = n(12),
-            a = n(35),
-            c = n(8),
-            s = n(47),
-            u = Object.getOwnPropertyDescriptor;
-        t.f = n(4)
-            ? u
-            : function (e, t) {
-                  if (((e = i(e)), (t = a(t, !0)), s))
-                      try {
-                          return u(e, t);
-                      } catch (e) {}
-                  if (c(e, t)) return o(!r.f.call(e, t), e[t]);
-              };
     },
     function (e, t, n) {
         'use strict';
-        n(77);
-        var r = n(2),
-            o = n(39),
-            i = n(4),
-            a = /./.toString,
-            c = function (e) {
-                n(10)(RegExp.prototype, 'toString', e, !0);
-            };
-        n(7)(function () {
-            return '/a/b' != a.call({source: 'a', flags: 'b'});
-        })
-            ? c(function () {
-                  var e = r(this);
-                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
-              })
-            : 'toString' != a.name &&
-              c(function () {
-                  return a.call(this);
-              });
+        var r = n(2);
+        e.exports = function () {
+            var e = r(this),
+                t = '';
+            return e.global && (t += 'g'), e.ignoreCase && (t += 'i'), e.multiline && (t += 'm'), e.unicode && (t += 'u'), e.sticky && (t += 'y'), t;
+        };
     },
-    function (e, t) {
-        e.exports = function (e, t, n) {
-            var r = void 0 === n;
-            switch (t.length) {
-                case 0:
-                    return r ? e() : e.call(n);
-                case 1:
-                    return r ? e(t[0]) : e.call(n, t[0]);
-                case 2:
-                    return r ? e(t[0], t[1]) : e.call(n, t[0], t[1]);
-                case 3:
-                    return r ? e(t[0], t[1], t[2]) : e.call(n, t[0], t[1], t[2]);
-                case 4:
-                    return r ? e(t[0], t[1], t[2], t[3]) : e.call(n, t[0], t[1], t[2], t[3]);
+    function (e, t, n) {
+        'use strict';
+        var r = n(25),
+            o = RegExp.prototype.exec;
+        e.exports = function (e, t) {
+            var n = e.exec;
+            if ('function' == typeof n) {
+                var i = n.call(e, t);
+                if ('object' != typeof i) throw new TypeError('RegExp exec method returned something other than an Object or null');
+                return i;
             }
-            return e.apply(n, t);
+            if ('RegExp' !== r(e)) throw new TypeError('RegExp#exec called on incompatible receiver');
+            return o.call(e, t);
         };
     },
     function (e, t, n) {
-        var r = n(8),
-            o = n(28),
-            i = n(36)('IE_PROTO'),
-            a = Object.prototype;
-        e.exports =
-            Object.getPrototypeOf ||
-            function (e) {
-                return (e = o(e)), r(e, i) ? e[i] : 'function' == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? a : null;
-            };
-    },
-    function (e, t, n) {
-        var r = n(2),
-            o = n(13),
-            i = n(0)('species');
-        e.exports = function (e, t) {
-            var n,
-                a = r(e).constructor;
-            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
-        };
-    },
-    function (e, t, n) {
-        var r,
-            o,
-            i,
-            a = n(24),
-            c = n(55),
-            s = n(51),
-            u = n(34),
-            l = n(1),
-            f = l.process,
-            d = l.setImmediate,
-            h = l.clearImmediate,
-            p = l.MessageChannel,
-            m = l.Dispatch,
-            y = 0,
-            v = {},
-            g = function () {
-                var e = +this;
-                if (v.hasOwnProperty(e)) {
-                    var t = v[e];
-                    delete v[e], t();
-                }
-            },
-            b = function (e) {
-                g.call(e.data);
-            };
-        (d && h) ||
-            ((d = function (e) {
-                for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
+        'use strict';
+        n(96);
+        var r = n(9),
+            o = n(8),
+            i = n(7),
+            a = n(15),
+            c = n(0),
+            s = n(39),
+            u = c('species'),
+            l = !i(function () {
+                var e = /./;
                 return (
-                    (v[++y] = function () {
-                        c('function' == typeof e ? e : Function(e), t);
+                    (e.exec = function () {
+                        var e = [];
+                        return (e.groups = {a: '7'}), e;
                     }),
-                    r(y),
-                    y
+                    '7' !== ''.replace(e, '$<a>')
                 );
             }),
-            (h = function (e) {
-                delete v[e];
-            }),
-            'process' == n(15)(f)
-                ? (r = function (e) {
-                      f.nextTick(a(g, e, 1));
-                  })
-                : m && m.now
-                ? (r = function (e) {
-                      m.now(a(g, e, 1));
-                  })
-                : p
-                ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
-                : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
-                ? ((r = function (e) {
-                      l.postMessage(e + '', '*');
-                  }),
-                  l.addEventListener('message', b, !1))
-                : (r =
-                      'onreadystatechange' in u('script')
-                          ? function (e) {
-                                s.appendChild(u('script')).onreadystatechange = function () {
-                                    s.removeChild(this), g.call(e);
-                                };
-                            }
-                          : function (e) {
-                                setTimeout(a(g, e, 1), 0);
-                            })),
-            (e.exports = {set: d, clear: h});
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(13);
-        function o(e) {
-            var t, n;
-            (this.promise = new e(function (e, r) {
-                if (void 0 !== t || void 0 !== n) throw TypeError('Bad Promise constructor');
-                (t = e), (n = r);
-            })),
-                (this.resolve = r(t)),
-                (this.reject = r(n));
-        }
-        e.exports.f = function (e) {
-            return new o(e);
+            f = (function () {
+                var e = /(?:)/,
+                    t = e.exec;
+                e.exec = function () {
+                    return t.apply(this, arguments);
+                };
+                var n = 'ab'.split(e);
+                return 2 === n.length && 'a' === n[0] && 'b' === n[1];
+            })();
+        e.exports = function (e, t, n) {
+            var d = c(e),
+                h = !i(function () {
+                    var t = {};
+                    return (
+                        (t[d] = function () {
+                            return 7;
+                        }),
+                        7 != ''[e](t)
+                    );
+                }),
+                p = h
+                    ? !i(function () {
+                          var t = !1,
+                              n = /a/;
+                          return (
+                              (n.exec = function () {
+                                  return (t = !0), null;
+                              }),
+                              'split' === e &&
+                                  ((n.constructor = {}),
+                                  (n.constructor[u] = function () {
+                                      return n;
+                                  })),
+                              n[d](''),
+                              !t
+                          );
+                      })
+                    : void 0;
+            if (!h || !p || ('replace' === e && !l) || ('split' === e && !f)) {
+                var y = /./[d],
+                    m = n(a, d, ''[e], function (e, t, n, r, o) {
+                        return t.exec === s ? (h && !o ? {done: !0, value: y.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
+                    }),
+                    v = m[0],
+                    g = m[1];
+                r(String.prototype, e, v),
+                    o(
+                        RegExp.prototype,
+                        d,
+                        2 == t
+                            ? function (e, t) {
+                                  return g.call(e, this, t);
+                              }
+                            : function (e) {
+                                  return g.call(e, this);
+                              }
+                    );
+            }
         };
     },
     function (e, t, n) {
-        var r = n(6).f,
-            o = Function.prototype,
-            i = /^\s*function ([^ (]*)/;
-        'name' in o ||
-            (n(4) &&
-                r(o, 'name', {
-                    configurable: !0,
-                    get: function () {
-                        try {
-                            return ('' + this).match(i)[1];
-                        } catch (e) {
-                            return '';
-                        }
-                    },
-                }));
-    },
-    function (e, t, n) {
-        var r = n(0)('unscopables'),
-            o = Array.prototype;
-        null == o[r] && n(9)(o, r, {}),
-            (e.exports = function (e) {
-                o[r][e] = !0;
-            });
-    },
-    function (e, t, n) {
         'use strict';
         var r = n(2),
-            o = n(98),
-            i = n(41);
-        n(42)('search', 1, function (e, t, n, a) {
-            return [
-                function (n) {
-                    var r = e(this),
-                        o = null == n ? void 0 : n[t];
-                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
-                },
-                function (e) {
-                    var t = a(n, e, this);
-                    if (t.done) return t.value;
-                    var c = r(e),
-                        s = String(this),
-                        u = c.lastIndex;
-                    o(u, 0) || (c.lastIndex = 0);
-                    var l = i(c, s);
-                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
-                },
-            ];
-        });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(2),
-            o = n(28),
-            i = n(26),
-            a = n(19),
-            c = n(64),
-            s = n(41),
+            o = n(29),
+            i = n(27),
+            a = n(18),
+            c = n(60),
+            s = n(44),
             u = Math.max,
             l = Math.min,
             f = Math.floor,
             d = /\$([$&`']|\d\d?|<[^>]*>)/g,
             h = /\$([$&`']|\d\d?)/g;
-        n(42)('replace', 2, function (e, t, n, p) {
+        n(45)('replace', 2, function (e, t, n, p) {
             return [
                 function (r, o) {
                     var i = e(this),
@@ -1863,15 +2154,15 @@
                         d = String(this),
                         h = 'function' == typeof t;
                     h || (t = String(t));
-                    var y = f.global;
-                    if (y) {
+                    var m = f.global;
+                    if (m) {
                         var v = f.unicode;
                         f.lastIndex = 0;
                     }
                     for (var g = []; ; ) {
                         var b = s(f, d);
                         if (null === b) break;
-                        if ((g.push(b), !y)) break;
+                        if ((g.push(b), !m)) break;
                         '' === String(b[0]) && (f.lastIndex = c(d, i(f.lastIndex), v));
                     }
                     for (var S, w = '', _ = 0, x = 0; x < g.length; x++) {
@@ -1882,13 +2173,13 @@
                             var q = [A].concat(L, k, d);
                             void 0 !== E && q.push(E);
                             var C = String(t.apply(void 0, q));
-                        } else C = m(A, d, k, L, E, t);
+                        } else C = y(A, d, k, L, E, t);
                         k >= _ && ((w += d.slice(_, k) + C), (_ = k + A.length));
                     }
                     return w + d.slice(_);
                 },
             ];
-            function m(e, t, r, i, a, c) {
+            function y(e, t, r, i, a, c) {
                 var s = r + e.length,
                     u = i.length,
                     l = h;
@@ -1925,14 +2216,294 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(102)(!0);
+        n(103);
+        var r = n(2),
+            o = n(43),
+            i = n(3),
+            a = /./.toString,
+            c = function (e) {
+                n(9)(RegExp.prototype, 'toString', e, !0);
+            };
+        n(7)(function () {
+            return '/a/b' != a.call({source: 'a', flags: 'b'});
+        })
+            ? c(function () {
+                  var e = r(this);
+                  return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !i && e instanceof RegExp ? o.call(e) : void 0);
+              })
+            : 'toString' != a.name &&
+              c(function () {
+                  return a.call(this);
+              });
+    },
+    function (e, t, n) {
+        var r,
+            o,
+            i,
+            a = n(24),
+            c = n(55),
+            s = n(49),
+            u = n(36),
+            l = n(1),
+            f = l.process,
+            d = l.setImmediate,
+            h = l.clearImmediate,
+            p = l.MessageChannel,
+            y = l.Dispatch,
+            m = 0,
+            v = {},
+            g = function () {
+                var e = +this;
+                if (v.hasOwnProperty(e)) {
+                    var t = v[e];
+                    delete v[e], t();
+                }
+            },
+            b = function (e) {
+                g.call(e.data);
+            };
+        (d && h) ||
+            ((d = function (e) {
+                for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
+                return (
+                    (v[++m] = function () {
+                        c('function' == typeof e ? e : Function(e), t);
+                    }),
+                    r(m),
+                    m
+                );
+            }),
+            (h = function (e) {
+                delete v[e];
+            }),
+            'process' == n(14)(f)
+                ? (r = function (e) {
+                      f.nextTick(a(g, e, 1));
+                  })
+                : y && y.now
+                ? (r = function (e) {
+                      y.now(a(g, e, 1));
+                  })
+                : p
+                ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
+                : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
+                ? ((r = function (e) {
+                      l.postMessage(e + '', '*');
+                  }),
+                  l.addEventListener('message', b, !1))
+                : (r =
+                      'onreadystatechange' in u('script')
+                          ? function (e) {
+                                s.appendChild(u('script')).onreadystatechange = function () {
+                                    s.removeChild(this), g.call(e);
+                                };
+                            }
+                          : function (e) {
+                                setTimeout(a(g, e, 1), 0);
+                            })),
+            (e.exports = {set: d, clear: h});
+    },
+    function (e, t, n) {
+        var r = n(1).document;
+        e.exports = r && r.documentElement;
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(13);
+        function o(e) {
+            var t, n;
+            (this.promise = new e(function (e, r) {
+                if (void 0 !== t || void 0 !== n) throw TypeError('Bad Promise constructor');
+                (t = e), (n = r);
+            })),
+                (this.resolve = r(t)),
+                (this.reject = r(n));
+        }
+        e.exports.f = function (e) {
+            return new o(e);
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(2),
+            o = n(106),
+            i = n(44);
+        n(45)('search', 1, function (e, t, n, a) {
+            return [
+                function (n) {
+                    var r = e(this),
+                        o = null == n ? void 0 : n[t];
+                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
+                },
+                function (e) {
+                    var t = a(n, e, this);
+                    if (t.done) return t.value;
+                    var c = r(e),
+                        s = String(this),
+                        u = c.lastIndex;
+                    o(u, 0) || (c.lastIndex = 0);
+                    var l = i(c, s);
+                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
+                },
+            ];
+        });
+    },
+    function (e, t, n) {
+        var r = n(29),
+            o = n(16);
+        n(97)('keys', function () {
+            return function (e) {
+                return o(r(e));
+            };
+        });
+    },
+    function (e, t, n) {
+        e.exports =
+            !n(3) &&
+            !n(7)(function () {
+                return (
+                    7 !=
+                    Object.defineProperty(n(36)('div'), 'a', {
+                        get: function () {
+                            return 7;
+                        },
+                    }).a
+                );
+            });
+    },
+    function (e, t, n) {
+        var r = n(2),
+            o = n(13),
+            i = n(0)('species');
+        e.exports = function (e, t) {
+            var n,
+                a = r(e).constructor;
+            return void 0 === a || null == (n = r(a)[i]) ? t : o(n);
+        };
+    },
+    function (e, t) {
+        e.exports = function (e, t, n) {
+            var r = void 0 === n;
+            switch (t.length) {
+                case 0:
+                    return r ? e() : e.call(n);
+                case 1:
+                    return r ? e(t[0]) : e.call(n, t[0]);
+                case 2:
+                    return r ? e(t[0], t[1]) : e.call(n, t[0], t[1]);
+                case 3:
+                    return r ? e(t[0], t[1], t[2]) : e.call(n, t[0], t[1], t[2]);
+                case 4:
+                    return r ? e(t[0], t[1], t[2], t[3]) : e.call(n, t[0], t[1], t[2], t[3]);
+            }
+            return e.apply(n, t);
+        };
+    },
+    function (e, t, n) {
+        var r = n(10),
+            o = n(12),
+            i = n(57)(!1),
+            a = n(37)('IE_PROTO');
+        e.exports = function (e, t) {
+            var n,
+                c = o(e),
+                s = 0,
+                u = [];
+            for (n in c) n != a && r(c, n) && u.push(n);
+            for (; t.length > s; ) r(c, (n = t[s++])) && (~i(u, n) || u.push(n));
+            return u;
+        };
+    },
+    function (e, t, n) {
+        var r = n(12),
+            o = n(27),
+            i = n(90);
+        e.exports = function (e) {
+            return function (t, n, a) {
+                var c,
+                    s = r(t),
+                    u = o(s.length),
+                    l = i(a, u);
+                if (e && n != n) {
+                    for (; u > l; ) if ((c = s[l++]) != c) return !0;
+                } else for (; u > l; l++) if ((e || l in s) && s[l] === n) return e || l || 0;
+                return !e && -1;
+            };
+        };
+    },
+    function (e, t, n) {
+        var r = n(10),
+            o = n(29),
+            i = n(37)('IE_PROTO'),
+            a = Object.prototype;
+        e.exports =
+            Object.getPrototypeOf ||
+            function (e) {
+                return (e = o(e)), r(e, i) ? e[i] : 'function' == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? a : null;
+            };
+    },
+    function (e, t, n) {
+        var r = n(0)('unscopables'),
+            o = Array.prototype;
+        null == o[r] && n(8)(o, r, {}),
+            (e.exports = function (e) {
+                o[r][e] = !0;
+            });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(70)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
     },
     function (e, t, n) {
-        var r = n(3),
-            o = n(15),
+        var r = n(1),
+            o = n(11),
+            i = n(19),
+            a = n(62),
+            c = n(6).f;
+        e.exports = function (e) {
+            var t = o.Symbol || (o.Symbol = i ? {} : r.Symbol || {});
+            '_' == e.charAt(0) || e in t || c(t, e, {value: a.f(e)});
+        };
+    },
+    function (e, t, n) {
+        t.f = n(0);
+    },
+    function (e, t) {
+        t.f = Object.getOwnPropertySymbols;
+    },
+    function (e, t, n) {
+        var r = n(56),
+            o = n(38).concat('length', 'prototype');
+        t.f =
+            Object.getOwnPropertyNames ||
+            function (e) {
+                return r(e, o);
+            };
+    },
+    function (e, t, n) {
+        var r = n(31),
+            o = n(30),
+            i = n(12),
+            a = n(41),
+            c = n(10),
+            s = n(53),
+            u = Object.getOwnPropertyDescriptor;
+        t.f = n(3)
+            ? u
+            : function (e, t) {
+                  if (((e = i(e)), (t = a(t, !0)), s))
+                      try {
+                          return u(e, t);
+                      } catch (e) {}
+                  if (c(e, t)) return o(!r.f.call(e, t), e[t]);
+              };
+    },
+    function (e, t, n) {
+        var r = n(4),
+            o = n(14),
             i = n(0)('match');
         e.exports = function (e) {
             var t;
@@ -1940,415 +2511,2925 @@
         };
     },
     function (e, t, n) {
-        var r = n(28),
-            o = n(14);
-        n(110)('keys', function () {
-            return function (e) {
-                return o(r(e));
-            };
-        });
-    },
-    function (e, t, n) {
-        n(45)('asyncIterator');
-    },
-    function (e, t, n) {
         'use strict';
-        var r = n(1),
-            o = n(8),
-            i = n(4),
-            a = n(5),
-            c = n(10),
-            s = n(70).KEY,
-            u = n(7),
-            l = n(22),
-            f = n(25),
-            d = n(18),
-            h = n(0),
-            p = n(46),
-            m = n(45),
-            y = n(71),
-            v = n(74),
-            g = n(2),
-            b = n(3),
-            S = n(28),
-            w = n(12),
-            _ = n(35),
-            x = n(23),
-            A = n(38),
-            k = n(76),
-            L = n(53),
-            M = n(50),
-            E = n(6),
-            q = n(14),
-            C = L.f,
-            T = E.f,
-            P = k.f,
-            O = r.Symbol,
-            R = r.JSON,
-            j = R && R.stringify,
-            H = h('_hidden'),
-            D = h('toPrimitive'),
-            F = {}.propertyIsEnumerable,
-            B = l('symbol-registry'),
-            I = l('symbols'),
-            N = l('op-symbols'),
-            $ = Object.prototype,
-            Y = 'function' == typeof O && !!M.f,
-            U = r.QObject,
-            W = !U || !U.prototype || !U.prototype.findChild,
-            G =
-                i &&
-                u(function () {
-                    return (
-                        7 !=
-                        A(
-                            T({}, 'a', {
-                                get: function () {
-                                    return T(this, 'a', {value: 7}).a;
-                                },
-                            })
-                        ).a
-                    );
-                })
-                    ? function (e, t, n) {
-                          var r = C($, t);
-                          r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
-                      }
-                    : T,
-            z = function (e) {
-                var t = (I[e] = A(O.prototype));
-                return (t._k = e), t;
-            },
-            V =
-                Y && 'symbol' == typeof O.iterator
-                    ? function (e) {
-                          return 'symbol' == typeof e;
-                      }
-                    : function (e) {
-                          return e instanceof O;
-                      },
-            Z = function (e, t, n) {
-                return (
-                    e === $ && Z(N, t, n),
-                    g(e),
-                    (t = _(t, !0)),
-                    g(n),
-                    o(I, t)
-                        ? (n.enumerable ? (o(e, H) && e[H][t] && (e[H][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, H) || T(e, H, x(1, {})), (e[H][t] = !0)), G(e, t, n))
-                        : T(e, t, n)
-                );
-            },
-            J = function (e, t) {
-                g(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
-                return e;
-            },
-            Q = function (e) {
-                var t = F.call(this, (e = _(e, !0)));
-                return !(this === $ && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, H) && this[H][e])) || t);
-            },
-            K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(I, t) || o(N, t))) {
-                    var n = C(e, t);
-                    return !n || !o(I, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
-                }
-            },
-            X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == H || t == s || r.push(t);
-                return r;
-            },
-            ee = function (e) {
-                for (var t, n = e === $, r = P(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o($, t)) || i.push(I[t]);
-                return i;
-            };
-        Y ||
-            (c(
-                (O = function () {
-                    if (this instanceof O) throw TypeError('Symbol is not a constructor!');
-                    var e = d(arguments.length > 0 ? arguments[0] : void 0),
-                        t = function (n) {
-                            this === $ && t.call(N, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), G(this, e, x(1, n));
-                        };
-                    return i && W && G($, e, {configurable: !0, set: t}), z(e);
-                }).prototype,
-                'toString',
-                function () {
-                    return this._k;
-                }
-            ),
-            (L.f = K),
-            (E.f = Z),
-            (n(52).f = k.f = X),
-            (n(27).f = Q),
-            (M.f = ee),
-            i && !n(17) && c($, 'propertyIsEnumerable', Q, !0),
-            (p.f = function (e) {
-                return z(h(e));
-            })),
-            a(a.G + a.W + a.F * !Y, {Symbol: O});
-        for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
-            h(te[ne++]);
-        for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
-        a(a.S + a.F * !Y, 'Symbol', {
-            for: function (e) {
-                return o(B, (e += '')) ? B[e] : (B[e] = O(e));
-            },
-            keyFor: function (e) {
-                if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in B) if (B[t] === e) return t;
-            },
-            useSetter: function () {
-                W = !0;
-            },
-            useSimple: function () {
-                W = !1;
-            },
-        }),
-            a(a.S + a.F * !Y, 'Object', {
-                create: function (e, t) {
-                    return void 0 === t ? A(e) : J(A(e), t);
-                },
-                defineProperty: Z,
-                defineProperties: J,
-                getOwnPropertyDescriptor: K,
-                getOwnPropertyNames: X,
-                getOwnPropertySymbols: ee,
-            });
-        var ie = u(function () {
-            M.f(1);
+        n.d(t, 'a', function () {
+            return Y;
         });
-        a(a.S + a.F * ie, 'Object', {
-            getOwnPropertySymbols: function (e) {
-                return M.f(S(e));
-            },
-        }),
-            R &&
-                a(
-                    a.S +
-                        a.F *
-                            (!Y ||
-                                u(function () {
-                                    var e = O();
-                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
-                                })),
-                    'JSON',
-                    {
-                        stringify: function (e) {
-                            for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
-                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !V(e)))
-                                return (
-                                    v(t) ||
-                                        (t = function (e, t) {
-                                            if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
-                                        }),
-                                    (r[1] = t),
-                                    j.apply(R, r)
-                                );
-                        },
+        n(32), n(47), n(73), n(34), n(23), n(22), n(98), n(51), n(107), n(46), n(71), n(72), n(68), n(33);
+        var r = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== r && r),
+            o = 'URLSearchParams' in r,
+            i = 'Symbol' in r && 'iterator' in Symbol,
+            a =
+                'FileReader' in r &&
+                'Blob' in r &&
+                (function () {
+                    try {
+                        return new Blob(), !0;
+                    } catch (e) {
+                        return !1;
                     }
-                ),
-            O.prototype[D] || n(9)(O.prototype, D, O.prototype.valueOf),
-            f(O, 'Symbol'),
-            f(Math, 'Math', !0),
-            f(r.JSON, 'JSON', !0);
-    },
-    function (e, t, n) {
-        e.exports = n(22)('native-function-to-string', Function.toString);
-    },
-    function (e, t, n) {
-        var r = n(18)('meta'),
-            o = n(3),
-            i = n(8),
-            a = n(6).f,
-            c = 0,
-            s =
-                Object.isExtensible ||
-                function () {
-                    return !0;
-                },
-            u = !n(7)(function () {
-                return s(Object.preventExtensions({}));
-            }),
-            l = function (e) {
-                a(e, r, {value: {i: 'O' + ++c, w: {}}});
-            },
-            f = (e.exports = {
-                KEY: r,
-                NEED: !1,
-                fastKey: function (e, t) {
-                    if (!o(e)) return 'symbol' == typeof e ? e : ('string' == typeof e ? 'S' : 'P') + e;
-                    if (!i(e, r)) {
-                        if (!s(e)) return 'F';
-                        if (!t) return 'E';
-                        l(e);
-                    }
-                    return e[r].i;
-                },
-                getWeak: function (e, t) {
-                    if (!i(e, r)) {
-                        if (!s(e)) return !0;
-                        if (!t) return !1;
-                        l(e);
-                    }
-                    return e[r].w;
-                },
-                onFreeze: function (e) {
-                    return u && f.NEED && s(e) && !i(e, r) && l(e), e;
-                },
-            });
-    },
-    function (e, t, n) {
-        var r = n(14),
-            o = n(50),
-            i = n(27);
-        e.exports = function (e) {
-            var t = r(e),
-                n = o.f;
-            if (n) for (var a, c = n(e), s = i.f, u = 0; c.length > u; ) s.call(e, (a = c[u++])) && t.push(a);
-            return t;
-        };
-    },
-    function (e, t, n) {
-        var r = n(15);
-        e.exports = Object('z').propertyIsEnumerable(0)
-            ? Object
-            : function (e) {
-                  return 'String' == r(e) ? e.split('') : Object(e);
-              };
-    },
-    function (e, t, n) {
-        var r = n(19),
-            o = Math.max,
-            i = Math.min;
-        e.exports = function (e, t) {
-            return (e = r(e)) < 0 ? o(e + t, 0) : i(e, t);
-        };
-    },
-    function (e, t, n) {
-        var r = n(15);
-        e.exports =
-            Array.isArray ||
-            function (e) {
-                return 'Array' == r(e);
-            };
-    },
-    function (e, t, n) {
-        var r = n(6),
-            o = n(2),
-            i = n(14);
-        e.exports = n(4)
-            ? Object.defineProperties
-            : function (e, t) {
-                  o(e);
-                  for (var n, a = i(t), c = a.length, s = 0; c > s; ) r.f(e, (n = a[s++]), t[n]);
-                  return e;
-              };
-    },
-    function (e, t, n) {
-        var r = n(12),
-            o = n(52).f,
-            i = {}.toString,
-            a = 'object' == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
-        e.exports.f = function (e) {
-            return a && '[object Window]' == i.call(e)
-                ? (function (e) {
-                      try {
-                          return o(e);
-                      } catch (e) {
-                          return a.slice();
-                      }
-                  })(e)
-                : o(r(e));
-        };
-    },
-    function (e, t, n) {
-        n(4) && 'g' != /./g.flags && n(6).f(RegExp.prototype, 'flags', {configurable: !0, get: n(39)});
-    },
-    function (e, t, n) {
-        var r = n(5),
-            o = n(38),
-            i = n(13),
-            a = n(2),
-            c = n(3),
-            s = n(7),
-            u = n(79),
-            l = (n(1).Reflect || {}).construct,
-            f = s(function () {
-                function e() {}
-                return !(l(function () {}, [], e) instanceof e);
-            }),
-            d = !s(function () {
-                l(function () {});
-            });
-        r(r.S + r.F * (f || d), 'Reflect', {
-            construct: function (e, t) {
-                i(e), a(t);
-                var n = arguments.length < 3 ? e : i(arguments[2]);
-                if (d && !f) return l(e, t, n);
-                if (e == n) {
-                    switch (t.length) {
-                        case 0:
-                            return new e();
-                        case 1:
-                            return new e(t[0]);
-                        case 2:
-                            return new e(t[0], t[1]);
-                        case 3:
-                            return new e(t[0], t[1], t[2]);
-                        case 4:
-                            return new e(t[0], t[1], t[2], t[3]);
-                    }
-                    var r = [null];
-                    return r.push.apply(r, t), new (u.apply(e, r))();
-                }
-                var s = n.prototype,
-                    h = o(c(s) ? s : Object.prototype),
-                    p = Function.apply.call(e, h, t);
-                return c(p) ? p : h;
-            },
-        });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(13),
-            o = n(3),
-            i = n(55),
-            a = [].slice,
-            c = {},
-            s = function (e, t, n) {
-                if (!(t in c)) {
-                    for (var r = [], o = 0; o < t; o++) r[o] = 'a[' + o + ']';
-                    c[t] = Function('F,a', 'return new F(' + r.join(',') + ')');
-                }
-                return c[t](e, n);
-            };
-        e.exports =
-            Function.bind ||
-            function (e) {
-                var t = r(this),
-                    n = a.call(arguments, 1),
-                    c = function () {
-                        var r = n.concat(a.call(arguments));
-                        return this instanceof c ? s(t, r.length, r) : i(t, r, e);
+                })(),
+            c = 'FormData' in r,
+            s = 'ArrayBuffer' in r;
+        if (s)
+            var u = [
+                    '[object Int8Array]',
+                    '[object Uint8Array]',
+                    '[object Uint8ClampedArray]',
+                    '[object Int16Array]',
+                    '[object Uint16Array]',
+                    '[object Int32Array]',
+                    '[object Uint32Array]',
+                    '[object Float32Array]',
+                    '[object Float64Array]',
+                ],
+                l =
+                    ArrayBuffer.isView ||
+                    function (e) {
+                        return e && u.indexOf(Object.prototype.toString.call(e)) > -1;
                     };
-                return o(t.prototype) && (c.prototype = t.prototype), c;
+        function f(e) {
+            if (('string' != typeof e && (e = String(e)), /[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(e) || '' === e)) throw new TypeError('Invalid character in header field name');
+            return e.toLowerCase();
+        }
+        function d(e) {
+            return 'string' != typeof e && (e = String(e)), e;
+        }
+        function h(e) {
+            var t = {
+                next: function () {
+                    var t = e.shift();
+                    return {done: void 0 === t, value: t};
+                },
             };
+            return (
+                i &&
+                    (t[Symbol.iterator] = function () {
+                        return t;
+                    }),
+                t
+            );
+        }
+        function p(e) {
+            (this.map = {}),
+                e instanceof p
+                    ? e.forEach(function (e, t) {
+                          this.append(t, e);
+                      }, this)
+                    : Array.isArray(e)
+                    ? e.forEach(function (e) {
+                          this.append(e[0], e[1]);
+                      }, this)
+                    : e &&
+                      Object.getOwnPropertyNames(e).forEach(function (t) {
+                          this.append(t, e[t]);
+                      }, this);
+        }
+        function y(e) {
+            if (e.bodyUsed) return Promise.reject(new TypeError('Already read'));
+            e.bodyUsed = !0;
+        }
+        function m(e) {
+            return new Promise(function (t, n) {
+                (e.onload = function () {
+                    t(e.result);
+                }),
+                    (e.onerror = function () {
+                        n(e.error);
+                    });
+            });
+        }
+        function v(e) {
+            var t = new FileReader(),
+                n = m(t);
+            return t.readAsArrayBuffer(e), n;
+        }
+        function g(e) {
+            if (e.slice) return e.slice(0);
+            var t = new Uint8Array(e.byteLength);
+            return t.set(new Uint8Array(e)), t.buffer;
+        }
+        function b() {
+            return (
+                (this.bodyUsed = !1),
+                (this._initBody = function (e) {
+                    var t;
+                    (this.bodyUsed = this.bodyUsed),
+                        (this._bodyInit = e),
+                        e
+                            ? 'string' == typeof e
+                                ? (this._bodyText = e)
+                                : a && Blob.prototype.isPrototypeOf(e)
+                                ? (this._bodyBlob = e)
+                                : c && FormData.prototype.isPrototypeOf(e)
+                                ? (this._bodyFormData = e)
+                                : o && URLSearchParams.prototype.isPrototypeOf(e)
+                                ? (this._bodyText = e.toString())
+                                : s && a && (t = e) && DataView.prototype.isPrototypeOf(t)
+                                ? ((this._bodyArrayBuffer = g(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
+                                : s && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
+                                ? (this._bodyArrayBuffer = g(e))
+                                : (this._bodyText = e = Object.prototype.toString.call(e))
+                            : (this._bodyText = ''),
+                        this.headers.get('content-type') ||
+                            ('string' == typeof e
+                                ? this.headers.set('content-type', 'text/plain;charset=UTF-8')
+                                : this._bodyBlob && this._bodyBlob.type
+                                ? this.headers.set('content-type', this._bodyBlob.type)
+                                : o && URLSearchParams.prototype.isPrototypeOf(e) && this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8'));
+                }),
+                a &&
+                    ((this.blob = function () {
+                        var e = y(this);
+                        if (e) return e;
+                        if (this._bodyBlob) return Promise.resolve(this._bodyBlob);
+                        if (this._bodyArrayBuffer) return Promise.resolve(new Blob([this._bodyArrayBuffer]));
+                        if (this._bodyFormData) throw new Error('could not read FormData body as blob');
+                        return Promise.resolve(new Blob([this._bodyText]));
+                    }),
+                    (this.arrayBuffer = function () {
+                        if (this._bodyArrayBuffer) {
+                            var e = y(this);
+                            return (
+                                e ||
+                                (ArrayBuffer.isView(this._bodyArrayBuffer)
+                                    ? Promise.resolve(
+                                          this._bodyArrayBuffer.buffer.slice(this._bodyArrayBuffer.byteOffset, this._bodyArrayBuffer.byteOffset + this._bodyArrayBuffer.byteLength)
+                                      )
+                                    : Promise.resolve(this._bodyArrayBuffer))
+                            );
+                        }
+                        return this.blob().then(v);
+                    })),
+                (this.text = function () {
+                    var e,
+                        t,
+                        n,
+                        r = y(this);
+                    if (r) return r;
+                    if (this._bodyBlob) return (e = this._bodyBlob), (t = new FileReader()), (n = m(t)), t.readAsText(e), n;
+                    if (this._bodyArrayBuffer)
+                        return Promise.resolve(
+                            (function (e) {
+                                for (var t = new Uint8Array(e), n = new Array(t.length), r = 0; r < t.length; r++) n[r] = String.fromCharCode(t[r]);
+                                return n.join('');
+                            })(this._bodyArrayBuffer)
+                        );
+                    if (this._bodyFormData) throw new Error('could not read FormData body as text');
+                    return Promise.resolve(this._bodyText);
+                }),
+                c &&
+                    (this.formData = function () {
+                        return this.text().then(_);
+                    }),
+                (this.json = function () {
+                    return this.text().then(JSON.parse);
+                }),
+                this
+            );
+        }
+        (p.prototype.append = function (e, t) {
+            (e = f(e)), (t = d(t));
+            var n = this.map[e];
+            this.map[e] = n ? n + ', ' + t : t;
+        }),
+            (p.prototype.delete = function (e) {
+                delete this.map[f(e)];
+            }),
+            (p.prototype.get = function (e) {
+                return (e = f(e)), this.has(e) ? this.map[e] : null;
+            }),
+            (p.prototype.has = function (e) {
+                return this.map.hasOwnProperty(f(e));
+            }),
+            (p.prototype.set = function (e, t) {
+                this.map[f(e)] = d(t);
+            }),
+            (p.prototype.forEach = function (e, t) {
+                for (var n in this.map) this.map.hasOwnProperty(n) && e.call(t, this.map[n], n, this);
+            }),
+            (p.prototype.keys = function () {
+                var e = [];
+                return (
+                    this.forEach(function (t, n) {
+                        e.push(n);
+                    }),
+                    h(e)
+                );
+            }),
+            (p.prototype.values = function () {
+                var e = [];
+                return (
+                    this.forEach(function (t) {
+                        e.push(t);
+                    }),
+                    h(e)
+                );
+            }),
+            (p.prototype.entries = function () {
+                var e = [];
+                return (
+                    this.forEach(function (t, n) {
+                        e.push([n, t]);
+                    }),
+                    h(e)
+                );
+            }),
+            i && (p.prototype[Symbol.iterator] = p.prototype.entries);
+        var S = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
+        function w(e, t) {
+            if (!(this instanceof w)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+            var n,
+                r,
+                o = (t = t || {}).body;
+            if (e instanceof w) {
+                if (e.bodyUsed) throw new TypeError('Already read');
+                (this.url = e.url),
+                    (this.credentials = e.credentials),
+                    t.headers || (this.headers = new p(e.headers)),
+                    (this.method = e.method),
+                    (this.mode = e.mode),
+                    (this.signal = e.signal),
+                    o || null == e._bodyInit || ((o = e._bodyInit), (e.bodyUsed = !0));
+            } else this.url = String(e);
+            if (
+                ((this.credentials = t.credentials || this.credentials || 'same-origin'),
+                (!t.headers && this.headers) || (this.headers = new p(t.headers)),
+                (this.method = ((n = t.method || this.method || 'GET'), (r = n.toUpperCase()), S.indexOf(r) > -1 ? r : n)),
+                (this.mode = t.mode || this.mode || null),
+                (this.signal = t.signal || this.signal),
+                (this.referrer = null),
+                ('GET' === this.method || 'HEAD' === this.method) && o)
+            )
+                throw new TypeError('Body not allowed for GET or HEAD requests');
+            if ((this._initBody(o), !(('GET' !== this.method && 'HEAD' !== this.method) || ('no-store' !== t.cache && 'no-cache' !== t.cache)))) {
+                var i = /([?&])_=[^&]*/;
+                if (i.test(this.url)) this.url = this.url.replace(i, '$1_=' + new Date().getTime());
+                else {
+                    this.url += (/\?/.test(this.url) ? '&' : '?') + '_=' + new Date().getTime();
+                }
+            }
+        }
+        function _(e) {
+            var t = new FormData();
+            return (
+                e
+                    .trim()
+                    .split('&')
+                    .forEach(function (e) {
+                        if (e) {
+                            var n = e.split('='),
+                                r = n.shift().replace(/\+/g, ' '),
+                                o = n.join('=').replace(/\+/g, ' ');
+                            t.append(decodeURIComponent(r), decodeURIComponent(o));
+                        }
+                    }),
+                t
+            );
+        }
+        function x(e, t) {
+            if (!(this instanceof x)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+            t || (t = {}),
+                (this.type = 'default'),
+                (this.status = void 0 === t.status ? 200 : t.status),
+                (this.ok = this.status >= 200 && this.status < 300),
+                (this.statusText = 'statusText' in t ? t.statusText : ''),
+                (this.headers = new p(t.headers)),
+                (this.url = t.url || ''),
+                this._initBody(e);
+        }
+        (w.prototype.clone = function () {
+            return new w(this, {body: this._bodyInit});
+        }),
+            b.call(w.prototype),
+            b.call(x.prototype),
+            (x.prototype.clone = function () {
+                return new x(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new p(this.headers), url: this.url});
+            }),
+            (x.error = function () {
+                var e = new x(null, {status: 0, statusText: ''});
+                return (e.type = 'error'), e;
+            });
+        var A = [301, 302, 303, 307, 308];
+        x.redirect = function (e, t) {
+            if (-1 === A.indexOf(t)) throw new RangeError('Invalid status code');
+            return new x(null, {status: t, headers: {location: e}});
+        };
+        var k = r.DOMException;
+        try {
+            new k();
+        } catch (e) {
+            ((k = function (e, t) {
+                (this.message = e), (this.name = t);
+                var n = Error(e);
+                this.stack = n.stack;
+            }).prototype = Object.create(Error.prototype)),
+                (k.prototype.constructor = k);
+        }
+        function M(e, t) {
+            return new Promise(function (n, o) {
+                var i = new w(e, t);
+                if (i.signal && i.signal.aborted) return o(new k('Aborted', 'AbortError'));
+                var c = new XMLHttpRequest();
+                function u() {
+                    c.abort();
+                }
+                (c.onload = function () {
+                    var e,
+                        t,
+                        r = {
+                            status: c.status,
+                            statusText: c.statusText,
+                            headers:
+                                ((e = c.getAllResponseHeaders() || ''),
+                                (t = new p()),
+                                e
+                                    .replace(/\r?\n[\t ]+/g, ' ')
+                                    .split(/\r?\n/)
+                                    .forEach(function (e) {
+                                        var n = e.split(':'),
+                                            r = n.shift().trim();
+                                        if (r) {
+                                            var o = n.join(':').trim();
+                                            t.append(r, o);
+                                        }
+                                    }),
+                                t),
+                        };
+                    r.url = 'responseURL' in c ? c.responseURL : r.headers.get('X-Request-URL');
+                    var o = 'response' in c ? c.response : c.responseText;
+                    setTimeout(function () {
+                        n(new x(o, r));
+                    }, 0);
+                }),
+                    (c.onerror = function () {
+                        setTimeout(function () {
+                            o(new TypeError('Network request failed'));
+                        }, 0);
+                    }),
+                    (c.ontimeout = function () {
+                        setTimeout(function () {
+                            o(new TypeError('Network request failed'));
+                        }, 0);
+                    }),
+                    (c.onabort = function () {
+                        setTimeout(function () {
+                            o(new k('Aborted', 'AbortError'));
+                        }, 0);
+                    }),
+                    c.open(
+                        i.method,
+                        (function (e) {
+                            try {
+                                return '' === e && r.location.href ? r.location.href : e;
+                            } catch (t) {
+                                return e;
+                            }
+                        })(i.url),
+                        !0
+                    ),
+                    'include' === i.credentials ? (c.withCredentials = !0) : 'omit' === i.credentials && (c.withCredentials = !1),
+                    'responseType' in c &&
+                        (a
+                            ? (c.responseType = 'blob')
+                            : s && i.headers.get('Content-Type') && -1 !== i.headers.get('Content-Type').indexOf('application/octet-stream') && (c.responseType = 'arraybuffer')),
+                    !t || 'object' != typeof t.headers || t.headers instanceof p
+                        ? i.headers.forEach(function (e, t) {
+                              c.setRequestHeader(t, e);
+                          })
+                        : Object.getOwnPropertyNames(t.headers).forEach(function (e) {
+                              c.setRequestHeader(e, d(t.headers[e]));
+                          }),
+                    i.signal &&
+                        (i.signal.addEventListener('abort', u),
+                        (c.onreadystatechange = function () {
+                            4 === c.readyState && i.signal.removeEventListener('abort', u);
+                        })),
+                    c.send(void 0 === i._bodyInit ? null : i._bodyInit);
+            });
+        }
+        (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = p), (r.Request = w), (r.Response = x));
+        n(111);
+        var E = n(35);
+        n(52);
+        function q(e, t, n, r, o, i, a) {
+            try {
+                var c = e[i](a),
+                    s = c.value;
+            } catch (e) {
+                return void n(e);
+            }
+            c.done ? t(s) : Promise.resolve(s).then(r, o);
+        }
+        function C(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (r, o) {
+                    var i = e.apply(t, n);
+                    function a(e) {
+                        q(i, r, o, a, c, 'next', e);
+                    }
+                    function c(e) {
+                        q(i, r, o, a, c, 'throw', e);
+                    }
+                    a(void 0);
+                });
+            };
+        }
+        function T(e, t) {
+            for (var n = 0; n < t.length; n++) {
+                var r = t[n];
+                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
+            }
+        }
+        var P = n(40),
+            R = n(113);
+        P.extend(R);
+        var O = (function () {
+                function e() {
+                    !(function (e, t) {
+                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                    })(this, e);
+                }
+                var t, n, r;
+                return (
+                    (t = e),
+                    (n = [
+                        {
+                            key: 'init',
+                            value: function (e, t, n) {
+                                var r,
+                                    o,
+                                    i,
+                                    a,
+                                    c = this,
+                                    s = new URL(window.location.href),
+                                    u = new URLSearchParams(s.search),
+                                    l = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+                                function f(e) {
+                                    document.querySelector('.SearchHotels') &&
+                                        document.querySelectorAll(e).forEach(function (e) {
+                                            e.style.display = 'none';
+                                        });
+                                }
+                                function d() {
+                                    return (d = C(
+                                        regeneratorRuntime.mark(function e(t) {
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (document.querySelector(t)) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (
+                                                                (document.querySelector(t).style.position = 'absolute'),
+                                                                (document.querySelector(t).style.left = '-10000px'),
+                                                                (e.next = 6),
+                                                                n.waitForSelectorInDOM('#city')
+                                                            );
+                                                        case 6:
+                                                            document.querySelector(t).removeAttribute('required');
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )).apply(this, arguments);
+                                }
+                                function h(e, t, n, r) {
+                                    document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
+                                }
+                                function p(e) {
+                                    var t = document.querySelector(e),
+                                        n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
+                                    return (
+                                        t.addEventListener('change', function () {
+                                            for (var e = 0; e < t.length; e += 1)
+                                                if (t[e].selected) {
+                                                    (t.selectedIndex = e), (n = t[e].textContent);
+                                                    break;
+                                                }
+                                            return n;
+                                        }),
+                                        n
+                                    );
+                                }
+                                function y() {
+                                    if ('search-results' === t && '' !== document.querySelector('input#hotelName').value) return document.querySelector('input#hotelName').value;
+                                }
+                                function m(e, t) {
+                                    var n = '';
+                                    return (
+                                        document.querySelectorAll(e).forEach(function (e) {
+                                            if (!e.classList.contains(t)) {
+                                                if (e.querySelector('input').checked) {
+                                                    var r = e.querySelector('span').textContent;
+                                                    n += ''.concat(r, ',');
+                                                }
+                                                return n;
+                                            }
+                                        }),
+                                        n.slice(0, -1)
+                                    );
+                                }
+                                function v(e) {
+                                    if (l.has(e)) return l.get(e);
+                                }
+                                document.querySelector('form#searchForm').addEventListener('submit', function (i) {
+                                    i.preventDefault();
+                                    var a,
+                                        s,
+                                        u,
+                                        f,
+                                        d,
+                                        h,
+                                        g = window.location.origin,
+                                        b = ''
+                                            .concat(g, '/v6/?type=geo&siteid=')
+                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                            .concat(e.distance_unit),
+                                        S = new URL(b);
+                                    function w(e) {
+                                        Object.keys(e).forEach(function (t) {
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && S.searchParams.append(e[t].key, e[t].value);
+                                        });
+                                    }
+                                    'standard' === n.getMetaTagContent('theme')
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (f = P(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
+                                          (d = P(f).diff(P(u), 'days')))
+                                        : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        'standard' !== n.getMetaTagContent('theme') &&
+                                            ((c.check_in_value = document.querySelector('input#theCheckIn').value),
+                                            (c.check_out_value = document.querySelector('input#theCheckOut').value)),
+                                        r
+                                            ? ((a = r.lat), (s = r.lng))
+                                            : o
+                                            ? ((a = o.lat), (s = o.lng))
+                                            : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
+                                        w({
+                                            longitude: {key: 'longitude', value: s},
+                                            latitude: {key: 'latitude', value: a},
+                                            destination: {
+                                                key: 'destination',
+                                                value:
+                                                    ((h = 'input#address-input'),
+                                                    null !== document.querySelector(h).value
+                                                        ? document.querySelector(h).value
+                                                        : l.has('destination')
+                                                        ? l.get('destination')
+                                                        : void 0),
+                                            },
+                                            checkin: {key: 'checkin', value: u},
+                                            nights: {key: 'nights', value: d},
+                                            rooms: {key: 'rooms', value: p('select#rooms')},
+                                            adults: {key: 'adults', value: p('select#adults')},
+                                            currency: {key: 'currency', value: e.currency},
+                                            amenities: {key: 'amenities', value: m('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: m('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: m('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            optionalHotel: {key: 'hotelname', value: y()},
+                                        }),
+                                        'search-results' === t &&
+                                            'lodging' === e.site_type.toLowerCase() &&
+                                            w({
+                                                properties: {key: 'properties', value: v('properties')},
+                                                utm_source: {key: 'utm_source', value: v('utm_source')},
+                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
+                                                radius: {key: 'radius', value: v('radius')},
+                                                groupId: {key: 'groupid', value: v('groupid')},
+                                                cid: {key: 'cid', value: v('cid')},
+                                                points: {key: 'points', value: v('points')},
+                                            }),
+                                        'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        (window.location.href = decodeURIComponent(S));
+                                }),
+                                    (function (e) {
+                                        d.apply(this, arguments);
+                                    })('input#city'),
+                                    'landing-page' === t &&
+                                        h(
+                                            '.RootBody',
+                                            'div#CitySearchContainer span',
+                                            'beforeEnd',
+                                            '<input type="search" id="address-input" placeholder="Destination" required="true" />'
+                                        ),
+                                    'search-results' === t &&
+                                        (h(
+                                            '.SearchHotels',
+                                            'div#theSearchBox',
+                                            'afterBegin',
+                                            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
+                                        ),
+                                        (function () {
+                                            if (document.querySelector('.SearchHotels')) {
+                                                var e;
+                                                null !== u.get('destination') && (e = u.get('destination')),
+                                                    (e =
+                                                        null !== l.get('destination')
+                                                            ? l.get('destination')
+                                                            : ''
+                                                                  .concat(document.querySelector('span[itemprop="addressLocality"]').textContent, ', ')
+                                                                  .concat(document.querySelector('span[itemprop="addressRegion"]').textContent));
+                                                var t = document.querySelector('input#address-input');
+                                                (t.value = e),
+                                                    t.addEventListener('click', function () {
+                                                        t.value = '';
+                                                    });
+                                            }
+                                        })()),
+                                    document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
+                                    f('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    'search-results' === t &&
+                                        'cug' !== e.site_type.toLowerCase() &&
+                                        'retail' !== e.site_type.toLowerCase() &&
+                                        n.waitForSelectorInDOM('.algolia-places').then(function () {
+                                            (document.querySelector('.algolia-places').style.display = 'none'),
+                                                (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
+                                        }),
+                                    p('select#rooms'),
+                                    p('select#adults'),
+                                    (i = 'input#theCheckIn'),
+                                    document.querySelector(i) && (document.querySelector(i).required = !0),
+                                    jQuery('#theBody').on('arnMapLoadedEvent', function () {
+                                        u.has('locationlabel') || u.has('points') || f('img.arn-green-marker-icon');
+                                    }),
+                                    (a = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
+                                        aroundLatLngViaIP: 'false',
+                                        type: 'city',
+                                    })).on('change', function (e) {
+                                        (document.querySelector('input#address-input').value = e.suggestion.value || ''), (r = e.suggestion.latlng);
+                                    }),
+                                    a.on('suggestions', function (e) {
+                                        o = e.rawAnswer.hits[0]._geoloc;
+                                    });
+                            },
+                        },
+                    ]) && T(t.prototype, n),
+                    r && T(t, r),
+                    e
+                );
+            })(),
+            j = n(21);
+        function H(e, t, n, r, o, i, a) {
+            try {
+                var c = e[i](a),
+                    s = c.value;
+            } catch (e) {
+                return void n(e);
+            }
+            c.done ? t(s) : Promise.resolve(s).then(r, o);
+        }
+        function D(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (r, o) {
+                    var i = e.apply(t, n);
+                    function a(e) {
+                        H(i, r, o, a, c, 'next', e);
+                    }
+                    function c(e) {
+                        H(i, r, o, a, c, 'throw', e);
+                    }
+                    a(void 0);
+                });
+            };
+        }
+        function F(e, t) {
+            for (var n = 0; n < t.length; n++) {
+                var r = t[n];
+                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
+            }
+        }
+        var B = new (n.n(j).a)(),
+            I = n(40),
+            N = new E.a(),
+            $ = new O(),
+            Y = (function () {
+                function e(t) {
+                    !(function (e, t) {
+                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                    })(this, e),
+                        console.log('Output: BasePortal -> constructor -> config', t),
+                        (this.site_id = ''),
+                        (this.page_name = N.getPageName()),
+                        (this.site_config = t),
+                        (this.currency = ''),
+                        (this.svg_arrow =
+                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
+                        (this.map_loaded = !1),
+                        (this.selected_currency = 'USD');
+                }
+                var t, n, r, o, i, a, c, s, u, l, f, d;
+                return (
+                    (t = e),
+                    (n = [
+                        {
+                            key: 'init',
+                            value: function () {
+                                var e = this;
+                                this.site_config || console.error('No site config found.'),
+                                    this.initializeARNRatesReadyEvent(),
+                                    N.ieForEachPolyfill(),
+                                    this.getSiteID().then(
+                                        (function () {
+                                            var t = D(
+                                                regeneratorRuntime.mark(function t(n) {
+                                                    return regeneratorRuntime.wrap(function (t) {
+                                                        for (;;)
+                                                            switch ((t.prev = t.next)) {
+                                                                case 0:
+                                                                    return (
+                                                                        N.getPageName(),
+                                                                        e.applyConfigStyles(),
+                                                                        e.setupDatePrompt(),
+                                                                        e.showLanguageFromCongif(),
+                                                                        e.showFilters(),
+                                                                        e.buildMobileMenu(),
+                                                                        N.createHTML(
+                                                                            '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
+                                                                            'head',
+                                                                            'beforeEnd'
+                                                                        ),
+                                                                        (t.next = 9),
+                                                                        N.createHTML(
+                                                                            '<header><a class="logo" href="'
+                                                                                .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
+                                                                                .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
+                                                                            '.config-container',
+                                                                            'afterEnd'
+                                                                        )
+                                                                    );
+                                                                case 9:
+                                                                    'cug' === e.site_config.site_type &&
+                                                                        N.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                            D(
+                                                                                regeneratorRuntime.mark(function e() {
+                                                                                    return regeneratorRuntime.wrap(function (e) {
+                                                                                        for (;;)
+                                                                                            switch ((e.prev = e.next)) {
+                                                                                                case 0:
+                                                                                                    N.appendToParent('#commands', 'header');
+                                                                                                case 1:
+                                                                                                case 'end':
+                                                                                                    return e.stop();
+                                                                                            }
+                                                                                    }, e);
+                                                                                })
+                                                                            )
+                                                                        ),
+                                                                        N.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                        'property-detail' === e.page_name &&
+                                                                            (e.addImageSlideshow(),
+                                                                            e.updateAmenitiesLegendTag(),
+                                                                            N.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                            N.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                            N.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                            N.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                            e.isPropByGateway(
+                                                                                e.site_config.exclusive_rate_text,
+                                                                                e.site_config.host_hotel_text,
+                                                                                e.site_config.partner_hotel_text,
+                                                                                e.site_config.lodging.event_name
+                                                                            ),
+                                                                            e.updatePropReviewsURLToUseAnchor(),
+                                                                            e.getTotalNights().then(function (t) {
+                                                                                e.getCurrency().then(function (n) {
+                                                                                    e.showFullStayAndNightlyRates(t, n);
+                                                                                });
+                                                                            }),
+                                                                            N.moveElementIntoExistingWrapper(
+                                                                                '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
+                                                                                '.SinglePropDetail .ArnPropAddress',
+                                                                                'afterEnd'
+                                                                            ),
+                                                                            N.moveElementIntoExistingWrapper(
+                                                                                'div.subHeaderContainer > div > a > span.translateMe',
+                                                                                '.SinglePropDetail .ArnLeftListContainer',
+                                                                                'afterBegin'
+                                                                            )),
+                                                                        'checkout' === e.page_name &&
+                                                                            (N.createModal(
+                                                                                [document.querySelector('#theStayPolicies')],
+                                                                                'Policies & Fees',
+                                                                                'checkout',
+                                                                                '#theConfirmationContainer',
+                                                                                'afterBegin'
+                                                                            ),
+                                                                            N.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                            N.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                            N.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                            N.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                            N.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                            N.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                            N.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                            e.formatCheckoutForm(),
+                                                                            e.setupReservationSummaryContainer(),
+                                                                            N.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                            N.emailVerificationSetup(),
+                                                                            e.fixCheckoutInputTabOrder(),
+                                                                            N.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
+                                                                        'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
+                                                                        document.querySelector('.RootBody') &&
+                                                                            ($.init(e.site_config, e.page_name, N),
+                                                                            e.buildCurrencyDropdown(),
+                                                                            N.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                            N.createHTML(
+                                                                                '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
+                                                                                '.RootBody .ArnPrimarySearchContainer',
+                                                                                'beforeBegin'
+                                                                            ),
+                                                                            N.moveOrphanedElementsIntoNewWrapper(
+                                                                                [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
+                                                                                'root-search-container',
+                                                                                '.RootBody .ArnSearchContainerMainDiv',
+                                                                                'afterBegin'
+                                                                            ),
+                                                                            N.moveElementIntoExistingWrapper(
+                                                                                '.ArnSecondarySearchOuterContainer',
+                                                                                '.ArnPrimarySearchContainer',
+                                                                                'beforeEnd'
+                                                                            ),
+                                                                            N.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                        N.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                        N.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                        N.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                        N.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                        N.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                        N.createHTML(
+                                                                            '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
+                                                                            '#theWBLoginFormBody .ForgotPasswordAction',
+                                                                            'afterEnd'
+                                                                        ),
+                                                                        'lrg-page' === e.page_name && e.replaceLRGForm(),
+                                                                        'search-results' === e.page_name && $.init(e.site_config, e.page_name, N),
+                                                                        jQuery('#theBody').on(
+                                                                            'arnMapLoadedEvent',
+                                                                            D(
+                                                                                regeneratorRuntime.mark(function t() {
+                                                                                    return regeneratorRuntime.wrap(function (t) {
+                                                                                        for (;;)
+                                                                                            switch ((t.prev = t.next)) {
+                                                                                                case 0:
+                                                                                                    return (
+                                                                                                        (e.map_loaded = !0),
+                                                                                                        (t.next = 3),
+                                                                                                        N.waitForSelectorInDOM('.pollingFinished')
+                                                                                                    );
+                                                                                                case 3:
+                                                                                                    document.querySelector('.leaflet-control-scale-line') ||
+                                                                                                        L.control.scale().addTo(window.ArnMap),
+                                                                                                        e.useLogoForVenueMapMarker(),
+                                                                                                        e.highlightMapMarkersOnPropertyHover(),
+                                                                                                        e.changeContractedPropertyPinColor();
+                                                                                                case 7:
+                                                                                                case 'end':
+                                                                                                    return t.stop();
+                                                                                            }
+                                                                                    }, t);
+                                                                                })
+                                                                            )
+                                                                        ),
+                                                                        jQuery(document).on(
+                                                                            'ratesReadyEvent',
+                                                                            D(
+                                                                                regeneratorRuntime.mark(function t() {
+                                                                                    return regeneratorRuntime.wrap(function (t) {
+                                                                                        for (;;)
+                                                                                            switch ((t.prev = t.next)) {
+                                                                                                case 0:
+                                                                                                    setTimeout(function () {
+                                                                                                        e.isPropByGateway(
+                                                                                                            e.site_config.exclusive_rate_text,
+                                                                                                            e.site_config.host_hotel_text,
+                                                                                                            e.site_config.partner_hotel_text,
+                                                                                                            e.site_config.lodging.event_name
+                                                                                                        ),
+                                                                                                            'property-detail' === e.page_name &&
+                                                                                                                'cug' === e.site_config.site_type.toLowerCase() &&
+                                                                                                                e.cugConfigs();
+                                                                                                    }, 1);
+                                                                                                case 1:
+                                                                                                case 'end':
+                                                                                                    return t.stop();
+                                                                                            }
+                                                                                    }, t);
+                                                                                })
+                                                                            )
+                                                                        ),
+                                                                        N.waitForSelectorInDOM('.pollingFinished').then(
+                                                                            (function () {
+                                                                                var t = D(
+                                                                                    regeneratorRuntime.mark(function t(n) {
+                                                                                        return regeneratorRuntime.wrap(function (t) {
+                                                                                            for (;;)
+                                                                                                switch ((t.prev = t.next)) {
+                                                                                                    case 0:
+                                                                                                        if (
+                                                                                                            ('hold-rooms' === e.page_name &&
+                                                                                                                (e.moveReviewsIntoPropNameContainer(),
+                                                                                                                N.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                            'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
+                                                                                                        ) {
+                                                                                                            t.next = 3;
+                                                                                                            break;
+                                                                                                        }
+                                                                                                        return t.abrupt('return');
+                                                                                                    case 3:
+                                                                                                        return (
+                                                                                                            e.buildCurrencyDropdown(),
+                                                                                                            e.cugConfigs(),
+                                                                                                            e.implementAds(),
+                                                                                                            e.toggleMap(),
+                                                                                                            e.addLRGDetails(),
+                                                                                                            e.getTotalNights().then(function (t) {
+                                                                                                                e.getCurrency().then(function (n) {
+                                                                                                                    e.showFullStayAndNightlyRates(t, n);
+                                                                                                                });
+                                                                                                            }),
+                                                                                                            e.createStarIcons(),
+                                                                                                            e.addHRToProperties(),
+                                                                                                            e.showLoaderOnResultsUpdate(),
+                                                                                                            e.showSearchContainerOnMobile(),
+                                                                                                            e.moveFooterOutOfSearchContainer(),
+                                                                                                            e.moveReviewsIntoPropNameContainer(),
+                                                                                                            N.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                            e.movePropClassBelowPropName(),
+                                                                                                            N.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                            N.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                            N.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                            N.updateHTML('.lblRating', 'Stars'),
+                                                                                                            N.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                            N.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                            N.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                            N.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                            N.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                            N.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                            N.moveElementIntoExistingWrapper(
+                                                                                                                '.ArnPropClass',
+                                                                                                                '.ArnPropName',
+                                                                                                                'beforeEnd'
+                                                                                                            ),
+                                                                                                            N.moveElementIntoExistingWrapper(
+                                                                                                                '#theOtherSubmitButton',
+                                                                                                                '.ArnSecondarySearchOuterContainer',
+                                                                                                                'beforeEnd'
+                                                                                                            ),
+                                                                                                            (t.next = 31),
+                                                                                                            N.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                N.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                            })
+                                                                                                        );
+                                                                                                    case 31:
+                                                                                                        return (
+                                                                                                            (t.next = 33),
+                                                                                                            N.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                N.createWrapper(
+                                                                                                                    '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                                                                                                                    '.ArnSecondarySearchOuterContainer',
+                                                                                                                    'sort-wrapper',
+                                                                                                                    'afterBegin'
+                                                                                                                ).then(function () {
+                                                                                                                    e.createMobileSortAndFilter(),
+                                                                                                                        N.createHTML(
+                                                                                                                            '<h4>Sort</h4>',
+                                                                                                                            '.sort-wrapper',
+                                                                                                                            'afterBegin'
+                                                                                                                        ),
+                                                                                                                        N.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
+                                                                                                                            ),
+                                                                                                                        N.matchMediaQuery('max-width: 800px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                            );
+                                                                                                                });
+                                                                                                            })
+                                                                                                        );
+                                                                                                    case 33:
+                                                                                                        if (!window.matchMedia('(min-width: 1105px)')) {
+                                                                                                            t.next = 41;
+                                                                                                            break;
+                                                                                                        }
+                                                                                                        return (t.next = 37), N.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                    case 37:
+                                                                                                        document.querySelector('.leaflet-control-scale-line') ||
+                                                                                                            L.control.scale().addTo(window.ArnMap),
+                                                                                                            e.useLogoForVenueMapMarker(),
+                                                                                                            e.highlightMapMarkersOnPropertyHover(),
+                                                                                                            e.changeContractedPropertyPinColor();
+                                                                                                    case 41:
+                                                                                                    case 'end':
+                                                                                                        return t.stop();
+                                                                                                }
+                                                                                        }, t);
+                                                                                    })
+                                                                                );
+                                                                                return function (e) {
+                                                                                    return t.apply(this, arguments);
+                                                                                };
+                                                                            })()
+                                                                        ),
+                                                                        e.applyDarkTheme(),
+                                                                        e.setInputToRequired('input#city'),
+                                                                        e.setInputToRequired('input#theCheckIn'),
+                                                                        e.resizeViewportForMapMobile(),
+                                                                        e.showCoronavirusInfoBanner(),
+                                                                        e.showCurrencySelect(),
+                                                                        e.positionPropReviews(),
+                                                                        e.insertPoweredByFooterLogo(),
+                                                                        e.updateConfirmationCheckBoxes(),
+                                                                        e.showMoreAmenities(),
+                                                                        e.appendMemberTokenForCug(),
+                                                                        e.hideRemainingRooms(),
+                                                                        e.replaceHTMLWithFile(
+                                                                            'https://static.hotelsforhope.com/ares/html/terms.html',
+                                                                            '.ArnSubPage.ArnTermsConditions'
+                                                                        ),
+                                                                        e.addLinkToLoginFromRegisterPage(),
+                                                                        e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        e.updateSupportPageText(),
+                                                                        e.removeLrgFooterLink(),
+                                                                        document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
+                                                                case 44:
+                                                                case 'end':
+                                                                    return t.stop();
+                                                            }
+                                                    }, t);
+                                                })
+                                            );
+                                            return function (e) {
+                                                return t.apply(this, arguments);
+                                            };
+                                        })()
+                                    );
+                            },
+                        },
+                        {
+                            key: 'initializeARNRatesReadyEvent',
+                            value: function () {
+                                function e() {
+                                    try {
+                                        setTimeout(function () {
+                                            jQuery(document).trigger('ratesReadyEvent');
+                                        }, 1);
+                                    } catch (e) {
+                                        console.log(e);
+                                    }
+                                }
+                                Ajax.Responders.register({onComplete: e}), e();
+                            },
+                        },
+                        {
+                            key: 'getSiteID',
+                            value:
+                                ((d = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (((this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content')), this.site_id)) {
+                                                                e.next = 3;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 3:
+                                                            return e.abrupt('return', this.site_id);
+                                                        case 4:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return d.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'getCurrency',
+                            value:
+                                ((f = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if ((t = document.querySelector('meta[name="currency"]'))) {
+                                                                e.next = 3;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 3:
+                                                            return (this.currency = t.getAttribute('content')), e.abrupt('return', this.currency);
+                                                        case 5:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return f.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'donationAmount',
+                            value: function () {
+                                if (document.querySelector('.ConfirmationForm')) {
+                                    var e = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
+                                    document.querySelector('.topRoomFunding') &&
+                                        null !== e &&
+                                        (document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ '.concat(
+                                            2 * e,
+                                            ' donation</span> to <span>RoomFunding</span>.  And s at no cost to you.</p>'
+                                        ));
+                                }
+                            },
+                        },
+                        {
+                            key: 'addPerNightToPrice',
+                            value: function (e, t) {
+                                document.querySelector(e) &&
+                                    document.querySelectorAll(t).forEach(function (e) {
+                                        e.parentNode.querySelector('.perNight') || e.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'updateBookingFeeLanguage',
+                            value: function () {
+                                if (document.querySelector('.CheckOutForm')) {
+                                    var e = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
+                                    e &&
+                                        (e.textContent.includes('4.95') || e.textContent.includes('5.00')) &&
+                                        e.textContent.includes('Hotels For Hope') &&
+                                        e.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
+                                        );
+                                }
+                            },
+                        },
+                        {
+                            key: 'hidePropertyThumbnailArrowIfNoPropertyThumbnails',
+                            value: function () {
+                                'search-results' !== !this.page_name &&
+                                    document.querySelectorAll('.ArnImageLink img').forEach(function (e) {
+                                        if (e && e.getAttribute('src').includes('no_image_300.gif')) {
+                                            var t = e.parentNode;
+                                            if (t) {
+                                                t.classList.add('no-images');
+                                                var n = t.previousSibling;
+                                                n && n.classList.contains('ArnPropImageButtons') && (n.style.display = 'none');
+                                            }
+                                        }
+                                    });
+                            },
+                        },
+                        {
+                            key: 'createStarIcons',
+                            value: function () {
+                                document.querySelectorAll('.ArnPropClass').forEach(function (e) {
+                                    var t = e.textContent.replace(/\D/g, ''),
+                                        n =
+                                            '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
+                                    '1' === t && (e.innerHTML = n),
+                                        '2' === t && (e.innerHTML = n.repeat(2)),
+                                        '3' === t && (e.innerHTML = n.repeat(3)),
+                                        '4' === t && (e.innerHTML = n.repeat(4)),
+                                        '5' === t && (e.innerHTML = n.repeat(5));
+                                });
+                            },
+                        },
+                        {
+                            key: 'createMobileSortAndFilter',
+                            value: function () {
+                                if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
+                                    N.updateHTML(
+                                        '.sort',
+                                        '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
+                                    ),
+                                        N.createHTML(
+                                            '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
+                                            '#searchForm',
+                                            'beforeEnd'
+                                        );
+                                    var e = document.querySelector('.ArnSortBy'),
+                                        t = document.querySelector('.sort-wrapper'),
+                                        n = document.querySelector('.ArnSecondarySearchOuterContainer'),
+                                        r = document.querySelector('.sort-filter-overlay');
+                                    e.removeEventListener('click', function () {}),
+                                        e.addEventListener('click', function () {
+                                            r.classList.toggle('show-sort-filter'),
+                                                document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', t),
+                                                document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', n),
+                                                (n.style.display = 'block'),
+                                                (t.style.display = 'block'),
+                                                document.body.classList.toggle('fixed');
+                                        }),
+                                        document.querySelector('.sort-filter-close').addEventListener('click', function () {
+                                            r.classList.toggle('show-sort-filter'), document.body.classList.toggle('fixed');
+                                        }),
+                                        document.querySelector('.sort-wrapper a').addEventListener('click', function (e) {
+                                            e.toElement.classList.toggle('active-filter');
+                                        }),
+                                        n.querySelectorAll('.ArnSearchField').forEach(function (e) {
+                                            e.classList.add('panel');
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'showSearchContainerOnMobile',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n,
+                                    r = new URL(window.location.href),
+                                    o = new URLSearchParams(r.search),
+                                    i = '',
+                                    a = '',
+                                    c = '',
+                                    s = document.querySelector('meta[name="checkIn"]'),
+                                    u = document.querySelector('meta[name="checkOut"]'),
+                                    l = document.querySelector('meta[name="numberOfAdults"]'),
+                                    f = document.querySelector('meta[name="SearchLocation"]'),
+                                    d = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                s &&
+                                    u &&
+                                    f &&
+                                    l &&
+                                    ((e = l.getAttribute('content')),
+                                    (i = f.getAttribute('content')),
+                                    (t = s.getAttribute('content')),
+                                    (n = u.getAttribute('content')),
+                                    (a = I(t)),
+                                    (c = I(n)),
+                                    ('cug' === this.site_config.site_type.toLowerCase() ||
+                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
+                                        (i = o.get('destination')),
+                                    N.createHTML(
+                                        '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
+                                            .concat(i, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                            .concat(a.format('MMMM D'), ' - ')
+                                            .concat(c.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                            .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
+                                        '.SearchHotels .ArnPrimarySearchOuterContainer',
+                                        'beforeBegin'
+                                    ),
+                                    document.querySelector('.show-search-container').addEventListener('click', function () {
+                                        d.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'buildMobileMenu',
+                            value:
+                                ((l = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('#commands')), (n = document.querySelector('#AdminControlsContainer')), t || n)) {
+                                                            e.next = 4;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 4:
+                                                        if (
+                                                            (n.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
+                                                            ),
+                                                            (r = document.querySelector('#hamburger')))
+                                                        ) {
+                                                            e.next = 8;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 8:
+                                                        return (
+                                                            r.addEventListener('click', function () {
+                                                                r.classList.toggle('is-active'), t.classList.toggle('active');
+                                                            }),
+                                                            (e.next = 11),
+                                                            N.waitForSelectorInDOM('header')
+                                                        );
+                                                    case 11:
+                                                        document.querySelector('header').insertAdjacentElement('beforeend', n);
+                                                    case 12:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return l.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'showAdditionalPolicies',
+                            value: function () {
+                                var e = document.querySelector('#theStayPolicies'),
+                                    t = e.querySelector('legend'),
+                                    n = e.offsetHeight,
+                                    r = document.querySelector('#theConfirmationPoliciesAjax');
+                                window.matchMedia('(max-width:800px)').matches &&
+                                    document.querySelector('#theBookingPage') &&
+                                    (r.insertAdjacentElement('afterEnd', e),
+                                    N.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
+                                    e.insertAdjacentElement('beforeBegin', t),
+                                    e.insertAdjacentHTML(
+                                        'beforeEnd',
+                                        '\n        <style>\n            #theStayPolicies {\n                height: 0;\n                display: none;\n            }\n            .show-policies{\n                height: '.concat(
+                                            n,
+                                            'px !important;\n                display: block !important;\n            }\n        </style>\n    '
+                                        )
+                                    ),
+                                    t.addEventListener('click', function () {
+                                        e.classList.toggle('show-policies');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'updatePropReviewsURLToUseAnchor',
+                            value: function () {
+                                var e = document.querySelector('.reviewCount a');
+                                'property-detail' === this.page_name && e && e.setAttribute('href', '#thePropertyReviews');
+                            },
+                        },
+                        {
+                            key: 'moveFooterOutOfSearchContainer',
+                            value: function () {
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelector('.ArnSupportBottom') &&
+                                    document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
+                            },
+                        },
+                        {
+                            key: 'moveReviewsIntoPropNameContainer',
+                            value: function () {
+                                var e = document.querySelectorAll('.SearchHotels .ArnPropName');
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelector('.ArnContainer') &&
+                                    e.forEach(function (e) {
+                                        e.insertAdjacentElement('beforeEnd', e.parentElement.querySelector('.ArnTripAdvisorDetails'));
+                                    });
+                            },
+                        },
+                        {
+                            key: 'toggleMap',
+                            value: function () {
+                                var e = document.querySelector('#ArnPropertyMap'),
+                                    t = document.querySelector('#arnCloseAnchorId'),
+                                    n = document.querySelector('header'),
+                                    r = document.querySelector('.config-container'),
+                                    o = document.querySelector('.ArnToggleMap + .ArnToggleMap');
+                                o && o.click(),
+                                    t &&
+                                        e &&
+                                        ((t.innerHTML =
+                                            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
+                                        t.addEventListener('click', function () {
+                                            if (
+                                                (t.classList.toggle('closeMap'),
+                                                e.classList.toggle('showMap'),
+                                                document.body.classList.toggle('fixed'),
+                                                n.classList.toggle('hideElement'),
+                                                r.classList.toggle('hideElement'),
+                                                t.classList.contains('closeMap'))
+                                            ) {
+                                                t.querySelector('span').textContent = ' Close Map';
+                                                var o = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
+                                                if (!o) return;
+                                                o.appendChild(t);
+                                            } else {
+                                                var i = document.querySelector('#arnToggleMapDiv');
+                                                if (!i) return;
+                                                i.appendChild(t), (t.querySelector('span').innerHTML = ' Open Map');
+                                            }
+                                        }));
+                            },
+                        },
+                        {
+                            key: 'accordion',
+                            value: function (e, t, n) {
+                                if (document.querySelector(e)) {
+                                    var r = document.querySelector(e),
+                                        o = r.querySelector(n),
+                                        i = r.querySelector(t),
+                                        a = i.offsetHeight;
+                                    document
+                                        .querySelector(e)
+                                        .insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>\n            '
+                                                .concat(t, '{\n                transform: translateY(-')
+                                                .concat(
+                                                    a,
+                                                    'px);\n                pointer-events: none;\n                transition: all .75s ease;\n                height: 0;\n                position: relative;\n            }\n            .show-content{\n                transform: translateY(0) !important;\n                opacity: 1 !important;\n                pointer-events: initial !important;\n                height: '
+                                                )
+                                                .concat(a, 'px !important;\n            }\n        </style>\n        ')
+                                        ),
+                                        o.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'
+                                        ),
+                                        o.addEventListener('click', function () {
+                                            i.classList.toggle('show-content'), o.querySelector('svg').classList.toggle('flip-svg');
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'movePropClassBelowPropName',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('.SearchHotels') &&
+                                    e.forEach(function (e) {
+                                        var t = e.querySelector('.ArnPropClass'),
+                                            n = e.querySelector('.ArnPropName');
+                                        e && t && n && n.insertAdjacentElement('beforeEnd', t);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'setupReservationSummaryContainer',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n,
+                                    r,
+                                    o = document.querySelector('.checkInRow td'),
+                                    i = document.querySelector('.checkOutRow td'),
+                                    a = document.querySelector('meta[name="currency"]');
+                                o &&
+                                    i &&
+                                    a &&
+                                    ((t = o.textContent),
+                                    (r = i.textContent),
+                                    (e = I(t).format(this.site_config.dayjs_date_format)),
+                                    (n = I(r).format(this.site_config.dayjs_date_format)),
+                                    N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                    N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                            },
+                        },
+                        {
+                            key: 'formatCheckoutForm',
+                            value: function () {
+                                var e = document.querySelectorAll('.WBGuestFormFields'),
+                                    t = 0;
+                                e.forEach(function (e) {
+                                    (t += 1),
+                                        N.moveElementIntoExistingWrapper(
+                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
+                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
+                                            'afterEnd'
+                                        ),
+                                        N.createWrapper(
+                                            '.RoomNumber-'
+                                                .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
+                                                .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
+                                                .concat(t, ', #theCountryAjax')
+                                                .concat(t),
+                                            '#theBillingAddressAjax'.concat(t),
+                                            'billing-details-container',
+                                            'afterEnd'
+                                        ),
+                                        N.createWrapper(
+                                            '.RoomNumber-'
+                                                .concat(t, ' #theCreditCardBillingNameAjax')
+                                                .concat(t, ',\n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
+                                                .concat(t, ' #theCardVerificationAjax'),
+                                            '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
+                                            'credit-card-details',
+                                            'afterEnd'
+                                        ),
+                                        N.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                        N.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                        N.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                        t > 1 && N.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                        N.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                        N.updateHTML(
+                                            '.cardNumber label',
+                                            '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                                        );
+                                }),
+                                    this.keepHeaderConsistentWhenSameAsLastGuestClicked(t);
+                            },
+                        },
+                        {
+                            key: 'keepHeaderConsistentWhenSameAsLastGuestClicked',
+                            value: function (e) {
+                                document.querySelector('#theCopyInfoAjax input') &&
+                                    document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
+                                        setTimeout(function () {
+                                            N.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                e > 1 && N.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                        }, 750);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'applyConfigStyles',
+                            value: function () {
+                                var e = document.querySelector('#h4h-styles');
+                                this.site_config &&
+                                    e &&
+                                    (N.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    e.insertAdjacentHTML(
+                                        'beforeend',
+                                        '<link href="'
+                                            .concat(B.path, '/site_configs/')
+                                            .concat(this.site_config.directory_name, '/styles/')
+                                            .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                    ));
+                            },
+                        },
+                        {
+                            key: 'applyDarkTheme',
+                            value: function () {
+                                'light' !== this.site_config.theme.toLowerCase() &&
+                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(B.path, '/styles/dark.css" rel="stylesheet">'));
+                            },
+                        },
+                        {
+                            key: 'showLanguageFromCongif',
+                            value: function () {
+                                var e,
+                                    t = '',
+                                    n = document.querySelector('#language'),
+                                    r = document.querySelector('.config-container'),
+                                    o = document.querySelector('meta[name="theme"]');
+                                this.site_config &&
+                                    r &&
+                                    o &&
+                                    n &&
+                                    (this.site_config.show_language_select
+                                        ? (document.querySelector('div#language-label').classList.add('config-label'),
+                                          (e = o.getAttribute('content')),
+                                          document.querySelector(".language-container div[value='".concat(e, "']")).classList.add('active-language'),
+                                          document.body.insertAdjacentElement('afterBegin', r),
+                                          r.insertAdjacentElement('afterBegin', n),
+                                          ((t = n.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
+                                          t.addEventListener('click', function () {
+                                              n.querySelector('.language-container').classList.toggle('show-language-container'),
+                                                  window.document.documentMode || t.querySelector('svg').classList.toggle('flip-svg');
+                                          }),
+                                          window.addEventListener('click', function (e) {
+                                              if (document.querySelector('.show-language-container')) {
+                                                  if (
+                                                      e.target === document.querySelector('#language-label') ||
+                                                      e.target.parentNode === document.querySelector('.language-container')
+                                                  )
+                                                      return;
+                                                  if ((document.querySelector('.language-container').classList.toggle('show-language-container'), window.document.documentMode))
+                                                      return;
+                                                  t.querySelector('svg').classList.toggle('flip-svg');
+                                              }
+                                          }))
+                                        : (n.style.display = 'none'));
+                            },
+                        },
+                        {
+                            key: 'buildCurrencyDropdown',
+                            value:
+                                ((u = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t,
+                                            n,
+                                            r,
+                                            o,
+                                            i = this;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (
+                                                            (t = function () {
+                                                                fetch(''.concat(B.path, '/js/json/currencies.json'))
+                                                                    .then(function (e) {
+                                                                        if (!e.ok) throw e;
+                                                                        return e.json();
+                                                                    })
+                                                                    .then(function (e) {
+                                                                        n(e), r(), o();
+                                                                    })
+                                                                    .catch(function (e) {
+                                                                        e.text().then(function (e) {
+                                                                            console.error('Could not fetch currencies.json', e);
+                                                                        });
+                                                                    });
+                                                            }),
+                                                            (n = function (e) {
+                                                                Object.entries(e);
+                                                                var t = document.createElement('div'),
+                                                                    n = document.createElement('div'),
+                                                                    r = '\n            <h4>Top Currencies</h4>\n            <div class="top-currencies">\n                <span id="AUD"><strong>'
+                                                                        .concat(e.AUD.code, '</strong> - ')
+                                                                        .concat(e.AUD.name, '</span>\n                <span id="CAD"><strong>')
+                                                                        .concat(e.CAD.code, '</strong> - ')
+                                                                        .concat(e.CAD.name, '</span>\n                <span id="EUR"><strong>')
+                                                                        .concat(e.EUR.code, '</strong> - ')
+                                                                        .concat(e.EUR.name, '</span>\n                <span id="MXN"><strong>')
+                                                                        .concat(e.MXN.code, '</strong> - ')
+                                                                        .concat(e.MXN.name, '</span>\n                <span id="GBP"><strong>')
+                                                                        .concat(e.GBP.code, '</strong> - ')
+                                                                        .concat(e.GBP.name, '</span>\n                <span id="USD"><strong>')
+                                                                        .concat(e.USD.code, '</strong> - ')
+                                                                        .concat(e.USD.name, '</span>\n            </div>\n            <h4>All Currencies</h4>\n            ');
+                                                                for (var o in (t.insertAdjacentHTML('afterBegin', r),
+                                                                t.classList.add('currency-content'),
+                                                                n.classList.add('all-currencies'),
+                                                                e))
+                                                                    n.insertAdjacentHTML(
+                                                                        'beforeEnd',
+                                                                        '<span id="'.concat(o, '"><strong>').concat(o, '</strong> - ').concat(e[o].name, '</span>')
+                                                                    );
+                                                                t.insertAdjacentElement('beforeEnd', n),
+                                                                    N.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
+                                                            }),
+                                                            (r = function () {
+                                                                var e = new URLSearchParams(window.location.search),
+                                                                    t = document.querySelector('.dropdown');
+                                                                t &&
+                                                                    t.addEventListener('click', function (t) {
+                                                                        (i.selected_currency = t.target.id),
+                                                                            i.selected_currency &&
+                                                                                (document.querySelector('.active-currency').classList.remove('active-currency'),
+                                                                                document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
+                                                                                (document.querySelector('#currency-label span').textContent = document.querySelector(
+                                                                                    '.active-currency'
+                                                                                ).textContent),
+                                                                                'search-results' === i.page_name &&
+                                                                                    (e.set('currency', i.selected_currency), (window.location.search = e.toString())));
+                                                                    });
+                                                            }),
+                                                            (o = function () {
+                                                                var e = document.querySelector('meta[name="currency"]');
+                                                                if (e) {
+                                                                    var t = e.content;
+                                                                    (i.selected_currency = t),
+                                                                        document.querySelector('#'.concat(t)).classList.add('active-currency'),
+                                                                        (document.querySelector('#currency-label span').textContent = document.querySelector(
+                                                                            '.active-currency'
+                                                                        ).textContent);
+                                                                }
+                                                            }),
+                                                            (e.next = 6),
+                                                            t()
+                                                        );
+                                                    case 6:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return u.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'setupDatePrompt',
+                            value: function () {
+                                var e = document.querySelector('#theDatePrompt');
+                                e &&
+                                    e
+                                        .querySelector('#datePromptContainer')
+                                        .insertAdjacentHTML('afterBegin', '<img src="'.concat(this.site_config.header.logo_file_location, '" alt="Logo">'));
+                            },
+                        },
+                        {
+                            key: 'highlightMapMarkersOnPropertyHover',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('#currentPropertyPage') &&
+                                    n.forEach(function (n) {
+                                        n.addEventListener('mouseenter', function (r) {
+                                            (t = n.parentElement.querySelector('.propId')) &&
+                                                ((e = t.textContent), window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOn(e));
+                                        }),
+                                            n.addEventListener('mouseleave', function (t) {
+                                                window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOff(e);
+                                            });
+                                    });
+                            },
+                        },
+                        {
+                            key: 'showFullStayAndNightlyRates',
+                            value: function (e, t) {
+                                var n,
+                                    r,
+                                    o,
+                                    i,
+                                    a = N.getMetaTagContent('showFullTotals');
+                                a ||
+                                    (document.querySelector('.SearchHotels') &&
+                                        (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                            (n = t.querySelector('.arnPrice')),
+                                                (r = t.querySelector('.arnPrice .arnUnit')) &&
+                                                    n &&
+                                                    ((o = parseFloat(r.textContent) * e),
+                                                    (i = o.toFixed(2)),
+                                                    r &&
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none')));
+                                        }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
+                                        )),
+                                    document.querySelector('.SinglePropDetail') &&
+                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                            (r = t.querySelector('strong')),
+                                                (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
+                                                r &&
+                                                    o &&
+                                                    (i = o.toFixed(2)) &&
+                                                    (r.insertAdjacentHTML(
+                                                        'beforeEnd',
+                                                        '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                    ),
+                                                    1 === e && (t.querySelector('.full-stay').style.display = 'none'));
+                                        }),
+                                        document.body.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                                        ))),
+                                    a &&
+                                        (document.querySelector('.SearchHotels') &&
+                                            document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                    (o = t.querySelector('.arnPrice .arnUnit')),
+                                                    r &&
+                                                        o &&
+                                                        ((r.style.display = 'block'),
+                                                        (o.style.fontSize = '13px'),
+                                                        (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                            }),
+                                        document.querySelector('.SinglePropDetail') &&
+                                            document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('.averageNightly')),
+                                                    (o = t.querySelector('strong')),
+                                                    r &&
+                                                        o &&
+                                                        ((r.style.display = 'block'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('strong').style.display = 'none'));
+                                            }));
+                            },
+                        },
+                        {
+                            key: 'getTotalNights',
+                            value:
+                                ((s = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o, i;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('meta[name="checkIn"]')), (n = document.querySelector('meta[name="checkOut"]')), t && n)) {
+                                                            e.next = 4;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 4:
+                                                        return (
+                                                            (r = new Date(t.getAttribute('content'))),
+                                                            (o = new Date(n.getAttribute('content'))),
+                                                            (i = (o.getTime() - r.getTime()) / 864e5),
+                                                            e.abrupt('return', i)
+                                                        );
+                                                    case 8:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return s.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'getNightlyRateForMapMarkers',
+                            value: function (e, t) {
+                                var n, r;
+                                document.querySelectorAll('.arnMapMarkerSpan').forEach(function (o) {
+                                    (n = o.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')),
+                                        (r = parseFloat(n / e).toFixed(0)),
+                                        (o.textContent = 'USD' === t ? '$'.concat(r) : ''.concat(r, ' ').concat(t));
+                                });
+                            },
+                        },
+                        {
+                            key: 'addTitleToProperties',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('.SearchHotels') &&
+                                    n.forEach(function (n) {
+                                        (t = n.querySelector('.ArnPropNameLink')), (e = t.querySelector('span').textContent), t.setAttribute('title', e);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'showLoaderOnResultsUpdate',
+                            value: function () {
+                                var e = this,
+                                    t = document.querySelector('#searching'),
+                                    n = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+                                document.querySelector('.SearchHotels') &&
+                                    n.forEach(function (n) {
+                                        n.addEventListener('click', function () {
+                                            'cug' !== e.site_config.site_type.toLowerCase() || '' !== document.querySelector('input#address-input').value
+                                                ? '' !== document.querySelector('input#theCheckIn').value
+                                                    ? (t.style.display = 'block')
+                                                    : e.style_validation_fields('input#theCheckIn')
+                                                : e.style_validation_fields('input#address-input');
+                                        });
+                                    });
+                            },
+                        },
+                        {
+                            key: 'changeContractedPropertyPinColor',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnProperty'),
+                                    t = document.querySelectorAll('.arnMapMarker');
+                                if (e) {
+                                    var n = [],
+                                        r = [];
+                                    e.forEach(function (e) {
+                                        e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
+                                    }),
+                                        n.forEach(function (e, t) {
+                                            e && r.push(t);
+                                        }),
+                                        r.forEach(function (e) {
+                                            t[e].classList.add('contracted-pin');
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'setMapMarkerSize',
+                            value: function () {
+                                var e = document.querySelector('meta[name="currency"]'),
+                                    t = document.querySelectorAll('.arnMapMarker');
+                                e &&
+                                    t &&
+                                    'USD' !== e.getAttribute('content') &&
+                                    t.forEach(function (e) {
+                                        e.style.width = '85px';
+                                    });
+                            },
+                        },
+                        {
+                            key: 'useLogoForVenueMapMarker',
+                            value: function () {
+                                var e = this,
+                                    t = document.querySelectorAll('.arn-green-marker-icon');
+                                this.site_config &&
+                                    t.forEach(function (t) {
+                                        t.setAttribute('src', ''.concat(e.site_config.map_marker_image_url));
+                                    });
+                            },
+                        },
+                        {
+                            key: 'addHRToProperties',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnProperty');
+                                e &&
+                                    e.forEach(function (e) {
+                                        e.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'isPropByGateway',
+                            value: function (e, t, n, r) {
+                                var o = this;
+                                function i(e, t) {
+                                    t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
+                                }
+                                document.querySelector('.exclusive-rate') ||
+                                    ('search-results' === this.page_name &&
+                                        document.querySelectorAll('div.ArnProperty').forEach(function (r) {
+                                            var a, c;
+                                            r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
+                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
+                                                (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
+                                                    ((a = e),
+                                                    (c = r),
+                                                    '' !== o.site_config.exclusive_rate_text &&
+                                                        c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
+                                        }),
+                                    'property-detail' === this.page_name &&
+                                        document.querySelectorAll('div.rateRow').forEach(function (t) {
+                                            (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
+                                                (function (e, t, n) {
+                                                    if (document.querySelector('.SinglePropDetail')) {
+                                                        var r = e.querySelector('.RoomDescription');
+                                                        r.innerHTML = r.innerHTML.replace(
+                                                            'Special Event Rate',
+                                                            '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
+                                                        );
+                                                    }
+                                                })(t, r, e);
+                                        }));
+                            },
+                        },
+                        {
+                            key: 'addLRGDetails',
+                            value: function () {
+                                var e = this;
+                                if ('lodging' === this.site_config.site_type && this.site_config.lodging.is_lrg) {
+                                    var t = document.querySelectorAll('.S16, .S20');
+                                    t &&
+                                        t.forEach(function (t) {
+                                            t.querySelector('.arnPrice') &&
+                                                t
+                                                    .querySelector('.arnPrice')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid='.concat(
+                                                            e.site_id,
+                                                            '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
+                                                        )
+                                                    );
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'replaceLRGForm',
+                            value:
+                                ((c = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if ('lodging' === this.site_config.site_type || this.site_config.is_lrg) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (
+                                                                (e.prev = 2),
+                                                                (e.next = 5),
+                                                                fetch('https://static.hotelsforhope.com/components/lrg-form/lrg-form.html').then(function (e) {
+                                                                    return e.text();
+                                                                })
+                                                            );
+                                                        case 5:
+                                                            (t = e.sent), (document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = t), (e.next = 12);
+                                                            break;
+                                                        case 9:
+                                                            (e.prev = 9), (e.t0 = e.catch(2)), console.error(e.t0);
+                                                        case 12:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this,
+                                            [[2, 9]]
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return c.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addImageSlideshow',
+                            value: function () {
+                                document.querySelector('#thePropertyImages').style.display = 'none';
+                                var e,
+                                    t,
+                                    n = document.querySelector('meta[name="aPropertyId"]').content,
+                                    r = 0;
+                                function o() {
+                                    return i.apply(this, arguments);
+                                }
+                                function i() {
+                                    return (i = D(
+                                        regeneratorRuntime.mark(function e() {
+                                            var t;
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                return (
+                                                                    (e.prev = 0),
+                                                                    (e.next = 3),
+                                                                    fetch('https://api.hotelsforhope.com/arn/properties/'.concat(n), {method: 'GET'}).then(function (e) {
+                                                                        return e.json();
+                                                                    })
+                                                                );
+                                                            case 3:
+                                                                return (
+                                                                    (t = e.sent),
+                                                                    e.abrupt(
+                                                                        'return',
+                                                                        t.Images.map(function (e) {
+                                                                            return e.ImagePath.replace(/_300/, '_804480');
+                                                                        })
+                                                                    )
+                                                                );
+                                                            case 7:
+                                                                (e.prev = 7), (e.t0 = e.catch(0)), console.log(e.t0);
+                                                            case 10:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                null,
+                                                [[0, 7]]
+                                            );
+                                        })
+                                    )).apply(this, arguments);
+                                }
+                                function a() {
+                                    t = document.querySelectorAll('.carousel-slide img');
+                                    for (var n = 0 === r ? r : r + 2; n < r + 5; n += 1) {
+                                        if (n === e.length) return;
+                                        document.querySelector('.carousel-slide').insertAdjacentHTML(
+                                            'beforeend',
+                                            '<div class="image-wrapper">\n                        <div class ="image-number">'
+                                                .concat(n + 1, '/')
+                                                .concat(e.length, '</div>\n                        <img src=')
+                                                .concat(e[n], '>\n                    </div>')
+                                        );
+                                    }
+                                }
+                                function c() {
+                                    return s.apply(this, arguments);
+                                }
+                                function s() {
+                                    return (s = D(
+                                        regeneratorRuntime.mark(function t() {
+                                            return regeneratorRuntime.wrap(function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            return (t.next = 2), o();
+                                                        case 2:
+                                                            (e = t.sent),
+                                                                document
+                                                                    .querySelector('.ArnPropName')
+                                                                    .insertAdjacentHTML(
+                                                                        'afterend',
+                                                                        '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
+                                                                    ),
+                                                                a();
+                                                        case 5:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            }, t);
+                                        })
+                                    )).apply(this, arguments);
+                                }
+                                function u(t, n) {
+                                    (r > 1 && r < e.length - 2) ||
+                                        ((t.style.display = 'block'),
+                                        (n.style.display = 'block'),
+                                        0 === r && (n.style.display = 'none'),
+                                        r + 1 === e.length && (t.style.display = 'none'));
+                                }
+                                function l() {
+                                    return (l = D(
+                                        regeneratorRuntime.mark(function e() {
+                                            var n, o, i;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), c();
+                                                        case 2:
+                                                            (n = document.querySelector('.carousel-slide')),
+                                                                (o = document.querySelector('#previousBtn')),
+                                                                u((i = document.querySelector('#nextBtn')), o),
+                                                                i.addEventListener('click', function () {
+                                                                    if (((t = document.querySelectorAll('.carousel-slide img')), r !== t.length - 1)) {
+                                                                        (r += 1), u(i, o);
+                                                                        var e = t[r].clientWidth;
+                                                                        (n.style.transform = 'translateX(-'.concat(e * r, 'px)')), r === t.length - 2 && a();
+                                                                    }
+                                                                }),
+                                                                o.addEventListener('click', function () {
+                                                                    if (!(r <= 0)) {
+                                                                        (r -= 1), u(i, o);
+                                                                        var e = t[r].clientWidth;
+                                                                        n.style.transform = 'translateX(-'.concat(e * r, 'px)');
+                                                                    }
+                                                                });
+                                                        case 8:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )).apply(this, arguments);
+                                }
+                                !(function () {
+                                    l.apply(this, arguments);
+                                })();
+                            },
+                        },
+                        {
+                            key: 'addSocialMetaTags',
+                            value: function (e, t) {
+                                'cug' !== this.site_config.site_type &&
+                                    'confirmation' === this.page_name &&
+                                    this.site_config.has_social_sharing &&
+                                    document.head.insertAdjacentHTML(
+                                        'beforeend',
+                                        '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">\n            <meta property="og:type" content="website" >\n            <meta property="og:title" content="'
+                                            .concat(e, '" >\n            <meta property="og:description" content="I just booked my room for ')
+                                            .concat(
+                                                e,
+                                                ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id='
+                                            )
+                                            .concat(t, '">')
+                                    );
+                            },
+                        },
+                        {
+                            key: 'addSocialMediaShareButtons',
+                            value: function (e, t) {
+                                if ('cug' !== this.site_config.site_type && 'confirmation' === this.page_name && this.site_config.has_social_sharing) {
+                                    var n = document.querySelector('#theReservationFormContainer tbody'),
+                                        r = document.createElement('script');
+                                    r.setAttribute('src', 'https://platform.twitter.com/widgets.js'),
+                                        r.setAttribute('async', !0),
+                                        document.head.appendChild(r),
+                                        n.insertAdjacentHTML(
+                                            'afterbegin',
+                                            '<div class="social-share-buttons-container">\n                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D'
+                                                .concat(
+                                                    t,
+                                                    '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
+                                                )
+                                                .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=')
+                                                .concat(t, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
+                                        );
+                                }
+                            },
+                        },
+                        {
+                            key: 'style_validation_fields',
+                            value: function (e) {
+                                var t = document.querySelector(e);
+                                '' === t.value && t.classList.add('invalidated');
+                            },
+                        },
+                        {
+                            key: 'setInputToRequired',
+                            value: function (e) {
+                                document.querySelector(e) && (document.querySelector(e).required = !0);
+                            },
+                        },
+                        {
+                            key: 'resizeViewportForMapMobile',
+                            value: function () {
+                                if ('search-results' === this.page_name || window.matchMedia('(max-width:800px)').matches) {
+                                    var e = 0.01 * window.innerHeight;
+                                    document.documentElement.style.setProperty('--vh', ''.concat(e, 'px')),
+                                        window.addEventListener('resize', function () {
+                                            (e = 0.01 * window.innerHeight), document.documentElement.style.setProperty('--vh', ''.concat(e, 'px'));
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'implementAds',
+                            value: function () {
+                                if (this.site_config.ads && !window.matchMedia('(max-width:800px)').matches) {
+                                    var e = this.site_config.ads;
+                                    if (
+                                        ('search-results' === this.page_name &&
+                                            (document.querySelector('.ArnSecondarySearchOuterContainer') &&
+                                                e.sidebar_ad.is_active &&
+                                                document
+                                                    .querySelector('.ArnSecondarySearchOuterContainer')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a class="sidebar-ad" href="'
+                                                            .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                            .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
+                                                    ),
+                                            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') &&
+                                                e.between_property_ad.is_active &&
+                                                document
+                                                    .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a class="between-property-ad" href="'
+                                                            .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                            .concat(
+                                                                e.between_property_ad.image_url,
+                                                                '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
+                                                            )
+                                                    )),
+                                        'confirmation' === this.page_name)
+                                    ) {
+                                        if (!document.querySelector('.GuestForms') || !e.confirmation_page_bottom.is_active) return;
+                                        document
+                                            .querySelector('.GuestForms')
+                                            .insertAdjacentHTML(
+                                                'beforeEnd',
+                                                '\n                <a class="confirmation-bottom-ad" href="'
+                                                    .concat(e.confirmation_page_bottom.outbound_url, '" target="_blank">\n                    <img src="')
+                                                    .concat(e.confirmation_page_bottom.image_url, '" alt="Advertisement">\n                </a>\n            ')
+                                            );
+                                    }
+                                }
+                            },
+                        },
+                        {
+                            key: 'cugConfigs',
+                            value: function () {
+                                var e,
+                                    t = this.site_config;
+                                'cug' === t.site_type.toLowerCase() &&
+                                    ((e = document.querySelectorAll('.percentSavings')) &&
+                                        !t.cug.show_percent_savings &&
+                                        e.forEach(function (e) {
+                                            e.insertAdjacentHTML('beforeEnd', ' Today');
+                                        }),
+                                    (function () {
+                                        if (t.cug.show_percent_savings) {
+                                            var e = document.querySelector('.ArnSortByDealPercent');
+                                            e && (e.style.display = 'block');
+                                        }
+                                    })(),
+                                    (function () {
+                                        if (!t.cug.show_percent_savings) {
+                                            var e = '';
+                                            document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
+                                                document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
+                                                e &&
+                                                    e.forEach(function (e) {
+                                                        var t = e.querySelector('div.percentSavings');
+                                                        if (t && ((t.style.display = 'block'), document.querySelector('.SearchHotels'))) {
+                                                            var n = e.querySelector('.ArnRateCell'),
+                                                                r = e.querySelector('.ArnRateButton');
+                                                            window.matchMedia('(min-width: 600px)').matches
+                                                                ? n.insertAdjacentElement('afterBegin', t)
+                                                                : r.insertAdjacentElement('afterBegin', t);
+                                                        }
+                                                    });
+                                        }
+                                    })());
+                            },
+                        },
+                        {
+                            key: 'showFilters',
+                            value: function () {
+                                this.site_config.show_stars &&
+                                    document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>'),
+                                    this.site_config.show_property_type &&
+                                        document.body.insertAdjacentHTML('beforeEnd', '<style> #PropertyTypesContainer{display:block !important;}</style>');
+                            },
+                        },
+                        {
+                            key: 'showCoronavirusInfoBanner',
+                            value: function () {
+                                '52342' !== this.site_id &&
+                                    'closed' !== localStorage.getItem('covidAlertBanner') &&
+                                    (document.body.insertAdjacentHTML(
+                                        'afterBegin',
+                                        '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
+                                    ),
+                                    document.querySelector('.close-banner-button').addEventListener('click', function (e) {
+                                        (document.querySelector('.info-banner').style.display = 'none'), window.localStorage.setItem('covidAlertBanner', 'closed');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'showCurrencySelect',
+                            value: function () {
+                                if (!this.site_config.show_currency_select) {
+                                    var e = document.querySelector('.config-container'),
+                                        t = document.querySelector('.currencies-container');
+                                    this.site_config.show_currency_select || this.site_config.show_language_select
+                                        ? this.site_config.show_currency_select || (t.style.display = 'none')
+                                        : (e.style.display = 'none');
+                                }
+                            },
+                        },
+                        {
+                            key: 'positionPropReviews',
+                            value: function () {
+                                if ('property-detail' === this.page_name && this.site_config.reviews_before_info && null !== document.querySelector('.PropertyReviews')) {
+                                    var e = document.querySelector('.PropertyReviews');
+                                    document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', e);
+                                }
+                            },
+                        },
+                        {
+                            key: 'insertPoweredByFooterLogo',
+                            value: function () {
+                                document
+                                    .querySelector('.ArnSupportBottom')
+                                    .insertAdjacentHTML(
+                                        'beforeend',
+                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                    );
+                            },
+                        },
+                        {
+                            key: 'updateConfirmationCheckBoxes',
+                            value: function () {
+                                'checkout' === this.page_name &&
+                                    ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
+                                    (document.querySelector(
+                                        'span.confirmationAgreement'
+                                    ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId='.concat(
+                                        this.site_id,
+                                        '&theme=standard">Terms & Conditions</a> found on this website.'
+                                    )),
+                                    N.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                    N.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                    document.querySelector('#policies-fees').addEventListener('click', function () {
+                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
+                                    }),
+                                    document.querySelector('span.open-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('hide');
+                                    }),
+                                    document.querySelector('span.close-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('hide');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'addMessagingToConfirmationPage',
+                            value: function () {
+                                if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
+                                    var e = window.arnCustomerEmailAddress,
+                                        t = this.site_config.confirmation_email_from;
+                                    (null != t && '' !== t) || (t = 'reservations@hotelsforhope.com');
+                                    var n = document.querySelector('.supportInfo');
+                                    e &&
+                                        n &&
+                                        n.insertAdjacentHTML(
+                                            'afterEnd',
+                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>'
+                                                .concat(t, '</strong></a> at <strong>')
+                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
+                                        );
+                                }
+                            },
+                        },
+                        {
+                            key: 'fixCheckoutInputTabOrder',
+                            value: function () {
+                                var e = document.querySelector('#theReservationForm'),
+                                    t = document.querySelector('meta[name="numberOfRooms"]');
+                                if (e && t) {
+                                    var n = t.content;
+                                    e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
+                                        e && (0 === t ? e.setAttribute('tabindex', 1) : e.setAttribute('tabIndex', t));
+                                    });
+                                    for (var r = 1; r <= n; r += 1) {
+                                        var o = document.querySelector('#theCity'.concat(r)),
+                                            i = document.querySelector('#theZipCode'.concat(r)),
+                                            a = document.querySelector('#theStateAjax'.concat(r, ' select')),
+                                            c = document.querySelector('#theCountryAjax'.concat(r, ' select')),
+                                            s = document.querySelector('#theCreditCardBillingNameAjax'.concat(r, ' input')),
+                                            u = document.querySelector('.RoomNumber-'.concat(r, ' #theCvvCode')),
+                                            l = document.querySelector('.RoomNumber-'.concat(r, ' .cardMonth')),
+                                            f = document.querySelector('.RoomNumber-'.concat(r, ' .cardYear'));
+                                        if (!(o && i && a && c && s && u && l && f)) return;
+                                        var d = o.tabIndex,
+                                            h = a.tabIndex,
+                                            p = i.tabIndex,
+                                            y = c.tabIndex,
+                                            m = s.tabIndex,
+                                            v = u.tabIndex,
+                                            g = l.tabIndex,
+                                            b = f.tabIndex;
+                                        o.setAttribute('tabIndex', p),
+                                            a.setAttribute('tabIndex', d),
+                                            i.setAttribute('tabIndex', y),
+                                            c.setAttribute('tabIndex', h),
+                                            s.setAttribute('tabIndex', v),
+                                            u.setAttribute('tabIndex', g),
+                                            l.setAttribute('tabIndex', b),
+                                            f.setAttribute('tabIndex', m);
+                                    }
+                                }
+                            },
+                        },
+                        {
+                            key: 'showMoreAmenities',
+                            value: function () {
+                                if ('property-detail' === this.page_name) {
+                                    var e,
+                                        t = document.querySelector('.ArnAmenityContainer');
+                                    !document.querySelector('#show-more-or-less') &&
+                                        document.querySelector('.PropertyAmenities li') &&
+                                        (t.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>'),
+                                        (e = document.querySelector('span#show-more-or-less')),
+                                        document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities'),
+                                        e.addEventListener('click', function () {
+                                            document.querySelector('span.show-more')
+                                                ? (document.querySelectorAll('.ArnAmenityContainer td:not(.show-amenities)').forEach(function (e) {
+                                                      e.classList.toggle('show-amenities');
+                                                  }),
+                                                  (e.textContent = 'Show Less Amenities'),
+                                                  e.classList.toggle('show-more'),
+                                                  e.classList.toggle('show-less'))
+                                                : document.querySelector('span.show-less') &&
+                                                  (document.querySelectorAll('.ArnAmenityContainer td:not(:first-child)').forEach(function (e) {
+                                                      e.classList.toggle('show-amenities');
+                                                  }),
+                                                  (e.textContent = 'Show More Amenities'),
+                                                  e.classList.toggle('show-less'),
+                                                  e.classList.toggle('show-more'));
+                                        }));
+                                }
+                            },
+                        },
+                        {
+                            key: 'hideRemainingRooms',
+                            value: function () {
+                                if ('property-detail' === this.page_name && document.querySelector('div.roomCount')) {
+                                    var e = document.querySelectorAll('table.ArnRateList'),
+                                        t = window.matchMedia('(max-width: 560px)');
+                                    e.forEach(function (e) {
+                                        if (e.querySelector('.roomCount strong') || e.classList.contains('SB16') || e.classList.contains('SB20')) {
+                                            var n = parseFloat(e.querySelector('.roomCount strong').textContent);
+                                            n < 6 && (e.querySelector('.roomCount').style.display = 'block'),
+                                                e.classList.contains('SB16') &&
+                                                    (e.classList.contains('SB20') || t.matches) &&
+                                                    ((n < 6 && e.classList.contains('SB16')) || e.classList.contains('SB20')) &&
+                                                    (e.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr');
+                                        }
+                                    });
+                                }
+                            },
+                        },
+                        {
+                            key: 'replaceHTMLWithFile',
+                            value:
+                                ((a = D(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        var r, o;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (document.querySelector(n)) {
+                                                            e.next = 2;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 2:
+                                                        return (r = document.querySelector(n)), (e.next = 5), N.fetchHTMLFromFile(t);
+                                                    case 5:
+                                                        (o = e.sent), (r.innerHTML = o);
+                                                    case 7:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t) {
+                                    return a.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'appendMemberTokenForCug',
+                            value:
+                                ((i = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if ('cug' === this.site_config.site_type.toLowerCase() && '52342' !== this.site_id) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), N.waitForSelectorInDOM('.logo');
+                                                        case 5:
+                                                            if (document.querySelector('meta[name="memberToken"]')) {
+                                                                e.next = 7;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 7:
+                                                            (n = document.querySelector('meta[name="memberToken"]').content),
+                                                                (r = document.querySelector('.logo')),
+                                                                (o = ''),
+                                                                (o =
+                                                                    '/' === t.slice(-1)
+                                                                        ? ''.concat(t, 'v6?siteId=').concat(this.site_id, '&_s=').concat(n)
+                                                                        : '.com' === t.slice(-4)
+                                                                        ? ''.concat(t, '/v6?siteId=').concat(this.site_id, '&_s=').concat(n)
+                                                                        : ''.concat(t, '&_s=').concat(n)),
+                                                                r.setAttribute('href', o);
+                                                        case 12:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addLinkToLoginFromRegisterPage',
+                            value: function () {
+                                if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
+                                    var e = document.querySelector('.WBValidatedRegistrationFormActions'),
+                                        t = window.location.href.replace('register', 'login');
+                                    e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
+                                }
+                            },
+                        },
+                        {
+                            key: 'setCheckDatesToReadOnlyOnMobile',
+                            value:
+                                ((o = D(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (N.matchMediaQuery('max-width: 800px')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), N.waitForSelectorInDOM('#theCheckIn');
+                                                        case 4:
+                                                            if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
+                                                                e.next = 11;
+                                                                break;
+                                                            }
+                                                            if (((t = document.querySelector('#theCheckIn')), (n = document.querySelector('#theCheckOut')), t && n)) {
+                                                                e.next = 9;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 9:
+                                                            t.setAttribute('readonly', !0), n.setAttribute('readonly', !0);
+                                                        case 11:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return o.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'updateAmenitiesLegendTag',
+                            value: function () {
+                                'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
+                            },
+                        },
+                        {
+                            key: 'cancelConfirmUpdate',
+                            value: function () {
+                                document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
+                            },
+                        },
+                        {
+                            key: 'moveOriginalPrice',
+                            value: function (e, t) {
+                                document.querySelectorAll(e).forEach(function (e) {
+                                    if (e.querySelector('div.originalPrice')) {
+                                        e.querySelector(t).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                        var n,
+                                            r,
+                                            o = parseFloat(e.querySelector('.originalPrice').textContent),
+                                            i = parseFloat(
+                                                document.querySelector('.SearchHotels')
+                                                    ? e.querySelector('.arnUnit').textContent
+                                                    : e.querySelector('.ArnNightlyRate strong').textContent
+                                            );
+                                        (r = ((o - (n = i)) / n) * 100), Math.floor(r) >= 5 || (e.querySelector('.originalPrice').style.display = 'none');
+                                    }
+                                });
+                            },
+                        },
+                        {
+                            key: 'updateSupportPageText',
+                            value: function () {
+                                this.site_config.is_resbeat_client ||
+                                    (document.querySelector('.WBSupportForm') &&
+                                        (document.querySelector('.ArnSupportChatTable p').textContent =
+                                            'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                            },
+                        },
+                        {
+                            key: 'removeLrgFooterLink',
+                            value: function () {
+                                this.site_config.lodging.is_lrg ||
+                                    this.site_config.is_resbeat_client ||
+                                    ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
+                                    (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
+                            },
+                        },
+                    ]) && F(t.prototype, n),
+                    r && F(t, r),
+                    e
+                );
+            })();
     },
     function (e, t, n) {
-        var r = n(53),
-            o = n(56),
-            i = n(8),
-            a = n(5),
-            c = n(3),
-            s = n(2);
-        a(a.S, 'Reflect', {
-            get: function e(t, n) {
-                var a,
-                    u,
-                    l = arguments.length < 3 ? t : arguments[2];
-                return s(t) === l ? t[n] : (a = r.f(t, n)) ? (i(a, 'value') ? a.value : void 0 !== a.get ? a.get.call(l) : void 0) : c((u = o(t))) ? e(u, n, l) : void 0;
+        'use strict';
+        var r = n(66),
+            o = n(2),
+            i = n(54),
+            a = n(60),
+            c = n(27),
+            s = n(44),
+            u = n(39),
+            l = n(7),
+            f = Math.min,
+            d = [].push,
+            h = 'length',
+            p = !l(function () {
+                RegExp(4294967295, 'y');
+            });
+        n(45)('split', 2, function (e, t, n, l) {
+            var y;
+            return (
+                (y =
+                    'c' == 'abbc'.split(/(b)*/)[1] ||
+                    4 != 'test'.split(/(?:)/, -1)[h] ||
+                    2 != 'ab'.split(/(?:ab)*/)[h] ||
+                    4 != '.'.split(/(.?)(.?)/)[h] ||
+                    '.'.split(/()()/)[h] > 1 ||
+                    ''.split(/.?/)[h]
+                        ? function (e, t) {
+                              var o = String(this);
+                              if (void 0 === e && 0 === t) return [];
+                              if (!r(e)) return n.call(o, e, t);
+                              for (
+                                  var i,
+                                      a,
+                                      c,
+                                      s = [],
+                                      l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
+                                      f = 0,
+                                      p = void 0 === t ? 4294967295 : t >>> 0,
+                                      y = new RegExp(e.source, l + 'g');
+                                  (i = u.call(y, o)) &&
+                                  !(
+                                      (a = y.lastIndex) > f &&
+                                      (s.push(o.slice(f, i.index)), i[h] > 1 && i.index < o[h] && d.apply(s, i.slice(1)), (c = i[0][h]), (f = a), s[h] >= p)
+                                  );
+
+                              )
+                                  y.lastIndex === i.index && y.lastIndex++;
+                              return f === o[h] ? (!c && y.test('')) || s.push('') : s.push(o.slice(f)), s[h] > p ? s.slice(0, p) : s;
+                          }
+                        : '0'.split(void 0, 0)[h]
+                        ? function (e, t) {
+                              return void 0 === e && 0 === t ? [] : n.call(this, e, t);
+                          }
+                        : n),
+                [
+                    function (n, r) {
+                        var o = e(this),
+                            i = null == n ? void 0 : n[t];
+                        return void 0 !== i ? i.call(n, o, r) : y.call(String(o), n, r);
+                    },
+                    function (e, t) {
+                        var r = l(y, e, this, t, y !== n);
+                        if (r.done) return r.value;
+                        var u = o(e),
+                            d = String(this),
+                            h = i(u, RegExp),
+                            m = u.unicode,
+                            v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
+                            g = new h(p ? u : '^(?:' + u.source + ')', v),
+                            b = void 0 === t ? 4294967295 : t >>> 0;
+                        if (0 === b) return [];
+                        if (0 === d.length) return null === s(g, d) ? [d] : [];
+                        for (var S = 0, w = 0, _ = []; w < d.length; ) {
+                            g.lastIndex = p ? w : 0;
+                            var x,
+                                A = s(g, p ? d : d.slice(w));
+                            if (null === A || (x = f(c(g.lastIndex + (p ? 0 : w)), d.length)) === S) w = a(d, w, m);
+                            else {
+                                if ((_.push(d.slice(S, w)), _.length === b)) return _;
+                                for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
+                                w = S = x;
+                            }
+                        }
+                        return _.push(d.slice(S)), _;
+                    },
+                ]
+            );
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(19),
+            o = n(5),
+            i = n(9),
+            a = n(8),
+            c = n(17),
+            s = n(95),
+            u = n(28),
+            l = n(58),
+            f = n(0)('iterator'),
+            d = !([].keys && 'next' in [].keys()),
+            h = function () {
+                return this;
+            };
+        e.exports = function (e, t, n, p, y, m, v) {
+            s(n, t, p);
+            var g,
+                b,
+                S,
+                w = function (e) {
+                    if (!d && e in k) return k[e];
+                    switch (e) {
+                        case 'keys':
+                        case 'values':
+                            return function () {
+                                return new n(this, e);
+                            };
+                    }
+                    return function () {
+                        return new n(this, e);
+                    };
+                },
+                _ = t + ' Iterator',
+                x = 'values' == y,
+                A = !1,
+                k = e.prototype,
+                L = k[f] || k['@@iterator'] || (y && k[y]),
+                M = L || w(y),
+                E = y ? (x ? w('entries') : M) : void 0,
+                q = ('Array' == t && k.entries) || L;
+            if (
+                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[f] || a(S, f, h)),
+                x &&
+                    L &&
+                    'values' !== L.name &&
+                    ((A = !0),
+                    (M = function () {
+                        return L.call(this);
+                    })),
+                (r && !v) || (!d && !A && k[f]) || a(k, f, M),
+                (c[t] = M),
+                (c[_] = h),
+                y)
+            )
+                if (((g = {values: x ? M : w('values'), keys: m ? M : w('keys'), entries: E}), v)) for (b in g) b in k || i(k, b, g[b]);
+                else o(o.P + o.F * (d || A), t, g);
+            return g;
+        };
+    },
+    function (e, t, n) {
+        var r = n(18),
+            o = n(15);
+        e.exports = function (e) {
+            return function (t, n) {
+                var i,
+                    a,
+                    c = String(o(t)),
+                    s = r(n),
+                    u = c.length;
+                return s < 0 || s >= u
+                    ? e
+                        ? ''
+                        : void 0
+                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
+                    ? e
+                        ? c.charAt(s)
+                        : i
+                    : e
+                    ? c.slice(s, s + 2)
+                    : a - 56320 + ((i - 55296) << 10) + 65536;
+            };
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(5),
+            o = n(57)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(59)('includes');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(5),
+            o = n(109);
+        r(r.P + r.F * n(110)('includes'), 'String', {
+            includes: function (e) {
+                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
             },
         });
+    },
+    function (e, t, n) {
+        var r = n(6).f,
+            o = Function.prototype,
+            i = /^\s*function ([^ (]*)/;
+        'name' in o ||
+            (n(3) &&
+                r(o, 'name', {
+                    configurable: !0,
+                    get: function () {
+                        try {
+                            return ('' + this).match(i)[1];
+                        } catch (e) {
+                            return '';
+                        }
+                    },
+                }));
+    },
+    function (e, t, n) {
+        e.exports = n(26)('native-function-to-string', Function.toString);
     },
     function (e, t) {
         e.exports = function (e, t, n, r) {
@@ -2358,18 +5439,18 @@
     },
     function (e, t, n) {
         var r = n(24),
-            o = n(83),
-            i = n(84),
+            o = n(77),
+            i = n(78),
             a = n(2),
-            c = n(26),
-            s = n(85),
+            c = n(27),
+            s = n(79),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, f, d) {
             var h,
                 p,
-                m,
                 y,
+                m,
                 v = d
                     ? function () {
                           return e;
@@ -2379,8 +5460,8 @@
                 b = 0;
             if ('function' != typeof v) throw TypeError(e + ' is not iterable!');
             if (i(v)) {
-                for (h = c(e.length); h > b; b++) if ((y = t ? g(a((p = e[b]))[0], p[1]) : g(e[b])) === u || y === l) return y;
-            } else for (m = v.call(e); !(p = m.next()).done; ) if ((y = o(m, g, p.value, t)) === u || y === l) return y;
+                for (h = c(e.length); h > b; b++) if ((m = t ? g(a((p = e[b]))[0], p[1]) : g(e[b])) === u || m === l) return m;
+            } else for (y = v.call(e); !(p = y.next()).done; ) if ((m = o(y, g, p.value, t)) === u || m === l) return m;
         }).BREAK = u),
             (t.RETURN = l);
     },
@@ -2396,7 +5477,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(21),
+        var r = n(17),
             o = n(0)('iterator'),
             i = Array.prototype;
         e.exports = function (e) {
@@ -2404,20 +5485,20 @@
         };
     },
     function (e, t, n) {
-        var r = n(29),
+        var r = n(25),
             o = n(0)('iterator'),
-            i = n(21);
+            i = n(17);
         e.exports = n(11).getIteratorMethod = function (e) {
             if (null != e) return e[o] || e['@@iterator'] || i[r(e)];
         };
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(58).set,
+            o = n(48).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
-            s = 'process' == n(15)(a);
+            s = 'process' == n(14)(a);
         e.exports = function () {
             var e,
                 t,
@@ -2477,8 +5558,8 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(3),
-            i = n(59);
+            o = n(4),
+            i = n(50);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -2486,7 +5567,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(10);
+        var r = n(9);
         e.exports = function (e, t, n) {
             for (var o in t) r(e, o, t[o], n);
             return e;
@@ -2496,7 +5577,7 @@
         'use strict';
         var r = n(1),
             o = n(6),
-            i = n(4),
+            i = n(3),
             a = n(0)('species');
         e.exports = function (e) {
             var t = r[e];
@@ -2540,6 +5621,298 @@
             return n;
         };
     },
+    function (e, t, n) {
+        n(61)('asyncIterator');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(1),
+            o = n(10),
+            i = n(3),
+            a = n(5),
+            c = n(9),
+            s = n(99).KEY,
+            u = n(7),
+            l = n(26),
+            f = n(28),
+            d = n(20),
+            h = n(0),
+            p = n(62),
+            y = n(61),
+            m = n(100),
+            v = n(101),
+            g = n(2),
+            b = n(4),
+            S = n(29),
+            w = n(12),
+            _ = n(41),
+            x = n(30),
+            A = n(42),
+            k = n(102),
+            L = n(65),
+            M = n(63),
+            E = n(6),
+            q = n(16),
+            C = L.f,
+            T = E.f,
+            P = k.f,
+            R = r.Symbol,
+            O = r.JSON,
+            j = O && O.stringify,
+            H = h('_hidden'),
+            D = h('toPrimitive'),
+            F = {}.propertyIsEnumerable,
+            B = l('symbol-registry'),
+            I = l('symbols'),
+            N = l('op-symbols'),
+            $ = Object.prototype,
+            Y = 'function' == typeof R && !!M.f,
+            U = r.QObject,
+            W = !U || !U.prototype || !U.prototype.findChild,
+            G =
+                i &&
+                u(function () {
+                    return (
+                        7 !=
+                        A(
+                            T({}, 'a', {
+                                get: function () {
+                                    return T(this, 'a', {value: 7}).a;
+                                },
+                            })
+                        ).a
+                    );
+                })
+                    ? function (e, t, n) {
+                          var r = C($, t);
+                          r && delete $[t], T(e, t, n), r && e !== $ && T($, t, r);
+                      }
+                    : T,
+            z = function (e) {
+                var t = (I[e] = A(R.prototype));
+                return (t._k = e), t;
+            },
+            V =
+                Y && 'symbol' == typeof R.iterator
+                    ? function (e) {
+                          return 'symbol' == typeof e;
+                      }
+                    : function (e) {
+                          return e instanceof R;
+                      },
+            Z = function (e, t, n) {
+                return (
+                    e === $ && Z(N, t, n),
+                    g(e),
+                    (t = _(t, !0)),
+                    g(n),
+                    o(I, t)
+                        ? (n.enumerable ? (o(e, H) && e[H][t] && (e[H][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, H) || T(e, H, x(1, {})), (e[H][t] = !0)), G(e, t, n))
+                        : T(e, t, n)
+                );
+            },
+            J = function (e, t) {
+                g(e);
+                for (var n, r = m((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
+                return e;
+            },
+            Q = function (e) {
+                var t = F.call(this, (e = _(e, !0)));
+                return !(this === $ && o(I, e) && !o(N, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, H) && this[H][e])) || t);
+            },
+            K = function (e, t) {
+                if (((e = w(e)), (t = _(t, !0)), e !== $ || !o(I, t) || o(N, t))) {
+                    var n = C(e, t);
+                    return !n || !o(I, t) || (o(e, H) && e[H][t]) || (n.enumerable = !0), n;
+                }
+            },
+            X = function (e) {
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == H || t == s || r.push(t);
+                return r;
+            },
+            ee = function (e) {
+                for (var t, n = e === $, r = P(n ? N : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o($, t)) || i.push(I[t]);
+                return i;
+            };
+        Y ||
+            (c(
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                    var e = d(arguments.length > 0 ? arguments[0] : void 0),
+                        t = function (n) {
+                            this === $ && t.call(N, n), o(this, H) && o(this[H], e) && (this[H][e] = !1), G(this, e, x(1, n));
+                        };
+                    return i && W && G($, e, {configurable: !0, set: t}), z(e);
+                }).prototype,
+                'toString',
+                function () {
+                    return this._k;
+                }
+            ),
+            (L.f = K),
+            (E.f = Z),
+            (n(64).f = k.f = X),
+            (n(31).f = Q),
+            (M.f = ee),
+            i && !n(19) && c($, 'propertyIsEnumerable', Q, !0),
+            (p.f = function (e) {
+                return z(h(e));
+            })),
+            a(a.G + a.W + a.F * !Y, {Symbol: R});
+        for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
+            h(te[ne++]);
+        for (var re = q(h.store), oe = 0; re.length > oe; ) y(re[oe++]);
+        a(a.S + a.F * !Y, 'Symbol', {
+            for: function (e) {
+                return o(B, (e += '')) ? B[e] : (B[e] = R(e));
+            },
+            keyFor: function (e) {
+                if (!V(e)) throw TypeError(e + ' is not a symbol!');
+                for (var t in B) if (B[t] === e) return t;
+            },
+            useSetter: function () {
+                W = !0;
+            },
+            useSimple: function () {
+                W = !1;
+            },
+        }),
+            a(a.S + a.F * !Y, 'Object', {
+                create: function (e, t) {
+                    return void 0 === t ? A(e) : J(A(e), t);
+                },
+                defineProperty: Z,
+                defineProperties: J,
+                getOwnPropertyDescriptor: K,
+                getOwnPropertyNames: X,
+                getOwnPropertySymbols: ee,
+            });
+        var ie = u(function () {
+            M.f(1);
+        });
+        a(a.S + a.F * ie, 'Object', {
+            getOwnPropertySymbols: function (e) {
+                return M.f(S(e));
+            },
+        }),
+            O &&
+                a(
+                    a.S +
+                        a.F *
+                            (!Y ||
+                                u(function () {
+                                    var e = R();
+                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
+                                })),
+                    'JSON',
+                    {
+                        stringify: function (e) {
+                            for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
+                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !V(e)))
+                                return (
+                                    v(t) ||
+                                        (t = function (e, t) {
+                                            if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
+                                        }),
+                                    (r[1] = t),
+                                    j.apply(O, r)
+                                );
+                        },
+                    }
+                ),
+            R.prototype[D] || n(8)(R.prototype, D, R.prototype.valueOf),
+            f(R, 'Symbol'),
+            f(Math, 'Math', !0),
+            f(r.JSON, 'JSON', !0);
+    },
+    function (e, t, n) {
+        var r = n(14);
+        e.exports = Object('z').propertyIsEnumerable(0)
+            ? Object
+            : function (e) {
+                  return 'String' == r(e) ? e.split('') : Object(e);
+              };
+    },
+    function (e, t, n) {
+        var r = n(18),
+            o = Math.max,
+            i = Math.min;
+        e.exports = function (e, t) {
+            return (e = r(e)) < 0 ? o(e + t, 0) : i(e, t);
+        };
+    },
+    function (e, t, n) {
+        var r = n(6),
+            o = n(2),
+            i = n(16);
+        e.exports = n(3)
+            ? Object.defineProperties
+            : function (e, t) {
+                  o(e);
+                  for (var n, a = i(t), c = a.length, s = 0; c > s; ) r.f(e, (n = a[s++]), t[n]);
+                  return e;
+              };
+    },
+    function (e, t, n) {
+        var r = n(5),
+            o = n(42),
+            i = n(13),
+            a = n(2),
+            c = n(4),
+            s = n(7),
+            u = n(104),
+            l = (n(1).Reflect || {}).construct,
+            f = s(function () {
+                function e() {}
+                return !(l(function () {}, [], e) instanceof e);
+            }),
+            d = !s(function () {
+                l(function () {});
+            });
+        r(r.S + r.F * (f || d), 'Reflect', {
+            construct: function (e, t) {
+                i(e), a(t);
+                var n = arguments.length < 3 ? e : i(arguments[2]);
+                if (d && !f) return l(e, t, n);
+                if (e == n) {
+                    switch (t.length) {
+                        case 0:
+                            return new e();
+                        case 1:
+                            return new e(t[0]);
+                        case 2:
+                            return new e(t[0], t[1]);
+                        case 3:
+                            return new e(t[0], t[1], t[2]);
+                        case 4:
+                            return new e(t[0], t[1], t[2], t[3]);
+                    }
+                    var r = [null];
+                    return r.push.apply(r, t), new (u.apply(e, r))();
+                }
+                var s = n.prototype,
+                    h = o(c(s) ? s : Object.prototype),
+                    p = Function.apply.call(e, h, t);
+                return c(p) ? p : h;
+            },
+        });
+    },
+    function (e, t, n) {
+        var r = n(65),
+            o = n(58),
+            i = n(10),
+            a = n(5),
+            c = n(4),
+            s = n(2);
+        a(a.S, 'Reflect', {
+            get: function e(t, n) {
+                var a,
+                    u,
+                    l = arguments.length < 3 ? t : arguments[2];
+                return s(t) === l ? t[n] : (a = r.f(t, n)) ? (i(a, 'value') ? a.value : void 0 !== a.get ? a.get.call(l) : void 0) : c((u = o(t))) ? e(u, n, l) : void 0;
+            },
+        });
+    },
     function (e, t) {
         e.exports = function (e, t) {
             return {value: t, done: !!e};
@@ -2547,71 +5920,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(17),
-            o = n(5),
-            i = n(10),
-            a = n(9),
-            c = n(21),
-            s = n(95),
-            u = n(25),
-            l = n(56),
-            f = n(0)('iterator'),
-            d = !([].keys && 'next' in [].keys()),
-            h = function () {
-                return this;
-            };
-        e.exports = function (e, t, n, p, m, y, v) {
-            s(n, t, p);
-            var g,
-                b,
-                S,
-                w = function (e) {
-                    if (!d && e in k) return k[e];
-                    switch (e) {
-                        case 'keys':
-                        case 'values':
-                            return function () {
-                                return new n(this, e);
-                            };
-                    }
-                    return function () {
-                        return new n(this, e);
-                    };
-                },
-                _ = t + ' Iterator',
-                x = 'values' == m,
-                A = !1,
-                k = e.prototype,
-                L = k[f] || k['@@iterator'] || (m && k[m]),
-                M = L || w(m),
-                E = m ? (x ? w('entries') : M) : void 0,
-                q = ('Array' == t && k.entries) || L;
-            if (
-                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[f] || a(S, f, h)),
-                x &&
-                    L &&
-                    'values' !== L.name &&
-                    ((A = !0),
-                    (M = function () {
-                        return L.call(this);
-                    })),
-                (r && !v) || (!d && !A && k[f]) || a(k, f, M),
-                (c[t] = M),
-                (c[_] = h),
-                m)
-            )
-                if (((g = {values: x ? M : w('values'), keys: y ? M : w('keys'), entries: E}), v)) for (b in g) b in k || i(k, b, g[b]);
-                else o(o.P + o.F * (d || A), t, g);
-            return g;
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(38),
-            o = n(23),
-            i = n(25),
+        var r = n(42),
+            o = n(30),
+            i = n(28),
             a = {};
-        n(9)(a, n(0)('iterator'), function () {
+        n(8)(a, n(0)('iterator'), function () {
             return this;
         }),
             (e.exports = function (e, t, n) {
@@ -2619,8 +5932,32 @@
             });
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(39);
+        n(5)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
+    },
+    function (e, t, n) {
         var r = n(5),
-            o = n(97)(!0);
+            o = n(11),
+            i = n(7);
+        e.exports = function (e, t) {
+            var n = (o.Object || {})[e] || Object[e],
+                a = {};
+            (a[e] = t(n)),
+                r(
+                    r.S +
+                        r.F *
+                            i(function () {
+                                n(1);
+                            }),
+                    'Object',
+                    a
+                );
+        };
+    },
+    function (e, t, n) {
+        var r = n(5),
+            o = n(105)(!0);
         r(r.S, 'Object', {
             entries: function (e) {
                 return o(e);
@@ -2628,10 +5965,117 @@
         });
     },
     function (e, t, n) {
-        var r = n(4),
-            o = n(14),
+        var r = n(20)('meta'),
+            o = n(4),
+            i = n(10),
+            a = n(6).f,
+            c = 0,
+            s =
+                Object.isExtensible ||
+                function () {
+                    return !0;
+                },
+            u = !n(7)(function () {
+                return s(Object.preventExtensions({}));
+            }),
+            l = function (e) {
+                a(e, r, {value: {i: 'O' + ++c, w: {}}});
+            },
+            f = (e.exports = {
+                KEY: r,
+                NEED: !1,
+                fastKey: function (e, t) {
+                    if (!o(e)) return 'symbol' == typeof e ? e : ('string' == typeof e ? 'S' : 'P') + e;
+                    if (!i(e, r)) {
+                        if (!s(e)) return 'F';
+                        if (!t) return 'E';
+                        l(e);
+                    }
+                    return e[r].i;
+                },
+                getWeak: function (e, t) {
+                    if (!i(e, r)) {
+                        if (!s(e)) return !0;
+                        if (!t) return !1;
+                        l(e);
+                    }
+                    return e[r].w;
+                },
+                onFreeze: function (e) {
+                    return u && f.NEED && s(e) && !i(e, r) && l(e), e;
+                },
+            });
+    },
+    function (e, t, n) {
+        var r = n(16),
+            o = n(63),
+            i = n(31);
+        e.exports = function (e) {
+            var t = r(e),
+                n = o.f;
+            if (n) for (var a, c = n(e), s = i.f, u = 0; c.length > u; ) s.call(e, (a = c[u++])) && t.push(a);
+            return t;
+        };
+    },
+    function (e, t, n) {
+        var r = n(14);
+        e.exports =
+            Array.isArray ||
+            function (e) {
+                return 'Array' == r(e);
+            };
+    },
+    function (e, t, n) {
+        var r = n(12),
+            o = n(64).f,
+            i = {}.toString,
+            a = 'object' == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+        e.exports.f = function (e) {
+            return a && '[object Window]' == i.call(e)
+                ? (function (e) {
+                      try {
+                          return o(e);
+                      } catch (e) {
+                          return a.slice();
+                      }
+                  })(e)
+                : o(r(e));
+        };
+    },
+    function (e, t, n) {
+        n(3) && 'g' != /./g.flags && n(6).f(RegExp.prototype, 'flags', {configurable: !0, get: n(43)});
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(13),
+            o = n(4),
+            i = n(55),
+            a = [].slice,
+            c = {},
+            s = function (e, t, n) {
+                if (!(t in c)) {
+                    for (var r = [], o = 0; o < t; o++) r[o] = 'a[' + o + ']';
+                    c[t] = Function('F,a', 'return new F(' + r.join(',') + ')');
+                }
+                return c[t](e, n);
+            };
+        e.exports =
+            Function.bind ||
+            function (e) {
+                var t = r(this),
+                    n = a.call(arguments, 1),
+                    c = function () {
+                        var r = n.concat(a.call(arguments));
+                        return this instanceof c ? s(t, r.length, r) : i(t, r, e);
+                    };
+                return o(t.prototype) && (c.prototype = t.prototype), c;
+            };
+    },
+    function (e, t, n) {
+        var r = n(3),
+            o = n(16),
             i = n(12),
-            a = n(27).f;
+            a = n(31).f;
         e.exports = function (e) {
             return function (t) {
                 for (var n, c = i(t), s = o(c), u = s.length, l = 0, f = []; u > l; ) (n = s[l++]), (r && !a.call(c, n)) || f.push(e ? [n, c[n]] : c[n]);
@@ -2647,18 +6091,13 @@
             };
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(43);
-        n(5)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
-    },
-    function (e, t, n) {
         var r = n(5);
-        r(r.P, 'String', {repeat: n(101)});
+        r(r.P, 'String', {repeat: n(108)});
     },
     function (e, t, n) {
         'use strict';
-        var r = n(19),
-            o = n(16);
+        var r = n(18),
+            o = n(15);
         e.exports = function (e) {
             var t = String(o(this)),
                 n = '',
@@ -2669,53 +6108,8 @@
         };
     },
     function (e, t, n) {
-        var r = n(19),
-            o = n(16);
-        e.exports = function (e) {
-            return function (t, n) {
-                var i,
-                    a,
-                    c = String(o(t)),
-                    s = r(n),
-                    u = c.length;
-                return s < 0 || s >= u
-                    ? e
-                        ? ''
-                        : void 0
-                    : (i = c.charCodeAt(s)) < 55296 || i > 56319 || s + 1 === u || (a = c.charCodeAt(s + 1)) < 56320 || a > 57343
-                    ? e
-                        ? c.charAt(s)
-                        : i
-                    : e
-                    ? c.slice(s, s + 2)
-                    : a - 56320 + ((i - 55296) << 10) + 65536;
-            };
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(5),
-            o = n(49)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(61)('includes');
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(5),
-            o = n(105);
-        r(r.P + r.F * n(106)('includes'), 'String', {
-            includes: function (e) {
-                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
-    },
-    function (e, t, n) {
-        var r = n(65),
-            o = n(16);
+        var r = n(66),
+            o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
             return String(o(e));
@@ -2734,95 +6128,6 @@
             }
             return !0;
         };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(65),
-            o = n(2),
-            i = n(57),
-            a = n(64),
-            c = n(26),
-            s = n(41),
-            u = n(43),
-            l = n(7),
-            f = Math.min,
-            d = [].push,
-            h = 'length',
-            p = !l(function () {
-                RegExp(4294967295, 'y');
-            });
-        n(42)('split', 2, function (e, t, n, l) {
-            var m;
-            return (
-                (m =
-                    'c' == 'abbc'.split(/(b)*/)[1] ||
-                    4 != 'test'.split(/(?:)/, -1)[h] ||
-                    2 != 'ab'.split(/(?:ab)*/)[h] ||
-                    4 != '.'.split(/(.?)(.?)/)[h] ||
-                    '.'.split(/()()/)[h] > 1 ||
-                    ''.split(/.?/)[h]
-                        ? function (e, t) {
-                              var o = String(this);
-                              if (void 0 === e && 0 === t) return [];
-                              if (!r(e)) return n.call(o, e, t);
-                              for (
-                                  var i,
-                                      a,
-                                      c,
-                                      s = [],
-                                      l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
-                                      f = 0,
-                                      p = void 0 === t ? 4294967295 : t >>> 0,
-                                      m = new RegExp(e.source, l + 'g');
-                                  (i = u.call(m, o)) &&
-                                  !(
-                                      (a = m.lastIndex) > f &&
-                                      (s.push(o.slice(f, i.index)), i[h] > 1 && i.index < o[h] && d.apply(s, i.slice(1)), (c = i[0][h]), (f = a), s[h] >= p)
-                                  );
-
-                              )
-                                  m.lastIndex === i.index && m.lastIndex++;
-                              return f === o[h] ? (!c && m.test('')) || s.push('') : s.push(o.slice(f)), s[h] > p ? s.slice(0, p) : s;
-                          }
-                        : '0'.split(void 0, 0)[h]
-                        ? function (e, t) {
-                              return void 0 === e && 0 === t ? [] : n.call(this, e, t);
-                          }
-                        : n),
-                [
-                    function (n, r) {
-                        var o = e(this),
-                            i = null == n ? void 0 : n[t];
-                        return void 0 !== i ? i.call(n, o, r) : m.call(String(o), n, r);
-                    },
-                    function (e, t) {
-                        var r = l(m, e, this, t, m !== n);
-                        if (r.done) return r.value;
-                        var u = o(e),
-                            d = String(this),
-                            h = i(u, RegExp),
-                            y = u.unicode,
-                            v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
-                            g = new h(p ? u : '^(?:' + u.source + ')', v),
-                            b = void 0 === t ? 4294967295 : t >>> 0;
-                        if (0 === b) return [];
-                        if (0 === d.length) return null === s(g, d) ? [d] : [];
-                        for (var S = 0, w = 0, _ = []; w < d.length; ) {
-                            g.lastIndex = p ? w : 0;
-                            var x,
-                                A = s(g, p ? d : d.slice(w));
-                            if (null === A || (x = f(c(g.lastIndex + (p ? 0 : w)), d.length)) === S) w = a(d, w, y);
-                            else {
-                                if ((_.push(d.slice(S, w)), _.length === b)) return _;
-                                for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
-                                w = S = x;
-                            }
-                        }
-                        return _.push(d.slice(S)), _;
-                    },
-                ]
-            );
-        });
     },
     function (e, t, n) {
         (function (e) {
@@ -3132,7 +6437,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }.call(this, n(109)));
+        }.call(this, n(112)));
     },
     function (e, t) {
         var n;
@@ -3145,25 +6450,6 @@
             'object' == typeof window && (n = window);
         }
         e.exports = n;
-    },
-    function (e, t, n) {
-        var r = n(5),
-            o = n(11),
-            i = n(7);
-        e.exports = function (e, t) {
-            var n = (o.Object || {})[e] || Object[e],
-                a = {};
-            (a[e] = t(n)),
-                r(
-                    r.S +
-                        r.F *
-                            i(function () {
-                                n(1);
-                            }),
-                    'Object',
-                    a
-                );
-        };
     },
     function (e, t, n) {
         e.exports = (function () {
@@ -3317,15 +6603,15 @@
                             d = o.milliseconds,
                             h = o.zone,
                             p = new Date(),
-                            m = c || (i || a ? 1 : p.getDate()),
-                            y = i || p.getFullYear(),
+                            y = c || (i || a ? 1 : p.getDate()),
+                            m = i || p.getFullYear(),
                             v = 0;
                         (i && !a) || (v = a > 0 ? a - 1 : p.getMonth());
                         var g = u || 0,
                             b = l || 0,
                             S = f || 0,
                             w = d || 0;
-                        return h ? new Date(Date.UTC(y, v, m, g, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, v, m, g, b, S, w)) : new Date(y, v, m, g, b, S, w);
+                        return h ? new Date(Date.UTC(m, v, y, g, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(m, v, y, g, b, S, w)) : new Date(m, v, y, g, b, S, w);
                     } catch (e) {
                         return new Date('');
                     }
@@ -3353,9 +6639,9 @@
                     } else if (c instanceof Array)
                         for (var h = c.length, p = 1; p <= h; p += 1) {
                             a[1] = c[p - 1];
-                            var m = r.apply(this, a);
-                            if (m.isValid()) {
-                                (this.$d = m.$d), (this.$L = m.$L), this.init();
+                            var y = r.apply(this, a);
+                            if (y.isValid()) {
+                                (this.$d = y.$d), (this.$L = y.$L), this.init();
                                 break;
                             }
                             p === h && (this.$d = new Date(''));
@@ -3365,406 +6651,74 @@
             };
         })();
     },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {},
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
         n.r(t);
-        n(67), n(68), n(54), n(20), n(78), n(80), n(30), n(60), n(40), n(31), n(96), n(62), n(100), n(63), n(103), n(104), n(107), n(32);
-        var r = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== r && r),
-            o = 'URLSearchParams' in r,
-            i = 'Symbol' in r && 'iterator' in Symbol,
-            a =
-                'FileReader' in r &&
-                'Blob' in r &&
-                (function () {
-                    try {
-                        return new Blob(), !0;
-                    } catch (e) {
-                        return !1;
-                    }
-                })(),
-            c = 'FormData' in r,
-            s = 'ArrayBuffer' in r;
-        if (s)
-            var u = [
-                    '[object Int8Array]',
-                    '[object Uint8Array]',
-                    '[object Uint8ClampedArray]',
-                    '[object Int16Array]',
-                    '[object Uint16Array]',
-                    '[object Int32Array]',
-                    '[object Uint32Array]',
-                    '[object Float32Array]',
-                    '[object Float64Array]',
-                ],
-                l =
-                    ArrayBuffer.isView ||
-                    function (e) {
-                        return e && u.indexOf(Object.prototype.toString.call(e)) > -1;
-                    };
-        function f(e) {
-            if (('string' != typeof e && (e = String(e)), /[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(e) || '' === e)) throw new TypeError('Invalid character in header field name');
-            return e.toLowerCase();
-        }
-        function d(e) {
-            return 'string' != typeof e && (e = String(e)), e;
-        }
-        function h(e) {
-            var t = {
-                next: function () {
-                    var t = e.shift();
-                    return {done: void 0 === t, value: t};
-                },
-            };
-            return (
-                i &&
-                    (t[Symbol.iterator] = function () {
-                        return t;
-                    }),
-                t
-            );
-        }
-        function p(e) {
-            (this.map = {}),
-                e instanceof p
-                    ? e.forEach(function (e, t) {
-                          this.append(t, e);
-                      }, this)
-                    : Array.isArray(e)
-                    ? e.forEach(function (e) {
-                          this.append(e[0], e[1]);
-                      }, this)
-                    : e &&
-                      Object.getOwnPropertyNames(e).forEach(function (t) {
-                          this.append(t, e[t]);
-                      }, this);
-        }
-        function m(e) {
-            if (e.bodyUsed) return Promise.reject(new TypeError('Already read'));
-            e.bodyUsed = !0;
-        }
-        function y(e) {
-            return new Promise(function (t, n) {
-                (e.onload = function () {
-                    t(e.result);
-                }),
-                    (e.onerror = function () {
-                        n(e.error);
-                    });
-            });
-        }
-        function v(e) {
-            var t = new FileReader(),
-                n = y(t);
-            return t.readAsArrayBuffer(e), n;
-        }
-        function g(e) {
-            if (e.slice) return e.slice(0);
-            var t = new Uint8Array(e.byteLength);
-            return t.set(new Uint8Array(e)), t.buffer;
-        }
-        function b() {
-            return (
-                (this.bodyUsed = !1),
-                (this._initBody = function (e) {
-                    var t;
-                    (this.bodyUsed = this.bodyUsed),
-                        (this._bodyInit = e),
-                        e
-                            ? 'string' == typeof e
-                                ? (this._bodyText = e)
-                                : a && Blob.prototype.isPrototypeOf(e)
-                                ? (this._bodyBlob = e)
-                                : c && FormData.prototype.isPrototypeOf(e)
-                                ? (this._bodyFormData = e)
-                                : o && URLSearchParams.prototype.isPrototypeOf(e)
-                                ? (this._bodyText = e.toString())
-                                : s && a && (t = e) && DataView.prototype.isPrototypeOf(t)
-                                ? ((this._bodyArrayBuffer = g(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
-                                : s && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
-                                ? (this._bodyArrayBuffer = g(e))
-                                : (this._bodyText = e = Object.prototype.toString.call(e))
-                            : (this._bodyText = ''),
-                        this.headers.get('content-type') ||
-                            ('string' == typeof e
-                                ? this.headers.set('content-type', 'text/plain;charset=UTF-8')
-                                : this._bodyBlob && this._bodyBlob.type
-                                ? this.headers.set('content-type', this._bodyBlob.type)
-                                : o && URLSearchParams.prototype.isPrototypeOf(e) && this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8'));
-                }),
-                a &&
-                    ((this.blob = function () {
-                        var e = m(this);
-                        if (e) return e;
-                        if (this._bodyBlob) return Promise.resolve(this._bodyBlob);
-                        if (this._bodyArrayBuffer) return Promise.resolve(new Blob([this._bodyArrayBuffer]));
-                        if (this._bodyFormData) throw new Error('could not read FormData body as blob');
-                        return Promise.resolve(new Blob([this._bodyText]));
-                    }),
-                    (this.arrayBuffer = function () {
-                        if (this._bodyArrayBuffer) {
-                            var e = m(this);
-                            return (
-                                e ||
-                                (ArrayBuffer.isView(this._bodyArrayBuffer)
-                                    ? Promise.resolve(
-                                          this._bodyArrayBuffer.buffer.slice(this._bodyArrayBuffer.byteOffset, this._bodyArrayBuffer.byteOffset + this._bodyArrayBuffer.byteLength)
-                                      )
-                                    : Promise.resolve(this._bodyArrayBuffer))
-                            );
-                        }
-                        return this.blob().then(v);
-                    })),
-                (this.text = function () {
-                    var e,
-                        t,
-                        n,
-                        r = m(this);
-                    if (r) return r;
-                    if (this._bodyBlob) return (e = this._bodyBlob), (t = new FileReader()), (n = y(t)), t.readAsText(e), n;
-                    if (this._bodyArrayBuffer)
-                        return Promise.resolve(
-                            (function (e) {
-                                for (var t = new Uint8Array(e), n = new Array(t.length), r = 0; r < t.length; r++) n[r] = String.fromCharCode(t[r]);
-                                return n.join('');
-                            })(this._bodyArrayBuffer)
-                        );
-                    if (this._bodyFormData) throw new Error('could not read FormData body as text');
-                    return Promise.resolve(this._bodyText);
-                }),
-                c &&
-                    (this.formData = function () {
-                        return this.text().then(_);
-                    }),
-                (this.json = function () {
-                    return this.text().then(JSON.parse);
-                }),
-                this
-            );
-        }
-        (p.prototype.append = function (e, t) {
-            (e = f(e)), (t = d(t));
-            var n = this.map[e];
-            this.map[e] = n ? n + ', ' + t : t;
-        }),
-            (p.prototype.delete = function (e) {
-                delete this.map[f(e)];
-            }),
-            (p.prototype.get = function (e) {
-                return (e = f(e)), this.has(e) ? this.map[e] : null;
-            }),
-            (p.prototype.has = function (e) {
-                return this.map.hasOwnProperty(f(e));
-            }),
-            (p.prototype.set = function (e, t) {
-                this.map[f(e)] = d(t);
-            }),
-            (p.prototype.forEach = function (e, t) {
-                for (var n in this.map) this.map.hasOwnProperty(n) && e.call(t, this.map[n], n, this);
-            }),
-            (p.prototype.keys = function () {
-                var e = [];
-                return (
-                    this.forEach(function (t, n) {
-                        e.push(n);
-                    }),
-                    h(e)
-                );
-            }),
-            (p.prototype.values = function () {
-                var e = [];
-                return (
-                    this.forEach(function (t) {
-                        e.push(t);
-                    }),
-                    h(e)
-                );
-            }),
-            (p.prototype.entries = function () {
-                var e = [];
-                return (
-                    this.forEach(function (t, n) {
-                        e.push([n, t]);
-                    }),
-                    h(e)
-                );
-            }),
-            i && (p.prototype[Symbol.iterator] = p.prototype.entries);
-        var S = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
-        function w(e, t) {
-            if (!(this instanceof w)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
-            var n,
-                r,
-                o = (t = t || {}).body;
-            if (e instanceof w) {
-                if (e.bodyUsed) throw new TypeError('Already read');
-                (this.url = e.url),
-                    (this.credentials = e.credentials),
-                    t.headers || (this.headers = new p(e.headers)),
-                    (this.method = e.method),
-                    (this.mode = e.mode),
-                    (this.signal = e.signal),
-                    o || null == e._bodyInit || ((o = e._bodyInit), (e.bodyUsed = !0));
-            } else this.url = String(e);
-            if (
-                ((this.credentials = t.credentials || this.credentials || 'same-origin'),
-                (!t.headers && this.headers) || (this.headers = new p(t.headers)),
-                (this.method = ((n = t.method || this.method || 'GET'), (r = n.toUpperCase()), S.indexOf(r) > -1 ? r : n)),
-                (this.mode = t.mode || this.mode || null),
-                (this.signal = t.signal || this.signal),
-                (this.referrer = null),
-                ('GET' === this.method || 'HEAD' === this.method) && o)
-            )
-                throw new TypeError('Body not allowed for GET or HEAD requests');
-            if ((this._initBody(o), !(('GET' !== this.method && 'HEAD' !== this.method) || ('no-store' !== t.cache && 'no-cache' !== t.cache)))) {
-                var i = /([?&])_=[^&]*/;
-                if (i.test(this.url)) this.url = this.url.replace(i, '$1_=' + new Date().getTime());
-                else {
-                    this.url += (/\?/.test(this.url) ? '&' : '?') + '_=' + new Date().getTime();
-                }
-            }
-        }
-        function _(e) {
-            var t = new FormData();
-            return (
-                e
-                    .trim()
-                    .split('&')
-                    .forEach(function (e) {
-                        if (e) {
-                            var n = e.split('='),
-                                r = n.shift().replace(/\+/g, ' '),
-                                o = n.join('=').replace(/\+/g, ' ');
-                            t.append(decodeURIComponent(r), decodeURIComponent(o));
-                        }
-                    }),
-                t
-            );
-        }
-        function x(e, t) {
-            if (!(this instanceof x)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
-            t || (t = {}),
-                (this.type = 'default'),
-                (this.status = void 0 === t.status ? 200 : t.status),
-                (this.ok = this.status >= 200 && this.status < 300),
-                (this.statusText = 'statusText' in t ? t.statusText : ''),
-                (this.headers = new p(t.headers)),
-                (this.url = t.url || ''),
-                this._initBody(e);
-        }
-        (w.prototype.clone = function () {
-            return new w(this, {body: this._bodyInit});
-        }),
-            b.call(w.prototype),
-            b.call(x.prototype),
-            (x.prototype.clone = function () {
-                return new x(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new p(this.headers), url: this.url});
-            }),
-            (x.error = function () {
-                var e = new x(null, {status: 0, statusText: ''});
-                return (e.type = 'error'), e;
-            });
-        var A = [301, 302, 303, 307, 308];
-        x.redirect = function (e, t) {
-            if (-1 === A.indexOf(t)) throw new RangeError('Invalid status code');
-            return new x(null, {status: t, headers: {location: e}});
-        };
-        var k = r.DOMException;
-        try {
-            new k();
-        } catch (e) {
-            ((k = function (e, t) {
-                (this.message = e), (this.name = t);
-                var n = Error(e);
-                this.stack = n.stack;
-            }).prototype = Object.create(Error.prototype)),
-                (k.prototype.constructor = k);
-        }
-        function M(e, t) {
-            return new Promise(function (n, o) {
-                var i = new w(e, t);
-                if (i.signal && i.signal.aborted) return o(new k('Aborted', 'AbortError'));
-                var c = new XMLHttpRequest();
-                function u() {
-                    c.abort();
-                }
-                (c.onload = function () {
-                    var e,
-                        t,
-                        r = {
-                            status: c.status,
-                            statusText: c.statusText,
-                            headers:
-                                ((e = c.getAllResponseHeaders() || ''),
-                                (t = new p()),
-                                e
-                                    .replace(/\r?\n[\t ]+/g, ' ')
-                                    .split(/\r?\n/)
-                                    .forEach(function (e) {
-                                        var n = e.split(':'),
-                                            r = n.shift().trim();
-                                        if (r) {
-                                            var o = n.join(':').trim();
-                                            t.append(r, o);
-                                        }
-                                    }),
-                                t),
-                        };
-                    r.url = 'responseURL' in c ? c.responseURL : r.headers.get('X-Request-URL');
-                    var o = 'response' in c ? c.response : c.responseText;
-                    setTimeout(function () {
-                        n(new x(o, r));
-                    }, 0);
-                }),
-                    (c.onerror = function () {
-                        setTimeout(function () {
-                            o(new TypeError('Network request failed'));
-                        }, 0);
-                    }),
-                    (c.ontimeout = function () {
-                        setTimeout(function () {
-                            o(new TypeError('Network request failed'));
-                        }, 0);
-                    }),
-                    (c.onabort = function () {
-                        setTimeout(function () {
-                            o(new k('Aborted', 'AbortError'));
-                        }, 0);
-                    }),
-                    c.open(
-                        i.method,
-                        (function (e) {
-                            try {
-                                return '' === e && r.location.href ? r.location.href : e;
-                            } catch (t) {
-                                return e;
-                            }
-                        })(i.url),
-                        !0
-                    ),
-                    'include' === i.credentials ? (c.withCredentials = !0) : 'omit' === i.credentials && (c.withCredentials = !1),
-                    'responseType' in c &&
-                        (a
-                            ? (c.responseType = 'blob')
-                            : s && i.headers.get('Content-Type') && -1 !== i.headers.get('Content-Type').indexOf('application/octet-stream') && (c.responseType = 'arraybuffer')),
-                    !t || 'object' != typeof t.headers || t.headers instanceof p
-                        ? i.headers.forEach(function (e, t) {
-                              c.setRequestHeader(t, e);
-                          })
-                        : Object.getOwnPropertyNames(t.headers).forEach(function (e) {
-                              c.setRequestHeader(e, d(t.headers[e]));
-                          }),
-                    i.signal &&
-                        (i.signal.addEventListener('abort', u),
-                        (c.onreadystatechange = function () {
-                            4 === c.readyState && i.signal.removeEventListener('abort', u);
-                        })),
-                    c.send(void 0 === i._bodyInit ? null : i._bodyInit);
-            });
-        }
-        (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = p), (r.Request = w), (r.Response = x));
-        n(108), n(66);
-        function E(e, t, n, r, o, i, a) {
+        n(87), n(88), n(47), n(22), n(92), n(93);
+        var r = n(67),
+            o = n(21),
+            i = new (n.n(o).a)(),
+            a = 'hof_landing_page-'.concat(62678);
+        n(32), n(73), n(33);
+        function c(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3773,2889 +6727,30 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function q(e) {
+        function s(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        E(i, r, o, a, c, 'next', e);
+                        c(i, r, o, a, s, 'next', e);
                     }
-                    function c(e) {
-                        E(i, r, o, a, c, 'throw', e);
-                    }
-                    a(void 0);
-                });
-            };
-        }
-        function C(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var r = t[n];
-                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
-            }
-        }
-        var T = n(44),
-            P = (function () {
-                function e() {
-                    !(function (e, t) {
-                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                    })(this, e);
-                }
-                var t, n, r, o, i, a, c, s, u, l, f, d;
-                return (
-                    (t = e),
-                    (n = [
-                        {
-                            key: 'ieForEachPolyfill',
-                            value: function () {
-                                window.NodeList && !NodeList.prototype.forEach && (NodeList.prototype.forEach = Array.prototype.forEach);
-                            },
-                        },
-                        {
-                            key: 'createHTML',
-                            value:
-                                ((d = q(
-                                    regeneratorRuntime.mark(function e(t, n, r) {
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return e.abrupt(
-                                                            'return',
-                                                            new Promise(function (e) {
-                                                                var o = document.querySelector(n);
-                                                                o && null != o && (o.insertAdjacentHTML(r, t), e());
-                                                            })
-                                                        );
-                                                    case 1:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e, t, n) {
-                                    return d.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'updateAttribute',
-                            value: function (e, t, n) {
-                                var r = document.querySelectorAll(e);
-                                r &&
-                                    r.forEach(function (e, r) {
-                                        e.setAttribute(n, t);
-                                    });
-                            },
-                        },
-                        {
-                            key: 'getAttribute',
-                            value: function (e, t) {
-                                if (document.querySelector(e)) return document.querySelector(e).getAttribute(t);
-                            },
-                        },
-                        {
-                            key: 'updateHTML',
-                            value: function (e, t) {
-                                var n = document.querySelectorAll(e);
-                                n &&
-                                    n.forEach(function (e, n) {
-                                        e.innerHTML = t;
-                                    });
-                            },
-                        },
-                        {
-                            key: 'appendToParent',
-                            value: function (e, t) {
-                                var n = document.querySelector(e),
-                                    r = document.querySelector(t);
-                                n && r && r.appendChild(n);
-                            },
-                        },
-                        {
-                            key: 'waitForSelectorInDOM',
-                            value:
-                                ((f = q(
-                                    regeneratorRuntime.mark(function e(t) {
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return e.abrupt(
-                                                            'return',
-                                                            new Promise(function (e) {
-                                                                var n = setInterval(function () {
-                                                                    var r = document.querySelector(t);
-                                                                    if (r) return e(r), clearInterval(n), r;
-                                                                }, 500);
-                                                            })
-                                                        );
-                                                    case 1:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e) {
-                                    return f.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'waitForTextInDOM',
-                            value:
-                                ((l = q(
-                                    regeneratorRuntime.mark(function e(t, n) {
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return e.abrupt(
-                                                            'return',
-                                                            new Promise(function (e) {
-                                                                var r = setInterval(function () {
-                                                                    var o = document.querySelector(t).textContent;
-                                                                    if (o === n) return e(o), clearInterval(r), o;
-                                                                }, 500);
-                                                            })
-                                                        );
-                                                    case 1:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e, t) {
-                                    return l.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'moveElementIntoExistingWrapper',
-                            value: function (e, t, n) {
-                                document.querySelector(t) && document.querySelector(e) && document.querySelector(t).insertAdjacentElement(n, document.querySelector(e));
-                            },
-                        },
-                        {
-                            key: 'moveOrphanedElementsIntoNewWrapper',
-                            value:
-                                ((u = q(
-                                    regeneratorRuntime.mark(function e(t, n, r, o) {
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return e.abrupt(
-                                                            'return',
-                                                            new Promise(function (e) {
-                                                                document.querySelector(r) &&
-                                                                    (document.querySelector(r).insertAdjacentHTML(o, '<div class id="'.concat(n, '"></div>')),
-                                                                    t.forEach(function (t) {
-                                                                        document.getElementById(n).insertAdjacentElement('beforeEnd', t), e();
-                                                                    }));
-                                                            })
-                                                        );
-                                                    case 1:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e, t, n, r) {
-                                    return u.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'createWrapper',
-                            value:
-                                ((s = q(
-                                    regeneratorRuntime.mark(function e(t, n, r, o) {
-                                        var i;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        if ((i = document.createElement('div'))) {
-                                                            e.next = 3;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 3:
-                                                        i.setAttribute('class', r),
-                                                            Array.prototype.forEach.call(document.querySelectorAll(t), function (e) {
-                                                                i.appendChild(e);
-                                                            }),
-                                                            document.querySelector(n).insertAdjacentElement(o, i);
-                                                    case 6:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e, t, n, r) {
-                                    return s.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'createModal',
-                            value: function (e, t, n, r, o) {
-                                n &&
-                                    (document.querySelector(r).insertAdjacentHTML(o, '<span class="open-modal">Show '.concat(t, '</span>')),
-                                    document.body.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '<div class="modal-overlay"><div class="modal-container"><div class="modal-header"><h3>'.concat(
-                                            t,
-                                            '</h3><span class="close-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="modal-content"></div></div></div>'
-                                        )
-                                    ),
-                                    e.forEach(function (e) {
-                                        document.querySelector('.modal-content').insertAdjacentElement('beforeEnd', e);
-                                    }),
-                                    document.querySelector('.open-modal').addEventListener('click', function () {
-                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
-                                    }),
-                                    document.querySelector('.close-modal').addEventListener('click', function () {
-                                        document.querySelector('.modal-overlay').classList.toggle('show-modal');
-                                    }));
-                            },
-                        },
-                        {
-                            key: 'addMultipleHeaderLogos',
-                            value:
-                                ((c = q(
-                                    regeneratorRuntime.mark(function e(t) {
-                                        var n, r, o, i;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            return (
-                                                                (o = function (e) {
-                                                                    if (e.matches && !r)
-                                                                        try {
-                                                                            Object.keys(t).forEach(function (e) {
-                                                                                n.insertAdjacentHTML(
-                                                                                    t[e].insertPosition,
-                                                                                    '<img class="'.concat(t[e].className, '" src="').concat(t[e].imageUrl, '">')
-                                                                                ),
-                                                                                    (r = !0);
-                                                                            });
-                                                                        } catch (e) {
-                                                                            console.error(e);
-                                                                        }
-                                                                }),
-                                                                (e.next = 3),
-                                                                this.waitForSelectorInDOM('header')
-                                                            );
-                                                        case 3:
-                                                            (n = document.querySelector('header')), (i = window.matchMedia('(min-width: 1200px)')), o(i), i.addListener(o);
-                                                        case 7:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function (e) {
-                                    return c.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'emailVerificationSetup',
-                            value: function () {
-                                var e = document.createElement('script');
-                                (e.text =
-                                    "\n            const DeBounce_APIKEY = 'public_T0tSVklSNEZRTEtkc1c5MFZoUWhKZz09';\n            const DeBounce_BlockFreeEmails = 'false';\n        "),
-                                    document.body.appendChild(e);
-                                var t = document.createElement('script');
-                                t.setAttribute('src', 'https://cdn.debounce.io/widget/DeBounce.js'), t.setAttribute('async', !0), document.body.appendChild(t);
-                            },
-                        },
-                        {
-                            key: 'createDropdownMenu',
-                            value: function (e, t, n, r) {
-                                var o = document.querySelector(e),
-                                    i = document.querySelector(r);
-                                if (o && i) {
-                                    i.insertAdjacentHTML('beforeEnd', '<style>'.concat(n, '{display: none;}').concat(r, '{position: relative;}</style>').concat(t.outerHTML));
-                                    var a = document.querySelector(n);
-                                    document.addEventListener('click', function (e) {
-                                        var t = e.target;
-                                        t === o && a.classList.toggle('show-dropdown'),
-                                            document.querySelector(''.concat(n, '.show-dropdown')) && t !== o && a.classList.toggle('show-dropdown');
-                                    });
-                                }
-                            },
-                        },
-                        {
-                            key: 'addPropThumbTag',
-                            value: function (e, t) {
-                                !document.querySelector('#theArnProperty'.concat(t, ' .ArnPropThumb > .propThumbTag')) &&
-                                    document.querySelector('#theArnProperty'.concat(t)) &&
-                                    document
-                                        .querySelector('#theArnProperty'.concat(t, ' .ArnPropThumb'))
-                                        .insertAdjacentHTML('afterbegin', '<div class="propThumbTag">'.concat(e, '</div>'));
-                            },
-                        },
-                        {
-                            key: 'ratesComingSoon',
-                            value:
-                                ((a = q(
-                                    regeneratorRuntime.mark(function e(t) {
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector('.SearchHotels')) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.next = 4), this.waitForSelectorInDOM('.pollingFinished');
-                                                        case 4:
-                                                            t.forEach(function (e) {
-                                                                document.querySelector('#theArnProperty'.concat(e, ' .ArnLimitedAvail')) &&
-                                                                    (document.querySelector('#theArnProperty'.concat(e, ' .ArnLimitedAvail')).textContent = 'Rates Coming Soon');
-                                                            });
-                                                        case 5:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function (e) {
-                                    return a.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'addClass',
-                            value: function (e, t) {
-                                document.querySelector('.'.concat(e)).classList.add(t);
-                            },
-                        },
-                        {
-                            key: 'getMetaTagContent',
-                            value: function (e) {
-                                if (document.querySelector('meta[name="'.concat(e, '"]'))) return document.querySelector('meta[name="'.concat(e, '"]')).content;
-                            },
-                        },
-                        {
-                            key: 'parseJSON',
-                            value: function (e) {
-                                if (e) return JSON.parse(e);
-                            },
-                        },
-                        {
-                            key: 'getPageName',
-                            value: function () {
-                                var e,
-                                    t = document.body;
-                                return (
-                                    t.classList.contains('SearchHotels') && !t.classList.contains('HoldRoomsForm') && (e = 'search-results'),
-                                    t.classList.contains('SinglePropDetail') && (e = 'property-detail'),
-                                    t.classList.contains('CheckOutForm') && (e = 'checkout'),
-                                    t.classList.contains('ConfirmationForm') && (e = 'confirmation'),
-                                    t.classList.contains('RootBody') && (e = 'landing-page'),
-                                    t.classList.contains('WBFaq') && (e = 'faq'),
-                                    t.classList.contains('WBTermsAndConditions') && (e = 'terms-conditions'),
-                                    t.classList.contains('WBPrivacyPolicy') && (e = 'privacy-policy'),
-                                    t.classList.contains('WBRateGuaranteeForm2') && (e = 'lrg-page'),
-                                    t.classList.contains('WBValidatedRegistrationForm') && (e = 'cug-registration'),
-                                    t.classList.contains('HoldRoomsForm') && t.classList.contains('SearchHotels') && (e = 'hold-rooms'),
-                                    e
-                                );
-                            },
-                        },
-                        {
-                            key: 'getElementTextContent',
-                            value: function (e) {
-                                if (document.querySelector(e)) return document.querySelector(e).textContent;
-                            },
-                        },
-                        {
-                            key: 'fetchJSON',
-                            value: function (e) {
-                                return function () {
-                                    fetch(e)
-                                        .then(function (e) {
-                                            if (!e.ok) throw e;
-                                            return e.json();
-                                        })
-                                        .catch(function (t) {
-                                            t.text().then(function (t) {
-                                                console.error('Could not fetch json from '.concat(e), t);
-                                            });
-                                        });
-                                };
-                            },
-                        },
-                        {
-                            key: 'fetchHTMLFromFile',
-                            value:
-                                ((i = q(
-                                    regeneratorRuntime.mark(function e(t) {
-                                        var n;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return (
-                                                            (n = ''),
-                                                            (e.next = 3),
-                                                            fetch(t)
-                                                                .then(function (e) {
-                                                                    if (!e.ok) throw e;
-                                                                    return e.text();
-                                                                })
-                                                                .then(function (e) {
-                                                                    n = e;
-                                                                })
-                                                                .catch(function (e) {
-                                                                    e.text().then(function (e) {
-                                                                        console.error('Could not fetch text from '.concat(t), e);
-                                                                    });
-                                                                })
-                                                        );
-                                                    case 3:
-                                                        return e.abrupt('return', n);
-                                                    case 4:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e) {
-                                    return i.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'removeMaskedElementFromTabIndex',
-                            value: function (e) {
-                                var t = document.querySelector(e);
-                                t && t.setAttribute('tabindex', -1);
-                            },
-                        },
-                        {
-                            key: 'calculateNights',
-                            value: function () {
-                                var e = T(document.querySelector('input#theCheckIn').value).format('MM/DD/YYYY'),
-                                    t = T(document.querySelector('input#theCheckOut').value).format('MM/DD/YYYY');
-                                return T(t).diff(T(e), 'days');
-                            },
-                        },
-                        {
-                            key: 'matchMediaQuery',
-                            value: function (e) {
-                                return window.matchMedia('('.concat(e, ')')).matches;
-                            },
-                        },
-                        {
-                            key: 'selectCheckboxOnLabelClick',
-                            value: function (e) {
-                                document.querySelectorAll(e).forEach(function (e) {
-                                    if (e.querySelector('input[type="checkbox"]') && e) {
-                                        var t = e.querySelector('span');
-                                        t || (t = e.querySelector('label')),
-                                            t.addEventListener('click', function (t) {
-                                                e.querySelector('input[type="checkbox"]').click();
-                                            });
-                                    }
-                                });
-                            },
-                        },
-                        {
-                            key: 'addAttributeToInput',
-                            value:
-                                ((o = q(
-                                    regeneratorRuntime.mark(function e(t, n, r, o) {
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector(o)) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.prev = 2), (e.next = 5), this.waitForSelectorInDOM(t);
-                                                        case 5:
-                                                            document.querySelector(t).setAttribute(r, n), (e.next = 11);
-                                                            break;
-                                                        case 8:
-                                                            (e.prev = 8), (e.t0 = e.catch(2)), console.error(e.t0);
-                                                        case 11:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this,
-                                            [[2, 8]]
-                                        );
-                                    })
-                                )),
-                                function (e, t, n, r) {
-                                    return o.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'replaceSpecificText',
-                            value: function (e, t, n) {
-                                if (document.querySelector(e)) {
-                                    var r = document.querySelector(e).textContent.replace(t, n);
-                                    document.querySelector(e).textContent = r;
-                                }
-                            },
-                        },
-                        {
-                            key: 'checkForPastDate',
-                            value: function (e) {
-                                e || console.error('No date passed into checkForPastDate()');
-                                var t = T();
-                                return T(e).diff(t, 'milliseconds') < 0;
-                            },
-                        },
-                    ]) && C(t.prototype, n),
-                    r && C(t, r),
-                    e
-                );
-            })();
-        function O(e, t, n, r, o, i, a) {
-            try {
-                var c = e[i](a),
-                    s = c.value;
-            } catch (e) {
-                return void n(e);
-            }
-            c.done ? t(s) : Promise.resolve(s).then(r, o);
-        }
-        function R(e) {
-            return function () {
-                var t = this,
-                    n = arguments;
-                return new Promise(function (r, o) {
-                    var i = e.apply(t, n);
-                    function a(e) {
-                        O(i, r, o, a, c, 'next', e);
-                    }
-                    function c(e) {
-                        O(i, r, o, a, c, 'throw', e);
+                    function s(e) {
+                        c(i, r, o, a, s, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        function j(e, t) {
+        function u(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var H = n(44),
-            D = n(111);
-        H.extend(D);
-        var F = (function () {
-                function e() {
-                    !(function (e, t) {
-                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                    })(this, e);
-                }
-                var t, n, r;
-                return (
-                    (t = e),
-                    (n = [
-                        {
-                            key: 'init',
-                            value: function (e, t, n) {
-                                var r,
-                                    o,
-                                    i,
-                                    a,
-                                    c = this,
-                                    s = new URL(window.location.href),
-                                    u = new URLSearchParams(s.search),
-                                    l = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-                                function f(e) {
-                                    document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll(e).forEach(function (e) {
-                                            e.style.display = 'none';
-                                        });
-                                }
-                                function d() {
-                                    return (d = R(
-                                        regeneratorRuntime.mark(function e(t) {
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector(t)) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (
-                                                                (document.querySelector(t).style.position = 'absolute'),
-                                                                (document.querySelector(t).style.left = '-10000px'),
-                                                                (e.next = 6),
-                                                                n.waitForSelectorInDOM('#city')
-                                                            );
-                                                        case 6:
-                                                            document.querySelector(t).removeAttribute('required');
-                                                        case 7:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
-                                        })
-                                    )).apply(this, arguments);
-                                }
-                                function h(e, t, n, r) {
-                                    document.querySelector(e) && document.querySelector(t).insertAdjacentHTML(n, r);
-                                }
-                                function p(e) {
-                                    var t = document.querySelector(e),
-                                        n = t.querySelector('option[value="'.concat(t.value, '"]')).textContent;
-                                    return (
-                                        t.addEventListener('change', function () {
-                                            for (var e = 0; e < t.length; e += 1)
-                                                if (t[e].selected) {
-                                                    (t.selectedIndex = e), (n = t[e].textContent);
-                                                    break;
-                                                }
-                                            return n;
-                                        }),
-                                        n
-                                    );
-                                }
-                                function m() {
-                                    if ('search-results' === t && '' !== document.querySelector('input#hotelName').value) return document.querySelector('input#hotelName').value;
-                                }
-                                function y(e, t) {
-                                    var n = '';
-                                    return (
-                                        document.querySelectorAll(e).forEach(function (e) {
-                                            if (!e.classList.contains(t)) {
-                                                if (e.querySelector('input').checked) {
-                                                    var r = e.querySelector('span').textContent;
-                                                    n += ''.concat(r, ',');
-                                                }
-                                                return n;
-                                            }
-                                        }),
-                                        n.slice(0, -1)
-                                    );
-                                }
-                                function v(e) {
-                                    if (l.has(e)) return l.get(e);
-                                }
-                                document.querySelector('form#searchForm').addEventListener('submit', function (i) {
-                                    i.preventDefault();
-                                    var a,
-                                        s,
-                                        u,
-                                        f,
-                                        d,
-                                        h,
-                                        g = window.location.origin,
-                                        b = ''
-                                            .concat(g, '/v6/?type=geo&siteid=')
-                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
-                                            .concat(e.distance_unit),
-                                        S = new URL(b);
-                                    function w(e) {
-                                        Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && S.searchParams.append(e[t].key, e[t].value);
-                                        });
-                                    }
-                                    'standard' === n.getMetaTagContent('theme')
-                                        ? ((u = H(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (f = H(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (d = H(f).diff(H(u), 'days')))
-                                        : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                        ? ((u = H(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (f = H(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (d = H(f).diff(H(u), 'days')),
-                                          (u = H(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                          (f = H(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : ((u = H(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (f = H(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (d = H(f).diff(H(u), 'days')),
-                                          (u = H(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (f = H(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
-                                        'standard' !== n.getMetaTagContent('theme') &&
-                                            ((c.check_in_value = document.querySelector('input#theCheckIn').value),
-                                            (c.check_out_value = document.querySelector('input#theCheckOut').value)),
-                                        r
-                                            ? ((a = r.lat), (s = r.lng))
-                                            : o
-                                            ? ((a = o.lat), (s = o.lng))
-                                            : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
-                                        w({
-                                            longitude: {key: 'longitude', value: s},
-                                            latitude: {key: 'latitude', value: a},
-                                            destination: {
-                                                key: 'destination',
-                                                value:
-                                                    ((h = 'input#address-input'),
-                                                    null !== document.querySelector(h).value
-                                                        ? document.querySelector(h).value
-                                                        : l.has('destination')
-                                                        ? l.get('destination')
-                                                        : void 0),
-                                            },
-                                            checkin: {key: 'checkin', value: u},
-                                            nights: {key: 'nights', value: d},
-                                            rooms: {key: 'rooms', value: p('select#rooms')},
-                                            adults: {key: 'adults', value: p('select#adults')},
-                                            currency: {key: 'currency', value: e.currency},
-                                            amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                            stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                            propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            optionalHotel: {key: 'hotelname', value: m()},
-                                        }),
-                                        'search-results' === t &&
-                                            'lodging' === e.site_type.toLowerCase() &&
-                                            w({
-                                                properties: {key: 'properties', value: v('properties')},
-                                                utm_source: {key: 'utm_source', value: v('utm_source')},
-                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
-                                                radius: {key: 'radius', value: v('radius')},
-                                                groupId: {key: 'groupid', value: v('groupid')},
-                                                cid: {key: 'cid', value: v('cid')},
-                                                points: {key: 'points', value: v('points')},
-                                            }),
-                                        'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
-                                        (window.location.href = decodeURIComponent(S));
-                                }),
-                                    (function (e) {
-                                        d.apply(this, arguments);
-                                    })('input#city'),
-                                    'landing-page' === t &&
-                                        h(
-                                            '.RootBody',
-                                            'div#CitySearchContainer span',
-                                            'beforeEnd',
-                                            '<input type="search" id="address-input" placeholder="Destination" required="true" />'
-                                        ),
-                                    'search-results' === t &&
-                                        (h(
-                                            '.SearchHotels',
-                                            'div#theSearchBox',
-                                            'afterBegin',
-                                            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
-                                        ),
-                                        (function () {
-                                            if (document.querySelector('.SearchHotels')) {
-                                                var e;
-                                                null !== u.get('destination') && (e = u.get('destination')),
-                                                    (e =
-                                                        null !== l.get('destination')
-                                                            ? l.get('destination')
-                                                            : ''
-                                                                  .concat(document.querySelector('span[itemprop="addressLocality"]').textContent, ', ')
-                                                                  .concat(document.querySelector('span[itemprop="addressRegion"]').textContent));
-                                                var t = document.querySelector('input#address-input');
-                                                (t.value = e),
-                                                    t.addEventListener('click', function () {
-                                                        t.value = '';
-                                                    });
-                                            }
-                                        })()),
-                                    document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    f('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
-                                    'search-results' === t &&
-                                        'cug' !== e.site_type.toLowerCase() &&
-                                        'retail' !== e.site_type.toLowerCase() &&
-                                        n.waitForSelectorInDOM('.algolia-places').then(function () {
-                                            (document.querySelector('.algolia-places').style.display = 'none'),
-                                                (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
-                                        }),
-                                    p('select#rooms'),
-                                    p('select#adults'),
-                                    (i = 'input#theCheckIn'),
-                                    document.querySelector(i) && (document.querySelector(i).required = !0),
-                                    jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        u.has('locationlabel') || u.has('points') || f('img.arn-green-marker-icon');
-                                    }),
-                                    (a = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
-                                        aroundLatLngViaIP: 'false',
-                                        type: 'city',
-                                    })).on('change', function (e) {
-                                        (document.querySelector('input#address-input').value = e.suggestion.value || ''), (r = e.suggestion.latlng);
-                                    }),
-                                    a.on('suggestions', function (e) {
-                                        o = e.rawAnswer.hits[0]._geoloc;
-                                    });
-                            },
-                        },
-                    ]) && j(t.prototype, n),
-                    r && j(t, r),
-                    e
-                );
-            })(),
-            B = n(33),
-            I = n.n(B);
-        function N(e, t, n, r, o, i, a) {
-            try {
-                var c = e[i](a),
-                    s = c.value;
-            } catch (e) {
-                return void n(e);
-            }
-            c.done ? t(s) : Promise.resolve(s).then(r, o);
-        }
-        function $(e) {
-            return function () {
-                var t = this,
-                    n = arguments;
-                return new Promise(function (r, o) {
-                    var i = e.apply(t, n);
-                    function a(e) {
-                        N(i, r, o, a, c, 'next', e);
-                    }
-                    function c(e) {
-                        N(i, r, o, a, c, 'throw', e);
-                    }
-                    a(void 0);
-                });
-            };
-        }
-        function Y(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var r = t[n];
-                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
-            }
-        }
-        var U = new I.a(),
-            W = n(44),
-            G = new P(),
-            z = new F(),
-            V = (function () {
-                function e(t) {
-                    !(function (e, t) {
-                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                    })(this, e),
-                        console.log('Output: BasePortal -> constructor -> config', t),
-                        (this.site_id = ''),
-                        (this.page_name = G.getPageName()),
-                        (this.site_config = t),
-                        (this.currency = ''),
-                        (this.svg_arrow =
-                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
-                        (this.map_loaded = !1),
-                        (this.selected_currency = 'USD');
-                }
-                var t, n, r, o, i, a, c, s, u, l, f, d;
-                return (
-                    (t = e),
-                    (n = [
-                        {
-                            key: 'init',
-                            value: function () {
-                                var e = this;
-                                this.site_config || console.error('No site config found.'),
-                                    this.initializeARNRatesReadyEvent(),
-                                    G.ieForEachPolyfill(),
-                                    this.getSiteID().then(
-                                        (function () {
-                                            var t = $(
-                                                regeneratorRuntime.mark(function t(n) {
-                                                    return regeneratorRuntime.wrap(function (t) {
-                                                        for (;;)
-                                                            switch ((t.prev = t.next)) {
-                                                                case 0:
-                                                                    return (
-                                                                        G.getPageName(),
-                                                                        e.applyConfigStyles(),
-                                                                        e.setupDatePrompt(),
-                                                                        e.showLanguageFromCongif(),
-                                                                        e.showFilters(),
-                                                                        e.buildMobileMenu(),
-                                                                        G.createHTML(
-                                                                            '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
-                                                                            'head',
-                                                                            'beforeEnd'
-                                                                        ),
-                                                                        (t.next = 9),
-                                                                        G.createHTML(
-                                                                            '<header><a class="logo" href="'
-                                                                                .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
-                                                                                .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
-                                                                            '.config-container',
-                                                                            'afterEnd'
-                                                                        )
-                                                                    );
-                                                                case 9:
-                                                                    'cug' === e.site_config.site_type &&
-                                                                        G.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            $(
-                                                                                regeneratorRuntime.mark(function e() {
-                                                                                    return regeneratorRuntime.wrap(function (e) {
-                                                                                        for (;;)
-                                                                                            switch ((e.prev = e.next)) {
-                                                                                                case 0:
-                                                                                                    G.appendToParent('#commands', 'header');
-                                                                                                case 1:
-                                                                                                case 'end':
-                                                                                                    return e.stop();
-                                                                                            }
-                                                                                    }, e);
-                                                                                })
-                                                                            )
-                                                                        ),
-                                                                        G.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
-                                                                        'property-detail' === e.page_name &&
-                                                                            (e.addImageSlideshow(),
-                                                                            e.updateAmenitiesLegendTag(),
-                                                                            G.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                            G.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                            G.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                            G.updateHTML('.SinglePropDetail .Details a', 'General Info'),
-                                                                            e.isPropByGateway(
-                                                                                e.site_config.exclusive_rate_text,
-                                                                                e.site_config.host_hotel_text,
-                                                                                e.site_config.partner_hotel_text,
-                                                                                e.site_config.lodging.event_name
-                                                                            ),
-                                                                            e.updatePropReviewsURLToUseAnchor(),
-                                                                            e.getTotalNights().then(function (t) {
-                                                                                e.getCurrency().then(function (n) {
-                                                                                    e.showFullStayAndNightlyRates(t, n);
-                                                                                });
-                                                                            }),
-                                                                            G.moveElementIntoExistingWrapper(
-                                                                                '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
-                                                                                '.SinglePropDetail .ArnPropAddress',
-                                                                                'afterEnd'
-                                                                            ),
-                                                                            G.moveElementIntoExistingWrapper(
-                                                                                'div.subHeaderContainer > div > a > span.translateMe',
-                                                                                '.SinglePropDetail .ArnLeftListContainer',
-                                                                                'afterBegin'
-                                                                            )),
-                                                                        'checkout' === e.page_name &&
-                                                                            (G.createModal(
-                                                                                [document.querySelector('#theStayPolicies')],
-                                                                                'Policies & Fees',
-                                                                                'checkout',
-                                                                                '#theConfirmationContainer',
-                                                                                'afterBegin'
-                                                                            ),
-                                                                            G.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                            G.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                            G.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                            G.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                            G.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                            G.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                            G.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                            G.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                            G.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                            G.updateHTML('#theHotel legend', 'Reservation Summary'),
-                                                                            e.formatCheckoutForm(),
-                                                                            e.setupReservationSummaryContainer(),
-                                                                            G.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                            G.emailVerificationSetup(),
-                                                                            e.fixCheckoutInputTabOrder(),
-                                                                            G.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
-                                                                        'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
-                                                                        document.querySelector('.RootBody') &&
-                                                                            (z.init(e.site_config, e.page_name, G),
-                                                                            e.buildCurrencyDropdown(),
-                                                                            G.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                            G.createHTML(
-                                                                                '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
-                                                                                '.RootBody .ArnPrimarySearchContainer',
-                                                                                'beforeBegin'
-                                                                            ),
-                                                                            G.moveOrphanedElementsIntoNewWrapper(
-                                                                                [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
-                                                                                'root-search-container',
-                                                                                '.RootBody .ArnSearchContainerMainDiv',
-                                                                                'afterBegin'
-                                                                            ),
-                                                                            G.moveElementIntoExistingWrapper(
-                                                                                '.ArnSecondarySearchOuterContainer',
-                                                                                '.ArnPrimarySearchContainer',
-                                                                                'beforeEnd'
-                                                                            ),
-                                                                            G.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                        G.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                        G.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                        G.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                        G.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                        G.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                        G.createHTML(
-                                                                            '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
-                                                                            '#theWBLoginFormBody .ForgotPasswordAction',
-                                                                            'afterEnd'
-                                                                        ),
-                                                                        'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                        'search-results' === e.page_name && z.init(e.site_config, e.page_name, G),
-                                                                        jQuery('#theBody').on(
-                                                                            'arnMapLoadedEvent',
-                                                                            $(
-                                                                                regeneratorRuntime.mark(function t() {
-                                                                                    return regeneratorRuntime.wrap(function (t) {
-                                                                                        for (;;)
-                                                                                            switch ((t.prev = t.next)) {
-                                                                                                case 0:
-                                                                                                    return (
-                                                                                                        (e.map_loaded = !0),
-                                                                                                        (t.next = 3),
-                                                                                                        G.waitForSelectorInDOM('.pollingFinished')
-                                                                                                    );
-                                                                                                case 3:
-                                                                                                    document.querySelector('.leaflet-control-scale-line') ||
-                                                                                                        L.control.scale().addTo(window.ArnMap),
-                                                                                                        e.useLogoForVenueMapMarker(),
-                                                                                                        e.highlightMapMarkersOnPropertyHover(),
-                                                                                                        e.changeContractedPropertyPinColor();
-                                                                                                case 7:
-                                                                                                case 'end':
-                                                                                                    return t.stop();
-                                                                                            }
-                                                                                    }, t);
-                                                                                })
-                                                                            )
-                                                                        ),
-                                                                        jQuery(document).on(
-                                                                            'ratesReadyEvent',
-                                                                            $(
-                                                                                regeneratorRuntime.mark(function t() {
-                                                                                    return regeneratorRuntime.wrap(function (t) {
-                                                                                        for (;;)
-                                                                                            switch ((t.prev = t.next)) {
-                                                                                                case 0:
-                                                                                                    setTimeout(function () {
-                                                                                                        e.isPropByGateway(
-                                                                                                            e.site_config.exclusive_rate_text,
-                                                                                                            e.site_config.host_hotel_text,
-                                                                                                            e.site_config.partner_hotel_text,
-                                                                                                            e.site_config.lodging.event_name
-                                                                                                        ),
-                                                                                                            'property-detail' === e.page_name &&
-                                                                                                                'cug' === e.site_config.site_type.toLowerCase() &&
-                                                                                                                e.cugConfigs();
-                                                                                                    }, 1);
-                                                                                                case 1:
-                                                                                                case 'end':
-                                                                                                    return t.stop();
-                                                                                            }
-                                                                                    }, t);
-                                                                                })
-                                                                            )
-                                                                        ),
-                                                                        G.waitForSelectorInDOM('.pollingFinished').then(
-                                                                            (function () {
-                                                                                var t = $(
-                                                                                    regeneratorRuntime.mark(function t(n) {
-                                                                                        return regeneratorRuntime.wrap(function (t) {
-                                                                                            for (;;)
-                                                                                                switch ((t.prev = t.next)) {
-                                                                                                    case 0:
-                                                                                                        if (
-                                                                                                            ('hold-rooms' === e.page_name &&
-                                                                                                                (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                G.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
-                                                                                                            'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
-                                                                                                        ) {
-                                                                                                            t.next = 3;
-                                                                                                            break;
-                                                                                                        }
-                                                                                                        return t.abrupt('return');
-                                                                                                    case 3:
-                                                                                                        return (
-                                                                                                            e.buildCurrencyDropdown(),
-                                                                                                            e.cugConfigs(),
-                                                                                                            e.implementAds(),
-                                                                                                            e.toggleMap(),
-                                                                                                            e.addLRGDetails(),
-                                                                                                            e.getTotalNights().then(function (t) {
-                                                                                                                e.getCurrency().then(function (n) {
-                                                                                                                    e.showFullStayAndNightlyRates(t, n);
-                                                                                                                });
-                                                                                                            }),
-                                                                                                            e.createStarIcons(),
-                                                                                                            e.addHRToProperties(),
-                                                                                                            e.showLoaderOnResultsUpdate(),
-                                                                                                            e.showSearchContainerOnMobile(),
-                                                                                                            e.moveFooterOutOfSearchContainer(),
-                                                                                                            e.moveReviewsIntoPropNameContainer(),
-                                                                                                            G.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
-                                                                                                            e.movePropClassBelowPropName(),
-                                                                                                            G.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                            G.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                            G.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                            G.updateHTML('.lblRating', 'Stars'),
-                                                                                                            G.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                            G.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                            G.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                            G.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                            G.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                            G.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                            G.moveElementIntoExistingWrapper(
-                                                                                                                '.ArnPropClass',
-                                                                                                                '.ArnPropName',
-                                                                                                                'beforeEnd'
-                                                                                                            ),
-                                                                                                            G.moveElementIntoExistingWrapper(
-                                                                                                                '#theOtherSubmitButton',
-                                                                                                                '.ArnSecondarySearchOuterContainer',
-                                                                                                                'beforeEnd'
-                                                                                                            ),
-                                                                                                            (t.next = 31),
-                                                                                                            G.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                G.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
-                                                                                                            })
-                                                                                                        );
-                                                                                                    case 31:
-                                                                                                        return (
-                                                                                                            (t.next = 33),
-                                                                                                            G.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                G.createWrapper(
-                                                                                                                    '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
-                                                                                                                    '.ArnSecondarySearchOuterContainer',
-                                                                                                                    'sort-wrapper',
-                                                                                                                    'afterBegin'
-                                                                                                                ).then(function () {
-                                                                                                                    e.createMobileSortAndFilter(),
-                                                                                                                        G.createHTML(
-                                                                                                                            '<h4>Sort</h4>',
-                                                                                                                            '.sort-wrapper',
-                                                                                                                            'afterBegin'
-                                                                                                                        ),
-                                                                                                                        G.matchMediaQuery('min-width: 1105px') &&
-                                                                                                                            document.body.insertAdjacentHTML(
-                                                                                                                                'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
-                                                                                                                            ),
-                                                                                                                        G.matchMediaQuery('max-width: 800px') &&
-                                                                                                                            document.body.insertAdjacentHTML(
-                                                                                                                                'afterBegin',
-                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
-                                                                                                                            );
-                                                                                                                });
-                                                                                                            })
-                                                                                                        );
-                                                                                                    case 33:
-                                                                                                        if (!window.matchMedia('(min-width: 1105px)')) {
-                                                                                                            t.next = 41;
-                                                                                                            break;
-                                                                                                        }
-                                                                                                        return (t.next = 37), G.waitForSelectorInDOM('#ArnPropertyMap');
-                                                                                                    case 37:
-                                                                                                        document.querySelector('.leaflet-control-scale-line') ||
-                                                                                                            L.control.scale().addTo(window.ArnMap),
-                                                                                                            e.useLogoForVenueMapMarker(),
-                                                                                                            e.highlightMapMarkersOnPropertyHover(),
-                                                                                                            e.changeContractedPropertyPinColor();
-                                                                                                    case 41:
-                                                                                                    case 'end':
-                                                                                                        return t.stop();
-                                                                                                }
-                                                                                        }, t);
-                                                                                    })
-                                                                                );
-                                                                                return function (e) {
-                                                                                    return t.apply(this, arguments);
-                                                                                };
-                                                                            })()
-                                                                        ),
-                                                                        e.applyDarkTheme(),
-                                                                        e.setInputToRequired('input#city'),
-                                                                        e.setInputToRequired('input#theCheckIn'),
-                                                                        e.resizeViewportForMapMobile(),
-                                                                        e.showCoronavirusInfoBanner(),
-                                                                        e.showCurrencySelect(),
-                                                                        e.positionPropReviews(),
-                                                                        e.insertPoweredByFooterLogo(),
-                                                                        e.updateConfirmationCheckBoxes(),
-                                                                        e.showMoreAmenities(),
-                                                                        e.appendMemberTokenForCug(),
-                                                                        e.hideRemainingRooms(),
-                                                                        e.replaceHTMLWithFile(
-                                                                            'https://static.hotelsforhope.com/ares/html/terms.html',
-                                                                            '.ArnSubPage.ArnTermsConditions'
-                                                                        ),
-                                                                        e.addLinkToLoginFromRegisterPage(),
-                                                                        e.setCheckDatesToReadOnlyOnMobile(),
-                                                                        e.updateSupportPageText(),
-                                                                        e.removeLrgFooterLink(),
-                                                                        document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
-                                                                case 'end':
-                                                                    return t.stop();
-                                                            }
-                                                    }, t);
-                                                })
-                                            );
-                                            return function (e) {
-                                                return t.apply(this, arguments);
-                                            };
-                                        })()
-                                    );
-                            },
-                        },
-                        {
-                            key: 'initializeARNRatesReadyEvent',
-                            value: function () {
-                                function e() {
-                                    try {
-                                        setTimeout(function () {
-                                            jQuery(document).trigger('ratesReadyEvent');
-                                        }, 1);
-                                    } catch (e) {
-                                        console.log(e);
-                                    }
-                                }
-                                Ajax.Responders.register({onComplete: e}), e();
-                            },
-                        },
-                        {
-                            key: 'getSiteID',
-                            value:
-                                ((d = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (((this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content')), this.site_id)) {
-                                                                e.next = 3;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 3:
-                                                            return e.abrupt('return', this.site_id);
-                                                        case 4:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function () {
-                                    return d.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'getCurrency',
-                            value:
-                                ((f = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if ((t = document.querySelector('meta[name="currency"]'))) {
-                                                                e.next = 3;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 3:
-                                                            return (this.currency = t.getAttribute('content')), e.abrupt('return', this.currency);
-                                                        case 5:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function () {
-                                    return f.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'donationAmount',
-                            value: function () {
-                                if (document.querySelector('.ConfirmationForm')) {
-                                    var e = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
-                                    document.querySelector('.topRoomFunding') &&
-                                        null !== e &&
-                                        (document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ '.concat(
-                                            2 * e,
-                                            ' donation</span> to <span>RoomFunding</span>.  And s at no cost to you.</p>'
-                                        ));
-                                }
-                            },
-                        },
-                        {
-                            key: 'addPerNightToPrice',
-                            value: function (e, t) {
-                                document.querySelector(e) &&
-                                    document.querySelectorAll(t).forEach(function (e) {
-                                        e.parentNode.querySelector('.perNight') || e.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
-                                    });
-                            },
-                        },
-                        {
-                            key: 'updateBookingFeeLanguage',
-                            value: function () {
-                                if (document.querySelector('.CheckOutForm')) {
-                                    var e = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
-                                    e &&
-                                        (e.textContent.includes('4.95') || e.textContent.includes('5.00')) &&
-                                        e.textContent.includes('Hotels For Hope') &&
-                                        e.insertAdjacentHTML(
-                                            'beforeEnd',
-                                            ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
-                                        );
-                                }
-                            },
-                        },
-                        {
-                            key: 'hidePropertyThumbnailArrowIfNoPropertyThumbnails',
-                            value: function () {
-                                'search-results' !== !this.page_name &&
-                                    document.querySelectorAll('.ArnImageLink img').forEach(function (e) {
-                                        if (e && e.getAttribute('src').includes('no_image_300.gif')) {
-                                            var t = e.parentNode;
-                                            if (t) {
-                                                t.classList.add('no-images');
-                                                var n = t.previousSibling;
-                                                n && n.classList.contains('ArnPropImageButtons') && (n.style.display = 'none');
-                                            }
-                                        }
-                                    });
-                            },
-                        },
-                        {
-                            key: 'createStarIcons',
-                            value: function () {
-                                document.querySelectorAll('.ArnPropClass').forEach(function (e) {
-                                    var t = e.textContent.replace(/\D/g, ''),
-                                        n =
-                                            '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
-                                    '1' === t && (e.innerHTML = n),
-                                        '2' === t && (e.innerHTML = n.repeat(2)),
-                                        '3' === t && (e.innerHTML = n.repeat(3)),
-                                        '4' === t && (e.innerHTML = n.repeat(4)),
-                                        '5' === t && (e.innerHTML = n.repeat(5));
-                                });
-                            },
-                        },
-                        {
-                            key: 'createMobileSortAndFilter',
-                            value: function () {
-                                if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                    G.updateHTML(
-                                        '.sort',
-                                        '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
-                                    ),
-                                        G.createHTML(
-                                            '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
-                                            '#searchForm',
-                                            'beforeEnd'
-                                        );
-                                    var e = document.querySelector('.ArnSortBy'),
-                                        t = document.querySelector('.sort-wrapper'),
-                                        n = document.querySelector('.ArnSecondarySearchOuterContainer'),
-                                        r = document.querySelector('.sort-filter-overlay');
-                                    e.removeEventListener('click', function () {}),
-                                        e.addEventListener('click', function () {
-                                            r.classList.toggle('show-sort-filter'),
-                                                document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', t),
-                                                document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', n),
-                                                (n.style.display = 'block'),
-                                                (t.style.display = 'block'),
-                                                document.body.classList.toggle('fixed');
-                                        }),
-                                        document.querySelector('.sort-filter-close').addEventListener('click', function () {
-                                            r.classList.toggle('show-sort-filter'), document.body.classList.toggle('fixed');
-                                        }),
-                                        document.querySelector('.sort-wrapper a').addEventListener('click', function (e) {
-                                            e.toElement.classList.toggle('active-filter');
-                                        }),
-                                        n.querySelectorAll('.ArnSearchField').forEach(function (e) {
-                                            e.classList.add('panel');
-                                        });
-                                }
-                            },
-                        },
-                        {
-                            key: 'showSearchContainerOnMobile',
-                            value: function () {
-                                var e,
-                                    t,
-                                    n,
-                                    r = new URL(window.location.href),
-                                    o = new URLSearchParams(r.search),
-                                    i = '',
-                                    a = '',
-                                    c = '',
-                                    s = document.querySelector('meta[name="checkIn"]'),
-                                    u = document.querySelector('meta[name="checkOut"]'),
-                                    l = document.querySelector('meta[name="numberOfAdults"]'),
-                                    f = document.querySelector('meta[name="SearchLocation"]'),
-                                    d = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                s &&
-                                    u &&
-                                    f &&
-                                    l &&
-                                    ((e = l.getAttribute('content')),
-                                    (i = f.getAttribute('content')),
-                                    (t = s.getAttribute('content')),
-                                    (n = u.getAttribute('content')),
-                                    (a = W(t)),
-                                    (c = W(n)),
-                                    ('cug' === this.site_config.site_type.toLowerCase() ||
-                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
-                                        (i = o.get('destination')),
-                                    G.createHTML(
-                                        '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                            .concat(i, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                            .concat(a.format('MMMM D'), ' - ')
-                                            .concat(c.format('MMMM D'), '</span>\n                        <span class="adults-count">')
-                                            .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
-                                        '.SearchHotels .ArnPrimarySearchOuterContainer',
-                                        'beforeBegin'
-                                    ),
-                                    document.querySelector('.show-search-container').addEventListener('click', function () {
-                                        d.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
-                                    }));
-                            },
-                        },
-                        {
-                            key: 'buildMobileMenu',
-                            value:
-                                ((l = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t, n, r;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        if (((t = document.querySelector('#commands')), (n = document.querySelector('#AdminControlsContainer')), t || n)) {
-                                                            e.next = 4;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 4:
-                                                        if (
-                                                            (n.insertAdjacentHTML(
-                                                                'beforeEnd',
-                                                                '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
-                                                            ),
-                                                            (r = document.querySelector('#hamburger')))
-                                                        ) {
-                                                            e.next = 8;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 8:
-                                                        return (
-                                                            r.addEventListener('click', function () {
-                                                                r.classList.toggle('is-active'), t.classList.toggle('active');
-                                                            }),
-                                                            (e.next = 11),
-                                                            G.waitForSelectorInDOM('header')
-                                                        );
-                                                    case 11:
-                                                        document.querySelector('header').insertAdjacentElement('beforeend', n);
-                                                    case 12:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function () {
-                                    return l.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'showAdditionalPolicies',
-                            value: function () {
-                                var e = document.querySelector('#theStayPolicies'),
-                                    t = e.querySelector('legend'),
-                                    n = e.offsetHeight,
-                                    r = document.querySelector('#theConfirmationPoliciesAjax');
-                                window.matchMedia('(max-width:800px)').matches &&
-                                    document.querySelector('#theBookingPage') &&
-                                    (r.insertAdjacentElement('afterEnd', e),
-                                    G.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
-                                    e.insertAdjacentElement('beforeBegin', t),
-                                    e.insertAdjacentHTML(
-                                        'beforeEnd',
-                                        '\n        <style>\n            #theStayPolicies {\n                height: 0;\n                display: none;\n            }\n            .show-policies{\n                height: '.concat(
-                                            n,
-                                            'px !important;\n                display: block !important;\n            }\n        </style>\n    '
-                                        )
-                                    ),
-                                    t.addEventListener('click', function () {
-                                        e.classList.toggle('show-policies');
-                                    }));
-                            },
-                        },
-                        {
-                            key: 'updatePropReviewsURLToUseAnchor',
-                            value: function () {
-                                var e = document.querySelector('.reviewCount a');
-                                'property-detail' === this.page_name && e && e.setAttribute('href', '#thePropertyReviews');
-                            },
-                        },
-                        {
-                            key: 'moveFooterOutOfSearchContainer',
-                            value: function () {
-                                document.querySelector('.SearchHotels') &&
-                                    document.querySelector('.ArnSupportBottom') &&
-                                    document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
-                            },
-                        },
-                        {
-                            key: 'moveReviewsIntoPropNameContainer',
-                            value: function () {
-                                var e = document.querySelectorAll('.SearchHotels .ArnPropName');
-                                document.querySelector('.SearchHotels') &&
-                                    document.querySelector('.ArnContainer') &&
-                                    e.forEach(function (e) {
-                                        e.insertAdjacentElement('beforeEnd', e.parentElement.querySelector('.ArnTripAdvisorDetails'));
-                                    });
-                            },
-                        },
-                        {
-                            key: 'toggleMap',
-                            value: function () {
-                                var e = document.querySelector('#ArnPropertyMap'),
-                                    t = document.querySelector('#arnCloseAnchorId'),
-                                    n = document.querySelector('header'),
-                                    r = document.querySelector('.config-container'),
-                                    o = document.querySelector('.ArnToggleMap + .ArnToggleMap');
-                                o && o.click(),
-                                    t &&
-                                        e &&
-                                        ((t.innerHTML =
-                                            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
-                                        t.addEventListener('click', function () {
-                                            if (
-                                                (t.classList.toggle('closeMap'),
-                                                e.classList.toggle('showMap'),
-                                                document.body.classList.toggle('fixed'),
-                                                n.classList.toggle('hideElement'),
-                                                r.classList.toggle('hideElement'),
-                                                t.classList.contains('closeMap'))
-                                            ) {
-                                                t.querySelector('span').textContent = ' Close Map';
-                                                var o = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
-                                                if (!o) return;
-                                                o.appendChild(t);
-                                            } else {
-                                                var i = document.querySelector('#arnToggleMapDiv');
-                                                if (!i) return;
-                                                i.appendChild(t), (t.querySelector('span').innerHTML = ' Open Map');
-                                            }
-                                        }));
-                            },
-                        },
-                        {
-                            key: 'accordion',
-                            value: function (e, t, n) {
-                                if (document.querySelector(e)) {
-                                    var r = document.querySelector(e),
-                                        o = r.querySelector(n),
-                                        i = r.querySelector(t),
-                                        a = i.offsetHeight;
-                                    document
-                                        .querySelector(e)
-                                        .insertAdjacentHTML(
-                                            'beforeEnd',
-                                            '<style>\n            '
-                                                .concat(t, '{\n                transform: translateY(-')
-                                                .concat(
-                                                    a,
-                                                    'px);\n                pointer-events: none;\n                transition: all .75s ease;\n                height: 0;\n                position: relative;\n            }\n            .show-content{\n                transform: translateY(0) !important;\n                opacity: 1 !important;\n                pointer-events: initial !important;\n                height: '
-                                                )
-                                                .concat(a, 'px !important;\n            }\n        </style>\n        ')
-                                        ),
-                                        o.insertAdjacentHTML(
-                                            'beforeEnd',
-                                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'
-                                        ),
-                                        o.addEventListener('click', function () {
-                                            i.classList.toggle('show-content'), o.querySelector('svg').classList.toggle('flip-svg');
-                                        });
-                                }
-                            },
-                        },
-                        {
-                            key: 'movePropClassBelowPropName',
-                            value: function () {
-                                var e = document.querySelectorAll('.ArnContainer');
-                                document.querySelector('.SearchHotels') &&
-                                    e.forEach(function (e) {
-                                        var t = e.querySelector('.ArnPropClass'),
-                                            n = e.querySelector('.ArnPropName');
-                                        e && t && n && n.insertAdjacentElement('beforeEnd', t);
-                                    });
-                            },
-                        },
-                        {
-                            key: 'setupReservationSummaryContainer',
-                            value: function () {
-                                var e,
-                                    t,
-                                    n,
-                                    r,
-                                    o = document.querySelector('.checkInRow td'),
-                                    i = document.querySelector('.checkOutRow td'),
-                                    a = document.querySelector('meta[name="currency"]');
-                                o &&
-                                    i &&
-                                    a &&
-                                    ((t = o.textContent),
-                                    (r = i.textContent),
-                                    (e = W(t).format(this.site_config.dayjs_date_format)),
-                                    (n = W(r).format(this.site_config.dayjs_date_format)),
-                                    G.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                    G.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
-                            },
-                        },
-                        {
-                            key: 'formatCheckoutForm',
-                            value: function () {
-                                var e = document.querySelectorAll('.WBGuestFormFields'),
-                                    t = 0;
-                                e.forEach(function (e) {
-                                    (t += 1),
-                                        G.moveElementIntoExistingWrapper(
-                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
-                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
-                                            'afterEnd'
-                                        ),
-                                        G.createWrapper(
-                                            '.RoomNumber-'
-                                                .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
-                                                .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
-                                                .concat(t, ', #theCountryAjax')
-                                                .concat(t),
-                                            '#theBillingAddressAjax'.concat(t),
-                                            'billing-details-container',
-                                            'afterEnd'
-                                        ),
-                                        G.createWrapper(
-                                            '.RoomNumber-'
-                                                .concat(t, ' #theCreditCardBillingNameAjax')
-                                                .concat(t, ',\n                .RoomNumber-')
-                                                .concat(t, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
-                                                .concat(t, ' #theCardVerificationAjax'),
-                                            '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
-                                            'credit-card-details',
-                                            'afterEnd'
-                                        ),
-                                        G.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                        G.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                        G.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                        t > 1 && G.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                        G.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                        G.updateHTML(
-                                            '.cardNumber label',
-                                            '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
-                                        );
-                                }),
-                                    this.keepHeaderConsistentWhenSameAsLastGuestClicked(t);
-                            },
-                        },
-                        {
-                            key: 'keepHeaderConsistentWhenSameAsLastGuestClicked',
-                            value: function (e) {
-                                document.querySelector('#theCopyInfoAjax input') &&
-                                    document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
-                                        setTimeout(function () {
-                                            G.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                e > 1 && G.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
-                                        }, 750);
-                                    });
-                            },
-                        },
-                        {
-                            key: 'applyConfigStyles',
-                            value: function () {
-                                var e = document.querySelector('#h4h-styles');
-                                this.site_config &&
-                                    e &&
-                                    (G.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                    e.insertAdjacentHTML(
-                                        'beforeend',
-                                        '<link href="'
-                                            .concat(U.path, '/site_configs/')
-                                            .concat(this.site_config.directory_name, '/styles/')
-                                            .concat(this.site_config.site_id, '.css" rel="stylesheet">')
-                                    ));
-                            },
-                        },
-                        {
-                            key: 'applyDarkTheme',
-                            value: function () {
-                                'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(U.path, '/styles/dark.css" rel="stylesheet">'));
-                            },
-                        },
-                        {
-                            key: 'showLanguageFromCongif',
-                            value: function () {
-                                var e,
-                                    t = '',
-                                    n = document.querySelector('#language'),
-                                    r = document.querySelector('.config-container'),
-                                    o = document.querySelector('meta[name="theme"]');
-                                this.site_config &&
-                                    r &&
-                                    o &&
-                                    n &&
-                                    (this.site_config.show_language_select
-                                        ? (document.querySelector('div#language-label').classList.add('config-label'),
-                                          (e = o.getAttribute('content')),
-                                          document.querySelector(".language-container div[value='".concat(e, "']")).classList.add('active-language'),
-                                          document.body.insertAdjacentElement('afterBegin', r),
-                                          r.insertAdjacentElement('afterBegin', n),
-                                          ((t = n.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
-                                          t.addEventListener('click', function () {
-                                              n.querySelector('.language-container').classList.toggle('show-language-container'),
-                                                  window.document.documentMode || t.querySelector('svg').classList.toggle('flip-svg');
-                                          }),
-                                          window.addEventListener('click', function (e) {
-                                              if (document.querySelector('.show-language-container')) {
-                                                  if (
-                                                      e.target === document.querySelector('#language-label') ||
-                                                      e.target.parentNode === document.querySelector('.language-container')
-                                                  )
-                                                      return;
-                                                  if ((document.querySelector('.language-container').classList.toggle('show-language-container'), window.document.documentMode))
-                                                      return;
-                                                  t.querySelector('svg').classList.toggle('flip-svg');
-                                              }
-                                          }))
-                                        : (n.style.display = 'none'));
-                            },
-                        },
-                        {
-                            key: 'buildCurrencyDropdown',
-                            value:
-                                ((u = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t,
-                                            n,
-                                            r,
-                                            o,
-                                            i = this;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return (
-                                                            (t = function () {
-                                                                fetch(''.concat(U.path, '/js/json/currencies.json'))
-                                                                    .then(function (e) {
-                                                                        if (!e.ok) throw e;
-                                                                        return e.json();
-                                                                    })
-                                                                    .then(function (e) {
-                                                                        n(e), r(), o();
-                                                                    })
-                                                                    .catch(function (e) {
-                                                                        e.text().then(function (e) {
-                                                                            console.error('Could not fetch currencies.json', e);
-                                                                        });
-                                                                    });
-                                                            }),
-                                                            (n = function (e) {
-                                                                Object.entries(e);
-                                                                var t = document.createElement('div'),
-                                                                    n = document.createElement('div'),
-                                                                    r = '\n            <h4>Top Currencies</h4>\n            <div class="top-currencies">\n                <span id="AUD"><strong>'
-                                                                        .concat(e.AUD.code, '</strong> - ')
-                                                                        .concat(e.AUD.name, '</span>\n                <span id="CAD"><strong>')
-                                                                        .concat(e.CAD.code, '</strong> - ')
-                                                                        .concat(e.CAD.name, '</span>\n                <span id="EUR"><strong>')
-                                                                        .concat(e.EUR.code, '</strong> - ')
-                                                                        .concat(e.EUR.name, '</span>\n                <span id="MXN"><strong>')
-                                                                        .concat(e.MXN.code, '</strong> - ')
-                                                                        .concat(e.MXN.name, '</span>\n                <span id="GBP"><strong>')
-                                                                        .concat(e.GBP.code, '</strong> - ')
-                                                                        .concat(e.GBP.name, '</span>\n                <span id="USD"><strong>')
-                                                                        .concat(e.USD.code, '</strong> - ')
-                                                                        .concat(e.USD.name, '</span>\n            </div>\n            <h4>All Currencies</h4>\n            ');
-                                                                for (var o in (t.insertAdjacentHTML('afterBegin', r),
-                                                                t.classList.add('currency-content'),
-                                                                n.classList.add('all-currencies'),
-                                                                e))
-                                                                    n.insertAdjacentHTML(
-                                                                        'beforeEnd',
-                                                                        '<span id="'.concat(o, '"><strong>').concat(o, '</strong> - ').concat(e[o].name, '</span>')
-                                                                    );
-                                                                t.insertAdjacentElement('beforeEnd', n),
-                                                                    G.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
-                                                            }),
-                                                            (r = function () {
-                                                                var e = new URLSearchParams(window.location.search),
-                                                                    t = document.querySelector('.dropdown');
-                                                                t &&
-                                                                    t.addEventListener('click', function (t) {
-                                                                        (i.selected_currency = t.target.id),
-                                                                            i.selected_currency &&
-                                                                                (document.querySelector('.active-currency').classList.remove('active-currency'),
-                                                                                document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
-                                                                                (document.querySelector('#currency-label span').textContent = document.querySelector(
-                                                                                    '.active-currency'
-                                                                                ).textContent),
-                                                                                'search-results' === i.page_name &&
-                                                                                    (e.set('currency', i.selected_currency), (window.location.search = e.toString())));
-                                                                    });
-                                                            }),
-                                                            (o = function () {
-                                                                var e = document.querySelector('meta[name="currency"]');
-                                                                if (e) {
-                                                                    var t = e.content;
-                                                                    (i.selected_currency = t),
-                                                                        document.querySelector('#'.concat(t)).classList.add('active-currency'),
-                                                                        (document.querySelector('#currency-label span').textContent = document.querySelector(
-                                                                            '.active-currency'
-                                                                        ).textContent);
-                                                                }
-                                                            }),
-                                                            (e.next = 6),
-                                                            t()
-                                                        );
-                                                    case 6:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function () {
-                                    return u.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'setupDatePrompt',
-                            value: function () {
-                                var e = document.querySelector('#theDatePrompt');
-                                e &&
-                                    e
-                                        .querySelector('#datePromptContainer')
-                                        .insertAdjacentHTML('afterBegin', '<img src="'.concat(this.site_config.header.logo_file_location, '" alt="Logo">'));
-                            },
-                        },
-                        {
-                            key: 'highlightMapMarkersOnPropertyHover',
-                            value: function () {
-                                var e,
-                                    t,
-                                    n = document.querySelectorAll('.ArnContainer');
-                                document.querySelector('#currentPropertyPage') &&
-                                    n.forEach(function (n) {
-                                        n.addEventListener('mouseenter', function (r) {
-                                            (t = n.parentElement.querySelector('.propId')) &&
-                                                ((e = t.textContent), window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOn(e));
-                                        }),
-                                            n.addEventListener('mouseleave', function (t) {
-                                                window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOff(e);
-                                            });
-                                    });
-                            },
-                        },
-                        {
-                            key: 'showFullStayAndNightlyRates',
-                            value: function (e, t) {
-                                var n, r, o, i;
-                                this.site_config.show_tax_inclusive_rates ||
-                                    (document.querySelector('.SearchHotels') &&
-                                        (document.querySelectorAll('.ArnContainer').forEach(function (a) {
-                                            (n = a.querySelector('.arnPrice')),
-                                                (r = a.querySelector('.arnPrice .arnUnit')) &&
-                                                    n &&
-                                                    ((o = parseFloat(r.textContent) * e),
-                                                    (i = o.toFixed(2)),
-                                                    r &&
-                                                        ('USD' === t
-                                                            ? n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (a.querySelector('.full-stay').style.display = 'none')));
-                                        }),
-                                        document.body.insertAdjacentHTML(
-                                            'beforeEnd',
-                                            '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
-                                        )),
-                                    document.querySelector('.SinglePropDetail') &&
-                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (n) {
-                                            (r = n.querySelector('strong')),
-                                                (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
-                                                r &&
-                                                    o &&
-                                                    (i = o.toFixed(2)) &&
-                                                    ('USD' === t
-                                                        ? r.insertAdjacentHTML(
-                                                              'beforeEnd',
-                                                              '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                          )
-                                                        : r.insertAdjacentHTML(
-                                                              'beforeEnd',
-                                                              '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                          ),
-                                                    1 === e && (n.querySelector('.full-stay').style.display = 'none'));
-                                        }),
-                                        document.body.insertAdjacentHTML(
-                                            'beforeEnd',
-                                            '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                        )));
-                            },
-                        },
-                        {
-                            key: 'getTotalNights',
-                            value:
-                                ((s = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t, n, r, o, i;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        if (((t = document.querySelector('meta[name="checkIn"]')), (n = document.querySelector('meta[name="checkOut"]')), t && n)) {
-                                                            e.next = 4;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 4:
-                                                        return (
-                                                            (r = new Date(t.getAttribute('content'))),
-                                                            (o = new Date(n.getAttribute('content'))),
-                                                            (i = (o.getTime() - r.getTime()) / 864e5),
-                                                            e.abrupt('return', i)
-                                                        );
-                                                    case 8:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function () {
-                                    return s.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'getNightlyRateForMapMarkers',
-                            value: function (e, t) {
-                                var n, r;
-                                document.querySelectorAll('.arnMapMarkerSpan').forEach(function (o) {
-                                    (n = o.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')),
-                                        (r = parseFloat(n / e).toFixed(0)),
-                                        (o.textContent = 'USD' === t ? '$'.concat(r) : ''.concat(r, ' ').concat(t));
-                                });
-                            },
-                        },
-                        {
-                            key: 'addTitleToProperties',
-                            value: function () {
-                                var e,
-                                    t,
-                                    n = document.querySelectorAll('.ArnContainer');
-                                document.querySelector('.SearchHotels') &&
-                                    n.forEach(function (n) {
-                                        (t = n.querySelector('.ArnPropNameLink')), (e = t.querySelector('span').textContent), t.setAttribute('title', e);
-                                    });
-                            },
-                        },
-                        {
-                            key: 'showLoaderOnResultsUpdate',
-                            value: function () {
-                                var e = this,
-                                    t = document.querySelector('#searching'),
-                                    n = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
-                                document.querySelector('.SearchHotels') &&
-                                    n.forEach(function (n) {
-                                        n.addEventListener('click', function () {
-                                            'cug' !== e.site_config.site_type.toLowerCase() || '' !== document.querySelector('input#address-input').value
-                                                ? '' !== document.querySelector('input#theCheckIn').value
-                                                    ? (t.style.display = 'block')
-                                                    : e.style_validation_fields('input#theCheckIn')
-                                                : e.style_validation_fields('input#address-input');
-                                        });
-                                    });
-                            },
-                        },
-                        {
-                            key: 'changeContractedPropertyPinColor',
-                            value: function () {
-                                var e = document.querySelectorAll('.ArnProperty'),
-                                    t = document.querySelectorAll('.arnMapMarker');
-                                if (e) {
-                                    var n = [],
-                                        r = [];
-                                    e.forEach(function (e) {
-                                        e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
-                                    }),
-                                        n.forEach(function (e, t) {
-                                            e && r.push(t);
-                                        }),
-                                        r.forEach(function (e) {
-                                            t[e].classList.add('contracted-pin');
-                                        });
-                                }
-                            },
-                        },
-                        {
-                            key: 'setMapMarkerSize',
-                            value: function () {
-                                var e = document.querySelector('meta[name="currency"]'),
-                                    t = document.querySelectorAll('.arnMapMarker');
-                                e &&
-                                    t &&
-                                    'USD' !== e.getAttribute('content') &&
-                                    t.forEach(function (e) {
-                                        e.style.width = '85px';
-                                    });
-                            },
-                        },
-                        {
-                            key: 'useLogoForVenueMapMarker',
-                            value: function () {
-                                var e = this,
-                                    t = document.querySelectorAll('.arn-green-marker-icon');
-                                this.site_config &&
-                                    t.forEach(function (t) {
-                                        t.setAttribute('src', ''.concat(e.site_config.map_marker_image_url));
-                                    });
-                            },
-                        },
-                        {
-                            key: 'addHRToProperties',
-                            value: function () {
-                                var e = document.querySelectorAll('.ArnProperty');
-                                e &&
-                                    e.forEach(function (e) {
-                                        e.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
-                                    });
-                            },
-                        },
-                        {
-                            key: 'isPropByGateway',
-                            value: function (e, t, n, r) {
-                                var o = this;
-                                function i(e, t) {
-                                    t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
-                                }
-                                document.querySelector('.exclusive-rate') ||
-                                    ('search-results' === this.page_name &&
-                                        document.querySelectorAll('div.ArnProperty').forEach(function (r) {
-                                            var a, c;
-                                            r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
-                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
-                                                (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
-                                                    ((a = e),
-                                                    (c = r),
-                                                    '' !== o.site_config.exclusive_rate_text &&
-                                                        c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
-                                        }),
-                                    'property-detail' === this.page_name &&
-                                        document.querySelectorAll('div.rateRow').forEach(function (t) {
-                                            (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
-                                                (function (e, t, n) {
-                                                    if (document.querySelector('.SinglePropDetail')) {
-                                                        var r = e.querySelector('.RoomDescription');
-                                                        r.innerHTML = r.innerHTML.replace(
-                                                            'Special Event Rate',
-                                                            '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
-                                                        );
-                                                    }
-                                                })(t, r, e);
-                                        }));
-                            },
-                        },
-                        {
-                            key: 'addLRGDetails',
-                            value: function () {
-                                var e = this;
-                                if ('lodging' === this.site_config.site_type && this.site_config.lodging.is_lrg) {
-                                    var t = document.querySelectorAll('.S16, .S20');
-                                    t &&
-                                        t.forEach(function (t) {
-                                            t.querySelector('.arnPrice') &&
-                                                t
-                                                    .querySelector('.arnPrice')
-                                                    .insertAdjacentHTML(
-                                                        'afterEnd',
-                                                        '\n                <a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid='.concat(
-                                                            e.site_id,
-                                                            '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
-                                                        )
-                                                    );
-                                        });
-                                }
-                            },
-                        },
-                        {
-                            key: 'replaceLRGForm',
-                            value:
-                                ((c = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if ('lodging' === this.site_config.site_type || this.site_config.is_lrg) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (
-                                                                (e.prev = 2),
-                                                                (e.next = 5),
-                                                                fetch('https://static.hotelsforhope.com/components/lrg-form/lrg-form.html').then(function (e) {
-                                                                    return e.text();
-                                                                })
-                                                            );
-                                                        case 5:
-                                                            (t = e.sent), (document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = t), (e.next = 12);
-                                                            break;
-                                                        case 9:
-                                                            (e.prev = 9), (e.t0 = e.catch(2)), console.error(e.t0);
-                                                        case 12:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this,
-                                            [[2, 9]]
-                                        );
-                                    })
-                                )),
-                                function () {
-                                    return c.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'addImageSlideshow',
-                            value: function () {
-                                document.querySelector('#thePropertyImages').style.display = 'none';
-                                var e,
-                                    t,
-                                    n = document.querySelector('meta[name="aPropertyId"]').content,
-                                    r = 0;
-                                function o() {
-                                    return i.apply(this, arguments);
-                                }
-                                function i() {
-                                    return (i = $(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                return (
-                                                                    (e.prev = 0),
-                                                                    (e.next = 3),
-                                                                    fetch('https://api.hotelsforhope.com/arn/properties/'.concat(n), {method: 'GET'}).then(function (e) {
-                                                                        return e.json();
-                                                                    })
-                                                                );
-                                                            case 3:
-                                                                return (
-                                                                    (t = e.sent),
-                                                                    e.abrupt(
-                                                                        'return',
-                                                                        t.Images.map(function (e) {
-                                                                            return e.ImagePath.replace(/_300/, '_804480');
-                                                                        })
-                                                                    )
-                                                                );
-                                                            case 7:
-                                                                (e.prev = 7), (e.t0 = e.catch(0)), console.log(e.t0);
-                                                            case 10:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                null,
-                                                [[0, 7]]
-                                            );
-                                        })
-                                    )).apply(this, arguments);
-                                }
-                                function a() {
-                                    t = document.querySelectorAll('.carousel-slide img');
-                                    for (var n = 0 === r ? r : r + 2; n < r + 5; n += 1) {
-                                        if (n === e.length) return;
-                                        document.querySelector('.carousel-slide').insertAdjacentHTML(
-                                            'beforeend',
-                                            '<div class="image-wrapper">\n                        <div class ="image-number">'
-                                                .concat(n + 1, '/')
-                                                .concat(e.length, '</div>\n                        <img src=')
-                                                .concat(e[n], '>\n                    </div>')
-                                        );
-                                    }
-                                }
-                                function c() {
-                                    return s.apply(this, arguments);
-                                }
-                                function s() {
-                                    return (s = $(
-                                        regeneratorRuntime.mark(function t() {
-                                            return regeneratorRuntime.wrap(function (t) {
-                                                for (;;)
-                                                    switch ((t.prev = t.next)) {
-                                                        case 0:
-                                                            return (t.next = 2), o();
-                                                        case 2:
-                                                            (e = t.sent),
-                                                                document
-                                                                    .querySelector('.ArnPropName')
-                                                                    .insertAdjacentHTML(
-                                                                        'afterend',
-                                                                        '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
-                                                                    ),
-                                                                a();
-                                                        case 5:
-                                                        case 'end':
-                                                            return t.stop();
-                                                    }
-                                            }, t);
-                                        })
-                                    )).apply(this, arguments);
-                                }
-                                function u(t, n) {
-                                    (r > 1 && r < e.length - 2) ||
-                                        ((t.style.display = 'block'),
-                                        (n.style.display = 'block'),
-                                        0 === r && (n.style.display = 'none'),
-                                        r + 1 === e.length && (t.style.display = 'none'));
-                                }
-                                function l() {
-                                    return (l = $(
-                                        regeneratorRuntime.mark(function e() {
-                                            var n, o, i;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            return (e.next = 2), c();
-                                                        case 2:
-                                                            (n = document.querySelector('.carousel-slide')),
-                                                                (o = document.querySelector('#previousBtn')),
-                                                                u((i = document.querySelector('#nextBtn')), o),
-                                                                i.addEventListener('click', function () {
-                                                                    if (((t = document.querySelectorAll('.carousel-slide img')), r !== t.length - 1)) {
-                                                                        (r += 1), u(i, o);
-                                                                        var e = t[r].clientWidth;
-                                                                        (n.style.transform = 'translateX(-'.concat(e * r, 'px)')), r === t.length - 2 && a();
-                                                                    }
-                                                                }),
-                                                                o.addEventListener('click', function () {
-                                                                    if (!(r <= 0)) {
-                                                                        (r -= 1), u(i, o);
-                                                                        var e = t[r].clientWidth;
-                                                                        n.style.transform = 'translateX(-'.concat(e * r, 'px)');
-                                                                    }
-                                                                });
-                                                        case 8:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
-                                        })
-                                    )).apply(this, arguments);
-                                }
-                                !(function () {
-                                    l.apply(this, arguments);
-                                })();
-                            },
-                        },
-                        {
-                            key: 'addSocialMetaTags',
-                            value: function (e, t) {
-                                'cug' !== this.site_config.site_type &&
-                                    'confirmation' === this.page_name &&
-                                    this.site_config.has_social_sharing &&
-                                    document.head.insertAdjacentHTML(
-                                        'beforeend',
-                                        '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">\n            <meta property="og:type" content="website" >\n            <meta property="og:title" content="'
-                                            .concat(e, '" >\n            <meta property="og:description" content="I just booked my room for ')
-                                            .concat(
-                                                e,
-                                                ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id='
-                                            )
-                                            .concat(t, '">')
-                                    );
-                            },
-                        },
-                        {
-                            key: 'addSocialMediaShareButtons',
-                            value: function (e, t) {
-                                if ('cug' !== this.site_config.site_type && 'confirmation' === this.page_name && this.site_config.has_social_sharing) {
-                                    var n = document.querySelector('#theReservationFormContainer tbody'),
-                                        r = document.createElement('script');
-                                    r.setAttribute('src', 'https://platform.twitter.com/widgets.js'),
-                                        r.setAttribute('async', !0),
-                                        document.head.appendChild(r),
-                                        n.insertAdjacentHTML(
-                                            'afterbegin',
-                                            '<div class="social-share-buttons-container">\n                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D'
-                                                .concat(
-                                                    t,
-                                                    '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
-                                                )
-                                                .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=')
-                                                .concat(t, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
-                                        );
-                                }
-                            },
-                        },
-                        {
-                            key: 'style_validation_fields',
-                            value: function (e) {
-                                var t = document.querySelector(e);
-                                '' === t.value && t.classList.add('invalidated');
-                            },
-                        },
-                        {
-                            key: 'setInputToRequired',
-                            value: function (e) {
-                                document.querySelector(e) && (document.querySelector(e).required = !0);
-                            },
-                        },
-                        {
-                            key: 'resizeViewportForMapMobile',
-                            value: function () {
-                                if ('search-results' === this.page_name || window.matchMedia('(max-width:800px)').matches) {
-                                    var e = 0.01 * window.innerHeight;
-                                    document.documentElement.style.setProperty('--vh', ''.concat(e, 'px')),
-                                        window.addEventListener('resize', function () {
-                                            (e = 0.01 * window.innerHeight), document.documentElement.style.setProperty('--vh', ''.concat(e, 'px'));
-                                        });
-                                }
-                            },
-                        },
-                        {
-                            key: 'implementAds',
-                            value: function () {
-                                if (this.site_config.ads && !window.matchMedia('(max-width:800px)').matches) {
-                                    var e = this.site_config.ads;
-                                    if (
-                                        ('search-results' === this.page_name &&
-                                            (document.querySelector('.ArnSecondarySearchOuterContainer') &&
-                                                e.sidebar_ad.is_active &&
-                                                document
-                                                    .querySelector('.ArnSecondarySearchOuterContainer')
-                                                    .insertAdjacentHTML(
-                                                        'afterEnd',
-                                                        '\n                <a class="sidebar-ad" href="'
-                                                            .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                            .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
-                                                    ),
-                                            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') &&
-                                                e.between_property_ad.is_active &&
-                                                document
-                                                    .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
-                                                    .insertAdjacentHTML(
-                                                        'afterEnd',
-                                                        '\n                <a class="between-property-ad" href="'
-                                                            .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                            .concat(
-                                                                e.between_property_ad.image_url,
-                                                                '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
-                                                            )
-                                                    )),
-                                        'confirmation' === this.page_name)
-                                    ) {
-                                        if (!document.querySelector('.GuestForms') || !e.confirmation_page_bottom.is_active) return;
-                                        document
-                                            .querySelector('.GuestForms')
-                                            .insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '\n                <a class="confirmation-bottom-ad" href="'
-                                                    .concat(e.confirmation_page_bottom.outbound_url, '" target="_blank">\n                    <img src="')
-                                                    .concat(e.confirmation_page_bottom.image_url, '" alt="Advertisement">\n                </a>\n            ')
-                                            );
-                                    }
-                                }
-                            },
-                        },
-                        {
-                            key: 'cugConfigs',
-                            value: function () {
-                                var e,
-                                    t = this.site_config;
-                                'cug' === t.site_type.toLowerCase() &&
-                                    ((e = document.querySelectorAll('.percentSavings')) &&
-                                        !t.cug.show_percent_savings &&
-                                        e.forEach(function (e) {
-                                            e.insertAdjacentHTML('beforeEnd', ' Today');
-                                        }),
-                                    (function () {
-                                        if (t.cug.show_percent_savings) {
-                                            var e = document.querySelector('.ArnSortByDealPercent');
-                                            e && (e.style.display = 'block');
-                                        }
-                                    })(),
-                                    (function () {
-                                        if (!t.cug.show_percent_savings) {
-                                            var e = '';
-                                            document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
-                                                document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
-                                                e &&
-                                                    e.forEach(function (e) {
-                                                        var t = e.querySelector('div.percentSavings');
-                                                        if (t && ((t.style.display = 'block'), document.querySelector('.SearchHotels'))) {
-                                                            var n = e.querySelector('.ArnRateCell'),
-                                                                r = e.querySelector('.ArnRateButton');
-                                                            window.matchMedia('(min-width: 600px)').matches
-                                                                ? n.insertAdjacentElement('afterBegin', t)
-                                                                : r.insertAdjacentElement('afterBegin', t);
-                                                        }
-                                                    });
-                                        }
-                                    })());
-                            },
-                        },
-                        {
-                            key: 'showFilters',
-                            value: function () {
-                                this.site_config.show_stars &&
-                                    document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>'),
-                                    this.site_config.show_property_type &&
-                                        document.body.insertAdjacentHTML('beforeEnd', '<style> #PropertyTypesContainer{display:block !important;}</style>');
-                            },
-                        },
-                        {
-                            key: 'showCoronavirusInfoBanner',
-                            value: function () {
-                                '52342' !== this.site_id &&
-                                    'closed' !== localStorage.getItem('covidAlertBanner') &&
-                                    (document.body.insertAdjacentHTML(
-                                        'afterBegin',
-                                        '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
-                                    ),
-                                    document.querySelector('.close-banner-button').addEventListener('click', function (e) {
-                                        (document.querySelector('.info-banner').style.display = 'none'), window.localStorage.setItem('covidAlertBanner', 'closed');
-                                    }));
-                            },
-                        },
-                        {
-                            key: 'showCurrencySelect',
-                            value: function () {
-                                if (!this.site_config.show_currency_select) {
-                                    var e = document.querySelector('.config-container'),
-                                        t = document.querySelector('.currencies-container');
-                                    this.site_config.show_currency_select || this.site_config.show_language_select
-                                        ? this.site_config.show_currency_select || (t.style.display = 'none')
-                                        : (e.style.display = 'none');
-                                }
-                            },
-                        },
-                        {
-                            key: 'positionPropReviews',
-                            value: function () {
-                                if ('property-detail' === this.page_name && this.site_config.reviews_before_info && null !== document.querySelector('.PropertyReviews')) {
-                                    var e = document.querySelector('.PropertyReviews');
-                                    document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', e);
-                                }
-                            },
-                        },
-                        {
-                            key: 'insertPoweredByFooterLogo',
-                            value: function () {
-                                document
-                                    .querySelector('.ArnSupportBottom')
-                                    .insertAdjacentHTML(
-                                        'beforeend',
-                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
-                                    );
-                            },
-                        },
-                        {
-                            key: 'updateConfirmationCheckBoxes',
-                            value: function () {
-                                'checkout' === this.page_name &&
-                                    ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                    (document.querySelector(
-                                        'span.confirmationAgreement'
-                                    ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId='.concat(
-                                        this.site_id,
-                                        '&theme=standard">Terms & Conditions</a> found on this website.'
-                                    )),
-                                    G.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                    G.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
-                                    document.querySelector('#policies-fees').addEventListener('click', function () {
-                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
-                                    }),
-                                    document.querySelector('span.open-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('hide');
-                                    }),
-                                    document.querySelector('span.close-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('hide');
-                                    }));
-                            },
-                        },
-                        {
-                            key: 'addMessagingToConfirmationPage',
-                            value: function () {
-                                if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
-                                    var e = window.arnCustomerEmailAddress,
-                                        t = this.site_config.confirmation_email_from;
-                                    (null != t && '' !== t) || (t = 'reservations@hotelsforhope.com');
-                                    var n = document.querySelector('.supportInfo');
-                                    e &&
-                                        n &&
-                                        n.insertAdjacentHTML(
-                                            'afterEnd',
-                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>'
-                                                .concat(t, '</strong></a> at <strong>')
-                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
-                                        );
-                                }
-                            },
-                        },
-                        {
-                            key: 'fixCheckoutInputTabOrder',
-                            value: function () {
-                                var e = document.querySelector('#theReservationForm'),
-                                    t = document.querySelector('meta[name="numberOfRooms"]');
-                                if (e && t) {
-                                    var n = t.content;
-                                    e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
-                                        e && (0 === t ? e.setAttribute('tabindex', 1) : e.setAttribute('tabIndex', t));
-                                    });
-                                    for (var r = 1; r <= n; r += 1) {
-                                        var o = document.querySelector('#theCity'.concat(r)),
-                                            i = document.querySelector('#theZipCode'.concat(r)),
-                                            a = document.querySelector('#theStateAjax'.concat(r, ' select')),
-                                            c = document.querySelector('#theCountryAjax'.concat(r, ' select')),
-                                            s = document.querySelector('#theCreditCardBillingNameAjax'.concat(r, ' input')),
-                                            u = document.querySelector('.RoomNumber-'.concat(r, ' #theCvvCode')),
-                                            l = document.querySelector('.RoomNumber-'.concat(r, ' .cardMonth')),
-                                            f = document.querySelector('.RoomNumber-'.concat(r, ' .cardYear'));
-                                        if (!(o && i && a && c && s && u && l && f)) return;
-                                        var d = o.tabIndex,
-                                            h = a.tabIndex,
-                                            p = i.tabIndex,
-                                            m = c.tabIndex,
-                                            y = s.tabIndex,
-                                            v = u.tabIndex,
-                                            g = l.tabIndex,
-                                            b = f.tabIndex;
-                                        o.setAttribute('tabIndex', p),
-                                            a.setAttribute('tabIndex', d),
-                                            i.setAttribute('tabIndex', m),
-                                            c.setAttribute('tabIndex', h),
-                                            s.setAttribute('tabIndex', v),
-                                            u.setAttribute('tabIndex', g),
-                                            l.setAttribute('tabIndex', b),
-                                            f.setAttribute('tabIndex', y);
-                                    }
-                                }
-                            },
-                        },
-                        {
-                            key: 'showMoreAmenities',
-                            value: function () {
-                                if ('property-detail' === this.page_name) {
-                                    var e,
-                                        t = document.querySelector('.ArnAmenityContainer');
-                                    !document.querySelector('#show-more-or-less') &&
-                                        document.querySelector('.PropertyAmenities li') &&
-                                        (t.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>'),
-                                        (e = document.querySelector('span#show-more-or-less')),
-                                        document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities'),
-                                        e.addEventListener('click', function () {
-                                            document.querySelector('span.show-more')
-                                                ? (document.querySelectorAll('.ArnAmenityContainer td:not(.show-amenities)').forEach(function (e) {
-                                                      e.classList.toggle('show-amenities');
-                                                  }),
-                                                  (e.textContent = 'Show Less Amenities'),
-                                                  e.classList.toggle('show-more'),
-                                                  e.classList.toggle('show-less'))
-                                                : document.querySelector('span.show-less') &&
-                                                  (document.querySelectorAll('.ArnAmenityContainer td:not(:first-child)').forEach(function (e) {
-                                                      e.classList.toggle('show-amenities');
-                                                  }),
-                                                  (e.textContent = 'Show More Amenities'),
-                                                  e.classList.toggle('show-less'),
-                                                  e.classList.toggle('show-more'));
-                                        }));
-                                }
-                            },
-                        },
-                        {
-                            key: 'hideRemainingRooms',
-                            value: function () {
-                                if ('property-detail' === this.page_name && document.querySelector('div.roomCount')) {
-                                    var e = document.querySelectorAll('table.ArnRateList'),
-                                        t = window.matchMedia('(max-width: 560px)');
-                                    e.forEach(function (e) {
-                                        if (e.querySelector('.roomCount strong') || e.classList.contains('SB16') || e.classList.contains('SB20')) {
-                                            var n = parseFloat(e.querySelector('.roomCount strong').textContent);
-                                            n < 6 && (e.querySelector('.roomCount').style.display = 'block'),
-                                                e.classList.contains('SB16') &&
-                                                    (e.classList.contains('SB20') || t.matches) &&
-                                                    ((n < 6 && e.classList.contains('SB16')) || e.classList.contains('SB20')) &&
-                                                    (e.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr');
-                                        }
-                                    });
-                                }
-                            },
-                        },
-                        {
-                            key: 'replaceHTMLWithFile',
-                            value:
-                                ((a = $(
-                                    regeneratorRuntime.mark(function e(t, n) {
-                                        var r, o;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        if (document.querySelector(n)) {
-                                                            e.next = 2;
-                                                            break;
-                                                        }
-                                                        return e.abrupt('return');
-                                                    case 2:
-                                                        return (r = document.querySelector(n)), (e.next = 5), G.fetchHTMLFromFile(t);
-                                                    case 5:
-                                                        (o = e.sent), (r.innerHTML = o);
-                                                    case 7:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
-                                    })
-                                )),
-                                function (e, t) {
-                                    return a.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'appendMemberTokenForCug',
-                            value:
-                                ((i = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t, n, r, o;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if ('cug' === this.site_config.site_type.toLowerCase() && '52342' !== this.site_id) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), G.waitForSelectorInDOM('.logo');
-                                                        case 5:
-                                                            if (document.querySelector('meta[name="memberToken"]')) {
-                                                                e.next = 7;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 7:
-                                                            (n = document.querySelector('meta[name="memberToken"]').content),
-                                                                (r = document.querySelector('.logo')),
-                                                                (o = ''),
-                                                                (o =
-                                                                    '/' === t.slice(-1)
-                                                                        ? ''.concat(t, 'v6?siteId=').concat(this.site_id, '&_s=').concat(n)
-                                                                        : '.com' === t.slice(-4)
-                                                                        ? ''.concat(t, '/v6?siteId=').concat(this.site_id, '&_s=').concat(n)
-                                                                        : ''.concat(t, '&_s=').concat(n)),
-                                                                r.setAttribute('href', o);
-                                                        case 12:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function () {
-                                    return i.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'addLinkToLoginFromRegisterPage',
-                            value: function () {
-                                if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
-                                    var e = document.querySelector('.WBValidatedRegistrationFormActions'),
-                                        t = window.location.href.replace('register', 'login');
-                                    e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
-                                }
-                            },
-                        },
-                        {
-                            key: 'setCheckDatesToReadOnlyOnMobile',
-                            value:
-                                ((o = $(
-                                    regeneratorRuntime.mark(function e() {
-                                        var t, n;
-                                        return regeneratorRuntime.wrap(
-                                            function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (G.matchMediaQuery('max-width: 800px')) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.next = 4), G.waitForSelectorInDOM('#theCheckIn');
-                                                        case 4:
-                                                            if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
-                                                                e.next = 11;
-                                                                break;
-                                                            }
-                                                            if (((t = document.querySelector('#theCheckIn')), (n = document.querySelector('#theCheckOut')), t && n)) {
-                                                                e.next = 9;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 9:
-                                                            t.setAttribute('readonly', !0), n.setAttribute('readonly', !0);
-                                                        case 11:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            },
-                                            e,
-                                            this
-                                        );
-                                    })
-                                )),
-                                function () {
-                                    return o.apply(this, arguments);
-                                }),
-                        },
-                        {
-                            key: 'updateAmenitiesLegendTag',
-                            value: function () {
-                                'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
-                            },
-                        },
-                        {
-                            key: 'cancelConfirmUpdate',
-                            value: function () {
-                                document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
-                            },
-                        },
-                        {
-                            key: 'moveOriginalPrice',
-                            value: function (e, t) {
-                                document.querySelectorAll(e).forEach(function (e) {
-                                    if (e.querySelector('div.originalPrice')) {
-                                        e.querySelector(t).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
-                                        var n,
-                                            r,
-                                            o = parseFloat(e.querySelector('.originalPrice').textContent),
-                                            i = parseFloat(
-                                                document.querySelector('.SearchHotels')
-                                                    ? e.querySelector('.arnUnit').textContent
-                                                    : e.querySelector('.ArnNightlyRate strong').textContent
-                                            );
-                                        (r = ((o - (n = i)) / n) * 100), Math.floor(r) >= 5 || (e.querySelector('.originalPrice').style.display = 'none');
-                                    }
-                                });
-                            },
-                        },
-                        {
-                            key: 'updateSupportPageText',
-                            value: function () {
-                                this.site_config.is_resbeat_client ||
-                                    (document.querySelector('.WBSupportForm') &&
-                                        (document.querySelector('.ArnSupportChatTable p').textContent =
-                                            'If you would like to speak with a representative, please call + 1 512-691-9555'));
-                            },
-                        },
-                        {
-                            key: 'removeLrgFooterLink',
-                            value: function () {
-                                this.site_config.lodging.is_lrg ||
-                                    this.site_config.is_resbeat_client ||
-                                    ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
-                                    (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
-                            },
-                        },
-                    ]) && Y(t.prototype, n),
-                    r && Y(t, r),
-                    e
-                );
-            })(),
-            Z = new I.a(),
-            J = 'hof_landing_page-'.concat(62678);
-        function Q(e, t, n, r, o, i, a) {
-            try {
-                var c = e[i](a),
-                    s = c.value;
-            } catch (e) {
-                return void n(e);
-            }
-            c.done ? t(s) : Promise.resolve(s).then(r, o);
-        }
-        function K(e) {
-            return function () {
-                var t = this,
-                    n = arguments;
-                return new Promise(function (r, o) {
-                    var i = e.apply(t, n);
-                    function a(e) {
-                        Q(i, r, o, a, c, 'next', e);
-                    }
-                    function c(e) {
-                        Q(i, r, o, a, c, 'throw', e);
-                    }
-                    a(void 0);
-                });
-            };
-        }
-        function X(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var r = t[n];
-                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
-            }
-        }
-        var ee = new P(),
-            te = (function () {
+        var l = new (n(35).a)(),
+            f = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -6676,7 +6771,7 @@
                         {
                             key: 'removeArnSearchContainer',
                             value:
-                                ((i = K(
+                                ((i = s(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -6685,7 +6780,7 @@
                                                         return (
                                                             document.body.insertAdjacentHTML('afterBegin', '<style>#root-search-container{display: none;}'),
                                                             (e.next = 3),
-                                                            ee.waitForSelectorInDOM('#root-search-container')
+                                                            l.waitForSelectorInDOM('#root-search-container')
                                                         );
                                                     case 3:
                                                         if (document.querySelector('#root-search-container')) {
@@ -6728,7 +6823,7 @@
                         {
                             key: 'generateEventHtml',
                             value:
-                                ((o = K(
+                                ((o = s(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -6738,7 +6833,7 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (t = 0), (e.next = 3), ee.waitForSelectorInDOM('.ArnSearchContainerMainDiv');
+                                                            return (t = 0), (e.next = 3), l.waitForSelectorInDOM('.ArnSearchContainerMainDiv');
                                                         case 3:
                                                             if ((n = document.querySelector('.ArnSearchContainerMainDiv'))) {
                                                                 e.next = 6;
@@ -6750,7 +6845,7 @@
                                                                 e.is_city_search_header_link
                                                                     ? r.buildCitySearchElement(e)
                                                                     : (0 === t && n.insertAdjacentHTML('beforeEnd', '<h1>Upcoming Events</h1><div class="events"></div>'),
-                                                                      ee.checkForPastDate(e.end_date) ||
+                                                                      l.checkForPastDate(e.end_date) ||
                                                                           (document.querySelector('.events').insertAdjacentHTML(
                                                                               'beforeEnd',
                                                                               '\n                <a class="event-container event-'
@@ -6781,13 +6876,13 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
-                    ]) && X(t.prototype, n),
-                    r && X(t, r),
+                    ]) && u(t.prototype, n),
+                    r && u(t, r),
                     e
                 );
             })();
-        function ne(e) {
-            return (ne =
+        function d(e) {
+            return (d =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -6796,14 +6891,14 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        function re(e, t) {
-            return (re =
+        function h(e, t) {
+            return (h =
                 Object.setPrototypeOf ||
                 function (e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        function oe(e) {
+        function p(e) {
             var t = (function () {
                 if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
                 if (Reflect.construct.sham) return !1;
@@ -6816,28 +6911,28 @@
             })();
             return function () {
                 var n,
-                    r = se(e);
+                    r = g(e);
                 if (t) {
-                    var o = se(this).constructor;
+                    var o = g(this).constructor;
                     n = Reflect.construct(r, arguments, o);
                 } else n = r.apply(this, arguments);
-                return ie(this, n);
+                return y(this, n);
             };
         }
-        function ie(e, t) {
-            return !t || ('object' !== ne(t) && 'function' != typeof t) ? ae(e) : t;
+        function y(e, t) {
+            return !t || ('object' !== d(t) && 'function' != typeof t) ? m(e) : t;
         }
-        function ae(e) {
+        function m(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function ce(e, t, n) {
-            return (ce =
+        function v(e, t, n) {
+            return (v =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = se(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = g(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6846,17 +6941,17 @@
                           }
                       })(e, t, n || e);
         }
-        function se(e) {
-            return (se = Object.setPrototypeOf
+        function g(e) {
+            return (g = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var ue = new (function () {
+        var b = new (function () {
                 return {
                     site_id: 62678,
-                    directory_name: J,
+                    directory_name: a,
                     affiliate_id: 17464,
                     master_id: 920,
                     site_type: 'event-landing-page',
@@ -6880,9 +6975,9 @@
                     show_currency_select: !1,
                     show_date_prompt: !1,
                     has_social_sharing: !0,
-                    fav_icon_url: ''.concat(Z.path, '/site_configs/').concat(J, '/img/logo.png'),
-                    header: {logo_file_location: ''.concat(Z.path, '/site_configs/').concat(J, '/img/logo.png'), logo_outbound_url: 'https://www.profootballhof.com/'},
-                    map_marker_image_url: ''.concat(Z.path, '/site_configs/').concat(J, '/img/logo.png'),
+                    fav_icon_url: ''.concat(i.path, '/site_configs/').concat(a, '/img/logo.png'),
+                    header: {logo_file_location: ''.concat(i.path, '/site_configs/').concat(a, '/img/logo.png'), logo_outbound_url: 'https://www.profootballhof.com/'},
+                    map_marker_image_url: ''.concat(i.path, '/site_configs/').concat(a, '/img/logo.png'),
                     theme: 'dark',
                     google_font_url: '//fonts.googleapis.com/css?family=Oswald:100,500,700',
                     ads: {
@@ -6907,25 +7002,25 @@
                     ],
                 };
             })(),
-            le = (function (e) {
+            S = (function (e) {
                 !(function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && re(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && h(e, t);
                 })(n, e);
-                var t = oe(n);
+                var t = p(n);
                 function n() {
                     var e, r;
                     return (
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, n),
-                        ce(((e = ae((r = t.call(this, ue)))), se(n.prototype)), 'init', e).call(e),
+                        v(((e = m((r = t.call(this, b)))), g(n.prototype)), 'init', e).call(e),
                         r
                     );
                 }
                 return n;
-            })(V);
-        new te(ue.landing_page_events).init(), new le();
-        n(112);
+            })(r.a);
+        new f(b.landing_page_events).init(), new S();
+        n(154);
     },
 ]);

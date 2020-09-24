@@ -1154,53 +1154,73 @@
                             {
                                 key: 'showFullStayAndNightlyRates',
                                 value: function (e, t) {
-                                    var o, n, r, s;
-                                    this.site_config.show_tax_inclusive_rates ||
+                                    var o,
+                                        n,
+                                        r,
+                                        s,
+                                        i = d.getMetaTagContent('showFullTotals');
+                                    i ||
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (i) {
-                                                (o = i.querySelector('.arnPrice')),
-                                                    (n = i.querySelector('.arnPrice .arnUnit')) &&
+                                            (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (o = t.querySelector('.arnPrice')),
+                                                    (n = t.querySelector('.arnPrice .arnUnit')) &&
                                                         o &&
                                                         ((r = parseFloat(n.textContent) * e),
                                                         (s = r.toFixed(2)),
                                                         n &&
-                                                            ('USD' === t
-                                                                ? o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (i.querySelector('.full-stay').style.display = 'none')));
+                                                            (o.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                            ),
+                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
                                             )),
                                         document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (o) {
-                                                (n = o.querySelector('strong')),
+                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (n = t.querySelector('strong')),
                                                     (r = parseFloat(n.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                     n &&
                                                         r &&
                                                         (s = r.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (o.querySelector('.full-stay').style.display = 'none'));
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                            ))),
+                                        i &&
+                                            (document.querySelector('.SearchHotels') &&
+                                                document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                    (n = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                        (r = t.querySelector('.arnPrice .arnUnit')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            (r.style.fontSize = '13px'),
+                                                            (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                                }),
+                                            document.querySelector('.SinglePropDetail') &&
+                                                document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                    (n = t.querySelector('.averageNightly')),
+                                                        (r = t.querySelector('strong')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            (r.textContent = r.textContent.replace(/[^\d.-]/g, '')),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('strong').style.display = 'none'));
+                                                }));
                                 },
                             },
                             {
@@ -1290,7 +1310,7 @@
                                         var o = [],
                                             n = [];
                                         e.forEach(function (e) {
-                                            e.classList.contains('S16') || e.classList.contains('S20') ? o.push(!0) : o.push(!1);
+                                            e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? o.push(!0) : o.push(!1);
                                         }),
                                             o.forEach(function (e, t) {
                                                 e && n.push(t);
@@ -1348,7 +1368,7 @@
                                                 var i, a;
                                                 n.classList.contains('ArnPropertyTierTwo') && '' !== o && s(o, n),
                                                     n.classList.contains('ArnPropertyTierThree') && '' !== t && s(t, n),
-                                                    (n.classList.contains('S16') || (n.classList.contains('S20') && '' !== e)) &&
+                                                    (n.classList.contains('S16') || n.classList.contains('S20') || (n.classList.contains('S33') && '' !== e)) &&
                                                         ((i = e),
                                                         (a = n),
                                                         '' !== r.site_config.exclusive_rate_text &&
@@ -2702,7 +2722,7 @@
                             {
                                 key: 'displayCheckoutRewardPoints',
                                 value: function () {
-                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId')) {
+                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId') && '63711' !== g.getMetaTagContent('siteId')) {
                                         var e = document.querySelector('.dueNowRow td'),
                                             t = document.querySelector('.taxFeeRow td');
                                         if (
@@ -2741,7 +2761,11 @@
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (document.querySelector('.SinglePropDetail') && '62725' !== g.getMetaTagContent('siteId')) {
+                                                                if (
+                                                                    document.querySelector('.SinglePropDetail') &&
+                                                                    '62725' !== g.getMetaTagContent('siteId') &&
+                                                                    '63711' !== g.getMetaTagContent('siteId')
+                                                                ) {
                                                                     e.next = 2;
                                                                     break;
                                                                 }
@@ -2932,6 +2956,7 @@
                                     if (
                                         !1 !== this.site_config.is_resbeat_client &&
                                         '62725' !== g.getMetaTagContent('siteId') &&
+                                        '63711' !== g.getMetaTagContent('siteId') &&
                                         (!document.querySelector('.beat-em') || 'search-results' !== g.page_name) &&
                                         (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                     ) {
@@ -4369,7 +4394,7 @@
                     v,
                     j,
                     b = function (e) {
-                        if (!m && e in k) return k[e];
+                        if (!m && e in A) return A[e];
                         switch (e) {
                             case 'keys':
                             case 'values':
@@ -4384,26 +4409,26 @@
                     S = t + ' Iterator',
                     w = 'values' == h,
                     x = !1,
-                    k = e.prototype,
-                    A = k[d] || k['@@iterator'] || (h && k[h]),
-                    L = A || b(h),
+                    A = e.prototype,
+                    k = A[d] || A['@@iterator'] || (h && A[h]),
+                    L = k || b(h),
                     q = h ? (w ? b('entries') : L) : void 0,
-                    M = ('Array' == t && k.entries) || A;
+                    M = ('Array' == t && A.entries) || k;
                 if (
                     (M && (j = l(M.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
-                        A &&
-                        'values' !== A.name &&
+                        k &&
+                        'values' !== k.name &&
                         ((x = !0),
                         (L = function () {
-                            return A.call(this);
+                            return k.call(this);
                         })),
-                    (n && !g) || (!m && !x && k[d]) || i(k, d, L),
+                    (n && !g) || (!m && !x && A[d]) || i(A, d, L),
                     (a[t] = L),
                     (a[S] = f),
                     h)
                 )
-                    if (((_ = {values: w ? L : b('values'), keys: y ? L : b('keys'), entries: q}), g)) for (v in _) v in k || s(k, v, _[v]);
+                    if (((_ = {values: w ? L : b('values'), keys: y ? L : b('keys'), entries: q}), g)) for (v in _) v in A || s(A, v, _[v]);
                     else r(r.P + r.F * (m || x), t, _);
                 return _;
             };
@@ -5400,8 +5425,8 @@
                 S = o(/*! ./_promise-resolve */ './node_modules/core-js/modules/_promise-resolve.js'),
                 w = c.TypeError,
                 x = c.process,
-                k = x && x.versions,
-                A = (k && k.v8) || '',
+                A = x && x.versions,
+                k = (A && A.v8) || '',
                 L = c.Promise,
                 q = 'process' == l(x),
                 M = function () {},
@@ -5412,7 +5437,7 @@
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
                                 e(M, M);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -5742,14 +5767,14 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < _.length; w++) {
                             v = _[w];
-                            for (var x = String(v[0]), k = u(l(i(v.index), m.length), 0), A = [], L = 1; L < v.length; L++) A.push(void 0 === (j = v[L]) ? j : String(j));
+                            for (var x = String(v[0]), A = u(l(i(v.index), m.length), 0), k = [], L = 1; L < v.length; L++) k.push(void 0 === (j = v[L]) ? j : String(j));
                             var q = v.groups;
                             if (f) {
-                                var M = [x].concat(A, k, m);
+                                var M = [x].concat(k, A, m);
                                 void 0 !== q && M.push(q);
                                 var C = String(t.apply(void 0, M));
-                            } else C = h(x, m, k, A, q, t);
-                            k >= S && ((b += m.slice(S, k) + C), (S = k + x.length));
+                            } else C = h(x, m, A, k, q, t);
+                            A >= S && ((b += m.slice(S, A) + C), (S = A + x.length));
                         }
                         return b + m.slice(S);
                     },
@@ -5901,7 +5926,7 @@
                                 if (null === x || (w = d(a(_.lastIndex + (p ? 0 : b)), m.length)) === j) b = i(m, b, y);
                                 else {
                                     if ((S.push(m.slice(j, b)), S.length === v)) return S;
-                                    for (var k = 1; k <= x.length - 1; k++) if ((S.push(x[k]), S.length === v)) return S;
+                                    for (var A = 1; A <= x.length - 1; A++) if ((S.push(x[A]), S.length === v)) return S;
                                     b = j = w;
                                 }
                             }
@@ -5987,14 +6012,14 @@
                 S = o(/*! ./_to-primitive */ './node_modules/core-js/modules/_to-primitive.js'),
                 w = o(/*! ./_property-desc */ './node_modules/core-js/modules/_property-desc.js'),
                 x = o(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
-                k = o(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
-                A = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
+                A = o(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
+                k = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 L = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 q = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 M = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                C = A.f,
+                C = k.f,
                 E = q.f,
-                T = k.f,
+                T = A.f,
                 P = n.Symbol,
                 R = n.JSON,
                 O = R && R.stringify,
@@ -6005,9 +6030,9 @@
                 D = l('symbols'),
                 N = l('op-symbols'),
                 U = Object.prototype,
-                $ = 'function' == typeof P && !!L.f,
-                Y = n.QObject,
-                W = !Y || !Y.prototype || !Y.prototype.findChild,
+                Y = 'function' == typeof P && !!L.f,
+                $ = n.QObject,
+                W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
                     s &&
                     u(function () {
@@ -6032,7 +6057,7 @@
                     return (t._k = e), t;
                 },
                 z =
-                    $ && 'symbol' == typeof P.iterator
+                    Y && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
@@ -6074,7 +6099,7 @@
                     for (var t, o = e === U, n = T(o ? N : b(e)), s = [], i = 0; n.length > i; ) !r(D, (t = n[i++])) || (o && !r(U, t)) || s.push(D[t]);
                     return s;
                 };
-            $ ||
+            Y ||
                 (a(
                     (P = function () {
                         if (this instanceof P) throw TypeError('Symbol is not a constructor!');
@@ -6089,20 +6114,20 @@
                         return this._k;
                     }
                 ),
-                (A.f = K),
+                (k.f = K),
                 (q.f = Z),
-                (o(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
+                (o(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = A.f = X),
                 (o(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = Q),
                 (L.f = ee),
                 s && !o(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(U, 'propertyIsEnumerable', Q, !0),
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !$, {Symbol: P});
+                i(i.G + i.W + i.F * !Y, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
             for (var ne = M(f.store), re = 0; ne.length > re; ) h(ne[re++]);
-            i(i.S + i.F * !$, 'Symbol', {
+            i(i.S + i.F * !Y, 'Symbol', {
                 for: function (e) {
                     return r(I, (e += '')) ? I[e] : (I[e] = P(e));
                 },
@@ -6117,7 +6142,7 @@
                     W = !1;
                 },
             }),
-                i(i.S + i.F * !$, 'Object', {
+                i(i.S + i.F * !Y, 'Object', {
                     create: function (e, t) {
                         return void 0 === t ? x(e) : J(x(e), t);
                     },
@@ -6139,7 +6164,7 @@
                     i(
                         i.S +
                             i.F *
-                                (!$ ||
+                                (!Y ||
                                     u(function () {
                                         var e = P();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
@@ -6876,7 +6901,7 @@
                                 if ('executing' === n) throw new Error('Generator is already running');
                                 if ('completed' === n) {
                                     if ('throw' === r) throw s;
-                                    return k();
+                                    return A();
                                 }
                                 for (o.method = r, o.arg = s; ; ) {
                                     var i = o.delegate;
@@ -7010,9 +7035,9 @@
                             return (s.next = s);
                         }
                     }
-                    return {next: k};
+                    return {next: A};
                 }
-                function k() {
+                function A() {
                     return {value: void 0, done: !0};
                 }
                 return (
@@ -7516,10 +7541,10 @@
                     return w;
                 }),
                 o.d(t, 'DOMException', function () {
-                    return k;
+                    return A;
                 }),
                 o.d(t, 'fetch', function () {
-                    return A;
+                    return k;
                 });
             var n = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== n && n),
                 r = 'URLSearchParams' in n,
@@ -7823,21 +7848,21 @@
                 if (-1 === x.indexOf(t)) throw new RangeError('Invalid status code');
                 return new w(null, {status: t, headers: {location: e}});
             };
-            var k = n.DOMException;
+            var A = n.DOMException;
             try {
-                new k();
+                new A();
             } catch (e) {
-                ((k = function (e, t) {
+                ((A = function (e, t) {
                     (this.message = e), (this.name = t);
                     var o = Error(e);
                     this.stack = o.stack;
                 }).prototype = Object.create(Error.prototype)),
-                    (k.prototype.constructor = k);
+                    (A.prototype.constructor = A);
             }
-            function A(e, t) {
+            function k(e, t) {
                 return new Promise(function (o, r) {
                     var s = new b(e, t);
-                    if (s.signal && s.signal.aborted) return r(new k('Aborted', 'AbortError'));
+                    if (s.signal && s.signal.aborted) return r(new A('Aborted', 'AbortError'));
                     var a = new XMLHttpRequest();
                     function u() {
                         a.abort();
@@ -7882,7 +7907,7 @@
                         }),
                         (a.onabort = function () {
                             setTimeout(function () {
-                                r(new k('Aborted', 'AbortError'));
+                                r(new A('Aborted', 'AbortError'));
                             }, 0);
                         }),
                         a.open(
@@ -7919,7 +7944,7 @@
                         a.send(void 0 === s._bodyInit ? null : s._bodyInit);
                 });
             }
-            (A.polyfill = !0), n.fetch || ((n.fetch = A), (n.Headers = p), (n.Request = b), (n.Response = w));
+            (k.polyfill = !0), n.fetch || ((n.fetch = k), (n.Headers = p), (n.Request = b), (n.Response = w));
         },
     './site_configs/cug_template-39624/js/39624-config.js':
         /*!************************************************************!*\

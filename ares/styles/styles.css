@@ -2180,6 +2180,9 @@ legend {
   width: 30%;
   text-align: right; }
 
+.MemberNotAuthenticated #theHotel .discount {
+  display: none; }
+
 #theHotel img {
   width: 100%; }
 

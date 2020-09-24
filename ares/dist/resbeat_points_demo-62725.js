@@ -1154,53 +1154,73 @@
                             {
                                 key: 'showFullStayAndNightlyRates',
                                 value: function (e, t) {
-                                    var o, n, r, s;
-                                    this.site_config.show_tax_inclusive_rates ||
+                                    var o,
+                                        n,
+                                        r,
+                                        s,
+                                        i = d.getMetaTagContent('showFullTotals');
+                                    i ||
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (i) {
-                                                (o = i.querySelector('.arnPrice')),
-                                                    (n = i.querySelector('.arnPrice .arnUnit')) &&
+                                            (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (o = t.querySelector('.arnPrice')),
+                                                    (n = t.querySelector('.arnPrice .arnUnit')) &&
                                                         o &&
                                                         ((r = parseFloat(n.textContent) * e),
                                                         (s = r.toFixed(2)),
                                                         n &&
-                                                            ('USD' === t
-                                                                ? o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : o.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (i.querySelector('.full-stay').style.display = 'none')));
+                                                            (o.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                            ),
+                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
                                             )),
                                         document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (o) {
-                                                (n = o.querySelector('strong')),
+                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (n = t.querySelector('strong')),
                                                     (r = parseFloat(n.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                     n &&
                                                         r &&
                                                         (s = r.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (o.querySelector('.full-stay').style.display = 'none'));
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                            ))),
+                                        i &&
+                                            (document.querySelector('.SearchHotels') &&
+                                                document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                    (n = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                        (r = t.querySelector('.arnPrice .arnUnit')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            (r.style.fontSize = '13px'),
+                                                            (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                                }),
+                                            document.querySelector('.SinglePropDetail') &&
+                                                document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                    (n = t.querySelector('.averageNightly')),
+                                                        (r = t.querySelector('strong')),
+                                                        n &&
+                                                            r &&
+                                                            ((n.style.display = 'block'),
+                                                            n.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            (r.textContent = r.textContent.replace(/[^\d.-]/g, '')),
+                                                            r.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('strong').style.display = 'none'));
+                                                }));
                                 },
                             },
                             {
@@ -1290,7 +1310,7 @@
                                         var o = [],
                                             n = [];
                                         e.forEach(function (e) {
-                                            e.classList.contains('S16') || e.classList.contains('S20') ? o.push(!0) : o.push(!1);
+                                            e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? o.push(!0) : o.push(!1);
                                         }),
                                             o.forEach(function (e, t) {
                                                 e && n.push(t);
@@ -1348,7 +1368,7 @@
                                                 var i, a;
                                                 n.classList.contains('ArnPropertyTierTwo') && '' !== o && s(o, n),
                                                     n.classList.contains('ArnPropertyTierThree') && '' !== t && s(t, n),
-                                                    (n.classList.contains('S16') || (n.classList.contains('S20') && '' !== e)) &&
+                                                    (n.classList.contains('S16') || n.classList.contains('S20') || (n.classList.contains('S33') && '' !== e)) &&
                                                         ((i = e),
                                                         (a = n),
                                                         '' !== r.site_config.exclusive_rate_text &&
@@ -2702,7 +2722,7 @@
                             {
                                 key: 'displayCheckoutRewardPoints',
                                 value: function () {
-                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId')) {
+                                    if (document.querySelector('.CheckOutForm') && '62725' !== g.getMetaTagContent('siteId') && '63711' !== g.getMetaTagContent('siteId')) {
                                         var e = document.querySelector('.dueNowRow td'),
                                             t = document.querySelector('.taxFeeRow td');
                                         if (
@@ -2741,7 +2761,11 @@
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (document.querySelector('.SinglePropDetail') && '62725' !== g.getMetaTagContent('siteId')) {
+                                                                if (
+                                                                    document.querySelector('.SinglePropDetail') &&
+                                                                    '62725' !== g.getMetaTagContent('siteId') &&
+                                                                    '63711' !== g.getMetaTagContent('siteId')
+                                                                ) {
                                                                     e.next = 2;
                                                                     break;
                                                                 }
@@ -2932,6 +2956,7 @@
                                     if (
                                         !1 !== this.site_config.is_resbeat_client &&
                                         '62725' !== g.getMetaTagContent('siteId') &&
+                                        '63711' !== g.getMetaTagContent('siteId') &&
                                         (!document.querySelector('.beat-em') || 'search-results' !== g.page_name) &&
                                         (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail'))
                                     ) {
@@ -4388,9 +4413,9 @@
                     k = A[d] || A['@@iterator'] || (h && A[h]),
                     q = k || b(h),
                     L = h ? (w ? b('entries') : q) : void 0,
-                    M = ('Array' == t && A.entries) || k;
+                    C = ('Array' == t && A.entries) || k;
                 if (
-                    (M && (j = l(M.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
+                    (C && (j = l(C.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
                         k &&
                         'values' !== k.name &&
@@ -5404,15 +5429,15 @@
                 k = (A && A.v8) || '',
                 q = c.Promise,
                 L = 'process' == l(x),
-                M = function () {},
-                C = (r = v.f),
+                C = function () {},
+                M = (r = v.f),
                 T = !!(function () {
                     try {
                         var e = q.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(M, M);
+                                e(C, C);
                             });
-                        return (L || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (L || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 E = function (e) {
@@ -5525,7 +5550,7 @@
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
                 }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(q.prototype, {
                     then: function (e, t) {
-                        var o = C(y(this, q));
+                        var o = M(y(this, q));
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
@@ -5544,7 +5569,7 @@
                     var e = new n();
                     (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
                 }),
-                (v.f = C = function (e) {
+                (v.f = M = function (e) {
                     return e === q || e === i ? new s(e) : r(e);
                 })),
                 d(d.G + d.W + d.F * !T, {Promise: q}),
@@ -5553,7 +5578,7 @@
                 (i = o(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !T, 'Promise', {
                     reject: function (e) {
-                        var t = C(this);
+                        var t = M(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
@@ -5568,14 +5593,14 @@
                             !(
                                 T &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    q.all(e).catch(M);
+                                    q.all(e).catch(C);
                                 })
                             ),
                     'Promise',
                     {
                         all: function (e) {
                             var t = this,
-                                o = C(t),
+                                o = M(t),
                                 n = o.resolve,
                                 r = o.reject,
                                 s = j(function () {
@@ -5597,7 +5622,7 @@
                         },
                         race: function (e) {
                             var t = this,
-                                o = C(t),
+                                o = M(t),
                                 n = o.reject,
                                 r = j(function () {
                                     h(e, !1, function (e) {
@@ -5745,11 +5770,11 @@
                             for (var x = String(v[0]), A = u(l(i(v.index), m.length), 0), k = [], q = 1; q < v.length; q++) k.push(void 0 === (j = v[q]) ? j : String(j));
                             var L = v.groups;
                             if (f) {
-                                var M = [x].concat(k, A, m);
-                                void 0 !== L && M.push(L);
-                                var C = String(t.apply(void 0, M));
-                            } else C = h(x, m, A, k, L, t);
-                            A >= S && ((b += m.slice(S, A) + C), (S = A + x.length));
+                                var C = [x].concat(k, A, m);
+                                void 0 !== L && C.push(L);
+                                var M = String(t.apply(void 0, C));
+                            } else M = h(x, m, A, k, L, t);
+                            A >= S && ((b += m.slice(S, A) + M), (S = A + x.length));
                         }
                         return b + m.slice(S);
                     },
@@ -5991,8 +6016,8 @@
                 k = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 q = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 L = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                M = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                C = k.f,
+                C = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                M = k.f,
                 T = L.f,
                 E = A.f,
                 P = n.Symbol,
@@ -6005,9 +6030,9 @@
                 D = l('symbols'),
                 N = l('op-symbols'),
                 U = Object.prototype,
-                $ = 'function' == typeof P && !!q.f,
-                Y = n.QObject,
-                W = !Y || !Y.prototype || !Y.prototype.findChild,
+                Y = 'function' == typeof P && !!q.f,
+                $ = n.QObject,
+                W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
                     s &&
                     u(function () {
@@ -6023,7 +6048,7 @@
                         );
                     })
                         ? function (e, t, o) {
-                              var n = C(U, t);
+                              var n = M(U, t);
                               n && delete U[t], T(e, t, o), n && e !== U && T(U, t, n);
                           }
                         : T,
@@ -6032,7 +6057,7 @@
                     return (t._k = e), t;
                 },
                 z =
-                    $ && 'symbol' == typeof P.iterator
+                    Y && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
@@ -6062,7 +6087,7 @@
                 },
                 K = function (e, t) {
                     if (((e = b(e)), (t = S(t, !0)), e !== U || !r(D, t) || r(N, t))) {
-                        var o = C(e, t);
+                        var o = M(e, t);
                         return !o || !r(D, t) || (r(e, H) && e[H][t]) || (o.enumerable = !0), o;
                     }
                 },
@@ -6074,7 +6099,7 @@
                     for (var t, o = e === U, n = E(o ? N : b(e)), s = [], i = 0; n.length > i; ) !r(D, (t = n[i++])) || (o && !r(U, t)) || s.push(D[t]);
                     return s;
                 };
-            $ ||
+            Y ||
                 (a(
                     (P = function () {
                         if (this instanceof P) throw TypeError('Symbol is not a constructor!');
@@ -6098,11 +6123,11 @@
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !$, {Symbol: P});
+                i(i.G + i.W + i.F * !Y, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
-            for (var ne = M(f.store), re = 0; ne.length > re; ) h(ne[re++]);
-            i(i.S + i.F * !$, 'Symbol', {
+            for (var ne = C(f.store), re = 0; ne.length > re; ) h(ne[re++]);
+            i(i.S + i.F * !Y, 'Symbol', {
                 for: function (e) {
                     return r(I, (e += '')) ? I[e] : (I[e] = P(e));
                 },
@@ -6117,7 +6142,7 @@
                     W = !1;
                 },
             }),
-                i(i.S + i.F * !$, 'Object', {
+                i(i.S + i.F * !Y, 'Object', {
                     create: function (e, t) {
                         return void 0 === t ? x(e) : J(x(e), t);
                     },
@@ -6139,7 +6164,7 @@
                     i(
                         i.S +
                             i.F *
-                                (!$ ||
+                                (!Y ||
                                     u(function () {
                                         var e = P();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));

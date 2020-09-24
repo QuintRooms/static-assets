@@ -10,6 +10,7 @@ const sites = {
         primary_color: '#215853',
         secondary_color: '##e2ad37',
         logo_url: 'https://static.hotelsforhope.com/portals/child-portals/cug/60831/images/logo.png',
+        uses_points: false,
     },
     60831: {
         client_name: 'RESBEAT',
@@ -17,6 +18,7 @@ const sites = {
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         logo_url: 'https://static.hotelsforhope.com/ares/site_configs/resbeat-60831/img/logo.png',
+        uses_points: false,
     },
     60278: {
         client_name: 'Ares Child',
@@ -24,6 +26,7 @@ const sites = {
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/logo.png',
+        uses_points: false,
     },
     60279: {
         client_name: 'Ares Child',
@@ -31,6 +34,7 @@ const sites = {
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png',
+        uses_points: false,
     },
     62011: {
         client_name: 'RESBEAT Test',
@@ -38,6 +42,15 @@ const sites = {
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
+        uses_points: false,
+    },
+    62725: {
+        client_name: 'RESBEAT Points Demo',
+        site_url: 'https://events.hotelsforhope.com/v6/',
+        primary_color: '#215853',
+        secondary_color: '#e2ad37',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
+        uses_points: true,
     },
     63710: {
         client_name: 'Pro Football Hall of Fame Gold Jackets Club',
@@ -45,6 +58,7 @@ const sites = {
         primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_cug-63710/img/logo.png',
+        uses_points: false,
     },
     63711: {
         client_name: 'Pro Football Hall of Fame Travel Club',
@@ -52,6 +66,7 @@ const sites = {
         primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_points_cug-63711/img/logo.png',
+        uses_points: true,
     },
 };
 

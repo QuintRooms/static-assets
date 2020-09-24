@@ -1154,53 +1154,73 @@
                             {
                                 key: 'showFullStayAndNightlyRates',
                                 value: function (e, t) {
-                                    var n, r, o, s;
-                                    this.site_config.show_tax_inclusive_rates ||
+                                    var n,
+                                        r,
+                                        o,
+                                        s,
+                                        i = d.getMetaTagContent('showFullTotals');
+                                    i ||
                                         (document.querySelector('.SearchHotels') &&
-                                            (document.querySelectorAll('.ArnContainer').forEach(function (i) {
-                                                (n = i.querySelector('.arnPrice')),
-                                                    (r = i.querySelector('.arnPrice .arnUnit')) &&
+                                            (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (n = t.querySelector('.arnPrice')),
+                                                    (r = t.querySelector('.arnPrice .arnUnit')) &&
                                                         n &&
                                                         ((o = parseFloat(r.textContent) * e),
                                                         (s = o.toFixed(2)),
                                                         r &&
-                                                            ('USD' === t
-                                                                ? n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                                  )
-                                                                : n.insertAdjacentHTML(
-                                                                      'beforeEnd',
-                                                                      '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                                  ),
-                                                            1 === e && (i.querySelector('.full-stay').style.display = 'none')));
+                                                            (n.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                            ),
+                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
                                             )),
                                         document.querySelector('.SinglePropDetail') &&
-                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (n) {
-                                                (r = n.querySelector('strong')),
+                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('strong')),
                                                     (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                     r &&
                                                         o &&
                                                         (s = o.toFixed(2)) &&
-                                                        ('USD' === t
-                                                            ? r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(s, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : r.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(s, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (n.querySelector('.full-stay').style.display = 'none'));
+                                                        (r.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(s, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                             }),
                                             document.body.insertAdjacentHTML(
                                                 'beforeEnd',
                                                 '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                            )));
+                                            ))),
+                                        i &&
+                                            (document.querySelector('.SearchHotels') &&
+                                                document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                    (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                        (o = t.querySelector('.arnPrice .arnUnit')),
+                                                        r &&
+                                                            o &&
+                                                            ((r.style.display = 'block'),
+                                                            (o.style.fontSize = '13px'),
+                                                            (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                            r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                                }),
+                                            document.querySelector('.SinglePropDetail') &&
+                                                document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                    (r = t.querySelector('.averageNightly')),
+                                                        (o = t.querySelector('strong')),
+                                                        r &&
+                                                            o &&
+                                                            ((r.style.display = 'block'),
+                                                            r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
+                                                            o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('strong').style.display = 'none'));
+                                                }));
                                 },
                             },
                             {
@@ -9819,26 +9839,26 @@
                 !(function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
                     (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && l(e, t);
-                })(h, e);
+                })(a, e);
                 var t,
                     n,
                     r,
                     o,
                     s,
-                    i = d(h);
-                function h() {
+                    i = d(a);
+                function a() {
                     var e, t;
                     return (
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                        })(this, h),
-                        f(((e = m((t = i.call(this, v)))), p(h.prototype)), 'init', e).call(e),
+                        })(this, a),
+                        f(((e = m((t = i.call(this, v)))), p(a.prototype)), 'init', e).call(e),
                         t.init(),
                         t
                     );
                 }
                 return (
-                    (t = h),
+                    (t = a),
                     (n = [
                         {
                             key: 'init',
@@ -9873,11 +9893,8 @@
                                                     }
                                                     return e.abrupt('return');
                                                 case 8:
-                                                    console.log('Tomorrow day js value: ', _().add(1, 'day').format('MM/DD/YYYY') + 1, 'Type: ', a(_().format('MM/DD/YYYY'))),
-                                                        t.setAttribute('value', _().format('MM/DD/YYYY')),
-                                                        n.setAttribute('value', _().add(1, 'day').format('MM/DD/YYYY')),
-                                                        console.log(t);
-                                                case 12:
+                                                    t.setAttribute('value', _().format('MM/DD/YYYY')), n.setAttribute('value', _().add(1, 'day').format('MM/DD/YYYY'));
+                                                case 10:
                                                 case 'end':
                                                     return e.stop();
                                             }
@@ -9903,7 +9920,7 @@
                         },
                     ]) && u(t.prototype, n),
                     r && u(t, r),
-                    h
+                    a
                 );
             })(r.default))(),
                 new s.default();

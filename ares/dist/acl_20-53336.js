@@ -96,18 +96,18 @@
                     d,
                     h = e & s.F,
                     p = e & s.G,
-                    m = e & s.S,
-                    y = e & s.P,
+                    y = e & s.S,
+                    m = e & s.P,
                     v = e & s.B,
-                    g = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
+                    g = p ? r : y ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
                     b = p ? o : o[t] || (o[t] = {}),
                     S = b.prototype || (b.prototype = {});
                 for (u in (p && (n = t), n))
                     (f = ((l = !h && g && void 0 !== g[u]) ? g : n)[u]),
-                        (d = v && l ? c(f, r) : y && 'function' == typeof f ? c(Function.call, f) : f),
+                        (d = v && l ? c(f, r) : m && 'function' == typeof f ? c(Function.call, f) : f),
                         g && a(g, u, f, e & s.U),
                         b[u] != f && i(b, u, d),
-                        y && S[u] != f && (S[u] = f);
+                        m && S[u] != f && (S[u] = f);
             };
         (r.core = o), (s.F = 1), (s.G = 2), (s.S = 4), (s.P = 8), (s.B = 16), (s.W = 32), (s.U = 64), (s.R = 128), (e.exports = s);
     },
@@ -379,8 +379,8 @@
             d = n(4),
             h = n(13),
             p = n(75),
-            m = n(76),
-            y = n(54),
+            y = n(76),
+            m = n(54),
             v = n(48).set,
             g = n(80)(),
             b = n(50),
@@ -392,16 +392,16 @@
             k = A && A.versions,
             L = (k && k.v8) || '',
             M = s.Promise,
-            E = 'process' == l(A),
-            q = function () {},
+            q = 'process' == l(A),
+            E = function () {},
             C = (o = b.f),
             T = !!(function () {
                 try {
                     var e = M.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(q, q);
+                            e(E, E);
                         });
-                    return (E || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (q || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             P = function (e) {
@@ -453,13 +453,13 @@
                     if (
                         (i &&
                             ((t = S(function () {
-                                E
+                                q
                                     ? A.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = E || j(e) ? 2 : 1)),
+                            (e._h = q || j(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
@@ -472,7 +472,7 @@
             H = function (e) {
                 v.call(s, function () {
                     var t;
-                    E ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
             D = function (e) {
@@ -514,11 +514,11 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(84)(M.prototype, {
                 then: function (e, t) {
-                    var n = C(y(this, M));
+                    var n = C(m(this, M));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = E ? A.domain : void 0),
+                        (n.domain = q ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && R(this, !1),
@@ -557,7 +557,7 @@
                         !(
                             T &&
                             n(86)(function (e) {
-                                M.all(e).catch(q);
+                                M.all(e).catch(E);
                             })
                         ),
                 'Promise',
@@ -571,7 +571,7 @@
                                 var n = [],
                                     i = 0,
                                     a = 1;
-                                m(e, !1, function (e) {
+                                y(e, !1, function (e) {
                                     var c = i++,
                                         s = !1;
                                     n.push(void 0),
@@ -589,7 +589,7 @@
                             n = C(t),
                             r = n.reject,
                             o = S(function () {
-                                m(e, !1, function (e) {
+                                y(e, !1, function (e) {
                                     t.resolve(e).then(n.resolve, r);
                                 });
                             });
@@ -673,9 +673,9 @@
             p[o] = function () {
                 return this;
             };
-            var m = Object.getPrototypeOf,
-                y = m && m(m(A([])));
-            y && y !== t && n.call(y, o) && (p = y);
+            var y = Object.getPrototypeOf,
+                m = y && y(y(A([])));
+            m && m !== t && n.call(m, o) && (p = m);
             var v = (h.prototype = f.prototype = Object.create(p));
             function g(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
@@ -967,16 +967,16 @@
                     TouchList: !1,
                 },
                 p = o(h),
-                m = 0;
-            m < p.length;
-            m++
+                y = 0;
+            y < p.length;
+            y++
         ) {
-            var y,
-                v = p[m],
+            var m,
+                v = p[y],
                 g = h[v],
                 b = a[v],
                 S = b && b.prototype;
-            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, v), (s[v] = d), g)) for (y in r) S[y] || i(S, y, r[y], !0);
+            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, v), (s[v] = d), g)) for (m in r) S[m] || i(S, m, r[m], !0);
         }
     },
     function (e, t, n) {
@@ -1023,7 +1023,7 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, c, s, u, l, f, d, h, p, m;
+                var t, n, r, c, s, u, l, f, d, h, p, y;
                 return (
                     (t = e),
                     (n = [
@@ -1036,7 +1036,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((m = o(
+                                ((y = o(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1057,7 +1057,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return m.apply(this, arguments);
+                                    return y.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1665,21 +1665,21 @@
                     weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                     months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                 },
-                m = 'en',
-                y = {};
-            y[m] = p;
+                y = 'en',
+                m = {};
+            m[y] = p;
             var v = function (e) {
                     return e instanceof w;
                 },
                 g = function (e, t, n) {
                     var r;
-                    if (!e) return m;
-                    if ('string' == typeof e) y[e] && (r = e), t && ((y[e] = t), (r = e));
+                    if (!e) return y;
+                    if ('string' == typeof e) m[e] && (r = e), t && ((m[e] = t), (r = e));
                     else {
                         var o = e.name;
-                        (y[o] = e), (r = o);
+                        (m[o] = e), (r = o);
                     }
-                    return !n && r && (m = r), r || (!n && m);
+                    return !n && r && (y = r), r || (!n && y);
                 },
                 b = function (e, t) {
                     if (v(e)) return e.clone();
@@ -1766,19 +1766,19 @@
                                 p = function (e, t) {
                                     return S.w(l.toDate()[e].apply(l.toDate('s'), (f ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(t)), l);
                                 },
-                                m = this.$W,
-                                y = this.$M,
+                                y = this.$W,
+                                m = this.$M,
                                 v = this.$D,
                                 g = 'set' + (this.$u ? 'UTC' : '');
                             switch (d) {
                                 case s:
                                     return f ? h(1, 0) : h(31, 11);
                                 case a:
-                                    return f ? h(1, y) : h(0, y + 1);
+                                    return f ? h(1, m) : h(0, m + 1);
                                 case i:
                                     var b = this.$locale().weekStart || 0,
-                                        w = (m < b ? m + 7 : m) - b;
-                                    return h(f ? v - w : v + (6 - w), y);
+                                        w = (y < b ? y + 7 : y) - b;
+                                    return h(f ? v - w : v + (6 - w), m);
                                 case o:
                                 case u:
                                     return p(g + 'Hours', 0);
@@ -1811,8 +1811,8 @@
                                 l)[f],
                                 p = f === o ? this.$D + (c - this.$W) : c;
                             if (f === a || f === s) {
-                                var m = this.clone().set(u, 1);
-                                m.$d[h](p), m.init(), (this.$d = m.set(u, Math.min(this.$D, m.daysInMonth())).$d);
+                                var y = this.clone().set(u, 1);
+                                y.$d[h](p), y.init(), (this.$d = y.set(u, Math.min(this.$D, y.daysInMonth())).$d);
                             } else h && this.$d[h](p);
                             return this.init(), this;
                         }),
@@ -1903,28 +1903,28 @@
                                 d = S.p(u),
                                 h = b(e),
                                 p = 6e4 * (h.utcOffset() - this.utcOffset()),
-                                m = this - h,
-                                y = S.m(this, h);
+                                y = this - h,
+                                m = S.m(this, h);
                             return (
-                                (y =
+                                (m =
                                     ((f = {}),
-                                    (f[s] = y / 12),
-                                    (f[a] = y),
-                                    (f[c] = y / 3),
-                                    (f[i] = (m - p) / 6048e5),
-                                    (f[o] = (m - p) / 864e5),
-                                    (f[r] = m / 36e5),
-                                    (f[n] = m / 6e4),
-                                    (f[t] = m / 1e3),
-                                    f)[d] || m),
-                                l ? y : S.a(y)
+                                    (f[s] = m / 12),
+                                    (f[a] = m),
+                                    (f[c] = m / 3),
+                                    (f[i] = (y - p) / 6048e5),
+                                    (f[o] = (y - p) / 864e5),
+                                    (f[r] = y / 36e5),
+                                    (f[n] = y / 6e4),
+                                    (f[t] = y / 1e3),
+                                    f)[d] || y),
+                                l ? m : S.a(m)
                             );
                         }),
                         (h.daysInMonth = function () {
                             return this.endOf(a).$D;
                         }),
                         (h.$locale = function () {
-                            return y[this.$L];
+                            return m[this.$L];
                         }),
                         (h.locale = function (e, t) {
                             if (!e) return this.$L;
@@ -1975,8 +1975,8 @@
                 (b.unix = function (e) {
                     return b(1e3 * e);
                 }),
-                (b.en = y[m]),
-                (b.Ls = y),
+                (b.en = m[y]),
+                (b.Ls = m),
                 b
             );
         })();
@@ -2106,12 +2106,12 @@
                       })
                     : void 0;
             if (!h || !p || ('replace' === e && !l) || ('split' === e && !f)) {
-                var m = /./[d],
-                    y = n(a, d, ''[e], function (e, t, n, r, o) {
-                        return t.exec === s ? (h && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
+                var y = /./[d],
+                    m = n(a, d, ''[e], function (e, t, n, r, o) {
+                        return t.exec === s ? (h && !o ? {done: !0, value: y.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
                     }),
-                    v = y[0],
-                    g = y[1];
+                    v = m[0],
+                    g = m[1];
                 r(String.prototype, e, v),
                     o(
                         RegExp.prototype,
@@ -2154,32 +2154,32 @@
                         d = String(this),
                         h = 'function' == typeof t;
                     h || (t = String(t));
-                    var y = f.global;
-                    if (y) {
+                    var m = f.global;
+                    if (m) {
                         var v = f.unicode;
                         f.lastIndex = 0;
                     }
                     for (var g = []; ; ) {
                         var b = s(f, d);
                         if (null === b) break;
-                        if ((g.push(b), !y)) break;
+                        if ((g.push(b), !m)) break;
                         '' === String(b[0]) && (f.lastIndex = c(d, i(f.lastIndex), v));
                     }
                     for (var S, w = '', _ = 0, x = 0; x < g.length; x++) {
                         b = g[x];
                         for (var A = String(b[0]), k = u(l(a(b.index), d.length), 0), L = [], M = 1; M < b.length; M++) L.push(void 0 === (S = b[M]) ? S : String(S));
-                        var E = b.groups;
+                        var q = b.groups;
                         if (h) {
-                            var q = [A].concat(L, k, d);
-                            void 0 !== E && q.push(E);
-                            var C = String(t.apply(void 0, q));
-                        } else C = m(A, d, k, L, E, t);
+                            var E = [A].concat(L, k, d);
+                            void 0 !== q && E.push(q);
+                            var C = String(t.apply(void 0, E));
+                        } else C = y(A, d, k, L, q, t);
                         k >= _ && ((w += d.slice(_, k) + C), (_ = k + A.length));
                     }
                     return w + d.slice(_);
                 },
             ];
-            function m(e, t, r, i, a, c) {
+            function y(e, t, r, i, a, c) {
                 var s = r + e.length,
                     u = i.length,
                     l = h;
@@ -2249,8 +2249,8 @@
             d = l.setImmediate,
             h = l.clearImmediate,
             p = l.MessageChannel,
-            m = l.Dispatch,
-            y = 0,
+            y = l.Dispatch,
+            m = 0,
             v = {},
             g = function () {
                 var e = +this;
@@ -2266,11 +2266,11 @@
             ((d = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
-                    (v[++y] = function () {
+                    (v[++m] = function () {
                         c('function' == typeof e ? e : Function(e), t);
                     }),
-                    r(y),
-                    y
+                    r(m),
+                    m
                 );
             }),
             (h = function (e) {
@@ -2280,9 +2280,9 @@
                 ? (r = function (e) {
                       f.nextTick(a(g, e, 1));
                   })
-                : m && m.now
+                : y && y.now
                 ? (r = function (e) {
-                      m.now(a(g, e, 1));
+                      y.now(a(g, e, 1));
                   })
                 : p
                 ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
@@ -2585,11 +2585,11 @@
                           this.append(t, e[t]);
                       }, this);
         }
-        function m(e) {
+        function y(e) {
             if (e.bodyUsed) return Promise.reject(new TypeError('Already read'));
             e.bodyUsed = !0;
         }
-        function y(e) {
+        function m(e) {
             return new Promise(function (t, n) {
                 (e.onload = function () {
                     t(e.result);
@@ -2601,7 +2601,7 @@
         }
         function v(e) {
             var t = new FileReader(),
-                n = y(t);
+                n = m(t);
             return t.readAsArrayBuffer(e), n;
         }
         function g(e) {
@@ -2640,7 +2640,7 @@
                 }),
                 a &&
                     ((this.blob = function () {
-                        var e = m(this);
+                        var e = y(this);
                         if (e) return e;
                         if (this._bodyBlob) return Promise.resolve(this._bodyBlob);
                         if (this._bodyArrayBuffer) return Promise.resolve(new Blob([this._bodyArrayBuffer]));
@@ -2649,7 +2649,7 @@
                     }),
                     (this.arrayBuffer = function () {
                         if (this._bodyArrayBuffer) {
-                            var e = m(this);
+                            var e = y(this);
                             return (
                                 e ||
                                 (ArrayBuffer.isView(this._bodyArrayBuffer)
@@ -2665,9 +2665,9 @@
                     var e,
                         t,
                         n,
-                        r = m(this);
+                        r = y(this);
                     if (r) return r;
-                    if (this._bodyBlob) return (e = this._bodyBlob), (t = new FileReader()), (n = y(t)), t.readAsText(e), n;
+                    if (this._bodyBlob) return (e = this._bodyBlob), (t = new FileReader()), (n = m(t)), t.readAsText(e), n;
                     if (this._bodyArrayBuffer)
                         return Promise.resolve(
                             (function (e) {
@@ -2910,9 +2910,9 @@
         }
         (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = p), (r.Request = w), (r.Response = x));
         n(111);
-        var E = n(35);
+        var q = n(35);
         n(52);
-        function q(e, t, n, r, o, i, a) {
+        function E(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -2928,10 +2928,10 @@
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        q(i, r, o, a, c, 'next', e);
+                        E(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        q(i, r, o, a, c, 'throw', e);
+                        E(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
@@ -3020,10 +3020,10 @@
                                         n
                                     );
                                 }
-                                function m() {
+                                function y() {
                                     if ('search-results' === t && '' !== document.querySelector('input#hotelName').value) return document.querySelector('input#hotelName').value;
                                 }
-                                function y(e, t) {
+                                function m(e, t) {
                                     var n = '';
                                     return (
                                         document.querySelectorAll(e).forEach(function (e) {
@@ -3101,10 +3101,10 @@
                                             rooms: {key: 'rooms', value: p('select#rooms')},
                                             adults: {key: 'adults', value: p('select#adults')},
                                             currency: {key: 'currency', value: e.currency},
-                                            amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                            stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                            propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            optionalHotel: {key: 'hotelname', value: m()},
+                                            amenities: {key: 'amenities', value: m('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: m('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: m('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            optionalHotel: {key: 'hotelname', value: y()},
                                         }),
                                         'search-results' === t &&
                                             'lodging' === e.site_type.toLowerCase() &&
@@ -3220,7 +3220,7 @@
         }
         var F = new (n.n(j).a)(),
             I = n(40),
-            N = new E.a(),
+            N = new q.a(),
             $ = new O(),
             Y = (function () {
                 function e(t) {
@@ -4259,53 +4259,73 @@
                         {
                             key: 'showFullStayAndNightlyRates',
                             value: function (e, t) {
-                                var n, r, o, i;
-                                this.site_config.show_tax_inclusive_rates ||
+                                var n,
+                                    r,
+                                    o,
+                                    i,
+                                    a = N.getMetaTagContent('showFullTotals');
+                                a ||
                                     (document.querySelector('.SearchHotels') &&
-                                        (document.querySelectorAll('.ArnContainer').forEach(function (a) {
-                                            (n = a.querySelector('.arnPrice')),
-                                                (r = a.querySelector('.arnPrice .arnUnit')) &&
+                                        (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                            (n = t.querySelector('.arnPrice')),
+                                                (r = t.querySelector('.arnPrice .arnUnit')) &&
                                                     n &&
                                                     ((o = parseFloat(r.textContent) * e),
                                                     (i = o.toFixed(2)),
                                                     r &&
-                                                        ('USD' === t
-                                                            ? n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                              )
-                                                            : n.insertAdjacentHTML(
-                                                                  'beforeEnd',
-                                                                  '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                              ),
-                                                        1 === e && (a.querySelector('.full-stay').style.display = 'none')));
+                                                        (n.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                        ),
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                         }),
                                         document.body.insertAdjacentHTML(
                                             'beforeEnd',
                                             '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
                                         )),
                                     document.querySelector('.SinglePropDetail') &&
-                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (n) {
-                                            (r = n.querySelector('strong')),
+                                        (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                            (r = t.querySelector('strong')),
                                                 (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
                                                 r &&
                                                     o &&
                                                     (i = o.toFixed(2)) &&
-                                                    ('USD' === t
-                                                        ? r.insertAdjacentHTML(
-                                                              'beforeEnd',
-                                                              '<div>per night</div><div class="full-stay">$'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                          )
-                                                        : r.insertAdjacentHTML(
-                                                              'beforeEnd',
-                                                              '<div>per night</div><div class="full-stay">'.concat(i, ' ').concat(t, ' for ').concat(e, ' nights </div>')
-                                                          ),
-                                                    1 === e && (n.querySelector('.full-stay').style.display = 'none'));
+                                                    (r.insertAdjacentHTML(
+                                                        'beforeEnd',
+                                                        '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
+                                                    ),
+                                                    1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                         }),
                                         document.body.insertAdjacentHTML(
                                             'beforeEnd',
                                             '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                        )));
+                                        ))),
+                                    a &&
+                                        (document.querySelector('.SearchHotels') &&
+                                            document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                    (o = t.querySelector('.arnPrice .arnUnit')),
+                                                    r &&
+                                                        o &&
+                                                        ((r.style.display = 'block'),
+                                                        (o.style.fontSize = '13px'),
+                                                        (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                            }),
+                                        document.querySelector('.SinglePropDetail') &&
+                                            document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('.averageNightly')),
+                                                    (o = t.querySelector('strong')),
+                                                    r &&
+                                                        o &&
+                                                        ((r.style.display = 'block'),
+                                                        r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                        (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
+                                                        o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                        1 === e && (t.querySelector('strong').style.display = 'none'));
+                                            }));
                             },
                         },
                         {
@@ -4391,7 +4411,7 @@
                                     var n = [],
                                         r = [];
                                     e.forEach(function (e) {
-                                        e.classList.contains('S16') || e.classList.contains('S20') ? n.push(!0) : n.push(!1);
+                                        e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
                                     }),
                                         n.forEach(function (e, t) {
                                             e && r.push(t);
@@ -4449,7 +4469,7 @@
                                             var a, c;
                                             r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
                                                 r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
-                                                (r.classList.contains('S16') || (r.classList.contains('S20') && '' !== e)) &&
+                                                (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
                                                     ((a = e),
                                                     (c = r),
                                                     '' !== o.site_config.exclusive_rate_text &&
@@ -4943,19 +4963,19 @@
                                         var d = o.tabIndex,
                                             h = a.tabIndex,
                                             p = i.tabIndex,
-                                            m = c.tabIndex,
-                                            y = s.tabIndex,
+                                            y = c.tabIndex,
+                                            m = s.tabIndex,
                                             v = u.tabIndex,
                                             g = l.tabIndex,
                                             b = f.tabIndex;
                                         o.setAttribute('tabIndex', p),
                                             a.setAttribute('tabIndex', d),
-                                            i.setAttribute('tabIndex', m),
+                                            i.setAttribute('tabIndex', y),
                                             c.setAttribute('tabIndex', h),
                                             s.setAttribute('tabIndex', v),
                                             u.setAttribute('tabIndex', g),
                                             l.setAttribute('tabIndex', b),
-                                            f.setAttribute('tabIndex', y);
+                                            f.setAttribute('tabIndex', m);
                                     }
                                 }
                             },
@@ -5214,9 +5234,9 @@
                 RegExp(4294967295, 'y');
             });
         n(45)('split', 2, function (e, t, n, l) {
-            var m;
+            var y;
             return (
-                (m =
+                (y =
                     'c' == 'abbc'.split(/(b)*/)[1] ||
                     4 != 'test'.split(/(?:)/, -1)[h] ||
                     2 != 'ab'.split(/(?:ab)*/)[h] ||
@@ -5235,16 +5255,16 @@
                                       l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
                                       f = 0,
                                       p = void 0 === t ? 4294967295 : t >>> 0,
-                                      m = new RegExp(e.source, l + 'g');
-                                  (i = u.call(m, o)) &&
+                                      y = new RegExp(e.source, l + 'g');
+                                  (i = u.call(y, o)) &&
                                   !(
-                                      (a = m.lastIndex) > f &&
+                                      (a = y.lastIndex) > f &&
                                       (s.push(o.slice(f, i.index)), i[h] > 1 && i.index < o[h] && d.apply(s, i.slice(1)), (c = i[0][h]), (f = a), s[h] >= p)
                                   );
 
                               )
-                                  m.lastIndex === i.index && m.lastIndex++;
-                              return f === o[h] ? (!c && m.test('')) || s.push('') : s.push(o.slice(f)), s[h] > p ? s.slice(0, p) : s;
+                                  y.lastIndex === i.index && y.lastIndex++;
+                              return f === o[h] ? (!c && y.test('')) || s.push('') : s.push(o.slice(f)), s[h] > p ? s.slice(0, p) : s;
                           }
                         : '0'.split(void 0, 0)[h]
                         ? function (e, t) {
@@ -5255,15 +5275,15 @@
                     function (n, r) {
                         var o = e(this),
                             i = null == n ? void 0 : n[t];
-                        return void 0 !== i ? i.call(n, o, r) : m.call(String(o), n, r);
+                        return void 0 !== i ? i.call(n, o, r) : y.call(String(o), n, r);
                     },
                     function (e, t) {
-                        var r = l(m, e, this, t, m !== n);
+                        var r = l(y, e, this, t, y !== n);
                         if (r.done) return r.value;
                         var u = o(e),
                             d = String(this),
                             h = i(u, RegExp),
-                            y = u.unicode,
+                            m = u.unicode,
                             v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
                             g = new h(p ? u : '^(?:' + u.source + ')', v),
                             b = void 0 === t ? 4294967295 : t >>> 0;
@@ -5273,7 +5293,7 @@
                             g.lastIndex = p ? w : 0;
                             var x,
                                 A = s(g, p ? d : d.slice(w));
-                            if (null === A || (x = f(c(g.lastIndex + (p ? 0 : w)), d.length)) === S) w = a(d, w, y);
+                            if (null === A || (x = f(c(g.lastIndex + (p ? 0 : w)), d.length)) === S) w = a(d, w, m);
                             else {
                                 if ((_.push(d.slice(S, w)), _.length === b)) return _;
                                 for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
@@ -5301,7 +5321,7 @@
             h = function () {
                 return this;
             };
-        e.exports = function (e, t, n, p, m, y, v) {
+        e.exports = function (e, t, n, p, y, m, v) {
             s(n, t, p);
             var g,
                 b,
@@ -5320,15 +5340,15 @@
                     };
                 },
                 _ = t + ' Iterator',
-                x = 'values' == m,
+                x = 'values' == y,
                 A = !1,
                 k = e.prototype,
-                L = k[f] || k['@@iterator'] || (m && k[m]),
-                M = L || w(m),
-                E = m ? (x ? w('entries') : M) : void 0,
-                q = ('Array' == t && k.entries) || L;
+                L = k[f] || k['@@iterator'] || (y && k[y]),
+                M = L || w(y),
+                q = y ? (x ? w('entries') : M) : void 0,
+                E = ('Array' == t && k.entries) || L;
             if (
-                (q && (S = l(q.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[f] || a(S, f, h)),
+                (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[f] || a(S, f, h)),
                 x &&
                     L &&
                     'values' !== L.name &&
@@ -5339,9 +5359,9 @@
                 (r && !v) || (!d && !A && k[f]) || a(k, f, M),
                 (c[t] = M),
                 (c[_] = h),
-                m)
+                y)
             )
-                if (((g = {values: x ? M : w('values'), keys: y ? M : w('keys'), entries: E}), v)) for (b in g) b in k || i(k, b, g[b]);
+                if (((g = {values: x ? M : w('values'), keys: m ? M : w('keys'), entries: q}), v)) for (b in g) b in k || i(k, b, g[b]);
                 else o(o.P + o.F * (d || A), t, g);
             return g;
         };
@@ -5429,8 +5449,8 @@
         ((t = e.exports = function (e, t, n, f, d) {
             var h,
                 p,
-                m,
                 y,
+                m,
                 v = d
                     ? function () {
                           return e;
@@ -5440,8 +5460,8 @@
                 b = 0;
             if ('function' != typeof v) throw TypeError(e + ' is not iterable!');
             if (i(v)) {
-                for (h = c(e.length); h > b; b++) if ((y = t ? g(a((p = e[b]))[0], p[1]) : g(e[b])) === u || y === l) return y;
-            } else for (m = v.call(e); !(p = m.next()).done; ) if ((y = o(m, g, p.value, t)) === u || y === l) return y;
+                for (h = c(e.length); h > b; b++) if ((m = t ? g(a((p = e[b]))[0], p[1]) : g(e[b])) === u || m === l) return m;
+            } else for (y = v.call(e); !(p = y.next()).done; ) if ((m = o(y, g, p.value, t)) === u || m === l) return m;
         }).BREAK = u),
             (t.RETURN = l);
     },
@@ -5618,8 +5638,8 @@
             d = n(20),
             h = n(0),
             p = n(62),
-            m = n(61),
-            y = n(100),
+            y = n(61),
+            m = n(100),
             v = n(101),
             g = n(2),
             b = n(4),
@@ -5631,10 +5651,10 @@
             k = n(102),
             L = n(65),
             M = n(63),
-            E = n(6),
-            q = n(16),
+            q = n(6),
+            E = n(16),
             C = L.f,
-            T = E.f,
+            T = q.f,
             P = k.f,
             R = r.Symbol,
             O = r.JSON,
@@ -5693,7 +5713,7 @@
             },
             J = function (e, t) {
                 g(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
+                for (var n, r = m((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
             Q = function (e) {
@@ -5730,7 +5750,7 @@
                 }
             ),
             (L.f = K),
-            (E.f = Z),
+            (q.f = Z),
             (n(64).f = k.f = X),
             (n(31).f = Q),
             (M.f = ee),
@@ -5741,7 +5761,7 @@
             a(a.G + a.W + a.F * !Y, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
-        for (var re = q(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = E(h.store), oe = 0; re.length > oe; ) y(re[oe++]);
         a(a.S + a.F * !Y, 'Symbol', {
             for: function (e) {
                 return o(F, (e += '')) ? F[e] : (F[e] = R(e));
@@ -6583,15 +6603,15 @@
                             d = o.milliseconds,
                             h = o.zone,
                             p = new Date(),
-                            m = c || (i || a ? 1 : p.getDate()),
-                            y = i || p.getFullYear(),
+                            y = c || (i || a ? 1 : p.getDate()),
+                            m = i || p.getFullYear(),
                             v = 0;
                         (i && !a) || (v = a > 0 ? a - 1 : p.getMonth());
                         var g = u || 0,
                             b = l || 0,
                             S = f || 0,
                             w = d || 0;
-                        return h ? new Date(Date.UTC(y, v, m, g, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, v, m, g, b, S, w)) : new Date(y, v, m, g, b, S, w);
+                        return h ? new Date(Date.UTC(m, v, y, g, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(m, v, y, g, b, S, w)) : new Date(m, v, y, g, b, S, w);
                     } catch (e) {
                         return new Date('');
                     }
@@ -6619,9 +6639,9 @@
                     } else if (c instanceof Array)
                         for (var h = c.length, p = 1; p <= h; p += 1) {
                             a[1] = c[p - 1];
-                            var m = r.apply(this, a);
-                            if (m.isValid()) {
-                                (this.$d = m.$d), (this.$L = m.$L), this.init();
+                            var y = r.apply(this, a);
+                            if (y.isValid()) {
+                                (this.$d = y.$d), (this.$L = y.$L), this.init();
                                 break;
                             }
                             p === h && (this.$d = new Date(''));
@@ -6756,9 +6776,9 @@
             })();
             return function () {
                 var n,
-                    r = y(e);
+                    r = m(e);
                 if (t) {
-                    var o = y(this).constructor;
+                    var o = m(this).constructor;
                     n = Reflect.construct(r, arguments, o);
                 } else n = r.apply(this, arguments);
                 return h(this, n);
@@ -6771,13 +6791,13 @@
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function m(e, t, n) {
-            return (m =
+        function y(e, t, n) {
+            return (y =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = y(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = m(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -6786,8 +6806,8 @@
                           }
                       })(e, t, n || e);
         }
-        function y(e) {
-            return (y = Object.setPrototypeOf
+        function m(e) {
+            return (m = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
@@ -6873,7 +6893,7 @@
                     (function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, n),
-                    m(((e = p((r = t.call(this, g)))), y(n.prototype)), 'init', e).call(e),
+                    y(((e = p((r = t.call(this, g)))), m(n.prototype)), 'init', e).call(e),
                     r
                 );
             }

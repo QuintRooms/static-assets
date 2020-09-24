@@ -26,7 +26,11 @@
 								<tr>
 									<td align="center" style="padding: 18px 0;">
 										<h1><img src="https://static.hotelsforhope.com/emails/img/welcome.png" alt="Welcome!" title="Welcome!"></h1>
-                                        <p>Welcome to your exclusive membership that offers unpublished hotel rates and discounts.</p>
+										[if:siteid=60831]
+                                        	<p>Welcome to your exclusive membership that offers unpublished hotel rates and discounts.</p>
+										[else]
+                                        	<p>Welcome to the <strong>[ClientName]</strong> exclusive membership that offers unpublished hotel rates and discounts.</p>
+										[endif]
                                         <p>You're all set to start booking!</p>
                                         <a style="background: [SecondaryColor]; color: #fff; text-decoration: none; padding: 6px; display: block; width: 195px; border-radius: 10px; font-size: 21px; font-weight: 500;" href="[SiteURL, fallback=https://hotels.resbeat.com]" cm_dontconvertlink>BOOK A ROOM</a>
 									</td>

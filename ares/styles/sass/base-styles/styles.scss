@@ -2820,7 +2820,7 @@ legend {
     text-align: right;
 }
 
-.MemberNotAuthenticated.CheckOutForm .discount{
+.MemberNotAuthenticated.CheckOutForm .totalRow + .discount{
     display: none;
 }
 

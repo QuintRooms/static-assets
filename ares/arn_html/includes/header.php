@@ -4,8 +4,8 @@ require_once '../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable('../../');
 $dotenv->load();
 ?>
-
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+
 
 <?php
 $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];

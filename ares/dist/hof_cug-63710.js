@@ -54,15 +54,15 @@
             'use strict';
             o.r(t),
                 o.d(t, 'default', function () {
-                    return f;
+                    return p;
                 });
             o(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
-                o(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
                 o(/*! core-js/modules/es6.function.name */ './node_modules/core-js/modules/es6.function.name.js'),
                 o(/*! core-js/modules/web.dom.iterable */ './node_modules/core-js/modules/web.dom.iterable.js'),
                 o(/*! core-js/modules/es6.array.iterator */ './node_modules/core-js/modules/es6.array.iterator.js'),
-                o(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 o(/*! core-js/modules/es7.object.entries */ './node_modules/core-js/modules/es7.object.entries.js'),
+                o(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
+                o(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 o(/*! core-js/modules/es6.regexp.search */ './node_modules/core-js/modules/es6.regexp.search.js'),
                 o(/*! core-js/modules/es6.string.repeat */ './node_modules/core-js/modules/es6.string.repeat.js'),
                 o(/*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'),
@@ -108,24 +108,26 @@
             }
             var u = new (o.n(s).a)(),
                 l = o(/*! dayjs */ './node_modules/dayjs/dayjs.min.js'),
-                d = new n.default(),
-                m = new r.default(),
-                f = (function () {
+                d = o(/*! dayjs/plugin/customParseFormat */ './node_modules/dayjs/plugin/customParseFormat.js');
+            l.extend(d);
+            var m = new n.default(),
+                f = new r.default(),
+                p = (function () {
                     function e(t) {
                         !(function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e),
                             console.log('Output: BasePortal -> constructor -> config', t),
                             (this.site_id = ''),
-                            (this.page_name = d.getPageName()),
+                            (this.page_name = m.getPageName()),
                             (this.site_config = t),
                             (this.currency = ''),
                             (this.svg_arrow =
                                 '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
                             (this.map_loaded = !1),
-                            (this.selected_currency = 'USD');
+                            (this.selected_currency = m.getMetaTagContent('currency') ? m.getMetaTagContent('currency') : 'USD');
                     }
-                    var t, o, n, r, s, i, f, p, h, y, g, _;
+                    var t, o, n, r, s, i, d, p, h, y, g, _;
                     return (
                         (t = e),
                         (o = [
@@ -135,7 +137,7 @@
                                     var e = this;
                                     this.site_config || console.error('No site config found.'),
                                         this.initializeARNRatesReadyEvent(),
-                                        d.ieForEachPolyfill(),
+                                        m.ieForEachPolyfill(),
                                         this.getSiteID().then(
                                             (function () {
                                                 var t = a(
@@ -145,19 +147,19 @@
                                                                 switch ((t.prev = t.next)) {
                                                                     case 0:
                                                                         return (
-                                                                            d.getPageName(),
+                                                                            m.getPageName(),
                                                                             e.applyConfigStyles(),
                                                                             e.setupDatePrompt(),
                                                                             e.showLanguageFromCongif(),
                                                                             e.showFilters(),
                                                                             e.buildMobileMenu(),
-                                                                            d.createHTML(
+                                                                            m.createHTML(
                                                                                 '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
                                                                                 'head',
                                                                                 'beforeEnd'
                                                                             ),
                                                                             (t.next = 9),
-                                                                            d.createHTML(
+                                                                            m.createHTML(
                                                                                 '<header><a class="logo" href="'
                                                                                     .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
                                                                                     .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
@@ -167,14 +169,14 @@
                                                                         );
                                                                     case 9:
                                                                         'cug' === e.site_config.site_type &&
-                                                                            d.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                            m.waitForSelectorInDOM('#AdminControlsContainer').then(
                                                                                 a(
                                                                                     regeneratorRuntime.mark(function e() {
                                                                                         return regeneratorRuntime.wrap(function (e) {
                                                                                             for (;;)
                                                                                                 switch ((e.prev = e.next)) {
                                                                                                     case 0:
-                                                                                                        d.appendToParent('#commands', 'header');
+                                                                                                        m.appendToParent('#commands', 'header');
                                                                                                     case 1:
                                                                                                     case 'end':
                                                                                                         return e.stop();
@@ -183,14 +185,14 @@
                                                                                     })
                                                                                 )
                                                                             ),
-                                                                            d.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                            m.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                             'property-detail' === e.page_name &&
                                                                                 (e.addImageSlideshow(),
                                                                                 e.updateAmenitiesLegendTag(),
-                                                                                d.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                                d.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                                d.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                                d.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                                m.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                                m.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                                m.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                                m.updateHTML('.SinglePropDetail .Details a', 'General Info'),
                                                                                 e.isPropByGateway(
                                                                                     e.site_config.exclusive_rate_text,
                                                                                     e.site_config.host_hotel_text,
@@ -203,76 +205,76 @@
                                                                                         e.showFullStayAndNightlyRates(t, o);
                                                                                     });
                                                                                 }),
-                                                                                d.moveElementIntoExistingWrapper(
+                                                                                m.moveElementIntoExistingWrapper(
                                                                                     '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
                                                                                     '.SinglePropDetail .ArnPropAddress',
                                                                                     'afterEnd'
                                                                                 ),
-                                                                                d.moveElementIntoExistingWrapper(
+                                                                                m.moveElementIntoExistingWrapper(
                                                                                     'div.subHeaderContainer > div > a > span.translateMe',
                                                                                     '.SinglePropDetail .ArnLeftListContainer',
                                                                                     'afterBegin'
                                                                                 )),
                                                                             'checkout' === e.page_name &&
-                                                                                (d.createModal(
+                                                                                (m.createModal(
                                                                                     [document.querySelector('#theStayPolicies')],
                                                                                     'Policies & Fees',
                                                                                     'checkout',
                                                                                     '#theConfirmationContainer',
                                                                                     'afterBegin'
                                                                                 ),
-                                                                                d.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                                d.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                                d.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                                d.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                                d.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                                d.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                                d.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                                d.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                                d.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                                d.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                                m.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                                m.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                                m.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                                m.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                                m.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                                m.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                                m.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                                m.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                                m.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                                m.updateHTML('#theHotel legend', 'Reservation Summary'),
                                                                                 e.formatCheckoutForm(),
                                                                                 e.setupReservationSummaryContainer(),
-                                                                                d.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                                d.emailVerificationSetup(),
+                                                                                m.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                                m.emailVerificationSetup(),
                                                                                 e.fixCheckoutInputTabOrder(),
-                                                                                d.selectCheckboxOnLabelClick(
+                                                                                m.selectCheckboxOnLabelClick(
                                                                                     '.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax'
                                                                                 )),
                                                                             'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
                                                                             document.querySelector('.RootBody') &&
-                                                                                (m.init(e.site_config, e.page_name, d),
+                                                                                (f.init(e.site_config, e.page_name, m),
                                                                                 e.buildCurrencyDropdown(),
-                                                                                d.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                                d.createHTML(
+                                                                                m.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                                m.createHTML(
                                                                                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
                                                                                     '.RootBody .ArnPrimarySearchContainer',
                                                                                     'beforeBegin'
                                                                                 ),
-                                                                                d.moveOrphanedElementsIntoNewWrapper(
+                                                                                m.moveOrphanedElementsIntoNewWrapper(
                                                                                     [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
                                                                                     'root-search-container',
                                                                                     '.RootBody .ArnSearchContainerMainDiv',
                                                                                     'afterBegin'
                                                                                 ),
-                                                                                d.moveElementIntoExistingWrapper(
+                                                                                m.moveElementIntoExistingWrapper(
                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                     '.ArnPrimarySearchContainer',
                                                                                     'beforeEnd'
                                                                                 ),
-                                                                                d.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                            d.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                            d.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                            d.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                            d.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                            d.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                            d.createHTML(
+                                                                                m.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                            m.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                            m.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                            m.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                            m.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                            m.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                            m.createHTML(
                                                                                 '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
                                                                                 '#theWBLoginFormBody .ForgotPasswordAction',
                                                                                 'afterEnd'
                                                                             ),
                                                                             'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                            'search-results' === e.page_name && m.init(e.site_config, e.page_name, d),
+                                                                            'search-results' === e.page_name && f.init(e.site_config, e.page_name, m),
                                                                             jQuery('#theBody').on(
                                                                                 'arnMapLoadedEvent',
                                                                                 a(
@@ -284,7 +286,7 @@
                                                                                                         return (
                                                                                                             (e.map_loaded = !0),
                                                                                                             (t.next = 3),
-                                                                                                            d.waitForSelectorInDOM('.pollingFinished')
+                                                                                                            m.waitForSelectorInDOM('.pollingFinished')
                                                                                                         );
                                                                                                     case 3:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
@@ -327,7 +329,7 @@
                                                                                     })
                                                                                 )
                                                                             ),
-                                                                            d.waitForSelectorInDOM('.pollingFinished').then(
+                                                                            m.waitForSelectorInDOM('.pollingFinished').then(
                                                                                 (function () {
                                                                                     var t = a(
                                                                                         regeneratorRuntime.mark(function t(o) {
@@ -338,7 +340,7 @@
                                                                                                             if (
                                                                                                                 ('hold-rooms' === e.page_name &&
                                                                                                                     (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                    d.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                                    m.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
                                                                                                                 'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
                                                                                                             ) {
                                                                                                                 t.next = 3;
@@ -363,55 +365,55 @@
                                                                                                                 e.showSearchContainerOnMobile(),
                                                                                                                 e.moveFooterOutOfSearchContainer(),
                                                                                                                 e.moveReviewsIntoPropNameContainer(),
-                                                                                                                d.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                                m.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                                 e.movePropClassBelowPropName(),
-                                                                                                                d.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                                d.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                                d.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                                d.updateHTML('.lblRating', 'Stars'),
-                                                                                                                d.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                                d.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                                d.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                                d.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                                d.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                                d.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                                d.moveElementIntoExistingWrapper(
+                                                                                                                m.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                                m.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                                m.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                                m.updateHTML('.lblRating', 'Stars'),
+                                                                                                                m.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                                m.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                                m.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                                m.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                                m.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                                m.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                                m.moveElementIntoExistingWrapper(
                                                                                                                     '.ArnPropClass',
                                                                                                                     '.ArnPropName',
                                                                                                                     'beforeEnd'
                                                                                                                 ),
-                                                                                                                d.moveElementIntoExistingWrapper(
+                                                                                                                m.moveElementIntoExistingWrapper(
                                                                                                                     '#theOtherSubmitButton',
                                                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                                                     'beforeEnd'
                                                                                                                 ),
                                                                                                                 (t.next = 31),
-                                                                                                                d.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                    d.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                                m.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                    m.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                                 })
                                                                                                             );
                                                                                                         case 31:
                                                                                                             return (
                                                                                                                 (t.next = 33),
-                                                                                                                d.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                    d.createWrapper(
+                                                                                                                m.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                    m.createWrapper(
                                                                                                                         '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
                                                                                                                         '.ArnSecondarySearchOuterContainer',
                                                                                                                         'sort-wrapper',
                                                                                                                         'afterBegin'
                                                                                                                     ).then(function () {
                                                                                                                         e.createMobileSortAndFilter(),
-                                                                                                                            d.createHTML(
+                                                                                                                            m.createHTML(
                                                                                                                                 '<h4>Sort</h4>',
                                                                                                                                 '.sort-wrapper',
                                                                                                                                 'afterBegin'
                                                                                                                             ),
-                                                                                                                            d.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                            m.matchMediaQuery('min-width: 1105px') &&
                                                                                                                                 document.body.insertAdjacentHTML(
                                                                                                                                     'afterBegin',
                                                                                                                                     '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                                 ),
-                                                                                                                            d.matchMediaQuery('max-width: 800px') &&
+                                                                                                                            m.matchMediaQuery('max-width: 800px') &&
                                                                                                                                 document.body.insertAdjacentHTML(
                                                                                                                                     'afterBegin',
                                                                                                                                     '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
@@ -424,7 +426,7 @@
                                                                                                                 t.next = 41;
                                                                                                                 break;
                                                                                                             }
-                                                                                                            return (t.next = 37), d.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                            return (t.next = 37), m.waitForSelectorInDOM('#ArnPropertyMap');
                                                                                                         case 37:
                                                                                                             document.querySelector('.leaflet-control-scale-line') ||
                                                                                                                 L.control.scale().addTo(window.ArnMap),
@@ -629,11 +631,11 @@
                                 key: 'createMobileSortAndFilter',
                                 value: function () {
                                     if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                        d.updateHTML(
+                                        m.updateHTML(
                                             '.sort',
                                             '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
                                         ),
-                                            d.createHTML(
+                                            m.createHTML(
                                                 '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
                                                 '#searchForm',
                                                 'beforeEnd'
@@ -676,14 +678,14 @@
                                         a = '',
                                         c = document.querySelector('meta[name="checkIn"]'),
                                         u = document.querySelector('meta[name="checkOut"]'),
-                                        m = document.querySelector('meta[name="numberOfAdults"]'),
+                                        d = document.querySelector('meta[name="numberOfAdults"]'),
                                         f = document.querySelector('meta[name="SearchLocation"]'),
                                         p = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
                                     c &&
                                         u &&
                                         f &&
-                                        m &&
-                                        ((e = m.getAttribute('content')),
+                                        d &&
+                                        ((e = d.getAttribute('content')),
                                         (s = f.getAttribute('content')),
                                         (t = c.getAttribute('content')),
                                         (o = u.getAttribute('content')),
@@ -692,7 +694,7 @@
                                         ('cug' === this.site_config.site_type.toLowerCase() ||
                                             ('retail' === this.site_config.site_type.toLowerCase() && null !== r.get('destination'))) &&
                                             (s = r.get('destination')),
-                                        d.createHTML(
+                                        m.createHTML(
                                             '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                                 .concat(s, '</h3>\n                    <span>\n                        <span class="search-dates">')
                                                 .concat(i.format('MMMM D'), ' - ')
@@ -739,7 +741,7 @@
                                                                     n.classList.toggle('is-active'), t.classList.toggle('active');
                                                                 }),
                                                                 (e.next = 11),
-                                                                d.waitForSelectorInDOM('header')
+                                                                m.waitForSelectorInDOM('header')
                                                             );
                                                         case 11:
                                                             document.querySelector('header').insertAdjacentElement('beforeend', o);
@@ -764,7 +766,7 @@
                                     window.matchMedia('(max-width:800px)').matches &&
                                         document.querySelector('#theBookingPage') &&
                                         (n.insertAdjacentElement('afterEnd', e),
-                                        d.moveOrphanedElementsIntoNewWrapper(
+                                        m.moveOrphanedElementsIntoNewWrapper(
                                             document.querySelectorAll('#theStayPolicies *'),
                                             'policies-container',
                                             '#theStayPolicies',
@@ -902,8 +904,8 @@
                                         (n = s.textContent),
                                         (e = l(t).format(this.site_config.dayjs_date_format)),
                                         (o = l(n).format(this.site_config.dayjs_date_format)),
-                                        d.createHTML('<span class="date-container">'.concat(e, ' - ').concat(o), '#theHotelAddress', 'beforeBegin'),
-                                        d.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                                        m.createHTML('<span class="date-container">'.concat(e, ' - ').concat(o), '#theHotelAddress', 'beforeBegin'),
+                                        m.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                                 },
                             },
                             {
@@ -913,12 +915,12 @@
                                         t = 0;
                                     e.forEach(function (e) {
                                         (t += 1),
-                                            d.moveElementIntoExistingWrapper(
+                                            m.moveElementIntoExistingWrapper(
                                                 '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
                                                 '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
                                                 'afterEnd'
                                             ),
-                                            d.createWrapper(
+                                            m.createWrapper(
                                                 '.RoomNumber-'
                                                     .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
                                                     .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
@@ -928,7 +930,7 @@
                                                 'billing-details-container',
                                                 'afterEnd'
                                             ),
-                                            d.createWrapper(
+                                            m.createWrapper(
                                                 '.RoomNumber-'
                                                     .concat(t, ' #theCreditCardBillingNameAjax')
                                                     .concat(t, ',\n                .RoomNumber-')
@@ -938,12 +940,12 @@
                                                 'credit-card-details',
                                                 'afterEnd'
                                             ),
-                                            d.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                            d.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                            d.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                            t > 1 && d.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                            d.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                            d.updateHTML(
+                                            m.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                            m.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                            m.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                            t > 1 && m.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                            m.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                            m.updateHTML(
                                                 '.cardNumber label',
                                                 '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
                                             );
@@ -957,8 +959,8 @@
                                     document.querySelector('#theCopyInfoAjax input') &&
                                         document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
                                             setTimeout(function () {
-                                                d.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                    e > 1 && d.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                                m.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                    e > 1 && m.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
                                             }, 750);
                                         });
                                 },
@@ -969,7 +971,7 @@
                                     var e = document.querySelector('#h4h-styles');
                                     this.site_config &&
                                         e &&
-                                        (d.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                        (m.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
                                         e.insertAdjacentHTML(
                                             'beforeend',
                                             '<link href="'
@@ -990,24 +992,63 @@
                                 key: 'showLanguageFromCongif',
                                 value: function () {
                                     var e,
-                                        t = '',
-                                        o = document.querySelector('#language'),
-                                        n = document.querySelector('.config-container'),
-                                        r = document.querySelector('meta[name="theme"]');
+                                        t,
+                                        o,
+                                        n = this,
+                                        r = '',
+                                        s = '',
+                                        i = document.querySelector('#language'),
+                                        a = document.querySelector('.config-container'),
+                                        c = document.querySelector('meta[name="theme"]'),
+                                        u = document.querySelector('input#theCheckIn'),
+                                        d = document.querySelector('input#theCheckOut'),
+                                        m = new URLSearchParams(window.location.search);
+                                    function f(n, r) {
+                                        (e = l(u.value, n).format('M/D/YYYY')),
+                                            (t = l(d.value, n).format('M/D/YYYY')),
+                                            (o = l(t).diff(l(e), 'days')),
+                                            (e = l(u.value, n).format(r)),
+                                            (t = l(d.value, n).format(r));
+                                    }
                                     this.site_config &&
-                                        n &&
-                                        r &&
-                                        o &&
+                                        a &&
+                                        c &&
+                                        i &&
                                         (this.site_config.show_language_select
                                             ? (document.querySelector('div#language-label').classList.add('config-label'),
-                                              (e = r.getAttribute('content')),
-                                              document.querySelector(".language-container div[value='".concat(e, "']")).classList.add('active-language'),
-                                              document.body.insertAdjacentElement('afterBegin', n),
-                                              n.insertAdjacentElement('afterBegin', o),
-                                              ((t = o.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
-                                              t.addEventListener('click', function () {
-                                                  o.querySelector('.language-container').classList.toggle('show-language-container'),
-                                                      window.document.documentMode || t.querySelector('svg').classList.toggle('flip-svg');
+                                              (s = c.getAttribute('content')),
+                                              document.querySelector(".language-container div[value='".concat(s, "']")).classList.add('active-language'),
+                                              document.body.insertAdjacentElement('afterBegin', a),
+                                              a.insertAdjacentElement('afterBegin', i),
+                                              ((r = i.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
+                                              r.addEventListener('click', function () {
+                                                  i.querySelector('.language-container').classList.toggle('show-language-container'),
+                                                      window.document.documentMode || r.querySelector('svg').classList.toggle('flip-svg');
+                                              }),
+                                              i.querySelector('.language-container').addEventListener('click', function (t) {
+                                                  var r = document.getElementById(t.target.id).getAttribute('value');
+                                                  ('search-results' !== n.page_name && 'landing-page' !== n.page_name) ||
+                                                      r === s ||
+                                                      (m.set('theme', r),
+                                                      'standard' === r || r.includes('mandarin') || 'standard' !== s || 16980 === n.site_config.affilaite_id
+                                                          ? 'standard' !== r || 'standard' === s || s.includes('mandarin')
+                                                              ? 'standard' === r || r.includes('mandarin') || 'standard' === s || s.includes('mandarin')
+                                                                  ? r.includes('mandarin') && 'standard' !== s
+                                                                      ? f('D/M/YYYY', 'YYYY/M/D')
+                                                                      : r.includes('mandarin') && s.includes('mandarin')
+                                                                      ? f('YYYY/M/D', 'YYYY/M/D')
+                                                                      : r.includes('mandarin') && 'standard' === s
+                                                                      ? f('M/D/YYYY', 'YYYY/M/D')
+                                                                      : 'standard' === r && s.includes('mandarin')
+                                                                      ? f('YYYY/M/D', 'M/D/YYYY')
+                                                                      : 'standard' !== r && s.includes('mandarin')
+                                                                      ? f('YYYY/M/D', 'D/M/YYYY')
+                                                                      : 16980 === n.site_config.affilaite_id && f('D/M/YYYY', 'D/M/YYYY')
+                                                                  : f('D/M/YYYY', 'D/M/YYYY')
+                                                              : f('D/M/YYYY', 'M/D/YYYY')
+                                                          : f('M/D/YYYY', 'D/M/YYYY'),
+                                                      'search-results' === n.page_name && (m.set('nights', o), m.set('checkin', e)),
+                                                      (window.location.search = m.toString()));
                                               }),
                                               window.addEventListener('click', function (e) {
                                                   if (document.querySelector('.show-language-container')) {
@@ -1018,10 +1059,10 @@
                                                           return;
                                                       if ((document.querySelector('.language-container').classList.toggle('show-language-container'), window.document.documentMode))
                                                           return;
-                                                      t.querySelector('svg').classList.toggle('flip-svg');
+                                                      r.querySelector('svg').classList.toggle('flip-svg');
                                                   }
                                               }))
-                                            : (o.style.display = 'none'));
+                                            : (i.style.display = 'none'));
                                 },
                             },
                             {
@@ -1080,7 +1121,7 @@
                                                                             '<span id="'.concat(r, '"><strong>').concat(r, '</strong> - ').concat(e[r].name, '</span>')
                                                                         );
                                                                     t.insertAdjacentElement('beforeEnd', o),
-                                                                        d.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
+                                                                        m.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
                                                                 }),
                                                                 (n = function () {
                                                                     var e = new URLSearchParams(window.location.search),
@@ -1158,7 +1199,7 @@
                                         n,
                                         r,
                                         s,
-                                        i = d.getMetaTagContent('showFullTotals');
+                                        i = m.getMetaTagContent('showFullTotals');
                                     i ||
                                         (document.querySelector('.SearchHotels') &&
                                             (document.querySelectorAll('.ArnContainer').forEach(function (t) {
@@ -1416,7 +1457,7 @@
                             {
                                 key: 'replaceLRGForm',
                                 value:
-                                    ((f = a(
+                                    ((d = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -1454,7 +1495,7 @@
                                         })
                                     )),
                                     function () {
-                                        return f.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
@@ -1809,8 +1850,8 @@
                                             this.site_id,
                                             '&theme=standard">Terms & Conditions</a> found on this website.'
                                         )),
-                                        d.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                        d.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                        m.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                        m.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function () {
                                             document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
                                         }),
@@ -1946,7 +1987,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (n = document.querySelector(o)), (e.next = 5), d.fetchHTMLFromFile(t);
+                                                            return (n = document.querySelector(o)), (e.next = 5), m.fetchHTMLFromFile(t);
                                                         case 5:
                                                             (r = e.sent), (n.innerHTML = r);
                                                         case 7:
@@ -1977,7 +2018,7 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
-                                                                return (t = this.site_config.header.logo_outbound_url), (e.next = 5), d.waitForSelectorInDOM('.logo');
+                                                                return (t = this.site_config.header.logo_outbound_url), (e.next = 5), m.waitForSelectorInDOM('.logo');
                                                             case 5:
                                                                 if (document.querySelector('meta[name="memberToken"]')) {
                                                                     e.next = 7;
@@ -2030,13 +2071,13 @@
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (d.matchMediaQuery('max-width: 800px')) {
+                                                                if (m.matchMediaQuery('max-width: 800px')) {
                                                                     e.next = 2;
                                                                     break;
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
-                                                                return (e.next = 4), d.waitForSelectorInDOM('#theCheckIn');
+                                                                return (e.next = 4), m.waitForSelectorInDOM('#theCheckIn');
                                                             case 4:
                                                                 if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
                                                                     e.next = 11;
@@ -2264,85 +2305,96 @@
                                 function v(e) {
                                     if (m.has(e)) return m.get(e);
                                 }
-                                document.querySelector('form#searchForm').addEventListener('submit', function (r) {
-                                    r.preventDefault();
-                                    var a,
-                                        c,
-                                        l,
-                                        d,
-                                        f,
-                                        p,
-                                        h = window.location.origin,
-                                        j = ''
-                                            .concat(h, '/v6/?type=geo&siteid=')
-                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
-                                            .concat(e.distance_unit),
-                                        b = new URL(j);
-                                    function S(e) {
-                                        Object.keys(e).forEach(function (t) {
-                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && b.searchParams.append(e[t].key, e[t].value);
-                                        });
-                                    }
-                                    'standard' === o.getMetaTagContent('theme')
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (d = i(document.querySelector('input#theCheckOut').value, e.dayjs_date_format).format(e.dayjs_date_format)),
-                                          (f = i(d).diff(i(l), 'days')))
-                                        : 'mandarin' === o.getMetaTagContent('theme') || 'tw_mandarin' === o.getMetaTagContent('theme')
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(e.dayjs_date_format)),
-                                          (f = i(d).diff(i(l), 'days')),
-                                          (l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(e.dayjs_date_format)),
-                                          (f = i(d).diff(i(l), 'days')),
-                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
-                                        'standard' !== o.getMetaTagContent('theme') &&
-                                            ((u.check_in_value = document.querySelector('input#theCheckIn').value),
-                                            (u.check_out_value = document.querySelector('input#theCheckOut').value)),
-                                        n
-                                            ? ((a = n.lat), (c = n.lng))
-                                            : s
-                                            ? ((a = s.lat), (c = s.lng))
-                                            : n || s || 'search-results' !== t || ((a = m.get('latitude')), (c = m.get('longitude'))),
-                                        S({
-                                            longitude: {key: 'longitude', value: c},
-                                            latitude: {key: 'latitude', value: a},
-                                            destination: {
-                                                key: 'destination',
-                                                value:
-                                                    ((p = 'input#address-input'),
-                                                    null !== document.querySelector(p).value
-                                                        ? document.querySelector(p).value
-                                                        : m.has('destination')
-                                                        ? m.get('destination')
-                                                        : void 0),
-                                            },
-                                            checkin: {key: 'checkin', value: l},
-                                            nights: {key: 'nights', value: f},
-                                            rooms: {key: 'rooms', value: y('select#rooms')},
-                                            adults: {key: 'adults', value: y('select#adults')},
-                                            currency: {key: 'currency', value: e.currency},
-                                            amenities: {key: 'amenities', value: _('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                            stars: {key: 'propertyclasses', value: _('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                            propertyType: {key: 'propertytypes', value: _('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                            optionalHotel: {key: 'hotelname', value: g()},
-                                        }),
-                                        'search-results' === t &&
-                                            'lodging' === e.site_type.toLowerCase() &&
+                                console.log(e),
+                                    document.querySelector('form#searchForm').addEventListener('submit', function (r) {
+                                        r.preventDefault();
+                                        var a,
+                                            c,
+                                            l,
+                                            d,
+                                            f,
+                                            p,
+                                            h = window.location.origin,
+                                            j = ''
+                                                .concat(h, '/v6/?type=geo&siteid=')
+                                                .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                                .concat(e.distance_unit),
+                                            b = new URL(j);
+                                        function S(e) {
+                                            Object.keys(e).forEach(function (t) {
+                                                '' !== e[t].value &&
+                                                    null !== e[t].value &&
+                                                    void 0 !== e[t].value &&
+                                                    void 0 !== e[t].key &&
+                                                    b.searchParams.append(e[t].key, e[t].value);
+                                            });
+                                        }
+                                        'standard' === o.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                            ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (f = i(d).diff(i(l), 'days')))
+                                            : 'mandarin' === o.getMetaTagContent('theme') || 'tw_mandarin' === o.getMetaTagContent('theme')
+                                            ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                              (f = i(d).diff(i(l), 'days')),
+                                              (l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                            : 16980 === e.affiliate_id || 60278 === e.site_id
+                                            ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                              (f = i(d).diff(i(l), 'days')),
+                                              (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
+                                            : ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (f = i(d).diff(i(l), 'days')),
+                                              (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                              (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                            'standard' !== o.getMetaTagContent('theme') &&
+                                                ((u.check_in_value = document.querySelector('input#theCheckIn').value),
+                                                (u.check_out_value = document.querySelector('input#theCheckOut').value)),
+                                            n
+                                                ? ((a = n.lat), (c = n.lng))
+                                                : s
+                                                ? ((a = s.lat), (c = s.lng))
+                                                : n || s || 'search-results' !== t || ((a = m.get('latitude')), (c = m.get('longitude'))),
                                             S({
-                                                properties: {key: 'properties', value: v('properties')},
-                                                utm_source: {key: 'utm_source', value: v('utm_source')},
-                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
-                                                radius: {key: 'radius', value: v('radius')},
-                                                groupId: {key: 'groupid', value: v('groupid')},
-                                                cid: {key: 'cid', value: v('cid')},
-                                                points: {key: 'points', value: v('points')},
+                                                longitude: {key: 'longitude', value: c},
+                                                latitude: {key: 'latitude', value: a},
+                                                destination: {
+                                                    key: 'destination',
+                                                    value:
+                                                        ((p = 'input#address-input'),
+                                                        null !== document.querySelector(p).value
+                                                            ? document.querySelector(p).value
+                                                            : m.has('destination')
+                                                            ? m.get('destination')
+                                                            : void 0),
+                                                },
+                                                checkin: {key: 'checkin', value: l},
+                                                nights: {key: 'nights', value: f},
+                                                rooms: {key: 'rooms', value: y('select#rooms')},
+                                                adults: {key: 'adults', value: y('select#adults')},
+                                                currency: {key: 'currency', value: o.getMetaTagContent('currency') ? o.getMetaTagContent('currency') : 'USD'},
+                                                amenities: {key: 'amenities', value: _('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                                stars: {key: 'propertyclasses', value: _('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                                propertyType: {key: 'propertytypes', value: _('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                                optionalHotel: {key: 'hotelname', value: g()},
                                             }),
-                                        'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: o.getMetaTagContent('memberToken')}}),
-                                        (window.location.href = decodeURIComponent(b));
-                                }),
+                                            'search-results' === t &&
+                                                'lodging' === e.site_type.toLowerCase() &&
+                                                S({
+                                                    properties: {key: 'properties', value: v('properties')},
+                                                    utm_source: {key: 'utm_source', value: v('utm_source')},
+                                                    locationLabel: {key: 'locationlabel', value: v('locationlabel')},
+                                                    radius: {key: 'radius', value: v('radius')},
+                                                    groupId: {key: 'groupid', value: v('groupid')},
+                                                    cid: {key: 'cid', value: v('cid')},
+                                                    points: {key: 'points', value: v('points')},
+                                                }),
+                                            'cug' === e.site_type.toLowerCase() && S({memberToken: {key: 'memberToken', value: o.getMetaTagContent('memberToken')}}),
+                                            (window.location.href = decodeURIComponent(b));
+                                    }),
                                     (function (e) {
                                         p.apply(this, arguments);
                                     })('input#city'),
@@ -4411,24 +4463,24 @@
                     x = !1,
                     A = e.prototype,
                     k = A[d] || A['@@iterator'] || (h && A[h]),
-                    L = k || b(h),
-                    q = h ? (w ? b('entries') : L) : void 0,
-                    M = ('Array' == t && A.entries) || k;
+                    M = k || b(h),
+                    q = h ? (w ? b('entries') : M) : void 0,
+                    L = ('Array' == t && A.entries) || k;
                 if (
-                    (M && (j = l(M.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
+                    (L && (j = l(L.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
                         k &&
                         'values' !== k.name &&
                         ((x = !0),
-                        (L = function () {
+                        (M = function () {
                             return k.call(this);
                         })),
-                    (n && !g) || (!m && !x && A[d]) || i(A, d, L),
-                    (a[t] = L),
+                    (n && !g) || (!m && !x && A[d]) || i(A, d, M),
+                    (a[t] = M),
                     (a[S] = f),
                     h)
                 )
-                    if (((_ = {values: w ? L : b('values'), keys: y ? L : b('keys'), entries: q}), g)) for (v in _) v in A || s(A, v, _[v]);
+                    if (((_ = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (v in _) v in A || s(A, v, _[v]);
                     else r(r.P + r.F * (m || x), t, _);
                 return _;
             };
@@ -5427,20 +5479,20 @@
                 x = c.process,
                 A = x && x.versions,
                 k = (A && A.v8) || '',
-                L = c.Promise,
+                M = c.Promise,
                 q = 'process' == l(x),
-                M = function () {},
+                L = function () {},
                 C = (r = v.f),
-                E = !!(function () {
+                T = !!(function () {
                     try {
-                        var e = L.resolve(1),
+                        var e = M.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(M, M);
+                                e(L, L);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(M) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(L) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
-                T = function (e) {
+                E = function (e) {
                     var t;
                     return !(!m(e) || 'function' != typeof (t = e.then)) && t;
                 },
@@ -5463,9 +5515,9 @@
                                             l = t.domain;
                                         try {
                                             a
-                                                ? (r || (2 == e._h && H(e), (e._h = 1)),
+                                                ? (r || (2 == e._h && F(e), (e._h = 1)),
                                                   !0 === a ? (o = n) : (l && l.enter(), (o = a(n)), l && (l.exit(), (i = !0))),
-                                                  o === t.promise ? u(w('Promise-chain cycle')) : (s = T(o)) ? s.call(o, c, u) : c(o))
+                                                  o === t.promise ? u(w('Promise-chain cycle')) : (s = E(o)) ? s.call(o, c, u) : c(o))
                                                 : u(n);
                                         } catch (e) {
                                             l && !i && l.exit(), u(e);
@@ -5505,52 +5557,52 @@
                 O = function (e) {
                     return 1 !== e._h && 0 === (e._a || e._c).length;
                 },
-                H = function (e) {
+                F = function (e) {
                     g.call(c, function () {
                         var t;
                         q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
-                F = function (e) {
+                H = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
                 },
-                B = function (e) {
+                D = function (e) {
                     var t,
                         o = this;
                     if (!o._d) {
                         (o._d = !0), (o = o._w || o);
                         try {
                             if (o === e) throw w("Promise can't be resolved itself");
-                            (t = T(e))
+                            (t = E(e))
                                 ? _(function () {
                                       var n = {_w: o, _d: !1};
                                       try {
-                                          t.call(e, u(B, n, 1), u(F, n, 1));
+                                          t.call(e, u(D, n, 1), u(H, n, 1));
                                       } catch (e) {
-                                          F.call(n, e);
+                                          H.call(n, e);
                                       }
                                   })
                                 : ((o._v = e), (o._s = 1), R(o, !1));
                         } catch (e) {
-                            F.call({_w: o, _d: !1}, e);
+                            H.call({_w: o, _d: !1}, e);
                         }
                     }
                 };
-            E ||
-                ((L = function (e) {
-                    p(this, L, 'Promise', '_h'), f(e), n.call(this);
+            T ||
+                ((M = function (e) {
+                    p(this, M, 'Promise', '_h'), f(e), n.call(this);
                     try {
-                        e(u(B, this, 1), u(F, this, 1));
+                        e(u(D, this, 1), u(H, this, 1));
                     } catch (e) {
-                        F.call(this, e);
+                        H.call(this, e);
                     }
                 }),
                 ((n = function (e) {
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-                }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(L.prototype, {
+                }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(M.prototype, {
                     then: function (e, t) {
-                        var o = C(y(this, L));
+                        var o = C(y(this, M));
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
@@ -5567,33 +5619,33 @@
                 })),
                 (s = function () {
                     var e = new n();
-                    (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
+                    (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (v.f = C = function (e) {
-                    return e === L || e === i ? new s(e) : r(e);
+                    return e === M || e === i ? new s(e) : r(e);
                 })),
-                d(d.G + d.W + d.F * !E, {Promise: L}),
-                o(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(L, 'Promise'),
+                d(d.G + d.W + d.F * !T, {Promise: M}),
+                o(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(M, 'Promise'),
                 o(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = o(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
-                d(d.S + d.F * !E, 'Promise', {
+                d(d.S + d.F * !T, 'Promise', {
                     reject: function (e) {
                         var t = C(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
-                d(d.S + d.F * (a || !E), 'Promise', {
+                d(d.S + d.F * (a || !T), 'Promise', {
                     resolve: function (e) {
-                        return S(a && this === i ? L : this, e);
+                        return S(a && this === i ? M : this, e);
                     },
                 }),
                 d(
                     d.S +
                         d.F *
                             !(
-                                E &&
+                                T &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    L.all(e).catch(M);
+                                    M.all(e).catch(L);
                                 })
                             ),
                     'Promise',
@@ -5767,12 +5819,12 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < _.length; w++) {
                             v = _[w];
-                            for (var x = String(v[0]), A = u(l(i(v.index), m.length), 0), k = [], L = 1; L < v.length; L++) k.push(void 0 === (j = v[L]) ? j : String(j));
+                            for (var x = String(v[0]), A = u(l(i(v.index), m.length), 0), k = [], M = 1; M < v.length; M++) k.push(void 0 === (j = v[M]) ? j : String(j));
                             var q = v.groups;
                             if (f) {
-                                var M = [x].concat(k, A, m);
-                                void 0 !== q && M.push(q);
-                                var C = String(t.apply(void 0, M));
+                                var L = [x].concat(k, A, m);
+                                void 0 !== q && L.push(q);
+                                var C = String(t.apply(void 0, L));
                             } else C = h(x, m, A, k, q, t);
                             A >= S && ((b += m.slice(S, A) + C), (S = A + x.length));
                         }
@@ -6014,23 +6066,23 @@
                 x = o(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
                 A = o(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 k = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
-                L = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
+                M = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 q = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                M = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                L = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 C = k.f,
-                E = q.f,
-                T = A.f,
+                T = q.f,
+                E = A.f,
                 R = n.Symbol,
                 P = n.JSON,
                 O = P && P.stringify,
-                H = f('_hidden'),
-                F = f('toPrimitive'),
-                B = {}.propertyIsEnumerable,
-                I = l('symbol-registry'),
-                D = l('symbols'),
-                N = l('op-symbols'),
-                U = Object.prototype,
-                Y = 'function' == typeof R && !!L.f,
+                F = f('_hidden'),
+                H = f('toPrimitive'),
+                D = {}.propertyIsEnumerable,
+                B = l('symbol-registry'),
+                I = l('symbols'),
+                Y = l('op-symbols'),
+                N = Object.prototype,
+                U = 'function' == typeof R && !!M.f,
                 $ = n.QObject,
                 W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
@@ -6039,25 +6091,25 @@
                         return (
                             7 !=
                             x(
-                                E({}, 'a', {
+                                T({}, 'a', {
                                     get: function () {
-                                        return E(this, 'a', {value: 7}).a;
+                                        return T(this, 'a', {value: 7}).a;
                                     },
                                 })
                             ).a
                         );
                     })
                         ? function (e, t, o) {
-                              var n = C(U, t);
-                              n && delete U[t], E(e, t, o), n && e !== U && E(U, t, n);
+                              var n = C(N, t);
+                              n && delete N[t], T(e, t, o), n && e !== N && T(N, t, n);
                           }
-                        : E,
+                        : T,
                 V = function (e) {
-                    var t = (D[e] = x(R.prototype));
+                    var t = (I[e] = x(R.prototype));
                     return (t._k = e), t;
                 },
                 z =
-                    Y && 'symbol' == typeof R.iterator
+                    U && 'symbol' == typeof R.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
@@ -6066,14 +6118,14 @@
                           },
                 Z = function (e, t, o) {
                     return (
-                        e === U && Z(N, t, o),
+                        e === N && Z(Y, t, o),
                         _(e),
                         (t = S(t, !0)),
                         _(o),
-                        r(D, t)
-                            ? (o.enumerable ? (r(e, H) && e[H][t] && (e[H][t] = !1), (o = x(o, {enumerable: w(0, !1)}))) : (r(e, H) || E(e, H, w(1, {})), (e[H][t] = !0)),
+                        r(I, t)
+                            ? (o.enumerable ? (r(e, F) && e[F][t] && (e[F][t] = !1), (o = x(o, {enumerable: w(0, !1)}))) : (r(e, F) || T(e, F, w(1, {})), (e[F][t] = !0)),
                               G(e, t, o))
-                            : E(e, t, o)
+                            : T(e, t, o)
                     );
                 },
                 J = function (e, t) {
@@ -6082,32 +6134,32 @@
                     return e;
                 },
                 Q = function (e) {
-                    var t = B.call(this, (e = S(e, !0)));
-                    return !(this === U && r(D, e) && !r(N, e)) && (!(t || !r(this, e) || !r(D, e) || (r(this, H) && this[H][e])) || t);
+                    var t = D.call(this, (e = S(e, !0)));
+                    return !(this === N && r(I, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(I, e) || (r(this, F) && this[F][e])) || t);
                 },
                 K = function (e, t) {
-                    if (((e = b(e)), (t = S(t, !0)), e !== U || !r(D, t) || r(N, t))) {
+                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(I, t) || r(Y, t))) {
                         var o = C(e, t);
-                        return !o || !r(D, t) || (r(e, H) && e[H][t]) || (o.enumerable = !0), o;
+                        return !o || !r(I, t) || (r(e, F) && e[F][t]) || (o.enumerable = !0), o;
                     }
                 },
                 X = function (e) {
-                    for (var t, o = T(b(e)), n = [], s = 0; o.length > s; ) r(D, (t = o[s++])) || t == H || t == c || n.push(t);
+                    for (var t, o = E(b(e)), n = [], s = 0; o.length > s; ) r(I, (t = o[s++])) || t == F || t == c || n.push(t);
                     return n;
                 },
                 ee = function (e) {
-                    for (var t, o = e === U, n = T(o ? N : b(e)), s = [], i = 0; n.length > i; ) !r(D, (t = n[i++])) || (o && !r(U, t)) || s.push(D[t]);
+                    for (var t, o = e === N, n = E(o ? Y : b(e)), s = [], i = 0; n.length > i; ) !r(I, (t = n[i++])) || (o && !r(N, t)) || s.push(I[t]);
                     return s;
                 };
-            Y ||
+            U ||
                 (a(
                     (R = function () {
                         if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (o) {
-                                this === U && t.call(N, o), r(this, H) && r(this[H], e) && (this[H][e] = !1), G(this, e, w(1, o));
+                                this === N && t.call(Y, o), r(this, F) && r(this[F], e) && (this[F][e] = !1), G(this, e, w(1, o));
                             };
-                        return s && W && G(U, e, {configurable: !0, set: t}), V(e);
+                        return s && W && G(N, e, {configurable: !0, set: t}), V(e);
                     }).prototype,
                     'toString',
                     function () {
@@ -6118,22 +6170,22 @@
                 (q.f = Z),
                 (o(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = A.f = X),
                 (o(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = Q),
-                (L.f = ee),
-                s && !o(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(U, 'propertyIsEnumerable', Q, !0),
+                (M.f = ee),
+                s && !o(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', Q, !0),
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !Y, {Symbol: R});
+                i(i.G + i.W + i.F * !U, {Symbol: R});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
-            for (var ne = M(f.store), re = 0; ne.length > re; ) h(ne[re++]);
-            i(i.S + i.F * !Y, 'Symbol', {
+            for (var ne = L(f.store), re = 0; ne.length > re; ) h(ne[re++]);
+            i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(I, (e += '')) ? I[e] : (I[e] = R(e));
+                    return r(B, (e += '')) ? B[e] : (B[e] = R(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in I) if (I[t] === e) return t;
+                    for (var t in B) if (B[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -6142,7 +6194,7 @@
                     W = !1;
                 },
             }),
-                i(i.S + i.F * !Y, 'Object', {
+                i(i.S + i.F * !U, 'Object', {
                     create: function (e, t) {
                         return void 0 === t ? x(e) : J(x(e), t);
                     },
@@ -6153,18 +6205,18 @@
                     getOwnPropertySymbols: ee,
                 });
             var se = u(function () {
-                L.f(1);
+                M.f(1);
             });
             i(i.S + i.F * se, 'Object', {
                 getOwnPropertySymbols: function (e) {
-                    return L.f(j(e));
+                    return M.f(j(e));
                 },
             }),
                 P &&
                     i(
                         i.S +
                             i.F *
-                                (!Y ||
+                                (!U ||
                                     u(function () {
                                         var e = R();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
@@ -6185,7 +6237,7 @@
                             },
                         }
                     ),
-                R.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(R.prototype, F, R.prototype.valueOf),
+                R.prototype[H] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(R.prototype, H, R.prototype.valueOf),
                 d(R, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);

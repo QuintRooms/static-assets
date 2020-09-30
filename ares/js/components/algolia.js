@@ -11,6 +11,7 @@ export default class Algolia {
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
         const original_params_url = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+        console.log(site_config);
 
         /**
          *@description adds the attribute "required" to an element.
@@ -196,22 +197,30 @@ export default class Algolia {
             let check_out_value;
             let nights;
 
-            if (utilities.getMetaTagContent('theme') === 'standard') {
-                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
-                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, site_config.dayjs_date_format).format(site_config.dayjs_date_format);
+            if (utilities.getMetaTagContent('theme') === 'standard' && site_config.affiliate_id !== 16980) {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
 
                 nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
             } else if (utilities.getMetaTagContent('theme') === 'mandarin' || utilities.getMetaTagContent('theme') === 'tw_mandarin') {
-                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format(site_config.dayjs_date_format);
-                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format(site_config.dayjs_date_format);
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY');
 
                 nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
 
                 check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D');
                 check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D');
+            } else if (site_config.affiliate_id === 16980 || site_config.site_id === 60278) {
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY');
+
+                nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
             } else {
-                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
-                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format(site_config.dayjs_date_format);
+                check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY');
+                check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY');
 
                 nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
 
@@ -249,7 +258,7 @@ export default class Algolia {
                                 key: 'rooms',
                                 value: setDropdownIndex('select#rooms'),
                             },
-                        })    
+                        })
             */
             function appendParamsToURL(paramObject) {
                 Object.keys(paramObject).forEach((obj) => {
@@ -290,7 +299,7 @@ export default class Algolia {
                 },
                 currency: {
                     key: 'currency',
-                    value: site_config.currency,
+                    value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',
                 },
                 amenities: {
                     key: 'amenities',

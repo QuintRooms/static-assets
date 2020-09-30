@@ -11,7 +11,6 @@ export default class Algolia {
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
         const original_params_url = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        console.log(site_config);
 
         /**
          *@description adds the attribute "required" to an element.

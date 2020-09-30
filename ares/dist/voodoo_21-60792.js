@@ -98,14 +98,14 @@
                     p = e & s.G,
                     m = e & s.S,
                     y = e & s.P,
-                    g = e & s.B,
-                    v = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
+                    v = e & s.B,
+                    g = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
                     S = p ? o : o[t] || (o[t] = {}),
                     b = S.prototype || (S.prototype = {});
                 for (u in (p && (n = t), n))
-                    (f = ((l = !h && v && void 0 !== v[u]) ? v : n)[u]),
-                        (d = g && l ? c(f, r) : y && 'function' == typeof f ? c(Function.call, f) : f),
-                        v && a(v, u, f, e & s.U),
+                    (f = ((l = !h && g && void 0 !== g[u]) ? g : n)[u]),
+                        (d = v && l ? c(f, r) : y && 'function' == typeof f ? c(Function.call, f) : f),
+                        g && a(g, u, f, e & s.U),
                         S[u] != f && i(S, u, d),
                         y && b[u] != f && (b[u] = f);
             };
@@ -381,8 +381,8 @@
             p = n(76),
             m = n(77),
             y = n(54),
-            g = n(48).set,
-            v = n(81)(),
+            v = n(48).set,
+            g = n(81)(),
             S = n(50),
             b = n(82),
             w = n(83),
@@ -412,7 +412,7 @@
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
-                    v(function () {
+                    g(function () {
                         for (
                             var r = e._v,
                                 o = 1 == e._s,
@@ -444,7 +444,7 @@
                 }
             },
             R = function (e) {
-                g.call(s, function () {
+                v.call(s, function () {
                     var t,
                         n,
                         r,
@@ -470,7 +470,7 @@
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
             Y = function (e) {
-                g.call(s, function () {
+                v.call(s, function () {
                     var t;
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
@@ -487,7 +487,7 @@
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
                         (t = P(e))
-                            ? v(function () {
+                            ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
                                       t.call(e, u(H, r, 1), u(D, r, 1));
@@ -676,8 +676,8 @@
             var m = Object.getPrototypeOf,
                 y = m && m(m(A([])));
             y && y !== t && n.call(y, o) && (p = y);
-            var g = (h.prototype = f.prototype = Object.create(p));
-            function v(e) {
+            var v = (h.prototype = f.prototype = Object.create(p));
+            function g(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
                     c(e, t, function (e) {
                         return this._invoke(t, e);
@@ -768,7 +768,7 @@
                 return {value: void 0, done: !0};
             }
             return (
-                (d.prototype = g.constructor = h),
+                (d.prototype = v.constructor = h),
                 (h.constructor = d),
                 (d.displayName = c(h, a, 'GeneratorFunction')),
                 (e.isGeneratorFunction = function (e) {
@@ -776,12 +776,12 @@
                     return !!t && (t === d || 'GeneratorFunction' === (t.displayName || t.name));
                 }),
                 (e.mark = function (e) {
-                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, h) : ((e.__proto__ = h), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(g)), e;
+                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, h) : ((e.__proto__ = h), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(v)), e;
                 }),
                 (e.awrap = function (e) {
                     return {__await: e};
                 }),
-                v(S.prototype),
+                g(S.prototype),
                 (S.prototype[i] = function () {
                     return this;
                 }),
@@ -795,12 +795,12 @@
                               return e.done ? e.value : a.next();
                           });
                 }),
-                v(g),
-                c(g, a, 'Generator'),
-                (g[o] = function () {
+                g(v),
+                c(v, a, 'Generator'),
+                (v[o] = function () {
                     return this;
                 }),
-                (g.toString = function () {
+                (v.toString = function () {
                     return '[object Generator]';
                 }),
                 (e.keys = function (e) {
@@ -972,11 +972,11 @@
             m++
         ) {
             var y,
-                g = p[m],
-                v = h[g],
-                S = a[g],
+                v = p[m],
+                g = h[v],
+                S = a[v],
                 b = S && S.prototype;
-            if (b && (b[l] || c(b, l, d), b[f] || c(b, f, g), (s[g] = d), v)) for (y in r) b[y] || i(b, y, r[y], !0);
+            if (b && (b[l] || c(b, l, d), b[f] || c(b, f, v), (s[v] = d), g)) for (y in r) b[y] || i(b, y, r[y], !0);
         }
     },
     function (e, t, n) {
@@ -1668,10 +1668,10 @@
                 m = 'en',
                 y = {};
             y[m] = p;
-            var g = function (e) {
+            var v = function (e) {
                     return e instanceof w;
                 },
-                v = function (e, t, n) {
+                g = function (e, t, n) {
                     var r;
                     if (!e) return m;
                     if ('string' == typeof e) y[e] && (r = e), t && ((y[e] = t), (r = e));
@@ -1682,19 +1682,19 @@
                     return !n && r && (m = r), r || (!n && m);
                 },
                 S = function (e, t) {
-                    if (g(e)) return e.clone();
+                    if (v(e)) return e.clone();
                     var n = 'object' == typeof t ? t : {};
                     return (n.date = e), (n.args = arguments), new w(n);
                 },
                 b = h;
-            (b.l = v),
-                (b.i = g),
+            (b.l = g),
+                (b.i = v),
                 (b.w = function (e, t) {
                     return S(e, {locale: t.$L, utc: t.$u, $offset: t.$offset});
                 });
             var w = (function () {
                     function d(e) {
-                        (this.$L = this.$L || v(e.locale, null, !0)), this.parse(e);
+                        (this.$L = this.$L || g(e.locale, null, !0)), this.parse(e);
                     }
                     var h = d.prototype;
                     return (
@@ -1768,8 +1768,8 @@
                                 },
                                 m = this.$W,
                                 y = this.$M,
-                                g = this.$D,
-                                v = 'set' + (this.$u ? 'UTC' : '');
+                                v = this.$D,
+                                g = 'set' + (this.$u ? 'UTC' : '');
                             switch (d) {
                                 case s:
                                     return f ? h(1, 0) : h(31, 11);
@@ -1778,16 +1778,16 @@
                                 case i:
                                     var S = this.$locale().weekStart || 0,
                                         w = (m < S ? m + 7 : m) - S;
-                                    return h(f ? g - w : g + (6 - w), y);
+                                    return h(f ? v - w : v + (6 - w), y);
                                 case o:
                                 case u:
-                                    return p(v + 'Hours', 0);
+                                    return p(g + 'Hours', 0);
                                 case r:
-                                    return p(v + 'Minutes', 1);
+                                    return p(g + 'Minutes', 1);
                                 case n:
-                                    return p(v + 'Seconds', 2);
+                                    return p(g + 'Seconds', 2);
                                 case t:
-                                    return p(v + 'Milliseconds', 3);
+                                    return p(g + 'Milliseconds', 3);
                                 default:
                                     return this.clone();
                             }
@@ -1929,7 +1929,7 @@
                         (h.locale = function (e, t) {
                             if (!e) return this.$L;
                             var n = this.clone(),
-                                r = v(e, t, !0);
+                                r = g(e, t, !0);
                             return r && (n.$L = r), n;
                         }),
                         (h.clone = function () {
@@ -1970,8 +1970,8 @@
                 (S.extend = function (e, t) {
                     return e(t, w, S), S;
                 }),
-                (S.locale = v),
-                (S.isDayjs = g),
+                (S.locale = g),
+                (S.isDayjs = v),
                 (S.unix = function (e) {
                     return S(1e3 * e);
                 }),
@@ -2110,18 +2110,18 @@
                     y = n(a, d, ''[e], function (e, t, n, r, o) {
                         return t.exec === s ? (h && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
                     }),
-                    g = y[0],
-                    v = y[1];
-                r(String.prototype, e, g),
+                    v = y[0],
+                    g = y[1];
+                r(String.prototype, e, v),
                     o(
                         RegExp.prototype,
                         d,
                         2 == t
                             ? function (e, t) {
-                                  return v.call(e, this, t);
+                                  return g.call(e, this, t);
                               }
                             : function (e) {
-                                  return v.call(e, this);
+                                  return g.call(e, this);
                               }
                     );
             }
@@ -2156,17 +2156,17 @@
                     h || (t = String(t));
                     var y = f.global;
                     if (y) {
-                        var g = f.unicode;
+                        var v = f.unicode;
                         f.lastIndex = 0;
                     }
-                    for (var v = []; ; ) {
+                    for (var g = []; ; ) {
                         var S = s(f, d);
                         if (null === S) break;
-                        if ((v.push(S), !y)) break;
-                        '' === String(S[0]) && (f.lastIndex = c(d, i(f.lastIndex), g));
+                        if ((g.push(S), !y)) break;
+                        '' === String(S[0]) && (f.lastIndex = c(d, i(f.lastIndex), v));
                     }
-                    for (var b, w = '', _ = 0, x = 0; x < v.length; x++) {
-                        S = v[x];
+                    for (var b, w = '', _ = 0, x = 0; x < g.length; x++) {
+                        S = g[x];
                         for (var A = String(S[0]), k = u(l(a(S.index), d.length), 0), M = [], L = 1; L < S.length; L++) M.push(void 0 === (b = S[L]) ? b : String(b));
                         var q = S.groups;
                         if (h) {
@@ -2251,22 +2251,22 @@
             p = l.MessageChannel,
             m = l.Dispatch,
             y = 0,
-            g = {},
-            v = function () {
+            v = {},
+            g = function () {
                 var e = +this;
-                if (g.hasOwnProperty(e)) {
-                    var t = g[e];
-                    delete g[e], t();
+                if (v.hasOwnProperty(e)) {
+                    var t = v[e];
+                    delete v[e], t();
                 }
             },
             S = function (e) {
-                v.call(e.data);
+                g.call(e.data);
             };
         (d && h) ||
             ((d = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
-                    (g[++y] = function () {
+                    (v[++y] = function () {
                         c('function' == typeof e ? e : Function(e), t);
                     }),
                     r(y),
@@ -2274,15 +2274,15 @@
                 );
             }),
             (h = function (e) {
-                delete g[e];
+                delete v[e];
             }),
             'process' == n(14)(f)
                 ? (r = function (e) {
-                      f.nextTick(a(v, e, 1));
+                      f.nextTick(a(g, e, 1));
                   })
                 : m && m.now
                 ? (r = function (e) {
-                      m.now(a(v, e, 1));
+                      m.now(a(g, e, 1));
                   })
                 : p
                 ? ((i = (o = new p()).port2), (o.port1.onmessage = S), (r = a(i.postMessage, i, 1)))
@@ -2295,11 +2295,11 @@
                       'onreadystatechange' in u('script')
                           ? function (e) {
                                 s.appendChild(u('script')).onreadystatechange = function () {
-                                    s.removeChild(this), v.call(e);
+                                    s.removeChild(this), g.call(e);
                                 };
                             }
                           : function (e) {
-                                setTimeout(a(v, e, 1), 0);
+                                setTimeout(a(g, e, 1), 0);
                             })),
             (e.exports = {set: d, clear: h});
     },
@@ -2664,13 +2664,13 @@
                             p = new Date(),
                             m = c || (i || a ? 1 : p.getDate()),
                             y = i || p.getFullYear(),
-                            g = 0;
-                        (i && !a) || (g = a > 0 ? a - 1 : p.getMonth());
-                        var v = u || 0,
+                            v = 0;
+                        (i && !a) || (v = a > 0 ? a - 1 : p.getMonth());
+                        var g = u || 0,
                             S = l || 0,
                             b = f || 0,
                             w = d || 0;
-                        return h ? new Date(Date.UTC(y, g, m, v, S, b, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, g, m, v, S, b, w)) : new Date(y, g, m, v, S, b, w);
+                        return h ? new Date(Date.UTC(y, v, m, g, S, b, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, v, m, g, S, b, w)) : new Date(y, v, m, g, S, b, w);
                     } catch (e) {
                         return new Date('');
                     }
@@ -2799,12 +2799,12 @@
                     });
             });
         }
-        function g(e) {
+        function v(e) {
             var t = new FileReader(),
                 n = y(t);
             return t.readAsArrayBuffer(e), n;
         }
-        function v(e) {
+        function g(e) {
             if (e.slice) return e.slice(0);
             var t = new Uint8Array(e.byteLength);
             return t.set(new Uint8Array(e)), t.buffer;
@@ -2826,9 +2826,9 @@
                                 : o && URLSearchParams.prototype.isPrototypeOf(e)
                                 ? (this._bodyText = e.toString())
                                 : s && a && (t = e) && DataView.prototype.isPrototypeOf(t)
-                                ? ((this._bodyArrayBuffer = v(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
+                                ? ((this._bodyArrayBuffer = g(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
                                 : s && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
-                                ? (this._bodyArrayBuffer = v(e))
+                                ? (this._bodyArrayBuffer = g(e))
                                 : (this._bodyText = e = Object.prototype.toString.call(e))
                             : (this._bodyText = ''),
                         this.headers.get('content-type') ||
@@ -2859,7 +2859,7 @@
                                     : Promise.resolve(this._bodyArrayBuffer))
                             );
                         }
-                        return this.blob().then(g);
+                        return this.blob().then(v);
                     })),
                 (this.text = function () {
                     var e,
@@ -3238,99 +3238,94 @@
                                         n.slice(0, -1)
                                     );
                                 }
-                                function g(e) {
+                                function v(e) {
                                     if (l.has(e)) return l.get(e);
                                 }
-                                console.log(e),
-                                    document.querySelector('form#searchForm').addEventListener('submit', function (i) {
-                                        i.preventDefault();
-                                        var a,
-                                            s,
-                                            u,
-                                            f,
-                                            d,
-                                            h,
-                                            v = window.location.origin,
-                                            S = ''
-                                                .concat(v, '/v6/?type=geo&siteid=')
-                                                .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
-                                                .concat(e.distance_unit),
-                                            b = new URL(S);
-                                        function w(e) {
-                                            Object.keys(e).forEach(function (t) {
-                                                '' !== e[t].value &&
-                                                    null !== e[t].value &&
-                                                    void 0 !== e[t].value &&
-                                                    void 0 !== e[t].key &&
-                                                    b.searchParams.append(e[t].key, e[t].value);
-                                            });
-                                        }
-                                        'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')))
-                                            : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                            : 16980 === e.affiliate_id || 60278 === e.site_id
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                            : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
-                                            'standard' !== n.getMetaTagContent('theme') &&
-                                                ((c.check_in_value = document.querySelector('input#theCheckIn').value),
-                                                (c.check_out_value = document.querySelector('input#theCheckOut').value)),
-                                            r
-                                                ? ((a = r.lat), (s = r.lng))
-                                                : o
-                                                ? ((a = o.lat), (s = o.lng))
-                                                : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
+                                document.querySelector('form#searchForm').addEventListener('submit', function (i) {
+                                    i.preventDefault();
+                                    var a,
+                                        s,
+                                        u,
+                                        f,
+                                        d,
+                                        h,
+                                        g = window.location.origin,
+                                        S = ''
+                                            .concat(g, '/v6/?type=geo&siteid=')
+                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                            .concat(e.distance_unit),
+                                        b = new URL(S);
+                                    function w(e) {
+                                        Object.keys(e).forEach(function (t) {
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && b.searchParams.append(e[t].key, e[t].value);
+                                        });
+                                    }
+                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')))
+                                        : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : 16980 === e.affiliate_id || 60278 === e.site_id
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
+                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        'standard' !== n.getMetaTagContent('theme') &&
+                                            ((c.check_in_value = document.querySelector('input#theCheckIn').value),
+                                            (c.check_out_value = document.querySelector('input#theCheckOut').value)),
+                                        r
+                                            ? ((a = r.lat), (s = r.lng))
+                                            : o
+                                            ? ((a = o.lat), (s = o.lng))
+                                            : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
+                                        w({
+                                            longitude: {key: 'longitude', value: s},
+                                            latitude: {key: 'latitude', value: a},
+                                            destination: {
+                                                key: 'destination',
+                                                value:
+                                                    ((h = 'input#address-input'),
+                                                    null !== document.querySelector(h).value
+                                                        ? document.querySelector(h).value
+                                                        : l.has('destination')
+                                                        ? l.get('destination')
+                                                        : void 0),
+                                            },
+                                            checkin: {key: 'checkin', value: u},
+                                            nights: {key: 'nights', value: d},
+                                            rooms: {key: 'rooms', value: p('select#rooms')},
+                                            adults: {key: 'adults', value: p('select#adults')},
+                                            currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
+                                            amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            optionalHotel: {key: 'hotelname', value: m()},
+                                        }),
+                                        'search-results' === t &&
+                                            'lodging' === e.site_type.toLowerCase() &&
                                             w({
-                                                longitude: {key: 'longitude', value: s},
-                                                latitude: {key: 'latitude', value: a},
-                                                destination: {
-                                                    key: 'destination',
-                                                    value:
-                                                        ((h = 'input#address-input'),
-                                                        null !== document.querySelector(h).value
-                                                            ? document.querySelector(h).value
-                                                            : l.has('destination')
-                                                            ? l.get('destination')
-                                                            : void 0),
-                                                },
-                                                checkin: {key: 'checkin', value: u},
-                                                nights: {key: 'nights', value: d},
-                                                rooms: {key: 'rooms', value: p('select#rooms')},
-                                                adults: {key: 'adults', value: p('select#adults')},
-                                                currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
-                                                amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                                stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                                propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                                optionalHotel: {key: 'hotelname', value: m()},
+                                                properties: {key: 'properties', value: v('properties')},
+                                                utm_source: {key: 'utm_source', value: v('utm_source')},
+                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
+                                                radius: {key: 'radius', value: v('radius')},
+                                                groupId: {key: 'groupid', value: v('groupid')},
+                                                cid: {key: 'cid', value: v('cid')},
+                                                points: {key: 'points', value: v('points')},
                                             }),
-                                            'search-results' === t &&
-                                                'lodging' === e.site_type.toLowerCase() &&
-                                                w({
-                                                    properties: {key: 'properties', value: g('properties')},
-                                                    utm_source: {key: 'utm_source', value: g('utm_source')},
-                                                    locationLabel: {key: 'locationlabel', value: g('locationlabel')},
-                                                    radius: {key: 'radius', value: g('radius')},
-                                                    groupId: {key: 'groupid', value: g('groupid')},
-                                                    cid: {key: 'cid', value: g('cid')},
-                                                    points: {key: 'points', value: g('points')},
-                                                }),
-                                            'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
-                                            (window.location.href = decodeURIComponent(b));
-                                    }),
+                                        'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        (window.location.href = decodeURIComponent(b));
+                                }),
                                     (function (e) {
                                         d.apply(this, arguments);
                                     })('input#city'),
@@ -5217,15 +5212,15 @@
                                             p = i.tabIndex,
                                             m = c.tabIndex,
                                             y = s.tabIndex,
-                                            g = u.tabIndex,
-                                            v = l.tabIndex,
+                                            v = u.tabIndex,
+                                            g = l.tabIndex,
                                             S = f.tabIndex;
                                         o.setAttribute('tabIndex', p),
                                             a.setAttribute('tabIndex', d),
                                             i.setAttribute('tabIndex', m),
                                             c.setAttribute('tabIndex', h),
-                                            s.setAttribute('tabIndex', g),
-                                            u.setAttribute('tabIndex', v),
+                                            s.setAttribute('tabIndex', v),
+                                            u.setAttribute('tabIndex', g),
                                             l.setAttribute('tabIndex', S),
                                             f.setAttribute('tabIndex', y);
                                     }
@@ -5536,16 +5531,16 @@
                             d = String(this),
                             h = i(u, RegExp),
                             y = u.unicode,
-                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
-                            v = new h(p ? u : '^(?:' + u.source + ')', g),
+                            v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
+                            g = new h(p ? u : '^(?:' + u.source + ')', v),
                             S = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === S) return [];
-                        if (0 === d.length) return null === s(v, d) ? [d] : [];
+                        if (0 === d.length) return null === s(g, d) ? [d] : [];
                         for (var b = 0, w = 0, _ = []; w < d.length; ) {
-                            v.lastIndex = p ? w : 0;
+                            g.lastIndex = p ? w : 0;
                             var x,
-                                A = s(v, p ? d : d.slice(w));
-                            if (null === A || (x = f(c(v.lastIndex + (p ? 0 : w)), d.length)) === b) w = a(d, w, y);
+                                A = s(g, p ? d : d.slice(w));
+                            if (null === A || (x = f(c(g.lastIndex + (p ? 0 : w)), d.length)) === b) w = a(d, w, y);
                             else {
                                 if ((_.push(d.slice(b, w)), _.length === S)) return _;
                                 for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === S)) return _;
@@ -5573,9 +5568,9 @@
             h = function () {
                 return this;
             };
-        e.exports = function (e, t, n, p, m, y, g) {
+        e.exports = function (e, t, n, p, m, y, v) {
             s(n, t, p);
-            var v,
+            var g,
                 S,
                 b,
                 w = function (e) {
@@ -5608,14 +5603,14 @@
                     (L = function () {
                         return M.call(this);
                     })),
-                (r && !g) || (!d && !A && k[f]) || a(k, f, L),
+                (r && !v) || (!d && !A && k[f]) || a(k, f, L),
                 (c[t] = L),
                 (c[_] = h),
                 m)
             )
-                if (((v = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), g)) for (S in v) S in k || i(k, S, v[S]);
-                else o(o.P + o.F * (d || A), t, v);
-            return v;
+                if (((g = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), v)) for (S in g) S in k || i(k, S, g[S]);
+                else o(o.P + o.F * (d || A), t, g);
+            return g;
         };
     },
     function (e, t, n) {
@@ -5703,17 +5698,17 @@
                 p,
                 m,
                 y,
-                g = d
+                v = d
                     ? function () {
                           return e;
                       }
                     : s(e),
-                v = r(n, f, t ? 2 : 1),
+                g = r(n, f, t ? 2 : 1),
                 S = 0;
-            if ('function' != typeof g) throw TypeError(e + ' is not iterable!');
-            if (i(g)) {
-                for (h = c(e.length); h > S; S++) if ((y = t ? v(a((p = e[S]))[0], p[1]) : v(e[S])) === u || y === l) return y;
-            } else for (m = g.call(e); !(p = m.next()).done; ) if ((y = o(m, v, p.value, t)) === u || y === l) return y;
+            if ('function' != typeof v) throw TypeError(e + ' is not iterable!');
+            if (i(v)) {
+                for (h = c(e.length); h > S; S++) if ((y = t ? g(a((p = e[S]))[0], p[1]) : g(e[S])) === u || y === l) return y;
+            } else for (m = v.call(e); !(p = m.next()).done; ) if ((y = o(m, g, p.value, t)) === u || y === l) return y;
         }).BREAK = u),
             (t.RETURN = l);
     },
@@ -5892,8 +5887,8 @@
             p = n(62),
             m = n(61),
             y = n(101),
-            g = n(102),
-            v = n(2),
+            v = n(102),
+            g = n(2),
             S = n(4),
             b = n(29),
             w = n(12),
@@ -5955,16 +5950,16 @@
             Z = function (e, t, n) {
                 return (
                     e === N && Z(F, t, n),
-                    v(e),
+                    g(e),
                     (t = _(t, !0)),
-                    v(n),
+                    g(n),
                     o(B, t)
                         ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, Y) || T(e, Y, x(1, {})), (e[Y][t] = !0)), G(e, t, n))
                         : T(e, t, n)
                 );
             },
             J = function (e, t) {
-                v(e);
+                g(e);
                 for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
@@ -6062,7 +6057,7 @@
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
                             if (((n = t = r[1]), (S(t) || void 0 !== e) && !V(e)))
                                 return (
-                                    g(t) ||
+                                    v(t) ||
                                         (t = function (e, t) {
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),

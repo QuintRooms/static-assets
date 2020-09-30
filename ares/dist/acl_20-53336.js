@@ -3241,96 +3241,91 @@
                                 function v(e) {
                                     if (l.has(e)) return l.get(e);
                                 }
-                                console.log(e),
-                                    document.querySelector('form#searchForm').addEventListener('submit', function (i) {
-                                        i.preventDefault();
-                                        var a,
-                                            s,
-                                            u,
-                                            f,
-                                            d,
-                                            h,
-                                            g = window.location.origin,
-                                            S = ''
-                                                .concat(g, '/v6/?type=geo&siteid=')
-                                                .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
-                                                .concat(e.distance_unit),
-                                            b = new URL(S);
-                                        function w(e) {
-                                            Object.keys(e).forEach(function (t) {
-                                                '' !== e[t].value &&
-                                                    null !== e[t].value &&
-                                                    void 0 !== e[t].value &&
-                                                    void 0 !== e[t].key &&
-                                                    b.searchParams.append(e[t].key, e[t].value);
-                                            });
-                                        }
-                                        'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')))
-                                            : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                            : 16980 === e.affiliate_id || 60278 === e.site_id
-                                            ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                            : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = P(f).diff(P(u), 'days')),
-                                              (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
-                                            'standard' !== n.getMetaTagContent('theme') &&
-                                                ((c.check_in_value = document.querySelector('input#theCheckIn').value),
-                                                (c.check_out_value = document.querySelector('input#theCheckOut').value)),
-                                            r
-                                                ? ((a = r.lat), (s = r.lng))
-                                                : o
-                                                ? ((a = o.lat), (s = o.lng))
-                                                : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
+                                document.querySelector('form#searchForm').addEventListener('submit', function (i) {
+                                    i.preventDefault();
+                                    var a,
+                                        s,
+                                        u,
+                                        f,
+                                        d,
+                                        h,
+                                        g = window.location.origin,
+                                        S = ''
+                                            .concat(g, '/v6/?type=geo&siteid=')
+                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                            .concat(e.distance_unit),
+                                        b = new URL(S);
+                                    function w(e) {
+                                        Object.keys(e).forEach(function (t) {
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && b.searchParams.append(e[t].key, e[t].value);
+                                        });
+                                    }
+                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')))
+                                        : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : 16980 === e.affiliate_id || 60278 === e.site_id
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
+                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (d = P(f).diff(P(u), 'days')),
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        'standard' !== n.getMetaTagContent('theme') &&
+                                            ((c.check_in_value = document.querySelector('input#theCheckIn').value),
+                                            (c.check_out_value = document.querySelector('input#theCheckOut').value)),
+                                        r
+                                            ? ((a = r.lat), (s = r.lng))
+                                            : o
+                                            ? ((a = o.lat), (s = o.lng))
+                                            : r || o || 'search-results' !== t || ((a = l.get('latitude')), (s = l.get('longitude'))),
+                                        w({
+                                            longitude: {key: 'longitude', value: s},
+                                            latitude: {key: 'latitude', value: a},
+                                            destination: {
+                                                key: 'destination',
+                                                value:
+                                                    ((h = 'input#address-input'),
+                                                    null !== document.querySelector(h).value
+                                                        ? document.querySelector(h).value
+                                                        : l.has('destination')
+                                                        ? l.get('destination')
+                                                        : void 0),
+                                            },
+                                            checkin: {key: 'checkin', value: u},
+                                            nights: {key: 'nights', value: d},
+                                            rooms: {key: 'rooms', value: p('select#rooms')},
+                                            adults: {key: 'adults', value: p('select#adults')},
+                                            currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
+                                            amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            optionalHotel: {key: 'hotelname', value: m()},
+                                        }),
+                                        'search-results' === t &&
+                                            'lodging' === e.site_type.toLowerCase() &&
                                             w({
-                                                longitude: {key: 'longitude', value: s},
-                                                latitude: {key: 'latitude', value: a},
-                                                destination: {
-                                                    key: 'destination',
-                                                    value:
-                                                        ((h = 'input#address-input'),
-                                                        null !== document.querySelector(h).value
-                                                            ? document.querySelector(h).value
-                                                            : l.has('destination')
-                                                            ? l.get('destination')
-                                                            : void 0),
-                                                },
-                                                checkin: {key: 'checkin', value: u},
-                                                nights: {key: 'nights', value: d},
-                                                rooms: {key: 'rooms', value: p('select#rooms')},
-                                                adults: {key: 'adults', value: p('select#adults')},
-                                                currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
-                                                amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                                stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                                propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                                optionalHotel: {key: 'hotelname', value: m()},
+                                                properties: {key: 'properties', value: v('properties')},
+                                                utm_source: {key: 'utm_source', value: v('utm_source')},
+                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
+                                                radius: {key: 'radius', value: v('radius')},
+                                                groupId: {key: 'groupid', value: v('groupid')},
+                                                cid: {key: 'cid', value: v('cid')},
+                                                points: {key: 'points', value: v('points')},
                                             }),
-                                            'search-results' === t &&
-                                                'lodging' === e.site_type.toLowerCase() &&
-                                                w({
-                                                    properties: {key: 'properties', value: v('properties')},
-                                                    utm_source: {key: 'utm_source', value: v('utm_source')},
-                                                    locationLabel: {key: 'locationlabel', value: v('locationlabel')},
-                                                    radius: {key: 'radius', value: v('radius')},
-                                                    groupId: {key: 'groupid', value: v('groupid')},
-                                                    cid: {key: 'cid', value: v('cid')},
-                                                    points: {key: 'points', value: v('points')},
-                                                }),
-                                            'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
-                                            (window.location.href = decodeURIComponent(b));
-                                    }),
+                                        'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        (window.location.href = decodeURIComponent(b));
+                                }),
                                     (function (e) {
                                         d.apply(this, arguments);
                                     })('input#city'),

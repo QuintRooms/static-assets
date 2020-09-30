@@ -390,25 +390,25 @@
             x = s.TypeError,
             A = s.process,
             k = A && A.versions,
-            M = (k && k.v8) || '',
-            L = s.Promise,
+            L = (k && k.v8) || '',
+            M = s.Promise,
             q = 'process' == l(A),
             E = function () {},
             C = (o = b.f),
             T = !!(function () {
                 try {
-                    var e = L.resolve(1),
+                    var e = M.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
                             e(E, E);
                         });
-                    return (q || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== M.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (q || 'function' == typeof PromiseRejectionEvent) && e.then(E) instanceof t && 0 !== L.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             P = function (e) {
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
-            O = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -427,7 +427,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && Y(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && D(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -439,11 +439,11 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && R(e);
+                        (e._c = []), (e._n = !1), t && !e._h && O(e);
                     });
                 }
             },
-            R = function (e) {
+            O = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
@@ -469,17 +469,17 @@
             j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            Y = function (e) {
+            D = function (e) {
                 g.call(s, function () {
                     var t;
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            D = function (e) {
-                var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), O(t, !0));
-            },
             H = function (e) {
+                var t = this;
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+            },
+            Y = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -490,38 +490,38 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(H, r, 1), u(D, r, 1));
+                                      t.call(e, u(Y, r, 1), u(H, r, 1));
                                   } catch (e) {
-                                      D.call(r, e);
+                                      H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), O(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
-                        D.call({_w: n, _d: !1}, e);
+                        H.call({_w: n, _d: !1}, e);
                     }
                 }
             };
         T ||
-            ((L = function (e) {
-                p(this, L, 'Promise', '_h'), h(e), r.call(this);
+            ((M = function (e) {
+                p(this, M, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(H, this, 1), u(D, this, 1));
+                    e(u(Y, this, 1), u(H, this, 1));
                 } catch (e) {
-                    D.call(this, e);
+                    H.call(this, e);
                 }
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(85)(L.prototype, {
+            }).prototype = n(85)(M.prototype, {
                 then: function (e, t) {
-                    var n = C(y(this, L));
+                    var n = C(y(this, M));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
                         (n.domain = q ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && O(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -531,13 +531,13 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(D, e, 1));
+                (this.promise = e), (this.resolve = u(Y, e, 1)), (this.reject = u(H, e, 1));
             }),
             (b.f = C = function (e) {
-                return e === L || e === a ? new i(e) : o(e);
+                return e === M || e === a ? new i(e) : o(e);
             })),
-            f(f.G + f.W + f.F * !T, {Promise: L}),
-            n(28)(L, 'Promise'),
+            f(f.G + f.W + f.F * !T, {Promise: M}),
+            n(28)(M, 'Promise'),
             n(86)('Promise'),
             (a = n(11).Promise),
             f(f.S + f.F * !T, 'Promise', {
@@ -548,7 +548,7 @@
             }),
             f(f.S + f.F * (c || !T), 'Promise', {
                 resolve: function (e) {
-                    return _(c && this === a ? L : this, e);
+                    return _(c && this === a ? M : this, e);
                 },
             }),
             f(
@@ -557,7 +557,7 @@
                         !(
                             T &&
                             n(87)(function (e) {
-                                L.all(e).catch(E);
+                                M.all(e).catch(E);
                             })
                         ),
                 'Promise',
@@ -2167,13 +2167,13 @@
                     }
                     for (var S, w = '', _ = 0, x = 0; x < v.length; x++) {
                         b = v[x];
-                        for (var A = String(b[0]), k = u(l(a(b.index), d.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
+                        for (var A = String(b[0]), k = u(l(a(b.index), d.length), 0), L = [], M = 1; M < b.length; M++) L.push(void 0 === (S = b[M]) ? S : String(S));
                         var q = b.groups;
                         if (h) {
-                            var E = [A].concat(M, k, d);
+                            var E = [A].concat(L, k, d);
                             void 0 !== q && E.push(q);
                             var C = String(t.apply(void 0, E));
-                        } else C = m(A, d, k, M, q, t);
+                        } else C = m(A, d, k, L, q, t);
                         k >= _ && ((w += d.slice(_, k) + C), (_ = k + A.length));
                     }
                     return w + d.slice(_);
@@ -3144,9 +3144,9 @@
             }
         }
         var P = n(40),
-            O = n(67);
-        P.extend(O);
-        var R = (function () {
+            R = n(67);
+        P.extend(R);
+        var O = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -3261,23 +3261,18 @@
                                         });
                                     }
                                     'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (d = P(f).diff(P(u), 'days')))
                                         : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (d = P(f).diff(P(u), 'days')),
                                           (u = P(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
                                           (f = P(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : 16980 === e.affiliate_id || 60278 === e.site_id
-                                        ? ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                        : (16980 === e.affiliate_id || e.site_id,
+                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
                                           (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                          (d = P(f).diff(P(u), 'days')),
-                                          (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                        : ((u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (d = P(f).diff(P(u), 'days')),
                                           (u = P(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (f = P(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
@@ -3393,7 +3388,7 @@
                 );
             })(),
             j = n(21);
-        function Y(e, t, n, r, o, i, a) {
+        function D(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
                     s = c.value;
@@ -3402,23 +3397,23 @@
             }
             c.done ? t(s) : Promise.resolve(s).then(r, o);
         }
-        function D(e) {
+        function H(e) {
             return function () {
                 var t = this,
                     n = arguments;
                 return new Promise(function (r, o) {
                     var i = e.apply(t, n);
                     function a(e) {
-                        Y(i, r, o, a, c, 'next', e);
+                        D(i, r, o, a, c, 'next', e);
                     }
                     function c(e) {
-                        Y(i, r, o, a, c, 'throw', e);
+                        D(i, r, o, a, c, 'throw', e);
                     }
                     a(void 0);
                 });
             };
         }
-        function H(e, t) {
+        function Y(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
@@ -3429,7 +3424,7 @@
             F = n(67);
         B.extend(F);
         var N = new q.a(),
-            $ = new R(),
+            $ = new O(),
             U = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -3458,7 +3453,7 @@
                                     N.ieForEachPolyfill(),
                                     this.getSiteID().then(
                                         (function () {
-                                            var t = D(
+                                            var t = H(
                                                 regeneratorRuntime.mark(function t(n) {
                                                     return regeneratorRuntime.wrap(function (t) {
                                                         for (;;)
@@ -3488,7 +3483,7 @@
                                                                 case 9:
                                                                     'cug' === e.site_config.site_type &&
                                                                         N.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                            D(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function e() {
                                                                                     return regeneratorRuntime.wrap(function (e) {
                                                                                         for (;;)
@@ -3593,7 +3588,7 @@
                                                                         'search-results' === e.page_name && $.init(e.site_config, e.page_name, N),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
-                                                                            D(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -3620,7 +3615,7 @@
                                                                         ),
                                                                         jQuery(document).on(
                                                                             'ratesReadyEvent',
-                                                                            D(
+                                                                            H(
                                                                                 regeneratorRuntime.mark(function t() {
                                                                                     return regeneratorRuntime.wrap(function (t) {
                                                                                         for (;;)
@@ -3647,7 +3642,7 @@
                                                                         ),
                                                                         N.waitForSelectorInDOM('.pollingFinished').then(
                                                                             (function () {
-                                                                                var t = D(
+                                                                                var t = H(
                                                                                     regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -3814,7 +3809,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((d = D(
+                                ((d = H(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -3845,7 +3840,7 @@
                         {
                             key: 'getCurrency',
                             value:
-                                ((f = D(
+                                ((f = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4027,7 +4022,7 @@
                         {
                             key: 'buildMobileMenu',
                             value:
-                                ((l = D(
+                                ((l = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4379,7 +4374,7 @@
                         {
                             key: 'buildCurrencyDropdown',
                             value:
-                                ((u = D(
+                                ((u = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -4578,7 +4573,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((s = D(
+                                ((s = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -4762,7 +4757,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((c = D(
+                                ((c = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4815,7 +4810,7 @@
                                     return i.apply(this, arguments);
                                 }
                                 function i() {
-                                    return (i = D(
+                                    return (i = H(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -4871,7 +4866,7 @@
                                     return s.apply(this, arguments);
                                 }
                                 function s() {
-                                    return (s = D(
+                                    return (s = H(
                                         regeneratorRuntime.mark(function t() {
                                             return regeneratorRuntime.wrap(function (t) {
                                                 for (;;)
@@ -4903,7 +4898,7 @@
                                         r + 1 === e.length && (t.style.display = 'none'));
                                 }
                                 function l() {
-                                    return (l = D(
+                                    return (l = H(
                                         regeneratorRuntime.mark(function e() {
                                             var n, o, i;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -5279,7 +5274,7 @@
                         {
                             key: 'replaceHTMLWithFile',
                             value:
-                                ((a = D(
+                                ((a = H(
                                     regeneratorRuntime.mark(function e(t, n) {
                                         var r, o;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -5309,7 +5304,7 @@
                         {
                             key: 'appendMemberTokenForCug',
                             value:
-                                ((i = D(
+                                ((i = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o;
                                         return regeneratorRuntime.wrap(
@@ -5368,7 +5363,7 @@
                         {
                             key: 'setCheckDatesToReadOnlyOnMobile',
                             value:
-                                ((o = D(
+                                ((o = H(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(
@@ -5458,8 +5453,8 @@
                                     (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                             },
                         },
-                    ]) && H(t.prototype, n),
-                    r && H(t, r),
+                    ]) && Y(t.prototype, n),
+                    r && Y(t, r),
                     e
                 );
             })();
@@ -5590,25 +5585,25 @@
                 x = 'values' == m,
                 A = !1,
                 k = e.prototype,
-                M = k[f] || k['@@iterator'] || (m && k[m]),
-                L = M || w(m),
-                q = m ? (x ? w('entries') : L) : void 0,
-                E = ('Array' == t && k.entries) || M;
+                L = k[f] || k['@@iterator'] || (m && k[m]),
+                M = L || w(m),
+                q = m ? (x ? w('entries') : M) : void 0,
+                E = ('Array' == t && k.entries) || L;
             if (
                 (E && (S = l(E.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[f] || a(S, f, h)),
                 x &&
-                    M &&
-                    'values' !== M.name &&
+                    L &&
+                    'values' !== L.name &&
                     ((A = !0),
-                    (L = function () {
-                        return M.call(this);
+                    (M = function () {
+                        return L.call(this);
                     })),
-                (r && !g) || (!d && !A && k[f]) || a(k, f, L),
-                (c[t] = L),
+                (r && !g) || (!d && !A && k[f]) || a(k, f, M),
+                (c[t] = M),
                 (c[_] = h),
                 m)
             )
-                if (((v = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), g)) for (b in v) b in k || i(k, b, v[b]);
+                if (((v = {values: x ? M : w('values'), keys: y ? M : w('keys'), entries: q}), g)) for (b in v) b in k || i(k, b, v[b]);
                 else o(o.P + o.F * (d || A), t, v);
             return v;
         };
@@ -5896,24 +5891,24 @@
             x = n(30),
             A = n(42),
             k = n(103),
-            M = n(65),
-            L = n(63),
+            L = n(65),
+            M = n(63),
             q = n(6),
             E = n(16),
-            C = M.f,
+            C = L.f,
             T = q.f,
             P = k.f,
-            O = r.Symbol,
-            R = r.JSON,
-            j = R && R.stringify,
-            Y = h('_hidden'),
-            D = h('toPrimitive'),
-            H = {}.propertyIsEnumerable,
+            R = r.Symbol,
+            O = r.JSON,
+            j = O && O.stringify,
+            D = h('_hidden'),
+            H = h('toPrimitive'),
+            Y = {}.propertyIsEnumerable,
             I = l('symbol-registry'),
             B = l('symbols'),
             F = l('op-symbols'),
             N = Object.prototype,
-            $ = 'function' == typeof O && !!L.f,
+            $ = 'function' == typeof R && !!M.f,
             U = r.QObject,
             W = !U || !U.prototype || !U.prototype.findChild,
             G =
@@ -5936,16 +5931,16 @@
                       }
                     : T,
             z = function (e) {
-                var t = (B[e] = A(O.prototype));
+                var t = (B[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
-                $ && 'symbol' == typeof O.iterator
+                $ && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof O;
+                          return e instanceof R;
                       },
             Z = function (e, t, n) {
                 return (
@@ -5954,7 +5949,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(B, t)
-                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, Y) || T(e, Y, x(1, {})), (e[Y][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : T(e, t, n)
                 );
             },
@@ -5964,17 +5959,17 @@
                 return e;
             },
             K = function (e) {
-                var t = H.call(this, (e = _(e, !0)));
-                return !(this === N && o(B, e) && !o(F, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, Y) && this[Y][e])) || t);
+                var t = Y.call(this, (e = _(e, !0)));
+                return !(this === N && o(B, e) && !o(F, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, D) && this[D][e])) || t);
             },
             Q = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(B, t) || o(F, t))) {
                     var n = C(e, t);
-                    return !n || !o(B, t) || (o(e, Y) && e[Y][t]) || (n.enumerable = !0), n;
+                    return !n || !o(B, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(B, (t = n[i++])) || t == Y || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(B, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -5983,11 +5978,11 @@
             };
         $ ||
             (c(
-                (O = function () {
-                    if (this instanceof O) throw TypeError('Symbol is not a constructor!');
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = d(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(F, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(F, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -5996,22 +5991,22 @@
                     return this._k;
                 }
             ),
-            (M.f = Q),
+            (L.f = Q),
             (q.f = Z),
             (n(64).f = k.f = X),
             (n(31).f = K),
-            (L.f = ee),
+            (M.f = ee),
             i && !n(19) && c(N, 'propertyIsEnumerable', K, !0),
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: O});
+            a(a.G + a.W + a.F * !$, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = E(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = O(e));
+                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
@@ -6035,20 +6030,20 @@
                 getOwnPropertySymbols: ee,
             });
         var ie = u(function () {
-            L.f(1);
+            M.f(1);
         });
         a(a.S + a.F * ie, 'Object', {
             getOwnPropertySymbols: function (e) {
-                return L.f(S(e));
+                return M.f(S(e));
             },
         }),
-            R &&
+            O &&
                 a(
                     a.S +
                         a.F *
                             (!$ ||
                                 u(function () {
-                                    var e = O();
+                                    var e = R();
                                     return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
@@ -6062,13 +6057,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(R, r)
+                                    j.apply(O, r)
                                 );
                         },
                     }
                 ),
-            O.prototype[D] || n(8)(O.prototype, D, O.prototype.valueOf),
-            f(O, 'Symbol'),
+            R.prototype[H] || n(8)(R.prototype, H, R.prototype.valueOf),
+            f(R, 'Symbol'),
             f(Math, 'Math', !0),
             f(r.JSON, 'JSON', !0);
     },

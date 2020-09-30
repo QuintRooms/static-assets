@@ -2325,23 +2325,18 @@
                                         });
                                     }
                                     'standard' === o.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')))
                                         : 'mandarin' === o.getMetaTagContent('theme') || 'tw_mandarin' === o.getMetaTagContent('theme')
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : 16980 === e.affiliate_id || 60278 === e.site_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                        : (16980 === e.affiliate_id || e.site_id,
+                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                          (f = i(d).diff(i(l), 'days')),
-                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                        : ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
@@ -5558,11 +5553,11 @@
                         M ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
-                D = function (e) {
+                F = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
-                F = function (e) {
+                B = function (e) {
                     var t,
                         o = this;
                     if (!o._d) {
@@ -5573,14 +5568,14 @@
                                 ? _(function () {
                                       var n = {_w: o, _d: !1};
                                       try {
-                                          t.call(e, u(F, n, 1), u(D, n, 1));
+                                          t.call(e, u(B, n, 1), u(F, n, 1));
                                       } catch (e) {
-                                          D.call(n, e);
+                                          F.call(n, e);
                                       }
                                   })
                                 : ((o._v = e), (o._s = 1), P(o, !1));
                         } catch (e) {
-                            D.call({_w: o, _d: !1}, e);
+                            F.call({_w: o, _d: !1}, e);
                         }
                     }
                 };
@@ -5588,9 +5583,9 @@
                 ((q = function (e) {
                     p(this, q, 'Promise', '_h'), f(e), n.call(this);
                     try {
-                        e(u(F, this, 1), u(D, this, 1));
+                        e(u(B, this, 1), u(F, this, 1));
                     } catch (e) {
-                        D.call(this, e);
+                        F.call(this, e);
                     }
                 }),
                 ((n = function (e) {
@@ -5614,7 +5609,7 @@
                 })),
                 (s = function () {
                     var e = new n();
-                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
+                    (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(F, e, 1));
                 }),
                 (v.f = C = function (e) {
                     return e === q || e === i ? new s(e) : r(e);
@@ -6071,9 +6066,9 @@
                 R = n.JSON,
                 O = R && R.stringify,
                 H = f('_hidden'),
-                D = f('toPrimitive'),
-                F = {}.propertyIsEnumerable,
-                B = l('symbol-registry'),
+                F = f('toPrimitive'),
+                B = {}.propertyIsEnumerable,
+                D = l('symbol-registry'),
                 I = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
@@ -6129,7 +6124,7 @@
                     return e;
                 },
                 Q = function (e) {
-                    var t = F.call(this, (e = S(e, !0)));
+                    var t = B.call(this, (e = S(e, !0)));
                     return !(this === N && r(I, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(I, e) || (r(this, H) && this[H][e])) || t);
                 },
                 K = function (e, t) {
@@ -6176,11 +6171,11 @@
             for (var ne = L(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(B, (e += '')) ? B[e] : (B[e] = P(e));
+                    return r(D, (e += '')) ? D[e] : (D[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in B) if (B[t] === e) return t;
+                    for (var t in D) if (D[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -6232,7 +6227,7 @@
                             },
                         }
                     ),
-                P.prototype[D] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, D, P.prototype.valueOf),
+                P.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, F, P.prototype.valueOf),
                 d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);

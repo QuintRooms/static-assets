@@ -2325,23 +2325,18 @@
                                         });
                                     }
                                     'standard' === o.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')))
                                         : 'mandarin' === o.getMetaTagContent('theme') || 'tw_mandarin' === o.getMetaTagContent('theme')
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : 16980 === e.affiliate_id || 60278 === e.site_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                        : (16980 === e.affiliate_id || e.site_id,
+                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                          (f = i(d).diff(i(l), 'days')),
-                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                        : ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
@@ -4459,10 +4454,10 @@
                     A = e.prototype,
                     k = A[d] || A['@@iterator'] || (h && A[h]),
                     M = k || b(h),
-                    q = h ? (w ? b('entries') : M) : void 0,
-                    L = ('Array' == t && A.entries) || k;
+                    L = h ? (w ? b('entries') : M) : void 0,
+                    q = ('Array' == t && A.entries) || k;
                 if (
-                    (L && (j = l(L.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
+                    (q && (j = l(q.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
                         k &&
                         'values' !== k.name &&
@@ -4475,7 +4470,7 @@
                     (a[S] = f),
                     h)
                 )
-                    if (((_ = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (v in _) v in A || s(A, v, _[v]);
+                    if (((_ = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: L}), g)) for (v in _) v in A || s(A, v, _[v]);
                     else r(r.P + r.F * (m || x), t, _);
                 return _;
             };
@@ -5475,16 +5470,16 @@
                 A = x && x.versions,
                 k = (A && A.v8) || '',
                 M = c.Promise,
-                q = 'process' == l(x),
-                L = function () {},
+                L = 'process' == l(x),
+                q = function () {},
                 C = (r = v.f),
                 T = !!(function () {
                     try {
                         var e = M.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(L, L);
+                                e(q, q);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(L) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (L || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 E = function (e) {
@@ -5536,13 +5531,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    q
+                                    L
                                         ? x.emit('unhandledRejection', r, e)
                                         : (o = c.onunhandledrejection)
                                         ? o({promise: e, reason: r})
                                         : (n = c.console) && n.error && n.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = q || O(e) ? 2 : 1)),
+                                (e._h = L || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5555,14 +5550,14 @@
                 F = function (e) {
                     g.call(c, function () {
                         var t;
-                        q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        L ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
                 H = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
                 },
-                D = function (e) {
+                B = function (e) {
                     var t,
                         o = this;
                     if (!o._d) {
@@ -5573,7 +5568,7 @@
                                 ? _(function () {
                                       var n = {_w: o, _d: !1};
                                       try {
-                                          t.call(e, u(D, n, 1), u(H, n, 1));
+                                          t.call(e, u(B, n, 1), u(H, n, 1));
                                       } catch (e) {
                                           H.call(n, e);
                                       }
@@ -5588,7 +5583,7 @@
                 ((M = function (e) {
                     p(this, M, 'Promise', '_h'), f(e), n.call(this);
                     try {
-                        e(u(D, this, 1), u(H, this, 1));
+                        e(u(B, this, 1), u(H, this, 1));
                     } catch (e) {
                         H.call(this, e);
                     }
@@ -5601,7 +5596,7 @@
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
-                            (o.domain = q ? x.domain : void 0),
+                            (o.domain = L ? x.domain : void 0),
                             this._c.push(o),
                             this._a && this._a.push(o),
                             this._s && R(this, !1),
@@ -5614,7 +5609,7 @@
                 })),
                 (s = function () {
                     var e = new n();
-                    (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(H, e, 1));
+                    (this.promise = e), (this.resolve = u(B, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (v.f = C = function (e) {
                     return e === M || e === i ? new s(e) : r(e);
@@ -5640,7 +5635,7 @@
                             !(
                                 T &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(L);
+                                    M.all(e).catch(q);
                                 })
                             ),
                     'Promise',
@@ -5815,12 +5810,12 @@
                         for (var j, b = '', S = 0, w = 0; w < _.length; w++) {
                             v = _[w];
                             for (var x = String(v[0]), A = u(l(i(v.index), m.length), 0), k = [], M = 1; M < v.length; M++) k.push(void 0 === (j = v[M]) ? j : String(j));
-                            var q = v.groups;
+                            var L = v.groups;
                             if (f) {
-                                var L = [x].concat(k, A, m);
-                                void 0 !== q && L.push(q);
-                                var C = String(t.apply(void 0, L));
-                            } else C = h(x, m, A, k, q, t);
+                                var q = [x].concat(k, A, m);
+                                void 0 !== L && q.push(L);
+                                var C = String(t.apply(void 0, q));
+                            } else C = h(x, m, A, k, L, t);
                             A >= S && ((b += m.slice(S, A) + C), (S = A + x.length));
                         }
                         return b + m.slice(S);
@@ -6062,18 +6057,18 @@
                 A = o(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 k = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 M = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                q = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                L = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                L = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                q = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 C = k.f,
-                T = q.f,
+                T = L.f,
                 E = A.f,
                 R = n.Symbol,
                 P = n.JSON,
                 O = P && P.stringify,
                 F = f('_hidden'),
                 H = f('toPrimitive'),
-                D = {}.propertyIsEnumerable,
-                B = l('symbol-registry'),
+                B = {}.propertyIsEnumerable,
+                D = l('symbol-registry'),
                 I = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
@@ -6129,7 +6124,7 @@
                     return e;
                 },
                 Q = function (e) {
-                    var t = D.call(this, (e = S(e, !0)));
+                    var t = B.call(this, (e = S(e, !0)));
                     return !(this === N && r(I, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(I, e) || (r(this, F) && this[F][e])) || t);
                 },
                 K = function (e, t) {
@@ -6162,7 +6157,7 @@
                     }
                 ),
                 (k.f = K),
-                (q.f = Z),
+                (L.f = Z),
                 (o(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = A.f = X),
                 (o(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = Q),
                 (M.f = ee),
@@ -6173,14 +6168,14 @@
                 i(i.G + i.W + i.F * !U, {Symbol: R});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
-            for (var ne = L(f.store), re = 0; ne.length > re; ) h(ne[re++]);
+            for (var ne = q(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(B, (e += '')) ? B[e] : (B[e] = R(e));
+                    return r(D, (e += '')) ? D[e] : (D[e] = R(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in B) if (B[t] === e) return t;
+                    for (var t in D) if (D[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;

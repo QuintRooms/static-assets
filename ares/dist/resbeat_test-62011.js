@@ -2325,23 +2325,18 @@
                                         });
                                     }
                                     'standard' === o.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')))
                                         : 'mandarin' === o.getMetaTagContent('theme') || 'tw_mandarin' === o.getMetaTagContent('theme')
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
+                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                        : 16980 === e.affiliate_id || 60278 === e.site_id
-                                        ? ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                        : (16980 === e.affiliate_id || e.site_id,
+                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                          (f = i(d).diff(i(l), 'days')),
-                                          (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                        : ((l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                          (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (f = i(d).diff(i(l), 'days')),
                                           (l = i(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (d = i(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
@@ -4458,8 +4453,8 @@
                     x = !1,
                     A = e.prototype,
                     k = A[d] || A['@@iterator'] || (h && A[h]),
-                    M = k || b(h),
-                    L = h ? (w ? b('entries') : M) : void 0,
+                    L = k || b(h),
+                    M = h ? (w ? b('entries') : L) : void 0,
                     q = ('Array' == t && A.entries) || k;
                 if (
                     (q && (j = l(q.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), n || 'function' == typeof j[d] || i(j, d, f)),
@@ -4467,15 +4462,15 @@
                         k &&
                         'values' !== k.name &&
                         ((x = !0),
-                        (M = function () {
+                        (L = function () {
                             return k.call(this);
                         })),
-                    (n && !g) || (!m && !x && A[d]) || i(A, d, M),
-                    (a[t] = M),
+                    (n && !g) || (!m && !x && A[d]) || i(A, d, L),
+                    (a[t] = L),
                     (a[S] = f),
                     h)
                 )
-                    if (((v = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: L}), g)) for (_ in v) _ in A || s(A, _, v[_]);
+                    if (((v = {values: w ? L : b('values'), keys: y ? L : b('keys'), entries: M}), g)) for (_ in v) _ in A || s(A, _, v[_]);
                     else r(r.P + r.F * (m || x), t, v);
                 return v;
             };
@@ -5474,17 +5469,17 @@
                 x = c.process,
                 A = x && x.versions,
                 k = (A && A.v8) || '',
-                M = c.Promise,
-                L = 'process' == l(x),
+                L = c.Promise,
+                M = 'process' == l(x),
                 q = function () {},
                 C = (r = _.f),
                 T = !!(function () {
                     try {
-                        var e = M.resolve(1),
+                        var e = L.resolve(1),
                             t = ((e.constructor = {})[o(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
                                 e(q, q);
                             });
-                        return (L || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (M || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== k.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 E = function (e) {
@@ -5536,13 +5531,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    L
+                                    M
                                         ? x.emit('unhandledRejection', r, e)
                                         : (o = c.onunhandledrejection)
                                         ? o({promise: e, reason: r})
                                         : (n = c.console) && n.error && n.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = L || O(e) ? 2 : 1)),
+                                (e._h = M || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5555,14 +5550,14 @@
                 H = function (e) {
                     g.call(c, function () {
                         var t;
-                        L ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        M ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
-                D = function (e) {
+                F = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
-                F = function (e) {
+                D = function (e) {
                     var t,
                         o = this;
                     if (!o._d) {
@@ -5573,35 +5568,35 @@
                                 ? v(function () {
                                       var n = {_w: o, _d: !1};
                                       try {
-                                          t.call(e, u(F, n, 1), u(D, n, 1));
+                                          t.call(e, u(D, n, 1), u(F, n, 1));
                                       } catch (e) {
-                                          D.call(n, e);
+                                          F.call(n, e);
                                       }
                                   })
                                 : ((o._v = e), (o._s = 1), P(o, !1));
                         } catch (e) {
-                            D.call({_w: o, _d: !1}, e);
+                            F.call({_w: o, _d: !1}, e);
                         }
                     }
                 };
             T ||
-                ((M = function (e) {
-                    p(this, M, 'Promise', '_h'), f(e), n.call(this);
+                ((L = function (e) {
+                    p(this, L, 'Promise', '_h'), f(e), n.call(this);
                     try {
-                        e(u(F, this, 1), u(D, this, 1));
+                        e(u(D, this, 1), u(F, this, 1));
                     } catch (e) {
-                        D.call(this, e);
+                        F.call(this, e);
                     }
                 }),
                 ((n = function (e) {
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-                }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(M.prototype, {
+                }).prototype = o(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(L.prototype, {
                     then: function (e, t) {
-                        var o = C(y(this, M));
+                        var o = C(y(this, L));
                         return (
                             (o.ok = 'function' != typeof e || e),
                             (o.fail = 'function' == typeof t && t),
-                            (o.domain = L ? x.domain : void 0),
+                            (o.domain = M ? x.domain : void 0),
                             this._c.push(o),
                             this._a && this._a.push(o),
                             this._s && P(this, !1),
@@ -5614,13 +5609,13 @@
                 })),
                 (s = function () {
                     var e = new n();
-                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
+                    (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(F, e, 1));
                 }),
                 (_.f = C = function (e) {
-                    return e === M || e === i ? new s(e) : r(e);
+                    return e === L || e === i ? new s(e) : r(e);
                 })),
-                d(d.G + d.W + d.F * !T, {Promise: M}),
-                o(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(M, 'Promise'),
+                d(d.G + d.W + d.F * !T, {Promise: L}),
+                o(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(L, 'Promise'),
                 o(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = o(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !T, 'Promise', {
@@ -5631,7 +5626,7 @@
                 }),
                 d(d.S + d.F * (a || !T), 'Promise', {
                     resolve: function (e) {
-                        return S(a && this === i ? M : this, e);
+                        return S(a && this === i ? L : this, e);
                     },
                 }),
                 d(
@@ -5640,7 +5635,7 @@
                             !(
                                 T &&
                                 o(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(q);
+                                    L.all(e).catch(q);
                                 })
                             ),
                     'Promise',
@@ -5814,13 +5809,13 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < v.length; w++) {
                             _ = v[w];
-                            for (var x = String(_[0]), A = u(l(i(_.index), m.length), 0), k = [], M = 1; M < _.length; M++) k.push(void 0 === (j = _[M]) ? j : String(j));
-                            var L = _.groups;
+                            for (var x = String(_[0]), A = u(l(i(_.index), m.length), 0), k = [], L = 1; L < _.length; L++) k.push(void 0 === (j = _[L]) ? j : String(j));
+                            var M = _.groups;
                             if (f) {
                                 var q = [x].concat(k, A, m);
-                                void 0 !== L && q.push(L);
+                                void 0 !== M && q.push(M);
                                 var C = String(t.apply(void 0, q));
-                            } else C = h(x, m, A, k, L, t);
+                            } else C = h(x, m, A, k, M, t);
                             A >= S && ((b += m.slice(S, A) + C), (S = A + x.length));
                         }
                         return b + m.slice(S);
@@ -6061,23 +6056,23 @@
                 x = o(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
                 A = o(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 k = o(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
-                M = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                L = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                L = o(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
+                M = o(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 q = o(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 C = k.f,
-                T = L.f,
+                T = M.f,
                 E = A.f,
                 P = n.Symbol,
                 R = n.JSON,
                 O = R && R.stringify,
                 H = f('_hidden'),
-                D = f('toPrimitive'),
-                F = {}.propertyIsEnumerable,
+                F = f('toPrimitive'),
+                D = {}.propertyIsEnumerable,
                 B = l('symbol-registry'),
                 I = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
-                U = 'function' == typeof P && !!M.f,
+                U = 'function' == typeof P && !!L.f,
                 $ = n.QObject,
                 W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
@@ -6129,7 +6124,7 @@
                     return e;
                 },
                 Q = function (e) {
-                    var t = F.call(this, (e = S(e, !0)));
+                    var t = D.call(this, (e = S(e, !0)));
                     return !(this === N && r(I, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(I, e) || (r(this, H) && this[H][e])) || t);
                 },
                 K = function (e, t) {
@@ -6162,10 +6157,10 @@
                     }
                 ),
                 (k.f = K),
-                (L.f = Z),
+                (M.f = Z),
                 (o(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = A.f = X),
                 (o(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = Q),
-                (M.f = ee),
+                (L.f = ee),
                 s && !o(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', Q, !0),
                 (p.f = function (e) {
                     return V(f(e));
@@ -6200,11 +6195,11 @@
                     getOwnPropertySymbols: ee,
                 });
             var se = u(function () {
-                M.f(1);
+                L.f(1);
             });
             i(i.S + i.F * se, 'Object', {
                 getOwnPropertySymbols: function (e) {
-                    return M.f(j(e));
+                    return L.f(j(e));
                 },
             }),
                 R &&
@@ -6232,7 +6227,7 @@
                             },
                         }
                     ),
-                P.prototype[D] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, D, P.prototype.valueOf),
+                P.prototype[F] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, F, P.prototype.valueOf),
                 d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);

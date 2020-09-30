@@ -6,8 +6,10 @@ import Algolia from './components/algolia';
 import Path from './path';
 
 const env_path = new Path();
-
 const dayjs = require('dayjs');
+const custom_parse_format = require('dayjs/plugin/customParseFormat');
+
+dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 const algolia = new Algolia();
@@ -22,7 +24,7 @@ export default class BasePortal {
         this.svg_arrow =
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
         this.map_loaded = false;
-        this.selected_currency = 'USD';
+        this.selected_currency = utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD';
     }
 
     init() {
@@ -781,6 +783,17 @@ export default class BasePortal {
         const config_container = document.querySelector('.config-container');
         const active_language_el = document.querySelector('meta[name="theme"]');
 
+        const check_in_el = document.querySelector('input#theCheckIn');
+        const check_out_el = document.querySelector('input#theCheckOut');
+        let check_in_value;
+        let check_out_value;
+        let nights;
+        const us_format = 'M/D/YYYY';
+        const euro_format = 'D/M/YYYY';
+        const iso8601 = 'YYYY/M/D';
+
+        const params = new URLSearchParams(window.location.search);
+
         if (!this.site_config || !config_container || !active_language_el || !language_container_el) return;
         if (!this.site_config.show_language_select) {
             language_container_el.style.display = 'none';
@@ -794,6 +807,16 @@ export default class BasePortal {
         language_label = language_container_el.querySelector('#language-label');
         language_label.querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML;
 
+        function setValuesForDayJs(initial_format, new_format) {
+            check_in_value = dayjs(check_in_el.value, initial_format).format(us_format);
+            check_out_value = dayjs(check_out_el.value, initial_format).format(us_format);
+
+            nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
+            check_in_value = dayjs(check_in_el.value, initial_format).format(new_format);
+            check_out_value = dayjs(check_out_el.value, initial_format).format(new_format);
+        }
+
         language_label.addEventListener('click', () => {
             language_container_el.querySelector('.language-container').classList.toggle('show-language-container');
 
@@ -801,6 +824,40 @@ export default class BasePortal {
             if (window.document.documentMode) return;
 
             language_label.querySelector('svg').classList.toggle('flip-svg');
+        });
+
+        language_container_el.querySelector('.language-container').addEventListener('click', (e) => {
+            const clicked_language = document.getElementById(e.target.id).getAttribute('value');
+
+            if ((this.page_name === 'search-results' || this.page_name === 'landing-page') && clicked_language !== active_language) {
+                params.set('theme', clicked_language);
+
+                if (clicked_language !== 'standard' && !clicked_language.includes('mandarin') && active_language === 'standard' && this.site_config.affilaite_id !== 16980) {
+                    setValuesForDayJs(us_format, euro_format);
+                } else if (clicked_language === 'standard' && active_language !== 'standard' && !active_language.includes('mandarin')) {
+                    setValuesForDayJs(euro_format, us_format);
+                } else if (clicked_language !== 'standard' && !clicked_language.includes('mandarin') && active_language !== 'standard' && !active_language.includes('mandarin')) {
+                    setValuesForDayJs(euro_format, euro_format);
+                } else if (clicked_language.includes('mandarin') && active_language !== 'standard') {
+                    setValuesForDayJs(euro_format, iso8601);
+                } else if (clicked_language.includes('mandarin') && active_language.includes('mandarin')) {
+                    setValuesForDayJs(iso8601, iso8601);
+                } else if (clicked_language.includes('mandarin') && active_language === 'standard') {
+                    setValuesForDayJs(us_format, iso8601);
+                } else if (clicked_language === 'standard' && active_language.includes('mandarin')) {
+                    setValuesForDayJs(iso8601, us_format);
+                } else if (clicked_language !== 'standard' && active_language.includes('mandarin')) {
+                    setValuesForDayJs(iso8601, euro_format);
+                } else if (this.site_config.affilaite_id === 16980) {
+                    setValuesForDayJs('D/M/YYYY', 'D/M/YYYY');
+                }
+                if (this.page_name === 'search-results') {
+                    params.set('nights', nights);
+                    params.set('checkin', check_in_value);
+                }
+
+                window.location.search = params.toString();
+            }
         });
 
         window.addEventListener('click', (e) => {
@@ -818,7 +875,7 @@ export default class BasePortal {
     }
 
     async buildCurrencyDropdown() {
-        const get_currency_j_s_o_n = () => {
+        const get_currency_json = () => {
             fetch(`${env_path.path}/js/json/currencies.json`)
                 .then((response) => {
                     if (!response.ok) {
@@ -907,7 +964,7 @@ export default class BasePortal {
             document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
         };
 
-        await get_currency_j_s_o_n();
+        await get_currency_json();
     }
 
     setupDatePrompt() {

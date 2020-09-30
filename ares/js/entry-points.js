@@ -46,6 +46,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson landing page
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // hof cug
@@ -58,7 +59,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson landing page
         };
     }
 

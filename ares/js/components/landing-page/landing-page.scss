@@ -19,7 +19,9 @@
 }
 
 @include append-images();
-@include append-header-images();
+@if ($header-images != '') {
+    @include append-header-images();
+}
 
 @function setUpEventColumns($images) {
     @if (length($images) == 1) {

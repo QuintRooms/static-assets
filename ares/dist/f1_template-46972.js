@@ -395,7 +395,7 @@
             L = 'process' == l(k),
             C = function () {},
             R = (i = _.f),
-            M = !!(function () {
+            T = !!(function () {
                 try {
                     var e = q.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -404,7 +404,7 @@
                     return (L || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== E.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            M = function (e) {
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -429,7 +429,7 @@
                                         a
                                             ? (i || (2 == e._h && I(e), (e._h = 1)),
                                               !0 === a ? (n = r) : (l && l.enter(), (n = a(r)), l && (l.exit(), (s = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (o = T(n)) ? o.call(n, c, u) : c(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (o = M(n)) ? o.call(n, c, u) : c(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !s && l.exit(), u(e);
@@ -479,18 +479,18 @@
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
             },
-            Y = function (e) {
+            H = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = M(e))
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(Y, r, 1), u(D, r, 1));
+                                      t.call(e, u(H, r, 1), u(D, r, 1));
                                   } catch (e) {
                                       D.call(r, e);
                                   }
@@ -501,11 +501,11 @@
                     }
                 }
             };
-        M ||
+        T ||
             ((q = function (e) {
                 p(this, q, 'Promise', '_h'), f(e), r.call(this);
                 try {
-                    e(u(Y, this, 1), u(D, this, 1));
+                    e(u(H, this, 1), u(D, this, 1));
                 } catch (e) {
                     D.call(this, e);
                 }
@@ -531,22 +531,22 @@
             })),
             (o = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(Y, e, 1)), (this.reject = u(D, e, 1));
+                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(D, e, 1));
             }),
             (_.f = R = function (e) {
                 return e === q || e === s ? new o(e) : i(e);
             })),
-            h(h.G + h.W + h.F * !M, {Promise: q}),
+            h(h.G + h.W + h.F * !T, {Promise: q}),
             n(28)(q, 'Promise'),
             n(86)('Promise'),
             (s = n(11).Promise),
-            h(h.S + h.F * !M, 'Promise', {
+            h(h.S + h.F * !T, 'Promise', {
                 reject: function (e) {
                     var t = R(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            h(h.S + h.F * (a || !M), 'Promise', {
+            h(h.S + h.F * (a || !T), 'Promise', {
                 resolve: function (e) {
                     return S(a && this === s ? q : this, e);
                 },
@@ -555,7 +555,7 @@
                 h.S +
                     h.F *
                         !(
-                            M &&
+                            T &&
                             n(87)(function (e) {
                                 q.all(e).catch(C);
                             })
@@ -3137,15 +3137,15 @@
                 });
             };
         }
-        function M(e, t) {
+        function T(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var T = n(40),
+        var M = n(40),
             P = n(67);
-        T.extend(P);
+        M.extend(P);
         var O = (function () {
                 function e() {
                     !(function (e, t) {
@@ -3241,96 +3241,86 @@
                                 function v(e) {
                                     if (l.has(e)) return l.get(e);
                                 }
-                                console.log(e),
-                                    document.querySelector('form#searchForm').addEventListener('submit', function (o) {
-                                        o.preventDefault();
-                                        var s,
-                                            c,
-                                            u,
-                                            h,
-                                            d,
-                                            f,
-                                            g = window.location.origin,
-                                            _ = ''
-                                                .concat(g, '/v6/?type=geo&siteid=')
-                                                .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
-                                                .concat(e.distance_unit),
-                                            b = new URL(_);
-                                        function w(e) {
-                                            Object.keys(e).forEach(function (t) {
-                                                '' !== e[t].value &&
-                                                    null !== e[t].value &&
-                                                    void 0 !== e[t].value &&
-                                                    void 0 !== e[t].key &&
-                                                    b.searchParams.append(e[t].key, e[t].value);
-                                            });
-                                        }
-                                        'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
-                                            ? ((u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = T(h).diff(T(u), 'days')))
-                                            : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
-                                            ? ((u = T(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('D/M/YYYY')),
-                                              (d = T(h).diff(T(u), 'days')),
-                                              (u = T(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
-                                            : 16980 === e.affiliate_id || 60278 === e.site_id
-                                            ? ((u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                              (d = T(h).diff(T(u), 'days')),
-                                              (u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')))
-                                            : ((u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (d = T(h).diff(T(u), 'days')),
-                                              (u = T(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
-                                              (h = T(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
-                                            'standard' !== n.getMetaTagContent('theme') &&
-                                                ((a.check_in_value = document.querySelector('input#theCheckIn').value),
-                                                (a.check_out_value = document.querySelector('input#theCheckOut').value)),
-                                            r
-                                                ? ((s = r.lat), (c = r.lng))
-                                                : i
-                                                ? ((s = i.lat), (c = i.lng))
-                                                : r || i || 'search-results' !== t || ((s = l.get('latitude')), (c = l.get('longitude'))),
+                                document.querySelector('form#searchForm').addEventListener('submit', function (o) {
+                                    o.preventDefault();
+                                    var s,
+                                        c,
+                                        u,
+                                        h,
+                                        d,
+                                        f,
+                                        g = window.location.origin,
+                                        _ = ''
+                                            .concat(g, '/v6/?type=geo&siteid=')
+                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                            .concat(e.distance_unit),
+                                        b = new URL(_);
+                                    function w(e) {
+                                        Object.keys(e).forEach(function (t) {
+                                            '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && b.searchParams.append(e[t].key, e[t].value);
+                                        });
+                                    }
+                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                        ? ((u = M(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (h = M(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (d = M(h).diff(M(u), 'days')))
+                                        : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
+                                        ? ((u = M(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (h = M(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
+                                          (d = M(h).diff(M(u), 'days')),
+                                          (u = M(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (h = M(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
+                                        : (16980 === e.affiliate_id || e.site_id,
+                                          (u = M(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (h = M(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (d = M(h).diff(M(u), 'days')),
+                                          (u = M(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (h = M(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
+                                        'standard' !== n.getMetaTagContent('theme') &&
+                                            ((a.check_in_value = document.querySelector('input#theCheckIn').value),
+                                            (a.check_out_value = document.querySelector('input#theCheckOut').value)),
+                                        r
+                                            ? ((s = r.lat), (c = r.lng))
+                                            : i
+                                            ? ((s = i.lat), (c = i.lng))
+                                            : r || i || 'search-results' !== t || ((s = l.get('latitude')), (c = l.get('longitude'))),
+                                        w({
+                                            longitude: {key: 'longitude', value: c},
+                                            latitude: {key: 'latitude', value: s},
+                                            destination: {
+                                                key: 'destination',
+                                                value:
+                                                    ((f = 'input#address-input'),
+                                                    null !== document.querySelector(f).value
+                                                        ? document.querySelector(f).value
+                                                        : l.has('destination')
+                                                        ? l.get('destination')
+                                                        : void 0),
+                                            },
+                                            checkin: {key: 'checkin', value: u},
+                                            nights: {key: 'nights', value: d},
+                                            rooms: {key: 'rooms', value: p('select#rooms')},
+                                            adults: {key: 'adults', value: p('select#adults')},
+                                            currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
+                                            amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                            stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                            propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                            optionalHotel: {key: 'hotelname', value: m()},
+                                        }),
+                                        'search-results' === t &&
+                                            'lodging' === e.site_type.toLowerCase() &&
                                             w({
-                                                longitude: {key: 'longitude', value: c},
-                                                latitude: {key: 'latitude', value: s},
-                                                destination: {
-                                                    key: 'destination',
-                                                    value:
-                                                        ((f = 'input#address-input'),
-                                                        null !== document.querySelector(f).value
-                                                            ? document.querySelector(f).value
-                                                            : l.has('destination')
-                                                            ? l.get('destination')
-                                                            : void 0),
-                                                },
-                                                checkin: {key: 'checkin', value: u},
-                                                nights: {key: 'nights', value: d},
-                                                rooms: {key: 'rooms', value: p('select#rooms')},
-                                                adults: {key: 'adults', value: p('select#adults')},
-                                                currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
-                                                amenities: {key: 'amenities', value: y('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                                stars: {key: 'propertyclasses', value: y('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                                propertyType: {key: 'propertytypes', value: y('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                                optionalHotel: {key: 'hotelname', value: m()},
+                                                properties: {key: 'properties', value: v('properties')},
+                                                utm_source: {key: 'utm_source', value: v('utm_source')},
+                                                locationLabel: {key: 'locationlabel', value: v('locationlabel')},
+                                                radius: {key: 'radius', value: v('radius')},
+                                                groupId: {key: 'groupid', value: v('groupid')},
+                                                cid: {key: 'cid', value: v('cid')},
+                                                points: {key: 'points', value: v('points')},
                                             }),
-                                            'search-results' === t &&
-                                                'lodging' === e.site_type.toLowerCase() &&
-                                                w({
-                                                    properties: {key: 'properties', value: v('properties')},
-                                                    utm_source: {key: 'utm_source', value: v('utm_source')},
-                                                    locationLabel: {key: 'locationlabel', value: v('locationlabel')},
-                                                    radius: {key: 'radius', value: v('radius')},
-                                                    groupId: {key: 'groupid', value: v('groupid')},
-                                                    cid: {key: 'cid', value: v('cid')},
-                                                    points: {key: 'points', value: v('points')},
-                                                }),
-                                            'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
-                                            (window.location.href = decodeURIComponent(b));
-                                    }),
+                                        'cug' === e.site_type.toLowerCase() && w({memberToken: {key: 'memberToken', value: n.getMetaTagContent('memberToken')}}),
+                                        (window.location.href = decodeURIComponent(b));
+                                }),
                                     (function (e) {
                                         d.apply(this, arguments);
                                     })('input#city'),
@@ -3392,8 +3382,8 @@
                                     });
                             },
                         },
-                    ]) && M(t.prototype, n),
-                    r && M(t, r),
+                    ]) && T(t.prototype, n),
+                    r && T(t, r),
                     e
                 );
             })(),
@@ -3423,16 +3413,16 @@
                 });
             };
         }
-        function Y(e, t) {
+        function H(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var H = new (n.n(j).a)(),
-            F = n(40),
+        var F = new (n.n(j).a)(),
+            Y = n(40),
             B = n(67);
-        F.extend(B);
+        Y.extend(B);
         var N = new q.a(),
             $ = new O(),
             U = (function () {
@@ -4010,8 +4000,8 @@
                                     (o = h.getAttribute('content')),
                                     (t = c.getAttribute('content')),
                                     (n = u.getAttribute('content')),
-                                    (s = F(t)),
-                                    (a = F(n)),
+                                    (s = Y(t)),
+                                    (a = Y(n)),
                                     ('cug' === this.site_config.site_type.toLowerCase() ||
                                         ('retail' === this.site_config.site_type.toLowerCase() && null !== i.get('destination'))) &&
                                         (o = i.get('destination')),
@@ -4218,8 +4208,8 @@
                                     s &&
                                     ((t = i.textContent),
                                     (r = o.textContent),
-                                    (e = F(t).format(this.site_config.dayjs_date_format)),
-                                    (n = F(r).format(this.site_config.dayjs_date_format)),
+                                    (e = Y(t).format(this.site_config.dayjs_date_format)),
+                                    (n = Y(r).format(this.site_config.dayjs_date_format)),
                                     N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -4291,7 +4281,7 @@
                                     e.insertAdjacentHTML(
                                         'beforeend',
                                         '<link href="'
-                                            .concat(H.path, '/site_configs/')
+                                            .concat(F.path, '/site_configs/')
                                             .concat(this.site_config.directory_name, '/styles/')
                                             .concat(this.site_config.site_id, '.css" rel="stylesheet">')
                                     ));
@@ -4301,7 +4291,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(H.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(F.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -4320,11 +4310,11 @@
                                     l = document.querySelector('input#theCheckOut'),
                                     h = new URLSearchParams(window.location.search);
                                 function d(r, i) {
-                                    (e = F(u.value, r).format('M/D/YYYY')),
-                                        (t = F(l.value, r).format('M/D/YYYY')),
-                                        (n = F(t).diff(F(e), 'days')),
-                                        (e = F(u.value, r).format(i)),
-                                        (t = F(l.value, r).format(i));
+                                    (e = Y(u.value, r).format('M/D/YYYY')),
+                                        (t = Y(l.value, r).format('M/D/YYYY')),
+                                        (n = Y(t).diff(Y(e), 'days')),
+                                        (e = Y(u.value, r).format(i)),
+                                        (t = Y(l.value, r).format(i));
                                 }
                                 this.site_config &&
                                     a &&
@@ -4397,7 +4387,7 @@
                                                     case 0:
                                                         return (
                                                             (t = function () {
-                                                                fetch(''.concat(H.path, '/js/json/currencies.json'))
+                                                                fetch(''.concat(F.path, '/js/json/currencies.json'))
                                                                     .then(function (e) {
                                                                         if (!e.ok) throw e;
                                                                         return e.json();
@@ -5463,8 +5453,8 @@
                                     (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                             },
                         },
-                    ]) && Y(t.prototype, n),
-                    r && Y(t, r),
+                    ]) && H(t.prototype, n),
+                    r && H(t, r),
                     e
                 );
             })();
@@ -5906,16 +5896,16 @@
             L = n(6),
             C = n(16),
             R = E.f,
-            M = L.f,
-            T = A.f,
+            T = L.f,
+            M = A.f,
             P = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
             I = f('_hidden'),
             D = f('toPrimitive'),
-            Y = {}.propertyIsEnumerable,
-            H = l('symbol-registry'),
-            F = l('symbols'),
+            H = {}.propertyIsEnumerable,
+            F = l('symbol-registry'),
+            Y = l('symbols'),
             B = l('op-symbols'),
             N = Object.prototype,
             $ = 'function' == typeof P && !!q.f,
@@ -5927,9 +5917,9 @@
                     return (
                         7 !=
                         k(
-                            M({}, 'a', {
+                            T({}, 'a', {
                                 get: function () {
-                                    return M(this, 'a', {value: 7}).a;
+                                    return T(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -5937,11 +5927,11 @@
                 })
                     ? function (e, t, n) {
                           var r = R(N, t);
-                          r && delete N[t], M(e, t, n), r && e !== N && M(N, t, r);
+                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
                       }
-                    : M,
+                    : T,
             z = function (e) {
-                var t = (F[e] = k(P.prototype));
+                var t = (Y[e] = k(P.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -5958,9 +5948,9 @@
                     g(e),
                     (t = S(t, !0)),
                     g(n),
-                    i(F, t)
-                        ? (n.enumerable ? (i(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (i(e, I) || M(e, I, x(1, {})), (e[I][t] = !0)), W(e, t, n))
-                        : M(e, t, n)
+                    i(Y, t)
+                        ? (n.enumerable ? (i(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (i(e, I) || T(e, I, x(1, {})), (e[I][t] = !0)), W(e, t, n))
+                        : T(e, t, n)
                 );
             },
             Q = function (e, t) {
@@ -5969,21 +5959,21 @@
                 return e;
             },
             J = function (e) {
-                var t = Y.call(this, (e = S(e, !0)));
-                return !(this === N && i(F, e) && !i(B, e)) && (!(t || !i(this, e) || !i(F, e) || (i(this, I) && this[I][e])) || t);
+                var t = H.call(this, (e = S(e, !0)));
+                return !(this === N && i(Y, e) && !i(B, e)) && (!(t || !i(this, e) || !i(Y, e) || (i(this, I) && this[I][e])) || t);
             },
             Z = function (e, t) {
-                if (((e = w(e)), (t = S(t, !0)), e !== N || !i(F, t) || i(B, t))) {
+                if (((e = w(e)), (t = S(t, !0)), e !== N || !i(Y, t) || i(B, t))) {
                     var n = R(e, t);
-                    return !n || !i(F, t) || (i(e, I) && e[I][t]) || (n.enumerable = !0), n;
+                    return !n || !i(Y, t) || (i(e, I) && e[I][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], o = 0; n.length > o; ) i(F, (t = n[o++])) || t == I || t == c || r.push(t);
+                for (var t, n = M(w(e)), r = [], o = 0; n.length > o; ) i(Y, (t = n[o++])) || t == I || t == c || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? B : w(e)), o = [], s = 0; r.length > s; ) !i(F, (t = r[s++])) || (n && !i(N, t)) || o.push(F[t]);
+                for (var t, n = e === N, r = M(n ? B : w(e)), o = [], s = 0; r.length > s; ) !i(Y, (t = r[s++])) || (n && !i(N, t)) || o.push(Y[t]);
                 return o;
             };
         $ ||
@@ -6016,11 +6006,11 @@
         for (var re = C(f.store), ie = 0; re.length > ie; ) m(re[ie++]);
         s(s.S + s.F * !$, 'Symbol', {
             for: function (e) {
-                return i(H, (e += '')) ? H[e] : (H[e] = P(e));
+                return i(F, (e += '')) ? F[e] : (F[e] = P(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in H) if (H[t] === e) return t;
+                for (var t in F) if (F[t] === e) return t;
             },
             useSetter: function () {
                 G = !0;

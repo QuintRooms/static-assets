@@ -2683,12 +2683,14 @@
                                             '.ArnSupportChatTable',
                                             '\n            <div class="support-details">\n                <h3>Customer Support</h3>\n                <p>Hours: M-F 8:00am - 5:30pm CST</p>\n                <p>Call Us: <a href="tel:1.866.584.0204">1.866.584.0204</a></p>\n                <p>Email Us: <a href="mailto:reservations@resbeat.com">reservations@resbeat.com</a></p>\n                <p>If you require assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</p>\n            </div>'
                                         ),
+                                        g.addAttributeToInput('#thePassCodeAjax input', 'Promocode', 'placeholder', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm'),
                                         g.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', !0, 'required', '.WBForgotPasswordForm'),
+                                        g.addAttributeToInput('#thePassCodeAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theFirstNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theLastNameAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
                                         g.addAttributeToInput('#theEditablePasswordAjax input', !0, 'required', '.WBValidatedRegistrationForm'),
@@ -5486,7 +5488,7 @@
                     var t;
                     return !(!m(e) || 'function' != typeof (t = e.then)) && t;
                 },
-                R = function (e, t) {
+                P = function (e, t) {
                     if (!e._n) {
                         e._n = !0;
                         var o = e._c;
@@ -5517,11 +5519,11 @@
 
                             )
                                 i(o[s++]);
-                            (e._c = []), (e._n = !1), t && !e._h && P(e);
+                            (e._c = []), (e._n = !1), t && !e._h && R(e);
                         });
                     }
                 },
-                P = function (e) {
+                R = function (e) {
                     g.call(c, function () {
                         var t,
                             o,
@@ -5555,7 +5557,7 @@
                 },
                 H = function (e) {
                     var t = this;
-                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                    t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
                 B = function (e) {
                     var t,
@@ -5573,7 +5575,7 @@
                                           H.call(n, e);
                                       }
                                   })
-                                : ((o._v = e), (o._s = 1), R(o, !1));
+                                : ((o._v = e), (o._s = 1), P(o, !1));
                         } catch (e) {
                             H.call({_w: o, _d: !1}, e);
                         }
@@ -5599,7 +5601,7 @@
                             (o.domain = L ? x.domain : void 0),
                             this._c.push(o),
                             this._a && this._a.push(o),
-                            this._s && R(this, !1),
+                            this._s && P(this, !1),
                             o.promise
                         );
                     },
@@ -6062,17 +6064,17 @@
                 C = k.f,
                 T = L.f,
                 E = A.f,
-                R = n.Symbol,
-                P = n.JSON,
-                O = P && P.stringify,
+                P = n.Symbol,
+                R = n.JSON,
+                O = R && R.stringify,
                 F = f('_hidden'),
                 H = f('toPrimitive'),
                 B = {}.propertyIsEnumerable,
-                D = l('symbol-registry'),
-                I = l('symbols'),
+                I = l('symbol-registry'),
+                D = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
-                U = 'function' == typeof R && !!M.f,
+                U = 'function' == typeof P && !!M.f,
                 $ = n.QObject,
                 W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
@@ -6095,16 +6097,16 @@
                           }
                         : T,
                 V = function (e) {
-                    var t = (I[e] = x(R.prototype));
+                    var t = (D[e] = x(P.prototype));
                     return (t._k = e), t;
                 },
                 z =
-                    U && 'symbol' == typeof R.iterator
+                    U && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
                           }
                         : function (e) {
-                              return e instanceof R;
+                              return e instanceof P;
                           },
                 Z = function (e, t, o) {
                     return (
@@ -6112,7 +6114,7 @@
                         _(e),
                         (t = S(t, !0)),
                         _(o),
-                        r(I, t)
+                        r(D, t)
                             ? (o.enumerable ? (r(e, F) && e[F][t] && (e[F][t] = !1), (o = x(o, {enumerable: w(0, !1)}))) : (r(e, F) || T(e, F, w(1, {})), (e[F][t] = !0)),
                               G(e, t, o))
                             : T(e, t, o)
@@ -6125,26 +6127,26 @@
                 },
                 Q = function (e) {
                     var t = B.call(this, (e = S(e, !0)));
-                    return !(this === N && r(I, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(I, e) || (r(this, F) && this[F][e])) || t);
+                    return !(this === N && r(D, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(D, e) || (r(this, F) && this[F][e])) || t);
                 },
                 K = function (e, t) {
-                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(I, t) || r(Y, t))) {
+                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(D, t) || r(Y, t))) {
                         var o = C(e, t);
-                        return !o || !r(I, t) || (r(e, F) && e[F][t]) || (o.enumerable = !0), o;
+                        return !o || !r(D, t) || (r(e, F) && e[F][t]) || (o.enumerable = !0), o;
                     }
                 },
                 X = function (e) {
-                    for (var t, o = E(b(e)), n = [], s = 0; o.length > s; ) r(I, (t = o[s++])) || t == F || t == c || n.push(t);
+                    for (var t, o = E(b(e)), n = [], s = 0; o.length > s; ) r(D, (t = o[s++])) || t == F || t == c || n.push(t);
                     return n;
                 },
                 ee = function (e) {
-                    for (var t, o = e === N, n = E(o ? Y : b(e)), s = [], i = 0; n.length > i; ) !r(I, (t = n[i++])) || (o && !r(N, t)) || s.push(I[t]);
+                    for (var t, o = e === N, n = E(o ? Y : b(e)), s = [], i = 0; n.length > i; ) !r(D, (t = n[i++])) || (o && !r(N, t)) || s.push(D[t]);
                     return s;
                 };
             U ||
                 (a(
-                    (R = function () {
-                        if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                    (P = function () {
+                        if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (o) {
                                 this === N && t.call(Y, o), r(this, F) && r(this[F], e) && (this[F][e] = !1), G(this, e, w(1, o));
@@ -6165,17 +6167,17 @@
                 (p.f = function (e) {
                     return V(f(e));
                 })),
-                i(i.G + i.W + i.F * !U, {Symbol: R});
+                i(i.G + i.W + i.F * !U, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), oe = 0; te.length > oe; )
                 f(te[oe++]);
             for (var ne = q(f.store), re = 0; ne.length > re; ) h(ne[re++]);
             i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(D, (e += '')) ? D[e] : (D[e] = R(e));
+                    return r(I, (e += '')) ? I[e] : (I[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in D) if (D[t] === e) return t;
+                    for (var t in I) if (I[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -6202,13 +6204,13 @@
                     return M.f(j(e));
                 },
             }),
-                P &&
+                R &&
                     i(
                         i.S +
                             i.F *
                                 (!U ||
                                     u(function () {
-                                        var e = R();
+                                        var e = P();
                                         return '[null]' != O([e]) || '{}' != O({a: e}) || '{}' != O(Object(e));
                                     })),
                         'JSON',
@@ -6222,13 +6224,13 @@
                                                 if (('function' == typeof o && (t = o.call(this, e, t)), !z(t))) return t;
                                             }),
                                         (n[1] = t),
-                                        O.apply(P, n)
+                                        O.apply(R, n)
                                     );
                             },
                         }
                     ),
-                R.prototype[H] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(R.prototype, H, R.prototype.valueOf),
-                d(R, 'Symbol'),
+                P.prototype[H] || o(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, H, P.prototype.valueOf),
+                d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(n.JSON, 'JSON', !0);
         },
@@ -8026,7 +8028,7 @@
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
-                    header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo.png'), logo_outbound_url: 'http://www..com/'},
+                    header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo.png'), logo_outbound_url: 'https://www.profootballhof.com/'},
                     map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

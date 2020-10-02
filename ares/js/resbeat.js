@@ -92,12 +92,14 @@ export default class Resbeat extends BasePortal {
             </div>`
         );
 
+        utilities.addAttributeToInput('#thePassCodeAjax input', 'Promocode', 'placeholder', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theFirstNameAjax input', 'First Name', 'placeholder', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theLastNameAjax input', 'Last Name', 'placeholder', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theEditablePasswordAjax input', 'Create a Password', 'placeholder', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theEditableConfirmPasswordAjax input', 'Confirm Password', 'placeholder', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', 'Email', 'placeholder', '.WBForgotPasswordForm');
         utilities.addAttributeToInput('.WBForgotPasswordFormFields #theUserNameAjax input', true, 'required', '.WBForgotPasswordForm');
+        utilities.addAttributeToInput('#thePassCodeAjax input', true, 'required', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theFirstNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theLastNameAjax input', true, 'required', '.WBValidatedRegistrationForm');
         utilities.addAttributeToInput('#theEditablePasswordAjax input', true, 'required', '.WBValidatedRegistrationForm');

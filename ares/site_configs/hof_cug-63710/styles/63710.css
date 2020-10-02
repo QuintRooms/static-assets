@@ -568,4 +568,8 @@ input[type=email].email-mask,
   display: none;
 }
 
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
+  bottom: 12px;
+}
+
 /*# sourceMappingURL=63710.css.map*/

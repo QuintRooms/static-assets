@@ -514,6 +514,7 @@ header {
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
 .CheckOutForm #theConfirmationButton, .WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #thePassCodeAjax input,
 .WBValidatedRegistrationForm #theFirstNameAjax input,
 .WBValidatedRegistrationForm #theLastNameAjax input,
 .WBValidatedRegistrationForm #theEditablePasswordAjax input,
@@ -555,7 +556,8 @@ input[type=email].email-mask,
   transition-duration: 0.4s;
 }
 
-.SearchHotels .ap-input-icon {
+.SearchHotels .ap-input-icon,
+#thePassCodeAjax input {
   background-color: #f0f0f0;
 }
 
@@ -677,6 +679,10 @@ input[type=email].email-mask,
 
 .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
   bottom: 12px;
+}
+
+#thePassCodeAjax {
+  display: block !important;
 }
 
 /*# sourceMappingURL=63711.css.map*/

@@ -17,6 +17,7 @@
 .ArnTermsConditions a,
 #theBookingPage .GuestForms, .CheckOutForm .open-modal, .CheckOutForm #policies-fees, .CheckOutForm #t-and-cs, .modal-container, .SinglePropDetail .translateMe, .config-container .config-label, .RootBody .ArnPrimarySearchContainer, .ArnPages a,
 .ArnPages, .ArnSupportLinks a, .ArnSupportLinks, .SinglePropDetail .SimpleSearch, .WBValidatedRegistrationForm #theUserNameAjax input,
+.WBValidatedRegistrationForm #thePassCodeAjax input,
 .WBValidatedRegistrationForm #theFirstNameAjax input,
 .WBValidatedRegistrationForm #theLastNameAjax input,
 .WBValidatedRegistrationForm #theEditablePasswordAjax input,
@@ -97,6 +98,7 @@ input[type='email'].email-mask,
 .WBValidatedRegistrationFormActions input {
   -webkit-appearance: none; }
 
+.WBValidatedRegistrationForm #thePassCodeAjax input,
 .WBValidatedRegistrationForm #theUserNameAjax input,
 .WBValidatedRegistrationForm #theFirstNameAjax input,
 .WBValidatedRegistrationForm #theLastNameAjax input,
@@ -287,6 +289,7 @@ a.ArnShowRatesLink,
   padding: 18px;
   margin-top: 12px; }
 
+.MemberNotAuthenticated #thePassCodeAjax input,
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input,
 .MemberNotAuthenticated #new-user-text,

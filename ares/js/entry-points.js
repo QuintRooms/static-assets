@@ -10,6 +10,7 @@ module.exports = () => {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
             // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            'bj_landing_page-58196': './src/58196.js', // BJ landing page
             // 'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
@@ -46,7 +47,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson landing page
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // hof cug

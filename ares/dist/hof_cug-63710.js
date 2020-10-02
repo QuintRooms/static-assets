@@ -8026,7 +8026,7 @@
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
-                    header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo.png'), logo_outbound_url: 'http://www..com/'},
+                    header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo.png'), logo_outbound_url: 'https://www.profootballhof.com/'},
                     map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

@@ -442,7 +442,7 @@ header {
 /* Fonts */
 @font-face {
   font-family: "Avenir";
-  src: url("https://static.hotelsforhope.com/portals/child-portals/cug/62011/fonts/Avenir-Light.ttf") format("truetype");
+  src: url("https://static.hotelsforhope.com/portals/child-portals/cug/63710/fonts/Avenir-Light.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
@@ -563,6 +563,9 @@ input[type=email].email-mask,
   .config-label {
     background: transparent;
   }
+}
+#rewards-link {
+  display: none;
 }
 
 /*# sourceMappingURL=63710.css.map*/

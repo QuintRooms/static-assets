@@ -42,10 +42,12 @@ input[type='email'].email-mask,
 .lowRateLink + .dvd, .mobile-filter-container .ArnSecondarySearchOuterContainer hr:first-child,
 .mobile-filter-container #CitiesNearbyContainer + hr, .pb-container, .MemberNotAuthenticated #theUserNameAjax label,
 .MemberNotAuthenticated #thePasswordAjax label, .organizationsCommand, .MemberNotAuthenticated .redeem-promocode-container, .WBValidatedRegistrationForm #thePersonalInfoGroup label,
-.WBValidatedRegistrationForm #thePassCodeAjax,
 #availableUser, .RootBody h1,
 .RootBody h3, .SearchHotels .ArnPropClass, .SearchHotels .arnUnit + div, .full-stay, .ConfirmationForm .supportInfo {
   display: none !important; }
+
+.WBValidatedRegistrationForm #thePassCodeAjax {
+  display: none; }
 
 .WBLoginFormActions input,
 #register-btn a,

@@ -199,10 +199,8 @@ export default class Algolia {
             if (site_config.site_id === 52342 || (utilities.getMetaTagContent('theme') === 'standard' && site_config.affiliate_id !== 16980)) {
                 check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY');
                 check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY');
-                console.log('check_in_value: ', check_in_value);
-                console.log('check_out_value: ', check_out_value);
+
                 nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
-                console.log('nights: ', nights);
             } else if (utilities.getMetaTagContent('theme') === 'mandarin' || utilities.getMetaTagContent('theme') === 'tw_mandarin') {
                 check_in_value = dayjs(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY');
                 check_out_value = dayjs(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY');

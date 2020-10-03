@@ -3263,10 +3263,7 @@
                                     52342 === e.site_id || ('standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id)
                                         ? ((u = T(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = T(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
-                                          console.log('check_in_value: ', u),
-                                          console.log('check_out_value: ', f),
-                                          (d = T(f).diff(T(u), 'days')),
-                                          console.log('nights: ', d))
+                                          (d = T(f).diff(T(u), 'days')))
                                         : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
                                         ? ((u = T(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (f = T(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),

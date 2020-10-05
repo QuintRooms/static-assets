@@ -10,11 +10,12 @@ module.exports = () => {
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
             // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
-            'bj_landing_page-58196': './src/58196.js', // BJ landing page
+            // 'bj_landing_page-58196': './src/58196.js', // BJ landing page
             // 'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // BJ W Palm Beach 2020
+            'bj_west_palm_beach_21-64187': './src/64187.js', // BJ W Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021

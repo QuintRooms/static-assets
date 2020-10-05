@@ -87,6 +87,12 @@ export default function siteConfig() {
                 end_date: '1/25/2021', // M/D/YYYY
                 portal_url: 'http://events.hotelsforhope.com/group-event?id=39777',
             },
+            {
+                name: '2021 West Palm Beach Auction',
+                display_date: 'April 07 - 12, 2021',
+                end_date: '04/12/2021', // M/D/YYYY
+                portal_url: 'http://events.hotelsforhope.com/group-event?id=44704',
+            },
         ],
     };
 }

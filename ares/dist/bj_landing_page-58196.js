@@ -4484,7 +4484,7 @@
                                             '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && S.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
-                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                    52342 === e.site_id || ('standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id)
                                         ? ((u = D(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (d = D(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = D(d).diff(D(u), 'days')))
@@ -6970,6 +6970,12 @@
                             display_date: 'January 16 - 24, 2021',
                             end_date: '1/25/2021',
                             portal_url: 'http://events.hotelsforhope.com/group-event?id=39777',
+                        },
+                        {
+                            name: '2021 West Palm Beach Auction',
+                            display_date: 'April 07 - 12, 2021',
+                            end_date: '04/12/2021',
+                            portal_url: 'http://events.hotelsforhope.com/group-event?id=44704',
                         },
                     ],
                 };

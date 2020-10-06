@@ -270,6 +270,7 @@ export default class BasePortal {
             this.setCheckDatesToReadOnlyOnMobile();
             this.updateSupportPageText();
             this.removeLrgFooterLink();
+            this.hideBookButtonForNoAvailability();
 
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
@@ -1918,5 +1919,17 @@ export default class BasePortal {
 
         document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none';
         document.querySelector('.ArnSupportBottom .dvd').style.display = 'none';
+    }
+
+    hideBookButtonForNoAvailability() {
+        if (this.page_name !== 'search-results') return;
+        if (!document.querySelector('.ArnLimitedAvail')) return;
+
+        const props = document.querySelectorAll('.ArnProperty');
+        props.forEach((prop) => {
+            if (prop.querySelector('.ArnLimitedAvail')) {
+                prop.querySelector('.ArnRateButton').style.display = 'none';
+            }
+        });
     }
 }

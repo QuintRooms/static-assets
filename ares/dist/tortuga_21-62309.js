@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 203));
+        n((n.s = 208));
 })([
     function (e, t, n) {
         var r = n(26)('wks'),
@@ -408,7 +408,7 @@
                 var t;
                 return !(!d(e) || 'function' != typeof (t = e.then)) && t;
             },
-            O = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -439,11 +439,11 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && R(e);
+                        (e._c = []), (e._n = !1), t && !e._h && O(e);
                     });
                 }
             },
-            R = function (e) {
+            O = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
@@ -477,7 +477,7 @@
             },
             H = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), O(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
             Y = function (e) {
                 var t,
@@ -495,7 +495,7 @@
                                       H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), O(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
                         H.call({_w: n, _d: !1}, e);
                     }
@@ -521,7 +521,7 @@
                         (n.domain = q ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && O(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -3144,9 +3144,9 @@
             }
         }
         var P = n(40),
-            O = n(67);
-        P.extend(O);
-        var R = (function () {
+            R = n(67);
+        P.extend(R);
+        var O = (function () {
                 function e() {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -3260,7 +3260,7 @@
                                             '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && S.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
-                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                    52342 === e.site_id || ('standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id)
                                         ? ((u = P(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = P(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (d = P(f).diff(P(u), 'days')))
@@ -3419,12 +3419,12 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var I = new (n.n(j).a)(),
-            B = n(40),
-            F = n(67);
-        B.extend(F);
+        var B = new (n.n(j).a)(),
+            F = n(40),
+            I = n(67);
+        F.extend(I);
         var N = new q.a(),
-            $ = new R(),
+            $ = new O(),
             U = (function () {
                 function e(t) {
                     !(function (e, t) {
@@ -3776,8 +3776,9 @@
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         e.updateSupportPageText(),
                                                                         e.removeLrgFooterLink(),
+                                                                        e.hideBookButtonForNoAvailability(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
+                                                                case 45:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4000,8 +4001,8 @@
                                     (i = f.getAttribute('content')),
                                     (t = s.getAttribute('content')),
                                     (n = u.getAttribute('content')),
-                                    (a = B(t)),
-                                    (c = B(n)),
+                                    (a = F(t)),
+                                    (c = F(n)),
                                     ('cug' === this.site_config.site_type.toLowerCase() ||
                                         ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
                                         (i = o.get('destination')),
@@ -4208,8 +4209,8 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = B(t).format(this.site_config.dayjs_date_format)),
-                                    (n = B(r).format(this.site_config.dayjs_date_format)),
+                                    (e = F(t).format(this.site_config.dayjs_date_format)),
+                                    (n = F(r).format(this.site_config.dayjs_date_format)),
                                     N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -4281,7 +4282,7 @@
                                     e.insertAdjacentHTML(
                                         'beforeend',
                                         '<link href="'
-                                            .concat(I.path, '/site_configs/')
+                                            .concat(B.path, '/site_configs/')
                                             .concat(this.site_config.directory_name, '/styles/')
                                             .concat(this.site_config.site_id, '.css" rel="stylesheet">')
                                     ));
@@ -4291,7 +4292,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(I.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(B.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -4310,11 +4311,11 @@
                                     l = document.querySelector('input#theCheckOut'),
                                     f = new URLSearchParams(window.location.search);
                                 function d(r, o) {
-                                    (e = B(u.value, r).format('M/D/YYYY')),
-                                        (t = B(l.value, r).format('M/D/YYYY')),
-                                        (n = B(t).diff(B(e), 'days')),
-                                        (e = B(u.value, r).format(o)),
-                                        (t = B(l.value, r).format(o));
+                                    (e = F(u.value, r).format('M/D/YYYY')),
+                                        (t = F(l.value, r).format('M/D/YYYY')),
+                                        (n = F(t).diff(F(e), 'days')),
+                                        (e = F(u.value, r).format(o)),
+                                        (t = F(l.value, r).format(o));
                                 }
                                 this.site_config &&
                                     c &&
@@ -4387,7 +4388,7 @@
                                                     case 0:
                                                         return (
                                                             (t = function () {
-                                                                fetch(''.concat(I.path, '/js/json/currencies.json'))
+                                                                fetch(''.concat(B.path, '/js/json/currencies.json'))
                                                                     .then(function (e) {
                                                                         if (!e.ok) throw e;
                                                                         return e.json();
@@ -5453,6 +5454,16 @@
                                     (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                             },
                         },
+                        {
+                            key: 'hideBookButtonForNoAvailability',
+                            value: function () {
+                                'search-results' === this.page_name &&
+                                    document.querySelector('.ArnLimitedAvail') &&
+                                    document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                        e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
+                                    });
+                            },
+                        },
                     ]) && Y(t.prototype, n),
                     r && Y(t, r),
                     e
@@ -5898,17 +5909,17 @@
             C = L.f,
             T = q.f,
             P = k.f,
-            O = r.Symbol,
-            R = r.JSON,
-            j = R && R.stringify,
+            R = r.Symbol,
+            O = r.JSON,
+            j = O && O.stringify,
             D = h('_hidden'),
             H = h('toPrimitive'),
             Y = {}.propertyIsEnumerable,
-            I = l('symbol-registry'),
-            B = l('symbols'),
-            F = l('op-symbols'),
+            B = l('symbol-registry'),
+            F = l('symbols'),
+            I = l('op-symbols'),
             N = Object.prototype,
-            $ = 'function' == typeof O && !!M.f,
+            $ = 'function' == typeof R && !!M.f,
             U = r.QObject,
             W = !U || !U.prototype || !U.prototype.findChild,
             G =
@@ -5931,24 +5942,24 @@
                       }
                     : T,
             z = function (e) {
-                var t = (B[e] = A(O.prototype));
+                var t = (F[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
-                $ && 'symbol' == typeof O.iterator
+                $ && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof O;
+                          return e instanceof R;
                       },
             Z = function (e, t, n) {
                 return (
-                    e === N && Z(F, t, n),
+                    e === N && Z(I, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(B, t)
+                    o(F, t)
                         ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : T(e, t, n)
                 );
@@ -5960,29 +5971,29 @@
             },
             Q = function (e) {
                 var t = Y.call(this, (e = _(e, !0)));
-                return !(this === N && o(B, e) && !o(F, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(F, e) && !o(I, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
             },
             X = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(B, t) || o(F, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(I, t))) {
                     var n = C(e, t);
-                    return !n || !o(B, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             K = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(B, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = P(n ? F : w(e)), i = [], a = 0; r.length > a; ) !o(B, (t = r[a++])) || (n && !o(N, t)) || i.push(B[t]);
+                for (var t, n = e === N, r = P(n ? I : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         $ ||
             (c(
-                (O = function () {
-                    if (this instanceof O) throw TypeError('Symbol is not a constructor!');
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = d(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(F, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(I, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -6000,17 +6011,17 @@
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: O});
+            a(a.G + a.W + a.F * !$, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = E(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = O(e));
+                return o(B, (e += '')) ? B[e] : (B[e] = R(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in I) if (I[t] === e) return t;
+                for (var t in B) if (B[t] === e) return t;
             },
             useSetter: function () {
                 W = !0;
@@ -6037,13 +6048,13 @@
                 return M.f(S(e));
             },
         }),
-            R &&
+            O &&
                 a(
                     a.S +
                         a.F *
                             (!$ ||
                                 u(function () {
-                                    var e = O();
+                                    var e = R();
                                     return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
@@ -6057,13 +6068,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(R, r)
+                                    j.apply(O, r)
                                 );
                         },
                     }
                 ),
-            O.prototype[H] || n(8)(O.prototype, H, O.prototype.valueOf),
-            f(O, 'Symbol'),
+            R.prototype[H] || n(8)(R.prototype, H, R.prototype.valueOf),
+            f(R, 'Symbol'),
             f(Math, 'Math', !0),
             f(r.JSON, 'JSON', !0);
     },
@@ -6747,7 +6758,12 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
     function (e, t, n) {},
+    ,
+    ,
     ,
     ,
     ,
@@ -6921,6 +6937,6 @@
             }
             return n;
         })(r.a))();
-        n(168);
+        n(171);
     },
 ]);

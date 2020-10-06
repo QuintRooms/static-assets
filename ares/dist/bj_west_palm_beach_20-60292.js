@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 184));
+        n((n.s = 187));
 })([
     function (e, t, n) {
         var r = n(26)('wks'),
@@ -3260,7 +3260,7 @@
                                             '' !== e[t].value && null !== e[t].value && void 0 !== e[t].value && void 0 !== e[t].key && S.searchParams.append(e[t].key, e[t].value);
                                         });
                                     }
-                                    'standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id
+                                    52342 === e.site_id || ('standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id)
                                         ? ((u = P(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (f = P(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (d = P(f).diff(P(u), 'days')))
@@ -3420,9 +3420,9 @@
             }
         }
         var B = new (n.n(j).a)(),
-            I = n(40),
-            F = n(67);
-        I.extend(F);
+            F = n(40),
+            I = n(67);
+        F.extend(I);
         var N = new q.a(),
             $ = new O(),
             U = (function () {
@@ -3776,8 +3776,9 @@
                                                                         e.setCheckDatesToReadOnlyOnMobile(),
                                                                         e.updateSupportPageText(),
                                                                         e.removeLrgFooterLink(),
+                                                                        e.hideBookButtonForNoAvailability(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 44:
+                                                                case 45:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4000,8 +4001,8 @@
                                     (i = f.getAttribute('content')),
                                     (t = s.getAttribute('content')),
                                     (n = u.getAttribute('content')),
-                                    (a = I(t)),
-                                    (c = I(n)),
+                                    (a = F(t)),
+                                    (c = F(n)),
                                     ('cug' === this.site_config.site_type.toLowerCase() ||
                                         ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
                                         (i = o.get('destination')),
@@ -4208,8 +4209,8 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = I(t).format(this.site_config.dayjs_date_format)),
-                                    (n = I(r).format(this.site_config.dayjs_date_format)),
+                                    (e = F(t).format(this.site_config.dayjs_date_format)),
+                                    (n = F(r).format(this.site_config.dayjs_date_format)),
                                     N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -4310,11 +4311,11 @@
                                     l = document.querySelector('input#theCheckOut'),
                                     f = new URLSearchParams(window.location.search);
                                 function d(r, o) {
-                                    (e = I(u.value, r).format('M/D/YYYY')),
-                                        (t = I(l.value, r).format('M/D/YYYY')),
-                                        (n = I(t).diff(I(e), 'days')),
-                                        (e = I(u.value, r).format(o)),
-                                        (t = I(l.value, r).format(o));
+                                    (e = F(u.value, r).format('M/D/YYYY')),
+                                        (t = F(l.value, r).format('M/D/YYYY')),
+                                        (n = F(t).diff(F(e), 'days')),
+                                        (e = F(u.value, r).format(o)),
+                                        (t = F(l.value, r).format(o));
                                 }
                                 this.site_config &&
                                     c &&
@@ -5453,6 +5454,16 @@
                                     (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
                             },
                         },
+                        {
+                            key: 'hideBookButtonForNoAvailability',
+                            value: function () {
+                                'search-results' === this.page_name &&
+                                    document.querySelector('.ArnLimitedAvail') &&
+                                    document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                        e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
+                                    });
+                            },
+                        },
                     ]) && Y(t.prototype, n),
                     r && Y(t, r),
                     e
@@ -5905,8 +5916,8 @@
             H = h('toPrimitive'),
             Y = {}.propertyIsEnumerable,
             B = l('symbol-registry'),
-            I = l('symbols'),
-            F = l('op-symbols'),
+            F = l('symbols'),
+            I = l('op-symbols'),
             N = Object.prototype,
             $ = 'function' == typeof R && !!M.f,
             U = r.QObject,
@@ -5931,7 +5942,7 @@
                       }
                     : T,
             z = function (e) {
-                var t = (I[e] = A(R.prototype));
+                var t = (F[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -5944,11 +5955,11 @@
                       },
             Z = function (e, t, n) {
                 return (
-                    e === N && Z(F, t, n),
+                    e === N && Z(I, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(I, t)
+                    o(F, t)
                         ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : T(e, t, n)
                 );
@@ -5960,20 +5971,20 @@
             },
             Q = function (e) {
                 var t = Y.call(this, (e = _(e, !0)));
-                return !(this === N && o(I, e) && !o(F, e)) && (!(t || !o(this, e) || !o(I, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(F, e) && !o(I, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
             },
             K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(I, t) || o(F, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(I, t))) {
                     var n = C(e, t);
-                    return !n || !o(I, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(I, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = P(n ? F : w(e)), i = [], a = 0; r.length > a; ) !o(I, (t = r[a++])) || (n && !o(N, t)) || i.push(I[t]);
+                for (var t, n = e === N, r = P(n ? I : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         $ ||
@@ -5982,7 +5993,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = d(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(F, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(I, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -6725,7 +6736,10 @@
     ,
     ,
     ,
+    ,
+    ,
     function (e, t, n) {},
+    ,
     ,
     ,
     ,
@@ -6899,6 +6913,6 @@
             }
             return n;
         })(r.a))();
-        n(146);
+        n(148);
     },
 ]);

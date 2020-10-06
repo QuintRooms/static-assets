@@ -15,7 +15,7 @@ module.exports = () => {
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // BJ scottsdale 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // BJ W Palm Beach 2020
-            'bj_west_palm_beach_21-64187': './src/64187.js', // BJ W Palm Beach 2021
+            // 'bj_west_palm_beach_21-64187': './src/64187.js', // BJ W Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021

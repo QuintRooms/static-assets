@@ -846,3 +846,7 @@ body.WBSupportForm {
         }
     }
 }
+
+.leaflet-container .leaflet-marker-pane img {
+    display: none !important;
+}

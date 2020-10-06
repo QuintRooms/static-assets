@@ -4421,3 +4421,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 // Date popup container end
+
+.MemberAuthenticated.SearchHotels .leaflet-container .leaflet-marker-pane img {
+    display: none !important;
+}

@@ -3413,3 +3413,6 @@ input[type='search']::-webkit-search-results-decoration {
 #lightbox {
   top: 0 !important;
   margin-top: 20px; }
+
+.MemberAuthenticated.SearchHotels .leaflet-container .leaflet-marker-pane img {
+  display: none !important; }

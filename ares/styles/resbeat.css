@@ -652,3 +652,6 @@ body.WBSupportForm {
 .WBResendOrCancelForm .WBResendOrCancelFormFields input {
   width: 40% !important;
   background: #f0f0f0 !important; }
+
+.leaflet-container .leaflet-marker-pane img {
+  display: none !important; }

@@ -1885,6 +1885,8 @@ export default class BasePortal {
     }
 
     // TODO check which percentage to use (the below calc or arn "percent")
+    // TODO exclude Resbeat sites
+    // TODO show total savings on checkout page (.discount)
     moveOriginalPrice(nodeList, element) {
         function percentDiff(num1, num2) {
             const percent_value = ((num1 - num2) / num2) * 100;

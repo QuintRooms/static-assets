@@ -54,6 +54,7 @@ module.exports = () => {
             // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // sotx summer_games_san_antonio_21
         };
 
         // local environment

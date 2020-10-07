@@ -1885,9 +1885,9 @@ export default class BasePortal {
     }
 
     // TODO check which percentage to use (the below calc or arn "percent")
-    // TODO exclude Resbeat sites
     // TODO show total savings on checkout page (.discount)
     moveOriginalPrice(nodeList, element) {
+        if (this.site_config.is_resbeat_client) return;
         function percentDiff(num1, num2) {
             const percent_value = ((num1 - num2) / num2) * 100;
             if (Math.floor(percent_value) >= 5) {

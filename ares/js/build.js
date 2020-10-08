@@ -148,6 +148,7 @@ export default class BasePortal {
 
             if (this.page_name === 'search-results') {
                 algolia.init(this.site_config, this.page_name, utilities);
+                // this.moveOriginalPrice('.ArnProperty', '.arnPrice');
             }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
@@ -271,7 +272,6 @@ export default class BasePortal {
             this.updateSupportPageText();
             this.removeLrgFooterLink();
             this.hideBookButtonForNoAvailability();
-
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }

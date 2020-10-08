@@ -4425,3 +4425,26 @@ input[type='search']::-webkit-search-results-decoration {
 .MemberAuthenticated.SearchHotels .leaflet-container .leaflet-marker-pane img {
     display: none !important;
 }
+
+// Original Price strikethrough start
+
+// .SearchHotels .originalPrice,
+// .SinglePropDetail .originalPrice {
+//     text-decoration: line-through;
+//     font-size: 15px;
+//     font-weight: 500;
+//     color: #666;
+//     font-size: 14px;
+// }
+
+// .SearchHotels .originalPrice {
+//     display: inline !important;
+//     margin-right: 5px;
+// }
+
+// .SinglePropDetail .originalPrice {
+//     display: block;
+//     padding: 0;
+// }
+
+// Original Price strikethrough end

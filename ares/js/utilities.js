@@ -444,4 +444,14 @@ export default class Utilities {
 
         return diff < 0;
     }
+
+    /**
+     *@description returns the percent difference between two numbers
+     *@param Number
+     *@param Number
+     *@return Number - percent difference
+     */
+    percentDiff(num1, num2) {
+        return Math.round(((num1 - num2) / num1) * 100);
+    }
 }

@@ -84,8 +84,21 @@ class ChildPortal extends BasePortal {
         }
 
         document.querySelector('#rs-tax-inclusive').addEventListener('click', (e) => {
-            // eslint-disable-next-line no-undef
-            theme.toLowerCase() === 'standard' ? arnChangeTheme('international') : arnChangeTheme('standard');
+            const url = new URL(window.location.href);
+            const params = url.searchParams;
+            if (theme === 'standard') {
+                params.set('theme', 'international');
+                url.search = params.toString();
+
+                window.location.href = url;
+
+                return;
+            }
+
+            params.set('theme', 'standard');
+            url.search = params.toString();
+
+            window.location.href = url;
         });
     }
 

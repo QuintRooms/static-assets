@@ -1893,6 +1893,7 @@ export default class BasePortal {
         await utilities.waitForSelectorInDOM('.pollingFinished');
 
         document.querySelectorAll(nodeList).forEach((prop) => {
+            console.log('inside forEach');
             if (!prop.querySelector('div.originalPrice')) return;
             if (parseFloat(prop.querySelector('.originalPrice').getAttribute('percent')) < 5) {
                 prop.querySelector('.originalPrice').style.display = 'none';
@@ -1916,6 +1917,7 @@ export default class BasePortal {
                 prop.querySelector('.originalPrice').textContent =
                     original_params_url.get('currency') === 'USD' ? `${currency}${price.toFixed(2)}` : `${price.toFixed(2)} ${currency}`;
             } else {
+                console.log('inside else');
                 prop.querySelector(element).insertAdjacentElement('afterbegin', prop.querySelector('div.originalPrice'));
             }
         });

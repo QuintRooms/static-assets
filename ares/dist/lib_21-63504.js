@@ -2137,8 +2137,10 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
+                                                                return (e.next = 4), m.waitForSelectorInDOM('.pollingFinished');
+                                                            case 4:
                                                                 document.querySelectorAll(t).forEach(function (e) {
-                                                                    if (e.querySelector('div.originalPrice'))
+                                                                    if ((console.log('inside forEach'), e.querySelector('div.originalPrice')))
                                                                         if (parseFloat(e.querySelector('.originalPrice').getAttribute('percent')) < 5)
                                                                             e.querySelector('.originalPrice').style.display = 'none';
                                                                         else if (e.querySelector('.averageNightly')) {
@@ -2156,9 +2158,11 @@
                                                                                     'USD' === n.get('currency')
                                                                                         ? ''.concat(t).concat(s.toFixed(2))
                                                                                         : ''.concat(s.toFixed(2), ' ').concat(t));
-                                                                        } else e.querySelector(o).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                                                        } else
+                                                                            console.log('inside else'),
+                                                                                e.querySelector(o).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
                                                                 });
-                                                            case 3:
+                                                            case 5:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

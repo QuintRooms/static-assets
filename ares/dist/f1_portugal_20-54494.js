@@ -2137,8 +2137,10 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
+                                                                return (e.next = 4), h.waitForSelectorInDOM('.pollingFinished');
+                                                            case 4:
                                                                 document.querySelectorAll(t).forEach(function (e) {
-                                                                    if (e.querySelector('div.originalPrice'))
+                                                                    if ((console.log('inside forEach'), e.querySelector('div.originalPrice')))
                                                                         if (parseFloat(e.querySelector('.originalPrice').getAttribute('percent')) < 5)
                                                                             e.querySelector('.originalPrice').style.display = 'none';
                                                                         else if (e.querySelector('.averageNightly')) {
@@ -2156,9 +2158,11 @@
                                                                                     'USD' === r.get('currency')
                                                                                         ? ''.concat(t).concat(s.toFixed(2))
                                                                                         : ''.concat(s.toFixed(2), ' ').concat(t));
-                                                                        } else e.querySelector(n).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                                                        } else
+                                                                            console.log('inside else'),
+                                                                                e.querySelector(n).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
                                                                 });
-                                                            case 3:
+                                                            case 5:
                                                             case 'end':
                                                                 return e.stop();
                                                         }
@@ -7515,7 +7519,7 @@
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
                 },
-                H = function (e) {
+                F = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -7526,7 +7530,7 @@
                                 ? g(function () {
                                       var r = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(H, r, 1), u(D, r, 1));
+                                          t.call(e, u(F, r, 1), u(D, r, 1));
                                       } catch (e) {
                                           D.call(r, e);
                                       }
@@ -7541,7 +7545,7 @@
                 ((E = function (e) {
                     f(this, E, 'Promise', '_h'), m(e), r.call(this);
                     try {
-                        e(u(H, this, 1), u(D, this, 1));
+                        e(u(F, this, 1), u(D, this, 1));
                     } catch (e) {
                         D.call(this, e);
                     }
@@ -7567,7 +7571,7 @@
                 })),
                 (s = function () {
                     var e = new r();
-                    (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(D, e, 1));
+                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
                 }),
                 (v.f = C = function (e) {
                     return e === E || e === i ? new s(e) : o(e);
@@ -8046,8 +8050,8 @@
                 O = M && M.stringify,
                 I = m('_hidden'),
                 D = m('toPrimitive'),
-                H = {}.propertyIsEnumerable,
-                F = l('symbol-registry'),
+                F = {}.propertyIsEnumerable,
+                H = l('symbol-registry'),
                 B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
@@ -8103,7 +8107,7 @@
                     return e;
                 },
                 J = function (e) {
-                    var t = H.call(this, (e = w(e, !0)));
+                    var t = F.call(this, (e = w(e, !0)));
                     return !(this === N && o(B, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, I) && this[I][e])) || t);
                 },
                 Z = function (e, t) {
@@ -8150,11 +8154,11 @@
             for (var re = q(m.store), oe = 0; re.length > oe; ) p(re[oe++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
-                    return o(F, (e += '')) ? F[e] : (F[e] = T(e));
+                    return o(H, (e += '')) ? H[e] : (H[e] = T(e));
                 },
                 keyFor: function (e) {
                     if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in F) if (F[t] === e) return t;
+                    for (var t in H) if (H[t] === e) return t;
                 },
                 useSetter: function () {
                     G = !0;

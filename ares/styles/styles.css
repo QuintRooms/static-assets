@@ -364,6 +364,9 @@ select#adults {
 
 /* Language Dropdown End */
 /* Currency Dropdown Start */
+.SinglePropDetail .currency {
+  display: none; }
+
 #CurrenciesContainer {
   display: none; }
 

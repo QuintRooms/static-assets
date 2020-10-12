@@ -1889,7 +1889,7 @@ export default class BasePortal {
 
     // TODO show total savings on checkout page (.discount)
     async showOriginalPrice(nodeList, element) {
-        if (this.site_config.is_resbeat_client || this.site_config.cug.is_cug) return;
+        if (this.site_config.is_resbeat_client) return;
         await utilities.waitForSelectorInDOM('.pollingFinished');
 
         document.querySelectorAll(nodeList).forEach((prop) => {

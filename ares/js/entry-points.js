@@ -8,6 +8,7 @@ module.exports = () => {
             // 'acl_21-60311': './src/60311.js', // ACL 2021
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+            'arizona_bike_week_21-64812': './src/64812.js', // arizona bike_week_21
             // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'bj_landing_page-58196': './src/58196.js', // BJ landing page
@@ -54,6 +55,7 @@ module.exports = () => {
             // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // sotx summer_games_san_antonio_21
         };
 
         // local environment

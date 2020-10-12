@@ -148,6 +148,7 @@ export default class BasePortal {
 
             if (this.page_name === 'search-results') {
                 algolia.init(this.site_config, this.page_name, utilities);
+                // this.moveOriginalPrice('.ArnProperty', '.arnPrice');
             }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
@@ -271,7 +272,6 @@ export default class BasePortal {
             this.updateSupportPageText();
             this.removeLrgFooterLink();
             this.hideBookButtonForNoAvailability();
-
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
@@ -1885,7 +1885,9 @@ export default class BasePortal {
     }
 
     // TODO check which percentage to use (the below calc or arn "percent")
+    // TODO show total savings on checkout page (.discount)
     moveOriginalPrice(nodeList, element) {
+        if (this.site_config.is_resbeat_client) return;
         function percentDiff(num1, num2) {
             const percent_value = ((num1 - num2) / num2) * 100;
             if (Math.floor(percent_value) >= 5) {

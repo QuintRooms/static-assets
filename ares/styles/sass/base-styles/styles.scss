@@ -4428,23 +4428,23 @@ input[type='search']::-webkit-search-results-decoration {
 
 // Original Price strikethrough start
 
-// .SearchHotels .originalPrice,
-// .SinglePropDetail .originalPrice {
-//     text-decoration: line-through;
-//     font-size: 15px;
-//     font-weight: 500;
-//     color: #666;
-//     font-size: 14px;
-// }
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
 
-// .SearchHotels .originalPrice {
-//     display: inline !important;
-//     margin-right: 5px;
-// }
+.SearchHotels .originalPrice {
+    display: inline;
+    margin-right: 5px;
+}
 
-// .SinglePropDetail .originalPrice {
-//     display: block;
-//     padding: 0;
-// }
+.SinglePropDetail .originalPrice {
+    display: block;
+    padding: 0;
+}
 
 // Original Price strikethrough end

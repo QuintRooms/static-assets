@@ -3416,3 +3416,19 @@ input[type='search']::-webkit-search-results-decoration {
 
 .MemberAuthenticated.SearchHotels .leaflet-container .leaflet-marker-pane img {
   display: none !important; }
+
+.SearchHotels .originalPrice,
+.SinglePropDetail .originalPrice {
+  text-decoration: line-through;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  font-size: 14px; }
+
+.SearchHotels .originalPrice {
+  display: inline;
+  margin-right: 5px; }
+
+.SinglePropDetail .originalPrice {
+  display: block;
+  padding: 0; }

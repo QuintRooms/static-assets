@@ -1916,7 +1916,9 @@ export default class BasePortal {
                 }
                 price = parseFloat(price) / parseFloat(nights);
                 prop.querySelector('.originalPrice').textContent =
-                    original_params_url.get('currency') === 'USD' ? `${currency}${price.toFixed(2)}` : `${price.toFixed(2)} ${currency}`;
+                    original_params_url.get('currency') === 'USD' || document.querySelector('.arnCurrency').textContent === '$'
+                        ? `${currency}${price.toFixed(2)}`
+                        : `${price.toFixed(2)} ${currency}`;
             } else {
                 prop.querySelector(element).insertAdjacentElement('afterbegin', prop.querySelector('div.originalPrice'));
             }

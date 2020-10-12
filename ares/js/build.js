@@ -1894,7 +1894,9 @@ export default class BasePortal {
 
         document.querySelectorAll(nodeList).forEach((prop) => {
             if (!prop.querySelector('div.originalPrice')) return;
-            if (parseFloat(prop.querySelector('.originalPrice').getAttribute('percent')) < 5) {
+
+            const percent = document.querySelector('meta[name="siteId"]').getAttribute('content') === '52342' ? 3 : 5;
+            if (parseFloat(prop.querySelector('.originalPrice').getAttribute('percent')) < percent) {
                 prop.querySelector('.originalPrice').style.display = 'none';
                 return;
             }

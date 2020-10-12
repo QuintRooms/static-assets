@@ -6662,7 +6662,7 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if (!this.site_config.is_resbeat_client && !this.site_config.cug.is_cug) {
+                                                            if (!this.site_config.is_resbeat_client) {
                                                                 e.next = 2;
                                                                 break;
                                                             }

@@ -1950,4 +1950,37 @@ export default class BasePortal {
             }
         });
     }
+
+    updatePropThumbToFeaturedImage() {
+        if (this.page_name !== 'search-results') return;
+
+        async function getPropObject(prop) {
+            const response = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop.querySelector('.propId').textContent}`);
+            const data = await response.json();
+            return data;
+        }
+
+        function findFeaturedImage(obj) {
+            let featured_image_path;
+            for (let i = 0; i <= obj.Images.length; i += 1) {
+                if (obj.Images[i].ImageCaption === 'Featured Image') {
+                    featured_image_path = obj.Images[i].ImagePath;
+                    break;
+                }
+            }
+            return featured_image_path;
+        }
+
+        const properties = document.querySelectorAll('.ArnProperty');
+
+        properties.forEach((prop, i) => {
+            getPropObject(prop).then((prop_obj) => {
+                const featured_image = findFeaturedImage(prop_obj);
+                const current_image = prop.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
+                if (featured_image.substr(featured_image.lastIndexOf('.com/') + 5) === current_image.substr(current_image.lastIndexOf('.com/') + 5)) return;
+                prop.querySelector('.ArnPropThumb .ArnImageLink img').setAttribute('src', featured_image);
+                console.log('image changed: ', i, prop_obj.Name);
+            });
+        });
+    }
 }

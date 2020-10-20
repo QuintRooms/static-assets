@@ -150,6 +150,7 @@ export default class BasePortal {
             if (this.page_name === 'search-results') {
                 algolia.init(this.site_config, this.page_name, utilities);
                 this.showOriginalPrice('.ArnProperty', '.arnPrice');
+                this.updatePropThumbToFeaturedImage();
             }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
@@ -1955,9 +1956,16 @@ export default class BasePortal {
         if (this.page_name !== 'search-results') return;
 
         async function getPropObject(prop) {
-            const response = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop.querySelector('.propId').textContent}`);
-            const data = await response.json();
-            return data;
+            try {
+                const response = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop.querySelector('.propId').textContent}`);
+                if (response.status >= 400 && response.status < 600) {
+                    throw new Error('Bad response from server');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error(error);
+            }
         }
 
         function findFeaturedImage(obj) {
@@ -1973,13 +1981,12 @@ export default class BasePortal {
 
         const properties = document.querySelectorAll('.ArnProperty');
 
-        properties.forEach((prop, i) => {
+        properties.forEach((prop) => {
             getPropObject(prop).then((prop_obj) => {
                 const featured_image = findFeaturedImage(prop_obj);
                 const current_image = prop.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
                 if (featured_image.substr(featured_image.lastIndexOf('.com/') + 5) === current_image.substr(current_image.lastIndexOf('.com/') + 5)) return;
                 prop.querySelector('.ArnPropThumb .ArnImageLink img').setAttribute('src', featured_image);
-                console.log('image changed: ', i, prop_obj.Name);
             });
         });
     }

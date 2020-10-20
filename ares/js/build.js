@@ -150,7 +150,6 @@ export default class BasePortal {
             if (this.page_name === 'search-results') {
                 algolia.init(this.site_config, this.page_name, utilities);
                 this.showOriginalPrice('.ArnProperty', '.arnPrice');
-                this.updatePropThumbToFeaturedImage();
             }
 
             jQuery('#theBody').on('arnMapLoadedEvent', async () => {
@@ -257,6 +256,7 @@ export default class BasePortal {
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
             // this.forceClickOnCitySearch();
+            this.updatePropThumbToFeaturedImage();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -1333,11 +1333,23 @@ export default class BasePortal {
         let prop_images;
         let carousel_images;
 
+        function reorderImagesArray(array) {
+            if (!array) return;
+            if (array[0].ImageCaption === 'Featured Image') return;
+            const zero_idx = 'Featured Image';
+            array.sort((x, y) => {
+                if (x.ImageCaption === zero_idx) {
+                    return -1;
+                }
+                return y.ImageCaption === zero_idx ? 1 : 0;
+            });
+            return array;
+        }
+
         async function getPropImages() {
             try {
-                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
-                    method: 'GET',
-                }).then((response) => response.json());
+                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`).then((response) => response.json());
+                reorderImagesArray(data.Images);
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
             } catch (error) {
                 console.log(error);
@@ -1360,6 +1372,7 @@ export default class BasePortal {
 
         async function createPropImageSlideshow() {
             prop_images = await getPropImages();
+            console.log('ordered prop images: ', prop_images);
             document.querySelector('.ArnPropName').insertAdjacentHTML(
                 'afterend',
                 `<div class="carousel-container">
@@ -1952,7 +1965,8 @@ export default class BasePortal {
         });
     }
 
-    updatePropThumbToFeaturedImage() {
+    async updatePropThumbToFeaturedImage() {
+        await utilities.waitForSelectorInDOM('.pollingFinished');
         if (this.page_name !== 'search-results') return;
 
         async function getPropObject(prop) {
@@ -1986,7 +2000,7 @@ export default class BasePortal {
                 const featured_image = findFeaturedImage(prop_obj);
                 const current_image = prop.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
                 if (featured_image.substr(featured_image.lastIndexOf('.com/') + 5) === current_image.substr(current_image.lastIndexOf('.com/') + 5)) return;
-                prop.querySelector('.ArnPropThumb .ArnImageLink img').setAttribute('src', featured_image);
+                prop.querySelector('.ArnPropThumb .ArnImageLink img').src = featured_image;
             });
         });
     }

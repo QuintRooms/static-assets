@@ -237,7 +237,6 @@
                                                                                 e.formatCheckoutForm(),
                                                                                 e.setupReservationSummaryContainer(),
                                                                                 h.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                                h.emailVerificationSetup(),
                                                                                 e.fixCheckoutInputTabOrder(),
                                                                                 h.selectCheckboxOnLabelClick(
                                                                                     '.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax'
@@ -1590,7 +1589,6 @@
                                                                 return (t.next = 2), s();
                                                             case 2:
                                                                 (e = t.sent),
-                                                                    console.log('ordered prop images: ', e),
                                                                     document
                                                                         .querySelector('.ArnPropName')
                                                                         .insertAdjacentHTML(
@@ -1598,7 +1596,7 @@
                                                                             '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
                                                                         ),
                                                                     c();
-                                                            case 6:
+                                                            case 5:
                                                             case 'end':
                                                                 return t.stop();
                                                         }
@@ -2228,7 +2226,7 @@
                                                             case 0:
                                                                 return (
                                                                     (r = function (e) {
-                                                                        for (var t, n = 0; n <= e.Images.length; n += 1)
+                                                                        for (var t, n = 0; n <= e.Images.length - 1; n += 1)
                                                                             if ('Featured Image' === e.Images[n].ImageCaption) {
                                                                                 t = e.Images[n].ImagePath;
                                                                                 break;
@@ -2290,11 +2288,12 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 7:
-                                                                document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                                                document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
                                                                     t(e).then(function (t) {
                                                                         var n = r(t),
                                                                             o = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
-                                                                        n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
+                                                                        n &&
+                                                                            n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
                                                                             (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
                                                                     });
                                                                 });

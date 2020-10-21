@@ -105,7 +105,7 @@ export default class BasePortal {
                 this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
-                utilities.emailVerificationSetup();
+                // utilities.emailVerificationSetup();
                 this.fixCheckoutInputTabOrder();
 
                 utilities.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax');
@@ -256,7 +256,7 @@ export default class BasePortal {
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
             // this.forceClickOnCitySearch();
-            this.updatePropThumbToFeaturedImage();
+            // this.updatePropThumbToFeaturedImage();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();

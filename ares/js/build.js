@@ -105,7 +105,7 @@ export default class BasePortal {
                 this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
-                utilities.emailVerificationSetup();
+                // utilities.emailVerificationSetup();
                 this.fixCheckoutInputTabOrder();
 
                 utilities.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax');
@@ -256,6 +256,7 @@ export default class BasePortal {
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
             // this.forceClickOnCitySearch();
+            // this.updatePropThumbToFeaturedImage();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -1332,11 +1333,23 @@ export default class BasePortal {
         let prop_images;
         let carousel_images;
 
+        function reorderImagesArray(array) {
+            if (!array) return;
+            if (array[0].ImageCaption === 'Featured Image') return;
+            const zero_idx = 'Featured Image';
+            array.sort((x, y) => {
+                if (x.ImageCaption === zero_idx) {
+                    return -1;
+                }
+                return y.ImageCaption === zero_idx ? 1 : 0;
+            });
+            return array;
+        }
+
         async function getPropImages() {
             try {
-                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`, {
-                    method: 'GET',
-                }).then((response) => response.json());
+                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`).then((response) => response.json());
+                reorderImagesArray(data.Images);
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
             } catch (error) {
                 console.log(error);
@@ -1359,6 +1372,7 @@ export default class BasePortal {
 
         async function createPropImageSlideshow() {
             prop_images = await getPropImages();
+            console.log('ordered prop images: ', prop_images);
             document.querySelector('.ArnPropName').insertAdjacentHTML(
                 'afterend',
                 `<div class="carousel-container">
@@ -1948,6 +1962,46 @@ export default class BasePortal {
             if (prop.querySelector('.ArnLimitedAvail')) {
                 prop.querySelector('.ArnRateButton').style.display = 'none';
             }
+        });
+    }
+
+    async updatePropThumbToFeaturedImage() {
+        await utilities.waitForSelectorInDOM('.pollingFinished');
+        if (this.page_name !== 'search-results') return;
+
+        async function getPropObject(prop) {
+            try {
+                const response = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop.querySelector('.propId').textContent}`);
+                if (response.status >= 400 && response.status < 600) {
+                    throw new Error('Bad response from server');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        function findFeaturedImage(obj) {
+            let featured_image_path;
+            for (let i = 0; i <= obj.Images.length; i += 1) {
+                if (obj.Images[i].ImageCaption === 'Featured Image') {
+                    featured_image_path = obj.Images[i].ImagePath;
+                    break;
+                }
+            }
+            return featured_image_path;
+        }
+
+        const properties = document.querySelectorAll('.ArnProperty');
+
+        properties.forEach((prop) => {
+            getPropObject(prop).then((prop_obj) => {
+                const featured_image = findFeaturedImage(prop_obj);
+                const current_image = prop.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
+                if (featured_image.substr(featured_image.lastIndexOf('.com/') + 5) === current_image.substr(current_image.lastIndexOf('.com/') + 5)) return;
+                prop.querySelector('.ArnPropThumb .ArnImageLink img').src = featured_image;
+            });
         });
     }
 }

@@ -256,7 +256,7 @@ export default class BasePortal {
             // this.addSocialMediaShareButtons(this.site_config.lodging.event_name, this.site_config.lodging.event_id);
 
             // this.forceClickOnCitySearch();
-            // this.updatePropThumbToFeaturedImage();
+            this.updatePropThumbToFeaturedImage();
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
@@ -1372,7 +1372,6 @@ export default class BasePortal {
 
         async function createPropImageSlideshow() {
             prop_images = await getPropImages();
-            console.log('ordered prop images: ', prop_images);
             document.querySelector('.ArnPropName').insertAdjacentHTML(
                 'afterend',
                 `<div class="carousel-container">
@@ -1984,7 +1983,7 @@ export default class BasePortal {
 
         function findFeaturedImage(obj) {
             let featured_image_path;
-            for (let i = 0; i <= obj.Images.length; i += 1) {
+            for (let i = 0; i <= obj.Images.length - 1; i += 1) {
                 if (obj.Images[i].ImageCaption === 'Featured Image') {
                     featured_image_path = obj.Images[i].ImagePath;
                     break;
@@ -1995,10 +1994,11 @@ export default class BasePortal {
 
         const properties = document.querySelectorAll('.ArnProperty');
 
-        properties.forEach((prop) => {
+        properties.forEach((prop, i) => {
             getPropObject(prop).then((prop_obj) => {
                 const featured_image = findFeaturedImage(prop_obj);
                 const current_image = prop.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
+                if (!featured_image) return;
                 if (featured_image.substr(featured_image.lastIndexOf('.com/') + 5) === current_image.substr(current_image.lastIndexOf('.com/') + 5)) return;
                 prop.querySelector('.ArnPropThumb .ArnImageLink img').src = featured_image;
             });

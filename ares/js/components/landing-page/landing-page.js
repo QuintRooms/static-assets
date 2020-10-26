@@ -65,9 +65,8 @@ export default class LandingPage {
                 this.buildCitySearchElement(event);
                 return;
             }
-            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<h1>Upcoming Events</h1><div class="events"></div>`);
-
             if (utilities.checkForPastDate(event.end_date)) return;
+            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<h1>Upcoming Events</h1><div class="events"></div>`);
 
             document.querySelector('.events').insertAdjacentHTML(
                 'beforeEnd',

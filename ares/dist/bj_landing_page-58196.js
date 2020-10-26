@@ -6975,23 +6975,23 @@
                                                             this.landing_page_events.forEach(function (e) {
                                                                 e.is_city_search_header_link
                                                                     ? r.buildCitySearchElement(e)
-                                                                    : (0 === t && n.insertAdjacentHTML('beforeEnd', '<h1>Upcoming Events</h1><div class="events"></div>'),
-                                                                      te.checkForPastDate(e.end_date) ||
-                                                                          (document.querySelector('.events').insertAdjacentHTML(
-                                                                              'beforeEnd',
-                                                                              '\n                <a class="event-container event-'
-                                                                                  .concat(t + 1, '" href="')
-                                                                                  .concat(
-                                                                                      e.portal_url,
-                                                                                      '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
-                                                                                  )
-                                                                                  .concat(e.name, '</h2>\n                        <div class="display-date">')
-                                                                                  .concat(
-                                                                                      e.display_date,
-                                                                                      '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
-                                                                                  )
-                                                                          ),
-                                                                          (t += 1)));
+                                                                    : te.checkForPastDate(e.end_date) ||
+                                                                      (0 === t && n.insertAdjacentHTML('beforeEnd', '<h1>Upcoming Events</h1><div class="events"></div>'),
+                                                                      document.querySelector('.events').insertAdjacentHTML(
+                                                                          'beforeEnd',
+                                                                          '\n                <a class="event-container event-'
+                                                                              .concat(t + 1, '" href="')
+                                                                              .concat(
+                                                                                  e.portal_url,
+                                                                                  '" target="_blank">\n                    <div class="event-details">\n                        <h2 class="event-name">'
+                                                                              )
+                                                                              .concat(e.name, '</h2>\n                        <div class="display-date">')
+                                                                              .concat(
+                                                                                  e.display_date,
+                                                                                  '</div>\n                    </div>\n                        <div class="view-hotels">View Hotels</div>\n                </a>\n                '
+                                                                              )
+                                                                      ),
+                                                                      (t += 1));
                                                             });
                                                         case 7:
                                                         case 'end':

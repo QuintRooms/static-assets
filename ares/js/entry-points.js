@@ -50,6 +50,7 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
+            // 'f1_dutch_21-65003': './src/65003.js', // F1 Dutch 2021
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // hof cug
             // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
@@ -62,7 +63,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'f1_dutch_21-65003': './src/65003.js', // F1 Dutch 2021
         };
     }
 

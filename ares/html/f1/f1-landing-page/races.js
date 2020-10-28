@@ -225,7 +225,7 @@ export default {
     //         flag_alt_text: 'Belgian',
     //         book_url: '',
     //     },
-    //     amsterdam: {
+    //     netherlands: {
     //         days: '3-5',
     //         month: 'Sep',
     //         race_expiry: '2021-09-06',

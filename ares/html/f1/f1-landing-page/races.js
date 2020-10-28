@@ -91,7 +91,7 @@ export default {
     //         location: 'Melbourne, Australia',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/australia.jpg`,
     //         flag_alt_text: 'Australian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45297&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Australia%202021',
     //     },
     //     bahrain: {
     //         days: '26-28',
@@ -102,7 +102,7 @@ export default {
     //         location: 'Sakhir, Bahrain',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/bahrain.jpg`,
     //         flag_alt_text: 'Bahrain',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202021',
     //     },
     //     china: {
     //         days: '9-11',
@@ -113,7 +113,7 @@ export default {
     //         location: 'Shanghai, China',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/china.gif`,
     //         flag_alt_text: 'Chinese',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45301&utm_source=Website&utm_medium=Index%20Page&utm_campaign=China%202021',
     //     },
     //     vietnam: {
     //         days: '23-25',
@@ -124,7 +124,7 @@ export default {
     //         location: 'Hanoi, Vietnam',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/vietnam.jpg`,
     //         flag_alt_text: 'Vietnamese',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45304&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Vietnam%202021',
     //     },
     //     spain: {
     //         days: '7-9',
@@ -135,7 +135,7 @@ export default {
     //         location: 'Catalunya, Spain',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/spain.gif`,
     //         flag_alt_text: 'Spanish',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45302&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Spain%202021',
     //     },
     //     monaco: {
     //         days: '21-23',
@@ -146,7 +146,7 @@ export default {
     //         location: 'Monte Carlo, Monaco',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/monaco.jpg`,
     //         flag_alt_text: 'Monaco',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45303&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Monaco%202021',
     //     },
     //     azerbaijan: {
     //         days: '', // TODO date needs to be added
@@ -157,7 +157,7 @@ export default {
     //         location: 'Baku, Azerbaijan',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/azerbaijan.jpg`,
     //         flag_alt_text: 'Azerbaijan',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45326&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Azerbaijan%202021',
     //     },
     //     canada: {
     //         days: '4-6',
@@ -168,7 +168,7 @@ export default {
     //         location: 'Montreal, Canada',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/canada.jpg`,
     //         flag_alt_text: 'Canadian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45328&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Canada%202021',
     //     },
     //     austria: {
     //         days: '18-20',
@@ -179,7 +179,7 @@ export default {
     //         location: 'Styria, Austria ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/austria.gif`,
     //         flag_alt_text: 'Austrian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45331&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Austria%202021',
     //     },
     //     france: {
     //         days: '25-27',
@@ -190,7 +190,7 @@ export default {
     //         location: 'La Castellet, France ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/france.png`,
     //         flag_alt_text: 'French',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45333&utm_source=Website&utm_medium=Index%20Page&utm_campaign=France%202021',
     //     },
     //     britain: {
     //         days: '9-11',
@@ -201,7 +201,7 @@ export default {
     //         location: 'Silverstone, England',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/britain.gif`,
     //         flag_alt_text: 'British',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45334&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Great%20Britain%202021',
     //     },
     //     hungary: {
     //         days: '23-25',
@@ -212,7 +212,7 @@ export default {
     //         location: 'Budapest, Hungary ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/hungary.gif`,
     //         flag_alt_text: 'Hungarian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45335&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Hungary%202021',
     //     },
     //     belguim: {
     //         days: '27-29',
@@ -223,7 +223,7 @@ export default {
     //         location: 'Stavelot, Belguim ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/belguim.gif`,
     //         flag_alt_text: 'Belgian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45306&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Belgium%202021',
     //     },
     //     netherlands: {
     //         days: '3-5',
@@ -234,7 +234,7 @@ export default {
     //         location: 'Zandvoort, Netherlands',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/netherlands.jpg`,
     //         flag_alt_text: 'Dutch',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45295&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Dutch%202021',
     //     },
     //     italy: {
     //         days: '10-12',
@@ -245,7 +245,7 @@ export default {
     //         location: 'Monza, Italy ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/italy.jpg`,
     //         flag_alt_text: 'Italian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45307&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Italy%202021',
     //     },
     //     russia: {
     //         days: '17-19',
@@ -256,7 +256,7 @@ export default {
     //         location: 'Sochi, Russia ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/russia.jpg`,
     //         flag_alt_text: 'Russian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45336&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Russia%202021',
     //     },
     //     singapore: {
     //         days: '1-3',
@@ -267,7 +267,7 @@ export default {
     //         location: 'Marina Bay, Singapore',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/singapore.svg`,
     //         flag_alt_text: 'Singaporean',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45308&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Singapore%202021',
     //     },
     //     japan: {
     //         days: '8-10',
@@ -278,7 +278,7 @@ export default {
     //         location: 'Sazuka, Japan ',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/japan.jpg`,
     //         flag_alt_text: 'Japanese',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45337&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Japan%202021',
     //     },
     //     usa: {
     //         days: '22-24',
@@ -289,7 +289,7 @@ export default {
     //         location: 'Austin, Texas, United States',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/us.jpg`,
     //         flag_alt_text: 'United States',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45310&utm_source=Website&utm_medium=Index%20Page&utm_campaign=United%20States%202021',
     //     },
     //     mexico: {
     //         days: '29-31',
@@ -300,7 +300,7 @@ export default {
     //         location: 'Mexico City, Mexico',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/mexico.jpg`,
     //         flag_alt_text: 'Mexican',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45313&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Mexico%202021',
     //     },
     //     brazil: {
     //         days: '13-15',
@@ -311,7 +311,7 @@ export default {
     //         location: 'Brazil',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/.jpg`, // TODO get image for Brazil
     //         flag_alt_text: 'Brazilian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45315&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Brazil%202021',
     //     },
     //     saudi_arabia: {
     //         days: '26-28',
@@ -322,7 +322,7 @@ export default {
     //         location: 'Riyadh, Saudi Arabia',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/.jpg`, // TODO get image for Saudi Arabia
     //         flag_alt_text: 'Saudi Arabian',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45315&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Saudi%20Arabia%202021',
     //     },
     //     abu_dhabi: {
     //         days: '3-5',
@@ -333,7 +333,7 @@ export default {
     //         location: 'Yas Island, Abu Dhabi, UAE',
     //         country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/abu-dhabi.jpg`,
     //         flag_alt_text: 'UAE',
-    //         book_url: '',
+    //         book_url: 'https://bookrooms.formula1.com/group-event?id=45322&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Abu%20Dhabi%202021',
     //     },
     // },
 };

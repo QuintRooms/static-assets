@@ -1,10 +1,10 @@
-export default function exclusiveRatesComingPopup(eventName, dates) {
+export default function popup(customText) {
     if (!document.querySelector('.SearchHotels')) return;
 
-    function ratesComingSoon(event, date) {
-        if (localStorage.getItem('ratesComingSoon')) return;
+    function ratesComingSoon(text) {
+        if (localStorage.getItem('popup')) return;
         document.body.classList.toggle('hidden');
-        window.localStorage.setItem('ratesComingSoon', 'true');
+        window.localStorage.setItem('popup', 'true');
         document.querySelector('.ArnSearchContainerMainDiv').insertAdjacentHTML(
             'afterbegin',
             `
@@ -12,12 +12,12 @@ export default function exclusiveRatesComingPopup(eventName, dates) {
                 <div id="exclusive-rates-popup" class="modal-container">
                     <div class="modal-header">
                         <div id="header-text">
-                            <h3>Exclusive ${event} hotel rates will be available on ${date}</h3>
+                            <h3>${text}</h3>
                         </div>
                         <span class="close-modal">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
-                                <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>
-                                <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>
+                                <polyline stroke="#000" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>
+                                <polyline stroke="#000" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>
                             </svg>
                         </span>
                     </div>
@@ -33,6 +33,6 @@ export default function exclusiveRatesComingPopup(eventName, dates) {
     }
 
     setTimeout(() => {
-        ratesComingSoon(eventName, dates);
+        ratesComingSoon(customText);
     }, 2000);
 }

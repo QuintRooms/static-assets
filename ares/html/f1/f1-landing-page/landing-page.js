@@ -2,6 +2,7 @@ import races from './races';
 import Utilities from '../../../js/utilities';
 import f1Styles from '../../../js/f1';
 
+// f1Styles(54494);
 f1Styles(document.querySelector('meta[name="siteId"]').content);
 
 const utilities = new Utilities();

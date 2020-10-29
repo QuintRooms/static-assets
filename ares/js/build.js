@@ -1953,8 +1953,7 @@ export default class BasePortal {
     }
 
     hideBookButtonForNoAvailability() {
-        if (this.page_name !== 'search-results') return;
-        if (!document.querySelector('.ArnLimitedAvail')) return;
+        if (!document.querySelector('.SearchHotels')) return;
 
         const props = document.querySelectorAll('.ArnProperty');
         props.forEach((prop) => {

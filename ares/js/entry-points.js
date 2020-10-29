@@ -21,6 +21,7 @@ module.exports = () => {
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // CFP 2021
             // 'f1_bahrain_20-60302': './src/60302.js', // F1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+            // 'f1_dutch_21-65003': './src/65003.js', // F1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js',
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // F1 Template
@@ -38,6 +39,7 @@ module.exports = () => {
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees
+            // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // sotx summer_games_san_antonio_21
             // 'tortuga_20-60336': './src/60336.js', // Tortuga
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // TSC 2020
@@ -50,13 +52,11 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'f1_dutch_21-65003': './src/65003.js', // F1 Dutch 2021
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // hof cug
             // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
-            // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // sotx summer_games_san_antonio_21
         };
 
         // local environment

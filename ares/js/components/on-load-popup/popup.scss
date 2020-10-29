@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     width: 50vw;
-    height: 15vh;
+    height: 22vh;
     border: 5px solid $primary_color;
     border-radius: 20px;
     
@@ -40,6 +40,6 @@
 @media screen and (max-width: 600px) {
     #exclusive-rates-popup {
         width: 90vw;
-        height: 45vh;
+        height: auto;
     }
 }

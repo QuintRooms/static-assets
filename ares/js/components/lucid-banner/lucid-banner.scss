@@ -1,0 +1,77 @@
+.lucid-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: $primary_color;
+
+    .lucid-content {
+        display: flex;
+        align-items: center;
+        width: 80%;
+
+        span {
+            color: $primary_text_color;
+            font-size: 20px;
+            margin-left: 30px;
+            font-weight: 600;
+        }
+    }
+
+    .lucid-button {
+        background: $primary_text_color;
+        display: flex;
+        margin-right: 50px;
+        width: 150px;
+        height: 30px;
+        transition: all 0.3s linear;
+        
+        &:hover {
+            background: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondary_text_color;
+            font-size: 13px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1080px) {
+    .lucid-content {
+        display: flex;
+        align-items: center;
+        width: 75%;
+        
+        span {
+            font-size: 16px;
+            margin-left: 30px;
+            font-weight: 600;
+        }
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+
+    .lucid-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+    
+        .lucid-button {
+            width: 180px;
+            height: 30px;
+            margin-right: 10px;
+        }
+    }
+
+}

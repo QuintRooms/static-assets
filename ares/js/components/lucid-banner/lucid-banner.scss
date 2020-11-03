@@ -10,12 +10,16 @@
         display: flex;
         align-items: center;
         width: 80%;
+        text-align: center;
 
         span {
             color: $primary_text_color;
-            font-size: 20px;
+            font-size: 16px;
             margin-left: 30px;
             font-weight: 600;
+        }
+        #mobile {
+            display: none;
         }
     }
 
@@ -45,13 +49,13 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .lucid-content {
+    .lucid-banner .lucid-content {
         display: flex;
         align-items: center;
         width: 75%;
         
         span {
-            font-size: 16px;
+            font-size: 14px;
             margin-left: 30px;
             font-weight: 600;
         }
@@ -72,6 +76,27 @@
             height: 30px;
             margin-right: 10px;
         }
+
+        .lucid-content {
+            span {
+                font-size: 20px;
+            }
+
+            #desktop {
+                display: none;
+            }
+    
+            #mobile {
+                display: inline;
+            }
+        }
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .lucid-banner .lucid-content span {
+        font-size: 16px;
+        margin-left: 8px;
+    }
 }

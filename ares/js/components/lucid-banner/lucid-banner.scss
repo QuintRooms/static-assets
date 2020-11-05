@@ -1,0 +1,121 @@
+.lucid-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: $primary_color;
+
+    .lucid-content {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        text-align: center;
+
+        span {
+            color: $primary_text_color;
+            font-size: 16px;
+            margin-left: 30px;
+            font-weight: 600;
+        }
+
+        #tablet {
+            display: none;
+        }
+
+        #mobile {
+            display: none;
+        }
+    }
+
+    .lucid-button {
+        background: $primary_text_color;
+        display: flex;
+        margin-right: 50px;
+        width: 150px;
+        height: 30px;
+        transition: all 0.3s linear;
+        
+        &:hover {
+            background: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            color: $secondary_text_color;
+            font-size: 13px;
+            font-weight: 700;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1080px) {
+    .lucid-banner .lucid-content {
+        display: flex;
+        align-items: center;
+        width: 75%;
+        
+        span {
+            font-size: 14px;
+            margin-left: 30px;
+            font-weight: 600;
+        }
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+
+    .lucid-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+    
+        .lucid-button {
+            width: 180px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .lucid-content {
+            span {
+                font-size: 16px;
+            }
+
+            #desktop {
+                display: none;
+            }
+    
+            #tablet {
+                display: inline;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .lucid-banner .lucid-content {
+
+        #tablet {
+            display: none;
+        }
+
+        #mobile {
+            display: inline;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .lucid-banner .lucid-content span {
+        font-size: 16px;
+        margin-left: 8px;
+    }
+}

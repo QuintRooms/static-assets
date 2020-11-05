@@ -1,8 +1,8 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #e10600;
+$header_background: #14141d;
 $logo_flex_position: space-between;
-$logo_max_width: 300px;
+$logo_max_width: 260px;
 $background_color: #fff;
 $primary_color: #e10600;
 $secondary_color: #333;
@@ -25,3 +25,9 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/ht
 #popup-modal.show-modal {
     background: unset;
 }
+
+.show-mobile-nav {
+    transform: translateY(410px) !important;
+}
+
+

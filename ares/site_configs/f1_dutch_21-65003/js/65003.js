@@ -14,7 +14,7 @@ class ChildPortal extends BasePortal {
 }
 
 f1Styles(site_config.site_id);
-popup('Check back on 6th November for additional and exclusive Dutch GP hotel rates.');
+popup('Check back on 13th November for additional and exclusive Dutch GP hotel rates.');
 
 new ChildPortal();
 new Distance();

@@ -1,5 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './58513-config';
+import renderLucidBanner from '../../../js/components/lucid-banner/lucid-banner';
 // import Utilities from '../../js/utilities';
 
 const site_config = new SiteConfig();
@@ -14,6 +15,7 @@ class ChildPortal extends BasePortal {
 }
 
 new ChildPortal();
+renderLucidBanner(site_config.lodging.event_name, 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Scottsdale');
 
 // function addHiltonTags() {
 //     const hilton_prop_ids = [

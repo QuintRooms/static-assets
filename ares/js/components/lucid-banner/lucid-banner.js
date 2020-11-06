@@ -8,7 +8,7 @@ const utilities = new Utilities();
  *@param string - Link to jotForm.
  */
 export default async function renderLucidBanner(event, link) {
-    if (document.querySelector('.RootBody') || document.querySelector('.SearchHotels')) {
+    if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
         await utilities.waitForSelectorInDOM('header');
 
         document.querySelector('header').insertAdjacentHTML(

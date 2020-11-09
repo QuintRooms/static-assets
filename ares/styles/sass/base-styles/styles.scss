@@ -389,11 +389,32 @@ select#adults {
     background: #fff;
     width: 100%;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+
+    @media screen and (min-width: 1100px) {
+        top: -700px !important;
+    }
 }
 
 .show-language-container {
     display: flex;
     flex-direction: column;
+    
+    @media screen and (min-width: 1100px) {
+        animation: languageDrop 0.5s ease forwards;
+    }
+}
+
+@keyframes languageDrop {
+    0% { 
+        opacity: 0;
+    }
+    70% {
+    transform: translateY(800px);
+    }
+    100% {
+    transform: translateY(730px);
+    opacity: 1;
+    }
 }
 
 .language-container img,
@@ -1482,7 +1503,22 @@ legend {
 .SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2),
 .SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3) {
     display: none;
+    animation: amenityDrop 1s linear;
 }
+
+@keyframes amenityDrop {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 .show-amenities {
     display: block !important;

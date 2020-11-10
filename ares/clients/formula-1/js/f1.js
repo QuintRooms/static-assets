@@ -12,7 +12,7 @@ export default async function f1Styles(siteId) {
     const currency_el = document.querySelector('.currencies-container');
 
     async function addHeader(id) {
-        const html = await utilities.fetchHTMLFromFile(`${env_path.path}clients/formula-1/html/f1-header.html`);
+        const html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula-1/html/f1-header.html`);
         const races_contact =
             siteId === '46451' || siteId === '45246'
                 ? `
@@ -53,7 +53,7 @@ export default async function f1Styles(siteId) {
     }
 
     async function addHamburgerMenu(id) {
-        const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/mobile-hamburger-menu.html`);
+        const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula-1/html/mobile-hamburger-menu.html`);
         header.insertAdjacentHTML('beforeend', burger_html);
 
         const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
@@ -85,7 +85,7 @@ export default async function f1Styles(siteId) {
 
     async function addFooter() {
         if (document.querySelector('meta[name="landing-page"]') !== null) return;
-        const footer_html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/footer.html`);
+        const footer_html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula-1/html/footer.html`);
 
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }

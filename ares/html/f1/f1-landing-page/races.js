@@ -1,4 +1,4 @@
-import Path from '../../../js/path';
+import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 export default {

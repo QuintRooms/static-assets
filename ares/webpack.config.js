@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const EntryPoints = require('./js/entry-points');
+const EntryPoints = require('./js/build_tools/entry-points');
 
 module.exports = () => {
     return {

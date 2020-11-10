@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EntryPoints = require('./js/entry-points');
-// const Path = require('./js/path');
-// const SourceMapPath = require('./js/source-map-path');
 
 module.exports = () => {
     return {
@@ -57,10 +55,6 @@ module.exports = () => {
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             }),
             new Dotenv(),
-            // new webpack.SourceMapDevToolPlugin({
-            //     filename: 'dist/[name].map',
-            //     sourceRoot: SourceMapPath(),
-            // }),
             new MiniCssExtractPlugin({
                 moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
             }),

@@ -263,7 +263,7 @@ export default {
             month: 'Oct',
             race_expiry: '2021-10-04',
             sponsor: '',
-            name: 'Singaporean Grand Prix',
+            name: 'Singapore Grand Prix',
             location: 'Marina Bay, Singapore',
             country_flag_url: `${env_path.path}/html/f1/f1-landing-page/images/singapore.svg`,
             flag_alt_text: 'Singaporean',

@@ -1,5 +1,5 @@
-import Path from './path';
-import Utilities from './utilities';
+import Path from '../../../js/build_tools/path';
+import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
 
@@ -12,7 +12,7 @@ export default async function f1Styles(siteId) {
     const currency_el = document.querySelector('.currencies-container');
 
     async function addHeader(id) {
-        const html = await utilities.fetchHTMLFromFile(`${env_path.path}/html/f1/f1-header.html`);
+        const html = await utilities.fetchHTMLFromFile(`${env_path.path}clients/formula-1/html/f1-header.html`);
         const races_contact =
             siteId === '46451' || siteId === '45246'
                 ? `

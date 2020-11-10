@@ -41,12 +41,12 @@ export default function siteConfig() {
         show_currency_select: true,
         show_date_prompt: false,
         has_social_sharing: true,
-        fav_icon_url: `${env_path.path}/html/f1/img/favicon.png`,
+        fav_icon_url: `${env_path.path}/clients/formula-1/images/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://autodromodoalgarve.com/',
         },
-        map_marker_image_url: `${env_path.path}/html/f1/img/favicon.png`,
+        map_marker_image_url: `${env_path.path}/clients/formula-1/images/favicon.png`,
         theme: 'light',
         google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
         ads: {

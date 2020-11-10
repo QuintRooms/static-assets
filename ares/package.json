@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "local": "NODE_ENV=local webpack --mode none",
     "dev": "npm run compile-css && NODE_ENV=develop webpack --mode development",
     "prod": "npm run compile-css && node js/production-checklist.js && NODE_ENV=production webpack --mode production && node js/generate-email-configs.js",
@@ -34,6 +34,7 @@
     "css-loader": "^3.6.0",
     "dotenv-webpack": "^1.8.0",
     "fs-extra": "^9.0.1",
+    "jest": "^26.6.3",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "node-sass-utils": "^1.1.3",

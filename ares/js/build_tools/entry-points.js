@@ -25,11 +25,11 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js',
             // 'f1_portugal_20-54494': './src/54494.js', // F1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // F1 Template
-            'hof_cug-63710': './src/63710.js', // hof cug
+            // 'hof_cug-63710': './src/63710.js', // hof cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // HOF Enshrinement 2021
             // 'hof_landing_page-62678': './src/62678.js', // HOF landing page
             // 'hof_marathon_21-60871': './src/60871.js', // HOF Marathon 2021
-            'hof_points_cug-63711': './src/63711.js', // hof points_cug
+            // 'hof_points_cug-63711': './src/63711.js', // hof points_cug
             // 'hof_retail-60037': './src/60037.js', // HOF retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
@@ -51,12 +51,12 @@ module.exports = () => {
         // develop environment
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
-            'ares_child-60278': './src/60278.js', // Ares Child Test
-            'ares_child-60279': './src/60279.js', // Ares Child Test
-            'cug_template-39624': './src/39624.js', // CUG Template
-            'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
-            'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
-            'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'ares_child-60278': './src/60278.js', // Ares Child Test
+            // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'cug_template-39624': './src/39624.js', // CUG Template
+            // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
+            // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
+            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
         };
 
         // local environment

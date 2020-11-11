@@ -1,7 +1,7 @@
 import SiteConfig from './62686-config';
 import Resbeat from '../../../js/resbeat';
 import Utilities from '../../../js/utilities';
-import Path from '../../../js/path';
+import Path from '../../../js/build_tools/path';
 
 const dayjs = require('dayjs');
 

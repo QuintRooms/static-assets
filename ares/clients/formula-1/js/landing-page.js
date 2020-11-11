@@ -1,6 +1,6 @@
 import races from './races';
 import Utilities from '../../../js/utilities';
-import f1Styles from '../../../js/f1';
+import f1Styles from './f1';
 
 // f1Styles(54494);
 f1Styles(document.querySelector('meta[name="siteId"]').content);
@@ -83,7 +83,7 @@ function updateTitle(text) {
 function changeLogoHtml() {
     document.querySelector('.logo').outerHTML = `
         <span class="logo">
-            <img src="https://static.hotelsforhope.com/ares/html/f1/f1-landing-page/images/logo.png" alt="F1 Rooms Logo">
+            <img src="https://static.hotelsforhope.com/ares/clients/formula-1/images/logo.png" alt="F1 Rooms Logo">
         </span>
         `;
 }

@@ -1844,7 +1844,7 @@ legend {
     position: relative;
     margin-top: 10px;
     margin-right: 10px; }
-  .SearchHotels #arnToggleMapDiv {
+  .SearchHotels #arnToggleMapDiv, .SearchHotels .ArnSortContainer {
     display: block;
     text-align: right; }
   .SearchHotels .ArnSortContainer {

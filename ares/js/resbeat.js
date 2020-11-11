@@ -1,6 +1,6 @@
 import BasePortal from './build';
 import Utilities from './utilities';
-import Path from './path';
+import Path from './build_tools/path';
 
 const env_path = new Path();
 

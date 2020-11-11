@@ -3,7 +3,7 @@ import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
 import Algolia from './components/algolia';
-import Path from './path';
+import Path from './build_tools/path';
 
 const env_path = new Path();
 const dayjs = require('dayjs');

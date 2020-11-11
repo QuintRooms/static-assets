@@ -45,7 +45,7 @@ isCUG=true`;
 }
 
 function addToEntryPoints() {
-    const entry_points = `${process.cwd()}/js/entry-points.js`;
+    const entry_points = `${process.cwd()}/js/build_tools/entry-points.js`;
 
     const new_line = `// new sites populate below
             '${site_name}-${site_id}': './src/${site_id}.js', // ${site_name.replace('_', ' ')}`;

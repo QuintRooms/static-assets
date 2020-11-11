@@ -74,7 +74,7 @@
                 n(/*! url-polyfill */ './node_modules/url-polyfill/url-polyfill.js');
             var r = n(/*! ./utilities */ './js/utilities.js'),
                 o = n(/*! ./components/algolia */ './js/components/algolia.js'),
-                s = n(/*! ./path */ './js/path.js');
+                s = n(/*! ./build_tools/path */ './js/build_tools/path.js');
             function i(e, t, n, r, o, s, i) {
                 try {
                     var a = e[s](i),
@@ -2206,8 +2206,7 @@
                             {
                                 key: 'hideBookButtonForNoAvailability',
                                 value: function () {
-                                    'search-results' === this.page_name &&
-                                        document.querySelector('.ArnLimitedAvail') &&
+                                    document.querySelector('.SearchHotels') &&
                                         document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                             e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
                                         });
@@ -2316,6 +2315,15 @@
                         e
                     );
                 })();
+        },
+    './js/build_tools/path.js':
+        /*!********************************!*\
+  !*** ./js/build_tools/path.js ***!
+  \********************************/
+        /*! no static exports found */ function (e, t, n) {
+            e.exports = function () {
+                return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            };
         },
     './js/calculate-distance.js':
         /*!**********************************!*\
@@ -3032,15 +3040,6 @@
                     e
                 );
             })();
-        },
-    './js/path.js':
-        /*!********************!*\
-  !*** ./js/path.js ***!
-  \********************/
-        /*! no static exports found */ function (e, t, n) {
-            e.exports = function () {
-                return {path: 'https://dev-static.hotelsforhope.com/ares'};
-            };
         },
     './js/utilities.js':
         /*!*************************!*\
@@ -9893,7 +9892,7 @@
                 n.d(t, 'default', function () {
                     return i;
                 });
-            var r = n(/*! ../../../js/path */ './js/path.js'),
+            var r = n(/*! ../../../js/build_tools/path */ './js/build_tools/path.js'),
                 o = new (n.n(r).a)(),
                 s = 'ares_child-'.concat(60279);
             function i() {

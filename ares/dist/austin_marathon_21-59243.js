@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 184));
+        n((n.s = 188));
 })([
     function (e, t, n) {
         var r = n(26)('wks'),
@@ -922,69 +922,11 @@
         }
     },
     function (e, t, n) {
-        for (
-            var r = n(23),
-                o = n(16),
-                i = n(9),
-                a = n(1),
-                c = n(8),
-                s = n(17),
-                u = n(0),
-                l = u('iterator'),
-                f = u('toStringTag'),
-                d = s.Array,
-                h = {
-                    CSSRuleList: !0,
-                    CSSStyleDeclaration: !1,
-                    CSSValueList: !1,
-                    ClientRectList: !1,
-                    DOMRectList: !1,
-                    DOMStringList: !1,
-                    DOMTokenList: !0,
-                    DataTransferItemList: !1,
-                    FileList: !1,
-                    HTMLAllCollection: !1,
-                    HTMLCollection: !1,
-                    HTMLFormElement: !1,
-                    HTMLSelectElement: !1,
-                    MediaList: !0,
-                    MimeTypeArray: !1,
-                    NamedNodeMap: !1,
-                    NodeList: !0,
-                    PaintRequestList: !1,
-                    Plugin: !1,
-                    PluginArray: !1,
-                    SVGLengthList: !1,
-                    SVGNumberList: !1,
-                    SVGPathSegList: !1,
-                    SVGPointList: !1,
-                    SVGStringList: !1,
-                    SVGTransformList: !1,
-                    SourceBufferList: !1,
-                    StyleSheetList: !0,
-                    TextTrackCueList: !1,
-                    TextTrackList: !1,
-                    TouchList: !1,
-                },
-                p = o(h),
-                m = 0;
-            m < p.length;
-            m++
-        ) {
-            var y,
-                g = p[m],
-                v = h[g],
-                b = a[g],
-                S = b && b.prototype;
-            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, g), (s[g] = d), v)) for (y in r) S[y] || i(S, y, r[y], !0);
-        }
-    },
-    function (e, t, n) {
         'use strict';
         n.d(t, 'a', function () {
             return c;
         });
-        n(46), n(34), n(23), n(52), n(32), n(22), n(33);
+        n(46), n(35), n(23), n(52), n(32), n(22), n(33);
         function r(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -1563,6 +1505,64 @@
                     e
                 );
             })();
+    },
+    function (e, t, n) {
+        for (
+            var r = n(23),
+                o = n(16),
+                i = n(9),
+                a = n(1),
+                c = n(8),
+                s = n(17),
+                u = n(0),
+                l = u('iterator'),
+                f = u('toStringTag'),
+                d = s.Array,
+                h = {
+                    CSSRuleList: !0,
+                    CSSStyleDeclaration: !1,
+                    CSSValueList: !1,
+                    ClientRectList: !1,
+                    DOMRectList: !1,
+                    DOMStringList: !1,
+                    DOMTokenList: !0,
+                    DataTransferItemList: !1,
+                    FileList: !1,
+                    HTMLAllCollection: !1,
+                    HTMLCollection: !1,
+                    HTMLFormElement: !1,
+                    HTMLSelectElement: !1,
+                    MediaList: !0,
+                    MimeTypeArray: !1,
+                    NamedNodeMap: !1,
+                    NodeList: !0,
+                    PaintRequestList: !1,
+                    Plugin: !1,
+                    PluginArray: !1,
+                    SVGLengthList: !1,
+                    SVGNumberList: !1,
+                    SVGPathSegList: !1,
+                    SVGPointList: !1,
+                    SVGStringList: !1,
+                    SVGTransformList: !1,
+                    SourceBufferList: !1,
+                    StyleSheetList: !0,
+                    TextTrackCueList: !1,
+                    TextTrackList: !1,
+                    TouchList: !1,
+                },
+                p = o(h),
+                m = 0;
+            m < p.length;
+            m++
+        ) {
+            var y,
+                g = p[m],
+                v = h[g],
+                b = a[g],
+                S = b && b.prototype;
+            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, g), (s[g] = d), v)) for (y in r) S[y] || i(S, y, r[y], !0);
+        }
     },
     function (e, t, n) {
         var r = n(4),
@@ -2721,7 +2721,7 @@
         n.d(t, 'a', function () {
             return U;
         });
-        n(32), n(74), n(34), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
+        n(32), n(74), n(35), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
         var r = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== r && r),
             o = 'URLSearchParams' in r,
             i = 'Symbol' in r && 'iterator' in Symbol,
@@ -3116,7 +3116,7 @@
         }
         (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = p), (r.Request = w), (r.Response = x));
         n(112);
-        var q = n(35);
+        var q = n(34);
         n(52);
         function E(e, t, n, r, o, i, a) {
             try {
@@ -3764,6 +3764,7 @@
                                                                             })()
                                                                         ),
                                                                         e.applyDarkTheme(),
+                                                                        e.updatePropThumbToFeaturedImage(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -3785,7 +3786,7 @@
                                                                         e.removeLrgFooterLink(),
                                                                         e.hideBookButtonForNoAvailability(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 45:
+                                                                case 46:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4894,7 +4895,6 @@
                                                             return (t.next = 2), i();
                                                         case 2:
                                                             (e = t.sent),
-                                                                console.log('ordered prop images: ', e),
                                                                 document
                                                                     .querySelector('.ArnPropName')
                                                                     .insertAdjacentHTML(
@@ -4902,7 +4902,7 @@
                                                                         '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
                                                                     ),
                                                                 c();
-                                                        case 6:
+                                                        case 5:
                                                         case 'end':
                                                             return t.stop();
                                                     }
@@ -5512,8 +5512,7 @@
                         {
                             key: 'hideBookButtonForNoAvailability',
                             value: function () {
-                                'search-results' === this.page_name &&
-                                    document.querySelector('.ArnLimitedAvail') &&
+                                document.querySelector('.SearchHotels') &&
                                     document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                         e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
                                     });
@@ -5532,7 +5531,7 @@
                                                         case 0:
                                                             return (
                                                                 (r = function (e) {
-                                                                    for (var t, n = 0; n <= e.Images.length; n += 1)
+                                                                    for (var t, n = 0; n <= e.Images.length - 1; n += 1)
                                                                         if ('Featured Image' === e.Images[n].ImageCaption) {
                                                                             t = e.Images[n].ImagePath;
                                                                             break;
@@ -5594,11 +5593,12 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 7:
-                                                            document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                                            document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
                                                                 t(e).then(function (t) {
                                                                     var n = r(t),
                                                                         o = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
-                                                                    n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
+                                                                    n &&
+                                                                        n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
                                                                         (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
                                                                 });
                                                             });
@@ -6886,7 +6886,11 @@
     ,
     ,
     ,
+    ,
     function (e, t, n) {},
+    ,
+    ,
+    ,
     ,
     ,
     ,
@@ -7026,7 +7030,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var y = new (n(35).a)(),
+        var y = new (n(34).a)(),
             g = new (function () {
                 return {
                     site_id: 59243,
@@ -7103,6 +7107,6 @@
             (function () {
                 v.apply(this, arguments);
             })();
-        n(144);
+        n(145);
     },
 ]);

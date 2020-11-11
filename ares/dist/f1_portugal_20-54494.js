@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 195));
+        n((n.s = 199));
 })([
     function (e, t, n) {
         var r = n(26)('wks'),
@@ -922,69 +922,11 @@
         }
     },
     function (e, t, n) {
-        for (
-            var r = n(23),
-                i = n(16),
-                o = n(9),
-                a = n(1),
-                s = n(8),
-                c = n(17),
-                u = n(0),
-                l = u('iterator'),
-                h = u('toStringTag'),
-                d = c.Array,
-                f = {
-                    CSSRuleList: !0,
-                    CSSStyleDeclaration: !1,
-                    CSSValueList: !1,
-                    ClientRectList: !1,
-                    DOMRectList: !1,
-                    DOMStringList: !1,
-                    DOMTokenList: !0,
-                    DataTransferItemList: !1,
-                    FileList: !1,
-                    HTMLAllCollection: !1,
-                    HTMLCollection: !1,
-                    HTMLFormElement: !1,
-                    HTMLSelectElement: !1,
-                    MediaList: !0,
-                    MimeTypeArray: !1,
-                    NamedNodeMap: !1,
-                    NodeList: !0,
-                    PaintRequestList: !1,
-                    Plugin: !1,
-                    PluginArray: !1,
-                    SVGLengthList: !1,
-                    SVGNumberList: !1,
-                    SVGPathSegList: !1,
-                    SVGPointList: !1,
-                    SVGStringList: !1,
-                    SVGTransformList: !1,
-                    SourceBufferList: !1,
-                    StyleSheetList: !0,
-                    TextTrackCueList: !1,
-                    TextTrackList: !1,
-                    TouchList: !1,
-                },
-                p = i(f),
-                m = 0;
-            m < p.length;
-            m++
-        ) {
-            var y,
-                v = p[m],
-                g = f[v],
-                _ = a[v],
-                b = _ && _.prototype;
-            if (b && (b[l] || s(b, l, d), b[h] || s(b, h, v), (c[v] = d), g)) for (y in r) b[y] || o(b, y, r[y], !0);
-        }
-    },
-    function (e, t, n) {
         'use strict';
         n.d(t, 'a', function () {
             return s;
         });
-        n(46), n(34), n(23), n(52), n(32), n(22), n(33);
+        n(46), n(35), n(23), n(52), n(32), n(22), n(33);
         function r(e, t, n, r, i, o, a) {
             try {
                 var s = e[o](a),
@@ -1563,6 +1505,64 @@
                     e
                 );
             })();
+    },
+    function (e, t, n) {
+        for (
+            var r = n(23),
+                i = n(16),
+                o = n(9),
+                a = n(1),
+                s = n(8),
+                c = n(17),
+                u = n(0),
+                l = u('iterator'),
+                h = u('toStringTag'),
+                d = c.Array,
+                f = {
+                    CSSRuleList: !0,
+                    CSSStyleDeclaration: !1,
+                    CSSValueList: !1,
+                    ClientRectList: !1,
+                    DOMRectList: !1,
+                    DOMStringList: !1,
+                    DOMTokenList: !0,
+                    DataTransferItemList: !1,
+                    FileList: !1,
+                    HTMLAllCollection: !1,
+                    HTMLCollection: !1,
+                    HTMLFormElement: !1,
+                    HTMLSelectElement: !1,
+                    MediaList: !0,
+                    MimeTypeArray: !1,
+                    NamedNodeMap: !1,
+                    NodeList: !0,
+                    PaintRequestList: !1,
+                    Plugin: !1,
+                    PluginArray: !1,
+                    SVGLengthList: !1,
+                    SVGNumberList: !1,
+                    SVGPathSegList: !1,
+                    SVGPointList: !1,
+                    SVGStringList: !1,
+                    SVGTransformList: !1,
+                    SourceBufferList: !1,
+                    StyleSheetList: !0,
+                    TextTrackCueList: !1,
+                    TextTrackList: !1,
+                    TouchList: !1,
+                },
+                p = i(f),
+                m = 0;
+            m < p.length;
+            m++
+        ) {
+            var y,
+                v = p[m],
+                g = f[v],
+                _ = a[v],
+                b = _ && _.prototype;
+            if (b && (b[l] || s(b, l, d), b[h] || s(b, h, v), (c[v] = d), g)) for (y in r) b[y] || o(b, y, r[y], !0);
+        }
     },
     function (e, t, n) {
         var r = n(4),
@@ -2721,7 +2721,7 @@
         n.d(t, 'a', function () {
             return U;
         });
-        n(32), n(74), n(34), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
+        n(32), n(74), n(35), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
         var r = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== r && r),
             i = 'URLSearchParams' in r,
             o = 'Symbol' in r && 'iterator' in Symbol,
@@ -3116,7 +3116,7 @@
         }
         (E.polyfill = !0), r.fetch || ((r.fetch = E), (r.Headers = p), (r.Request = w), (r.Response = x));
         n(112);
-        var q = n(35);
+        var q = n(34);
         n(52);
         function C(e, t, n, r, i, o, a) {
             try {
@@ -3764,6 +3764,7 @@
                                                                             })()
                                                                         ),
                                                                         e.applyDarkTheme(),
+                                                                        e.updatePropThumbToFeaturedImage(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -3785,7 +3786,7 @@
                                                                         e.removeLrgFooterLink(),
                                                                         e.hideBookButtonForNoAvailability(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 45:
+                                                                case 46:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4894,7 +4895,6 @@
                                                             return (t.next = 2), o();
                                                         case 2:
                                                             (e = t.sent),
-                                                                console.log('ordered prop images: ', e),
                                                                 document
                                                                     .querySelector('.ArnPropName')
                                                                     .insertAdjacentHTML(
@@ -4902,7 +4902,7 @@
                                                                         '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
                                                                     ),
                                                                 s();
-                                                        case 6:
+                                                        case 5:
                                                         case 'end':
                                                             return t.stop();
                                                     }
@@ -5512,8 +5512,7 @@
                         {
                             key: 'hideBookButtonForNoAvailability',
                             value: function () {
-                                'search-results' === this.page_name &&
-                                    document.querySelector('.ArnLimitedAvail') &&
+                                document.querySelector('.SearchHotels') &&
                                     document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                         e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
                                     });
@@ -5532,7 +5531,7 @@
                                                         case 0:
                                                             return (
                                                                 (r = function (e) {
-                                                                    for (var t, n = 0; n <= e.Images.length; n += 1)
+                                                                    for (var t, n = 0; n <= e.Images.length - 1; n += 1)
                                                                         if ('Featured Image' === e.Images[n].ImageCaption) {
                                                                             t = e.Images[n].ImagePath;
                                                                             break;
@@ -5594,11 +5593,12 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 7:
-                                                            document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                                            document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
                                                                 t(e).then(function (t) {
                                                                     var n = r(t),
                                                                         i = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
-                                                                    n.substr(n.lastIndexOf('.com/') + 5) !== i.substr(i.lastIndexOf('.com/') + 5) &&
+                                                                    n &&
+                                                                        n.substr(n.lastIndexOf('.com/') + 5) !== i.substr(i.lastIndexOf('.com/') + 5) &&
                                                                         (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
                                                                 });
                                                             });
@@ -6957,6 +6957,194 @@
         var r;
         (r = class extends Error {}), (e.exports = r);
     },
+    function (e, t, n) {
+        'use strict';
+        n.d(t, 'a', function () {
+            return u;
+        });
+        n(33), n(32), n(22);
+        var r = n(21),
+            i = n.n(r);
+        function o(e, t, n, r, i, o, a) {
+            try {
+                var s = e[o](a),
+                    c = s.value;
+            } catch (e) {
+                return void n(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(r, i);
+        }
+        function a(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (r, i) {
+                    var a = e.apply(t, n);
+                    function s(e) {
+                        o(a, r, i, s, c, 'next', e);
+                    }
+                    function c(e) {
+                        o(a, r, i, s, c, 'throw', e);
+                    }
+                    s(void 0);
+                });
+            };
+        }
+        var s = new (n(34).a)(),
+            c = new i.a();
+        function u(e) {
+            return l.apply(this, arguments);
+        }
+        function l() {
+            return (l = a(
+                regeneratorRuntime.mark(function e(t) {
+                    var n, r, i, o, u, l, h, d, f;
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    return (
+                                        (f = function () {
+                                            return (f = a(
+                                                regeneratorRuntime.mark(function e() {
+                                                    var t;
+                                                    return regeneratorRuntime.wrap(function (e) {
+                                                        for (;;)
+                                                            switch ((e.prev = e.next)) {
+                                                                case 0:
+                                                                    if (null === document.querySelector('meta[name="landing-page"]')) {
+                                                                        e.next = 2;
+                                                                        break;
+                                                                    }
+                                                                    return e.abrupt('return');
+                                                                case 2:
+                                                                    return (e.next = 4), s.fetchHTMLFromFile(''.concat(c.path, '/clients/formula-1/html/footer.html'));
+                                                                case 4:
+                                                                    (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
+                                                                case 6:
+                                                                case 'end':
+                                                                    return e.stop();
+                                                            }
+                                                    }, e);
+                                                })
+                                            )).apply(this, arguments);
+                                        }),
+                                        (d = function () {
+                                            return f.apply(this, arguments);
+                                        }),
+                                        (h = function () {
+                                            return (h = a(
+                                                regeneratorRuntime.mark(function e(t) {
+                                                    var o, a, u;
+                                                    return regeneratorRuntime.wrap(function (e) {
+                                                        for (;;)
+                                                            switch ((e.prev = e.next)) {
+                                                                case 0:
+                                                                    return (
+                                                                        (a = function (e) {
+                                                                            null !== r &&
+                                                                                (e.matches
+                                                                                    ? (document
+                                                                                          .querySelector('.mobile-nav-lower-ul .language-mobile-li')
+                                                                                          .insertAdjacentElement('afterbegin', r),
+                                                                                      document
+                                                                                          .querySelector('.mobile-nav-lower-ul .currency-mobile-li')
+                                                                                          .insertAdjacentElement('afterBegin', i))
+                                                                                    : (document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r),
+                                                                                      document.querySelector('.currency').insertAdjacentElement('afterBegin', i)));
+                                                                        }),
+                                                                        (e.next = 3),
+                                                                        s.fetchHTMLFromFile(''.concat(c.path, '/clients/formula-1/html/mobile-hamburger-menu.html'))
+                                                                    );
+                                                                case 3:
+                                                                    return (
+                                                                        (o = e.sent),
+                                                                        n.insertAdjacentHTML('beforeend', o),
+                                                                        (document.querySelector('.mobile-nav-upper-ul #contactUs').href =
+                                                                            '46451' === t || '45246' === t
+                                                                                ? 'href="https://events.hotelsforhope.com/v6/support?siteId=46973"'
+                                                                                : 'href="https://events.hotelsforhope.com/v6/support?siteId='.concat(t, '"')),
+                                                                        (e.next = 9),
+                                                                        s.waitForSelectorInDOM('.navbar-hamburger')
+                                                                    );
+                                                                case 9:
+                                                                    document.querySelector('.navbar-hamburger').addEventListener('click', function () {
+                                                                        document.querySelector('.mobile-nav-container').classList.toggle('show-mobile-nav');
+                                                                    }),
+                                                                        (u = window.matchMedia('(max-width: 1100px)')),
+                                                                        a(u),
+                                                                        u.addListener(a);
+                                                                case 13:
+                                                                case 'end':
+                                                                    return e.stop();
+                                                            }
+                                                    }, e);
+                                                })
+                                            )).apply(this, arguments);
+                                        }),
+                                        (l = function (e) {
+                                            return h.apply(this, arguments);
+                                        }),
+                                        (u = function () {
+                                            return (u = a(
+                                                regeneratorRuntime.mark(function e(o) {
+                                                    var a, u;
+                                                    return regeneratorRuntime.wrap(function (e) {
+                                                        for (;;)
+                                                            switch ((e.prev = e.next)) {
+                                                                case 0:
+                                                                    return (e.next = 2), s.fetchHTMLFromFile(''.concat(c.path, '/clients/formula-1/html/f1-header.html'));
+                                                                case 2:
+                                                                    if (
+                                                                        ((a = e.sent),
+                                                                        (u =
+                                                                            '46451' === t || '45246' === t
+                                                                                ? '\n        <ul id="races-contact">\n            <li>\n                <a href="#races-container" id="races">Races</a>\n            </li>\n            <li>\n                <a href="https://events.hotelsforhope.com/v6/support?siteId=46973" id="contactUs">Contact Us</a>\n            </li>\n        </ul>\n        <div class="navbar-hamburger">\n            <span class="toggle-bar top-bar"></span>\n            <span class="toggle-bar middle-bar"></span>\n            <span class="toggle-bar bottom-bar"></span>\n        </div>\n    '
+                                                                                : '\n    <ul id="races-contact">\n        <li>\n            <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>\n        </li>\n        <li>\n            <a href="https://events.hotelsforhope.com/v6/support?siteId='.concat(
+                                                                                      o,
+                                                                                      '" id="contactUs">Contact Us</a>\n        </li>\n    </ul>\n    <div class="navbar-hamburger">\n        <span class="toggle-bar top-bar"></span>\n        <span class="toggle-bar middle-bar"></span>\n        <span class="toggle-bar bottom-bar"></span>\n    </div>\n'
+                                                                                  )),
+                                                                        n.insertAdjacentHTML('beforebegin', a),
+                                                                        n.insertAdjacentHTML('beforeend', u),
+                                                                        null !== r && null !== i)
+                                                                    ) {
+                                                                        e.next = 8;
+                                                                        break;
+                                                                    }
+                                                                    return e.abrupt('return');
+                                                                case 8:
+                                                                    document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r),
+                                                                        document.querySelector('.currency').insertAdjacentElement('afterBegin', i);
+                                                                case 10:
+                                                                case 'end':
+                                                                    return e.stop();
+                                                            }
+                                                    }, e);
+                                                })
+                                            )).apply(this, arguments);
+                                        }),
+                                        (o = function (e) {
+                                            return u.apply(this, arguments);
+                                        }),
+                                        (e.next = 8),
+                                        s.waitForSelectorInDOM('header')
+                                    );
+                                case 8:
+                                    (n = document.querySelector('header')),
+                                        (r = document.querySelector('#language')),
+                                        (i = document.querySelector('.currencies-container')),
+                                        o(t),
+                                        l(t),
+                                        d();
+                                case 14:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+    },
     function (module, exports, __webpack_require__) {
         'use strict';
         function asyncGeneratorStep(e, t, n, r, i, o, a) {
@@ -6987,7 +7175,7 @@
         var Events, RedisConnection, Scripts, parser;
         (parser = __webpack_require__(114)),
             (Events = __webpack_require__(115)),
-            (Scripts = __webpack_require__(118)),
+            (Scripts = __webpack_require__(119)),
             (RedisConnection = function () {
                 class RedisConnection {
                     constructor(options = {}) {
@@ -7222,7 +7410,7 @@
         var Events, IORedisConnection, Scripts, parser;
         (parser = __webpack_require__(114)),
             (Events = __webpack_require__(115)),
-            (Scripts = __webpack_require__(118)),
+            (Scripts = __webpack_require__(119)),
             (IORedisConnection = function () {
                 class IORedisConnection {
                     constructor(options = {}) {
@@ -7311,194 +7499,6 @@
                 );
             }.call(void 0)),
             (module.exports = IORedisConnection);
-    },
-    function (e, t, n) {
-        'use strict';
-        n.d(t, 'a', function () {
-            return u;
-        });
-        n(33), n(32), n(22);
-        var r = n(21),
-            i = n.n(r);
-        function o(e, t, n, r, i, o, a) {
-            try {
-                var s = e[o](a),
-                    c = s.value;
-            } catch (e) {
-                return void n(e);
-            }
-            s.done ? t(c) : Promise.resolve(c).then(r, i);
-        }
-        function a(e) {
-            return function () {
-                var t = this,
-                    n = arguments;
-                return new Promise(function (r, i) {
-                    var a = e.apply(t, n);
-                    function s(e) {
-                        o(a, r, i, s, c, 'next', e);
-                    }
-                    function c(e) {
-                        o(a, r, i, s, c, 'throw', e);
-                    }
-                    s(void 0);
-                });
-            };
-        }
-        var s = new (n(35).a)(),
-            c = new i.a();
-        function u(e) {
-            return l.apply(this, arguments);
-        }
-        function l() {
-            return (l = a(
-                regeneratorRuntime.mark(function e(t) {
-                    var n, r, i, o, u, l, h, d, f;
-                    return regeneratorRuntime.wrap(function (e) {
-                        for (;;)
-                            switch ((e.prev = e.next)) {
-                                case 0:
-                                    return (
-                                        (f = function () {
-                                            return (f = a(
-                                                regeneratorRuntime.mark(function e() {
-                                                    var t;
-                                                    return regeneratorRuntime.wrap(function (e) {
-                                                        for (;;)
-                                                            switch ((e.prev = e.next)) {
-                                                                case 0:
-                                                                    if (null === document.querySelector('meta[name="landing-page"]')) {
-                                                                        e.next = 2;
-                                                                        break;
-                                                                    }
-                                                                    return e.abrupt('return');
-                                                                case 2:
-                                                                    return (e.next = 4), s.fetchHTMLFromFile(''.concat(c.path, '/html/f1/footer.html'));
-                                                                case 4:
-                                                                    (t = e.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', t);
-                                                                case 6:
-                                                                case 'end':
-                                                                    return e.stop();
-                                                            }
-                                                    }, e);
-                                                })
-                                            )).apply(this, arguments);
-                                        }),
-                                        (d = function () {
-                                            return f.apply(this, arguments);
-                                        }),
-                                        (h = function () {
-                                            return (h = a(
-                                                regeneratorRuntime.mark(function e(t) {
-                                                    var o, a, u;
-                                                    return regeneratorRuntime.wrap(function (e) {
-                                                        for (;;)
-                                                            switch ((e.prev = e.next)) {
-                                                                case 0:
-                                                                    return (
-                                                                        (a = function (e) {
-                                                                            null !== r &&
-                                                                                (e.matches
-                                                                                    ? (document
-                                                                                          .querySelector('.mobile-nav-lower-ul .language-mobile-li')
-                                                                                          .insertAdjacentElement('afterbegin', r),
-                                                                                      document
-                                                                                          .querySelector('.mobile-nav-lower-ul .currency-mobile-li')
-                                                                                          .insertAdjacentElement('afterBegin', i))
-                                                                                    : (document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r),
-                                                                                      document.querySelector('.currency').insertAdjacentElement('afterBegin', i)));
-                                                                        }),
-                                                                        (e.next = 3),
-                                                                        s.fetchHTMLFromFile(''.concat(c.path, '/html/f1/mobile-hamburger-menu.html'))
-                                                                    );
-                                                                case 3:
-                                                                    return (
-                                                                        (o = e.sent),
-                                                                        n.insertAdjacentHTML('beforeend', o),
-                                                                        (document.querySelector('.mobile-nav-upper-ul #contactUs').href =
-                                                                            '46451' === t || '45246' === t
-                                                                                ? 'href="https://events.hotelsforhope.com/v6/support?siteId=46973"'
-                                                                                : 'href="https://events.hotelsforhope.com/v6/support?siteId='.concat(t, '"')),
-                                                                        (e.next = 9),
-                                                                        s.waitForSelectorInDOM('.navbar-hamburger')
-                                                                    );
-                                                                case 9:
-                                                                    document.querySelector('.navbar-hamburger').addEventListener('click', function () {
-                                                                        document.querySelector('.mobile-nav-container').classList.toggle('show-mobile-nav');
-                                                                    }),
-                                                                        (u = window.matchMedia('(max-width: 1100px)')),
-                                                                        a(u),
-                                                                        u.addListener(a);
-                                                                case 13:
-                                                                case 'end':
-                                                                    return e.stop();
-                                                            }
-                                                    }, e);
-                                                })
-                                            )).apply(this, arguments);
-                                        }),
-                                        (l = function (e) {
-                                            return h.apply(this, arguments);
-                                        }),
-                                        (u = function () {
-                                            return (u = a(
-                                                regeneratorRuntime.mark(function e(o) {
-                                                    var a, u;
-                                                    return regeneratorRuntime.wrap(function (e) {
-                                                        for (;;)
-                                                            switch ((e.prev = e.next)) {
-                                                                case 0:
-                                                                    return (e.next = 2), s.fetchHTMLFromFile(''.concat(c.path, '/html/f1/f1-header.html'));
-                                                                case 2:
-                                                                    if (
-                                                                        ((a = e.sent),
-                                                                        (u =
-                                                                            '46451' === t || '45246' === t
-                                                                                ? '\n        <ul id="races-contact">\n            <li>\n                <a href="#races-container" id="races">Races</a>\n            </li>\n            <li>\n                <a href="https://events.hotelsforhope.com/v6/support?siteId=46973" id="contactUs">Contact Us</a>\n            </li>\n        </ul>\n        <div class="navbar-hamburger">\n            <span class="toggle-bar top-bar"></span>\n            <span class="toggle-bar middle-bar"></span>\n            <span class="toggle-bar bottom-bar"></span>\n        </div>\n    '
-                                                                                : '\n    <ul id="races-contact">\n        <li>\n            <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>\n        </li>\n        <li>\n            <a href="https://events.hotelsforhope.com/v6/support?siteId='.concat(
-                                                                                      o,
-                                                                                      '" id="contactUs">Contact Us</a>\n        </li>\n    </ul>\n    <div class="navbar-hamburger">\n        <span class="toggle-bar top-bar"></span>\n        <span class="toggle-bar middle-bar"></span>\n        <span class="toggle-bar bottom-bar"></span>\n    </div>\n'
-                                                                                  )),
-                                                                        n.insertAdjacentHTML('beforebegin', a),
-                                                                        n.insertAdjacentHTML('beforeend', u),
-                                                                        null !== r && null !== i)
-                                                                    ) {
-                                                                        e.next = 8;
-                                                                        break;
-                                                                    }
-                                                                    return e.abrupt('return');
-                                                                case 8:
-                                                                    document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', r),
-                                                                        document.querySelector('.currency').insertAdjacentElement('afterBegin', i);
-                                                                case 10:
-                                                                case 'end':
-                                                                    return e.stop();
-                                                            }
-                                                    }, e);
-                                                })
-                                            )).apply(this, arguments);
-                                        }),
-                                        (o = function (e) {
-                                            return u.apply(this, arguments);
-                                        }),
-                                        (e.next = 8),
-                                        s.waitForSelectorInDOM('header')
-                                    );
-                                case 8:
-                                    (n = document.querySelector('header')),
-                                        (r = document.querySelector('#language')),
-                                        (i = document.querySelector('.currencies-container')),
-                                        o(t),
-                                        l(t),
-                                        d();
-                                case 14:
-                                case 'end':
-                                    return e.stop();
-                            }
-                    }, e);
-                })
-            )).apply(this, arguments);
-        }
     },
     function (e, t, n) {
         'use strict';
@@ -7896,8 +7896,8 @@
                     (e.strategy = e.prototype.strategy = {LEAK: 1, OVERFLOW: 2, OVERFLOW_PRIORITY: 4, BLOCK: 3}),
                     (e.BottleneckError = e.prototype.BottleneckError = n(116)),
                     (e.Group = e.prototype.Group = n(134)),
-                    (e.RedisConnection = e.prototype.RedisConnection = n(117)),
-                    (e.IORedisConnection = e.prototype.IORedisConnection = n(119)),
+                    (e.RedisConnection = e.prototype.RedisConnection = n(118)),
+                    (e.IORedisConnection = e.prototype.IORedisConnection = n(120)),
                     (e.Batcher = e.prototype.Batcher = n(135)),
                     (e.prototype.jobDefaults = {priority: 5, weight: 1, expiration: null, id: '<no-id>'}),
                     (e.prototype.storeDefaults = {
@@ -7987,7 +7987,7 @@
         n.d(t, 'a', function () {
             return u;
         });
-        n(34), n(23), n(125), n(32), n(22), n(46), n(72), n(73), n(33), n(69), n(48);
+        n(35), n(23), n(125), n(32), n(22), n(46), n(72), n(73), n(33), n(69), n(48);
         var r = n(124),
             i = n.n(r);
         function o(e, t, n, r, i, o, a) {
@@ -8021,7 +8021,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var c = new (n(35).a)(),
+        var c = new (n(34).a)(),
             u = (function () {
                 function e(t, n, r, i, o) {
                     !(function (e, t) {
@@ -8846,8 +8846,8 @@
         var a, s, c, u, l;
         (l = n(114)),
             (a = n(116)),
-            (c = n(117)),
-            (s = n(119)),
+            (c = n(118)),
+            (s = n(120)),
             (u = class {
                 constructor(e, t, n) {
                     (this.instance = e),
@@ -9259,9 +9259,9 @@
         var a, s, c, u, l, h;
         (h = n(114)),
             (a = n(115)),
-            (u = n(117)),
-            (c = n(119)),
-            (l = n(118)),
+            (u = n(118)),
+            (c = n(120)),
+            (l = n(119)),
             (s = function () {
                 class e {
                     constructor(e = {}) {
@@ -9425,7 +9425,11 @@
     ,
     ,
     ,
+    ,
+    ,
     function (e, t, n) {},
+    ,
+    ,
     ,
     ,
     ,
@@ -9473,7 +9477,7 @@
             i = n(21),
             o = new (n.n(i).a)(),
             a = 'f1_portugal_20-'.concat(54494);
-        var s = n(120),
+        var s = n(117),
             c = n(123);
         function u(e) {
             return (u =
@@ -9567,9 +9571,9 @@
                     show_currency_select: !0,
                     show_date_prompt: !1,
                     has_social_sharing: !0,
-                    fav_icon_url: ''.concat(o.path, '/html/f1/img/favicon.png'),
+                    fav_icon_url: ''.concat(o.path, '/clients/formula-1/images/favicon.png'),
                     header: {logo_file_location: ''.concat(o.path, '/site_configs/').concat(a, '/img/logo.png'), logo_outbound_url: 'https://autodromodoalgarve.com/'},
-                    map_marker_image_url: ''.concat(o.path, '/html/f1/img/favicon.png'),
+                    map_marker_image_url: ''.concat(o.path, '/clients/formula-1/images/favicon.png'),
                     theme: 'light',
                     google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
                     ads: {
@@ -9601,6 +9605,6 @@
                 return n;
             })(r.a);
         Object(s.a)(y.site_id), new v(), new c.a();
-        n(155);
+        n(157);
     },
 ]);

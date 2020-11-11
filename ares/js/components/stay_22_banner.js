@@ -1,5 +1,5 @@
 import Utilities from '../utilities';
-import Path from '../path';
+import Path from '../build_tools/path';
 
 const env_path = new Path();
 const utilities = new Utilities();
@@ -22,7 +22,7 @@ export default async function addStay22Banner(link) {
                     <a class="airbnb-logo" href="${link}" target="_blank">
                         <img src="${env_path.path}/images/airbnb_logo_white.png" alt="airbnb logo">
                     </a>
-                    <span>Looking for an Airbnb rental? Check out the options in ${destination}!</span>     
+                    <span>Looking for an Airbnb rental? Check out the options in ${destination}!</span>
                 </div>
                 <div class="custom-button">
                     <a id="custom-link" target="_blank" href="${link}">Book an Airbnb</a>

@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 176));
+        n((n.s = 180));
 })([
     function (e, t, n) {
         var r = n(26)('wks'),
@@ -922,69 +922,11 @@
         }
     },
     function (e, t, n) {
-        for (
-            var r = n(23),
-                o = n(16),
-                i = n(9),
-                a = n(1),
-                c = n(8),
-                s = n(17),
-                u = n(0),
-                l = u('iterator'),
-                f = u('toStringTag'),
-                d = s.Array,
-                h = {
-                    CSSRuleList: !0,
-                    CSSStyleDeclaration: !1,
-                    CSSValueList: !1,
-                    ClientRectList: !1,
-                    DOMRectList: !1,
-                    DOMStringList: !1,
-                    DOMTokenList: !0,
-                    DataTransferItemList: !1,
-                    FileList: !1,
-                    HTMLAllCollection: !1,
-                    HTMLCollection: !1,
-                    HTMLFormElement: !1,
-                    HTMLSelectElement: !1,
-                    MediaList: !0,
-                    MimeTypeArray: !1,
-                    NamedNodeMap: !1,
-                    NodeList: !0,
-                    PaintRequestList: !1,
-                    Plugin: !1,
-                    PluginArray: !1,
-                    SVGLengthList: !1,
-                    SVGNumberList: !1,
-                    SVGPathSegList: !1,
-                    SVGPointList: !1,
-                    SVGStringList: !1,
-                    SVGTransformList: !1,
-                    SourceBufferList: !1,
-                    StyleSheetList: !0,
-                    TextTrackCueList: !1,
-                    TextTrackList: !1,
-                    TouchList: !1,
-                },
-                p = o(h),
-                m = 0;
-            m < p.length;
-            m++
-        ) {
-            var y,
-                g = p[m],
-                v = h[g],
-                b = a[g],
-                S = b && b.prototype;
-            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, g), (s[g] = d), v)) for (y in r) S[y] || i(S, y, r[y], !0);
-        }
-    },
-    function (e, t, n) {
         'use strict';
         n.d(t, 'a', function () {
             return c;
         });
-        n(46), n(34), n(23), n(52), n(32), n(22), n(33);
+        n(46), n(35), n(23), n(52), n(32), n(22), n(33);
         function r(e, t, n, r, o, i, a) {
             try {
                 var c = e[i](a),
@@ -1563,6 +1505,64 @@
                     e
                 );
             })();
+    },
+    function (e, t, n) {
+        for (
+            var r = n(23),
+                o = n(16),
+                i = n(9),
+                a = n(1),
+                c = n(8),
+                s = n(17),
+                u = n(0),
+                l = u('iterator'),
+                f = u('toStringTag'),
+                d = s.Array,
+                h = {
+                    CSSRuleList: !0,
+                    CSSStyleDeclaration: !1,
+                    CSSValueList: !1,
+                    ClientRectList: !1,
+                    DOMRectList: !1,
+                    DOMStringList: !1,
+                    DOMTokenList: !0,
+                    DataTransferItemList: !1,
+                    FileList: !1,
+                    HTMLAllCollection: !1,
+                    HTMLCollection: !1,
+                    HTMLFormElement: !1,
+                    HTMLSelectElement: !1,
+                    MediaList: !0,
+                    MimeTypeArray: !1,
+                    NamedNodeMap: !1,
+                    NodeList: !0,
+                    PaintRequestList: !1,
+                    Plugin: !1,
+                    PluginArray: !1,
+                    SVGLengthList: !1,
+                    SVGNumberList: !1,
+                    SVGPathSegList: !1,
+                    SVGPointList: !1,
+                    SVGStringList: !1,
+                    SVGTransformList: !1,
+                    SourceBufferList: !1,
+                    StyleSheetList: !0,
+                    TextTrackCueList: !1,
+                    TextTrackList: !1,
+                    TouchList: !1,
+                },
+                p = o(h),
+                m = 0;
+            m < p.length;
+            m++
+        ) {
+            var y,
+                g = p[m],
+                v = h[g],
+                b = a[g],
+                S = b && b.prototype;
+            if (S && (S[l] || c(S, l, d), S[f] || c(S, f, g), (s[g] = d), v)) for (y in r) S[y] || i(S, y, r[y], !0);
+        }
     },
     function (e, t, n) {
         var r = n(4),
@@ -2721,7 +2721,7 @@
         n.d(t, 'a', function () {
             return $;
         });
-        n(32), n(74), n(34), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
+        n(32), n(74), n(35), n(23), n(99), n(47), n(22), n(48), n(108), n(46), n(72), n(73), n(69), n(33);
         var r = ('undefined' != typeof globalThis && globalThis) || ('undefined' != typeof self && self) || (void 0 !== r && r),
             o = 'URLSearchParams' in r,
             i = 'Symbol' in r && 'iterator' in Symbol,
@@ -3116,7 +3116,7 @@
         }
         (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = p), (r.Request = w), (r.Response = x));
         n(112);
-        var q = n(35);
+        var q = n(34);
         n(52);
         function C(e, t, n, r, o, i, a) {
             try {
@@ -3425,10 +3425,10 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var Y = new (n.n(j).a)(),
-            F = n(40),
+        var F = new (n.n(j).a)(),
+            Y = n(40),
             B = n(67);
-        F.extend(B);
+        Y.extend(B);
         var N = new q.a(),
             U = new O(),
             $ = (function () {
@@ -3764,6 +3764,7 @@
                                                                             })()
                                                                         ),
                                                                         e.applyDarkTheme(),
+                                                                        e.updatePropThumbToFeaturedImage(),
                                                                         e.setInputToRequired('input#city'),
                                                                         e.setInputToRequired('input#theCheckIn'),
                                                                         e.resizeViewportForMapMobile(),
@@ -3785,7 +3786,7 @@
                                                                         e.removeLrgFooterLink(),
                                                                         e.hideBookButtonForNoAvailability(),
                                                                         document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                case 45:
+                                                                case 46:
                                                                 case 'end':
                                                                     return t.stop();
                                                             }
@@ -4008,8 +4009,8 @@
                                     (i = f.getAttribute('content')),
                                     (t = s.getAttribute('content')),
                                     (n = u.getAttribute('content')),
-                                    (a = F(t)),
-                                    (c = F(n)),
+                                    (a = Y(t)),
+                                    (c = Y(n)),
                                     ('cug' === this.site_config.site_type.toLowerCase() ||
                                         ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
                                         (i = o.get('destination')),
@@ -4216,8 +4217,8 @@
                                     a &&
                                     ((t = o.textContent),
                                     (r = i.textContent),
-                                    (e = F(t).format(this.site_config.dayjs_date_format)),
-                                    (n = F(r).format(this.site_config.dayjs_date_format)),
+                                    (e = Y(t).format(this.site_config.dayjs_date_format)),
+                                    (n = Y(r).format(this.site_config.dayjs_date_format)),
                                     N.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
                                     N.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                             },
@@ -4289,7 +4290,7 @@
                                     e.insertAdjacentHTML(
                                         'beforeend',
                                         '<link href="'
-                                            .concat(Y.path, '/site_configs/')
+                                            .concat(F.path, '/site_configs/')
                                             .concat(this.site_config.directory_name, '/styles/')
                                             .concat(this.site_config.site_id, '.css" rel="stylesheet">')
                                     ));
@@ -4299,7 +4300,7 @@
                             key: 'applyDarkTheme',
                             value: function () {
                                 'light' !== this.site_config.theme.toLowerCase() &&
-                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(Y.path, '/styles/dark.css" rel="stylesheet">'));
+                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(F.path, '/styles/dark.css" rel="stylesheet">'));
                             },
                         },
                         {
@@ -4318,11 +4319,11 @@
                                     l = document.querySelector('input#theCheckOut'),
                                     f = new URLSearchParams(window.location.search);
                                 function d(r, o) {
-                                    (e = F(u.value, r).format('M/D/YYYY')),
-                                        (t = F(l.value, r).format('M/D/YYYY')),
-                                        (n = F(t).diff(F(e), 'days')),
-                                        (e = F(u.value, r).format(o)),
-                                        (t = F(l.value, r).format(o));
+                                    (e = Y(u.value, r).format('M/D/YYYY')),
+                                        (t = Y(l.value, r).format('M/D/YYYY')),
+                                        (n = Y(t).diff(Y(e), 'days')),
+                                        (e = Y(u.value, r).format(o)),
+                                        (t = Y(l.value, r).format(o));
                                 }
                                 this.site_config &&
                                     c &&
@@ -4395,7 +4396,7 @@
                                                     case 0:
                                                         return (
                                                             (t = function () {
-                                                                fetch(''.concat(Y.path, '/js/json/currencies.json'))
+                                                                fetch(''.concat(F.path, '/js/json/currencies.json'))
                                                                     .then(function (e) {
                                                                         if (!e.ok) throw e;
                                                                         return e.json();
@@ -4894,7 +4895,6 @@
                                                             return (t.next = 2), i();
                                                         case 2:
                                                             (e = t.sent),
-                                                                console.log('ordered prop images: ', e),
                                                                 document
                                                                     .querySelector('.ArnPropName')
                                                                     .insertAdjacentHTML(
@@ -4902,7 +4902,7 @@
                                                                         '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
                                                                     ),
                                                                 c();
-                                                        case 6:
+                                                        case 5:
                                                         case 'end':
                                                             return t.stop();
                                                     }
@@ -5512,8 +5512,7 @@
                         {
                             key: 'hideBookButtonForNoAvailability',
                             value: function () {
-                                'search-results' === this.page_name &&
-                                    document.querySelector('.ArnLimitedAvail') &&
+                                document.querySelector('.SearchHotels') &&
                                     document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                         e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
                                     });
@@ -5532,7 +5531,7 @@
                                                         case 0:
                                                             return (
                                                                 (r = function (e) {
-                                                                    for (var t, n = 0; n <= e.Images.length; n += 1)
+                                                                    for (var t, n = 0; n <= e.Images.length - 1; n += 1)
                                                                         if ('Featured Image' === e.Images[n].ImageCaption) {
                                                                             t = e.Images[n].ImagePath;
                                                                             break;
@@ -5594,11 +5593,12 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 7:
-                                                            document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                                            document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
                                                                 t(e).then(function (t) {
                                                                     var n = r(t),
                                                                         o = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
-                                                                    n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
+                                                                    n &&
+                                                                        n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
                                                                         (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
                                                                 });
                                                             });
@@ -6067,8 +6067,8 @@
             D = h('_hidden'),
             I = h('toPrimitive'),
             H = {}.propertyIsEnumerable,
-            Y = l('symbol-registry'),
-            F = l('symbols'),
+            F = l('symbol-registry'),
+            Y = l('symbols'),
             B = l('op-symbols'),
             N = Object.prototype,
             U = 'function' == typeof R && !!M.f,
@@ -6094,7 +6094,7 @@
                       }
                     : P,
             z = function (e) {
-                var t = (F[e] = A(R.prototype));
+                var t = (Y[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -6111,7 +6111,7 @@
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(F, t)
+                    o(Y, t)
                         ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
@@ -6123,20 +6123,20 @@
             },
             Q = function (e) {
                 var t = H.call(this, (e = _(e, !0)));
-                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(Y, e) && !o(B, e)) && (!(t || !o(this, e) || !o(Y, e) || (o(this, D) && this[D][e])) || t);
             },
             K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(B, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(Y, t) || o(B, t))) {
                     var n = E(e, t);
-                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(Y, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(Y, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(Y, (t = r[a++])) || (n && !o(N, t)) || i.push(Y[t]);
                 return i;
             };
         U ||
@@ -6169,11 +6169,11 @@
         for (var re = C(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(Y, (e += '')) ? Y[e] : (Y[e] = R(e));
+                return o(F, (e += '')) ? F[e] : (F[e] = R(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in Y) if (Y[t] === e) return t;
+                for (var t in F) if (F[t] === e) return t;
             },
             useSetter: function () {
                 W = !0;
@@ -6910,7 +6910,11 @@
     ,
     ,
     ,
+    ,
+    ,
     function (e, t, n) {},
+    ,
+    ,
     ,
     ,
     ,
@@ -6923,7 +6927,7 @@
         n.r(t);
         n(88), n(89), n(93), n(94), n(47), n(22), n(48);
         var r = n(68),
-            o = n(35);
+            o = n(34);
         n(32), n(46), n(69), n(33);
         function i(e, t, n, r, o, i, a) {
             try {
@@ -7497,6 +7501,6 @@
             );
         })(r.a))(),
             new s();
-        n(168);
+        n(170);
     },
 ]);

@@ -59,7 +59,7 @@ header {
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    background: url('images/banner.jpg') no-repeat center center /cover;
+    background: url('../images/banner.jpg') no-repeat center center /cover;
     height: 500px;
     text-transform: uppercase
 }
@@ -126,7 +126,7 @@ section h3 {
 .races::-webkit-scrollbar-thumb {
     margin-left: 4px;
     border-radius: 8px;
-    border: 1px solid #f7f4f1; 
+    border: 1px solid #f7f4f1;
     background-color: rgba(0, 0, 0, .5);
 }
 
@@ -430,7 +430,7 @@ hr {
     border: 0;
     clear:both;
     display:block;
-    width: 96%;               
+    width: 96%;
     background-color:#38383f;
     height: 1px;
     margin: 40px 0;
@@ -566,7 +566,7 @@ hr {
     .book-btn {
         display: none;
     }
-    
+
     .race .mobile-book-btn {
         background: #E7E7E7;
         height: 100%;
@@ -632,7 +632,7 @@ hr {
     .social-media {
         justify-content: center;
     }
-    
+
     .footer-nav div {
         width: 95%;
     }

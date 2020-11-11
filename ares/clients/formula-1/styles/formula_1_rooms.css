@@ -1,23 +1,26 @@
 @font-face {
     font-family: 'F1-Black';
-    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.eot?#iefix') format('embedded-opentype'),
+        url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Black_web.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'F1-Bold';
-    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.eot?#iefix') format('embedded-opentype'),
+        url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Bold_web.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'F1-Regular';
-    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.eot?#iefix') format('embedded-opentype'),
+        url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Regular_web.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'F1-Wide';
-    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format("embedded-opentype"), url("https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf") format("truetype");
+    src: url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.eot?#iefix') format('embedded-opentype'),
+        url('https://media.travsrv.com/appSkins/45249/v6/themes/standard/Formula1-Display-Wide_web.ttf') format('truetype');
 }
-
 
 * {
     box-sizing: border-box;
@@ -36,7 +39,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.ArnSupportLinks, .subHeaderContainer {
+.ArnSupportLinks,
+.subHeaderContainer {
     display: none;
 }
 
@@ -50,6 +54,10 @@ header {
     padding: 5px 0 5px 30px;
 }
 
+.logo img {
+    max-width: 300px;
+}
+
 #tickets li:last-child {
     display: none;
 }
@@ -59,9 +67,9 @@ header {
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    background: url('../images/banner.jpg') no-repeat center center /cover;
+    background: url('../images/banner.jpg') no-repeat center center / cover;
     height: 500px;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .banner h1 {
@@ -97,13 +105,11 @@ section p {
 
 section h1 {
     font-family: 'F1-Bold', 'Helvetica';
-
 }
 
 section h3 {
     text-transform: uppercase;
     font-family: 'F1-Regular', 'Helvetica';
-
 }
 
 .races {
@@ -127,7 +133,7 @@ section h3 {
     margin-left: 4px;
     border-radius: 8px;
     border: 1px solid #f7f4f1;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .race {
@@ -179,7 +185,7 @@ section h3 {
 }
 
 .date {
-    border-right: 2px dotted #E7E7E7;
+    border-right: 2px dotted #e7e7e7;
     width: 15%;
 }
 
@@ -192,7 +198,7 @@ section h3 {
 .month {
     text-transform: uppercase;
     text-align: center;
-    background-color: #E7E7E7;
+    background-color: #e7e7e7;
     border-radius: 10px;
     width: 40%;
     margin: auto;
@@ -206,7 +212,7 @@ section h3 {
 .race .book-btn {
     text-transform: uppercase;
     color: #333;
-    border: 1px solid #E7E7E7;
+    border: 1px solid #e7e7e7;
     padding: 7px 10px;
     border-radius: 7px;
     margin-right: 15px;
@@ -259,7 +265,7 @@ fieldset {
     margin-top: 15px;
 }
 
-.tile{
+.tile {
     max-width: 31%;
 }
 
@@ -277,8 +283,8 @@ fieldset {
 
 .tile-content {
     padding: 15px 15px 15px 0;
-    border-bottom: 1px solid #D5D5D6;
-    border-right: 1px solid #D5D5D6;
+    border-bottom: 1px solid #d5d5d6;
+    border-right: 1px solid #d5d5d6;
     border-radius: 0 0 15px 0;
     margin-top: 25px;
     min-height: 165px;
@@ -418,20 +424,22 @@ footer fieldset {
     color: #fff;
 }
 
-.footer-nav a:hover, .privacy-links a:hover {
+.footer-nav a:hover,
+.privacy-links a:hover {
     text-decoration: none;
 }
 
-.footer-nav li:hover, .privacy-links a:hover {
+.footer-nav li:hover,
+.privacy-links a:hover {
     border-bottom: solid 2px #e10600;
 }
 
 hr {
     border: 0;
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
     width: 96%;
-    background-color:#38383f;
+    background-color: #38383f;
     height: 1px;
     margin: 40px 0;
 }
@@ -451,13 +459,14 @@ hr {
     padding-bottom: 30px;
 }
 
-.mobile-privacy-links, .more {
+.mobile-privacy-links,
+.more {
     display: none;
 }
 
 @media screen and (max-width: 1100px) {
     header {
-        padding: 10px 0 10px 10px
+        padding: 10px 0 10px 10px;
     }
 
     .show-mobile-nav {
@@ -480,7 +489,7 @@ hr {
     }
 
     #give {
-        margin-left: 10px
+        margin-left: 10px;
     }
 
     .country-flag {
@@ -494,7 +503,6 @@ hr {
 }
 
 @media screen and (max-width: 800px) {
-
     .days {
         font-size: 12px;
     }
@@ -536,7 +544,9 @@ hr {
         display: block;
     }
 
-    .race-details #F1-title, .race-details #sponsor, #desktop-year {
+    .race-details #F1-title,
+    .race-details #sponsor,
+    #desktop-year {
         display: none;
     }
 
@@ -568,7 +578,7 @@ hr {
     }
 
     .race .mobile-book-btn {
-        background: #E7E7E7;
+        background: #e7e7e7;
         height: 100%;
         display: flex;
         border-radius: 0px 5px 5px 0px;
@@ -580,7 +590,6 @@ hr {
 }
 
 @media screen and (max-width: 700px) {
-
     .days {
         font-size: 14px;
     }
@@ -603,7 +612,9 @@ hr {
         min-height: 100px;
     }
 
-    #rates, #rewards, #give  {
+    #rates,
+    #rewards,
+    #give {
         margin: 10px 0;
     }
 
@@ -716,14 +727,12 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-
     .race-details {
         width: 140px;
     }
 }
 
 @media screen and (max-width: 400px) {
-
     .logo img {
         width: 80%;
     }
@@ -732,8 +741,8 @@ hr {
         font-size: 30px;
     }
 
-
-    .country-flag, #mobile-year {
+    .country-flag,
+    #mobile-year {
         display: none;
     }
 

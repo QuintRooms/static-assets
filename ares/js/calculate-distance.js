@@ -90,6 +90,7 @@ export default class Distance {
         await utilities.waitForSelectorInDOM('.prop-hr');
         let insert_element;
         let insert_position;
+        let sorted_array = [];
 
         /**
          *@description checks if there are any url properties, if there are, creates a node list of those props to determine the which element the sorted properties are inserted after. If there are no url properties, the sorted array is inserted afterbegin of the #currentPropertyPage element
@@ -103,7 +104,6 @@ export default class Distance {
                 document.querySelector('.ArnPropertyTierThree')
             ) {
                 const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16, .S20, .ArnPropertyTierThree, .ArnPropertyTierTwo, .ArnPropertyTierOne'));
-
                 insert_element = node_list[node_list.length - 1];
                 insert_position = 'afterend';
             } else {
@@ -139,19 +139,17 @@ export default class Distance {
                     return;
                 unsorted_array.push(property);
             });
-            const sorted_array = [].slice.call(unsorted_array).sort((a, b) => {
+            sorted_array = [].slice.call(unsorted_array).sort((a, b) => {
                 return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
             });
-
-            return sorted_array;
         }
 
+        buildAndSortNonUrlPropertiesArray();
         determineSortedArrayInsertPosition();
-        buildAndSortNonUrlPropertiesArray()
-            .reverse()
-            .forEach((property, i) => {
-                insert_element.insertAdjacentElement(insert_position, property);
-            });
+
+        sorted_array.reverse().forEach((property, i) => {
+            insert_element.insertAdjacentElement(insert_position, property);
+        });
     }
 
     async updateDistance() {

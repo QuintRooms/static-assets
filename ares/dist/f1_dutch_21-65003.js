@@ -9112,22 +9112,21 @@
                             value:
                                 ((o = ae(
                                     regeneratorRuntime.mark(function e() {
-                                        var t, n, r, i, o, a, s;
+                                        var t, n, r, i, o, a, s, c;
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
                                                 switch ((e.prev = e.next)) {
                                                     case 0:
                                                         return (
-                                                            (s = function () {
-                                                                return (s = ae(
+                                                            (c = function () {
+                                                                return (c = ae(
                                                                     regeneratorRuntime.mark(function e() {
-                                                                        var t, n;
+                                                                        var t;
                                                                         return regeneratorRuntime.wrap(function (e) {
                                                                             for (;;)
                                                                                 switch ((e.prev = e.next)) {
                                                                                     case 0:
-                                                                                        return (
-                                                                                            (t = []),
+                                                                                        (t = []),
                                                                                             document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                                                                                 e.classList.contains('S16') ||
                                                                                                     e.classList.contains('S20') ||
@@ -9136,15 +9135,13 @@
                                                                                                     e.classList.contains('ArnPropertyTierThree') ||
                                                                                                     t.push(e);
                                                                                             }),
-                                                                                            (n = [].slice.call(t).sort(function (e, t) {
-                                                                                                return o(e.querySelector('.distanceLabel').textContent) >
-                                                                                                    o(t.querySelector('.distanceLabel').textContent)
+                                                                                            (r = [].slice.call(t).sort(function (e, t) {
+                                                                                                return a(e.querySelector('.distanceLabel').textContent) >
+                                                                                                    a(t.querySelector('.distanceLabel').textContent)
                                                                                                     ? 1
                                                                                                     : -1;
-                                                                                            })),
-                                                                                            e.abrupt('return', n)
-                                                                                        );
-                                                                                    case 5:
+                                                                                            }));
+                                                                                    case 4:
                                                                                     case 'end':
                                                                                         return e.stop();
                                                                                 }
@@ -9152,14 +9149,14 @@
                                                                     })
                                                                 )).apply(this, arguments);
                                                             }),
-                                                            (a = function () {
-                                                                return s.apply(this, arguments);
+                                                            (s = function () {
+                                                                return c.apply(this, arguments);
                                                             }),
-                                                            (o = function (e) {
+                                                            (a = function (e) {
                                                                 return parseFloat(e.substring(0, e.indexOf(' ')));
                                                             }),
-                                                            (i = function () {
-                                                                return (i = ae(
+                                                            (o = function () {
+                                                                return (o = ae(
                                                                     regeneratorRuntime.mark(function e() {
                                                                         var r;
                                                                         return regeneratorRuntime.wrap(function (e) {
@@ -9187,20 +9184,20 @@
                                                                     })
                                                                 )).apply(this, arguments);
                                                             }),
-                                                            (r = function () {
-                                                                return i.apply(this, arguments);
+                                                            (i = function () {
+                                                                return o.apply(this, arguments);
                                                             }),
                                                             (e.next = 7),
                                                             ce.waitForSelectorInDOM('.prop-hr')
                                                         );
                                                     case 7:
-                                                        r(),
-                                                            a()
-                                                                .reverse()
-                                                                .forEach(function (e, r) {
-                                                                    t.insertAdjacentElement(n, e);
-                                                                });
-                                                    case 9:
+                                                        (r = []),
+                                                            s(),
+                                                            i(),
+                                                            r.reverse().forEach(function (e, r) {
+                                                                t.insertAdjacentElement(n, e);
+                                                            });
+                                                    case 11:
                                                     case 'end':
                                                         return e.stop();
                                                 }

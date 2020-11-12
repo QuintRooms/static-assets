@@ -88,26 +88,21 @@ export default class Distance {
 
     async sortPropsByDistance() {
         await utilities.waitForSelectorInDOM('.prop-hr');
-        const sort_array = [];
         let insert_element;
         let insert_position;
 
-        function getPropertyIdsFromOriginalParams() {
-            const original_params = new URLSearchParams(utilities.getMetaTagContent('originalParams'));
-            let prop_ids_array = original_params.get('properties');
-
-            if (!prop_ids_array) return;
-
-            prop_ids_array = prop_ids_array.split(',');
-
-            return prop_ids_array.map((prop_id) => {
-                return prop_id.replace(/\D/g, '');
-            });
-        }
-
-        async function hasContractedInventory() {
-            if (document.querySelector('.S16') || document.querySelector('.S20')) {
-                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16, .S20'));
+        /**
+         *@description checks if there are any url properties, if there are, creates a node list of those props to determine the which element the sorted properties are inserted after. If there are no url properties, the sorted array is inserted afterbegin of the #currentPropertyPage element
+         */
+        async function determineSortedArrayInsertPosition() {
+            if (
+                document.querySelector('.S16') ||
+                document.querySelector('.S20') ||
+                document.querySelector('.ArnPropertyTierOne') ||
+                document.querySelector('.ArnPropertyTierTwo') ||
+                document.querySelector('.ArnPropertyTierThree')
+            ) {
+                const node_list = Array.prototype.slice.call(document.querySelectorAll('.S16, .S20, .ArnPropertyTierThree, .ArnPropertyTierTwo, .ArnPropertyTierOne'));
 
                 insert_element = node_list[node_list.length - 1];
                 insert_position = 'afterend';
@@ -117,37 +112,46 @@ export default class Distance {
             }
         }
 
-        async function isOriginalParamPropIdInDom() {
-            const original_param_prop_ids = getPropertyIdsFromOriginalParams();
-            const properties = document.querySelectorAll('.ArnProperty');
-
-            properties.forEach((property) => {
-                if (!original_param_prop_ids) {
-                    if (property.classList.contains('S16') || property.classList.contains('S20')) return;
-                    sort_array.push(property);
-                } else {
-                    if (original_param_prop_ids.includes(property.querySelector('.propId').textContent) || property.classList.contains('S16') || property.classList.contains('S20'))
-                        return;
-                    sort_array.push(property);
-                }
-            });
-        }
-
-        isOriginalParamPropIdInDom();
-
+        /**
+         *@description extracts the number of miles from the string which includes either 'm' or 'km'
+         */
         function extractNumber(str) {
             return parseFloat(str.substring(0, str.indexOf(' ')));
         }
 
-        const props_array = [].slice.call(sort_array).sort((a, b) => {
-            return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
-        });
+        /**
+         *@description loops through each property in search results, for each prop, checks if any classes exist that would signal it's a url property, if it isn't a url prop, it is pushed to an array which then gets sorted in order of distance.
+         *@returns Array - node list of properties, excluding any properties in the URL, sorted by distance.
+         */
+        async function buildAndSortNonUrlPropertiesArray() {
+            const unsorted_array = [];
 
-        hasContractedInventory();
+            const properties = document.querySelectorAll('.ArnProperty');
 
-        props_array.reverse().forEach((property, i) => {
-            insert_element.insertAdjacentElement(insert_position, property);
-        });
+            properties.forEach((property) => {
+                if (
+                    property.classList.contains('S16') ||
+                    property.classList.contains('S20') ||
+                    property.classList.contains('ArnPropertyTierOne') ||
+                    property.classList.contains('ArnPropertyTierTwo') ||
+                    property.classList.contains('ArnPropertyTierThree')
+                )
+                    return;
+                unsorted_array.push(property);
+            });
+            const sorted_array = [].slice.call(unsorted_array).sort((a, b) => {
+                return extractNumber(a.querySelector('.distanceLabel').textContent) > extractNumber(b.querySelector('.distanceLabel').textContent) ? 1 : -1;
+            });
+
+            return sorted_array;
+        }
+
+        determineSortedArrayInsertPosition();
+        buildAndSortNonUrlPropertiesArray()
+            .reverse()
+            .forEach((property, i) => {
+                insert_element.insertAdjacentElement(insert_position, property);
+            });
     }
 
     async updateDistance() {

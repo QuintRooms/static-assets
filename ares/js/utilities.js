@@ -454,4 +454,9 @@ export default class Utilities {
     percentDiff(num1, num2) {
         return Math.round(((num1 - num2) / num1) * 100);
     }
+
+    // For testing set up.
+    sum(a, b) {
+        return a + b;
+    }
 }

@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './60512-config';
-import addStay22Banner from '../../../js/components/stay_22_banner';
+import addStay22Banner from '../../../js/components/stay-22-banner';
 
 const site_config = new SiteConfig();
 

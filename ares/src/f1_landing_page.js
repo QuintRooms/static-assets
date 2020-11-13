@@ -1,1 +1,1 @@
-import '../clients/formula-1/js/landing-page';
+import '../clients/formula_1/js/landing-page';

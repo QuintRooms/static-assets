@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './58513-config';
-import renderLucidBanner from '../../../js/components/lucid-banner/lucid-banner';
+import renderLucidBanner from '../../../js/components/lucid_banner/lucid-banner';
 // import Utilities from '../../js/utilities';
 
 const site_config = new SiteConfig();

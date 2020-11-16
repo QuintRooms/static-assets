@@ -1,4 +1,3 @@
-// import sum from './func';
 const sum = require('./func');
 
 test('adds 3 + 3 to equal 6', () => {

@@ -39,7 +39,7 @@
   "lint-staged": {
     "*.{js, html}": [
       "eslint --fix",
-      "test --passWithNoTests --findRelatedTests",
+      "npm run test --passWithNoTests --findRelatedTests",
       "prettier --single-quote --write",
       "git add"
     ]

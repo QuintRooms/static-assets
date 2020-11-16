@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "eslint --fix"
+    "format": "eslint --fix",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
   "lint-staged": {
     "*.{js, html}": [
       "eslint --fix",
+      "test --bail --passWithNoTests --findRelatedTests",
       "prettier --single-quote --write",
       "git add"
     ]

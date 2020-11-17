@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Hotels4Hope/static-assets#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.1.0",

@@ -33,13 +33,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
     "*.{js, html}": [
       "eslint --fix",
-      "npm run test",
       "prettier --single-quote --write",
       "git add"
     ]

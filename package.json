@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "eslint --fix",
-    "test": "jest --notify --findRelatedTests --bail"
+    "test": "jest --notify --verbose --findRelatedTests"
   },
   "repository": {
     "type": "git",

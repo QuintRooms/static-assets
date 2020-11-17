@@ -455,3 +455,4 @@ export default class Utilities {
         return Math.round(((num1 - num2) / num1) * 100);
     }
 }
+// adding comment for testing

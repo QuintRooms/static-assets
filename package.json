@@ -40,7 +40,8 @@
     "*.{js, html}": [
       "eslint --fix",
       "npm run test",
-      "prettier --single-quote --write"
+      "prettier --single-quote --write",
+      "git add"
     ]
   }
 }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "eslint --fix",
-    "test": "jest --verbose --passWithNoTests --findRelatedTests"
+    "test": "jest --verbose --passWithNoTests"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "*.{js, html}": [
       "eslint --fix",
       "prettier --single-quote --write",
-      "npm run test",
+      "npm run jest --verbose --passWithNoTests --findRelatedTests",
       "git add"
     ]
   }

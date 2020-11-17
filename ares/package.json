@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "local": "NODE_ENV=local webpack --mode none",
     "dev": "npm run compile-css && NODE_ENV=develop webpack --mode development",
     "prod": "npm run compile-css && node js/build_tools/production-checklist.js && NODE_ENV=production webpack --mode production && node js/build_tools/generate-email-configs.js",

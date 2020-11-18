@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './46972-config';
-import f1Styles from '../../../clients/formula-1/js/f1';
+import f1Styles from '../../../clients/formula_1/js/f1';
 import Distance from '../../../js/calculate-distance';
 
 const site_config = new SiteConfig();

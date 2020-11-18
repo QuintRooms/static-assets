@@ -83,7 +83,7 @@ function updateTitle(text) {
 function changeLogoHtml() {
     document.querySelector('.logo').outerHTML = `
         <span class="logo">
-            <img src="https://static.hotelsforhope.com/ares/clients/formula-1/images/logo.png" alt="F1 Rooms Logo">
+            <img src="https://static.hotelsforhope.com/ares/clients/formula_1/images/logo.png" alt="F1 Rooms Logo">
         </span>
         `;
 }

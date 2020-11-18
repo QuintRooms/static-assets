@@ -14,6 +14,7 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
+utilities.prepopulateDatePopupWithTodaysDate();
 utilities.addMultipleHeaderLogos({
     image1: {
         insertPosition: 'afterbegin',

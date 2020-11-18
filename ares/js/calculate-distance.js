@@ -121,7 +121,6 @@ export default class Distance {
 
         /**
          *@description loops through each property in search results, for each prop, checks if any classes exist that would signal it's a url property, if it isn't a url prop, it is pushed to an array which then gets sorted in order of distance.
-         *@returns Array - node list of properties, excluding any properties in the URL, sorted by distance.
          */
         async function buildAndSortNonUrlPropertiesArray() {
             const unsorted_array = [];

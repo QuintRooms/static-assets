@@ -454,4 +454,21 @@ export default class Utilities {
     percentDiff(num1, num2) {
         return Math.round(((num1 - num2) / num1) * 100);
     }
+
+    /**
+     *@description Sets the Prompt for checkin popup dates as today's date. the 'promptForCheckIn' must be added as a URL parameter for this to be used.
+     */
+    async prepopulateDatePopupWithTodaysDate() {
+        if (!document.querySelector('.SearchHotels')) return;
+
+        await this.waitForSelectorInDOM('#theQuickCheckIn');
+
+        const check_in_input = document.querySelector('#theDatePrompt #theQuickCheckIn');
+        const check_out_input = document.querySelector('#theDatePrompt #theQuickCheckOut');
+
+        if (!check_in_input || !check_out_input) return;
+
+        check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
+        check_out_input.setAttribute('value', dayjs().add(1, 'day').format('MM/DD/YYYY'));
+    }
 }

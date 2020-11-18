@@ -509,25 +509,25 @@
             S = u.TypeError,
             k = u.process,
             M = k && k.versions,
-            L = (M && M.v8) || '',
-            P = u.Promise,
+            P = (M && M.v8) || '',
+            L = u.Promise,
             j = 'process' == l(k),
-            E = function () {},
-            A = (o = _.f),
+            A = function () {},
+            E = (o = _.f),
             O = !!(function () {
                 try {
-                    var t = P.resolve(1),
+                    var t = L.resolve(1),
                         e = ((t.constructor = {})[n(0)('species')] = function (t) {
-                            t(E, E);
+                            t(A, A);
                         });
-                    return (j || 'function' == typeof PromiseRejectionEvent) && t.then(E) instanceof e && 0 !== L.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                    return (j || 'function' == typeof PromiseRejectionEvent) && t.then(A) instanceof e && 0 !== P.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                 } catch (t) {}
             })(),
             T = function (t) {
                 var e;
                 return !(!p(t) || 'function' != typeof (e = t.then)) && e;
             },
-            $ = function (t, e) {
+            I = function (t, e) {
                 if (!t._n) {
                     t._n = !0;
                     var n = t._c;
@@ -546,7 +546,7 @@
                                         l = e.domain;
                                     try {
                                         c
-                                            ? (o || (2 == t._h && D(t), (t._h = 1)),
+                                            ? (o || (2 == t._h && q(t), (t._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (i = !0))),
                                               n === e.promise ? s(S('Promise-chain cycle')) : (a = T(n)) ? a.call(n, u, s) : u(n))
                                             : s(r);
@@ -558,17 +558,17 @@
 
                         )
                             i(n[a++]);
-                        (t._c = []), (t._n = !1), e && !t._h && I(t);
+                        (t._c = []), (t._n = !1), e && !t._h && $(t);
                     });
                 }
             },
-            I = function (t) {
+            $ = function (t) {
                 g.call(u, function () {
                     var e,
                         n,
                         r,
                         o = t._v,
-                        a = q(t);
+                        a = D(t);
                     if (
                         (a &&
                             ((e = x(function () {
@@ -578,17 +578,17 @@
                                     ? n({promise: t, reason: o})
                                     : (r = u.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = j || q(t) ? 2 : 1)),
+                            (t._h = j || D(t) ? 2 : 1)),
                         (t._a = void 0),
                         a && e.e)
                     )
                         throw e.v;
                 });
             },
-            q = function (t) {
+            D = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
-            D = function (t) {
+            q = function (t) {
                 g.call(u, function () {
                     var e;
                     j ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
@@ -596,9 +596,9 @@
             },
             R = function (t) {
                 var e = this;
-                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), $(e, !0));
+                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), I(e, !0));
             },
-            F = function (t) {
+            C = function (t) {
                 var e,
                     n = this;
                 if (!n._d) {
@@ -609,38 +609,38 @@
                             ? y(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      e.call(t, s(F, r, 1), s(R, r, 1));
+                                      e.call(t, s(C, r, 1), s(R, r, 1));
                                   } catch (t) {
                                       R.call(r, t);
                                   }
                               })
-                            : ((n._v = t), (n._s = 1), $(n, !1));
+                            : ((n._v = t), (n._s = 1), I(n, !1));
                     } catch (t) {
                         R.call({_w: n, _d: !1}, t);
                     }
                 }
             };
         O ||
-            ((P = function (t) {
-                m(this, P, 'Promise', '_h'), h(t), r.call(this);
+            ((L = function (t) {
+                m(this, L, 'Promise', '_h'), h(t), r.call(this);
                 try {
-                    t(s(F, this, 1), s(R, this, 1));
+                    t(s(C, this, 1), s(R, this, 1));
                 } catch (t) {
                     R.call(this, t);
                 }
             }),
             ((r = function (t) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(76)(P.prototype, {
+            }).prototype = n(76)(L.prototype, {
                 then: function (t, e) {
-                    var n = A(v(this, P));
+                    var n = E(v(this, L));
                     return (
                         (n.ok = 'function' != typeof t || t),
                         (n.fail = 'function' == typeof e && e),
                         (n.domain = j ? k.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && $(this, !1),
+                        this._s && I(this, !1),
                         n.promise
                     );
                 },
@@ -650,24 +650,24 @@
             })),
             (a = function () {
                 var t = new r();
-                (this.promise = t), (this.resolve = s(F, t, 1)), (this.reject = s(R, t, 1));
+                (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(R, t, 1));
             }),
-            (_.f = A = function (t) {
-                return t === P || t === i ? new a(t) : o(t);
+            (_.f = E = function (t) {
+                return t === L || t === i ? new a(t) : o(t);
             })),
-            f(f.G + f.W + f.F * !O, {Promise: P}),
-            n(29)(P, 'Promise'),
+            f(f.G + f.W + f.F * !O, {Promise: L}),
+            n(29)(L, 'Promise'),
             n(77)('Promise'),
             (i = n(5).Promise),
             f(f.S + f.F * !O, 'Promise', {
                 reject: function (t) {
-                    var e = A(this);
+                    var e = E(this);
                     return (0, e.reject)(t), e.promise;
                 },
             }),
             f(f.S + f.F * (c || !O), 'Promise', {
                 resolve: function (t) {
-                    return w(c && this === i ? P : this, t);
+                    return w(c && this === i ? L : this, t);
                 },
             }),
             f(
@@ -676,14 +676,14 @@
                         !(
                             O &&
                             n(78)(function (t) {
-                                P.all(t).catch(E);
+                                L.all(t).catch(A);
                             })
                         ),
                 'Promise',
                 {
                     all: function (t) {
                         var e = this,
-                            n = A(e),
+                            n = E(e),
                             r = n.resolve,
                             o = n.reject,
                             a = x(function () {
@@ -705,7 +705,7 @@
                     },
                     race: function (t) {
                         var e = this,
-                            n = A(e),
+                            n = E(e),
                             r = n.reject,
                             o = x(function () {
                                 d(t, !1, function (t) {
@@ -1223,25 +1223,25 @@
                 S = 'values' == d,
                 k = !1,
                 M = t.prototype,
-                L = M[f] || M['@@iterator'] || (d && M[d]),
-                P = L || b(d),
-                j = d ? (S ? b('entries') : P) : void 0,
-                E = ('Array' == e && M.entries) || L;
+                P = M[f] || M['@@iterator'] || (d && M[d]),
+                L = P || b(d),
+                j = d ? (S ? b('entries') : L) : void 0,
+                A = ('Array' == e && M.entries) || P;
             if (
-                (E && (x = l(E.call(new t()))) !== Object.prototype && x.next && (s(x, w, !0), r || 'function' == typeof x[f] || i(x, f, h)),
+                (A && (x = l(A.call(new t()))) !== Object.prototype && x.next && (s(x, w, !0), r || 'function' == typeof x[f] || i(x, f, h)),
                 S &&
-                    L &&
-                    'values' !== L.name &&
+                    P &&
+                    'values' !== P.name &&
                     ((k = !0),
-                    (P = function () {
-                        return L.call(this);
+                    (L = function () {
+                        return P.call(this);
                     })),
-                (r && !g) || (!p && !k && M[f]) || i(M, f, P),
-                (c[e] = P),
+                (r && !g) || (!p && !k && M[f]) || i(M, f, L),
+                (c[e] = L),
                 (c[w] = h),
                 d)
             )
-                if (((y = {values: S ? P : b('values'), keys: v ? P : b('keys'), entries: j}), g)) for (_ in y) _ in M || a(M, _, y[_]);
+                if (((y = {values: S ? L : b('values'), keys: v ? L : b('keys'), entries: j}), g)) for (_ in y) _ in M || a(M, _, y[_]);
                 else o(o.P + o.F * (p || k), e, y);
             return y;
         };
@@ -1415,14 +1415,14 @@
                     }
                     for (var x, b = '', w = 0, S = 0; S < y.length; S++) {
                         _ = y[S];
-                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), L = [], P = 1; P < _.length; P++) L.push(void 0 === (x = _[P]) ? x : String(x));
+                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), P = [], L = 1; L < _.length; L++) P.push(void 0 === (x = _[L]) ? x : String(x));
                         var j = _.groups;
                         if (h) {
-                            var E = [k].concat(L, M, p);
-                            void 0 !== j && E.push(j);
-                            var A = String(e.apply(void 0, E));
-                        } else A = d(k, p, M, L, j, e);
-                        M >= w && ((b += p.slice(w, M) + A), (w = M + k.length));
+                            var A = [k].concat(P, M, p);
+                            void 0 !== j && A.push(j);
+                            var E = String(e.apply(void 0, A));
+                        } else E = d(k, p, M, P, j, e);
+                        M >= w && ((b += p.slice(w, M) + E), (w = M + k.length));
                     }
                     return b + p.slice(w);
                 },
@@ -2208,7 +2208,7 @@
                         sponsor: 'VTB',
                         name: 'Russian Grand Prix',
                         location: 'Sochi, Russia',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/russia.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/russia.jpg'),
                         flag_alt_text: 'Russian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36972&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Russia%202020',
                     },
@@ -2219,7 +2219,7 @@
                         sponsor: 'Heineken',
                         name: 'Portuguese Grand Prix',
                         location: 'Algarve, Portugal',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/portugal.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/portugal.jpg'),
                         flag_alt_text: 'Portugese',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44099&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Portugal%202020',
                     },
@@ -2230,7 +2230,7 @@
                         sponsor: 'DHL',
                         name: 'Turkish Grand Prix',
                         location: 'Istanbul, Turkey',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/turkey.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/turkey.jpg'),
                         flag_alt_text: 'Turkish',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44089&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Turkey%202020',
                     },
@@ -2241,7 +2241,7 @@
                         sponsor: 'Gulf Air',
                         name: 'Bahrain Grand Prix',
                         location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/bahrain.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44125&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202020',
                     },
@@ -2252,7 +2252,7 @@
                         sponsor: 'Rolex',
                         name: 'Sakhir Grand Prix',
                         location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/bahrain.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=44126&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Sakhir%202020',
                     },
@@ -2263,7 +2263,7 @@
                         sponsor: 'Etihad Airways',
                         name: 'Abu Dhabi Grand Prix',
                         location: 'Yas Island, Abu Dhabi',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/abu-dhabi.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/abu-dhabi.jpg'),
                         flag_alt_text: 'United Arab Emirates',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=36977&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Abu%20Dhabi%202020',
                     },
@@ -2276,7 +2276,7 @@
                         sponsor: '',
                         name: 'Australian Grand Prix',
                         location: 'Melbourne, Australia',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/australia.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/australia.jpg'),
                         flag_alt_text: 'Australian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45297&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Australia%202021',
                     },
@@ -2287,7 +2287,7 @@
                         sponsor: '',
                         name: 'Bahrain Grand Prix',
                         location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/bahrain.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202021',
                     },
@@ -2298,7 +2298,7 @@
                         sponsor: '',
                         name: 'Chinese Grand Prix',
                         location: 'Shanghai, China',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/china.gif'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/china.gif'),
                         flag_alt_text: 'Chinese',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45301&utm_source=Website&utm_medium=Index%20Page&utm_campaign=China%202021',
                     },
@@ -2309,7 +2309,7 @@
                         sponsor: '',
                         name: 'Spanish Grand Prix',
                         location: 'Catalunya, Spain',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/spain.gif'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/spain.gif'),
                         flag_alt_text: 'Spanish',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45302&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Spain%202021',
                     },
@@ -2320,7 +2320,7 @@
                         sponsor: '',
                         name: 'Monaco Grand Prix',
                         location: 'Monte Carlo, Monaco',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/monaco.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/monaco.jpg'),
                         flag_alt_text: 'Monaco',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45303&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Monaco%202021',
                     },
@@ -2331,7 +2331,7 @@
                         sponsor: '',
                         name: 'Azerbaijan Grand Prix',
                         location: 'Baku, Azerbaijan',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/azerbaijan.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/azerbaijan.jpg'),
                         flag_alt_text: 'Azerbaijan',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45326&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Azerbaijan%202021',
                     },
@@ -2342,7 +2342,7 @@
                         sponsor: '',
                         name: 'Canadian Grand Prix',
                         location: 'Montreal, Canada',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/canada.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/canada.jpg'),
                         flag_alt_text: 'Canadian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45328&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Canada%202021',
                     },
@@ -2353,7 +2353,7 @@
                         sponsor: '',
                         name: 'French Grand Prix',
                         location: 'La Castellet, France ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/france.png'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/france.png'),
                         flag_alt_text: 'French',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45333&utm_source=Website&utm_medium=Index%20Page&utm_campaign=France%202021',
                     },
@@ -2364,7 +2364,7 @@
                         sponsor: '',
                         name: 'Austrian Grand Prix',
                         location: 'Styria, Austria ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/austria.gif'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/austria.gif'),
                         flag_alt_text: 'Austrian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45331&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Austria%202021',
                     },
@@ -2375,7 +2375,7 @@
                         sponsor: '',
                         name: 'British Grand Prix',
                         location: 'Silverstone, England',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/britain.gif'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/britain.gif'),
                         flag_alt_text: 'British',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45334&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Great%20Britain%202021',
                     },
@@ -2386,7 +2386,7 @@
                         sponsor: '',
                         name: 'Hungarian Grand Prix',
                         location: 'Budapest, Hungary ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/hungary.gif'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/hungary.gif'),
                         flag_alt_text: 'Hungarian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45335&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Hungary%202021',
                     },
@@ -2397,7 +2397,7 @@
                         sponsor: '',
                         name: 'Belgian Grand Prix',
                         location: 'Stavelot, Belgium ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/belgium.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/belgium.jpg'),
                         flag_alt_text: 'Belgian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45306&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Belgium%202021',
                     },
@@ -2408,7 +2408,7 @@
                         sponsor: '',
                         name: 'Dutch Grand Prix',
                         location: 'Zandvoort, Netherlands',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/netherlands.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/netherlands.jpg'),
                         flag_alt_text: 'Dutch',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45295&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Dutch%202021',
                     },
@@ -2419,7 +2419,7 @@
                         sponsor: '',
                         name: 'Italian Grand Prix',
                         location: 'Monza, Italy ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/italy.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/italy.jpg'),
                         flag_alt_text: 'Italian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45307&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Italy%202021',
                     },
@@ -2430,7 +2430,7 @@
                         sponsor: '',
                         name: 'Russian Grand Prix',
                         location: 'Sochi, Russia ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/russia.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/russia.jpg'),
                         flag_alt_text: 'Russian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45336&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Russia%202021',
                     },
@@ -2441,7 +2441,7 @@
                         sponsor: '',
                         name: 'Singapore Grand Prix',
                         location: 'Marina Bay, Singapore',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/singapore.svg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/singapore.svg'),
                         flag_alt_text: 'Singaporean',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45308&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Singapore%202021',
                     },
@@ -2452,7 +2452,7 @@
                         sponsor: '',
                         name: 'Japanese Grand Prix',
                         location: 'Sazuka, Japan ',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/japan.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/japan.jpg'),
                         flag_alt_text: 'Japanese',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45337&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Japan%202021',
                     },
@@ -2463,7 +2463,7 @@
                         sponsor: '',
                         name: 'Mexican Grand Prix',
                         location: 'Mexico City, Mexico',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/mexico.jpg'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/mexico.jpg'),
                         flag_alt_text: 'Mexican',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45313&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Mexico%202021',
                     },
@@ -2474,7 +2474,7 @@
                         sponsor: '',
                         name: 'Brazilian Grand Prix',
                         location: 'Brazil',
-                        country_flag_url: ''.concat(a.path, '/clients/formula-1/images/brazil.png'),
+                        country_flag_url: ''.concat(a.path, '/clients/formula_1/images/brazil.png'),
                         flag_alt_text: 'Brazilian',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45315&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Brazil%202021',
                     },
@@ -2519,7 +2519,7 @@
                         if (!(t instanceof e)) throw new TypeError('Cannot call a class as a function');
                     })(this, t);
                 }
-                var e, n, r, o, a, i, c, f, p, h, m, d;
+                var e, n, r, o, a, i, c, f, p, h, m, d, v;
                 return (
                     (e = t),
                     (n = [
@@ -2532,7 +2532,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((d = u(
+                                ((v = u(
                                     regeneratorRuntime.mark(function t(e, n, r) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -2553,7 +2553,7 @@
                                     })
                                 )),
                                 function (t, e, n) {
-                                    return d.apply(this, arguments);
+                                    return v.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2593,7 +2593,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((m = u(
+                                ((d = u(
                                     regeneratorRuntime.mark(function t(e) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -2616,13 +2616,13 @@
                                     })
                                 )),
                                 function (t) {
-                                    return m.apply(this, arguments);
+                                    return d.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'waitForTextInDOM',
                             value:
-                                ((h = u(
+                                ((m = u(
                                     regeneratorRuntime.mark(function t(e, n) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -2645,7 +2645,7 @@
                                     })
                                 )),
                                 function (t, e) {
-                                    return h.apply(this, arguments);
+                                    return m.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2657,7 +2657,7 @@
                         {
                             key: 'moveOrphanedElementsIntoNewWrapper',
                             value:
-                                ((p = u(
+                                ((h = u(
                                     regeneratorRuntime.mark(function t(e, n, r, o) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -2681,13 +2681,13 @@
                                     })
                                 )),
                                 function (t, e, n, r) {
-                                    return p.apply(this, arguments);
+                                    return h.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'createWrapper',
                             value:
-                                ((f = u(
+                                ((p = u(
                                     regeneratorRuntime.mark(function t(e, n, r, o) {
                                         var a;
                                         return regeneratorRuntime.wrap(function (t) {
@@ -2713,7 +2713,7 @@
                                     })
                                 )),
                                 function (t, e, n, r) {
-                                    return f.apply(this, arguments);
+                                    return p.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2742,7 +2742,7 @@
                         {
                             key: 'addMultipleHeaderLogos',
                             value:
-                                ((c = u(
+                                ((f = u(
                                     regeneratorRuntime.mark(function t(e) {
                                         var n, r, o, a;
                                         return regeneratorRuntime.wrap(
@@ -2781,7 +2781,7 @@
                                     })
                                 )),
                                 function (t) {
-                                    return c.apply(this, arguments);
+                                    return f.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2824,7 +2824,7 @@
                         {
                             key: 'ratesComingSoon',
                             value:
-                                ((i = u(
+                                ((c = u(
                                     regeneratorRuntime.mark(function t(e) {
                                         return regeneratorRuntime.wrap(
                                             function (t) {
@@ -2854,7 +2854,7 @@
                                     })
                                 )),
                                 function (t) {
-                                    return i.apply(this, arguments);
+                                    return c.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2922,7 +2922,7 @@
                         {
                             key: 'fetchHTMLFromFile',
                             value:
-                                ((a = u(
+                                ((i = u(
                                     regeneratorRuntime.mark(function t(e) {
                                         var n;
                                         return regeneratorRuntime.wrap(function (t) {
@@ -2956,7 +2956,7 @@
                                     })
                                 )),
                                 function (t) {
-                                    return a.apply(this, arguments);
+                                    return i.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2997,7 +2997,7 @@
                         {
                             key: 'addAttributeToInput',
                             value:
-                                ((o = u(
+                                ((a = u(
                                     regeneratorRuntime.mark(function t(e, n, r, o) {
                                         return regeneratorRuntime.wrap(
                                             function (t) {
@@ -3028,7 +3028,7 @@
                                     })
                                 )),
                                 function (t, e, n, r) {
-                                    return o.apply(this, arguments);
+                                    return a.apply(this, arguments);
                                 }),
                         },
                         {
@@ -3053,6 +3053,50 @@
                             value: function (t, e) {
                                 return Math.round(((t - e) / t) * 100);
                             },
+                        },
+                        {
+                            key: 'prepopulateDatePopupWithTodaysDate',
+                            value:
+                                ((o = u(
+                                    regeneratorRuntime.mark(function t() {
+                                        var e, n;
+                                        return regeneratorRuntime.wrap(
+                                            function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            if (document.querySelector('.SearchHotels')) {
+                                                                t.next = 2;
+                                                                break;
+                                                            }
+                                                            return t.abrupt('return');
+                                                        case 2:
+                                                            return (t.next = 4), this.waitForSelectorInDOM('#theQuickCheckIn');
+                                                        case 4:
+                                                            if (
+                                                                ((e = document.querySelector('#theDatePrompt #theQuickCheckIn')),
+                                                                (n = document.querySelector('#theDatePrompt #theQuickCheckOut')),
+                                                                e && n)
+                                                            ) {
+                                                                t.next = 8;
+                                                                break;
+                                                            }
+                                                            return t.abrupt('return');
+                                                        case 8:
+                                                            e.setAttribute('value', l().format('MM/DD/YYYY')), n.setAttribute('value', l().add(1, 'day').format('MM/DD/YYYY'));
+                                                        case 10:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            },
+                                            t,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return o.apply(this, arguments);
+                                }),
                         },
                     ]) && s(e.prototype, n),
                     r && s(e, r),
@@ -3109,7 +3153,7 @@
                                                                     }
                                                                     return t.abrupt('return');
                                                                 case 2:
-                                                                    return (t.next = 4), m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula-1/html/footer.html'));
+                                                                    return (t.next = 4), m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula_1/html/footer.html'));
                                                                 case 4:
                                                                     (e = t.sent), document.querySelector('.pb-container').insertAdjacentHTML('afterend', e);
                                                                 case 6:
@@ -3145,7 +3189,7 @@
                                                                                       document.querySelector('.currency').insertAdjacentElement('afterBegin', o)));
                                                                         }),
                                                                         (t.next = 3),
-                                                                        m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula-1/html/mobile-hamburger-menu.html'))
+                                                                        m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula_1/html/mobile-hamburger-menu.html'))
                                                                     );
                                                                 case 3:
                                                                     return (
@@ -3184,7 +3228,7 @@
                                                         for (;;)
                                                             switch ((t.prev = t.next)) {
                                                                 case 0:
-                                                                    return (t.next = 2), m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula-1/html/f1-header.html'));
+                                                                    return (t.next = 2), m.fetchHTMLFromFile(''.concat(d.path, '/clients/formula_1/html/f1-header.html'));
                                                                 case 2:
                                                                     if (
                                                                         ((i = t.sent),
@@ -3296,7 +3340,7 @@
                 document.querySelector('.more').classList.toggle('open'), document.querySelector('.mobile-privacy-links').classList.toggle('show');
             }),
             (document.querySelector('.logo').outerHTML =
-                '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/clients/formula-1/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '),
+                '\n        <span class="logo">\n            <img src="https://static.hotelsforhope.com/ares/clients/formula_1/images/logo.png" alt="F1 Rooms Logo">\n        </span>\n        '),
             (g = 'F1® Rooms'),
             (document.querySelector('title').textContent = g);
     },

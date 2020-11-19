@@ -47,5 +47,8 @@
             "npm run test --verbose --passWithNoTests --findRelatedTests",
             "git add"
         ]
+    },
+    "dependencies": {
+        "dayjs": "^1.9.6"
     }
 }

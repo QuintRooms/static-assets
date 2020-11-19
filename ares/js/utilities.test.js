@@ -1,7 +1,7 @@
-import fetchMock from 'jest-fetch-mock';
+// import fetchMock from 'jest-fetch-mock';
 import Utilities from './utilities';
 
-fetchMock.enableMocks();
+// fetchMock.enableMocks();
 
 const utilities = new Utilities();
 

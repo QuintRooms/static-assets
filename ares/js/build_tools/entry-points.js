@@ -8,9 +8,9 @@ module.exports = () => {
             // 'acl_21-60311': './src/60311.js', // ACL 2021
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            // 'arizona_bike_week_21-64812': './src/64812.js', // arizona bike_week_21
+            // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'austin_food_and_wine_20-60290': './src/60290.js', // AFW 2020
-            // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'bj_landing_page-58196': './src/58196.js', // BJ landing page
             // 'bj_las_vegas_20-60089': './src/60089.js', // BJ Las Vegas 2020
             // 'bj_northeast_20-60086': './src/60086.js', // BJ Northeast 2020

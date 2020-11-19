@@ -13,11 +13,11 @@ class ChildPortal extends BasePortal {
 }
 
 new ChildPortal();
-
+// updated for rescheduled dates
 async function addHeaderContent() {
     await utilities.waitForSelectorInDOM('header');
     const header = document.querySelector('header');
-    header.insertAdjacentHTML('beforeend', '<span class="event-dates">Feb 12-14, 2021 - Downtown Austin, TX</span>');
+    header.insertAdjacentHTML('beforeend', '<span class="event-dates">April 23-25, 2021 - Downtown Austin, TX</span>');
 }
 
 addHeaderContent();

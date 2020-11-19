@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose --passWithNoTests",
     "local": "NODE_ENV=local webpack --mode none",
     "dev": "npm run compile-css && NODE_ENV=develop webpack --mode development",
     "prod": "npm run compile-css && node js/build_tools/production-checklist.js && NODE_ENV=production webpack --mode production && node js/build_tools/generate-email-configs.js",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.6.3",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.0.6",
@@ -35,6 +36,7 @@
     "dotenv-webpack": "^1.8.0",
     "fs-extra": "^9.0.1",
     "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "node-sass-utils": "^1.1.3",

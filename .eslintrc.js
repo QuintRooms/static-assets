@@ -2,10 +2,11 @@ module.exports = {
     'env': {
         'browser': true,
         'es6': true,
-        'jquery': true
+        'jquery': true,
+        "jest/globals": true
     },
     'extends': ['airbnb-base', 'plugin:prettier/recommended'],
-    'plugins': ['prettier', 'more-naming-conventions'],
+    'plugins': ['prettier', 'more-naming-conventions', 'jest'],
     'rules': {
         'prettier/prettier': ['error']
     },

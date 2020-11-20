@@ -83,7 +83,7 @@ export default function siteConfig() {
             },
             {
                 name: '2021 Scottsdale Auction',
-                display_date: 'January 16 - 24, 2021',
+                display_date: 'January 16 - 23, 2021',
                 end_date: '1/25/2021', // M/D/YYYY
                 portal_url: 'http://events.hotelsforhope.com/group-event?id=39777',
             },

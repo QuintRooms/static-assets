@@ -4,6 +4,7 @@ import 'url-polyfill';
 import Utilities from './utilities';
 import Algolia from './components/algolia';
 import Path from './build_tools/path';
+import renderLucidBanner from './components/lucid_banner/lucid-banner';
 
 const env_path = new Path();
 const dayjs = require('dayjs');
@@ -274,6 +275,7 @@ export default class BasePortal {
             this.updateSupportPageText();
             this.removeLrgFooterLink();
             this.hideBookButtonForNoAvailability();
+            this.addGroupBookingBannerBelowHeader(this.site_config.lodging.event_name, this.site_config.group_booking_form_url);
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
@@ -2002,5 +2004,10 @@ export default class BasePortal {
                 prop.querySelector('.ArnPropThumb .ArnImageLink img').src = featured_image;
             });
         });
+    }
+
+    addGroupBookingBannerBelowHeader(event_name, url) {
+        if (!this.site_config.has_group_booking_banner || this.site_config.group_booking_form_url === '') return;
+        renderLucidBanner(event_name, url);
     }
 }

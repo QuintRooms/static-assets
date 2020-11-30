@@ -353,18 +353,13 @@ export default class Utilities {
         await fetch(url)
             .then((response) => {
                 if (!response.ok) {
-                    throw response;
+                    throw new Error('Not 2xx response');
                 }
-
-                return response.text();
-            })
-            .then((text) => {
-                html = text;
+                html = response.text();
             })
             .catch((err) => {
-                err.text().then((error) => {
-                    console.error(`Could not fetch text from ${url}`, error);
-                });
+                html = err.toString();
+                console.error(`Could not fetch text from ${url}`, err.toString());
             });
 
         return html;

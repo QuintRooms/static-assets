@@ -80,5 +80,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
+        has_group_booking_banner: false,
+        group_booking_form_url: '',
     };
 }

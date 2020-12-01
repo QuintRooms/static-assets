@@ -82,5 +82,26 @@ export default class LandingPage {
             );
             i += 1;
         });
+        this.addUtmTrackingToUrls(window.location.href);
+    }
+
+    addUtmTrackingToUrls(url) {
+        if (!document.querySelector('.RootBody')) return;
+        const params = new URL(url);
+        const search_params = new URLSearchParams(params.search);
+
+        const source = search_params.get('utm_source');
+        const medium = search_params.get('utm_medium');
+        if (source === null || medium === null) return;
+
+        const events = document.querySelectorAll('.event-container');
+        if (!events) return;
+
+        events.forEach((e) => {
+            const href = e.getAttribute('href');
+            e.href = `${href}&utm_source=${source}&utm_medium=${medium}`;
+        });
+        // returning a value for testing purposes only
+        // return [source, medium];
     }
 }

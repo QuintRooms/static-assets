@@ -39,12 +39,12 @@ describe('addUtmTrackingToUrls', () => {
         expect(landing_page.addUtmTrackingToUrls(url)).toEqual(['Website', 'Mobile']);
     });
 
-    it('Returns if no URL is passed as an argument', () => {
+    it('Returns error if no URL is passed as an argument', () => {
         document.body.innerHTML = html;
         expect(landing_page.addUtmTrackingToUrls()).toEqual(new Error('URL is null'));
     });
 
-    it('Returns if no elements with the class "event-container" exist', () => {
+    it('Returns error if no elements with the class "event-container" exist', () => {
         document.body.innerHTML = `
         <div class="RootBody">
             <a class="event-1" href="test.href" target="_blank">

@@ -1298,6 +1298,27 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         window.location.href = './search-results.php';
     });
     </script>
+    <script>
+        function init() {
+            const options = {
+                types: ['(cities)']
+            };
+            const input = document.querySelector('input#address-input');
+            const autocomplete = new google.maps.places.Autocomplete(input, options);
+            // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            // const place = autocomplete.getPlace();
+            // console.log(place);
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            // infowindow.close();
+            let place = autocomplete.getPlace();
+            console.log(place);
+            console.log(place.geometry.location.lat(),'- - ', place.geometry.location.lng());
+        //     infowindow.setContent('<div><strong>' + place.name + 
+        // '</strong><br>' + place.geometry.location.lat + 'AND' + place.geometry.location.lng);
+            })
+        }
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
 </body>
 
 </html>

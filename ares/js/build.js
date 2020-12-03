@@ -2,7 +2,8 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
-import Algolia from './components/algolia';
+// import Algolia from './components/algolia';
+import Autocomplete from './components/autocomplete/autocomplete';
 import Path from './build_tools/path';
 import renderLucidBanner from './components/lucid_banner/lucid-banner';
 
@@ -13,7 +14,8 @@ const custom_parse_format = require('dayjs/plugin/customParseFormat');
 dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
-const algolia = new Algolia();
+// const algolia = new Algolia();
+const autocomplete = new Autocomplete();
 
 export default class BasePortal {
     constructor(config) {
@@ -119,7 +121,8 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                algolia.init(this.site_config, this.page_name, utilities);
+                // algolia.init(this.site_config, this.page_name, utilities);
+                autocomplete.init(this.site_config, this.page_name);
                 this.buildCurrencyDropdown();
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
@@ -149,7 +152,8 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
-                algolia.init(this.site_config, this.page_name, utilities);
+                // algolia.init(this.site_config, this.page_name, utilities);
+                autocomplete.init(this.site_config, this.page_name);
                 this.showOriginalPrice('.ArnProperty', '.arnPrice');
             }
 

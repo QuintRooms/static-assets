@@ -20,7 +20,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '41942',
-            event_name: 'College Football Playoffs',
+            event_name: 'College Football Playoff',
             event_dates: '',
             is_lrg: '',
         },

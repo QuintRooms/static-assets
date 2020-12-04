@@ -8,23 +8,49 @@ const autocomplete = new Autocomplete(
     'landing-page'
 );
 
-describe('insertAutocompleteToBody', () => {
-    it('Updates the body with the Google Autocomplete script before end', () => {
+describe('hideArnSearchInput', () => {
+    it('Positions ARN search input off the page and removes the required attribute', () => {
+        afterEach(() => {
+            document.body.innerHTML = '';
+        });
+
         document.body.innerHTML = `
-        <h1>This is a test</h1>`;
+        <h1 class="RootBody">This is a test</h1>
+        <input id="city" required>`;
 
         const new_html = `
-        <h1>This is a test</h1><script>
-        function init() {
-            const options = {
-                types: ['(cities)']
-            };
-            const input = document.getElementById('input#address-input');
-            const autocomplete = new google.maps.places.Autocomplete(input);
-        }
-        google.maps.event.addDomListener(window, 'load', init);
-    </script>`;
-        autocomplete.insertAutocompleteToBody();
+        <h1 class="RootBody">This is a test</h1>
+        <input id="city" style="position: absolute; left: -10000px;">`;
+        autocomplete.hideArnSearchInput('input#city');
+        expect(document.body.innerHTML).toEqual(new_html);
+    });
+});
+
+describe('insertNewSearchInput', () => {
+    afterEach(() => {
+        document.body.innerHTML = '';
+    });
+
+    it('Inserts a new search input', () => {
+        document.body.innerHTML = `
+        <h1 class="RootBody">This is a test</h1>
+        <div id="CitySearchContainer">
+            <span>
+            </span>
+        </div>`;
+
+        const new_html = `
+        <h1 class="RootBody">This is a test</h1>
+        <div id="CitySearchContainer">
+            <span>
+            <input type="search" id="address-input" placeholder="Destination" required="true"></span>
+        </div>`;
+        autocomplete.insertNewSearchInput(
+            '.RootBody',
+            'div#CitySearchContainer span',
+            'beforeEnd',
+            '<input type="search" id="address-input" placeholder="Destination" required="true">'
+        );
         expect(document.body.innerHTML).toEqual(new_html);
     });
 });

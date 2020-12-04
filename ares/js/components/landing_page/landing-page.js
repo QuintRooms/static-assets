@@ -86,6 +86,9 @@ export default class LandingPage {
     }
 
     addUtmTrackingToUrls(url) {
+        if (!url) {
+            return new Error('URL is null');
+        }
         if (!document.querySelector('.RootBody')) return;
         const params = new URL(url);
         const search_params = new URLSearchParams(params.search);
@@ -95,13 +98,15 @@ export default class LandingPage {
         if (source === null || medium === null) return;
 
         const events = document.querySelectorAll('.event-container');
-        if (!events) return;
+        if (!events.length) {
+            return new Error('No events exist!');
+        }
 
         events.forEach((e) => {
             const href = e.getAttribute('href');
             e.href = `${href}&utm_source=${source}&utm_medium=${medium}`;
         });
         // returning a value for testing purposes only
-        // return [source, medium];
+        return [source, medium];
     }
 }

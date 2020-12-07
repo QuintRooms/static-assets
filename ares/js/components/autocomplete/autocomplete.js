@@ -17,14 +17,16 @@ export default class Autocomplete {
             cid: '',
             points: '',
         };
+        this.destination = null;
+        this.url = `${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${site_config.distance_unit}`;
     }
 
     init() {
+        this.sumbitListener();
         this.hideArnSearchInput('input#city');
         this.insertNewSearchInput('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         this.googleMapsScript();
         this.setAttribute('input#theSubmitButton', 'onClick', '');
-        // this.getDestination('input#address-input');
     }
 
     /**
@@ -102,5 +104,12 @@ export default class Autocomplete {
         if (!this.original_params.has(paramObj)) return;
         const param = this.original_params.get(paramObj);
         return param;
+    }
+
+    sumbitListener() {
+        document.querySelector('form#searchForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.destination = this.getDestination('input#address-input');
+        });
     }
 }

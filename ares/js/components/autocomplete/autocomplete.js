@@ -7,12 +7,24 @@ export default class Autocomplete {
         this.page_name = page_name;
         this.lat = null;
         this.lng = null;
+        this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+        this.event_params = {
+            properties: '',
+            utm_source: '',
+            location_label: '',
+            radius: '',
+            group_id: '',
+            cid: '',
+            points: '',
+        };
     }
 
     init() {
         this.hideArnSearchInput('input#city');
         this.insertNewSearchInput('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         this.googleMapsScript();
+        this.setAttribute('input#theSubmitButton', 'onClick', '');
+        // this.getDestination('input#address-input');
     }
 
     /**
@@ -52,9 +64,43 @@ export default class Autocomplete {
         // eslint-disable-next-line no-undef
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             const place = autocomplete.getPlace();
-            console.log(place.geometry.location.lat(), '-', place.geometry.location.lng());
+            console.log('lat: ', place.geometry.location.lat(), 'lng: ', place.geometry.location.lng());
             this.lat = place.geometry.location.lat();
             this.lng = place.geometry.location.lng();
         });
+    }
+
+    /**
+     *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
+     */
+    setAttribute(selector, attribute_name, attribute) {
+        const arn_submit_btn = document.querySelector(selector);
+        arn_submit_btn.setAttribute(attribute_name, attribute);
+    }
+
+    /**
+     *@description gets and returns the destination input string for CUG's or retail sites only.
+     *@param string selector of the input to get the value from.
+     *@return string - the destination or input value.
+     */
+    getDestination(inputSelector) {
+        if (document.querySelector(inputSelector).getAttribute('value') !== '') {
+            return document.querySelector(inputSelector).value;
+        }
+        if (this.original_params.has('destination')) {
+            return this.original_params.get('destination');
+        }
+    }
+
+    /**
+     *@description gets the value of an originalParam key.
+     *@param string the key for the originalParam you want the content for.
+     *@return string - the value of the param.
+     */
+    getEventOrginalParams(paramObj) {
+        // for in over this.event_params and set each value to the value of the key in original params - method only runs once and properties are set ready for url
+        if (!this.original_params.has(paramObj)) return;
+        const param = this.original_params.get(paramObj);
+        return param;
     }
 }

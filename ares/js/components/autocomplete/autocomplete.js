@@ -115,6 +115,20 @@ export default class Autocomplete {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
         });
+
+        /* Values to have on submit:
+            - Filters: Amenitites, Stars, Propertytypes
+            - Destination
+            - Check in
+            - Check out
+            - Nights (nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');)
+            - Rooms
+            - Adults
+            - Lat/lng
+            - Currency (utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD')
+            - Optional Hotel Name: Search results only
+            - Event Params (see object in constructor)
+            - Member Token (CUG only) */
     }
 
     enableEnterKey(input) {

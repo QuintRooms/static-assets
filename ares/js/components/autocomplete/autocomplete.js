@@ -63,7 +63,6 @@ export default class Autocomplete {
      *@return string - the destination or input value.
      */
     getDestination(inputSelector) {
-        console.log('TESTING');
         if (document.querySelector(inputSelector).getAttribute('value') !== '') {
             return document.querySelector(inputSelector).value;
         }

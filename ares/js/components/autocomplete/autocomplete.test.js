@@ -1,17 +1,19 @@
 import Autocomplete from './autocomplete';
 
-document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
-
-const autocomplete = new Autocomplete(
-    {
-        site_id: '60279',
-        directory_name: 'ares_child',
-        distance_unit: 'useMiles',
-    },
-    'landing-page'
-);
+// document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
 describe('Constructor sets property values', () => {
+    document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
     it('Sets the value of site_config', () => {
         expect(autocomplete.site_config).toEqual(expect.objectContaining({site_id: '60279', directory_name: 'ares_child', distance_unit: 'useMiles'}));
     });
@@ -32,6 +34,14 @@ describe('Constructor sets property values', () => {
 });
 
 describe('hideArnSearchInput', () => {
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
     it('Positions ARN search input off the page and removes the required attribute', () => {
         afterEach(() => {
             document.body.innerHTML = '';
@@ -50,6 +60,15 @@ describe('hideArnSearchInput', () => {
 });
 
 describe('insertNewSearchInput', () => {
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
     afterEach(() => {
         document.body.innerHTML = '';
     });
@@ -79,6 +98,15 @@ describe('insertNewSearchInput', () => {
 });
 
 describe('setAttribute', () => {
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
     it('Sets an onClick attribute to and empty string', () => {
         afterEach(() => {
             document.body.innerHTML = '';
@@ -96,14 +124,48 @@ describe('getDestination', () => {
     });
 
     it('Returns the destination string from the input', () => {
-        document.body.innerHTML = `<meta name="original_params" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination="Austin, TX, USA"><input type="search" id="address-input" placeholder="Destination" required="true" value="Austin, TX, USA">
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="Austin, TX, USA">
         `;
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'landing-page'
+        );
+
         expect(autocomplete.getDestination('input#address-input')).toEqual('Austin, TX, USA');
     });
 
     it('Sets destination if it exists in Original Params', () => {
-        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'landing-page'
+        );
 
         expect(autocomplete.getDestination('input#address-input')).toEqual('Austin, TX, USA');
+    });
+
+    it('Returns and error if the destination is not available', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'landing-page'
+        );
+
+        expect(autocomplete.getDestination('input#address-input')).toEqual(new Error('No destination available'));
     });
 });

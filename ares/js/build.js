@@ -15,7 +15,6 @@ dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 // const algolia = new Algolia();
-const autocomplete = new Autocomplete();
 
 export default class BasePortal {
     constructor(config) {
@@ -28,6 +27,7 @@ export default class BasePortal {
             '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>';
         this.map_loaded = false;
         this.selected_currency = utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD';
+        this.autocomplete = new Autocomplete(this.site_config, this.page_name);
     }
 
     init() {
@@ -122,7 +122,7 @@ export default class BasePortal {
             // root page methods
             if (document.querySelector('.RootBody')) {
                 // algolia.init(this.site_config, this.page_name, utilities);
-                autocomplete.init(this.site_config, this.page_name);
+                this.autocomplete.init();
                 this.buildCurrencyDropdown();
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
@@ -153,7 +153,7 @@ export default class BasePortal {
 
             if (this.page_name === 'search-results') {
                 // algolia.init(this.site_config, this.page_name, utilities);
-                autocomplete.init(this.site_config, this.page_name);
+                this.autocomplete.init();
                 this.showOriginalPrice('.ArnProperty', '.arnPrice');
             }
 

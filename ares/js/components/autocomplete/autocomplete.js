@@ -156,7 +156,7 @@ export default class Autocomplete {
             - L̶a̶t̶/̶l̶n̶g̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ c̶h̶a̶n̶g̶e̶d̶)̶
             - C̶u̶r̶r̶e̶n̶c̶y̶ ̶(̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶?̶ ̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶:̶ ̶'̶U̶S̶D̶'̶)̶
             - Optional Hotel Name: Search results only
-            - Event Params (see object in constructor)
+            - E̶v̶e̶n̶t̶ ̶P̶a̶r̶a̶m̶s̶ ̶(̶s̶e̶e̶ ̶o̶b̶j̶e̶c̶t̶ ̶i̶n̶ ̶c̶o̶n̶s̶t̶r̶u̶c̶t̶o̶r̶)̶
             - Member Token (CUG only) */
     }
 

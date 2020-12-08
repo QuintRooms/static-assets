@@ -200,5 +200,16 @@ describe('getEventParams', () => {
                 points: null,
             })
         );
+        expect(autocomplete.event_params).toEqual(
+            expect.objectContaining({
+                properties: 'x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947',
+                utm_source: 'internal',
+                locationlabel: 'Tortuga-Main Stage',
+                radius: '5',
+                groupid: '43285',
+                cid: 'ROCK',
+                points: '-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)',
+            })
+        );
     });
 });

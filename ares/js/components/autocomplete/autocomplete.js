@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 // import Utilities from '../../utilities';
 // const dayjs = require('dayjs');
 // const utilities = new Utilities();
@@ -18,7 +19,7 @@ export default class Autocomplete {
             points: '',
         };
         this.destination = null;
-        this.url = `${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${site_config.distance_unit}`;
+        this.url = `${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
     }
 
     init() {
@@ -56,6 +57,22 @@ export default class Autocomplete {
         document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
     }
 
+    /**
+     *@description gets and returns the destination input string for CUG's or retail sites only.
+     *@param string selector of the input to get the value from.
+     *@return string - the destination or input value.
+     */
+    getDestination(inputSelector) {
+        console.log('TESTING');
+        if (document.querySelector(inputSelector).getAttribute('value') !== '') {
+            return document.querySelector(inputSelector).value;
+        }
+        if (this.original_params.has('destination')) {
+            return this.original_params.get('destination');
+        }
+        return new Error('No destination available');
+    }
+
     googleMapsScript() {
         const options = {
             types: ['(cities)'],
@@ -63,12 +80,15 @@ export default class Autocomplete {
         const input = document.querySelector('input#address-input');
         // eslint-disable-next-line no-undef
         const autocomplete = new google.maps.places.Autocomplete(input, options);
+        this.enableEnterKey(input);
         // eslint-disable-next-line no-undef
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        google.maps.event.addListener(autocomplete, 'place_changed', () => {
             const place = autocomplete.getPlace();
+            console.log(place);
             console.log('lat: ', place.geometry.location.lat(), 'lng: ', place.geometry.location.lng());
             this.lat = place.geometry.location.lat();
             this.lng = place.geometry.location.lng();
+            this.destination = this.getDestination('input#address-input');
         });
     }
 
@@ -78,20 +98,6 @@ export default class Autocomplete {
     setAttribute(selector, attribute_name, attribute) {
         const arn_submit_btn = document.querySelector(selector);
         arn_submit_btn.setAttribute(attribute_name, attribute);
-    }
-
-    /**
-     *@description gets and returns the destination input string for CUG's or retail sites only.
-     *@param string selector of the input to get the value from.
-     *@return string - the destination or input value.
-     */
-    getDestination(inputSelector) {
-        if (document.querySelector(inputSelector).getAttribute('value') !== '') {
-            return document.querySelector(inputSelector).value;
-        }
-        if (this.original_params.has('destination')) {
-            return this.original_params.get('destination');
-        }
     }
 
     /**
@@ -109,7 +115,35 @@ export default class Autocomplete {
     sumbitListener() {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            this.destination = this.getDestination('input#address-input');
         });
+    }
+
+    enableEnterKey(input) {
+        /* Store original event listener */
+        const add_event_listener = input.addEventListener;
+
+        const add_event_listener_wrapper = (type, listener) => {
+            if (type === 'keydown') {
+                /* Store existing listener function */
+                const listener_func = listener;
+                // eslint-disable-next-line no-param-reassign
+                listener = (event) => {
+                    /* Simulate a 'down arrow' keypress if no address has been selected */
+                    const suggestion_selected = document.getElementsByClassName('pac-item-selected').length;
+                    if (event.key === 'Enter' && !suggestion_selected) {
+                        const e = new KeyboardEvent('keydown', {
+                            key: 'ArrowDown',
+                            code: 'ArrowDown',
+                            keyCode: 40,
+                        });
+                        listener_func.apply(input, [e]);
+                    }
+                    listener_func.apply(input, [event]);
+                };
+            }
+            add_event_listener.apply(input, [type, listener]);
+        };
+
+        input.addEventListener = add_event_listener_wrapper;
     }
 }

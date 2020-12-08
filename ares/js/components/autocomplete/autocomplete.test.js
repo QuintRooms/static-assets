@@ -1,7 +1,5 @@
 import Autocomplete from './autocomplete';
 
-// document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
-
 describe('Constructor sets property values', () => {
     document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
@@ -30,6 +28,9 @@ describe('Constructor sets property values', () => {
         expect(autocomplete.original_params.toString()).toEqual(
             'siteid=62309&currency=USD&cid=ROCK&useMiles=&checkin=11%2F12%2F21&pageSize=15&mapSize=13&groupid=43285&radius=5&nights=3&latitude=26.10879170000000&map=&longitude=-80.10643370000000&destination=Austin%2C+TX%2C+USA'
         );
+    });
+    it('Sets the value of currency to USD', () => {
+        expect(autocomplete.currency).toEqual('USD');
     });
 });
 
@@ -167,5 +168,37 @@ describe('getDestination', () => {
         );
 
         expect(autocomplete.getDestination('input#address-input')).toEqual(new Error('No destination available'));
+    });
+});
+
+describe('getEventParams', () => {
+    afterEach(() => {
+        document.body.innerHTML = '';
+    });
+
+    it('Sets the key/values in the constructor property event_params', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279">`;
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'landing-page'
+        );
+        autocomplete.getEventOriginalParams(autocomplete.event_params);
+        expect(autocomplete.event_params).toBeTruthy();
+        expect(autocomplete.event_params).toEqual(
+            expect.not.objectContaining({
+                properties: null,
+                utm_source: null,
+                locationlabel: null,
+                radius: null,
+                groupid: null,
+                cid: null,
+                points: null,
+            })
+        );
     });
 });

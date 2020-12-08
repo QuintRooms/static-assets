@@ -213,3 +213,27 @@ describe('getEventParams', () => {
         );
     });
 });
+
+describe('getDropdownValue', () => {
+    document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279">`;
+
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
+    it('Returns the selected options text content', () => {
+        document.body.innerHTML = `<select id="rooms" name="31">
+        <option value="32">1</option>
+        <option value="33" selected="selected">2</option>
+        <option value="34">3</option>
+        <option value="35">4</option>
+    </select>`;
+
+        expect(autocomplete.getDropdownValue('#rooms')).toBe('2');
+    });
+});

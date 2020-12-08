@@ -18,6 +18,8 @@ export default class Autocomplete {
             cid: null,
             points: null,
         };
+        this.rooms = null;
+        this.adults = null;
         this.check_in_date = null;
         this.check_out_date = null;
         this.currency = utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD';
@@ -116,6 +118,16 @@ export default class Autocomplete {
     }
 
     /**
+     *@description sets and gets the value for a option element.
+     *@param string selector for the option element.
+     *@return string - the current value for the option input (rooms/adults).
+     */
+    getDropdownValue(dropdown_selector) {
+        const dropdown = document.querySelector(dropdown_selector);
+        return document.querySelector(`option[value="${dropdown.value}"]`).textContent;
+    }
+
+    /**
      * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
      * @param object paramObject - an object containing one or more parameters to append to a url.
      * @property string - paramObject[i].key - url parameter key.
@@ -127,7 +139,7 @@ export default class Autocomplete {
                     },
                     rooms: {
                         key: 'rooms',
-                        value: setDropdownIndex('select#rooms'),
+                        value: getDropdownValue('select#rooms'),
                     },
                 })
     */
@@ -140,9 +152,13 @@ export default class Autocomplete {
     }
 
     sumbitListener() {
-        document.querySelector('form#searchForm').addEventListener('submit', (e) => {
+        document.querySelector('#theOtherSubmitButton').addEventListener('click', (e) => {
+            // document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            window.alert('click');
+            this.rooms = this.getDropdownValue('#rooms');
+            this.adults = this.getDropdownValue('#adults');
+            console.log('rooms : ', this.rooms, 'adults: ', this.adults);
+            window.alert('pause');
         });
 
         /* Values to have on submit:
@@ -151,8 +167,8 @@ export default class Autocomplete {
             - Check in
             - Check out
             - Nights (nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');)
-            - Rooms
-            - Adults
+            - R̶o̶o̶m̶s̶
+            - A̶d̶u̶l̶t̶s̶
             - L̶a̶t̶/̶l̶n̶g̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ c̶h̶a̶n̶g̶e̶d̶)̶
             - C̶u̶r̶r̶e̶n̶c̶y̶ ̶(̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶?̶ ̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶:̶ ̶'̶U̶S̶D̶'̶)̶
             - Optional Hotel Name: Search results only

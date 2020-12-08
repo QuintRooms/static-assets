@@ -5,7 +5,7 @@ name: Static Assets Testing
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ develop, autocomplete ]
 
 jobs:
   build:

@@ -33,7 +33,7 @@ export default class Autocomplete {
         this.insertNewSearchInput('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
         this.googleMapsScript();
         this.setAttribute('input#theSubmitButton', 'onClick', '');
-        if (this.page_name === 'search-hotels') {
+        if (this.page_name === 'search-results') {
             this.getEventOriginalParams(this.event_params);
         }
     }

@@ -34,6 +34,38 @@ describe('Constructor sets property values', () => {
     });
 });
 
+describe('init', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it("Calls it's methods the correct amount of times", () => {
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'search-results'
+        );
+        autocomplete.init();
+
+        expect(autocomplete.sumbitListener).toBeCalledTimes(1);
+        expect(autocomplete.sumbitListener).toReturnWith(true);
+        expect(autocomplete.hideArnSearchInput).toBeCalledTimes(1);
+        expect(autocomplete.insertNewSearchInput).toBeCalledTimes(1);
+        expect(autocomplete.googleMapsScript).toBeCalledTimes(1);
+        expect(autocomplete.getEventOriginalParams).toBeCalledTimes(1);
+    });
+});
+
 describe('hideArnSearchInput', () => {
     const autocomplete = new Autocomplete(
         {

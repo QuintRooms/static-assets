@@ -203,6 +203,8 @@ describe('getDestination', () => {
     });
 });
 
+// test googleMapsScript() here
+
 describe('getEventParams', () => {
     afterEach(() => {
         document.body.innerHTML = '';
@@ -267,5 +269,61 @@ describe('getDropdownValue', () => {
     </select>`;
 
         expect(autocomplete.getDropdownValue('#rooms')).toBe('2');
+    });
+});
+
+describe('applyFilters', () => {
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
+    afterEach(() => {
+        document.body.innerHTML = '';
+    });
+
+    it('Returns a comma seperated list of amenities', () => {
+        document.body.innerHTML = `
+        <div id="AmentitiesContainer" class="ArnIndividualSearchContainer ArnAmentitiesContainer">
+            <div class="ArnSearchField">
+                <div class="lblAmenities">Amenities:</div>
+                    <div class="AirportShuttleBox">
+                        <input name="191" type="checkbox" class="checkbox" checked>
+                        <input name="192" type="hidden" class="hidden">
+                        <span class="lblAirportShuttle">Airport Shuttle</span>
+                    </div>
+                    <div class="ComplimentaryBreakfastBox">
+                        <input name="193" type="checkbox" class="checkbox" checked>
+                        <input name="194" type="hidden" class="hidden">
+                        <span class="lblComplimentaryBreakfast">Complimentary Breakfast</span>
+                    </div>
+                    <div class="FitnessCenterBox">
+                        <input name="195" type="checkbox" class="checkbox" checked>
+                        <input name="196" type="hidden" class="hidden">
+                        <span class="lblFitnessCenter">Fitness Center</span>
+                    </div>
+                </div>
+        </div>`;
+
+        expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toEqual('Airport Shuttle,Complimentary Breakfast,Fitness Center');
+    });
+
+    it('Returns null with not filter boxes checked', () => {
+        document.body.innerHTML = `
+        <div id="AmentitiesContainer" class="ArnIndividualSearchContainer ArnAmentitiesContainer">
+            <div class="ArnSearchField">
+                <div class="lblAmenities">Amenities:</div>
+                    <div class="AirportShuttleBox">
+                        <input name="191" type="checkbox" class="checkbox">
+                        <input name="192" type="hidden" class="hidden">
+                        <span class="lblAirportShuttle">Airport Shuttle</span>
+                    </div>
+        </div>`;
+
+        expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toBeNull();
     });
 });

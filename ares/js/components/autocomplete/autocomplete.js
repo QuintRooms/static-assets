@@ -22,6 +22,9 @@ export default class Autocomplete {
         this.adults = null;
         this.check_in_date = null;
         this.check_out_date = null;
+        this.amenities = null;
+        this.property_classes = null;
+        this.property_types = null;
         this.currency = utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD';
         this.destination = null;
         this.url = new URL(`${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`);
@@ -66,6 +69,14 @@ export default class Autocomplete {
     }
 
     /**
+     *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
+     */
+    setAttribute(selector, attribute_name, attribute) {
+        const arn_submit_btn = document.querySelector(selector);
+        arn_submit_btn.setAttribute(attribute_name, attribute);
+    }
+
+    /**
      *@description gets and returns the destination input string for CUG's or retail sites only.
      *@param string selector of the input to get the value from.
      *@return string - the destination or input value.
@@ -80,6 +91,35 @@ export default class Autocomplete {
         return new Error('No destination available');
     }
 
+    getFirstSuggestionOnPressOfEnter(input) {
+        /* Store original event listener */
+        const add_event_listener = input.addEventListener;
+
+        const add_event_listener_wrapper = (type, listener) => {
+            if (type === 'keydown') {
+                /* Store existing listener function */
+                const listener_func = listener;
+                // eslint-disable-next-line no-param-reassign
+                listener = (event) => {
+                    /* Simulate a 'down arrow' keypress if no address has been selected */
+                    const suggestion_selected = document.getElementsByClassName('pac-item-selected').length;
+                    if (event.key === 'Enter' && !suggestion_selected) {
+                        const e = new KeyboardEvent('keydown', {
+                            key: 'ArrowDown',
+                            code: 'ArrowDown',
+                            keyCode: 40,
+                        });
+                        listener_func.apply(input, [e]);
+                    }
+                    listener_func.apply(input, [event]);
+                };
+            }
+            add_event_listener.apply(input, [type, listener]);
+        };
+
+        input.addEventListener = add_event_listener_wrapper;
+    }
+
     googleMapsScript() {
         const options = {
             types: ['(cities)'],
@@ -87,7 +127,7 @@ export default class Autocomplete {
         const input = document.querySelector('input#address-input');
         // eslint-disable-next-line no-undef
         const autocomplete = new google.maps.places.Autocomplete(input, options);
-        this.enableEnterKey(input);
+        this.getFirstSuggestionOnPressOfEnter(input);
         // eslint-disable-next-line no-undef
         google.maps.event.addListener(autocomplete, 'place_changed', () => {
             const place = autocomplete.getPlace();
@@ -97,14 +137,6 @@ export default class Autocomplete {
             this.lng = place.geometry.location.lng();
             this.destination = this.getDestination('input#address-input');
         });
-    }
-
-    /**
-     *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
-     */
-    setAttribute(selector, attribute_name, attribute) {
-        const arn_submit_btn = document.querySelector(selector);
-        arn_submit_btn.setAttribute(attribute_name, attribute);
     }
 
     /**
@@ -125,6 +157,27 @@ export default class Autocomplete {
     getDropdownValue(dropdown_selector) {
         const dropdown = document.querySelector(dropdown_selector);
         return document.querySelector(`option[value="${dropdown.value}"]`).textContent;
+    }
+
+    /**
+     *@description loops through checkboxes in the filter passed in and adds the textContent to a variable.
+     *@param string dom selector for which filter to loop over.
+     *@param string first div of filter child to be ignored due to ARN's interesting markup.
+     *@return string comma seperated strings. The slice method is removing the last comma.
+     */
+    applyFilters(checkboxSelector, lblFilter) {
+        let filter_values = '';
+        document.querySelectorAll(checkboxSelector).forEach((el) => {
+            if (el.classList.contains(lblFilter)) return;
+            if (el.querySelector('input').checked) {
+                const label = el.querySelector('span').textContent;
+                // eslint-disable-next-line no-param-reassign
+                filter_values += `${label},`;
+            }
+            return filter_values;
+        });
+        filter_values.length ? (filter_values = filter_values.slice(0, -1)) : (filter_values = null);
+        return filter_values;
     }
 
     /**
@@ -158,6 +211,10 @@ export default class Autocomplete {
             this.rooms = this.getDropdownValue('#rooms');
             this.adults = this.getDropdownValue('#adults');
             console.log('rooms : ', this.rooms, 'adults: ', this.adults);
+            this.amenities = this.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities');
+            this.property_classes = this.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating');
+            this.property_types = this.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType');
+            console.log(this.amenities);
             window.alert('pause');
         });
 
@@ -174,34 +231,5 @@ export default class Autocomplete {
             - Optional Hotel Name: Search results only
             - E̶v̶e̶n̶t̶ ̶P̶a̶r̶a̶m̶s̶ ̶(̶s̶e̶e̶ ̶o̶b̶j̶e̶c̶t̶ ̶i̶n̶ ̶c̶o̶n̶s̶t̶r̶u̶c̶t̶o̶r̶)̶
             - Member Token (CUG only) */
-    }
-
-    enableEnterKey(input) {
-        /* Store original event listener */
-        const add_event_listener = input.addEventListener;
-
-        const add_event_listener_wrapper = (type, listener) => {
-            if (type === 'keydown') {
-                /* Store existing listener function */
-                const listener_func = listener;
-                // eslint-disable-next-line no-param-reassign
-                listener = (event) => {
-                    /* Simulate a 'down arrow' keypress if no address has been selected */
-                    const suggestion_selected = document.getElementsByClassName('pac-item-selected').length;
-                    if (event.key === 'Enter' && !suggestion_selected) {
-                        const e = new KeyboardEvent('keydown', {
-                            key: 'ArrowDown',
-                            code: 'ArrowDown',
-                            keyCode: 40,
-                        });
-                        listener_func.apply(input, [e]);
-                    }
-                    listener_func.apply(input, [event]);
-                };
-            }
-            add_event_listener.apply(input, [type, listener]);
-        };
-
-        input.addEventListener = add_event_listener_wrapper;
     }
 }

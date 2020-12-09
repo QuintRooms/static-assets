@@ -210,12 +210,10 @@ export default class Autocomplete {
             e.preventDefault();
             this.rooms = this.getDropdownValue('#rooms');
             this.adults = this.getDropdownValue('#adults');
-            console.log('rooms : ', this.rooms, 'adults: ', this.adults);
             this.amenities = this.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities');
             this.property_classes = this.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating');
             this.property_types = this.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType');
-            console.log(this.amenities);
-            window.alert('pause');
+            // window.alert('pause');
         });
 
         /* Values to have on submit:

@@ -37,6 +37,7 @@ describe('Constructor sets property values', () => {
 describe('init', () => {
     afterEach(() => {
         jest.restoreAllMocks();
+        document.body.innerHTML = '';
     });
 
     it("Calls it's methods the correct amount of times", () => {
@@ -46,6 +47,8 @@ describe('init', () => {
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
         const autocomplete = new Autocomplete(
             {
@@ -325,5 +328,37 @@ describe('applyFilters', () => {
         </div>`;
 
         expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toBeNull();
+    });
+});
+
+// appendParamsToUrl()
+
+describe('submitListener', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    // document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
+
+    it("Calls it's methods correct amount of times", () => {
+        jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => true);
+
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit">`;
+
+        const autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'search-results'
+        );
+        autocomplete.sumbitListener();
+        document.getElementById('theOtherSubmitButton').click();
+
+        expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
+        expect(autocomplete.getDropdownValue).toReturnWith(true);
+        expect(autocomplete.applyFilters).toBeCalledTimes(3);
     });
 });

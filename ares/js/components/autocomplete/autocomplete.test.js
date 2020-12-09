@@ -331,7 +331,47 @@ describe('applyFilters', () => {
     });
 });
 
-// appendParamsToUrl()
+describe('appendParamsToUrl', () => {
+    const autocomplete = new Autocomplete(
+        {
+            site_id: '60279',
+            directory_name: 'ares_child',
+            distance_unit: 'useMiles',
+        },
+        'landing-page'
+    );
+
+    it('Returns and error with invalid keys or values', () => {
+        // Needs more tests, perhaps refactor method
+        expect(
+            autocomplete.appendParamsToURL({
+                longitude: {
+                    key: 'longitude',
+                    value: '3',
+                },
+                rooms: {
+                    key: 'rooms',
+                    value: '',
+                },
+            })
+        ).toBeUndefined();
+    });
+
+    // it('Builds the URL with valid params', () => {
+    //     expect(
+    //         autocomplete.appendParamsToURL({
+    //             longitude: {
+    //                 key: 'longitude',
+    //                 value: '3',
+    //             },
+    //             rooms: {
+    //                 key: 'rooms',
+    //                 value: '2',
+    //             },
+    //         })
+    //     ).toEqual();
+    // });
+});
 
 describe('submitListener', () => {
     afterEach(() => {

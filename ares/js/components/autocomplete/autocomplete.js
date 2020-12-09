@@ -200,7 +200,7 @@ export default class Autocomplete {
         Object.keys(paramObject).forEach((obj) => {
             if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined && paramObject[obj].key !== undefined) {
                 this.url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
-            }
+            } else return new Error('Param key or value is invalid');
         });
     }
 

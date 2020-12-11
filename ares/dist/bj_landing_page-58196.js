@@ -2951,9 +2951,9 @@
                     : function (e) {
                           return e instanceof R;
                       },
-            J = function (e, t, n) {
+            Z = function (e, t, n) {
                 return (
-                    e === N && J(F, t, n),
+                    e === N && Z(F, t, n),
                     g(e),
                     (t = _(t, !0)),
                     g(n),
@@ -2962,9 +2962,9 @@
                         : P(e, t, n)
                 );
             },
-            Z = function (e, t) {
+            J = function (e, t) {
                 g(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
+                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
             Q = function (e) {
@@ -3001,7 +3001,7 @@
                 }
             ),
             (M.f = K),
-            (q.f = J),
+            (q.f = Z),
             (n(54).f = k.f = X),
             (n(29).f = Q),
             (L.f = ee),
@@ -3030,10 +3030,10 @@
         }),
             a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? A(e) : Z(A(e), t);
+                    return void 0 === t ? A(e) : J(A(e), t);
                 },
-                defineProperty: J,
-                defineProperties: Z,
+                defineProperty: Z,
+                defineProperties: J,
                 getOwnPropertyDescriptor: K,
                 getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
@@ -7172,7 +7172,7 @@
                         },
                         {
                             name: '2021 Scottsdale Auction',
-                            display_date: 'January 16 - 23, 2021',
+                            display_date: '',
                             end_date: '1/25/2021',
                             portal_url: 'http://events.hotelsforhope.com/group-event?id=39777&utm_campaign=Barrett-Jackson%20Scottsdale%202021',
                         },
@@ -7354,6 +7354,7 @@
                         {
                             key: 'addUtmTrackingToUrls',
                             value: function (e) {
+                                if (!e) return new Error('URL is null');
                                 if (document.querySelector('.RootBody')) {
                                     var t = new URL(e),
                                         n = new URLSearchParams(t.search),
@@ -7361,11 +7362,13 @@
                                         o = n.get('utm_medium');
                                     if (null !== r && null !== o) {
                                         var i = document.querySelectorAll('.event-container');
-                                        i &&
-                                            i.forEach(function (e) {
-                                                var t = e.getAttribute('href');
-                                                e.href = ''.concat(t, '&utm_source=').concat(r, '&utm_medium=').concat(o);
-                                            });
+                                        return i.length
+                                            ? (i.forEach(function (e) {
+                                                  var t = e.getAttribute('href');
+                                                  e.href = ''.concat(t, '&utm_source=').concat(r, '&utm_medium=').concat(o);
+                                              }),
+                                              [r, o])
+                                            : new Error('No events exist!');
                                     }
                                 }
                             },

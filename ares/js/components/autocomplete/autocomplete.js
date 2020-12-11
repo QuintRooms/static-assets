@@ -1,36 +1,37 @@
+/* eslint-disable lines-between-class-members */
 /* eslint-disable no-underscore-dangle */
 import Utilities from '../../utilities';
-// const dayjs = require('dayjs');
+
+const dayjs = require('dayjs');
+
 const utilities = new Utilities();
 export default class Autocomplete {
+    event_params = {
+        properties: null,
+        utm_source: null,
+        locationlabel: null,
+        radius: null,
+        groupid: null,
+        cid: null,
+        points: null,
+    };
+    lat = null;
+    lng = null;
+    rooms = null;
+    adults = null;
+    check_in_date = null;
+    amenities = null;
+    property_classes = null;
+    property_types = null;
+    destination = null;
+
     constructor(site_config, page_name) {
         this.site_config = site_config;
         this.page_name = page_name;
-        this.lat = null;
-        this.lng = null;
         this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        this.event_params = {
-            properties: null,
-            utm_source: null,
-            locationlabel: null,
-            radius: null,
-            groupid: null,
-            cid: null,
-            points: null,
-        };
-        this.rooms = null;
-        this.adults = null;
-        this.check_in_date = null;
-        this.check_out_date = null;
-        this.amenities = null;
-        this.property_classes = null;
-        this.property_types = null;
-        this.currency = utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD';
-        this.destination = null;
         this.url = new URL(`${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`);
-    }
+        this.params = new URLSearchParams(this.url.search.slice(1));
 
-    init() {
         this.sumbitListener();
         this.hideArnSearchInput('input#city');
         this.insertNewSearchInput('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
@@ -42,10 +43,10 @@ export default class Autocomplete {
     }
 
     /**
-     *@description removes ARN's search bar element from the dom.
+     *@description Moves ARN's search input off of the page.
      *@param string dom selector for ARN's seach input.
      */
-    async hideArnSearchInput(selector) {
+    hideArnSearchInput(selector) {
         if (!document.querySelector(selector)) return;
 
         document.querySelector(selector).style.position = 'absolute';
@@ -91,6 +92,10 @@ export default class Autocomplete {
         return new Error('No destination available');
     }
 
+    /**
+     *@description Fills the destination input with the first autocomplete suggestion from Google on press of the enter key.
+     *@param string selector of the input to put the event listener on.
+     */
     getFirstSuggestionOnPressOfEnter(input) {
         /* Store original event listener */
         const add_event_listener = input.addEventListener;
@@ -181,6 +186,17 @@ export default class Autocomplete {
     }
 
     /**
+     *@description if on the search-results page, checks for a value in the "optional hotel" input.
+     *@return string - the value of the "optional hotel" input if not an empty string.
+     */
+    getOptionalHotelName(selector) {
+        if (this.page_name !== 'search-results') return;
+        if (document.querySelector(selector).value === '') return;
+        return document.querySelector(selector).value;
+    }
+
+    // TODO refactor to use for in loop
+    /**
      * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
      * @param object paramObject - an object containing one or more parameters to append to a url.
      * @property string - paramObject[i].key - url parameter key.
@@ -199,8 +215,8 @@ export default class Autocomplete {
     appendParamsToURL(paramObject) {
         Object.keys(paramObject).forEach((obj) => {
             if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined && paramObject[obj].key !== undefined) {
-                this.url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
-            } else return new Error('Param key or value is invalid');
+                this.params.append(paramObject[obj].key, paramObject[obj].value);
+            }
         });
     }
 
@@ -213,15 +229,68 @@ export default class Autocomplete {
             this.amenities = this.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities');
             this.property_classes = this.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating');
             this.property_types = this.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType');
-            // window.alert('pause');
+
+            this.appendParamsToURL({
+                longitude: {
+                    key: 'lognitude',
+                    value: this.lng,
+                },
+                latitude: {
+                    key: 'latitude',
+                    value: this.lat,
+                },
+                destination: {
+                    key: 'destination',
+                    value: this.destination,
+                },
+                checkin: {
+                    key: 'checkin',
+                    value: (this.check_in_date = dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                },
+                nights: {
+                    key: 'nights',
+                    value: dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(dayjs(this.check_in_date), 'days'),
+                },
+                rooms: {
+                    key: 'rooms',
+                    value: this.rooms,
+                },
+                adults: {
+                    key: 'adults',
+                    value: this.adults,
+                },
+                currency: {
+                    key: 'currency',
+                    value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',
+                },
+                amenities: {
+                    key: 'amenities',
+                    value: this.amenities,
+                },
+                propertyClasses: {
+                    key: 'propteryclasses',
+                    value: this.proptery_classes,
+                },
+                propertyTypes: {
+                    key: 'propertytypes',
+                    value: this.property_types,
+                },
+                optionalHotel: {
+                    key: 'hotelname',
+                    value: this.getOptionalHotelName('input#hotelName'),
+                },
+            });
+            console.log(decodeURIComponent(`${this.url.toString()}${this.params.toString()}`));
+            console.log(`${this.url.toString()}${this.params.toString()}`);
+            // window.alert(`${this.url.toString()}${this.params.toString()}`);
+            // window.location.href = decodeURIComponent(`${this.url.toString()}${this.params.toString()}`);
         });
 
         /* Values to have on submit:
-            - Filters: Amenitites, Stars, Propertytypes
+            - F̶i̶l̶t̶e̶r̶s̶:̶ ̶A̶m̶e̶n̶i̶t̶i̶t̶e̶s̶,̶ ̶S̶t̶a̶r̶s̶,̶ ̶P̶r̶o̶p̶e̶r̶t̶y̶t̶y̶p̶e̶s̶
             - D̶e̶s̶t̶i̶n̶a̶t̶i̶o̶n̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ ̶c̶h̶a̶n̶g̶e̶d̶)̶ 
-            - Check in
-            - Check out
-            - Nights (nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');)
+            - C̶h̶e̶c̶k̶ ̶i̶n̶
+            - N̶i̶g̶h̶t̶s̶ (nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');)
             - R̶o̶o̶m̶s̶
             - A̶d̶u̶l̶t̶s̶
             - L̶a̶t̶/̶l̶n̶g̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ c̶h̶a̶n̶g̶e̶d̶)̶

@@ -1,88 +1,66 @@
 import Autocomplete from './autocomplete';
 
-describe('Constructor sets property values', () => {
-    document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
 
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
+document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
-    it('Sets the value of site_config', () => {
-        expect(autocomplete.site_config).toEqual(expect.objectContaining({site_id: '60279', directory_name: 'ares_child', distance_unit: 'useMiles'}));
-    });
-    it('Sets the value of page_name to landing-page', () => {
-        expect(autocomplete.page_name).toEqual('landing-page');
-    });
-    it('Sets the value of latitude to null', () => {
-        expect(autocomplete.lat).toBeNull();
-    });
-    it('Sets the value of longitude null', () => {
-        expect(autocomplete.lng).toBeNull();
-    });
-    it('Sets the value of original_params', () => {
-        expect(autocomplete.original_params.toString()).toEqual(
-            'siteid=62309&currency=USD&cid=ROCK&useMiles=&checkin=11%2F12%2F21&pageSize=15&mapSize=13&groupid=43285&radius=5&nights=3&latitude=26.10879170000000&map=&longitude=-80.10643370000000&destination=Austin%2C+TX%2C+USA'
-        );
-    });
-    it('Sets the value of currency to USD', () => {
-        expect(autocomplete.currency).toEqual('USD');
-    });
-});
+const autocomplete = new Autocomplete(
+    {
+        site_id: '60279',
+        directory_name: 'ares_child',
+        distance_unit: 'useMiles',
+    },
+    'landing-page'
+);
 
-describe('init', () => {
-    afterEach(() => {
+/* - - - - - - CONSTRUCTOR - - - - - -*/
+describe('Constructor', () => {
+    afterAll(() => {
         jest.restoreAllMocks();
         document.body.innerHTML = '';
     });
 
-    it("Calls it's methods the correct amount of times", () => {
-        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+    it('Sets the value of site_config', () => {
+        expect(autocomplete.site_config).toEqual(expect.objectContaining({site_id: '60279', directory_name: 'ares_child', distance_unit: 'useMiles'}));
+    });
 
-        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+    it('Sets the value of page_name to landing-page', () => {
+        expect(autocomplete.page_name).toEqual('landing-page');
+    });
 
-        const autocomplete = new Autocomplete(
-            {
-                site_id: '60279',
-                directory_name: 'ares_child',
-                distance_unit: 'useMiles',
-            },
-            'search-results'
+    it('Sets the value of original_params', () => {
+        expect(decodeURIComponent(autocomplete.original_params.toString())).toEqual(
+            'siteid=62309&currency=USD&points=-80.104529|26.114917|Tortuga-Sunset+Stage,-80.119458|26.100938|Water+Taxi+Stop+(Tickets+Extra$),-80.106137|26.110877|Water+Taxi+Stop+(Tickets+Extra$)&cid=ROCK&useMiles=&checkin=11/12/21&pageSize=15&mapSize=13&groupid=43285&radius=5&locationlabel=Tortuga-Main+Stage&utm_source=internal&nights=3&propertytypes=Hotel,Motel,Resort,Hostel,Ext.+Stay,Boutique,Weekly+Rentals&latitude=26.10879170000000&map=&longitude=-80.10643370000000&type=geo&properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947'
         );
-        autocomplete.init();
+    });
 
+    it('Calls methods', () => {
         expect(autocomplete.sumbitListener).toBeCalledTimes(1);
         expect(autocomplete.sumbitListener).toReturnWith(true);
         expect(autocomplete.hideArnSearchInput).toBeCalledTimes(1);
         expect(autocomplete.insertNewSearchInput).toBeCalledTimes(1);
         expect(autocomplete.googleMapsScript).toBeCalledTimes(1);
-        expect(autocomplete.getEventOriginalParams).toBeCalledTimes(1);
+        expect(autocomplete.setAttribute).toBeCalledTimes(1);
+        // expect(autocomplete.getEventOriginalParams).toBeCalledTimes(1);
     });
 });
 
+// /* - - - - - - hideArnSearchInput - - - - - -*/
 describe('hideArnSearchInput', () => {
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
-    it('Positions ARN search input off the page and removes the required attribute', () => {
-        afterEach(() => {
-            document.body.innerHTML = '';
-        });
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
 
+    afterAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    it('Positions ARN search input off the page and removes the required attribute', () => {
         document.body.innerHTML = `
         <h1 class="RootBody">This is a test</h1>
         <input id="city" required>`;
@@ -90,22 +68,19 @@ describe('hideArnSearchInput', () => {
         const new_html = `
         <h1 class="RootBody">This is a test</h1>
         <input id="city" style="position: absolute; left: -10000px;">`;
+
         autocomplete.hideArnSearchInput('input#city');
         expect(document.body.innerHTML).toEqual(new_html);
     });
 });
 
+/* - - - - - - insertNewSearchInput - - - - - -*/
 describe('insertNewSearchInput', () => {
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
 
-    afterEach(() => {
+    afterAll(() => {
         document.body.innerHTML = '';
     });
 
@@ -123,6 +98,7 @@ describe('insertNewSearchInput', () => {
             <span>
             <input type="search" id="address-input" placeholder="Destination" required="true"></span>
         </div>`;
+
         autocomplete.insertNewSearchInput(
             '.RootBody',
             'div#CitySearchContainer span',
@@ -133,52 +109,54 @@ describe('insertNewSearchInput', () => {
     });
 });
 
+/* - - - - - - setAttribute - - - - - -*/
+
 describe('setAttribute', () => {
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = '';
+    });
 
     it('Sets an onClick attribute to and empty string', () => {
-        afterEach(() => {
-            document.body.innerHTML = '';
-        });
-    });
-    document.body.innerHTML = `<input id="theSubmitButton" onclick="$('theBody').addClassName('searchingForResults');doPushPagePrep();$('theArnPushPage').show();$('theArnPushPageContent').show()">`;
+        document.body.innerHTML = `<input id="theSubmitButton" onclick="$('theBody').addClassName('searchingForResults');doPushPagePrep();$('theArnPushPage').show();$('theArnPushPageContent').show()">`;
 
-    autocomplete.setAttribute('input#theSubmitButton', 'onClick', '');
-    expect(document.body.innerHTML).toEqual(`<input id="theSubmitButton" onclick="">`);
+        autocomplete.setAttribute('input#theSubmitButton', 'onClick', '');
+        expect(document.body.innerHTML).toEqual(`<input id="theSubmitButton" onclick="">`);
+    });
 });
 
+/* - - - - - - getDestination - - - - - -*/
+
 describe('getDestination', () => {
-    afterEach(() => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        jest.restoreAllMocks();
         document.body.innerHTML = '';
     });
 
     it('Returns the destination string from the input', () => {
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="Austin, TX, USA">
         `;
-
-        const autocomplete = new Autocomplete(
-            {
-                site_id: '60279',
-                directory_name: 'ares_child',
-                distance_unit: 'useMiles',
-            },
-            'landing-page'
-        );
-
         expect(autocomplete.getDestination('input#address-input')).toEqual('Austin, TX, USA');
     });
 
     it('Sets destination if it exists in Original Params', () => {
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
-        const autocomplete = new Autocomplete(
+        const new_autocomplete = new Autocomplete(
             {
                 site_id: '60279',
                 directory_name: 'ares_child',
@@ -187,13 +165,13 @@ describe('getDestination', () => {
             'landing-page'
         );
 
-        expect(autocomplete.getDestination('input#address-input')).toEqual('Austin, TX, USA');
+        expect(new_autocomplete.getDestination('input#address-input')).toEqual('Austin, TX, USA');
     });
 
-    it('Returns and error if the destination is not available', () => {
+    it('Returns an error if the destination is not available', () => {
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
-        const autocomplete = new Autocomplete(
+        const new_autocomplete = new Autocomplete(
             {
                 site_id: '60279',
                 directory_name: 'ares_child',
@@ -202,28 +180,26 @@ describe('getDestination', () => {
             'landing-page'
         );
 
-        expect(autocomplete.getDestination('input#address-input')).toEqual(new Error('No destination available'));
+        expect(new_autocomplete.getDestination('input#address-input')).toEqual(new Error('No destination available'));
     });
 });
 
-// test googleMapsScript() here
+// // test googleMapsScript() here
 
-describe('getEventParams', () => {
-    afterEach(() => {
+/* - - - - - - getEventParams - - - - - -*/
+
+describe('getEventOriginalParams', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
         document.body.innerHTML = '';
     });
 
     it('Sets the key/values in the constructor property event_params', () => {
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279">`;
 
-        const autocomplete = new Autocomplete(
-            {
-                site_id: '60279',
-                directory_name: 'ares_child',
-                distance_unit: 'useMiles',
-            },
-            'landing-page'
-        );
         autocomplete.getEventOriginalParams(autocomplete.event_params);
         expect(autocomplete.event_params).toBeTruthy();
         expect(autocomplete.event_params).toEqual(
@@ -251,17 +227,16 @@ describe('getEventParams', () => {
     });
 });
 
-describe('getDropdownValue', () => {
-    document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279">`;
+/* - - - - - - getDropdownValue - - - - - -*/
 
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
+describe('getDropdownValue', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = '';
+    });
 
     it('Returns the selected options text content', () => {
         document.body.innerHTML = `<select id="rooms" name="31">
@@ -275,17 +250,14 @@ describe('getDropdownValue', () => {
     });
 });
 
-describe('applyFilters', () => {
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
+/* - - - - - - applyFilters - - - - - -*/
 
-    afterEach(() => {
+describe('applyFilters', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
         document.body.innerHTML = '';
     });
 
@@ -315,7 +287,7 @@ describe('applyFilters', () => {
         expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toEqual('Airport Shuttle,Complimentary Breakfast,Fitness Center');
     });
 
-    it('Returns null with not filter boxes checked', () => {
+    it('Returns null if no filter boxes are checked', () => {
         document.body.innerHTML = `
         <div id="AmentitiesContainer" class="ArnIndividualSearchContainer ArnAmentitiesContainer">
             <div class="ArnSearchField">
@@ -331,62 +303,35 @@ describe('applyFilters', () => {
     });
 });
 
-describe('appendParamsToUrl', () => {
-    const autocomplete = new Autocomplete(
-        {
-            site_id: '60279',
-            directory_name: 'ares_child',
-            distance_unit: 'useMiles',
-        },
-        'landing-page'
-    );
-
-    it('Returns and error with invalid keys or values', () => {
-        // Needs more tests, perhaps refactor method
-        expect(
-            autocomplete.appendParamsToURL({
-                longitude: {
-                    key: 'longitude',
-                    value: '3',
-                },
-                rooms: {
-                    key: 'rooms',
-                    value: '',
-                },
-            })
-        ).toBeUndefined();
+describe('getOptionalHotelName', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
     });
 
-    // it('Builds the URL with valid params', () => {
-    //     expect(
-    //         autocomplete.appendParamsToURL({
-    //             longitude: {
-    //                 key: 'longitude',
-    //                 value: '3',
-    //             },
-    //             rooms: {
-    //                 key: 'rooms',
-    //                 value: '2',
-    //             },
-    //         })
-    //     ).toEqual();
-    // });
-});
-
-describe('submitListener', () => {
-    afterEach(() => {
+    afterAll(() => {
+        document.body.innerHTML = '';
         jest.restoreAllMocks();
     });
 
-    // document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
+    afterEach(() => {
+        document.body.innerHTML = '';
+    });
 
-    it("Calls it's methods correct amount of times", () => {
-        jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => true);
+    it('Returns when not search-results page', () => {
+        expect(autocomplete.getOptionalHotelName()).toBeUndefined();
+    });
 
-        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit">`;
+    it('Returns when the value of #hotelName is and empty string on search-hotels page', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="hotelName" placeholder="Destination" required="true" value="">`;
 
-        const autocomplete = new Autocomplete(
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+
+        const new_autocomplete = new Autocomplete(
             {
                 site_id: '60279',
                 directory_name: 'ares_child',
@@ -394,11 +339,88 @@ describe('submitListener', () => {
             },
             'search-results'
         );
+        expect(new_autocomplete.getOptionalHotelName('input#hotelName')).toBeUndefined();
+    });
+
+    it('Returns the value of the optional hotel entered', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="hotelName" value="Hilton">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+            },
+            'search-results'
+        );
+        expect(new_autocomplete.getOptionalHotelName('#hotelName')).toEqual('Hilton');
+    });
+});
+
+// describe('appendParamsToUrl', () => {
+//     beforeAll(() => {
+//         document.body.innerHTML = '';
+//     });
+
+//     afterAll(() => {
+//         document.body.innerHTML = '';
+//     });
+
+//     it('Returns an error with invalid keys or values', () => {
+//         // Needs more tests, perhaps refactor method
+//         expect(
+//             autocomplete.appendParamsToURL({
+//                 longitude: {
+//                     key: 'longitude',
+//                     value: '3',
+//                 },
+//                 rooms: {
+//                     key: 'rooms',
+//                     value: '',
+//                 },
+//             })
+//         ).toThrow();
+//     });
+
+//     it('Builds the URL with valid params', () => {
+//         expect(
+//             autocomplete.appendParamsToURL({
+//                 longitude: {
+//                     key: 'longitude',
+//                     value: '3',
+//                 },
+//                 rooms: {
+//                     key: 'rooms',
+//                     value: '2',
+//                 },
+//             })
+//         ).toEqual();
+//     });
+// });
+
+// /* - - - - - - submitListener - - - - - -*/
+
+describe('submitListener', () => {
+    afterAll(() => {
+        jest.restoreAllMocks();
+        document.body.innerHTML = ``;
+    });
+
+    // document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
+
+    it("Calls it's methods correct amount of times when submit event occurs ", () => {
+        jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
+        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => 'Airport Shuttle');
+        jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
+
+        document.body.innerHTML = `<input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020">`;
         autocomplete.sumbitListener();
         document.getElementById('theOtherSubmitButton').click();
 
         expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
-        expect(autocomplete.getDropdownValue).toReturnWith(true);
+        expect(autocomplete.getDropdownValue).toReturnWith('1');
         expect(autocomplete.applyFilters).toBeCalledTimes(3);
+        expect(autocomplete.applyFilters).toReturnWith('Airport Shuttle');
+        expect(autocomplete.appendParamsToURL).toBeCalledTimes(1);
     });
 });

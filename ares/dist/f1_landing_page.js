@@ -169,14 +169,14 @@
                     f,
                     p,
                     d = t & u.F,
-                    m = t & u.G,
-                    h = t & u.S,
+                    h = t & u.G,
+                    m = t & u.S,
                     v = t & u.P,
                     g = t & u.B,
-                    y = m ? r : h ? r[e] || (r[e] = {}) : (r[e] || {}).prototype,
-                    _ = m ? o : o[e] || (o[e] = {}),
+                    y = h ? r : m ? r[e] || (r[e] = {}) : (r[e] || {}).prototype,
+                    _ = h ? o : o[e] || (o[e] = {}),
                     x = _.prototype || (_.prototype = {});
-                for (s in (m && (n = e), n))
+                for (s in (h && (n = e), n))
                     (f = ((l = !d && y && void 0 !== y[s]) ? y : n)[s]),
                         (p = g && l ? c(f, r) : v && 'function' == typeof f ? c(Function.call, f) : f),
                         y && i(y, s, f, t & u.U),
@@ -421,13 +421,13 @@
                     TextTrackList: !1,
                     TouchList: !1,
                 },
-                m = o(d),
-                h = 0;
-            h < m.length;
-            h++
+                h = o(d),
+                m = 0;
+            m < h.length;
+            m++
         ) {
             var v,
-                g = m[h],
+                g = h[m],
                 y = d[g],
                 _ = i[g],
                 x = _ && _.prototype;
@@ -502,7 +502,7 @@
                         if (!(t instanceof e)) throw new TypeError('Cannot call a class as a function');
                     })(this, t);
                 }
-                var e, n, r, c, u, s, l, f, p, d, m, h, v;
+                var e, n, r, c, u, s, l, f, p, d, h, m, v;
                 return (
                     (e = t),
                     (n = [
@@ -576,7 +576,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((h = o(
+                                ((m = o(
                                     regeneratorRuntime.mark(function t(e) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -599,13 +599,13 @@
                                     })
                                 )),
                                 function (t) {
-                                    return h.apply(this, arguments);
+                                    return m.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'waitForTextInDOM',
                             value:
-                                ((m = o(
+                                ((h = o(
                                     regeneratorRuntime.mark(function t(e, n) {
                                         return regeneratorRuntime.wrap(function (t) {
                                             for (;;)
@@ -628,7 +628,7 @@
                                     })
                                 )),
                                 function (t, e) {
-                                    return m.apply(this, arguments);
+                                    return h.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1129,37 +1129,37 @@
             f = n(13),
             p = n(8),
             d = n(16),
-            m = n(71),
-            h = n(72),
+            h = n(71),
+            m = n(72),
             v = n(76),
             g = n(41).set,
             y = n(78)(),
             _ = n(42),
             x = n(79),
             b = n(80),
-            S = n(81),
-            w = u.TypeError,
+            w = n(81),
+            S = u.TypeError,
             k = u.process,
             M = k && k.versions,
-            P = (M && M.v8) || '',
-            L = u.Promise,
-            j = 'process' == l(k),
+            L = (M && M.v8) || '',
+            j = u.Promise,
+            P = 'process' == l(k),
             E = function () {},
             O = (o = _.f),
             A = !!(function () {
                 try {
-                    var t = L.resolve(1),
+                    var t = j.resolve(1),
                         e = ((t.constructor = {})[n(0)('species')] = function (t) {
                             t(E, E);
                         });
-                    return (j || 'function' == typeof PromiseRejectionEvent) && t.then(E) instanceof e && 0 !== P.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                    return (P || 'function' == typeof PromiseRejectionEvent) && t.then(E) instanceof e && 0 !== L.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                 } catch (t) {}
             })(),
             T = function (t) {
                 var e;
                 return !(!p(t) || 'function' != typeof (e = t.then)) && e;
             },
-            I = function (t, e) {
+            $ = function (t, e) {
                 if (!t._n) {
                     t._n = !0;
                     var n = t._c;
@@ -1178,9 +1178,9 @@
                                         l = e.domain;
                                     try {
                                         c
-                                            ? (o || (2 == t._h && q(t), (t._h = 1)),
+                                            ? (o || (2 == t._h && D(t), (t._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (i = !0))),
-                                              n === e.promise ? s(w('Promise-chain cycle')) : (a = T(n)) ? a.call(n, u, s) : u(n))
+                                              n === e.promise ? s(S('Promise-chain cycle')) : (a = T(n)) ? a.call(n, u, s) : u(n))
                                             : s(r);
                                     } catch (t) {
                                         l && !i && l.exit(), s(t);
@@ -1190,45 +1190,45 @@
 
                         )
                             i(n[a++]);
-                        (t._c = []), (t._n = !1), e && !t._h && $(t);
+                        (t._c = []), (t._n = !1), e && !t._h && q(t);
                     });
                 }
             },
-            $ = function (t) {
+            q = function (t) {
                 g.call(u, function () {
                     var e,
                         n,
                         r,
                         o = t._v,
-                        a = D(t);
+                        a = I(t);
                     if (
                         (a &&
                             ((e = x(function () {
-                                j
+                                P
                                     ? k.emit('unhandledRejection', o, t)
                                     : (n = u.onunhandledrejection)
                                     ? n({promise: t, reason: o})
                                     : (r = u.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = j || D(t) ? 2 : 1)),
+                            (t._h = P || I(t) ? 2 : 1)),
                         (t._a = void 0),
                         a && e.e)
                     )
                         throw e.v;
                 });
             },
-            D = function (t) {
+            I = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
-            q = function (t) {
+            D = function (t) {
                 g.call(u, function () {
                     var e;
-                    j ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
+                    P ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
                 });
             },
             R = function (t) {
                 var e = this;
-                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), I(e, !0));
+                e._d || ((e._d = !0), ((e = e._w || e)._v = t), (e._s = 2), e._a || (e._a = e._c.slice()), $(e, !0));
             },
             C = function (t) {
                 var e,
@@ -1236,7 +1236,7 @@
                 if (!n._d) {
                     (n._d = !0), (n = n._w || n);
                     try {
-                        if (n === t) throw w("Promise can't be resolved itself");
+                        if (n === t) throw S("Promise can't be resolved itself");
                         (e = T(t))
                             ? y(function () {
                                   var r = {_w: n, _d: !1};
@@ -1246,15 +1246,15 @@
                                       R.call(r, t);
                                   }
                               })
-                            : ((n._v = t), (n._s = 1), I(n, !1));
+                            : ((n._v = t), (n._s = 1), $(n, !1));
                     } catch (t) {
                         R.call({_w: n, _d: !1}, t);
                     }
                 }
             };
         A ||
-            ((L = function (t) {
-                m(this, L, 'Promise', '_h'), d(t), r.call(this);
+            ((j = function (t) {
+                h(this, j, 'Promise', '_h'), d(t), r.call(this);
                 try {
                     t(s(C, this, 1), s(R, this, 1));
                 } catch (t) {
@@ -1263,16 +1263,16 @@
             }),
             ((r = function (t) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(82)(L.prototype, {
+            }).prototype = n(82)(j.prototype, {
                 then: function (t, e) {
-                    var n = O(v(this, L));
+                    var n = O(v(this, j));
                     return (
                         (n.ok = 'function' != typeof t || t),
                         (n.fail = 'function' == typeof e && e),
-                        (n.domain = j ? k.domain : void 0),
+                        (n.domain = P ? k.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && I(this, !1),
+                        this._s && $(this, !1),
                         n.promise
                     );
                 },
@@ -1285,10 +1285,10 @@
                 (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(R, t, 1));
             }),
             (_.f = O = function (t) {
-                return t === L || t === i ? new a(t) : o(t);
+                return t === j || t === i ? new a(t) : o(t);
             })),
-            f(f.G + f.W + f.F * !A, {Promise: L}),
-            n(28)(L, 'Promise'),
+            f(f.G + f.W + f.F * !A, {Promise: j}),
+            n(28)(j, 'Promise'),
             n(83)('Promise'),
             (i = n(7).Promise),
             f(f.S + f.F * !A, 'Promise', {
@@ -1299,7 +1299,7 @@
             }),
             f(f.S + f.F * (c || !A), 'Promise', {
                 resolve: function (t) {
-                    return S(c && this === i ? L : this, t);
+                    return w(c && this === i ? j : this, t);
                 },
             }),
             f(
@@ -1308,7 +1308,7 @@
                         !(
                             A &&
                             n(84)(function (t) {
-                                L.all(t).catch(E);
+                                j.all(t).catch(E);
                             })
                         ),
                 'Promise',
@@ -1322,7 +1322,7 @@
                                 var n = [],
                                     a = 0,
                                     i = 1;
-                                h(t, !1, function (t) {
+                                m(t, !1, function (t) {
                                     var c = a++,
                                         u = !1;
                                     n.push(void 0),
@@ -1340,7 +1340,7 @@
                             n = O(e),
                             r = n.reject,
                             o = x(function () {
-                                h(t, !1, function (t) {
+                                m(t, !1, function (t) {
                                     e.resolve(t).then(n.resolve, r);
                                 });
                             });
@@ -1361,8 +1361,8 @@
             f = l.process,
             p = l.setImmediate,
             d = l.clearImmediate,
-            m = l.MessageChannel,
-            h = l.Dispatch,
+            h = l.MessageChannel,
+            m = l.Dispatch,
             v = 0,
             g = {},
             y = function () {
@@ -1393,12 +1393,12 @@
                 ? (r = function (t) {
                       f.nextTick(i(y, t, 1));
                   })
-                : h && h.now
+                : m && m.now
                 ? (r = function (t) {
-                      h.now(i(y, t, 1));
+                      m.now(i(y, t, 1));
                   })
-                : m
-                ? ((a = (o = new m()).port2), (o.port1.onmessage = _), (r = i(a.postMessage, a, 1)))
+                : h
+                ? ((a = (o = new h()).port2), (o.port1.onmessage = _), (r = i(a.postMessage, a, 1)))
                 : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
                 ? ((r = function (t) {
                       l.postMessage(t + '', '*');
@@ -1454,7 +1454,7 @@
             function u(t, e, n, r) {
                 var o = e && e.prototype instanceof f ? e : f,
                     a = Object.create(o.prototype),
-                    i = new w(r || []);
+                    i = new S(r || []);
                 return (
                     (a._invoke = (function (t, e, n) {
                         var r = 'suspendedStart';
@@ -1503,14 +1503,14 @@
             function f() {}
             function p() {}
             function d() {}
-            var m = {};
-            m[o] = function () {
+            var h = {};
+            h[o] = function () {
                 return this;
             };
-            var h = Object.getPrototypeOf,
-                v = h && h(h(k([])));
-            v && v !== e && n.call(v, o) && (m = v);
-            var g = (d.prototype = f.prototype = Object.create(m));
+            var m = Object.getPrototypeOf,
+                v = m && m(m(k([])));
+            v && v !== e && n.call(v, o) && (h = v);
+            var g = (d.prototype = f.prototype = Object.create(h));
             function y(t) {
                 ['next', 'throw', 'return'].forEach(function (e) {
                     c(t, e, function (t) {
@@ -1575,11 +1575,11 @@
                 var e = {tryLoc: t[0]};
                 1 in t && (e.catchLoc = t[1]), 2 in t && ((e.finallyLoc = t[2]), (e.afterLoc = t[3])), this.tryEntries.push(e);
             }
-            function S(t) {
+            function w(t) {
                 var e = t.completion || {};
                 (e.type = 'normal'), delete e.arg, (t.completion = e);
             }
-            function w(t) {
+            function S(t) {
                 (this.tryEntries = [{tryLoc: 'root'}]), t.forEach(b, this), this.reset(!0);
             }
             function k(t) {
@@ -1652,8 +1652,8 @@
                     );
                 }),
                 (t.values = k),
-                (w.prototype = {
-                    constructor: w,
+                (S.prototype = {
+                    constructor: S,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -1663,7 +1663,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = void 0),
-                            this.tryEntries.forEach(S),
+                            this.tryEntries.forEach(w),
                             !t)
                         )
                             for (var e in this) 't' === e.charAt(0) && n.call(this, e) && !isNaN(+e.slice(1)) && (this[e] = void 0);
@@ -1725,7 +1725,7 @@
                     finish: function (t) {
                         for (var e = this.tryEntries.length - 1; e >= 0; --e) {
                             var n = this.tryEntries[e];
-                            if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), l;
+                            if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), w(n), l;
                         }
                     },
                     catch: function (t) {
@@ -1735,7 +1735,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    S(n);
+                                    w(n);
                                 }
                                 return o;
                             }
@@ -1908,8 +1908,8 @@
             d = function () {
                 return this;
             };
-        t.exports = function (t, e, n, m, h, v, g) {
-            u(n, e, m);
+        t.exports = function (t, e, n, h, m, v, g) {
+            u(n, e, h);
             var y,
                 _,
                 x,
@@ -1926,29 +1926,29 @@
                         return new n(this, t);
                     };
                 },
-                S = e + ' Iterator',
-                w = 'values' == h,
+                w = e + ' Iterator',
+                S = 'values' == m,
                 k = !1,
                 M = t.prototype,
-                P = M[f] || M['@@iterator'] || (h && M[h]),
-                L = P || b(h),
-                j = h ? (w ? b('entries') : L) : void 0,
-                E = ('Array' == e && M.entries) || P;
+                L = M[f] || M['@@iterator'] || (m && M[m]),
+                j = L || b(m),
+                P = m ? (S ? b('entries') : j) : void 0,
+                E = ('Array' == e && M.entries) || L;
             if (
-                (E && (x = l(E.call(new t()))) !== Object.prototype && x.next && (s(x, S, !0), r || 'function' == typeof x[f] || i(x, f, d)),
-                w &&
-                    P &&
-                    'values' !== P.name &&
+                (E && (x = l(E.call(new t()))) !== Object.prototype && x.next && (s(x, w, !0), r || 'function' == typeof x[f] || i(x, f, d)),
+                S &&
+                    L &&
+                    'values' !== L.name &&
                     ((k = !0),
-                    (L = function () {
-                        return P.call(this);
+                    (j = function () {
+                        return L.call(this);
                     })),
-                (r && !g) || (!p && !k && M[f]) || i(M, f, L),
-                (c[e] = L),
-                (c[S] = d),
-                h)
+                (r && !g) || (!p && !k && M[f]) || i(M, f, j),
+                (c[e] = j),
+                (c[w] = d),
+                m)
             )
-                if (((y = {values: w ? L : b('values'), keys: v ? L : b('keys'), entries: j}), g)) for (_ in y) _ in M || a(M, _, y[_]);
+                if (((y = {values: S ? j : b('values'), keys: v ? j : b('keys'), entries: P}), g)) for (_ in y) _ in M || a(M, _, y[_]);
                 else o(o.P + o.F * (p || k), e, y);
             return y;
         };
@@ -2088,74 +2088,6 @@
         Object.defineProperty(e, '__esModule', {value: !0}), (e.default = void 0);
         var o = new ((r = n(37)) && r.__esModule ? r : {default: r}).default(),
             a = {
-                races_2020: {
-                    russia: {
-                        days: '25-27',
-                        month: 'Sep',
-                        race_expiry: '2020-09-27',
-                        sponsor: 'VTB',
-                        name: 'Russian Grand Prix',
-                        location: 'Sochi, Russia',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/russia.jpg'),
-                        flag_alt_text: 'Russian',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=36972&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Russia%202020',
-                    },
-                    portugal: {
-                        days: '23-25',
-                        month: 'Oct',
-                        race_expiry: '2020-10-25',
-                        sponsor: 'Heineken',
-                        name: 'Portuguese Grand Prix',
-                        location: 'Algarve, Portugal',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/portugal.jpg'),
-                        flag_alt_text: 'Portugese',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=44099&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Portugal%202020',
-                    },
-                    turkey: {
-                        days: '13-15',
-                        month: 'Nov',
-                        race_expiry: '2020-11-15',
-                        sponsor: 'DHL',
-                        name: 'Turkish Grand Prix',
-                        location: 'Istanbul, Turkey',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/turkey.jpg'),
-                        flag_alt_text: 'Turkish',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=44089&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Turkey%202020',
-                    },
-                    bahrain: {
-                        days: '27-29',
-                        month: 'Nov',
-                        race_expiry: '2020-11-29',
-                        sponsor: 'Gulf Air',
-                        name: 'Bahrain Grand Prix',
-                        location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/bahrain.jpg'),
-                        flag_alt_text: 'Bahrain',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=44125&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202020',
-                    },
-                    sakhir: {
-                        days: '4-6',
-                        month: 'Dec',
-                        race_expiry: '2020-12-06',
-                        sponsor: 'Rolex',
-                        name: 'Sakhir Grand Prix',
-                        location: 'Sakhir, Bahrain',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/bahrain.jpg'),
-                        flag_alt_text: 'Bahrain',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=44126&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Sakhir%202020',
-                    },
-                    abu_dhabi: {
-                        days: '11-13',
-                        month: 'Dec',
-                        race_expiry: '2020-12-13',
-                        sponsor: 'Etihad Airways',
-                        name: 'Abu Dhabi Grand Prix',
-                        location: 'Yas Island, Abu Dhabi',
-                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/abu-dhabi.jpg'),
-                        flag_alt_text: 'United Arab Emirates',
-                        book_url: 'https://bookrooms.formula1.com/group-event?id=36977&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Abu%20Dhabi%202020',
-                    },
-                },
                 races_2021: {
                     australia: {
                         days: '19-21',
@@ -2394,7 +2326,7 @@
             f = Math.floor,
             p = /\$([$&`']|\d\d?|<[^>]*>)/g,
             d = /\$([$&`']|\d\d?)/g;
-        n(67)('replace', 2, function (t, e, n, m) {
+        n(67)('replace', 2, function (t, e, n, h) {
             return [
                 function (r, o) {
                     var a = t(this),
@@ -2402,7 +2334,7 @@
                     return void 0 !== i ? i.call(r, a, o) : n.call(String(a), r, o);
                 },
                 function (t, e) {
-                    var o = m(n, t, this, e);
+                    var o = h(n, t, this, e);
                     if (o.done) return o.value;
                     var f = r(t),
                         p = String(this),
@@ -2419,21 +2351,21 @@
                         if ((y.push(_), !v)) break;
                         '' === String(_[0]) && (f.lastIndex = c(p, a(f.lastIndex), g));
                     }
-                    for (var x, b = '', S = 0, w = 0; w < y.length; w++) {
-                        _ = y[w];
-                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), P = [], L = 1; L < _.length; L++) P.push(void 0 === (x = _[L]) ? x : String(x));
-                        var j = _.groups;
+                    for (var x, b = '', w = 0, S = 0; S < y.length; S++) {
+                        _ = y[S];
+                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), L = [], j = 1; j < _.length; j++) L.push(void 0 === (x = _[j]) ? x : String(x));
+                        var P = _.groups;
                         if (d) {
-                            var E = [k].concat(P, M, p);
-                            void 0 !== j && E.push(j);
+                            var E = [k].concat(L, M, p);
+                            void 0 !== P && E.push(P);
                             var O = String(e.apply(void 0, E));
-                        } else O = h(k, p, M, P, j, e);
-                        M >= S && ((b += p.slice(S, M) + O), (S = M + k.length));
+                        } else O = m(k, p, M, L, P, e);
+                        M >= w && ((b += p.slice(w, M) + O), (w = M + k.length));
                     }
-                    return b + p.slice(S);
+                    return b + p.slice(w);
                 },
             ];
-            function h(t, e, r, a, i, c) {
+            function m(t, e, r, a, i, c) {
                 var u = r + t.length,
                     s = a.length,
                     l = d;
@@ -2554,7 +2486,7 @@
                         7 != ''[t](e)
                     );
                 }),
-                m = d
+                h = d
                     ? !a(function () {
                           var e = !1,
                               n = /a/;
@@ -2572,10 +2504,10 @@
                           );
                       })
                     : void 0;
-            if (!d || !m || ('replace' === t && !l) || ('split' === t && !f)) {
-                var h = /./[p],
+            if (!d || !h || ('replace' === t && !l) || ('split' === t && !f)) {
+                var m = /./[p],
                     v = n(i, p, ''[t], function (t, e, n, r, o) {
-                        return e.exec === u ? (d && !o ? {done: !0, value: h.call(e, n, r)} : {done: !0, value: t.call(n, e, r)}) : {done: !1};
+                        return e.exec === u ? (d && !o ? {done: !0, value: m.call(e, n, r)} : {done: !0, value: t.call(n, e, r)}) : {done: !1};
                     }),
                     g = v[0],
                     y = v[1];
@@ -2641,8 +2573,8 @@
             l = {};
         ((e = t.exports = function (t, e, n, f, p) {
             var d,
-                m,
                 h,
+                m,
                 v,
                 g = p
                     ? function () {
@@ -2653,8 +2585,8 @@
                 _ = 0;
             if ('function' != typeof g) throw TypeError(t + ' is not iterable!');
             if (a(g)) {
-                for (d = c(t.length); d > _; _++) if ((v = e ? y(i((m = t[_]))[0], m[1]) : y(t[_])) === s || v === l) return v;
-            } else for (h = g.call(t); !(m = h.next()).done; ) if ((v = o(h, y, m.value, e)) === s || v === l) return v;
+                for (d = c(t.length); d > _; _++) if ((v = e ? y(i((h = t[_]))[0], h[1]) : y(t[_])) === s || v === l) return v;
+            } else for (m = g.call(t); !(h = m.next()).done; ) if ((v = o(m, y, h.value, e)) === s || v === l) return v;
         }).BREAK = s),
             (e.RETURN = l);
     },
@@ -2893,26 +2825,26 @@
                         return void 0 === t;
                     },
                 },
-                m = {
+                h = {
                     name: 'en',
                     weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                     months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                 },
-                h = 'en',
+                m = 'en',
                 v = {};
-            v[h] = m;
+            v[m] = h;
             var g = function (t) {
                     return t instanceof b;
                 },
                 y = function (t, e, n) {
                     var r;
-                    if (!t) return h;
+                    if (!t) return m;
                     if ('string' == typeof t) v[t] && (r = t), e && ((v[t] = e), (r = t));
                     else {
                         var o = t.name;
                         (v[o] = t), (r = o);
                     }
-                    return !n && r && (h = r), r || (!n && h);
+                    return !n && r && (m = r), r || (!n && m);
                 },
                 _ = function (t, e) {
                     if (g(t)) return t.clone();
@@ -2996,10 +2928,10 @@
                                     var n = x.w(l.$u ? Date.UTC(l.$y, e, t) : new Date(l.$y, e, t), l);
                                     return f ? n : n.endOf(o);
                                 },
-                                m = function (t, e) {
+                                h = function (t, e) {
                                     return x.w(l.toDate()[t].apply(l.toDate('s'), (f ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e)), l);
                                 },
-                                h = this.$W,
+                                m = this.$W,
                                 v = this.$M,
                                 g = this.$D,
                                 y = 'set' + (this.$u ? 'UTC' : '');
@@ -3010,17 +2942,17 @@
                                     return f ? d(1, v) : d(0, v + 1);
                                 case a:
                                     var _ = this.$locale().weekStart || 0,
-                                        b = (h < _ ? h + 7 : h) - _;
+                                        b = (m < _ ? m + 7 : m) - _;
                                     return d(f ? g - b : g + (6 - b), v);
                                 case o:
                                 case s:
-                                    return m(y + 'Hours', 0);
+                                    return h(y + 'Hours', 0);
                                 case r:
-                                    return m(y + 'Minutes', 1);
+                                    return h(y + 'Minutes', 1);
                                 case n:
-                                    return m(y + 'Seconds', 2);
+                                    return h(y + 'Seconds', 2);
                                 case e:
-                                    return m(y + 'Milliseconds', 3);
+                                    return h(y + 'Milliseconds', 3);
                                 default:
                                     return this.clone();
                             }
@@ -3042,11 +2974,11 @@
                                 (l[e] = p + 'Seconds'),
                                 (l[t] = p + 'Milliseconds'),
                                 l)[f],
-                                m = f === o ? this.$D + (c - this.$W) : c;
+                                h = f === o ? this.$D + (c - this.$W) : c;
                             if (f === i || f === u) {
-                                var h = this.clone().set(s, 1);
-                                h.$d[d](m), h.init(), (this.$d = h.set(s, Math.min(this.$D, h.daysInMonth())).$d);
-                            } else d && this.$d[d](m);
+                                var m = this.clone().set(s, 1);
+                                m.$d[d](h), m.init(), (this.$d = m.set(s, Math.min(this.$D, m.daysInMonth())).$d);
+                            } else d && this.$d[d](h);
                             return this.init(), this;
                         }),
                         (d.set = function (t, e) {
@@ -3069,8 +3001,8 @@
                             if (f === o) return p(1);
                             if (f === a) return p(7);
                             var d = ((s = {}), (s[n] = 6e4), (s[r] = 36e5), (s[e] = 1e3), s)[f] || 1,
-                                m = this.$d.getTime() + t * d;
-                            return x.w(m, this);
+                                h = this.$d.getTime() + t * d;
+                            return x.w(h, this);
                         }),
                         (d.subtract = function (t, e) {
                             return this.add(-1 * t, e);
@@ -3098,7 +3030,7 @@
                                         var r = t < 12 ? 'AM' : 'PM';
                                         return n ? r.toLowerCase() : r;
                                     },
-                                m = {
+                                h = {
                                     YY: String(this.$y).slice(-2),
                                     YYYY: this.$y,
                                     M: c + 1,
@@ -3125,7 +3057,7 @@
                                     Z: r,
                                 };
                             return n.replace(f, function (t, e) {
-                                return e || m[t] || r.replace(':', '');
+                                return e || h[t] || r.replace(':', '');
                             });
                         }),
                         (d.utcOffset = function () {
@@ -3135,8 +3067,8 @@
                             var f,
                                 p = x.p(s),
                                 d = _(t),
-                                m = 6e4 * (d.utcOffset() - this.utcOffset()),
-                                h = this - d,
+                                h = 6e4 * (d.utcOffset() - this.utcOffset()),
+                                m = this - d,
                                 v = x.m(this, d);
                             return (
                                 (v =
@@ -3144,12 +3076,12 @@
                                     (f[u] = v / 12),
                                     (f[i] = v),
                                     (f[c] = v / 3),
-                                    (f[a] = (h - m) / 6048e5),
-                                    (f[o] = (h - m) / 864e5),
-                                    (f[r] = h / 36e5),
-                                    (f[n] = h / 6e4),
-                                    (f[e] = h / 1e3),
-                                    f)[p] || h),
+                                    (f[a] = (m - h) / 6048e5),
+                                    (f[o] = (m - h) / 864e5),
+                                    (f[r] = m / 36e5),
+                                    (f[n] = m / 6e4),
+                                    (f[e] = m / 1e3),
+                                    f)[p] || m),
                                 l ? v : x.a(v)
                             );
                         }),
@@ -3183,9 +3115,9 @@
                         p
                     );
                 })(),
-                S = b.prototype;
+                w = b.prototype;
             return (
-                (_.prototype = S),
+                (_.prototype = w),
                 [
                     ['$ms', t],
                     ['$s', e],
@@ -3196,7 +3128,7 @@
                     ['$y', u],
                     ['$D', s],
                 ].forEach(function (t) {
-                    S[t[1]] = function (e) {
+                    w[t[1]] = function (e) {
                         return this.$g(e, t[0], t[1]);
                     };
                 }),
@@ -3208,7 +3140,7 @@
                 (_.unix = function (t) {
                     return _(1e3 * t);
                 }),
-                (_.en = v[h]),
+                (_.en = v[m]),
                 (_.Ls = v),
                 _
             );

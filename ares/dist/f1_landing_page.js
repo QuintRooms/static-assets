@@ -1142,17 +1142,17 @@
             k = u.process,
             M = k && k.versions,
             L = (M && M.v8) || '',
-            j = u.Promise,
-            P = 'process' == l(k),
+            P = u.Promise,
+            j = 'process' == l(k),
             E = function () {},
             O = (o = _.f),
             A = !!(function () {
                 try {
-                    var t = j.resolve(1),
+                    var t = P.resolve(1),
                         e = ((t.constructor = {})[n(0)('species')] = function (t) {
                             t(E, E);
                         });
-                    return (P || 'function' == typeof PromiseRejectionEvent) && t.then(E) instanceof e && 0 !== L.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                    return (j || 'function' == typeof PromiseRejectionEvent) && t.then(E) instanceof e && 0 !== L.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                 } catch (t) {}
             })(),
             T = function (t) {
@@ -1204,13 +1204,13 @@
                     if (
                         (a &&
                             ((e = x(function () {
-                                P
+                                j
                                     ? k.emit('unhandledRejection', o, t)
                                     : (n = u.onunhandledrejection)
                                     ? n({promise: t, reason: o})
                                     : (r = u.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = P || I(t) ? 2 : 1)),
+                            (t._h = j || I(t) ? 2 : 1)),
                         (t._a = void 0),
                         a && e.e)
                     )
@@ -1223,7 +1223,7 @@
             D = function (t) {
                 g.call(u, function () {
                     var e;
-                    P ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
+                    j ? k.emit('rejectionHandled', t) : (e = u.onrejectionhandled) && e({promise: t, reason: t._v});
                 });
             },
             R = function (t) {
@@ -1253,8 +1253,8 @@
                 }
             };
         A ||
-            ((j = function (t) {
-                h(this, j, 'Promise', '_h'), d(t), r.call(this);
+            ((P = function (t) {
+                h(this, P, 'Promise', '_h'), d(t), r.call(this);
                 try {
                     t(s(C, this, 1), s(R, this, 1));
                 } catch (t) {
@@ -1263,13 +1263,13 @@
             }),
             ((r = function (t) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(82)(j.prototype, {
+            }).prototype = n(82)(P.prototype, {
                 then: function (t, e) {
-                    var n = O(v(this, j));
+                    var n = O(v(this, P));
                     return (
                         (n.ok = 'function' != typeof t || t),
                         (n.fail = 'function' == typeof e && e),
-                        (n.domain = P ? k.domain : void 0),
+                        (n.domain = j ? k.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && $(this, !1),
@@ -1285,10 +1285,10 @@
                 (this.promise = t), (this.resolve = s(C, t, 1)), (this.reject = s(R, t, 1));
             }),
             (_.f = O = function (t) {
-                return t === j || t === i ? new a(t) : o(t);
+                return t === P || t === i ? new a(t) : o(t);
             })),
-            f(f.G + f.W + f.F * !A, {Promise: j}),
-            n(28)(j, 'Promise'),
+            f(f.G + f.W + f.F * !A, {Promise: P}),
+            n(28)(P, 'Promise'),
             n(83)('Promise'),
             (i = n(7).Promise),
             f(f.S + f.F * !A, 'Promise', {
@@ -1299,7 +1299,7 @@
             }),
             f(f.S + f.F * (c || !A), 'Promise', {
                 resolve: function (t) {
-                    return w(c && this === i ? j : this, t);
+                    return w(c && this === i ? P : this, t);
                 },
             }),
             f(
@@ -1308,7 +1308,7 @@
                         !(
                             A &&
                             n(84)(function (t) {
-                                j.all(t).catch(E);
+                                P.all(t).catch(E);
                             })
                         ),
                 'Promise',
@@ -1771,55 +1771,58 @@
         var i,
             c = new o.default();
         Object.keys(r.default).forEach(function (t) {
-            var e = t.slice(-4);
-            document
-                .querySelector('#lower-section')
-                .insertAdjacentHTML(
-                    'beforebegin',
-                    '\n            <div class="container" id="races-container">\n                <section>\n                    <h1>'
-                        .concat(
-                            e,
-                            ' FIA Formula One World Championship&trade; Races</h1>\n                    <p>Choose your race below to see all available hotel options.</p>\n                    <fieldset>\n                        <h3 class="season">'
-                        )
-                        .concat(e, ' Races</h3>\n                        <div class="races-')
-                        .concat(e, ' races">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            ')
-                ),
-                (function (t, e) {
-                    var n = document.querySelector('.races-'.concat(e));
-                    Object.keys(t).forEach(function (r) {
-                        c.checkForPastDate(t[r].race_expiry) ||
-                            n.insertAdjacentHTML(
-                                'beforeend',
-                                '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
-                                    .concat(t[r].days, '</div>\n                            <div class="month">')
-                                    .concat(
-                                        t[r].month,
-                                        '</div>\n                        </div>\n                        <div class="race-location">\n                            <img class="country-flag" src="'
-                                    )
-                                    .concat(t[r].country_flag_url, '" alt="')
-                                    .concat(
-                                        t[r].flag_alt_text,
-                                        ' flag">\n                            <div class="race-details">\n                                <div class="name">\n                                <span id="F1-title">Formula 1</span>\n                                <span id="mobile-year">'
-                                    )
-                                    .concat(e, '</span>\n                                <span id="sponsor">')
-                                    .concat(t[r].sponsor, '</span>\n                                ')
-                                    .concat(t[r].name, '\n                                <span id="desktop-year">')
-                                    .concat(e, '</span>\n                                </div>\n                                <div class="location">')
-                                    .concat(
-                                        t[r].location,
-                                        '</div>\n                            </div>\n                        </div>\n                    </div>\n                <a class="book-btn" target="_blank" href="'
-                                    )
-                                    .concat(
-                                        t[r].book_url,
-                                        '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n                <a class="mobile-book-btn" target="_blank" href="'
-                                    )
-                                    .concat(
-                                        t[r].book_url,
-                                        '"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n            </div>\n        '
-                                    )
-                            );
-                    });
-                })(r.default[t], e);
+            if (!c.checkForPastDate(r.default[t].season_expiry)) {
+                var e = t.slice(-4);
+                document
+                    .querySelector('#lower-section')
+                    .insertAdjacentHTML(
+                        'beforebegin',
+                        '\n            <div class="container" id="races-container">\n                <section>\n                    <h1>'
+                            .concat(
+                                e,
+                                ' FIA Formula One World Championship&trade; Races</h1>\n                    <p>Choose your race below to see all available hotel options.</p>\n                    <fieldset>\n                        <h3 class="season">'
+                            )
+                            .concat(e, ' Races</h3>\n                        <div class="races-')
+                            .concat(e, ' races">\n                        </div>\n                    </fieldset>\n                </section>\n            </div>\n            ')
+                    ),
+                    (function (t, e) {
+                        var n = document.querySelector('.races-'.concat(e));
+                        Object.keys(t).forEach(function (r) {
+                            'season_expiry' !== r &&
+                                (c.checkForPastDate(t[r].race_expiry) ||
+                                    n.insertAdjacentHTML(
+                                        'beforeend',
+                                        '\n                <div class="race">\n                    <div class="race-info">\n                        <div class="date">\n                            <div class="days">'
+                                            .concat(t[r].days, '</div>\n                            <div class="month">')
+                                            .concat(
+                                                t[r].month,
+                                                '</div>\n                        </div>\n                        <div class="race-location">\n                            <img class="country-flag" src="'
+                                            )
+                                            .concat(t[r].country_flag_url, '" alt="')
+                                            .concat(
+                                                t[r].flag_alt_text,
+                                                ' flag">\n                            <div class="race-details">\n                                <div class="name">\n                                <span id="F1-title">Formula 1</span>\n                                <span id="mobile-year">'
+                                            )
+                                            .concat(e, '</span>\n                                <span id="sponsor">')
+                                            .concat(t[r].sponsor, '</span>\n                                ')
+                                            .concat(t[r].name, '\n                                <span id="desktop-year">')
+                                            .concat(e, '</span>\n                                </div>\n                                <div class="location">')
+                                            .concat(
+                                                t[r].location,
+                                                '</div>\n                            </div>\n                        </div>\n                    </div>\n                <a class="book-btn" target="_blank" href="'
+                                            )
+                                            .concat(
+                                                t[r].book_url,
+                                                '">Book Rooms <svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n                <a class="mobile-book-btn" target="_blank" href="'
+                                            )
+                                            .concat(
+                                                t[r].book_url,
+                                                '"><svg class="chevron" fill="none" height="12" id="i-chevron-right" stroke="#C21E26" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <path d="M4.5 10 L9 6 4.5 .75"></path> </svg></a>\n            </div>\n        '
+                                            )
+                                    ));
+                        });
+                    })(r.default[t], e);
+            }
         }),
             (document.querySelector('.footer-nav ul li:last-child a').href = 'https://events.hotelsforhope.com/v6/support?siteId=46973'),
             document.querySelector('.more').addEventListener('click', function () {
@@ -1931,8 +1934,8 @@
                 k = !1,
                 M = t.prototype,
                 L = M[f] || M['@@iterator'] || (m && M[m]),
-                j = L || b(m),
-                P = m ? (S ? b('entries') : j) : void 0,
+                P = L || b(m),
+                j = m ? (S ? b('entries') : P) : void 0,
                 E = ('Array' == e && M.entries) || L;
             if (
                 (E && (x = l(E.call(new t()))) !== Object.prototype && x.next && (s(x, w, !0), r || 'function' == typeof x[f] || i(x, f, d)),
@@ -1940,15 +1943,15 @@
                     L &&
                     'values' !== L.name &&
                     ((k = !0),
-                    (j = function () {
+                    (P = function () {
                         return L.call(this);
                     })),
-                (r && !g) || (!p && !k && M[f]) || i(M, f, j),
-                (c[e] = j),
+                (r && !g) || (!p && !k && M[f]) || i(M, f, P),
+                (c[e] = P),
                 (c[w] = d),
                 m)
             )
-                if (((y = {values: S ? j : b('values'), keys: v ? j : b('keys'), entries: P}), g)) for (_ in y) _ in M || a(M, _, y[_]);
+                if (((y = {values: S ? P : b('values'), keys: v ? P : b('keys'), entries: j}), g)) for (_ in y) _ in M || a(M, _, y[_]);
                 else o(o.P + o.F * (p || k), e, y);
             return y;
         };
@@ -2089,6 +2092,7 @@
         var o = new ((r = n(37)) && r.__esModule ? r : {default: r}).default(),
             a = {
                 races_2021: {
+                    season_expiry: '2021-12-06',
                     australia: {
                         days: '19-21',
                         month: 'Mar',
@@ -2353,13 +2357,13 @@
                     }
                     for (var x, b = '', w = 0, S = 0; S < y.length; S++) {
                         _ = y[S];
-                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), L = [], j = 1; j < _.length; j++) L.push(void 0 === (x = _[j]) ? x : String(x));
-                        var P = _.groups;
+                        for (var k = String(_[0]), M = s(l(i(_.index), p.length), 0), L = [], P = 1; P < _.length; P++) L.push(void 0 === (x = _[P]) ? x : String(x));
+                        var j = _.groups;
                         if (d) {
                             var E = [k].concat(L, M, p);
-                            void 0 !== P && E.push(P);
+                            void 0 !== j && E.push(j);
                             var O = String(e.apply(void 0, E));
-                        } else O = m(k, p, M, L, P, e);
+                        } else O = m(k, p, M, L, j, e);
                         M >= w && ((b += p.slice(w, M) + O), (w = M + k.length));
                     }
                     return b + p.slice(w);

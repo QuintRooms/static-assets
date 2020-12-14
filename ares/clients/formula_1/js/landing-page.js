@@ -10,6 +10,7 @@ const utilities = new Utilities();
 function populateRaces(obj, year) {
     const races_list = document.querySelector(`.races-${year}`);
     Object.keys(obj).forEach((i) => {
+        if (i === 'season_expiry') return;
         if (utilities.checkForPastDate(obj[i].race_expiry)) return;
         races_list.insertAdjacentHTML(
             'beforeend',
@@ -44,6 +45,7 @@ function populateRaces(obj, year) {
 
 function populateRaceSeasons() {
     Object.keys(races).forEach((i) => {
+        if (utilities.checkForPastDate(races[i].season_expiry)) return;
         const year = i.slice(-4);
         document.querySelector('#lower-section').insertAdjacentHTML(
             'beforebegin',

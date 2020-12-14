@@ -3,6 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 export default {
     // races_2020: {
+    //     season_expiry: '2021-12-13',
     //     russia: {
     //         days: '25-27',
     //         month: 'Sep',
@@ -82,6 +83,7 @@ export default {
     //     // },
     // },
     races_2021: {
+        season_expiry: '2021-12-06',
         australia: {
             days: '19-21',
             month: 'Mar',

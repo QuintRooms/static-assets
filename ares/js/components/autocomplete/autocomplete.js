@@ -51,10 +51,38 @@ export default class Autocomplete {
         this.googleMapsScript();
         this.setAttribute('input#theSubmitButton', 'onClick', '');
         this.setAttribute('input#theCheckIn', 'required', true);
+
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
-            this.retreiveDestinationValue();
+            this.retreiveDestinationValueToPrePopulateInput('input#address-input');
+            this.removeCitySarchForEvent();
         }
+    }
+
+    // /**
+    //  *@description creates a node list of elements passed in as a string and sets their display to none.
+    //  *@param string comma seperated selectors.
+    //  */
+    // hideArnSearchElements(selectors) {
+    //     if (this.page_name !== 'search-results') return;
+    //     const elements = document.querySelectorAll(selectors);
+
+    //     elements.forEach((element) => {
+    //         element.style.display = 'none';
+    //     });
+    // }
+
+    /**
+     *@description removes the search input for event sites thus keeping the user in the city of the event.
+     */
+    removeCitySarchForEvent() {
+        if (this.page_name !== 'search-results') return;
+        if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
+        // utilities.waitForSelectorInDOM('.algolia-places').then(() => {
+        document.querySelector('input#address-input').style.display = 'none';
+        // document.querySelector('.algolia-places').style.display = 'none';
+        document.querySelector('#theSearchBox').firstChild.style.display = 'none';
+        // });
     }
 
     /**
@@ -214,7 +242,7 @@ export default class Autocomplete {
      *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
      *@params - String - DOM selector, input to prepopulate destination string value
      */
-    retreiveDestinationValue(input) {
+    retreiveDestinationValueToPrePopulateInput(input) {
         if (this.page_name !== 'search-results') return;
 
         const params = new URL(window.location.href);
@@ -374,22 +402,9 @@ export default class Autocomplete {
             }
 
             // console.log(decodeURIComponent(`${this.url.toString()}${this.params.toString()}`));
-            // console.log(`${this.url.toString()}${this.params.toString()}`);
+            console.log(`${this.url.toString()}${this.params.toString()}`);
             // window.alert(`${this.url.toString()}${this.params.toString()}`);
-            // window.location.href = decodeURIComponent(`${this.url.toString()}${this.params.toString()}`);
+            window.location.href = decodeURIComponent(`${this.url.toString()}${this.params.toString()}`);
         });
-
-        /* Values to have on submit:
-            - F̶i̶l̶t̶e̶r̶s̶:̶ ̶A̶m̶e̶n̶i̶t̶i̶t̶e̶s̶,̶ ̶S̶t̶a̶r̶s̶,̶ ̶P̶r̶o̶p̶e̶r̶t̶y̶t̶y̶p̶e̶s̶
-            - D̶e̶s̶t̶i̶n̶a̶t̶i̶o̶n̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ ̶c̶h̶a̶n̶g̶e̶d̶)̶ 
-            - C̶h̶e̶c̶k̶ ̶i̶n̶
-            - N̶i̶g̶h̶t̶s̶ (nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');)
-            - R̶o̶o̶m̶s̶
-            - A̶d̶u̶l̶t̶s̶
-            - L̶a̶t̶/̶l̶n̶g̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ c̶h̶a̶n̶g̶e̶d̶)̶
-            - C̶u̶r̶r̶e̶n̶c̶y̶ ̶(̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶?̶ ̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶:̶ ̶'̶U̶S̶D̶'̶)̶
-            - O̶p̶t̶i̶o̶n̶a̶l̶ ̶H̶o̶t̶e̶l̶ ̶N̶a̶m̶e̶:̶ ̶S̶e̶a̶r̶c̶h̶ ̶r̶e̶s̶u̶l̶t̶s̶ ̶o̶n̶l̶y̶
-            - E̶v̶e̶n̶t̶ ̶P̶a̶r̶a̶m̶s̶ ̶(̶s̶e̶e̶ ̶o̶b̶j̶e̶c̶t̶ ̶i̶n̶ ̶c̶o̶n̶s̶t̶r̶u̶c̶t̶o̶r̶)̶
-            - M̶e̶m̶b̶e̶r̶ ̶T̶o̶k̶e̶n̶ ̶(̶C̶U̶G̶ ̶o̶n̶l̶y̶)̶ */
     }
 }

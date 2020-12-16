@@ -7,9 +7,9 @@ jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(()
 jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
-jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValue').mockImplementation(() => 'Austin, TX');
+jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
 
-document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><div id="theSearchBox"><span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
 const autocomplete = new Autocomplete(
     {
@@ -50,6 +50,46 @@ describe('Constructor', () => {
         expect(autocomplete.googleMapsScript).toBeCalledTimes(1);
         expect(autocomplete.setAttribute).toBeCalledTimes(2);
         expect(autocomplete.getEventOriginalParams).toBeCalledTimes(0);
+    });
+});
+
+/* - - - - - - removeCitySarchForEvent - - - - - -*/
+
+describe('removeCitySarchForEvent', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = '';
+        jest.restoreAllMocks();
+    });
+
+    it('Sets the input and surrounding span display to none', () => {
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
+
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><div id="theSearchBox"><span style=>City Search:</span><input type="search" id="address-input" placeholder="Destination" style= required="true" value=""></div>`;
+
+        // eslint-disable-next-line no-unused-vars
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+        // new_autocomplete.removeCitySarchForEvent();
+
+        expect(document.querySelector('input#address-input').getAttribute('style')).toEqual('display: none;');
+        expect(document.querySelector('#theSearchBox span').style.display).toEqual('none');
     });
 });
 
@@ -158,7 +198,8 @@ describe('getDestination', () => {
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValue').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'removeCitySarchForEvent').mockImplementation(() => true);
 
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;nights=3&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;destination=Austin, TX, USA"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
 
@@ -390,7 +431,8 @@ describe('getOptionalHotelName', () => {
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValue').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'removeCitySarchForEvent').mockImplementation(() => true);
 
         const new_autocomplete = new Autocomplete(
             {
@@ -420,9 +462,9 @@ describe('getOptionalHotelName', () => {
     });
 });
 
-/* - - - - - - retreiveDestinationValue - - - - - -*/
+/* - - - - - - retreiveDestinationValueToPrePopulateInput - - - - - -*/
 
-describe('retreiveDestinationValue', () => {
+describe('retreiveDestinationValueToPrePopulateInput', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
         jest.restoreAllMocks();
@@ -441,6 +483,7 @@ describe('retreiveDestinationValue', () => {
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAndClearInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeCitySarchForEvent').mockImplementation(() => true);
 
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><span itemprop="addressLocality">Austin</span><span itemprop="addressRegion">TX</span>`;
 
@@ -480,7 +523,7 @@ describe('retreiveDestinationValue', () => {
             'search-results'
         );
 
-        expect(new_autocomplete.retreiveDestinationValue('input#address-input')).toEqual('Austin, Texas');
+        expect(new_autocomplete.retreiveDestinationValueToPrePopulateInput('input#address-input')).toEqual('Austin, Texas');
     });
 
     it('Returns the destination string from original params', () => {
@@ -501,8 +544,8 @@ describe('retreiveDestinationValue', () => {
             `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
         );
 
-        expect(new_autocomplete.retreiveDestinationValue('input#address-input')).toEqual('Austin, TX');
-        expect(new_autocomplete.retreiveDestinationValue('input#address-input')).not.toEqual('Austin, Texas');
+        expect(new_autocomplete.retreiveDestinationValueToPrePopulateInput('input#address-input')).toEqual('Austin, TX');
+        expect(new_autocomplete.retreiveDestinationValueToPrePopulateInput('input#address-input')).not.toEqual('Austin, Texas');
     });
 
     it('Returns the destination string from the first property address span tag', () => {
@@ -522,7 +565,7 @@ describe('retreiveDestinationValue', () => {
         window.location = new URL(
             `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
         );
-        expect(new_autocomplete.retreiveDestinationValue('input#address-input')).toEqual('Austin, TX');
+        expect(new_autocomplete.retreiveDestinationValueToPrePopulateInput('input#address-input')).toEqual('Austin, TX');
     });
 });
 
@@ -635,12 +678,16 @@ describe('submitListener', () => {
     });
 
     it('Calls appendParamsToURL twice when page is search-results', () => {
+        // Constructor mocks
         jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValue').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
+        jest.spyOn(Autocomplete.prototype, 'removeCitySarchForEvent').mockImplementation(() => true);
+
+        // Submit mocks
         jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
         jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => 'Airport Shuttle');

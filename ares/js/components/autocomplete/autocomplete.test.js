@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import Autocomplete from './autocomplete';
 
 jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
@@ -18,7 +19,8 @@ const autocomplete = new Autocomplete(
     'landing-page'
 );
 
-/* - - - - - - CONSTRUCTOR - - - - - -*/
+/* - - - - - - Constructor - - - - - -*/
+
 describe('Constructor', () => {
     afterAll(() => {
         jest.restoreAllMocks();
@@ -43,14 +45,15 @@ describe('Constructor', () => {
         expect(autocomplete.sumbitListener).toBeCalledTimes(1);
         expect(autocomplete.sumbitListener).toReturnWith(true);
         expect(autocomplete.hideArnSearchInput).toBeCalledTimes(1);
-        expect(autocomplete.insertNewSearchInput).toBeCalledTimes(1);
+        expect(autocomplete.insertNewSearchInput).toBeCalledTimes(2);
         expect(autocomplete.googleMapsScript).toBeCalledTimes(1);
         expect(autocomplete.setAttribute).toBeCalledTimes(1);
-        // expect(autocomplete.getEventOriginalParams).toBeCalledTimes(1);
+        expect(autocomplete.getEventOriginalParams).toBeCalledTimes(0);
     });
 });
 
 // /* - - - - - - hideArnSearchInput - - - - - -*/
+
 describe('hideArnSearchInput', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
@@ -75,6 +78,7 @@ describe('hideArnSearchInput', () => {
 });
 
 /* - - - - - - insertNewSearchInput - - - - - -*/
+
 describe('insertNewSearchInput', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
@@ -100,7 +104,7 @@ describe('insertNewSearchInput', () => {
         </div>`;
 
         autocomplete.insertNewSearchInput(
-            '.RootBody',
+            'landing-page',
             'div#CitySearchContainer span',
             'beforeEnd',
             '<input type="search" id="address-input" placeholder="Destination" required="true">'
@@ -184,9 +188,60 @@ describe('getDestination', () => {
     });
 });
 
-// // test googleMapsScript() here
+/* - - - - - - getFirstSuggestionOnPressOfEnter - - - - - -*/
 
-/* - - - - - - getEventParams - - - - - -*/
+// TODO Add more indepth testing for this method
+describe('getFirstSuggestionOnPressOfEnter', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    it('is called', () => {
+        document.body.innerHTML = `<div class="pac-container pac-logo" style="width: 241px; position: absolute; left: 600px; top: 379px;"><div class="pac-item"><span class="pac-icon pac-icon-marker"></span><span class="pac-item-query"><span class="pac-matched">Austin</span></span><span><span class="pac-matched">TX</span>, USA</span></div></div><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+        expect(autocomplete.getFirstSuggestionOnPressOfEnter(document.querySelector('input#address-input'))).toBeUndefined();
+    });
+});
+
+/* - - - - - - googleMapsScript - - - - - -*/
+
+// describe('googleMapsScript', () => {
+//     beforeAll(() => {
+//         document.body.innerHTML = '';
+//     });
+
+//     afterAll(() => {
+//         document.body.innerHTML = '';
+//         jest.restoreAllMocks();
+//     });
+
+//     window.google = {
+//         maps: {
+//             places: {
+//                 Autocomplete() {
+//                     return {addListener: jest.fn()};
+//                 },
+//             },
+//             event: {
+//                 addListener: jest.fn(),
+//             },
+//             Autocomplete: class {},
+//         },
+//     };
+
+//     it('Calls the getFirstSuggestionOnPressOfEnter method once', () => {
+//         jest.spyOn(Autocomplete.prototype, 'getFirstSuggestionOnPressOfEnter').mockImplementation(() => true);
+
+//         autocomplete.googleMapsScript();
+//         expect(autocomplete.getFirstSuggestionOnPressOfEnter).toBeCalledTimes(1);
+//         expect(autocomplete.getFirstSuggestionOnPressOfEnter).not.toBeCalledTimes(2);
+//     });
+// });
+
+/* - - - - - - getEventOriginalParams - - - - - -*/
 
 describe('getEventOriginalParams', () => {
     beforeAll(() => {
@@ -303,6 +358,8 @@ describe('applyFilters', () => {
     });
 });
 
+/* - - - - - - getOptionalHotelName - - - - - -*/
+
 describe('getOptionalHotelName', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
@@ -336,6 +393,7 @@ describe('getOptionalHotelName', () => {
                 site_id: '60279',
                 directory_name: 'ares_child',
                 distance_unit: 'useMiles',
+                site_type: 'lodging',
             },
             'search-results'
         );
@@ -350,12 +408,142 @@ describe('getOptionalHotelName', () => {
                 site_id: '60279',
                 directory_name: 'ares_child',
                 distance_unit: 'useMiles',
+                site_type: 'lodging',
             },
             'search-results'
         );
         expect(new_autocomplete.getOptionalHotelName('#hotelName')).toEqual('Hilton');
     });
 });
+
+/* - - - - - - prepopulateDestinationInput - - - - - -*/
+
+describe('prepopulateDestinationInput', () => {
+    beforeAll(() => {
+        document.body.innerHTML = '';
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = '';
+        jest.restoreAllMocks();
+    });
+
+    it('Returns the destination string from url params', () => {
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+
+        delete window.location;
+        window.location = new URL(
+            `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&destination=Austin,+Texas&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
+        );
+
+        expect(new_autocomplete.getEventOriginalParams).toBeCalledTimes(1);
+        expect(new_autocomplete.prepopulateDestinationInput('input#address-input')).toEqual('Austin, Texas');
+    });
+
+    it('Returns the destination string from original params', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;destination=Austin, TX&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+
+        delete window.location;
+        window.location = new URL(
+            `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
+        );
+
+        expect(new_autocomplete.prepopulateDestinationInput('input#address-input')).toEqual('Austin, TX');
+        expect(new_autocomplete.prepopulateDestinationInput('input#address-input')).not.toEqual('Austin, Texas');
+    });
+
+    it('Returns the destination string from the first property address span tag', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><span itemprop="addressLocality">Austin</span><span itemprop="addressRegion">TX</span>`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+
+        delete window.location;
+        window.location = new URL(
+            `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
+        );
+        expect(new_autocomplete.prepopulateDestinationInput('input#address-input')).toEqual('Austin, TX');
+    });
+
+    it('Sets the value of the input with the destination', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+
+        delete window.location;
+        window.location = new URL(
+            `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&destination=Austin,+Texas&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
+        );
+        new_autocomplete.prepopulateDestinationInput('input#address-input');
+        expect(document.querySelector('input#address-input').value).toEqual('Austin, Texas');
+    });
+
+    it('On click of the input, the value is cleared', () => {
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value="">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+
+        delete window.location;
+        window.location = new URL(
+            `https://events.hotelsforhope.com/v6/?type=geo&siteid=62686&pagesize=10&useMiles=&longitude=-97.7437&latitude=30.2711&destination=Austin,+Texas&checkin=11/19/2021&nights=1&rooms=1&adults=2&currency=USD`
+        );
+        new_autocomplete.prepopulateDestinationInput('input#address-input');
+        document.querySelector('input#address-input').click();
+        expect(document.querySelector('input#address-input').value).toEqual('');
+    });
+});
+
+/* - - - - - - appendParamsToUrl - - - - - -*/
 
 // describe('appendParamsToUrl', () => {
 //     beforeAll(() => {
@@ -382,31 +570,39 @@ describe('getOptionalHotelName', () => {
 //         ).toThrow();
 //     });
 
-//     it('Builds the URL with valid params', () => {
-//         expect(
-//             autocomplete.appendParamsToURL({
-//                 longitude: {
-//                     key: 'longitude',
-//                     value: '3',
-//                 },
-//                 rooms: {
-//                     key: 'rooms',
-//                     value: '2',
-//                 },
-//             })
-//         ).toEqual();
-//     });
+//     // it('Builds the URL with valid params', () => {
+//     //     expect(
+//     //         autocomplete.appendParamsToURL({
+//     //             longitude: {
+//     //                 key: 'longitude',
+//     //                 value: '3',
+//     //             },
+//     //             rooms: {
+//     //                 key: 'rooms',
+//     //                 value: '2',
+//     //             },
+//     //         })
+//     //     ).toEqual();
+//     // });
 // });
 
 // /* - - - - - - submitListener - - - - - -*/
 
 describe('submitListener', () => {
+    beforeAll(() => {
+        document.body.innerHTML = ``;
+    });
+
     afterAll(() => {
         jest.restoreAllMocks();
         document.body.innerHTML = ``;
     });
 
-    // document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
+    beforeEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
 
     it("Calls it's methods correct amount of times when submit event occurs ", () => {
         jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
@@ -422,5 +618,31 @@ describe('submitListener', () => {
         expect(autocomplete.applyFilters).toBeCalledTimes(3);
         expect(autocomplete.applyFilters).toReturnWith('Airport Shuttle');
         expect(autocomplete.appendParamsToURL).toBeCalledTimes(1);
+    });
+
+    it('Calls appendParamsToURL twice when page is search-results', () => {
+        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
+        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => 'Airport Shuttle');
+        jest.spyOn(Autocomplete.prototype, 'getOptionalHotelName').mockImplementation(() => 'Hilton');
+
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020">`;
+
+        const new_autocomplete = new Autocomplete(
+            {
+                site_id: '60279',
+                directory_name: 'ares_child',
+                distance_unit: 'useMiles',
+                site_type: 'lodging',
+            },
+            'search-results'
+        );
+        document.getElementById('theOtherSubmitButton').click();
+        expect(new_autocomplete.appendParamsToURL).toBeCalledTimes(2);
     });
 });

@@ -29,15 +29,28 @@ export default class Autocomplete {
         this.site_config = site_config;
         this.page_name = page_name;
         this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        this.url = new URL(`${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`);
+        this.url = new URL(`${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}&`);
         this.params = new URLSearchParams(this.url.search.slice(1));
 
         this.sumbitListener();
         this.hideArnSearchInput('input#city');
-        this.insertNewSearchInput('.RootBody', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required="true" />');
+        this.insertNewSearchInput(
+            'landing-page',
+            'div#CitySearchContainer span',
+            'beforeEnd',
+            '<input type="search" id="address-input" placeholder="Destination" required="true" />'
+        );
+
+        this.insertNewSearchInput(
+            'search-results',
+            'div#theSearchBox',
+            'afterBegin',
+            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
+        );
+
         this.googleMapsScript();
         this.setAttribute('input#theSubmitButton', 'onClick', '');
-        if (this.page_name === 'search-results') {
+        if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
         }
     }
@@ -65,7 +78,7 @@ export default class Autocomplete {
      *@param string html - markup for new element.
      */
     insertNewSearchInput(page, selector, adjacent_location, html) {
-        if (!document.querySelector(page)) return;
+        if (this.page_name !== page) return;
         document.querySelector(selector).insertAdjacentHTML(adjacent_location, html);
     }
 
@@ -195,7 +208,33 @@ export default class Autocomplete {
         return document.querySelector(selector).value;
     }
 
-    // TODO refactor to use for in loop
+    /**
+     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@params - String - DOM selector, input to prepopulate destination string value
+     */
+    prepopulateDestinationInput(input) {
+        if (this.page_name !== 'search-results') return;
+
+        const params = new URL(window.location.href);
+        const search_params = new URLSearchParams(params.search);
+        let destination;
+
+        if (search_params.has('destination')) {
+            destination = search_params.get('destination');
+        } else if (this.original_params.has('destination')) {
+            destination = this.original_params.get('destination');
+        } else {
+            destination = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${document.querySelector('span[itemprop="addressRegion"]').textContent}`;
+        }
+        const input_to_fill = document.querySelector(input); // 'input#address-input'
+        input_to_fill.value = destination;
+
+        input_to_fill.addEventListener('click', () => {
+            input_to_fill.value = '';
+        });
+        return destination;
+    }
+
     /**
      * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
      * @param object paramObject - an object containing one or more parameters to append to a url.
@@ -213,11 +252,11 @@ export default class Autocomplete {
                 })
     */
     appendParamsToURL(paramObject) {
-        Object.keys(paramObject).forEach((obj) => {
+        for (const obj in paramObject) {
             if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined && paramObject[obj].key !== undefined) {
                 this.params.append(paramObject[obj].key, paramObject[obj].value);
             }
-        });
+        }
     }
 
     sumbitListener() {
@@ -229,7 +268,6 @@ export default class Autocomplete {
             this.amenities = this.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities');
             this.property_classes = this.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating');
             this.property_types = this.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType');
-
             this.appendParamsToURL({
                 longitude: {
                     key: 'lognitude',
@@ -269,7 +307,7 @@ export default class Autocomplete {
                 },
                 propertyClasses: {
                     key: 'propteryclasses',
-                    value: this.proptery_classes,
+                    value: this.property_classes,
                 },
                 propertyTypes: {
                     key: 'propertytypes',
@@ -279,9 +317,46 @@ export default class Autocomplete {
                     key: 'hotelname',
                     value: this.getOptionalHotelName('input#hotelName'),
                 },
+                memberToken: {
+                    key: 'memberToken',
+                    value: utilities.getMetaTagContent('memberToken'),
+                },
             });
-            console.log(decodeURIComponent(`${this.url.toString()}${this.params.toString()}`));
-            console.log(`${this.url.toString()}${this.params.toString()}`);
+            if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
+                this.appendParamsToURL({
+                    properties: {
+                        key: 'properties',
+                        value: this.properties,
+                    },
+                    utm_source: {
+                        key: 'utm_source',
+                        value: this.utm_source,
+                    },
+                    locationLabel: {
+                        key: 'locationlabel',
+                        value: this.locationlabel,
+                    },
+                    radius: {
+                        key: 'radius',
+                        value: this.radius,
+                    },
+                    groupId: {
+                        key: 'groupid',
+                        value: this.groupid,
+                    },
+                    cid: {
+                        key: 'cid',
+                        value: this.cid,
+                    },
+                    points: {
+                        key: 'points',
+                        value: this.points,
+                    },
+                });
+            }
+
+            // console.log(decodeURIComponent(`${this.url.toString()}${this.params.toString()}`));
+            // console.log(`${this.url.toString()}${this.params.toString()}`);
             // window.alert(`${this.url.toString()}${this.params.toString()}`);
             // window.location.href = decodeURIComponent(`${this.url.toString()}${this.params.toString()}`);
         });
@@ -295,8 +370,8 @@ export default class Autocomplete {
             - A̶d̶u̶l̶t̶s̶
             - L̶a̶t̶/̶l̶n̶g̶ ̶(̶s̶e̶t̶ ̶o̶n̶ ̶p̶l̶a̶c̶e̶ c̶h̶a̶n̶g̶e̶d̶)̶
             - C̶u̶r̶r̶e̶n̶c̶y̶ ̶(̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶?̶ ̶u̶t̶i̶l̶i̶t̶i̶e̶s̶.̶g̶e̶t̶M̶e̶t̶a̶T̶a̶g̶C̶o̶n̶t̶e̶n̶t̶(̶'̶c̶u̶r̶r̶e̶n̶c̶y̶'̶)̶ ̶:̶ ̶'̶U̶S̶D̶'̶)̶
-            - Optional Hotel Name: Search results only
+            - O̶p̶t̶i̶o̶n̶a̶l̶ ̶H̶o̶t̶e̶l̶ ̶N̶a̶m̶e̶:̶ ̶S̶e̶a̶r̶c̶h̶ ̶r̶e̶s̶u̶l̶t̶s̶ ̶o̶n̶l̶y̶
             - E̶v̶e̶n̶t̶ ̶P̶a̶r̶a̶m̶s̶ ̶(̶s̶e̶e̶ ̶o̶b̶j̶e̶c̶t̶ ̶i̶n̶ ̶c̶o̶n̶s̶t̶r̶u̶c̶t̶o̶r̶)̶
-            - Member Token (CUG only) */
+            - M̶e̶m̶b̶e̶r̶ ̶T̶o̶k̶e̶n̶ ̶(̶C̶U̶G̶ ̶o̶n̶l̶y̶)̶ */
     }
 }

@@ -208,38 +208,53 @@ describe('getFirstSuggestionOnPressOfEnter', () => {
 
 /* - - - - - - googleMapsScript - - - - - -*/
 
-// describe('googleMapsScript', () => {
-//     beforeAll(() => {
-//         document.body.innerHTML = '';
-//     });
+describe('googleMapsScript', () => {
+    const setup_google_mock = () => {
+        const google = {
+            maps: {
+                places: {
+                    Autocomplete: class {},
+                },
+                event: {
+                    addListener: jest.fn(),
+                },
+            },
+        };
+        global.window.google = google;
+    };
 
-//     afterAll(() => {
-//         document.body.innerHTML = '';
-//         jest.restoreAllMocks();
-//     });
+    beforeAll(() => {
+        document.body.innerHTML = '';
+        setup_google_mock();
+    });
 
-//     window.google = {
-//         maps: {
-//             places: {
-//                 Autocomplete() {
-//                     return {addListener: jest.fn()};
-//                 },
-//             },
-//             event: {
-//                 addListener: jest.fn(),
-//             },
-//             Autocomplete: class {},
-//         },
-//     };
+    afterAll(() => {
+        document.body.innerHTML = '';
+        jest.restoreAllMocks();
+    });
 
-//     it('Calls the getFirstSuggestionOnPressOfEnter method once', () => {
-//         jest.spyOn(Autocomplete.prototype, 'getFirstSuggestionOnPressOfEnter').mockImplementation(() => true);
+    // window.google = {
+    //     maps: {
+    //         places: {
+    //             Autocomplete() {
+    //                 return {addListener: jest.fn()};
+    //             },
+    //         },
+    //         event: {
+    //             addListener: jest.fn(),
+    //         },
+    //         Autocomplete: class {},
+    //     },
+    // };
 
-//         autocomplete.googleMapsScript();
-//         expect(autocomplete.getFirstSuggestionOnPressOfEnter).toBeCalledTimes(1);
-//         expect(autocomplete.getFirstSuggestionOnPressOfEnter).not.toBeCalledTimes(2);
-//     });
-// });
+    it('Calls the getFirstSuggestionOnPressOfEnter method once', () => {
+        jest.spyOn(Autocomplete.prototype, 'getFirstSuggestionOnPressOfEnter').mockImplementation(() => true);
+
+        autocomplete.googleMapsScript();
+        expect(autocomplete.getFirstSuggestionOnPressOfEnter).toBeCalledTimes(1);
+        expect(autocomplete.getFirstSuggestionOnPressOfEnter).not.toBeCalledTimes(2);
+    });
+});
 
 /* - - - - - - getEventOriginalParams - - - - - -*/
 

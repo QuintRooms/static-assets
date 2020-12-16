@@ -150,7 +150,6 @@ export default class Autocomplete {
         google.maps.event.addListener(autocomplete, 'place_changed', () => {
             const place = autocomplete.getPlace();
             console.log(place);
-            console.log('lat: ', place.geometry.location.lat(), 'lng: ', place.geometry.location.lng());
             this.lat = place.geometry.location.lat();
             this.lng = place.geometry.location.lng();
             this.destination = this.getDestination('input#address-input');
@@ -212,7 +211,7 @@ export default class Autocomplete {
      *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
      *@params - String - DOM selector, input to prepopulate destination string value
      */
-    prepopulateDestinationInput(input) {
+    retreiveDestinationValue(input) {
         if (this.page_name !== 'search-results') return;
 
         const params = new URL(window.location.href);
@@ -226,13 +225,23 @@ export default class Autocomplete {
         } else {
             destination = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${document.querySelector('span[itemprop="addressRegion"]').textContent}`;
         }
-        const input_to_fill = document.querySelector(input); // 'input#address-input'
-        input_to_fill.value = destination;
+
+        this.setAndClearInput(input, destination);
+        return destination;
+    }
+
+    /**
+     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@params - String - DOM selector, input to prepopulate destination string value.
+     *@params - String - Destination, the value that the input is populated with.
+     */
+    setAndClearInput(input, val) {
+        const input_to_fill = document.querySelector(input);
+        input_to_fill.value = val;
 
         input_to_fill.addEventListener('click', () => {
             input_to_fill.value = '';
         });
-        return destination;
     }
 
     /**
@@ -253,7 +262,13 @@ export default class Autocomplete {
     */
     appendParamsToURL(paramObject) {
         for (const obj in paramObject) {
-            if (paramObject[obj].value !== '' && paramObject[obj].value !== null && paramObject[obj].value !== undefined && paramObject[obj].key !== undefined) {
+            if (
+                paramObject[obj].value !== '' &&
+                paramObject[obj].value !== null &&
+                paramObject[obj].value !== undefined &&
+                paramObject[obj].key !== undefined &&
+                paramObject[obj].key !== ''
+            ) {
                 this.params.append(paramObject[obj].key, paramObject[obj].value);
             }
         }

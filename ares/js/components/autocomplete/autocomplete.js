@@ -50,8 +50,10 @@ export default class Autocomplete {
 
         this.googleMapsScript();
         this.setAttribute('input#theSubmitButton', 'onClick', '');
+        this.setAttribute('input#theCheckIn', 'required', true);
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
+            this.retreiveDestinationValue();
         }
     }
 
@@ -86,8 +88,9 @@ export default class Autocomplete {
      *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
      */
     setAttribute(selector, attribute_name, attribute) {
-        const arn_submit_btn = document.querySelector(selector);
-        arn_submit_btn.setAttribute(attribute_name, attribute);
+        if (!document.querySelector(selector)) return;
+        const element = document.querySelector(selector);
+        element.setAttribute(attribute_name, attribute);
     }
 
     /**

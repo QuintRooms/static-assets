@@ -7174,7 +7174,7 @@
                             name: '2021 Scottsdale Auction',
                             display_date: '',
                             end_date: '1/25/2021',
-                            portal_url: 'http://events.hotelsforhope.com/group-event?id=39777&utm_campaign=Barrett-Jackson%20Scottsdale%202021',
+                            portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
                         },
                         {
                             name: '2021 West Palm Beach Auction',

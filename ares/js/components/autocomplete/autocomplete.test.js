@@ -1,5 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import Autocomplete from './autocomplete';
+import Utilities from '../../utilities';
 
 jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
@@ -86,7 +87,6 @@ describe('removeCitySarchForEvent', () => {
             },
             'search-results'
         );
-        // new_autocomplete.removeCitySarchForEvent();
 
         expect(document.querySelector('input#address-input').getAttribute('style')).toEqual('display: none;');
         expect(document.querySelector('#theSearchBox span').style.display).toEqual('none');
@@ -98,13 +98,15 @@ describe('removeCitySarchForEvent', () => {
 describe('hideArnSearchInput', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
+        jest.restoreAllMocks();
     });
 
     afterAll(() => {
         document.body.innerHTML = '';
+        jest.restoreAllMocks();
     });
 
-    it('Positions ARN search input off the page and removes the required attribute', () => {
+    it('Positions ARN search input off the page and removes the required attribute', async () => {
         document.body.innerHTML = `
         <h1 class="RootBody">This is a test</h1>
         <input id="city" required>`;
@@ -113,7 +115,11 @@ describe('hideArnSearchInput', () => {
         <h1 class="RootBody">This is a test</h1>
         <input id="city" style="position: absolute; left: -10000px;">`;
 
+        const util_mock = jest.spyOn(Utilities.prototype, 'waitForSelectorInDOM');
+
         autocomplete.hideArnSearchInput('input#city');
+        expect(util_mock).toHaveBeenCalled();
+        await util_mock.mock.results[0].value;
         expect(document.body.innerHTML).toEqual(new_html);
     });
 });
@@ -349,9 +355,9 @@ describe('getDropdownValue', () => {
     });
 });
 
-/* - - - - - - applyFilters - - - - - -*/
+/* - - - - - - getFilters - - - - - -*/
 
-describe('applyFilters', () => {
+describe('getFilters', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
     });
@@ -383,7 +389,7 @@ describe('applyFilters', () => {
                 </div>
         </div>`;
 
-        expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toEqual('Airport Shuttle,Complimentary Breakfast,Fitness Center');
+        expect(autocomplete.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toEqual('Airport Shuttle,Complimentary Breakfast,Fitness Center');
     });
 
     it('Returns null if no filter boxes are checked', () => {
@@ -398,7 +404,7 @@ describe('applyFilters', () => {
                     </div>
         </div>`;
 
-        expect(autocomplete.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toBeNull();
+        expect(autocomplete.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')).toBeNull();
     });
 });
 
@@ -605,7 +611,10 @@ describe('appendParamsToUrl', () => {
     });
 
     it('Builds the URL with valid params', () => {
-        autocomplete.appendParamsToURL({
+        const url = `https://events.hotelsforhope.com/v6/?type=geo&siteid=12345&pagesize=10&useMiles=`;
+        const built_url = new URL(url);
+
+        autocomplete.appendParamsToURL(built_url, {
             longitude: {
                 key: 'longitude',
                 value: '3',
@@ -616,11 +625,14 @@ describe('appendParamsToUrl', () => {
             },
         });
 
-        expect(autocomplete.params.toString()).toEqual('type=geo&siteid=60279&pagesize=10&useMiles=&longitude=3&rooms=2');
+        expect(built_url.toString()).toEqual(`${url}&longitude=3&rooms=2`);
     });
 
     it("Doesn't append any values or keys that are null, undefined or an empty string", () => {
-        autocomplete.appendParamsToURL({
+        const url = `https://events.hotelsforhope.com/v6/?type=geo&siteid=12345&pagesize=10&useMiles`;
+        const built_url = new URL(url);
+
+        autocomplete.appendParamsToURL(built_url, {
             longitude: {
                 key: 'latitude',
                 value: '3',
@@ -639,7 +651,7 @@ describe('appendParamsToUrl', () => {
             },
         });
 
-        expect(autocomplete.params.toString()).toEqual('type=geo&siteid=60279&pagesize=10&useMiles=&longitude=3&rooms=2&latitude=3');
+        expect(built_url.toString()).toEqual('https://events.hotelsforhope.com/v6/?type=geo&siteid=12345&pagesize=10&useMiles=&latitude=3');
     });
 });
 
@@ -659,22 +671,21 @@ describe('submitListener', () => {
         jest.restoreAllMocks();
     });
 
-    document.body.innerHTML = `<form accept-charset="utf-8" autocomplete="off" id="searchForm"></form>`;
-
     it("Calls it's methods correct amount of times when submit event occurs ", () => {
         jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
-        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => 'Airport Shuttle');
-        jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'getFilters').mockImplementation(() => 'Airport Shuttle');
+        jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => undefined);
 
-        document.body.innerHTML = `<input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020">`;
-        autocomplete.sumbitListener();
-        document.getElementById('theOtherSubmitButton').click();
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;
 
-        expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
-        expect(autocomplete.getDropdownValue).toReturnWith('1');
-        expect(autocomplete.applyFilters).toBeCalledTimes(3);
-        expect(autocomplete.applyFilters).toReturnWith('Airport Shuttle');
+        autocomplete.sumbitListener('form#searchForm', 'submit');
+        document.getElementById('searchForm').submit();
+
         expect(autocomplete.appendParamsToURL).toBeCalledTimes(1);
+        // expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
+        expect(autocomplete.getDropdownValue).toReturnWith('1');
+        expect(autocomplete.getFilters).toBeCalledTimes(3);
+        expect(autocomplete.getFilters).toReturnWith('Airport Shuttle');
     });
 
     it('Calls appendParamsToURL twice when page is search-results', () => {
@@ -690,10 +701,10 @@ describe('submitListener', () => {
         // Submit mocks
         jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getDropdownValue').mockImplementation(() => '1');
-        jest.spyOn(Autocomplete.prototype, 'applyFilters').mockImplementation(() => 'Airport Shuttle');
+        jest.spyOn(Autocomplete.prototype, 'getFilters').mockImplementation(() => 'Airport Shuttle');
         jest.spyOn(Autocomplete.prototype, 'getOptionalHotelName').mockImplementation(() => 'Hilton');
 
-        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020">`;
+        document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;
 
         const new_autocomplete = new Autocomplete(
             {
@@ -704,7 +715,7 @@ describe('submitListener', () => {
             },
             'search-results'
         );
-        document.getElementById('theOtherSubmitButton').click();
+        document.getElementById('searchForm').submit();
         expect(new_autocomplete.appendParamsToURL).toBeCalledTimes(2);
     });
 });

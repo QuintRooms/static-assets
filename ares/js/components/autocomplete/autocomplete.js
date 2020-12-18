@@ -1,5 +1,4 @@
 /* eslint-disable lines-between-class-members */
-/* eslint-disable no-underscore-dangle */
 import Utilities from '../../utilities';
 
 const dayjs = require('dayjs');
@@ -17,22 +16,13 @@ export default class Autocomplete {
     };
     lat = null;
     lng = null;
-    rooms = null;
-    adults = null;
-    check_in_date = null;
-    amenities = null;
-    property_classes = null;
-    property_types = null;
     destination = null;
 
     constructor(site_config, page_name) {
         this.site_config = site_config;
         this.page_name = page_name;
         this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        this.url = new URL(`${window.location}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}&`);
-        this.params = new URLSearchParams(this.url.search.slice(1));
-
-        this.sumbitListener();
+        this.sumbitListener('form#searchForm', 'submit');
         this.hideArnSearchInput('input#city');
         this.insertNewSearchInput(
             'landing-page',
@@ -40,17 +30,15 @@ export default class Autocomplete {
             'beforeEnd',
             '<input type="search" id="address-input" placeholder="Destination" required="true" />'
         );
-
         this.insertNewSearchInput(
             'search-results',
             'div#theSearchBox',
             'afterBegin',
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
         );
-
         this.googleMapsScript();
-        this.setAttribute('input#theSubmitButton', 'onClick', '');
         this.setAttribute('input#theCheckIn', 'required', true);
+        this.setAttribute('input#theSubmitButton', 'onClick', '');
 
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
@@ -59,44 +47,26 @@ export default class Autocomplete {
         }
     }
 
-    // /**
-    //  *@description creates a node list of elements passed in as a string and sets their display to none.
-    //  *@param string comma seperated selectors.
-    //  */
-    // hideArnSearchElements(selectors) {
-    //     if (this.page_name !== 'search-results') return;
-    //     const elements = document.querySelectorAll(selectors);
-
-    //     elements.forEach((element) => {
-    //         element.style.display = 'none';
-    //     });
-    // }
-
     /**
      *@description removes the search input for event sites thus keeping the user in the city of the event.
      */
     removeCitySarchForEvent() {
         if (this.page_name !== 'search-results') return;
         if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
-        // utilities.waitForSelectorInDOM('.algolia-places').then(() => {
+
         document.querySelector('input#address-input').style.display = 'none';
-        // document.querySelector('.algolia-places').style.display = 'none';
         document.querySelector('#theSearchBox').firstChild.style.display = 'none';
-        // });
     }
 
     /**
      *@description Moves ARN's search input off of the page.
      *@param string dom selector for ARN's seach input.
      */
-    hideArnSearchInput(selector) {
-        if (!document.querySelector(selector)) return;
-
+    async hideArnSearchInput(selector) {
+        await utilities.waitForSelectorInDOM(selector);
+        // TODO move styles to master css
         document.querySelector(selector).style.position = 'absolute';
         document.querySelector(selector).style.left = '-10000px';
-
-        // await utilities.waitForSelectorInDOM('#city');
-
         document.querySelector(selector).removeAttribute('required');
     }
 
@@ -169,6 +139,9 @@ export default class Autocomplete {
         input.addEventListener = add_event_listener_wrapper;
     }
 
+    /**
+     *@description Instantiates the Google Places autocomplete restricted to cities. latitude, longitude and destination properties are also set when the place_changed event occurs.
+     */
     googleMapsScript() {
         const options = {
             types: ['(cities)'],
@@ -180,7 +153,6 @@ export default class Autocomplete {
         // eslint-disable-next-line no-undef
         google.maps.event.addListener(autocomplete, 'place_changed', () => {
             const place = autocomplete.getPlace();
-            console.log(place);
             this.lat = place.geometry.location.lat();
             this.lng = place.geometry.location.lng();
             this.destination = this.getDestination('input#address-input');
@@ -211,9 +183,9 @@ export default class Autocomplete {
      *@description loops through checkboxes in the filter passed in and adds the textContent to a variable.
      *@param string dom selector for which filter to loop over.
      *@param string first div of filter child to be ignored due to ARN's interesting markup.
-     *@return string comma seperated strings. The slice method is removing the last comma.
+     *@return comma seperated strings. The slice method is removing the last comma.
      */
-    applyFilters(checkboxSelector, lblFilter) {
+    getFilters(checkboxSelector, lblFilter) {
         let filter_values = '';
         document.querySelectorAll(checkboxSelector).forEach((el) => {
             if (el.classList.contains(lblFilter)) return;
@@ -239,8 +211,9 @@ export default class Autocomplete {
     }
 
     /**
-     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@description Finds the destination value and calls the setAndClear method with that value as a parameter.
      *@params - String - DOM selector, input to prepopulate destination string value
+     *@return - String - Destination value.
      */
     retreiveDestinationValueToPrePopulateInput(input) {
         if (this.page_name !== 'search-results') return;
@@ -262,13 +235,13 @@ export default class Autocomplete {
     }
 
     /**
-     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@description populates the search input on the search-results page with the destination value and clears the input field on click.
      *@params - String - DOM selector, input to prepopulate destination string value.
      *@params - String - Destination, the value that the input is populated with.
      */
-    setAndClearInput(input, val) {
+    setAndClearInput(input, destinationValue) {
         const input_to_fill = document.querySelector(input);
-        input_to_fill.value = val;
+        input_to_fill.value = destinationValue;
 
         input_to_fill.addEventListener('click', () => {
             input_to_fill.value = '';
@@ -277,6 +250,7 @@ export default class Autocomplete {
 
     /**
      * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
+     * @param object - url object which searchParams will append url parameters to.
      * @param object paramObject - an object containing one or more parameters to append to a url.
      * @property string - paramObject[i].key - url parameter key.
      * @property string - paramObject[i].value - the value for the parameter key.
@@ -291,7 +265,7 @@ export default class Autocomplete {
                     },
                 })
     */
-    appendParamsToURL(paramObject) {
+    appendParamsToURL(url, paramObject) {
         for (const obj in paramObject) {
             if (
                 paramObject[obj].value !== '' &&
@@ -300,48 +274,55 @@ export default class Autocomplete {
                 paramObject[obj].key !== undefined &&
                 paramObject[obj].key !== ''
             ) {
-                this.params.append(paramObject[obj].key, paramObject[obj].value);
+                url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
             }
         }
     }
 
-    sumbitListener() {
-        document.querySelector('#theOtherSubmitButton').addEventListener('click', (e) => {
-            // document.querySelector('form#searchForm').addEventListener('submit', (e) => {
+    /**
+     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@params - String - DOM selector for the event listener to be added to.
+     *@params - String - Event to listen for.
+     */
+    sumbitListener(selector, event) {
+        document.querySelector(selector).addEventListener(event, (e) => {
             e.preventDefault();
-            this.rooms = this.getDropdownValue('#rooms');
-            this.adults = this.getDropdownValue('#adults');
-            this.amenities = this.applyFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities');
-            this.property_classes = this.applyFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating');
-            this.property_types = this.applyFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType');
-            this.appendParamsToURL({
+
+            const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
+            const built_url = new URL(url);
+            const nights = dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(
+                dayjs(document.querySelector('input#theCheckIn').value),
+                'days'
+            );
+
+            this.appendParamsToURL(built_url, {
                 longitude: {
-                    key: 'lognitude',
-                    value: this.lng,
+                    key: 'longitude',
+                    value: this.lng ? this.lng : this.original_params.get('longitude'),
                 },
                 latitude: {
                     key: 'latitude',
-                    value: this.lat,
+                    value: this.lat ? this.lat : this.original_params.get('latitude'),
                 },
                 destination: {
                     key: 'destination',
-                    value: this.destination,
+                    value: this.destination ? this.destination : this.original_params.get('destination'),
                 },
                 checkin: {
                     key: 'checkin',
-                    value: (this.check_in_date = dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
+                    value: dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY'),
                 },
                 nights: {
                     key: 'nights',
-                    value: dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(dayjs(this.check_in_date), 'days'),
+                    value: nights,
                 },
                 rooms: {
                     key: 'rooms',
-                    value: this.rooms,
+                    value: this.getDropdownValue('#rooms'),
                 },
                 adults: {
                     key: 'adults',
-                    value: this.adults,
+                    value: this.getDropdownValue('#adults'),
                 },
                 currency: {
                     key: 'currency',
@@ -349,15 +330,15 @@ export default class Autocomplete {
                 },
                 amenities: {
                     key: 'amenities',
-                    value: this.amenities,
+                    value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities'),
                 },
                 propertyClasses: {
                     key: 'propteryclasses',
-                    value: this.property_classes,
+                    value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating'),
                 },
                 propertyTypes: {
                     key: 'propertytypes',
-                    value: this.property_types,
+                    value: this.getFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType'),
                 },
                 optionalHotel: {
                     key: 'hotelname',
@@ -369,7 +350,7 @@ export default class Autocomplete {
                 },
             });
             if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
-                this.appendParamsToURL({
+                this.appendParamsToURL(built_url, {
                     properties: {
                         key: 'properties',
                         value: this.properties,
@@ -400,11 +381,9 @@ export default class Autocomplete {
                     },
                 });
             }
-
-            // console.log(decodeURIComponent(`${this.url.toString()}${this.params.toString()}`));
-            console.log(`${this.url.toString()}${this.params.toString()}`);
-            // window.alert(`${this.url.toString()}${this.params.toString()}`);
-            window.location.href = decodeURIComponent(`${this.url.toString()}${this.params.toString()}`);
+            // console.log('decodeURIComponent: ', decodeURIComponent(built_url));
+            // window.alert(built_url);
+            window.location.href = decodeURIComponent(built_url);
         });
     }
 }

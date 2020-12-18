@@ -13,7 +13,8 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="<?php echo $site_id; ?>" name="siteId" />
+    <meta content="12345" name="siteId" />
+    <!-- <meta content="<?php echo $site_id; ?>" name="siteId" /> -->
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="i9OeMFOgz_0aLKzN" name="sessionId" />
     <meta content="59m 58s" name="expiresIn" />

@@ -188,6 +188,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,500,700" rel="stylesheet">
     <link id="favicon" rel="shortcut icon" href="https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places"></script>
 </head>
 
 <body onkeydown="onKeyDown(event)"

@@ -57,6 +57,7 @@ module.exports = () => {
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat test
+            // 'retail_resbeat_public-51474': './src/51474.js', // retail resbeat_public
         };
 
         // local environment

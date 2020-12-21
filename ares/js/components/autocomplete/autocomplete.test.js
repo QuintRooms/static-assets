@@ -3,7 +3,7 @@ import Autocomplete from './autocomplete';
 import Utilities from '../../utilities';
 
 jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
 jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
@@ -46,7 +46,7 @@ describe('Constructor', () => {
     it('Calls methods', () => {
         expect(autocomplete.sumbitListener).toBeCalledTimes(1);
         expect(autocomplete.sumbitListener).toReturnWith(true);
-        expect(autocomplete.hideArnSearchInput).toBeCalledTimes(1);
+        expect(autocomplete.removeAttribute).toBeCalledTimes(1);
         expect(autocomplete.insertNewSearchInput).toBeCalledTimes(2);
         expect(autocomplete.googleMapsScript).toBeCalledTimes(1);
         expect(autocomplete.setAttribute).toBeCalledTimes(2);
@@ -68,7 +68,7 @@ describe('removeCitySarchForEvent', () => {
 
     it('Sets the input and surrounding span display to none', () => {
         jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
@@ -93,9 +93,9 @@ describe('removeCitySarchForEvent', () => {
     });
 });
 
-/* - - - - - - hideArnSearchInput - - - - - -*/
+/* - - - - - - removeAttribute - - - - - -*/
 
-describe('hideArnSearchInput', () => {
+describe('removeAttribute', () => {
     beforeAll(() => {
         document.body.innerHTML = '';
         jest.restoreAllMocks();
@@ -106,18 +106,18 @@ describe('hideArnSearchInput', () => {
         jest.restoreAllMocks();
     });
 
-    it('Positions ARN search input off the page and removes the required attribute', async () => {
+    it('Removes the required attribute', async () => {
         document.body.innerHTML = `
         <h1 class="RootBody">This is a test</h1>
         <input id="city" required>`;
 
         const new_html = `
         <h1 class="RootBody">This is a test</h1>
-        <input id="city" style="position: absolute; left: -10000px;">`;
+        <input id="city">`;
 
         const util_mock = jest.spyOn(Utilities.prototype, 'waitForSelectorInDOM');
 
-        autocomplete.hideArnSearchInput('input#city');
+        autocomplete.removeAttribute('input#city', 'required');
         expect(util_mock).toHaveBeenCalled();
         await util_mock.mock.results[0].value;
         expect(document.body.innerHTML).toEqual(new_html);
@@ -199,7 +199,7 @@ describe('getDestination', () => {
 
     it('If destination string is unavailable on from the input, returns it from Original Params', () => {
         jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
@@ -258,11 +258,31 @@ describe('getFirstSuggestionOnPressOfEnter', () => {
 /* - - - - - - googleMapsScript - - - - - -*/
 
 describe('googleMapsScript', () => {
+    jest.spyOn(Autocomplete.prototype, 'getDestination').mockImplementation(() => 'Austin, TX, USA');
+    // let lat;
+    // let lng;
+    // let destination;
+
     const setup_google_mock = () => {
         const google = {
             maps: {
                 places: {
-                    Autocomplete: class {},
+                    Autocomplete: class {
+                        getPlace() {
+                            return {
+                                place: {
+                                    geometry: {
+                                        lat() {
+                                            return '39.5';
+                                        },
+                                        lng() {
+                                            return '97.1';
+                                        },
+                                    },
+                                },
+                            };
+                        }
+                    },
                 },
                 event: {
                     addListener: jest.fn(), // TODO mock place_changed
@@ -432,7 +452,7 @@ describe('getOptionalHotelName', () => {
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><input type="search" id="hotelName" placeholder="Destination" required="true" value="">`;
 
         jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
@@ -483,7 +503,7 @@ describe('retreiveDestinationValueToPrePopulateInput', () => {
 
     it('Calls the setAndClearInput method once', () => {
         jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
@@ -655,9 +675,9 @@ describe('appendParamsToUrl', () => {
     });
 });
 
-// /* - - - - - - submitListener - - - - - -*/
+/* - - - - - - constructUrl - - - - - -*/
 
-describe('submitListener', () => {
+describe('constructUrl', () => {
     beforeAll(() => {
         document.body.innerHTML = ``;
     });
@@ -676,27 +696,33 @@ describe('submitListener', () => {
         jest.spyOn(Autocomplete.prototype, 'getFilters').mockImplementation(() => 'Airport Shuttle');
         jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => undefined);
 
+        const event = {preventDefault: jest.fn()};
+
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;
 
-        autocomplete.sumbitListener('form#searchForm', 'submit');
-        document.getElementById('searchForm').submit();
-
+        // autocomplete.sumbitListener('form#searchForm', 'submit');
+        // document.getElementById('searchForm').submit();
+        autocomplete.constructUrl(event);
         expect(autocomplete.appendParamsToURL).toBeCalledTimes(1);
-        // expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
+        expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
         expect(autocomplete.getDropdownValue).toReturnWith('1');
         expect(autocomplete.getFilters).toBeCalledTimes(3);
         expect(autocomplete.getFilters).toReturnWith('Airport Shuttle');
     });
 
     it('Calls appendParamsToURL twice when page is search-results', () => {
+        // Manual mock of submit event
+        const event2 = {preventDefault: jest.fn()};
+
         // Constructor mocks
-        jest.spyOn(Autocomplete.prototype, 'hideArnSearchInput').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'insertNewSearchInput').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'googleMapsScript').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'getEventOriginalParams').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'setAttribute').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'retreiveDestinationValueToPrePopulateInput').mockImplementation(() => 'Austin, TX');
         jest.spyOn(Autocomplete.prototype, 'removeCitySarchForEvent').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'sumbitListener').mockImplementation(() => true);
 
         // Submit mocks
         jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => true);
@@ -715,7 +741,35 @@ describe('submitListener', () => {
             },
             'search-results'
         );
-        document.getElementById('searchForm').submit();
+        new_autocomplete.constructUrl(event2);
         expect(new_autocomplete.appendParamsToURL).toBeCalledTimes(2);
+    });
+});
+
+/* - - - - - - submitListener - - - - - -*/
+
+describe('submitListener', () => {
+    beforeAll(() => {
+        document.body.innerHTML = ``;
+    });
+
+    afterAll(() => {
+        jest.restoreAllMocks();
+        document.body.innerHTML = ``;
+    });
+
+    beforeEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('Calls constructUrl() on submit', () => {
+        jest.spyOn(Autocomplete.prototype, 'constructUrl').mockImplementation(() => true);
+
+        document.body.innerHTML = `<form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;
+
+        autocomplete.sumbitListener('form#searchForm', 'submit');
+        document.getElementById('searchForm').submit();
+
+        expect(autocomplete.constructUrl).toBeCalledTimes(1);
     });
 });

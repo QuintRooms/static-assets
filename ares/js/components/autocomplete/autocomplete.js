@@ -23,7 +23,7 @@ export default class Autocomplete {
         this.page_name = page_name;
         this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
         this.sumbitListener('form#searchForm', 'submit');
-        this.hideArnSearchInput('input#city');
+        this.removeAttribute('input#city', 'required');
         this.insertNewSearchInput(
             'landing-page',
             'div#CitySearchContainer span',
@@ -39,10 +39,10 @@ export default class Autocomplete {
         this.googleMapsScript();
         this.setAttribute('input#theCheckIn', 'required', true);
         this.setAttribute('input#theSubmitButton', 'onClick', '');
+        this.retreiveDestinationValueToPrePopulateInput('input#address-input');
 
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
-            this.retreiveDestinationValueToPrePopulateInput('input#address-input');
             this.removeCitySarchForEvent();
         }
     }
@@ -62,12 +62,9 @@ export default class Autocomplete {
      *@description Moves ARN's search input off of the page.
      *@param string dom selector for ARN's seach input.
      */
-    async hideArnSearchInput(selector) {
+    async removeAttribute(selector, attr) {
         await utilities.waitForSelectorInDOM(selector);
-        // TODO move styles to master css
-        document.querySelector(selector).style.position = 'absolute';
-        document.querySelector(selector).style.left = '-10000px';
-        document.querySelector(selector).removeAttribute('required');
+        document.querySelector(selector).removeAttribute(attr);
     }
 
     /**
@@ -229,7 +226,6 @@ export default class Autocomplete {
         } else {
             destination = `${document.querySelector('span[itemprop="addressLocality"]').textContent}, ${document.querySelector('span[itemprop="addressRegion"]').textContent}`;
         }
-
         this.setAndClearInput(input, destination);
         return destination;
     }
@@ -280,110 +276,118 @@ export default class Autocomplete {
     }
 
     /**
-     *@description populates the destination search input on the search-results page with the destination and clears the input field on click.
+     *@description constructs the URL with necessary parameters.
+     *@params - Object - The event.
+     */
+    constructUrl(event) {
+        event.preventDefault();
+
+        const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
+        const built_url = new URL(url);
+        const nights = dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(
+            dayjs(document.querySelector('input#theCheckIn').value),
+            'days'
+        );
+
+        this.appendParamsToURL(built_url, {
+            longitude: {
+                key: 'longitude',
+                value: this.lng ? this.lng : this.original_params.get('longitude'),
+            },
+            latitude: {
+                key: 'latitude',
+                value: this.lat ? this.lat : this.original_params.get('latitude'),
+            },
+            destination: {
+                key: 'destination',
+                value: this.destination ? this.destination : this.original_params.get('destination'),
+            },
+            checkin: {
+                key: 'checkin',
+                value: dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY'),
+            },
+            nights: {
+                key: 'nights',
+                value: nights,
+            },
+            rooms: {
+                key: 'rooms',
+                value: this.getDropdownValue('#rooms'),
+            },
+            adults: {
+                key: 'adults',
+                value: this.getDropdownValue('#adults'),
+            },
+            currency: {
+                key: 'currency',
+                value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',
+            },
+            amenities: {
+                key: 'amenities',
+                value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities'),
+            },
+            propertyClasses: {
+                key: 'propertyclasses',
+                value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating'),
+            },
+            propertyTypes: {
+                key: 'propertytypes',
+                value: this.getFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType'),
+            },
+            optionalHotel: {
+                key: 'hotelname',
+                value: this.getOptionalHotelName('input#hotelName'),
+            },
+            memberToken: {
+                key: 'memberToken',
+                value: utilities.getMetaTagContent('memberToken'),
+            },
+        });
+        if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
+            this.appendParamsToURL(built_url, {
+                properties: {
+                    key: 'properties',
+                    value: this.properties,
+                },
+                utm_source: {
+                    key: 'utm_source',
+                    value: this.utm_source,
+                },
+                locationLabel: {
+                    key: 'locationlabel',
+                    value: this.locationlabel,
+                },
+                radius: {
+                    key: 'radius',
+                    value: this.radius,
+                },
+                groupId: {
+                    key: 'groupid',
+                    value: this.groupid,
+                },
+                cid: {
+                    key: 'cid',
+                    value: this.cid,
+                },
+                points: {
+                    key: 'points',
+                    value: this.points,
+                },
+            });
+        }
+        // console.log('decodeURIComponent: ', decodeURIComponent(built_url));
+        // window.alert(built_url);
+        window.location.href = decodeURIComponent(built_url);
+    }
+
+    /**
+     *@description Sets up an event listener on the given elements with the given event and calls the constructUrl method.
      *@params - String - DOM selector for the event listener to be added to.
      *@params - String - Event to listen for.
      */
     sumbitListener(selector, event) {
         document.querySelector(selector).addEventListener(event, (e) => {
-            e.preventDefault();
-
-            const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
-            const built_url = new URL(url);
-            const nights = dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(
-                dayjs(document.querySelector('input#theCheckIn').value),
-                'days'
-            );
-
-            this.appendParamsToURL(built_url, {
-                longitude: {
-                    key: 'longitude',
-                    value: this.lng ? this.lng : this.original_params.get('longitude'),
-                },
-                latitude: {
-                    key: 'latitude',
-                    value: this.lat ? this.lat : this.original_params.get('latitude'),
-                },
-                destination: {
-                    key: 'destination',
-                    value: this.destination ? this.destination : this.original_params.get('destination'),
-                },
-                checkin: {
-                    key: 'checkin',
-                    value: dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY'),
-                },
-                nights: {
-                    key: 'nights',
-                    value: nights,
-                },
-                rooms: {
-                    key: 'rooms',
-                    value: this.getDropdownValue('#rooms'),
-                },
-                adults: {
-                    key: 'adults',
-                    value: this.getDropdownValue('#adults'),
-                },
-                currency: {
-                    key: 'currency',
-                    value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',
-                },
-                amenities: {
-                    key: 'amenities',
-                    value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities'),
-                },
-                propertyClasses: {
-                    key: 'propteryclasses',
-                    value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating'),
-                },
-                propertyTypes: {
-                    key: 'propertytypes',
-                    value: this.getFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType'),
-                },
-                optionalHotel: {
-                    key: 'hotelname',
-                    value: this.getOptionalHotelName('input#hotelName'),
-                },
-                memberToken: {
-                    key: 'memberToken',
-                    value: utilities.getMetaTagContent('memberToken'),
-                },
-            });
-            if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
-                this.appendParamsToURL(built_url, {
-                    properties: {
-                        key: 'properties',
-                        value: this.properties,
-                    },
-                    utm_source: {
-                        key: 'utm_source',
-                        value: this.utm_source,
-                    },
-                    locationLabel: {
-                        key: 'locationlabel',
-                        value: this.locationlabel,
-                    },
-                    radius: {
-                        key: 'radius',
-                        value: this.radius,
-                    },
-                    groupId: {
-                        key: 'groupid',
-                        value: this.groupid,
-                    },
-                    cid: {
-                        key: 'cid',
-                        value: this.cid,
-                    },
-                    points: {
-                        key: 'points',
-                        value: this.points,
-                    },
-                });
-            }
-            // console.log('decodeURIComponent: ', decodeURIComponent(built_url));
-            // window.alert(built_url);
-            window.location.href = decodeURIComponent(built_url);
+            this.constructUrl(e);
         });
     }
 }

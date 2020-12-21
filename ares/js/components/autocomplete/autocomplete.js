@@ -343,6 +343,7 @@ export default class Autocomplete {
                 value: utilities.getMetaTagContent('memberToken'),
             },
         });
+
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.appendParamsToURL(built_url, {
                 properties: {
@@ -375,8 +376,6 @@ export default class Autocomplete {
                 },
             });
         }
-        // console.log('decodeURIComponent: ', decodeURIComponent(built_url));
-        // window.alert(built_url);
         window.location.href = decodeURIComponent(built_url);
     }
 

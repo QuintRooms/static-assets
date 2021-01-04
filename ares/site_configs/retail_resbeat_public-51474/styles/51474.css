@@ -564,7 +564,7 @@ input[type=email].email-mask,
 }
 
 .ArnSupportLinks.ArnSupportBottom .searchLink + .dvd {
-  display: block !important;
+  display: inline !important;
 }
 
 header .supportLink {
@@ -612,6 +612,8 @@ header .supportLink {
   display: block !important;
   font-weight: 200;
   font-size: 36px;
+  text-transform: uppercase !important;
+  color: #666;
 }
 
 @media screen and (max-width: 800px) {

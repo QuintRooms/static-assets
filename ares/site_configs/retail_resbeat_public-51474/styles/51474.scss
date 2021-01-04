@@ -164,6 +164,10 @@ header .supportLink {
 .SinglePropDetail .save-more {
     color: #666;
     font-size: 15px;
+    text-align: left;
+    padding: 7px 0;
+    position: absolute;
+    bottom: 42px;
 
     a {
         font-weight: bold;
@@ -191,6 +195,14 @@ header .supportLink {
 
     a:hover {
         text-decoration: underline;
+    }
+}
+
+.RootBody .search-messaging {
+    h1 {
+        display: block !important;
+        font-weight: 200;
+        font-size: 36px;
     }
 }
 

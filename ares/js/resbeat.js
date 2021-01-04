@@ -427,9 +427,12 @@ export default class Resbeat extends BasePortal {
 
     updateSearchTitle() {
         if (!document.querySelector('.RootBody')) return;
-        if (!document.querySelector('meta[name="firstName"]')) return;
+        if (!document.querySelector('meta[name="firstName"]') && utilities.getMetaTagContent('siteId') !== '51474') return;
+        let name;
+        if (document.querySelector('meta[name="firstName"]')) {
+            name = document.querySelector('meta[name="firstName"]').content;
+        }
 
-        const name = document.querySelector('meta[name="firstName"]').content;
         const el = document.querySelector('.RootBody .ArnSearchHotelsImg');
         el.innerHTML = `
             <span class="search-messaging">

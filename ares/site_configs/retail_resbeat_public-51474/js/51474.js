@@ -33,7 +33,13 @@ class ChildPortal extends Resbeat {
             }, 1);
         }
         this.addSupportLinkToHeader();
-        this.addAsearchResultsCallToAction();
+        if (document.querySelector('.SearchHotels')) {
+            jQuery(document).on('ratesReadyEvent', () => {
+                setTimeout(() => {
+                    this.addAsearchResultsCallToAction();
+                }, 1);
+            });
+        }
         this.appendConfirmationCallToAction();
     }
 
@@ -57,8 +63,7 @@ class ChildPortal extends Resbeat {
         document.querySelector('header').insertAdjacentElement('beforeend', support_link);
     }
 
-    addAsearchResultsCallToAction() {
-        console.log('Hello');
+    async addAsearchResultsCallToAction() {
         if (document.querySelector('.SearchHotels')) {
             // const mq = window.matchMedia('(max-width: 600px)');
 

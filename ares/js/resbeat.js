@@ -429,17 +429,27 @@ export default class Resbeat extends BasePortal {
         if (!document.querySelector('.RootBody')) return;
         if (!document.querySelector('meta[name="firstName"]') && utilities.getMetaTagContent('siteId') !== '51474') return;
         let name;
+        let html;
         if (document.querySelector('meta[name="firstName"]')) {
             name = document.querySelector('meta[name="firstName"]').content;
         }
 
         const el = document.querySelector('.RootBody .ArnSearchHotelsImg');
-        el.innerHTML = `
+        name
+            ? (html = `
+        <span class="search-messaging">
+                <h1 id="user-name">${name.toUpperCase()}, ${this.site_config.root_page_header_text}</h1>
+                <h4>${this.site_config.root_page_subheader_text}</h4>
+        </span>
+        `)
+            : (html = `
             <span class="search-messaging">
-                    <h1 id="user-name">${name.toUpperCase()}, ${this.site_config.root_page_header_text}</h1>
+                    <h1>${this.site_config.root_page_header_text}</h1>
                     <h4>${this.site_config.root_page_subheader_text}</h4>
             </span>
-            `;
+            `);
+
+        el.innerHTML = html;
     }
 
     applyResbeatStyles() {

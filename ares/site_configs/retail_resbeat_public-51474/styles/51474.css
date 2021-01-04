@@ -563,6 +563,47 @@ input[type=email].email-mask,
   background-color: #f0f0f0;
 }
 
+.ArnSupportLinks.ArnSupportBottom .searchLink + .dvd {
+  display: block;
+}
+
+header .supportLink {
+  margin-right: 40px;
+  color: #666;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.SinglePropDetail .save-more {
+  color: #666;
+  font-size: 15px;
+}
+.SinglePropDetail .save-more a {
+  font-weight: bold;
+  color: #e2ad37 !important;
+}
+
+.ConfirmationForm .points-earned {
+  background: #e2ad37 !important;
+}
+.ConfirmationForm .points-earned a {
+  font-weight: bold;
+  color: #fff;
+  font-size: 15px;
+}
+
+.SearchHotels .beat-em a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.SearchHotels .beat-em a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 800px) {
   .config-label {
     background: transparent;

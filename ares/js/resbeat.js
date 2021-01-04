@@ -265,6 +265,7 @@ export default class Resbeat extends BasePortal {
 
     confirmationPointsEarned() {
         if (!document.querySelector('.ConfirmationForm')) return;
+        if (!document.querySelector('.discountRow')) return;
 
         let points_earned = document.querySelector('.discountRow td').textContent;
         // eslint-disable-next-line radix
@@ -458,6 +459,7 @@ export default class Resbeat extends BasePortal {
 
     confPageSavings() {
         if (!document.querySelector('.ConfirmationForm')) return;
+        if (!document.querySelector('#theRateTotals .discount')) return;
 
         const beat_em_value = document.querySelector('#theRateTotals .discount td').textContent;
 

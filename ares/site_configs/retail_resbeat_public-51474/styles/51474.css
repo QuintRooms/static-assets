@@ -563,6 +563,10 @@ input[type=email].email-mask,
   background-color: #f0f0f0;
 }
 
+.MemberNotAuthenticated header {
+  display: flex !important;
+}
+
 .ArnSupportLinks.ArnSupportBottom .searchLink + .dvd {
   display: inline !important;
 }
@@ -586,6 +590,22 @@ header .supportLink {
 .SinglePropDetail .save-more a {
   font-weight: bold;
   color: #e2ad37 !important;
+}
+
+.SinglePropDetail .earn-points-cta {
+  display: flex;
+  flex-direction: row;
+  grid-row: 1/2;
+  align-items: center;
+  grid-column: 1/3;
+  text-align: left;
+  color: #666;
+  font-size: 15px;
+}
+.SinglePropDetail .earn-points-cta a {
+  font-weight: bold;
+  color: #e2ad37 !important;
+  margin-left: 5px;
 }
 
 .ConfirmationForm .points-earned {

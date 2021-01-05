@@ -850,3 +850,46 @@ body.WBSupportForm {
 .leaflet-container .leaflet-marker-pane img {
     display: none !important;
 }
+
+/* - - - - - Resbeat Retail Referral Registration Start - - - - */
+
+.WBValidatedRegistrationFormContainer {
+    display: flex;
+
+    #referral-info {
+        margin: 10vh auto 0 auto;
+        padding: 18px;
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+
+        p#content {
+            color: #666;
+            letter-spacing: 1px;
+            font-size: 15px;
+        }
+
+        h3 {
+            color: #666;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .WBValidatedRegistrationFormContainer {
+        display: block;
+
+        #referral-info {
+            margin: 1vh auto 0 auto;
+        }
+
+        .theWBValidatedRegistrationFormBody {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/* - - - - - Resbeat Retail Referral Registration End - - - - */

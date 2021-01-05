@@ -57,6 +57,7 @@ export default class Resbeat extends BasePortal {
         if (document.querySelector('.WBValidatedRegistrationForm')) {
             this.createInputMaskToBypassArnValidation('#theUserNameAjax', 'email-mask', 'email', 'Email', '#theUserNameAjax input');
             utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+            this.addRegistrationInfoForRetailReferal();
         }
         if (document.querySelector('.WBSupportFormContainer')) {
             this.createInputMaskToBypassArnValidation(
@@ -555,5 +556,24 @@ export default class Resbeat extends BasePortal {
             'afterBegin',
             `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
         );
+    }
+
+    addRegistrationInfoForRetailReferal() {
+        if (utilities.page_name !== 'cug-registration') return;
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+
+        if (params.has('cta_referral')) {
+            document.querySelector('.WBValidatedRegistrationFormContainer').insertAdjacentHTML(
+                'afterbegin',
+                `
+                <div id="referral-info">
+                    <h1>Want to pay less for hotel rooms?</h1>
+                    <p id="content">RES<b>BEAT</b> is a private hotel booking platform and our exclusive technology allows members free access to unbeatable rates otherwise unavailable to the public. Every time you make a reservation, you'll also earn RESBEAT Rewards, which you can redeem at the online retailer of your choice through a virtual Visa® card.</p>
+                    <h3>Sign up for free and start saving today!</h3>
+                </div>
+                `
+            );
+        }
     }
 }

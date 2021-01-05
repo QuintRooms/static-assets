@@ -18,7 +18,6 @@ const utilities = new Utilities();
 
 export default class BasePortal {
     constructor(config) {
-        console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
         this.page_name = utilities.getPageName();
         this.site_config = config;

@@ -42,7 +42,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
-            logo_outbound_url: 'https://hotels.resbeat.com/v6/register',
+            logo_outbound_url: 'https://hotels.resbeat.com/v6/register?cta_referral=logo',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',

@@ -65,18 +65,23 @@ class ChildPortal extends Resbeat {
 
     async addAsearchResultsCallToAction() {
         if (document.querySelector('.SearchHotels')) {
-            // const mq = window.matchMedia('(max-width: 600px)');
-
             if (!document.querySelector('.ArnContainer')) return;
+            const mq = window.matchMedia('(max-width: 600px)');
+            let html;
+            if (mq.matches) {
+                html = `<div class="beat-em">
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=search-results">Sign up & save!</a>
+            </div>`;
+            } else {
+                html = `<div class="beat-em">
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=search-results">Sign up & save more!</a>
+            </div>`;
+            }
+
             const rate_cells = document.querySelectorAll('.ArnContainer');
             rate_cells.forEach((el) => {
                 if (el.querySelector('.beat-em')) return;
-                el.querySelector('.ArnRateCell').insertAdjacentHTML(
-                    'afterbegin',
-                    `<div class="beat-em">
-                        <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_redirect=search-results">Sign up & save more!</a>
-                    </div>`
-                );
+                el.querySelector('.ArnRateCell').insertAdjacentHTML('afterbegin', html);
             });
         }
     }
@@ -102,7 +107,7 @@ class ChildPortal extends Resbeat {
                       `
                 <div class="earn-points-cta">
                 <span>Earn RE<b>WARDS</b>: ${reward_points}</span>
-                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_redirect=property">Sign up for free!</a>
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=property"> Sign up for free!</a>
                 </div>
                 `
                   )
@@ -111,7 +116,7 @@ class ChildPortal extends Resbeat {
                       `
                 <div class="save-more">
                     <span>
-                        Save more and earn <span class="points">${reward_points}</span> RES<b>BEAT</b> Rewards when you <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_redirect=property">sign up for free!</a>
+                        Save more and earn <span class="points">${reward_points}</span> RES<b>BEAT</b> Rewards when you <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=property">sign up for free!</a>
                     </span>
                 </div>
                 `
@@ -126,7 +131,7 @@ class ChildPortal extends Resbeat {
             `
             <div class="confirmation-sign-up">
                 <p>Don’t forget to become a RES<b>BEAT</b> member and receive exclusive access to unbeatable hotel rates at no cost to you. You’ll also earn RES<b>BEAT</b> Rewards with every booking that you can spend at any online retailer of your choice.</p>
-                <span><a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_redirect=confirmation">Sign up for free</a> and start saving even more today!</span>
+                <span><a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=confirmation">Sign up for free</a> and start saving even more today!</span>
             </div>
             `
         );

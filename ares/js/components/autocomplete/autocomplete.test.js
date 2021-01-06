@@ -258,34 +258,14 @@ describe('getFirstSuggestionOnPressOfEnter', () => {
 /* - - - - - - googleMapsScript - - - - - -*/
 
 describe('googleMapsScript', () => {
-    jest.spyOn(Autocomplete.prototype, 'getDestination').mockImplementation(() => 'Austin, TX, USA');
-    // let lat;
-    // let lng;
-    // let destination;
-
     const setup_google_mock = () => {
         const google = {
             maps: {
                 places: {
-                    Autocomplete: class {
-                        getPlace() {
-                            return {
-                                place: {
-                                    geometry: {
-                                        lat() {
-                                            return '39.5';
-                                        },
-                                        lng() {
-                                            return '97.1';
-                                        },
-                                    },
-                                },
-                            };
-                        }
-                    },
+                    Autocomplete: class {},
                 },
                 event: {
-                    addListener: jest.fn(), // TODO mock place_changed
+                    addListener: jest.fn(() => autocomplete.onPlaceChanged()),
                 },
             },
         };
@@ -304,8 +284,11 @@ describe('googleMapsScript', () => {
 
     it('Calls the getFirstSuggestionOnPressOfEnter method once', () => {
         jest.spyOn(Autocomplete.prototype, 'getFirstSuggestionOnPressOfEnter').mockImplementation(() => true);
+        jest.spyOn(Autocomplete.prototype, 'onPlaceChanged').mockImplementation(() => true);
 
         autocomplete.googleMapsScript();
+        expect(autocomplete.onPlaceChanged).toBeCalledTimes(1);
+        expect(autocomplete.onPlaceChanged).toHaveReturnedWith(true);
         expect(autocomplete.getFirstSuggestionOnPressOfEnter).toBeCalledTimes(1);
         expect(autocomplete.getFirstSuggestionOnPressOfEnter).not.toBeCalledTimes(2);
     });
@@ -675,6 +658,64 @@ describe('appendParamsToUrl', () => {
     });
 });
 
+/* - - - - - - setDateFormat - - - - - -*/
+
+describe('setDateFormat', () => {
+    beforeAll(() => {
+        document.body.innerHTML = ``;
+    });
+
+    afterAll(() => {
+        document.body.innerHTML = ``;
+    });
+
+    it('Returns the correctly formatted date and correct amount of nights for M/D/YYYY', () => {
+        document.body.innerHTML = `
+        <input id="theCheckIn" value="1/6/2021">
+        <input id="theCheckOut" value="1/8/2021">
+        <span itemprop="addressLocality">Austin</span>
+        `;
+        expect(autocomplete.setDateFormat('spanish', 12345, 52342)).toEqual({
+            check_in_value: '1/6/2021',
+            nights: 2,
+        });
+        expect(autocomplete.setDateFormat('standard', 12345, 60279)).toEqual({
+            check_in_value: '1/6/2021',
+            nights: 2,
+        });
+        expect(autocomplete.setDateFormat('spanish', 16980, 12345)).toEqual({
+            check_in_value: '1/6/2021',
+            nights: 2,
+        });
+    });
+
+    it('Returns formatted date and nights for YYYY/M/D', () => {
+        document.body.innerHTML = `
+        <input id="theCheckIn" value="2021/1/6">
+        <input id="theCheckOut" value="2021/1/8">
+        <span itemprop="addressLocality">Austin</span>
+        `;
+
+        expect(autocomplete.setDateFormat('mandarin', 12345, 60279)).toEqual({
+            check_in_value: '2021/1/6',
+            nights: 2,
+        });
+    });
+
+    it('Returns formatted date and nights for D/M/YYYY', () => {
+        document.body.innerHTML = `
+        <input id="theCheckIn" value="6/1/2021">
+        <input id="theCheckOut" value="8/1/2021">
+        <span itemprop="addressLocality">London</span>
+        `;
+
+        expect(autocomplete.setDateFormat('standard', 16980, 60279)).toEqual({
+            check_in_value: '6/1/2021',
+            nights: 2,
+        });
+    });
+});
+
 /* - - - - - - constructUrl - - - - - -*/
 
 describe('constructUrl', () => {
@@ -697,12 +738,16 @@ describe('constructUrl', () => {
         jest.spyOn(Autocomplete.prototype, 'appendParamsToURL').mockImplementation(() => undefined);
 
         const event = {preventDefault: jest.fn()};
+        const stay_data = {
+            check_in_value: '6/1/2021',
+            nights: '2',
+        };
 
         document.body.innerHTML = `<meta name="originalParams" content="siteid=62309&amp;currency=USD&amp;points=-80.104529|26.114917|Tortuga-Sunset Stage,-80.119458|26.100938|Water Taxi Stop (Tickets Extra$),-80.106137|26.110877|Water Taxi Stop (Tickets Extra$)&amp;cid=ROCK&amp;useMiles=&amp;checkin=11/12/21&amp;pageSize=15&amp;mapSize=13&amp;groupid=43285&amp;radius=5&amp;locationlabel=Tortuga-Main Stage&amp;utm_source=internal&amp;nights=3&amp;propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&amp;latitude=26.10879170000000&amp;map=&amp;longitude=-80.10643370000000&amp;type=geo&amp;properties=x208368,x378,x2636,x2324,x44621,x24437,x29761,x848867,x3846047,x235230,x10505,x3873763,x269736,x1714083,x13941,x39947"><meta name="siteId" content="60279"><form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;
 
         // autocomplete.sumbitListener('form#searchForm', 'submit');
         // document.getElementById('searchForm').submit();
-        autocomplete.constructUrl(event);
+        autocomplete.constructUrl(event, stay_data);
         expect(autocomplete.appendParamsToURL).toBeCalledTimes(1);
         expect(autocomplete.getDropdownValue).toBeCalledTimes(2);
         expect(autocomplete.getDropdownValue).toReturnWith('1');
@@ -713,6 +758,10 @@ describe('constructUrl', () => {
     it('Calls appendParamsToURL twice when page is search-results', () => {
         // Manual mock of submit event
         const event2 = {preventDefault: jest.fn()};
+        const stay_data = {
+            check_in_value: '6/1/2021',
+            nights: '2',
+        };
 
         // Constructor mocks
         jest.spyOn(Autocomplete.prototype, 'removeAttribute').mockImplementation(() => true);
@@ -741,7 +790,7 @@ describe('constructUrl', () => {
             },
             'search-results'
         );
-        new_autocomplete.constructUrl(event2);
+        new_autocomplete.constructUrl(event2, stay_data);
         expect(new_autocomplete.appendParamsToURL).toBeCalledTimes(2);
     });
 });
@@ -763,6 +812,7 @@ describe('submitListener', () => {
     });
 
     it('Calls constructUrl() on submit', () => {
+        jest.spyOn(Autocomplete.prototype, 'setDateFormat').mockImplementation(() => true);
         jest.spyOn(Autocomplete.prototype, 'constructUrl').mockImplementation(() => true);
 
         document.body.innerHTML = `<form id="searchForm"><input type="search" id="address-input" placeholder="Destination" required="true" value=""><input id="theOtherSubmitButton" style="cursor:hand;cursor:pointer;" value="Search" type="submit" class="submit"><input type="search" id="theCheckIn" value="2/3/2020"><input type="search" id="theCheckOut" value="2/4/2020"></form>`;

@@ -64,7 +64,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'ares_child-60279': './src/60279.js', // Ares Child Test
         };
     }
 

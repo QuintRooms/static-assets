@@ -2,6 +2,9 @@
 import Utilities from '../../utilities';
 
 const dayjs = require('dayjs');
+const custom_parse_format = require('dayjs/plugin/customParseFormat');
+
+dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 export default class Autocomplete {
@@ -51,9 +54,6 @@ export default class Autocomplete {
      *@description removes the search input for event sites thus keeping the user in the city of the event.
      */
     removeCitySarchForEvent() {
-        if (this.page_name !== 'search-results') return;
-        if (this.site_config.site_type.toLowerCase() === 'cug' || this.site_config.site_type.toLowerCase() === 'retail') return;
-
         document.querySelector('input#address-input').style.display = 'none';
         document.querySelector('#theSearchBox').firstChild.style.display = 'none';
     }
@@ -149,11 +149,19 @@ export default class Autocomplete {
         this.getFirstSuggestionOnPressOfEnter(input);
         // eslint-disable-next-line no-undef
         google.maps.event.addListener(autocomplete, 'place_changed', () => {
-            const place = autocomplete.getPlace();
-            this.lat = place.geometry.location.lat();
-            this.lng = place.geometry.location.lng();
-            this.destination = this.getDestination('input#address-input');
+            this.onPlaceChanged(autocomplete);
         });
+    }
+
+    /**
+     *@description Sets the values of class properties for appending to the URL.
+     *@param - Google Autocomplete object. Has the methods getPlace(), lat() and lng() on it
+     */
+    onPlaceChanged(autocompleteObject) {
+        const place = autocompleteObject.getPlace();
+        this.lat = place.geometry.location.lat();
+        this.lng = place.geometry.location.lng();
+        this.destination = this.getDestination('input#address-input');
     }
 
     /**
@@ -276,18 +284,52 @@ export default class Autocomplete {
     }
 
     /**
+     *@description Sets the format of the date correctly in order to calculate the amount of nights. It conditionalizes for the Room Steals site and any Formula 1 site (excluding the USA race in Austin) that have different date formats.
+     *@params - String - The language theme.
+     *@params - Number - Affiliate ID.
+     *@params - Number - Site ID.
+     *@returns - Object - {check_in_value, nights}
+     */
+    setDateFormat(theme, affiliate, site) {
+        const date_in = document.querySelector('input#theCheckIn').value;
+        const date_out = document.querySelector('input#theCheckOut').value;
+        let check_in_value;
+        let check_out_value;
+        let nights;
+
+        if (
+            site === 52342 ||
+            (theme === 'standard' && affiliate !== 16980) ||
+            (document.querySelector('span[itemprop="addressLocality"]').textContent === 'Austin' && affiliate === 16980)
+        ) {
+            check_in_value = dayjs(date_in, 'M/D/YYYY').format('M/D/YYYY');
+            check_out_value = dayjs(date_out, 'M/D/YYYY').format('M/D/YYYY');
+            nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+            return {check_in_value, nights};
+        }
+        if (theme === 'mandarin' || theme === 'tw_mandarin') {
+            check_in_value = dayjs(date_in, 'YYYY/M/D').format('YYYY/M/D');
+            check_out_value = dayjs(date_out, 'YYYY/M/D').format('YYYY/M/D');
+            nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+            return {check_in_value, nights};
+        }
+        check_in_value = dayjs(date_in, 'D/M/YYYY').format('M/D/YYYY');
+        check_out_value = dayjs(date_out, 'D/M/YYYY').format('M/D/YYYY');
+        nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+        check_in_value = dayjs(date_in, 'D/M/YYYY').format('D/M/YYYY');
+        check_out_value = dayjs(date_out, 'D/M/YYYY').format('D/M/YYYY');
+        return {check_in_value, nights};
+    }
+
+    /**
      *@description constructs the URL with necessary parameters.
      *@params - Object - The event.
      */
-    constructUrl(event) {
+    constructUrl(event, stayData) {
         event.preventDefault();
 
         const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
         const built_url = new URL(url);
-        const nights = dayjs(dayjs(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')).diff(
-            dayjs(document.querySelector('input#theCheckIn').value),
-            'days'
-        );
 
         this.appendParamsToURL(built_url, {
             longitude: {
@@ -304,11 +346,11 @@ export default class Autocomplete {
             },
             checkin: {
                 key: 'checkin',
-                value: dayjs(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY'),
+                value: stayData.check_in_value,
             },
             nights: {
                 key: 'nights',
-                value: nights,
+                value: stayData.nights,
             },
             rooms: {
                 key: 'rooms',
@@ -386,7 +428,8 @@ export default class Autocomplete {
      */
     sumbitListener(selector, event) {
         document.querySelector(selector).addEventListener(event, (e) => {
-            this.constructUrl(e);
+            const stay_data = this.setDateFormat(utilities.getMetaTagContent('theme'), this.site_config.affiliate_id, this.site_config.site_id);
+            this.constructUrl(e, stay_data);
         });
     }
 }

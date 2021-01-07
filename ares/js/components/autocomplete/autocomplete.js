@@ -11,6 +11,8 @@ export default class Autocomplete {
     event_params = {
         properties: null,
         utm_source: null,
+        utm_campaign: null,
+        utm_medium: null,
         locationlabel: null,
         radius: null,
         groupid: null,
@@ -120,6 +122,7 @@ export default class Autocomplete {
                     /* Simulate a 'down arrow' keypress if no address has been selected */
                     const suggestion_selected = document.getElementsByClassName('pac-item-selected').length;
                     if (event.key === 'Enter' && !suggestion_selected) {
+                        event.preventDefault();
                         const e = new KeyboardEvent('keydown', {
                             key: 'ArrowDown',
                             code: 'ArrowDown',
@@ -148,7 +151,7 @@ export default class Autocomplete {
         const autocomplete = new google.maps.places.Autocomplete(input, options);
         this.getFirstSuggestionOnPressOfEnter(input);
         // eslint-disable-next-line no-undef
-        google.maps.event.addListener(autocomplete, 'place_changed', () => {
+        google.maps.event.addListener(autocomplete, 'place_changed', (e) => {
             this.onPlaceChanged(autocomplete);
         });
     }
@@ -326,7 +329,7 @@ export default class Autocomplete {
      *@params - Object - The event.
      */
     constructUrl(event, stayData) {
-        event.preventDefault();
+        // event.preventDefault();
 
         const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
         const built_url = new URL(url);
@@ -396,6 +399,14 @@ export default class Autocomplete {
                     key: 'utm_source',
                     value: this.utm_source,
                 },
+                utm_medium: {
+                    key: 'utm_medium',
+                    value: this.utm_medium,
+                },
+                utm_campaign: {
+                    key: 'utm_campaign',
+                    value: this.utm_campaign,
+                },
                 locationLabel: {
                     key: 'locationlabel',
                     value: this.locationlabel,
@@ -418,7 +429,7 @@ export default class Autocomplete {
                 },
             });
         }
-        window.location.href = decodeURIComponent(built_url);
+        // window.location.href = decodeURIComponent(built_url);
     }
 
     /**
@@ -428,6 +439,7 @@ export default class Autocomplete {
      */
     sumbitListener(selector, event) {
         document.querySelector(selector).addEventListener(event, (e) => {
+            e.preventDefault();
             const stay_data = this.setDateFormat(utilities.getMetaTagContent('theme'), this.site_config.affiliate_id, this.site_config.site_id);
             this.constructUrl(e, stay_data);
         });

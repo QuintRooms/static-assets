@@ -57,6 +57,7 @@ export default class Resbeat extends BasePortal {
         if (document.querySelector('.WBValidatedRegistrationForm')) {
             this.createInputMaskToBypassArnValidation('#theUserNameAjax', 'email-mask', 'email', 'Email', '#theUserNameAjax input');
             utilities.removeMaskedElementFromTabIndex('#theUserNameAjax input');
+            this.addRegistrationInfoForRetailReferal();
         }
         if (document.querySelector('.WBSupportFormContainer')) {
             this.createInputMaskToBypassArnValidation(
@@ -265,6 +266,7 @@ export default class Resbeat extends BasePortal {
 
     confirmationPointsEarned() {
         if (!document.querySelector('.ConfirmationForm')) return;
+        if (!document.querySelector('.discountRow')) return;
 
         let points_earned = document.querySelector('.discountRow td').textContent;
         // eslint-disable-next-line radix
@@ -426,16 +428,29 @@ export default class Resbeat extends BasePortal {
 
     updateSearchTitle() {
         if (!document.querySelector('.RootBody')) return;
-        if (!document.querySelector('meta[name="firstName"]')) return;
+        if (!document.querySelector('meta[name="firstName"]') && utilities.getMetaTagContent('siteId') !== '51474') return;
+        let name;
+        let html;
+        if (document.querySelector('meta[name="firstName"]')) {
+            name = document.querySelector('meta[name="firstName"]').content;
+        }
 
-        const name = document.querySelector('meta[name="firstName"]').content;
         const el = document.querySelector('.RootBody .ArnSearchHotelsImg');
-        el.innerHTML = `
+        name
+            ? (html = `
+        <span class="search-messaging">
+                <h1 id="user-name">${name.toUpperCase()}, ${this.site_config.root_page_header_text}</h1>
+                <h4>${this.site_config.root_page_subheader_text}</h4>
+        </span>
+        `)
+            : (html = `
             <span class="search-messaging">
-                    <h1 id="user-name">${name.toUpperCase()}, ${this.site_config.root_page_header_text}</h1>
+                    <h1>${this.site_config.root_page_header_text}</h1>
                     <h4>${this.site_config.root_page_subheader_text}</h4>
             </span>
-            `;
+            `);
+
+        el.innerHTML = html;
     }
 
     applyResbeatStyles() {
@@ -458,6 +473,7 @@ export default class Resbeat extends BasePortal {
 
     confPageSavings() {
         if (!document.querySelector('.ConfirmationForm')) return;
+        if (!document.querySelector('#theRateTotals .discount')) return;
 
         const beat_em_value = document.querySelector('#theRateTotals .discount td').textContent;
 
@@ -540,5 +556,24 @@ export default class Resbeat extends BasePortal {
             'afterBegin',
             `<a id="rewards-link" href="https://rb-redirect.hotelsforhope.com/users/redirect/${encoded_query_string}" target="_blank">RES<b>BEAT</b> Rewards</a>`
         );
+    }
+
+    addRegistrationInfoForRetailReferal() {
+        if (utilities.page_name !== 'cug-registration') return;
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+
+        if (params.has('cta_referral')) {
+            document.querySelector('.WBValidatedRegistrationFormContainer').insertAdjacentHTML(
+                'afterbegin',
+                `
+                <div id="referral-info">
+                    <h1>Want to pay less for hotel rooms?</h1>
+                    <p id="content">RES<b>BEAT</b> is a private hotel booking platform and our exclusive technology allows members free access to unbeatable rates otherwise unavailable to the public. Every time you make a reservation, you'll also earn RESBEAT Rewards, which you can redeem at the online retailer of your choice through a virtual Visa® card.</p>
+                    <h3>Sign up for free and start saving today!</h3>
+                </div>
+                `
+            );
+        }
     }
 }

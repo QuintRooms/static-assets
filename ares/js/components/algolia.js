@@ -327,6 +327,14 @@ export default class Algolia {
                         key: 'utm_source',
                         value: getEventOrginalParams('utm_source'),
                     },
+                    utm_campaign: {
+                        key: 'utm_campaign',
+                        value: getEventOrginalParams('utm_campaign'),
+                    },
+                    utm_medium: {
+                        key: 'utm_medium',
+                        value: getEventOrginalParams('utm_medium'),
+                    },
                     locationLabel: {
                         key: 'locationlabel',
                         value: getEventOrginalParams('locationlabel'),

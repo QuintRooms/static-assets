@@ -20,7 +20,7 @@ $bg-images: url(#{$path}/site_configs/#{$site_name}/img/player.jpg);
 $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-@import '../../../js/components/landing-page/landing-page.scss';
+@import '../../../js/components/landing_page/landing-page.scss';
 
 #AmentitiesContainer,
 .RootBody h3{

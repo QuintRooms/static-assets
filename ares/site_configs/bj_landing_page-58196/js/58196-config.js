@@ -83,7 +83,7 @@ export default function siteConfig() {
             },
             {
                 name: '2021 Scottsdale Auction',
-                display_date: '', // postponed event dates - January 16 - 23, 2021
+                display_date: 'March 20 - 27, 2021',
                 end_date: '1/25/2021', // M/D/YYYY
                 portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
             },

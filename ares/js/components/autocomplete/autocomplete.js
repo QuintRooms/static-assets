@@ -21,25 +21,19 @@ export default class Autocomplete {
     };
     lat = null;
     lng = null;
-    destination = null;
 
     constructor(site_config, page_name) {
         this.site_config = site_config;
         this.page_name = page_name;
         this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        this.sumbitListener('form#searchForm', 'submit');
+        this.sumbitListener();
         this.removeAttribute('input#city', 'required');
-        this.insertNewSearchInput(
-            'landing-page',
-            'div#CitySearchContainer span',
-            'beforeEnd',
-            '<input type="search" id="address-input" placeholder="Destination" required="true" />'
-        );
+        this.insertNewSearchInput('landing-page', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required/>');
         this.insertNewSearchInput(
             'search-results',
             'div#theSearchBox',
             'afterBegin',
-            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required="true"  />'
+            '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required/>'
         );
         this.googleMapsScript();
         this.setAttribute('input#theCheckIn', 'required', true);
@@ -154,6 +148,12 @@ export default class Autocomplete {
         google.maps.event.addListener(autocomplete, 'place_changed', (e) => {
             this.onPlaceChanged(autocomplete);
         });
+        // eslint-disable-next-line no-undef
+        google.maps.event.addDomListener(input, 'keydown', (e) => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+            }
+        });
     }
 
     /**
@@ -164,7 +164,7 @@ export default class Autocomplete {
         const place = autocompleteObject.getPlace();
         this.lat = place.geometry.location.lat();
         this.lng = place.geometry.location.lng();
-        this.destination = this.getDestination('input#address-input');
+        // this.destination = this.getDestination('input#address-input');
     }
 
     /**
@@ -328,9 +328,7 @@ export default class Autocomplete {
      *@description constructs the URL with necessary parameters.
      *@params - Object - The event.
      */
-    constructUrl(event, stayData) {
-        // event.preventDefault();
-
+    constructUrl(stayData) {
         const url = `${window.location.origin}/v6/?type=geo&siteid=${document.querySelector('meta[name="siteId"]').content}&pagesize=10&${this.site_config.distance_unit}`;
         const built_url = new URL(url);
 
@@ -345,7 +343,8 @@ export default class Autocomplete {
             },
             destination: {
                 key: 'destination',
-                value: this.destination ? this.destination : this.original_params.get('destination'),
+                value: this.getDestination('input#address-input'),
+                // value: this.destination ? this.destination : this.original_params.get('destination'),
             },
             checkin: {
                 key: 'checkin',
@@ -429,7 +428,8 @@ export default class Autocomplete {
                 },
             });
         }
-        // window.location.href = decodeURIComponent(built_url);
+
+        window.location.href = decodeURIComponent(built_url);
     }
 
     /**
@@ -437,11 +437,11 @@ export default class Autocomplete {
      *@params - String - DOM selector for the event listener to be added to.
      *@params - String - Event to listen for.
      */
-    sumbitListener(selector, event) {
-        document.querySelector(selector).addEventListener(event, (e) => {
+    sumbitListener() {
+        document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const stay_data = this.setDateFormat(utilities.getMetaTagContent('theme'), this.site_config.affiliate_id, this.site_config.site_id);
-            this.constructUrl(e, stay_data);
+            this.constructUrl(stay_data);
         });
     }
 }

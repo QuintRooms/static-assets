@@ -21,6 +21,7 @@ export default class Autocomplete {
     };
     lat = null;
     lng = null;
+    destination = null;
 
     constructor(site_config, page_name) {
         this.site_config = site_config;
@@ -164,7 +165,7 @@ export default class Autocomplete {
         const place = autocompleteObject.getPlace();
         this.lat = place.geometry.location.lat();
         this.lng = place.geometry.location.lng();
-        // this.destination = this.getDestination('input#address-input');
+        this.destination = this.getDestination('input#address-input');
     }
 
     /**
@@ -343,8 +344,8 @@ export default class Autocomplete {
             },
             destination: {
                 key: 'destination',
-                value: this.getDestination('input#address-input'),
-                // value: this.destination ? this.destination : this.original_params.get('destination'),
+                // value: this.getDestination('input#address-input'),
+                value: this.destination,
             },
             checkin: {
                 key: 'checkin',

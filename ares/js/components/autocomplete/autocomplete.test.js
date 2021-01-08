@@ -266,6 +266,7 @@ describe('googleMapsScript', () => {
                 },
                 event: {
                     addListener: jest.fn(() => autocomplete.onPlaceChanged()),
+                    addDomListener: jest.fn(() => true),
                 },
             },
         };

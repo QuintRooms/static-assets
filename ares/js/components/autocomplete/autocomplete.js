@@ -21,7 +21,7 @@ export default class Autocomplete {
     };
     lat = null;
     lng = null;
-    destination = null;
+    // destination = null;
 
     constructor(site_config, page_name) {
         this.site_config = site_config;
@@ -275,13 +275,7 @@ export default class Autocomplete {
     */
     appendParamsToURL(url, paramObject) {
         for (const obj in paramObject) {
-            if (
-                paramObject[obj].value !== '' &&
-                paramObject[obj].value !== null &&
-                paramObject[obj].value !== undefined &&
-                paramObject[obj].key !== undefined &&
-                paramObject[obj].key !== ''
-            ) {
+            if (paramObject[obj].value && paramObject[obj].key) {
                 url.searchParams.append(paramObject[obj].key, paramObject[obj].value);
             }
         }
@@ -344,8 +338,7 @@ export default class Autocomplete {
             },
             destination: {
                 key: 'destination',
-                // value: this.getDestination('input#address-input'),
-                value: this.destination,
+                value: this.getDestination('input#address-input'),
             },
             checkin: {
                 key: 'checkin',
@@ -393,39 +386,39 @@ export default class Autocomplete {
             this.appendParamsToURL(built_url, {
                 properties: {
                     key: 'properties',
-                    value: this.properties,
+                    value: this.event_params.properties,
                 },
                 utm_source: {
                     key: 'utm_source',
-                    value: this.utm_source,
+                    value: this.event_params.utm_source,
                 },
                 utm_medium: {
                     key: 'utm_medium',
-                    value: this.utm_medium,
+                    value: this.event_params.utm_medium,
                 },
                 utm_campaign: {
                     key: 'utm_campaign',
-                    value: this.utm_campaign,
+                    value: this.event_params.utm_campaign,
                 },
                 locationLabel: {
                     key: 'locationlabel',
-                    value: this.locationlabel,
+                    value: this.event_params.locationlabel,
                 },
                 radius: {
                     key: 'radius',
-                    value: this.radius,
+                    value: this.event_params.radius,
                 },
                 groupId: {
                     key: 'groupid',
-                    value: this.groupid,
+                    value: this.event_params.groupid,
                 },
                 cid: {
                     key: 'cid',
-                    value: this.cid,
+                    value: this.event_params.cid,
                 },
                 points: {
                     key: 'points',
-                    value: this.points,
+                    value: this.event_params.points,
                 },
             });
         }

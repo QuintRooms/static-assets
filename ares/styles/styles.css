@@ -2976,7 +2976,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .SearchHotels #address-input {
   width: 100%;
-  margin-bottom: 10px; }
+  margin: 7px 0; }
 
 .RootBody input#city {
   position: absolute;

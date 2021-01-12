@@ -580,12 +580,17 @@ header .supportLink {
 }
 
 .SinglePropDetail .save-more {
-  color: #666;
+  color: #fff;
   font-size: 15px;
   text-align: left;
   padding: 7px 0;
   position: absolute;
   bottom: 42px;
+  background: #215853;
+  border-radius: 25px;
+}
+.SinglePropDetail .save-more span {
+  padding: 10px;
 }
 .SinglePropDetail .save-more a {
   font-weight: bold;
@@ -606,15 +611,6 @@ header .supportLink {
   font-weight: bold;
   color: #e2ad37 !important;
   margin-left: 5px;
-}
-
-.ConfirmationForm .points-earned {
-  background: #e2ad37 !important;
-}
-.ConfirmationForm .points-earned a {
-  font-weight: bold;
-  color: #fff;
-  font-size: 15px;
 }
 
 .CheckOutForm .total-points-earned {
@@ -640,6 +636,19 @@ header .supportLink {
   color: #666;
 }
 
+.ConfirmationForm .points-earned, .ConfirmationForm .discount, .ConfirmationForm .beat-em-value {
+  display: none;
+}
+.ConfirmationForm .confirmation-sign-up.points-earned {
+  display: flex;
+  background: #e2ad37 !important;
+}
+.ConfirmationForm .confirmation-sign-up.points-earned a {
+  font-weight: bold;
+  color: #fff;
+  font-size: 15px;
+}
+
 @media screen and (max-width: 800px) {
   .config-label {
     background: transparent;
@@ -648,6 +657,15 @@ header .supportLink {
 @media screen and (max-width: 600px) {
   .MemberNotAuthenticated .info-banner {
     display: flex !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  header {
+    justify-content: center;
+    flex-direction: column;
+  }
+  header .supportLink {
+    margin-right: unset;
   }
 }
 

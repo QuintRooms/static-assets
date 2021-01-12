@@ -666,13 +666,20 @@ body.WBSupportForm {
     max-width: 400px;
     display: flex;
     flex-direction: column; }
-    .WBValidatedRegistrationFormContainer #referral-info p#content {
+    .WBValidatedRegistrationFormContainer #referral-info p.referral-content {
       color: #666;
       letter-spacing: 1px;
       font-size: 15px; }
     .WBValidatedRegistrationFormContainer #referral-info h3 {
       color: #666;
       letter-spacing: 1px; }
+  .WBValidatedRegistrationFormContainer input.referral {
+    background-color: #e2ad37 !important;
+    border-color: #e2ad37 !important;
+    font-weight: 800; }
+    .WBValidatedRegistrationFormContainer input.referral :hover {
+      background-color: #fff;
+      color: #e2ad37; }
 
 @media screen and (max-width: 770px) {
   .WBValidatedRegistrationFormContainer {

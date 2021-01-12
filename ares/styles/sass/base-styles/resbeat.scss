@@ -864,7 +864,7 @@ body.WBSupportForm {
         display: flex;
         flex-direction: column;
 
-        p#content {
+        p.referral-content {
             color: #666;
             letter-spacing: 1px;
             font-size: 15px;
@@ -873,6 +873,17 @@ body.WBSupportForm {
         h3 {
             color: #666;
             letter-spacing: 1px;
+        }
+    }
+
+    input.referral {
+        background-color: #e2ad37 !important;
+        border-color: #e2ad37!important;
+        font-weight: 800;
+
+        :hover {
+            background-color: #fff;
+            color: #e2ad37;
         }
     }
 }

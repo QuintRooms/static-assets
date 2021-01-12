@@ -36,7 +36,7 @@ class ChildPortal extends Resbeat {
         if (document.querySelector('.SearchHotels')) {
             jQuery(document).on('ratesReadyEvent', () => {
                 setTimeout(() => {
-                    this.addAsearchResultsCallToAction();
+                    this.addSearchResultsCallToAction();
                 }, 1);
             });
         }
@@ -63,18 +63,18 @@ class ChildPortal extends Resbeat {
         document.querySelector('header').insertAdjacentElement('beforeend', support_link);
     }
 
-    async addAsearchResultsCallToAction() {
+    async addSearchResultsCallToAction() {
         if (document.querySelector('.SearchHotels')) {
             if (!document.querySelector('.ArnContainer')) return;
             const mq = window.matchMedia('(max-width: 600px)');
             let html;
             if (mq.matches) {
                 html = `<div class="beat-em">
-                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=search-results">Sign up & save!</a>
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Search%20Results&utm_medium=Website&utm_campaign=RESBEAT%20Retail">Sign up & save!</a>
             </div>`;
             } else {
                 html = `<div class="beat-em">
-                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=search-results">Sign up & save more!</a>
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Search%20Results&utm_medium=Website&utm_campaign=RESBEAT%20Retail">Sign up & save up to 18%</a>
             </div>`;
             }
 
@@ -107,7 +107,7 @@ class ChildPortal extends Resbeat {
                       `
                 <div class="earn-points-cta">
                 <span>Earn RE<b>WARDS</b>: ${reward_points}</span>
-                <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=property"> Sign up for free!</a>
+                <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail"> Sign up for free!</a>
                 </div>
                 `
                   )
@@ -116,7 +116,7 @@ class ChildPortal extends Resbeat {
                       `
                 <div class="save-more">
                     <span>
-                        Save more and earn <span class="points">${reward_points}</span> RES<b>BEAT</b> Rewards when you <a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=property">sign up for free!</a>
+                        Save more and earn <span class="points">${reward_points}</span> RES<b>BEAT</b> Rewards when you <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail">sign up for free!</a>
                     </span>
                 </div>
                 `
@@ -129,9 +129,10 @@ class ChildPortal extends Resbeat {
         document.querySelector('.GuestForms').insertAdjacentHTML(
             'beforeEnd',
             `
-            <div class="confirmation-sign-up">
-                <p>Don’t forget to become a RES<b>BEAT</b> member and receive exclusive access to unbeatable hotel rates at no cost to you. You’ll also earn RES<b>BEAT</b> Rewards with every booking that you can spend at any online retailer of your choice.</p>
-                <span><a target="_blank" href="https://hotels.resbeat.com/v6/register?cta_referral=confirmation">Sign up for free</a> and start saving even more today!</span>
+            <div class="confirmation-sign-up points-earned">
+                <p>Don’t forget to sign up for RES<b>BEAT</b> and receive exclusive access to unbeatable hotel rates at no cost to you. </p>
+                <p>You’ll also earn RES<b>BEAT</b> Rewards with every booking that you can spend at your preferred online retailer.</p>
+                <span><a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Confirmation%20Page&utm_medium=Website&utm_campaign=RESBEAT%20Retail">Sign up for free</a> and start saving even more today!</span>
             </div>
             `
         );

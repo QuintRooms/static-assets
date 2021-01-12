@@ -571,7 +571,7 @@ export default class Resbeat extends BasePortal {
                 <div id="referral-info">
                     <h1>Want to pay less for hotel rooms?</h1>
                     <p class="referral-content">RES<b>BEAT</b>'s exclusive technology allows members free access to unbeatable rates otherwise unavailable to the public.</p>
-                    <p class="referral-content">Every time you make a reservation, you'll also earn RESBEAT Rewards, which you can redeem using your virtual Visa® card.</p>
+                    <p class="referral-content">Every time you make a reservation, you'll also earn RES<b>BEAT</b> Rewards, which you can redeem using your virtual Visa® card.</p>
                     <h3>Sign up for free and start saving today!</h3>
                 </div>
                 `

@@ -881,9 +881,10 @@ body.WBSupportForm {
         border-color: #e2ad37!important;
         font-weight: 800;
 
-        :hover {
-            background-color: #fff;
-            color: #e2ad37;
+        &:hover {
+            background-color: #fff !important;
+            border-color: #e2ad37!important;
+            color: #e2ad37 !important;
         }
     }
 }

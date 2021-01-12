@@ -37,6 +37,7 @@ module.exports = () => {
             // 'lolla_20-52975': './src/52975.js', // lollapalooza 2020
             // 'lolla_21-60828': './src/60828.js', // lollapalooza 2021
             // 'resbeat-60831': './src/60831.js', // Resbeat
+            // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
@@ -56,8 +57,7 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
-            // 'resbeat_test-62011': './src/62011.js', // Resbeat test
-            // 'retail_resbeat_public-51474': './src/51474.js', // retail resbeat_public
+            // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
         };
 
         // local environment

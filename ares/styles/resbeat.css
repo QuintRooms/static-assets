@@ -677,9 +677,10 @@ body.WBSupportForm {
     background-color: #e2ad37 !important;
     border-color: #e2ad37 !important;
     font-weight: 800; }
-    .WBValidatedRegistrationFormContainer input.referral :hover {
-      background-color: #fff;
-      color: #e2ad37; }
+    .WBValidatedRegistrationFormContainer input.referral:hover {
+      background-color: #fff !important;
+      border-color: #e2ad37 !important;
+      color: #e2ad37 !important; }
 
 @media screen and (max-width: 770px) {
   .WBValidatedRegistrationFormContainer {

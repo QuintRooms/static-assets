@@ -1190,17 +1190,17 @@
 
                         )
                             i(n[a++]);
-                        (t._c = []), (t._n = !1), e && !t._h && q(t);
+                        (t._c = []), (t._n = !1), e && !t._h && I(t);
                     });
                 }
             },
-            q = function (t) {
+            I = function (t) {
                 y.call(u, function () {
                     var e,
                         n,
                         r,
                         o = t._v,
-                        a = I(t);
+                        a = q(t);
                     if (
                         (a &&
                             ((e = x(function () {
@@ -1210,14 +1210,14 @@
                                     ? n({promise: t, reason: o})
                                     : (r = u.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (t._h = P || I(t) ? 2 : 1)),
+                            (t._h = P || q(t) ? 2 : 1)),
                         (t._a = void 0),
                         a && e.e)
                     )
                         throw e.v;
                 });
             },
-            I = function (t) {
+            q = function (t) {
                 return 1 !== t._h && 0 === (t._a || t._c).length;
             },
             D = function (t) {
@@ -2103,6 +2103,17 @@
                         country_flag_url: ''.concat(o.path, '/clients/formula_1/images/bahrain.jpg'),
                         flag_alt_text: 'Bahrain',
                         book_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Bahrain%202021',
+                    },
+                    imola: {
+                        days: '16-18',
+                        month: 'Apr',
+                        race_expiry: '2021-04-19',
+                        sponsor: '',
+                        name: "Gran Premio Dell'Emila Romagne 2021",
+                        location: 'Imola, Italy',
+                        country_flag_url: ''.concat(o.path, '/clients/formula_1/images/italy.jpg'),
+                        flag_alt_text: 'Italian',
+                        book_url: 'https://bookrooms.formula1.com/group-event?id=47086&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Imola%202021',
                     },
                     spain: {
                         days: '7-9',

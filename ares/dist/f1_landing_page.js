@@ -2109,7 +2109,7 @@
                         month: 'Apr',
                         race_expiry: '2021-04-19',
                         sponsor: '',
-                        name: "Gran Premio Dell'Emila Romagne 2021",
+                        name: "Gran Premio Dell'Emila Romagne",
                         location: 'Imola, Italy',
                         country_flag_url: ''.concat(o.path, '/clients/formula_1/images/italy.jpg'),
                         flag_alt_text: 'Italian',

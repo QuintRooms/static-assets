@@ -166,12 +166,22 @@ header .supportLink {
 }
 
 .SinglePropDetail .save-more {
-    color: #666;
+    color: #fff;
     font-size: 15px;
-    text-align: left;
+    text-align: center;
     padding: 7px 0;
-    position: absolute;
+    // position: absolute;
     bottom: 42px;
+    background: #215853;
+    border-radius: 25px;
+
+    .points {
+        padding: 0;
+    }
+
+    span {
+        padding: 10px;
+    }
 
     a {
         font-weight: bold;
@@ -193,15 +203,6 @@ header .supportLink {
         font-weight: bold;
         color: #e2ad37 !important;
         margin-left: 5px;
-    }
-}
-
-.ConfirmationForm .points-earned {
-    background: #e2ad37 !important;
-    a {
-        font-weight: bold;
-        color: #fff;
-        font-size: 15px;
     }
 }
 
@@ -235,6 +236,23 @@ header .supportLink {
     }
 }
 
+.ConfirmationForm {
+    .points-earned, .discount, .beat-em-value {
+        display: none;
+    }
+    
+    .confirmation-sign-up.points-earned {
+        display: flex;
+        background: #e2ad37 !important;
+
+        a {
+            font-weight: bold;
+            color: #fff;
+            font-size: 15px;
+        }
+    }
+}
+
 @media screen and (max-width: 800px){
     .config-label{
         background: transparent;
@@ -244,5 +262,16 @@ header .supportLink {
 @media screen and (max-width: 600px){
     .MemberNotAuthenticated .info-banner {
         display: flex !important;
+    }
+}
+
+@media screen and (max-width: 400px){
+    header {
+        justify-content: center;
+        flex-direction: column;
+
+        .supportLink {
+            margin-right: unset;
+        }
     }
 }

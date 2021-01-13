@@ -21,7 +21,6 @@ export default class Autocomplete {
     };
     lat = null;
     lng = null;
-    // destination = null;
 
     constructor(site_config, page_name) {
         this.site_config = site_config;
@@ -298,7 +297,7 @@ export default class Autocomplete {
         if (
             site === 52342 ||
             (theme === 'standard' && affiliate !== 16980) ||
-            (document.querySelector('span[itemprop="addressLocality"]').textContent === 'Austin' && affiliate === 16980)
+            (document.querySelector('span[itemprop="addressLocality"]').textContent === 'Austin' && affiliate === 16980 && theme === 'standard')
         ) {
             check_in_value = dayjs(date_in, 'M/D/YYYY').format('M/D/YYYY');
             check_out_value = dayjs(date_out, 'M/D/YYYY').format('M/D/YYYY');
@@ -435,6 +434,7 @@ export default class Autocomplete {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const stay_data = this.setDateFormat(utilities.getMetaTagContent('theme'), this.site_config.affiliate_id, this.site_config.site_id);
+            console.log('stay data: ', stay_data);
             this.constructUrl(stay_data);
         });
     }

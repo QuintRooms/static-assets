@@ -684,7 +684,7 @@ describe('setDateFormat', () => {
             check_in_value: '1/6/2021',
             nights: 2,
         });
-        expect(autocomplete.setDateFormat('spanish', 16980, 12345)).toEqual({
+        expect(autocomplete.setDateFormat('standard', 16980, 12345)).toEqual({
             check_in_value: '1/6/2021',
             nights: 2,
         });

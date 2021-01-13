@@ -434,7 +434,6 @@ export default class Autocomplete {
         document.querySelector('form#searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const stay_data = this.setDateFormat(utilities.getMetaTagContent('theme'), this.site_config.affiliate_id, this.site_config.site_id);
-            console.log('stay data: ', stay_data);
             this.constructUrl(stay_data);
         });
     }

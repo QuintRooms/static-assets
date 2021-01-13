@@ -558,22 +558,26 @@ export default class Resbeat extends BasePortal {
         );
     }
 
-    addRegistrationInfoForRetailReferal() {
-        if (utilities.page_name !== 'cug-registration') return;
+    async addRegistrationInfoForRetailReferal() {
+        if (!document.querySelector('.WBValidatedRegistrationForm')) return;
         const url = new URL(window.location.href);
         const params = new URLSearchParams(url.search);
 
         if (params.has('cta_referral')) {
+            await utilities.waitForSelectorInDOM('.WBValidatedRegistrationFormContainer');
             document.querySelector('.WBValidatedRegistrationFormContainer').insertAdjacentHTML(
                 'afterbegin',
                 `
                 <div id="referral-info">
                     <h1>Want to pay less for hotel rooms?</h1>
-                    <p id="content">RES<b>BEAT</b> is a private hotel booking platform and our exclusive technology allows members free access to unbeatable rates otherwise unavailable to the public. Every time you make a reservation, you'll also earn RESBEAT Rewards, which you can redeem at the online retailer of your choice through a virtual Visa® card.</p>
+                    <p class="referral-content">RES<b>BEAT</b>'s exclusive technology allows members free access to unbeatable rates otherwise unavailable to the public.</p>
+                    <p class="referral-content">Every time you make a reservation, you'll also earn RES<b>BEAT</b> Rewards, which you can redeem using your virtual Visa® card.</p>
                     <h3>Sign up for free and start saving today!</h3>
                 </div>
                 `
             );
+
+            document.querySelector('input.RegisterAction.submit').classList.add('referral');
         }
     }
 }

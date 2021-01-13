@@ -3389,7 +3389,7 @@
                                                     return document.querySelector('.SinglePropDetail'), (e.next = 3), g.waitForSelectorInDOM('.ArnNightlyRate');
                                                 case 3:
                                                     (t = document.querySelectorAll('table.ArnRateList')),
-                                                        (n = window.matchMedia('(max-width: 800px)')),
+                                                        (n = window.matchMedia('(max-width: 560px)')),
                                                         t.forEach(function (e) {
                                                             if (e.querySelector('.full-stay')) {
                                                                 var t = e.querySelector('.full-stay').textContent.split('.')[0];
@@ -3398,9 +3398,9 @@
                                                                           .querySelector('tbody .bookRoomCell')
                                                                           .insertAdjacentHTML(
                                                                               'afterbegin',
-                                                                              '\n                <div class="earn-points-cta">\n                <span>Earn RE<b>WARDS</b>: '.concat(
+                                                                              '\n                <div class="earn-points-cta">\n                    <span>Earn RE<b>WARDS</b>: '.concat(
                                                                                   t,
-                                                                                  '</span>\n                <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail"> Sign up for free!</a>\n                </div>\n                '
+                                                                                  '</span>\n                    <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail"> Sign up for free!</a>\n                </div>\n                '
                                                                               )
                                                                           )
                                                                     : e

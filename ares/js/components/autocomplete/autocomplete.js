@@ -256,7 +256,7 @@ export default class Autocomplete {
     }
 
     /**
-     * @description loops over each object within the object passed in, checks for empty strings, null or undefined values then appends the key and value to the URL.
+     * @description loops over each object within the object passed in, if keys and values are truthy, appends the key and value to the URL.
      * @param object - url object which searchParams will append url parameters to.
      * @param object paramObject - an object containing one or more parameters to append to a url.
      * @property string - paramObject[i].key - url parameter key.
@@ -294,6 +294,8 @@ export default class Autocomplete {
         let check_out_value;
         let nights;
 
+        // TODO needs refactor.
+
         if (
             site === 52342 ||
             (theme === 'standard' && affiliate !== 16980) ||
@@ -319,7 +321,7 @@ export default class Autocomplete {
     }
 
     /**
-     *@description constructs the URL with necessary parameters.
+     *@description constructs the URL with necessary parameters and changes the window.location.href.
      *@params - Object - The event.
      */
     constructUrl(stayData) {

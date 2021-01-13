@@ -91,7 +91,7 @@ class ChildPortal extends Resbeat {
 
         await utilities.waitForSelectorInDOM('.ArnNightlyRate');
         const rooms = document.querySelectorAll('table.ArnRateList');
-        const mq = window.matchMedia('(max-width: 800px)');
+        const mq = window.matchMedia('(max-width: 560px)');
 
         rooms.forEach((el) => {
             if (!el.querySelector('.full-stay')) return;
@@ -106,8 +106,8 @@ class ChildPortal extends Resbeat {
                       'afterbegin',
                       `
                 <div class="earn-points-cta">
-                <span>Earn RE<b>WARDS</b>: ${reward_points}</span>
-                <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail"> Sign up for free!</a>
+                    <span>Earn RE<b>WARDS</b>: ${reward_points}</span>
+                    <a target="_blank" href="https://hotels.resbeat.com/v6/register?siteid=60831&cta_referral=true&utm_source=Property%20Details&utm_medium=Website&utm_campaign=RESBEAT%20Retail"> Sign up for free!</a>
                 </div>
                 `
                   )

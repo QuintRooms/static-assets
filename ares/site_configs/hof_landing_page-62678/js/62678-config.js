@@ -79,14 +79,14 @@ export default function siteConfig() {
                 name: 'Hall of Fame Enshrinement Week',
                 display_date: 'August 5-8, 2021', // August 5-8, 2021
                 end_date: '8/8/2021', // M/D/YYYY
-                portal_url: 'http://book.hofhotels.com/group-event?id=42991&utm_source=internal',
+                portal_url: 'https://book.hofhotels.com/group-event?id=42991&utm_campaign=Pro%20Football%20HOF%20Enshrinement%202021',
             },
             {
                 is_city_search_header_link: true,
                 name: 'Search Canton, OH',
                 display_date: '', // August 5-8, 2021
                 end_date: '', // M/D/YYYY
-                portal_url: 'https://book.hofhotels.com/group-event?id=44347',
+                portal_url: 'https://book.hofhotels.com/group-event?id=44347&utm_campaign=Pro%20Football%20HOF%20Canton%202021',
             },
         ],
     };

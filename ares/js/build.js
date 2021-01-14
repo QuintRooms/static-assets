@@ -279,6 +279,7 @@ export default class BasePortal {
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
+            this.shouldSiteRedirect(this.site_config.lodging.redirect_date, this.site_config.lodging.redirect_url, this.page_name);
         });
     }
 
@@ -2009,5 +2010,14 @@ export default class BasePortal {
     addGroupBookingBannerBelowHeader(event_name, url) {
         if (!this.site_config.has_group_booking_banner || this.site_config.group_booking_form_url === '') return;
         renderLucidBanner(event_name, url);
+    }
+
+    shouldSiteRedirect(date, url, page) {
+        if (!date && !url) return;
+        if (page !== 'landing-page' || page !== 'search-results' || page !== 'property-detail') return;
+
+        if (utilities.checkForPastDate(date)) {
+            window.location.href = url;
+        }
     }
 }

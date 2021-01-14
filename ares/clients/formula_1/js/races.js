@@ -100,7 +100,7 @@ export default {
             month: 'Apr',
             race_expiry: '2021-04-19',
             sponsor: '',
-            name: "Gran Premio Dell'Emila Romagne",
+            name: 'Emilia Romagna Grand Prix',
             location: 'Imola, Italy',
             country_flag_url: `${env_path.path}/clients/formula_1/images/italy.jpg`,
             flag_alt_text: 'Italian',

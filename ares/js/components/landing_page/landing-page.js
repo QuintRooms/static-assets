@@ -97,7 +97,7 @@ export default class LandingPage {
         const medium = search_params.get('utm_medium');
         if (source === null || medium === null) return;
 
-        const events = document.querySelectorAll('.event-container');
+        const events = document.querySelectorAll('.event-container, .header-container');
         if (!events.length) {
             return new Error('No events exist!');
         }

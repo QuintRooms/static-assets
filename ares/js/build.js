@@ -279,7 +279,7 @@ export default class BasePortal {
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
-            this.shouldSiteRedirect(this.site_config.lodging.redirect_date, this.site_config.lodging.redirect_url, this.page_name);
+            // this.shouldSiteRedirect(this.site_config.lodging.redirect_date, this.site_config.lodging.redirect_url, this.page_name);
         });
     }
 

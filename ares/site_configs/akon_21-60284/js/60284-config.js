@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41308,
             event_name: 'A-Kon',
             event_dates: '6/24/2021 - 6/27/2021',
+            redirect_date: '1/14/2021',
+            redirect_url: 'https://hotels.resbeat.com/v6/?siteid=51474&utm_source=internal&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

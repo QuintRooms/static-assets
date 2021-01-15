@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 44940,
             event_name: 'Arizona Bike Week 2021',
             event_dates: '4/7/2021 - 4/13/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

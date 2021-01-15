@@ -22,6 +22,8 @@ export default function siteConfig() {
             event_id: '41942',
             event_name: 'College Football Playoff',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: '',
         },
         cug: {

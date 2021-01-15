@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 11111,
             event_name: 'Bahrain Grand Prix',
             event_dates: '11/27/2020 - 11/29/2020',
+            redirect_date: '11/29/2020',
+            redirect_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 40481,
             event_name: 'Barrett-Jackson Northeast 2020',
             event_dates: '6/24/2020 - 6/27/2020',
+            redirect_date: '09/12/2020',
+            redirect_url: 'https://events.hotelsforhope.com/v6/?siteid=64189&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

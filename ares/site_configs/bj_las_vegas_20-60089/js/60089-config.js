@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 40943,
             event_name: 'Barrett-Jackson Las Vegas 2020',
             event_dates: '09/10/2020 - 09/12/2020',
+            redirect_date: '09/12/2020',
+            redirect_url: 'https://events.hotelsforhope.com/v6/?siteid=64189&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

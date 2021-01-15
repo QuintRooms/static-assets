@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 11111,
             event_name: '2020 - Formula 1 - Portugal',
             event_dates: '10/23/2020 - 10/25/2020',
+            redirect_date: '10/25/2020',
+            redirect_url: 'https://bookrooms.formula1.com/v6?utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

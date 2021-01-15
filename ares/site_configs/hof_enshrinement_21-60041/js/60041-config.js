@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 42991,
             event_name: 'Pro Football Hall of Fame Enshrinement 2021',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

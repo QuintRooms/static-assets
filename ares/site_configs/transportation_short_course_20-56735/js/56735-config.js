@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 35702,
             event_name: 'Transportation Short Course',
             event_dates: '10/12/2020 - 10/14/2020',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

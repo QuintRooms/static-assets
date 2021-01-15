@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41751,
             event_name: 'Voodoo Music + Arts Experience',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 39777,
             event_name: 'Barrett-Jackson Scottsdale 2021',
             event_dates: '01/16/2021 - 01/24/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

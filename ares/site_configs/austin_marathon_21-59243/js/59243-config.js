@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 40435,
             event_name: 'Austin Marathon 2021',
             event_dates: '2/12/2021 - 2/14/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

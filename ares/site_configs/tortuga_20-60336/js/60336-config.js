@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41307,
             event_name: 'Tortuga Music Festival',
             event_dates: '',
+            redirect_date: '1/1/2021',
+            redirect_url: 'https://events.hotelsforhope.com/group-event?id=43285&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

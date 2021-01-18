@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 41301,
             event_name: 'Buku Music and Art Project ',
             event_dates: '3/19/2021 - 3/20/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

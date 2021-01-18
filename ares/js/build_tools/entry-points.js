@@ -64,6 +64,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            // 'roomcash-63712': './src/63712.js', // RoomCash
         };
     }
 

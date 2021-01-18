@@ -2020,4 +2020,60 @@ export default class BasePortal {
             window.location.href = url;
         }
     }
+
+    reportUserData(page, siteType) {
+        if (page !== 'landing-page' || page !== 'search-results' || page !== 'property-detail') return;
+        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+        let email;
+        let user_id;
+        let user_name;
+
+        const referral_url = document.referrer;
+        const user_agent = window.navigator.userAgent;
+        const destination = document.getElementById('address-input').value;
+        const site = `${document.title} - ${document.querySelector('meta[name="siteId"]').getAttribute('content')}`;
+        const trip_dates = `${document.getElementById('theCheckIn').value} - ${document.getElementById('theCheckOut').value}`;
+        const adults = document.querySelector('meta[name="numberOfAdults"]').getAttribute('content');
+        const rooms = document.querySelector('meta[name="numberOfRooms"]').getAttribute('content');
+        const amenities = original_params.get('amenities');
+        const stars = original_params.get('propertyclasses');
+        const property_types = original_params.get('propertytypes');
+        const currency = original_params.get('currency');
+        const nights = original_params.get('nights');
+        const theme = document.querySelector('meta[name="theme"]').getAttribute('content');
+        const optional_hotel_name = original_params.get('hotelname');
+
+        if (siteType.toLowerCase() === 'cug') {
+            email = document.querySelector('meta[name="email"]').getAttribute('content');
+            user_id = document.querySelector('meta[name="userId"]').getAttribute('content');
+            user_name = `${document.querySelector('meta[name="firstName"]').getAttribute('content')} ${document.querySelector('meta[name="lastName"]').getAttribute('content')}`;
+        }
+
+        const data_vars = {
+            referral_url,
+            user_agent,
+            destination,
+            site,
+            trip_dates,
+            adults,
+            rooms,
+            email,
+            user_id,
+            user_name,
+            amenities,
+            stars,
+            property_types,
+            currency,
+            nights,
+            theme,
+            optional_hotel_name,
+        };
+
+        for (const key in data_vars) {
+            if (data_vars[key]) return;
+            delete data_vars[key];
+        }
+        console.log(data_vars);
+        // Send data to url
+    }
 }

@@ -29,6 +29,7 @@ export default class Autocomplete {
         this.sumbitListener();
         this.removeAttribute('input#city', 'required');
         this.insertNewSearchInput('landing-page', 'div#CitySearchContainer span', 'beforeEnd', '<input type="search" id="address-input" placeholder="Destination" required/>');
+        // TODO inclue support for different languages in future iteration ('City Search:')
         this.insertNewSearchInput(
             'search-results',
             'div#theSearchBox',
@@ -36,20 +37,20 @@ export default class Autocomplete {
             '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required/>'
         );
         this.googleMapsScript();
-        this.setAttribute('input#theCheckIn', 'required', true);
-        this.setAttribute('input#theSubmitButton', 'onClick', '');
+        this.resetArnElementAttribute('input#theCheckIn', 'required', true);
+        this.resetArnElementAttribute('input#theSubmitButton', 'onClick', '');
         this.retreiveDestinationValueToPrePopulateInput('input#address-input');
 
         if (this.page_name === 'search-results' && this.site_config.site_type.toLowerCase() === 'lodging') {
             this.getEventOriginalParams(this.event_params);
-            this.removeCitySarchForEvent();
+            this.removeCitySearchForEvent();
         }
     }
 
     /**
      *@description removes the search input for event sites thus keeping the user in the city of the event.
      */
-    removeCitySarchForEvent() {
+    removeCitySearchForEvent() {
         document.querySelector('input#address-input').style.display = 'none';
         document.querySelector('#theSearchBox').firstChild.style.display = 'none';
     }
@@ -78,7 +79,7 @@ export default class Autocomplete {
     /**
      *@description resets ARN's onClick attribute to and empty string to stop their submit button having any functionality.
      */
-    setAttribute(selector, attribute_name, attribute) {
+    resetArnElementAttribute(selector, attribute_name, attribute) {
         if (!document.querySelector(selector)) return;
         const element = document.querySelector(selector);
         element.setAttribute(attribute_name, attribute);

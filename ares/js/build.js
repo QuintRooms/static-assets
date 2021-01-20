@@ -280,6 +280,7 @@ export default class BasePortal {
                 this.cancelConfirmUpdate();
             }
             // this.shouldSiteRedirect(this.site_config.lodging.redirect_date, this.site_config.lodging.redirect_url, this.page_name);
+            // this.reportUserData(this.page_name, this.site_config.site_type);
         });
     }
 
@@ -1832,14 +1833,11 @@ export default class BasePortal {
     }
 
     async appendMemberTokenForCug() {
-        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342') return;
+        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342' || !this.site_config.is_resbeat_client) return;
 
         const outbound_url = this.site_config.header.logo_outbound_url;
 
         await utilities.waitForSelectorInDOM('.logo');
-
-        // if (!document.querySelector('input[name="_s"]')) return;
-        // const member_token = document.querySelector('input[name="_s"]').value;
 
         if (!document.querySelector('meta[name="memberToken"]')) return;
         const member_token = document.querySelector('meta[name="memberToken"]').content;
@@ -1848,12 +1846,10 @@ export default class BasePortal {
 
         let new_href = '';
 
-        if (outbound_url.slice(-1) === '/') {
-            new_href = `${outbound_url}v6?siteId=${this.site_id}&_s=${member_token}`;
-        } else if (outbound_url.slice(-4) === '.com') {
-            new_href = `${outbound_url}/v6?siteId=${this.site_id}&_s=${member_token}`;
+        if (outbound_url.slice(-1) === '/' || outbound_url.slice(-4) === '.com') {
+            new_href = `${outbound_url}v6?siteId=${this.site_id}&memberToken=${member_token}`;
         } else {
-            new_href = `${outbound_url}&_s=${member_token}`;
+            new_href = `${outbound_url}&memberToken=${member_token}`;
         }
 
         logo.setAttribute('href', new_href);
@@ -2013,11 +2009,72 @@ export default class BasePortal {
     }
 
     shouldSiteRedirect(date, url, page) {
-        if (!date && !url) return;
+        if (!date || !url) return;
         if (page !== 'landing-page' || page !== 'search-results' || page !== 'property-detail') return;
 
         if (utilities.checkForPastDate(date)) {
             window.location.href = url;
         }
+    }
+
+    reportUserData(page, siteType) {
+        if (page !== 'landing-page' || page !== 'search-results' || page !== 'property-detail') return;
+        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+
+        const data_vars = {
+            referral_url: document.referrer,
+            user_agent: window.navigator.userAgent,
+            site: `${document.title} - ${document.querySelector('meta[name="siteId"]').getAttribute('content')}`,
+            theme: document.querySelector('meta[name="theme"]').getAttribute('content'),
+            current_page: this.page_name,
+            destination: null,
+            trip_dates: null,
+            adults: null,
+            rooms: null,
+            email: null,
+            user_id: null,
+            user_name: null,
+            amenities: null,
+            stars: null,
+            property_types: null,
+            currency: null,
+            nights: null,
+            optional_hotel_name: null,
+            property: null,
+            rate_data: null,
+        };
+
+        if (page === 'search-results' || page === 'property-detail') {
+            data_vars.destination = document.getElementById('address-input').value;
+            data_vars.trip_dates = `${document.getElementById('theCheckIn').value} - ${document.getElementById('theCheckOut').value}`;
+            data_vars.adults = document.querySelector('meta[name="numberOfAdults"]').getAttribute('content');
+            data_vars.rooms = document.querySelector('meta[name="numberOfRooms"]').getAttribute('content');
+            data_vars.amenities = original_params.get('amenities');
+            data_vars.stars = original_params.get('propertyclasses');
+            data_vars.property_types = original_params.get('propertytypes');
+            data_vars.currency = original_params.get('currency');
+            data_vars.nights = original_params.get('nights');
+            data_vars.optional_hotel_name = original_params.get('hotelname');
+        }
+
+        if (page === 'property-detail') {
+            data_vars.property = document.querySelector('.ArnPropNameLink span').textContent;
+            data_vars.rate_data = document.querySelector('.ArnNightlyRate strong').textContent;
+        }
+
+        if (siteType.toLowerCase() === 'cug') {
+            data_vars.email = document.querySelector('meta[name="email"]').getAttribute('content');
+            data_vars.user_id = document.querySelector('meta[name="userId"]').getAttribute('content');
+            data_vars.user_name = `${document.querySelector('meta[name="firstName"]').getAttribute('content')} ${document
+                .querySelector('meta[name="lastName"]')
+                .getAttribute('content')}`;
+        }
+
+        for (const key in data_vars) {
+            if (data_vars[key]) return;
+            delete data_vars[key];
+        }
+        console.log(data_vars);
+        // Send data to url
     }
 }

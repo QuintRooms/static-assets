@@ -280,6 +280,7 @@ export default class BasePortal {
                 this.cancelConfirmUpdate();
             }
             // this.shouldSiteRedirect(this.site_config.lodging.redirect_date, this.site_config.lodging.redirect_url, this.page_name);
+            // this.reportUserData(this.page_name, this.site_config.site_type);
         });
     }
 

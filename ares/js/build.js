@@ -1833,7 +1833,14 @@ export default class BasePortal {
     }
 
     async appendMemberTokenForCug() {
-        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342' || !this.site_config.is_resbeat_client) return;
+        if (
+            this.site_config.site_type.toLowerCase() !== 'cug' ||
+            this.site_id === '52342' ||
+            !this.site_config.is_resbeat_client ||
+            this.site_id === '63711' ||
+            this.site_id === '63710'
+        )
+            return;
 
         const outbound_url = this.site_config.header.logo_outbound_url;
 
@@ -1846,8 +1853,10 @@ export default class BasePortal {
 
         let new_href = '';
 
-        if (outbound_url.slice(-1) === '/' || outbound_url.slice(-4) === '.com') {
+        if (outbound_url.slice(-1) === '/') {
             new_href = `${outbound_url}v6?siteId=${this.site_id}&memberToken=${member_token}`;
+        } else if (outbound_url.slice(-4) === '.com') {
+            new_href = `${outbound_url}/v6?siteId=${this.site_id}&memberToken=${member_token}`;
         } else {
             new_href = `${outbound_url}&memberToken=${member_token}`;
         }

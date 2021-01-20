@@ -1832,14 +1832,11 @@ export default class BasePortal {
     }
 
     async appendMemberTokenForCug() {
-        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342') return;
+        if (this.site_config.site_type.toLowerCase() !== 'cug' || this.site_id === '52342' || !this.site_config.is_resbeat_client) return;
 
         const outbound_url = this.site_config.header.logo_outbound_url;
 
         await utilities.waitForSelectorInDOM('.logo');
-
-        // if (!document.querySelector('input[name="_s"]')) return;
-        // const member_token = document.querySelector('input[name="_s"]').value;
 
         if (!document.querySelector('meta[name="memberToken"]')) return;
         const member_token = document.querySelector('meta[name="memberToken"]').content;
@@ -1848,12 +1845,10 @@ export default class BasePortal {
 
         let new_href = '';
 
-        if (outbound_url.slice(-1) === '/') {
-            new_href = `${outbound_url}v6?siteId=${this.site_id}&_s=${member_token}`;
-        } else if (outbound_url.slice(-4) === '.com') {
-            new_href = `${outbound_url}/v6?siteId=${this.site_id}&_s=${member_token}`;
+        if (outbound_url.slice(-1) === '/' || outbound_url.slice(-4) === '.com') {
+            new_href = `${outbound_url}v6?siteId=${this.site_id}&memberToken=${member_token}`;
         } else {
-            new_href = `${outbound_url}&_s=${member_token}`;
+            new_href = `${outbound_url}&memberToken=${member_token}`;
         }
 
         logo.setAttribute('href', new_href);
@@ -2013,7 +2008,7 @@ export default class BasePortal {
     }
 
     shouldSiteRedirect(date, url, page) {
-        if (!date && !url) return;
+        if (!date || !url) return;
         if (page !== 'landing-page' || page !== 'search-results' || page !== 'property-detail') return;
 
         if (utilities.checkForPastDate(date)) {

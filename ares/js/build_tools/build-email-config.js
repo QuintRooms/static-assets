@@ -6,7 +6,7 @@ let site_name;
 
 function createConfig(siteObj) {
     const data = JSON.stringify(siteObj);
-    fs.writeFileSync(`${ares}/email_configs/${site_id}.json`, data);
+    fs.writeFileSync(`${ares}/emails/email_configs/${site_id}.json`, data);
     // console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ');
     // console.log(`\n Email config built in ares/email_configs for ${site_name.slice(0, site_name.length - 6)}`);
     // console.log('\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ');

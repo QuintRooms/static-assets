@@ -8,11 +8,11 @@ module.exports = () => {
     return {
         entry() {
             const sites = EntryPoints();
-            // if (process.env.NODE_ENV === 'production') {
-            for (const site in sites) {
-                build_email_config(site);
+            if (process.env.NODE_ENV === 'production') {
+                for (const site in sites) {
+                    build_email_config(site);
+                }
             }
-            // }
             return sites;
         },
         output: {

@@ -1,0 +1,267 @@
+<mjml>
+    <mj-head>
+        <mj-title>Booking Confirmation</mj-title>
+        <mj-attributes>
+            <mj-all padding-top="0" padding-bottom="0" color="#535353"/>
+            <!-- <mj-text font-family="sans-serif" color="#8e8b85" /> -->
+        </mj-attributes>
+    </mj-head>
+    <mj-body background-color="#fff">
+        <!-- Header -->
+        <mj-section>
+            <mj-column width="30%" padding-top="30px" padding-bottom="30px">
+                <mj-image src="https://via.placeholder.com/200x100.png" />
+                <!-- <mj-raw>
+                    <img style="max-width: 300px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
+                </mj-raw> -->
+            </mj-column>
+            <mj-column width="100%">
+                <mj-divider border-width="1px" border-style="solid" border-color="lightgrey" />
+            </mj-column>
+        </mj-section>
+
+        <mj-wrapper>
+        <!-- Room is Booked -->
+            <mj-section padding-bottom="30px">
+                <mj-column width="100%">
+                    <mj-text align="center" color="#666">
+                        <h1>Your Room Is Booked!</h1>
+                        <mj-raw>
+                            <span style="color: [PrimaryColor, fallback=#666]">BOOKING NUMBER:[CONFIRMATIONNUMBER,FALLBACK=]</span>
+                        </mj-raw>
+                    </mj-text>
+                </mj-column>
+            </mj-section>
+            
+            <!-- Image -->
+            <mj-section padding-bottom="10px">
+                <mj-column width="100%">
+                    <!-- <mj-image src="https://via.placeholder.com/600x300.png" /> -->
+                    <!-- <mj-raw>
+                        <img width="800" src="[data.banner] alt="Hotel Bed"  style="display: block;" />
+                    </mj-raw> -->
+                    <mj-raw>
+                        <img width="800" src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" alt="Hotel Bed" title="Hotel Bed" style="display: block;" />
+                    </mj-raw>
+                </mj-column>
+            </mj-section>
+        </mj-wrapper>
+
+        <!-- Hotel Address -->
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text align="center" color="#666">
+                    <mj-raw>
+                        <h2 style="color: [PrimaryColor, fallback=#666]">[Hotel,fallback=]</h2>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+            <mj-column width="100%" padding-bottom="30px">
+                <mj-text align="center" color="#666">
+                    <mj-raw>
+                        <p style="font-weight: 500; font-size: 14px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <!-- Reservation Details -->
+        <mj-section background-color="#F4F4F4">
+            <mj-column width="100%">
+                <mj-text align="center" color="#666">
+                    <h4>RESERVATION DETAILS</h4>
+                </mj-text>
+                <mj-divider border-width="1px" border-style="solid" border-color="lightgrey" />
+            </mj-column>
+            <mj-column width="50%" padding-top="10px">
+                <mj-text color="#666" padding-bottom="10px" padding-top="5px">
+                    <mj-raw>
+                        <span>Guest Name: [GuestName,fallback=]</span>
+                        </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Check In: [CheckInDate,fallback=] - [CheckInTime,fallback=]</span>
+                    </mj-raw>
+                </mj-text color="#666">
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Check Out: [CheckOutDate,fallback=] - [CheckOutTime,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Guests: [Guests,fallback=]</span>
+                        </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <mj-raw>
+                        <span>Rooms: [Rooms,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+            <mj-column width="50%" padding-top="10px">
+                <mj-text color="#666" padding-bottom="10px" padding-top="5px">
+                    <mj-raw>
+                        <span>[if:DepositCharged=0.00] [elseif:DepositCharged] [endif]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Total for Stay: [CurrencySymbol, fallback=][Total,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Tax Amount: [CurrencySymbol, fallback=][TaxAmount,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Deposit Charged: 	[CurrencySymbol, fallback=][DepositCharged,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Balance Due: [CurrencySymbol, fallback=][BalanceDue,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666" padding-bottom="10px">
+                    <mj-raw>
+                        <span>Rate Per Night: [RoomRates,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <!-- Need Help With This Reservation? -->
+        <mj-section>
+            <mj-column width="20%"  padding-top="20px">
+                <mj-image src="https://via.placeholder.com/500x300.png" alt="logo" />
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text align="center" color="#666">
+                    <h1>Need Help With This Reservation?</h1>
+                </mj-text>
+            </mj-column>
+            <mj-column width="100%">
+                <mj-text align="center" color="#666">
+                    <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section  padding-top="20px">
+            <!-- Email Contact -->
+            <mj-column width="50%" padding-bottom="20px">
+                <mj-image width="50px" src="https://static.hotelsforhope.com/emails/img/email.png" width="0px"alt="email" />
+                <mj-text align="center" color="#666">
+                    <h4>Email Hotels For Hope</h4>
+                    <span>reservations@hotelsforhope.com</span>
+                </mj-text>
+            </mj-column>
+            <!-- Phone Contact -->
+            <mj-column width="50%" padding-bottom="20px">
+                <mj-image width="50px" src="https://static.hotelsforhope.com/emails/img/phone.png" width="0px"alt="email" />
+                <mj-text align="center" color="#666">
+                    <h4>Call Hotels For Hope</h4>
+                    <span>1.866.584.0204</span>
+                </mj-text>
+            </mj-column>
+            <mj-column width="100%" padding-top="20px">
+                <mj-divider border-width="1px" border-style="solid" border-color="lightgrey" />
+            </mj-column>
+        </mj-section>
+
+        <!-- Fees and Policies -->
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text color="#666">
+                    <h5>Room Description</h5>
+                    <mj-raw>
+                        <span>[RoomDescriptionLong,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Deposit Policy</h5>
+                    <mj-raw>
+                        <span>[DepositPolicyLong,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Payment Terms</h5>
+                    <mj-raw>
+                        <span>[PaymentTermsLong,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Cancellation Policy</h5>
+                    <mj-raw>
+                        <span>[CancellationPolicyLong,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Property Policy</h5>
+                    <mj-raw>
+                        <span>[PropertyPolicy,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Extra Fees Policy</h5>
+                    <mj-raw>
+                        <span>[ExtraFeesPolicy,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Payment Policy</h5>
+                    <mj-raw>
+                        <span>[PaymentPolicy,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Check In Support Policy</h5>
+                    <mj-raw>
+                        <span>[CheckInSupportPolicy,fallback=]</span>
+                    </mj-raw>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Important Guest Information</h5>
+                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a href="">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+                </mj-text>
+                <mj-text color="#666">
+                    <h5>Reservation Information</h5>
+                    <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
+                    <mj-raw>
+                        [Hotel,fallback=]
+                    </mj-raw> at 
+                    <mj-raw>
+                        [HotelPhone,fallback=].
+                    </mj-raw>To cancel or modify your reservation, <a href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span>
+                </mj-text>
+            </mj-column>
+            <mj-column width="100%" padding-top="20px">
+                <mj-divider border-width="1px" border-style="solid" border-color="lightgrey"/>
+            </mj-column>
+        </mj-section>
+
+        <!-- Footer -->
+        <mj-section>
+            <mj-column width="100%" padding-bottom="30px">
+                <mj-text>
+                    <h4>Hotels For Hope</h4>
+                    <span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
+                </mj-text>
+                <mj-text>
+                    <a href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>
+                </mj-text>
+                <mj-text>
+                    <a color=[PrimaryColor, fallback=#666] href="tel:1.866.584.0204">1.866.584.0204</a>
+                </mj-text>
+                <mj-text>
+                    <unsubscribe>Unsubscribe</unsubscribe>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>

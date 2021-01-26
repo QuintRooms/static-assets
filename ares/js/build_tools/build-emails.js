@@ -1,15 +1,34 @@
+/* eslint-disable no-console */
 const fs = require('fs');
+const handlebars = require('handlebars');
+const mjml2html = require('mjml');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const fsx = require('fs-extra');
 
 const ares = `${process.cwd()}`;
 let site_id;
 let site_name;
 
+async function buildEmail(context) {
+    const conf_template = fs.readFileSync(`${ares}/emails/templates_mjml/confirmation.mjml`, 'utf8');
+    const template = handlebars.compile(conf_template);
+    const mjml = template(context);
+    const {html} = mjml2html(mjml);
+
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/confirmation/confirmation.html`, html.toString(), {encoding: 'utf8'}, (err) => {
+        if (err) {
+            return console.log(err);
+        }
+    });
+}
+
 function createConfig(siteObj) {
     const data = JSON.stringify(siteObj);
-    fs.writeFileSync(`${ares}/emails/email_configs/${site_id}.json`, data);
-    // console.log('- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ');
-    // console.log(`\n Email config built in ares/email_configs for ${site_name.slice(0, site_name.length - 6)}`);
-    // console.log('\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ');
+    // fs.writeFileSync(`${ares}/site_configs/${site_name}/emails/email_config/${site_id}.json`, data);
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/email_config/${site_id}.json`, data);
+    if (siteObj.has_default_conf_email) {
+        buildEmail(siteObj);
+    }
 }
 
 function extractValue(string, startChar, endChar) {
@@ -24,6 +43,8 @@ function buildSiteObject(siteConfig, siteStyles) {
         secondary_color: extractValue(siteStyles, '$secondary_color:', ';'),
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
+        has_default_conf_email: extractValue(siteConfig, 'has_default_conf_email:', ',') === 'true',
+        // TODO make below image urls dynamic.
         logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/logo.png`,
         banner: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/banner.png`,
     };

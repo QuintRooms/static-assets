@@ -11,7 +11,7 @@ module.exports = () => {
             // if (process.env.NODE_ENV === 'production') {
             // for (const site in sites) {
             //     build_emails(site);
-            //     // }
+            // }
             // }
             return sites;
         },

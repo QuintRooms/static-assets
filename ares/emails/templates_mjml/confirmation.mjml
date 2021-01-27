@@ -10,10 +10,7 @@
         <!-- Header -->
         <mj-section>
             <mj-column width="30%" padding-top="30px" padding-bottom="30px">
-                <mj-image src="https://via.placeholder.com/200x100.png" />
-                <!-- <mj-raw>
-                    <img style="max-width: 300px; display: block;" src="[LogoURL]" alt="Logo" title="Logo" />
-                </mj-raw> -->
+                <mj-image css-class="logo" src={{logo}} alt="Logo" title="Logo" />
             </mj-column>
             <mj-column width="100%">
                 <mj-divider border-width="1px" border-style="solid" border-color="lightgrey" />
@@ -36,13 +33,7 @@
             <!-- Image -->
             <mj-section padding-bottom="10px">
                 <mj-column width="100%">
-                    <!-- <mj-image src="https://via.placeholder.com/600x300.png" /> -->
-                    <!-- <mj-raw>
-                        <img width="800" src="[data.banner] alt="Hotel Bed"  style="display: block;" />
-                    </mj-raw> -->
-                    <mj-raw>
-                        <img width="800" src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" alt="Hotel Bed" title="Hotel Bed" style="display: block;" />
-                    </mj-raw>
+                        <mj-image src={{banner}} alt="Hotel Bed" css-class="banner" />
                 </mj-column>
             </mj-section>
         </mj-wrapper>

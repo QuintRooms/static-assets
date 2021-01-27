@@ -11,12 +11,10 @@ let site_name;
 
 async function buildEmail(context, inputPath) {
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
-    // TODO compile mjml includes/partials
-    const template = handlebars.compile(conf_template);
-    const mjml = template(context);
-    const {html} = mjml2html(mjml);
-
-    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/confirmation/confirmation.html`, html.toString(), {encoding: 'utf8'}, (err) => {
+    const {html} = mjml2html(conf_template);
+    const template = handlebars.compile(html.toString());
+    const data = template(context);
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/confirmation/confirmation.html`, data, {encoding: 'utf8'}, (err) => {
         if (err) {
             return console.log(err);
         }
@@ -47,6 +45,9 @@ function extractValue(string, startChar, endChar) {
 }
 
 function buildSiteObject(siteConfig, siteStyles) {
+    const logo = extractValue(siteConfig, '/logo.', '`');
+    const banner = extractValue(siteStyles, '/banner.', ')');
+
     const site_details = {
         site_id: `${site_id}`,
         primary_color: extractValue(siteStyles, '$primary_color:', ';'),
@@ -54,9 +55,8 @@ function buildSiteObject(siteConfig, siteStyles) {
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
         has_custom_conf_email: extractValue(siteConfig, 'has_custom_conf_email:', ',') === 'true',
-        // TODO make below image extensions dynamic.
-        logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/logo.png`,
-        banner: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/banner.png`,
+        logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${logo}`,
+        banner: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${banner}`,
     };
     createConfig(site_details);
 }

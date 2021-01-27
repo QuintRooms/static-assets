@@ -1,0 +1,5 @@
+<mj-title>{{client_name}} Booking Confirmation</mj-title>
+<mj-attributes>
+    <mj-all padding-top="0" padding-bottom="0" color="#535353"/>
+    <!-- <mj-text font-family="sans-serif" color="#8e8b85" /> -->
+</mj-attributes>

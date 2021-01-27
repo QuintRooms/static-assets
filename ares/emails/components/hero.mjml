@@ -1,0 +1,20 @@
+<mj-wrapper>
+<!-- Room is Booked -->
+    <mj-section padding-bottom="30px">
+        <mj-column width="100%">
+            <mj-text align="center" color="#666">
+                <h1>Your Room Is Booked!</h1>
+                <mj-raw>
+                    <span style="color: [PrimaryColor, fallback=#666]">BOOKING NUMBER:[CONFIRMATIONNUMBER,FALLBACK=]</span>
+                </mj-raw>
+            </mj-text>
+        </mj-column>
+    </mj-section>
+    
+    <!-- Image -->
+    <mj-section padding-bottom="10px">
+        <mj-column width="100%">
+                <mj-image src={{banner}} alt="Hotel Bed" css-class="banner" />
+        </mj-column>
+    </mj-section>
+</mj-wrapper>

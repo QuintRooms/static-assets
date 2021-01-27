@@ -1,0 +1,17 @@
+<mj-section>
+    <mj-column width="100%" padding-bottom="30px">
+        <mj-text>
+            <h4>Hotels For Hope</h4>
+            <span>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</span>
+        </mj-text>
+        <mj-text>
+            <a href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>
+        </mj-text>
+        <mj-text>
+            <a color=[PrimaryColor, fallback=#666] href="tel:1.866.584.0204">1.866.584.0204</a>
+        </mj-text>
+        <mj-text>
+            <unsubscribe>Unsubscribe</unsubscribe>
+        </mj-text>
+    </mj-column>
+</mj-section>

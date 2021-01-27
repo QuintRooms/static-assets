@@ -1,0 +1,38 @@
+<mj-section>
+    <mj-column width="20%"  padding-top="20px">
+        <mj-image src="https://via.placeholder.com/500x300.png" alt="logo" />
+    </mj-column>
+</mj-section>
+<mj-section>
+    <mj-column width="100%">
+        <mj-text align="center" color="#666">
+            <h1>Need Help With This Reservation?</h1>
+        </mj-text>
+    </mj-column>
+    <mj-column width="100%">
+        <mj-text align="center" color="#666">
+            <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section  padding-top="20px">
+    <!-- Email Contact -->
+    <mj-column width="50%" padding-bottom="20px">
+        <mj-image width="50px" src="https://static.hotelsforhope.com/emails/img/email.png" width="0px"alt="email" />
+        <mj-text align="center" color="#666">
+            <h4>Email Hotels For Hope</h4>
+            <span>reservations@hotelsforhope.com</span>
+        </mj-text>
+    </mj-column>
+    <!-- Phone Contact -->
+    <mj-column width="50%" padding-bottom="20px">
+        <mj-image width="50px" src="https://static.hotelsforhope.com/emails/img/phone.png" width="0px"alt="email" />
+        <mj-text align="center" color="#666">
+            <h4>Call Hotels For Hope</h4>
+            <span>1.866.584.0204</span>
+        </mj-text>
+    </mj-column>
+    <mj-column width="100%" padding-top="20px">
+        <mj-divider border-width="1px" border-style="solid" border-color="lightgrey" />
+    </mj-column>
+</mj-section>

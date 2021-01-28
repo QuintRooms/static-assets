@@ -9,33 +9,35 @@ const ares = `${process.cwd()}`;
 let site_id;
 let site_name;
 
-async function buildEmail(context, inputPath) {
+async function buildEmail(context, inputPath, fileName) {
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
     const {html} = mjml2html(conf_template);
     const template = handlebars.compile(html.toString());
     const data = template(context);
-    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/confirmation/confirmation.html`, data, {encoding: 'utf8'}, (err) => {
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${fileName}.html`, data, {encoding: 'utf8'}, (err) => {
         if (err) {
             return console.log(err);
         }
     });
 }
 
-function createConfig(siteObj) {
+function createFiles(siteObj) {
     const data = JSON.stringify(siteObj);
-    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/email_config/${site_id}.json`, data);
-    if (siteObj.has_custom_conf_email) {
-        fs.stat(`${ares}/site_configs/${site_name}/emails/confirmation/confirmation.mjml`, (err) => {
-            if (err && err.code === 'ENOENT') {
-                console.log(
-                    "\u001b[1;33m\n------------------------------------------------------------------------------------------------------------------\n\nNo custom email template exists, please build the custom email template you wish to compile to HTML in:\n\n  site_configs\n         |\n         |- /emails\n               |\n               |- /confirmation\n                     |\n                     |- confirmation.html\n\nOr change the site's config 'has_custom_conf_email' to false to use the default room booking confirmation email.\n\n------------------------------------------------------------------------------------------------------------------"
-                );
-                return;
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${site_id}.json`, data);
+    if (siteObj.has_custom_emails) {
+        const email_dir = fs.readdirSync(`${ares}/site_configs/${site_name}/emails`);
+        email_dir.forEach((file) => {
+            if (file.includes('.mjml')) {
+                buildEmail(siteObj, `/site_configs/${site_name}/emails/${file}`, file.substring(0, file.length - 5));
             }
-            buildEmail(siteObj, `site_configs/${site_name}/emails/confirmation/confirmation.mjml`);
         });
+        if (!email_dir.toString().includes('.mjml')) {
+            console.log(
+                "\u001b[1;33m\n------------------------------------------------------------------------------------------------------------------\n\nNo custom emails exists, please build the custom email template you wish to compile at the following location:\n\n  site_configs\n         |\n         |- /emails\n               |\n               |- /confirmation\n                     |\n                     |- confirmation.html\n\nOr change the site's config 'has_custom_emails' to false to use the default room booking confirmation email.\n\n------------------------------------------------------------------------------------------------------------------"
+            );
+        }
     } else {
-        buildEmail(siteObj, 'emails/templates_mjml/confirmation.mjml');
+        buildEmail(siteObj, 'emails/default_templates_mjml/confirmation.mjml', 'confirmation');
     }
 }
 
@@ -45,8 +47,9 @@ function extractValue(string, startChar, endChar) {
 }
 
 function buildSiteObject(siteConfig, siteStyles) {
-    const logo = extractValue(siteConfig, '/logo.', '`');
-    const banner = extractValue(siteStyles, '/banner.', ')');
+    let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    logo = logo[1].replace(`\``, '');
+    const theme_color = extractValue(siteConfig, 'theme:', ',').slice(1, -1) === 'light' ? '#fff' : '#000';
 
     const site_details = {
         site_id: `${site_id}`,
@@ -54,11 +57,12 @@ function buildSiteObject(siteConfig, siteStyles) {
         secondary_color: extractValue(siteStyles, '$secondary_color:', ';'),
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
-        has_custom_conf_email: extractValue(siteConfig, 'has_custom_conf_email:', ',') === 'true',
+        has_custom_emails: extractValue(siteConfig, 'has_custom_emails:', ',') === 'true',
         logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${logo}`,
-        banner: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${banner}`,
+        theme: theme_color,
+        text: theme_color === '#fff' ? '#666' : '#F5FFFA',
     };
-    createConfig(site_details);
+    createFiles(site_details);
 }
 
 function defineVars(site) {

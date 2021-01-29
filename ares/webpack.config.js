@@ -2,17 +2,17 @@ const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EntryPoints = require('./js/build_tools/entry-points');
-// const build_emails = require('./js/build_tools/build-emails');
+const build_emails = require('./js/build_tools/build-emails');
 
 module.exports = () => {
     return {
         entry() {
             const sites = EntryPoints();
-            // if (process.env.NODE_ENV === 'production') {
-            // for (const site in sites) {
-            //     build_emails(site);
-            // }
-            // }
+            if (process.env.NODE_ENV === 'production') {
+                for (const site in sites) {
+                    build_emails(site);
+                }
+            }
             return sites;
         },
         output: {

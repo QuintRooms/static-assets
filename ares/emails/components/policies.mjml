@@ -1,69 +1,45 @@
 <mj-section>
     <mj-column width="100%">
-        <mj-text color="#666">
+        <mj-text>
             <h5>Room Description</h5>
-            <mj-raw>
-                <span>[RoomDescriptionLong,fallback=]</span>
-            </mj-raw>
+            <span>[RoomDescriptionLong,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Deposit Policy</h5>
-            <mj-raw>
-                <span>[DepositPolicyLong,fallback=]</span>
-            </mj-raw>
+            <span>[DepositPolicyLong,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Payment Terms</h5>
-            <mj-raw>
-                <span>[PaymentTermsLong,fallback=]</span>
-            </mj-raw>
+            <span>[PaymentTermsLong,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Cancellation Policy</h5>
-            <mj-raw>
-                <span>[CancellationPolicyLong,fallback=]</span>
-            </mj-raw>
+            <span>[CancellationPolicyLong,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Property Policy</h5>
-            <mj-raw>
-                <span>[PropertyPolicy,fallback=]</span>
-            </mj-raw>
+            <span>[PropertyPolicy,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Extra Fees Policy</h5>
-            <mj-raw>
-                <span>[ExtraFeesPolicy,fallback=]</span>
-            </mj-raw>
+            <span>[ExtraFeesPolicy,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Payment Policy</h5>
-            <mj-raw>
-                <span>[PaymentPolicy,fallback=]</span>
-            </mj-raw>
+            <span>[PaymentPolicy,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Check In Support Policy</h5>
-            <mj-raw>
-                <span>[CheckInSupportPolicy,fallback=]</span>
-            </mj-raw>
+            <span>[CheckInSupportPolicy,fallback=]</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Important Guest Information</h5>
-            <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a href="">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+            <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
         </mj-text>
-        <mj-text color="#666">
+        <mj-text>
             <h5>Reservation Information</h5>
-            <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
-            <mj-raw>
-                [Hotel,fallback=]
-            </mj-raw> at 
-            <mj-raw>
-                [HotelPhone,fallback=].
-            </mj-raw>To cancel or modify your reservation, <a href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span>
+            <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
+                [Hotel,fallback=] at [HotelPhone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span>
         </mj-text>
-    </mj-column>
-    <mj-column width="100%" padding-top="20px">
-        <mj-divider border-width="1px" border-style="solid" border-color="lightgrey"/>
     </mj-column>
 </mj-section>

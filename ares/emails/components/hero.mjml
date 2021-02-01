@@ -12,7 +12,7 @@
     <!-- Image -->
     <mj-section padding-bottom="10px">
         <mj-column width="100%">
-                <mj-image src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" css-class="banner" />
+                <mj-image alt="hotel room bed" src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" css-class="banner" />
         </mj-column>
     </mj-section>
 </mj-wrapper>

@@ -1,5 +1,5 @@
-<mj-section>
-    <mj-column width="100%" padding-top="20px">
+<mj-section padding-top="20px" padding-bottom="20px">
+    <mj-column width="100%">
         <mj-text align="center">
             <h1>Need Help With This Reservation?</h1>
         </mj-text>

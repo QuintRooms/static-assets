@@ -6,6 +6,9 @@
             </mj-raw>
         </mj-text>
     </mj-column>
+</mj-section>
+        
+<mj-section>
     <mj-column width="100%" padding-bottom="30px">
         <mj-text align="center">
             <mj-raw>

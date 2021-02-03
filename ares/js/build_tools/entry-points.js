@@ -54,6 +54,8 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'cfp_indianapolis_22-62632': './src/62632.js', // cfp indianapolis_22
+            // 'cfp_landing_page_22-62631': './src/62631.js', // CFP Landing Page
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
@@ -66,7 +68,6 @@ module.exports = () => {
             // new sites populate below
             // 'arizona_bike_week_22-66931': './src/66931.js', // arizona bike_week_22
             // 'roomcash-63712': './src/63712.js', // RoomCash
-            // 'cfp_landing_page_22-62631': './src/62631.js', // CFP Landing Page
         };
     }
 

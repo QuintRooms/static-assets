@@ -87,13 +87,13 @@ export default function siteConfig() {
                 name: 'College Football Playoff Championship - Indianapolis 2022',
                 display_date: 'January 8 - 12, 2022',
                 end_date: '01/12/2022', // M/D/YYYY
-                portal_url: 'http://events.hotelsforhope.com/group-event?id=46199',
+                portal_url: 'http://events.hotelsforhope.com/group-event?id=46199', // TODO add utm codes
             },
             {
                 name: 'College Football Playoff Hotels',
                 display_date: '',
                 end_date: '3/28/2025', // M/D/YYYY
-                portal_url: '',
+                portal_url: 'https://events.hotelsforhope.com/v6/?siteid=67665',
             },
         ],
     };

@@ -66,6 +66,7 @@ module.exports = () => {
             // new sites populate below
             // 'arizona_bike_week_22-66931': './src/66931.js', // arizona bike_week_22
             // 'roomcash-63712': './src/63712.js', // RoomCash
+            // 'cfp_landing_page_22-62631': './src/62631.js', // CFP Landing Page
         };
     }
 

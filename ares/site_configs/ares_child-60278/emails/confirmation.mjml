@@ -1,0 +1,14 @@
+<mjml>
+    <mj-head>
+        <mj-include path="./emails/components/head.mjml" />
+    </mj-head>
+    <mj-body background-color={{theme}}>
+        <mj-include path="./emails/components/header.mjml" />
+        <mj-include path="./emails/components/hero.mjml" />
+        <mj-include path="./emails/components/hotel_address.mjml" />
+        <mj-include path="./emails/components/reservation_details.mjml" />
+        <mj-include path="./emails/components/contact.mjml" />
+        <mj-include path="./emails/components/policies.mjml" />
+        <mj-include path="./emails/components/footer.mjml" />
+    </mj-body>
+</mjml>

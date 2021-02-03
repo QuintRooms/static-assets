@@ -2914,8 +2914,8 @@
             H = h('toPrimitive'),
             I = {}.propertyIsEnumerable,
             Y = l('symbol-registry'),
-            B = l('symbols'),
-            F = l('op-symbols'),
+            F = l('symbols'),
+            B = l('op-symbols'),
             N = Object.prototype,
             U = 'function' == typeof R && !!L.f,
             $ = r.QObject,
@@ -2940,7 +2940,7 @@
                       }
                     : P,
             z = function (e) {
-                var t = (B[e] = A(R.prototype));
+                var t = (F[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -2953,11 +2953,11 @@
                       },
             Z = function (e, t, n) {
                 return (
-                    e === N && Z(F, t, n),
+                    e === N && Z(B, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
-                    o(B, t)
+                    o(F, t)
                         ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
@@ -2969,20 +2969,20 @@
             },
             Q = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
-                return !(this === N && o(B, e) && !o(F, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
             },
             K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(B, t) || o(F, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(B, t))) {
                     var n = C(e, t);
-                    return !n || !o(B, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(B, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? F : w(e)), i = [], a = 0; r.length > a; ) !o(B, (t = r[a++])) || (n && !o(N, t)) || i.push(B[t]);
+                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         U ||
@@ -2991,7 +2991,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(F, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -7244,12 +7244,6 @@
                             display_date: 'March 20 - 27, 2021',
                             end_date: '3/28/2021',
                             portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
-                        },
-                        {
-                            name: '2021 West Palm Beach Auction',
-                            display_date: 'April 08 - 10, 2021',
-                            end_date: '04/12/2021',
-                            portal_url: 'http://events.hotelsforhope.com/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021',
                         },
                     ],
                 };

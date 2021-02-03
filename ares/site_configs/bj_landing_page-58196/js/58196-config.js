@@ -75,12 +75,12 @@ export default function siteConfig() {
         has_landing_page: true,
         hide_search_on_landing_page: true,
         landing_page_events: [
-            {
-                name: 'Fall Auction 2020 Scottsdale',
-                display_date: 'October 22 - 24, 2020',
-                end_date: '10/25/2020', // M/D/YYYY
-                portal_url: 'https://events.hotelsforhope.com/group-event?id=43435',
-            },
+            // {
+            //     name: 'Fall Auction 2020 Scottsdale',
+            //     display_date: 'October 22 - 24, 2020',
+            //     end_date: '10/25/2020', // M/D/YYYY
+            //     portal_url: 'https://events.hotelsforhope.com/group-event?id=43435',
+            // },
             {
                 name: '2021 Scottsdale Auction',
                 display_date: 'March 20 - 27, 2021',

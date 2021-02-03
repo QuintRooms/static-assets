@@ -23,7 +23,7 @@
     @include append-header-images();
 }
 
-// TODO move below function to JS - length of images array doesn't account for expired events.
+// TODO move below function to JS - length of images array doesn't account for expired events. It is based off the amount of images in sass array
 @function setUpEventColumns($images) {
     @if (length($images) == 1) {
         @return 1fr;

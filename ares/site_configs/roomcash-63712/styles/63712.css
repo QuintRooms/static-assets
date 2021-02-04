@@ -1,0 +1,466 @@
+*,
+.taxFeeRow td,
+.discount td,
+.totalRow td,
+.balanceDueRow td,
+.dueNowRow td,
+.guestNameFields td,
+.total-points-earned td {
+  font-family: "Montserrat", "Helvetica";
+}
+
+/* Header */
+header {
+  justify-content: flex-start;
+  background: #000000;
+}
+
+.RootBody {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+}
+
+.logo img {
+  max-width: 200px;
+}
+
+body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
+  background-color: #E6E6E6;
+}
+
+/* Primary Background Color */
+#searching h2:after,
+#theConfirmationButton,
+.ArnPrimarySearchContainer,
+.ArnShowRatesLink,
+.ArnTripAdvisorDetails.HasReviews .ratingCount,
+.CreateAnAccountAction,
+.RootBody #theOtherSubmitButton,
+.SimpleSearch,
+.WBForgotPasswordFormActions .submit,
+.WBLoginFormActions .submit,
+.WBValidatedRegistrationFormActions .submit,
+.arn-leaflet-reset-button,
+.bookRoom,
+.HoldRoomsForm .submit,
+#datePromptContainer + .SimpleSearch .CheckRates .submit,
+.yui3-skin-sam .yui3-calendar-day:hover,
+.sort-wrapper .active,
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
+  background: #CC9831;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+#arnCloseAnchorId:active,
+#arnCloseAnchorId:focus,
+#arnCloseAnchorId:hover {
+    border: 1px solid #CC9831;
+  }
+
+  .closeMap {
+    border: 1px solid #fff !important;
+    background-color: #CC9831 !important;
+    color: #fff !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  #commands a:active,
+#commands a:focus,
+#commands a:hover,
+#commands button:active,
+#commands button:focus,
+#commands button:hover,
+.sort-wrapper a:before,
+.sort-wrapper a.active-filter:before,
+.sort {
+    background: #CC9831;
+  }
+}
+#searching,
+#theConfirmationButton,
+.HoldRoomsForm .submit,
+.ArnPrimarySearchContainer,
+.ArnShowRatesLink,
+.ArnTripAdvisorDetails.HasReviews .ratingCount,
+.SinglePropDetail .CheckRates .submit,
+.CreateAnAccountAction,
+.RootBody #theOtherSubmitButton,
+.SearchHotels #theSubmitButton,
+.SimpleSearch,
+.WBForgotPasswordFormActions .submit,
+.WBLoginFormActions .submit,
+.WBValidatedRegistrationFormActions .submit,
+.arnMapPopup .rate,
+#datePromptContainer + .SimpleSearch .CheckRates .submit,
+.bookRoom,
+.sort-wrapper .active,
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton {
+  color: #fff;
+}
+
+.custom-button a, .WBForgotPasswordFormActions input:hover {
+  color: #CC9831;
+}
+
+span.exclusive-rate {
+  background: #CC9831;
+  color: #fff;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+#arnCloseAnchorId:active,
+#arnCloseAnchorId:focus,
+#arnCloseAnchorId:hover {
+    color: #000000;
+  }
+}
+@media screen and (max-width: 800px) {
+  #commands a:active,
+#commands a:focus,
+#commands a:hover,
+#commands button:active,
+#commands button:focus,
+#commands button:hover,
+.sort, .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    color: #fff;
+  }
+}
+.holdRoom,
+.reviewCount a,
+#theAdditionalEmailsLink a,
+.SinglePropDetail .ArnRateCancelAnchor,
+.open-modal,
+.lowest-rate-link,
+.SinglePropDetail .RateCalendarPopupAnchor,
+.ArnContentContainer legend, #theRoomsOnHold h2,
+.confirmation-messaging a,
+.receiptLink,
+.returnResultsInfo a,
+.supportInfo a, .SinglePropDetail #show-more-or-less {
+  color: #000000;
+}
+
+.percentSavings {
+  color: #CC9831;
+}
+
+input#theSubmitButton,
+#theOtherSubmitButton,
+.bookRoom,
+.arn-leaflet-reset-button,
+input#theConfirmationButton,
+a.ArnShowRatesLink, .WBConfirmedBooking .submit {
+  background: #CC9831;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.CheckRates input.submit,
+.CheckRates input.submit,
+.CheckRates input.submit,
+#lightbox, #lightbox .dialog-button-ok input:hover {
+  background: #CC9831;
+  color: #fff;
+}
+
+input#theSubmitButton:hover,
+input#theSubmitButton:focus,
+input#theSubmitButton:active,
+#theOtherSubmitButton:hover,
+#theOtherSubmitButton:focus,
+#theOtherSubmitButton:active,
+.RootBody #theOtherSubmitButton:hover,
+.RootBody #theOtherSubmitButton:focus,
+.RootBody #theOtherSubmitButton:active,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active,
+.arn-leaflet-reset-button:hover,
+.arn-leaflet-reset-button:focus,
+.arn-leaflet-reset-button:active,
+input#theConfirmationButton:hover,
+input#theConfirmationButton:focus,
+input#theConfirmationButton:active,
+a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #CC9831;
+}
+
+.CheckRates input.submit:hover,
+.CheckRates input.submit:focus,
+.CheckRates input.submit:active {
+  background: #fff;
+  color: #000;
+}
+
+.SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
+  color: #CC9831;
+  border-color: #CC9831;
+}
+
+.SinglePropDetail #moreRatesLink:hover {
+  background-color: #CC9831;
+}
+
+@media screen and (max-width: 800px) {
+  #theBookingPage legend#policies-legend {
+    color: #000000;
+  }
+}
+header {
+  border-bottom: 3px solid #000;
+}
+
+.arnMapMarker.contracted-pin,
+.arnMapMarker.contracted-pin.highlight {
+  border: 1px solid #fff;
+  background: #CC9831;
+  color: #fff;
+}
+
+.arnMapMarker.contracted-pin:hover {
+  border: 1px solid #CC9831;
+  background: #fff;
+  color: #CC9831;
+}
+
+.arnMapMarker.contracted-pin .arnMapMarkerTriangle {
+  border-top-color: #CC9831;
+}
+
+#theOtherSubmitButton,
+.ArnSecondarySearchOuterContainer select,
+.ArnShowRatesLink,
+.RootBody #theOtherSubmitButton,
+.bookRoom,
+.sort,
+.HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
+  border: 1px solid #000;
+}
+
+.holdRoom {
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+.sort {
+    border: 1px solid #CC9831;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sort-wrapper a:before {
+    border: 2px solid #CC9831;
+  }
+}
+.active-page {
+  background: #CC9831 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day-selected {
+  background-color: #CC9831 !important;
+  color: #fff !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day:hover {
+  background-color: #CC9831 !important;
+}
+
+.yui3-skin-sam .yui3-calendar-content {
+  border-color: #000 !important;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarker {
+  background: #CC9831;
+  border-color: #fff;
+  color: #fff;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
+  border-top-color: #CC9831;
+}
+
+.MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
+  border-top-color: #CC9831;
+}
+
+#footer-menu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+@media (max-width: 1100px) {
+  #footer-menu-container {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media (max-width: 800px) {
+  #footer-menu-container {
+    align-items: center;
+  }
+}
+#footer-menu-container #links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+@media (max-width: 1100px) {
+  #footer-menu-container #links-container {
+    justify-content: flex-start;
+    width: 80%;
+  }
+}
+@media (max-width: 800px) {
+  #footer-menu-container #links-container {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  #footer-menu-container #links-container {
+    flex-direction: column;
+  }
+}
+#footer-menu-container #links-container .links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 60px;
+  min-width: 100px;
+}
+#footer-menu-container #links-container .links li {
+  list-style: none;
+  margin: 5px 0;
+}
+#footer-menu-container #links-container .links a {
+  color: #000000;
+  text-decoration: none;
+  list-style: none;
+  font-weight: 300;
+}
+#footer-menu-container #links-container .links a:hover {
+  text-decoration: underline;
+}
+#footer-menu-container #links-container .links .links-header {
+  color: #CC9831;
+  font-weight: bold;
+}
+#footer-menu-container #links-container :first-child {
+  margin-left: 0;
+}
+#footer-menu-container #policy-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 300px;
+  padding: 20px;
+}
+@media (max-width: 1100px) {
+  #footer-menu-container #policy-social {
+    align-items: flex-start;
+    width: 80%;
+  }
+}
+@media (max-width: 800px) {
+  #footer-menu-container #policy-social {
+    align-items: center;
+    width: 100%;
+  }
+}
+#footer-menu-container #policy-social #social-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+#footer-menu-container #policy-social #social-container .social-icon {
+  border: 2px solid #000;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#footer-menu-container #policy-social #social-container .social-icon:hover {
+  background-color: #CC9831;
+  border-color: #000;
+}
+#footer-menu-container #policy-social #social-container .social-icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer-menu-container #policy-social #social-container .social-icon a img {
+  width: 90%;
+  height: auto;
+}
+#footer-menu-container #policy-social hr {
+  border: 1px solid #ccc;
+  width: 50%;
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  #footer-menu-container #policy-social hr {
+    width: 100%;
+  }
+}
+#footer-menu-container #policy-social #copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 300;
+}
+@media (max-width: 1100px) {
+  #footer-menu-container #policy-social #copyright {
+    align-items: unset;
+  }
+}
+#footer-menu-container #policy-social #copyright p, #footer-menu-container #policy-social #copyright #pipe {
+  color: #000000;
+}
+#footer-menu-container #policy-social #copyright div :first-child {
+  padding-right: 5px;
+}
+#footer-menu-container #policy-social #copyright div :last-child {
+  padding-left: 5px;
+}
+#footer-menu-container #policy-social #copyright a {
+  color: #CC9831;
+  text-decoration: none;
+}
+#footer-menu-container #policy-social #copyright a:hover {
+  text-decoration: underline;
+}
+
+.SearchHotels #currentPropertyPage {
+  background-color: #fff;
+  padding: 80px 24px;
+}
+.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+  background-color: unset;
+  color: #000000;
+}
+.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+  color: #fff;
+  background-color: #CC9831;
+  border-color: #CC9831;
+}
+.SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover {
+  color: #000000;
+  background-color: #fff;
+  border-color: #CC9831;
+}
+.SearchHotels .ArnTripAdvisorDetails.HasReviews .ratingCount {
+  background-color: #000;
+}
+
+/*# sourceMappingURL=63712.css.map*/

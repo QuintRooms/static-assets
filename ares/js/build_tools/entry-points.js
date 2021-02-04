@@ -67,7 +67,7 @@ module.exports = () => {
         entry_points = {
             // new sites populate below
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            // 'roomcash-63712': './src/63712.js', // RoomCash
+            'roomcash-63712': './src/63712.js', // RoomCash
         };
     }
 

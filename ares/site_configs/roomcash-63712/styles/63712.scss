@@ -1,22 +1,240 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #fff;
-$logo_flex_position: center;
-$logo_max_width: 300px;
-$background_color: #fff;
-$primary_color: #5dc3ac;
-$secondary_color: #7487dd;
+$header_background: #000000;
+$logo_flex_position: flex-start;
+$logo_max_width: 200px;
+$background_color: #E6E6E6;
+$primary_color: #CC9831;
+$secondary_color: #CC9831;
 $primary_text_color: #fff;
-$secondary_text_color: #5dc3ac;
-$secondary_background_color: #5dc3ac;
-$border_color: #5dc3ac;
+$secondary_text_color: #000000;
+$secondary_background_color: #000;
+$border_color: #000;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #5dc3ac;
-$button_hover_border_color: #5dc3ac;
+$button_hover_text_color: #000;
+$button_hover_border_color: #CC9831;
 $google_font_name: 'Montserrat';
 $site_name: 'roomcash-63712';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+$heading_weight: 800;
+$sub_heading_weight: 400;
+$text_weight: 300;
+$desktop: 1100px;
+$tablet: 800px;
+$mobile: 500px;
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-    @import '../../../styles/sass/config-styles/resbeat.config.scss';
+
+#footer-menu-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    @include desktop {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    @include tablet {
+        align-items: center;
+    }
+
+    #links-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 20px;
+
+        @include desktop {
+            justify-content: flex-start;
+            width: 80%;
+        }
+
+        @include tablet {
+            justify-content: center;
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            margin: 0 60px;
+            min-width: 100px;
+
+            li {
+                list-style: none;
+                margin: 5px 0;
+            }
+
+            a {
+                color: $secondary_text_color;
+                text-decoration: none;
+                list-style: none;
+                font-weight: $text_weight;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .links-header {
+                color: $primary_color;
+                font-weight: bold;
+            }
+        }
+
+        :first-child {
+            margin-left: 0;
+        }
+    }
+
+    #policy-social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        min-width: 300px;
+        padding: 20px;
+
+        @include desktop {
+            align-items: flex-start;
+            width: 80%;
+        }
+
+        @include tablet {
+            align-items: center;
+            width: 100%;
+        }
+
+        #social-container {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 10px;
+
+            .social-icon {
+                border: 2px solid $border_color;
+                margin: 5px;
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+                &:hover {
+                    background-color: $primary_color;
+                    border-color: $border_color;
+                }
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 90%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        
+        hr {
+            border: 1px solid #ccc;
+            width: 50%;
+            margin: 0;
+
+            @include desktop {
+                width: 100%;
+            }
+        }
+
+        #copyright {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-weight: $text_weight;
+
+            @include desktop {
+                align-items: unset;
+            }
+
+            p, #pipe {
+                color: $secondary_text_color;
+            }
+
+            div {
+                :first-child {
+                    padding-right: 5px;
+                }
+
+                :last-child {
+                    padding-left: 5px;
+                }
+            }
+
+            a {
+                color: $primary_color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.SearchHotels{
+
+    #currentPropertyPage {
+        background-color: #fff;
+        padding: 80px 24px;
+    }
+
+    .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+        background-color: unset;
+        color: $secondary_text_color;
+    }
+    // Buttons
+    .ArnShowRatesLink, #theSubmitButton, #theOtherSubmitButton {
+        color: $primary_text_color;
+        background-color: $primary_color;
+        border-color: $primary_color;
+
+        &:hover {
+            color: $secondary_text_color;
+            background-color: $button_hover_background_color;
+            border-color: $primary_color;
+        }
+    }
+
+    .ArnTripAdvisorDetails.HasReviews .ratingCount {
+        background-color: $secondary_background_color;
+    }
+}

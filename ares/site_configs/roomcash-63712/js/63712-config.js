@@ -43,8 +43,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'http://www..com/',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-main.png`,
+            logo_outbound_url: 'http://www.placeholder.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',

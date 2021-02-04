@@ -45,7 +45,7 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         has_social_sharing: true,
-        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png?v2`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
@@ -87,13 +87,13 @@ export default function siteConfig() {
                 name: 'College Football Playoff Championship - Indianapolis 2022',
                 display_date: 'January 8 - 12, 2022',
                 end_date: '01/12/2022', // M/D/YYYY
-                portal_url: 'http://events.hotelsforhope.com/group-event?id=46199', // TODO add utm codes
+                portal_url: 'http://collegefootballplayoffhotels.com/group-event?id=46199&utm_campaign=CFP%20Indianapolis%202022',
             },
             {
                 name: 'College Football Playoff Hotels',
                 display_date: '',
                 end_date: '3/28/2025', // M/D/YYYY
-                portal_url: 'https://events.hotelsforhope.com/v6/?siteid=67665',
+                portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
             },
         ],
     };

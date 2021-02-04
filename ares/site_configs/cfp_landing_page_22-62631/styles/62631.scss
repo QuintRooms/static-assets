@@ -1,7 +1,7 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $header_background: #000;
-$logo_flex_position: flex-start;
+$logo_flex_position: center;
 $logo_max_width: 330px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
@@ -47,4 +47,8 @@ $header-images: '';
     font-family: 'UnitedSansReg-Heavy';
     src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
     font-style: normal;
+}
+
+.ArnSupportLinks.ArnSupportBottom {
+    background-color: #000 !important;
 }

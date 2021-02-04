@@ -1,41 +1,38 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-
-const site_id = 62631;
-const directory_name = `cfp_landing_page_22-${site_id}`;
+const site_id = 62632;
+const directory_name = `cfp_indianapolis_22-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 17489,
+        affiliate_id: '17489',
         master_id: 920,
         site_type: 'lodging',
-        algolia_app_id: 'pl58QCMXHS4C',
-        algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
+        algolia_app_id: 'plCZXR0GZ7J1',
+        algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
         distance_unit: 'useMiles',
-        map_size: '12',
-        radius: '50',
         lodging: {
-            event_id: '',
-            event_name: 'College Football Playoff Hotels',
+            event_id: '46199',
+            event_name: 'College Football Playoff Indianapolis',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
-            is_lrg: '',
+            is_lrg: false,
         },
         cug: {
             is_cug: false,
             show_points: false,
             allow_registration: false,
-            percent_off_text: '',
+            percent_off_text: 'off',
             show_percent_savings: false,
         },
-        exclusive_rate_text: 'EXCLUSIVE RATES',
-        host_hotel_text: '',
-        partner_hotel_text: '',
+        exclusive_rate_text: 'Exclusive Rate',
+        host_hotel_text: 'Host Hotel',
+        partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
@@ -47,12 +44,12 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-indy.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
-        google_font_url: '',
+        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
                 is_active: false,
@@ -76,24 +73,20 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'START YOUR <b>SEARCH</b>',
-        root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'College Football Playoff Hotels',
-        has_landing_page: true,
+        has_group_booking_banner: false,
+        group_booking_form_url: '',
+        has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: 'College Football Playoff Championship - Indianapolis 2022',
-                display_date: 'January 8 - 12, 2022',
-                end_date: '01/12/2022', // M/D/YYYY
-                portal_url: 'http://collegefootballplayoffhotels.com/group-event?id=46199&utm_campaign=CFP%20Indianapolis%202022',
-            },
-            {
-                name: 'College Football Playoff Hotels',
-                display_date: '',
-                end_date: '3/28/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
+                name: '',
+                display_date: '', // August 5-8, 2021
+                end_date: '', // M/D/YYYY
+                portal_url: '',
             },
         ],
     };

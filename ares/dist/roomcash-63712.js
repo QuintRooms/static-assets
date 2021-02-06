@@ -313,9 +313,9 @@
             E = M.f,
             P = q.f,
             T = k.f,
-            O = r.Symbol,
-            R = r.JSON,
-            j = R && R.stringify,
+            R = r.Symbol,
+            O = r.JSON,
+            j = O && O.stringify,
             D = h('_hidden'),
             H = h('toPrimitive'),
             I = {}.propertyIsEnumerable,
@@ -323,7 +323,7 @@
             F = l('symbols'),
             B = l('op-symbols'),
             N = Object.prototype,
-            $ = 'function' == typeof O && !!L.f,
+            $ = 'function' == typeof R && !!L.f,
             U = r.QObject,
             W = !U || !U.prototype || !U.prototype.findChild,
             G =
@@ -346,16 +346,16 @@
                       }
                     : P,
             z = function (e) {
-                var t = (F[e] = A(O.prototype));
+                var t = (F[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
-                $ && 'symbol' == typeof O.iterator
+                $ && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof O;
+                          return e instanceof R;
                       },
             Q = function (e, t, n) {
                 return (
@@ -393,8 +393,8 @@
             };
         $ ||
             (c(
-                (O = function () {
-                    if (this instanceof O) throw TypeError('Symbol is not a constructor!');
+                (R = function () {
+                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
                             this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
@@ -415,13 +415,13 @@
             (p.f = function (e) {
                 return z(h(e));
             })),
-            a(a.G + a.W + a.F * !$, {Symbol: O});
+            a(a.G + a.W + a.F * !$, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             h(te[ne++]);
         for (var re = C(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(Y, (e += '')) ? Y[e] : (Y[e] = O(e));
+                return o(Y, (e += '')) ? Y[e] : (Y[e] = R(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
@@ -452,13 +452,13 @@
                 return L.f(S(e));
             },
         }),
-            R &&
+            O &&
                 a(
                     a.S +
                         a.F *
                             (!$ ||
                                 u(function () {
-                                    var e = O();
+                                    var e = R();
                                     return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
@@ -472,13 +472,13 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    j.apply(R, r)
+                                    j.apply(O, r)
                                 );
                         },
                     }
                 ),
-            O.prototype[H] || n(22)(O.prototype, H, O.prototype.valueOf),
-            d(O, 'Symbol'),
+            R.prototype[H] || n(22)(R.prototype, H, R.prototype.valueOf),
+            d(R, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3422,7 +3422,7 @@
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
-            O = function (e, t) {
+            R = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -3453,11 +3453,11 @@
 
                         )
                             a(n[i++]);
-                        (e._c = []), (e._n = !1), t && !e._h && R(e);
+                        (e._c = []), (e._n = !1), t && !e._h && O(e);
                     });
                 }
             },
-            R = function (e) {
+            O = function (e) {
                 g.call(s, function () {
                     var t,
                         n,
@@ -3491,7 +3491,7 @@
             },
             H = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), O(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
             I = function (e) {
                 var t,
@@ -3509,7 +3509,7 @@
                                       H.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), O(n, !1));
+                            : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
                         H.call({_w: n, _d: !1}, e);
                     }
@@ -3535,7 +3535,7 @@
                         (n.domain = q ? A.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && O(this, !1),
+                        this._s && R(this, !1),
                         n.promise
                     );
                 },
@@ -7207,7 +7207,7 @@
                     show_tax_inclusive_rates: !1,
                     dayjs_date_format: 'M/D/YYYY',
                     reviews_before_info: !0,
-                    show_stars: !0,
+                    show_stars: !1,
                     show_property_type: !0,
                     show_language_select: !1,
                     show_currency_select: !0,
@@ -7240,16 +7240,45 @@
     },
     function (e, t, n) {
         'use strict';
-        var r;
-        function o(e, t) {
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(64), n(56), n(107);
+        var r = o(n(111));
+        function o(e) {
+            return e && e.__esModule ? e : {default: e};
+        }
+        function i(e, t, n, r, o, i, a) {
+            try {
+                var c = e[i](a),
+                    s = c.value;
+            } catch (e) {
+                return void n(e);
+            }
+            c.done ? t(s) : Promise.resolve(s).then(r, o);
+        }
+        function a(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (r, o) {
+                    var a = e.apply(t, n);
+                    function c(e) {
+                        i(a, r, o, c, s, 'next', e);
+                    }
+                    function s(e) {
+                        i(a, r, o, c, s, 'throw', e);
+                    }
+                    c(void 0);
+                });
+            };
+        }
+        function c(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0);
-        var i = new ((r = n(117)) && r.__esModule ? r : {default: r}).default(),
-            a = (function () {
+        var s = new (o(n(117)).default)(),
+            u = new r.default(),
+            l = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -7257,31 +7286,43 @@
                         (this.config = t),
                         this.init();
                 }
-                var t, n, r;
+                var t, n, r, o, i;
                 return (
                     (t = e),
                     (n = [
                         {
                             key: 'init',
                             value: function () {
-                                this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
+                                this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
+                                    this.buildHeaderLinks(),
+                                    this.insertContent([
+                                        {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: '<hr>'},
+                                        {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: '<hr>'},
+                                        {
+                                            element: '.SearchHotels .ArnSearchContainerMainDiv',
+                                            position: 'afterbegin',
+                                            html:
+                                                '\n            <div id="sub-header-container">\n                <a href="">How It Works</a>\n                <a href="">FAQs</a>\n                <a href="">Daily Deals</a>\n                <a href="">Partnerships</a>\n            </div>\n        ',
+                                        },
+                                    ]),
+                                    this.updatePropertyContainer();
                             },
                         },
                         {
                             key: 'buildFooterMenu',
                             value: function (e, t) {
-                                var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links">\n                        <li class="links-header">Learn More</li>\n                        <li><a href="">How it Works</a></li>\n                        <li><a href="">FAQs</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">About RoomCash</li>\n                        <li><a href="">Our Mission</a></li>\n                        <li><a href="">Contact Us</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a href="">Add Your Hotel</a></li>\n                        <li><a href="">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a href="">\n                            <img src="'
-                                    .concat(i.path, '/site_configs/')
+                                var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links">\n                        <li class="links-header">Learn More</li>\n                        <li><a href="">How it Works</a></li>\n                        <li><a href="">FAQs</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">About RoomCash</li>\n                        <li><a href="">Our Mission</a></li>\n                        <li><a href="">Contact Us</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a href="">Add Your Hotel</a></li>\n                    <li><a href="">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a href="">\n                            <img src="'
+                                    .concat(s.path, '/site_configs/')
                                     .concat(
                                         this.config.directory_name,
                                         '/icons/facebook.png">\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a href="">\n                            <img src="'
                                     )
-                                    .concat(i.path, '/site_configs/')
+                                    .concat(s.path, '/site_configs/')
                                     .concat(
                                         this.config.directory_name,
                                         '/icons/instagram.png">\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a href="">\n                            <img src="">m\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a href="">\n                            <img src="'
                                     )
-                                    .concat(i.path, '/site_configs/')
+                                    .concat(s.path, '/site_configs/')
                                     .concat(
                                         this.config.directory_name,
                                         '/icons/app-store.png">\n                        </a>\n                    </div>\n                </div>\n                <hr>\n                <div id="copyright">\n                    <p>Copyright &copy; 2020. All rights reserved</p>\n                    <div><a href="">Privacy Policy</a><span id="pipe">|</span><a href="">Terms & Conditions</a></div>\n                </div>\n            </div>\n        </div>\n        '
@@ -7289,12 +7330,113 @@
                                 document.querySelector(e).insertAdjacentHTML(t, n);
                             },
                         },
-                    ]) && o(t.prototype, n),
-                    r && o(t, r),
+                        {
+                            key: 'moveAccountLink',
+                            value:
+                                ((i = a(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (e.next = 2), u.waitForSelectorInDOM('#account-container');
+                                                    case 2:
+                                                        ((t = document.querySelector('.profileCommand')).textContent = 'MY ACCOUNT'),
+                                                            document.querySelector('#account-container span').insertAdjacentElement('afterbegin', t);
+                                                    case 5:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'buildHeaderLinks',
+                            value:
+                                ((o = a(
+                                    regeneratorRuntime.mark(function e(t) {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), u.waitForSelectorInDOM('header');
+                                                        case 2:
+                                                            return (e.next = 4), u.waitForSelectorInDOM('#commands');
+                                                        case 4:
+                                                            document
+                                                                .querySelector('header')
+                                                                .insertAdjacentHTML(
+                                                                    'beforeend',
+                                                                    '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="">\n                    <span id="balance">$50</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
+                                                                ),
+                                                                this.moveAccountLink();
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (e) {
+                                    return o.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'insertContent',
+                            value: function (e) {
+                                e.forEach(
+                                    (function () {
+                                        var e = a(
+                                            regeneratorRuntime.mark(function e(t) {
+                                                return regeneratorRuntime.wrap(function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                return (e.next = 2), u.waitForSelectorInDOM(t.element);
+                                                            case 2:
+                                                                document.querySelector(t.element).insertAdjacentHTML(t.position, t.html);
+                                                            case 3:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                }, e);
+                                            })
+                                        );
+                                        return function (t) {
+                                            return e.apply(this, arguments);
+                                        };
+                                    })()
+                                );
+                            },
+                        },
+                        {
+                            key: 'updatePropertyContainer',
+                            value: function () {
+                                document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                    e.querySelector('.ArnPropDescription').insertAdjacentHTML(
+                                        'afterend',
+                                        '\n                <div class="roomcash-scale-container">\n                    <div class="roomcash-amount">\n                        <div class="bar roomcash"></div>\n                        <div class="cash-text">\n                            <span class="rc-value">$125</span>\n                            <p>RoomCash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">\n                        <div class="bar your-cash"></div>\n                        <div class="cash-text">\n                            <span class="yc-value">$25</span>\n                            <p>Your Cash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                </div>\n            '
+                                    );
+                                    var t = e.querySelector('.ArnRateButton');
+                                    e.querySelector('.ArnPropClass').insertAdjacentElement('afterend', t);
+                                });
+                            },
+                        },
+                    ]) && c(t.prototype, n),
+                    r && c(t, r),
                     e
                 );
             })();
-        t.default = a;
+        t.default = l;
     },
     function (e, t, n) {},
 ]);

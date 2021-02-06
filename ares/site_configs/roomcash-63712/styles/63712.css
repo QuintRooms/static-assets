@@ -103,7 +103,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 span.exclusive-rate {
-  background: #CC9831;
+  background: #1C8747;
   color: #fff;
 }
 
@@ -142,7 +142,7 @@ span.exclusive-rate {
 }
 
 .percentSavings {
-  color: #CC9831;
+  color: #1C8747;
 }
 
 input#theSubmitButton,
@@ -216,18 +216,18 @@ header {
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #CC9831;
+  background: #1C8747;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #CC9831;
+  border: 1px solid #1C8747;
   background: #fff;
-  color: #CC9831;
+  color: #1C8747;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #CC9831;
+  border-top-color: #1C8747;
 }
 
 #theOtherSubmitButton,
@@ -288,6 +288,67 @@ header {
   border-top-color: #CC9831;
 }
 
+/* - - - - - - - - Header - - - - - - - - */
+header {
+  justify-content: space-between;
+  border-bottom: none;
+  height: 110px;
+}
+header .logo img {
+  padding: 0;
+  margin-left: 30px;
+  max-width: 190px;
+}
+header #commands {
+  display: none;
+}
+header #admin-container {
+  height: 100%;
+  display: flex;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  header #admin-container {
+    display: none;
+  }
+}
+header #admin-container #balance {
+  font-size: 30px;
+}
+header #admin-container .header-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 53px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+@media (max-width: 1100px) {
+  header #admin-container .header-link {
+    padding: 30px;
+  }
+}
+header #admin-container .header-link a {
+  color: #fff;
+  text-decoration: none;
+}
+header #admin-container .header-link a:hover {
+  text-decoration: underline;
+}
+header #admin-container #balance {
+  color: #CC9831;
+}
+header #admin-container #search-container {
+  background-color: #CC9831;
+}
+header #AdminControlsContainer {
+  margin-right: 10px;
+}
+header #AdminControlsContainer .hamburger .line {
+  background-color: #CC9831;
+}
+
+/* - - - - - - - - Footer Menu - - - - - - - - */
 #footer-menu-container {
   width: 100%;
   display: flex;
@@ -325,16 +386,30 @@ header {
     width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   #footer-menu-container #links-container {
     flex-direction: column;
+    align-items: center;
   }
 }
 #footer-menu-container #links-container .links {
   display: flex;
   flex-direction: column;
-  margin: 0 60px;
-  min-width: 100px;
+  width: 180px;
+}
+@media (max-width: 800px) {
+  #footer-menu-container #links-container .links {
+    margin: 0;
+    text-align: center;
+  }
+  #footer-menu-container #links-container .links :first-child {
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  #footer-menu-container #links-container .links {
+    width: 100%;
+  }
 }
 #footer-menu-container #links-container .links li {
   list-style: none;
@@ -385,7 +460,6 @@ header {
   margin: 5px;
   width: 30px;
   height: 30px;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -405,7 +479,7 @@ header {
 }
 #footer-menu-container #policy-social hr {
   border: 1px solid #ccc;
-  width: 50%;
+  width: 100%;
   margin: 0;
 }
 @media (max-width: 1100px) {
@@ -441,6 +515,66 @@ header {
   text-decoration: underline;
 }
 
+/* - - - - - - - - Buttons - - - - - - - - */
+.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+  color: #fff;
+  background-color: #CC9831;
+  border-color: #CC9831;
+  text-transform: uppercase;
+}
+.SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover {
+  color: #000000;
+  background-color: #fff;
+  border-color: #CC9831;
+}
+
+/* - - - - - - - - Search Results - - - - - - - - */
+.SearchHotels .ArnRightListContainer {
+  padding-top: 0;
+}
+.SearchHotels #sub-header-container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SearchHotels #sub-header-container a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 40px;
+}
+.SearchHotels #sub-header-container a:hover {
+  text-decoration: underline;
+}
+.SearchHotels .ArnLeftSearchContainer {
+  width: 300px;
+}
+.SearchHotels .ArnLeftSearchContainer hr {
+  background: #ccc;
+  height: 1px;
+  margin-top: 30px;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer {
+  margin-top: 10px;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer .ArnSearchHeader {
+  text-transform: uppercase;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
+  margin-top: 30px;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblAmenities {
+  font-weight: 400;
+}
 .SearchHotels #currentPropertyPage {
   background-color: #fff;
   padding: 80px 24px;
@@ -448,19 +582,79 @@ header {
 .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   background-color: unset;
   color: #000000;
+  font-weight: 300;
 }
-.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
-  color: #fff;
-  background-color: #CC9831;
-  border-color: #CC9831;
+.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckIn, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckOut, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #rooms, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #adults {
+  font-weight: 300 !important;
 }
-.SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover {
-  color: #000000;
-  background-color: #fff;
-  border-color: #CC9831;
+.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox input, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox select {
+  padding: 12px !important;
 }
-.SearchHotels .ArnTripAdvisorDetails.HasReviews .ratingCount {
+.SearchHotels .ArnProperty .ArnRateCell {
+  display: none;
+}
+.SearchHotels .ArnProperty .percentSavings, .SearchHotels .ArnProperty .ArnPriceCell {
+  display: none !important;
+}
+.SearchHotels .ArnProperty .ArnPropNameLink span {
+  letter-spacing: 1px;
+}
+.SearchHotels .ArnProperty .ArnTripAdvisorDetails.HasReviews .ratingCount {
   background-color: #000;
 }
+.SearchHotels .ArnProperty .ArnRateButton {
+  max-width: 130px;
+}
+.SearchHotels .ArnProperty .ArnPropName {
+  width: 100%;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container {
+  display: flex;
+  margin: 20px 0;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .bar {
+  height: 10px;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .roomcash {
+  border-radius: 20px 0 0 20px;
+  background: #CC9831;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .your-cash {
+  border-radius: 0 20px 20px 0;
+  background: #1C8747;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text p {
+  margin: 0;
+  font-weight: 400;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text :last-child {
+  font-weight: 300;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text .rc-value {
+  color: #CC9831;
+  font-size: 20px;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text .yc-value {
+  color: #1C8747;
+  font-size: 20px;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .roomcash-amount {
+  width: 50%;
+}
+.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .your-cash-amount {
+  width: 50%;
+}
+.SearchHotels .ArnPages {
+  display: flex;
+  justify-content: center;
+}
+
+/* - - - - - - - - Property Detail - - - - - - - - */
 
 /*# sourceMappingURL=63712.css.map*/

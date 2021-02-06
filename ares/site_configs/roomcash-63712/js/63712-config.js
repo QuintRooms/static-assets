@@ -35,7 +35,7 @@ export default function siteConfig() {
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
-        show_stars: true,
+        show_stars: false,
         show_property_type: true,
         show_language_select: false,
         show_currency_select: true,

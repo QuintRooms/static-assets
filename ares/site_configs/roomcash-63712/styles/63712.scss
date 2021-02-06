@@ -5,7 +5,7 @@ $logo_flex_position: flex-start;
 $logo_max_width: 200px;
 $background_color: #E6E6E6;
 $primary_color: #CC9831;
-$secondary_color: #CC9831;
+$secondary_color: #1C8747;
 $primary_text_color: #fff;
 $secondary_text_color: #000000;
 $secondary_background_color: #000;
@@ -22,7 +22,14 @@ $sub_heading_weight: 400;
 $text_weight: 300;
 $desktop: 1100px;
 $tablet: 800px;
-$mobile: 500px;
+$tablet_small: 700px;
+$mobile: 600px;
+
+@mixin desktop {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
 
 @mixin tablet {
     @media (max-width: #{$tablet}) {
@@ -30,8 +37,8 @@ $mobile: 500px;
     }
 }
 
-@mixin desktop {
-    @media (max-width: #{$desktop}) {
+@mixin tablet-small {
+    @media (max-width: #{$tablet_small}) {
         @content;
     }
 }
@@ -43,6 +50,78 @@ $mobile: 500px;
 }
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+/* - - - - - - - - Header - - - - - - - - */
+
+header {
+    justify-content: space-between;
+    border-bottom: none;
+    height: 110px;
+
+    .logo img {
+        padding: 0;
+        margin-left: 30px;
+        max-width: 190px;
+    }
+
+    #commands {
+        display: none;
+    }
+
+    #admin-container {
+        height: 100%;
+        display: flex;
+        color: $primary_text_color;
+
+        @include tablet {
+            display: none;
+        }
+
+        #balance {
+            font-size: 30px;
+        }
+
+        .header-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 53px;
+            font-size: 16px;
+            letter-spacing: 1px;
+
+            @include desktop{
+                padding: 30px;
+            }
+
+            a {
+                color: $primary_text_color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #balance {
+            color: $primary_color;
+        }
+
+        #search-container {
+            background-color: $primary_color;
+        }
+    }
+
+    #AdminControlsContainer {
+        margin-right: 10px;
+
+        .hamburger .line {
+            background-color: $primary_color;
+        }
+    }
+}
+
+/* - - - - - - - - Footer Menu - - - - - - - - */
 
 #footer-menu-container {
     width: 100%;
@@ -79,13 +158,27 @@ $mobile: 500px;
 
         @include mobile {
             flex-direction: column;
+            align-items: center;
         }
 
         .links {
             display: flex;
             flex-direction: column;
-            margin: 0 60px;
-            min-width: 100px;
+            // margin: 0 60px;
+            width: 180px;
+
+            @include tablet {
+                margin: 0;
+                text-align: center;
+
+                :first-child {
+                    margin-left: 0;
+                }
+            }
+
+            @include mobile {
+                width: 100%;
+            }
 
             li {
                 list-style: none;
@@ -141,7 +234,6 @@ $mobile: 500px;
                 margin: 5px;
                 width: 30px;
                 height: 30px;
-                border-radius: 5px;
                 display: flex;
                 justify-content: center;
                 align-content: center;
@@ -166,7 +258,7 @@ $mobile: 500px;
         
         hr {
             border: 1px solid #ccc;
-            width: 50%;
+            width: 100%;
             margin: 0;
 
             @include desktop {
@@ -210,7 +302,87 @@ $mobile: 500px;
     }
 }
 
-.SearchHotels{
+/* - - - - - - - - Buttons - - - - - - - - */
+
+.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+    color: $primary_text_color;
+    background-color: $primary_color;
+    border-color: $primary_color;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $secondary_text_color;
+        background-color: $button_hover_background_color;
+        border-color: $primary_color;
+    }
+}
+
+/* - - - - - - - - Search Results - - - - - - - - */
+
+.SearchHotels {
+
+    .ArnRightListContainer {
+        padding-top: 0;
+    }
+
+    // sub-header
+    #sub-header-container {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: $secondary_text_color;
+            font-size: 15px;
+            font-weight: $sub_heading_weight;
+            margin: 0 40px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Update Search container
+    .ArnLeftSearchContainer {
+        width: 300px;
+
+        hr {
+            background: #ccc;
+            height: 1px;
+            margin-top: 30px;
+        }
+
+        .ArnPrimarySearchOuterContainer {
+            margin-top: 10px;
+    
+            .ArnSearchHeader {
+                text-transform: uppercase;
+    
+            }
+        }
+
+        .ArnSecondarySearchOuterContainer {
+
+            h4 {
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 17px;
+                letter-spacing: 1px;
+            }
+
+            #filter-by {
+                margin-top: 30px;
+            }
+
+            .lblAmenities {
+                font-weight: $sub_heading_weight;
+            }
+        }
+    }
 
     #currentPropertyPage {
         background-color: #fff;
@@ -220,21 +392,106 @@ $mobile: 500px;
     .ArnQuadSearchContainer.ArnPrimarySearchContainer {
         background-color: unset;
         color: $secondary_text_color;
-    }
-    // Buttons
-    .ArnShowRatesLink, #theSubmitButton, #theOtherSubmitButton {
-        color: $primary_text_color;
-        background-color: $primary_color;
-        border-color: $primary_color;
-
-        &:hover {
-            color: $secondary_text_color;
-            background-color: $button_hover_background_color;
-            border-color: $primary_color;
+        font-weight: $text_weight;
+        
+        #theSearchBox{
+            #theCheckIn, #theCheckOut, #rooms, #adults {
+                font-weight: $text_weight !important;
+            }
+            input, select {
+                padding: 12px !important;
+            }
         }
     }
 
-    .ArnTripAdvisorDetails.HasReviews .ratingCount {
-        background-color: $secondary_background_color;
+    // Property Container
+    .ArnProperty {
+
+        .ArnRateCell {
+            display: none;
+        }
+
+        .percentSavings, .ArnPriceCell {
+            display: none !important;
+        }
+
+        .ArnPropNameLink span {
+            letter-spacing: 1px;
+        }
+
+        .ArnTripAdvisorDetails.HasReviews .ratingCount {
+            background-color: $secondary_background_color;
+        }
+
+        .ArnRateButton {
+            max-width: 130px;
+        }
+
+        .ArnPropName {
+            width: 100%;
+            
+            .roomcash-scale-container {
+                display: flex;
+                margin: 20px 0;
+
+                .bar {
+                    height: 10px;
+                }
+
+                .roomcash {
+                    border-radius: 20px 0 0 20px;
+                    background: $primary_color;
+                }
+
+                .your-cash {
+                    border-radius: 0 20px 20px 0;
+                    background: $secondary_color
+                }
+
+                .cash-text {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    p {
+                        margin: 0;
+                        font-weight: $sub_heading_weight;
+                    }
+
+                    :last-child {
+                        font-weight: $text_weight;
+                    }
+
+                    .rc-value {
+                        color: $primary_color;
+                        font-size: 20px;
+                    }
+
+                    .yc-value {
+                        color: $secondary_color;
+                        font-size: 20px;
+                    }
+                }
+
+                // should be dynamic
+                .roomcash-amount {
+                    width: 50%;
+                }
+                // should be dynamic
+                .your-cash-amount {
+                    width: 50%;
+                }
+            }
+        }
+
+    }
+
+    // pagination
+    .ArnPages {
+        display: flex;
+        justify-content: center;
     }
 }
+
+/* - - - - - - - - Property Detail - - - - - - - - */

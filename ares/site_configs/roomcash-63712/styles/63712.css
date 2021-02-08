@@ -383,6 +383,14 @@ header #AdminControlsContainer .hamburger .line {
   justify-content: space-evenly;
   padding: 20px 0;
 }
+@media (max-width: 700px) {
+  .ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
+    flex-direction: column;
+  }
+  .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a {
+    margin: 10px 0;
+  }
+}
 
 /* - - - - - - - - Footer Menu - - - - - - - - */
 #footer-menu-container {
@@ -552,16 +560,84 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Buttons - - - - - - - - */
-.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton {
+.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .CheckRates input, .holdRoom {
   color: #fff;
   background-color: #CC9831;
   border-color: #CC9831;
   text-transform: uppercase;
 }
-.SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover {
-  color: #000000;
+.SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .CheckRates input:hover, .holdRoom:hover {
+  color: #000000 !important;
   background-color: #fff;
   border-color: #CC9831;
+}
+
+/* - - - - - - - - Sub-Header - - - - - - - - */
+#sub-header-container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  #sub-header-container {
+    display: none;
+  }
+}
+#sub-header-container a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 40px;
+}
+#sub-header-container a:hover {
+  text-decoration: underline;
+}
+
+/* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
+.roomcash-scale-container {
+  display: flex;
+  margin: 20px 0;
+}
+.roomcash-scale-container .bar {
+  height: 10px;
+}
+.roomcash-scale-container .roomcash {
+  border-radius: 20px 0 0 20px;
+  background: #CC9831;
+}
+.roomcash-scale-container .your-cash {
+  border-radius: 0 20px 20px 0;
+  background: #1C8747;
+}
+.roomcash-scale-container .cash-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roomcash-scale-container .cash-text p {
+  margin: 0;
+  font-weight: 400;
+}
+.roomcash-scale-container .cash-text :last-child {
+  font-weight: 300;
+}
+.roomcash-scale-container .cash-text .rc-value {
+  color: #CC9831;
+  font-size: 20px;
+}
+.roomcash-scale-container .cash-text .yc-value {
+  color: #1C8747;
+  font-size: 20px;
+}
+.roomcash-scale-container .roomcash-amount {
+  width: 50%;
+}
+.roomcash-scale-container .your-cash-amount {
+  width: 50%;
 }
 
 /* - - - - - - - - Search Results - - - - - - - - */
@@ -570,28 +646,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
   width: 23vw;
-}
-.SearchHotels #sub-header-container {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 800px) {
-  .SearchHotels #sub-header-container {
-    display: none;
-  }
-}
-.SearchHotels #sub-header-container a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 400;
-  margin: 0 40px;
-}
-.SearchHotels #sub-header-container a:hover {
-  text-decoration: underline;
 }
 .SearchHotels .ArnLeftSearchContainer {
   width: 20vw;
@@ -701,53 +755,63 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropName {
   width: 100%;
 }
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container {
-  display: flex;
-  margin: 20px 0;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .bar {
-  height: 10px;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .roomcash {
-  border-radius: 20px 0 0 20px;
-  background: #CC9831;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .your-cash {
-  border-radius: 0 20px 20px 0;
-  background: #1C8747;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text p {
-  margin: 0;
-  font-weight: 400;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text :last-child {
-  font-weight: 300;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text .rc-value {
-  color: #CC9831;
-  font-size: 20px;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .cash-text .yc-value {
-  color: #1C8747;
-  font-size: 20px;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .roomcash-amount {
-  width: 50%;
-}
-.SearchHotels .ArnProperty .ArnPropName .roomcash-scale-container .your-cash-amount {
-  width: 50%;
-}
 .SearchHotels .ArnPages {
   display: flex;
   justify-content: center;
 }
 
 /* - - - - - - - - Property Detail - - - - - - - - */
+.SinglePropDetail .ArnRightListContainer {
+  background-color: #fff;
+}
+.SinglePropDetail .ArnRightListContainer .ArnProperty {
+  padding: 10px 0;
+}
+.SinglePropDetail .ArnRightListContainer .RoomDescription {
+  font-weight: 300;
+}
+.SinglePropDetail .ArnLeftListContainer {
+  margin: 0 40px 0 10px;
+}
+.SinglePropDetail .ArnLeftListContainer .translateMe {
+  text-transform: uppercase;
+}
+.SinglePropDetail .ArnLeftListContainer .SimpleSearch {
+  background-color: unset;
+  color: #000;
+  font-weight: 300;
+  padding: 0;
+}
+.SinglePropDetail .ArnLeftListContainer .SimpleSearch input, .SinglePropDetail .ArnLeftListContainer .SimpleSearch select {
+  padding: 12px !important;
+  font-weight: 300 !important;
+}
+.SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit {
+  font-weight: 400;
+}
+.SinglePropDetail .ArnLeftListContainer .ArnAmenityContainer {
+  font-weight: 300 !important;
+}
+.SinglePropDetail .percentSavings {
+  display: none !important;
+}
+.SinglePropDetail .roomcash-scale-container {
+  margin-top: 30px;
+  width: 60%;
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .roomcash-scale-container {
+    width: 100%;
+  }
+}
+.SinglePropDetail .roomcash-scale-container .bar {
+  margin-top: 10px;
+}
+.SinglePropDetail .roomcash-scale-container .roomcash-amount {
+  width: 50%;
+}
+.SinglePropDetail .roomcash-scale-container .your-cash-amount {
+  width: 50%;
+}
 
 /*# sourceMappingURL=63712.css.map*/

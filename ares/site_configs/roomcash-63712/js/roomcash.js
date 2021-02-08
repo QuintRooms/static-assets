@@ -12,51 +12,87 @@ export default class Roomcash {
     }
 
     init() {
-        this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
-        this.buildHeaderLinks();
-        this.insertContent([
-            {
-                element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',
-                position: 'beforeend',
-                html: `<hr>`,
-            },
-            {
-                element: '.SearchHotels .sort-wrapper',
-                position: 'afterend',
-                html: `<hr>`,
-            },
-            {
-                element: '.SearchHotels .ArnSearchContainerMainDiv',
-                position: 'afterbegin',
-                html: `
-                <span id="sub-header-container">
-                    <a href="">How It Works</a>
-                    <a href="">FAQs</a>
-                    <a href="">Daily Deals</a>
-                    <a href="">Partnerships</a>
-                </span>`,
-            },
-            {
-                element: '.SearchHotels .lblAmenities',
-                position: 'beforeBegin',
-                html: `<div id="filter-by">FILTER BY</div>`,
-            },
-            {
-                element: '.ArnSupportLinks.ArnSupportBottom',
-                position: 'afterbegin',
-                html: `
-                    <div id="footer">
-                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
-                        <div id="brand-logos">
-                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                        </div>
-                    </div>`,
-            },
-        ]);
-        this.updatePropertyContainer();
-        this.buildSortSelectMenu();
+        // Search Results
+        if (document.querySelector('.SearchHotels')) {
+            this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
+            this.buildHeaderLinks();
+            this.insertContent([
+                {
+                    element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',
+                    position: 'beforeend',
+                    html: `<hr>`,
+                },
+                {
+                    element: '.SearchHotels .sort-wrapper',
+                    position: 'afterend',
+                    html: `<hr>`,
+                },
+                {
+                    element: '.SearchHotels .ArnSearchContainerMainDiv',
+                    position: 'afterbegin',
+                    html: `
+                    <span id="sub-header-container">
+                        <a href="">How It Works</a>
+                        <a href="">FAQs</a>
+                        <a href="">Daily Deals</a>
+                        <a href="">Partnerships</a>
+                    </span>`,
+                },
+                {
+                    element: '.SearchHotels .lblAmenities',
+                    position: 'beforeBegin',
+                    html: `<div id="filter-by">FILTER BY</div>`,
+                },
+                {
+                    element: '.ArnSupportLinks.ArnSupportBottom',
+                    position: 'afterbegin',
+                    html: `
+                        <div id="footer">
+                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
+                            <div id="brand-logos">
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                            </div>
+                        </div>`,
+                },
+            ]);
+            this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend');
+            this.buildSortSelectMenu();
+        }
+
+        // Property Detail
+        if (document.querySelector('.SinglePropDetail')) {
+            this.buildFooterMenu('.PropDetailView', 'afterend');
+            this.buildHeaderLinks();
+            this.insertContent([
+                {
+                    element: '.PropDetailView',
+                    position: 'beforebegin',
+                    html: `
+                    <span id="sub-header-container">
+                        <a href="">How It Works</a>
+                        <a href="">FAQs</a>
+                        <a href="">Daily Deals</a>
+                        <a href="">Partnerships</a>
+                    </span>`,
+                },
+                {
+                    element: '.ArnSupportLinks.ArnSupportBottom',
+                    position: 'afterbegin',
+                    html: `
+                        <div id="footer">
+                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
+                            <div id="brand-logos">
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                            </div>
+                        </div>`,
+                },
+            ]);
+            this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend');
+        }
     }
 
     buildFooterMenu(insertElement, position) {
@@ -156,35 +192,56 @@ export default class Roomcash {
         });
     }
 
-    updatePropertyContainer() {
-        const props = document.querySelectorAll('.ArnProperty');
+    async updatePropertyContainer(containerName, insertElement, insertPosition) {
+        const props = document.querySelectorAll(containerName);
+
+        const html = document.querySelector('.SearchHotels')
+            ? `
+        <div class="roomcash-scale-container">
+            <div class="roomcash-amount">
+                <div class="bar roomcash"></div>
+                <div class="cash-text">
+                    <span class="rc-value">$25</span>
+                    <p>RoomCash</p>
+                    <p>(per night)</p>
+                </div>
+            </div>
+            <div class="your-cash-amount">
+                <div class="bar your-cash"></div>
+                <div class="cash-text">
+                    <span class="yc-value">$125</span>
+                    <p>Your Cash</p>
+                    <p>(per night)</p>
+                </div>
+            </div>
+        </div>
+    `
+            : `
+    <div class="roomcash-scale-container">
+        <div class="roomcash-amount">
+            <div class="cash-text">
+                <span class="rc-value">$25</span>
+                <p>RoomCash</p>
+                <p>(per night)</p>
+            </div>
+            <div class="bar roomcash"></div>
+        </div>
+        <div class="your-cash-amount">
+            <div class="cash-text">
+                <span class="yc-value">$125</span>
+                <p>Your Cash</p>
+                <p>(per night)</p>
+            </div>
+            <div class="bar your-cash"></div>
+        </div>
+    </div>
+`;
 
         props.forEach((prop) => {
-            prop.querySelector('.ArnPropDescription').insertAdjacentHTML(
-                'afterend',
-                `
-                <div class="roomcash-scale-container">
-                    <div class="roomcash-amount">
-                        <div class="bar roomcash"></div>
-                        <div class="cash-text">
-                            <span class="rc-value">$25</span>
-                            <p>RoomCash</p>
-                            <p>(per night)</p>
-                        </div>
-                    </div>
-                    <div class="your-cash-amount">
-                        <div class="bar your-cash"></div>
-                        <div class="cash-text">
-                            <span class="yc-value">$125</span>
-                            <p>Your Cash</p>
-                            <p>(per night)</p>
-                        </div>
-                    </div>
-                </div>
-            `
-            );
+            prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
 
             // Moves Book button
+            if (!document.querySelector('.SearchHotels')) return;
             const button = prop.querySelector('.ArnRateButton');
             prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
         });

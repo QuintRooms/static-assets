@@ -85,7 +85,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 53px;
+            padding: 50px;
             font-size: 16px;
             letter-spacing: 1px;
 
@@ -323,6 +323,10 @@ header {
 
     .ArnRightListContainer {
         padding-top: 0;
+
+        #ArnPropertyMap {
+            width: 23vw;
+        }
     }
 
     // sub-header
@@ -332,6 +336,10 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include tablet {
+            display: none;
+        }
 
         a {
             text-decoration: none;
@@ -348,7 +356,21 @@ header {
 
     // Update Search container
     .ArnLeftSearchContainer {
-        width: 300px;
+        width: 20vw;
+        padding: 0 10px;
+        margin-left: 0;
+
+        @include desktop {
+            padding: 0;
+
+            .ArnSearchHeader {
+                margin-left: 10px;
+            }
+        }
+
+        @include tablet {
+            width: unset;
+        }
 
         hr {
             background: #ccc;
@@ -366,6 +388,14 @@ header {
         }
 
         .ArnSecondarySearchOuterContainer {
+            .sort-wrapper {
+
+                @include desktop {
+                    hr {
+                        display: none;
+                    }
+                }
+            }
 
             h4 {
                 text-transform: uppercase;
@@ -387,6 +417,11 @@ header {
     #currentPropertyPage {
         background-color: #fff;
         padding: 80px 24px;
+        width: 55vw;
+
+        @include desktop {
+            width: unset;
+        }
     }
 
     .ArnQuadSearchContainer.ArnPrimarySearchContainer {
@@ -406,6 +441,20 @@ header {
 
     // Property Container
     .ArnProperty {
+
+        .ArnPropThumb, .ArnPropThumb img {
+            height: 300px;
+        }
+
+        .ArnPropName {
+            height: 300px;
+            padding: 20px 12px;
+            justify-content: space-evenly;
+
+            .ArnTripAdvisorDetails {
+                bottom: 35px;
+            }
+        }
 
         .ArnRateCell {
             display: none;

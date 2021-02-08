@@ -319,7 +319,7 @@ header #admin-container .header-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 53px;
+  padding: 50px;
   font-size: 16px;
   letter-spacing: 1px;
 }
@@ -532,12 +532,20 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer {
   padding-top: 0;
 }
+.SearchHotels .ArnRightListContainer #ArnPropertyMap {
+  width: 23vw;
+}
 .SearchHotels #sub-header-container {
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 800px) {
+  .SearchHotels #sub-header-container {
+    display: none;
+  }
 }
 .SearchHotels #sub-header-container a {
   text-decoration: none;
@@ -550,7 +558,22 @@ header #AdminControlsContainer .hamburger .line {
   text-decoration: underline;
 }
 .SearchHotels .ArnLeftSearchContainer {
-  width: 300px;
+  width: 20vw;
+  padding: 0 10px;
+  margin-left: 0;
+}
+@media (max-width: 1100px) {
+  .SearchHotels .ArnLeftSearchContainer {
+    padding: 0;
+  }
+  .SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .SearchHotels .ArnLeftSearchContainer {
+    width: unset;
+  }
 }
 .SearchHotels .ArnLeftSearchContainer hr {
   background: #ccc;
@@ -562,6 +585,11 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer .ArnSearchHeader {
   text-transform: uppercase;
+}
+@media (max-width: 1100px) {
+  .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper hr {
+    display: none;
+  }
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4 {
   text-transform: uppercase;
@@ -578,6 +606,12 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels #currentPropertyPage {
   background-color: #fff;
   padding: 80px 24px;
+  width: 55vw;
+}
+@media (max-width: 1100px) {
+  .SearchHotels #currentPropertyPage {
+    width: unset;
+  }
 }
 .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   background-color: unset;
@@ -589,6 +623,17 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox input, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox select {
   padding: 12px !important;
+}
+.SearchHotels .ArnProperty .ArnPropThumb, .SearchHotels .ArnProperty .ArnPropThumb img {
+  height: 300px;
+}
+.SearchHotels .ArnProperty .ArnPropName {
+  height: 300px;
+  padding: 20px 12px;
+  justify-content: space-evenly;
+}
+.SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails {
+  bottom: 35px;
 }
 .SearchHotels .ArnProperty .ArnRateCell {
   display: none;

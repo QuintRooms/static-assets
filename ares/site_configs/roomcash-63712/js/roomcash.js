@@ -160,7 +160,7 @@ export default class Roomcash {
 
             // Moves Book button
             const button = prop.querySelector('.ArnRateButton');
-            prop.querySelector('.ArnPropClass').insertAdjacentElement('afterend', button);
+            prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
         });
     }
 }

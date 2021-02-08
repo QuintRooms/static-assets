@@ -7427,7 +7427,7 @@
                                         '\n                <div class="roomcash-scale-container">\n                    <div class="roomcash-amount">\n                        <div class="bar roomcash"></div>\n                        <div class="cash-text">\n                            <span class="rc-value">$125</span>\n                            <p>RoomCash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">\n                        <div class="bar your-cash"></div>\n                        <div class="cash-text">\n                            <span class="yc-value">$25</span>\n                            <p>Your Cash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                </div>\n            '
                                     );
                                     var t = e.querySelector('.ArnRateButton');
-                                    e.querySelector('.ArnPropClass').insertAdjacentElement('afterend', t);
+                                    e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', t);
                                 });
                             },
                         },

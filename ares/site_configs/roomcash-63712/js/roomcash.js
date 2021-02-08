@@ -15,22 +15,48 @@ export default class Roomcash {
         this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
         this.buildHeaderLinks();
         this.insertContent([
-            {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: `<hr>`},
-            {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: `<hr>`},
+            {
+                element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',
+                position: 'beforeend',
+                html: `<hr>`,
+            },
+            {
+                element: '.SearchHotels .sort-wrapper',
+                position: 'afterend',
+                html: `<hr>`,
+            },
             {
                 element: '.SearchHotels .ArnSearchContainerMainDiv',
                 position: 'afterbegin',
                 html: `
-            <div id="sub-header-container">
-                <a href="">How It Works</a>
-                <a href="">FAQs</a>
-                <a href="">Daily Deals</a>
-                <a href="">Partnerships</a>
-            </div>
-        `,
+                <span id="sub-header-container">
+                    <a href="">How It Works</a>
+                    <a href="">FAQs</a>
+                    <a href="">Daily Deals</a>
+                    <a href="">Partnerships</a>
+                </span>`,
+            },
+            {
+                element: '.SearchHotels .lblAmenities',
+                position: 'beforeBegin',
+                html: `<div id="filter-by">FILTER BY</div>`,
+            },
+            {
+                element: '.ArnSupportLinks.ArnSupportBottom',
+                position: 'afterbegin',
+                html: `
+                    <div id="footer">
+                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
+                        <div id="brand-logos">
+                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                            <a href=""><img src="https://via.placeholder.com/200x100"></a>
+                        </div>
+                    </div>`,
             },
         ]);
         this.updatePropertyContainer();
+        this.buildSortSelectMenu();
     }
 
     buildFooterMenu(insertElement, position) {
@@ -106,7 +132,7 @@ export default class Roomcash {
             `
             <div id="admin-container">
                 <div id="balance-container" class="header-link">
-                    <img src="">
+                    <img src="https://via.placeholder.com/50x50">
                     <span id="balance">$50</span>
                 </div>
                 <div id="account-container" class="header-link">
@@ -141,7 +167,7 @@ export default class Roomcash {
                     <div class="roomcash-amount">
                         <div class="bar roomcash"></div>
                         <div class="cash-text">
-                            <span class="rc-value">$125</span>
+                            <span class="rc-value">$25</span>
                             <p>RoomCash</p>
                             <p>(per night)</p>
                         </div>
@@ -149,7 +175,7 @@ export default class Roomcash {
                     <div class="your-cash-amount">
                         <div class="bar your-cash"></div>
                         <div class="cash-text">
-                            <span class="yc-value">$25</span>
+                            <span class="yc-value">$125</span>
                             <p>Your Cash</p>
                             <p>(per night)</p>
                         </div>
@@ -162,5 +188,23 @@ export default class Roomcash {
             const button = prop.querySelector('.ArnRateButton');
             prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
         });
+    }
+
+    async buildSortSelectMenu() {
+        if (!document.querySelector('.SearchHotels')) return;
+        await utilities.waitForSelectorInDOM('.sort-wrapper');
+        const html = `
+        <select id="sort-select">
+            <option id="sort-price"></option>
+            <option id="sort-rating"></option>
+        </select>`;
+
+        const price = document.querySelector('.ArnSortByPrice');
+        const rating = document.querySelector('.ArnSortByClass');
+
+        document.querySelector('.sort-wrapper h4').insertAdjacentHTML('afterend', html);
+
+        document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
+        document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', rating);
     }
 }

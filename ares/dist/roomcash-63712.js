@@ -7286,7 +7286,7 @@
                         (this.config = t),
                         this.init();
                 }
-                var t, n, r, o, i;
+                var t, n, r, o, i, l;
                 return (
                     (t = e),
                     (n = [
@@ -7302,10 +7302,18 @@
                                             element: '.SearchHotels .ArnSearchContainerMainDiv',
                                             position: 'afterbegin',
                                             html:
-                                                '\n            <div id="sub-header-container">\n                <a href="">How It Works</a>\n                <a href="">FAQs</a>\n                <a href="">Daily Deals</a>\n                <a href="">Partnerships</a>\n            </div>\n        ',
+                                                '\n                <span id="sub-header-container">\n                    <a href="">How It Works</a>\n                    <a href="">FAQs</a>\n                    <a href="">Daily Deals</a>\n                    <a href="">Partnerships</a>\n                </span>',
+                                        },
+                                        {element: '.SearchHotels .lblAmenities', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
+                                        {
+                                            element: '.ArnSupportLinks.ArnSupportBottom',
+                                            position: 'afterbegin',
+                                            html:
+                                                '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                            <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                            <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                        </div>\n                    </div>',
                                         },
                                     ]),
-                                    this.updatePropertyContainer();
+                                    this.updatePropertyContainer(),
+                                    this.buildSortSelectMenu();
                             },
                         },
                         {
@@ -7333,7 +7341,7 @@
                         {
                             key: 'moveAccountLink',
                             value:
-                                ((i = a(
+                                ((l = a(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -7352,13 +7360,13 @@
                                     })
                                 )),
                                 function () {
-                                    return i.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'buildHeaderLinks',
                             value:
-                                ((o = a(
+                                ((i = a(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -7373,7 +7381,7 @@
                                                                 .querySelector('header')
                                                                 .insertAdjacentHTML(
                                                                     'beforeend',
-                                                                    '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="">\n                    <span id="balance">$50</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
+                                                                    '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="https://via.placeholder.com/50x50">\n                    <span id="balance">$50</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
                                                                 ),
                                                                 this.moveAccountLink();
                                                         case 7:
@@ -7387,7 +7395,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return o.apply(this, arguments);
+                                    return i.apply(this, arguments);
                                 }),
                         },
                         {
@@ -7424,12 +7432,51 @@
                                 document.querySelectorAll('.ArnProperty').forEach(function (e) {
                                     e.querySelector('.ArnPropDescription').insertAdjacentHTML(
                                         'afterend',
-                                        '\n                <div class="roomcash-scale-container">\n                    <div class="roomcash-amount">\n                        <div class="bar roomcash"></div>\n                        <div class="cash-text">\n                            <span class="rc-value">$125</span>\n                            <p>RoomCash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">\n                        <div class="bar your-cash"></div>\n                        <div class="cash-text">\n                            <span class="yc-value">$25</span>\n                            <p>Your Cash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                </div>\n            '
+                                        '\n                <div class="roomcash-scale-container">\n                    <div class="roomcash-amount">\n                        <div class="bar roomcash"></div>\n                        <div class="cash-text">\n                            <span class="rc-value">$25</span>\n                            <p>RoomCash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">\n                        <div class="bar your-cash"></div>\n                        <div class="cash-text">\n                            <span class="yc-value">$125</span>\n                            <p>Your Cash</p>\n                            <p>(per night)</p>\n                        </div>\n                    </div>\n                </div>\n            '
                                     );
                                     var t = e.querySelector('.ArnRateButton');
                                     e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', t);
                                 });
                             },
+                        },
+                        {
+                            key: 'buildSortSelectMenu',
+                            value:
+                                ((o = a(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (document.querySelector('.SearchHotels')) {
+                                                            e.next = 2;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 2:
+                                                        return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
+                                                    case 4:
+                                                        (t = document.querySelector('.ArnSortByPrice')),
+                                                            (n = document.querySelector('.ArnSortByClass')),
+                                                            document
+                                                                .querySelector('.sort-wrapper h4')
+                                                                .insertAdjacentHTML(
+                                                                    'afterend',
+                                                                    '\n        <select id="sort-select">\n            <option id="sort-price"></option>\n            <option id="sort-rating"></option>\n        </select>'
+                                                                ),
+                                                            document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
+                                                            document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', n);
+                                                    case 10:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return o.apply(this, arguments);
+                                }),
                         },
                     ]) && c(t.prototype, n),
                     r && c(t, r),

@@ -312,7 +312,10 @@ header #admin-container {
     display: none;
   }
 }
-header #admin-container #balance {
+header #admin-container #balance-container img {
+  margin-right: 10px;
+}
+header #admin-container #balance-container #balance {
   font-size: 30px;
 }
 header #admin-container .header-link {
@@ -346,6 +349,39 @@ header #AdminControlsContainer {
 }
 header #AdminControlsContainer .hamburger .line {
   background-color: #CC9831;
+}
+
+/* - - - - - - - - Footer Bar - - - - - - - - */
+.ArnSupportLinks.ArnSupportBottom {
+  background-color: #000000;
+  margin: 0;
+}
+.ArnSupportLinks.ArnSupportBottom .ARN_ServiceLinks, .ArnSupportLinks.ArnSupportBottom .pb-container, .ArnSupportLinks.ArnSupportBottom .dvd, .ArnSupportLinks.ArnSupportBottom .cookie-policy-link {
+  display: none;
+}
+.ArnSupportLinks.ArnSupportBottom #footer {
+  display: flex;
+  flex-direction: column;
+}
+.ArnSupportLinks.ArnSupportBottom #footer #footer-title {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  color: #6E6F70;
+  font-size: 20px;
+  font-weight: 400;
+  width: 100%;
+}
+.ArnSupportLinks.ArnSupportBottom #footer #footer-title hr {
+  height: 1px;
+  width: 20%;
+  margin: auto 40px;
+  border-color: #6E6F70;
+}
+.ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
 }
 
 /* - - - - - - - - Footer Menu - - - - - - - - */
@@ -586,22 +622,28 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer .ArnSearchHeader {
   text-transform: uppercase;
 }
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper #sort-select {
+  border: none;
+  padding: 15px !important;
+  margin-top: 10px;
+}
 @media (max-width: 1100px) {
   .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper hr {
     display: none;
   }
 }
-.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4 {
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   text-transform: uppercase;
   margin: 0;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   margin-top: 30px;
+  font-weight: 800;
 }
-.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblAmenities {
-  font-weight: 400;
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType {
+  font-weight: 600 !important;
 }
 .SearchHotels #currentPropertyPage {
   background-color: #fff;
@@ -625,7 +667,7 @@ header #AdminControlsContainer .hamburger .line {
   padding: 12px !important;
 }
 .SearchHotels .ArnProperty .ArnPropThumb, .SearchHotels .ArnProperty .ArnPropThumb img {
-  height: 300px;
+  height: 280px;
 }
 .SearchHotels .ArnProperty .ArnPropName {
   height: 300px;
@@ -634,6 +676,12 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails {
   bottom: 35px;
+}
+.SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .ratingCount {
+  padding: 5px;
+}
+.SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount {
+  align-self: center;
 }
 .SearchHotels .ArnProperty .ArnRateCell {
   display: none;

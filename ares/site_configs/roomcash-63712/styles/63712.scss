@@ -77,9 +77,17 @@ header {
             display: none;
         }
 
-        #balance {
-            font-size: 30px;
+        #balance-container {
+
+            img {
+                margin-right: 10px;
+            }
+            
+            #balance {
+                font-size: 30px;
+            }
         }
+
 
         .header-link {
             display: flex;
@@ -119,6 +127,48 @@ header {
             background-color: $primary_color;
         }
     }
+}
+
+/* - - - - - - - - Footer Bar - - - - - - - - */
+
+
+.ArnSupportLinks.ArnSupportBottom {
+    background-color: $header_background;
+    margin: 0;
+
+    .ARN_ServiceLinks, .pb-container, .dvd, .cookie-policy-link {
+        display: none;
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+
+        #footer-title {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            color: #6E6F70;
+            font-size: 20px;
+            font-weight: 400;
+            width: 100%;
+    
+            hr {
+                height: 1px;
+                width: 20%;
+                margin: auto 40px;
+                border-color: #6E6F70;
+            }
+        }
+
+        #brand-logos {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 0;
+        }
+
+    }
+
 }
 
 /* - - - - - - - - Footer Menu - - - - - - - - */
@@ -390,6 +440,12 @@ header {
         .ArnSecondarySearchOuterContainer {
             .sort-wrapper {
 
+                #sort-select {
+                    border: none;
+                    padding: 15px !important;
+                    margin-top: 10px;
+                }
+
                 @include desktop {
                     hr {
                         display: none;
@@ -397,19 +453,20 @@ header {
                 }
             }
 
-            h4 {
+            h4, #filter-by {
                 text-transform: uppercase;
                 margin: 0;
-                font-size: 17px;
+                font-size: 20px;
                 letter-spacing: 1px;
             }
 
             #filter-by {
                 margin-top: 30px;
+                font-weight: $heading_weight;
             }
 
-            .lblAmenities {
-                font-weight: $sub_heading_weight;
+            .lblAmenities, .lblPropertyType {
+                font-weight: 600 !important;
             }
         }
     }
@@ -443,7 +500,7 @@ header {
     .ArnProperty {
 
         .ArnPropThumb, .ArnPropThumb img {
-            height: 300px;
+            height: 280px;
         }
 
         .ArnPropName {
@@ -453,6 +510,14 @@ header {
 
             .ArnTripAdvisorDetails {
                 bottom: 35px;
+
+                .ratingCount {
+                    padding: 5px;
+                }
+
+                .reviewCount {
+                    align-self: center;
+                }
             }
         }
 

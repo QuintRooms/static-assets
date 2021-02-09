@@ -297,8 +297,8 @@
             p = n(7),
             m = n(3),
             y = n(30),
-            v = n(45),
-            g = n(12),
+            g = n(45),
+            v = n(12),
             b = n(13),
             S = n(46),
             w = n(33),
@@ -319,8 +319,8 @@
             D = h('_hidden'),
             H = h('toPrimitive'),
             I = {}.propertyIsEnumerable,
-            Y = l('symbol-registry'),
-            F = l('symbols'),
+            F = l('symbol-registry'),
+            Y = l('symbols'),
             B = l('op-symbols'),
             N = Object.prototype,
             $ = 'function' == typeof R && !!L.f,
@@ -346,7 +346,7 @@
                       }
                     : P,
             z = function (e) {
-                var t = (F[e] = A(R.prototype));
+                var t = (Y[e] = A(R.prototype));
                 return (t._k = e), t;
             },
             V =
@@ -360,35 +360,35 @@
             Q = function (e, t, n) {
                 return (
                     e === N && Q(B, t, n),
-                    g(e),
+                    v(e),
                     (t = _(t, !0)),
-                    g(n),
-                    o(F, t)
+                    v(n),
+                    o(Y, t)
                         ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
             },
             Z = function (e, t) {
-                g(e);
+                v(e);
                 for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Q(e, (n = r[o++]), t[n]);
                 return e;
             },
             J = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
-                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(Y, e) && !o(B, e)) && (!(t || !o(this, e) || !o(Y, e) || (o(this, D) && this[D][e])) || t);
             },
             K = function (e, t) {
-                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(B, t))) {
+                if (((e = w(e)), (t = _(t, !0)), e !== N || !o(Y, t) || o(B, t))) {
                     var n = E(e, t);
-                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(Y, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(Y, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(Y, (t = r[a++])) || (n && !o(N, t)) || i.push(Y[t]);
                 return i;
             };
         $ ||
@@ -421,11 +421,11 @@
         for (var re = C(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !$, 'Symbol', {
             for: function (e) {
-                return o(Y, (e += '')) ? Y[e] : (Y[e] = R(e));
+                return o(F, (e += '')) ? F[e] : (F[e] = R(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in Y) if (Y[t] === e) return t;
+                for (var t in F) if (F[t] === e) return t;
             },
             useSetter: function () {
                 W = !0;
@@ -467,7 +467,7 @@
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
                             if (((n = t = r[1]), (b(t) || void 0 !== e) && !V(e)))
                                 return (
-                                    v(t) ||
+                                    g(t) ||
                                         (t = function (e, t) {
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
@@ -503,14 +503,14 @@
                     p = e & s.G,
                     m = e & s.S,
                     y = e & s.P,
-                    v = e & s.B,
-                    g = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
+                    g = e & s.B,
+                    v = p ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
                     b = p ? o : o[t] || (o[t] = {}),
                     S = b.prototype || (b.prototype = {});
                 for (u in (p && (n = t), n))
-                    (d = ((l = !h && g && void 0 !== g[u]) ? g : n)[u]),
-                        (f = v && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
-                        g && a(g, u, d, e & s.U),
+                    (d = ((l = !h && v && void 0 !== v[u]) ? v : n)[u]),
+                        (f = g && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
+                        v && a(v, u, d, e & s.U),
                         b[u] != d && i(b, u, f),
                         y && S[u] != d && (S[u] = d);
             };
@@ -1128,7 +1128,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = p.getMetaTagContent('currency') ? p.getMetaTagContent('currency') : 'USD');
                 }
-                var t, n, r, o, i, c, s, h, y, v, g, b, S, w;
+                var t, n, r, o, i, c, s, h, y, g, v, b, S, w;
                 return (
                     (t = e),
                     (n = [
@@ -2066,7 +2066,7 @@
                         {
                             key: 'buildCurrencyDropdown',
                             value:
-                                ((g = u(
+                                ((v = u(
                                     regeneratorRuntime.mark(function e() {
                                         var t,
                                             n,
@@ -2159,7 +2159,7 @@
                                     })
                                 )),
                                 function () {
-                                    return g.apply(this, arguments);
+                                    return v.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2267,7 +2267,7 @@
                         {
                             key: 'getTotalNights',
                             value:
-                                ((v = u(
+                                ((g = u(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r, o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -2294,7 +2294,7 @@
                                     })
                                 )),
                                 function () {
-                                    return v.apply(this, arguments);
+                                    return g.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2910,15 +2910,15 @@
                                             p = i.tabIndex,
                                             m = c.tabIndex,
                                             y = s.tabIndex,
-                                            v = u.tabIndex,
-                                            g = l.tabIndex,
+                                            g = u.tabIndex,
+                                            v = l.tabIndex,
                                             b = d.tabIndex;
                                         o.setAttribute('tabIndex', p),
                                             a.setAttribute('tabIndex', f),
                                             i.setAttribute('tabIndex', m),
                                             c.setAttribute('tabIndex', h),
-                                            s.setAttribute('tabIndex', v),
-                                            u.setAttribute('tabIndex', g),
+                                            s.setAttribute('tabIndex', g),
+                                            u.setAttribute('tabIndex', v),
                                             l.setAttribute('tabIndex', b),
                                             d.setAttribute('tabIndex', y);
                                     }
@@ -3395,8 +3395,8 @@
             p = n(65),
             m = n(66),
             y = n(71),
-            v = n(72).set,
-            g = n(73)(),
+            g = n(72).set,
+            v = n(73)(),
             b = n(74),
             S = n(75),
             w = n(76),
@@ -3426,7 +3426,7 @@
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
-                    g(function () {
+                    v(function () {
                         for (
                             var r = e._v,
                                 o = 1 == e._s,
@@ -3458,7 +3458,7 @@
                 }
             },
             O = function (e) {
-                v.call(s, function () {
+                g.call(s, function () {
                     var t,
                         n,
                         r,
@@ -3484,7 +3484,7 @@
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
             D = function (e) {
-                v.call(s, function () {
+                g.call(s, function () {
                     var t;
                     q ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
@@ -3501,7 +3501,7 @@
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
                         (t = T(e))
-                            ? g(function () {
+                            ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
                                       t.call(e, u(I, r, 1), u(H, r, 1));
@@ -3632,17 +3632,17 @@
                 p,
                 m,
                 y,
-                v = f
+                g = f
                     ? function () {
                           return e;
                       }
                     : s(e),
-                g = r(n, d, t ? 2 : 1),
+                v = r(n, d, t ? 2 : 1),
                 b = 0;
-            if ('function' != typeof v) throw TypeError(e + ' is not iterable!');
-            if (i(v)) {
-                for (h = c(e.length); h > b; b++) if ((y = t ? g(a((p = e[b]))[0], p[1]) : g(e[b])) === u || y === l) return y;
-            } else for (m = v.call(e); !(p = m.next()).done; ) if ((y = o(m, g, p.value, t)) === u || y === l) return y;
+            if ('function' != typeof g) throw TypeError(e + ' is not iterable!');
+            if (i(g)) {
+                for (h = c(e.length); h > b; b++) if ((y = t ? v(a((p = e[b]))[0], p[1]) : v(e[b])) === u || y === l) return y;
+            } else for (m = g.call(e); !(p = m.next()).done; ) if ((y = o(m, v, p.value, t)) === u || y === l) return y;
         }).BREAK = u),
             (t.RETURN = l);
     },
@@ -3701,22 +3701,22 @@
             p = l.MessageChannel,
             m = l.Dispatch,
             y = 0,
-            v = {},
-            g = function () {
+            g = {},
+            v = function () {
                 var e = +this;
-                if (v.hasOwnProperty(e)) {
-                    var t = v[e];
-                    delete v[e], t();
+                if (g.hasOwnProperty(e)) {
+                    var t = g[e];
+                    delete g[e], t();
                 }
             },
             b = function (e) {
-                g.call(e.data);
+                v.call(e.data);
             };
         (f && h) ||
             ((f = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
-                    (v[++y] = function () {
+                    (g[++y] = function () {
                         c('function' == typeof e ? e : Function(e), t);
                     }),
                     r(y),
@@ -3724,15 +3724,15 @@
                 );
             }),
             (h = function (e) {
-                delete v[e];
+                delete g[e];
             }),
             'process' == n(35)(d)
                 ? (r = function (e) {
-                      d.nextTick(a(g, e, 1));
+                      d.nextTick(a(v, e, 1));
                   })
                 : m && m.now
                 ? (r = function (e) {
-                      m.now(a(g, e, 1));
+                      m.now(a(v, e, 1));
                   })
                 : p
                 ? ((i = (o = new p()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
@@ -3745,11 +3745,11 @@
                       'onreadystatechange' in u('script')
                           ? function (e) {
                                 s.appendChild(u('script')).onreadystatechange = function () {
-                                    s.removeChild(this), g.call(e);
+                                    s.removeChild(this), v.call(e);
                                 };
                             }
                           : function (e) {
-                                setTimeout(a(g, e, 1), 0);
+                                setTimeout(a(v, e, 1), 0);
                             })),
             (e.exports = {set: f, clear: h});
     },
@@ -3966,11 +3966,11 @@
             m++
         ) {
             var y,
-                v = p[m],
-                g = h[v],
-                b = a[v],
+                g = p[m],
+                v = h[g],
+                b = a[g],
                 S = b && b.prototype;
-            if (S && (S[l] || c(S, l, f), S[d] || c(S, d, v), (s[v] = f), g)) for (y in r) S[y] || i(S, y, r[y], !0);
+            if (S && (S[l] || c(S, l, f), S[d] || c(S, d, g), (s[g] = f), v)) for (y in r) S[y] || i(S, y, r[y], !0);
         }
     },
     function (e, t, n) {
@@ -4026,9 +4026,9 @@
             h = function () {
                 return this;
             };
-        e.exports = function (e, t, n, p, m, y, v) {
+        e.exports = function (e, t, n, p, m, y, g) {
             s(n, t, p);
-            var g,
+            var v,
                 b,
                 S,
                 w = function (e) {
@@ -4061,14 +4061,14 @@
                     (L = function () {
                         return M.call(this);
                     })),
-                (r && !v) || (!f && !A && k[d]) || a(k, d, L),
+                (r && !g) || (!f && !A && k[d]) || a(k, d, L),
                 (c[t] = L),
                 (c[_] = h),
                 m)
             )
-                if (((g = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), v)) for (b in g) b in k || i(k, b, g[b]);
-                else o(o.P + o.F * (f || A), t, g);
-            return g;
+                if (((v = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), g)) for (b in v) b in k || i(k, b, v[b]);
+                else o(o.P + o.F * (f || A), t, v);
+            return v;
         };
     },
     function (e, t, n) {
@@ -4215,18 +4215,18 @@
                     y = n(a, f, ''[e], function (e, t, n, r, o) {
                         return t.exec === s ? (h && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
                     }),
-                    v = y[0],
-                    g = y[1];
-                r(String.prototype, e, v),
+                    g = y[0],
+                    v = y[1];
+                r(String.prototype, e, g),
                     o(
                         RegExp.prototype,
                         f,
                         2 == t
                             ? function (e, t) {
-                                  return g.call(e, this, t);
+                                  return v.call(e, this, t);
                               }
                             : function (e) {
-                                  return g.call(e, this);
+                                  return v.call(e, this);
                               }
                     );
             }
@@ -4316,17 +4316,17 @@
                     h || (t = String(t));
                     var y = d.global;
                     if (y) {
-                        var v = d.unicode;
+                        var g = d.unicode;
                         d.lastIndex = 0;
                     }
-                    for (var g = []; ; ) {
+                    for (var v = []; ; ) {
                         var b = s(d, f);
                         if (null === b) break;
-                        if ((g.push(b), !y)) break;
-                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), v));
+                        if ((v.push(b), !y)) break;
+                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
                     }
-                    for (var S, w = '', _ = 0, x = 0; x < g.length; x++) {
-                        b = g[x];
+                    for (var S, w = '', _ = 0, x = 0; x < v.length; x++) {
+                        b = v[x];
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
                         var q = b.groups;
                         if (h) {
@@ -4524,16 +4524,16 @@
                             f = String(this),
                             h = i(u, RegExp),
                             y = u.unicode,
-                            v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
-                            g = new h(p ? u : '^(?:' + u.source + ')', v),
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
+                            v = new h(p ? u : '^(?:' + u.source + ')', g),
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
-                        if (0 === f.length) return null === s(g, f) ? [f] : [];
+                        if (0 === f.length) return null === s(v, f) ? [f] : [];
                         for (var S = 0, w = 0, _ = []; w < f.length; ) {
-                            g.lastIndex = p ? w : 0;
+                            v.lastIndex = p ? w : 0;
                             var x,
-                                A = s(g, p ? f : f.slice(w));
-                            if (null === A || (x = d(c(g.lastIndex + (p ? 0 : w)), f.length)) === S) w = a(f, w, y);
+                                A = s(v, p ? f : f.slice(w));
+                            if (null === A || (x = d(c(v.lastIndex + (p ? 0 : w)), f.length)) === S) w = a(f, w, y);
                             else {
                                 if ((_.push(f.slice(S, w)), _.length === b)) return _;
                                 for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
@@ -4624,8 +4624,8 @@
             var m = Object.getPrototypeOf,
                 y = m && m(m(A([])));
             y && y !== t && n.call(y, o) && (p = y);
-            var v = (h.prototype = d.prototype = Object.create(p));
-            function g(e) {
+            var g = (h.prototype = d.prototype = Object.create(p));
+            function v(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
                     c(e, t, function (e) {
                         return this._invoke(t, e);
@@ -4716,7 +4716,7 @@
                 return {value: void 0, done: !0};
             }
             return (
-                (f.prototype = v.constructor = h),
+                (f.prototype = g.constructor = h),
                 (h.constructor = f),
                 (f.displayName = c(h, a, 'GeneratorFunction')),
                 (e.isGeneratorFunction = function (e) {
@@ -4724,12 +4724,12 @@
                     return !!t && (t === f || 'GeneratorFunction' === (t.displayName || t.name));
                 }),
                 (e.mark = function (e) {
-                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, h) : ((e.__proto__ = h), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(v)), e;
+                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, h) : ((e.__proto__ = h), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(g)), e;
                 }),
                 (e.awrap = function (e) {
                     return {__await: e};
                 }),
-                g(b.prototype),
+                v(b.prototype),
                 (b.prototype[i] = function () {
                     return this;
                 }),
@@ -4743,12 +4743,12 @@
                               return e.done ? e.value : a.next();
                           });
                 }),
-                g(v),
-                c(v, a, 'Generator'),
-                (v[o] = function () {
+                v(g),
+                c(g, a, 'Generator'),
+                (g[o] = function () {
                     return this;
                 }),
-                (v.toString = function () {
+                (g.toString = function () {
                     return '[object Generator]';
                 }),
                 (e.keys = function (e) {
@@ -4970,12 +4970,12 @@
                     });
             });
         }
-        function v(e) {
+        function g(e) {
             var t = new FileReader(),
                 n = y(t);
             return t.readAsArrayBuffer(e), n;
         }
-        function g(e) {
+        function v(e) {
             if (e.slice) return e.slice(0);
             var t = new Uint8Array(e.byteLength);
             return t.set(new Uint8Array(e)), t.buffer;
@@ -4997,9 +4997,9 @@
                                 : o && URLSearchParams.prototype.isPrototypeOf(e)
                                 ? (this._bodyText = e.toString())
                                 : s && a && (t = e) && DataView.prototype.isPrototypeOf(t)
-                                ? ((this._bodyArrayBuffer = g(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
+                                ? ((this._bodyArrayBuffer = v(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
                                 : s && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
-                                ? (this._bodyArrayBuffer = g(e))
+                                ? (this._bodyArrayBuffer = v(e))
                                 : (this._bodyText = e = Object.prototype.toString.call(e))
                             : (this._bodyText = ''),
                         this.headers.get('content-type') ||
@@ -5030,7 +5030,7 @@
                                     : Promise.resolve(this._bodyArrayBuffer))
                             );
                         }
-                        return this.blob().then(v);
+                        return this.blob().then(g);
                     })),
                 (this.text = function () {
                     var e,
@@ -6312,10 +6312,10 @@
                 m = 'en',
                 y = {};
             y[m] = p;
-            var v = function (e) {
+            var g = function (e) {
                     return e instanceof w;
                 },
-                g = function (e, t, n) {
+                v = function (e, t, n) {
                     var r;
                     if (!e) return m;
                     if ('string' == typeof e) y[e] && (r = e), t && ((y[e] = t), (r = e));
@@ -6326,19 +6326,19 @@
                     return !n && r && (m = r), r || (!n && m);
                 },
                 b = function (e, t) {
-                    if (v(e)) return e.clone();
+                    if (g(e)) return e.clone();
                     var n = 'object' == typeof t ? t : {};
                     return (n.date = e), (n.args = arguments), new w(n);
                 },
                 S = h;
-            (S.l = g),
-                (S.i = v),
+            (S.l = v),
+                (S.i = g),
                 (S.w = function (e, t) {
                     return b(e, {locale: t.$L, utc: t.$u, $offset: t.$offset});
                 });
             var w = (function () {
                     function f(e) {
-                        (this.$L = this.$L || g(e.locale, null, !0)), this.parse(e);
+                        (this.$L = this.$L || v(e.locale, null, !0)), this.parse(e);
                     }
                     var h = f.prototype;
                     return (
@@ -6412,8 +6412,8 @@
                                 },
                                 m = this.$W,
                                 y = this.$M,
-                                v = this.$D,
-                                g = 'set' + (this.$u ? 'UTC' : '');
+                                g = this.$D,
+                                v = 'set' + (this.$u ? 'UTC' : '');
                             switch (f) {
                                 case s:
                                     return d ? h(1, 0) : h(31, 11);
@@ -6422,16 +6422,16 @@
                                 case i:
                                     var b = this.$locale().weekStart || 0,
                                         w = (m < b ? m + 7 : m) - b;
-                                    return h(d ? v - w : v + (6 - w), y);
+                                    return h(d ? g - w : g + (6 - w), y);
                                 case o:
                                 case u:
-                                    return p(g + 'Hours', 0);
+                                    return p(v + 'Hours', 0);
                                 case r:
-                                    return p(g + 'Minutes', 1);
+                                    return p(v + 'Minutes', 1);
                                 case n:
-                                    return p(g + 'Seconds', 2);
+                                    return p(v + 'Seconds', 2);
                                 case t:
-                                    return p(g + 'Milliseconds', 3);
+                                    return p(v + 'Milliseconds', 3);
                                 default:
                                     return this.clone();
                             }
@@ -6573,7 +6573,7 @@
                         (h.locale = function (e, t) {
                             if (!e) return this.$L;
                             var n = this.clone(),
-                                r = g(e, t, !0);
+                                r = v(e, t, !0);
                             return r && (n.$L = r), n;
                         }),
                         (h.clone = function () {
@@ -6614,8 +6614,8 @@
                 (b.extend = function (e, t) {
                     return e(t, w, b), b;
                 }),
-                (b.locale = g),
-                (b.isDayjs = v),
+                (b.locale = v),
+                (b.isDayjs = g),
                 (b.unix = function (e) {
                     return b(1e3 * e);
                 }),
@@ -6736,10 +6736,10 @@
                                     n
                                 );
                             }
-                            function v() {
+                            function g() {
                                 if ('search-results' === t && '' !== document.querySelector('input#hotelName').value) return document.querySelector('input#hotelName').value;
                             }
-                            function g(e, t) {
+                            function v(e, t) {
                                 var n = '';
                                 return (
                                     document.querySelectorAll(e).forEach(function (e) {
@@ -6814,10 +6814,10 @@
                                         rooms: {key: 'rooms', value: y('select#rooms')},
                                         adults: {key: 'adults', value: y('select#adults')},
                                         currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
-                                        amenities: {key: 'amenities', value: g('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                        stars: {key: 'propertyclasses', value: g('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                        propertyType: {key: 'propertytypes', value: g('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                        optionalHotel: {key: 'hotelname', value: v()},
+                                        amenities: {key: 'amenities', value: v('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                        stars: {key: 'propertyclasses', value: v('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                        propertyType: {key: 'propertytypes', value: v('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                        optionalHotel: {key: 'hotelname', value: g()},
                                     }),
                                     'search-results' === t &&
                                         'lodging' === e.site_type.toLowerCase() &&
@@ -7057,13 +7057,13 @@
                             p = new Date(),
                             m = c || (i || a ? 1 : p.getDate()),
                             y = i || p.getFullYear(),
-                            v = 0;
-                        (i && !a) || (v = a > 0 ? a - 1 : p.getMonth());
-                        var g = u || 0,
+                            g = 0;
+                        (i && !a) || (g = a > 0 ? a - 1 : p.getMonth());
+                        var v = u || 0,
                             b = l || 0,
                             S = d || 0,
                             w = f || 0;
-                        return h ? new Date(Date.UTC(y, v, m, g, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, v, m, g, b, S, w)) : new Date(y, v, m, g, b, S, w);
+                        return h ? new Date(Date.UTC(y, g, m, v, b, S, w + 60 * h.offset * 1e3)) : r ? new Date(Date.UTC(y, g, m, v, b, S, w)) : new Date(y, g, m, v, b, S, w);
                     } catch (e) {
                         return new Date('');
                     }
@@ -7207,7 +7207,7 @@
                     show_tax_inclusive_rates: !1,
                     dayjs_date_format: 'M/D/YYYY',
                     reviews_before_info: !0,
-                    show_stars: !1,
+                    show_stars: !0,
                     show_property_type: !0,
                     show_language_select: !1,
                     show_currency_select: !0,
@@ -7286,38 +7286,55 @@
                         (this.config = t),
                         this.init();
                 }
-                var t, n, r, o, i, l, d;
+                var t, n, r, o, i, l, d, f;
                 return (
                     (t = e),
                     (n = [
                         {
                             key: 'init',
                             value: function () {
-                                document.querySelector('.SearchHotels') &&
-                                    (this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
-                                    this.buildHeaderLinks(),
+                                this.buildHeaderLinks(),
                                     this.insertContent([
-                                        {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: '<hr>'},
-                                        {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: '<hr>'},
-                                        {
-                                            element: '.SearchHotels .ArnSearchContainerMainDiv',
-                                            position: 'afterbegin',
-                                            html:
-                                                '\n                    <span id="sub-header-container">\n                        <a href="">How It Works</a>\n                        <a href="">FAQs</a>\n                        <a href="">Daily Deals</a>\n                        <a href="">Partnerships</a>\n                    </span>',
-                                        },
-                                        {element: '.SearchHotels .lblAmenities', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
                                         {
                                             element: '.ArnSupportLinks.ArnSupportBottom',
                                             position: 'afterbegin',
-                                            html:
-                                                '\n                        <div id="footer">\n                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                            <div id="brand-logos">\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                            </div>\n                        </div>',
+                                            html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a href=""><img src="'
+                                                .concat(s.path, '/site_configs/')
+                                                .concat(this.config.directory_name, '/img/quint-logo.png"></a>\n                            <a href=""><img src="')
+                                                .concat(s.path, '/site_configs/')
+                                                .concat(this.config.directory_name, '/img/resbeat-logo.png"></a>\n                            <a href=""><img src="')
+                                                .concat(s.path, '/site_configs/')
+                                                .concat(this.config.directory_name, '/img/h4h-logo.png"></a>\n                        </div>\n                    </div>'),
                                         },
                                     ]),
-                                    this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend'),
-                                    this.buildSortSelectMenu()),
+                                    document.querySelector('.RootBody') &&
+                                        (this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
+                                        this.insertContent([
+                                            {
+                                                element: '.SearchHotels .ArnSearchContainerMainDiv',
+                                                position: 'afterbegin',
+                                                html:
+                                                    '\n                    <span id="sub-header-container">\n                        <a href="">How It Works</a>\n                        <a href="">FAQs</a>\n                        <a href="">Daily Deals</a>\n                        <a href="">Partnerships</a>\n                    </span>',
+                                            },
+                                        ])),
+                                    document.querySelector('.SearchHotels') &&
+                                        (this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
+                                        this.moveCurrency(),
+                                        this.insertContent([
+                                            {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: '<hr>'},
+                                            {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: '<hr>'},
+                                            {
+                                                element: '.SearchHotels .ArnSearchContainerMainDiv',
+                                                position: 'afterbegin',
+                                                html:
+                                                    '\n                    <span id="sub-header-container">\n                        <a href="">How It Works</a>\n                        <a href="">FAQs</a>\n                        <a href="">Daily Deals</a>\n                        <a href="">Partnerships</a>\n                    </span>',
+                                            },
+                                            {element: '.SearchHotels .lblAmenities', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
+                                        ]),
+                                        this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend'),
+                                        this.buildSortSelectMenu()),
                                     document.querySelector('.SinglePropDetail') &&
                                         (this.buildFooterMenu('.PropDetailView', 'afterend'),
-                                        this.buildHeaderLinks(),
                                         this.insertContent([
                                             {
                                                 element: '.PropDetailView',
@@ -7325,14 +7342,10 @@
                                                 html:
                                                     '\n                    <span id="sub-header-container">\n                        <a href="">How It Works</a>\n                        <a href="">FAQs</a>\n                        <a href="">Daily Deals</a>\n                        <a href="">Partnerships</a>\n                    </span>',
                                             },
-                                            {
-                                                element: '.ArnSupportLinks.ArnSupportBottom',
-                                                position: 'afterbegin',
-                                                html:
-                                                    '\n                        <div id="footer">\n                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                            <div id="brand-logos">\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                                <a href=""><img src="https://via.placeholder.com/200x100"></a>\n                            </div>\n                        </div>',
-                                            },
                                         ]),
-                                        this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend'));
+                                        this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend')),
+                                    document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
+                                    document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend');
                             },
                         },
                         {
@@ -7360,7 +7373,7 @@
                         {
                             key: 'moveAccountLink',
                             value:
-                                ((d = a(
+                                ((f = a(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -7379,14 +7392,15 @@
                                     })
                                 )),
                                 function () {
-                                    return d.apply(this, arguments);
+                                    return f.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'buildHeaderLinks',
                             value:
-                                ((l = a(
-                                    regeneratorRuntime.mark(function e(t) {
+                                ((d = a(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
@@ -7396,14 +7410,27 @@
                                                         case 2:
                                                             return (e.next = 4), u.waitForSelectorInDOM('#commands');
                                                         case 4:
-                                                            document
-                                                                .querySelector('header')
-                                                                .insertAdjacentHTML(
+                                                            (t = document.querySelector('header')),
+                                                                (n = document.querySelector('#commands')),
+                                                                (r = document.querySelector('#AdminControlsContainer')),
+                                                                (o = document.querySelector('.profileCommand').href),
+                                                                r.insertAdjacentHTML(
+                                                                    'afterbegin',
+                                                                    '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">$50</span>\n            </div>\n        '
+                                                                ),
+                                                                n.insertAdjacentHTML(
+                                                                    'afterbegin',
+                                                                    '\n            <a id="mobile-account-link "href="'.concat(
+                                                                        o,
+                                                                        '">My Account</a>\n            <a href="">How It Works</a>\n            <a href="">FAQs</a>\n            <a href="">Daily Deals</a>\n            <a href="">Partnerships</a>\n            '
+                                                                    )
+                                                                ),
+                                                                t.insertAdjacentHTML(
                                                                     'beforeend',
                                                                     '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="https://via.placeholder.com/50x50">\n                    <span id="balance">$50</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
                                                                 ),
                                                                 this.moveAccountLink();
-                                                        case 7:
+                                                        case 12:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -7413,8 +7440,8 @@
                                         );
                                     })
                                 )),
-                                function (e) {
-                                    return l.apply(this, arguments);
+                                function () {
+                                    return d.apply(this, arguments);
                                 }),
                         },
                         {
@@ -7448,7 +7475,7 @@
                         {
                             key: 'updatePropertyContainer',
                             value:
-                                ((i = a(
+                                ((l = a(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         var o, i;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -7473,13 +7500,13 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return i.apply(this, arguments);
+                                    return l.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'buildSortSelectMenu',
                             value:
-                                ((o = a(
+                                ((i = a(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n;
                                         return regeneratorRuntime.wrap(function (e) {
@@ -7505,6 +7532,31 @@
                                                             document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
                                                             document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', n);
                                                     case 10:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'moveCurrency',
+                            value:
+                                ((o = a(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (e.next = 2), u.waitForSelectorInDOM('.ArnQuadSearchContainer input');
+                                                    case 2:
+                                                        (t = document.querySelector('.currencies-container')),
+                                                            document.querySelector('.ArnQuadSearchContainer #theSubmitButton').insertAdjacentElement('afterend', t);
+                                                    case 4:
                                                     case 'end':
                                                         return e.stop();
                                                 }

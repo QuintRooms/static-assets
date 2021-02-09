@@ -51,6 +51,10 @@ $mobile: 600px;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+/* - - - - - - - Components Start  - - - - - - - */
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+
 /* - - - - - - - - Header - - - - - - - - */
 
 header {
@@ -64,8 +68,51 @@ header {
         max-width: 190px;
     }
 
+    @include tablet {
+
+        #commands {
+            display: flex !important;
+
+            .organizationsCommand, form {
+                display: none;
+            }
+
+            a {
+                padding: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-align: center;
+                color: $primary_color;
+            }
+        }
+
+        #commands.active {
+            transform: translateY(175px);
+        }
+    }
+
+
+
+    #mobile-balance-container {
+        margin-right: 20px;
+        display: none;
+
+        @include tablet {
+            display: unset;
+        }
+
+        #mobile-balance {
+            font-size: 30px;
+            color: $primary_color;
+        }
+    }
+
     #commands {
         display: none;
+
+        @include tablet {
+            display: unset;
+        }
     }
 
     #admin-container {
@@ -134,13 +181,14 @@ header {
 
 .ArnSupportLinks.ArnSupportBottom {
     background-color: $header_background;
-    margin: 0;
+    margin: 0 !important;
 
     .ARN_ServiceLinks, .pb-container, .dvd, .cookie-policy-link {
         display: none;
     }
 
     #footer {
+        // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         display: flex;
         flex-direction: column;
 
@@ -148,14 +196,15 @@ header {
             display: flex;
             align-self: center;
             justify-content: center;
-            color: #6E6F70;
+            color: #fff;
+            // color: #6E6F70;
             font-size: 20px;
             font-weight: 400;
             width: 100%;
     
             hr {
                 height: 1px;
-                width: 20%;
+                width: 10%;
                 margin: auto 40px;
                 border-color: #6E6F70;
             }
@@ -164,7 +213,13 @@ header {
         #brand-logos {
             display: flex;
             justify-content: space-evenly;
+            width: 70%;
+            margin: 0 auto;
             padding: 20px 0;
+
+            img {
+                max-width: 200px;
+            }
 
             @include tablet-small {
                 flex-direction: column;
@@ -186,6 +241,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0 30px;
 
     @include desktop {
@@ -362,11 +418,15 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .CheckRates input, .holdRoom {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
     color: $primary_text_color;
     background-color: $primary_color;
     border-color: $primary_color;
     text-transform: uppercase;
+    font-weight: $sub_heading_weight !important;
+    transition-property: color, background;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 
     &:hover {
         color: $secondary_text_color !important;
@@ -414,11 +474,13 @@ header {
     .roomcash {
         border-radius: 20px 0 0 20px;
         background: $primary_color;
+        clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
     }
 
     .your-cash {
         border-radius: 0 20px 20px 0;
-        background: $secondary_color
+        background: $secondary_color;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
     }
 
     .cash-text {
@@ -456,10 +518,41 @@ header {
         width: 50%;
     }
 }
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+/* - - - - - - - Components End  - - - - - - - */
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+
+/* - - - - - - - - Root Page - - - - - - - - */
+
+.RootBody {
+
+    .ArnSearchContainerMainDiv {
+        background-color: #fff;
+
+        .ArnPrimarySearchOuterContainer {
+            margin: 20px 0;
+
+            h1, h3 {
+                color: $secondary_text_color;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+        .ArnQuadSearchContainer {
+            margin: 30px 0;
+        }
+    }
+}
+
 
 /* - - - - - - - - Search Results - - - - - - - - */
 
 .SearchHotels {
+
+    .config-container {
+        display: none;
+    }
 
     .ArnRightListContainer {
         padding-top: 0;
@@ -467,6 +560,10 @@ header {
         #ArnPropertyMap {
             width: 23vw;
         }
+    }
+    
+    input#theSubmitButton {
+        padding: 15px !important;
     }
 
     // Update Search container
@@ -504,11 +601,16 @@ header {
 
         .ArnSecondarySearchOuterContainer {
             .sort-wrapper {
+                @include desktop {
+                    display: block;
+                }
 
                 #sort-select {
                     border: none;
                     padding: 15px !important;
                     margin-top: 10px;
+                    font-weight: $text_weight !important;
+
                 }
 
                 @include desktop {
@@ -559,6 +661,30 @@ header {
                 padding: 12px !important;
             }
         }
+
+        .currencies-container {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+
+            .config-label {
+                color: #000;
+                width: unset;
+                border-bottom: none;
+            }
+
+            .dropdown{
+                right: unset;
+                top: unset;
+                z-index: 1;
+
+                @include tablet {
+                    width: 95%;
+                    right: 0;
+                    margin-top: 15px;
+                }
+            }
+        }
     }
 
     // Property Container
@@ -573,6 +699,10 @@ header {
             padding: 20px 12px;
             justify-content: space-evenly;
 
+            @include tablet-small {
+                height: unset;
+            }
+
             .ArnTripAdvisorDetails {
                 bottom: 35px;
 
@@ -586,8 +716,8 @@ header {
             }
         }
 
-        .ArnRateCell {
-            display: none;
+        .ArnRateCell, .ArnPropClass {
+            display: none !important;
         }
 
         .percentSavings, .ArnPriceCell {
@@ -689,3 +819,44 @@ header {
         }
     }
 }
+
+/* - - - - - - - - Checkout Page - - - - - - - - */
+
+.CheckOutForm, .ConfirmationForm {
+
+    #theBookingPage {
+        max-width: 1170px;
+
+        .GuestForms {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .PaymentPolicies {
+            background-color: #fff;
+            border: none;
+        }
+    }
+
+    @include desktop {
+        #footer-menu-container {
+            align-items: flex-start;
+        }
+
+    }
+}
+
+/* - - - - - - - - Confirmation Page - - - - - - - - */
+
+// .ConfirmationForm {
+
+//     #theReservationFormContainer {
+//         margin-bottom: 20px;
+//         background-color: #fff;
+
+//         #theBookingPage .PaymentPolicies {
+//             border: none;
+//         }
+//     }
+// }

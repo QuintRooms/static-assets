@@ -12,10 +12,45 @@ export default class Roomcash {
     }
 
     init() {
+        // All pages
+        this.buildHeaderLinks();
+        this.insertContent([
+            {
+                element: '.ArnSupportLinks.ArnSupportBottom',
+                position: 'afterbegin',
+                html: `
+                    <div id="footer">
+                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
+                        <div id="brand-logos">
+                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint-logo.png"></a>
+                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat-logo.png"></a>
+                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/h4h-logo.png"></a>
+                        </div>
+                    </div>`,
+            },
+        ]);
+
+        // Root Page
+        if (document.querySelector('.RootBody')) {
+            this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
+            this.insertContent([
+                {
+                    element: '.SearchHotels .ArnSearchContainerMainDiv',
+                    position: 'afterbegin',
+                    html: `
+                    <span id="sub-header-container">
+                        <a href="">How It Works</a>
+                        <a href="">FAQs</a>
+                        <a href="">Daily Deals</a>
+                        <a href="">Partnerships</a>
+                    </span>`,
+                },
+            ]);
+        }
         // Search Results
         if (document.querySelector('.SearchHotels')) {
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
-            this.buildHeaderLinks();
+            this.moveCurrency();
             this.insertContent([
                 {
                     element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',
@@ -43,19 +78,6 @@ export default class Roomcash {
                     position: 'beforeBegin',
                     html: `<div id="filter-by">FILTER BY</div>`,
                 },
-                {
-                    element: '.ArnSupportLinks.ArnSupportBottom',
-                    position: 'afterbegin',
-                    html: `
-                        <div id="footer">
-                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
-                            <div id="brand-logos">
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                            </div>
-                        </div>`,
-                },
             ]);
             this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend');
             this.buildSortSelectMenu();
@@ -64,7 +86,6 @@ export default class Roomcash {
         // Property Detail
         if (document.querySelector('.SinglePropDetail')) {
             this.buildFooterMenu('.PropDetailView', 'afterend');
-            this.buildHeaderLinks();
             this.insertContent([
                 {
                     element: '.PropDetailView',
@@ -77,21 +98,18 @@ export default class Roomcash {
                         <a href="">Partnerships</a>
                     </span>`,
                 },
-                {
-                    element: '.ArnSupportLinks.ArnSupportBottom',
-                    position: 'afterbegin',
-                    html: `
-                        <div id="footer">
-                            <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
-                            <div id="brand-logos">
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                                <a href=""><img src="https://via.placeholder.com/200x100"></a>
-                            </div>
-                        </div>`,
-                },
             ]);
             this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend');
+        }
+
+        // Checkout Page
+        if (document.querySelector('.CheckOutForm')) {
+            this.buildFooterMenu('#theReservationFormContainer', 'afterend');
+        }
+
+        // Confirmation Page
+        if (document.querySelector('.ConfirmationForm')) {
+            this.buildFooterMenu('#theBookingPage', 'afterend');
         }
     }
 
@@ -158,10 +176,33 @@ export default class Roomcash {
         document.querySelector('#account-container span').insertAdjacentElement('afterbegin', profile);
     }
 
-    async buildHeaderLinks(balance) {
+    async buildHeaderLinks() {
         await utilities.waitForSelectorInDOM('header');
         await utilities.waitForSelectorInDOM('#commands');
         const header = document.querySelector('header');
+        const commands = document.querySelector('#commands');
+        const hamburger = document.querySelector('#AdminControlsContainer');
+        const account_link = document.querySelector('.profileCommand').href;
+
+        hamburger.insertAdjacentHTML(
+            'afterbegin',
+            `
+            <div id="mobile-balance-container">
+                <span id="mobile-balance">$50</span>
+            </div>
+        `
+        );
+
+        commands.insertAdjacentHTML(
+            'afterbegin',
+            `
+            <a id="mobile-account-link "href="${account_link}">My Account</a>
+            <a href="">How It Works</a>
+            <a href="">FAQs</a>
+            <a href="">Daily Deals</a>
+            <a href="">Partnerships</a>
+            `
+        );
 
         header.insertAdjacentHTML(
             'beforeend',
@@ -263,5 +304,12 @@ export default class Roomcash {
 
         document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
         document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', rating);
+    }
+
+    async moveCurrency() {
+        await utilities.waitForSelectorInDOM('.ArnQuadSearchContainer input');
+        const currency = document.querySelector('.currencies-container');
+
+        document.querySelector('.ArnQuadSearchContainer #theSubmitButton').insertAdjacentElement('afterend', currency);
     }
 }

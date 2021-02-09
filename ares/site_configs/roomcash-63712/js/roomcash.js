@@ -22,9 +22,9 @@ export default class Roomcash {
                     <div id="footer">
                         <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
                         <div id="brand-logos">
-                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint-logo.png"></a>
-                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat-logo.png"></a>
-                            <a href=""><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/h4h-logo.png"></a>
+                            <a href="https://quintevents.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint-logo.png"></a>
+                            <a href="https://resbeat.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat-logo.png"></a>
+                            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/h4h-logo.png"></a>
                         </div>
                     </div>`,
             },

@@ -7298,11 +7298,17 @@
                                         {
                                             element: '.ArnSupportLinks.ArnSupportBottom',
                                             position: 'afterbegin',
-                                            html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a href=""><img src="'
+                                            html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a href="https://quintevents.com/" target="_blank"><img src="'
                                                 .concat(s.path, '/site_configs/')
-                                                .concat(this.config.directory_name, '/img/quint-logo.png"></a>\n                            <a href=""><img src="')
+                                                .concat(
+                                                    this.config.directory_name,
+                                                    '/img/quint-logo.png"></a>\n                            <a href="https://resbeat.com/" target="_blank"><img src="'
+                                                )
                                                 .concat(s.path, '/site_configs/')
-                                                .concat(this.config.directory_name, '/img/resbeat-logo.png"></a>\n                            <a href=""><img src="')
+                                                .concat(
+                                                    this.config.directory_name,
+                                                    '/img/resbeat-logo.png"></a>\n                            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="'
+                                                )
                                                 .concat(s.path, '/site_configs/')
                                                 .concat(this.config.directory_name, '/img/h4h-logo.png"></a>\n                        </div>\n                    </div>'),
                                         },

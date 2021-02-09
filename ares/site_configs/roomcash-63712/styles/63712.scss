@@ -83,11 +83,13 @@ header {
                 letter-spacing: 1px;
                 text-align: center;
                 color: $primary_color;
+                border-bottom: none;
             }
         }
 
         #commands.active {
             transform: translateY(175px);
+            background-color: #000;
         }
     }
 
@@ -188,9 +190,9 @@ header {
     }
 
     #footer {
-        // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         #footer-title {
             display: flex;
@@ -207,6 +209,10 @@ header {
                 width: 10%;
                 margin: auto 40px;
                 border-color: #6E6F70;
+
+                @include tablet {
+                    width: 30%;
+                }
             }
         }
 
@@ -216,6 +222,15 @@ header {
             width: 70%;
             margin: 0 auto;
             padding: 20px 0;
+
+            @include tablet {
+                width: 100%;
+                margin: 0;
+            }
+
+            a {
+                margin: auto;
+            }
 
             img {
                 max-width: 200px;
@@ -558,7 +573,7 @@ header {
         padding-top: 0;
 
         #ArnPropertyMap {
-            width: 23vw;
+            width: 24vw;
         }
     }
     
@@ -610,6 +625,12 @@ header {
                     padding: 15px !important;
                     margin-top: 10px;
                     font-weight: $text_weight !important;
+
+                    @include tablet {
+                        width: 100%;
+                        padding: 15px !important;
+                        margin: 20px 0 0 0;
+                    }
 
                 }
 
@@ -795,6 +816,12 @@ header {
 
     .percentSavings {
         display: none !important;
+    }
+
+    @media (max-width: 560px) {
+        .bookRoom {
+            align-self: end;
+        }
     }
 
     .roomcash-scale-container {

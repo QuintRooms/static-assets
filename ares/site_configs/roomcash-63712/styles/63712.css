@@ -736,6 +736,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
   width: 24vw;
+  height: 75vh !important;
 }
 .SearchHotels input#theSubmitButton {
   padding: 15px !important;
@@ -770,27 +771,34 @@ header #AdminControlsContainer .hamburger .line {
   text-transform: uppercase;
 }
 @media (max-width: 1100px) {
-  .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper {
+  .SearchHotels .ArnLeftSearchContainer .sort-wrapper {
     display: block;
   }
 }
-.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper #sort-select {
+.SearchHotels .ArnLeftSearchContainer .sort-wrapper #sort-select {
   border: none;
   padding: 15px !important;
   margin-top: 10px;
   font-weight: 300 !important;
+  background-color: #E6E6E6;
 }
 @media (max-width: 800px) {
-  .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper #sort-select {
+  .SearchHotels .ArnLeftSearchContainer .sort-wrapper #sort-select {
     width: 100%;
     padding: 15px !important;
     margin: 20px 0 0 0;
   }
 }
 @media (max-width: 1100px) {
-  .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .sort-wrapper hr {
+  .SearchHotels .ArnLeftSearchContainer .sort-wrapper hr {
     display: none;
   }
+}
+.SearchHotels .ArnLeftSearchContainer .mobile-filter-container h4 {
+  display: none;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer span {
+  font-weight: 300;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   text-transform: uppercase;
@@ -803,7 +811,7 @@ header #AdminControlsContainer .hamburger .line {
   font-weight: 800;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType {
-  font-weight: 600 !important;
+  font-weight: 400 !important;
 }
 .SearchHotels #currentPropertyPage {
   background-color: #fff;

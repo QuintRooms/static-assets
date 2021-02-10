@@ -91,7 +91,7 @@ export default function siteConfig() {
             },
             {
                 name: 'SEARCH ANYWHERE',
-                display_date: '',
+                display_date: '2/10/2023',
                 end_date: '3/28/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
             },

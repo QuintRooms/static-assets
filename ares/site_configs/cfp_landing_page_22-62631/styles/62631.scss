@@ -53,8 +53,14 @@ $header-images: '';
     background-color: #000 !important;
 }
 
-.event-2 .display-date {
-    display: none;
+.event-2 {
+    .display-date {
+        visibility: hidden;
+    }
+
+    .view-hotels {
+        margin-top: 20px;
+    }
 }
 
 .event-container {

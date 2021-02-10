@@ -1,22 +1,902 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #fff;
-$logo_flex_position: center;
-$logo_max_width: 300px;
-$background_color: #fff;
-$primary_color: #5dc3ac;
-$secondary_color: #7487dd;
+$header_background: #000000;
+$logo_flex_position: flex-start;
+$logo_max_width: 200px;
+$background_color: #E6E6E6;
+$primary_color: #CC9831;
+$secondary_color: #1C8747;
 $primary_text_color: #fff;
-$secondary_text_color: #5dc3ac;
-$secondary_background_color: #5dc3ac;
-$border_color: #5dc3ac;
+$secondary_text_color: #000000;
+$secondary_background_color: #000;
+$border_color: #000;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #5dc3ac;
-$button_hover_border_color: #5dc3ac;
+$button_hover_text_color: #000;
+$button_hover_border_color: #CC9831;
 $google_font_name: 'Montserrat';
 $site_name: 'roomcash-63712';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+$heading_weight: 800;
+$sub_heading_weight: 400;
+$text_weight: 300;
+$desktop: 1100px;
+$tablet: 800px;
+$tablet_small: 700px;
+$mobile: 600px;
+
+@mixin desktop {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin tablet-small {
+    @media (max-width: #{$tablet_small}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-    @import '../../../styles/sass/config-styles/resbeat.config.scss';
+
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+/* - - - - - - - Components Start  - - - - - - - */
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+
+/* - - - - - - - - Header - - - - - - - - */
+
+header {
+    justify-content: space-between;
+    border-bottom: none;
+    height: 110px;
+
+    .logo img {
+        padding: 0;
+        margin-left: 30px;
+        max-width: 190px;
+    }
+
+    @include tablet {
+
+        #commands {
+            display: flex !important;
+
+            .organizationsCommand, form {
+                display: none;
+            }
+
+            a {
+                padding: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-align: center;
+                color: $primary_color;
+                border-bottom: none;
+            }
+        }
+
+        #commands.active {
+            transform: translateY(175px);
+            background-color: #000;
+        }
+    }
+
+
+
+    #mobile-balance-container {
+        margin-right: 20px;
+        display: none;
+
+        @include tablet {
+            display: unset;
+        }
+
+        #mobile-balance {
+            font-size: 30px;
+            color: $primary_color;
+        }
+    }
+
+    #commands {
+        display: none;
+
+        @include tablet {
+            display: unset;
+        }
+    }
+
+    #admin-container {
+        height: 100%;
+        display: flex;
+        color: $primary_text_color;
+
+        @include tablet {
+            display: none;
+        }
+
+        #balance-container {
+
+            img {
+                margin-right: 10px;
+            }
+            
+            #balance {
+                font-size: 30px;
+            }
+        }
+
+
+        .header-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            font-size: 16px;
+            letter-spacing: 1px;
+
+            @include desktop{
+                padding: 30px;
+            }
+
+            a {
+                color: $primary_text_color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #balance {
+            color: $primary_color;
+        }
+
+        #search-container {
+            background-color: $primary_color;
+        }
+    }
+
+    #AdminControlsContainer {
+        margin-right: 10px;
+
+        .hamburger .line {
+            background-color: $primary_color;
+        }
+    }
+}
+
+/* - - - - - - - - Footer Bar - - - - - - - - */
+
+
+.ArnSupportLinks.ArnSupportBottom {
+    background-color: $header_background;
+    margin: 0 !important;
+
+    .ARN_ServiceLinks, .pb-container, .dvd, .cookie-policy-link {
+        display: none;
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #footer-title {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            color: #fff;
+            // color: #6E6F70;
+            font-size: 20px;
+            font-weight: 400;
+            width: 100%;
+    
+            hr {
+                height: 1px;
+                width: 10%;
+                margin: auto 40px;
+                border-color: #6E6F70;
+
+                @include tablet {
+                    width: 30%;
+                }
+            }
+        }
+
+        #brand-logos {
+            display: flex;
+            justify-content: space-evenly;
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px 0;
+
+            @include tablet {
+                width: 100%;
+                margin: 0;
+            }
+
+            a {
+                margin: auto;
+            }
+
+            img {
+                max-width: 200px;
+            }
+
+            @include tablet-small {
+                flex-direction: column;
+                
+                a {
+                    margin: 10px 0;
+                }
+            }
+        }
+
+    }
+
+}
+
+/* - - - - - - - - Footer Menu - - - - - - - - */
+
+#footer-menu-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+    @include desktop {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    @include tablet {
+        align-items: center;
+    }
+
+    #links-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 20px;
+
+        @include desktop {
+            justify-content: flex-start;
+            width: 80%;
+        }
+
+        @include tablet {
+            justify-content: center;
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            // margin: 0 60px;
+            width: 180px;
+
+            @include tablet {
+                margin: 0;
+                text-align: center;
+
+                :first-child {
+                    margin-left: 0;
+                }
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+
+            li {
+                list-style: none;
+                margin: 5px 0;
+            }
+
+            a {
+                color: $secondary_text_color;
+                text-decoration: none;
+                list-style: none;
+                font-weight: $text_weight;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .links-header {
+                color: $primary_color;
+                font-weight: bold;
+            }
+        }
+
+        :first-child {
+            margin-left: 0;
+        }
+    }
+
+    #policy-social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        min-width: 300px;
+        padding: 20px;
+
+        @include desktop {
+            align-items: flex-start;
+            width: 80%;
+        }
+
+        @include tablet {
+            align-items: center;
+            width: 100%;
+        }
+
+        #social-container {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 10px;
+
+            .social-icon {
+                border: 2px solid $border_color;
+                margin: 5px;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+                &:hover {
+                    background-color: $primary_color;
+                    border-color: $border_color;
+                }
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 90%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        
+        hr {
+            border: 1px solid #ccc;
+            width: 100%;
+            margin: 0;
+
+            @include desktop {
+                width: 100%;
+            }
+        }
+
+        #copyright {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-weight: $text_weight;
+
+            @include desktop {
+                align-items: unset;
+            }
+
+            p, #pipe {
+                color: $secondary_text_color;
+            }
+
+            div {
+                :first-child {
+                    padding-right: 5px;
+                }
+
+                :last-child {
+                    padding-left: 5px;
+                }
+            }
+
+            a {
+                color: $primary_color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/* - - - - - - - - Buttons - - - - - - - - */
+
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
+    color: $primary_text_color;
+    background-color: $primary_color;
+    border-color: $primary_color;
+    text-transform: uppercase;
+    font-weight: $sub_heading_weight !important;
+    transition-property: color, background;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+        color: $secondary_text_color !important;
+        background-color: $button_hover_background_color;
+        border-color: $primary_color;
+    }
+}
+
+/* - - - - - - - - Sub-Header - - - - - - - - */
+
+#sub-header-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary_text_color;
+        font-size: 15px;
+        font-weight: $sub_heading_weight;
+        margin: 0 40px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
+
+.roomcash-scale-container {
+    display: flex;
+    margin: 20px 0;
+
+    .bar {
+        height: 10px;
+    }
+
+    .roomcash {
+        border-radius: 20px 0 0 20px;
+        background: $primary_color;
+        clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+    }
+
+    .your-cash {
+        border-radius: 0 20px 20px 0;
+        background: $secondary_color;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
+    }
+
+    .cash-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        p {
+            margin: 0;
+            font-weight: $sub_heading_weight;
+        }
+
+        :last-child {
+            font-weight: $text_weight;
+        }
+
+        .rc-value {
+            color: $primary_color;
+            font-size: 20px;
+        }
+
+        .yc-value {
+            color: $secondary_color;
+            font-size: 20px;
+        }
+    }
+
+    // should be dynamic
+    .roomcash-amount {
+        width: 50%;
+    }
+    // should be dynamic
+    .your-cash-amount {
+        width: 50%;
+    }
+}
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+/* - - - - - - - Components End  - - - - - - - */
+/* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+
+/* - - - - - - - - Root Page - - - - - - - - */
+
+.RootBody {
+
+    .ArnSearchContainerMainDiv {
+        background-color: #fff;
+
+        .ArnPrimarySearchOuterContainer {
+            margin: 20px 0;
+
+            h1, h3 {
+                color: $secondary_text_color;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+
+        .ArnQuadSearchContainer {
+            margin: 30px 0;
+        }
+    }
+}
+
+
+/* - - - - - - - - Search Results - - - - - - - - */
+
+.SearchHotels {
+
+    .config-container {
+        display: none;
+    }
+
+    .ArnRightListContainer {
+        padding-top: 0;
+
+        #ArnPropertyMap {
+            width: 24vw;
+            height: 75vh !important;
+        }
+    }
+    
+    input#theSubmitButton {
+        padding: 15px !important;
+    }
+
+    // Update Search container
+    .ArnLeftSearchContainer {
+        width: 20vw;
+        padding: 0 10px;
+        margin-left: 0;
+
+        @include desktop {
+            padding: 0;
+
+            .ArnSearchHeader {
+                margin-left: 10px;
+            }
+        }
+
+        @include tablet {
+            width: unset;
+        }
+
+        hr {
+            background: #ccc;
+            height: 1px;
+            margin-top: 30px;
+        }
+
+        .ArnPrimarySearchOuterContainer {
+            margin-top: 10px;
+    
+            .ArnSearchHeader {
+                text-transform: uppercase;
+    
+            }
+        }
+
+        .sort-wrapper {
+            @include desktop {
+                display: block;
+            }
+
+            #sort-select {
+                border: none;
+                padding: 15px !important;
+                margin-top: 10px;
+                font-weight: $text_weight !important;
+                background-color: $background_color;
+
+                @include tablet {
+                    width: 100%;
+                    padding: 15px !important;
+                    margin: 20px 0 0 0;
+                }
+
+            }
+
+            @include desktop {
+                hr {
+                    display: none;
+                }
+            }
+        }
+
+        .mobile-filter-container {
+            h4 {
+                display: none;
+            }
+        }
+
+        .ArnSecondarySearchOuterContainer {
+
+            span {
+                font-weight: $text_weight;
+            } 
+
+            h4, #filter-by {
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            #filter-by {
+                margin-top: 30px;
+                font-weight: $heading_weight;
+            }
+
+            .lblAmenities, .lblPropertyType {
+                font-weight: $sub_heading_weight !important;
+            }
+        }
+    }
+
+    #currentPropertyPage {
+        background-color: #fff;
+        padding: 80px 24px;
+        width: 55vw;
+
+        @include desktop {
+            width: unset;
+        }
+    }
+
+    .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+        background-color: unset;
+        color: $secondary_text_color;
+        font-weight: $text_weight;
+        
+        #theSearchBox{
+            #theCheckIn, #theCheckOut, #rooms, #adults {
+                font-weight: $text_weight !important;
+            }
+            input, select {
+                padding: 12px !important;
+            }
+        }
+
+        .currencies-container {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+
+            .config-label {
+                color: #000;
+                width: unset;
+                border-bottom: none;
+            }
+
+            .dropdown{
+                right: unset;
+                top: unset;
+                z-index: 1;
+
+                @include tablet {
+                    width: 95%;
+                    right: 0;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    // Property Container
+    .ArnProperty {
+
+        .ArnPropThumb, .ArnPropThumb img {
+            height: 280px;
+        }
+
+        .ArnPropName {
+            height: 300px;
+            padding: 20px 12px;
+            justify-content: space-evenly;
+
+            @include tablet-small {
+                height: unset;
+            }
+
+            .ArnTripAdvisorDetails {
+                bottom: 35px;
+
+                .ratingCount {
+                    padding: 5px;
+                }
+
+                .reviewCount {
+                    align-self: center;
+                }
+            }
+        }
+
+        .ArnRateCell, .ArnPropClass {
+            display: none !important;
+        }
+
+        .percentSavings, .ArnPriceCell {
+            display: none !important;
+        }
+
+        .ArnPropNameLink span {
+            letter-spacing: 1px;
+        }
+
+        .ArnTripAdvisorDetails.HasReviews .ratingCount {
+            background-color: $secondary_background_color;
+        }
+
+        .ArnRateButton {
+            max-width: 130px;
+        }
+
+        .ArnPropName {
+            width: 100%;
+        }
+
+    }
+
+    // pagination
+    .ArnPages {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* - - - - - - - - Property Detail - - - - - - - - */
+
+.SinglePropDetail {
+
+    .ArnRightListContainer {
+        background-color: #fff;
+
+        .ArnProperty {
+            padding: 10px 0;
+        }
+
+        .RoomDescription {
+            font-weight: $text_weight;
+        }
+    }
+
+    .ArnLeftListContainer {
+        margin: 0 40px 0 10px;
+
+        .translateMe {
+            text-transform: uppercase;
+        }
+
+        .SimpleSearch {
+            background-color: unset;
+            color: #000;
+            font-weight: $text_weight;
+            padding: 0;
+
+            input, select {
+                padding: 12px !important;
+                font-weight: $text_weight !important;
+            }
+
+            input.submit {
+                font-weight: $sub_heading_weight;
+            }
+        }
+
+        .ArnAmenityContainer {
+            font-weight: $text_weight !important;
+        }
+    }
+
+    .percentSavings {
+        display: none !important;
+    }
+
+    @media (max-width: 560px) {
+        .bookRoom {
+            align-self: end;
+        }
+    }
+
+    .roomcash-scale-container {
+        margin-top: 30px;
+        width: 60%;
+
+        @include mobile {
+            width: 100%;
+        }
+    
+        .bar {
+            margin-top: 10px;
+        }
+
+        // should be dynamic
+        .roomcash-amount {
+            width: 50%;
+        }
+        // should be dynamic
+        .your-cash-amount {
+            width: 50%;
+        }
+    }
+}
+
+/* - - - - - - - - Checkout Page - - - - - - - - */
+
+.CheckOutForm, .ConfirmationForm {
+
+    #theBookingPage {
+        max-width: 1170px;
+
+        .GuestForms {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .PaymentPolicies {
+            background-color: #fff;
+            border: none;
+        }
+    }
+
+    @include desktop {
+        #footer-menu-container {
+            align-items: flex-start;
+        }
+
+    }
+}
+
+/* - - - - - - - - Confirmation Page - - - - - - - - */
+
+// .ConfirmationForm {
+
+//     #theReservationFormContainer {
+//         margin-bottom: 20px;
+//         background-color: #fff;
+
+//         #theBookingPage .PaymentPolicies {
+//             border: none;
+//         }
+//     }
+// }

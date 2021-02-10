@@ -52,3 +52,20 @@ $header-images: '';
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;
 }
+
+.event-2 .display-date {
+    display: none;
+}
+
+.event-container {
+    h2 {
+        font-size: 24px;
+    }
+
+    .view-hotels {
+        background-color: #c9920e;
+        padding: 15px;
+        border-radius: 16px;
+    }
+}
+

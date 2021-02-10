@@ -84,13 +84,13 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: 'College Football Playoff Championship - Indianapolis 2022',
+                name: 'SEARCH CFP CHAMPIONSHIP INDIANAPOLIS 2022',
                 display_date: 'January 8 - 12, 2022',
                 end_date: '01/12/2022', // M/D/YYYY
                 portal_url: 'http://collegefootballplayoffhotels.com/group-event?id=46199&utm_campaign=CFP%20Indianapolis%202022',
             },
             {
-                name: 'College Football Playoff Hotels',
+                name: 'SEARCH ANYWHERE',
                 display_date: '',
                 end_date: '3/28/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',

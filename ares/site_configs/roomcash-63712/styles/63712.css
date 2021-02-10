@@ -686,6 +686,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 130px;
 }
 .roomcash-scale-container .cash-text p {
   margin: 0;
@@ -693,6 +694,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container .cash-text :last-child {
   font-weight: 300;
+  display: none;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;

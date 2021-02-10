@@ -294,7 +294,7 @@ export default class Roomcash {
             prop.querySelector('.prop-hr').insertAdjacentHTML(
                 'beforebegin',
                 `
-                <div id="rc-avg-nightly">${prop.querySelector('.averageNightly').textContent}</div>
+                <div id="rc-avg-nightly">Average Per Night:<span>${prop.querySelector('.averageNightly').textContent}</span></div>
                 `
             );
         });

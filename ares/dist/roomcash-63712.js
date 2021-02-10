@@ -8038,9 +8038,9 @@
                                                                                 .querySelector('.prop-hr')
                                                                                 .insertAdjacentHTML(
                                                                                     'beforebegin',
-                                                                                    '\n                <div id="rc-avg-nightly">'.concat(
+                                                                                    '\n                <div id="rc-avg-nightly">Average Per Night:<span>'.concat(
                                                                                         e.querySelector('.averageNightly').textContent,
-                                                                                        '</div>\n                '
+                                                                                        '</span></div>\n                '
                                                                                     )
                                                                                 );
                                                                     }

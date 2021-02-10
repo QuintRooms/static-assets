@@ -2909,10 +2909,11 @@
                                     }
                                     return e.abrupt('return');
                                 case 2:
-                                    return (e.next = 4), y.waitForSelectorInDOM('.event-2 .event-name');
+                                    return (e.next = 4), y.waitForSelectorInDOM('.event-name');
                                 case 4:
-                                    document.querySelector('.event-2 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> ANYWHERE</h2>';
-                                case 5:
+                                    (document.querySelector('.event-1 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> CFP CHAMPIONSHIP INDIANAPOLIS 2022</h2>'),
+                                        (document.querySelector('.event-2 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> ANYWHERE</h2>');
+                                case 6:
                                 case 'end':
                                     return e.stop();
                             }

@@ -676,12 +676,10 @@ header #AdminControlsContainer .hamburger .line {
 .roomcash-scale-container .roomcash {
   border-radius: 20px 0 0 20px;
   background: #CC9831;
-  clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
 }
 .roomcash-scale-container .your-cash {
   border-radius: 0 20px 20px 0;
   background: #1C8747;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
 }
 .roomcash-scale-container .cash-text {
   width: 100%;

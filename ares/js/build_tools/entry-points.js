@@ -60,7 +60,7 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
-            // 'roomcash-63712': './src/63712.js', // RoomCash
+            'roomcash-63712': './src/63712.js', // RoomCash
         };
 
         // local environment

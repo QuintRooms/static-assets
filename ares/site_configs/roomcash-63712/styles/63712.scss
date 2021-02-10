@@ -492,13 +492,13 @@ header {
     .roomcash {
         border-radius: 20px 0 0 20px;
         background: $primary_color;
-        clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+        // clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
     }
 
     .your-cash {
         border-radius: 0 20px 20px 0;
         background: $secondary_color;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
     }
 
     .cash-text {

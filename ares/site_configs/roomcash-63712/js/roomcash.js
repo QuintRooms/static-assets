@@ -8,6 +8,7 @@ const utilities = new Utilities();
 export default class Roomcash {
     constructor(config) {
         this.config = config;
+        this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
         this.sub_header_container = `
         <span id="sub-header-container">
             <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
@@ -170,7 +171,7 @@ export default class Roomcash {
             'afterbegin',
             `
             <div id="mobile-balance-container">
-                <span id="mobile-balance">$50</span>
+                <span id="mobile-balance">$${this.user_points}</span>
             </div>
         `
         );
@@ -192,7 +193,7 @@ export default class Roomcash {
             <div id="admin-container">
                 <div id="balance-container" class="header-link">
                     <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
-                    <span id="balance">$50</span>
+                    <span id="balance">$${this.user_points}</span>
                 </div>
                 <div id="account-container" class="header-link">
                     <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
@@ -213,7 +214,30 @@ export default class Roomcash {
         });
     }
 
+    applyValues(property) {
+        // get average nightly and add below book button - .averageNightly
+        // your cash - .ArnUnit
+        let your_cash = property.querySelector('.arnUnit').innerHTML;
+        your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
+        const room_cash = property.querySelector('.originalPrice').getAttribute('amount');
+
+        property.querySelector('.yc-value').textContent = `${your_cash}`;
+        property.querySelector('.rc-value').textContent = room_cash;
+
+        return property.querySelector('.originalPrice').getAttribute('percent');
+    }
+
+    setRoomCashBarWidth(rcPercent, property) {
+        const yc_percent = 100 - parseFloat(rcPercent);
+        property.querySelector('.your-cash-amount').style.width = `${yc_percent.toString()}%`;
+        property.querySelector('.roomcash-amount').style.width = `${rcPercent}%`;
+    }
+
     async updatePropertyContainer(containerName, insertElement, insertPosition) {
+        if (document.querySelector('.SearchHotels')) {
+            await utilities.waitForSelectorInDOM('.pollingFinished');
+        }
+        await utilities.waitForSelectorInDOM(insertElement);
         const props = document.querySelectorAll(containerName);
 
         const html = document.querySelector('.SearchHotels')
@@ -222,7 +246,7 @@ export default class Roomcash {
             <div class="roomcash-amount">
                 <div class="bar roomcash"></div>
                 <div class="cash-text">
-                    <span class="rc-value">$25</span>
+                    <span class="rc-value"></span>
                     <p>RoomCash</p>
                     <p>(per night)</p>
                 </div>
@@ -230,7 +254,7 @@ export default class Roomcash {
             <div class="your-cash-amount">
                 <div class="bar your-cash"></div>
                 <div class="cash-text">
-                    <span class="yc-value">$125</span>
+                    <span class="yc-value"></span>
                     <p>Your Cash</p>
                     <p>(per night)</p>
                 </div>
@@ -241,7 +265,7 @@ export default class Roomcash {
     <div class="roomcash-scale-container">
         <div class="roomcash-amount">
             <div class="cash-text">
-                <span class="rc-value">$25</span>
+                <span class="rc-value"></span>
                 <p>RoomCash</p>
                 <p>(per night)</p>
             </div>
@@ -249,7 +273,7 @@ export default class Roomcash {
         </div>
         <div class="your-cash-amount">
             <div class="cash-text">
-                <span class="yc-value">$125</span>
+                <span class="yc-value"></span>
                 <p>Your Cash</p>
                 <p>(per night)</p>
             </div>
@@ -260,11 +284,19 @@ export default class Roomcash {
 
         props.forEach((prop) => {
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
-
+            const width = this.applyValues(prop);
+            this.setRoomCashBarWidth(width, prop);
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;
             const button = prop.querySelector('.ArnRateButton');
             prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
+            // insert average nightly
+            prop.querySelector('.prop-hr').insertAdjacentHTML(
+                'beforebegin',
+                `
+                <div id="rc-avg-nightly">${prop.querySelector('.averageNightly').textContent}</div>
+                `
+            );
         });
     }
 
@@ -278,7 +310,7 @@ export default class Roomcash {
         </select>`;
 
         const price = document.querySelector('.ArnSortByPrice');
-        const rating = document.querySelector('.ArnSortByClass');
+        const rating = document.querySelector('.ArnSortByDistance');
 
         document.querySelector('.sort-wrapper h4').insertAdjacentHTML('afterend', html);
 

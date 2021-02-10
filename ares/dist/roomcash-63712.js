@@ -4073,10 +4073,10 @@
                     k = e.prototype,
                     A = k[d] || k['@@iterator'] || (h && k[h]),
                     M = A || b(h),
-                    L = h ? (w ? b('entries') : M) : void 0,
-                    q = ('Array' == t && k.entries) || A;
+                    q = h ? (w ? b('entries') : M) : void 0,
+                    L = ('Array' == t && k.entries) || A;
                 if (
-                    (q && (j = l(q.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
+                    (L && (j = l(L.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
                         A &&
                         'values' !== A.name &&
@@ -4089,7 +4089,7 @@
                     (a[S] = f),
                     h)
                 )
-                    if (((_ = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: L}), g)) for (v in _) v in k || s(k, v, _[v]);
+                    if (((_ = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (v in _) v in k || s(k, v, _[v]);
                     else r(r.P + r.F * (m || x), t, _);
                 return _;
             };
@@ -5089,16 +5089,16 @@
                 k = x && x.versions,
                 A = (k && k.v8) || '',
                 M = c.Promise,
-                L = 'process' == l(x),
-                q = function () {},
+                q = 'process' == l(x),
+                L = function () {},
                 C = (r = v.f),
                 E = !!(function () {
                     try {
                         var e = M.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(q, q);
+                                e(L, L);
                             });
-                        return (L || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(L) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 P = function (e) {
@@ -5150,13 +5150,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    L
+                                    q
                                         ? x.emit('unhandledRejection', r, e)
                                         : (n = c.onunhandledrejection)
                                         ? n({promise: e, reason: r})
                                         : (o = c.console) && o.error && o.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = L || O(e) ? 2 : 1)),
+                                (e._h = q || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5169,7 +5169,7 @@
                 D = function (e) {
                     g.call(c, function () {
                         var t;
-                        L ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
                 H = function (e) {
@@ -5215,7 +5215,7 @@
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
-                            (n.domain = L ? x.domain : void 0),
+                            (n.domain = q ? x.domain : void 0),
                             this._c.push(n),
                             this._a && this._a.push(n),
                             this._s && T(this, !1),
@@ -5254,7 +5254,7 @@
                             !(
                                 E &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(q);
+                                    M.all(e).catch(L);
                                 })
                             ),
                     'Promise',
@@ -5429,12 +5429,12 @@
                         for (var j, b = '', S = 0, w = 0; w < _.length; w++) {
                             v = _[w];
                             for (var x = String(v[0]), k = u(l(i(v.index), m.length), 0), A = [], M = 1; M < v.length; M++) A.push(void 0 === (j = v[M]) ? j : String(j));
-                            var L = v.groups;
+                            var q = v.groups;
                             if (f) {
-                                var q = [x].concat(A, k, m);
-                                void 0 !== L && q.push(L);
-                                var C = String(t.apply(void 0, q));
-                            } else C = h(x, m, k, A, L, t);
+                                var L = [x].concat(A, k, m);
+                                void 0 !== q && L.push(q);
+                                var C = String(t.apply(void 0, L));
+                            } else C = h(x, m, k, A, q, t);
                             k >= S && ((b += m.slice(S, k) + C), (S = k + x.length));
                         }
                         return b + m.slice(S);
@@ -5676,10 +5676,10 @@
                 k = n(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 A = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 M = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                L = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                q = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                L = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 C = A.f,
-                E = L.f,
+                E = q.f,
                 P = k.f,
                 T = o.Symbol,
                 R = o.JSON,
@@ -5713,11 +5713,11 @@
                               o && delete N[t], E(e, t, n), o && e !== N && E(N, t, o);
                           }
                         : E,
-                z = function (e) {
+                V = function (e) {
                     var t = (Y[e] = x(T.prototype));
                     return (t._k = e), t;
                 },
-                V =
+                z =
                     $ && 'symbol' == typeof T.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
@@ -5768,7 +5768,7 @@
                             t = function (n) {
                                 this === N && t.call(B, n), r(this, D) && r(this[D], e) && (this[D][e] = !1), G(this, e, w(1, n));
                             };
-                        return s && W && G(N, e, {configurable: !0, set: t}), z(e);
+                        return s && W && G(N, e, {configurable: !0, set: t}), V(e);
                     }).prototype,
                     'toString',
                     function () {
@@ -5776,24 +5776,24 @@
                     }
                 ),
                 (A.f = K),
-                (L.f = Q),
+                (q.f = Q),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
                 (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
                 (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
-                    return z(f(e));
+                    return V(f(e));
                 })),
                 i(i.G + i.W + i.F * !$, {Symbol: T});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
                 f(te[ne++]);
-            for (var oe = q(f.store), re = 0; oe.length > re; ) h(oe[re++]);
+            for (var oe = L(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
                     return r(F, (e += '')) ? F[e] : (F[e] = T(e));
                 },
                 keyFor: function (e) {
-                    if (!V(e)) throw TypeError(e + ' is not a symbol!');
+                    if (!z(e)) throw TypeError(e + ' is not a symbol!');
                     for (var t in F) if (F[t] === e) return t;
                 },
                 useSetter: function () {
@@ -5834,11 +5834,11 @@
                         {
                             stringify: function (e) {
                                 for (var t, n, o = [e], r = 1; arguments.length > r; ) o.push(arguments[r++]);
-                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !V(e)))
+                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !z(e)))
                                     return (
                                         g(t) ||
                                             (t = function (e, t) {
-                                                if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
+                                                if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                             }),
                                         (o[1] = t),
                                         O.apply(R, o)
@@ -7779,6 +7779,7 @@
             Object.defineProperty(t, '__esModule', {value: !0}),
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
+                n(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
             var o = r(n(/*! ../../../js/utilities */ './js/utilities.js'));
@@ -7824,6 +7825,7 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e),
                             (this.config = t),
+                            (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
                             (this.sub_header_container =
                                 '\n        <span id="sub-header-container">\n            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
@@ -7920,7 +7922,10 @@
                                                                         .querySelector('#AdminControlsContainer')
                                                                         .insertAdjacentHTML(
                                                                             'afterbegin',
-                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">$50</span>\n            </div>\n        '
+                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">$'.concat(
+                                                                                this.user_points,
+                                                                                '</span>\n            </div>\n        '
+                                                                            )
                                                                         ),
                                                                     n.insertAdjacentHTML(
                                                                         'afterbegin',
@@ -7930,9 +7935,10 @@
                                                                         'beforeend',
                                                                         '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="'
                                                                             .concat(c.path, '/site_configs/')
+                                                                            .concat(this.config.directory_name, '/img/points-icon.png">\n                    <span id="balance">$')
                                                                             .concat(
-                                                                                this.config.directory_name,
-                                                                                '/img/points-icon.png">\n                    <span id="balance">$50</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
+                                                                                this.user_points,
+                                                                                '</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '
                                                                             )
                                                                     );
                                                             case 10:
@@ -7978,26 +7984,68 @@
                                 },
                             },
                             {
+                                key: 'applyValues',
+                                value: function (e) {
+                                    var t = e.querySelector('.arnUnit').innerHTML;
+                                    t = t.substring(0, t.indexOf('<span>'));
+                                    var n = e.querySelector('.originalPrice').getAttribute('amount');
+                                    return (
+                                        (e.querySelector('.yc-value').textContent = ''.concat(t)),
+                                        (e.querySelector('.rc-value').textContent = n),
+                                        e.querySelector('.originalPrice').getAttribute('percent')
+                                    );
+                                },
+                            },
+                            {
+                                key: 'setRoomCashBarWidth',
+                                value: function (e, t) {
+                                    var n = 100 - parseFloat(e);
+                                    (t.querySelector('.your-cash-amount').style.width = ''.concat(n.toString(), '%')),
+                                        (t.querySelector('.roomcash-amount').style.width = ''.concat(e, '%'));
+                                },
+                            },
+                            {
                                 key: 'updatePropertyContainer',
                                 value:
                                     ((l = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
-                                            var r, s;
+                                            var r,
+                                                s,
+                                                i = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
+                                                            if (!document.querySelector('.SearchHotels')) {
+                                                                e.next = 3;
+                                                                break;
+                                                            }
+                                                            return (e.next = 3), u.waitForSelectorInDOM('.pollingFinished');
+                                                        case 3:
+                                                            return (e.next = 5), u.waitForSelectorInDOM(n);
+                                                        case 5:
                                                             (r = document.querySelectorAll(t)),
                                                                 (s = document.querySelector('.SearchHotels')
-                                                                    ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value">$25</span>\n                    <p>RoomCash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value">$125</span>\n                    <p>Your Cash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n        </div>\n    '
-                                                                    : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value">$25</span>\n                <p>RoomCash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value">$125</span>\n                <p>Your Cash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
+                                                                    ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n        </div>\n    '
+                                                                    : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
                                                                 r.forEach(function (e) {
-                                                                    if ((e.querySelector(n).insertAdjacentHTML(o, s), document.querySelector('.SearchHotels'))) {
-                                                                        var t = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', t);
+                                                                    e.querySelector(n).insertAdjacentHTML(o, s);
+                                                                    var t = i.applyValues(e);
+                                                                    if ((i.setRoomCashBarWidth(t, e), document.querySelector('.SearchHotels'))) {
+                                                                        var r = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', r),
+                                                                            e
+                                                                                .querySelector('.prop-hr')
+                                                                                .insertAdjacentHTML(
+                                                                                    'beforebegin',
+                                                                                    '\n                <div id="rc-avg-nightly">'.concat(
+                                                                                        e.querySelector('.averageNightly').textContent,
+                                                                                        '</div>\n                '
+                                                                                    )
+                                                                                );
                                                                     }
                                                                 });
-                                                        case 3:
+                                                        case 8:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -8027,7 +8075,7 @@
                                                             return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
                                                         case 4:
                                                             (t = document.querySelector('.ArnSortByPrice')),
-                                                                (n = document.querySelector('.ArnSortByClass')),
+                                                                (n = document.querySelector('.ArnSortByDistance')),
                                                                 document
                                                                     .querySelector('.sort-wrapper h4')
                                                                     .insertAdjacentHTML(

@@ -208,7 +208,8 @@ header {
                 height: 1px;
                 width: 10%;
                 margin: auto 40px;
-                border-color: #6E6F70;
+                background: #ccc;
+                border: none;
 
                 @include tablet {
                     width: 30%;
@@ -386,9 +387,11 @@ header {
         }
         
         hr {
-            border: 1px solid #ccc;
             width: 100%;
             margin: 0;
+            background: #ccc;
+            height: 1px;
+            border: none;
 
             @include desktop {
                 width: 100%;
@@ -574,7 +577,6 @@ header {
 
         #ArnPropertyMap {
             width: 24vw;
-            height: 75vh !important;
         }
     }
     
@@ -604,6 +606,7 @@ header {
             background: #ccc;
             height: 1px;
             margin-top: 30px;
+            border: none;
         }
 
         .ArnPrimarySearchOuterContainer {
@@ -625,12 +628,12 @@ header {
                 padding: 15px !important;
                 margin-top: 10px;
                 font-weight: $text_weight !important;
-                background-color: $background_color;
 
                 @include tablet {
                     width: 100%;
                     padding: 15px !important;
                     margin: 20px 0 0 0;
+                    background-color: $background_color;
                 }
 
             }

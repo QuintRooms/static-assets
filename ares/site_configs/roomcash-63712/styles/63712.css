@@ -418,7 +418,8 @@ header #AdminControlsContainer .hamburger .line {
   height: 1px;
   width: 10%;
   margin: auto 40px;
-  border-color: #6E6F70;
+  background: #ccc;
+  border: none;
 }
 @media (max-width: 800px) {
   .ArnSupportLinks.ArnSupportBottom #footer #footer-title hr {
@@ -584,9 +585,11 @@ header #AdminControlsContainer .hamburger .line {
   height: auto;
 }
 #footer-menu-container #policy-social hr {
-  border: 1px solid #ccc;
   width: 100%;
   margin: 0;
+  background: #ccc;
+  height: 1px;
+  border: none;
 }
 @media (max-width: 1100px) {
   #footer-menu-container #policy-social hr {
@@ -736,7 +739,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
   width: 24vw;
-  height: 75vh !important;
 }
 .SearchHotels input#theSubmitButton {
   padding: 15px !important;
@@ -763,6 +765,7 @@ header #AdminControlsContainer .hamburger .line {
   background: #ccc;
   height: 1px;
   margin-top: 30px;
+  border: none;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer {
   margin-top: 10px;
@@ -780,13 +783,13 @@ header #AdminControlsContainer .hamburger .line {
   padding: 15px !important;
   margin-top: 10px;
   font-weight: 300 !important;
-  background-color: #E6E6E6;
 }
 @media (max-width: 800px) {
   .SearchHotels .ArnLeftSearchContainer .sort-wrapper #sort-select {
     width: 100%;
     padding: 15px !important;
     margin: 20px 0 0 0;
+    background-color: #E6E6E6;
   }
 }
 @media (max-width: 1100px) {

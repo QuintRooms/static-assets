@@ -60,6 +60,7 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
+            // 'roomcash-63712': './src/63712.js', // RoomCash
         };
 
         // local environment
@@ -67,7 +68,6 @@ module.exports = () => {
         entry_points = {
             // new sites populate below
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            'roomcash-63712': './src/63712.js', // RoomCash
         };
     }
 

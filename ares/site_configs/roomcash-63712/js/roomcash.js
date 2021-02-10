@@ -8,6 +8,13 @@ const utilities = new Utilities();
 export default class Roomcash {
     constructor(config) {
         this.config = config;
+        this.sub_header_container = `
+        <span id="sub-header-container">
+            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+        </span>`;
         this.init();
     }
 
@@ -22,9 +29,9 @@ export default class Roomcash {
                     <div id="footer">
                         <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
                         <div id="brand-logos">
-                            <a href="https://quintevents.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint-logo.png"></a>
-                            <a href="https://resbeat.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat-logo.png"></a>
-                            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/h4h-logo.png"></a>
+                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint.png"></a>
+                            <a target="_blank" href="https://resbeat.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat.png"></a>
+                            <a target="_blank" href="https://www.hotelsforhope.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/h4h.png"></a>
                         </div>
                     </div>`,
             },
@@ -37,13 +44,7 @@ export default class Roomcash {
                 {
                     element: '.SearchHotels .ArnSearchContainerMainDiv',
                     position: 'afterbegin',
-                    html: `
-                    <span id="sub-header-container">
-                        <a href="">How It Works</a>
-                        <a href="">FAQs</a>
-                        <a href="">Daily Deals</a>
-                        <a href="">Partnerships</a>
-                    </span>`,
+                    html: this.sub_header_container,
                 },
             ]);
         }
@@ -65,13 +66,7 @@ export default class Roomcash {
                 {
                     element: '.SearchHotels .ArnSearchContainerMainDiv',
                     position: 'afterbegin',
-                    html: `
-                    <span id="sub-header-container">
-                        <a href="">How It Works</a>
-                        <a href="">FAQs</a>
-                        <a href="">Daily Deals</a>
-                        <a href="">Partnerships</a>
-                    </span>`,
+                    html: this.sub_header_container,
                 },
                 {
                     element: '.SearchHotels .lblAmenities',
@@ -90,13 +85,7 @@ export default class Roomcash {
                 {
                     element: '.PropDetailView',
                     position: 'beforebegin',
-                    html: `
-                    <span id="sub-header-container">
-                        <a href="">How It Works</a>
-                        <a href="">FAQs</a>
-                        <a href="">Daily Deals</a>
-                        <a href="">Partnerships</a>
-                    </span>`,
+                    html: this.sub_header_container,
                 },
             ]);
             this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend');
@@ -119,39 +108,40 @@ export default class Roomcash {
             <div id="links-container">
                 <div class="links">
                         <li class="links-header">Learn More</li>
-                        <li><a href="">How it Works</a></li>
-                        <li><a href="">FAQs</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>
                 </div>
                 <div class="links">
                         <li class="links-header">About RoomCash</li>
-                        <li><a href="">Our Mission</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/our-mission">Our Mission</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/careers">Careers</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>
                 </div>
                 <div class="links">
                         <li class="links-header">Partner with RoomCash</li>
-                        <li><a href="">Add Your Hotel</a></li>
-                    <li><a href="">Corporate Partners</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>
+                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>
                 </div>
             </div>
             <div id="policy-social">
                 <div id="social-container">
                     <div class="social-icon">
-                        <a href="">
+                        <a target="_blank" href="">
                             <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/facebook.png">
                         </a>
                     </div>
                     <div class="social-icon">
-                        <a href="">
+                        <a target="_blank" href="">
                             <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/instagram.png">
                         </a>
                     </div>
                     <div class="social-icon">
-                        <a href="">
+                        <a target="_blank" href="">
                             <img src="">m
                         </a>
                     </div>
                     <div class="social-icon">
-                        <a href="">
+                        <a target="_blank" href="">
                             <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/app-store.png">
                         </a>
                     </div>
@@ -159,7 +149,7 @@ export default class Roomcash {
                 <hr>
                 <div id="copyright">
                     <p>Copyright &copy; 2020. All rights reserved</p>
-                    <div><a href="">Privacy Policy</a><span id="pipe">|</span><a href="">Terms & Conditions</a></div>
+                    <div><a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a><span id="pipe">|</span><a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a></div>
                 </div>
             </div>
         </div>
@@ -169,20 +159,12 @@ export default class Roomcash {
         container.insertAdjacentHTML(position, footer_menu);
     }
 
-    async moveAccountLink() {
-        await utilities.waitForSelectorInDOM('#account-container');
-        const profile = document.querySelector('.profileCommand');
-        profile.textContent = 'MY ACCOUNT';
-        document.querySelector('#account-container span').insertAdjacentElement('afterbegin', profile);
-    }
-
     async buildHeaderLinks() {
         await utilities.waitForSelectorInDOM('header');
         await utilities.waitForSelectorInDOM('#commands');
         const header = document.querySelector('header');
         const commands = document.querySelector('#commands');
         const hamburger = document.querySelector('#AdminControlsContainer');
-        const account_link = document.querySelector('.profileCommand').href;
 
         hamburger.insertAdjacentHTML(
             'afterbegin',
@@ -196,11 +178,11 @@ export default class Roomcash {
         commands.insertAdjacentHTML(
             'afterbegin',
             `
-            <a id="mobile-account-link "href="${account_link}">My Account</a>
-            <a href="">How It Works</a>
-            <a href="">FAQs</a>
-            <a href="">Daily Deals</a>
-            <a href="">Partnerships</a>
+            <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>
+            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
             `
         );
 
@@ -209,20 +191,18 @@ export default class Roomcash {
             `
             <div id="admin-container">
                 <div id="balance-container" class="header-link">
-                    <img src="https://via.placeholder.com/50x50">
+                    <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
                     <span id="balance">$50</span>
                 </div>
                 <div id="account-container" class="header-link">
-                    <span></span>
+                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
                 </div>
                 <div id="search-container" class="header-link">
-                    <span><a href="">SEARCH HOTELS</a></span>
+                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>
                 </div>
             </div>
         `
         );
-
-        this.moveAccountLink();
     }
 
     insertContent(elementsArray) {

@@ -449,9 +449,9 @@ header {
 /* - - - - - - - - Buttons - - - - - - - - */
 
 .RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
-    color: $primary_text_color;
-    background-color: $primary_color;
-    border-color: $primary_color;
+    color: $primary_text_color !important;
+    background-color: $primary_color !important;
+    border-color: $primary_color !important;
     text-transform: uppercase;
     font-weight: $sub_heading_weight !important;
     transition-property: color, background;
@@ -976,12 +976,13 @@ body.WBSupportForm{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 96px;
+    flex-grow: 1;
 
     h1 {
         text-align: center;
     }
 
-    input, select {
+    input, select, textarea {
         background-color: #fff;
         border: none;
         width: 100%;
@@ -996,20 +997,15 @@ body.WBSupportForm{
         padding: 20px;
         grid-column-start: 2;
         grid-row-start: 2;
-        margin: 30px;
+        margin: 24px;
     }
 
     .WBSupportFormContainer {
-        background-color: #fff;
         grid-column-start: 1;
         grid-row-start: 2;
 
         .FormFields {
             margin-top: 6px;
-
-            label {
-                display: none;
-            }
         }
 
         // submit button
@@ -1018,7 +1014,7 @@ body.WBSupportForm{
             
             input {
                 border: 1px solid $primary_color;
-                width: 100%;
+                width: 50%;
                 padding: 15px;
             }
         }

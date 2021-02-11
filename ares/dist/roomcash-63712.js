@@ -5218,7 +5218,7 @@
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
                 },
-                I = function (e) {
+                F = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -5229,7 +5229,7 @@
                                 ? _(function () {
                                       var o = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(I, o, 1), u(H, o, 1));
+                                          t.call(e, u(F, o, 1), u(H, o, 1));
                                       } catch (e) {
                                           H.call(o, e);
                                       }
@@ -5244,7 +5244,7 @@
                 ((M = function (e) {
                     p(this, M, 'Promise', '_h'), f(e), o.call(this);
                     try {
-                        e(u(I, this, 1), u(H, this, 1));
+                        e(u(F, this, 1), u(H, this, 1));
                     } catch (e) {
                         H.call(this, e);
                     }
@@ -5270,7 +5270,7 @@
                 })),
                 (s = function () {
                     var e = new o();
-                    (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
+                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (v.f = C = function (e) {
                     return e === M || e === i ? new s(e) : r(e);
@@ -5728,8 +5728,8 @@
                 O = R && R.stringify,
                 D = f('_hidden'),
                 H = f('toPrimitive'),
-                I = {}.propertyIsEnumerable,
-                F = l('symbol-registry'),
+                F = {}.propertyIsEnumerable,
+                I = l('symbol-registry'),
                 Y = l('symbols'),
                 B = l('op-symbols'),
                 N = Object.prototype,
@@ -5785,7 +5785,7 @@
                     return e;
                 },
                 J = function (e) {
-                    var t = I.call(this, (e = S(e, !0)));
+                    var t = F.call(this, (e = S(e, !0)));
                     return !(this === N && r(Y, e) && !r(B, e)) && (!(t || !r(this, e) || !r(Y, e) || (r(this, D) && this[D][e])) || t);
                 },
                 K = function (e, t) {
@@ -5832,11 +5832,11 @@
             for (var oe = L(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
-                    return r(F, (e += '')) ? F[e] : (F[e] = T(e));
+                    return r(I, (e += '')) ? I[e] : (I[e] = T(e));
                 },
                 keyFor: function (e) {
                     if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in F) if (F[t] === e) return t;
+                    for (var t in I) if (I[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -7878,26 +7878,26 @@
                             {
                                 key: 'init',
                                 value: function () {
-                                    this.buildHeaderLinks(),
-                                        this.insertContent([
-                                            {
-                                                element: '.ArnSupportLinks.ArnSupportBottom',
-                                                position: 'afterbegin',
-                                                html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
-                                                    .concat(c.path, '/site_configs/')
-                                                    .concat(
-                                                        this.config.directory_name,
-                                                        '/img/quint.png"></a>\n                            <a target="_blank" href="https://resbeat.com/" target="_blank"><img src="'
-                                                    )
-                                                    .concat(c.path, '/site_configs/')
-                                                    .concat(
-                                                        this.config.directory_name,
-                                                        '/img/resbeat.png"></a>\n                            <a target="_blank" href="https://www.hotelsforhope.com/" target="_blank"><img src="'
-                                                    )
-                                                    .concat(c.path, '/site_configs/')
-                                                    .concat(this.config.directory_name, '/img/h4h.png"></a>\n                        </div>\n                    </div>'),
-                                            },
-                                        ]),
+                                    this.insertContent([
+                                        {
+                                            element: '.ArnSupportLinks.ArnSupportBottom',
+                                            position: 'afterbegin',
+                                            html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
+                                                .concat(c.path, '/site_configs/')
+                                                .concat(
+                                                    this.config.directory_name,
+                                                    '/img/quint.png"></a>\n                            <a target="_blank" href="https://resbeat.com/" target="_blank"><img src="'
+                                                )
+                                                .concat(c.path, '/site_configs/')
+                                                .concat(
+                                                    this.config.directory_name,
+                                                    '/img/resbeat.png"></a>\n                            <a target="_blank" href="https://www.hotelsforhope.com/" target="_blank"><img src="'
+                                                )
+                                                .concat(c.path, '/site_configs/')
+                                                .concat(this.config.directory_name, '/img/h4h.png"></a>\n                        </div>\n                    </div>'),
+                                        },
+                                    ]),
+                                        this.buildHeaderLinks(),
                                         document.querySelector('.RootBody') &&
                                             (this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
                                             this.insertContent([{element: '.SearchHotels .ArnSearchContainerMainDiv', position: 'afterbegin', html: this.sub_header_container}])),
@@ -7917,7 +7917,8 @@
                                             this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
                                             this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
-                                        document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend');
+                                        document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend'),
+                                        document.querySelector('.WBSupportForm') && this.buildFooterMenu('.ArnSubPage.WBSupportForm', 'afterend');
                                 },
                             },
                             {

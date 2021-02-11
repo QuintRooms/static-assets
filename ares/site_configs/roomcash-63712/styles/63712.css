@@ -633,9 +633,9 @@ header #AdminControlsContainer .hamburger .line {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 .RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
-  color: #fff;
-  background-color: #CC9831;
-  border-color: #CC9831;
+  color: #fff !important;
+  background-color: #CC9831 !important;
+  border-color: #CC9831 !important;
   text-transform: uppercase;
   font-weight: 400 !important;
   transition-property: color, background;
@@ -1050,11 +1050,12 @@ body.WBSupportForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 96px;
+  flex-grow: 1;
 }
 .ArnSubPage.WBSupportForm h1 {
   text-align: center;
 }
-.ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select {
+.ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select, .ArnSubPage.WBSupportForm textarea {
   background-color: #fff;
   border: none;
   width: 100%;
@@ -1068,25 +1069,21 @@ body.WBSupportForm {
   padding: 20px;
   grid-column-start: 2;
   grid-row-start: 2;
-  margin: 30px;
+  margin: 24px;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer {
-  background-color: #fff;
   grid-column-start: 1;
   grid-row-start: 2;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields {
   margin-top: 6px;
 }
-.ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields label {
-  display: none;
-}
 .ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions {
   text-align: center;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
   border: 1px solid #CC9831;
-  width: 100%;
+  width: 50%;
   padding: 15px;
 }
 

@@ -21,7 +21,6 @@ export default class Roomcash {
 
     init() {
         // All pages
-        this.buildHeaderLinks();
         this.insertContent([
             {
                 element: '.ArnSupportLinks.ArnSupportBottom',
@@ -37,6 +36,7 @@ export default class Roomcash {
                     </div>`,
             },
         ]);
+        this.buildHeaderLinks();
 
         // Root Page
         if (document.querySelector('.RootBody')) {
@@ -100,6 +100,11 @@ export default class Roomcash {
         // Confirmation Page
         if (document.querySelector('.ConfirmationForm')) {
             this.buildFooterMenu('#theBookingPage', 'afterend');
+        }
+
+        // Support Page
+        if (document.querySelector('.WBSupportForm')) {
+            this.buildFooterMenu('.ArnSubPage.WBSupportForm', 'afterend');
         }
     }
 

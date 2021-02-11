@@ -2834,7 +2834,7 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e);
                     }
-                    var t, n, o, a, c, u, l, d, m, f, p, h, y;
+                    var t, n, o, a, c, u, l, d, m, f, p, h, y, g;
                     return (
                         (t = e),
                         (n = [
@@ -2847,7 +2847,7 @@
                             {
                                 key: 'createHTML',
                                 value:
-                                    ((y = r(
+                                    ((g = r(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2868,7 +2868,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return y.apply(this, arguments);
+                                        return g.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2908,7 +2908,7 @@
                             {
                                 key: 'waitForSelectorInDOM',
                                 value:
-                                    ((h = r(
+                                    ((y = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2931,13 +2931,13 @@
                                         })
                                     )),
                                     function (e) {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'waitForTextInDOM',
                                 value:
-                                    ((p = r(
+                                    ((h = r(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2960,7 +2960,7 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2972,7 +2972,7 @@
                             {
                                 key: 'moveOrphanedElementsIntoNewWrapper',
                                 value:
-                                    ((f = r(
+                                    ((p = r(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2996,13 +2996,13 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'createWrapper',
                                 value:
-                                    ((m = r(
+                                    ((f = r(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             var s;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -3028,7 +3028,7 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return m.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3057,7 +3057,7 @@
                             {
                                 key: 'addMultipleHeaderLogos',
                                 value:
-                                    ((d = r(
+                                    ((m = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             var n, o, r, s;
                                             return regeneratorRuntime.wrap(
@@ -3096,7 +3096,7 @@
                                         })
                                     )),
                                     function (e) {
-                                        return d.apply(this, arguments);
+                                        return m.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3139,7 +3139,7 @@
                             {
                                 key: 'ratesComingSoon',
                                 value:
-                                    ((l = r(
+                                    ((d = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
@@ -3170,7 +3170,7 @@
                                         })
                                     )),
                                     function (e) {
-                                        return l.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3238,7 +3238,7 @@
                             {
                                 key: 'fetchHTMLFromFile',
                                 value:
-                                    ((u = r(
+                                    ((l = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             var n;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -3267,7 +3267,7 @@
                                         })
                                     )),
                                     function (e) {
-                                        return u.apply(this, arguments);
+                                        return l.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3308,7 +3308,7 @@
                             {
                                 key: 'addAttributeToInput',
                                 value:
-                                    ((c = r(
+                                    ((u = r(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
@@ -3339,7 +3339,7 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return c.apply(this, arguments);
+                                        return u.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3368,7 +3368,7 @@
                             {
                                 key: 'prepopulateDatePopupWithTodaysDate',
                                 value:
-                                    ((a = r(
+                                    ((c = r(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -3406,6 +3406,48 @@
                                         })
                                     )),
                                     function () {
+                                        return c.apply(this, arguments);
+                                    }),
+                            },
+                            {
+                                key: 'addToolTip',
+                                value:
+                                    ((a = r(
+                                        regeneratorRuntime.mark(function e(t, n, o, r, s, i) {
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                return (e.next = 2), this.waitForSelectorInDOM(t);
+                                                            case 2:
+                                                                document
+                                                                    .querySelector(t)
+                                                                    .insertAdjacentHTML(
+                                                                        n,
+                                                                        '\n                <style>\n                .tooltip-wrapper {\n                    position: relative;\n                }\n                \n                .tooltip:hover span {\n                    opacity: 1;\n                    filter: alpha(opacity=100);\n                    top: -7em;\n                    left: -14em;\n                    z-index: 99;\n                    -webkit-transition: all 0.2s ease;\n                    -moz-transition: all 0.2s ease;\n                    -o-transition: all 0.2s ease;\n                    transition: all 0.2s ease;\n                }\n                \n                .tooltip-wrapper > span b {\n                    color: '
+                                                                            .concat(s, ';\n                    background: ')
+                                                                            .concat(
+                                                                                i,
+                                                                                ";\n                    font-family: 'Times New Roman', serif;\n                    font-size: 11px;\n                    width: 14px;\n                    height: 14px;\n                    line-height: 14px;\n                    text-align: center;\n                    border-radius: 100%;\n                    display: inline-block;\n                    position: relative;\n                    top: -4px;\n                }\n                \n                .tooltip span {\n                    background: none repeat scroll 0 0 #fff;\n                    color: #666;\n                    font-weight: 500;\n                    padding: 12px;\n                    top: -4em;\n                    left: -14em;\n                    margin-left: 0;\n                    opacity: 0;\n                    filter: alpha(opacity=0);\n                    position: absolute;\n                    text-align: center;\n                    z-index: 2;\n                    text-transform: none;\n                    -webkit-transition: all 0.3s ease;\n                    -moz-transition: all 0.3s ease-in-out;\n                    -o-transition: all 0.3s ease;\n                    transition: all 0.3s ease-in-out;\n                    pointer-events: none;\n                    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);\n                    font-family: 'Avenir', 'Helvetica';\n                    font-size: 12px;\n                }\n                \n                .tooltip span:after {\n                    border-color: #fff rgba(0, 0, 0, 0);\n                    border-style: solid;\n                    border-width: 15px 15px 0;\n                    bottom: -15px;\n                    content: '';\n                    display: block;\n                    left: 31px;\n                    position: absolute;\n                    width: 0;\n                }\n                </style>\n                    <span class=\"tooltip-wrapper\">\n                        <span>\n                            <b class=\"tooltip\">"
+                                                                            )
+                                                                            .concat(r, '\n                                <span>')
+                                                                            .concat(
+                                                                                o,
+                                                                                '</span>\n                            </b>\n                        </span>\n                    </span>\n            '
+                                                                            )
+                                                                    );
+                                                            case 3:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                this
+                                            );
+                                        })
+                                    )),
+                                    function (e, t, n, o, r, s) {
                                         return a.apply(this, arguments);
                                     }),
                             },
@@ -5713,11 +5755,11 @@
                               o && delete N[t], E(e, t, n), o && e !== N && E(N, t, o);
                           }
                         : E,
-                V = function (e) {
+                z = function (e) {
                     var t = (Y[e] = x(T.prototype));
                     return (t._k = e), t;
                 },
-                z =
+                V =
                     $ && 'symbol' == typeof T.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
@@ -5768,7 +5810,7 @@
                             t = function (n) {
                                 this === N && t.call(B, n), r(this, D) && r(this[D], e) && (this[D][e] = !1), G(this, e, w(1, n));
                             };
-                        return s && W && G(N, e, {configurable: !0, set: t}), V(e);
+                        return s && W && G(N, e, {configurable: !0, set: t}), z(e);
                     }).prototype,
                     'toString',
                     function () {
@@ -5782,7 +5824,7 @@
                 (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
-                    return V(f(e));
+                    return z(f(e));
                 })),
                 i(i.G + i.W + i.F * !$, {Symbol: T});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -5793,7 +5835,7 @@
                     return r(F, (e += '')) ? F[e] : (F[e] = T(e));
                 },
                 keyFor: function (e) {
-                    if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                    if (!V(e)) throw TypeError(e + ' is not a symbol!');
                     for (var t in F) if (F[t] === e) return t;
                 },
                 useSetter: function () {
@@ -5834,11 +5876,11 @@
                         {
                             stringify: function (e) {
                                 for (var t, n, o = [e], r = 1; arguments.length > r; ) o.push(arguments[r++]);
-                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !z(e)))
+                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !V(e)))
                                     return (
                                         g(t) ||
                                             (t = function (e, t) {
-                                                if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
+                                                if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                             }),
                                         (o[1] = t),
                                         O.apply(R, o)
@@ -8034,7 +8076,18 @@
                                                                 r.forEach(function (e) {
                                                                     e.querySelector(n).insertAdjacentHTML(o, s);
                                                                     var t = i.applyValues(e);
-                                                                    if ((i.setRoomCashBarWidth(t, e), document.querySelector('.SearchHotels'))) {
+                                                                    if (
+                                                                        (i.setRoomCashBarWidth(t, e),
+                                                                        u.addToolTip(
+                                                                            '#'.concat(e.id, ' .roomcash-amount p'),
+                                                                            'beforeend',
+                                                                            'This is a tool tip',
+                                                                            '?',
+                                                                            '#fff',
+                                                                            '#000'
+                                                                        ),
+                                                                        document.querySelector('.SearchHotels'))
+                                                                    ) {
                                                                         var r = e.querySelector('.ArnRateButton');
                                                                         e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', r),
                                                                             e

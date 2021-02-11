@@ -291,6 +291,8 @@ export default class Roomcash {
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
             const width = this.applyValues(prop);
             this.setRoomCashBarWidth(width, prop);
+            // add tooltip
+            utilities.addToolTip(`#${prop.id} .roomcash-amount p`, 'beforeend', 'This is a tool tip', '?', '#fff', '#000');
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;
             const button = prop.querySelector('.ArnRateButton');

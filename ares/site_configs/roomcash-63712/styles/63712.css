@@ -721,6 +721,12 @@ header #AdminControlsContainer .hamburger .line {
 .roomcash-scale-container .roomcash-amount {
   width: 50%;
 }
+.roomcash-scale-container .roomcash-amount .tooltip-wrapper > span b {
+  font-family: "Montserrat" !important;
+}
+.roomcash-scale-container .roomcash-amount .tooltip-wrapper .tooltip span {
+  left: -8em;
+}
 .roomcash-scale-container .your-cash-amount {
   width: 50%;
 }

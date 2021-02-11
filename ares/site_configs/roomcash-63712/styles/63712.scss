@@ -549,11 +549,20 @@ header {
         }
     }
 
-    // should be dynamic
+    // Width dynamically adjusts on load
     .roomcash-amount {
         width: 50%;
+        .tooltip-wrapper {
+            > span b {
+                font-family: $google_font_name !important;
+            }
+
+            .tooltip span {
+                left: -8em;
+            }
+        }
     }
-    // should be dynamic
+    // Width dynamically adjusts on load
     .your-cash-amount {
         width: 50%;
     }

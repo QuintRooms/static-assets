@@ -466,4 +466,98 @@ export default class Utilities {
         check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
         check_out_input.setAttribute('value', dayjs().add(1, 'day').format('MM/DD/YYYY'));
     }
+
+    /**
+     *@description Adds a styled tool tip to a specified element.
+     *@param string - Element to insert on
+     *@param string - Position to insert on element
+     *@param string - Text content for tool tip
+     *@param string - Tool tip - usually a '?' or 'i'
+     *@param string - Color of tool tip
+     *@param string - Background color of tool tip
+     */
+    async addToolTip(insertElement, insertPosition, tipContent, toolTip, color, backgroundColor) {
+        await this.waitForSelectorInDOM(insertElement);
+
+        document.querySelector(insertElement).insertAdjacentHTML(
+            insertPosition,
+            `
+                <style>
+                .tooltip-wrapper {
+                    position: relative;
+                }
+                
+                .tooltip:hover span {
+                    opacity: 1;
+                    filter: alpha(opacity=100);
+                    top: -7em;
+                    left: -14em;
+                    z-index: 99;
+                    -webkit-transition: all 0.2s ease;
+                    -moz-transition: all 0.2s ease;
+                    -o-transition: all 0.2s ease;
+                    transition: all 0.2s ease;
+                }
+                
+                .tooltip-wrapper > span b {
+                    color: ${color};
+                    background: ${backgroundColor};
+                    font-family: 'Times New Roman', serif;
+                    font-size: 11px;
+                    width: 14px;
+                    height: 14px;
+                    line-height: 14px;
+                    text-align: center;
+                    border-radius: 100%;
+                    display: inline-block;
+                    position: relative;
+                    top: -4px;
+                }
+                
+                .tooltip span {
+                    background: none repeat scroll 0 0 #fff;
+                    color: #666;
+                    font-weight: 500;
+                    padding: 12px;
+                    top: -4em;
+                    left: -14em;
+                    margin-left: 0;
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                    position: absolute;
+                    text-align: center;
+                    z-index: 2;
+                    text-transform: none;
+                    -webkit-transition: all 0.3s ease;
+                    -moz-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease;
+                    transition: all 0.3s ease-in-out;
+                    pointer-events: none;
+                    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
+                    font-family: 'Avenir', 'Helvetica';
+                    font-size: 12px;
+                }
+                
+                .tooltip span:after {
+                    border-color: #fff rgba(0, 0, 0, 0);
+                    border-style: solid;
+                    border-width: 15px 15px 0;
+                    bottom: -15px;
+                    content: '';
+                    display: block;
+                    left: 31px;
+                    position: absolute;
+                    width: 0;
+                }
+                </style>
+                    <span class="tooltip-wrapper">
+                        <span>
+                            <b class="tooltip">${toolTip}
+                                <span>${tipContent}</span>
+                            </b>
+                        </span>
+                    </span>
+            `
+        );
+    }
 }

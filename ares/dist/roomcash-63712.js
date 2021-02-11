@@ -7918,7 +7918,8 @@
                                             this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                         document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend'),
-                                        document.querySelector('.WBSupportForm') && this.buildFooterMenu('.ArnSubPage.WBSupportForm', 'afterend');
+                                        (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) &&
+                                            this.buildFooterMenu('.ArnSubPage', 'afterend');
                                 },
                             },
                             {

@@ -448,10 +448,10 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
-    color: $primary_text_color !important;
-    background-color: $primary_color !important;
-    border-color: $primary_color !important;
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input {
+    color: $primary_text_color ;
+    background-color: $primary_color;
+    border-color: $primary_color ;
     text-transform: uppercase;
     font-weight: $sub_heading_weight !important;
     transition-property: color, background;
@@ -460,8 +460,8 @@ header {
 
     &:hover {
         color: $secondary_text_color !important;
-        background-color: $button_hover_background_color;
-        border-color: $primary_color;
+        background-color: $button_hover_background_color !important;
+        border-color: $primary_color !important;
     }
 }
 
@@ -978,17 +978,23 @@ body.WBSupportForm{
     grid-column-gap: 96px;
     flex-grow: 1;
 
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+
     h1 {
         text-align: center;
     }
 
+    .useCancelFormWarning {
+        display: none;
+    }
+
     input, select, textarea {
         background-color: #fff;
-        border: none;
+        border: 1px solid #ccc !important;
         width: 100%;
         padding: 12px !important;
-        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-        border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
         outline: 0;
     }
 
@@ -997,12 +1003,13 @@ body.WBSupportForm{
         padding: 20px;
         grid-column-start: 2;
         grid-row-start: 2;
-        margin: 24px;
     }
 
     .WBSupportFormContainer {
         grid-column-start: 1;
         grid-row-start: 2;
+        background-color: #fff;
+        padding: 20px;
 
         .FormFields {
             margin-top: 6px;
@@ -1019,4 +1026,36 @@ body.WBSupportForm{
             }
         }
     }
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+
+.WBResendOrCancelForm {
+    h1 {
+        text-align: center;
+    }
+
+    .ArnSubPage {
+        background: #fff;
+        padding: 20px;
+        margin: 40px auto;
+
+        .WBResendOrCancelFormFields {
+            display: flex;
+            justify-content: center;
+
+            input {
+                width: 40% !important;
+            }
+            
+            @include mobile {
+                flex-direction: column;
+
+                input {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    
 }

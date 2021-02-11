@@ -102,9 +102,9 @@ export default class Roomcash {
             this.buildFooterMenu('#theBookingPage', 'afterend');
         }
 
-        // Support Page
-        if (document.querySelector('.WBSupportForm')) {
-            this.buildFooterMenu('.ArnSubPage.WBSupportForm', 'afterend');
+        // Support Page & Cancel/modify Page
+        if (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) {
+            this.buildFooterMenu('.ArnSubPage', 'afterend');
         }
     }
 

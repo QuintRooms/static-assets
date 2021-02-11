@@ -632,20 +632,20 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Buttons - - - - - - - - */
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
-  color: #fff !important;
-  background-color: #CC9831 !important;
-  border-color: #CC9831 !important;
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input {
+  color: #fff;
+  background-color: #CC9831;
+  border-color: #CC9831;
   text-transform: uppercase;
   font-weight: 400 !important;
   transition-property: color, background;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
-.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover {
+.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover {
   color: #000000 !important;
-  background-color: #fff;
-  border-color: #CC9831;
+  background-color: #fff !important;
+  border-color: #CC9831 !important;
 }
 
 .SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
@@ -1052,16 +1052,22 @@ body.WBSupportForm {
   grid-column-gap: 96px;
   flex-grow: 1;
 }
+@media (max-width: 800px) {
+  .ArnSubPage.WBSupportForm {
+    grid-template-columns: 1fr;
+  }
+}
 .ArnSubPage.WBSupportForm h1 {
   text-align: center;
 }
+.ArnSubPage.WBSupportForm .useCancelFormWarning {
+  display: none;
+}
 .ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select, .ArnSubPage.WBSupportForm textarea {
   background-color: #fff;
-  border: none;
+  border: 1px solid #ccc !important;
   width: 100%;
   padding: 12px !important;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-  border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   outline: 0;
 }
 .ArnSubPage.WBSupportForm .ArnSupportChatTable {
@@ -1069,11 +1075,12 @@ body.WBSupportForm {
   padding: 20px;
   grid-column-start: 2;
   grid-row-start: 2;
-  margin: 24px;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer {
   grid-column-start: 1;
   grid-row-start: 2;
+  background-color: #fff;
+  padding: 20px;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields {
   margin-top: 6px;
@@ -1085,6 +1092,31 @@ body.WBSupportForm {
   border: 1px solid #CC9831;
   width: 50%;
   padding: 15px;
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+.WBResendOrCancelForm h1 {
+  text-align: center;
+}
+.WBResendOrCancelForm .ArnSubPage {
+  background: #fff;
+  padding: 20px;
+  margin: 40px auto;
+}
+.WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields {
+  display: flex;
+  justify-content: center;
+}
+.WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields input {
+  width: 40% !important;
+}
+@media (max-width: 600px) {
+  .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields {
+    flex-direction: column;
+  }
+  .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields input {
+    margin-top: 10px;
+  }
 }
 
 /*# sourceMappingURL=63712.css.map*/

@@ -641,6 +641,15 @@ header #AdminControlsContainer .hamburger .line {
   border-color: #CC9831;
 }
 
+.SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
+  padding: 15px !important;
+}
+
+.SinglePropDetail #moreRatesLink {
+  width: unset;
+  height: unset;
+}
+
 /* - - - - - - - - Sub-Header - - - - - - - - */
 #sub-header-container {
   width: 100%;
@@ -694,7 +703,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container .cash-text :last-child {
   font-weight: 300;
-  display: none;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;
@@ -899,7 +907,7 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropName {
   width: 100%;
 }
-.SearchHotels .ArnProperty .rc-avg-nightly {
+.SearchHotels .ArnProperty #rc-avg-nightly {
   text-align: right;
   margin-right: 10px;
 }

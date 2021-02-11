@@ -70,12 +70,12 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
                 {
-                    element: '.SearchHotels .lblAmenities',
+                    element: '.SearchHotels #AmentitiesContainer',
                     position: 'beforeBegin',
                     html: `<div id="filter-by">FILTER BY</div>`,
                 },
             ]);
-            this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend');
+            this.addRoomCashBar('.ArnProperty', '.tbody tr', 'afterend');
             this.buildSortSelectMenu();
         }
 
@@ -89,7 +89,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend');
+            this.addRoomCashBar('.rateRow', '.RoomDescription', 'beforeend');
         }
 
         // Checkout Page
@@ -238,7 +238,7 @@ export default class Roomcash {
         property.querySelector('.roomcash-amount').style.width = `${rcPercent}%`;
     }
 
-    async updatePropertyContainer(containerName, insertElement, insertPosition) {
+    async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
             await utilities.waitForSelectorInDOM('.pollingFinished');
         }
@@ -253,7 +253,7 @@ export default class Roomcash {
                 <div class="cash-text">
                     <span class="rc-value"></span>
                     <p>RoomCash</p>
-                    <p>(per night)</p>
+                    <p>(per stay)</p>
                 </div>
             </div>
             <div class="your-cash-amount">
@@ -261,7 +261,7 @@ export default class Roomcash {
                 <div class="cash-text">
                     <span class="yc-value"></span>
                     <p>Your Cash</p>
-                    <p>(per night)</p>
+                    <p>(per stay)</p>
                 </div>
             </div>
         </div>

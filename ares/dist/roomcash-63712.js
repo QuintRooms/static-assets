@@ -7867,14 +7867,14 @@
                                                 {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: '<hr>'},
                                                 {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: '<hr>'},
                                                 {element: '.SearchHotels .ArnSearchContainerMainDiv', position: 'afterbegin', html: this.sub_header_container},
-                                                {element: '.SearchHotels .lblAmenities', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
+                                                {element: '.SearchHotels #AmentitiesContainer', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
                                             ]),
-                                            this.updatePropertyContainer('.ArnProperty', '.ArnPropDescription', 'afterend'),
+                                            this.addRoomCashBar('.ArnProperty', '.tbody tr', 'afterend'),
                                             this.buildSortSelectMenu()),
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
-                                            this.updatePropertyContainer('.rateRow', '.RoomDescription', 'beforeend')),
+                                            this.addRoomCashBar('.rateRow', '.RoomDescription', 'beforeend')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                         document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend');
                                 },
@@ -8008,7 +8008,7 @@
                                 },
                             },
                             {
-                                key: 'updatePropertyContainer',
+                                key: 'addRoomCashBar',
                                 value:
                                     ((l = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
@@ -8029,7 +8029,7 @@
                                                         case 5:
                                                             (r = document.querySelectorAll(t)),
                                                                 (s = document.querySelector('.SearchHotels')
-                                                                    ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per night)</p>\n                </div>\n            </div>\n        </div>\n    '
+                                                                    ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
                                                                     : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
                                                                 r.forEach(function (e) {
                                                                     e.querySelector(n).insertAdjacentHTML(o, s);

@@ -453,6 +453,15 @@ header {
     }
 }
 
+.SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
+    padding: 15px !important;
+}
+
+.SinglePropDetail #moreRatesLink  {
+    width: unset;
+    height: unset;
+}
+
 /* - - - - - - - - Sub-Header - - - - - - - - */
 
 #sub-header-container {
@@ -515,7 +524,6 @@ header {
 
         :last-child {
             font-weight: $text_weight;
-            display: none;
         }
 
         .rc-value {
@@ -779,7 +787,7 @@ header {
             width: 100%;
         }
 
-        .rc-avg-nightly {
+        #rc-avg-nightly {
             text-align: right;
             margin-right: 10px;
         }

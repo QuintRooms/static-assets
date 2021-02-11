@@ -964,35 +964,63 @@ header {
 
 /* - - - - - - - - Support Page - - - - - - - - */
 
-.WBSupportForm {
-    background-color: #fff;
+body.WBSupportForm{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
     padding: 50px;
     margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 96px;
 
+    h1 {
+        text-align: center;
+    }
+
+    input, select {
+        background-color: #fff;
+        border: none;
+        width: 100%;
+        padding: 12px !important;
+        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+        border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        outline: 0;
+    }
+
     .ArnSupportChatTable {
+        background-color: #fff;
+        padding: 20px;
         grid-column-start: 2;
         grid-row-start: 2;
+        margin: 30px;
     }
 
     .WBSupportFormContainer {
+        background-color: #fff;
         grid-column-start: 1;
         grid-row-start: 2;
 
         .FormFields {
             margin-top: 6px;
 
-            input {
-                background: $background_color;
+            label {
+                display: none;
             }
         }
 
         // submit button
-        .WBSupportFormActions input {
-            width: 20%;
-            padding: 15px;
+        .WBSupportFormActions {
+            text-align: center;
+            
+            input {
+                border: 1px solid $primary_color;
+                width: 100%;
+                padding: 15px;
+            }
         }
     }
 }

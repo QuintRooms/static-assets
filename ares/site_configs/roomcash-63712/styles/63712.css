@@ -1038,30 +1038,55 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Support Page - - - - - - - - */
-.WBSupportForm {
-  background-color: #fff;
+body.WBSupportForm {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
   padding: 50px;
   margin: 30px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 96px;
 }
-.WBSupportForm .ArnSupportChatTable {
+.ArnSubPage.WBSupportForm h1 {
+  text-align: center;
+}
+.ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select {
+  background-color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  outline: 0;
+}
+.ArnSubPage.WBSupportForm .ArnSupportChatTable {
+  background-color: #fff;
+  padding: 20px;
   grid-column-start: 2;
   grid-row-start: 2;
+  margin: 30px;
 }
-.WBSupportForm .WBSupportFormContainer {
+.ArnSubPage.WBSupportForm .WBSupportFormContainer {
+  background-color: #fff;
   grid-column-start: 1;
   grid-row-start: 2;
 }
-.WBSupportForm .WBSupportFormContainer .FormFields {
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields {
   margin-top: 6px;
 }
-.WBSupportForm .WBSupportFormContainer .FormFields input {
-  background: #E6E6E6;
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields label {
+  display: none;
 }
-.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
-  width: 20%;
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions {
+  text-align: center;
+}
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
+  border: 1px solid #CC9831;
+  width: 100%;
   padding: 15px;
 }
 

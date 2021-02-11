@@ -7869,12 +7869,12 @@
                                                 {element: '.SearchHotels .ArnSearchContainerMainDiv', position: 'afterbegin', html: this.sub_header_container},
                                                 {element: '.SearchHotels #AmentitiesContainer', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
                                             ]),
-                                            this.addRoomCashBar('.ArnProperty', '.tbody tr', 'afterend'),
+                                            this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend'),
                                             this.buildSortSelectMenu()),
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
-                                            this.addRoomCashBar('.rateRow', '.RoomDescription', 'beforeend')),
+                                            this.addRoomCashBar('.rateRow', 'tbody tr', 'beforeend')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                         document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend');
                                 },

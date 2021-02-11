@@ -288,15 +288,19 @@ export default class Roomcash {
 `;
 
         props.forEach((prop) => {
+            const selector = document.querySelector('.SearchHotels') ? `#${prop.id}` : `.${prop.classList[0]}`;
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
             const width = this.applyValues(prop);
             this.setRoomCashBarWidth(width, prop);
+
             // add tooltip
-            utilities.addToolTip(`#${prop.id} .roomcash-amount p`, 'beforeend', 'This is a tool tip', '?', '#fff', '#000');
+            utilities.addToolTip(`${selector} .roomcash-amount p`, 'beforeend', 'This is a tool tip', '?', '#fff', '#000');
+
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;
             const button = prop.querySelector('.ArnRateButton');
             prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
+
             // insert average nightly
             prop.querySelector('.prop-hr').insertAdjacentHTML(
                 'beforebegin',

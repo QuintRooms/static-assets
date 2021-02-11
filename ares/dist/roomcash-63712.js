@@ -8074,22 +8074,16 @@
                                                                     ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
                                                                     : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
                                                                 r.forEach(function (e) {
+                                                                    var t = document.querySelector('.SearchHotels') ? '#'.concat(e.id) : '.'.concat(e.classList[0]);
                                                                     e.querySelector(n).insertAdjacentHTML(o, s);
-                                                                    var t = i.applyValues(e);
+                                                                    var r = i.applyValues(e);
                                                                     if (
-                                                                        (i.setRoomCashBarWidth(t, e),
-                                                                        u.addToolTip(
-                                                                            '#'.concat(e.id, ' .roomcash-amount p'),
-                                                                            'beforeend',
-                                                                            'This is a tool tip',
-                                                                            '?',
-                                                                            '#fff',
-                                                                            '#000'
-                                                                        ),
+                                                                        (i.setRoomCashBarWidth(r, e),
+                                                                        u.addToolTip(''.concat(t, ' .roomcash-amount p'), 'beforeend', 'This is a tool tip', '?', '#fff', '#000'),
                                                                         document.querySelector('.SearchHotels'))
                                                                     ) {
-                                                                        var r = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', r),
+                                                                        var a = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', a),
                                                                             e
                                                                                 .querySelector('.prop-hr')
                                                                                 .insertAdjacentHTML(

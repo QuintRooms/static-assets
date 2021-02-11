@@ -7987,7 +7987,7 @@
                                 key: 'applyValues',
                                 value: function (e) {
                                     var t;
-                                    document.querySelector('SearchHotels')
+                                    document.querySelector('.SearchHotels')
                                         ? (t = e.querySelector('.arnUnit').innerHTML)
                                         : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
                                         (t = t.substring(0, t.indexOf('<span>')));

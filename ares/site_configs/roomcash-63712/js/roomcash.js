@@ -217,7 +217,7 @@ export default class Roomcash {
     applyValues(property) {
         let your_cash;
 
-        if (document.querySelector('SearchHotels')) {
+        if (document.querySelector('.SearchHotels')) {
             your_cash = property.querySelector('.arnUnit').innerHTML;
         } else if (document.querySelector('.SinglePropDetail')) {
             your_cash = property.querySelector('.ArnNightlyRate strong').innerHTML;

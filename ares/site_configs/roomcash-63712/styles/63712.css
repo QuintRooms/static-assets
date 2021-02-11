@@ -899,6 +899,10 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropName {
   width: 100%;
 }
+.SearchHotels .ArnProperty .rc-avg-nightly {
+  text-align: right;
+  margin-right: 10px;
+}
 .SearchHotels .ArnPages {
   display: flex;
   justify-content: center;

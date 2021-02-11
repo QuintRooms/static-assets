@@ -215,9 +215,14 @@ export default class Roomcash {
     }
 
     applyValues(property) {
-        // get average nightly and add below book button - .averageNightly
-        // your cash - .ArnUnit
-        let your_cash = property.querySelector('.arnUnit').innerHTML;
+        let your_cash;
+
+        if (document.querySelector('SearchHotels')) {
+            your_cash = property.querySelector('.arnUnit').innerHTML;
+        } else if (document.querySelector('.SinglePropDetail')) {
+            your_cash = property.querySelector('.ArnNightlyRate strong').innerHTML;
+        }
+
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
         const room_cash = property.querySelector('.originalPrice').getAttribute('amount');
 
@@ -294,7 +299,7 @@ export default class Roomcash {
             prop.querySelector('.prop-hr').insertAdjacentHTML(
                 'beforebegin',
                 `
-                <div id="rc-avg-nightly">Average Per Night:<span>${prop.querySelector('.averageNightly').textContent}</span></div>
+                <div id="rc-avg-nightly">Average Per Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
                 `
             );
         });

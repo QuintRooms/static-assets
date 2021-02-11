@@ -7986,8 +7986,11 @@
                             {
                                 key: 'applyValues',
                                 value: function (e) {
-                                    var t = e.querySelector('.arnUnit').innerHTML;
-                                    t = t.substring(0, t.indexOf('<span>'));
+                                    var t;
+                                    document.querySelector('SearchHotels')
+                                        ? (t = e.querySelector('.arnUnit').innerHTML)
+                                        : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
+                                        (t = t.substring(0, t.indexOf('<span>')));
                                     var n = e.querySelector('.originalPrice').getAttribute('amount');
                                     return (
                                         (e.querySelector('.yc-value').textContent = ''.concat(t)),
@@ -8038,7 +8041,7 @@
                                                                                 .querySelector('.prop-hr')
                                                                                 .insertAdjacentHTML(
                                                                                     'beforebegin',
-                                                                                    '\n                <div id="rc-avg-nightly">Average Per Night:<span>'.concat(
+                                                                                    '\n                <div id="rc-avg-nightly">Average Per Night: <span>'.concat(
                                                                                         e.querySelector('.averageNightly').textContent,
                                                                                         '</span></div>\n                '
                                                                                     )

@@ -210,8 +210,7 @@ header {
             display: flex;
             align-self: center;
             justify-content: center;
-            color: #fff;
-            // color: #6E6F70;
+            color: #6E6F70;
             font-size: 20px;
             font-weight: 400;
             width: 100%;
@@ -220,7 +219,7 @@ header {
                 height: 1px;
                 width: 10%;
                 margin: auto 40px;
-                background: #ccc;
+                background: #6E6F70;
                 border: none;
 
                 @include tablet {
@@ -247,6 +246,7 @@ header {
 
             img {
                 max-width: 200px;
+                filter: brightness(0) invert(.5);
             }
 
             @include tablet-small {
@@ -448,7 +448,7 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
     color: $primary_text_color;
     background-color: $primary_color;
     border-color: $primary_color;
@@ -513,13 +513,13 @@ header {
     .roomcash {
         border-radius: 20px 0 0 20px;
         background: $primary_color;
-        // clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
     }
 
     .your-cash {
         border-radius: 0 20px 20px 0;
         background: $secondary_color;
-        // clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
+        clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
     }
 
     .cash-text {
@@ -553,6 +553,11 @@ header {
     .roomcash-amount {
         width: 50%;
         .tooltip-wrapper {
+
+            @include tablet {
+                display: none;
+            }
+
             > span b {
                 font-family: $google_font_name !important;
             }
@@ -880,6 +885,10 @@ header {
         margin-top: 30px;
         width: 75%;
 
+        .tooltip span {
+            top: 0em;
+        }
+
         @include tablet {
             width: 85%;
         }
@@ -953,16 +962,37 @@ header {
     }
 }
 
-/* - - - - - - - - Confirmation Page - - - - - - - - */
+/* - - - - - - - - Support Page - - - - - - - - */
 
-// .ConfirmationForm {
+.WBSupportForm {
+    background-color: #fff;
+    padding: 50px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 96px;
 
-//     #theReservationFormContainer {
-//         margin-bottom: 20px;
-//         background-color: #fff;
+    .ArnSupportChatTable {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
 
-//         #theBookingPage .PaymentPolicies {
-//             border: none;
-//         }
-//     }
-// }
+    .WBSupportFormContainer {
+        grid-column-start: 1;
+        grid-row-start: 2;
+
+        .FormFields {
+            margin-top: 6px;
+
+            input {
+                background: $background_color;
+            }
+        }
+
+        // submit button
+        .WBSupportFormActions input {
+            width: 20%;
+            padding: 15px;
+        }
+    }
+}

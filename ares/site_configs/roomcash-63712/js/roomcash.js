@@ -214,7 +214,7 @@ export default class Roomcash {
         });
     }
 
-    applyValues(property) {
+    getValues(property) {
         let your_cash;
 
         if (document.querySelector('.SearchHotels')) {
@@ -225,17 +225,8 @@ export default class Roomcash {
 
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
         const room_cash = property.querySelector('.originalPrice').getAttribute('amount');
-
-        property.querySelector('.yc-value').textContent = `${your_cash}`;
-        property.querySelector('.rc-value').textContent = room_cash;
-
-        return property.querySelector('.originalPrice').getAttribute('percent');
-    }
-
-    setRoomCashBarWidth(rcPercent, property) {
-        const yc_percent = 100 - parseFloat(rcPercent);
-        property.querySelector('.your-cash-amount').style.width = `${yc_percent.toString()}%`;
-        property.querySelector('.roomcash-amount').style.width = `${rcPercent}%`;
+        const width = property.querySelector('.originalPrice').getAttribute('percent');
+        return {yc: your_cash, rc: room_cash, rc_width: width};
     }
 
     async addRoomCashBar(containerName, insertElement, insertPosition) {
@@ -245,40 +236,45 @@ export default class Roomcash {
         await utilities.waitForSelectorInDOM(insertElement);
         const props = document.querySelectorAll(containerName);
 
-        const html = document.querySelector('.SearchHotels')
-            ? `
+        props.forEach((prop, idx) => {
+            const values = this.getValues(prop);
+
+            if (!values.yc || !values.rc || !values.rc_width) return;
+
+            const html = document.querySelector('.SearchHotels')
+                ? `
         <div class="roomcash-scale-container">
-            <div class="roomcash-amount">
+            <div class="roomcash-amount" style="width: ${values.rc_width}%">
                 <div class="bar roomcash"></div>
                 <div class="cash-text">
-                    <span class="rc-value"></span>
+                    <span class="rc-value">${values.rc}</span>
                     <p>RoomCash</p>
                     <p>(per stay)</p>
                 </div>
             </div>
-            <div class="your-cash-amount">
+            <div class="your-cash-amount" style="width: ${100 - parseFloat(values.rc_width)}%">
                 <div class="bar your-cash"></div>
                 <div class="cash-text">
-                    <span class="yc-value"></span>
+                    <span class="yc-value">${values.yc}</span>
                     <p>Your Cash</p>
                     <p>(per stay)</p>
                 </div>
             </div>
         </div>
     `
-            : `
-    <div class="roomcash-scale-container">
-        <div class="roomcash-amount">
+                : `
+    <div class="roomcash-scale-container" id="rc-${idx}">
+        <div class="roomcash-amount" style="width: ${values.rc_width}%">
             <div class="cash-text">
-                <span class="rc-value"></span>
+                <span class="rc-value">${values.rc}</span>
                 <p>RoomCash</p>
                 <p>(per stay)</p>
             </div>
             <div class="bar roomcash"></div>
         </div>
-        <div class="your-cash-amount">
+        <div class="your-cash-amount" style="width: ${100 - parseFloat(values.rc_width)}%">
             <div class="cash-text">
-                <span class="yc-value"></span>
+                <span class="yc-value">${values.yc}</span>
                 <p>Your Cash</p>
                 <p>(per stay)</p>
             </div>
@@ -287,14 +283,11 @@ export default class Roomcash {
     </div>
 `;
 
-        props.forEach((prop) => {
-            const selector = document.querySelector('.SearchHotels') ? `#${prop.id}` : `.${prop.classList[0]}`;
+            const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
-            const width = this.applyValues(prop);
-            this.setRoomCashBarWidth(width, prop);
 
             // add tooltip
-            utilities.addToolTip(`${selector} .roomcash-amount p`, 'beforeend', 'This is a tool tip', '?', '#fff', '#000');
+            utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'This is a tool tip', '?', '#fff', '#000');
 
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;

@@ -415,7 +415,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   align-self: center;
   justify-content: center;
-  color: #fff;
+  color: #6E6F70;
   font-size: 20px;
   font-weight: 400;
   width: 100%;
@@ -424,7 +424,7 @@ header #AdminControlsContainer .hamburger .line {
   height: 1px;
   width: 10%;
   margin: auto 40px;
-  background: #ccc;
+  background: #6E6F70;
   border: none;
 }
 @media (max-width: 800px) {
@@ -450,6 +450,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
   max-width: 200px;
+  filter: brightness(0) invert(0.5);
 }
 @media (max-width: 700px) {
   .ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
@@ -631,7 +632,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Buttons - - - - - - - - */
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input {
   color: #fff;
   background-color: #CC9831;
   border-color: #CC9831;
@@ -641,7 +642,7 @@ header #AdminControlsContainer .hamburger .line {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
-.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover {
+.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover {
   color: #000000 !important;
   background-color: #fff;
   border-color: #CC9831;
@@ -691,10 +692,12 @@ header #AdminControlsContainer .hamburger .line {
 .roomcash-scale-container .roomcash {
   border-radius: 20px 0 0 20px;
   background: #CC9831;
+  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
 }
 .roomcash-scale-container .your-cash {
   border-radius: 0 20px 20px 0;
   background: #1C8747;
+  clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
 }
 .roomcash-scale-container .cash-text {
   width: 100%;
@@ -720,6 +723,11 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container .roomcash-amount {
   width: 50%;
+}
+@media (max-width: 800px) {
+  .roomcash-scale-container .roomcash-amount .tooltip-wrapper {
+    display: none;
+  }
 }
 .roomcash-scale-container .roomcash-amount .tooltip-wrapper > span b {
   font-family: "Montserrat" !important;
@@ -972,6 +980,9 @@ header #AdminControlsContainer .hamburger .line {
   margin-top: 30px;
   width: 75%;
 }
+.SinglePropDetail .roomcash-scale-container .tooltip span {
+  top: 0em;
+}
 @media (max-width: 800px) {
   .SinglePropDetail .roomcash-scale-container {
     width: 85%;
@@ -1026,6 +1037,32 @@ header #AdminControlsContainer .hamburger .line {
   }
 }
 
-/* - - - - - - - - Confirmation Page - - - - - - - - */
+/* - - - - - - - - Support Page - - - - - - - - */
+.WBSupportForm {
+  background-color: #fff;
+  padding: 50px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 96px;
+}
+.WBSupportForm .ArnSupportChatTable {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.WBSupportForm .WBSupportFormContainer {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.WBSupportForm .WBSupportFormContainer .FormFields {
+  margin-top: 6px;
+}
+.WBSupportForm .WBSupportFormContainer .FormFields input {
+  background: #E6E6E6;
+}
+.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
+  width: 20%;
+  padding: 15px;
+}
 
 /*# sourceMappingURL=63712.css.map*/

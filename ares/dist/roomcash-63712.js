@@ -7821,7 +7821,6 @@
             Object.defineProperty(t, '__esModule', {value: !0}),
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
-                n(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
             var o = r(n(/*! ../../../js/utilities */ './js/utilities.js'));
@@ -8026,27 +8025,19 @@
                                 },
                             },
                             {
-                                key: 'applyValues',
+                                key: 'getValues',
                                 value: function (e) {
                                     var t;
-                                    document.querySelector('.SearchHotels')
-                                        ? (t = e.querySelector('.arnUnit').innerHTML)
-                                        : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
-                                        (t = t.substring(0, t.indexOf('<span>')));
-                                    var n = e.querySelector('.originalPrice').getAttribute('amount');
                                     return (
-                                        (e.querySelector('.yc-value').textContent = ''.concat(t)),
-                                        (e.querySelector('.rc-value').textContent = n),
-                                        e.querySelector('.originalPrice').getAttribute('percent')
+                                        document.querySelector('.SearchHotels')
+                                            ? (t = e.querySelector('.arnUnit').innerHTML)
+                                            : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
+                                        {
+                                            yc: (t = t.substring(0, t.indexOf('<span>'))),
+                                            rc: e.querySelector('.originalPrice').getAttribute('amount'),
+                                            rc_width: e.querySelector('.originalPrice').getAttribute('percent'),
+                                        }
                                     );
-                                },
-                            },
-                            {
-                                key: 'setRoomCashBarWidth',
-                                value: function (e, t) {
-                                    var n = 100 - parseFloat(e);
-                                    (t.querySelector('.your-cash-amount').style.width = ''.concat(n.toString(), '%')),
-                                        (t.querySelector('.roomcash-amount').style.width = ''.concat(e, '%'));
                                 },
                             },
                             {
@@ -8054,9 +8045,7 @@
                                 value:
                                     ((l = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
-                                            var r,
-                                                s,
-                                                i = this;
+                                            var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
@@ -8069,21 +8058,53 @@
                                                         case 3:
                                                             return (e.next = 5), u.waitForSelectorInDOM(n);
                                                         case 5:
-                                                            (r = document.querySelectorAll(t)),
-                                                                (s = document.querySelector('.SearchHotels')
-                                                                    ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
-                                                                    : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
-                                                                r.forEach(function (e) {
-                                                                    var t = document.querySelector('.SearchHotels') ? '#'.concat(e.id) : '.'.concat(e.classList[0]);
-                                                                    e.querySelector(n).insertAdjacentHTML(o, s);
-                                                                    var r = i.applyValues(e);
+                                                            document.querySelectorAll(t).forEach(function (e, t) {
+                                                                var s = r.getValues(e);
+                                                                if (s.yc && s.rc && s.rc_width) {
+                                                                    var i = document.querySelector('.SearchHotels')
+                                                                            ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount" style="width: '
+                                                                                  .concat(
+                                                                                      s.rc_width,
+                                                                                      '%">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value">'
+                                                                                  )
+                                                                                  .concat(
+                                                                                      s.rc,
+                                                                                      '</span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount" style="width: '
+                                                                                  )
+                                                                                  .concat(
+                                                                                      100 - parseFloat(s.rc_width),
+                                                                                      '%">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value">'
+                                                                                  )
+                                                                                  .concat(
+                                                                                      s.yc,
+                                                                                      '</span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
+                                                                                  )
+                                                                            : '\n    <div class="roomcash-scale-container" id="rc-'
+                                                                                  .concat(t, '">\n        <div class="roomcash-amount" style="width: ')
+                                                                                  .concat(
+                                                                                      s.rc_width,
+                                                                                      '%">\n            <div class="cash-text">\n                <span class="rc-value">'
+                                                                                  )
+                                                                                  .concat(
+                                                                                      s.rc,
+                                                                                      '</span>\n                <p>RoomCash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount" style="width: '
+                                                                                  )
+                                                                                  .concat(
+                                                                                      100 - parseFloat(s.rc_width),
+                                                                                      '%">\n            <div class="cash-text">\n                <span class="yc-value">'
+                                                                                  )
+                                                                                  .concat(
+                                                                                      s.yc,
+                                                                                      '</span>\n                <p>Your Cash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'
+                                                                                  ),
+                                                                        a = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                     if (
-                                                                        (i.setRoomCashBarWidth(r, e),
-                                                                        u.addToolTip(''.concat(t, ' .roomcash-amount p'), 'beforeend', 'This is a tool tip', '?', '#fff', '#000'),
+                                                                        (e.querySelector(n).insertAdjacentHTML(o, i),
+                                                                        u.addToolTip('#'.concat(a, ' .roomcash-amount p'), 'beforeend', 'This is a tool tip', '?', '#fff', '#000'),
                                                                         document.querySelector('.SearchHotels'))
                                                                     ) {
-                                                                        var a = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', a),
+                                                                        var c = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', c),
                                                                             e
                                                                                 .querySelector('.prop-hr')
                                                                                 .insertAdjacentHTML(
@@ -8094,8 +8115,9 @@
                                                                                     )
                                                                                 );
                                                                     }
-                                                                });
-                                                        case 8:
+                                                                }
+                                                            });
+                                                        case 7:
                                                         case 'end':
                                                             return e.stop();
                                                     }

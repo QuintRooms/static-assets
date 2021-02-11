@@ -302,6 +302,11 @@ header .logo img {
   margin-left: 30px;
   max-width: 190px;
 }
+@media (max-width: 400px) {
+  header .logo img {
+    margin-left: 5px;
+  }
+}
 @media (max-width: 800px) {
   header #commands {
     display: flex !important;
@@ -318,8 +323,9 @@ header .logo img {
     border-bottom: none;
   }
   header #commands.active {
-    transform: translateY(175px);
+    transform: translateY(195px);
     background-color: #000;
+    border-top: 2px solid #CC9831;
   }
 }
 header #mobile-balance-container {
@@ -958,7 +964,12 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .roomcash-scale-container {
   margin-top: 30px;
-  width: 60%;
+  width: 75%;
+}
+@media (max-width: 800px) {
+  .SinglePropDetail .roomcash-scale-container {
+    width: 85%;
+  }
 }
 @media (max-width: 600px) {
   .SinglePropDetail .roomcash-scale-container {
@@ -974,8 +985,23 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .roomcash-scale-container .your-cash-amount {
   width: 50%;
 }
+@media (max-width: 600px) {
+  .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {
+    margin-top: 10px;
+  }
+  .SinglePropDetail .rateRow .ArnNightlyRate {
+    grid-row: 1/3;
+    text-align: center;
+  }
+  .SinglePropDetail .rateRow .ArnRateCancelAnchor {
+    grid-row: 2/3;
+  }
+}
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
+.CheckOutForm .resConfirmationButton, .ConfirmationForm .resConfirmationButton {
+  text-align: center;
+}
 .CheckOutForm #theBookingPage, .ConfirmationForm #theBookingPage {
   max-width: 1170px;
 }

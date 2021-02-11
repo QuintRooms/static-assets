@@ -7874,7 +7874,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
-                                            this.addRoomCashBar('.rateRow', 'tbody tr', 'beforeend')),
+                                            this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                         document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend');
                                 },
@@ -8030,7 +8030,7 @@
                                                             (r = document.querySelectorAll(t)),
                                                                 (s = document.querySelector('.SearchHotels')
                                                                     ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value"></span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value"></span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
-                                                                    : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per night)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
+                                                                    : '\n    <div class="roomcash-scale-container">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value"></span>\n                <p>RoomCash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value"></span>\n                <p>Your Cash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'),
                                                                 r.forEach(function (e) {
                                                                     e.querySelector(n).insertAdjacentHTML(o, s);
                                                                     var t = i.applyValues(e);

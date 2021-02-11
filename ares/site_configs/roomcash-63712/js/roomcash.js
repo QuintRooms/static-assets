@@ -89,7 +89,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.addRoomCashBar('.rateRow', 'tbody tr', 'beforeend');
+            this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
         }
 
         // Checkout Page
@@ -272,7 +272,7 @@ export default class Roomcash {
             <div class="cash-text">
                 <span class="rc-value"></span>
                 <p>RoomCash</p>
-                <p>(per night)</p>
+                <p>(per stay)</p>
             </div>
             <div class="bar roomcash"></div>
         </div>
@@ -280,7 +280,7 @@ export default class Roomcash {
             <div class="cash-text">
                 <span class="yc-value"></span>
                 <p>Your Cash</p>
-                <p>(per night)</p>
+                <p>(per stay)</p>
             </div>
             <div class="bar your-cash"></div>
         </div>

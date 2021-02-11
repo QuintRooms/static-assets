@@ -24,6 +24,7 @@ $desktop: 1100px;
 $tablet: 800px;
 $tablet_small: 700px;
 $mobile: 600px;
+$mobile_small: 400px;
 
 @mixin desktop {
     @media (max-width: #{$desktop}) {
@@ -49,6 +50,12 @@ $mobile: 600px;
     }
 }
 
+@mixin mobile-small {
+    @media (max-width: #{$mobile_small}) {
+        @content;
+    }
+}
+
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -66,6 +73,10 @@ header {
         padding: 0;
         margin-left: 30px;
         max-width: 190px;
+
+        @include mobile-small {
+            margin-left: 5px;
+        }
     }
 
     @include tablet {
@@ -88,8 +99,9 @@ header {
         }
 
         #commands.active {
-            transform: translateY(175px);
+            transform: translateY(195px);
             background-color: #000;
+            border-top: 2px solid #CC9831;
         }
     }
 
@@ -857,7 +869,11 @@ header {
 
     .roomcash-scale-container {
         margin-top: 30px;
-        width: 60%;
+        width: 75%;
+
+        @include tablet {
+            width: 85%;
+        }
 
         @include mobile {
             width: 100%;
@@ -876,11 +892,34 @@ header {
             width: 50%;
         }
     }
+
+    @include mobile {
+
+        .rateRow {
+
+            tbody > tr > td:nth-child(2) {
+                margin-top: 10px;
+            }
+
+            .ArnNightlyRate {
+                grid-row: 1/ 3;
+                text-align: center;
+            }
+
+            .ArnRateCancelAnchor {
+                grid-row: 2 / 3;
+            }
+        }
+    }
 }
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
 
 .CheckOutForm, .ConfirmationForm {
+
+    .resConfirmationButton {
+        text-align: center;
+    }
 
     #theBookingPage {
         max-width: 1170px;

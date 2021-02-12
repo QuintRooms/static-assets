@@ -91,7 +91,12 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
+
+            if (utilities.matchMediaQuery('max-width: 560px')) {
+                this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
+            } else {
+                this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
+            }
         }
 
         // Checkout Page

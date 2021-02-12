@@ -310,8 +310,8 @@ export default class Roomcash {
             prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
 
             // insert average nightly
-            prop.querySelector('.prop-hr').insertAdjacentHTML(
-                'beforebegin',
+            prop.querySelector('.ArnRateButton').insertAdjacentHTML(
+                'afterend',
                 `
                 <div id="rc-avg-nightly">Average Per Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
                 `

@@ -689,13 +689,14 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container #container-lower {
   display: flex;
+  justify-content: space-around;
 }
 .roomcash-scale-container .bar {
   height: 10px;
   border-radius: 25px;
   width: 100%;
   background-color: #CC9831;
-  background-image: -webkit-linear-gradient(130deg, #1C8747 70%, #CC9831 30%);
+  background-image: -webkit-linear-gradient(134deg, #1C8747 70%, #CC9831 30%);
 }
 .roomcash-scale-container #roomcash-bar-container {
   height: 10px;
@@ -707,8 +708,10 @@ header #AdminControlsContainer .hamburger .line {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 130px;
+  min-width: 140px;
+}
+.roomcash-scale-container .cash-text .tooltip {
+  font-family: "Montserrat" !important;
 }
 .roomcash-scale-container .cash-text p {
   margin: 0;
@@ -729,9 +732,6 @@ header #AdminControlsContainer .hamburger .line {
   .roomcash-scale-container .roomcash-amount .tooltip-wrapper {
     display: none;
   }
-}
-.roomcash-scale-container .roomcash-amount .tooltip-wrapper > span b {
-  font-family: "Montserrat" !important;
 }
 .roomcash-scale-container .roomcash-amount .tooltip-wrapper .tooltip span {
   left: -8em;
@@ -898,7 +898,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnProperty .ArnPropName {
   height: 300px;
-  padding: 20px 12px;
+  padding: 20px 12px 0 12px;
   justify-content: space-evenly;
 }
 @media (max-width: 700px) {
@@ -914,6 +914,11 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount {
   align-self: center;
+}
+.SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount a {
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 400;
 }
 .SearchHotels .ArnProperty .ArnRateCell, .SearchHotels .ArnProperty .ArnPropClass {
   display: none !important;
@@ -982,9 +987,13 @@ header #AdminControlsContainer .hamburger .line {
     align-self: end;
   }
 }
+.SinglePropDetail .ArnNightlyRate {
+  visibility: hidden;
+  margin-bottom: 40px;
+}
 .SinglePropDetail .roomcash-scale-container {
   margin-top: 30px;
-  width: 75%;
+  width: 95%;
 }
 .SinglePropDetail .roomcash-scale-container .tooltip span {
   top: 0em;
@@ -1005,10 +1014,6 @@ header #AdminControlsContainer .hamburger .line {
 @media (max-width: 600px) {
   .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {
     margin-top: 10px;
-  }
-  .SinglePropDetail .rateRow .ArnNightlyRate {
-    grid-row: 1/3;
-    text-align: center;
   }
   .SinglePropDetail .rateRow .ArnRateCancelAnchor {
     grid-row: 2/3;

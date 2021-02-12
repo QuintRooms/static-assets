@@ -8115,9 +8115,9 @@
                                                                             var c = e.querySelector('.ArnRateButton');
                                                                             e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', c),
                                                                                 e
-                                                                                    .querySelector('.prop-hr')
+                                                                                    .querySelector('.ArnRateButton')
                                                                                     .insertAdjacentHTML(
-                                                                                        'beforebegin',
+                                                                                        'afterend',
                                                                                         '\n                <div id="rc-avg-nightly">Average Per Night: <span>'.concat(
                                                                                             e.querySelector('.averageNightly').textContent,
                                                                                             '</span></div>\n                '

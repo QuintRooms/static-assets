@@ -58,6 +58,17 @@ $mobile_small: 400px;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+-webkit-appearance: none;
+border-radius: 0;
+-webkit-border-radius: 0;
+}
+
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -510,6 +521,10 @@ header {
     #container-lower {
         display: flex;
         justify-content: space-around;
+
+        @include mobile {
+            justify-content: space-between;
+        }
     }
 
     .bar {
@@ -533,6 +548,10 @@ header {
         display: flex;
         flex-direction: column;
         min-width: 140px;
+
+        @include mobile {
+            align-items: center;
+        }
 
         .tooltip {
             font-family: $google_font_name !important;
@@ -619,6 +638,10 @@ header {
 
         #ArnPropertyMap {
             width: 24vw;
+
+            @include desktop {
+                width: unset;
+            }
         }
     }
     
@@ -642,6 +665,10 @@ header {
 
         @include tablet {
             width: unset;
+
+            .show-search-container {
+                margin: 10px 0;
+            }
         }
 
         hr {
@@ -731,6 +758,16 @@ header {
         background-color: unset;
         color: $secondary_text_color;
         font-weight: $text_weight;
+
+        @include tablet {
+            hr {
+                display: none;
+            }
+        }
+
+        @include mobile {
+            font-weight: $sub_heading_weight;
+        }
         
         #theSearchBox{
             #theCheckIn, #theCheckOut, #rooms, #adults {
@@ -819,6 +856,11 @@ header {
 
         .ArnRateButton {
             max-width: 130px;
+
+            @include mobile {
+                text-align: center;
+                margin-bottom: 20px;
+            }
         }
 
         .ArnPropName {
@@ -828,6 +870,10 @@ header {
         #rc-avg-nightly {
             text-align: right;
             margin-right: 10px;
+
+            @include mobile {
+                text-align: center;
+            }
         }
 
     }

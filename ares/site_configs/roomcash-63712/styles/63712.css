@@ -288,6 +288,17 @@ header {
   border-top-color: #CC9831;
 }
 
+textarea,
+input.text,
+input[type=text],
+input[type=button],
+input[type=submit],
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -691,6 +702,11 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 600px) {
+  .roomcash-scale-container #container-lower {
+    justify-content: space-between;
+  }
+}
 .roomcash-scale-container .bar {
   height: 10px;
   border-radius: 25px;
@@ -709,6 +725,11 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: column;
   min-width: 140px;
+}
+@media (max-width: 600px) {
+  .roomcash-scale-container .cash-text {
+    align-items: center;
+  }
 }
 .roomcash-scale-container .cash-text .tooltip {
   font-family: "Montserrat" !important;
@@ -774,6 +795,11 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
   width: 24vw;
 }
+@media (max-width: 1100px) {
+  .SearchHotels .ArnRightListContainer #ArnPropertyMap {
+    width: unset;
+  }
+}
 .SearchHotels input#theSubmitButton {
   padding: 15px !important;
 }
@@ -793,6 +819,9 @@ header #AdminControlsContainer .hamburger .line {
 @media (max-width: 800px) {
   .SearchHotels .ArnLeftSearchContainer {
     width: unset;
+  }
+  .SearchHotels .ArnLeftSearchContainer .show-search-container {
+    margin: 10px 0;
   }
 }
 .SearchHotels .ArnLeftSearchContainer hr {
@@ -865,6 +894,16 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   font-weight: 300;
 }
+@media (max-width: 800px) {
+  .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer hr {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+    font-weight: 400;
+  }
+}
 .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckIn, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckOut, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #rooms, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #adults {
   font-weight: 300 !important;
 }
@@ -935,12 +974,23 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnRateButton {
   max-width: 130px;
 }
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty .ArnRateButton {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 .SearchHotels .ArnProperty .ArnPropName {
   width: 100%;
 }
 .SearchHotels .ArnProperty #rc-avg-nightly {
   text-align: right;
   margin-right: 10px;
+}
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty #rc-avg-nightly {
+    text-align: center;
+  }
 }
 .SearchHotels .ArnPages {
   display: flex;

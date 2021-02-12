@@ -91,7 +91,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
+            this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
         }
 
         // Checkout Page

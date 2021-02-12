@@ -7915,7 +7915,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
-                                            this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
+                                            this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')),
                                         document.querySelector('.CheckOutForm') && this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                         document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend'),
                                         (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) &&

@@ -729,11 +729,11 @@ header #AdminControlsContainer .hamburger .line {
   font-size: 20px;
 }
 @media (max-width: 800px) {
-  .roomcash-scale-container .roomcash-amount .tooltip-wrapper {
+  .roomcash-scale-container .tooltip-wrapper {
     display: none;
   }
 }
-.roomcash-scale-container .roomcash-amount .tooltip-wrapper .tooltip span {
+.roomcash-scale-container .tooltip-wrapper .tooltip span {
   left: -8em;
 }
 
@@ -983,6 +983,12 @@ header #AdminControlsContainer .hamburger .line {
   display: none !important;
 }
 @media (max-width: 560px) {
+  .SinglePropDetail .bookRoomCell {
+    display: unset;
+  }
+  .SinglePropDetail .bookRoomCell .ArnNightlyRate {
+    display: none;
+  }
   .SinglePropDetail .bookRoom {
     align-self: end;
   }

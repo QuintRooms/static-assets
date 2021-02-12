@@ -558,16 +558,14 @@ header {
         }
     }
 
-    .roomcash-amount {
-        .tooltip-wrapper {
+    .tooltip-wrapper {
 
-            @include tablet {
-                display: none;
-            }
+        @include tablet {
+            display: none;
+        }
 
-            .tooltip span {
-                left: -8em;
-            }
+        .tooltip span {
+            left: -8em;
         }
     }
 }
@@ -890,6 +888,13 @@ header {
     }
 
     @media (max-width: 560px) {
+        .bookRoomCell {
+            display: unset;
+            
+            .ArnNightlyRate {
+                display: none;
+            }
+        }
         .bookRoom {
             align-self: end;
         }

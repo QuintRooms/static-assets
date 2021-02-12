@@ -251,44 +251,50 @@ export default class Roomcash {
 
             const html = document.querySelector('.SearchHotels')
                 ? `
-        <div class="roomcash-scale-container">
-            <div class="roomcash-amount">
-                <div class="bar roomcash"></div>
-                <div class="cash-text">
-                    <span class="rc-value">${values.rc}</span>
-                    <p>RoomCash</p>
-                    <p>(per stay)</p>
+                <div class="roomcash-scale-container" id="rc-${idx}">
+                    <div id="roomcash-bar-container">
+                        <span class="bar"></span>
+                    </div>
+                <div id="container-lower">
+                    <div class="roomcash-amount">     
+                        <div class="cash-text">
+                            <span class="rc-value">${values.rc}</span>
+                            <p>RoomCash</p>
+                            <p>(per stay)</p>
+                        </div>
+                    </div>
+                    <div class="your-cash-amount">      
+                        <div class="cash-text">
+                            <span class="yc-value">${values.yc}</span>
+                            <p>Your Cash</p>
+                            <p>(per stay)</p>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="your-cash-amount">
-                <div class="bar your-cash"></div>
-                <div class="cash-text">
-                    <span class="yc-value">${values.yc}</span>
-                    <p>Your Cash</p>
-                    <p>(per stay)</p>
-                </div>
-            </div>
-        </div>
     `
                 : `
-    <div class="roomcash-scale-container" id="rc-${idx}">
-        <div class="roomcash-amount">
-            <div class="cash-text">
-                <span class="rc-value">${values.rc}</span>
-                <p>RoomCash</p>
-                <p>(per stay)</p>
-            </div>
-            <div class="bar roomcash"></div>
-        </div>
-        <div class="your-cash-amount">
-            <div class="cash-text">
-                <span class="yc-value">${values.yc}</span>
-                <p>Your Cash</p>
-                <p>(per stay)</p>
-            </div>
-            <div class="bar your-cash"></div>
-        </div>
-    </div>
+                <div class="roomcash-scale-container" id="rc-${idx}">
+                    <div id="container-lower">
+                        <div class="roomcash-amount">     
+                            <div class="cash-text">
+                                <span class="rc-value">${values.rc}</span>
+                                <p>RoomCash</p>
+                                <p>(per stay)</p>
+                            </div>
+                        </div>
+                        <div class="your-cash-amount">      
+                            <div class="cash-text">
+                                <span class="yc-value">${values.yc}</span>
+                                <p>Your Cash</p>
+                                <p>(per stay)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="roomcash-bar-container">
+                        <span class="bar"></span>
+                    </div>
+                </div>
 `;
 
             const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;

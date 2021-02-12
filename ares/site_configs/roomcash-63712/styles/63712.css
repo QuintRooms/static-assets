@@ -684,18 +684,24 @@ header #AdminControlsContainer .hamburger .line {
 /* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
 .roomcash-scale-container {
   display: flex;
+  flex-direction: column;
   margin: 20px 0;
+}
+.roomcash-scale-container #container-lower {
+  display: flex;
 }
 .roomcash-scale-container .bar {
   height: 10px;
+  border-radius: 25px;
+  width: 100%;
+  background-color: #CC9831;
+  background-image: -webkit-linear-gradient(130deg, #1C8747 70%, #CC9831 30%);
 }
-.roomcash-scale-container .roomcash {
-  border-radius: 20px 0 0 20px;
-  background: #CC9831;
-}
-.roomcash-scale-container .your-cash {
-  border-radius: 0 20px 20px 0;
-  background: #1C8747;
+.roomcash-scale-container #roomcash-bar-container {
+  height: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 .roomcash-scale-container .cash-text {
   width: 100%;
@@ -719,9 +725,6 @@ header #AdminControlsContainer .hamburger .line {
   color: #1C8747;
   font-size: 20px;
 }
-.roomcash-scale-container .roomcash-amount {
-  width: 25%;
-}
 @media (max-width: 800px) {
   .roomcash-scale-container .roomcash-amount .tooltip-wrapper {
     display: none;
@@ -732,9 +735,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container .roomcash-amount .tooltip-wrapper .tooltip span {
   left: -8em;
-}
-.roomcash-scale-container .your-cash-amount {
-  width: 75%;
 }
 
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -1001,12 +1001,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .roomcash-scale-container .bar {
   margin-top: 10px;
-}
-.SinglePropDetail .roomcash-scale-container .roomcash-amount {
-  width: 25%;
-}
-.SinglePropDetail .roomcash-scale-container .your-cash-amount {
-  width: 75%;
 }
 @media (max-width: 600px) {
   .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {

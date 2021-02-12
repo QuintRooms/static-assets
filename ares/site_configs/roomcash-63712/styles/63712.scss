@@ -504,23 +504,28 @@ header {
 
 .roomcash-scale-container {
     display: flex;
+    flex-direction: column;
     margin: 20px 0;
+
+    #container-lower {
+        display: flex;
+    }
 
     .bar {
         height: 10px;
+        border-radius: 25px;
+        width: 100%;
+        background-color: $primary_color;
+        background-image: -webkit-linear-gradient(130deg, $secondary_color 70%, $primary_color 30%);
     }
 
-    .roomcash {
-        border-radius: 20px 0 0 20px;
-        background: $primary_color;
-        // clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+    #roomcash-bar-container {
+        height: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
-    .your-cash {
-        border-radius: 0 20px 20px 0;
-        background: $secondary_color;
-        // clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0 100%);
-    }
 
     .cash-text {
         width: 100%;
@@ -550,7 +555,6 @@ header {
     }
 
     .roomcash-amount {
-        width: 25%;
         .tooltip-wrapper {
 
             @include tablet {
@@ -565,9 +569,6 @@ header {
                 left: -8em;
             }
         }
-    }
-    .your-cash-amount {
-        width: 75%;
     }
 }
 
@@ -906,14 +907,6 @@ header {
     
         .bar {
             margin-top: 10px;
-        }
-
-        .roomcash-amount {
-            width: 25%;
-        }
-
-        .your-cash-amount {
-            width: 75%;
         }
     }
 

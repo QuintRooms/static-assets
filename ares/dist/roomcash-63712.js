@@ -8065,27 +8065,31 @@
                                                                     var s = r.getValues(e);
                                                                     if (s.yc && s.rc && s.rc_width) {
                                                                         var i = document.querySelector('.SearchHotels')
-                                                                                ? '\n        <div class="roomcash-scale-container">\n            <div class="roomcash-amount">\n                <div class="bar roomcash"></div>\n                <div class="cash-text">\n                    <span class="rc-value">'
-                                                                                      .concat(
-                                                                                          s.rc,
-                                                                                          '</span>\n                    <p>RoomCash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n            <div class="your-cash-amount">\n                <div class="bar your-cash"></div>\n                <div class="cash-text">\n                    <span class="yc-value">'
-                                                                                      )
-                                                                                      .concat(
-                                                                                          s.yc,
-                                                                                          '</span>\n                    <p>Your Cash</p>\n                    <p>(per stay)</p>\n                </div>\n            </div>\n        </div>\n    '
-                                                                                      )
-                                                                                : '\n    <div class="roomcash-scale-container" id="rc-'
+                                                                                ? '\n                <div class="roomcash-scale-container" id="rc-'
                                                                                       .concat(
                                                                                           t,
-                                                                                          '">\n        <div class="roomcash-amount">\n            <div class="cash-text">\n                <span class="rc-value">'
+                                                                                          '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div id="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value">'
                                                                                       )
                                                                                       .concat(
                                                                                           s.rc,
-                                                                                          '</span>\n                <p>RoomCash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar roomcash"></div>\n        </div>\n        <div class="your-cash-amount">\n            <div class="cash-text">\n                <span class="yc-value">'
+                                                                                          '</span>\n                            <p>RoomCash</p>\n                            <p>(per stay)</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">      \n                        <div class="cash-text">\n                            <span class="yc-value">'
                                                                                       )
                                                                                       .concat(
                                                                                           s.yc,
-                                                                                          '</span>\n                <p>Your Cash</p>\n                <p>(per stay)</p>\n            </div>\n            <div class="bar your-cash"></div>\n        </div>\n    </div>\n'
+                                                                                          '</span>\n                            <p>Your Cash</p>\n                            <p>(per stay)</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>\n    '
+                                                                                      )
+                                                                                : '\n                <div class="roomcash-scale-container" id="rc-'
+                                                                                      .concat(
+                                                                                          t,
+                                                                                          '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value">'
+                                                                                      )
+                                                                                      .concat(
+                                                                                          s.rc,
+                                                                                          '</span>\n                                <p>RoomCash</p>\n                                <p>(per stay)</p>\n                            </div>\n                        </div>\n                        <div class="your-cash-amount">      \n                            <div class="cash-text">\n                                <span class="yc-value">'
+                                                                                      )
+                                                                                      .concat(
+                                                                                          s.yc,
+                                                                                          '</span>\n                                <p>Your Cash</p>\n                                <p>(per stay)</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                </div>\n'
                                                                                       ),
                                                                             a = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                         if (

@@ -16,7 +16,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '',
+            event_name: 'RoomCash ',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -78,6 +78,7 @@ export default function siteConfig() {
         confirmation_email_from: '',
         has_group_booking_banner: false,
         group_booking_form_url: '',
+        has_custom_emails: true,
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

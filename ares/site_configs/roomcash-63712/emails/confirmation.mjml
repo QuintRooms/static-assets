@@ -1,0 +1,25 @@
+<mjml>
+    <mj-head>
+        <mj-include path="./emails/components/head.mjml" />
+    </mj-head>
+    <mj-body background-color={{theme}}>
+        <mj-section background-color="#000">
+            <mj-column width="50%" padding-top="30px" padding-bottom="30px" >
+                <mj-image editable="true" css-class="logo" src={{logo}} alt="Logo" title="Logo" />
+            </mj-column>
+        </mj-section>
+        
+        <mj-section>
+            <mj-column width="100%">
+            <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+            </mj-column>
+        </mj-section>
+
+        <mj-include path="./emails/components/hero.mjml" />
+        <mj-include path="./emails/components/hotel_address.mjml" />
+        <mj-include path="./emails/components/reservation_details.mjml" />
+        <mj-include path="./emails/components/contact.mjml" />
+        <mj-include path="./emails/components/policies.mjml" />
+        <mj-include path="./emails/components/footer.mjml" />
+    </mj-body>
+</mjml>

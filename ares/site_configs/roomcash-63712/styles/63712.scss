@@ -63,6 +63,7 @@ input.text,
 input[type="text"],
 input[type="button"],
 input[type="submit"],
+input[type="checkbox"],
 .input-checkbox {
 -webkit-appearance: none;
 border-radius: 0;
@@ -858,7 +859,7 @@ header {
             max-width: 130px;
 
             @include mobile {
-                text-align: center;
+                align-self: center;
                 margin-bottom: 20px;
             }
         }

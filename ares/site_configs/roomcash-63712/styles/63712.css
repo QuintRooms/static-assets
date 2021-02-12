@@ -293,6 +293,7 @@ input.text,
 input[type=text],
 input[type=button],
 input[type=submit],
+input[type=checkbox],
 .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
@@ -976,7 +977,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 @media (max-width: 600px) {
   .SearchHotels .ArnProperty .ArnRateButton {
-    text-align: center;
+    align-self: center;
     margin-bottom: 20px;
   }
 }

@@ -8,7 +8,7 @@ module.exports = () => {
     return {
         entry() {
             const sites = EntryPoints();
-            if (process.env.NODE_ENV === 'production') {
+            if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'develop') {
                 for (const site in sites) {
                     build_emails(site);
                 }

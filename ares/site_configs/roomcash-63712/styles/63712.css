@@ -632,7 +632,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Buttons - - - - - - - - */
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit {
   color: #fff;
   background-color: #CC9831;
   border: 1px solid #CC9831;
@@ -642,7 +642,7 @@ header #AdminControlsContainer .hamburger .line {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
-.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover {
+.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover, .CreateAnAccountAction:hover, .LoginAction.submit:hover {
   color: #000000 !important;
   background-color: #fff !important;
   border-color: #CC9831 !important;
@@ -692,12 +692,10 @@ header #AdminControlsContainer .hamburger .line {
 .roomcash-scale-container .roomcash {
   border-radius: 20px 0 0 20px;
   background: #CC9831;
-  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
 }
 .roomcash-scale-container .your-cash {
   border-radius: 0 20px 20px 0;
   background: #1C8747;
-  clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
 }
 .roomcash-scale-container .cash-text {
   width: 100%;
@@ -722,7 +720,7 @@ header #AdminControlsContainer .hamburger .line {
   font-size: 20px;
 }
 .roomcash-scale-container .roomcash-amount {
-  width: 50%;
+  width: 25%;
 }
 @media (max-width: 800px) {
   .roomcash-scale-container .roomcash-amount .tooltip-wrapper {
@@ -736,7 +734,7 @@ header #AdminControlsContainer .hamburger .line {
   left: -8em;
 }
 .roomcash-scale-container .your-cash-amount {
-  width: 50%;
+  width: 75%;
 }
 
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -756,6 +754,14 @@ header #AdminControlsContainer .hamburger .line {
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer {
   margin: 30px 0;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer #CitySearchContainer {
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer #CitySearchContainer {
+    width: unset;
+  }
 }
 
 /* - - - - - - - - Search Results - - - - - - - - */
@@ -997,10 +1003,10 @@ header #AdminControlsContainer .hamburger .line {
   margin-top: 10px;
 }
 .SinglePropDetail .roomcash-scale-container .roomcash-amount {
-  width: 50%;
+  width: 25%;
 }
 .SinglePropDetail .roomcash-scale-container .your-cash-amount {
-  width: 50%;
+  width: 75%;
 }
 @media (max-width: 600px) {
   .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {
@@ -1081,6 +1087,7 @@ body.WBSupportForm {
     grid-row-start: 2;
     grid-column-start: 1;
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 .ArnSubPage.WBSupportForm .WBSupportFormContainer {
@@ -1140,6 +1147,29 @@ body.WBSupportForm {
   .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions input {
     margin: 10px 0;
   }
+}
+
+/* - - - - - - - - Login Page - - - - - - - - */
+.WBLoginForm .WBLoginFormActions {
+  display: flex;
+  flex-direction: column;
+}
+.WBLoginForm .WBLoginFormActions .CreateAnAccountAction {
+  margin: 18px 0;
+}
+.WBLoginForm .redeem-promocode-container {
+  display: none;
+}
+
+/* - - - - - - - - Create an Account Page - - - - - - - - */
+.WBValidatedRegistrationForm #thePassCodeAjax {
+  display: none;
+}
+.WBValidatedRegistrationForm .return-to-login {
+  color: #000;
+}
+.WBValidatedRegistrationForm .return-to-login:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=63712.css.map*/

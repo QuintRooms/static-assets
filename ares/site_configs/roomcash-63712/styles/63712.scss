@@ -448,7 +448,7 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit {
     color: $primary_text_color ;
     background-color: $primary_color;
     border: 1px solid $primary_color;
@@ -513,13 +513,13 @@ header {
     .roomcash {
         border-radius: 20px 0 0 20px;
         background: $primary_color;
-        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        // clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
     }
 
     .your-cash {
         border-radius: 0 20px 20px 0;
         background: $secondary_color;
-        clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
+        // clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0 100%);
     }
 
     .cash-text {
@@ -549,9 +549,8 @@ header {
         }
     }
 
-    // Width dynamically adjusts on load
     .roomcash-amount {
-        width: 50%;
+        width: 25%;
         .tooltip-wrapper {
 
             @include tablet {
@@ -567,11 +566,11 @@ header {
             }
         }
     }
-    // Width dynamically adjusts on load
     .your-cash-amount {
-        width: 50%;
+        width: 75%;
     }
 }
+
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components End  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -595,6 +594,14 @@ header {
 
         .ArnQuadSearchContainer {
             margin: 30px 0;
+
+            #CitySearchContainer {
+                width: 50%;
+
+                @media (max-width: 600px) {
+                    width: unset;
+                }
+            }
         }
     }
 }
@@ -901,13 +908,12 @@ header {
             margin-top: 10px;
         }
 
-        // should be dynamic
         .roomcash-amount {
-            width: 50%;
+            width: 25%;
         }
-        // should be dynamic
+
         .your-cash-amount {
-            width: 50%;
+            width: 75%;
         }
     }
 
@@ -1008,6 +1014,7 @@ body.WBSupportForm{
             grid-row-start: 2;
             grid-column-start: 1;
             width: 100%;
+            margin-bottom: 10px;
         }
     }
 
@@ -1082,4 +1089,39 @@ body.WBSupportForm{
         }
     }
     
+}
+
+/* - - - - - - - - Login Page - - - - - - - - */
+
+.WBLoginForm {
+
+    .WBLoginFormActions {
+        display: flex;
+        flex-direction: column;
+
+        .CreateAnAccountAction {
+            margin: 18px 0;
+        }
+    }
+
+    .redeem-promocode-container {
+        display: none;
+    }
+}
+
+/* - - - - - - - - Create an Account Page - - - - - - - - */
+
+.WBValidatedRegistrationForm {
+    
+    #thePassCodeAjax {
+        display: none;
+    }
+
+    .return-to-login {
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

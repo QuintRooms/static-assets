@@ -451,7 +451,7 @@ header {
 .RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input {
     color: $primary_text_color ;
     background-color: $primary_color;
-    border-color: $primary_color ;
+    border: 1px solid $primary_color;
     text-transform: uppercase;
     font-weight: $sub_heading_weight !important;
     transition-property: color, background;
@@ -1003,6 +1003,12 @@ body.WBSupportForm{
         padding: 20px;
         grid-column-start: 2;
         grid-row-start: 2;
+
+        @include tablet {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            width: 100%;
+        }
     }
 
     .WBSupportFormContainer {
@@ -1010,6 +1016,12 @@ body.WBSupportForm{
         grid-row-start: 2;
         background-color: #fff;
         padding: 20px;
+
+        @include tablet {
+            grid-row-start: 3;
+            grid-column-start: 1;
+            width: 100%;
+        }
 
         .FormFields {
             margin-top: 6px;
@@ -1020,9 +1032,10 @@ body.WBSupportForm{
             text-align: center;
             
             input {
-                border: 1px solid $primary_color;
+                border: 1px solid $primary_color !important;
                 width: 50%;
-                padding: 15px;
+                padding: 15px !important;
+                background-color: #CC9831 !important;
             }
         }
     }
@@ -1041,18 +1054,29 @@ body.WBSupportForm{
         margin: 40px auto;
 
         .WBResendOrCancelFormFields {
+
+            #theEmailAddressAjax input, #theConfirmationNumberAjax input{
+                width: 40% !important;
+
+                @include tablet_small {
+                    width: 80% !important;
+                }
+            }
+        }
+
+        .WBResendOrCancelFormActions {
             display: flex;
             justify-content: center;
 
             input {
-                width: 40% !important;
+                padding: 15px !important;
             }
-            
-            @include mobile {
+
+            @include tablet-small {
                 flex-direction: column;
 
                 input {
-                    margin-top: 10px;
+                    margin: 10px 0;
                 }
             }
         }

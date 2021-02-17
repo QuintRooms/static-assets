@@ -19,29 +19,30 @@
         </mj-hero>
 
         <mj-include path="./emails/components/hotel_address.mjml" />
+
         /* - - - RoomCash Balance - - - - */
-        <mj-section background-color="#000" padding-right="0" padding-left="0">
-            <mj-column width="33%">
-                <mj-text align="center" color="#CC9831">
+        <mj-section padding-right="0" padding-left="0">
+            <mj-column width="33%" background-color="#000">
+                <mj-text align="center" color="#CC9831" padding-bottom="5px" padding-top="5px">
                     <h4>Your RoomCash</h4>
                     <img style="width:10%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png"><span style="margin:10px 5px;">[balance]</span>
                 </mj-text>
             </mj-column>
-            <mj-column width="33%">
+            <mj-column width="33%" background-color="#000" padding-bottom="5px" padding-top="5px">
                 <mj-text align="center" color="#CC9831">
                     <h4>RoomCash Earned</h4>
                     <img style="width:10%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png"><span style="margin:10px 5px;">[balance_earned]</span>
                 </mj-text>
             </mj-column>
-            <mj-column width="33%" background-color="#CC9831" padding-bottom="0" padding-right="0">
-                <mj-text align="center" height="56px" font-weight="400" font-size="12px" padding-top="10px" padding-bottom="10px" letter-spacing="1px" background-color="#CC9831">
-                    <a style="color:#fff" href="">SPEND MY ROOMCASH</a>
+            <mj-column width="33%" background-color="#CC9831" padding-bottom="5px" padding-top="5px" padding-right="0">
+                <mj-text padding-top="16px" padding-bottom="16px" align="center" font-weight="400" font-size="12px" letter-spacing="1px" background-color="#CC9831">
+                    <h4><a style="color:#fff" href="">SPEND MY ROOMCASH</a></h4>
                 </mj-text>
             </mj-column>
         </mj-section>
         <mj-include path="./emails/components/reservation_details.mjml" />
         <mj-include path="./emails/components/contact.mjml" />
         <mj-include path="./emails/components/policies.mjml" />
-        <mj-include path="./emails/components/footer.mjml" />
+        <mj-include path="./site_configs/roomcash-63712/emails/components/footer.mjml" />
     </mj-body>
 </mjml>

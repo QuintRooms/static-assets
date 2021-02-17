@@ -183,7 +183,7 @@ export default class Roomcash {
             'afterbegin',
             `
             <div id="mobile-balance-container">
-                <span id="mobile-balance">$${this.user_points}</span>
+                <span id="mobile-balance">${this.user_points}</span>
             </div>
         `
         );
@@ -205,7 +205,7 @@ export default class Roomcash {
             <div id="admin-container">
                 <div id="balance-container" class="header-link">
                     <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
-                    <span id="balance">$${this.user_points}</span>
+                    <span id="balance">${this.user_points}</span>
                 </div>
                 <div id="account-container" class="header-link">
                     <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>

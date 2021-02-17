@@ -7968,7 +7968,7 @@
                                                                         .querySelector('#AdminControlsContainer')
                                                                         .insertAdjacentHTML(
                                                                             'afterbegin',
-                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">$'.concat(
+                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">'.concat(
                                                                                 this.user_points,
                                                                                 '</span>\n            </div>\n        '
                                                                             )
@@ -7981,7 +7981,7 @@
                                                                         'beforeend',
                                                                         '\n            <div id="admin-container">\n                <div id="balance-container" class="header-link">\n                    <img src="'
                                                                             .concat(c.path, '/site_configs/')
-                                                                            .concat(this.config.directory_name, '/img/points-icon.png">\n                    <span id="balance">$')
+                                                                            .concat(this.config.directory_name, '/img/points-icon.png">\n                    <span id="balance">')
                                                                             .concat(
                                                                                 this.user_points,
                                                                                 '</span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>\n                </div>\n            </div>\n        '

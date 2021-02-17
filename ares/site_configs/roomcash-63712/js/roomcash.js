@@ -42,6 +42,8 @@ export default class Roomcash {
 
         // Root Page
         if (document.querySelector('.RootBody')) {
+            this.updateText('.ArnPrimarySearchOuterContainer h1:first-of-type', `${document.querySelector('meta[name="firstName"]').content}, WHERE WILL YOUR ROOMCASH TAKE YOU?`);
+            this.updateText('.ArnPrimarySearchOuterContainer h3:first-of-type', 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS');
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
             this.insertContent([
                 {
@@ -91,6 +93,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
+            this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
 
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
@@ -102,6 +105,8 @@ export default class Roomcash {
         // Checkout Page
         if (document.querySelector('.CheckOutForm')) {
             this.buildFooterMenu('#theReservationFormContainer', 'afterend');
+            this.updateText('.discount th', 'RoomCash');
+            this.updateText('.dueNowRow th', 'Your Cash');
         }
 
         // Confirmation Page
@@ -252,7 +257,9 @@ export default class Roomcash {
             const values = this.getValues(prop);
 
             if (!values.yc || !values.rc || !values.rc_width) return;
-
+            const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+            const n_nights = original_params.get('nights');
+            const stay = n_nights === '1' ? 'night' : 'nights';
             const html = document.querySelector('.SearchHotels')
                 ? `
                 <div class="roomcash-scale-container" id="rc-${idx}">
@@ -264,14 +271,14 @@ export default class Roomcash {
                         <div class="cash-text">
                             <span class="rc-value">${values.rc}</span>
                             <p>RoomCash</p>
-                            <p>(per stay)</p>
+                            <p>(for ${n_nights} ${stay})</p>
                         </div>
                     </div>
                     <div class="your-cash-amount">      
                         <div class="cash-text">
                             <span class="yc-value">${values.yc}</span>
                             <p>Your Cash</p>
-                            <p>(per stay)</p>
+                            <p>(per ${n_nights} ${stay})</p>
                         </div>
                     </div>
                     </div>
@@ -346,5 +353,24 @@ export default class Roomcash {
         const currency = document.querySelector('.currencies-container');
 
         document.querySelector('.ArnQuadSearchContainer #theSubmitButton').insertAdjacentElement('afterend', currency);
+    }
+
+    async updateText(element, newText) {
+        await utilities.waitForSelectorInDOM(element);
+
+        document.querySelector(element).textContent = newText;
+    }
+
+    async updateAttribute(element, name, newAttr) {
+        await utilities.waitForSelectorInDOM(element);
+
+        document.querySelector(element).setAttribute(name, newAttr);
+    }
+
+    restructureRateContainer(elementNodeList) {
+        const rates = document.querySelectorAll(elementNodeList);
+        rates.forEach((el) => {
+            this.updateAttribute(`${el} tr:last-of-type td`, 'colspan', '2');
+        });
     }
 }

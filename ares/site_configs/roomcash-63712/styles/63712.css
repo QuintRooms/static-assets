@@ -420,6 +420,7 @@ header #AdminControlsContainer .hamburger .line {
 .ArnSupportLinks.ArnSupportBottom {
   background-color: #000000;
   margin: 0 !important;
+  padding: 20px 0;
 }
 .ArnSupportLinks.ArnSupportBottom .ARN_ServiceLinks, .ArnSupportLinks.ArnSupportBottom .pb-container, .ArnSupportLinks.ArnSupportBottom .dvd, .ArnSupportLinks.ArnSupportBottom .cookie-policy-link {
   display: none;
@@ -467,7 +468,7 @@ header #AdminControlsContainer .hamburger .line {
   margin: auto;
 }
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
-  max-width: 200px;
+  max-width: 165px;
   filter: brightness(0) invert(0.5);
 }
 @media (max-width: 700px) {
@@ -783,17 +784,19 @@ header #AdminControlsContainer .hamburger .line {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer {
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
-}
-.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer .ArnPrimarySearchContainer {
   background: #b7b7b7;
+  color: #000;
 }
-.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer #CitySearchContainer {
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {
+  color: #000;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
   width: 50%;
 }
 @media (max-width: 600px) {
-  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer #CitySearchContainer {
+  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
     width: unset;
   }
 }
@@ -813,6 +816,9 @@ header #AdminControlsContainer .hamburger .line {
   color: #fff;
   background-color: #CC9831;
 }
+.SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker .arnMapMarkerTriangle {
+  border-top-color: #CC9831;
+}
 @media (max-width: 1100px) {
   .SearchHotels .ArnRightListContainer #ArnPropertyMap {
     width: unset;
@@ -827,7 +833,7 @@ header #AdminControlsContainer .hamburger .line {
   margin-left: 0;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
-  margin-right: 13px;
+  margin-left: 13px;
   font-weight: 800;
 }
 @media (max-width: 1100px) {
@@ -969,7 +975,7 @@ header #AdminControlsContainer .hamburger .line {
   }
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails {
-  bottom: unset;
+  bottom: 0;
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .ratingCount {
   padding: 5px;
@@ -1018,6 +1024,9 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Property Detail - - - - - - - - */
+.SinglePropDetail .RateCalendarPopupAnchor {
+  margin-right: 47px;
+}
 .SinglePropDetail .ArnRightListContainer {
   background-color: #fff;
 }
@@ -1111,6 +1120,12 @@ header #AdminControlsContainer .hamburger .line {
 .CheckOutForm #theBookingPage .PaymentPolicies, .ConfirmationForm #theBookingPage .PaymentPolicies {
   background-color: #fff;
   border: none;
+}
+.CheckOutForm #theBookingPage .PaymentPolicies .discount th, .ConfirmationForm #theBookingPage .PaymentPolicies .discount th {
+  color: #CC9831;
+}
+.CheckOutForm #theBookingPage .PaymentPolicies .dueNowRow th, .ConfirmationForm #theBookingPage .PaymentPolicies .dueNowRow th {
+  color: #1C8747;
 }
 @media (max-width: 1100px) {
   .CheckOutForm #footer-menu-container, .ConfirmationForm #footer-menu-container {

@@ -214,6 +214,7 @@ header {
 .ArnSupportLinks.ArnSupportBottom {
     background-color: $header_background;
     margin: 0 !important;
+    padding: 20px 0;
 
     .ARN_ServiceLinks, .pb-container, .dvd, .cookie-policy-link {
         display: none;
@@ -263,7 +264,7 @@ header {
             }
 
             img {
-                max-width: 200px;
+                max-width: 165px;
                 filter: brightness(0) invert(.5);
             }
 
@@ -621,11 +622,13 @@ header {
             }
         }
 
-        .ArnQuadSearchContainer {
+        .ArnQuadSearchContainer.ArnPrimarySearchContainer {
             margin: 30px 0;
+            background: rgb(183, 183, 183);
+            color: #000;
 
-            .ArnPrimarySearchContainer {
-                background: rgb(183, 183, 183);
+            .ArnSecondarySearchOuterContainer {
+                color: #000;
             }
 
             #CitySearchContainer {
@@ -658,6 +661,10 @@ header {
                 border-color: #fff;
                 color: #fff;
                 background-color: $primary_color;
+
+                .arnMapMarkerTriangle {
+                    border-top-color: $primary_color;
+                }
             }
 
             @include desktop {
@@ -677,7 +684,7 @@ header {
         margin-left: 0;
 
         .ArnSearchHeader {
-            margin-right: 13px;
+            margin-left: 13px;
             font-weight: $heading_weight;
         }
 
@@ -847,7 +854,7 @@ header {
             }
 
             .ArnTripAdvisorDetails {
-                bottom: unset;
+                bottom: 0;
 
                 .ratingCount {
                     padding: 5px;
@@ -911,6 +918,10 @@ header {
 /* - - - - - - - - Property Detail - - - - - - - - */
 
 .SinglePropDetail {
+
+    .RateCalendarPopupAnchor {
+        margin-right: 47px;
+    }
 
     .ArnRightListContainer {
         background-color: #fff;
@@ -1030,6 +1041,14 @@ header {
         .PaymentPolicies {
             background-color: #fff;
             border: none;
+
+            .discount th {
+                color: $primary_color;
+            }
+
+            .dueNowRow th {
+                color: $secondary_color;
+            }
         }
     }
 

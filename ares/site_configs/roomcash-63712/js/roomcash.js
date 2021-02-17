@@ -125,10 +125,9 @@ export default class Roomcash {
                         <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>
                 </div>
                 <div class="links">
-                        <li class="links-header">About RoomCash</li>
-                        <li><a target="_blank" href="https://roomcash.com/our-mission">Our Mission</a></li>
-                        <li><a target="_blank" href="https://roomcash.com/careers">Careers</a></li>
+                        <li class="links-header">Support</li>
                         <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>
+                        <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.cancelLink').href}">Cancel/Modify</a></li>
                 </div>
                 <div class="links">
                         <li class="links-header">Partner with RoomCash</li>
@@ -318,7 +317,7 @@ export default class Roomcash {
             prop.querySelector('.ArnRateButton').insertAdjacentHTML(
                 'afterend',
                 `
-                <div id="rc-avg-nightly">Average Per Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
+                <div id="rc-avg-nightly">Avg/Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
                 `
             );
         });

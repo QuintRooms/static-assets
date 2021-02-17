@@ -5218,7 +5218,7 @@
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
                 },
-                F = function (e) {
+                I = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -5229,7 +5229,7 @@
                                 ? _(function () {
                                       var o = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(F, o, 1), u(H, o, 1));
+                                          t.call(e, u(I, o, 1), u(H, o, 1));
                                       } catch (e) {
                                           H.call(o, e);
                                       }
@@ -5244,7 +5244,7 @@
                 ((M = function (e) {
                     p(this, M, 'Promise', '_h'), f(e), o.call(this);
                     try {
-                        e(u(F, this, 1), u(H, this, 1));
+                        e(u(I, this, 1), u(H, this, 1));
                     } catch (e) {
                         H.call(this, e);
                     }
@@ -5270,7 +5270,7 @@
                 })),
                 (s = function () {
                     var e = new o();
-                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(H, e, 1));
+                    (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (v.f = C = function (e) {
                     return e === M || e === i ? new s(e) : r(e);
@@ -5728,8 +5728,8 @@
                 O = R && R.stringify,
                 D = f('_hidden'),
                 H = f('toPrimitive'),
-                F = {}.propertyIsEnumerable,
-                I = l('symbol-registry'),
+                I = {}.propertyIsEnumerable,
+                F = l('symbol-registry'),
                 Y = l('symbols'),
                 B = l('op-symbols'),
                 N = Object.prototype,
@@ -5785,7 +5785,7 @@
                     return e;
                 },
                 J = function (e) {
-                    var t = F.call(this, (e = S(e, !0)));
+                    var t = I.call(this, (e = S(e, !0)));
                     return !(this === N && r(Y, e) && !r(B, e)) && (!(t || !r(this, e) || !r(Y, e) || (r(this, D) && this[D][e])) || t);
                 },
                 K = function (e, t) {
@@ -5832,11 +5832,11 @@
             for (var oe = L(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             i(i.S + i.F * !$, 'Symbol', {
                 for: function (e) {
-                    return r(I, (e += '')) ? I[e] : (I[e] = T(e));
+                    return r(F, (e += '')) ? F[e] : (F[e] = T(e));
                 },
                 keyFor: function (e) {
                     if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in I) if (I[t] === e) return t;
+                    for (var t in F) if (F[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -7692,8 +7692,8 @@
                             confirmation_page_top: {is_active: !1, image_url: '', outbound_url: ''},
                             confirmation_page_bottom: {is_active: !1, image_url: '', outbound_url: ''},
                         },
-                        root_page_header_text: 'Start Your Search',
-                        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
+                        root_page_header_text: ''.concat(document.querySelector('meta[name="firstName"]'), ', WHERE WILL YOUR ROOMCASH TAKE YOU?'),
+                        root_page_subheader_text: 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS',
                         is_resbeat_client: !0,
                         confirmation_email_from: '',
                         has_group_booking_banner: !1,
@@ -7928,7 +7928,11 @@
                             {
                                 key: 'buildFooterMenu',
                                 value: function (e, t) {
-                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">About RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/our-mission">Our Mission</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/careers">Careers</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Support</li>\n                        <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>\n                        <li><a target="_blank" href="'
+                                        .concat(
+                                            document.querySelector('.ARN_ServiceLinks.cancelLink').href,
+                                            '">Cancel/Modify</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                        )
                                         .concat(c.path, '/site_configs/')
                                         .concat(
                                             this.config.directory_name,
@@ -8121,7 +8125,7 @@
                                                                                     .querySelector('.ArnRateButton')
                                                                                     .insertAdjacentHTML(
                                                                                         'afterend',
-                                                                                        '\n                <div id="rc-avg-nightly">Average Per Night: <span>'.concat(
+                                                                                        '\n                <div id="rc-avg-nightly">Avg/Night: <span>'.concat(
                                                                                             e.querySelector('.averageNightly').textContent,
                                                                                             '</span></div>\n                '
                                                                                         )

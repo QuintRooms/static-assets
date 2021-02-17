@@ -72,8 +72,8 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'Start Your Search',
-        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
+        root_page_header_text: `${document.querySelector('meta[name="firstName"]')}, WHERE WILL YOUR ROOMCASH TAKE YOU?`,
+        root_page_subheader_text: 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS',
         is_resbeat_client: true,
         confirmation_email_from: '',
         has_group_booking_banner: false,

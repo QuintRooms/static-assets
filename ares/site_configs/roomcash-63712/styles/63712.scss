@@ -2,7 +2,7 @@
 
 $header_background: #000000;
 $logo_flex_position: flex-start;
-$logo_max_width: 200px;
+$logo_max_width: 150px;
 $background_color: #E6E6E6;
 $primary_color: #CC9831;
 $secondary_color: #1C8747;
@@ -19,7 +19,7 @@ $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
 $heading_weight: 800;
 $sub_heading_weight: 400;
-$text_weight: 300;
+$text_weight: 400;
 $desktop: 1100px;
 $tablet: 800px;
 $tablet_small: 700px;
@@ -158,10 +158,12 @@ header {
 
             img {
                 margin-right: 10px;
+                width: 25%;
             }
             
             #balance {
-                font-size: 30px;
+                font-size: 18px;
+                font-weight: 500;
             }
         }
 
@@ -170,8 +172,8 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px;
-            font-size: 16px;
+            padding: 30px;
+            font-size: 15px;
             letter-spacing: 1px;
 
             @include desktop{
@@ -525,7 +527,11 @@ header {
 
     #container-lower {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+
+        .roomcash-amount {
+            text-align: center;
+        }
 
         @include mobile {
             justify-content: space-between;
@@ -618,6 +624,10 @@ header {
         .ArnQuadSearchContainer {
             margin: 30px 0;
 
+            .ArnPrimarySearchContainer {
+                background: rgb(183, 183, 183);
+            }
+
             #CitySearchContainer {
                 width: 50%;
 
@@ -644,6 +654,12 @@ header {
         #ArnPropertyMap {
             width: 24vw;
 
+            .arnMapMarker {
+                border-color: #fff;
+                color: #fff;
+                background-color: $primary_color;
+            }
+
             @include desktop {
                 width: unset;
             }
@@ -659,6 +675,11 @@ header {
         width: 20vw;
         padding: 0 10px;
         margin-left: 0;
+
+        .ArnSearchHeader {
+            margin-right: 13px;
+            font-weight: $heading_weight;
+        }
 
         @include desktop {
             padding: 0;
@@ -751,7 +772,7 @@ header {
 
     #currentPropertyPage {
         background-color: #fff;
-        padding: 80px 24px;
+        padding: 35px 24px;
         width: 55vw;
 
         @include desktop {
@@ -759,7 +780,7 @@ header {
         }
     }
 
-    .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+    .ArnQuadSearchContainer {
         background-color: unset;
         color: $secondary_text_color;
         font-weight: $text_weight;
@@ -812,20 +833,21 @@ header {
     .ArnProperty {
 
         .ArnPropThumb, .ArnPropThumb img {
-            height: 250px;
+            height: 225px;
         }
 
         .ArnPropName {
-            height: 250px;
+            height: 225px;
             padding: 0 12px 0 12px;
             justify-content: flex-start;
+            width: 100%;
 
             @include tablet-small {
                 height: unset;
             }
 
             .ArnTripAdvisorDetails {
-                bottom: 27px;
+                bottom: unset;
 
                 .ratingCount {
                     padding: 5px;
@@ -866,10 +888,6 @@ header {
                 align-self: center;
                 margin-bottom: 20px;
             }
-        }
-
-        .ArnPropName {
-            width: 100%;
         }
 
         #rc-avg-nightly {

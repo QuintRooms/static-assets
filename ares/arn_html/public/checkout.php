@@ -22,6 +22,7 @@
     <meta content="" name="keywords" />
     <meta content="2020-11-06" name="checkIn" />
     <meta content="2020-11-09" name="checkOut" />
+    <meta name="userPoints" content="200">
     <meta content="4" name="numberOfAdults" />
     <meta content="0" name="numberOfKids" />
     <meta content="2" name="numberOfRooms" />

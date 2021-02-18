@@ -467,7 +467,7 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit, #book-another {
     color: $primary_text_color ;
     background-color: $primary_color;
     border: 1px solid $primary_color;
@@ -1057,6 +1057,27 @@ header {
             align-items: flex-start;
         }
 
+    }
+}
+
+/* - - - - - - - - Confirmation Page - - - - - - - - */
+
+.FinalConfirmation {
+
+    .roomcash-earned {
+        padding: 30px;
+        background-color: #000;
+        color: #fff;
+        border: 6px solid $primary_color;
+        text-align: center;
+
+        #book-another {
+
+        }
+
+        strong, a {
+            color: $primary_color;
+        }
     }
 }
 

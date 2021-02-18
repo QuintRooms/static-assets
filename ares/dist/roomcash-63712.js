@@ -7929,7 +7929,16 @@
                                             (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
                                             this.updateText('.dueNowRow th', 'Your Cash')),
-                                        document.querySelector('.ConfirmationForm') && this.buildFooterMenu('#theBookingPage', 'afterend'),
+                                        document.querySelector('.ConfirmationForm') &&
+                                            (this.buildFooterMenu('#theBookingPage', 'afterend'),
+                                            this.insertContent([
+                                                {
+                                                    element: '.GuestForms',
+                                                    position: 'beforeend',
+                                                    html:
+                                                        '\n                    <div class="roomcash-earned">\n                        <p class="congratulations">Congrats, [first name]! This reservation has earned you <strong>$50 RoomCash.</strong></p>\n                        <p id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</p>\n                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>\n                        <p id="dont-forget">Don\'t forget to check out some other ways you can earn <a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a> so you never miss out on savings again!</p>\n                    </div>\n                    ',
+                                                },
+                                            ])),
                                         (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) &&
                                             this.buildFooterMenu('.ArnSubPage', 'afterend');
                                 },
@@ -8099,7 +8108,7 @@
                                                                                       )
                                                                                       .concat(
                                                                                           s.yc,
-                                                                                          '</span>\n                            <p>Your Cash</p>\n                            <p>(per '
+                                                                                          '</span>\n                            <p>Your Cash</p>\n                            <p>(for '
                                                                                       )
                                                                                       .concat(i, ' ')
                                                                                       .concat(
@@ -8113,11 +8122,21 @@
                                                                                       )
                                                                                       .concat(
                                                                                           s.rc,
-                                                                                          '</span>\n                                <p>RoomCash</p>\n                                <p>(per stay)</p>\n                            </div>\n                        </div>\n                        <div class="your-cash-amount">      \n                            <div class="cash-text">\n                                <span class="yc-value">'
+                                                                                          '</span>\n                                <p>RoomCash</p>\n                                <p>(for '
+                                                                                      )
+                                                                                      .concat(i, ' ')
+                                                                                      .concat(
+                                                                                          a,
+                                                                                          ')</p>\n                            </div>\n                        </div>\n                        <div class="your-cash-amount">      \n                            <div class="cash-text">\n                                <span class="yc-value">'
                                                                                       )
                                                                                       .concat(
                                                                                           s.yc,
-                                                                                          '</span>\n                                <p>Your Cash</p>\n                                <p>(per stay)</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                </div>\n'
+                                                                                          '</span>\n                                <p>Your Cash</p>\n                                <p>(for '
+                                                                                      )
+                                                                                      .concat(i, ' ')
+                                                                                      .concat(
+                                                                                          a,
+                                                                                          ')</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                </div>\n'
                                                                                       ),
                                                                             l = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                         if (
@@ -8281,7 +8300,7 @@
                                 value: function (e) {
                                     var t = this;
                                     document.querySelectorAll(e).forEach(function (e) {
-                                        t.updateAttribute(''.concat(e, ' tr:last-of-type td'), 'colspan', '2');
+                                        t.updateAttribute(''.concat(e.classList[0], ' tr:last-of-type td'), 'colspan', '2');
                                     });
                                 },
                             },

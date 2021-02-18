@@ -16,6 +16,8 @@
     <meta content="<?php echo $site_id; ?>" name="siteId" />
     <meta content="SOTX" name="cid" />
     <meta content="hXWCT6jOVdK4WGgw" name="sessionId" />
+    <meta name="userPoints" content="200">
+    <meta content="4657970" name="userId">
     <meta content="58m 14s" name="expiresIn" />
     <meta content="920" name="masterId" />
     <meta content="false" name="isTestMode" />

@@ -112,6 +112,20 @@ export default class Roomcash {
         // Confirmation Page
         if (document.querySelector('.ConfirmationForm')) {
             this.buildFooterMenu('#theBookingPage', 'afterend');
+            this.insertContent([
+                {
+                    element: '.GuestForms',
+                    position: 'beforeend',
+                    html: `
+                    <div class="roomcash-earned">
+                        <p class="congratulations">Congrats, [first name]! This reservation has earned you <strong>$50 RoomCash.</strong></p>
+                        <p id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</p>
+                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>
+                        <p id="dont-forget">Don't forget to check out some other ways you can earn <a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a> so you never miss out on savings again!</p>
+                    </div>
+                    `,
+                },
+            ]);
         }
 
         // Support Page & Cancel/modify Page
@@ -278,7 +292,7 @@ export default class Roomcash {
                         <div class="cash-text">
                             <span class="yc-value">${values.yc}</span>
                             <p>Your Cash</p>
-                            <p>(per ${n_nights} ${stay})</p>
+                            <p>(for ${n_nights} ${stay})</p>
                         </div>
                     </div>
                     </div>
@@ -291,14 +305,14 @@ export default class Roomcash {
                             <div class="cash-text">
                                 <span class="rc-value">${values.rc}</span>
                                 <p>RoomCash</p>
-                                <p>(per stay)</p>
+                                <p>(for ${n_nights} ${stay})</p>
                             </div>
                         </div>
                         <div class="your-cash-amount">      
                             <div class="cash-text">
                                 <span class="yc-value">${values.yc}</span>
                                 <p>Your Cash</p>
-                                <p>(per stay)</p>
+                                <p>(for ${n_nights} ${stay})</p>
                             </div>
                         </div>
                     </div>
@@ -370,7 +384,7 @@ export default class Roomcash {
     restructureRateContainer(elementNodeList) {
         const rates = document.querySelectorAll(elementNodeList);
         rates.forEach((el) => {
-            this.updateAttribute(`${el} tr:last-of-type td`, 'colspan', '2');
+            this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
         });
     }
 }

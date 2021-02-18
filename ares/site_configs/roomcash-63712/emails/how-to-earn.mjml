@@ -13,13 +13,13 @@
         <mj-section padding-bottom="0">
             <mj-column width="100%" padding-bottom="30px">
                 <mj-text align="center" color="#000">
-                    <h1 style="letter-spacing:3px;">HEY THERE, [First Name]!</h1>
+                    <h1 style="letter-spacing:3px;">Hey there, [First Name]!</h1>
                 </mj-text>
-                <mj-text align="center" color="#000" padding-top="20px" font-size="15px">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px" font-size="14px">
                     <span>You already know that hotels cost less with RoomCash, so how would you like to earn more?</span>
                 </mj-text>
-                <mj-text align="center" color="#CC9831" padding-top="20px" font-size="15px">
-                    <span style="font-weight: 500;">Earning RoomCash is quick, simple and instantaneous. Here are just a few of the easy ways you can top up your Reserves!</span>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px" font-size="14px">
+                    <span>Earning RoomCash is quick, simple and instantaneous. Here are just a few of the easy ways you can top up your Reserves!</span>
                 </mj-text>
             </mj-column>
         </mj-section>

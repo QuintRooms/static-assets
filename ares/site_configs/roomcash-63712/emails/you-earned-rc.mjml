@@ -13,16 +13,16 @@
         <mj-section>
             <mj-column width="100%">
                 <mj-text align="center" color="#000">
-                    <h1 style="letter-spacing:3px;">GOOD NEWS, [First Name]!</h1>
+                    <h1 style="letter-spacing:3px;">Good news, [First Name]!</h1>
                 </mj-text>
-                <mj-text align="center" font-size="15px" color="#000" padding-top="20px">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">
                     <span>As [action], you’ve earned another $[value] RoomCash!</span>
                 </mj-text>
-                <mj-text align="center" font-size="15px" color="#000" padding-top="20px">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">
                     <span>We’ve already added this to your RoomCash Reserves, so your new balance is: $[balance].</span>
                 </mj-text>
-                <mj-text align="center" font-size="15px" color="#CC9831" padding-top="20px">
-                    <span style="font-weight: 500;">Ready to make exclusive savings on your next trip?</span>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px">
+                    <span>Ready to make exclusive savings on your next trip?</span>
                 </mj-text>
                 <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
             </mj-column>

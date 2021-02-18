@@ -15,10 +15,10 @@
                 <mj-text align="center" color="#000">
                     <h1 style="letter-spacing:3px;">You're in, [First Name]!</h1>
                 </mj-text>
-                <mj-text align="center" font-weight="600" font-size="15px" color="#000">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000">
                     <span>Welcome to your new way of instantly reducing the cash you spend on hotel rooms!</span>
                 </mj-text>
-                <mj-text align="center" font-weight="600" font-size="15px" color="#CC9831" padding-top="20px">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px">
                     <span>Ready to start saving? Here are a few helpful tips to get you going!</span>
                 </mj-text>
             </mj-column>
@@ -83,7 +83,7 @@
                     <span>You’ve got RoomCash. We’ve got 600,000+ hotels for you to choose from.</span>
                 </mj-text>
                 <mj-text align="center" font-weight="600" color="#CC9831">
-                    <span font-size:15px;">See where your RoomCash can take you!</span>
+                    <span font-size:15px;">See where your RoomCash can take you!"</span>
                 </mj-text>
                 <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
             </mj-column>

@@ -375,6 +375,10 @@ header #admin-container {
     display: none;
   }
 }
+header #admin-container #balance-container {
+  display: flex;
+  justify-content: flex-end;
+}
 header #admin-container #balance-container img {
   margin-right: 10px;
   width: 25%;
@@ -777,7 +781,7 @@ header #AdminControlsContainer .hamburger .line {
   background-color: #fff;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer {
-  margin: 20px 0;
+  margin: 50px 0;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h1, .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h3 {
   color: #000000;
@@ -791,6 +795,9 @@ header #AdminControlsContainer .hamburger .line {
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {
   color: #000;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblCurrency, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblHotelSize, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblNearbyCities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRateTypes, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRating, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblSortByPrice {
+  font-weight: 500;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
   width: 50%;
@@ -991,7 +998,7 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnRateCell, .SearchHotels .ArnProperty .ArnPropClass {
   display: none !important;
 }
-.SearchHotels .ArnProperty .percentSavings, .SearchHotels .ArnProperty .ArnPriceCell {
+.SearchHotels .ArnProperty .percentSavings {
   display: none !important;
 }
 .SearchHotels .ArnProperty .ArnPropNameLink span {
@@ -1151,6 +1158,7 @@ header #AdminControlsContainer .hamburger .line {
   padding: 10px 0;
   max-width: 200px;
   margin: 20px auto;
+  text-decoration: none;
 }
 .FinalConfirmation .roomcash-earned strong, .FinalConfirmation .roomcash-earned a {
   color: #CC9831;

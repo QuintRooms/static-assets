@@ -269,7 +269,11 @@ export default class Roomcash {
         const props = document.querySelectorAll(containerName);
 
         props.forEach((prop, idx) => {
-            if (prop.querySelector('.ArnLimitedAvail')) return;
+            if (prop.querySelector('.ArnLimitedAvail')) {
+                prop.querySelector('.ArnPriceCell').style.display = 'unset';
+                prop.querySelector('.ArnRateButton').style.display = 'none';
+                return;
+            }
             const values = this.getValues(prop);
 
             if (!values.yc || !values.rc || !values.rc_width) return;

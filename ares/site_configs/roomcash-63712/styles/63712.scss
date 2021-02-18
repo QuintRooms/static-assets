@@ -2,7 +2,7 @@
 
 $header_background: #000000;
 $logo_flex_position: flex-start;
-$logo_max_width: 200px;
+$logo_max_width: 150px;
 $background_color: #E6E6E6;
 $primary_color: #CC9831;
 $secondary_color: #1C8747;
@@ -19,11 +19,12 @@ $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
 $heading_weight: 800;
 $sub_heading_weight: 400;
-$text_weight: 300;
+$text_weight: 400;
 $desktop: 1100px;
 $tablet: 800px;
 $tablet_small: 700px;
 $mobile: 600px;
+$mobile_small: 400px;
 
 @mixin desktop {
     @media (max-width: #{$desktop}) {
@@ -49,7 +50,29 @@ $mobile: 600px;
     }
 }
 
+@mixin mobile-small {
+    @media (max-width: #{$mobile_small}) {
+        @content;
+    }
+}
+
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+-webkit-appearance: none;
+border-radius: 0;
+-webkit-border-radius: 0;
+}
+
+input[type="checkbox"] {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
 
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
@@ -66,6 +89,10 @@ header {
         padding: 0;
         margin-left: 30px;
         max-width: 190px;
+
+        @include mobile-small {
+            margin-left: 5px;
+        }
     }
 
     @include tablet {
@@ -88,8 +115,9 @@ header {
         }
 
         #commands.active {
-            transform: translateY(175px);
+            transform: translateY(195px);
             background-color: #000;
+            border-top: 2px solid #CC9831;
         }
     }
 
@@ -127,13 +155,17 @@ header {
         }
 
         #balance-container {
+            display: flex;
+            justify-content: flex-end;
 
             img {
                 margin-right: 10px;
+                width: 25%;
             }
             
             #balance {
-                font-size: 30px;
+                font-size: 18px;
+                font-weight: 500;
             }
         }
 
@@ -142,8 +174,8 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px;
-            font-size: 16px;
+            padding: 30px;
+            font-size: 15px;
             letter-spacing: 1px;
 
             @include desktop{
@@ -184,6 +216,7 @@ header {
 .ArnSupportLinks.ArnSupportBottom {
     background-color: $header_background;
     margin: 0 !important;
+    padding: 20px 0;
 
     .ARN_ServiceLinks, .pb-container, .dvd, .cookie-policy-link {
         display: none;
@@ -198,8 +231,7 @@ header {
             display: flex;
             align-self: center;
             justify-content: center;
-            color: #fff;
-            // color: #6E6F70;
+            color: #6E6F70;
             font-size: 20px;
             font-weight: 400;
             width: 100%;
@@ -208,7 +240,8 @@ header {
                 height: 1px;
                 width: 10%;
                 margin: auto 40px;
-                border-color: #6E6F70;
+                background: #6E6F70;
+                border: none;
 
                 @include tablet {
                     width: 30%;
@@ -233,7 +266,8 @@ header {
             }
 
             img {
-                max-width: 200px;
+                max-width: 165px;
+                filter: brightness(0) invert(.5);
             }
 
             @include tablet-small {
@@ -386,9 +420,11 @@ header {
         }
         
         hr {
-            border: 1px solid #ccc;
             width: 100%;
             margin: 0;
+            background: #ccc;
+            height: 1px;
+            border: none;
 
             @include desktop {
                 width: 100%;
@@ -433,10 +469,10 @@ header {
 
 /* - - - - - - - - Buttons - - - - - - - - */
 
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
-    color: $primary_text_color;
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit, #book-another {
+    color: $primary_text_color ;
     background-color: $primary_color;
-    border-color: $primary_color;
+    border: 1px solid $primary_color;
     text-transform: uppercase;
     font-weight: $sub_heading_weight !important;
     transition-property: color, background;
@@ -445,9 +481,18 @@ header {
 
     &:hover {
         color: $secondary_text_color !important;
-        background-color: $button_hover_background_color;
-        border-color: $primary_color;
+        background-color: $button_hover_background_color !important;
+        border-color: $primary_color !important;
     }
+}
+
+.SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
+    padding: 15px !important;
+}
+
+.SinglePropDetail #moreRatesLink  {
+    width: unset;
+    height: unset;
 }
 
 /* - - - - - - - - Sub-Header - - - - - - - - */
@@ -480,29 +525,71 @@ header {
 
 .roomcash-scale-container {
     display: flex;
+    flex-direction: column;
     margin: 20px 0;
+
+    #container-lower {
+        display: flex;
+        justify-content: space-between;
+
+        .roomcash-amount {
+            text-align: center;
+
+            .tooltip {
+                &:hover span {
+                    top: -10.5em;
+                }
+                span {
+                top: 0em;
+                }
+            }
+        }
+
+        .your-cash-amount {
+            .tooltip {
+                &:hover span {
+                    top: -9.5em;
+                }
+                span {
+                top: 0em;
+                }
+            }
+        }
+
+        @include mobile {
+            justify-content: space-between;
+        }
+    }
 
     .bar {
         height: 10px;
+        border-radius: 25px;
+        width: 100%;
+        background-color: $primary_color;
+        background-image: -webkit-linear-gradient(134deg, $secondary_color 70%, $primary_color 30%);
     }
 
-    .roomcash {
-        border-radius: 20px 0 0 20px;
-        background: $primary_color;
-        clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+    #roomcash-bar-container {
+        height: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
-    .your-cash {
-        border-radius: 0 20px 20px 0;
-        background: $secondary_color;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
-    }
 
     .cash-text {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        min-width: 140px;
+
+        @include mobile {
+            align-items: center;
+        }
+
+        .tooltip {
+            font-family: $google_font_name !important;
+        }
         
         p {
             margin: 0;
@@ -524,15 +611,18 @@ header {
         }
     }
 
-    // should be dynamic
-    .roomcash-amount {
-        width: 50%;
-    }
-    // should be dynamic
-    .your-cash-amount {
-        width: 50%;
+    .tooltip-wrapper {
+
+        @include tablet {
+            display: none;
+        }
+
+        .tooltip span {
+            left: -8em;
+        }
     }
 }
+
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components End  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -545,7 +635,7 @@ header {
         background-color: #fff;
 
         .ArnPrimarySearchOuterContainer {
-            margin: 20px 0;
+            margin: 50px 0;
 
             h1, h3 {
                 color: $secondary_text_color;
@@ -554,8 +644,26 @@ header {
             }
         }
 
-        .ArnQuadSearchContainer {
+        .ArnQuadSearchContainer.ArnPrimarySearchContainer {
             margin: 30px 0;
+            background: rgb(183, 183, 183);
+            color: #000;
+
+            .ArnSecondarySearchOuterContainer {
+                color: #000;
+
+                .lblAmenities, .lblCurrency, .lblHotelSize, .lblNearbyCities, .lblPropertyType, .lblRateTypes, .lblRating, .lblSortByPrice {
+                    font-weight: 500;
+                }
+            }
+
+            #CitySearchContainer {
+                width: 50%;
+
+                @media (max-width: 600px) {
+                    width: unset;
+                }
+            }
         }
     }
 }
@@ -574,7 +682,20 @@ header {
 
         #ArnPropertyMap {
             width: 24vw;
-            height: 75vh !important;
+
+            .arnMapMarker {
+                border-color: #fff;
+                color: #fff;
+                background-color: $primary_color;
+
+                .arnMapMarkerTriangle {
+                    border-top-color: $primary_color;
+                }
+            }
+
+            @include desktop {
+                width: unset;
+            }
         }
     }
     
@@ -588,6 +709,11 @@ header {
         padding: 0 10px;
         margin-left: 0;
 
+        .ArnSearchHeader {
+            margin-left: 13px;
+            font-weight: $heading_weight;
+        }
+
         @include desktop {
             padding: 0;
 
@@ -598,12 +724,17 @@ header {
 
         @include tablet {
             width: unset;
+
+            .show-search-container {
+                margin: 10px 0;
+            }
         }
 
         hr {
             background: #ccc;
             height: 1px;
             margin-top: 30px;
+            border: none;
         }
 
         .ArnPrimarySearchOuterContainer {
@@ -625,12 +756,12 @@ header {
                 padding: 15px !important;
                 margin-top: 10px;
                 font-weight: $text_weight !important;
-                background-color: $background_color;
 
                 @include tablet {
                     width: 100%;
                     padding: 15px !important;
                     margin: 20px 0 0 0;
+                    background-color: $background_color;
                 }
 
             }
@@ -674,7 +805,7 @@ header {
 
     #currentPropertyPage {
         background-color: #fff;
-        padding: 80px 24px;
+        padding: 35px 24px;
         width: 55vw;
 
         @include desktop {
@@ -682,10 +813,20 @@ header {
         }
     }
 
-    .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+    .ArnQuadSearchContainer {
         background-color: unset;
         color: $secondary_text_color;
         font-weight: $text_weight;
+
+        @include tablet {
+            hr {
+                display: none;
+            }
+        }
+
+        @include mobile {
+            font-weight: $sub_heading_weight;
+        }
         
         #theSearchBox{
             #theCheckIn, #theCheckOut, #rooms, #adults {
@@ -725,20 +866,21 @@ header {
     .ArnProperty {
 
         .ArnPropThumb, .ArnPropThumb img {
-            height: 280px;
+            height: 225px;
         }
 
         .ArnPropName {
-            height: 300px;
-            padding: 20px 12px;
-            justify-content: space-evenly;
+            height: 225px;
+            padding: 0 12px 0 12px;
+            justify-content: flex-start;
+            width: 100%;
 
             @include tablet-small {
                 height: unset;
             }
 
             .ArnTripAdvisorDetails {
-                bottom: 35px;
+                bottom: 0;
 
                 .ratingCount {
                     padding: 5px;
@@ -746,15 +888,25 @@ header {
 
                 .reviewCount {
                     align-self: center;
+
+                    a {
+                        letter-spacing: 1px;
+                        font-size: 15px;
+                        font-weight: $sub_heading_weight;
+                    }
                 }
             }
         }
 
-        .ArnRateCell, .ArnPropClass {
+        .ArnRateCell {
+            display: none;
+        }
+
+        .ArnPropClass {
             display: none !important;
         }
 
-        .percentSavings, .ArnPriceCell {
+        .percentSavings {
             display: none !important;
         }
 
@@ -768,12 +920,22 @@ header {
 
         .ArnRateButton {
             max-width: 130px;
+
+            @include mobile {
+                align-self: center;
+                margin-bottom: 20px;
+            }
         }
 
-        .ArnPropName {
-            width: 100%;
-        }
+        #rc-avg-nightly {
+            text-align: right;
+            margin-top: 5px;
 
+
+            @include mobile {
+                text-align: center;
+            }
+        }
     }
 
     // pagination
@@ -786,6 +948,10 @@ header {
 /* - - - - - - - - Property Detail - - - - - - - - */
 
 .SinglePropDetail {
+
+    .RateCalendarPopupAnchor {
+        margin-right: 47px;
+    }
 
     .ArnRightListContainer {
         background-color: #fff;
@@ -832,14 +998,39 @@ header {
     }
 
     @media (max-width: 560px) {
+        .bookRoomCell {
+            display: unset;
+            
+            .ArnNightlyRate {
+                display: none;
+            }
+        }
         .bookRoom {
             align-self: end;
         }
     }
 
+    .ArnNightlyRate {
+        visibility: hidden;
+        margin-bottom: 40px;
+    }
+
     .roomcash-scale-container {
         margin-top: 30px;
-        width: 60%;
+        width: 95%;
+
+        .tooltip {
+            &:hover span {
+                top: -10.5em;
+            }
+            span {
+            top: 0em;
+            }
+        }
+
+        @include tablet {
+            width: 85%;
+        }
 
         @include mobile {
             width: 100%;
@@ -848,14 +1039,19 @@ header {
         .bar {
             margin-top: 10px;
         }
+    }
 
-        // should be dynamic
-        .roomcash-amount {
-            width: 50%;
-        }
-        // should be dynamic
-        .your-cash-amount {
-            width: 50%;
+    @include mobile {
+
+        .rateRow {
+
+            tbody > tr > td:nth-child(2) {
+                margin-top: 10px;
+            }
+
+            .ArnRateCancelAnchor {
+                grid-row: 2 / 3;
+            }
         }
     }
 }
@@ -863,6 +1059,10 @@ header {
 /* - - - - - - - - Checkout Page - - - - - - - - */
 
 .CheckOutForm, .ConfirmationForm {
+
+    .resConfirmationButton {
+        text-align: center;
+    }
 
     #theBookingPage {
         max-width: 1170px;
@@ -876,6 +1076,14 @@ header {
         .PaymentPolicies {
             background-color: #fff;
             border: none;
+
+            .discount th {
+                color: $primary_color;
+            }
+
+            .dueNowRow th {
+                color: $secondary_color;
+            }
         }
     }
 
@@ -889,14 +1097,189 @@ header {
 
 /* - - - - - - - - Confirmation Page - - - - - - - - */
 
-// .ConfirmationForm {
+.FinalConfirmation {
 
-//     #theReservationFormContainer {
-//         margin-bottom: 20px;
-//         background-color: #fff;
+    .roomcash-earned {
+        color: #000;
+        border-top: 10px solid $primary_color;
+        border-bottom: 10px solid $primary_color;
+        text-align: center;
+        margin: 40px 0;
+        padding: 20px 0;
 
-//         #theBookingPage .PaymentPolicies {
-//             border: none;
-//         }
-//     }
-// }
+        .rc-earned-entries {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        #book-another {
+            display: block;
+            padding: 10px 0;
+            max-width: 200px;
+            margin: 20px auto;
+            text-decoration: none;
+        }
+
+        strong, a {
+            color: $primary_color;
+        }
+    }
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+
+body.WBSupportForm{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
+    padding: 50px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 96px;
+    flex-grow: 1;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .useCancelFormWarning {
+        display: none;
+    }
+
+    input, select, textarea {
+        background-color: #fff;
+        border: 1px solid #ccc !important;
+        width: 100%;
+        padding: 12px !important;
+        outline: 0;
+    }
+
+    .ArnSupportChatTable {
+        background-color: #fff;
+        padding: 20px;
+        grid-column-start: 2;
+        grid-row-start: 2;
+
+        @include tablet {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .WBSupportFormContainer {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        background-color: #fff;
+        padding: 20px;
+
+        @include tablet {
+            grid-row-start: 3;
+            grid-column-start: 1;
+            width: 100%;
+        }
+
+        .FormFields {
+            margin-top: 6px;
+        }
+
+        // submit button
+        .WBSupportFormActions {
+            text-align: center;
+            
+            input {
+                border: 1px solid $primary_color !important;
+                width: 50%;
+                padding: 15px !important;
+                background-color: #CC9831 !important;
+            }
+        }
+    }
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+
+.WBResendOrCancelForm {
+    h1 {
+        text-align: center;
+    }
+
+    .ArnSubPage {
+        background: #fff;
+        padding: 20px;
+        margin: 40px auto;
+
+        .WBResendOrCancelFormFields {
+
+            #theEmailAddressAjax input, #theConfirmationNumberAjax input{
+                width: 40% !important;
+
+                @include tablet_small {
+                    width: 80% !important;
+                }
+            }
+        }
+
+        .WBResendOrCancelFormActions {
+            display: flex;
+            justify-content: center;
+
+            input {
+                padding: 15px !important;
+            }
+
+            @include tablet-small {
+                flex-direction: column;
+
+                input {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+    
+}
+
+/* - - - - - - - - Login Page - - - - - - - - */
+
+.WBLoginForm {
+
+    .WBLoginFormActions {
+        display: flex;
+        flex-direction: column;
+
+        .CreateAnAccountAction {
+            margin: 18px 0;
+        }
+    }
+
+    .redeem-promocode-container {
+        display: none;
+    }
+}
+
+/* - - - - - - - - Create an Account Page - - - - - - - - */
+
+.WBValidatedRegistrationForm {
+    
+    #thePassCodeAjax {
+        display: none;
+    }
+
+    .return-to-login {
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

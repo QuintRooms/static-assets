@@ -20,7 +20,7 @@ header {
 }
 
 .logo img {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
@@ -288,6 +288,22 @@ header {
   border-top-color: #CC9831;
 }
 
+textarea,
+input.text,
+input[type=text],
+input[type=button],
+input[type=submit],
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+input[type=checkbox] {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -301,6 +317,11 @@ header .logo img {
   padding: 0;
   margin-left: 30px;
   max-width: 190px;
+}
+@media (max-width: 400px) {
+  header .logo img {
+    margin-left: 5px;
+  }
 }
 @media (max-width: 800px) {
   header #commands {
@@ -318,8 +339,9 @@ header .logo img {
     border-bottom: none;
   }
   header #commands.active {
-    transform: translateY(175px);
+    transform: translateY(195px);
     background-color: #000;
+    border-top: 2px solid #CC9831;
   }
 }
 header #mobile-balance-container {
@@ -353,18 +375,24 @@ header #admin-container {
     display: none;
   }
 }
+header #admin-container #balance-container {
+  display: flex;
+  justify-content: flex-end;
+}
 header #admin-container #balance-container img {
   margin-right: 10px;
+  width: 25%;
 }
 header #admin-container #balance-container #balance {
-  font-size: 30px;
+  font-size: 18px;
+  font-weight: 500;
 }
 header #admin-container .header-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  font-size: 16px;
+  padding: 30px;
+  font-size: 15px;
   letter-spacing: 1px;
 }
 @media (max-width: 1100px) {
@@ -396,6 +424,7 @@ header #AdminControlsContainer .hamburger .line {
 .ArnSupportLinks.ArnSupportBottom {
   background-color: #000000;
   margin: 0 !important;
+  padding: 20px 0;
 }
 .ArnSupportLinks.ArnSupportBottom .ARN_ServiceLinks, .ArnSupportLinks.ArnSupportBottom .pb-container, .ArnSupportLinks.ArnSupportBottom .dvd, .ArnSupportLinks.ArnSupportBottom .cookie-policy-link {
   display: none;
@@ -409,7 +438,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   align-self: center;
   justify-content: center;
-  color: #fff;
+  color: #6E6F70;
   font-size: 20px;
   font-weight: 400;
   width: 100%;
@@ -418,7 +447,8 @@ header #AdminControlsContainer .hamburger .line {
   height: 1px;
   width: 10%;
   margin: auto 40px;
-  border-color: #6E6F70;
+  background: #6E6F70;
+  border: none;
 }
 @media (max-width: 800px) {
   .ArnSupportLinks.ArnSupportBottom #footer #footer-title hr {
@@ -442,7 +472,8 @@ header #AdminControlsContainer .hamburger .line {
   margin: auto;
 }
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
-  max-width: 200px;
+  max-width: 165px;
+  filter: brightness(0) invert(0.5);
 }
 @media (max-width: 700px) {
   .ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
@@ -525,7 +556,7 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   text-decoration: none;
   list-style: none;
-  font-weight: 300;
+  font-weight: 400;
 }
 #footer-menu-container #links-container .links a:hover {
   text-decoration: underline;
@@ -584,9 +615,11 @@ header #AdminControlsContainer .hamburger .line {
   height: auto;
 }
 #footer-menu-container #policy-social hr {
-  border: 1px solid #ccc;
   width: 100%;
   margin: 0;
+  background: #ccc;
+  height: 1px;
+  border: none;
 }
 @media (max-width: 1100px) {
   #footer-menu-container #policy-social hr {
@@ -597,7 +630,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-weight: 300;
+  font-weight: 400;
 }
 @media (max-width: 1100px) {
   #footer-menu-container #policy-social #copyright {
@@ -622,20 +655,29 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Buttons - - - - - - - - */
-.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton {
+.RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit, #book-another {
   color: #fff;
   background-color: #CC9831;
-  border-color: #CC9831;
+  border: 1px solid #CC9831;
   text-transform: uppercase;
   font-weight: 400 !important;
   transition-property: color, background;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
-.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover {
+.RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover, .CreateAnAccountAction:hover, .LoginAction.submit:hover, #book-another:hover {
   color: #000000 !important;
-  background-color: #fff;
-  border-color: #CC9831;
+  background-color: #fff !important;
+  border-color: #CC9831 !important;
+}
+
+.SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
+  padding: 15px !important;
+}
+
+.SinglePropDetail #moreRatesLink {
+  width: unset;
+  height: unset;
 }
 
 /* - - - - - - - - Sub-Header - - - - - - - - */
@@ -665,33 +707,66 @@ header #AdminControlsContainer .hamburger .line {
 /* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
 .roomcash-scale-container {
   display: flex;
+  flex-direction: column;
   margin: 20px 0;
+}
+.roomcash-scale-container #container-lower {
+  display: flex;
+  justify-content: space-between;
+}
+.roomcash-scale-container #container-lower .roomcash-amount {
+  text-align: center;
+}
+.roomcash-scale-container #container-lower .roomcash-amount .tooltip:hover span {
+  top: -10.5em;
+}
+.roomcash-scale-container #container-lower .roomcash-amount .tooltip span {
+  top: 0em;
+}
+.roomcash-scale-container #container-lower .your-cash-amount .tooltip:hover span {
+  top: -9.5em;
+}
+.roomcash-scale-container #container-lower .your-cash-amount .tooltip span {
+  top: 0em;
+}
+@media (max-width: 600px) {
+  .roomcash-scale-container #container-lower {
+    justify-content: space-between;
+  }
 }
 .roomcash-scale-container .bar {
   height: 10px;
+  border-radius: 25px;
+  width: 100%;
+  background-color: #CC9831;
+  background-image: -webkit-linear-gradient(134deg, #1C8747 70%, #CC9831 30%);
 }
-.roomcash-scale-container .roomcash {
-  border-radius: 20px 0 0 20px;
-  background: #CC9831;
-  clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
-}
-.roomcash-scale-container .your-cash {
-  border-radius: 0 20px 20px 0;
-  background: #1C8747;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
+.roomcash-scale-container #roomcash-bar-container {
+  height: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 .roomcash-scale-container .cash-text {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-width: 140px;
+}
+@media (max-width: 600px) {
+  .roomcash-scale-container .cash-text {
+    align-items: center;
+  }
+}
+.roomcash-scale-container .cash-text .tooltip {
+  font-family: "Montserrat" !important;
 }
 .roomcash-scale-container .cash-text p {
   margin: 0;
   font-weight: 400;
 }
 .roomcash-scale-container .cash-text :last-child {
-  font-weight: 300;
+  font-weight: 400;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;
@@ -701,11 +776,13 @@ header #AdminControlsContainer .hamburger .line {
   color: #1C8747;
   font-size: 20px;
 }
-.roomcash-scale-container .roomcash-amount {
-  width: 50%;
+@media (max-width: 800px) {
+  .roomcash-scale-container .tooltip-wrapper {
+    display: none;
+  }
 }
-.roomcash-scale-container .your-cash-amount {
-  width: 50%;
+.roomcash-scale-container .tooltip-wrapper .tooltip span {
+  left: -8em;
 }
 
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
@@ -716,15 +793,31 @@ header #AdminControlsContainer .hamburger .line {
   background-color: #fff;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer {
-  margin: 20px 0;
+  margin: 50px 0;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h1, .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h3 {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer {
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
+  background: #b7b7b7;
+  color: #000;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {
+  color: #000;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblCurrency, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblHotelSize, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblNearbyCities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRateTypes, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRating, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblSortByPrice {
+  font-weight: 500;
+}
+.RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
+    width: unset;
+  }
 }
 
 /* - - - - - - - - Search Results - - - - - - - - */
@@ -736,7 +829,19 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
   width: 24vw;
-  height: 75vh !important;
+}
+.SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
+  border-color: #fff;
+  color: #fff;
+  background-color: #CC9831;
+}
+.SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker .arnMapMarkerTriangle {
+  border-top-color: #CC9831;
+}
+@media (max-width: 1100px) {
+  .SearchHotels .ArnRightListContainer #ArnPropertyMap {
+    width: unset;
+  }
 }
 .SearchHotels input#theSubmitButton {
   padding: 15px !important;
@@ -745,6 +850,10 @@ header #AdminControlsContainer .hamburger .line {
   width: 20vw;
   padding: 0 10px;
   margin-left: 0;
+}
+.SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
+  margin-left: 13px;
+  font-weight: 800;
 }
 @media (max-width: 1100px) {
   .SearchHotels .ArnLeftSearchContainer {
@@ -758,11 +867,15 @@ header #AdminControlsContainer .hamburger .line {
   .SearchHotels .ArnLeftSearchContainer {
     width: unset;
   }
+  .SearchHotels .ArnLeftSearchContainer .show-search-container {
+    margin: 10px 0;
+  }
 }
 .SearchHotels .ArnLeftSearchContainer hr {
   background: #ccc;
   height: 1px;
   margin-top: 30px;
+  border: none;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer {
   margin-top: 10px;
@@ -779,14 +892,14 @@ header #AdminControlsContainer .hamburger .line {
   border: none;
   padding: 15px !important;
   margin-top: 10px;
-  font-weight: 300 !important;
-  background-color: #E6E6E6;
+  font-weight: 400 !important;
 }
 @media (max-width: 800px) {
   .SearchHotels .ArnLeftSearchContainer .sort-wrapper #sort-select {
     width: 100%;
     padding: 15px !important;
     margin: 20px 0 0 0;
+    background-color: #E6E6E6;
   }
 }
 @media (max-width: 1100px) {
@@ -798,7 +911,7 @@ header #AdminControlsContainer .hamburger .line {
   display: none;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer span {
-  font-weight: 300;
+  font-weight: 400;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   text-transform: uppercase;
@@ -815,7 +928,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels #currentPropertyPage {
   background-color: #fff;
-  padding: 80px 24px;
+  padding: 35px 24px;
   width: 55vw;
 }
 @media (max-width: 1100px) {
@@ -823,46 +936,57 @@ header #AdminControlsContainer .hamburger .line {
     width: unset;
   }
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer {
+.SearchHotels .ArnQuadSearchContainer {
   background-color: unset;
   color: #000000;
-  font-weight: 300;
+  font-weight: 400;
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckIn, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #theCheckOut, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #rooms, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox #adults {
-  font-weight: 300 !important;
+@media (max-width: 800px) {
+  .SearchHotels .ArnQuadSearchContainer hr {
+    display: none;
+  }
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox input, .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer #theSearchBox select {
+@media (max-width: 600px) {
+  .SearchHotels .ArnQuadSearchContainer {
+    font-weight: 400;
+  }
+}
+.SearchHotels .ArnQuadSearchContainer #theSearchBox #theCheckIn, .SearchHotels .ArnQuadSearchContainer #theSearchBox #theCheckOut, .SearchHotels .ArnQuadSearchContainer #theSearchBox #rooms, .SearchHotels .ArnQuadSearchContainer #theSearchBox #adults {
+  font-weight: 400 !important;
+}
+.SearchHotels .ArnQuadSearchContainer #theSearchBox input, .SearchHotels .ArnQuadSearchContainer #theSearchBox select {
   padding: 12px !important;
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer .currencies-container {
+.SearchHotels .ArnQuadSearchContainer .currencies-container {
   background-color: #fff;
   padding: 15px;
   margin-top: 20px;
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer .currencies-container .config-label {
+.SearchHotels .ArnQuadSearchContainer .currencies-container .config-label {
   color: #000;
   width: unset;
   border-bottom: none;
 }
-.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer .currencies-container .dropdown {
+.SearchHotels .ArnQuadSearchContainer .currencies-container .dropdown {
   right: unset;
   top: unset;
   z-index: 1;
 }
 @media (max-width: 800px) {
-  .SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer .currencies-container .dropdown {
+  .SearchHotels .ArnQuadSearchContainer .currencies-container .dropdown {
     width: 95%;
     right: 0;
     margin-top: 15px;
   }
 }
 .SearchHotels .ArnProperty .ArnPropThumb, .SearchHotels .ArnProperty .ArnPropThumb img {
-  height: 280px;
+  height: 225px;
 }
 .SearchHotels .ArnProperty .ArnPropName {
-  height: 300px;
-  padding: 20px 12px;
-  justify-content: space-evenly;
+  height: 225px;
+  padding: 0 12px 0 12px;
+  justify-content: flex-start;
+  width: 100%;
 }
 @media (max-width: 700px) {
   .SearchHotels .ArnProperty .ArnPropName {
@@ -870,7 +994,7 @@ header #AdminControlsContainer .hamburger .line {
   }
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails {
-  bottom: 35px;
+  bottom: 0;
 }
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .ratingCount {
   padding: 5px;
@@ -878,10 +1002,18 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount {
   align-self: center;
 }
-.SearchHotels .ArnProperty .ArnRateCell, .SearchHotels .ArnProperty .ArnPropClass {
+.SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount a {
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.SearchHotels .ArnProperty .ArnRateCell {
+  display: none;
+}
+.SearchHotels .ArnProperty .ArnPropClass {
   display: none !important;
 }
-.SearchHotels .ArnProperty .percentSavings, .SearchHotels .ArnProperty .ArnPriceCell {
+.SearchHotels .ArnProperty .percentSavings {
   display: none !important;
 }
 .SearchHotels .ArnProperty .ArnPropNameLink span {
@@ -893,8 +1025,20 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnRateButton {
   max-width: 130px;
 }
-.SearchHotels .ArnProperty .ArnPropName {
-  width: 100%;
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty .ArnRateButton {
+    align-self: center;
+    margin-bottom: 20px;
+  }
+}
+.SearchHotels .ArnProperty #rc-avg-nightly {
+  text-align: right;
+  margin-top: 5px;
+}
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty #rc-avg-nightly {
+    text-align: center;
+  }
 }
 .SearchHotels .ArnPages {
   display: flex;
@@ -902,6 +1046,9 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Property Detail - - - - - - - - */
+.SinglePropDetail .RateCalendarPopupAnchor {
+  margin-right: 47px;
+}
 .SinglePropDetail .ArnRightListContainer {
   background-color: #fff;
 }
@@ -909,7 +1056,7 @@ header #AdminControlsContainer .hamburger .line {
   padding: 10px 0;
 }
 .SinglePropDetail .ArnRightListContainer .RoomDescription {
-  font-weight: 300;
+  font-weight: 400;
 }
 .SinglePropDetail .ArnLeftListContainer {
   margin: 0 40px 0 10px;
@@ -920,30 +1067,51 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch {
   background-color: unset;
   color: #000;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0;
 }
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch input, .SinglePropDetail .ArnLeftListContainer .SimpleSearch select {
   padding: 12px !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit {
   font-weight: 400;
 }
 .SinglePropDetail .ArnLeftListContainer .ArnAmenityContainer {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 .SinglePropDetail .percentSavings {
   display: none !important;
 }
 @media (max-width: 560px) {
+  .SinglePropDetail .bookRoomCell {
+    display: unset;
+  }
+  .SinglePropDetail .bookRoomCell .ArnNightlyRate {
+    display: none;
+  }
   .SinglePropDetail .bookRoom {
     align-self: end;
   }
 }
+.SinglePropDetail .ArnNightlyRate {
+  visibility: hidden;
+  margin-bottom: 40px;
+}
 .SinglePropDetail .roomcash-scale-container {
   margin-top: 30px;
-  width: 60%;
+  width: 95%;
+}
+.SinglePropDetail .roomcash-scale-container .tooltip:hover span {
+  top: -10.5em;
+}
+.SinglePropDetail .roomcash-scale-container .tooltip span {
+  top: 0em;
+}
+@media (max-width: 800px) {
+  .SinglePropDetail .roomcash-scale-container {
+    width: 85%;
+  }
 }
 @media (max-width: 600px) {
   .SinglePropDetail .roomcash-scale-container {
@@ -953,14 +1121,19 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .roomcash-scale-container .bar {
   margin-top: 10px;
 }
-.SinglePropDetail .roomcash-scale-container .roomcash-amount {
-  width: 50%;
-}
-.SinglePropDetail .roomcash-scale-container .your-cash-amount {
-  width: 50%;
+@media (max-width: 600px) {
+  .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {
+    margin-top: 10px;
+  }
+  .SinglePropDetail .rateRow .ArnRateCancelAnchor {
+    grid-row: 2/3;
+  }
 }
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
+.CheckOutForm .resConfirmationButton, .ConfirmationForm .resConfirmationButton {
+  text-align: center;
+}
 .CheckOutForm #theBookingPage, .ConfirmationForm #theBookingPage {
   max-width: 1170px;
 }
@@ -973,6 +1146,12 @@ header #AdminControlsContainer .hamburger .line {
   background-color: #fff;
   border: none;
 }
+.CheckOutForm #theBookingPage .PaymentPolicies .discount th, .ConfirmationForm #theBookingPage .PaymentPolicies .discount th {
+  color: #CC9831;
+}
+.CheckOutForm #theBookingPage .PaymentPolicies .dueNowRow th, .ConfirmationForm #theBookingPage .PaymentPolicies .dueNowRow th {
+  color: #1C8747;
+}
 @media (max-width: 1100px) {
   .CheckOutForm #footer-menu-container, .ConfirmationForm #footer-menu-container {
     align-items: flex-start;
@@ -980,5 +1159,156 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Confirmation Page - - - - - - - - */
+.FinalConfirmation .roomcash-earned {
+  color: #000;
+  border-top: 10px solid #CC9831;
+  border-bottom: 10px solid #CC9831;
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px 0;
+}
+.FinalConfirmation .roomcash-earned .rc-earned-entries {
+  margin: 15px 0;
+  font-size: 17px;
+}
+.FinalConfirmation .roomcash-earned #book-another {
+  display: block;
+  padding: 10px 0;
+  max-width: 200px;
+  margin: 20px auto;
+  text-decoration: none;
+}
+.FinalConfirmation .roomcash-earned strong, .FinalConfirmation .roomcash-earned a {
+  color: #CC9831;
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+body.WBSupportForm {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.ArnSubPage.WBSupportForm {
+  padding: 50px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 96px;
+  flex-grow: 1;
+}
+@media (max-width: 800px) {
+  .ArnSubPage.WBSupportForm {
+    grid-template-columns: 1fr;
+  }
+}
+.ArnSubPage.WBSupportForm h1 {
+  text-align: center;
+}
+.ArnSubPage.WBSupportForm .useCancelFormWarning {
+  display: none;
+}
+.ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select, .ArnSubPage.WBSupportForm textarea {
+  background-color: #fff;
+  border: 1px solid #ccc !important;
+  width: 100%;
+  padding: 12px !important;
+  outline: 0;
+}
+.ArnSubPage.WBSupportForm .ArnSupportChatTable {
+  background-color: #fff;
+  padding: 20px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+@media (max-width: 800px) {
+  .ArnSubPage.WBSupportForm .ArnSupportChatTable {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.ArnSubPage.WBSupportForm .WBSupportFormContainer {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: #fff;
+  padding: 20px;
+}
+@media (max-width: 800px) {
+  .ArnSubPage.WBSupportForm .WBSupportFormContainer {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    width: 100%;
+  }
+}
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields {
+  margin-top: 6px;
+}
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions {
+  text-align: center;
+}
+.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
+  border: 1px solid #CC9831 !important;
+  width: 50%;
+  padding: 15px !important;
+  background-color: #CC9831 !important;
+}
+
+/* - - - - - - - - Support Page - - - - - - - - */
+.WBResendOrCancelForm h1 {
+  text-align: center;
+}
+.WBResendOrCancelForm .ArnSubPage {
+  background: #fff;
+  padding: 20px;
+  margin: 40px auto;
+}
+.WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theEmailAddressAjax input, .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theConfirmationNumberAjax input {
+  width: 40% !important;
+}
+@media (max-width: 700px) {
+  .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theEmailAddressAjax input, .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theConfirmationNumberAjax input {
+    width: 80% !important;
+  }
+}
+.WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions {
+  display: flex;
+  justify-content: center;
+}
+.WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions input {
+  padding: 15px !important;
+}
+@media (max-width: 700px) {
+  .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions {
+    flex-direction: column;
+  }
+  .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions input {
+    margin: 10px 0;
+  }
+}
+
+/* - - - - - - - - Login Page - - - - - - - - */
+.WBLoginForm .WBLoginFormActions {
+  display: flex;
+  flex-direction: column;
+}
+.WBLoginForm .WBLoginFormActions .CreateAnAccountAction {
+  margin: 18px 0;
+}
+.WBLoginForm .redeem-promocode-container {
+  display: none;
+}
+
+/* - - - - - - - - Create an Account Page - - - - - - - - */
+.WBValidatedRegistrationForm #thePassCodeAjax {
+  display: none;
+}
+.WBValidatedRegistrationForm .return-to-login {
+  color: #000;
+}
+.WBValidatedRegistrationForm .return-to-login:hover {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=63712.css.map*/

@@ -16,7 +16,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '',
+            event_name: 'RoomCash ',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -44,7 +44,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-main.png`,
-            logo_outbound_url: 'http://www.placeholder.com/',
+            logo_outbound_url: 'https://roomcash.com/dashboard',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -72,12 +72,13 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'Start Your Search',
-        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
+        root_page_header_text: `${document.querySelector('meta[name="firstName"]')}, WHERE WILL YOUR ROOMCASH TAKE YOU?`,
+        root_page_subheader_text: 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS',
         is_resbeat_client: true,
         confirmation_email_from: '',
         has_group_booking_banner: false,
         group_booking_form_url: '',
+        has_custom_emails: true,
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

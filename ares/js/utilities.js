@@ -466,4 +466,36 @@ export default class Utilities {
         check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
         check_out_input.setAttribute('value', dayjs().add(1, 'day').format('MM/DD/YYYY'));
     }
+
+    /**
+     *@description Adds a styled tool tip to a specified element.
+     *@param string - Element to insert on
+     *@param string - Position to insert on element
+     *@param string - Text content for tool tip
+     *@param string - Tool tip - usually a '?' or 'i'
+     *@param string - Color of tool tip
+     *@param string - Background color of tool tip
+     */
+    async addToolTip(insertElement, insertPosition, tipContent, toolTip, color, backgroundColor) {
+        await this.waitForSelectorInDOM(insertElement);
+
+        document.querySelector(insertElement).insertAdjacentHTML(
+            insertPosition,
+            `
+                <style>
+                .tooltip-wrapper > span b {
+                    color: ${color};
+                    background: ${backgroundColor};
+                }
+                </style>
+                    <span class="tooltip-wrapper">
+                        <span>
+                            <b class="tooltip">${toolTip}
+                                <span>${tipContent}</span>
+                            </b>
+                        </span>
+                    </span>
+            `
+        );
+    }
 }

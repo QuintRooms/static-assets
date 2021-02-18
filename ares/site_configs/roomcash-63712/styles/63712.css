@@ -704,6 +704,14 @@ header #AdminControlsContainer .hamburger .line {
   text-decoration: underline;
 }
 
+.SinglePropDetail .ArnRightListContainer {
+  padding-top: 0;
+}
+.SinglePropDetail #sub-header-container {
+  margin-bottom: 10px;
+  background-color: #E6E6E6;
+}
+
 /* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
 .roomcash-scale-container {
   display: flex;
@@ -1102,10 +1110,19 @@ header #AdminControlsContainer .hamburger .line {
   margin-top: 30px;
   width: 95%;
 }
-.SinglePropDetail .roomcash-scale-container .tooltip:hover span {
-  top: -10.5em;
+.SinglePropDetail .roomcash-scale-container .roomcash-amount {
+  text-align: center;
 }
-.SinglePropDetail .roomcash-scale-container .tooltip span {
+.SinglePropDetail .roomcash-scale-container .roomcash-amount .tooltip:hover span {
+  top: -4em;
+}
+.SinglePropDetail .roomcash-scale-container .roomcash-amount .tooltip span {
+  top: 0em;
+}
+.SinglePropDetail .roomcash-scale-container .your-cash-amount .tooltip:hover span {
+  top: -3em;
+}
+.SinglePropDetail .roomcash-scale-container .your-cash-amount .tooltip span {
   top: 0em;
 }
 @media (max-width: 800px) {

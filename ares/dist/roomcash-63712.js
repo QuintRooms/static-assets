@@ -5755,11 +5755,11 @@
                               o && delete N[t], E(e, t, n), o && e !== N && E(N, t, o);
                           }
                         : E,
-                V = function (e) {
+                z = function (e) {
                     var t = (Y[e] = x(T.prototype));
                     return (t._k = e), t;
                 },
-                z =
+                V =
                     U && 'symbol' == typeof T.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
@@ -5810,7 +5810,7 @@
                             t = function (n) {
                                 this === N && t.call(B, n), r(this, D) && r(this[D], e) && (this[D][e] = !1), G(this, e, w(1, n));
                             };
-                        return s && W && G(N, e, {configurable: !0, set: t}), V(e);
+                        return s && W && G(N, e, {configurable: !0, set: t}), z(e);
                     }).prototype,
                     'toString',
                     function () {
@@ -5824,7 +5824,7 @@
                 (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
-                    return V(f(e));
+                    return z(f(e));
                 })),
                 i(i.G + i.W + i.F * !U, {Symbol: T});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -5835,7 +5835,7 @@
                     return r(F, (e += '')) ? F[e] : (F[e] = T(e));
                 },
                 keyFor: function (e) {
-                    if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                    if (!V(e)) throw TypeError(e + ' is not a symbol!');
                     for (var t in F) if (F[t] === e) return t;
                 },
                 useSetter: function () {
@@ -5876,11 +5876,11 @@
                         {
                             stringify: function (e) {
                                 for (var t, n, o = [e], r = 1; arguments.length > r; ) o.push(arguments[r++]);
-                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !z(e)))
+                                if (((n = t = o[1]), (v(t) || void 0 !== e) && !V(e)))
                                     return (
                                         g(t) ||
                                             (t = function (e, t) {
-                                                if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
+                                                if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                             }),
                                         (o[1] = t),
                                         O.apply(R, o)
@@ -7920,7 +7920,7 @@
                                             this.buildSortSelectMenu()),
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
-                                            this.insertContent([{element: '.PropDetailView', position: 'beforebegin', html: this.sub_header_container}]),
+                                            this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
                                             this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')

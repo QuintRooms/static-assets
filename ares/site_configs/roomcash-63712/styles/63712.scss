@@ -521,6 +521,19 @@ header {
     }
 }
 
+.SinglePropDetail {
+
+    .ArnRightListContainer{
+        padding-top: 0;
+    }
+
+    #sub-header-container {
+    margin-bottom: 10px;
+    background-color: $background_color;
+    }
+}
+
+
 /* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
 
 .roomcash-scale-container {
@@ -1019,12 +1032,27 @@ header {
         margin-top: 30px;
         width: 95%;
 
-        .tooltip {
-            &:hover span {
-                top: -10.5em;
+        .roomcash-amount {
+            text-align: center;
+
+            .tooltip {
+                &:hover span {
+                    top: -4em;
+                }
+                span {
+                top: 0em;
+                }
             }
-            span {
-            top: 0em;
+        }
+
+        .your-cash-amount {
+            .tooltip {
+                &:hover span {
+                    top: -3em;
+                }
+                span {
+                top: 0em;
+                }
             }
         }
 

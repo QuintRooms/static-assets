@@ -88,8 +88,8 @@ export default class Roomcash {
             this.buildFooterMenu('.PropDetailView', 'afterend');
             this.insertContent([
                 {
-                    element: '.PropDetailView',
-                    position: 'beforebegin',
+                    element: '.ArnRightListContainer',
+                    position: 'afterbegin',
                     html: this.sub_header_container,
                 },
             ]);

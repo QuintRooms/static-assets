@@ -8057,16 +8057,17 @@
                                 key: 'getValues',
                                 value: function (e) {
                                     var t;
-                                    return (
-                                        document.querySelector('.SearchHotels')
-                                            ? (t = e.querySelector('.arnUnit').innerHTML)
-                                            : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
-                                        {
-                                            yc: (t = t.substring(0, t.indexOf('<span>'))),
-                                            rc: e.querySelector('.originalPrice').getAttribute('amount'),
-                                            rc_width: e.querySelector('.originalPrice').getAttribute('percent'),
-                                        }
-                                    );
+                                    if (e.querySelector('.originalPrice'))
+                                        return (
+                                            document.querySelector('.SearchHotels')
+                                                ? (t = e.querySelector('.arnUnit').innerHTML)
+                                                : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
+                                            {
+                                                yc: (t = t.substring(0, t.indexOf('<span>'))),
+                                                rc: e.querySelector('.originalPrice').getAttribute('amount'),
+                                                rc_width: e.querySelector('.originalPrice').getAttribute('percent'),
+                                            }
+                                        );
                                 },
                             },
                             {
@@ -8088,12 +8089,12 @@
                                                             return (e.next = 5), u.waitForSelectorInDOM(n);
                                                         case 5:
                                                             document.querySelectorAll(t).forEach(function (e, t) {
-                                                                if (e.querySelector('.ArnLimitedAvail'))
+                                                                var s = r.getValues(e);
+                                                                if (e.querySelector('.ArnLimitedAvail') || !s)
                                                                     return (
                                                                         (e.querySelector('.ArnPriceCell').style.display = 'unset'),
                                                                         void (e.querySelector('.ArnRateButton').style.display = 'none')
                                                                     );
-                                                                var s = r.getValues(e);
                                                                 if (s.yc && s.rc && s.rc_width) {
                                                                     var i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content).get('nights'),
                                                                         a = '1' === i ? 'night' : 'nights',

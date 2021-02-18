@@ -248,6 +248,7 @@ export default class Roomcash {
 
     getValues(property) {
         let your_cash;
+        if (!property.querySelector('.originalPrice')) return undefined;
 
         if (document.querySelector('.SearchHotels')) {
             your_cash = property.querySelector('.arnUnit').innerHTML;
@@ -269,14 +270,13 @@ export default class Roomcash {
         const props = document.querySelectorAll(containerName);
 
         props.forEach((prop, idx) => {
-            if (prop.querySelector('.ArnLimitedAvail')) {
+            const values = this.getValues(prop);
+
+            if (prop.querySelector('.ArnLimitedAvail') || !values) {
                 prop.querySelector('.ArnPriceCell').style.display = 'unset';
                 prop.querySelector('.ArnRateButton').style.display = 'none';
                 return;
             }
-
-            // TODO if no .originalPrice return and make values display
-            const values = this.getValues(prop);
 
             if (!values.yc || !values.rc || !values.rc_width) return;
             const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);

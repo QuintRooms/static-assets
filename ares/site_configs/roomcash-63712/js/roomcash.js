@@ -273,7 +273,7 @@ export default class Roomcash {
             const values = this.getValues(prop);
 
             if (prop.querySelector('.ArnLimitedAvail') || !values) {
-                prop.querySelector('.ArnPriceCell').style.display = 'unset';
+                prop.querySelector('.ArnRateCell').style.display = 'unset';
                 prop.querySelector('.ArnRateButton').style.display = 'none';
                 return;
             }

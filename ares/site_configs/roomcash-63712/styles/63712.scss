@@ -534,6 +534,26 @@ header {
 
         .roomcash-amount {
             text-align: center;
+
+            .tooltip {
+                &:hover span {
+                    top: -10.5em;
+                }
+                span {
+                top: 0em;
+                }
+            }
+        }
+
+        .your-cash-amount {
+            .tooltip {
+                &:hover span {
+                    top: -9.5em;
+                }
+                span {
+                top: 0em;
+                }
+            }
         }
 
         @include mobile {
@@ -878,8 +898,12 @@ header {
             }
         }
 
-        .ArnRateCell, .ArnPropClass {
+        .ArnRateCell {
             display: none;
+        }
+
+        .ArnPropClass {
+            display: none !important;
         }
 
         .percentSavings {
@@ -995,8 +1019,13 @@ header {
         margin-top: 30px;
         width: 95%;
 
-        .tooltip span {
+        .tooltip {
+            &:hover span {
+                top: -10.5em;
+            }
+            span {
             top: 0em;
+            }
         }
 
         @include tablet {

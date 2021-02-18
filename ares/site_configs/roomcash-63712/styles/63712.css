@@ -717,6 +717,18 @@ header #AdminControlsContainer .hamburger .line {
 .roomcash-scale-container #container-lower .roomcash-amount {
   text-align: center;
 }
+.roomcash-scale-container #container-lower .roomcash-amount .tooltip:hover span {
+  top: -10.5em;
+}
+.roomcash-scale-container #container-lower .roomcash-amount .tooltip span {
+  top: 0em;
+}
+.roomcash-scale-container #container-lower .your-cash-amount .tooltip:hover span {
+  top: -9.5em;
+}
+.roomcash-scale-container #container-lower .your-cash-amount .tooltip span {
+  top: 0em;
+}
 @media (max-width: 600px) {
   .roomcash-scale-container #container-lower {
     justify-content: space-between;
@@ -995,8 +1007,11 @@ header #AdminControlsContainer .hamburger .line {
   font-size: 15px;
   font-weight: 400;
 }
-.SearchHotels .ArnProperty .ArnRateCell, .SearchHotels .ArnProperty .ArnPropClass {
+.SearchHotels .ArnProperty .ArnRateCell {
   display: none;
+}
+.SearchHotels .ArnProperty .ArnPropClass {
+  display: none !important;
 }
 .SearchHotels .ArnProperty .percentSavings {
   display: none !important;
@@ -1086,6 +1101,9 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .roomcash-scale-container {
   margin-top: 30px;
   width: 95%;
+}
+.SinglePropDetail .roomcash-scale-container .tooltip:hover span {
+  top: -10.5em;
 }
 .SinglePropDetail .roomcash-scale-container .tooltip span {
   top: 0em;

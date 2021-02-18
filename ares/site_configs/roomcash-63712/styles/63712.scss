@@ -1066,14 +1066,12 @@ header {
 
     .roomcash-earned {
         padding: 30px;
-        background-color: #000;
         color: #fff;
-        border: 6px solid $primary_color;
+        border-top: 10px solid $primary_color;
+        border-bottom: 10px solid $primary_color;
         text-align: center;
-
-        #book-another {
-
-        }
+        margin: 40px 0;
+        padding: 20px 0;
 
         strong, a {
             color: $primary_color;

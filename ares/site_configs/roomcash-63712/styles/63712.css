@@ -1136,10 +1136,12 @@ header #AdminControlsContainer .hamburger .line {
 /* - - - - - - - - Confirmation Page - - - - - - - - */
 .FinalConfirmation .roomcash-earned {
   padding: 30px;
-  background-color: #000;
   color: #fff;
-  border: 6px solid #CC9831;
+  border-top: 10px solid #CC9831;
+  border-bottom: 10px solid #CC9831;
   text-align: center;
+  margin: 40px 0;
+  padding: 20px 0;
 }
 .FinalConfirmation .roomcash-earned strong, .FinalConfirmation .roomcash-earned a {
   color: #CC9831;

@@ -240,7 +240,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h1>Your Room Is Booked!</h1>
-                    <span editable="true">BOOKING NUMBER:[CONFIRMATIONNUMBER,FALLBACK=]</span></div>
+                    <span editable="true">BOOKING NUMBER:[confirmation_number]</span></div>
     
                 </td>
               </tr>
@@ -303,8 +303,8 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><mj-raw>
-                <h2>[Hotel,fallback=]</h2>
-            </mj-raw></div>
+                        <h2>[hotel,fallback=]</h2>
+                    </mj-raw></div>
     
                 </td>
               </tr>
@@ -367,8 +367,8 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><mj-raw>
-                <p style="font-weight: 500; font-size: 14px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
-            </mj-raw></div>
+                        <p style="font-weight: 500; font-size: 14px;">[hotel_address,fallback=] [hotel_city,fallback=], [hotel_state,fallback=] [hotel_zip,fallback=]</p>
+                    </mj-raw></div>
     
                 </td>
               </tr>
@@ -716,7 +716,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guest Name:</b> [GuestName,fallback=]</span></div>
+      ><span><b>Guest Name:</b> [guest_name,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -728,7 +728,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check In:</b> [CheckInDate,fallback=] - [CheckInTime,fallback=]</span></div>
+      ><span><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -740,7 +740,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check Out:</b> [CheckOutDate,fallback=] - [CheckOutTime,fallback=]</span></div>
+      ><span><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -752,7 +752,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guests:</b> [Guests,fallback=]</span></div>
+      ><span><b>Guests:</b> [guests,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -764,7 +764,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rooms:</b> [Rooms,fallback=]</span></div>
+      ><span><b>Rooms:</b> [rooms,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -804,7 +804,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Total for Stay:</b> [CurrencySymbol, fallback=][Total,fallback=]</span></div>
+      ><span><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -816,7 +816,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Tax Amount:</b> [CurrencySymbol, fallback=][TaxAmount,fallback=]</span></div>
+      ><span><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -828,7 +828,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Deposit Charged:</b> 	[CurrencySymbol, fallback=][DepositCharged,fallback=]</span></div>
+      ><span><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -840,7 +840,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Balance Due:</b> [CurrencySymbol, fallback=][BalanceDue,fallback=]</span></div>
+      ><span><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -852,7 +852,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rate Per Night:</b> [RoomRates,fallback=]</span></div>
+      ><span><b>Rate Per Night:</b> [room_rates,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1338,7 +1338,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Room Description</h5>
-                    <span>[RoomDescriptionLong,fallback=]</span></div>
+                    <span>[room_description,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1351,7 +1351,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Deposit Policy</h5>
-                    <span>[DepositPolicyLong,fallback=]</span></div>
+                    <span>[deposit_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1364,7 +1364,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Payment Terms</h5>
-                    <span>[PaymentTermsLong,fallback=]</span></div>
+                    <span>[payment_terms,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1377,7 +1377,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Cancellation Policy</h5>
-                    <span>[CancellationPolicyLong,fallback=]</span></div>
+                    <span>[cancellation_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1390,7 +1390,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Property Policy</h5>
-                    <span>[PropertyPolicy,fallback=]</span></div>
+                    <span>[property_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1403,7 +1403,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Extra Fees Policy</h5>
-                    <span>[ExtraFeesPolicy,fallback=]</span></div>
+                    <span>[extra_fees_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1416,7 +1416,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Payment Policy</h5>
-                    <span>[PaymentPolicy,fallback=]</span></div>
+                    <span>[payment_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1429,7 +1429,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Check In Support Policy</h5>
-                    <span>[CheckInSupportPolicy,fallback=]</span></div>
+                    <span>[check_in_support_policy,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1442,7 +1442,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Important Guest Information</h5>
-                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
+                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
     
                 </td>
               </tr>
@@ -1456,7 +1456,7 @@
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
       ><h5>Reservation Information</h5>
                     <span>For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
-                        [Hotel,fallback=] at [HotelPhone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span></div>
+                        [hotel,fallback=] at [HotelPhone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=63712">click here.</a></span></div>
     
                 </td>
               </tr>
@@ -1519,7 +1519,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h4 style="color:#000; padding-bottom:5px; padding-top:0; margin:0;">Want More RoomCash?</h4>
-            <span style="color:#666666; padding-top:0px;"><a style="color:#CC9831;  font-weight:600;" href=" https://roomcash.com/how-it-works#earn-roomcash">Learn More</a> about how easy it is to add to your <strong style="font-weight:600;">RoomCash</strong> Reserves.</span></div>
+            <span style="color:#666666; padding-top:0px;"><a style="color:#CC9831;  font-weight:600;" href=" https://roomcash.com/how-it-works#earn-roomcash">Learn More</a> about how easy it is to add to your <strong style="font-weight:600; color:#CC9831;">RoomCash</strong> Reserves.</span></div>
     
                 </td>
               </tr>
@@ -1546,6 +1546,21 @@
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h4 style="color:#000; padding-bottom:5px; padding-top:0; margin:0;">Stay in Touch</h4>
             <span style="color:#666666; padding-top:0px;">You'll find us on <a style="color:#CC9831; font-weight:600;" href="">Instagram,</a> <a style="color:#CC9831; font-weight:600;" href="">Facebook</a> & <a style="color:#CC9831; font-weight:600;" href="">Twitter</a></span></div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="center" style="font-size:0px;padding:10px 25px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
+      ><span style="display: none;">
+                <singleline></singleline>
+                <unsubscribe>Unubscribe</unsubscribe>
+            </span></div>
     
                 </td>
               </tr>

@@ -7935,8 +7935,10 @@
                                                 {
                                                     element: '.GuestForms',
                                                     position: 'beforeend',
-                                                    html:
-                                                        '\n                    <div class="roomcash-earned">\n                        <p class="congratulations">Congrats, [first name]! This reservation has earned you <strong>$50 RoomCash.</strong></p>\n                        <p id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</p>\n                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>\n                        <p id="dont-forget">Don\'t forget to check out some other ways you can earn <strong><a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a></strong> so you never miss out on savings again!</p>\n                    </div>\n                    ',
+                                                    html: '\n                    <div class="roomcash-earned">\n                        <div class="rc-earned-entries" id="congratulations">Congrats, '.concat(
+                                                        document.querySelector('meta[name="firstName"]').content,
+                                                        '! This reservation has earned you <strong>$50 RoomCash.</strong></div>\n                        <div class="rc-earned-entries" id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</div>\n                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>\n                        <div class="rc-earned-entries" id="dont-forget">Don\'t forget to check out some other ways you can earn <strong><a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a></strong> so you never miss out on savings again!</div>\n                    </div>\n                    '
+                                                    ),
                                                 },
                                             ])),
                                         (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) &&

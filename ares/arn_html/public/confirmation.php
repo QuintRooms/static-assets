@@ -24,6 +24,7 @@
     <meta content="" name="keywords" />
     <meta content="2021-02-24" name="checkIn" />
     <meta content="2021-02-28" name="checkOut" />
+    <meta content="Matthew" name="firstName">
     <meta content="2" name="numberOfAdults" />
     <meta content="0" name="numberOfKids" />
     <meta content="1" name="numberOfRooms" />

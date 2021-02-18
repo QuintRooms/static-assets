@@ -13,24 +13,24 @@
         <mj-section>
             <mj-column width="100%" padding-bottom="30px">
                 <mj-text align="center" color="#000">
-                    <h1 style="letter-spacing:3px;">YOU'RE IN, [First Name]!</h1>
+                    <h1 style="letter-spacing:3px;">You're in, [First Name]!</h1>
                 </mj-text>
-                <mj-text align="center" font-size="15px" color="#000">
+                <mj-text align="center" font-weight="600" font-size="15px" color="#000">
                     <span>Welcome to your new way of instantly reducing the cash you spend on hotel rooms!</span>
                 </mj-text>
-                <mj-text align="center" font-size="15px" color="#CC9831" padding-top="20px">
-                    <span style="font-weight: 500;">Ready to start saving? Here are a few helpful tips to get you going!</span>
+                <mj-text align="center" font-weight="600" font-size="15px" color="#CC9831" padding-top="20px">
+                    <span>Ready to start saving? Here are a few helpful tips to get you going!</span>
                 </mj-text>
             </mj-column>
         </mj-section>
 
         /* - - - - Grid icon section - - - - */
         <mj-section>
-            <mj-column width="50%" border-bottom="5px solid #fff" border-right="4px solid #fff" padding-right="10px" padding-left="10px" padding-top="10px" padding-bottom="10px" background-color="#E6E6E6" >
+            <mj-column width="50%" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" padding-top="10px" padding-bottom="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
                         <td>
-                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/rc-app-icon.png" alt="RoomCash app icon" />
+                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/lock.png" />
                         </td>
                         <td width="70%">
                             <p>By signing up, you’ve unlocked your RoomCash – congrats! We’ve added $[value] to your <a style="color:#CC9831;" href="https://roomcash.com/dashboard">RoomCash Reserves.</a></p>
@@ -38,19 +38,7 @@
                     </tr>
                 </mj-table>
             </mj-column>
-            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-bottom="5px solid #fff" border-left="4px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
-                <mj-table color="#000">
-                    <tr>
-                        <td>
-                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/calendar-tick.png"/>
-                        </td>
-                        <td width="70%">
-                            <p>You’ll earn another $[value] RoomCash every time you make a booking, so you’ll never miss out on savings again!</p>
-                        </td>
-                    </tr>
-                </mj-table>
-            </mj-column>
-            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-right="4px solid #fff" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
                         <td>
@@ -62,7 +50,19 @@
                     </tr>
                 </mj-table>
             </mj-column>
-            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-left="4px solid #fff" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td>
+                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/calendar-tick.png"/>
+                        </td>
+                        <td width="70%">
+                            <p>You’ll earn another $[value] RoomCash every time you make a booking, so you’ll never miss out on savings again!</p>
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+            <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
                         <td>
@@ -79,11 +79,11 @@
         /* - - - - Spend RoomCash section - - - - */
         <mj-section padding-top="30px">
             <mj-column width="100%">
-                <mj-text align="center" padding-bottom="20px" color="#000">
+                <mj-text align="center" font-weight="600" padding-bottom="20px" color="#000">
                     <span>You’ve got RoomCash. We’ve got 600,000+ hotels for you to choose from.</span>
                 </mj-text>
-                <mj-text align="center" color="#CC9831">
-                    <span style="font-weight: 500; font-size:15px;">See where your RoomCash can take you!</span>
+                <mj-text align="center" font-weight="600" color="#CC9831">
+                    <span font-size:15px;">See where your RoomCash can take you!</span>
                 </mj-text>
                 <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
             </mj-column>

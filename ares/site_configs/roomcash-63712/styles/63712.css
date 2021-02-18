@@ -996,7 +996,7 @@ header #AdminControlsContainer .hamburger .line {
   font-weight: 400;
 }
 .SearchHotels .ArnProperty .ArnRateCell, .SearchHotels .ArnProperty .ArnPropClass {
-  display: none !important;
+  display: none;
 }
 .SearchHotels .ArnProperty .percentSavings {
   display: none !important;

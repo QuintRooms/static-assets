@@ -274,6 +274,8 @@ export default class Roomcash {
                 prop.querySelector('.ArnRateButton').style.display = 'none';
                 return;
             }
+
+            // TODO if no .originalPrice return and make values display
             const values = this.getValues(prop);
 
             if (!values.yc || !values.rc || !values.rc_width) return;

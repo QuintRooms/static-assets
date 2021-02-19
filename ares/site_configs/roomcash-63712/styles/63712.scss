@@ -545,6 +545,11 @@ header {
         display: flex;
         justify-content: space-between;
 
+        .rc-value, .yc-value {
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
         .roomcash-amount {
             text-align: center;
 
@@ -1037,10 +1042,7 @@ header {
 
             .tooltip {
                 &:hover span {
-                    top: -4em;
-                }
-                span {
-                top: 0em;
+                    top: -4em !important;
                 }
             }
         }
@@ -1048,10 +1050,7 @@ header {
         .your-cash-amount {
             .tooltip {
                 &:hover span {
-                    top: -3em;
-                }
-                span {
-                top: 0em;
+                    top: -3em !important;
                 }
             }
         }

@@ -257,7 +257,7 @@ export default class Roomcash {
         }
 
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
-        const room_cash = property.querySelector('.originalPrice').getAttribute('amount');
+        const room_cash = property.querySelector('.originalPrice').getAttribute('amount').substring(1);
         const width = property.querySelector('.originalPrice').getAttribute('percent');
         return {yc: your_cash, rc: room_cash, rc_width: width};
     }
@@ -291,7 +291,7 @@ export default class Roomcash {
                 <div id="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value">${values.rc}</span>
+                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -311,7 +311,7 @@ export default class Roomcash {
                     <div id="container-lower">
                         <div class="roomcash-amount">     
                             <div class="cash-text">
-                                <span class="rc-value">${values.rc}</span>
+                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                                 <p>RoomCash</p>
                                 <p>(for ${n_nights} ${stay})</p>
                             </div>

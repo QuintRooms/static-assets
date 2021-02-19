@@ -722,6 +722,10 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   justify-content: space-between;
 }
+.roomcash-scale-container #container-lower .rc-value, .roomcash-scale-container #container-lower .yc-value {
+  font-weight: 600;
+  margin-top: 5px;
+}
 .roomcash-scale-container #container-lower .roomcash-amount {
   text-align: center;
 }
@@ -1114,16 +1118,10 @@ header #AdminControlsContainer .hamburger .line {
   text-align: center;
 }
 .SinglePropDetail .roomcash-scale-container .roomcash-amount .tooltip:hover span {
-  top: -4em;
-}
-.SinglePropDetail .roomcash-scale-container .roomcash-amount .tooltip span {
-  top: 0em;
+  top: -4em !important;
 }
 .SinglePropDetail .roomcash-scale-container .your-cash-amount .tooltip:hover span {
-  top: -3em;
-}
-.SinglePropDetail .roomcash-scale-container .your-cash-amount .tooltip span {
-  top: 0em;
+  top: -3em !important;
 }
 @media (max-width: 800px) {
   .SinglePropDetail .roomcash-scale-container {

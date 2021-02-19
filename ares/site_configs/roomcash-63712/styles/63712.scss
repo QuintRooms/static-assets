@@ -621,6 +621,11 @@ header {
         .rc-value {
             color: $primary_color;
             font-size: 20px;
+
+            img {
+                width: 15%;
+                margin-right: 8px;
+            }
         }
 
         .yc-value {
@@ -726,6 +731,12 @@ header {
         width: 20vw;
         padding: 0 10px;
         margin-left: 0;
+
+        @include tablet {
+            .search-info {
+                margin-top: 30px;
+            }
+        }
 
         .ArnSearchHeader {
             margin-left: 13px;

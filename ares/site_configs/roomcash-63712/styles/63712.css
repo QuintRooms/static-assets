@@ -784,6 +784,10 @@ header #AdminControlsContainer .hamburger .line {
   color: #CC9831;
   font-size: 20px;
 }
+.roomcash-scale-container .cash-text .rc-value img {
+  width: 15%;
+  margin-right: 8px;
+}
 .roomcash-scale-container .cash-text .yc-value {
   color: #1C8747;
   font-size: 20px;
@@ -862,6 +866,11 @@ header #AdminControlsContainer .hamburger .line {
   width: 20vw;
   padding: 0 10px;
   margin-left: 0;
+}
+@media (max-width: 800px) {
+  .SearchHotels .ArnLeftSearchContainer .search-info {
+    margin-top: 30px;
+  }
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
   margin-left: 13px;

@@ -8105,7 +8105,7 @@
                                                                                       '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div id="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value"><img src="'
                                                                                   )
                                                                                   .concat(c.path, '/site_configs/')
-                                                                                  .concat(r.config.directory_name, '/img/points-icon.png">')
+                                                                                  .concat(r.config.directory_name, '/img/favicon.png">')
                                                                                   .concat(
                                                                                       s.rc,
                                                                                       '</span>\n                            <p>RoomCash</p>\n                            <p>(for '
@@ -8130,7 +8130,7 @@
                                                                                       '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value"><img src="'
                                                                                   )
                                                                                   .concat(c.path, '/site_configs/')
-                                                                                  .concat(r.config.directory_name, '/img/points-icon.png">')
+                                                                                  .concat(r.config.directory_name, '/img/favicon.png">')
                                                                                   .concat(
                                                                                       s.rc,
                                                                                       '</span>\n                                <p>RoomCash</p>\n                                <p>(for '

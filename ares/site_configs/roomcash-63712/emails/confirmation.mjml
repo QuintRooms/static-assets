@@ -7,7 +7,8 @@
 
         /* - - - - Hero Image - - - -*/
         <mj-hero width="100%" padding="0px" padding-right="0">
-            <mj-image src="https://static.hotelsforhope.com/images/stock_photos/conf-hero.jpg" alt="" />
+            <mj-image src="./img/conf-hero3.jpg" alt="" />
+            <!-- <mj-image src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/conf-hero3.jpg" alt="" /> -->
         </mj-hero>
 
         /* - - - - Your room is booked - - - */
@@ -172,43 +173,43 @@
         /* - - - - Policies - - - - */
         <mj-section padding-top="20px" padding-bottom="20px">
             <mj-column width="100%">
-                <mj-text padding-top="20px" padding-bottom="10px">
+                <mj-text padding-top="20px" padding-bottom="10px" align="center">
                     <h5>Room Description</h5>
                     <span>[room_description,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Deposit Policy</h5>
                     <span>[deposit_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Payment Terms</h5>
                     <span>[payment_terms,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Cancellation Policy</h5>
                     <span>[cancellation_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Property Policy</h5>
                     <span>[property_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Extra Fees Policy</h5>
                     <span>[extra_fees_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Payment Policy</h5>
                     <span>[payment_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Check In Support Policy</h5>
                     <span>[check_in_support_policy,fallback=]</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Important Guest Information</h5>
                     <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
                 </mj-text>
-                <mj-text padding-top="10px" padding-bottom="10px">
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Reservation Information</h5>
                     <span>For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
                         [hotel,fallback=] at [hotel_phone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=63712">click here.</a></span>

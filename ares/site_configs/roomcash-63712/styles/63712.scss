@@ -1206,15 +1206,28 @@ body.WBSupportForm{
 
 .ArnSubPage.WBSupportForm {
 
+    h1 {
+        display: none;
+    }
+
     #support-page {
         display: flex;
         flex-direction: column;
 
         #hero-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
             text-align: center;
-            background: url('https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg') no-repeat center center / cover;
             color: #fff;
+            background-position: top;
+            min-height: 300px;
+
+            h1 {
+                display: block !important;
+            }
         }
 
         #support-lower {
@@ -1233,8 +1246,23 @@ body.WBSupportForm{
                 width: 50vw;
                 background: $background_color;
             }
+
+            #contact-form {
+                width: 50vw;
+            }
             
             .contact-item {
+
+                h5 {
+                    font-weight: $text_weight;
+                    margin: 5px 0;
+                }
+
+                #theReasonForInquiryAjax {
+                    select {
+                        color: #666;
+                    }
+                }
                 a {
                     color: #CC9831;
                     text-decoration: none;
@@ -1251,14 +1279,6 @@ body.WBSupportForm{
             justify-content: center;
             padding: 20px;
         }
-    }
-
-    h1:first-of-type {
-        display: none;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .useCancelFormWarning {

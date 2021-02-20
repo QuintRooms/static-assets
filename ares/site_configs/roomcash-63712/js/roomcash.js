@@ -455,8 +455,9 @@ export default class Roomcash {
 
         utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
-        utilities.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm');
         this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
     }
 }

@@ -8063,13 +8063,25 @@
                             {
                                 key: 'removeCurrency',
                                 value: function (e, t) {
-                                    return '$' === t ? e.substring(1) : e.substring(0, e.length - 3);
+                                    var n;
+                                    return '$' ===
+                                        (n = document.querySelector('.SearchHotels')
+                                            ? t.querySelector('.arnCurrency').textContent
+                                            : (n = t.querySelector('.ArnNightlyRate').getAttribute('total')).substring(n.length - 3))
+                                        ? e.substring(1)
+                                        : e.substring(0, e.length - 3);
                                 },
                             },
                             {
                                 key: 'addCurrency',
                                 value: function (e, t) {
-                                    return '$' === t ? ''.concat(t).concat(e) : ''.concat(e, ' ').concat(t);
+                                    var n;
+                                    return '$' ===
+                                        (n = document.querySelector('.SearchHotels')
+                                            ? t.querySelector('.arnCurrency').textContent
+                                            : (n = t.querySelector('.ArnNightlyRate').getAttribute('total')).substring(n.length - 3)) || 'USD' === n
+                                        ? '$'.concat(e)
+                                        : ''.concat(e, ' ').concat(n);
                                 },
                             },
                             {
@@ -8077,14 +8089,13 @@
                                 value: function (e) {
                                     var t;
                                     if (e.querySelector('.originalPrice')) {
-                                        var n = e.querySelector('.arnCurrency').textContent;
                                         document.querySelector('.SearchHotels')
                                             ? (t = e.querySelector('.arnUnit').innerHTML)
                                             : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
                                             (t = t.substring(0, t.indexOf('<span>')));
-                                        var o = e.querySelector('.originalPrice').getAttribute('amount'),
-                                            r = e.querySelector('.originalPrice').getAttribute('percent');
-                                        return (o = this.removeCurrency(o, n)), {yc: (t = this.addCurrency(t, n)), rc: o, rc_width: r, currency: n};
+                                        var n = e.querySelector('.originalPrice').getAttribute('amount'),
+                                            o = e.querySelector('.originalPrice').getAttribute('percent');
+                                        return (n = this.removeCurrency(n, e)), {yc: (t = this.addCurrency(t, e)), rc: n, rc_width: o};
                                     }
                                 },
                             },

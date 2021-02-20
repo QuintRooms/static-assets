@@ -257,16 +257,32 @@ export default class Roomcash {
         });
     }
 
-    removeCurrency(value, currency) {
+    removeCurrency(value, element) {
+        let currency;
+        if (document.querySelector('.SearchHotels')) {
+            currency = element.querySelector('.arnCurrency').textContent;
+        } else {
+            currency = element.querySelector('.ArnNightlyRate').getAttribute('total');
+            currency = currency.substring(currency.length - 3);
+        }
+
         if (currency === '$') {
             return value.substring(1);
         }
         return value.substring(0, value.length - 3);
     }
 
-    addCurrency(value, currency) {
-        if (currency === '$') {
-            return `${currency}${value}`;
+    addCurrency(value, element) {
+        let currency;
+        if (document.querySelector('.SearchHotels')) {
+            currency = element.querySelector('.arnCurrency').textContent;
+        } else {
+            currency = element.querySelector('.ArnNightlyRate').getAttribute('total');
+            currency = currency.substring(currency.length - 3);
+        }
+
+        if (currency === '$' || currency === 'USD') {
+            return `$${value}`;
         }
         return `${value} ${currency}`;
     }
@@ -274,8 +290,6 @@ export default class Roomcash {
     getValues(property) {
         let your_cash;
         if (!property.querySelector('.originalPrice')) return undefined;
-
-        const curr = property.querySelector('.arnCurrency').textContent;
 
         if (document.querySelector('.SearchHotels')) {
             your_cash = property.querySelector('.arnUnit').innerHTML;
@@ -287,9 +301,9 @@ export default class Roomcash {
         let room_cash = property.querySelector('.originalPrice').getAttribute('amount');
         const width = property.querySelector('.originalPrice').getAttribute('percent');
 
-        room_cash = this.removeCurrency(room_cash, curr);
-        your_cash = this.addCurrency(your_cash, curr);
-        return {yc: your_cash, rc: room_cash, rc_width: width, currency: curr};
+        room_cash = this.removeCurrency(room_cash, property);
+        your_cash = this.addCurrency(your_cash, property);
+        return {yc: your_cash, rc: room_cash, rc_width: width};
     }
 
     async addRoomCashBar(containerName, insertElement, insertPosition) {

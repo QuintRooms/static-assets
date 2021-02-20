@@ -1228,19 +1228,53 @@ body.WBSupportForm {
   min-height: 100vh;
   flex-direction: column;
 }
-
-.ArnSubPage.WBSupportForm {
-  padding: 50px;
-  margin: 30px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 96px;
-  flex-grow: 1;
+body.WBSupportForm .ArnSupportChatTable {
+  display: none;
 }
-@media (max-width: 800px) {
-  .ArnSubPage.WBSupportForm {
-    grid-template-columns: 1fr;
-  }
+body.WBSupportForm .ArnSubPage {
+  max-width: 100vw;
+  margin: 0;
+}
+
+.ArnSubPage.WBSupportForm #support-page {
+  display: flex;
+  flex-direction: column;
+}
+.ArnSubPage.WBSupportForm #support-page #hero-image {
+  width: 100%;
+  text-align: center;
+  background: url("https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg");
+  color: #fff;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower {
+  display: flex;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower #contact-details {
+  width: 50vw;
+  background: #fff;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower #support-form {
+  width: 50vw;
+  background: #E6E6E6;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item a {
+  color: #CC9831;
+  text-decoration: none;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item a:hover {
+  text-decoration: underline;
+}
+.ArnSubPage.WBSupportForm #support-page .WBSupportFormContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.ArnSubPage.WBSupportForm h1:first-of-type {
+  display: none;
 }
 .ArnSubPage.WBSupportForm h1 {
   text-align: center;
@@ -1250,52 +1284,31 @@ body.WBSupportForm {
 }
 .ArnSubPage.WBSupportForm input, .ArnSubPage.WBSupportForm select, .ArnSubPage.WBSupportForm textarea {
   background-color: #fff;
-  border: 1px solid #ccc !important;
+  border: none !important;
   width: 100%;
   padding: 12px !important;
   outline: 0;
 }
-.ArnSubPage.WBSupportForm .ArnSupportChatTable {
-  background-color: #fff;
-  padding: 20px;
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-@media (max-width: 800px) {
-  .ArnSubPage.WBSupportForm .ArnSupportChatTable {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-.ArnSubPage.WBSupportForm .WBSupportFormContainer {
-  grid-column-start: 1;
-  grid-row-start: 2;
-  background-color: #fff;
-  padding: 20px;
-}
-@media (max-width: 800px) {
-  .ArnSubPage.WBSupportForm .WBSupportFormContainer {
-    grid-row-start: 3;
-    grid-column-start: 1;
-    width: 100%;
-  }
-}
-.ArnSubPage.WBSupportForm .WBSupportFormContainer .FormFields {
+.ArnSubPage.WBSupportForm .FormFields {
   margin-top: 6px;
 }
-.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions {
+.ArnSubPage.WBSupportForm .FormFields label {
+  display: none;
+}
+.ArnSubPage.WBSupportForm .WBSupportFormActions {
   text-align: center;
 }
-.ArnSubPage.WBSupportForm .WBSupportFormContainer .WBSupportFormActions input {
+.ArnSubPage.WBSupportForm .WBSupportFormActions input {
   border: 1px solid #CC9831 !important;
   width: 50%;
   padding: 15px !important;
   background-color: #CC9831 !important;
 }
+.ArnSubPage.WBSupportForm .WBSupportFormFields #theReservationConfirmationNumberAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theDateOfArrivalAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theHotelNameAjax {
+  display: none;
+}
 
-/* - - - - - - - - Support Page - - - - - - - - */
+/* - - - - - - - - Cancel/modify Page - - - - - - - - */
 .WBResendOrCancelForm h1 {
   text-align: center;
 }

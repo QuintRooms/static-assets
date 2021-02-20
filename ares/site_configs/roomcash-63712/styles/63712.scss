@@ -1193,18 +1193,68 @@ body.WBSupportForm{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
+    .ArnSupportChatTable {
+        display: none;
+    }
+
+    .ArnSubPage {
+        max-width: 100vw;
+        margin: 0;
+    }
 }
 
 .ArnSubPage.WBSupportForm {
-    padding: 50px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 96px;
-    flex-grow: 1;
 
-    @include tablet {
-        grid-template-columns: 1fr;
+    #support-page {
+        display: flex;
+        flex-direction: column;
+
+        #hero-image {
+            width: 100%;
+            text-align: center;
+            background: url('https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg');
+            color: #fff;
+        }
+
+        #support-lower {
+            display: flex;
+
+            #contact-details {
+                width: 50vw;
+                background: #fff;
+                padding: 0 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+
+            #support-form {
+                width: 50vw;
+                background: $background_color;
+            }
+            
+            .contact-item {
+                a {
+                    color: #CC9831;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .WBSupportFormContainer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+    }
+
+    h1:first-of-type {
+        display: none;
     }
 
     h1 {
@@ -1217,57 +1267,41 @@ body.WBSupportForm{
 
     input, select, textarea {
         background-color: #fff;
-        border: 1px solid #ccc !important;
+        border: none !important;
         width: 100%;
         padding: 12px !important;
         outline: 0;
     }
 
-    .ArnSupportChatTable {
-        background-color: #fff;
-        padding: 20px;
-        grid-column-start: 2;
-        grid-row-start: 2;
 
-        @include tablet {
-            grid-row-start: 2;
-            grid-column-start: 1;
-            width: 100%;
-            margin-bottom: 10px;
+    .FormFields {
+        margin-top: 6px;
+
+        label {
+            display: none;
         }
     }
 
-    .WBSupportFormContainer {
-        grid-column-start: 1;
-        grid-row-start: 2;
-        background-color: #fff;
-        padding: 20px;
-
-        @include tablet {
-            grid-row-start: 3;
-            grid-column-start: 1;
-            width: 100%;
+    // submit button
+    .WBSupportFormActions {
+        text-align: center;
+        
+        input {
+            border: 1px solid $primary_color !important;
+            width: 50%;
+            padding: 15px !important;
+            background-color: #CC9831 !important;
         }
+    }
 
-        .FormFields {
-            margin-top: 6px;
-        }
-
-        // submit button
-        .WBSupportFormActions {
-            text-align: center;
-            
-            input {
-                border: 1px solid $primary_color !important;
-                width: 50%;
-                padding: 15px !important;
-                background-color: #CC9831 !important;
-            }
+    .WBSupportFormFields {
+        #theReservationConfirmationNumberAjax, #theDateOfArrivalAjax,  #theHotelNameAjax {
+            display: none;
         }
     }
 }
 
-/* - - - - - - - - Support Page - - - - - - - - */
+/* - - - - - - - - Cancel/modify Page - - - - - - - - */
 
 .WBResendOrCancelForm {
     h1 {

@@ -19,6 +19,7 @@
     <meta content="45m 57s" name="expiresIn" />
     <meta content="2143" name="masterId" />
     <meta content="false" name="isTestMode" />
+    <meta name="userPoints" content="200">
     <meta content="" name="keywords" />
     <meta content="2020-11-06" name="checkIn" />
     <meta content="2020-11-09" name="checkOut" />

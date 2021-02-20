@@ -132,8 +132,14 @@ export default class Roomcash {
             ]);
         }
 
-        // Support Page & Cancel/modify Page
-        if (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) {
+        // Support Page
+        if (document.querySelector('.WBSupportForm')) {
+            this.buildFooterMenu('.ArnSubPage', 'afterend');
+            this.buildSupportPage();
+        }
+
+        // Cancel Modify Page
+        if (document.querySelector('.WBResendOrCancelForm')) {
             this.buildFooterMenu('.ArnSubPage', 'afterend');
         }
     }
@@ -397,4 +403,60 @@ export default class Roomcash {
     //         this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
     //     });
     // }
+
+    async buildSupportPage() {
+        const support_form = document.querySelector('.WBSupportFormContainer');
+
+        this.insertContent([
+            {
+                element: '.ArnSubPage.WBSupportForm',
+                position: 'afterbegin',
+                html: `
+                    <div id="support-page">
+                        <div id="hero-image">
+                            <h1>GET IN TOUCH</h1>
+                            <span>We're here to help! Contact us and we'll help you anyway we can</span>
+                        </div>
+                        <div id="support-lower">
+                            <div id="contact-details">
+                                <div id="support" class="contact-item">
+                                    <h3>Customer Support</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                                <div id="partner" class="contact-item">
+                                    <h3>PARTNER INQUIRIES</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                                <div id="marketing" class="contact-item">
+                                    <h3>MARKETING INQUIRIES</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                            </div>
+                            <div id="contact-form">
+                            </div>
+                        </div>
+                    </div>
+                    `,
+            },
+            {
+                element: '.ArnSubPage.WBSupportForm',
+                position: 'afterbegin',
+                html: this.sub_header_container,
+            },
+        ]);
+
+        await utilities.waitForSelectorInDOM('#contact-form');
+        document.querySelector('#contact-form').insertAdjacentElement('afterbegin', support_form);
+
+        this.updateText('WBSupportFormActions input', 'GET IN TOUCH');
+
+        utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportForm');
+        this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry');
+        utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
+    }
 }

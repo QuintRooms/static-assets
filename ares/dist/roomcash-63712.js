@@ -8333,11 +8333,11 @@
                                                                 );
                                                             case 4:
                                                                 document.querySelector('#contact-form').insertAdjacentElement('afterbegin', t),
-                                                                    this.updateText('WBSupportFormActions input', 'GET IN TOUCH'),
+                                                                    this.updateText('.WBSupportFormActions input', 'GET IN TOUCH'),
                                                                     u.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm'),
-                                                                    this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry'),
+                                                                    this.updateText('#theReasonForInquiryAjax select option[value="32"]', 'Reason for inquiry'),
                                                                     u.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
                                                             case 12:

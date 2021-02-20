@@ -1228,10 +1228,19 @@ body.WBSupportForm{
             h1 {
                 display: block !important;
             }
+
+            span {
+                font-size: 17px;
+                letter-spacing: 1px;
+            }
         }
 
         #support-lower {
             display: flex;
+
+            @include mobile {
+                flex-direction: column;
+            }
 
             #contact-details {
                 width: 50vw;
@@ -1240,15 +1249,20 @@ body.WBSupportForm{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-            }
 
-            #support-form {
-                width: 50vw;
-                background: $background_color;
+                @include mobile {
+                    width: 100vw;
+                    align-items: center;
+                    padding: 20px 80px;
+                }
             }
 
             #contact-form {
                 width: 50vw;
+
+                @include mobile {
+                    width: 100vw;
+                }
             }
             
             .contact-item {
@@ -1258,11 +1272,6 @@ body.WBSupportForm{
                     margin: 5px 0;
                 }
 
-                #theReasonForInquiryAjax {
-                    select {
-                        color: #666;
-                    }
-                }
                 a {
                     color: #CC9831;
                     text-decoration: none;
@@ -1277,7 +1286,17 @@ body.WBSupportForm{
         .WBSupportFormContainer {
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 40px;
+
+            #theReasonForInquiryAjax {
+                select {
+                    color: #666;
+                }
+            }
+
+            #theWBSupportFormBody {
+                width: 100%;
+            }
         }
     }
 
@@ -1295,7 +1314,7 @@ body.WBSupportForm{
 
 
     .FormFields {
-        margin-top: 6px;
+        margin: 15px 0;
 
         label {
             display: none;
@@ -1307,10 +1326,10 @@ body.WBSupportForm{
         text-align: center;
         
         input {
-            border: 1px solid $primary_color !important;
-            width: 50%;
+            border: 1px solid $primary_color;
+            width: 100%;
             padding: 15px !important;
-            background-color: #CC9831 !important;
+            background-color: #CC9831;
         }
     }
 

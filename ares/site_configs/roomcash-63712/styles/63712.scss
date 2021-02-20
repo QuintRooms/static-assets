@@ -1326,10 +1326,16 @@ body.WBSupportForm{
         text-align: center;
         
         input {
-            border: 1px solid $primary_color;
+            border: 1px solid $primary_color !important;
             width: 100%;
             padding: 15px !important;
             background-color: #CC9831;
+
+            &:hover {
+                color: $secondary_text_color !important;
+                background-color: $button_hover_background_color !important;
+                border-color: $primary_color !important;
+            }
         }
     }
 
@@ -1361,6 +1367,10 @@ body.WBSupportForm{
                     width: 80% !important;
                 }
             }
+        }
+
+        .emailWarning2 a {
+            color: $primary_color;
         }
 
         .WBResendOrCancelFormActions {

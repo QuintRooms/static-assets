@@ -8,7 +8,7 @@ const utilities = new Utilities();
 export default class Roomcash {
     constructor(config) {
         this.config = config;
-        this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
+        this.user_points = null;
         this.sub_header_container = `
         <span id="sub-header-container">
             <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
@@ -20,6 +20,9 @@ export default class Roomcash {
     }
 
     init() {
+        if (document.querySelector('.MemberAuthenticated')) {
+            this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
+        }
         // All pages
         this.insertContent([
             {
@@ -155,7 +158,7 @@ export default class Roomcash {
                 </div>
                 <div class="links">
                         <li class="links-header">Support</li>
-                        <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>
+                        <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.supportLink').href}">Contact Us</a></li>
                         <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.cancelLink').href}">Cancel/Modify</a></li>
                 </div>
                 <div class="links">
@@ -254,9 +257,25 @@ export default class Roomcash {
         });
     }
 
+    removeCurrency(value, currency) {
+        if (currency === '$') {
+            return value.substring(1);
+        }
+        return value.substring(0, value.length - 3);
+    }
+
+    addCurrency(value, currency) {
+        if (currency === '$') {
+            return `${currency}${value}`;
+        }
+        return `${value} ${currency}`;
+    }
+
     getValues(property) {
         let your_cash;
         if (!property.querySelector('.originalPrice')) return undefined;
+
+        const curr = property.querySelector('.arnCurrency').textContent;
 
         if (document.querySelector('.SearchHotels')) {
             your_cash = property.querySelector('.arnUnit').innerHTML;
@@ -265,9 +284,12 @@ export default class Roomcash {
         }
 
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
-        const room_cash = property.querySelector('.originalPrice').getAttribute('amount').substring(1);
+        let room_cash = property.querySelector('.originalPrice').getAttribute('amount');
         const width = property.querySelector('.originalPrice').getAttribute('percent');
-        return {yc: your_cash, rc: room_cash, rc_width: width};
+
+        room_cash = this.removeCurrency(room_cash, curr);
+        your_cash = this.addCurrency(your_cash, curr);
+        return {yc: your_cash, rc: room_cash, rc_width: width, currency: curr};
     }
 
     async addRoomCashBar(containerName, insertElement, insertPosition) {
@@ -299,7 +321,7 @@ export default class Roomcash {
                 <div id="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
+                            <span class="rc-value">${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -456,7 +478,7 @@ export default class Roomcash {
         utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm');
-        this.updateText('#theReasonForInquiryAjax select option[value="32"]', 'Reason for inquiry');
+        this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
     }

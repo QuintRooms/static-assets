@@ -7869,7 +7869,7 @@
                             (this.config = t),
                             (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
                             (this.sub_header_container =
-                                '\n        <span id="sub-header-container">\n            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
+                                '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
                     var t, n, o, r, s, l, d, m, f;
@@ -7921,7 +7921,6 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
-                                            this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
@@ -7931,13 +7930,15 @@
                                             this.updateText('.dueNowRow th', 'Your Cash')),
                                         document.querySelector('.ConfirmationForm') &&
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
+                                            this.updateText('.discount th', 'RoomCash'),
+                                            this.updateText('.balanceDueRow th', 'Your Cash'),
                                             this.insertContent([
                                                 {
                                                     element: '.GuestForms',
                                                     position: 'beforeend',
                                                     html: '\n                    <div class="roomcash-earned">\n                        <div class="rc-earned-entries" id="congratulations">Congrats, '.concat(
                                                         document.querySelector('meta[name="firstName"]').content,
-                                                        '! This reservation has earned you <strong>$50 RoomCash.</strong></div>\n                        <div class="rc-earned-entries" id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</div>\n                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>\n                        <div class="rc-earned-entries" id="dont-forget">Don\'t forget to check out some other ways you can earn <strong><a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a></strong> so you never miss out on savings again!</div>\n                    </div>\n                    '
+                                                        '! This reservation has earned you <strong>$50 RoomCash.</strong></div>\n                        <div class="rc-earned-entries" id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</div>\n                        <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>\n                        <div class="rc-earned-entries" id="dont-forget">Don\'t forget to check out some other ways you can <strong><a href="https://roomcash.com/how-it-works" target="_blank">earn RoomCash</a></strong> so you never miss out on savings again!</div>\n                    </div>\n                    '
                                                     ),
                                                 },
                                             ])),
@@ -8105,7 +8106,7 @@
                                                                                       '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div id="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value"><img src="'
                                                                                   )
                                                                                   .concat(c.path, '/site_configs/')
-                                                                                  .concat(r.config.directory_name, '/img/favicon.png">')
+                                                                                  .concat(r.config.directory_name, '/img/points-icon.png">')
                                                                                   .concat(
                                                                                       s.rc,
                                                                                       '</span>\n                            <p>RoomCash</p>\n                            <p>(for '
@@ -8130,7 +8131,7 @@
                                                                                       '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value"><img src="'
                                                                                   )
                                                                                   .concat(c.path, '/site_configs/')
-                                                                                  .concat(r.config.directory_name, '/img/favicon.png">')
+                                                                                  .concat(r.config.directory_name, '/img/points-icon.png">')
                                                                                   .concat(
                                                                                       s.rc,
                                                                                       '</span>\n                                <p>RoomCash</p>\n                                <p>(for '
@@ -8304,15 +8305,6 @@
                                     function (e, t, n) {
                                         return r.apply(this, arguments);
                                     }),
-                            },
-                            {
-                                key: 'restructureRateContainer',
-                                value: function (e) {
-                                    var t = this;
-                                    document.querySelectorAll(e).forEach(function (e) {
-                                        t.updateAttribute(''.concat(e.classList[0], ' tr:last-of-type td'), 'colspan', '2');
-                                    });
-                                },
                             },
                         ]) && a(t.prototype, n),
                         o && a(t, o),

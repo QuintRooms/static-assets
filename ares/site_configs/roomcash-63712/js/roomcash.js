@@ -11,10 +11,10 @@ export default class Roomcash {
         this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
         this.sub_header_container = `
         <span id="sub-header-container">
-            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>
-            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
-            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
         this.init();
     }
@@ -93,7 +93,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
+            // this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
 
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
@@ -112,6 +112,8 @@ export default class Roomcash {
         // Confirmation Page
         if (document.querySelector('.ConfirmationForm')) {
             this.buildFooterMenu('#theBookingPage', 'afterend');
+            this.updateText('.discount th', 'RoomCash');
+            this.updateText('.balanceDueRow th', 'Your Cash');
             this.insertContent([
                 {
                     element: '.GuestForms',
@@ -123,7 +125,7 @@ export default class Roomcash {
                         }! This reservation has earned you <strong>$50 RoomCash.</strong></div>
                         <div class="rc-earned-entries" id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</div>
                         <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>
-                        <div class="rc-earned-entries" id="dont-forget">Don't forget to check out some other ways you can earn <strong><a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a></strong> so you never miss out on savings again!</div>
+                        <div class="rc-earned-entries" id="dont-forget">Don't forget to check out some other ways you can <strong><a href="https://roomcash.com/how-it-works" target="_blank">earn RoomCash</a></strong> so you never miss out on savings again!</div>
                     </div>
                     `,
                 },
@@ -291,7 +293,7 @@ export default class Roomcash {
                 <div id="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/favicon.png">${values.rc}</span>
+                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -311,7 +313,7 @@ export default class Roomcash {
                     <div id="container-lower">
                         <div class="roomcash-amount">     
                             <div class="cash-text">
-                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/favicon.png">${values.rc}</span>
+                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                                 <p>RoomCash</p>
                                 <p>(for ${n_nights} ${stay})</p>
                             </div>
@@ -389,10 +391,10 @@ export default class Roomcash {
         document.querySelector(element).setAttribute(name, newAttr);
     }
 
-    restructureRateContainer(elementNodeList) {
-        const rates = document.querySelectorAll(elementNodeList);
-        rates.forEach((el) => {
-            this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
-        });
-    }
+    // restructureRateContainer(elementNodeList) {
+    //     const rates = document.querySelectorAll(elementNodeList);
+    //     rates.forEach((el) => {
+    //         this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
+    //     });
+    // }
 }

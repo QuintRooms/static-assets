@@ -311,7 +311,7 @@ input[type=checkbox] {
 header {
   justify-content: space-between;
   border-bottom: none;
-  height: 110px;
+  height: 100px;
 }
 header .logo img {
   padding: 0;
@@ -688,6 +688,9 @@ header #AdminControlsContainer .hamburger .line {
   justify-content: center;
   align-items: center;
 }
+#sub-header-container #daily-deals {
+  display: none;
+}
 @media (max-width: 800px) {
   #sub-header-container {
     display: none;
@@ -730,7 +733,7 @@ header #AdminControlsContainer .hamburger .line {
   text-align: center;
 }
 .roomcash-scale-container #container-lower .roomcash-amount .tooltip:hover span {
-  top: -10.5em;
+  top: -11.5em;
 }
 .roomcash-scale-container #container-lower .roomcash-amount .tooltip span {
   top: 0em;
@@ -764,6 +767,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: column;
   min-width: 140px;
+  text-align: center;
 }
 @media (max-width: 600px) {
   .roomcash-scale-container .cash-text {
@@ -818,7 +822,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
-  background: #b7b7b7;
+  background: linear-gradient(rgba(183, 183, 183, 0.5), rgba(183, 183, 183, 0.5));
   color: #000;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {
@@ -1183,6 +1187,15 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Confirmation Page - - - - - - - - */
+.FinalConfirmation #theReservationFormContainer .discount th {
+  color: #CC9831;
+}
+.FinalConfirmation #theReservationFormContainer .balanceDueRow th {
+  color: #1C8747;
+}
+.FinalConfirmation #balance-container {
+  display: none;
+}
 .FinalConfirmation .roomcash-earned {
   color: #000;
   border-top: 10px solid #CC9831;
@@ -1204,6 +1217,9 @@ header #AdminControlsContainer .hamburger .line {
 }
 .FinalConfirmation .roomcash-earned strong, .FinalConfirmation .roomcash-earned a {
   color: #CC9831;
+}
+.FinalConfirmation .roomcash-earned #dont-forget a {
+  font-size: 17px !important;
 }
 
 /* - - - - - - - - Support Page - - - - - - - - */

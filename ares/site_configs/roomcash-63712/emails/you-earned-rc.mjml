@@ -13,9 +13,9 @@
         <mj-section>
             <mj-column width="100%">
                 <mj-text align="center" color="#000">
-                    <h1 style="letter-spacing:3px;">Good news, [first_name]!</h1>
+                    <h1 style="letter-spacing:3px; font-size: 28px;">Good news, [first_name]!</h1>
                 </mj-text>
-                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" >
                     <span>As [action], you’ve earned another $[value_earned] RoomCash!</span>
                 </mj-text>
                 <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">

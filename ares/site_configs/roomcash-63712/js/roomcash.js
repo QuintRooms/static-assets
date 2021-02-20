@@ -96,8 +96,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            // this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
-
+            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
             } else {
@@ -266,7 +265,7 @@ export default class Roomcash {
             currency = currency.substring(currency.length - 3);
         }
 
-        if (currency === '$') {
+        if (currency === '$' || currency === 'USD') {
             return value.substring(1);
         }
         return value.substring(0, value.length - 3);
@@ -355,7 +354,7 @@ export default class Roomcash {
                     <div id="container-lower">
                         <div class="roomcash-amount">     
                             <div class="cash-text">
-                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
+                                <span class="rc-value">${values.rc}</span>
                                 <p>RoomCash</p>
                                 <p>(for ${n_nights} ${stay})</p>
                             </div>
@@ -433,13 +432,6 @@ export default class Roomcash {
         document.querySelector(element).setAttribute(name, newAttr);
     }
 
-    // restructureRateContainer(elementNodeList) {
-    //     const rates = document.querySelectorAll(elementNodeList);
-    //     rates.forEach((el) => {
-    //         this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
-    //     });
-    // }
-
     async buildSupportPage() {
         const support_form = document.querySelector('.WBSupportFormContainer');
 
@@ -488,6 +480,7 @@ export default class Roomcash {
         document.querySelector('#contact-form').insertAdjacentElement('afterbegin', support_form);
 
         this.updateText('.WBSupportFormActions input', 'GET IN TOUCH');
+        utilities.addAttributeToInput('.WBSupportFormActions input', 'GET IN TOUCH', 'value', '.WBSupportForm');
 
         utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
@@ -495,5 +488,15 @@ export default class Roomcash {
         this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
+    }
+
+    moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
+        if (!document.querySelector(element_to_move_selector)) return;
+        const elements = document.querySelectorAll(nodeList);
+        elements.forEach(async (el) => {
+            await utilities.waitForSelectorInDOM(el);
+            const el_to_move = el.querySelector(element_to_move_selector);
+            el.querySelector(destination).insertAdjacentElement(insertPosition, el_to_move);
+        });
     }
 }

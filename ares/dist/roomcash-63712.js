@@ -7923,6 +7923,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
+                                            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
@@ -8067,7 +8068,7 @@
                                     return '$' ===
                                         (n = document.querySelector('.SearchHotels')
                                             ? t.querySelector('.arnCurrency').textContent
-                                            : (n = t.querySelector('.ArnNightlyRate').getAttribute('total')).substring(n.length - 3))
+                                            : (n = t.querySelector('.ArnNightlyRate').getAttribute('total')).substring(n.length - 3)) || 'USD' === n
                                         ? e.substring(1)
                                         : e.substring(0, e.length - 3);
                                 },
@@ -8127,7 +8128,7 @@
                                                                 if (s.yc && s.rc && s.rc_width) {
                                                                     var i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content).get('nights'),
                                                                         a = '1' === i ? 'night' : 'nights',
-                                                                        l = document.querySelector('.SearchHotels')
+                                                                        c = document.querySelector('.SearchHotels')
                                                                             ? '\n                <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
                                                                                       t,
@@ -8154,10 +8155,8 @@
                                                                             : '\n                <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
                                                                                       t,
-                                                                                      '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value"><img src="'
+                                                                                      '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value">'
                                                                                   )
-                                                                                  .concat(c.path, '/site_configs/')
-                                                                                  .concat(r.config.directory_name, '/img/points-icon.png">')
                                                                                   .concat(
                                                                                       s.rc,
                                                                                       '</span>\n                                <p>RoomCash</p>\n                                <p>(for '
@@ -8176,11 +8175,11 @@
                                                                                       a,
                                                                                       ')</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                </div>\n'
                                                                                   ),
-                                                                        d = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
+                                                                        l = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                     if (
-                                                                        (e.querySelector(n).insertAdjacentHTML(o, l),
+                                                                        (e.querySelector(n).insertAdjacentHTML(o, c),
                                                                         u.addToolTip(
-                                                                            '#'.concat(d, ' .roomcash-amount p'),
+                                                                            '#'.concat(l, ' .roomcash-amount p'),
                                                                             'beforeend',
                                                                             'Maximum amount of your RoomCash we can apply',
                                                                             '?',
@@ -8188,7 +8187,7 @@
                                                                             '#000'
                                                                         ),
                                                                         u.addToolTip(
-                                                                            '#'.concat(d, ' .your-cash-amount p'),
+                                                                            '#'.concat(l, ' .your-cash-amount p'),
                                                                             'beforeend',
                                                                             'How much of your cash is needed',
                                                                             '?',
@@ -8197,8 +8196,8 @@
                                                                         ),
                                                                         document.querySelector('.SearchHotels'))
                                                                     ) {
-                                                                        var m = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', m),
+                                                                        var d = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', d),
                                                                             e
                                                                                 .querySelector('.ArnRateButton')
                                                                                 .insertAdjacentHTML(
@@ -8360,13 +8359,14 @@
                                                             case 4:
                                                                 document.querySelector('#contact-form').insertAdjacentElement('afterbegin', t),
                                                                     this.updateText('.WBSupportFormActions input', 'GET IN TOUCH'),
+                                                                    u.addAttributeToInput('.WBSupportFormActions input', 'GET IN TOUCH', 'value', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm'),
                                                                     this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry'),
                                                                     u.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
-                                                            case 12:
+                                                            case 13:
                                                             case 'end':
                                                                 return e.stop();
                                                         }
@@ -8379,6 +8379,36 @@
                                     function () {
                                         return r.apply(this, arguments);
                                     }),
+                            },
+                            {
+                                key: 'moveElements',
+                                value: function (e, t, n, o) {
+                                    document.querySelector(o) &&
+                                        document.querySelectorAll(e).forEach(
+                                            (function () {
+                                                var e = i(
+                                                    regeneratorRuntime.mark(function e(r) {
+                                                        var s;
+                                                        return regeneratorRuntime.wrap(function (e) {
+                                                            for (;;)
+                                                                switch ((e.prev = e.next)) {
+                                                                    case 0:
+                                                                        return (e.next = 2), u.waitForSelectorInDOM(r);
+                                                                    case 2:
+                                                                        (s = r.querySelector(o)), r.querySelector(t).insertAdjacentElement(n, s);
+                                                                    case 4:
+                                                                    case 'end':
+                                                                        return e.stop();
+                                                                }
+                                                        }, e);
+                                                    })
+                                                );
+                                                return function (t) {
+                                                    return e.apply(this, arguments);
+                                                };
+                                            })()
+                                        );
+                                },
                             },
                         ]) && a(t.prototype, n),
                         o && a(t, o),

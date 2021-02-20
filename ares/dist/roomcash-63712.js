@@ -4116,9 +4116,9 @@
                     A = k[d] || k['@@iterator'] || (h && k[h]),
                     M = A || b(h),
                     q = h ? (w ? b('entries') : M) : void 0,
-                    L = ('Array' == t && k.entries) || A;
+                    C = ('Array' == t && k.entries) || A;
                 if (
-                    (L && (j = l(L.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
+                    (C && (j = l(C.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
                     w &&
                         A &&
                         'values' !== A.name &&
@@ -5132,15 +5132,15 @@
                 A = (k && k.v8) || '',
                 M = c.Promise,
                 q = 'process' == l(x),
-                L = function () {},
-                C = (r = v.f),
+                C = function () {},
+                L = (r = v.f),
                 E = !!(function () {
                     try {
                         var e = M.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(L, L);
+                                e(C, C);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(L) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -5253,7 +5253,7 @@
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
                 }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(M.prototype, {
                     then: function (e, t) {
-                        var n = C(y(this, M));
+                        var n = L(y(this, M));
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
@@ -5272,7 +5272,7 @@
                     var e = new o();
                     (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
                 }),
-                (v.f = C = function (e) {
+                (v.f = L = function (e) {
                     return e === M || e === i ? new s(e) : r(e);
                 })),
                 d(d.G + d.W + d.F * !E, {Promise: M}),
@@ -5281,7 +5281,7 @@
                 (i = n(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !E, 'Promise', {
                     reject: function (e) {
-                        var t = C(this);
+                        var t = L(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
@@ -5296,14 +5296,14 @@
                             !(
                                 E &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(L);
+                                    M.all(e).catch(C);
                                 })
                             ),
                     'Promise',
                     {
                         all: function (e) {
                             var t = this,
-                                n = C(t),
+                                n = L(t),
                                 o = n.resolve,
                                 r = n.reject,
                                 s = j(function () {
@@ -5325,7 +5325,7 @@
                         },
                         race: function (e) {
                             var t = this,
-                                n = C(t),
+                                n = L(t),
                                 o = n.reject,
                                 r = j(function () {
                                     h(e, !1, function (e) {
@@ -5473,11 +5473,11 @@
                             for (var x = String(v[0]), k = u(l(i(v.index), m.length), 0), A = [], M = 1; M < v.length; M++) A.push(void 0 === (j = v[M]) ? j : String(j));
                             var q = v.groups;
                             if (f) {
-                                var L = [x].concat(A, k, m);
-                                void 0 !== q && L.push(q);
-                                var C = String(t.apply(void 0, L));
-                            } else C = h(x, m, k, A, q, t);
-                            k >= S && ((b += m.slice(S, k) + C), (S = k + x.length));
+                                var C = [x].concat(A, k, m);
+                                void 0 !== q && C.push(q);
+                                var L = String(t.apply(void 0, C));
+                            } else L = h(x, m, k, A, q, t);
+                            k >= S && ((b += m.slice(S, k) + L), (S = k + x.length));
                         }
                         return b + m.slice(S);
                     },
@@ -5719,8 +5719,8 @@
                 A = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 M = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                L = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                C = A.f,
+                C = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                L = A.f,
                 E = q.f,
                 T = k.f,
                 P = o.Symbol,
@@ -5751,7 +5751,7 @@
                         );
                     })
                         ? function (e, t, n) {
-                              var o = C(N, t);
+                              var o = L(N, t);
                               o && delete N[t], E(e, t, n), o && e !== N && E(N, t, o);
                           }
                         : E,
@@ -5790,7 +5790,7 @@
                 },
                 K = function (e, t) {
                     if (((e = b(e)), (t = S(t, !0)), e !== N || !r(B, t) || r(Y, t))) {
-                        var n = C(e, t);
+                        var n = L(e, t);
                         return !n || !r(B, t) || (r(e, D) && e[D][t]) || (n.enumerable = !0), n;
                     }
                 },
@@ -5829,7 +5829,7 @@
                 i(i.G + i.W + i.F * !U, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
                 f(te[ne++]);
-            for (var oe = L(f.store), re = 0; oe.length > re; ) h(oe[re++]);
+            for (var oe = C(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
                     return r(F, (e += '')) ? F[e] : (F[e] = P(e));
@@ -8336,10 +8336,11 @@
                                                                     this.updateText('WBSupportFormActions input', 'GET IN TOUCH'),
                                                                     u.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm'),
-                                                                    u.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportForm'),
+                                                                    u.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm'),
                                                                     this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry'),
-                                                                    u.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
-                                                            case 11:
+                                                                    u.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm'),
+                                                                    u.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
+                                                            case 12:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

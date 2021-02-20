@@ -1236,15 +1236,26 @@ body.WBSupportForm .ArnSubPage {
   margin: 0;
 }
 
+.ArnSubPage.WBSupportForm h1 {
+  display: none;
+}
 .ArnSubPage.WBSupportForm #support-page {
   display: flex;
   flex-direction: column;
 }
 .ArnSubPage.WBSupportForm #support-page #hero-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   text-align: center;
-  background: url("https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg") no-repeat center center/cover;
   color: #fff;
+  background-position: top;
+  min-height: 300px;
+}
+.ArnSubPage.WBSupportForm #support-page #hero-image h1 {
+  display: block !important;
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower {
   display: flex;
@@ -1261,6 +1272,16 @@ body.WBSupportForm .ArnSubPage {
   width: 50vw;
   background: #E6E6E6;
 }
+.ArnSubPage.WBSupportForm #support-page #support-lower #contact-form {
+  width: 50vw;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item h5 {
+  font-weight: 400;
+  margin: 5px 0;
+}
+.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item #theReasonForInquiryAjax select {
+  color: #666;
+}
 .ArnSubPage.WBSupportForm #support-page #support-lower .contact-item a {
   color: #CC9831;
   text-decoration: none;
@@ -1272,12 +1293,6 @@ body.WBSupportForm .ArnSubPage {
   display: flex;
   justify-content: center;
   padding: 20px;
-}
-.ArnSubPage.WBSupportForm h1:first-of-type {
-  display: none;
-}
-.ArnSubPage.WBSupportForm h1 {
-  text-align: center;
 }
 .ArnSubPage.WBSupportForm .useCancelFormWarning {
   display: none;

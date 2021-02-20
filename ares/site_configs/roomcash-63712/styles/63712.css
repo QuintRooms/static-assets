@@ -1257,8 +1257,17 @@ body.WBSupportForm .ArnSubPage {
 .ArnSubPage.WBSupportForm #support-page #hero-image h1 {
   display: block !important;
 }
+.ArnSubPage.WBSupportForm #support-page #hero-image span {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
 .ArnSubPage.WBSupportForm #support-page #support-lower {
   display: flex;
+}
+@media (max-width: 600px) {
+  .ArnSubPage.WBSupportForm #support-page #support-lower {
+    flex-direction: column;
+  }
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower #contact-details {
   width: 50vw;
@@ -1268,19 +1277,24 @@ body.WBSupportForm .ArnSubPage {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.ArnSubPage.WBSupportForm #support-page #support-lower #support-form {
-  width: 50vw;
-  background: #E6E6E6;
+@media (max-width: 600px) {
+  .ArnSubPage.WBSupportForm #support-page #support-lower #contact-details {
+    width: 100vw;
+    align-items: center;
+    padding: 20px 80px;
+  }
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower #contact-form {
   width: 50vw;
 }
+@media (max-width: 600px) {
+  .ArnSubPage.WBSupportForm #support-page #support-lower #contact-form {
+    width: 100vw;
+  }
+}
 .ArnSubPage.WBSupportForm #support-page #support-lower .contact-item h5 {
   font-weight: 400;
   margin: 5px 0;
-}
-.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item #theReasonForInquiryAjax select {
-  color: #666;
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower .contact-item a {
   color: #CC9831;
@@ -1292,7 +1306,13 @@ body.WBSupportForm .ArnSubPage {
 .ArnSubPage.WBSupportForm #support-page .WBSupportFormContainer {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
+}
+.ArnSubPage.WBSupportForm #support-page .WBSupportFormContainer #theReasonForInquiryAjax select {
+  color: #666;
+}
+.ArnSubPage.WBSupportForm #support-page .WBSupportFormContainer #theWBSupportFormBody {
+  width: 100%;
 }
 .ArnSubPage.WBSupportForm .useCancelFormWarning {
   display: none;
@@ -1305,7 +1325,7 @@ body.WBSupportForm .ArnSubPage {
   outline: 0;
 }
 .ArnSubPage.WBSupportForm .FormFields {
-  margin-top: 6px;
+  margin: 15px 0;
 }
 .ArnSubPage.WBSupportForm .FormFields label {
   display: none;
@@ -1314,10 +1334,10 @@ body.WBSupportForm .ArnSubPage {
   text-align: center;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormActions input {
-  border: 1px solid #CC9831 !important;
-  width: 50%;
+  border: 1px solid #CC9831;
+  width: 100%;
   padding: 15px !important;
-  background-color: #CC9831 !important;
+  background-color: #CC9831;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormFields #theReservationConfirmationNumberAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theDateOfArrivalAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theHotelNameAjax {
   display: none;

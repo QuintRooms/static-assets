@@ -451,12 +451,12 @@ export default class Roomcash {
         await utilities.waitForSelectorInDOM('#contact-form');
         document.querySelector('#contact-form').insertAdjacentElement('afterbegin', support_form);
 
-        this.updateText('WBSupportFormActions input', 'GET IN TOUCH');
+        this.updateText('.WBSupportFormActions input', 'GET IN TOUCH');
 
         utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm');
-        this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry');
+        this.updateText('#theReasonForInquiryAjax select option[value="32"]', 'Reason for inquiry');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
     }

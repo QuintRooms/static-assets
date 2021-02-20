@@ -11,10 +11,10 @@ export default class Roomcash {
         this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
         this.sub_header_container = `
         <span id="sub-header-container">
-            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>
-            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
-            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
         this.init();
     }
@@ -88,12 +88,12 @@ export default class Roomcash {
             this.buildFooterMenu('.PropDetailView', 'afterend');
             this.insertContent([
                 {
-                    element: '.PropDetailView',
-                    position: 'beforebegin',
+                    element: '.ArnRightListContainer',
+                    position: 'afterbegin',
                     html: this.sub_header_container,
                 },
             ]);
-            this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
+            // this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
 
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
@@ -112,6 +112,8 @@ export default class Roomcash {
         // Confirmation Page
         if (document.querySelector('.ConfirmationForm')) {
             this.buildFooterMenu('#theBookingPage', 'afterend');
+            this.updateText('.discount th', 'RoomCash');
+            this.updateText('.balanceDueRow th', 'Your Cash');
             this.insertContent([
                 {
                     element: '.GuestForms',
@@ -123,15 +125,21 @@ export default class Roomcash {
                         }! This reservation has earned you <strong>$50 RoomCash.</strong></div>
                         <div class="rc-earned-entries" id="exclusive-savings">Want to see what exclusive savings you can make on your next trip?</div>
                         <a id="book-another" href="https://hotels.roomcash.com" target="_blank">BOOK ANOTHER ROOM</a>
-                        <div class="rc-earned-entries" id="dont-forget">Don't forget to check out some other ways you can earn <strong><a href="https://roomcash.com/how-it-works" target="_blank">RoomCash</a></strong> so you never miss out on savings again!</div>
+                        <div class="rc-earned-entries" id="dont-forget">Don't forget to check out some other ways you can <strong><a href="https://roomcash.com/how-it-works" target="_blank">earn RoomCash</a></strong> so you never miss out on savings again!</div>
                     </div>
                     `,
                 },
             ]);
         }
 
-        // Support Page & Cancel/modify Page
-        if (document.querySelector('.WBSupportForm') || document.querySelector('.WBResendOrCancelForm')) {
+        // Support Page
+        if (document.querySelector('.WBSupportForm')) {
+            this.buildFooterMenu('.ArnSubPage', 'afterend');
+            this.buildSupportPage();
+        }
+
+        // Cancel Modify Page
+        if (document.querySelector('.WBResendOrCancelForm')) {
             this.buildFooterMenu('.ArnSubPage', 'afterend');
         }
     }
@@ -257,7 +265,7 @@ export default class Roomcash {
         }
 
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
-        const room_cash = property.querySelector('.originalPrice').getAttribute('amount');
+        const room_cash = property.querySelector('.originalPrice').getAttribute('amount').substring(1);
         const width = property.querySelector('.originalPrice').getAttribute('percent');
         return {yc: your_cash, rc: room_cash, rc_width: width};
     }
@@ -291,7 +299,7 @@ export default class Roomcash {
                 <div id="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value">${values.rc}</span>
+                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -311,7 +319,7 @@ export default class Roomcash {
                     <div id="container-lower">
                         <div class="roomcash-amount">     
                             <div class="cash-text">
-                                <span class="rc-value">${values.rc}</span>
+                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
                                 <p>RoomCash</p>
                                 <p>(for ${n_nights} ${stay})</p>
                             </div>
@@ -389,10 +397,66 @@ export default class Roomcash {
         document.querySelector(element).setAttribute(name, newAttr);
     }
 
-    restructureRateContainer(elementNodeList) {
-        const rates = document.querySelectorAll(elementNodeList);
-        rates.forEach((el) => {
-            this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
-        });
+    // restructureRateContainer(elementNodeList) {
+    //     const rates = document.querySelectorAll(elementNodeList);
+    //     rates.forEach((el) => {
+    //         this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
+    //     });
+    // }
+
+    async buildSupportPage() {
+        const support_form = document.querySelector('.WBSupportFormContainer');
+
+        this.insertContent([
+            {
+                element: '.ArnSubPage.WBSupportForm',
+                position: 'afterbegin',
+                html: `
+                    <div id="support-page">
+                        <div id="hero-image">
+                            <h1>GET IN TOUCH</h1>
+                            <span>We're here to help! Contact us and we'll help you anyway we can</span>
+                        </div>
+                        <div id="support-lower">
+                            <div id="contact-details">
+                                <div id="support" class="contact-item">
+                                    <h3>Customer Support</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                                <div id="partner" class="contact-item">
+                                    <h3>PARTNER INQUIRIES</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                                <div id="marketing" class="contact-item">
+                                    <h3>MARKETING INQUIRIES</h3>
+                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
+                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                </div>
+                            </div>
+                            <div id="contact-form">
+                            </div>
+                        </div>
+                    </div>
+                    `,
+            },
+            {
+                element: '.ArnSubPage.WBSupportForm',
+                position: 'afterbegin',
+                html: this.sub_header_container,
+            },
+        ]);
+
+        await utilities.waitForSelectorInDOM('#contact-form');
+        document.querySelector('#contact-form').insertAdjacentElement('afterbegin', support_form);
+
+        this.updateText('WBSupportFormActions input', 'GET IN TOUCH');
+
+        utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theEmailAjax input', 'Email', 'placeholder', '.WBSupportForm');
+        this.updateText('#theReasonForInquiryAjax select option[value="31"]', 'Reason for inquiry');
+        utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
     }
 }

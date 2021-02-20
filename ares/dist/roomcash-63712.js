@@ -8383,7 +8383,7 @@
                             {
                                 key: 'moveElements',
                                 value: function (e, t, n, o) {
-                                    document.querySelector(o) &&
+                                    '1' !== new URLSearchParams(document.querySelector('meta[name="originalParams"]').content).get('nights') &&
                                         document.querySelectorAll(e).forEach(
                                             (function () {
                                                 var e = i(

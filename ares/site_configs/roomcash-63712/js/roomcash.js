@@ -491,7 +491,9 @@ export default class Roomcash {
     }
 
     moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
-        if (!document.querySelector(element_to_move_selector)) return;
+        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+        const nights = original_params.get('nights');
+        if (nights === '1') return;
         const elements = document.querySelectorAll(nodeList);
         elements.forEach(async (el) => {
             await utilities.waitForSelectorInDOM(el);

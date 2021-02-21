@@ -1075,6 +1075,11 @@ header #AdminControlsContainer .hamburger .line {
   display: block;
   float: unset;
 }
+@media (max-width: 560px) {
+  .SinglePropDetail .SinglePropDetail .ArnRateCancelAnchor {
+    align-self: unset;
+  }
+}
 .SinglePropDetail .ArnRightListContainer {
   background-color: #fff;
 }
@@ -1130,11 +1135,6 @@ header #AdminControlsContainer .hamburger .line {
 @media (max-width: 600px) {
   .SinglePropDetail .prop-detail-lower {
     flex-direction: column;
-  }
-}
-@media (max-width: 560px) {
-  .SinglePropDetail .prop-detail-lower .SinglePropDetail .ArnRateCancelAnchor {
-    align-self: unset;
   }
 }
 .SinglePropDetail .prop-detail-lower .book {

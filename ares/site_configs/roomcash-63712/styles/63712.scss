@@ -988,6 +988,12 @@ header {
         float: unset;
     }
 
+    @media (max-width: 560px) {
+        .SinglePropDetail .ArnRateCancelAnchor {
+            align-self: unset;
+        }
+    }
+
     .ArnRightListContainer {
         background-color: #fff;
 
@@ -1055,12 +1061,6 @@ header {
 
         @include mobile {
             flex-direction: column;
-        }
-
-        @media (max-width: 560px) {
-            .SinglePropDetail .ArnRateCancelAnchor {
-                align-self: unset;
-            }
         }
 
         .book {

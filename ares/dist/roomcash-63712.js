@@ -8173,7 +8173,7 @@
                                                                                   .concat(i, ' ')
                                                                                   .concat(
                                                                                       a,
-                                                                                      ')</p>\n                                        </div>\n                                    </div>\n                                </div>\n                                <div id="roomcash-bar-container">\n                                    <span class="bar"></span>\n                                </div>\n                            </div>\n                            <div id="book"></div>\n                        </div>\n                    </td>\n                </tr>\n'
+                                                                                      ')</p>\n                                        </div>\n                                    </div>\n                                </div>\n                                <div id="roomcash-bar-container">\n                                    <span class="bar"></span>\n                                </div>\n                            </div>\n                            <div class="book"></div>\n                        </div>\n                    </td>\n                </tr>\n'
                                                                                   ),
                                                                         l = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                     if (
@@ -8403,10 +8403,12 @@
                                                         case 2:
                                                             return (e.next = 4), u.waitForSelectorInDOM(r);
                                                         case 4:
+                                                            return (e.next = 6), u.waitForSelectorInDOM(n);
+                                                        case 6:
                                                             document.querySelectorAll(t).forEach(function (e) {
                                                                 e.querySelector(n).insertAdjacentElement(o, e.querySelector(r));
                                                             });
-                                                        case 6:
+                                                        case 8:
                                                         case 'end':
                                                             return e.stop();
                                                     }

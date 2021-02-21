@@ -375,7 +375,7 @@ export default class Roomcash {
                                     <span class="bar"></span>
                                 </div>
                             </div>
-                            <div id="book"></div>
+                            <div class="book"></div>
                         </div>
                     </td>
                 </tr>
@@ -508,6 +508,7 @@ export default class Roomcash {
     async moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
         if (!document.querySelector(element_to_move_selector)) return;
         await utilities.waitForSelectorInDOM(element_to_move_selector);
+        await utilities.waitForSelectorInDOM(destination);
         const elements = document.querySelectorAll(nodeList);
         elements.forEach((el) => {
             el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));

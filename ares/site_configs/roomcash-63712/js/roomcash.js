@@ -305,6 +305,7 @@ export default class Roomcash {
         return {yc: your_cash, rc: room_cash, rc_width: width};
     }
 
+    // TODO refactor
     async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
             await utilities.waitForSelectorInDOM('.pollingFinished');
@@ -372,6 +373,7 @@ export default class Roomcash {
                             <span class="bar"></span>
                         </div>
                     </div>
+                    <div id="book"></div>
                 </div>
 `;
 
@@ -384,7 +386,9 @@ export default class Roomcash {
 
             if (document.querySelector('.SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor')) {
                 const book_room = prop.querySelector('.bookRoom');
-                prop.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', book_room);
+                const cancel = prop.querySelector('.ArnRateCancelAnchor');
+                prop.querySelector('#book').insertAdjacentElement('afterbegin', book_room);
+                prop.querySelector('#book').insertAdjacentElement('beforeend', cancel);
             }
 
             // Moves Book button

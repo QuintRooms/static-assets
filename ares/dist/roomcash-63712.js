@@ -8173,7 +8173,7 @@
                                                                                   .concat(i, ' ')
                                                                                   .concat(
                                                                                       a,
-                                                                                      ')</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div id="roomcash-bar-container">\n                            <span class="bar"></span>\n                        </div>\n                    </div>\n                </div>\n'
+                                                                                      ')</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div id="roomcash-bar-container">\n                            <span class="bar"></span>\n                        </div>\n                    </div>\n                    <div id="book"></div>\n                </div>\n'
                                                                                   ),
                                                                         l = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                     if (
@@ -8196,12 +8196,14 @@
                                                                         ),
                                                                         document.querySelector('.SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor'))
                                                                     ) {
-                                                                        var d = e.querySelector('.bookRoom');
-                                                                        e.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', d);
+                                                                        var d = e.querySelector('.bookRoom'),
+                                                                            m = e.querySelector('.ArnRateCancelAnchor');
+                                                                        e.querySelector('#book').insertAdjacentElement('afterbegin', d),
+                                                                            e.querySelector('#book').insertAdjacentElement('beforeend', m);
                                                                     }
                                                                     if (document.querySelector('.SearchHotels')) {
-                                                                        var m = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', m),
+                                                                        var f = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', f),
                                                                             e
                                                                                 .querySelector('.ArnRateButton')
                                                                                 .insertAdjacentHTML(

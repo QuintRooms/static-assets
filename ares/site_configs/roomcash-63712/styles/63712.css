@@ -1127,8 +1127,18 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .prop-detail-lower {
   display: flex;
 }
+@media (max-width: 600px) {
+  .SinglePropDetail .prop-detail-lower {
+    flex-direction: column;
+  }
+}
+@media (max-width: 560px) {
+  .SinglePropDetail .prop-detail-lower .SinglePropDetail .ArnRateCancelAnchor {
+    align-self: unset;
+  }
+}
 .SinglePropDetail .prop-detail-lower .book {
-  min-width: 35%;
+  min-width: 30%;
   margin: 0 30px;
   display: flex;
   flex-direction: column;

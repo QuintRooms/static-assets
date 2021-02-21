@@ -350,25 +350,27 @@ export default class Roomcash {
                 </div>
     `
                 : `
-                <div class="roomcash-scale-container" id="rc-${idx}">
-                    <div id="container-lower">
-                        <div class="roomcash-amount">     
-                            <div class="cash-text">
-                                <span class="rc-value">${values.rc}</span>
-                                <p>RoomCash</p>
-                                <p>(for ${n_nights} ${stay})</p>
+                <div id="prop-detail-lower-container">
+                    <div class="roomcash-scale-container" id="rc-${idx}">
+                        <div id="container-lower">
+                            <div class="roomcash-amount">     
+                                <div class="cash-text">
+                                    <span class="rc-value">${values.rc}</span>
+                                    <p>RoomCash</p>
+                                    <p>(for ${n_nights} ${stay})</p>
+                                </div>
+                            </div>
+                            <div class="your-cash-amount">      
+                                <div class="cash-text">
+                                    <span class="yc-value">${values.yc}</span>
+                                    <p>Your Cash</p>
+                                    <p>(for ${n_nights} ${stay})</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="your-cash-amount">      
-                            <div class="cash-text">
-                                <span class="yc-value">${values.yc}</span>
-                                <p>Your Cash</p>
-                                <p>(for ${n_nights} ${stay})</p>
-                            </div>
+                        <div id="roomcash-bar-container">
+                            <span class="bar"></span>
                         </div>
-                    </div>
-                    <div id="roomcash-bar-container">
-                        <span class="bar"></span>
                     </div>
                 </div>
 `;
@@ -379,6 +381,11 @@ export default class Roomcash {
             // add tooltip
             utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
             utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
+
+            if (document.querySelector('SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor')) {
+                const book_room = prop.querySelector('.bookRoom');
+                prop.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', book_room);
+            }
 
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;

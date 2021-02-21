@@ -8152,28 +8152,28 @@
                                                                                       a,
                                                                                       ')</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>\n    '
                                                                                   )
-                                                                            : '\n                <div class="roomcash-scale-container" id="rc-'
+                                                                            : '\n                <div id="prop-detail-lower-container">\n                    <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
                                                                                       t,
-                                                                                      '">\n                    <div id="container-lower">\n                        <div class="roomcash-amount">     \n                            <div class="cash-text">\n                                <span class="rc-value">'
+                                                                                      '">\n                        <div id="container-lower">\n                            <div class="roomcash-amount">     \n                                <div class="cash-text">\n                                    <span class="rc-value">'
                                                                                   )
                                                                                   .concat(
                                                                                       s.rc,
-                                                                                      '</span>\n                                <p>RoomCash</p>\n                                <p>(for '
+                                                                                      '</span>\n                                    <p>RoomCash</p>\n                                    <p>(for '
                                                                                   )
                                                                                   .concat(i, ' ')
                                                                                   .concat(
                                                                                       a,
-                                                                                      ')</p>\n                            </div>\n                        </div>\n                        <div class="your-cash-amount">      \n                            <div class="cash-text">\n                                <span class="yc-value">'
+                                                                                      ')</p>\n                                </div>\n                            </div>\n                            <div class="your-cash-amount">      \n                                <div class="cash-text">\n                                    <span class="yc-value">'
                                                                                   )
                                                                                   .concat(
                                                                                       s.yc,
-                                                                                      '</span>\n                                <p>Your Cash</p>\n                                <p>(for '
+                                                                                      '</span>\n                                    <p>Your Cash</p>\n                                    <p>(for '
                                                                                   )
                                                                                   .concat(i, ' ')
                                                                                   .concat(
                                                                                       a,
-                                                                                      ')</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                </div>\n'
+                                                                                      ')</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div id="roomcash-bar-container">\n                            <span class="bar"></span>\n                        </div>\n                    </div>\n                </div>\n'
                                                                                   ),
                                                                         l = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
                                                                     if (
@@ -8194,10 +8194,14 @@
                                                                             '#fff',
                                                                             '#000'
                                                                         ),
-                                                                        document.querySelector('.SearchHotels'))
+                                                                        document.querySelector('SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor'))
                                                                     ) {
-                                                                        var d = e.querySelector('.ArnRateButton');
-                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', d),
+                                                                        var d = e.querySelector('.bookRoom');
+                                                                        e.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', d);
+                                                                    }
+                                                                    if (document.querySelector('.SearchHotels')) {
+                                                                        var m = e.querySelector('.ArnRateButton');
+                                                                        e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', m),
                                                                             e
                                                                                 .querySelector('.ArnRateButton')
                                                                                 .insertAdjacentHTML(

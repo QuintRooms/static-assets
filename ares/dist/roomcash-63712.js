@@ -8194,7 +8194,7 @@
                                                                             '#fff',
                                                                             '#000'
                                                                         ),
-                                                                        document.querySelector('SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor'))
+                                                                        document.querySelector('.SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor'))
                                                                     ) {
                                                                         var d = e.querySelector('.bookRoom');
                                                                         e.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', d);

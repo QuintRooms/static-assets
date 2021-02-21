@@ -382,7 +382,7 @@ export default class Roomcash {
             utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
             utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
 
-            if (document.querySelector('SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor')) {
+            if (document.querySelector('.SinglePropDetail') && !document.querySelector('.RateCalendarPopupAnchor')) {
                 const book_room = prop.querySelector('.bookRoom');
                 prop.querySelector('#prop-detail-lower-container').insertAdjacentElement('beforeend', book_room);
             }

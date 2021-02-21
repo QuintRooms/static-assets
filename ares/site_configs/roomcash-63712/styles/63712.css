@@ -1073,6 +1073,7 @@ header #AdminControlsContainer .hamburger .line {
 /* - - - - - - - - Property Detail - - - - - - - - */
 .SinglePropDetail .RateCalendarPopupAnchor {
   display: block;
+  float: unset;
 }
 .SinglePropDetail .ArnRightListContainer {
   background-color: #fff;

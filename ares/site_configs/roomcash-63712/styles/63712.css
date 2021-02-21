@@ -1076,7 +1076,7 @@ header #AdminControlsContainer .hamburger .line {
   float: unset;
 }
 @media (max-width: 560px) {
-  .SinglePropDetail .SinglePropDetail .ArnRateCancelAnchor {
+  .SinglePropDetail .ArnRateCancelAnchor {
     align-self: unset;
   }
 }

@@ -721,31 +721,31 @@ header #AdminControlsContainer .hamburger .line {
   flex-direction: column;
   margin: 20px 0;
 }
-.roomcash-scale-container #container-lower {
+.roomcash-scale-container .container-lower {
   display: flex;
   justify-content: space-between;
 }
-.roomcash-scale-container #container-lower .rc-value, .roomcash-scale-container #container-lower .yc-value {
+.roomcash-scale-container .container-lower .rc-value, .roomcash-scale-container .container-lower .yc-value {
   font-weight: 600;
   margin-top: 5px;
 }
-.roomcash-scale-container #container-lower .roomcash-amount {
+.roomcash-scale-container .container-lower .roomcash-amount {
   text-align: center;
 }
-.roomcash-scale-container #container-lower .roomcash-amount .tooltip:hover span {
+.roomcash-scale-container .container-lower .roomcash-amount .tooltip:hover span {
   top: -11.5em;
 }
-.roomcash-scale-container #container-lower .roomcash-amount .tooltip span {
+.roomcash-scale-container .container-lower .roomcash-amount .tooltip span {
   top: 0em;
 }
-.roomcash-scale-container #container-lower .your-cash-amount .tooltip:hover span {
+.roomcash-scale-container .container-lower .your-cash-amount .tooltip:hover span {
   top: -9.5em;
 }
-.roomcash-scale-container #container-lower .your-cash-amount .tooltip span {
+.roomcash-scale-container .container-lower .your-cash-amount .tooltip span {
   top: 0em;
 }
 @media (max-width: 600px) {
-  .roomcash-scale-container #container-lower {
+  .roomcash-scale-container .container-lower {
     justify-content: space-between;
   }
 }

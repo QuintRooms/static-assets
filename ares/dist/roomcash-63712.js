@@ -7923,7 +7923,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
-                                            this.moveElements('.rateRow', '#book', 'beforeend', '.RateCalendarPopupAnchor'),
+                                            this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
@@ -8132,7 +8132,7 @@
                                                                             ? '\n                <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
                                                                                       t,
-                                                                                      '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div id="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value">'
+                                                                                      '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div class="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value">'
                                                                                   )
                                                                                   .concat(
                                                                                       s.rc,
@@ -8152,10 +8152,10 @@
                                                                                       a,
                                                                                       ')</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>\n    '
                                                                                   )
-                                                                            : '\n                <tr colspan="2">\n                    <td colspan="2">\n                        <div id="prop-detail-lower">\n                            <div class="roomcash-scale-container" id="rc-'
+                                                                            : '\n                <tr colspan="2">\n                    <td colspan="2">\n                        <div class="prop-detail-lower">\n                            <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
                                                                                       t,
-                                                                                      '">\n                                <div id="container-lower">\n                                    <div class="roomcash-amount">     \n                                        <div class="cash-text">\n                                            <span class="rc-value">'
+                                                                                      '">\n                                <div class="container-lower">\n                                    <div class="roomcash-amount">     \n                                        <div class="cash-text">\n                                            <span class="rc-value">'
                                                                                   )
                                                                                   .concat(
                                                                                       s.rc,

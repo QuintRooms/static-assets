@@ -545,7 +545,7 @@ header {
     flex-direction: column;
     margin: 20px 0;
 
-    #container-lower {
+    .container-lower {
         display: flex;
         justify-content: space-between;
 
@@ -1053,8 +1053,18 @@ header {
     .prop-detail-lower {
         display: flex;
 
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @media (max-width: 560px) {
+            .SinglePropDetail .ArnRateCancelAnchor {
+                align-self: unset;
+            }
+        }
+
         .book {
-            min-width: 35%;
+            min-width: 30%;
             margin: 0 30px;
             display: flex;
             flex-direction: column;

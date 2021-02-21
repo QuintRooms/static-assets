@@ -7923,7 +7923,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
-                                            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
+                                            this.moveElements('.rateRow', '#book', 'beforeend', '.RateCalendarPopupAnchor'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
@@ -8403,12 +8403,10 @@
                                                         case 2:
                                                             return (e.next = 4), u.waitForSelectorInDOM(r);
                                                         case 4:
-                                                            return (e.next = 6), u.waitForSelectorInDOM(n);
-                                                        case 6:
                                                             document.querySelectorAll(t).forEach(function (e) {
                                                                 e.querySelector(n).insertAdjacentElement(o, e.querySelector(r));
                                                             });
-                                                        case 8:
+                                                        case 6:
                                                         case 'end':
                                                             return e.stop();
                                                     }

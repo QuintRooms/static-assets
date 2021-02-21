@@ -8198,8 +8198,8 @@
                                                                     ) {
                                                                         var d = e.querySelector('.bookRoom'),
                                                                             m = e.querySelector('.ArnRateCancelAnchor');
-                                                                        e.querySelector('#book').insertAdjacentElement('afterbegin', d),
-                                                                            e.querySelector('#book').insertAdjacentElement('beforeend', m);
+                                                                        e.querySelector('.book').insertAdjacentElement('afterbegin', d),
+                                                                            e.querySelector('.book').insertAdjacentElement('beforeend', m);
                                                                     }
                                                                     if (document.querySelector('.SearchHotels')) {
                                                                         var f = e.querySelector('.ArnRateButton');

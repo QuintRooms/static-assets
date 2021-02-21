@@ -490,15 +490,12 @@ export default class Roomcash {
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
     }
 
-    moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
-        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-        const nights = original_params.get('nights');
-        if (nights === '1') return;
+    async moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
+        if (!document.querySelector(element_to_move_selector)) return;
+        await utilities.waitForSelectorInDOM(element_to_move_selector);
         const elements = document.querySelectorAll(nodeList);
-        elements.forEach(async (el) => {
-            await utilities.waitForSelectorInDOM(el);
-            const el_to_move = el.querySelector(element_to_move_selector);
-            el.querySelector(destination).insertAdjacentElement(insertPosition, el_to_move);
+        elements.forEach((el) => {
+            el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));
         });
     }
 }

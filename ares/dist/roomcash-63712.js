@@ -7872,7 +7872,7 @@
                                 '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p;
+                    var t, n, o, r, s, l, d, m, f, p, h;
                     return (
                         (t = e),
                         (n = [
@@ -7982,7 +7982,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((p = i(
+                                    ((h = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8030,7 +8030,7 @@
                                         })
                                     )),
                                     function () {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8103,7 +8103,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((f = i(
+                                    ((p = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8218,13 +8218,13 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSortSelectMenu',
                                 value:
-                                    ((m = i(
+                                    ((f = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8257,13 +8257,13 @@
                                         })
                                     )),
                                     function () {
-                                        return m.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveCurrency',
                                 value:
-                                    ((d = i(
+                                    ((m = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8282,13 +8282,13 @@
                                         })
                                     )),
                                     function () {
-                                        return d.apply(this, arguments);
+                                        return m.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateText',
                                 value:
-                                    ((l = i(
+                                    ((d = i(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8305,13 +8305,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return l.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateAttribute',
                                 value:
-                                    ((s = i(
+                                    ((l = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8328,13 +8328,13 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return s.apply(this, arguments);
+                                        return l.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSupportPage',
                                 value:
-                                    ((r = i(
+                                    ((s = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -8377,38 +8377,39 @@
                                         })
                                     )),
                                     function () {
-                                        return r.apply(this, arguments);
+                                        return s.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveElements',
-                                value: function (e, t, n, o) {
-                                    '1' !== new URLSearchParams(document.querySelector('meta[name="originalParams"]').content).get('nights') &&
-                                        document.querySelectorAll(e).forEach(
-                                            (function () {
-                                                var e = i(
-                                                    regeneratorRuntime.mark(function e(r) {
-                                                        var s;
-                                                        return regeneratorRuntime.wrap(function (e) {
-                                                            for (;;)
-                                                                switch ((e.prev = e.next)) {
-                                                                    case 0:
-                                                                        return (e.next = 2), u.waitForSelectorInDOM(r);
-                                                                    case 2:
-                                                                        (s = r.querySelector(o)), r.querySelector(t).insertAdjacentElement(n, s);
-                                                                    case 4:
-                                                                    case 'end':
-                                                                        return e.stop();
-                                                                }
-                                                        }, e);
-                                                    })
-                                                );
-                                                return function (t) {
-                                                    return e.apply(this, arguments);
-                                                };
-                                            })()
-                                        );
-                                },
+                                value:
+                                    ((r = i(
+                                        regeneratorRuntime.mark(function e(t, n, o, r) {
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (document.querySelector(r)) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), u.waitForSelectorInDOM(r);
+                                                        case 4:
+                                                            document.querySelectorAll(t).forEach(function (e) {
+                                                                e.querySelector(n).insertAdjacentElement(o, e.querySelector(r));
+                                                            });
+                                                        case 6:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e, t, n, o) {
+                                        return r.apply(this, arguments);
+                                    }),
                             },
                         ]) && a(t.prototype, n),
                         o && a(t, o),

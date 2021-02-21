@@ -984,7 +984,8 @@ header {
 .SinglePropDetail {
 
     .RateCalendarPopupAnchor {
-        margin-right: 47px;
+        display: block;
+        float: unset;
     }
 
     .ArnRightListContainer {
@@ -1049,51 +1050,50 @@ header {
         margin-bottom: 40px;
     }
 
-    .roomcash-scale-container {
-        margin-top: 30px;
-        width: 95%;
+    .prop-detail-lower {
+        display: flex;
 
-        .roomcash-amount {
-            text-align: center;
-
-            .tooltip {
-                &:hover span {
-                    top: -4em !important;
-                }
-            }
+        .book {
+            min-width: 35%;
+            margin: 0 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .your-cash-amount {
-            .tooltip {
-                &:hover span {
-                    top: -3em !important;
-                }
-            }
-        }
-
-        @include tablet {
-            width: 85%;
-        }
-
-        @include mobile {
-            width: 100%;
-        }
+        .roomcash-scale-container {
+            margin-top: 30px;
+            width: 95%;
     
-        .bar {
-            margin-top: 10px;
-        }
-    }
-
-    @include mobile {
-
-        .rateRow {
-
-            tbody > tr > td:nth-child(2) {
-                margin-top: 10px;
+            .roomcash-amount {
+                text-align: center;
+    
+                .tooltip {
+                    &:hover span {
+                        top: -4em !important;
+                    }
+                }
             }
-
-            .ArnRateCancelAnchor {
-                grid-row: 2 / 3;
+    
+            .your-cash-amount {
+                .tooltip {
+                    &:hover span {
+                        top: -3em !important;
+                    }
+                }
+            }
+    
+            @include tablet {
+                width: 85%;
+            }
+    
+            @include mobile {
+                width: 100%;
+            }
+        
+            .bar {
+                margin-top: 10px;
             }
         }
     }
@@ -1326,10 +1326,16 @@ body.WBSupportForm{
         text-align: center;
         
         input {
-            border: 1px solid $primary_color;
+            border: 1px solid $primary_color !important;
             width: 100%;
             padding: 15px !important;
             background-color: #CC9831;
+
+            &:hover {
+                color: $secondary_text_color !important;
+                background-color: $button_hover_background_color !important;
+                border-color: $primary_color !important;
+            }
         }
     }
 
@@ -1361,6 +1367,10 @@ body.WBSupportForm{
                     width: 80% !important;
                 }
             }
+        }
+
+        .emailWarning2 a {
+            color: $primary_color;
         }
 
         .WBResendOrCancelFormActions {

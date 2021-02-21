@@ -8,7 +8,7 @@ const utilities = new Utilities();
 export default class Roomcash {
     constructor(config) {
         this.config = config;
-        this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
+        this.user_points = null;
         this.sub_header_container = `
         <span id="sub-header-container">
             <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
@@ -20,6 +20,9 @@ export default class Roomcash {
     }
 
     init() {
+        if (document.querySelector('.MemberAuthenticated')) {
+            this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
+        }
         // All pages
         this.insertContent([
             {
@@ -93,8 +96,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            // this.restructureRateContainer('.ArnContentGeneralInfo.ArnRateList');
-
+            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
             } else {
@@ -155,7 +157,7 @@ export default class Roomcash {
                 </div>
                 <div class="links">
                         <li class="links-header">Support</li>
-                        <li><a target="_blank" href="https://roomcash.com/contact-us">Contact Us</a></li>
+                        <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.supportLink').href}">Contact Us</a></li>
                         <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.cancelLink').href}">Cancel/Modify</a></li>
                 </div>
                 <div class="links">
@@ -254,6 +256,36 @@ export default class Roomcash {
         });
     }
 
+    removeCurrency(value, element) {
+        let currency;
+        if (document.querySelector('.SearchHotels')) {
+            currency = element.querySelector('.arnCurrency').textContent;
+        } else {
+            currency = element.querySelector('.ArnNightlyRate').getAttribute('total');
+            currency = currency.substring(currency.length - 3);
+        }
+
+        if (currency === '$' || currency === 'USD') {
+            return value.substring(1);
+        }
+        return value.substring(0, value.length - 3);
+    }
+
+    addCurrency(value, element) {
+        let currency;
+        if (document.querySelector('.SearchHotels')) {
+            currency = element.querySelector('.arnCurrency').textContent;
+        } else {
+            currency = element.querySelector('.ArnNightlyRate').getAttribute('total');
+            currency = currency.substring(currency.length - 3);
+        }
+
+        if (currency === '$' || currency === 'USD') {
+            return `$${value}`;
+        }
+        return `${value} ${currency}`;
+    }
+
     getValues(property) {
         let your_cash;
         if (!property.querySelector('.originalPrice')) return undefined;
@@ -265,11 +297,15 @@ export default class Roomcash {
         }
 
         your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
-        const room_cash = property.querySelector('.originalPrice').getAttribute('amount').substring(1);
+        let room_cash = property.querySelector('.originalPrice').getAttribute('amount');
         const width = property.querySelector('.originalPrice').getAttribute('percent');
+
+        room_cash = this.removeCurrency(room_cash, property);
+        your_cash = this.addCurrency(your_cash, property);
         return {yc: your_cash, rc: room_cash, rc_width: width};
     }
 
+    // TODO refactor
     async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
             await utilities.waitForSelectorInDOM('.pollingFinished');
@@ -299,7 +335,7 @@ export default class Roomcash {
                 <div id="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
+                            <span class="rc-value">${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -315,27 +351,34 @@ export default class Roomcash {
                 </div>
     `
                 : `
-                <div class="roomcash-scale-container" id="rc-${idx}">
-                    <div id="container-lower">
-                        <div class="roomcash-amount">     
-                            <div class="cash-text">
-                                <span class="rc-value"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">${values.rc}</span>
-                                <p>RoomCash</p>
-                                <p>(for ${n_nights} ${stay})</p>
+                <tr colspan="2">
+                    <td colspan="2">
+                        <div id="prop-detail-lower">
+                            <div class="roomcash-scale-container" id="rc-${idx}">
+                                <div id="container-lower">
+                                    <div class="roomcash-amount">     
+                                        <div class="cash-text">
+                                            <span class="rc-value">${values.rc}</span>
+                                            <p>RoomCash</p>
+                                            <p>(for ${n_nights} ${stay})</p>
+                                        </div>
+                                    </div>
+                                    <div class="your-cash-amount">      
+                                        <div class="cash-text">
+                                            <span class="yc-value">${values.yc}</span>
+                                            <p>Your Cash</p>
+                                            <p>(for ${n_nights} ${stay})</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="roomcash-bar-container">
+                                    <span class="bar"></span>
+                                </div>
                             </div>
+                            <div class="book"></div>
                         </div>
-                        <div class="your-cash-amount">      
-                            <div class="cash-text">
-                                <span class="yc-value">${values.yc}</span>
-                                <p>Your Cash</p>
-                                <p>(for ${n_nights} ${stay})</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="roomcash-bar-container">
-                        <span class="bar"></span>
-                    </div>
-                </div>
+                    </td>
+                </tr>
 `;
 
             const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
@@ -344,6 +387,13 @@ export default class Roomcash {
             // add tooltip
             utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
             utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
+
+            if (document.querySelector('.SinglePropDetail')) {
+                const book_room = prop.querySelector('.bookRoom');
+                const cancel = prop.querySelector('.ArnRateCancelAnchor');
+                prop.querySelector('#book').insertAdjacentElement('afterbegin', book_room);
+                prop.querySelector('#book').insertAdjacentElement('beforeend', cancel);
+            }
 
             // Moves Book button
             if (!document.querySelector('.SearchHotels')) return;
@@ -397,13 +447,6 @@ export default class Roomcash {
         document.querySelector(element).setAttribute(name, newAttr);
     }
 
-    // restructureRateContainer(elementNodeList) {
-    //     const rates = document.querySelectorAll(elementNodeList);
-    //     rates.forEach((el) => {
-    //         this.updateAttribute(`${el.classList[0]} tr:last-of-type td`, 'colspan', '2');
-    //     });
-    // }
-
     async buildSupportPage() {
         const support_form = document.querySelector('.WBSupportFormContainer');
 
@@ -452,12 +495,23 @@ export default class Roomcash {
         document.querySelector('#contact-form').insertAdjacentElement('afterbegin', support_form);
 
         this.updateText('.WBSupportFormActions input', 'GET IN TOUCH');
+        utilities.addAttributeToInput('.WBSupportFormActions input', 'GET IN TOUCH', 'value', '.WBSupportForm');
 
         utilities.addAttributeToInput('#theNameAjax input', 'Name', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm');
-        this.updateText('#theReasonForInquiryAjax select option[value="32"]', 'Reason for inquiry');
+        this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry');
         utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
+    }
+
+    async moveElements(nodeList, destination, insertPosition, element_to_move_selector) {
+        if (!document.querySelector(element_to_move_selector)) return;
+        await utilities.waitForSelectorInDOM(element_to_move_selector);
+        await utilities.waitForSelectorInDOM(destination);
+        const elements = document.querySelectorAll(nodeList);
+        elements.forEach((el) => {
+            el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));
+        });
     }
 }

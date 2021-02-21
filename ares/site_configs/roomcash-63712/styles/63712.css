@@ -1072,7 +1072,8 @@ header #AdminControlsContainer .hamburger .line {
 
 /* - - - - - - - - Property Detail - - - - - - - - */
 .SinglePropDetail .RateCalendarPopupAnchor {
-  margin-right: 47px;
+  display: block;
+  float: unset;
 }
 .SinglePropDetail .ArnRightListContainer {
   background-color: #fff;
@@ -1123,39 +1124,42 @@ header #AdminControlsContainer .hamburger .line {
   visibility: hidden;
   margin-bottom: 40px;
 }
-.SinglePropDetail .roomcash-scale-container {
+.SinglePropDetail .prop-detail-lower {
+  display: flex;
+}
+.SinglePropDetail .prop-detail-lower .book {
+  min-width: 35%;
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.SinglePropDetail .prop-detail-lower .roomcash-scale-container {
   margin-top: 30px;
   width: 95%;
 }
-.SinglePropDetail .roomcash-scale-container .roomcash-amount {
+.SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount {
   text-align: center;
 }
-.SinglePropDetail .roomcash-scale-container .roomcash-amount .tooltip:hover span {
+.SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount .tooltip:hover span {
   top: -4em !important;
 }
-.SinglePropDetail .roomcash-scale-container .your-cash-amount .tooltip:hover span {
+.SinglePropDetail .prop-detail-lower .roomcash-scale-container .your-cash-amount .tooltip:hover span {
   top: -3em !important;
 }
 @media (max-width: 800px) {
-  .SinglePropDetail .roomcash-scale-container {
+  .SinglePropDetail .prop-detail-lower .roomcash-scale-container {
     width: 85%;
   }
 }
 @media (max-width: 600px) {
-  .SinglePropDetail .roomcash-scale-container {
+  .SinglePropDetail .prop-detail-lower .roomcash-scale-container {
     width: 100%;
   }
 }
-.SinglePropDetail .roomcash-scale-container .bar {
+.SinglePropDetail .prop-detail-lower .roomcash-scale-container .bar {
   margin-top: 10px;
-}
-@media (max-width: 600px) {
-  .SinglePropDetail .rateRow tbody > tr > td:nth-child(2) {
-    margin-top: 10px;
-  }
-  .SinglePropDetail .rateRow .ArnRateCancelAnchor {
-    grid-row: 2/3;
-  }
 }
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
@@ -1334,10 +1338,15 @@ body.WBSupportForm .ArnSubPage {
   text-align: center;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormActions input {
-  border: 1px solid #CC9831;
+  border: 1px solid #CC9831 !important;
   width: 100%;
   padding: 15px !important;
   background-color: #CC9831;
+}
+.ArnSubPage.WBSupportForm .WBSupportFormActions input:hover {
+  color: #000000 !important;
+  background-color: #fff !important;
+  border-color: #CC9831 !important;
 }
 .ArnSubPage.WBSupportForm .WBSupportFormFields #theReservationConfirmationNumberAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theDateOfArrivalAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theHotelNameAjax {
   display: none;
@@ -1359,6 +1368,9 @@ body.WBSupportForm .ArnSubPage {
   .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theEmailAddressAjax input, .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormFields #theConfirmationNumberAjax input {
     width: 80% !important;
   }
+}
+.WBResendOrCancelForm .ArnSubPage .emailWarning2 a {
+  color: #CC9831;
 }
 .WBResendOrCancelForm .ArnSubPage .WBResendOrCancelFormActions {
   display: flex;

@@ -351,30 +351,32 @@ export default class Roomcash {
                 </div>
     `
                 : `
-                <tr>
-                    <td>
-                        <div class="roomcash-scale-container" id="rc-${idx}">
-                            <div id="container-lower">
-                                <div class="roomcash-amount">     
-                                    <div class="cash-text">
-                                        <span class="rc-value">${values.rc}</span>
-                                        <p>RoomCash</p>
-                                        <p>(for ${n_nights} ${stay})</p>
+                <tr colspan="2">
+                    <td colspan="2">
+                        <div id="prop-detail-lower">
+                            <div class="roomcash-scale-container" id="rc-${idx}">
+                                <div id="container-lower">
+                                    <div class="roomcash-amount">     
+                                        <div class="cash-text">
+                                            <span class="rc-value">${values.rc}</span>
+                                            <p>RoomCash</p>
+                                            <p>(for ${n_nights} ${stay})</p>
+                                        </div>
+                                    </div>
+                                    <div class="your-cash-amount">      
+                                        <div class="cash-text">
+                                            <span class="yc-value">${values.yc}</span>
+                                            <p>Your Cash</p>
+                                            <p>(for ${n_nights} ${stay})</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="your-cash-amount">      
-                                    <div class="cash-text">
-                                        <span class="yc-value">${values.yc}</span>
-                                        <p>Your Cash</p>
-                                        <p>(for ${n_nights} ${stay})</p>
-                                    </div>
+                                <div id="roomcash-bar-container">
+                                    <span class="bar"></span>
                                 </div>
                             </div>
-                            <div id="roomcash-bar-container">
-                                <span class="bar"></span>
-                            </div>
+                            <div id="book"></div>
                         </div>
-                        <div id="book"></div>
                     </td>
                 </tr>
 `;

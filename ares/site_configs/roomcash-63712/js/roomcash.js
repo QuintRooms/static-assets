@@ -351,7 +351,7 @@ export default class Roomcash {
                 </div>
     `
                 : `
-                <div id="prop-detail-lower-container">
+                <tr id="prop-detail-lower-container">
                     <div class="roomcash-scale-container" id="rc-${idx}">
                         <div id="container-lower">
                             <div class="roomcash-amount">     
@@ -374,7 +374,7 @@ export default class Roomcash {
                         </div>
                     </div>
                     <div id="book"></div>
-                </div>
+                </tr>
 `;
 
             const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;

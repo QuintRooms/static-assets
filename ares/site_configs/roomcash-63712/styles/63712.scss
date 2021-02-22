@@ -468,6 +468,10 @@ header {
                 }
             }
         }
+
+        hr {
+            display: none!important;
+        }
     }
 
     #social-container {
@@ -566,7 +570,7 @@ header {
 
             .tooltip {
                 &:hover span {
-                    top: -11.5em;
+                    top: -10.5em;
                 }
                 span {
                 top: 0em;
@@ -661,6 +665,10 @@ header {
 /* - - - - - - - - Root Page - - - - - - - - */
 
 .RootBody {
+
+    #sub-header-container {
+        margin: 25px 0;
+    }
 
     .ArnSearchContainerMainDiv {
         background-color: #fff;
@@ -1345,7 +1353,6 @@ body.WBSupportForm{
 
                 @include mobile {
                     width: 100vw;
-                    align-items: center;
                     padding: 20px 80px;
                 }
             }

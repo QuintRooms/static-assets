@@ -1,6 +1,9 @@
 <mjml>
     <mj-include path="./site_configs/roomcash-63712/emails/components/head.mjml" />
     <mj-body background-color=#fff>
+        <mj-raw>
+            <span id="preheader" style="display:none!important;">Here are just a few of the easy ways you can earn more RoomCash.</span>
+        </mj-raw>
         /* - - - - Header - - - - */
         <mj-include path="./site_configs/roomcash-63712/emails/components/header.mjml" />
 

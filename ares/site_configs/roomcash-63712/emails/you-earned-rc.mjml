@@ -1,6 +1,9 @@
 <mjml>
     <mj-include path="./site_configs/roomcash-63712/emails/components/head.mjml" />
     <mj-body background-color=#fff>
+        <mj-raw>
+            <span id="preheader" style="display:none!important;">We've topped up your RoomCash Reserves.</span>
+        </mj-raw>
         /* - - - - Header - - - - */
         <mj-include path="./site_configs/roomcash-63712/emails/components/header.mjml" />
 

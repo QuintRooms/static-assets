@@ -656,6 +656,9 @@ header #AdminControlsContainer .hamburger .line {
 #footer-menu-container #policy-social #copyright a:hover {
   text-decoration: underline;
 }
+#footer-menu-container #policy-social hr {
+  display: none !important;
+}
 #footer-menu-container #social-container {
   display: none !important;
 }
@@ -738,7 +741,7 @@ header #AdminControlsContainer .hamburger .line {
   text-align: center;
 }
 .roomcash-scale-container .container-lower .roomcash-amount .tooltip:hover span {
-  top: -11.5em;
+  top: -10.5em;
 }
 .roomcash-scale-container .container-lower .roomcash-amount .tooltip span {
   top: 0em;
@@ -809,6 +812,9 @@ header #AdminControlsContainer .hamburger .line {
 /* - - - - - - - Components End  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - - Root Page - - - - - - - - */
+.RootBody #sub-header-container {
+  margin: 25px 0;
+}
 .RootBody .ArnSearchContainerMainDiv {
   background-color: #fff;
 }
@@ -1354,7 +1360,6 @@ body.WBSupportForm .ArnSubPage {
 @media (max-width: 600px) {
   .ArnSubPage.WBSupportForm #support-page #support-lower #contact-details {
     width: 100vw;
-    align-items: center;
     padding: 20px 80px;
   }
 }

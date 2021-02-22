@@ -83,7 +83,7 @@ export default class Roomcash {
                 },
             ]);
             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend');
-            this.buildSortSelectMenu();
+            // this.buildSortSelectMenu();
         }
 
         // Property Detail

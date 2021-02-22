@@ -856,6 +856,9 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer {
   padding-top: 0;
 }
+.SearchHotels .ArnRightListContainer #ArnPropertyMap {
+  width: calc(37vw - 241px);
+}
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
   border-color: #fff;
   color: #fff;

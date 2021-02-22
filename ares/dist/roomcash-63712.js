@@ -7682,7 +7682,7 @@
                         show_date_prompt: !1,
                         has_social_sharing: !0,
                         fav_icon_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
-                        header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo-main.png'), logo_outbound_url: 'https://roomcash.com/dashboard'},
+                        header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo-main.png'), logo_outbound_url: 'https://roomcash.com'},
                         map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                         theme: 'light',
                         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:300,500,700',
@@ -7955,7 +7955,7 @@
                                     var e = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
                                         t = e.get('latitude'),
                                         n = e.get('longitude');
-                                    ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(t, n)), ArnMap.invalidateSize();
+                                    ArnMap.invalidateSize(), ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(t, n));
                                 },
                             },
                             {
@@ -8387,9 +8387,17 @@
                                                                     u.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm'),
                                                                     this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry'),
+                                                                    u.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm'),
                                                                     u.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm'),
-                                                                    u.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
-                                                            case 13:
+                                                                    u.addAttributeToInput(
+                                                                        '#theReservationConfirmationNumberAjax input',
+                                                                        'Confirmation Number',
+                                                                        'placeholder',
+                                                                        '.WBSupportForm'
+                                                                    ),
+                                                                    u.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportForm'),
+                                                                    u.addAttributeToInput('#theHotelNameAjax input', 'Hotel Name', 'placeholder', '.WBSupportForm');
+                                                            case 16:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

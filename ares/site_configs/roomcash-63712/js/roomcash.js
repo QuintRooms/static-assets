@@ -153,11 +153,11 @@ export default class Roomcash {
         const lng = original_params.get('longitude');
 
         // eslint-disable-next-line no-undef
+        ArnMap.invalidateSize();
+        // eslint-disable-next-line no-undef
         ArnMap.setZoom(15);
         // eslint-disable-next-line no-undef
         ArnMap.panTo(new L.LatLng(lat, lng));
-        // eslint-disable-next-line no-undef
-        ArnMap.invalidateSize();
     }
 
     buildFooterMenu(insertElement, position) {
@@ -530,8 +530,11 @@ export default class Roomcash {
         utilities.addAttributeToInput('#theDaytimePhoneNumberAjax input', 'Phone', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theEmailAjax input', 'Email Address', 'placeholder', '.WBSupportForm');
         this.updateText('#theReasonForInquiryAjax select option', 'Reason for inquiry');
-        utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
         utilities.addAttributeToInput('#theCommentsAjax textarea', '6', 'rows', '.WBSupportForm');
+        utilities.addAttributeToInput('#theCommentsAjax textarea', 'Message', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theReservationConfirmationNumberAjax input', 'Confirmation Number', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theDateOfArrivalAjax input', 'Check In Date', 'placeholder', '.WBSupportForm');
+        utilities.addAttributeToInput('#theHotelNameAjax input', 'Hotel Name', 'placeholder', '.WBSupportForm');
     }
 
     async moveElements(nodeList, destination, insertPosition, element_to_move_selector) {

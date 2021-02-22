@@ -8246,16 +8246,17 @@
                                                             return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
                                                         case 4:
                                                             (t = document.querySelector('.ArnSortByPrice')),
-                                                                (n = document.querySelector('.ArnSortByDistance')),
+                                                                (n = document.querySelector('.ArnSortByDealAmount')),
                                                                 document
                                                                     .querySelector('.sort-wrapper h4')
                                                                     .insertAdjacentHTML(
                                                                         'afterend',
-                                                                        '\n        <select id="sort-select">\n            <option id="sort-price"></option>\n            <option id="sort-rating"></option>\n        </select>'
+                                                                        '\n        <select id="sort-select">\n            <option id="sort-deal"></option>\n            <option id="sort-price"></option>\n        </select>'
                                                                     ),
+                                                                document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', n),
                                                                 document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
-                                                                document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', n);
-                                                        case 10:
+                                                                (n.textContent = 'RoomCash Savings');
+                                                        case 11:
                                                         case 'end':
                                                             return e.stop();
                                                     }

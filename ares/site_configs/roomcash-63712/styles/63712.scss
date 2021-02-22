@@ -641,10 +641,6 @@ header {
 
     .tooltip-wrapper {
 
-        @include tablet {
-            display: none;
-        }
-
         .tooltip span {
             left: -8em;
         }
@@ -669,6 +665,10 @@ header {
                 color: $secondary_text_color;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+
+                @include tablet-small {
+                    text-align: center;
+                }
             }
         }
 

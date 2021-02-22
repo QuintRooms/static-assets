@@ -796,11 +796,6 @@ header #AdminControlsContainer .hamburger .line {
   color: #1C8747;
   font-size: 20px;
 }
-@media (max-width: 800px) {
-  .roomcash-scale-container .tooltip-wrapper {
-    display: none;
-  }
-}
 .roomcash-scale-container .tooltip-wrapper .tooltip span {
   left: -8em;
 }
@@ -819,6 +814,11 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+@media (max-width: 700px) {
+  .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h1, .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h3 {
+    text-align: center;
+  }
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;

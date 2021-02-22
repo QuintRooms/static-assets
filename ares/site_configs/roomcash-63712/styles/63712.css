@@ -796,11 +796,6 @@ header #AdminControlsContainer .hamburger .line {
   color: #1C8747;
   font-size: 20px;
 }
-@media (max-width: 800px) {
-  .roomcash-scale-container .tooltip-wrapper {
-    display: none;
-  }
-}
 .roomcash-scale-container .tooltip-wrapper .tooltip span {
   left: -8em;
 }
@@ -819,6 +814,11 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+@media (max-width: 700px) {
+  .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h1, .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h3 {
+    text-align: center;
+  }
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
@@ -911,6 +911,12 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer .ArnSearchHeader {
   text-transform: uppercase;
+}
+.SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDealPercent, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDistance, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByAvailability {
+  display: none !important;
+}
+.SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByPrice, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDealAmount {
+  display: block !important;
 }
 @media (max-width: 1100px) {
   .SearchHotels .ArnLeftSearchContainer .sort-wrapper {
@@ -1074,6 +1080,10 @@ header #AdminControlsContainer .hamburger .line {
   justify-content: center;
 }
 
+.ArnProperty.no-roomCash-deal .ArnRateCell {
+  display: flex;
+}
+
 /* - - - - - - - - Property Detail - - - - - - - - */
 .SinglePropDetail .RateRowHeader {
   display: none;
@@ -1135,6 +1145,9 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .ArnNightlyRate {
   visibility: hidden;
   margin-bottom: 40px;
+}
+.SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
+  visibility: visible;
 }
 .SinglePropDetail .prop-detail-lower {
   display: flex;

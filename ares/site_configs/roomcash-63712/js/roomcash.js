@@ -315,9 +315,15 @@ export default class Roomcash {
         props.forEach((prop, idx) => {
             const values = this.getValues(prop);
 
-            if (prop.querySelector('.ArnLimitedAvail') || !values) {
+            if (prop.querySelector('.ArnLimitedAvail')) {
                 prop.querySelector('.ArnRateCell').style.display = 'unset';
                 prop.querySelector('.ArnRateButton').style.display = 'none';
+                return;
+            }
+
+            if (!values) {
+                prop.classList.add('no-roomCash-deal');
+                prop.querySelector('tbody tr:last-of-type td').setAttribute('align', 'left');
                 return;
             }
 
@@ -410,22 +416,30 @@ export default class Roomcash {
         });
     }
 
+    // listenForSortSelection() {
+
+    // }
+
     async buildSortSelectMenu() {
         if (!document.querySelector('.SearchHotels')) return;
+        // const sort_type = document.querySelector('meta[name="SortType"]').content;
         await utilities.waitForSelectorInDOM('.sort-wrapper');
         const html = `
         <select id="sort-select">
+            <option id="sort-deal"></option>
             <option id="sort-price"></option>
-            <option id="sort-rating"></option>
         </select>`;
 
         const price = document.querySelector('.ArnSortByPrice');
-        const rating = document.querySelector('.ArnSortByDistance');
+        const deal = document.querySelector('.ArnSortByDealAmount');
 
         document.querySelector('.sort-wrapper h4').insertAdjacentHTML('afterend', html);
 
+        document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', deal);
         document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
-        document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', rating);
+        deal.textContent = 'RoomCash Savings';
+
+        // this.listenForSortSelection();
     }
 
     async moveCurrency() {

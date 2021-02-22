@@ -8119,10 +8119,15 @@
                                                         case 5:
                                                             document.querySelectorAll(t).forEach(function (e, t) {
                                                                 var s = r.getValues(e);
-                                                                if (e.querySelector('.ArnLimitedAvail') || !s)
+                                                                if (e.querySelector('.ArnLimitedAvail'))
                                                                     return (
                                                                         (e.querySelector('.ArnRateCell').style.display = 'unset'),
                                                                         void (e.querySelector('.ArnRateButton').style.display = 'none')
+                                                                    );
+                                                                if (!s)
+                                                                    return (
+                                                                        e.classList.add('no-roomCash-deal'),
+                                                                        void e.querySelector('tbody tr:last-of-type td').setAttribute('align', 'left')
                                                                     );
                                                                 if (s.yc && s.rc && s.rc_width) {
                                                                     var i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content).get('nights'),
@@ -8246,16 +8251,17 @@
                                                             return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
                                                         case 4:
                                                             (t = document.querySelector('.ArnSortByPrice')),
-                                                                (n = document.querySelector('.ArnSortByDistance')),
+                                                                (n = document.querySelector('.ArnSortByDealAmount')),
                                                                 document
                                                                     .querySelector('.sort-wrapper h4')
                                                                     .insertAdjacentHTML(
                                                                         'afterend',
-                                                                        '\n        <select id="sort-select">\n            <option id="sort-price"></option>\n            <option id="sort-rating"></option>\n        </select>'
+                                                                        '\n        <select id="sort-select">\n            <option id="sort-deal"></option>\n            <option id="sort-price"></option>\n        </select>'
                                                                     ),
+                                                                document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', n),
                                                                 document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
-                                                                document.querySelector('#sort-rating').insertAdjacentElement('afterbegin', n);
-                                                        case 10:
+                                                                (n.textContent = 'RoomCash Savings');
+                                                        case 11:
                                                         case 'end':
                                                             return e.stop();
                                                     }

@@ -641,10 +641,6 @@ header {
 
     .tooltip-wrapper {
 
-        @include tablet {
-            display: none;
-        }
-
         .tooltip span {
             left: -8em;
         }
@@ -669,6 +665,10 @@ header {
                 color: $secondary_text_color;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+
+                @include tablet-small {
+                    text-align: center;
+                }
             }
         }
 
@@ -792,6 +792,15 @@ header {
         }
 
         .sort-wrapper {
+
+            .ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByAvailability {
+                display: none !important;
+            }
+
+            .ArnSortByPrice, .ArnSortByDealAmount {
+                display: block !important;
+            }
+            
             @include desktop {
                 display: block;
             }
@@ -990,6 +999,12 @@ header {
     }
 }
 
+.ArnProperty.no-roomCash-deal {
+    .ArnRateCell {
+        display: flex;
+    }
+}
+
 /* - - - - - - - - Property Detail - - - - - - - - */
 
 .SinglePropDetail {
@@ -1070,6 +1085,13 @@ header {
         visibility: hidden;
         margin-bottom: 40px;
     }
+
+    .no-roomCash-deal {
+        .ArnNightlyRate {
+            visibility: visible;
+        }
+    }
+
 
     .prop-detail-lower {
         display: flex;

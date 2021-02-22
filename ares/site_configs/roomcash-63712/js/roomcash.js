@@ -323,6 +323,7 @@ export default class Roomcash {
 
             if (!values) {
                 prop.classList.add('no-roomCash-deal');
+                prop.querySelector('tbody tr:last-of-type td').setAttribute('align', 'left');
                 return;
             }
 

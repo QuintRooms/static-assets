@@ -999,6 +999,12 @@ header {
     }
 }
 
+.ArnProperty.no-roomCash-deal {
+    .ArnRateCell {
+        display: flex;
+    }
+}
+
 /* - - - - - - - - Property Detail - - - - - - - - */
 
 .SinglePropDetail {
@@ -1079,6 +1085,13 @@ header {
         visibility: hidden;
         margin-bottom: 40px;
     }
+
+    .no-roomCash-deal {
+        .ArnNightlyRate {
+            visibility: visible;
+        }
+    }
+
 
     .prop-detail-lower {
         display: flex;

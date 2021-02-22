@@ -1080,6 +1080,10 @@ header #AdminControlsContainer .hamburger .line {
   justify-content: center;
 }
 
+.ArnProperty.no-roomCash-deal .ArnRateCell {
+  display: flex;
+}
+
 /* - - - - - - - - Property Detail - - - - - - - - */
 .SinglePropDetail .RateRowHeader {
   display: none;
@@ -1141,6 +1145,9 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .ArnNightlyRate {
   visibility: hidden;
   margin-bottom: 40px;
+}
+.SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
+  visibility: visible;
 }
 .SinglePropDetail .prop-detail-lower {
   display: flex;

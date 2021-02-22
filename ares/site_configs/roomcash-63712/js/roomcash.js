@@ -323,6 +323,7 @@ export default class Roomcash {
 
             if (!values) {
                 prop.classList.add('no-roomCash-deal');
+                return;
             }
 
             if (!values.yc || !values.rc || !values.rc_width) return;

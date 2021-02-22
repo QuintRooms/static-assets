@@ -329,6 +329,8 @@ export default class Roomcash {
 
         props.forEach((prop, idx) => {
             const values = this.getValues(prop);
+            let html;
+            let n_nights;
 
             if (prop.querySelector('.ArnLimitedAvail')) {
                 prop.querySelector('.ArnRateCell').style.display = 'unset';
@@ -342,11 +344,12 @@ export default class Roomcash {
             }
 
             if (!values.yc || !values.rc || !values.rc_width) return;
-            const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-            const n_nights = original_params.get('nights');
-            const stay = n_nights === '1' ? 'night' : 'nights';
-            const html = document.querySelector('.SearchHotels')
-                ? `
+            if (document.querySelector('.SearchHotels')) {
+                n_nights = prop.querySelector('.arnUnit span').textContent.trim();
+                if (n_nights === 'for 1 nights') {
+                    n_nights = n_nights.substring(0, n_nights.length - 1);
+                }
+                html = `
                 <div class="roomcash-scale-container" id="rc-${idx}">
                     <div id="roomcash-bar-container">
                         <span class="bar"></span>
@@ -356,20 +359,24 @@ export default class Roomcash {
                         <div class="cash-text">
                             <span class="rc-value">$${values.rc}</span>
                             <p>RoomCash</p>
-                            <p>(for ${n_nights} ${stay})</p>
+                            <p>(${n_nights})</p>
                         </div>
                     </div>
                     <div class="your-cash-amount">      
                         <div class="cash-text">
                             <span class="yc-value">${values.yc}</span>
                             <p>Your Cash</p>
-                            <p>(for ${n_nights} ${stay})</p>
+                            <p>(${n_nights})</p>
                         </div>
                     </div>
                     </div>
-                </div>
-    `
-                : `
+                </div>`;
+            } else if (document.querySelector('.SinglePropDetail')) {
+                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent;
+                if (n_nights === 'for 1 nights') {
+                    n_nights = n_nights.substring(0, n_nights.length - 1);
+                }
+                html = `
                 <tr colspan="2">
                     <td colspan="2">
                         <div class="prop-detail-lower">
@@ -379,14 +386,14 @@ export default class Roomcash {
                                         <div class="cash-text">
                                             <span class="rc-value">$${values.rc}</span>
                                             <p>RoomCash</p>
-                                            <p>(for ${n_nights} ${stay})</p>
+                                            <p>(${n_nights})</p>
                                         </div>
                                     </div>
                                     <div class="your-cash-amount">      
                                         <div class="cash-text">
                                             <span class="yc-value">${values.yc}</span>
                                             <p>Your Cash</p>
-                                            <p>(for ${n_nights} ${stay})</p>
+                                            <p>(${n_nights})</p>
                                         </div>
                                     </div>
                                 </div>
@@ -397,8 +404,8 @@ export default class Roomcash {
                             <div class="book"></div>
                         </div>
                     </td>
-                </tr>
-`;
+                </tr>`;
+            }
 
             const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);

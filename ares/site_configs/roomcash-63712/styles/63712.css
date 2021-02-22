@@ -831,10 +831,19 @@ header #AdminControlsContainer .hamburger .line {
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblCurrency, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblHotelSize, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblNearbyCities, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRateTypes, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblRating, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer .lblSortByPrice {
   font-weight: 500;
 }
+@media (max-width: 700px) {
+  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer #AmentitiesContainer, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer #PropertyClassesContainer, .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer #PropertyTypesContainer {
+    display: none !important;
+  }
+  .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    max-width: none;
+    width: 100%;
+  }
+}
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
   width: 50%;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
     width: unset;
   }
@@ -847,9 +856,6 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer {
   padding-top: 0;
 }
-.SearchHotels .ArnRightListContainer #ArnPropertyMap {
-  width: 24vw;
-}
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
   border-color: #fff;
   color: #fff;
@@ -857,11 +863,6 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker .arnMapMarkerTriangle {
   border-top-color: #CC9831;
-}
-@media (max-width: 1100px) {
-  .SearchHotels .ArnRightListContainer #ArnPropertyMap {
-    width: unset;
-  }
 }
 .SearchHotels input#theSubmitButton {
   padding: 15px !important;
@@ -873,7 +874,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 @media (max-width: 800px) {
   .SearchHotels .ArnLeftSearchContainer .search-info {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
@@ -1071,6 +1072,9 @@ header #AdminControlsContainer .hamburger .line {
 }
 
 /* - - - - - - - - Property Detail - - - - - - - - */
+.SinglePropDetail .RateRowHeader {
+  display: none;
+}
 .SinglePropDetail .RateCalendarPopupAnchor {
   display: block;
   float: unset;
@@ -1183,6 +1187,9 @@ header #AdminControlsContainer .hamburger .line {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
+}
+.CheckOutForm #theBookingPage input[type=checkbox], .ConfirmationForm #theBookingPage input[type=checkbox] {
+  width: 50px;
 }
 .CheckOutForm #theBookingPage .PaymentPolicies, .ConfirmationForm #theBookingPage .PaymentPolicies {
   background-color: #fff;

@@ -997,13 +997,27 @@ header {
         display: flex;
         justify-content: center;
     }
-}
 
-.ArnProperty.no-roomCash-deal {
-    .ArnRateCell {
-        display: flex;
+    .ArnProperty.no-roomCash-deal {
+        .ArnRateCell {
+            display: flex;
+    
+            @include mobile {
+                padding: 0 12px;
+                justify-content: space-between;
+    
+                .ArnRateButton {
+                    margin-bottom: 0;
+                }
+            }
+    
+            @include tablet {
+                width: 50%;
+            }
+        }
     }
 }
+
 
 /* - - - - - - - - Property Detail - - - - - - - - */
 
@@ -1089,6 +1103,22 @@ header {
     .no-roomCash-deal {
         .ArnNightlyRate {
             visibility: visible;
+
+            @include mobile {
+                display: block !important;
+                margin: 20px 0
+                ;
+                width: unset;
+                text-align: unset;
+            }
+        }
+
+        .RateCalendarPopupAnchor {
+            float: left !important;
+
+            @include mobile {
+                text-align: center;
+            }
         }
     }
 

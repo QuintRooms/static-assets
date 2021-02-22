@@ -1079,9 +1079,22 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   justify-content: center;
 }
-
-.ArnProperty.no-roomCash-deal .ArnRateCell {
+.SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell {
   display: flex;
+}
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell {
+    padding: 0 12px;
+    justify-content: space-between;
+  }
+  .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell .ArnRateButton {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 800px) {
+  .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell {
+    width: 50%;
+  }
 }
 
 /* - - - - - - - - Property Detail - - - - - - - - */
@@ -1148,6 +1161,22 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
   visibility: visible;
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
+    display: block !important;
+    margin: 20px 0;
+    width: unset;
+    text-align: unset;
+  }
+}
+.SinglePropDetail .no-roomCash-deal .RateCalendarPopupAnchor {
+  float: left !important;
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .no-roomCash-deal .RateCalendarPopupAnchor {
+    text-align: center;
+  }
 }
 .SinglePropDetail .prop-detail-lower {
   display: flex;

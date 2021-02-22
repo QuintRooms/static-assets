@@ -1366,7 +1366,7 @@ body.WBSupportForm .ArnSubPage {
     width: 100vw;
   }
 }
-.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item h5 {
+.ArnSubPage.WBSupportForm #support-page #support-lower .contact-item h4 {
   font-weight: 400;
   margin: 5px 0;
 }
@@ -1417,9 +1417,6 @@ body.WBSupportForm .ArnSubPage {
   color: #000000 !important;
   background-color: #fff !important;
   border-color: #CC9831 !important;
-}
-.ArnSubPage.WBSupportForm .WBSupportFormFields #theReservationConfirmationNumberAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theDateOfArrivalAjax, .ArnSubPage.WBSupportForm .WBSupportFormFields #theHotelNameAjax {
-  display: none;
 }
 
 /* - - - - - - - - Cancel/modify Page - - - - - - - - */

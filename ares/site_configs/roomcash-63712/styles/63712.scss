@@ -792,6 +792,15 @@ header {
         }
 
         .sort-wrapper {
+
+            .ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByAvailability {
+                display: none !important;
+            }
+
+            .ArnSortByPrice, .ArnSortByDealAmount {
+                display: block !important;
+            }
+            
             @include desktop {
                 display: block;
             }

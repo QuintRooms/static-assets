@@ -912,6 +912,12 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnLeftSearchContainer .ArnPrimarySearchOuterContainer .ArnSearchHeader {
   text-transform: uppercase;
 }
+.SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDealPercent, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDistance, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByAvailability {
+  display: none !important;
+}
+.SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByPrice, .SearchHotels .ArnLeftSearchContainer .sort-wrapper .ArnSortByDealAmount {
+  display: block !important;
+}
 @media (max-width: 1100px) {
   .SearchHotels .ArnLeftSearchContainer .sort-wrapper {
     display: block;

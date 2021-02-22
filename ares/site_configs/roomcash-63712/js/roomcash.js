@@ -83,7 +83,7 @@ export default class Roomcash {
                 },
             ]);
             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend');
-            // this.buildSortSelectMenu();
+            this.buildSortSelectMenu();
         }
 
         // Property Detail
@@ -315,10 +315,14 @@ export default class Roomcash {
         props.forEach((prop, idx) => {
             const values = this.getValues(prop);
 
-            if (prop.querySelector('.ArnLimitedAvail') || !values) {
+            if (prop.querySelector('.ArnLimitedAvail')) {
                 prop.querySelector('.ArnRateCell').style.display = 'unset';
                 prop.querySelector('.ArnRateButton').style.display = 'none';
                 return;
+            }
+
+            if (!values) {
+                prop.classList.add('no-roomCash-deal');
             }
 
             if (!values.yc || !values.rc || !values.rc_width) return;
@@ -410,8 +414,13 @@ export default class Roomcash {
         });
     }
 
+    // listenForSortSelection() {
+
+    // }
+
     async buildSortSelectMenu() {
         if (!document.querySelector('.SearchHotels')) return;
+        // const sort_type = document.querySelector('meta[name="SortType"]').content;
         await utilities.waitForSelectorInDOM('.sort-wrapper');
         const html = `
         <select id="sort-select">
@@ -427,6 +436,8 @@ export default class Roomcash {
         document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', deal);
         document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
         deal.textContent = 'RoomCash Savings';
+
+        // this.listenForSortSelection();
     }
 
     async moveCurrency() {

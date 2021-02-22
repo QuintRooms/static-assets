@@ -405,8 +405,6 @@ export default class BasePortal {
 
     // refactor meeeeee
     createMobileSortAndFilter() {
-        if (this.site_id === '63712') return;
-        console.log('Running');
         if (!window.matchMedia('(max-width:800px)').matches || !document.querySelector('.SearchHotels')) return;
 
         utilities.updateHTML(

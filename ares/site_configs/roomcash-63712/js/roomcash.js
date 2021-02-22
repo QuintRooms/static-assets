@@ -84,6 +84,8 @@ export default class Roomcash {
             ]);
             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend');
             this.buildSortSelectMenu();
+
+            this.resizeMap();
         }
 
         // Property Detail
@@ -145,21 +147,34 @@ export default class Roomcash {
         }
     }
 
+    resizeMap() {
+        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
+        const lat = original_params.get('latitude');
+        const lng = original_params.get('longitude');
+
+        // eslint-disable-next-line no-undef
+        ArnMap.setZoom(15);
+        // eslint-disable-next-line no-undef
+        ArnMap.panTo(new L.LatLng(lat, lng));
+        // eslint-disable-next-line no-undef
+        ArnMap.invalidateSize();
+    }
+
     buildFooterMenu(insertElement, position) {
         const footer_menu = `
         <div id="footer-menu-container">
             <div id="links-container">
-                <div class="links">
+                <div class="links learn-more">
                         <li class="links-header">Learn More</li>
                         <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>
                         <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>
                 </div>
-                <div class="links">
+                <div class="links support">
                         <li class="links-header">Support</li>
                         <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.supportLink').href}">Contact Us</a></li>
                         <li><a target="_blank" href="${document.querySelector('.ARN_ServiceLinks.cancelLink').href}">Cancel/Modify</a></li>
                 </div>
-                <div class="links">
+                <div class="links partner">
                         <li class="links-header">Partner with RoomCash</li>
                         <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>
                     <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>
@@ -190,7 +205,7 @@ export default class Roomcash {
                 </div>
                 <hr>
                 <div id="copyright">
-                    <p>Copyright &copy; 2020. All rights reserved</p>
+                    <p>Copyright &copy; ${new Date().getFullYear()}. All rights reserved</p>
                     <div><a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a><span id="pipe">|</span><a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a></div>
                 </div>
             </div>

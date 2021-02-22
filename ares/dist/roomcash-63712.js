@@ -7685,7 +7685,7 @@
                         header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo-main.png'), logo_outbound_url: 'https://roomcash.com/dashboard'},
                         map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                         theme: 'light',
-                        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
+                        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:300,500,700',
                         ads: {
                             sidebar_ad: {is_active: !1, image_url: '', outbound_url: ''},
                             between_property_ad: {is_active: !1, image_url: '', outbound_url: ''},
@@ -7919,7 +7919,8 @@
                                                 {element: '.SearchHotels #AmentitiesContainer', position: 'beforeBegin', html: '<div id="filter-by">FILTER BY</div>'},
                                             ]),
                                             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend'),
-                                            this.buildSortSelectMenu()),
+                                            this.buildSortSelectMenu(),
+                                            this.resizeMap()),
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
@@ -7949,16 +7950,25 @@
                                 },
                             },
                             {
+                                key: 'resizeMap',
+                                value: function () {
+                                    var e = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                        t = e.get('latitude'),
+                                        n = e.get('longitude');
+                                    ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(t, n)), ArnMap.invalidateSize();
+                                },
+                            },
+                            {
                                 key: 'buildFooterMenu',
                                 value: function (e, t) {
-                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Support</li>\n                        <li><a target="_blank" href="'
+                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links learn-more">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>\n                </div>\n                <div class="links support">\n                        <li class="links-header">Support</li>\n                        <li><a target="_blank" href="'
                                         .concat(
                                             document.querySelector('.ARN_ServiceLinks.supportLink').href,
                                             '">Contact Us</a></li>\n                        <li><a target="_blank" href="'
                                         )
                                         .concat(
                                             document.querySelector('.ARN_ServiceLinks.cancelLink').href,
-                                            '">Cancel/Modify</a></li>\n                </div>\n                <div class="links">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                            '">Cancel/Modify</a></li>\n                </div>\n                <div class="links partner">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
                                         )
                                         .concat(c.path, '/site_configs/')
                                         .concat(
@@ -7973,7 +7983,11 @@
                                         .concat(c.path, '/site_configs/')
                                         .concat(
                                             this.config.directory_name,
-                                            '/icons/app-store.png">\n                        </a>\n                    </div>\n                </div>\n                <hr>\n                <div id="copyright">\n                    <p>Copyright &copy; 2020. All rights reserved</p>\n                    <div><a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a><span id="pipe">|</span><a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a></div>\n                </div>\n            </div>\n        </div>\n        '
+                                            '/icons/app-store.png">\n                        </a>\n                    </div>\n                </div>\n                <hr>\n                <div id="copyright">\n                    <p>Copyright &copy; '
+                                        )
+                                        .concat(
+                                            new Date().getFullYear(),
+                                            '. All rights reserved</p>\n                    <div><a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a><span id="pipe">|</span><a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a></div>\n                </div>\n            </div>\n        </div>\n        '
                                         );
                                     document.querySelector(e).insertAdjacentHTML(t, n);
                                 },

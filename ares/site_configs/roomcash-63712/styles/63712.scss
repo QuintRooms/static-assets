@@ -1360,7 +1360,7 @@ body.WBSupportForm{
             
             .contact-item {
 
-                h5 {
+                h4 {
                     font-weight: $text_weight;
                     margin: 5px 0;
                 }
@@ -1429,12 +1429,6 @@ body.WBSupportForm{
                 background-color: $button_hover_background_color !important;
                 border-color: $primary_color !important;
             }
-        }
-    }
-
-    .WBSupportFormFields {
-        #theReservationConfirmationNumberAjax, #theDateOfArrivalAjax,  #theHotelNameAjax {
-            display: none;
         }
     }
 }

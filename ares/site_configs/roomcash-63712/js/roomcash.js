@@ -50,8 +50,8 @@ export default class Roomcash {
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
             this.insertContent([
                 {
-                    element: '.SearchHotels .ArnSearchContainerMainDiv',
-                    position: 'afterbegin',
+                    element: '.RootBody .ArnSearchContainerMainDiv',
+                    position: 'beforebegin',
                     html: this.sub_header_container,
                 },
             ]);
@@ -227,7 +227,7 @@ export default class Roomcash {
             'afterbegin',
             `
             <div id="mobile-balance-container">
-                <span id="mobile-balance">${this.user_points}</span>
+                <span id="mobile-balance">$${this.user_points}</span>
             </div>
         `
         );
@@ -249,7 +249,7 @@ export default class Roomcash {
             <div id="admin-container">
                 <div id="balance-container" class="header-link">
                     <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
-                    <span id="balance">${this.user_points}</span>
+                    <span id="balance">$${this.user_points}</span>
                 </div>
                 <div id="account-container" class="header-link">
                     <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
@@ -354,7 +354,7 @@ export default class Roomcash {
                 <div class="container-lower">
                     <div class="roomcash-amount">     
                         <div class="cash-text">
-                            <span class="rc-value">${values.rc}</span>
+                            <span class="rc-value">$${values.rc}</span>
                             <p>RoomCash</p>
                             <p>(for ${n_nights} ${stay})</p>
                         </div>
@@ -377,7 +377,7 @@ export default class Roomcash {
                                 <div class="container-lower">
                                     <div class="roomcash-amount">     
                                         <div class="cash-text">
-                                            <span class="rc-value">${values.rc}</span>
+                                            <span class="rc-value">$${values.rc}</span>
                                             <p>RoomCash</p>
                                             <p>(for ${n_nights} ${stay})</p>
                                         </div>
@@ -486,24 +486,25 @@ export default class Roomcash {
                     <div id="support-page">
                         <div id="hero-image">
                             <h1>GET IN TOUCH</h1>
-                            <span>We're here to help! Contact us and we'll help you anyway we can</span>
+                            <span>Have a question about your reservation? What to chat about becoming partner? We're here to help!</span>
                         </div>
                         <div id="support-lower">
                             <div id="contact-details">
                                 <div id="support" class="contact-item">
-                                    <h3>Customer Support</h3>
-                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
-                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                    <h2>CUSTOMER SUPPORT</h2>
+                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>
+                                    <h4>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h4>
+                                    <h4>Hours: M-F 8:00 AM - 5:30 pm CST</h4>
                                 </div>
                                 <div id="partner" class="contact-item">
-                                    <h3>PARTNER INQUIRIES</h3>
-                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
-                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                    <h2>PARTNER INQUIRIES</h2>
+                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>
+                                    <h4>Email Us: <a href="mailto:partners@hotelsforhope.com">partners@roomcash.com</a></h4>
                                 </div>
                                 <div id="marketing" class="contact-item">
-                                    <h3>MARKETING INQUIRIES</h3>
-                                    <h5>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h5>
-                                    <h5>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h5>
+                                    <h2>MARKETING INQUIRIES</h2>
+                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>
+                                    <h4>Email Us: <a href="mailto:marketing@hotelsforhope.com">marketing@roomcash.com</a></h4>
                                 </div>
                             </div>
                             <div id="contact-form">

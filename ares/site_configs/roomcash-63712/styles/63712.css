@@ -529,6 +529,9 @@ header #AdminControlsContainer .hamburger .line {
     align-items: center;
   }
 }
+#footer-menu-container #links-container .partner li:nth-child(2) {
+  display: none !important;
+}
 #footer-menu-container #links-container .links {
   display: flex;
   flex-direction: column;
@@ -653,6 +656,9 @@ header #AdminControlsContainer .hamburger .line {
 #footer-menu-container #policy-social #copyright a:hover {
   text-decoration: underline;
 }
+#footer-menu-container #social-container {
+  display: none !important;
+}
 
 /* - - - - - - - - Buttons - - - - - - - - */
 .RootBody #theOtherSubmitButton, .SearchHotels .ArnShowRatesLink, .SearchHotels #theSubmitButton, .SearchHotels #theOtherSubmitButton, .bookRoom, .SinglePropDetail #moreRatesLink, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit, .holdRoom, .CheckOutForm input#theConfirmationButton, .WBSupportFormActions input, .WBResendOrCancelFormActions input, .CreateAnAccountAction, .LoginAction.submit, #book-another {
@@ -666,9 +672,8 @@ header #AdminControlsContainer .hamburger .line {
   transition-timing-function: ease-in-out;
 }
 .RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover, .CreateAnAccountAction:hover, .LoginAction.submit:hover, #book-another:hover {
-  color: #000000 !important;
-  background-color: #fff !important;
-  border-color: #CC9831 !important;
+  background-color: #BD8C2E !important;
+  border-color: #BD8C2E !important;
 }
 
 .SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
@@ -857,7 +862,7 @@ header #AdminControlsContainer .hamburger .line {
   padding-top: 0;
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap {
-  width: calc(37vw - 241px);
+  width: 24vw;
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
   border-color: #fff;
@@ -1013,6 +1018,9 @@ header #AdminControlsContainer .hamburger .line {
     right: 0;
     margin-top: 15px;
   }
+}
+.SearchHotels .ArnQuadSearchContainer .currencies-container {
+  display: none !important;
 }
 .SearchHotels .ArnProperty .ArnPropThumb, .SearchHotels .ArnProperty .ArnPropThumb img {
   height: 225px;

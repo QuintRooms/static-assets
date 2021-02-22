@@ -683,12 +683,23 @@ header {
                 .lblAmenities, .lblCurrency, .lblHotelSize, .lblNearbyCities, .lblPropertyType, .lblRateTypes, .lblRating, .lblSortByPrice {
                     font-weight: 500;
                 }
+
+                @include tablet-small {
+                    #AmentitiesContainer, #PropertyClassesContainer, #PropertyTypesContainer {
+                        display: none !important;
+                    }
+
+                    #theOtherSubmitButton {
+                        max-width: none;
+                        width: 100%;
+                    }
+                }
             }
 
             #CitySearchContainer {
                 width: 50%;
 
-                @media (max-width: 600px) {
+                @include tablet-small {
                     width: unset;
                 }
             }
@@ -709,7 +720,7 @@ header {
         padding-top: 0;
 
         #ArnPropertyMap {
-            width: 24vw;
+            // width: 24vw;
 
             .arnMapMarker {
                 border-color: #fff;
@@ -721,9 +732,9 @@ header {
                 }
             }
 
-            @include desktop {
-                width: unset;
-            }
+            // @include desktop {
+            //     width: unset;
+            // }
         }
     }
     
@@ -739,7 +750,7 @@ header {
 
         @include tablet {
             .search-info {
-                margin-top: 30px;
+                margin-top: 10px;
             }
         }
 
@@ -983,6 +994,10 @@ header {
 
 .SinglePropDetail {
 
+    .RateRowHeader {
+        display: none;
+    }
+
     .RateCalendarPopupAnchor {
         display: block;
         float: unset;
@@ -1124,6 +1139,10 @@ header {
             background-color: #fff;
             padding: 20px;
             margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            width: 50px;
         }
 
         .PaymentPolicies {

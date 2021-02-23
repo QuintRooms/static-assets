@@ -1154,10 +1154,9 @@ header {
             }
         }
 
-        .RateCalendarPopupAnchor {
-            float: left !important;
-
-            @include mobile {
+        @include mobile {
+            
+            .RateCalendarPopupAnchor {
                 text-align: center;
             }
         }

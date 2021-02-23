@@ -90,7 +90,7 @@ header {
         margin-left: 30px;
         max-width: 190px;
 
-        @include mobile-small {
+        @include mobile {
             margin-left: 5px;
         }
     }

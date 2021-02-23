@@ -147,7 +147,8 @@ export default class Roomcash {
         }
     }
 
-    resizeMap() {
+    async resizeMap() {
+        await utilities.waitForSelectorInDOM('.pollingFinished');
         const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
         const lat = original_params.get('latitude');
         const lng = original_params.get('longitude');

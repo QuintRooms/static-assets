@@ -8258,36 +8258,35 @@
                                 key: 'setUpListener',
                                 value:
                                     ((p = i(
-                                        regeneratorRuntime.mark(function e(t, n) {
-                                            var o,
-                                                r = this;
+                                        regeneratorRuntime.mark(function e(t) {
+                                            var n,
+                                                o = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
-                                                                (o = document.querySelector(n)),
+                                                                (n = document.querySelector('#sort-select')),
                                                                 console.log('inside setUpListener'),
-                                                                console.log('select element: ', o),
-                                                                (e.next = 5),
-                                                                u.waitForSelectorInDOM(n)
+                                                                (e.next = 4),
+                                                                u.waitForSelectorInDOM('#sort-select')
                                                             );
-                                                        case 5:
+                                                        case 4:
                                                             console.log('after waitForSelector'),
                                                                 document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
                                                                 console.log('before event listener'),
-                                                                o.addEventListenter('change', function (e) {
+                                                                document.querySelector('#sort-select').addEventListenter('change', function (e) {
                                                                     console.log('event listener added'),
-                                                                        r.handleEvent(e, document.querySelectorAll('#sort-select option')[o.selectedIndex]);
+                                                                        o.handleEvent(e, document.querySelectorAll('#sort-select option')[n.selectedIndex]);
                                                                 });
-                                                        case 9:
+                                                        case 8:
                                                         case 'end':
                                                             return e.stop();
                                                     }
                                             }, e);
                                         })
                                     )),
-                                    function (e, t) {
+                                    function (e) {
                                         return p.apply(this, arguments);
                                     }),
                             },
@@ -8324,7 +8323,7 @@
                                                                     (t = localStorage.getItem('sortType')
                                                                         ? localStorage.getItem('sortType')
                                                                         : document.querySelector('meta[name="SortType"]').content),
-                                                                    this.setUpListener(t, '#sort-select');
+                                                                    this.setUpListener(t);
                                                             case 13:
                                                             case 'end':
                                                                 return e.stop();

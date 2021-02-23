@@ -1481,6 +1481,15 @@ body.WBSupportForm .ArnSubPage {
     width: 80% !important;
   }
 }
+.WBResendOrCancelForm .ArnSubPage .emailWarning, .WBResendOrCancelForm .ArnSubPage .emailWarning2, .WBResendOrCancelForm .ArnSubPage #theConfirmationNumberAjax label, .WBResendOrCancelForm .ArnSubPage #theEmailAddressAjax label {
+  font-weight: 300;
+}
+.WBResendOrCancelForm .ArnSubPage .emailWarningHeading {
+  font-weight: 500;
+}
+.WBResendOrCancelForm .ArnSubPage .ArnSubPage.WBResendOrCancelForm h1 {
+  font-weight: 700;
+}
 .WBResendOrCancelForm .ArnSubPage .emailWarning2 a {
   color: #CC9831;
 }

@@ -3,7 +3,7 @@
 $header_background: #000000;
 $logo_flex_position: flex-start;
 $logo_max_width: 150px;
-$background_color: #E6E6E6;
+$background_color: #EBEBEB;
 $primary_color: #CC9831;
 $secondary_color: #1C8747;
 $primary_text_color: #fff;
@@ -315,7 +315,7 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        width: 100%;
+        width: 70%;
         padding: 20px;
 
         @include desktop {
@@ -1231,7 +1231,7 @@ header {
         }
 
         input[type="checkbox"] {
-            width: 50px;
+            width: 50px !important;
         }
 
         .PaymentPolicies {

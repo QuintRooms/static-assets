@@ -445,16 +445,17 @@ export default class Roomcash {
         window.location.href = sortOption.querySelector('a').href;
     }
 
-    async setUpListener(sortTypeId, selectElement) {
+    async setUpListener(sortTypeId, element) {
+        const select_element = document.querySelector(element);
         console.log('inside setUpListener');
-        console.log('select element: ', selectElement);
-        await utilities.waitForSelectorInDOM(selectElement);
+        console.log('select element: ', select_element);
+        await utilities.waitForSelectorInDOM(element);
         console.log('after waitForSelector');
         document.querySelector(`#${sortTypeId}`).setAttribute('selected', 'selected');
         console.log('before event listener');
-        selectElement.addEventListenter('change', (e) => {
+        select_element.addEventListenter('change', (e) => {
             console.log('event listener added');
-            this.handleEvent(e, document.querySelectorAll('#sort-select option')[selectElement.selectedIndex]);
+            this.handleEvent(e, document.querySelectorAll('#sort-select option')[select_element.selectedIndex]);
         });
     }
 
@@ -483,7 +484,7 @@ export default class Roomcash {
         } else {
             sort_type = document.querySelector('meta[name="SortType"]').content;
         }
-        this.setUpListener(sort_type, document.querySelector('#sort-select'));
+        this.setUpListener(sort_type, '#sort-select');
     }
 
     async moveCurrency() {

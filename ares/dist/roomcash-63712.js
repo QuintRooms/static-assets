@@ -8259,21 +8259,28 @@
                                 value:
                                     ((p = i(
                                         regeneratorRuntime.mark(function e(t, n) {
-                                            var o = this;
+                                            var o,
+                                                r = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return console.log('inside setUpListener'), console.log('select element: ', n), (e.next = 4), u.waitForSelectorInDOM(n);
-                                                        case 4:
+                                                            return (
+                                                                (o = document.querySelector(n)),
+                                                                console.log('inside setUpListener'),
+                                                                console.log('select element: ', o),
+                                                                (e.next = 5),
+                                                                u.waitForSelectorInDOM(n)
+                                                            );
+                                                        case 5:
                                                             console.log('after waitForSelector'),
                                                                 document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
                                                                 console.log('before event listener'),
-                                                                n.addEventListenter('change', function (e) {
+                                                                o.addEventListenter('change', function (e) {
                                                                     console.log('event listener added'),
-                                                                        o.handleEvent(e, document.querySelectorAll('#sort-select option')[n.selectedIndex]);
+                                                                        r.handleEvent(e, document.querySelectorAll('#sort-select option')[o.selectedIndex]);
                                                                 });
-                                                        case 8:
+                                                        case 9:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -8317,7 +8324,7 @@
                                                                     (t = localStorage.getItem('sortType')
                                                                         ? localStorage.getItem('sortType')
                                                                         : document.querySelector('meta[name="SortType"]').content),
-                                                                    this.setUpListener(t, document.querySelector('#sort-select'));
+                                                                    this.setUpListener(t, '#sort-select');
                                                             case 13:
                                                             case 'end':
                                                                 return e.stop();

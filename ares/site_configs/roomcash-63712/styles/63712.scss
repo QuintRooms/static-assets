@@ -1153,23 +1153,28 @@ header {
 
     .prop-detail-lower {
         display: flex;
+        justify-content: space-between;
 
         @include mobile {
             flex-direction: column;
         }
 
         .book {
-            min-width: 30%;
-            margin: 0 30px;
+            margin-right: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            .bookRoom {
+                width: 150px;
+            }
         }
 
         .roomcash-scale-container {
             margin-top: 30px;
             width: 95%;
+            padding: 0 20px;
     
             .roomcash-amount {
                 text-align: center;

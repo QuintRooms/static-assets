@@ -1208,6 +1208,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .prop-detail-lower {
   display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 600px) {
   .SinglePropDetail .prop-detail-lower {
@@ -1215,16 +1216,19 @@ header #AdminControlsContainer .hamburger .line {
   }
 }
 .SinglePropDetail .prop-detail-lower .book {
-  min-width: 30%;
-  margin: 0 30px;
+  margin-right: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.SinglePropDetail .prop-detail-lower .book .bookRoom {
+  width: 150px;
+}
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container {
   margin-top: 30px;
   width: 95%;
+  padding: 0 20px;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount {
   text-align: center;

@@ -17,9 +17,9 @@ $google_font_name: 'Montserrat';
 $site_name: 'roomcash-63712';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
-$heading_weight: 800;
-$sub_heading_weight: 400;
-$text_weight: 400;
+$heading_weight: 700;
+$sub_heading_weight: 500;
+$text_weight: 300;
 $desktop: 1100px;
 $tablet: 800px;
 $tablet_small: 700px;
@@ -246,12 +246,17 @@ header {
                 @include tablet {
                     width: 30%;
                 }
+
+                @include mobile {
+                    display: none;
+                }
             }
         }
 
         #brand-logos {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
+            align-items: center;
             width: 70%;
             margin: 0 auto;
             padding: 20px 0;
@@ -261,13 +266,17 @@ header {
                 margin: 0;
             }
 
-            a {
-                margin: auto;
+            a:first-child, a:nth-child(2) {
+                margin-right: 4rem;
             }
 
             img {
                 max-width: 165px;
                 filter: brightness(0) invert(.5);
+
+                @include mobile {
+                    max-width: 10rem;
+                }
             }
 
             @include tablet-small {
@@ -494,6 +503,7 @@ header {
     &:hover {
         background-color: #BD8C2E !important;
         border-color: #BD8C2E !important;
+        color: $primary_text_color !important
     }
 }
 

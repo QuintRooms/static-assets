@@ -153,6 +153,7 @@ export default class Roomcash {
         const lat = original_params.get('latitude');
         const lng = original_params.get('longitude');
 
+        if (utilities.matchMediaQuery('max-width: 1000px')) return;
         // eslint-disable-next-line no-undef
         ArnMap.invalidateSize();
         // eslint-disable-next-line no-undef

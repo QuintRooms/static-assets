@@ -7963,13 +7963,19 @@
                                                         case 0:
                                                             return (e.next = 2), u.waitForSelectorInDOM('.pollingFinished');
                                                         case 2:
-                                                            (t = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
+                                                            if (
+                                                                ((t = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
                                                                 (n = t.get('latitude')),
                                                                 (o = t.get('longitude')),
-                                                                ArnMap.invalidateSize(),
-                                                                ArnMap.setZoom(15),
-                                                                ArnMap.panTo(new L.LatLng(n, o));
-                                                        case 8:
+                                                                !u.matchMediaQuery('max-width: 1000px'))
+                                                            ) {
+                                                                e.next = 7;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 7:
+                                                            ArnMap.invalidateSize(), ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(n, o));
+                                                        case 10:
                                                         case 'end':
                                                             return e.stop();
                                                     }

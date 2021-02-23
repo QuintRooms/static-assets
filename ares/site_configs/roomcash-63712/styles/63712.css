@@ -867,8 +867,10 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer {
   padding-top: 0;
 }
-.SearchHotels .ArnRightListContainer #ArnPropertyMap {
-  width: 24vw;
+@media (min-width: 100px) {
+  .SearchHotels .ArnRightListContainer #ArnPropertyMap {
+    width: 24vw;
+  }
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
   border-color: #fff;

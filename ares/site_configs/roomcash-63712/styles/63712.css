@@ -24,7 +24,7 @@ header {
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
-  background-color: #E6E6E6;
+  background-color: #EBEBEB;
 }
 
 /* Primary Background Color */
@@ -519,7 +519,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
+  width: 70%;
   padding: 20px;
 }
 @media (max-width: 1100px) {
@@ -732,7 +732,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail #sub-header-container {
   margin-bottom: 10px;
-  background-color: #E6E6E6;
+  background-color: #EBEBEB;
 }
 
 /* - - - - - - - - RoomCash/Your Cash scale - - - - - - - - */
@@ -959,7 +959,7 @@ header #AdminControlsContainer .hamburger .line {
     width: 100%;
     padding: 15px !important;
     margin: 20px 0 0 0;
-    background-color: #E6E6E6;
+    background-color: #EBEBEB;
   }
 }
 @media (max-width: 1100px) {
@@ -1185,7 +1185,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .ArnNightlyRate {
   visibility: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
   visibility: visible;
@@ -1219,15 +1219,20 @@ header #AdminControlsContainer .hamburger .line {
   margin-right: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .prop-detail-lower .book {
+    margin-right: 0;
+  }
 }
 .SinglePropDetail .prop-detail-lower .book .bookRoom {
   width: 150px;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container {
   margin-top: 30px;
-  width: 95%;
+  width: 70%;
   padding: 0 20px;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount {
@@ -1266,7 +1271,7 @@ header #AdminControlsContainer .hamburger .line {
   margin-bottom: 20px;
 }
 .CheckOutForm #theBookingPage input[type=checkbox], .ConfirmationForm #theBookingPage input[type=checkbox] {
-  width: 50px;
+  width: 50px !important;
 }
 .CheckOutForm #theBookingPage .PaymentPolicies, .ConfirmationForm #theBookingPage .PaymentPolicies {
   background-color: #fff;

@@ -155,6 +155,7 @@ export default class Roomcash {
 
         if (utilities.matchMediaQuery('max-width: 1000px')) {
             document.querySelector('.ArnToggleMap').addEventListener('click', () => {
+                console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()');
                 // eslint-disable-next-line no-undef
                 ArnMap.invalidateSize();
                 // eslint-disable-next-line no-undef

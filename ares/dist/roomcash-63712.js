@@ -7968,7 +7968,10 @@
                                                                 (o = t.get('longitude')),
                                                                 u.matchMediaQuery('max-width: 1000px') &&
                                                                     document.querySelector('.ArnToggleMap').addEventListener('click', function () {
-                                                                        ArnMap.invalidateSize(), ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(n, o));
+                                                                        console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()'),
+                                                                            ArnMap.invalidateSize(),
+                                                                            ArnMap.setZoom(15),
+                                                                            ArnMap.panTo(new L.LatLng(n, o));
                                                                     }),
                                                                 ArnMap.invalidateSize(),
                                                                 ArnMap.setZoom(15),

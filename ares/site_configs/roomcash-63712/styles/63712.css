@@ -477,6 +477,11 @@ header #AdminControlsContainer .hamburger .line {
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:first-child, .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:nth-child(2) {
   margin-right: 4rem;
 }
+@media (max-width: 700px) {
+  .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:first-child, .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:nth-child(2) {
+    margin-right: 0;
+  }
+}
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
   max-width: 165px;
   filter: brightness(0) invert(0.5);
@@ -519,7 +524,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 70%;
+  width: 50%;
   padding: 20px;
 }
 @media (max-width: 1100px) {
@@ -601,6 +606,11 @@ header #AdminControlsContainer .hamburger .line {
     width: 100%;
   }
 }
+@media (max-width: 600px) {
+  #footer-menu-container #policy-social {
+    padding: 20px 0;
+  }
+}
 #footer-menu-container #policy-social #social-container {
   display: flex;
   flex-direction: row;
@@ -649,6 +659,11 @@ header #AdminControlsContainer .hamburger .line {
 @media (max-width: 1100px) {
   #footer-menu-container #policy-social #copyright {
     align-items: unset;
+  }
+}
+@media (max-width: 800px) {
+  #footer-menu-container #policy-social #copyright {
+    align-items: center;
   }
 }
 #footer-menu-container #policy-social #copyright p, #footer-menu-container #policy-social #copyright #pipe {
@@ -1364,6 +1379,11 @@ body.WBSupportForm .ArnSubPage {
   font-size: 17px;
   letter-spacing: 1px;
 }
+@media (max-width: 700px) {
+  .ArnSubPage.WBSupportForm #support-page #hero-image span {
+    padding: 0 10px;
+  }
+}
 .ArnSubPage.WBSupportForm #support-page #support-lower {
   display: flex;
 }
@@ -1383,7 +1403,7 @@ body.WBSupportForm .ArnSubPage {
 @media (max-width: 600px) {
   .ArnSubPage.WBSupportForm #support-page #support-lower #contact-details {
     width: 100vw;
-    padding: 20px 80px;
+    padding: 20px 30px;
   }
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower #contact-form {

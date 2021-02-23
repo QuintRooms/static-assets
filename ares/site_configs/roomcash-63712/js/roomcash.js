@@ -348,6 +348,10 @@ export default class Roomcash {
 
             if (!values) {
                 prop.classList.add('no-roomCash-deal');
+                if (!prop.querySelector('.RateCalendarPopupAnchor')) return;
+
+                const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
+                prop.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rates);
                 return;
             }
 

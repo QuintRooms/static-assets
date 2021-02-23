@@ -60,7 +60,7 @@
             </mj-column>
             <mj-column width="30%" padding-top="30px" padding-bottom="30px">
                 <mj-text align="center" font-weight="400" font-size="12px" letter-spacing="1px">
-                    <div><a style="color:#fff; background-color:#CC9831; padding: 10px 5px;" href="https://roomcash.com/dashboard">SPEND MY ROOMCASH</a></div>
+                    <div><a style="color:#fff; background-color:#CC9831; padding: 10px 5px; text-decoration: none;" href="https://roomcash.com/dashboard">SPEND MY ROOMCASH</a></div>
                 </mj-text>
             </mj-column>
         </mj-section>

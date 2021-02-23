@@ -147,11 +147,23 @@ export default class Roomcash {
         }
     }
 
-    resizeMap() {
+    async resizeMap() {
+        await utilities.waitForSelectorInDOM('.pollingFinished');
         const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
         const lat = original_params.get('latitude');
         const lng = original_params.get('longitude');
 
+        if (utilities.matchMediaQuery('max-width: 1000px')) {
+            document.querySelector('.ArnToggleMap').addEventListener('click', () => {
+                console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()');
+                // eslint-disable-next-line no-undef
+                ArnMap.invalidateSize();
+                // eslint-disable-next-line no-undef
+                ArnMap.setZoom(15);
+                // eslint-disable-next-line no-undef
+                ArnMap.panTo(new L.LatLng(lat, lng));
+            });
+        }
         // eslint-disable-next-line no-undef
         ArnMap.invalidateSize();
         // eslint-disable-next-line no-undef
@@ -372,7 +384,7 @@ export default class Roomcash {
                     </div>
                 </div>`;
             } else if (document.querySelector('.SinglePropDetail')) {
-                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent;
+                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent.trim();
                 if (n_nights === 'for 1 nights') {
                     n_nights = n_nights.substring(0, n_nights.length - 1);
                 }
@@ -437,18 +449,28 @@ export default class Roomcash {
         });
     }
 
-    // listenForSortSelection() {
+    handleEvent(sortOption) {
+        localStorage.setItem('sortType', sortOption.id);
+        window.location.href = sortOption.querySelector('a').href;
+    }
 
-    // }
+    async setUpListener(sortTypeId, element) {
+        const select_element = document.querySelector(element);
+        document.querySelector(`#${sortTypeId}`).setAttribute('selected', 'selected');
+        select_element.addEventListener('change', (e) => {
+            this.handleEvent(document.querySelectorAll('#sort-select option')[select_element.selectedIndex]);
+        });
+    }
 
     async buildSortSelectMenu() {
         if (!document.querySelector('.SearchHotels')) return;
-        // const sort_type = document.querySelector('meta[name="SortType"]').content;
         await utilities.waitForSelectorInDOM('.sort-wrapper');
+        let sort_type;
+
         const html = `
         <select id="sort-select">
-            <option id="sort-deal"></option>
-            <option id="sort-price"></option>
+            <option id="DealAmount"></option>
+            <option id="BestValue"></option>
         </select>`;
 
         const price = document.querySelector('.ArnSortByPrice');
@@ -456,11 +478,16 @@ export default class Roomcash {
 
         document.querySelector('.sort-wrapper h4').insertAdjacentHTML('afterend', html);
 
-        document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', deal);
-        document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
+        document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', deal);
+        document.querySelector('#BestValue').insertAdjacentElement('afterbegin', price);
         deal.textContent = 'RoomCash Savings';
 
-        // this.listenForSortSelection();
+        if (localStorage.getItem('sortType')) {
+            sort_type = localStorage.getItem('sortType');
+        } else {
+            sort_type = document.querySelector('meta[name="SortType"]').content;
+        }
+        this.setUpListener(sort_type, '#sort-select');
     }
 
     async moveCurrency() {

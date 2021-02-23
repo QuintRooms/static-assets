@@ -90,7 +90,7 @@ header {
         margin-left: 30px;
         max-width: 190px;
 
-        @include mobile-small {
+        @include mobile {
             margin-left: 5px;
         }
     }
@@ -735,8 +735,10 @@ header {
         padding-top: 0;
 
         #ArnPropertyMap {
-            // width: calc(37vw - 241px);
-            width: 24vw;
+            @media (min-width: 1100px) {
+                width: 24vw;
+            }
+            
 
             .arnMapMarker {
                 border-color: #fff;
@@ -747,10 +749,6 @@ header {
                     border-top-color: $primary_color;
                 }
             }
-
-            // @include desktop {
-            //     width: unset;
-            // }
         }
     }
     

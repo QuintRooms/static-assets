@@ -682,38 +682,40 @@
                                         n,
                                         o = new URL(window.location.href),
                                         r = new URLSearchParams(o.search),
-                                        s = '',
+                                        s = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
                                         i = '',
                                         a = '',
-                                        c = document.querySelector('meta[name="checkIn"]'),
-                                        u = document.querySelector('meta[name="checkOut"]'),
-                                        l = document.querySelector('meta[name="numberOfAdults"]'),
-                                        d = document.querySelector('meta[name="SearchLocation"]'),
-                                        f = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                    c &&
-                                        u &&
-                                        d &&
+                                        c = '',
+                                        u = document.querySelector('meta[name="checkIn"]'),
+                                        l = document.querySelector('meta[name="checkOut"]'),
+                                        d = document.querySelector('meta[name="numberOfAdults"]'),
+                                        f = document.querySelector('meta[name="SearchLocation"]'),
+                                        h = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                    u &&
                                         l &&
-                                        ((e = l.getAttribute('content')),
-                                        (s = d.getAttribute('content')),
-                                        (t = c.getAttribute('content')),
-                                        (n = u.getAttribute('content')),
-                                        (i = m(t)),
-                                        (a = m(n)),
-                                        ('cug' === this.site_config.site_type.toLowerCase() ||
+                                        f &&
+                                        d &&
+                                        ((e = d.getAttribute('content')),
+                                        (i = f.getAttribute('content')),
+                                        (t = u.getAttribute('content')),
+                                        (n = l.getAttribute('content')),
+                                        (a = m(t)),
+                                        (c = m(n)),
+                                        (('cug' === this.site_config.site_type.toLowerCase() && null !== r.get('destination')) ||
                                             ('retail' === this.site_config.site_type.toLowerCase() && null !== r.get('destination'))) &&
-                                            (s = r.get('destination')),
+                                            (i = r.get('destination')),
+                                        (null !== r.get('destination') && 'location' !== i) || (i = s.get('destination')),
                                         p.createHTML(
                                             '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                                .concat(s, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                                .concat(i.format('MMMM D'), ' - ')
-                                                .concat(a.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                                .concat(i, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                                .concat(a.format('MMMM D'), ' - ')
+                                                .concat(c.format('MMMM D'), '</span>\n                        <span class="adults-count">')
                                                 .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
                                             '.SearchHotels .ArnPrimarySearchOuterContainer',
                                             'beforeBegin'
                                         ),
                                         document.querySelector('.show-search-container').addEventListener('click', function () {
-                                            f.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                            h.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
                                         }));
                                 },
                             },
@@ -7872,7 +7874,7 @@
                                 '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h;
+                    var t, n, o, r, s, l, d, m, f, p, h, y, g;
                     return (
                         (t = e),
                         (n = [
@@ -7951,12 +7953,39 @@
                             },
                             {
                                 key: 'resizeMap',
-                                value: function () {
-                                    var e = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                        t = e.get('latitude'),
-                                        n = e.get('longitude');
-                                    ArnMap.invalidateSize(), ArnMap.setZoom(15), ArnMap.panTo(new L.LatLng(t, n));
-                                },
+                                value:
+                                    ((g = i(
+                                        regeneratorRuntime.mark(function e() {
+                                            var t, n, o;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), u.waitForSelectorInDOM('.pollingFinished');
+                                                        case 2:
+                                                            (t = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
+                                                                (n = t.get('latitude')),
+                                                                (o = t.get('longitude')),
+                                                                u.matchMediaQuery('max-width: 1000px') &&
+                                                                    document.querySelector('.ArnToggleMap').addEventListener('click', function () {
+                                                                        console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()'),
+                                                                            ArnMap.invalidateSize(),
+                                                                            ArnMap.setZoom(15),
+                                                                            ArnMap.panTo(new L.LatLng(n, o));
+                                                                    }),
+                                                                ArnMap.invalidateSize(),
+                                                                ArnMap.setZoom(15),
+                                                                ArnMap.panTo(new L.LatLng(n, o));
+                                                        case 9:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function () {
+                                        return g.apply(this, arguments);
+                                    }),
                             },
                             {
                                 key: 'buildFooterMenu',
@@ -7995,7 +8024,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((h = i(
+                                    ((y = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8043,7 +8072,7 @@
                                         })
                                     )),
                                     function () {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8116,7 +8145,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((p = i(
+                                    ((h = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8167,7 +8196,7 @@
                                                                                       ')</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>'
                                                                                   )))
                                                                             : document.querySelector('.SinglePropDetail') &&
-                                                                              ('for 1 nights' === (i = document.querySelector('.ArnNightlyRate strong span').textContent) &&
+                                                                              ('for 1 nights' === (i = document.querySelector('.ArnNightlyRate strong span').textContent.trim()) &&
                                                                                   (i = i.substring(0, i.length - 1)),
                                                                               (s = '\n                <tr colspan="2">\n                    <td colspan="2">\n                        <div class="prop-detail-lower">\n                            <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
@@ -8241,6 +8270,39 @@
                                         })
                                     )),
                                     function (e, t, n) {
+                                        return h.apply(this, arguments);
+                                    }),
+                            },
+                            {
+                                key: 'handleEvent',
+                                value: function (e) {
+                                    localStorage.setItem('sortType', e.id), (window.location.href = e.querySelector('a').href);
+                                },
+                            },
+                            {
+                                key: 'setUpListener',
+                                value:
+                                    ((p = i(
+                                        regeneratorRuntime.mark(function e(t, n) {
+                                            var o,
+                                                r = this;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            (o = document.querySelector(n)),
+                                                                document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
+                                                                o.addEventListener('change', function (e) {
+                                                                    r.handleEvent(document.querySelectorAll('#sort-select option')[o.selectedIndex]);
+                                                                });
+                                                        case 3:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e, t) {
                                         return p.apply(this, arguments);
                                     }),
                             },
@@ -8249,35 +8311,43 @@
                                 value:
                                     ((f = i(
                                         regeneratorRuntime.mark(function e() {
-                                            var t, n;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector('.SearchHotels')) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
-                                                        case 4:
-                                                            (t = document.querySelector('.ArnSortByPrice')),
-                                                                (n = document.querySelector('.ArnSortByDealAmount')),
-                                                                document
-                                                                    .querySelector('.sort-wrapper h4')
-                                                                    .insertAdjacentHTML(
-                                                                        'afterend',
-                                                                        '\n        <select id="sort-select">\n            <option id="sort-deal"></option>\n            <option id="sort-price"></option>\n        </select>'
-                                                                    ),
-                                                                document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', n),
-                                                                document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
-                                                                (n.textContent = 'RoomCash Savings');
-                                                        case 11:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
+                                            var t, n, o;
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                if (document.querySelector('.SearchHotels')) {
+                                                                    e.next = 2;
+                                                                    break;
+                                                                }
+                                                                return e.abrupt('return');
+                                                            case 2:
+                                                                return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
+                                                            case 4:
+                                                                (n = document.querySelector('.ArnSortByPrice')),
+                                                                    (o = document.querySelector('.ArnSortByDealAmount')),
+                                                                    document
+                                                                        .querySelector('.sort-wrapper h4')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterend',
+                                                                            '\n        <select id="sort-select">\n            <option id="DealAmount"></option>\n            <option id="BestValue"></option>\n        </select>'
+                                                                        ),
+                                                                    document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', o),
+                                                                    document.querySelector('#BestValue').insertAdjacentElement('afterbegin', n),
+                                                                    (o.textContent = 'RoomCash Savings'),
+                                                                    (t = localStorage.getItem('sortType')
+                                                                        ? localStorage.getItem('sortType')
+                                                                        : document.querySelector('meta[name="SortType"]').content),
+                                                                    this.setUpListener(t, '#sort-select');
+                                                            case 13:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                this
+                                            );
                                         })
                                     )),
                                     function () {

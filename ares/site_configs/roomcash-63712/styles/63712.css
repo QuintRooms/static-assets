@@ -318,7 +318,7 @@ header .logo img {
   margin-left: 30px;
   max-width: 190px;
 }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   header .logo img {
     margin-left: 5px;
   }
@@ -867,8 +867,10 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnRightListContainer {
   padding-top: 0;
 }
-.SearchHotels .ArnRightListContainer #ArnPropertyMap {
-  width: 24vw;
+@media (min-width: 1100px) {
+  .SearchHotels .ArnRightListContainer #ArnPropertyMap {
+    width: 24vw;
+  }
 }
 .SearchHotels .ArnRightListContainer #ArnPropertyMap .arnMapMarker {
   border-color: #fff;

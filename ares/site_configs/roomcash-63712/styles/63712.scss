@@ -1125,7 +1125,7 @@ header {
 
     .ArnNightlyRate {
         visibility: hidden;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .no-roomCash-deal {
@@ -1163,8 +1163,12 @@ header {
             margin-right: 12px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+
+            @include mobile {
+                margin-right: 0;
+            }
 
             .bookRoom {
                 width: 150px;
@@ -1173,7 +1177,7 @@ header {
 
         .roomcash-scale-container {
             margin-top: 30px;
-            width: 95%;
+            width: 70%;
             padding: 0 20px;
     
             .roomcash-amount {

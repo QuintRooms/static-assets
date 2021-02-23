@@ -8015,7 +8015,7 @@
                                         )
                                         .concat(
                                             new Date().getFullYear(),
-                                            '. All rights reserved</p>\n                    <div><a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a><span id="pipe">|</span><a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a></div>\n                </div>\n            </div>\n        </div>\n        '
+                                            '. All rights reserved</p>\n                    <div>\n                        <a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a>\n                    </div>\n                </div>\n            </div>\n        </div>\n        '
                                         );
                                     document.querySelector(e).insertAdjacentHTML(t, n);
                                 },

@@ -483,7 +483,14 @@ export default class Roomcash {
         } else {
             sort_type = document.querySelector('meta[name="SortType"]').content;
         }
-        this.setUpListener(sort_type);
+
+        document.querySelector(`#${sort_type}`).setAttribute('selected', 'selected');
+        console.log('before event listener');
+        document.querySelector('#sort-select').addEventListenter('change', (e) => {
+            console.log('event listener added');
+            this.handleEvent(e, document.querySelectorAll('#sort-select option')[document.querySelector('#sort-select').selectedIndex]);
+        });
+        // this.setUpListener(sort_type);
     }
 
     async moveCurrency() {

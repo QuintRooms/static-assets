@@ -8247,7 +8247,8 @@
                             {
                                 key: 'handleEvent',
                                 value: function (e, t) {
-                                    console.log('event: ', e),
+                                    console.log('Inside handleEvent'),
+                                        console.log('event: ', e),
                                         console.log('option: ', t),
                                         localStorage.setItem('sortType', t.id),
                                         (window.location.href = t.querySelector('a').href);
@@ -8263,14 +8264,16 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (e.next = 2), u.waitForSelectorInDOM(n);
-                                                        case 2:
-                                                            document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
+                                                            return console.log('inside setUpListener'), console.log('select element: ', n), (e.next = 4), u.waitForSelectorInDOM(n);
+                                                        case 4:
+                                                            console.log('after waitForSelector'),
+                                                                document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
+                                                                console.log('before event listener'),
                                                                 n.addEventListenter('change', function (e) {
                                                                     console.log('event listener added'),
                                                                         o.handleEvent(e, document.querySelectorAll('#sort-select option')[n.selectedIndex]);
                                                                 });
-                                                        case 4:
+                                                        case 8:
                                                         case 'end':
                                                             return e.stop();
                                                     }

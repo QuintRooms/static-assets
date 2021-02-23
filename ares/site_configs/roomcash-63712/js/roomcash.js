@@ -438,6 +438,7 @@ export default class Roomcash {
     }
 
     handleEvent(event, sortOption) {
+        console.log('Inside handleEvent');
         console.log('event: ', event);
         console.log('option: ', sortOption);
         localStorage.setItem('sortType', sortOption.id);
@@ -445,8 +446,12 @@ export default class Roomcash {
     }
 
     async setUpListener(sortTypeId, selectElement) {
+        console.log('inside setUpListener');
+        console.log('select element: ', selectElement);
         await utilities.waitForSelectorInDOM(selectElement);
+        console.log('after waitForSelector');
         document.querySelector(`#${sortTypeId}`).setAttribute('selected', 'selected');
+        console.log('before event listener');
         selectElement.addEventListenter('change', (e) => {
             console.log('event listener added');
             this.handleEvent(e, document.querySelectorAll('#sort-select option')[selectElement.selectedIndex]);

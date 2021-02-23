@@ -372,7 +372,7 @@ export default class Roomcash {
                     </div>
                 </div>`;
             } else if (document.querySelector('.SinglePropDetail')) {
-                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent;
+                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent.trim();
                 if (n_nights === 'for 1 nights') {
                     n_nights = n_nights.substring(0, n_nights.length - 1);
                 }
@@ -437,18 +437,28 @@ export default class Roomcash {
         });
     }
 
-    // listenForSortSelection() {
+    handleEvent(event, sortOption) {
+        console.log('event: ', event);
+        console.log('option: ', sortOption);
+        localStorage.setItem('sortType', sortOption.id);
+        window.location.href = sortOption.querySelector('a').href;
+    }
 
-    // }
+    setUpListener(selectElement) {
+        selectElement.addEventListenter('change', (e) => {
+            this.handleEvent(e, document.querySelectorAll('#sort-select option')[selectElement.selectedIndex]);
+        });
+    }
 
     async buildSortSelectMenu() {
         if (!document.querySelector('.SearchHotels')) return;
-        // const sort_type = document.querySelector('meta[name="SortType"]').content;
         await utilities.waitForSelectorInDOM('.sort-wrapper');
+        let sort_type;
+
         const html = `
         <select id="sort-select">
-            <option id="sort-deal"></option>
-            <option id="sort-price"></option>
+            <option id="DealAmount"></option>
+            <option id="BestValue"></option>
         </select>`;
 
         const price = document.querySelector('.ArnSortByPrice');
@@ -456,11 +466,17 @@ export default class Roomcash {
 
         document.querySelector('.sort-wrapper h4').insertAdjacentHTML('afterend', html);
 
-        document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', deal);
-        document.querySelector('#sort-price').insertAdjacentElement('afterbegin', price);
+        document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', deal);
+        document.querySelector('#BestValue').insertAdjacentElement('afterbegin', price);
         deal.textContent = 'RoomCash Savings';
 
-        // this.listenForSortSelection();
+        if (localStorage.getItem('sortType')) {
+            sort_type = localStorage.getItem('sortType');
+        } else {
+            sort_type = document.querySelector('meta[name="SortType"]').content;
+        }
+        document.querySelector(`#${sort_type}`).setAttribute('selected', 'selected');
+        this.setUpListener(document.querySelector('#sort-select'));
     }
 
     async moveCurrency() {

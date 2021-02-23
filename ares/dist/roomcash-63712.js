@@ -8167,7 +8167,7 @@
                                                                                       ')</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>'
                                                                                   )))
                                                                             : document.querySelector('.SinglePropDetail') &&
-                                                                              ('for 1 nights' === (i = document.querySelector('.ArnNightlyRate strong span').textContent) &&
+                                                                              ('for 1 nights' === (i = document.querySelector('.ArnNightlyRate strong span').textContent.trim()) &&
                                                                                   (i = i.substring(0, i.length - 1)),
                                                                               (s = '\n                <tr colspan="2">\n                    <td colspan="2">\n                        <div class="prop-detail-lower">\n                            <div class="roomcash-scale-container" id="rc-'
                                                                                   .concat(
@@ -8245,39 +8245,66 @@
                                     }),
                             },
                             {
+                                key: 'handleEvent',
+                                value: function (e, t) {
+                                    console.log('event: ', e),
+                                        console.log('option: ', t),
+                                        localStorage.setItem('sortType', t.id),
+                                        (window.location.href = t.querySelector('a').href);
+                                },
+                            },
+                            {
+                                key: 'setUpListener',
+                                value: function (e) {
+                                    var t = this;
+                                    e.addEventListenter('change', function (n) {
+                                        t.handleEvent(n, document.querySelectorAll('#sort-select option')[e.selectedIndex]);
+                                    });
+                                },
+                            },
+                            {
                                 key: 'buildSortSelectMenu',
                                 value:
                                     ((f = i(
                                         regeneratorRuntime.mark(function e() {
-                                            var t, n;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector('.SearchHotels')) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
-                                                        case 4:
-                                                            (t = document.querySelector('.ArnSortByPrice')),
-                                                                (n = document.querySelector('.ArnSortByDealAmount')),
-                                                                document
-                                                                    .querySelector('.sort-wrapper h4')
-                                                                    .insertAdjacentHTML(
-                                                                        'afterend',
-                                                                        '\n        <select id="sort-select">\n            <option id="sort-deal"></option>\n            <option id="sort-price"></option>\n        </select>'
-                                                                    ),
-                                                                document.querySelector('#sort-deal').insertAdjacentElement('afterbegin', n),
-                                                                document.querySelector('#sort-price').insertAdjacentElement('afterbegin', t),
-                                                                (n.textContent = 'RoomCash Savings');
-                                                        case 11:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
+                                            var t, n, o;
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                if (document.querySelector('.SearchHotels')) {
+                                                                    e.next = 2;
+                                                                    break;
+                                                                }
+                                                                return e.abrupt('return');
+                                                            case 2:
+                                                                return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
+                                                            case 4:
+                                                                (n = document.querySelector('.ArnSortByPrice')),
+                                                                    (o = document.querySelector('.ArnSortByDealAmount')),
+                                                                    document
+                                                                        .querySelector('.sort-wrapper h4')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterend',
+                                                                            '\n        <select id="sort-select">\n            <option id="DealAmount"></option>\n            <option id="BestValue"></option>\n        </select>'
+                                                                        ),
+                                                                    document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', o),
+                                                                    document.querySelector('#BestValue').insertAdjacentElement('afterbegin', n),
+                                                                    (o.textContent = 'RoomCash Savings'),
+                                                                    (t = localStorage.getItem('sortType')
+                                                                        ? localStorage.getItem('sortType')
+                                                                        : document.querySelector('meta[name="SortType"]').content),
+                                                                    document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
+                                                                    this.setUpListener(document.querySelector('#sort-select'));
+                                                            case 14:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                this
+                                            );
                                         })
                                     )),
                                     function () {

@@ -451,6 +451,7 @@ export default class BasePortal {
     showSearchContainerOnMobile() {
         const params = new URL(window.location.href);
         const search_params = new URLSearchParams(params.search);
+        const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
 
         let adults_text = '';
         let location_text = '';
@@ -475,8 +476,15 @@ export default class BasePortal {
         check_in_date = dayjs(check_in_text);
         check_out_date = dayjs(check_out_text);
 
-        if (this.site_config.site_type.toLowerCase() === 'cug' || (this.site_config.site_type.toLowerCase() === 'retail' && search_params.get('destination') !== null)) {
+        if (
+            (this.site_config.site_type.toLowerCase() === 'cug' && search_params.get('destination') !== null) ||
+            (this.site_config.site_type.toLowerCase() === 'retail' && search_params.get('destination') !== null)
+        ) {
             location_text = search_params.get('destination');
+        }
+
+        if (search_params.get('destination') === null || location_text === 'location') {
+            location_text = original_params.get('destination');
         }
 
         utilities.createHTML(

@@ -682,38 +682,40 @@
                                         n,
                                         o = new URL(window.location.href),
                                         r = new URLSearchParams(o.search),
-                                        s = '',
+                                        s = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
                                         i = '',
                                         a = '',
-                                        c = document.querySelector('meta[name="checkIn"]'),
-                                        u = document.querySelector('meta[name="checkOut"]'),
-                                        l = document.querySelector('meta[name="numberOfAdults"]'),
-                                        d = document.querySelector('meta[name="SearchLocation"]'),
-                                        f = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                    c &&
-                                        u &&
-                                        d &&
+                                        c = '',
+                                        u = document.querySelector('meta[name="checkIn"]'),
+                                        l = document.querySelector('meta[name="checkOut"]'),
+                                        d = document.querySelector('meta[name="numberOfAdults"]'),
+                                        f = document.querySelector('meta[name="SearchLocation"]'),
+                                        h = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                    u &&
                                         l &&
-                                        ((e = l.getAttribute('content')),
-                                        (s = d.getAttribute('content')),
-                                        (t = c.getAttribute('content')),
-                                        (n = u.getAttribute('content')),
-                                        (i = m(t)),
-                                        (a = m(n)),
-                                        ('cug' === this.site_config.site_type.toLowerCase() ||
+                                        f &&
+                                        d &&
+                                        ((e = d.getAttribute('content')),
+                                        (i = f.getAttribute('content')),
+                                        (t = u.getAttribute('content')),
+                                        (n = l.getAttribute('content')),
+                                        (a = m(t)),
+                                        (c = m(n)),
+                                        (('cug' === this.site_config.site_type.toLowerCase() && null !== r.get('destination')) ||
                                             ('retail' === this.site_config.site_type.toLowerCase() && null !== r.get('destination'))) &&
-                                            (s = r.get('destination')),
+                                            (i = r.get('destination')),
+                                        (null !== r.get('destination') && 'location' !== i) || (i = s.get('destination')),
                                         p.createHTML(
                                             '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                                .concat(s, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                                .concat(i.format('MMMM D'), ' - ')
-                                                .concat(a.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                                .concat(i, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                                .concat(a.format('MMMM D'), ' - ')
+                                                .concat(c.format('MMMM D'), '</span>\n                        <span class="adults-count">')
                                                 .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
                                             '.SearchHotels .ArnPrimarySearchOuterContainer',
                                             'beforeBegin'
                                         ),
                                         document.querySelector('.show-search-container').addEventListener('click', function () {
-                                            f.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                            h.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
                                         }));
                                 },
                             },
@@ -4114,8 +4116,8 @@
                     x = !1,
                     k = e.prototype,
                     A = k[d] || k['@@iterator'] || (h && k[h]),
-                    M = A || b(h),
-                    q = h ? (w ? b('entries') : M) : void 0,
+                    q = A || b(h),
+                    M = h ? (w ? b('entries') : q) : void 0,
                     C = ('Array' == t && k.entries) || A;
                 if (
                     (C && (j = l(C.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
@@ -4123,15 +4125,15 @@
                         A &&
                         'values' !== A.name &&
                         ((x = !0),
-                        (M = function () {
+                        (q = function () {
                             return A.call(this);
                         })),
-                    (o && !g) || (!m && !x && k[d]) || i(k, d, M),
-                    (a[t] = M),
+                    (o && !g) || (!m && !x && k[d]) || i(k, d, q),
+                    (a[t] = q),
                     (a[S] = f),
                     h)
                 )
-                    if (((v = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (_ in v) _ in k || s(k, _, v[_]);
+                    if (((v = {values: w ? q : b('values'), keys: y ? q : b('keys'), entries: M}), g)) for (_ in v) _ in k || s(k, _, v[_]);
                     else r(r.P + r.F * (m || x), t, v);
                 return v;
             };
@@ -5130,17 +5132,17 @@
                 x = c.process,
                 k = x && x.versions,
                 A = (k && k.v8) || '',
-                M = c.Promise,
-                q = 'process' == l(x),
+                q = c.Promise,
+                M = 'process' == l(x),
                 C = function () {},
                 L = (r = _.f),
                 E = !!(function () {
                     try {
-                        var e = M.resolve(1),
+                        var e = q.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
                                 e(C, C);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (M || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -5192,13 +5194,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    q
+                                    M
                                         ? x.emit('unhandledRejection', r, e)
                                         : (n = c.onunhandledrejection)
                                         ? n({promise: e, reason: r})
                                         : (o = c.console) && o.error && o.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = q || O(e) ? 2 : 1)),
+                                (e._h = M || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5211,7 +5213,7 @@
                 D = function (e) {
                     g.call(c, function () {
                         var t;
-                        q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        M ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
                 H = function (e) {
@@ -5241,8 +5243,8 @@
                     }
                 };
             E ||
-                ((M = function (e) {
-                    p(this, M, 'Promise', '_h'), f(e), o.call(this);
+                ((q = function (e) {
+                    p(this, q, 'Promise', '_h'), f(e), o.call(this);
                     try {
                         e(u(I, this, 1), u(H, this, 1));
                     } catch (e) {
@@ -5251,13 +5253,13 @@
                 }),
                 ((o = function (e) {
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-                }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(M.prototype, {
+                }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(q.prototype, {
                     then: function (e, t) {
-                        var n = L(y(this, M));
+                        var n = L(y(this, q));
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
-                            (n.domain = q ? x.domain : void 0),
+                            (n.domain = M ? x.domain : void 0),
                             this._c.push(n),
                             this._a && this._a.push(n),
                             this._s && P(this, !1),
@@ -5273,10 +5275,10 @@
                     (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (_.f = L = function (e) {
-                    return e === M || e === i ? new s(e) : r(e);
+                    return e === q || e === i ? new s(e) : r(e);
                 })),
-                d(d.G + d.W + d.F * !E, {Promise: M}),
-                n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(M, 'Promise'),
+                d(d.G + d.W + d.F * !E, {Promise: q}),
+                n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(q, 'Promise'),
                 n(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = n(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !E, 'Promise', {
@@ -5287,7 +5289,7 @@
                 }),
                 d(d.S + d.F * (a || !E), 'Promise', {
                     resolve: function (e) {
-                        return S(a && this === i ? M : this, e);
+                        return S(a && this === i ? q : this, e);
                     },
                 }),
                 d(
@@ -5296,7 +5298,7 @@
                             !(
                                 E &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(C);
+                                    q.all(e).catch(C);
                                 })
                             ),
                     'Promise',
@@ -5470,13 +5472,13 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < v.length; w++) {
                             _ = v[w];
-                            for (var x = String(_[0]), k = u(l(i(_.index), m.length), 0), A = [], M = 1; M < _.length; M++) A.push(void 0 === (j = _[M]) ? j : String(j));
-                            var q = _.groups;
+                            for (var x = String(_[0]), k = u(l(i(_.index), m.length), 0), A = [], q = 1; q < _.length; q++) A.push(void 0 === (j = _[q]) ? j : String(j));
+                            var M = _.groups;
                             if (f) {
                                 var C = [x].concat(A, k, m);
-                                void 0 !== q && C.push(q);
+                                void 0 !== M && C.push(M);
                                 var L = String(t.apply(void 0, C));
-                            } else L = h(x, m, k, A, q, t);
+                            } else L = h(x, m, k, A, M, t);
                             k >= S && ((b += m.slice(S, k) + L), (S = k + x.length));
                         }
                         return b + m.slice(S);
@@ -5717,11 +5719,11 @@
                 x = n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
                 k = n(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 A = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
-                M = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                q = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
+                M = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 C = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 L = A.f,
-                E = q.f,
+                E = M.f,
                 T = k.f,
                 P = o.Symbol,
                 R = o.JSON,
@@ -5733,7 +5735,7 @@
                 B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
-                U = 'function' == typeof P && !!M.f,
+                U = 'function' == typeof P && !!q.f,
                 $ = o.QObject,
                 W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
@@ -5818,10 +5820,10 @@
                     }
                 ),
                 (A.f = K),
-                (q.f = Q),
+                (M.f = Q),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
                 (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
-                (M.f = ee),
+                (q.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
                     return z(f(e));
@@ -5856,11 +5858,11 @@
                     getOwnPropertySymbols: ee,
                 });
             var se = u(function () {
-                M.f(1);
+                q.f(1);
             });
             i(i.S + i.F * se, 'Object', {
                 getOwnPropertySymbols: function (e) {
-                    return M.f(j(e));
+                    return q.f(j(e));
                 },
             }),
                 R &&

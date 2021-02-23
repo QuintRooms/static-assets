@@ -7961,22 +7961,21 @@
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (e.next = 2), u.waitForSelectorInDOM('.pollingFinished');
+                                                            if (!u.matchMediaQuery('max-width: 1100px')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
                                                         case 2:
+                                                            return (e.next = 4), u.waitForSelectorInDOM('.pollingFinished');
+                                                        case 4:
                                                             (t = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
                                                                 (n = t.get('latitude')),
                                                                 (o = t.get('longitude')),
-                                                                u.matchMediaQuery('max-width: 1000px') &&
-                                                                    document.querySelector('.ArnToggleMap').addEventListener('click', function () {
-                                                                        console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()'),
-                                                                            ArnMap.invalidateSize(),
-                                                                            ArnMap.setZoom(15),
-                                                                            ArnMap.panTo(new L.LatLng(n, o));
-                                                                    }),
                                                                 ArnMap.invalidateSize(),
                                                                 ArnMap.setZoom(15),
                                                                 ArnMap.panTo(new L.LatLng(n, o));
-                                                        case 9:
+                                                        case 10:
                                                         case 'end':
                                                             return e.stop();
                                                     }

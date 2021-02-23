@@ -455,9 +455,15 @@ header #AdminControlsContainer .hamburger .line {
     width: 30%;
   }
 }
+@media (max-width: 600px) {
+  .ArnSupportLinks.ArnSupportBottom #footer #footer-title hr {
+    display: none;
+  }
+}
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   width: 70%;
   margin: 0 auto;
   padding: 20px 0;
@@ -468,12 +474,17 @@ header #AdminControlsContainer .hamburger .line {
     margin: 0;
   }
 }
-.ArnSupportLinks.ArnSupportBottom #footer #brand-logos a {
-  margin: auto;
+.ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:first-child, .ArnSupportLinks.ArnSupportBottom #footer #brand-logos a:nth-child(2) {
+  margin-right: 4rem;
 }
 .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
   max-width: 165px;
   filter: brightness(0) invert(0.5);
+}
+@media (max-width: 600px) {
+  .ArnSupportLinks.ArnSupportBottom #footer #brand-logos img {
+    max-width: 10rem;
+  }
 }
 @media (max-width: 700px) {
   .ArnSupportLinks.ArnSupportBottom #footer #brand-logos {
@@ -559,7 +570,7 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   text-decoration: none;
   list-style: none;
-  font-weight: 400;
+  font-weight: 300;
 }
 #footer-menu-container #links-container .links a:hover {
   text-decoration: underline;
@@ -633,7 +644,7 @@ header #AdminControlsContainer .hamburger .line {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-weight: 400;
+  font-weight: 300;
 }
 @media (max-width: 1100px) {
   #footer-menu-container #policy-social #copyright {
@@ -669,7 +680,7 @@ header #AdminControlsContainer .hamburger .line {
   background-color: #CC9831;
   border: 1px solid #CC9831;
   text-transform: uppercase;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   transition-property: color, background;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -677,6 +688,7 @@ header #AdminControlsContainer .hamburger .line {
 .RootBody #theOtherSubmitButton:hover, .SearchHotels .ArnShowRatesLink:hover, .SearchHotels #theSubmitButton:hover, .SearchHotels #theOtherSubmitButton:hover, .bookRoom:hover, .SinglePropDetail #moreRatesLink:hover, .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit:hover, .holdRoom:hover, .CheckOutForm input#theConfirmationButton:hover, .WBSupportFormActions input:hover, .WBResendOrCancelFormActions input:hover, .CreateAnAccountAction:hover, .LoginAction.submit:hover, #book-another:hover {
   background-color: #BD8C2E !important;
   border-color: #BD8C2E !important;
+  color: #fff !important;
 }
 
 .SearchHotels #theOtherSubmitButton, .SinglePropDetail .CheckRates input, .SinglePropDetail #moreRatesLink {
@@ -708,7 +720,7 @@ header #AdminControlsContainer .hamburger .line {
   text-decoration: none;
   color: #000000;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 40px;
 }
 #sub-header-container a:hover {
@@ -787,10 +799,10 @@ header #AdminControlsContainer .hamburger .line {
 }
 .roomcash-scale-container .cash-text p {
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 .roomcash-scale-container .cash-text :last-child {
-  font-weight: 400;
+  font-weight: 300;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;
@@ -895,7 +907,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSearchHeader {
   margin-left: 13px;
-  font-weight: 800;
+  font-weight: 700;
 }
 @media (max-width: 1100px) {
   .SearchHotels .ArnLeftSearchContainer {
@@ -940,7 +952,7 @@ header #AdminControlsContainer .hamburger .line {
   border: none;
   padding: 15px !important;
   margin-top: 10px;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 @media (max-width: 800px) {
   .SearchHotels .ArnLeftSearchContainer .sort-wrapper #sort-select {
@@ -959,7 +971,7 @@ header #AdminControlsContainer .hamburger .line {
   display: none;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer span {
-  font-weight: 400;
+  font-weight: 300;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer h4, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   text-transform: uppercase;
@@ -969,10 +981,10 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer #filter-by {
   margin-top: 30px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblAmenities, .SearchHotels .ArnLeftSearchContainer .ArnSecondarySearchOuterContainer .lblPropertyType {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 .SearchHotels #currentPropertyPage {
   background-color: #fff;
@@ -987,7 +999,7 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnQuadSearchContainer {
   background-color: unset;
   color: #000000;
-  font-weight: 400;
+  font-weight: 300;
 }
 @media (max-width: 800px) {
   .SearchHotels .ArnQuadSearchContainer hr {
@@ -996,11 +1008,11 @@ header #AdminControlsContainer .hamburger .line {
 }
 @media (max-width: 600px) {
   .SearchHotels .ArnQuadSearchContainer {
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 .SearchHotels .ArnQuadSearchContainer #theSearchBox #theCheckIn, .SearchHotels .ArnQuadSearchContainer #theSearchBox #theCheckOut, .SearchHotels .ArnQuadSearchContainer #theSearchBox #rooms, .SearchHotels .ArnQuadSearchContainer #theSearchBox #adults {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 .SearchHotels .ArnQuadSearchContainer #theSearchBox input, .SearchHotels .ArnQuadSearchContainer #theSearchBox select {
   padding: 12px !important;
@@ -1056,7 +1068,7 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropName .ArnTripAdvisorDetails .reviewCount a {
   letter-spacing: 1px;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .SearchHotels .ArnProperty .ArnRateCell {
   display: none;
@@ -1133,7 +1145,7 @@ header #AdminControlsContainer .hamburger .line {
   padding: 10px 0;
 }
 .SinglePropDetail .ArnRightListContainer .RoomDescription {
-  font-weight: 400;
+  font-weight: 300;
 }
 .SinglePropDetail .ArnLeftListContainer {
   margin: 0 40px 0 10px;
@@ -1144,18 +1156,18 @@ header #AdminControlsContainer .hamburger .line {
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch {
   background-color: unset;
   color: #000;
-  font-weight: 400;
+  font-weight: 300;
   padding: 0;
 }
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch input, .SinglePropDetail .ArnLeftListContainer .SimpleSearch select {
   padding: 12px !important;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 .SinglePropDetail .ArnLeftListContainer .SimpleSearch input.submit {
-  font-weight: 400;
+  font-weight: 500;
 }
 .SinglePropDetail .ArnLeftListContainer .ArnAmenityContainer {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 .SinglePropDetail .percentSavings {
   display: none !important;
@@ -1374,7 +1386,7 @@ body.WBSupportForm .ArnSubPage {
   }
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower .contact-item h4 {
-  font-weight: 400;
+  font-weight: 300;
   margin: 5px 0;
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower .contact-item a {

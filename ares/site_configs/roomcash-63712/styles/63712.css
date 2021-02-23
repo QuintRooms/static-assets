@@ -16,7 +16,7 @@ header {
 }
 
 .RootBody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  background: #EBEBEB;
 }
 
 .logo img {
@@ -845,7 +845,7 @@ header #AdminControlsContainer .hamburger .line {
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
-  background: linear-gradient(rgba(183, 183, 183, 0.5), rgba(183, 183, 183, 0.5));
+  background-color: #EBEBEB;
   color: #000;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {

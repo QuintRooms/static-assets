@@ -444,7 +444,8 @@ export default class Roomcash {
         window.location.href = sortOption.querySelector('a').href;
     }
 
-    setUpListener(selectElement) {
+    async setUpListener(selectElement) {
+        await utilities.waitForSelectorInDOM(selectElement);
         selectElement.addEventListenter('change', (e) => {
             this.handleEvent(e, document.querySelectorAll('#sort-select option')[selectElement.selectedIndex]);
         });

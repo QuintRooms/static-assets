@@ -7872,7 +7872,7 @@
                                 '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h;
+                    var t, n, o, r, s, l, d, m, f, p, h, y;
                     return (
                         (t = e),
                         (n = [
@@ -7995,7 +7995,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((h = i(
+                                    ((y = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8043,7 +8043,7 @@
                                         })
                                     )),
                                     function () {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8116,7 +8116,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((p = i(
+                                    ((h = i(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8241,7 +8241,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8255,12 +8255,29 @@
                             },
                             {
                                 key: 'setUpListener',
-                                value: function (e) {
-                                    var t = this;
-                                    e.addEventListenter('change', function (n) {
-                                        t.handleEvent(n, document.querySelectorAll('#sort-select option')[e.selectedIndex]);
-                                    });
-                                },
+                                value:
+                                    ((p = i(
+                                        regeneratorRuntime.mark(function e(t) {
+                                            var n = this;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), u.waitForSelectorInDOM(t);
+                                                        case 2:
+                                                            t.addEventListenter('change', function (e) {
+                                                                n.handleEvent(e, document.querySelectorAll('#sort-select option')[t.selectedIndex]);
+                                                            });
+                                                        case 3:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e) {
+                                        return p.apply(this, arguments);
+                                    }),
                             },
                             {
                                 key: 'buildSortSelectMenu',

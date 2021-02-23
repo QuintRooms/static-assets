@@ -148,22 +148,12 @@ export default class Roomcash {
     }
 
     async resizeMap() {
+        if (utilities.matchMediaQuery('max-width: 1100px')) return;
         await utilities.waitForSelectorInDOM('.pollingFinished');
         const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
         const lat = original_params.get('latitude');
         const lng = original_params.get('longitude');
 
-        if (utilities.matchMediaQuery('max-width: 1000px')) {
-            document.querySelector('.ArnToggleMap').addEventListener('click', () => {
-                console.log('ArnMap methods running: invalidateSize(), setZoom() & panTo()');
-                // eslint-disable-next-line no-undef
-                ArnMap.invalidateSize();
-                // eslint-disable-next-line no-undef
-                ArnMap.setZoom(15);
-                // eslint-disable-next-line no-undef
-                ArnMap.panTo(new L.LatLng(lat, lng));
-            });
-        }
         // eslint-disable-next-line no-undef
         ArnMap.invalidateSize();
         // eslint-disable-next-line no-undef

@@ -8257,25 +8257,27 @@
                                 key: 'setUpListener',
                                 value:
                                     ((p = i(
-                                        regeneratorRuntime.mark(function e(t) {
-                                            var n = this;
+                                        regeneratorRuntime.mark(function e(t, n) {
+                                            var o = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (e.next = 2), u.waitForSelectorInDOM(t);
+                                                            return (e.next = 2), u.waitForSelectorInDOM(n);
                                                         case 2:
-                                                            t.addEventListenter('change', function (e) {
-                                                                n.handleEvent(e, document.querySelectorAll('#sort-select option')[t.selectedIndex]);
-                                                            });
-                                                        case 3:
+                                                            document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
+                                                                n.addEventListenter('change', function (e) {
+                                                                    console.log('event listener added'),
+                                                                        o.handleEvent(e, document.querySelectorAll('#sort-select option')[n.selectedIndex]);
+                                                                });
+                                                        case 4:
                                                         case 'end':
                                                             return e.stop();
                                                     }
                                             }, e);
                                         })
                                     )),
-                                    function (e) {
+                                    function (e, t) {
                                         return p.apply(this, arguments);
                                     }),
                             },
@@ -8312,9 +8314,8 @@
                                                                     (t = localStorage.getItem('sortType')
                                                                         ? localStorage.getItem('sortType')
                                                                         : document.querySelector('meta[name="SortType"]').content),
-                                                                    document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
-                                                                    this.setUpListener(document.querySelector('#sort-select'));
-                                                            case 14:
+                                                                    this.setUpListener(t, document.querySelector('#sort-select'));
+                                                            case 13:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

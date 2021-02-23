@@ -8246,12 +8246,8 @@
                             },
                             {
                                 key: 'handleEvent',
-                                value: function (e, t) {
-                                    console.log('Inside handleEvent'),
-                                        console.log('event: ', e),
-                                        console.log('option: ', t),
-                                        localStorage.setItem('sortType', t.id),
-                                        (window.location.href = t.querySelector('a').href);
+                                value: function (e) {
+                                    localStorage.setItem('sortType', e.id), (window.location.href = e.querySelector('a').href);
                                 },
                             },
                             {
@@ -8266,15 +8262,11 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             (o = document.querySelector(n)),
-                                                                console.log('inside setUpListener'),
-                                                                console.log('after waitForSelector'),
                                                                 document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
-                                                                console.log('before event listener'),
                                                                 o.addEventListener('change', function (e) {
-                                                                    console.log('event listener added'),
-                                                                        r.handleEvent(e, document.querySelectorAll('#sort-select option')[o.selectedIndex]);
+                                                                    r.handleEvent(document.querySelectorAll('#sort-select option')[o.selectedIndex]);
                                                                 });
-                                                        case 6:
+                                                        case 3:
                                                         case 'end':
                                                             return e.stop();
                                                     }

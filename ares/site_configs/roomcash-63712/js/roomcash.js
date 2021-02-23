@@ -437,24 +437,16 @@ export default class Roomcash {
         });
     }
 
-    handleEvent(event, sortOption) {
-        console.log('Inside handleEvent');
-        console.log('event: ', event);
-        console.log('option: ', sortOption);
+    handleEvent(sortOption) {
         localStorage.setItem('sortType', sortOption.id);
         window.location.href = sortOption.querySelector('a').href;
     }
 
     async setUpListener(sortTypeId, element) {
         const select_element = document.querySelector(element);
-        console.log('inside setUpListener');
-        // await utilities.waitForSelectorInDOM(element);
-        console.log('after waitForSelector');
         document.querySelector(`#${sortTypeId}`).setAttribute('selected', 'selected');
-        console.log('before event listener');
         select_element.addEventListener('change', (e) => {
-            console.log('event listener added');
-            this.handleEvent(e, document.querySelectorAll('#sort-select option')[select_element.selectedIndex]);
+            this.handleEvent(document.querySelectorAll('#sort-select option')[select_element.selectedIndex]);
         });
     }
 

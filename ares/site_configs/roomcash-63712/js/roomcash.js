@@ -196,12 +196,12 @@ export default class Roomcash {
                     </div>
                     <div class="social-icon">
                         <a target="_blank" href="">
-                            <img src="">m
+                            <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/google-play.png">
                         </a>
                     </div>
                     <div class="social-icon">
                         <a target="_blank" href="">
-                            <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/app-store.png">
+                            <img src="${env_path.path}/site_configs/${this.config.directory_name}/icons/apple-store.png">
                         </a>
                     </div>
                 </div>

@@ -8006,12 +8006,17 @@
                                         .concat(c.path, '/site_configs/')
                                         .concat(
                                             this.config.directory_name,
-                                            '/icons/instagram.png">\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="">m\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                            '/icons/instagram.png">\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
                                         )
                                         .concat(c.path, '/site_configs/')
                                         .concat(
                                             this.config.directory_name,
-                                            '/icons/app-store.png">\n                        </a>\n                    </div>\n                </div>\n                <hr>\n                <div id="copyright">\n                    <p>Copyright &copy; '
+                                            '/icons/google-play.png">\n                        </a>\n                    </div>\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                        )
+                                        .concat(c.path, '/site_configs/')
+                                        .concat(
+                                            this.config.directory_name,
+                                            '/icons/apple-store.png">\n                        </a>\n                    </div>\n                </div>\n                <hr>\n                <div id="copyright">\n                    <p>Copyright &copy; '
                                         )
                                         .concat(
                                             new Date().getFullYear(),

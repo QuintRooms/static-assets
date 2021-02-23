@@ -4114,8 +4114,8 @@
                     x = !1,
                     k = e.prototype,
                     A = k[d] || k['@@iterator'] || (h && k[h]),
-                    q = A || b(h),
-                    M = h ? (w ? b('entries') : q) : void 0,
+                    M = A || b(h),
+                    q = h ? (w ? b('entries') : M) : void 0,
                     C = ('Array' == t && k.entries) || A;
                 if (
                     (C && (j = l(C.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || i(j, d, f)),
@@ -4123,15 +4123,15 @@
                         A &&
                         'values' !== A.name &&
                         ((x = !0),
-                        (q = function () {
+                        (M = function () {
                             return A.call(this);
                         })),
-                    (o && !g) || (!m && !x && k[d]) || i(k, d, q),
-                    (a[t] = q),
+                    (o && !g) || (!m && !x && k[d]) || i(k, d, M),
+                    (a[t] = M),
                     (a[S] = f),
                     h)
                 )
-                    if (((v = {values: w ? q : b('values'), keys: y ? q : b('keys'), entries: M}), g)) for (_ in v) _ in k || s(k, _, v[_]);
+                    if (((v = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (_ in v) _ in k || s(k, _, v[_]);
                     else r(r.P + r.F * (m || x), t, v);
                 return v;
             };
@@ -5130,17 +5130,17 @@
                 x = c.process,
                 k = x && x.versions,
                 A = (k && k.v8) || '',
-                q = c.Promise,
-                M = 'process' == l(x),
+                M = c.Promise,
+                q = 'process' == l(x),
                 C = function () {},
                 L = (r = _.f),
                 E = !!(function () {
                     try {
-                        var e = q.resolve(1),
+                        var e = M.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
                                 e(C, C);
                             });
-                        return (M || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -5192,13 +5192,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    M
+                                    q
                                         ? x.emit('unhandledRejection', r, e)
                                         : (n = c.onunhandledrejection)
                                         ? n({promise: e, reason: r})
                                         : (o = c.console) && o.error && o.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = M || O(e) ? 2 : 1)),
+                                (e._h = q || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5211,7 +5211,7 @@
                 D = function (e) {
                     g.call(c, function () {
                         var t;
-                        M ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
                 H = function (e) {
@@ -5241,8 +5241,8 @@
                     }
                 };
             E ||
-                ((q = function (e) {
-                    p(this, q, 'Promise', '_h'), f(e), o.call(this);
+                ((M = function (e) {
+                    p(this, M, 'Promise', '_h'), f(e), o.call(this);
                     try {
                         e(u(I, this, 1), u(H, this, 1));
                     } catch (e) {
@@ -5251,13 +5251,13 @@
                 }),
                 ((o = function (e) {
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-                }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(q.prototype, {
+                }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(M.prototype, {
                     then: function (e, t) {
-                        var n = L(y(this, q));
+                        var n = L(y(this, M));
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
-                            (n.domain = M ? x.domain : void 0),
+                            (n.domain = q ? x.domain : void 0),
                             this._c.push(n),
                             this._a && this._a.push(n),
                             this._s && P(this, !1),
@@ -5273,10 +5273,10 @@
                     (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
                 }),
                 (_.f = L = function (e) {
-                    return e === q || e === i ? new s(e) : r(e);
+                    return e === M || e === i ? new s(e) : r(e);
                 })),
-                d(d.G + d.W + d.F * !E, {Promise: q}),
-                n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(q, 'Promise'),
+                d(d.G + d.W + d.F * !E, {Promise: M}),
+                n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(M, 'Promise'),
                 n(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = n(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
                 d(d.S + d.F * !E, 'Promise', {
@@ -5287,7 +5287,7 @@
                 }),
                 d(d.S + d.F * (a || !E), 'Promise', {
                     resolve: function (e) {
-                        return S(a && this === i ? q : this, e);
+                        return S(a && this === i ? M : this, e);
                     },
                 }),
                 d(
@@ -5296,7 +5296,7 @@
                             !(
                                 E &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    q.all(e).catch(C);
+                                    M.all(e).catch(C);
                                 })
                             ),
                     'Promise',
@@ -5470,13 +5470,13 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < v.length; w++) {
                             _ = v[w];
-                            for (var x = String(_[0]), k = u(l(i(_.index), m.length), 0), A = [], q = 1; q < _.length; q++) A.push(void 0 === (j = _[q]) ? j : String(j));
-                            var M = _.groups;
+                            for (var x = String(_[0]), k = u(l(i(_.index), m.length), 0), A = [], M = 1; M < _.length; M++) A.push(void 0 === (j = _[M]) ? j : String(j));
+                            var q = _.groups;
                             if (f) {
                                 var C = [x].concat(A, k, m);
-                                void 0 !== M && C.push(M);
+                                void 0 !== q && C.push(q);
                                 var L = String(t.apply(void 0, C));
-                            } else L = h(x, m, k, A, M, t);
+                            } else L = h(x, m, k, A, q, t);
                             k >= S && ((b += m.slice(S, k) + L), (S = k + x.length));
                         }
                         return b + m.slice(S);
@@ -5717,11 +5717,11 @@
                 x = n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
                 k = n(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 A = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
-                q = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                M = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                M = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
+                q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 C = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 L = A.f,
-                E = M.f,
+                E = q.f,
                 T = k.f,
                 P = o.Symbol,
                 R = o.JSON,
@@ -5733,7 +5733,7 @@
                 B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
-                U = 'function' == typeof P && !!q.f,
+                U = 'function' == typeof P && !!M.f,
                 $ = o.QObject,
                 W = !$ || !$.prototype || !$.prototype.findChild,
                 G =
@@ -5818,10 +5818,10 @@
                     }
                 ),
                 (A.f = K),
-                (M.f = Q),
+                (q.f = Q),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
                 (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
-                (q.f = ee),
+                (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
                     return z(f(e));
@@ -5856,11 +5856,11 @@
                     getOwnPropertySymbols: ee,
                 });
             var se = u(function () {
-                q.f(1);
+                M.f(1);
             });
             i(i.S + i.F * se, 'Object', {
                 getOwnPropertySymbols: function (e) {
-                    return q.f(j(e));
+                    return M.f(j(e));
                 },
             }),
                 R &&
@@ -8258,35 +8258,30 @@
                                 key: 'setUpListener',
                                 value:
                                     ((p = i(
-                                        regeneratorRuntime.mark(function e(t) {
-                                            var n,
-                                                o = this;
+                                        regeneratorRuntime.mark(function e(t, n) {
+                                            var o,
+                                                r = this;
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            return (
-                                                                (n = document.querySelector('#sort-select')),
+                                                            (o = document.querySelector(n)),
                                                                 console.log('inside setUpListener'),
-                                                                (e.next = 4),
-                                                                u.waitForSelectorInDOM('#sort-select')
-                                                            );
-                                                        case 4:
-                                                            console.log('after waitForSelector'),
+                                                                console.log('after waitForSelector'),
                                                                 document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
                                                                 console.log('before event listener'),
-                                                                document.querySelector('#sort-select').addEventListenter('change', function (e) {
+                                                                o.addEventListener('change', function (e) {
                                                                     console.log('event listener added'),
-                                                                        o.handleEvent(e, document.querySelectorAll('#sort-select option')[n.selectedIndex]);
+                                                                        r.handleEvent(e, document.querySelectorAll('#sort-select option')[o.selectedIndex]);
                                                                 });
-                                                        case 8:
+                                                        case 6:
                                                         case 'end':
                                                             return e.stop();
                                                     }
                                             }, e);
                                         })
                                     )),
-                                    function (e) {
+                                    function (e, t) {
                                         return p.apply(this, arguments);
                                     }),
                             },
@@ -8295,50 +8290,43 @@
                                 value:
                                     ((f = i(
                                         regeneratorRuntime.mark(function e() {
-                                            var t,
-                                                n,
-                                                o,
-                                                r = this;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (document.querySelector('.SearchHotels')) {
-                                                                e.next = 2;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 2:
-                                                            return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
-                                                        case 4:
-                                                            (n = document.querySelector('.ArnSortByPrice')),
-                                                                (o = document.querySelector('.ArnSortByDealAmount')),
-                                                                document
-                                                                    .querySelector('.sort-wrapper h4')
-                                                                    .insertAdjacentHTML(
-                                                                        'afterend',
-                                                                        '\n        <select id="sort-select">\n            <option id="DealAmount"></option>\n            <option id="BestValue"></option>\n        </select>'
-                                                                    ),
-                                                                document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', o),
-                                                                document.querySelector('#BestValue').insertAdjacentElement('afterbegin', n),
-                                                                (o.textContent = 'RoomCash Savings'),
-                                                                (t = localStorage.getItem('sortType')
-                                                                    ? localStorage.getItem('sortType')
-                                                                    : document.querySelector('meta[name="SortType"]').content),
-                                                                document.querySelector('#'.concat(t)).setAttribute('selected', 'selected'),
-                                                                console.log('before event listener'),
-                                                                document.querySelector('#sort-select').addEventListenter('change', function (e) {
-                                                                    console.log('event listener added'),
-                                                                        r.handleEvent(
-                                                                            e,
-                                                                            document.querySelectorAll('#sort-select option')[document.querySelector('#sort-select').selectedIndex]
-                                                                        );
-                                                                });
-                                                        case 15:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
+                                            var t, n, o;
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                if (document.querySelector('.SearchHotels')) {
+                                                                    e.next = 2;
+                                                                    break;
+                                                                }
+                                                                return e.abrupt('return');
+                                                            case 2:
+                                                                return (e.next = 4), u.waitForSelectorInDOM('.sort-wrapper');
+                                                            case 4:
+                                                                (n = document.querySelector('.ArnSortByPrice')),
+                                                                    (o = document.querySelector('.ArnSortByDealAmount')),
+                                                                    document
+                                                                        .querySelector('.sort-wrapper h4')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterend',
+                                                                            '\n        <select id="sort-select">\n            <option id="DealAmount"></option>\n            <option id="BestValue"></option>\n        </select>'
+                                                                        ),
+                                                                    document.querySelector('#DealAmount').insertAdjacentElement('afterbegin', o),
+                                                                    document.querySelector('#BestValue').insertAdjacentElement('afterbegin', n),
+                                                                    (o.textContent = 'RoomCash Savings'),
+                                                                    (t = localStorage.getItem('sortType')
+                                                                        ? localStorage.getItem('sortType')
+                                                                        : document.querySelector('meta[name="SortType"]').content),
+                                                                    this.setUpListener(t, '#sort-select');
+                                                            case 13:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                this
+                                            );
                                         })
                                     )),
                                     function () {

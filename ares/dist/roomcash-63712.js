@@ -7881,6 +7881,7 @@
                             {
                                 key: 'init',
                                 value: function () {
+                                    var e = this;
                                     document.querySelector('.MemberAuthenticated') &&
                                         (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
                                         this.insertContent([
@@ -7929,7 +7930,9 @@
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend'),
-                                            document.querySelector('#moreRatesLink').addEventListener('click', this.handleSeeMoreRooms())),
+                                            document.querySelector('#moreRatesLink').addEventListener('click', function () {
+                                                e.handleSeeMoreRooms();
+                                            })),
                                         document.querySelector('.CheckOutForm') &&
                                             (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
@@ -8525,13 +8528,14 @@
                             {
                                 key: 'handleSeeMoreRooms',
                                 value: function () {
-                                    document.querySelector('.RateCalendarPopupAnchor') &&
-                                        document.querySelectorAll('#moreRates rateRow').forEach(function (e) {
-                                            if (e.querySelector('.RateCalendarPopupAnchor')) {
-                                                var t = e.querySelector('.RateCalendarPopupAnchor');
-                                                e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', t);
-                                            }
-                                        });
+                                    console.log('click'),
+                                        document.querySelector('.RateCalendarPopupAnchor') &&
+                                            document.querySelectorAll('#moreRates rateRow').forEach(function (e) {
+                                                if (e.querySelector('.RateCalendarPopupAnchor')) {
+                                                    var t = e.querySelector('.RateCalendarPopupAnchor');
+                                                    e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', t);
+                                                }
+                                            });
                                 },
                             },
                         ]) && i(t.prototype, n),

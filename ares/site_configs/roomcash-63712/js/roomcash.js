@@ -584,15 +584,15 @@ export default class Roomcash {
     }
 
     handleSeeMoreRooms() {
-        console.log('click');
         if (!document.querySelector('.RateCalendarPopupAnchor')) return;
 
         const more_rates = document.querySelectorAll('#moreRates rateRow');
 
-        more_rates.forEach((rate) => {
-            if (!rate.querySelector('.RateCalendarPopupAnchor')) return;
-            const daily_rates = rate.querySelector('.RateCalendarPopupAnchor');
-            rate.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rates);
+        more_rates.forEach(async (rate) => {
+            console.log(rate);
+            // await utilities.waitForSelectorInDOM('.RateCalendarPopupAnchor');
+            const daily_rate_anchor = rate.querySelector('.RateCalendarPopupAnchor');
+            rate.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rate_anchor);
         });
     }
 }

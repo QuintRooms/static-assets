@@ -8528,14 +8528,31 @@
                             {
                                 key: 'handleSeeMoreRooms',
                                 value: function () {
-                                    console.log('click'),
-                                        document.querySelector('.RateCalendarPopupAnchor') &&
-                                            document.querySelectorAll('#moreRates rateRow').forEach(function (e) {
-                                                if (e.querySelector('.RateCalendarPopupAnchor')) {
-                                                    var t = e.querySelector('.RateCalendarPopupAnchor');
-                                                    e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', t);
-                                                }
-                                            });
+                                    document.querySelector('.RateCalendarPopupAnchor') &&
+                                        document.querySelectorAll('#moreRates rateRow').forEach(
+                                            (function () {
+                                                var e = a(
+                                                    regeneratorRuntime.mark(function e(t) {
+                                                        var n;
+                                                        return regeneratorRuntime.wrap(function (e) {
+                                                            for (;;)
+                                                                switch ((e.prev = e.next)) {
+                                                                    case 0:
+                                                                        console.log(t),
+                                                                            (n = t.querySelector('.RateCalendarPopupAnchor')),
+                                                                            t.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', n);
+                                                                    case 3:
+                                                                    case 'end':
+                                                                        return e.stop();
+                                                                }
+                                                        }, e);
+                                                    })
+                                                );
+                                                return function (t) {
+                                                    return e.apply(this, arguments);
+                                                };
+                                            })()
+                                        );
                                 },
                             },
                         ]) && i(t.prototype, n),

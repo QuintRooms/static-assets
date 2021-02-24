@@ -7996,7 +7996,7 @@
                                         )
                                         .concat(
                                             document.querySelector('.ARN_ServiceLinks.cancelLink').href,
-                                            '">Cancel/Modify</a></li>\n                </div>\n                <div class="links partner">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
+                                            '">Cancel/Modify</a></li>\n                </div>\n                <div class="links partner">\n                        <li class="links-header">Partner with RoomCash</li>\n                        <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>\n                    <li><a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a></li>\n                </div>\n            </div>\n            <div id="policy-social">\n                <div id="social-container">\n                    <div class="social-icon">\n                        <a target="_blank" href="">\n                            <img src="'
                                         )
                                         .concat(c.path, '/site_configs/')
                                         .concat(

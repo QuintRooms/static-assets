@@ -375,6 +375,12 @@ header #admin-container {
     display: none;
   }
 }
+header #admin-container #account-container, header #admin-container #search-container {
+  cursor: pointer;
+}
+header #admin-container #account-container:hover, header #admin-container #search-container:hover {
+  border-bottom: 4px solid #CC9831;
+}
 header #admin-container #balance-container {
   display: flex;
   justify-content: flex-end;
@@ -394,6 +400,7 @@ header #admin-container .header-link {
   padding: 30px;
   font-size: 15px;
   letter-spacing: 1px;
+  border-bottom: 4px solid transparent;
 }
 @media (max-width: 1100px) {
   header #admin-container .header-link {
@@ -403,9 +410,6 @@ header #admin-container .header-link {
 header #admin-container .header-link a {
   color: #fff;
   text-decoration: none;
-}
-header #admin-container .header-link a:hover {
-  text-decoration: underline;
 }
 header #admin-container #balance {
   color: #CC9831;
@@ -518,6 +522,7 @@ header #AdminControlsContainer .hamburger .line {
 @media (max-width: 800px) {
   #footer-menu-container {
     align-items: center;
+    padding: 0 10px;
   }
 }
 #footer-menu-container #links-container {

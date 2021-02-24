@@ -433,7 +433,7 @@
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#CC9831;"
       ><div style="margin-bottom: 10px;">RoomCash Earned</div>
                         <img style="width:8%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
-                        <span style="margin:10px 5px; font-size: 28px;">[value_earned]</span></div>
+                        <span style="margin:10px 5px; font-size: 28px;">$[value_earned]</span></div>
     
                 </td>
               </tr>
@@ -475,7 +475,7 @@
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#CC9831;"
       ><div style="margin-bottom: 10px;">RoomCash Reserves</div>
                     <img style="width:8%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
-                    <span style="margin:10px 5px; font-size: 28px;">[balance]</span></div>
+                    <span style="margin:10px 5px; font-size: 28px;">$[balance]</span></div>
     
                 </td>
               </tr>
@@ -719,7 +719,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guest Name:</b> [guest_name,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Guest Name:</b> [guest_name,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -731,7 +731,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -743,7 +743,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -755,7 +755,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guests:</b> [guests,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Guests:</b> [guests,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -767,7 +767,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rooms:</b> [rooms,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Rooms:</b> [rooms,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -807,7 +807,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -819,7 +819,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -831,7 +831,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -843,7 +843,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -855,7 +855,7 @@
                   
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rate Per Night:</b> [room_rates,fallback=]</span></div>
+      ><span style="line-height:1.4"><b>Rate Per Night:</b> [room_rates,fallback=]</span></div>
     
                 </td>
               </tr>
@@ -1332,7 +1332,7 @@
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
-          
+          [if:room_description]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:20px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1341,11 +1341,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Room Description</h5>
-                    <span>[room_description,fallback=]</span></div>
+                    <span style="line-height:1.4">[room_description,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:deposit_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1354,11 +1354,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Deposit Policy</h5>
-                    <span>[deposit_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[deposit_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:payment_terms]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1367,11 +1367,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Payment Terms</h5>
-                    <span>[payment_terms,fallback=]</span></div>
+                    <span style="line-height:1.4">[payment_terms,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:cancellation_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1380,11 +1380,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Cancellation Policy</h5>
-                    <span>[cancellation_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[cancellation_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:property_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1393,11 +1393,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Property Policy</h5>
-                    <span>[property_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[property_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:extra_fees_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1406,11 +1406,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Extra Fees Policy</h5>
-                    <span>[extra_fees_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[extra_fees_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:payment_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1419,11 +1419,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Payment Policy</h5>
-                    <span>[payment_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[payment_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif][if:check_in_support_policy]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1432,11 +1432,11 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Check In Support Policy</h5>
-                    <span>[check_in_support_policy,fallback=]</span></div>
+                    <span style="line-height:1.4">[check_in_support_policy,fallback=]</span></div>
     
                 </td>
               </tr>
-            
+            [endif]
               <tr>
                 <td
                    align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0;padding-bottom:10px;padding-left:0;word-break:break-word;"
@@ -1445,7 +1445,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Important Guest Information</h5>
-                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
+                    <span style="line-height:1.4">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
     
                 </td>
               </tr>
@@ -1458,7 +1458,7 @@
       <div
          style="font-family:Montserrat, sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;"
       ><h5>Reservation Information</h5>
-                    <span>For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
+                    <span style="line-height:1.4">For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
                         [hotel,fallback=] at [hotel_phone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=63712">click here.</a></span></div>
     
                 </td>

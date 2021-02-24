@@ -19,7 +19,7 @@
                     <h1 style="letter-spacing:3px; font-size: 28px;">Good news, [first_name]!</h1>
                 </mj-text>
                 <mj-text align="center" font-weight="600" font-size="14px" color="#000" >
-                    <span>As [action], you’ve earned another $[value_earned] RoomCash!</span>
+                    <span>You’ve earned another $[value_earned] RoomCash!</span>
                 </mj-text>
                 <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">
                     <span>We’ve already added this to your RoomCash Reserves, so your new balance is: $[balance].</span>

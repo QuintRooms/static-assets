@@ -375,6 +375,9 @@ header #admin-container {
     display: none;
   }
 }
+header #admin-container #account-container {
+  margin: 0 10px;
+}
 header #admin-container #account-container, header #admin-container #search-container {
   cursor: pointer;
 }
@@ -1071,6 +1074,15 @@ header #AdminControlsContainer .hamburger .line {
   justify-content: flex-start;
   width: 100%;
 }
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty .ArnPropName .ArnPropNameLink {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .SearchHotels .ArnProperty .ArnPropName .ArnLimitedAvail {
+    text-align: center;
+  }
+}
 @media (max-width: 700px) {
   .SearchHotels .ArnProperty .ArnPropName {
     height: unset;
@@ -1134,6 +1146,11 @@ header #AdminControlsContainer .hamburger .line {
   .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell {
     padding: 0 12px;
     justify-content: space-between;
+    flex-direction: column;
+  }
+  .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell .ArnPriceCell {
+    text-align: center;
+    align-self: center;
   }
   .SearchHotels .ArnProperty.no-roomCash-deal .ArnRateCell .ArnRateButton {
     margin-bottom: 0;

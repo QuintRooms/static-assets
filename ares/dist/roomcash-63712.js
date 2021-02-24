@@ -7874,7 +7874,7 @@
                                 '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h, y, g;
+                    var t, n, o, r, s, l, d, m, f, p, h, y, g, v;
                     return (
                         (t = e),
                         (n = [
@@ -7958,7 +7958,7 @@
                             {
                                 key: 'resizeMap',
                                 value:
-                                    ((g = a(
+                                    ((v = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -7987,7 +7987,7 @@
                                         })
                                     )),
                                     function () {
-                                        return g.apply(this, arguments);
+                                        return v.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8032,7 +8032,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((y = a(
+                                    ((g = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8080,7 +8080,7 @@
                                         })
                                     )),
                                     function () {
-                                        return y.apply(this, arguments);
+                                        return g.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8153,7 +8153,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((h = a(
+                                    ((y = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8282,7 +8282,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8294,7 +8294,7 @@
                             {
                                 key: 'setUpListener',
                                 value:
-                                    ((p = a(
+                                    ((h = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             var o,
                                                 r = this;
@@ -8315,13 +8315,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSortSelectMenu',
                                 value:
-                                    ((f = a(
+                                    ((p = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(
@@ -8363,13 +8363,13 @@
                                         })
                                     )),
                                     function () {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveCurrency',
                                 value:
-                                    ((m = a(
+                                    ((f = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8388,13 +8388,13 @@
                                         })
                                     )),
                                     function () {
-                                        return m.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateText',
                                 value:
-                                    ((d = a(
+                                    ((m = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8411,13 +8411,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return d.apply(this, arguments);
+                                        return m.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateAttribute',
                                 value:
-                                    ((l = a(
+                                    ((d = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8434,13 +8434,13 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return l.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSupportPage',
                                 value:
-                                    ((s = a(
+                                    ((l = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -8491,13 +8491,13 @@
                                         })
                                     )),
                                     function () {
-                                        return s.apply(this, arguments);
+                                        return l.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveElements',
                                 value:
-                                    ((r = a(
+                                    ((s = a(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8522,38 +8522,40 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return r.apply(this, arguments);
+                                        return s.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'handleSeeMoreRooms',
-                                value: function () {
-                                    document.querySelector('.RateCalendarPopupAnchor') &&
-                                        document.querySelectorAll('#moreRates rateRow').forEach(
-                                            (function () {
-                                                var e = a(
-                                                    regeneratorRuntime.mark(function e(t) {
-                                                        var n;
-                                                        return regeneratorRuntime.wrap(function (e) {
-                                                            for (;;)
-                                                                switch ((e.prev = e.next)) {
-                                                                    case 0:
-                                                                        console.log(t),
-                                                                            (n = t.querySelector('.RateCalendarPopupAnchor')),
-                                                                            t.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', n);
-                                                                    case 3:
-                                                                    case 'end':
-                                                                        return e.stop();
-                                                                }
-                                                        }, e);
-                                                    })
-                                                );
-                                                return function (t) {
-                                                    return e.apply(this, arguments);
-                                                };
-                                            })()
-                                        );
-                                },
+                                value:
+                                    ((r = a(
+                                        regeneratorRuntime.mark(function e() {
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (document.querySelector('.RateCalendarPopupAnchor')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), u.waitForSelectorInDOM('#moreRates rateRow');
+                                                        case 4:
+                                                            document.querySelectorAll('#moreRates rateRow').forEach(function (e) {
+                                                                var t = e.querySelector('.RateCalendarPopupAnchor');
+                                                                e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', t);
+                                                            });
+                                                        case 6:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function () {
+                                        return r.apply(this, arguments);
+                                    }),
                             },
                         ]) && i(t.prototype, n),
                         o && i(t, o),

@@ -85,37 +85,37 @@
 
                 <mj-column width="50%">
                     <mj-text padding-bottom="10px" color="#666">
-                        <span><b>Guest Name:</b> [guest_name,fallback=]</span>
+                        <span style="line-height:1.4"><b>Guest Name:</b> [guest_name,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                        <span><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span>
+                        <span style="line-height:1.4"><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                        <span><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span>
+                        <span style="line-height:1.4"><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                        <span><b>Guests:</b> [guests,fallback=]</span>
+                        <span style="line-height:1.4"><b>Guests:</b> [guests,fallback=]</span>
                     </mj-text>
                     <mj-text color="#666">
-                        <span><b>Rooms:</b> [rooms,fallback=]</span>
+                        <span style="line-height:1.4"><b>Rooms:</b> [rooms,fallback=]</span>
                     </mj-text>
                 </mj-column>
 
                 <mj-column width="50%">
                     <mj-text color="#666" padding-bottom="10px">
-                            <span><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span>
+                            <span style="line-height:1.4"><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                            <span><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span>
+                            <span style="line-height:1.4"><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                            <span><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span>
+                            <span style="line-height:1.4"><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                            <span><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span>
+                            <span style="line-height:1.4"><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span>
                     </mj-text>
                     <mj-text padding-bottom="10px" color="#666">
-                            <span><b>Rate Per Night:</b> [room_rates,fallback=]</span>
+                            <span style="line-height:1.4"><b>Rate Per Night:</b> [room_rates,fallback=]</span>
                     </mj-text>
                 </mj-column>
 
@@ -174,45 +174,61 @@
         /* - - - - Policies - - - - */
         <mj-section padding-top="20px" padding-bottom="20px">
             <mj-column width="100%">
+                <mj-raw>[if:room_description]</mj-raw>
                 <mj-text padding-top="20px" padding-bottom="10px" align="center">
                     <h5>Room Description</h5>
-                    <span>[room_description,fallback=]</span>
+                    <span style="line-height:1.4">[room_description,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:deposit_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Deposit Policy</h5>
-                    <span>[deposit_policy,fallback=]</span>
+                    <span style="line-height:1.4">[deposit_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:payment_terms]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Payment Terms</h5>
-                    <span>[payment_terms,fallback=]</span>
+                    <span style="line-height:1.4">[payment_terms,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:cancellation_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Cancellation Policy</h5>
-                    <span>[cancellation_policy,fallback=]</span>
+                    <span style="line-height:1.4">[cancellation_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:property_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Property Policy</h5>
-                    <span>[property_policy,fallback=]</span>
+                    <span style="line-height:1.4">[property_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:extra_fees_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Extra Fees Policy</h5>
-                    <span>[extra_fees_policy,fallback=]</span>
+                    <span style="line-height:1.4">[extra_fees_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:payment_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Payment Policy</h5>
-                    <span>[payment_policy,fallback=]</span>
+                    <span style="line-height:1.4">[payment_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:check_in_support_policy]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Check In Support Policy</h5>
-                    <span>[check_in_support_policy,fallback=]</span>
+                    <span style="line-height:1.4">[check_in_support_policy,fallback=]</span>
                 </mj-text>
+                <mj-raw>[endif]</mj-raw>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Important Guest Information</h5>
-                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+                    <span style="line-height:1.4">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
                 </mj-text>
                 <mj-text padding-top="10px" padding-bottom="10px" align="center">
                     <h5>Reservation Information</h5>
-                    <span>For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
+                    <span style="line-height:1.4">For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
                         [hotel,fallback=] at [hotel_phone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=63712">click here.</a></span>
                 </mj-text>
             </mj-column>

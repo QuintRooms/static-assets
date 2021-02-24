@@ -179,7 +179,7 @@ export default class Roomcash {
                 <div class="links partner">
                         <li class="links-header">Partner with RoomCash</li>
                         <li><a target="_blank" href="https://roomcash.com/add-hotel">Add Your Hotel</a></li>
-                    <li><a target="_blank" href="https://roomcash.com/partnerships">Corporate Partners</a></li>
+                    <li><a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a></li>
                 </div>
             </div>
             <div id="policy-social">

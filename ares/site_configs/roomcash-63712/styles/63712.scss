@@ -154,6 +154,10 @@ header {
             display: none;
         }
 
+        #account-container {
+            margin: 0 10px;
+        }
+
         #account-container, #search-container {
             cursor: pointer;
             
@@ -976,6 +980,18 @@ header {
             justify-content: flex-start;
             width: 100%;
 
+
+        @include mobile {
+            .ArnPropNameLink {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .ArnLimitedAvail {
+                text-align: center;
+            }
+        }
+
             @include tablet-small {
                 height: unset;
             }
@@ -1052,6 +1068,12 @@ header {
             @include mobile {
                 padding: 0 12px;
                 justify-content: space-between;
+                flex-direction: column;
+
+                .ArnPriceCell {
+                    text-align: center;
+                    align-self: center;
+                }
     
                 .ArnRateButton {
                     margin-bottom: 0;

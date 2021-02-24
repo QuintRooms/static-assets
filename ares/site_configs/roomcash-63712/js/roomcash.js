@@ -103,6 +103,7 @@ export default class Roomcash {
             } else {
                 this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
             }
+            document.querySelector('#moreRatesLink').addEventListener('click', this.handleSeeMoreRooms());
         }
 
         // Checkout Page
@@ -577,6 +578,18 @@ export default class Roomcash {
         const elements = document.querySelectorAll(nodeList);
         elements.forEach((el) => {
             el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));
+        });
+    }
+
+    handleSeeMoreRooms() {
+        if (!document.querySelector('.RateCalendarPopupAnchor')) return;
+
+        const more_rates = document.querySelectorAll('#moreRates rateRow');
+
+        more_rates.forEach((rate) => {
+            if (!rate.querySelector('.RateCalendarPopupAnchor')) return;
+            const daily_rates = rate.querySelector('.RateCalendarPopupAnchor');
+            rate.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rates);
         });
     }
 }

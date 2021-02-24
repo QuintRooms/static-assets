@@ -974,21 +974,22 @@ header {
             height: 225px;
         }
 
+        @include mobile {
+            .ArnLimitedAvail {
+                text-align: center;
+            }
+        }
+
         .ArnPropName {
             height: 225px;
             padding: 0 12px 0 12px;
             justify-content: flex-start;
             width: 100%;
 
-
         @include mobile {
             .ArnPropNameLink {
                 text-align: center;
                 margin: 10px 0;
-            }
-
-            .ArnLimitedAvail {
-                text-align: center;
             }
         }
 
@@ -1112,6 +1113,16 @@ header {
 
         .ArnProperty {
             padding: 10px 0;
+
+            #moreRates {
+                .ArnNightlyRate {
+                    visibility: unset;
+                    @media (max-width: 560px) {
+                        display: block !important;
+                        text-align: center;
+                    }
+                }
+            }
         }
 
         .RoomDescription {

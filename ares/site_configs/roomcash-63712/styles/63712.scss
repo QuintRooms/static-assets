@@ -154,6 +154,14 @@ header {
             display: none;
         }
 
+        #account-container, #search-container {
+            cursor: pointer;
+            
+            &:hover {
+                border-bottom: 4px solid $primary_color;
+            }
+        }
+
         #balance-container {
             display: flex;
             justify-content: flex-end;
@@ -177,6 +185,7 @@ header {
             padding: 30px;
             font-size: 15px;
             letter-spacing: 1px;
+            border-bottom: 4px solid transparent;
 
             @include desktop{
                 padding: 30px;
@@ -185,10 +194,6 @@ header {
             a {
                 color: $primary_text_color;
                 text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
             }
         }
 

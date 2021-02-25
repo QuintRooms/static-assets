@@ -240,7 +240,7 @@ export default class Roomcash {
             'afterbegin',
             `
             <div id="mobile-balance-container">
-                <span id="mobile-balance">$${this.user_points}</span>
+                <span id="mobile-balance"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">$${this.user_points}</span>
             </div>
         `
         );

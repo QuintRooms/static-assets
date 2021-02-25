@@ -910,7 +910,7 @@ input[type=checkbox] {
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
   width: 50%;
 }
-@media (max-width: 700px) {
+@media (max-width: 920px) {
   .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer #CitySearchContainer {
     width: unset;
   }

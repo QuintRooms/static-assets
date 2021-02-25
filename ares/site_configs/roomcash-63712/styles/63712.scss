@@ -314,6 +314,8 @@ header {
 
 #footer-menu-container {
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -492,6 +494,21 @@ header {
 
                 :last-child {
                     padding-left: 5px;
+                }
+
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    a {
+                        padding: 0;
+                        margin: 5px 0;
+                    }
+
+                    #pipe {
+                        display: none;
+                    }
                 }
             }
 

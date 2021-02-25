@@ -115,9 +115,14 @@ header {
         }
 
         #commands.active {
-            transform: translateY(195px);
+            // transform: translateY(195px);
+            transform: translateY(145px);
             background-color: #000;
             border-top: 2px solid #CC9831;
+
+            a:nth-child(4), .profileCommand {
+                display: none !important;
+            }
         }
     }
 
@@ -974,21 +979,22 @@ header {
             height: 225px;
         }
 
+        @include mobile {
+            .ArnLimitedAvail {
+                text-align: center;
+            }
+        }
+
         .ArnPropName {
             height: 225px;
             padding: 0 12px 0 12px;
             justify-content: flex-start;
             width: 100%;
 
-
         @include mobile {
             .ArnPropNameLink {
                 text-align: center;
                 margin: 10px 0;
-            }
-
-            .ArnLimitedAvail {
-                text-align: center;
             }
         }
 
@@ -1112,6 +1118,16 @@ header {
 
         .ArnProperty {
             padding: 10px 0;
+
+            #moreRates {
+                .ArnNightlyRate {
+                    visibility: unset;
+                    @media (max-width: 560px) {
+                        display: block !important;
+                        text-align: center;
+                    }
+                }
+            }
         }
 
         .RoomDescription {

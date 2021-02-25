@@ -103,6 +103,9 @@ export default class Roomcash {
             } else {
                 this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
             }
+            document.querySelector('#moreRatesLink').addEventListener('click', () => {
+                this.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+            });
         }
 
         // Checkout Page

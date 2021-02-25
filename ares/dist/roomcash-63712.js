@@ -7881,6 +7881,7 @@
                             {
                                 key: 'init',
                                 value: function () {
+                                    var e = this;
                                     document.querySelector('.MemberAuthenticated') &&
                                         (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
                                         this.insertContent([
@@ -7928,7 +7929,10 @@
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
-                                                : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend')),
+                                                : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend'),
+                                            document.querySelector('#moreRatesLink').addEventListener('click', function () {
+                                                e.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+                                            })),
                                         document.querySelector('.CheckOutForm') &&
                                             (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),

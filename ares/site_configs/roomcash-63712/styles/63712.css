@@ -339,9 +339,12 @@ header .logo img {
     border-bottom: none;
   }
   header #commands.active {
-    transform: translateY(195px);
+    transform: translateY(145px);
     background-color: #000;
     border-top: 2px solid #CC9831;
+  }
+  header #commands.active a:nth-child(4), header #commands.active .profileCommand {
+    display: none !important;
   }
 }
 header #mobile-balance-container {
@@ -1068,6 +1071,11 @@ header #AdminControlsContainer .hamburger .line {
 .SearchHotels .ArnProperty .ArnPropThumb, .SearchHotels .ArnProperty .ArnPropThumb img {
   height: 225px;
 }
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty .ArnLimitedAvail {
+    text-align: center;
+  }
+}
 .SearchHotels .ArnProperty .ArnPropName {
   height: 225px;
   padding: 0 12px 0 12px;
@@ -1078,9 +1086,6 @@ header #AdminControlsContainer .hamburger .line {
   .SearchHotels .ArnProperty .ArnPropName .ArnPropNameLink {
     text-align: center;
     margin: 10px 0;
-  }
-  .SearchHotels .ArnProperty .ArnPropName .ArnLimitedAvail {
-    text-align: center;
   }
 }
 @media (max-width: 700px) {
@@ -1180,6 +1185,15 @@ header #AdminControlsContainer .hamburger .line {
 }
 .SinglePropDetail .ArnRightListContainer .ArnProperty {
   padding: 10px 0;
+}
+.SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .ArnNightlyRate {
+  visibility: unset;
+}
+@media (max-width: 560px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .ArnNightlyRate {
+    display: block !important;
+    text-align: center;
+  }
 }
 .SinglePropDetail .ArnRightListContainer .RoomDescription {
   font-weight: 300;

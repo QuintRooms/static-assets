@@ -79,147 +79,153 @@ input[type="checkbox"] {
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 
 /* - - - - - - - - Header - - - - - - - - */
+.header-container {
+    width: 100vw;
+    background-color: #000;
 
-header {
-    justify-content: space-between;
-    border-bottom: none;
-    height: 100px;
-
-    .logo img {
-        padding: 0;
-        margin-left: 30px;
-        max-width: 190px;
-
-        @include mobile {
-            margin-left: 5px;
+    header {
+        justify-content: space-between;
+        border-bottom: none;
+        height: 100px;
+        max-width: 1440px;
+        margin: 0 auto;
+    
+        .logo img {
+            padding: 0;
+            margin-left: 30px;
+            max-width: 190px;
+    
+            @include mobile {
+                margin-left: 5px;
+            }
         }
-    }
-
-    @include tablet {
-
+    
+        @include tablet {
+    
+            #commands {
+                display: flex !important;
+    
+                .organizationsCommand, form {
+                    display: none;
+                }
+    
+                a {
+                    padding: 15px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    color: $primary_color;
+                    border-bottom: none;
+                }
+            }
+    
+            #commands.active {
+                // transform: translateY(195px);
+                transform: translateY(145px);
+                background-color: #000;
+                border-top: 2px solid #CC9831;
+    
+                a:nth-child(4), .profileCommand {
+                    display: none !important;
+                }
+            }
+        }
+    
+    
+    
+        #mobile-balance-container {
+            margin-right: 20px;
+            display: none;
+    
+            @include tablet {
+                display: unset;
+            }
+    
+            #mobile-balance {
+                font-size: 30px;
+                color: $primary_color;
+            }
+        }
+    
         #commands {
-            display: flex !important;
-
-            .organizationsCommand, form {
+            display: none;
+    
+            @include tablet {
+                display: unset;
+            }
+        }
+    
+        #admin-container {
+            height: 100%;
+            display: flex;
+            color: $primary_text_color;
+    
+            @include tablet {
                 display: none;
             }
-
-            a {
-                padding: 15px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                text-align: center;
-                color: $primary_color;
-                border-bottom: none;
+    
+            #account-container {
+                margin: 0 10px;
             }
-        }
-
-        #commands.active {
-            // transform: translateY(195px);
-            transform: translateY(145px);
-            background-color: #000;
-            border-top: 2px solid #CC9831;
-
-            a:nth-child(4), .profileCommand {
-                display: none !important;
+    
+            #account-container, #search-container {
+                cursor: pointer;
+                
+                &:hover {
+                    border-bottom: 4px solid $primary_color;
+                }
             }
-        }
-    }
-
-
-
-    #mobile-balance-container {
-        margin-right: 20px;
-        display: none;
-
-        @include tablet {
-            display: unset;
-        }
-
-        #mobile-balance {
-            font-size: 30px;
-            color: $primary_color;
-        }
-    }
-
-    #commands {
-        display: none;
-
-        @include tablet {
-            display: unset;
-        }
-    }
-
-    #admin-container {
-        height: 100%;
-        display: flex;
-        color: $primary_text_color;
-
-        @include tablet {
-            display: none;
-        }
-
-        #account-container {
-            margin: 0 10px;
-        }
-
-        #account-container, #search-container {
-            cursor: pointer;
-            
-            &:hover {
-                border-bottom: 4px solid $primary_color;
+    
+            #balance-container {
+                display: flex;
+                justify-content: flex-end;
+    
+                img {
+                    margin-right: 10px;
+                    width: 25%;
+                }
+                
+                #balance {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
             }
-        }
-
-        #balance-container {
-            display: flex;
-            justify-content: flex-end;
-
-            img {
-                margin-right: 10px;
-                width: 25%;
-            }
-            
-            #balance {
-                font-size: 18px;
-                font-weight: 500;
-            }
-        }
-
-
-        .header-link {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            font-size: 15px;
-            letter-spacing: 1px;
-            border-bottom: 4px solid transparent;
-
-            @include desktop{
+    
+    
+            .header-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 padding: 30px;
+                font-size: 15px;
+                letter-spacing: 1px;
+                border-bottom: 4px solid transparent;
+    
+                @include desktop{
+                    padding: 30px;
+                }
+    
+                a {
+                    color: $primary_text_color;
+                    text-decoration: none;
+                }
             }
-
-            a {
-                color: $primary_text_color;
-                text-decoration: none;
+    
+            #balance {
+                color: $primary_color;
+            }
+    
+            #search-container {
+                background-color: $primary_color;
             }
         }
-
-        #balance {
-            color: $primary_color;
-        }
-
-        #search-container {
-            background-color: $primary_color;
-        }
-    }
-
-    #AdminControlsContainer {
-        margin-right: 10px;
-
-        .hamburger .line {
-            background-color: $primary_color;
+    
+        #AdminControlsContainer {
+            margin-right: 10px;
+    
+            .hamburger .line {
+                background-color: $primary_color;
+            }
         }
     }
 }

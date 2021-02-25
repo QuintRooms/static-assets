@@ -308,29 +308,35 @@ input[type=checkbox] {
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - - Header - - - - - - - - */
-header {
+.header-container {
+  width: 100vw;
+  background-color: #000;
+}
+.header-container header {
   justify-content: space-between;
   border-bottom: none;
   height: 100px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
-header .logo img {
+.header-container header .logo img {
   padding: 0;
   margin-left: 30px;
   max-width: 190px;
 }
 @media (max-width: 600px) {
-  header .logo img {
+  .header-container header .logo img {
     margin-left: 5px;
   }
 }
 @media (max-width: 800px) {
-  header #commands {
+  .header-container header #commands {
     display: flex !important;
   }
-  header #commands .organizationsCommand, header #commands form {
+  .header-container header #commands .organizationsCommand, .header-container header #commands form {
     display: none;
   }
-  header #commands a {
+  .header-container header #commands a {
     padding: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -338,68 +344,68 @@ header .logo img {
     color: #CC9831;
     border-bottom: none;
   }
-  header #commands.active {
+  .header-container header #commands.active {
     transform: translateY(145px);
     background-color: #000;
     border-top: 2px solid #CC9831;
   }
-  header #commands.active a:nth-child(4), header #commands.active .profileCommand {
+  .header-container header #commands.active a:nth-child(4), .header-container header #commands.active .profileCommand {
     display: none !important;
   }
 }
-header #mobile-balance-container {
+.header-container header #mobile-balance-container {
   margin-right: 20px;
   display: none;
 }
 @media (max-width: 800px) {
-  header #mobile-balance-container {
+  .header-container header #mobile-balance-container {
     display: unset;
   }
 }
-header #mobile-balance-container #mobile-balance {
+.header-container header #mobile-balance-container #mobile-balance {
   font-size: 30px;
   color: #CC9831;
 }
-header #commands {
+.header-container header #commands {
   display: none;
 }
 @media (max-width: 800px) {
-  header #commands {
+  .header-container header #commands {
     display: unset;
   }
 }
-header #admin-container {
+.header-container header #admin-container {
   height: 100%;
   display: flex;
   color: #fff;
 }
 @media (max-width: 800px) {
-  header #admin-container {
+  .header-container header #admin-container {
     display: none;
   }
 }
-header #admin-container #account-container {
+.header-container header #admin-container #account-container {
   margin: 0 10px;
 }
-header #admin-container #account-container, header #admin-container #search-container {
+.header-container header #admin-container #account-container, .header-container header #admin-container #search-container {
   cursor: pointer;
 }
-header #admin-container #account-container:hover, header #admin-container #search-container:hover {
+.header-container header #admin-container #account-container:hover, .header-container header #admin-container #search-container:hover {
   border-bottom: 4px solid #CC9831;
 }
-header #admin-container #balance-container {
+.header-container header #admin-container #balance-container {
   display: flex;
   justify-content: flex-end;
 }
-header #admin-container #balance-container img {
+.header-container header #admin-container #balance-container img {
   margin-right: 10px;
   width: 25%;
 }
-header #admin-container #balance-container #balance {
+.header-container header #admin-container #balance-container #balance {
   font-size: 18px;
   font-weight: 500;
 }
-header #admin-container .header-link {
+.header-container header #admin-container .header-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -409,24 +415,24 @@ header #admin-container .header-link {
   border-bottom: 4px solid transparent;
 }
 @media (max-width: 1100px) {
-  header #admin-container .header-link {
+  .header-container header #admin-container .header-link {
     padding: 30px;
   }
 }
-header #admin-container .header-link a {
+.header-container header #admin-container .header-link a {
   color: #fff;
   text-decoration: none;
 }
-header #admin-container #balance {
+.header-container header #admin-container #balance {
   color: #CC9831;
 }
-header #admin-container #search-container {
+.header-container header #admin-container #search-container {
   background-color: #CC9831;
 }
-header #AdminControlsContainer {
+.header-container header #AdminControlsContainer {
   margin-right: 10px;
 }
-header #AdminControlsContainer .hamburger .line {
+.header-container header #AdminControlsContainer .hamburger .line {
   background-color: #CC9831;
 }
 

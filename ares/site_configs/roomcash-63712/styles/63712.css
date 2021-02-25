@@ -863,15 +863,11 @@ header #AdminControlsContainer .hamburger .line {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-@media (max-width: 700px) {
-  .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h1, .RootBody .ArnSearchContainerMainDiv .ArnPrimarySearchOuterContainer h3 {
-    text-align: center;
-  }
+  text-align: center;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer {
   margin: 30px 0;
-  background-color: #EBEBEB;
+  background: #EBEBEB;
   color: #000;
 }
 .RootBody .ArnSearchContainerMainDiv .ArnQuadSearchContainer.ArnPrimarySearchContainer .ArnSecondarySearchOuterContainer {
@@ -1385,6 +1381,8 @@ body.WBSupportForm {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 body.WBSupportForm .ArnSupportChatTable {
   display: none;
@@ -1573,6 +1571,16 @@ body.WBSupportForm .ArnSubPage {
 }
 .WBValidatedRegistrationForm .return-to-login:hover {
   text-decoration: underline;
+}
+
+/* - - - - Page width - - - - */
+body.WBSupportForm, .RootBody .ArnSearchContainerMainDiv, .ArnSubPage {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.WBResendOrCancelForm .ArnSubPage {
+  margin: 40px auto;
 }
 
 /*# sourceMappingURL=63712.css.map*/

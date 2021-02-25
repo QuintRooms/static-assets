@@ -12,7 +12,7 @@ export default class Roomcash {
         this.sub_header_container = `
         <span id="sub-header-container">
             <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>
             <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
             <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
@@ -46,7 +46,7 @@ export default class Roomcash {
         // Root Page
         if (document.querySelector('.RootBody')) {
             this.updateText('.ArnPrimarySearchOuterContainer h1:first-of-type', `${document.querySelector('meta[name="firstName"]').content}, WHERE WILL YOUR ROOMCASH TAKE YOU?`);
-            this.updateText('.ArnPrimarySearchOuterContainer h3:first-of-type', 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS');
+            this.updateText('.ArnPrimarySearchOuterContainer h3:first-of-type', 'START YOUR SEARCH AND CHOOSE FROM 600,000+ GLOBAL HOTELS');
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
             this.insertContent([
                 {
@@ -111,8 +111,9 @@ export default class Roomcash {
         // Checkout Page
         if (document.querySelector('.CheckOutForm')) {
             this.buildFooterMenu('#theReservationFormContainer', 'afterend');
-            this.updateText('.discount th', 'RoomCash');
-            this.updateText('.dueNowRow th', 'Your Cash');
+            this.updateText('.discount th', 'RoomCash:');
+            this.updateText('.dueNowRow th', 'Your Cash:');
+            this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:');
         }
 
         // Confirmation Page
@@ -172,7 +173,7 @@ export default class Roomcash {
                 <div class="links learn-more">
                         <li class="links-header">Learn More</li>
                         <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>
-                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>
+                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQ</a></li>
                 </div>
                 <div class="links support">
                         <li class="links-header">Support</li>
@@ -248,7 +249,7 @@ export default class Roomcash {
             `
             <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>
             <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>
+            <a target="_blank" href="https://roomcash.com/faqs">FAQ</a>
             <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
             <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
             `
@@ -531,7 +532,7 @@ export default class Roomcash {
                                     <h2>CUSTOMER SUPPORT</h2>
                                     <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>
                                     <h4>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h4>
-                                    <h4>Hours: M-F 8:00 AM - 5:30 pm CST</h4>
+                                    <h4>Hours: M-F 8:00 AM - 5:30 PM CST</h4>
                                 </div>
                                 <div id="partner" class="contact-item">
                                     <h2>PARTNER INQUIRIES</h2>

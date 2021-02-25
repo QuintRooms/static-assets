@@ -149,6 +149,13 @@ export default class Roomcash {
         // Cancel Modify Page
         if (document.querySelector('.WBResendOrCancelForm')) {
             this.buildFooterMenu('.ArnSubPage', 'afterend');
+            this.insertContent([
+                {
+                    element: '.ArnSubPage.WBResendOrCancelForm',
+                    position: 'beforebegin',
+                    html: this.sub_header_container,
+                },
+            ]);
         }
     }
 

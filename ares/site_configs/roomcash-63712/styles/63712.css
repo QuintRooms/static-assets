@@ -1302,15 +1302,16 @@ input[type=checkbox] {
   }
 }
 .SinglePropDetail .prop-detail-lower .book {
-  margin-right: 12px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  width: 20%;
+  min-width: 175px;
 }
 @media (max-width: 600px) {
   .SinglePropDetail .prop-detail-lower .book {
-    margin-right: 0;
+    width: unset;
   }
 }
 .SinglePropDetail .prop-detail-lower .book .bookRoom {

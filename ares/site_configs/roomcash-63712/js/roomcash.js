@@ -214,7 +214,7 @@ export default class Roomcash {
                 <div id="copyright">
                     <p>Copyright &copy; ${new Date().getFullYear()}. All rights reserved</p>
                     <div>
-                        <a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a>
+                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085">Privacy Policy</a>
                         <span id="pipe"> | </span>
                         <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>
                         <span id="pipe"> | </span>

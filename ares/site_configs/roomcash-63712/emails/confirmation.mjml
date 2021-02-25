@@ -47,7 +47,7 @@
             <mj-column width="50%" background-color="#000">
                 <mj-text align="center" color="#CC9831"  padding-bottom="10px" padding-top="10px">
                         <div style="margin-bottom: 10px;">RoomCash Earned</div>
-                        <img style="width:8%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
+                        <img style="margin-right:10px" width="20" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
                         <span style="margin:10px 5px; font-size: 28px;">$[value_earned]</span>
                 </mj-text>
             </mj-column>
@@ -60,7 +60,9 @@
             </mj-column> -->
             <mj-column width="50%" padding-top="30px" padding-bottom="30px">
                 <mj-text align="center" font-weight="400" font-size="12px" letter-spacing="1px">
-                    <div><a style="color:#fff; background-color:#CC9831; padding: 10px 5px; text-decoration: none;" href="https://roomcash.com/dashboard">SPEND MY ROOMCASH</a></div>
+                    <mj-raw>
+                        <div><a style="color:#fff; background-color:#CC9831; padding: 10px 5px; text-decoration: none;" href="https://roomcash.com/dashboard">SPEND MY ROOMCASH</a></div>
+                    </mj-raw>
                 </mj-text>
             </mj-column>
         </mj-section>

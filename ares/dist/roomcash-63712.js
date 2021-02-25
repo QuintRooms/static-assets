@@ -7872,7 +7872,7 @@
                             (this.config = t),
                             (this.user_points = null),
                             (this.sub_header_container =
-                                '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
+                                '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
                     var t, n, o, r, s, l, d, m, f, p, h, y, g, v;

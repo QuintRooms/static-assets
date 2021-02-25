@@ -11,10 +11,10 @@ export default class Roomcash {
         this.user_points = null;
         this.sub_header_container = `
         <span id="sub-header-container">
-            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>
-            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
-            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>
+                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
         this.init();
     }

@@ -24,6 +24,7 @@ export default class Roomcash {
             this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content');
         }
         // All pages
+        this.wrapHeader();
         this.insertContent([
             {
                 element: '.ArnSupportLinks.ArnSupportBottom',
@@ -582,5 +583,15 @@ export default class Roomcash {
         elements.forEach((el) => {
             el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));
         });
+    }
+
+    async wrapHeader() {
+        await utilities.waitForSelectorInDOM('header');
+        const header = document.querySelector('header');
+        const wrapper = document.createElement('div');
+
+        wrapper.classList.add('header-container');
+        header.parentNode.insertBefore(wrapper, header);
+        wrapper.appendChild(header);
     }
 }

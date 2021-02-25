@@ -1846,7 +1846,8 @@ export default class BasePortal {
             this.site_id === '52342' ||
             !this.site_config.is_resbeat_client ||
             this.site_id === '63711' ||
-            this.site_id === '63710'
+            this.site_id === '63710' ||
+            this.site_id === '63712'
         )
             return;
 

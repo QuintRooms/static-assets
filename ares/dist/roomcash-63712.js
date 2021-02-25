@@ -2039,7 +2039,8 @@
                                                                     '52342' !== this.site_id &&
                                                                     this.site_config.is_resbeat_client &&
                                                                     '63711' !== this.site_id &&
-                                                                    '63710' !== this.site_id
+                                                                    '63710' !== this.site_id &&
+                                                                    '63712' !== this.site_id
                                                                 ) {
                                                                     e.next = 2;
                                                                     break;
@@ -7684,7 +7685,7 @@
                         show_date_prompt: !1,
                         has_social_sharing: !0,
                         fav_icon_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
-                        header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo-main.png'), logo_outbound_url: 'https://roomcash.com'},
+                        header: {logo_file_location: ''.concat(r.path, '/site_configs/').concat(s, '/img/logo-main.png'), logo_outbound_url: 'https://roomcash.com/dashboard'},
                         map_marker_image_url: ''.concat(r.path, '/site_configs/').concat(s, '/img/favicon.png'),
                         theme: 'light',
                         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:300,500,700',
@@ -8052,10 +8053,10 @@
                                                                         .querySelector('#AdminControlsContainer')
                                                                         .insertAdjacentHTML(
                                                                             'afterbegin',
-                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance">$'.concat(
-                                                                                this.user_points,
-                                                                                '</span>\n            </div>\n        '
-                                                                            )
+                                                                            '\n            <div id="mobile-balance-container">\n                <span id="mobile-balance"><img src="'
+                                                                                .concat(c.path, '/site_configs/')
+                                                                                .concat(this.config.directory_name, '/img/points-icon.png">$')
+                                                                                .concat(this.user_points, '</span>\n            </div>\n        ')
                                                                         ),
                                                                     n.insertAdjacentHTML(
                                                                         'afterbegin',

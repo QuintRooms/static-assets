@@ -240,7 +240,10 @@ export default class Roomcash {
             'afterbegin',
             `
             <div id="mobile-balance-container">
-                <span id="mobile-balance"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">$${this.user_points}</span>
+                <div>
+                    <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
+                    <span id="mobile-balance">$${this.user_points}</span>
+                </div>
             </div>
         `
         );
@@ -525,7 +528,7 @@ export default class Roomcash {
                     <div id="support-page">
                         <div id="hero-image">
                             <h1>GET IN TOUCH</h1>
-                            <span>Have a question about your reservation? What to chat about becoming partner? We're here to help!</span>
+                            <span>Have a question about your reservation? Want to chat about becoming partner? We're here to help!</span>
                         </div>
                         <div id="support-lower">
                             <div id="contact-details">

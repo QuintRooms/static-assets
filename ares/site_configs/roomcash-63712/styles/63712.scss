@@ -134,8 +134,16 @@ input[type="checkbox"] {
     
     
         #mobile-balance-container {
-            margin-right: 20px;
             display: none;
+
+            div {
+                display: flex;
+                align-items: center;
+
+                img {
+                    max-width: 2rem;
+                }
+            }
     
             @include tablet {
                 display: unset;
@@ -144,6 +152,7 @@ input[type="checkbox"] {
             #mobile-balance {
                 font-size: 30px;
                 color: $primary_color;
+                margin-left: 8px;
             }
         }
     
@@ -326,7 +335,6 @@ input[type="checkbox"] {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
 
     @include desktop {
         flex-direction: column;
@@ -343,7 +351,12 @@ input[type="checkbox"] {
         flex-direction: row;
         justify-content: flex-start;
         width: 50%;
-        padding: 20px;
+        padding: 20px 0;
+
+        @media (max-width: 1200px) {
+            padding-left: 10px;
+        }
+
 
         @include desktop {
             justify-content: flex-start;
@@ -351,6 +364,7 @@ input[type="checkbox"] {
         }
 
         @include tablet {
+            padding-left: unset;
             justify-content: center;
             width: 100%;
         }
@@ -570,7 +584,7 @@ input[type="checkbox"] {
 
 #sub-header-container {
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -586,8 +600,8 @@ input[type="checkbox"] {
     a {
         text-decoration: none;
         color: $secondary_text_color;
-        font-size: 15px;
-        font-weight: $sub_heading_weight;
+        font-size: 17px;
+        font-weight: $text_weight;
         margin: 0 40px;
 
         &:hover {

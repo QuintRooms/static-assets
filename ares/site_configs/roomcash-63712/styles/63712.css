@@ -1357,9 +1357,6 @@ input[type=checkbox] {
   padding: 20px;
   margin-bottom: 20px;
 }
-.CheckOutForm #theBookingPage input[type=checkbox], .ConfirmationForm #theBookingPage input[type=checkbox] {
-  width: 50px !important;
-}
 .CheckOutForm #theBookingPage .PaymentPolicies, .ConfirmationForm #theBookingPage .PaymentPolicies {
   background-color: #fff;
   border: none;

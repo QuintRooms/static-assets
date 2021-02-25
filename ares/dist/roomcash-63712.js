@@ -7872,7 +7872,7 @@
                             (this.config = t),
                             (this.user_points = null),
                             (this.sub_header_container =
-                                '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
+                                '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
                     var t, n, o, r, s, l, d, m, f, p, h, y, g, v;
@@ -8027,7 +8027,7 @@
                                         )
                                         .concat(
                                             new Date().getFullYear(),
-                                            '. All rights reserved</p>\n                    <div>\n                        <a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a>\n                    </div>\n                </div>\n            </div>\n        </div>\n        '
+                                            '. All rights reserved</p>\n                    <div>\n                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085">Privacy Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>\n                        <span id="pipe"> | </span>\n                        <a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a>\n                    </div>\n                </div>\n            </div>\n        </div>\n        '
                                         );
                                     document.querySelector(e).insertAdjacentHTML(t, n);
                                 },

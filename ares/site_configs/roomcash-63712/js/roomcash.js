@@ -11,10 +11,10 @@ export default class Roomcash {
         this.user_points = null;
         this.sub_header_container = `
         <span id="sub-header-container">
-            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
-            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>
-            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
-            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>
+                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
+                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
         this.init();
     }
@@ -214,7 +214,7 @@ export default class Roomcash {
                 <div id="copyright">
                     <p>Copyright &copy; ${new Date().getFullYear()}. All rights reserved</p>
                     <div>
-                        <a target="_blank" href="https://roomcash.com/privacy-policy">Privacy Policy</a>
+                        <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085">Privacy Policy</a>
                         <span id="pipe"> | </span>
                         <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>
                         <span id="pipe"> | </span>

@@ -603,6 +603,7 @@ input[type="checkbox"] {
         font-weight: $text_weight;
         padding: 16px;
         margin: 0 80px 0 0;
+        border-bottom: 2px solid transparent;
 
         &:hover {
             border-bottom: 2px solid #000;
@@ -743,10 +744,6 @@ input[type="checkbox"] {
 /* - - - - - - - - Root Page - - - - - - - - */
 
 .RootBody {
-
-    #sub-header-container {
-        margin: 25px 0;
-    }
 
     .ArnSearchContainerMainDiv {
         background-color: #fff;

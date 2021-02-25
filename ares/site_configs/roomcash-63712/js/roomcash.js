@@ -104,7 +104,7 @@ export default class Roomcash {
                 this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
             }
             document.querySelector('#moreRatesLink').addEventListener('click', () => {
-                this.handleSeeMoreRooms();
+                this.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
             });
         }
 
@@ -580,18 +580,6 @@ export default class Roomcash {
         const elements = document.querySelectorAll(nodeList);
         elements.forEach((el) => {
             el.querySelector(destination).insertAdjacentElement(insertPosition, el.querySelector(element_to_move_selector));
-        });
-    }
-
-    async handleSeeMoreRooms() {
-        if (!document.querySelector('.RateCalendarPopupAnchor')) return;
-        await utilities.waitForSelectorInDOM('#moreRates rateRow');
-
-        const more_rates = document.querySelectorAll('#moreRates rateRow');
-
-        more_rates.forEach((rate) => {
-            const daily_rate_anchor = rate.querySelector('.RateCalendarPopupAnchor');
-            rate.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rate_anchor);
         });
     }
 }

@@ -782,6 +782,7 @@ input[type=checkbox] {
   font-weight: 300;
   padding: 16px;
   margin: 0 80px 0 0;
+  border-bottom: 2px solid transparent;
 }
 #sub-header-container a:hover {
   border-bottom: 2px solid #000;
@@ -887,9 +888,6 @@ input[type=checkbox] {
 /* - - - - - - - Components End  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - - Root Page - - - - - - - - */
-.RootBody #sub-header-container {
-  margin: 25px 0;
-}
 .RootBody .ArnSearchContainerMainDiv {
   background-color: #fff;
 }

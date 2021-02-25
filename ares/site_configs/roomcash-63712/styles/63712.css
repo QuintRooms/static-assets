@@ -1193,6 +1193,13 @@ header #AdminControlsContainer .hamburger .line {
   .SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .ArnNightlyRate {
     display: block !important;
     text-align: center;
+    width: unset;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .RateCalendarPopupAnchor {
+    text-align: center;
   }
 }
 .SinglePropDetail .ArnRightListContainer .RoomDescription {

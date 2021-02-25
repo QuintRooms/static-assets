@@ -717,17 +717,13 @@ header {
                 color: $secondary_text_color;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-
-                @include tablet-small {
-                    text-align: center;
-                }
+                text-align: center;
             }
         }
 
         .ArnQuadSearchContainer.ArnPrimarySearchContainer {
             margin: 30px 0;
-            // background: linear-gradient(rgb(183, 183, 183, 0.5),rgb(183, 183, 183, 0.5));
-            background-color: $background_color;
+            background: $background_color;
             color: #000;
 
             .ArnSecondarySearchOuterContainer {
@@ -1371,10 +1367,12 @@ header {
 
 /* - - - - - - - - Support Page - - - - - - - - */
 
-body.WBSupportForm{
+body.WBSupportForm {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
 
     .ArnSupportChatTable {
         display: none;
@@ -1617,4 +1615,14 @@ body.WBSupportForm{
             text-decoration: underline;
         }
     }
+}
+ /* - - - - Page width - - - - */
+
+body.WBSupportForm, .RootBody .ArnSearchContainerMainDiv, .ArnSubPage {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.WBResendOrCancelForm .ArnSubPage {
+    margin: 40px auto;
 }

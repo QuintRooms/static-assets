@@ -7871,7 +7871,7 @@
                             (this.config = t),
                             (this.user_points = null),
                             (this.sub_header_container =
-                                '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
+                                '\n        <span id="sub-header-container">\n            <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
                     var t, n, o, r, s, l, d, m, f, p, h, y, g;
@@ -7909,7 +7909,7 @@
                                                 '.ArnPrimarySearchOuterContainer h1:first-of-type',
                                                 ''.concat(document.querySelector('meta[name="firstName"]').content, ', WHERE WILL YOUR ROOMCASH TAKE YOU?')
                                             ),
-                                            this.updateText('.ArnPrimarySearchOuterContainer h3:first-of-type', 'START SEARCHING AND CHOOSE FROM 600,000+ GLOBAL HOTELS'),
+                                            this.updateText('.ArnPrimarySearchOuterContainer h3:first-of-type', 'START YOUR SEARCH AND CHOOSE FROM 600,000+ GLOBAL HOTELS'),
                                             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
                                             this.insertContent([{element: '.RootBody .ArnSearchContainerMainDiv', position: 'beforebegin', html: this.sub_header_container}])),
                                         document.querySelector('.SearchHotels') &&
@@ -7935,8 +7935,9 @@
                                             })),
                                         document.querySelector('.CheckOutForm') &&
                                             (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
-                                            this.updateText('.discount th', 'RoomCash'),
-                                            this.updateText('.dueNowRow th', 'Your Cash')),
+                                            this.updateText('.discount th', 'RoomCash:'),
+                                            this.updateText('.dueNowRow th', 'Your Cash:'),
+                                            this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:')),
                                         document.querySelector('.ConfirmationForm') &&
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
@@ -7993,7 +7994,7 @@
                             {
                                 key: 'buildFooterMenu',
                                 value: function (e, t) {
-                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links learn-more">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQs</a></li>\n                </div>\n                <div class="links support">\n                        <li class="links-header">Support</li>\n                        <li><a target="_blank" href="'
+                                    var n = '\n        <div id="footer-menu-container">\n            <div id="links-container">\n                <div class="links learn-more">\n                        <li class="links-header">Learn More</li>\n                        <li><a target="_blank" href="https://roomcash.com/how-it-works">How it Works</a></li>\n                        <li><a target="_blank" href="https://roomcash.com/faqs">FAQ</a></li>\n                </div>\n                <div class="links support">\n                        <li class="links-header">Support</li>\n                        <li><a target="_blank" href="'
                                         .concat(
                                             document.querySelector('.ARN_ServiceLinks.supportLink').href,
                                             '">Contact Us</a></li>\n                        <li><a target="_blank" href="'
@@ -8057,7 +8058,7 @@
                                                                         ),
                                                                     n.insertAdjacentHTML(
                                                                         'afterbegin',
-                                                                        '\n            <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>\n            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQs</a>\n            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n            '
+                                                                        '\n            <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>\n            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n            '
                                                                     ),
                                                                     t.insertAdjacentHTML(
                                                                         'beforeend',
@@ -8455,7 +8456,7 @@
                                                                             element: '.ArnSubPage.WBSupportForm',
                                                                             position: 'afterbegin',
                                                                             html:
-                                                                                '\n                    <div id="support-page">\n                        <div id="hero-image">\n                            <h1>GET IN TOUCH</h1>\n                            <span>Have a question about your reservation? What to chat about becoming partner? We\'re here to help!</span>\n                        </div>\n                        <div id="support-lower">\n                            <div id="contact-details">\n                                <div id="support" class="contact-item">\n                                    <h2>CUSTOMER SUPPORT</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h4>\n                                    <h4>Hours: M-F 8:00 AM - 5:30 pm CST</h4>\n                                </div>\n                                <div id="partner" class="contact-item">\n                                    <h2>PARTNER INQUIRIES</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:partners@hotelsforhope.com">partners@roomcash.com</a></h4>\n                                </div>\n                                <div id="marketing" class="contact-item">\n                                    <h2>MARKETING INQUIRIES</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:marketing@hotelsforhope.com">marketing@roomcash.com</a></h4>\n                                </div>\n                            </div>\n                            <div id="contact-form">\n                            </div>\n                        </div>\n                    </div>\n                    ',
+                                                                                '\n                    <div id="support-page">\n                        <div id="hero-image">\n                            <h1>GET IN TOUCH</h1>\n                            <span>Have a question about your reservation? What to chat about becoming partner? We\'re here to help!</span>\n                        </div>\n                        <div id="support-lower">\n                            <div id="contact-details">\n                                <div id="support" class="contact-item">\n                                    <h2>CUSTOMER SUPPORT</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a></h4>\n                                    <h4>Hours: M-F 8:00 AM - 5:30 PM CST</h4>\n                                </div>\n                                <div id="partner" class="contact-item">\n                                    <h2>PARTNER INQUIRIES</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:partners@hotelsforhope.com">partners@roomcash.com</a></h4>\n                                </div>\n                                <div id="marketing" class="contact-item">\n                                    <h2>MARKETING INQUIRIES</h2>\n                                    <h4>Call Us: <a href="tel:1.866.584.0204">1.512.767.1360</a></h4>\n                                    <h4>Email Us: <a href="mailto:marketing@hotelsforhope.com">marketing@roomcash.com</a></h4>\n                                </div>\n                            </div>\n                            <div id="contact-form">\n                            </div>\n                        </div>\n                    </div>\n                    ',
                                                                         },
                                                                         {element: '.ArnSubPage.WBSupportForm', position: 'afterbegin', html: this.sub_header_container},
                                                                     ]),

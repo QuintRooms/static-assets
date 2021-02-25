@@ -339,9 +339,12 @@ header .logo img {
     border-bottom: none;
   }
   header #commands.active {
-    transform: translateY(195px);
+    transform: translateY(145px);
     background-color: #000;
     border-top: 2px solid #CC9831;
+  }
+  header #commands.active a:nth-child(4), header #commands.active .profileCommand {
+    display: none !important;
   }
 }
 header #mobile-balance-container {

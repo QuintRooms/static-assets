@@ -1125,6 +1125,14 @@ header {
                     @media (max-width: 560px) {
                         display: block !important;
                         text-align: center;
+                        width: unset;
+                        margin-top: 20px;
+                    }
+                }
+
+                @media (max-width: 560px) {
+                    .RateCalendarPopupAnchor {
+                        text-align: center;
                     }
                 }
             }

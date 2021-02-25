@@ -309,7 +309,6 @@ input[type=checkbox] {
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - - Header - - - - - - - - */
 .header-container {
-  width: 100vw;
   background-color: #000;
 }
 .header-container header {
@@ -953,7 +952,7 @@ input[type=checkbox] {
   padding: 15px !important;
 }
 .SearchHotels .ArnLeftSearchContainer {
-  width: 20vw;
+  width: 18vw;
   padding: 0 10px;
   margin-left: 0;
 }

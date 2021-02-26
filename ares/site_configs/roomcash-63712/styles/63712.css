@@ -1418,14 +1418,7 @@ body.WBSupportForm .ArnSupportChatTable {
   display: none;
 }
 
-.ArnSubPage.WBSupportForm h1 {
-  display: none;
-}
-.ArnSubPage.WBSupportForm #support-page {
-  display: flex;
-  flex-direction: column;
-}
-.ArnSubPage.WBSupportForm #support-page #hero-image {
+.ArnSubPage.WBSupportForm #hero-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1436,17 +1429,24 @@ body.WBSupportForm .ArnSupportChatTable {
   background-position: top;
   min-height: 300px;
 }
-.ArnSubPage.WBSupportForm #support-page #hero-image h1 {
+.ArnSubPage.WBSupportForm #hero-image h1 {
   display: block !important;
 }
-.ArnSubPage.WBSupportForm #support-page #hero-image span {
+.ArnSubPage.WBSupportForm #hero-image span {
   font-size: 17px;
   letter-spacing: 1px;
 }
 @media (max-width: 700px) {
-  .ArnSubPage.WBSupportForm #support-page #hero-image span {
+  .ArnSubPage.WBSupportForm #hero-image span {
     padding: 0 10px;
   }
+}
+.ArnSubPage.WBSupportForm h1 {
+  display: none;
+}
+.ArnSubPage.WBSupportForm #support-page {
+  display: flex;
+  flex-direction: column;
 }
 .ArnSubPage.WBSupportForm #support-page #support-lower {
   display: flex;

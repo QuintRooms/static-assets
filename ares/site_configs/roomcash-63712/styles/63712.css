@@ -339,9 +339,12 @@ input[type=checkbox] {
     padding: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
+    text-align: left;
     color: #CC9831;
     border-bottom: none;
+  }
+  .header-container header #commands a:hover {
+    color: #fff !important;
   }
   .header-container header #commands.active {
     transform: translateY(145px);

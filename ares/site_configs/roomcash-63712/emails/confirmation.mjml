@@ -61,7 +61,7 @@
             <mj-column width="50%" padding-top="30px" padding-bottom="30px">
                 <mj-text align="center" font-weight="400" font-size="12px" letter-spacing="1px">
                     <mj-raw>
-                        <div><a style="display: block; color:#fff; background-color:#CC9831; padding: 10px 5px; text-decoration: none;" href="https://roomcash.com/dashboard">SPEND MY ROOMCASH</a></div>
+                        <div><a style="display: block; color:#fff; background-color:#CC9831; padding: 10px 5px; text-decoration: none;" href="https://hotels.roomcash.com/v6?&siteid=63712&type=property">SPEND MY ROOMCASH</a></div>
                     </mj-raw>
                 </mj-text>
             </mj-column>

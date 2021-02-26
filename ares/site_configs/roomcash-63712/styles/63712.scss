@@ -140,7 +140,7 @@ input[type="checkbox"] {
                 align-items: center;
 
                 img {
-                    max-width: 2rem;
+                    max-width: 32px;
                 }
             }
     
@@ -149,7 +149,7 @@ input[type="checkbox"] {
             }
     
             #mobile-balance {
-                font-size: 30px;
+                font-size: 20px;
                 color: $primary_color;
                 margin-left: 8px;
             }
@@ -260,7 +260,7 @@ input[type="checkbox"] {
             align-self: center;
             justify-content: center;
             color: #6E6F70;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: $sub_heading_weight;
             width: 100%;
     

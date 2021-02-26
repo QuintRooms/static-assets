@@ -112,9 +112,13 @@ input[type="checkbox"] {
                     padding: 15px;
                     text-transform: uppercase;
                     letter-spacing: 1px;
-                    text-align: center;
+                    text-align: left;
                     color: $primary_color;
                     border-bottom: none;
+
+                    &:hover {
+                        color: #fff !important;
+                    }
                 }
             }
     

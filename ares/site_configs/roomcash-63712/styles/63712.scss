@@ -1328,9 +1328,11 @@ input[type="checkbox"] {
             margin-bottom: 20px;
         }
 
-        // input[type="checkbox"] {
-        //     width: 50px !important;
-        // }
+        @include mobile {
+            p.confirmationWarning.confirmedDueNowCharge input:first-child {
+                width: 35px;
+            }
+        }
 
         .PaymentPolicies {
             background-color: #fff;

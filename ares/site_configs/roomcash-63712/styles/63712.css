@@ -1356,6 +1356,11 @@ input[type=checkbox] {
   padding: 20px;
   margin-bottom: 20px;
 }
+@media (max-width: 600px) {
+  .CheckOutForm #theBookingPage p.confirmationWarning.confirmedDueNowCharge input:first-child, .ConfirmationForm #theBookingPage p.confirmationWarning.confirmedDueNowCharge input:first-child {
+    width: 35px;
+  }
+}
 .CheckOutForm #theBookingPage .PaymentPolicies, .ConfirmationForm #theBookingPage .PaymentPolicies {
   background-color: #fff;
   border: none;

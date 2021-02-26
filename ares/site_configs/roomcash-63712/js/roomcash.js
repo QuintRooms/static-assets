@@ -226,6 +226,8 @@ export default class Roomcash {
                         <a target="_blank" href="https://www.iubenda.com/privacy-policy/14257085/cookie-policy">Cookie Policy</a>
                         <span id="pipe"> | </span>
                         <a target="_blank" href="https://roomcash.com/terms">Terms & Conditions</a>
+                        <span id="pipe"> | </span>
+                        <a target="_blank" href="https://roomcash.com/remove-my-data">Remove My Data</a>
                     </div>
                 </div>
             </div>
@@ -274,11 +276,11 @@ export default class Roomcash {
                     <img src="${env_path.path}/site_configs/${this.config.directory_name}/img/points-icon.png">
                     <span id="balance">$${this.user_points}</span>
                 </div>
-                <div id="account-container" class="header-link">
-                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
-                </div>
                 <div id="search-container" class="header-link">
                     <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>
+                </div>
+                <div id="account-container" class="header-link">
+                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
                 </div>
             </div>
         `

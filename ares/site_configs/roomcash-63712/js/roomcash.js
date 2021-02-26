@@ -533,10 +533,6 @@ export default class Roomcash {
                 position: 'afterbegin',
                 html: `
                     <div id="support-page">
-                        <div id="hero-image">
-                            <h1>GET IN TOUCH</h1>
-                            <span>Have a question about your reservation? Want to chat about becoming partner? We're here to help!</span>
-                        </div>
                         <div id="support-lower">
                             <div id="contact-details">
                                 <div id="support" class="contact-item">
@@ -564,8 +560,19 @@ export default class Roomcash {
             },
             {
                 element: '.ArnSubPage.WBSupportForm',
-                position: 'afterbegin',
+                position: 'beforebegin',
                 html: this.sub_header_container,
+            },
+            {
+                element: '.ArnSubPage.WBSupportForm',
+                position: 'beforebegin',
+                html: `
+                    <div id="hero-image">
+                        <div id="hero-header-containter">
+                            <h1>GET IN TOUCH</h1>
+                            <span>Have a question about your reservation? Want to chat about becoming a partner? We're here to help!</span>
+                        </div>
+                    </div>`,
             },
         ]);
 

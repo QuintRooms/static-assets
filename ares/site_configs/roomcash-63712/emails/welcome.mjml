@@ -32,8 +32,8 @@
             <mj-column width="50%" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" padding-top="10px" padding-bottom="10px" background-color="#E6E6E6" >
                 <mj-table color="#000" font-family="Montserrat, sans-serif" font-weight="300">
                     <tr>
-                        <td align="center" width="80" height="80" valign="middle">
-                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/lock.png" />
+                        <td style="line-height: 50px; margin-top: 40px;">
+                            <img width="80" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/lock.png" />
                         </td>
                         <td width="70%">
                             <p>By signing up, you’ve unlocked your RoomCash – congrats! We’ve added <strong style="color:#CC9831; font-weight:600;">$[value_earned]</strong> to your <a style="color:#CC9831; font-weight:600;" href="https://roomcash.com/dashboard">RoomCash Reserves.</a></p>
@@ -44,8 +44,8 @@
             <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
-                        <td>
-                            <img width="90%" editable="true" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/piggy-bank.png" />
+                        <td style="line-height: 50px; margin-top: 40px;">
+                            <img width="80" editable="true" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/piggy-bank.png" />
                         </td>
                         <td width="70%">
                             <p>As you search, we’ll show you how much of <strong style="color:#CC9831;">your RoomCash</strong> we can apply and how much of <strong style="color:#CC9831;">your cash</strong> is needed.</p>
@@ -58,8 +58,8 @@
             <mj-column width="50%" padding-top="10px" padding-bottom="10px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
-                        <td>
-                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/calendar-tick.png"/>
+                        <td style="line-height: 50px; margin-top: 40px;">
+                            <img width="80" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/calendar-tick.png"/>
                         </td>
                         <td width="70%">
                             <p>You’ll earn another <strong style="font-weight:600; color:#CC9831;">$50 RoomCash</strong> every time you make a booking, so you’ll never miss out on savings again!</p>
@@ -67,11 +67,11 @@
                     </tr>
                 </mj-table>
             </mj-column>
-            <mj-column width="50%" padding-top="10px" padding-bottom="32px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+            <mj-column width="50%" padding-top="10px" padding-bottom="22px" border-top="5px solid #fff" border-bottom="5px solid #fff" border-left="5px solid #fff" border-right="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
                 <mj-table color="#000">
                     <tr>
-                        <td>
-                            <img width="90%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/hand.png" />
+                        <td style="line-height: 50px; margin-top: 40px;">
+                            <img width="80" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/hand.png" />
                         </td>
                         <td width="70%">
                             <p>As a RoomCash member, you’ll also get <strong style=" color:#CC9831;">exclusive</strong> opportunities to earn more - watch your inbox!</p>

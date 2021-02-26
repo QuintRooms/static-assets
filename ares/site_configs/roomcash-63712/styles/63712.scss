@@ -1415,32 +1415,32 @@ body.WBSupportForm {
     }
 }
 
-.ArnSubPage.WBSupportForm {
+#hero-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg') no-repeat center center / cover;
+    color: #fff;
+    background-position: top;
+    min-height: 300px;
 
-    #hero-image {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        text-align: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg') no-repeat center center / cover;
-        color: #fff;
-        background-position: top;
-        min-height: 300px;
+    h1 {
+        display: block !important;
+    }
 
-        h1 {
-            display: block !important;
-        }
+    span {
+        font-size: 17px;
+        letter-spacing: 1px;
 
-        span {
-            font-size: 17px;
-            letter-spacing: 1px;
-
-            @include tablet-small {
-                padding: 0 10px;
-            }
+        @include tablet-small {
+            padding: 0 10px;
         }
     }
+}
+
+.ArnSubPage.WBSupportForm {
     
     h1 {
         display: none;

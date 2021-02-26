@@ -9,7 +9,7 @@
 
         /* - - - - Hero Image - - - -*/
         <mj-hero width="100%" padding="0px" padding-right="0">
-            <mj-image href="https://roomcash.com" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg" />
+            <mj-image href="https://roomcash.com/dashboard" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/welcome-hero-crop.jpg" />
         </mj-hero>
 
         /* - - - - Name Section - - - - */

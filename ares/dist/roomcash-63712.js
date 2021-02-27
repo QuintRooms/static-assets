@@ -55,10 +55,8 @@
             Object.defineProperty(t, '__esModule', {value: !0}),
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
+                n(/*! core-js/modules/es6.regexp.match */ './node_modules/core-js/modules/es6.regexp.match.js'),
                 n(/*! core-js/modules/es6.function.name */ './node_modules/core-js/modules/es6.function.name.js'),
-                n(/*! core-js/modules/web.dom.iterable */ './node_modules/core-js/modules/web.dom.iterable.js'),
-                n(/*! core-js/modules/es6.array.iterator */ './node_modules/core-js/modules/es6.array.iterator.js'),
-                n(/*! core-js/modules/es7.object.entries */ './node_modules/core-js/modules/es7.object.entries.js'),
                 n(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 n(/*! core-js/modules/es6.regexp.search */ './node_modules/core-js/modules/es6.regexp.search.js'),
@@ -1091,6 +1089,7 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
+                                                                console.log(''.concat(d.path, '/js/json/currencies.json')),
                                                                 (t = function () {
                                                                     fetch(''.concat(d.path, '/js/json/currencies.json'))
                                                                         .then(function (e) {
@@ -1101,13 +1100,10 @@
                                                                             n(e), o(), r();
                                                                         })
                                                                         .catch(function (e) {
-                                                                            e.text().then(function (e) {
-                                                                                console.error('Could not fetch currencies.json', e);
-                                                                            });
+                                                                            console.error('Could not fetch currencies.json', e);
                                                                         });
                                                                 }),
                                                                 (n = function (e) {
-                                                                    Object.entries(e);
                                                                     var t = document.createElement('div'),
                                                                         n = document.createElement('div'),
                                                                         o = '\n            <h4>Top Currencies</h4>\n            <div class="top-currencies">\n                <span id="AUD"><strong>'
@@ -1153,7 +1149,7 @@
                                                                 (r = function () {
                                                                     var e = document.querySelector('meta[name="currency"]');
                                                                     if (e) {
-                                                                        var t = e.content;
+                                                                        var t = e.content.match(/\((.*)\)/)[1];
                                                                         (s.selected_currency = t),
                                                                             document.querySelector('#'.concat(t)).classList.add('active-currency'),
                                                                             (document.querySelector('#currency-label span').textContent = document.querySelector(
@@ -1161,10 +1157,10 @@
                                                                             ).textContent);
                                                                     }
                                                                 }),
-                                                                (e.next = 6),
+                                                                (e.next = 7),
                                                                 t()
                                                             );
-                                                        case 6:
+                                                        case 7:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -4527,22 +4523,6 @@
                     );
             };
         },
-    './node_modules/core-js/modules/_object-to-array.js':
-        /*!**********************************************************!*\
-  !*** ./node_modules/core-js/modules/_object-to-array.js ***!
-  \**********************************************************/
-        /*! no static exports found */ function (e, t, n) {
-            var o = n(/*! ./_descriptors */ './node_modules/core-js/modules/_descriptors.js'),
-                r = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                s = n(/*! ./_to-iobject */ './node_modules/core-js/modules/_to-iobject.js'),
-                a = n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f;
-            e.exports = function (e) {
-                return function (t) {
-                    for (var n, i = s(t), c = r(i), u = c.length, l = 0, d = []; u > l; ) (n = c[l++]), (o && !a.call(i, n)) || d.push(e ? [n, i[n]] : i[n]);
-                    return d;
-                };
-            };
-        },
     './node_modules/core-js/modules/_perform.js':
         /*!**************************************************!*\
   !*** ./node_modules/core-js/modules/_perform.js ***!
@@ -5429,6 +5409,40 @@
                     get: n(/*! ./_flags */ './node_modules/core-js/modules/_flags.js'),
                 });
         },
+    './node_modules/core-js/modules/es6.regexp.match.js':
+        /*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es6.regexp.match.js ***!
+  \**********************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            'use strict';
+            var o = n(/*! ./_an-object */ './node_modules/core-js/modules/_an-object.js'),
+                r = n(/*! ./_to-length */ './node_modules/core-js/modules/_to-length.js'),
+                s = n(/*! ./_advance-string-index */ './node_modules/core-js/modules/_advance-string-index.js'),
+                a = n(/*! ./_regexp-exec-abstract */ './node_modules/core-js/modules/_regexp-exec-abstract.js');
+            n(/*! ./_fix-re-wks */ './node_modules/core-js/modules/_fix-re-wks.js')('match', 1, function (e, t, n, i) {
+                return [
+                    function (n) {
+                        var o = e(this),
+                            r = null == n ? void 0 : n[t];
+                        return void 0 !== r ? r.call(n, o) : new RegExp(n)[t](String(o));
+                    },
+                    function (e) {
+                        var t = i(n, e, this);
+                        if (t.done) return t.value;
+                        var c = o(e),
+                            u = String(this);
+                        if (!c.global) return a(c, u);
+                        var l = c.unicode;
+                        c.lastIndex = 0;
+                        for (var d, m = [], f = 0; null !== (d = a(c, u)); ) {
+                            var p = String(d[0]);
+                            (m[f] = p), '' === p && (c.lastIndex = s(u, r(c.lastIndex), l)), f++;
+                        }
+                        return 0 === f ? null : m;
+                    },
+                ];
+            });
+        },
     './node_modules/core-js/modules/es6.regexp.replace.js':
         /*!************************************************************!*\
   !*** ./node_modules/core-js/modules/es6.regexp.replace.js ***!
@@ -5910,19 +5924,6 @@
                 },
             }),
                 n(/*! ./_add-to-unscopables */ './node_modules/core-js/modules/_add-to-unscopables.js')('includes');
-        },
-    './node_modules/core-js/modules/es7.object.entries.js':
-        /*!************************************************************!*\
-  !*** ./node_modules/core-js/modules/es7.object.entries.js ***!
-  \************************************************************/
-        /*! no static exports found */ function (e, t, n) {
-            var o = n(/*! ./_export */ './node_modules/core-js/modules/_export.js'),
-                r = n(/*! ./_object-to-array */ './node_modules/core-js/modules/_object-to-array.js')(!0);
-            o(o.S, 'Object', {
-                entries: function (e) {
-                    return r(e);
-                },
-            });
         },
     './node_modules/core-js/modules/es7.symbol.async-iterator.js':
         /*!*******************************************************************!*\

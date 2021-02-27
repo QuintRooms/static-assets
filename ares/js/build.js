@@ -890,6 +890,8 @@ export default class BasePortal {
     }
 
     async buildCurrencyDropdown() {
+        console.log(`${env_path.path}/js/json/currencies.json`);
+
         const get_currency_json = () => {
             fetch(`${env_path.path}/js/json/currencies.json`)
                 .then((response) => {
@@ -904,16 +906,11 @@ export default class BasePortal {
                     style_active_currency();
                 })
                 .catch((err) => {
-                    err.text().then((error) => {
-                        console.error('Could not fetch currencies.json', error);
-                    });
+                    console.error('Could not fetch currencies.json', err);
                 });
         };
 
         const setup_content_for_dropdown = (currencies_json) => {
-            // eslint-disable-next-line no-unused-vars
-            const currencies = Object.entries(currencies_json);
-
             const menu_container = document.createElement('div');
             const all_currencies_container = document.createElement('div');
 
@@ -970,7 +967,8 @@ export default class BasePortal {
 
             if (!active_currency_meta) return;
 
-            const active_currency = active_currency_meta.content;
+            const reg_ex = /\((.*)\)/;
+            const active_currency = active_currency_meta.content.match(reg_ex)[1];
 
             this.selected_currency = active_currency;
 

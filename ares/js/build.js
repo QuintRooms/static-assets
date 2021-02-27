@@ -17,7 +17,6 @@ const algolia = new Algolia();
 
 export default class BasePortal {
     constructor(config) {
-        console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
         this.page_name = utilities.getPageName();
         this.site_config = config;
@@ -890,8 +889,6 @@ export default class BasePortal {
     }
 
     async buildCurrencyDropdown() {
-        console.log(`${env_path.path}/js/json/currencies.json`);
-
         const get_currency_json = () => {
             fetch(`${env_path.path}/js/json/currencies.json`)
                 .then((response) => {

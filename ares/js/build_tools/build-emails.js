@@ -48,7 +48,13 @@ function extractValue(string, startChar, endChar) {
 
 function buildSiteObject(siteConfig, siteStyles) {
     let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
-    logo = logo[1].replace(`\``, '');
+
+    try {
+        logo = logo[1].replace(`\``, '');
+    } catch (e) {
+        console.log('\x1b[41m%s\x1b[0m', `This breaks when /img/logo.png does not exist. Add a logo to ${site_name}-${site_id}. Error: ${e}`);
+    }
+
     const theme_color = extractValue(siteConfig, 'theme:', ',').slice(1, -1) === 'light' ? '#fff' : '#000';
 
     const site_details = {

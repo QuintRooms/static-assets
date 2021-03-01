@@ -1,0 +1,7 @@
+<mj-head>
+    <mj-title>RoomCash</mj-title>
+    <mj-attributes>
+        <mj-font name="Montserrat" href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700" />
+        <mj-all padding-top="0" padding-right="0" padding-left="0" padding-bottom="0" font-family="Montserrat, sans-serif"/>
+    </mj-attributes>
+</mj-head>

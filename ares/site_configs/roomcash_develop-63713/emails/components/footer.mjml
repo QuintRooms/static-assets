@@ -1,0 +1,40 @@
+<mj-section background-color="#E6E6E6" border-top="10px solid #CC9831">
+    <mj-column padding-top="20px" padding-bottom="20px">
+        <mj-text align="center" padding-top="0" padding-bottom="20px">
+            <h4 style="color:#000; padding-bottom:5px; padding-top:0; margin:0;">Want More RoomCash?</h4>
+            <span style="color:#666666; padding-top:0px;"><a style="color:#CC9831;  font-weight:600;" href=" https://roomcash.com/how-it-works#earn-roomcash">Learn More</a> about how easy it is to add to your RoomCash Reserves.</span>
+        </mj-text>
+        <mj-text align="center" padding-bottom="15px" padding-top="10px">
+            <h4 style="color:#000; padding-bottom:5px; padding-top:0; margin:0;">Have Questions or Need Help?</h4>
+            <span style="color:#666666; padding-top:0px;">Check out <a style="color:#CC9831;  font-weight:600;" href="https://roomcash.com/how-it-works">How It Works</a> and our <a style="color:#CC9831;  font-weight:600;"href="https://roomcash.com/faqs">FAQ</a> or visit our <a style="color:#CC9831; font-weight:600;"href="https://hotels.roomcash.com/v6/support?siteid=63712">Help Center.</a> </span>
+        </mj-text>
+        <!-- <mj-text align="center" padding-bottom="15px">
+            <h4 style="color:#000; padding-bottom:5px; padding-top:0; margin:0;">Stay in Touch</h4>
+            <span style="color:#666666; padding-top:0px;">You'll find us on <a style="color:#CC9831; font-weight:600;" href="">Instagram,</a> <a style="color:#CC9831; font-weight:600;" href="">Facebook</a> & <a style="color:#CC9831; font-weight:600;" href="">Twitter</a></span>
+        </mj-text> -->
+        <mj-text align="center" padding-top="0" padding-bottom="0">
+            <span style="display: none;">
+                <singleline></singleline>
+                <unsubscribe>Unubscribe</unsubscribe>
+            </span>
+        </mj-text>
+    </mj-column>
+</mj-section>
+
+<mj-section background-color="#000">
+    <mj-column width="25%" padding-top="20px" padding-left="10px" padding-right="10px" padding-bottom="20px">
+        <mj-text color="#666666" align="center">
+            <hr>
+        </mj-text>
+    </mj-column>
+    <mj-column width="50%" padding-top="20px" padding-bottom="20px">
+        <mj-text color="#ccc" align="center">
+            <span>RoomCash is a Part of QuintEvents</span>
+        </mj-text>
+    </mj-column>
+    <mj-column width="25%" padding-top="20px" padding-right="10px" padding-left="10px" padding-bottom="20px">
+        <mj-text color="#666666" align="center">
+            <hr>
+        </mj-text>
+    </mj-column>
+</mj-section>

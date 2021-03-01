@@ -1,0 +1,118 @@
+<mjml>
+    <mj-include path="./site_configs/roomcash-63712/emails/components/head.mjml" />
+    <mj-body background-color=#fff>
+        <mj-raw>
+            <span id="preheader" style="display:none!important;">Here are just a few of the easy ways you can earn more RoomCash.</span>
+        </mj-raw>
+        /* - - - - Header - - - - */
+        <mj-include path="./site_configs/roomcash-63712/emails/components/header.mjml" />
+
+        /* - - - - Hero Image - - - -*/
+        <mj-hero width="100%" padding="0px" padding-right="0">
+            <mj-image editable="true" href="https://roomcash.com/dashboard" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/suitcase-hero.jpg" />
+        </mj-hero>
+
+        /* - - - - Hey There Section - - - -*/
+        <mj-section padding-bottom="0">
+            <mj-column width="100%" padding-bottom="30px">
+                <mj-text align="center" color="#000">
+                    <h1 style="letter-spacing:3px; font-size: 28px;">Want more RoomCash, [first_name]?</h1>
+                </mj-text>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px" font-size="14px">
+                    <span>You already know that hotels cost less with RoomCash, so how would you like to earn more?</span>
+                </mj-text>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px" font-size="14px">
+                    <span>Earning RoomCash is quick, simple and instantaneous. Here are just a few of the easy ways you can top up your Reserves!</span>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        /* - - - - Ways to earn - - - - */
+        <mj-section>
+            <mj-column width="100%" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" padding-top="5px" padding-bottom="5px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td style="text-align:center; line-height: 50px; margin-top: 40px;">
+                            <img width="60%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/calendar-tick.png" />
+                        </td>
+                        <td width="80%">
+                            <p>Every time you <a style="color:#CC9831; font-weight:600;" href="https://hotels.roomcash.com">make a booking</a>, we’ll instantly add <strong style="color:#CC9831;">$50</strong> to your RoomCash Reserves, so you’ll never miss out on exclusive savings again!</p>
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column width="100%"  border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td style="text-align:center; line-height: 50px; margin-top: 40px;">
+                            <img width="60%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/speech-bubble.png"/>
+                        </td>
+                        <td width="80%">
+                            <p>Spread the love (and savings) and share RoomCash with your friends or family. When they sign up, we’ll add <strong style="color:#CC9831;">$25</strong> to their RoomCash Reserves, and yours. Win-win!</p>
+                            <p style="font-weight:600;">Here's your unique referral link: <a style="color:#CC9831;" href="">[sharable_link]</a> 
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+        <!-- <mj-section>
+            <mj-column width="100%" padding-top="5px" padding-bottom="5px" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td style="text-align:center; line-height: 50px; margin-top: 40px;">
+                            <img width="60%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/bag-tag.png" />
+                        </td>
+                        <td width="80%">
+                            <p>Channel your inner influencer (and make us jealous) by sharing a picture from your stay on <a style="color:#CC9831; font-weight:600;" href="">Instagram,</a> <a style="color:#CC9831; font-weight:600;" href="">Facebook</a> or <a style="color:#CC9831; font-weight:600;" href="">Twitter</a>! When you tag us <a style="color:#CC9831; font-weight:600;" href="">@roomcash</a> or <strong style="font-weight:600;">#roomcash</strong>, you’ll earn $25 RoomCash.</p>
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column width="100%" padding-top="5px" padding-bottom="5px" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td style="text-align:center; line-height: 50px; margin-top: 40px;">
+                            <img width="60%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/receipt.png" />
+                        </td>
+                        <td width="80%">
+                            <p>Want to be in the know about <strong>member-only</strong> deals and <strong>exclusive opportunities</strong> to earn even more RoomCash? Then <a style="color:#CC9831; font-weight:600;" href="https://roomcash.com">sign up</a> for our newsletter and keep an eye on your inbox. Oh, and you’ll earn another $25 RoomCash.</p>
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column width="100%" padding-top="10px" padding-bottom="10px" border-bottom="5px solid #fff" padding-right="10px" padding-left="10px" background-color="#E6E6E6" >
+                <mj-table color="#000">
+                    <tr>
+                        <td style="text-align:center; line-height: 50px; margin-top: 40px;">
+                            <img width="60%" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/ticket-stub.png" />
+                        </td>
+                        <td width="80%">
+                            <p>Heading to a sporting event or festival and need a hotel room? Book through one of our <a style="color:#CC9831; font-weight:600;" href="https://roomcash.com/partnerships">entertainment partners</a> for the best rates and earn $25 RoomCash to boot. </p>
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section> -->
+
+        /* - - - - Don't Forget - - - - */
+        <mj-section>
+            <mj-column width="100%" padding-top="20px">
+                <mj-text align="center" font-size="14px" font-weight="600" padding-bottom="20px" color="#000">
+                    <span>Don’t forget, you still have $[balance] RoomCash to spend.</span>
+                </mj-text>
+                <mj-text align="center" font-size="14px" font-weight="600" color="#CC9831">
+                    <span>See what exclusive savings you can make on your next trip!</span>
+                </mj-text>
+                <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
+            </mj-column>
+        </mj-section>
+        /* - - - footer - - - */
+        <mj-include path="./site_configs/roomcash-63712/emails/components/footer.mjml" />
+    </mj-body>
+<mjml>

@@ -855,6 +855,9 @@ input[type=checkbox] {
   min-width: 140px;
   text-align: center;
 }
+.roomcash-scale-container .cash-text .nights {
+  display: none !important;
+}
 @media (max-width: 600px) {
   .roomcash-scale-container .cash-text {
     align-items: center;
@@ -869,7 +872,6 @@ input[type=checkbox] {
 }
 .roomcash-scale-container .cash-text :last-child {
   font-weight: 300;
-  display: none !important;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;

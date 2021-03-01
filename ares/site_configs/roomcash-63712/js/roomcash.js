@@ -388,14 +388,14 @@ export default class Roomcash {
                         <div class="cash-text">
                             <span class="rc-value">$${values.rc}</span>
                             <p>RoomCash</p>
-                            <p>(${n_nights})</p>
+                            <p class="nights">(${n_nights})</p>
                         </div>
                     </div>
                     <div class="your-cash-amount">      
                         <div class="cash-text">
                             <span class="yc-value">${values.yc}</span>
                             <p>Your Cash</p>
-                            <p>(${n_nights})</p>
+                            <p class="nights">(${n_nights})</p>
                         </div>
                     </div>
                     </div>
@@ -415,14 +415,14 @@ export default class Roomcash {
                                         <div class="cash-text">
                                             <span class="rc-value">$${values.rc}</span>
                                             <p>RoomCash</p>
-                                            <p>(${n_nights})</p>
+                                            <p class="nights">(${n_nights})</p>
                                         </div>
                                     </div>
                                     <div class="your-cash-amount">      
                                         <div class="cash-text">
                                             <span class="yc-value">${values.yc}</span>
                                             <p>Your Cash</p>
-                                            <p>(${n_nights})</p>
+                                            <p class="nights">(${n_nights})</p>
                                         </div>
                                     </div>
                                 </div>

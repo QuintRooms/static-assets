@@ -8198,7 +8198,7 @@
                                                                                   )
                                                                                   .concat(
                                                                                       i.rc,
-                                                                                      '</span>\n                            <p>RoomCash</p>\n                            <p>('
+                                                                                      '</span>\n                            <p>RoomCash</p>\n                            <p class="nights">('
                                                                                   )
                                                                                   .concat(
                                                                                       a,
@@ -8206,7 +8206,7 @@
                                                                                   )
                                                                                   .concat(
                                                                                       i.yc,
-                                                                                      '</span>\n                            <p>Your Cash</p>\n                            <p>('
+                                                                                      '</span>\n                            <p>Your Cash</p>\n                            <p class="nights">('
                                                                                   )
                                                                                   .concat(
                                                                                       a,
@@ -8222,7 +8222,7 @@
                                                                                   )
                                                                                   .concat(
                                                                                       i.rc,
-                                                                                      '</span>\n                                            <p>RoomCash</p>\n                                            <p>('
+                                                                                      '</span>\n                                            <p>RoomCash</p>\n                                            <p class="nights">('
                                                                                   )
                                                                                   .concat(
                                                                                       a,
@@ -8230,7 +8230,7 @@
                                                                                   )
                                                                                   .concat(
                                                                                       i.yc,
-                                                                                      '</span>\n                                            <p>Your Cash</p>\n                                            <p>('
+                                                                                      '</span>\n                                            <p>Your Cash</p>\n                                            <p class="nights">('
                                                                                   )
                                                                                   .concat(
                                                                                       a,

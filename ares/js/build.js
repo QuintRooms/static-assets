@@ -961,11 +961,18 @@ export default class BasePortal {
 
         const style_active_currency = () => {
             const active_currency_meta = document.querySelector('meta[name="currency"]');
+            let active_currency;
 
             if (!active_currency_meta) return;
 
             const reg_ex = /\((.*)\)/;
-            const active_currency = active_currency_meta.content.match(reg_ex)[1];
+
+            if (active_currency_meta.content.match(reg_ex)) {
+                // eslint-disable-next-line prefer-destructuring
+                active_currency = active_currency_meta.content.match(reg_ex)[1];
+            } else {
+                active_currency = utilities.getMetaTagContent('currency');
+            }
 
             this.selected_currency = active_currency;
 

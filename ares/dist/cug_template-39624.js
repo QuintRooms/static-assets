@@ -117,7 +117,6 @@
                         !(function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e),
-                            console.log('Output: BasePortal -> constructor -> config', t),
                             (this.site_id = ''),
                             (this.page_name = p.getPageName()),
                             (this.site_config = t),
@@ -1089,7 +1088,6 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
-                                                                console.log(''.concat(d.path, '/js/json/currencies.json')),
                                                                 (t = function () {
                                                                     fetch(''.concat(d.path, '/js/json/currencies.json'))
                                                                         .then(function (e) {
@@ -1147,20 +1145,22 @@
                                                                         });
                                                                 }),
                                                                 (r = function () {
-                                                                    var e = document.querySelector('meta[name="currency"]');
-                                                                    if (e) {
-                                                                        var t = e.content.match(/\((.*)\)/)[1];
-                                                                        (s.selected_currency = t),
-                                                                            document.querySelector('#'.concat(t)).classList.add('active-currency'),
+                                                                    var e,
+                                                                        t = document.querySelector('meta[name="currency"]');
+                                                                    if (t) {
+                                                                        var n = /\((.*)\)/;
+                                                                        (e = t.content.match(n) ? t.content.match(n)[1] : p.getMetaTagContent('currency')),
+                                                                            (s.selected_currency = e),
+                                                                            document.querySelector('#'.concat(e)).classList.add('active-currency'),
                                                                             (document.querySelector('#currency-label span').textContent = document.querySelector(
                                                                                 '.active-currency'
                                                                             ).textContent);
                                                                     }
                                                                 }),
-                                                                (e.next = 7),
+                                                                (e.next = 6),
                                                                 t()
                                                             );
-                                                        case 7:
+                                                        case 6:
                                                         case 'end':
                                                             return e.stop();
                                                     }

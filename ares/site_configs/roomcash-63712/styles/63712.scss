@@ -699,6 +699,10 @@ input[type="checkbox"] {
         min-width: 140px;
         text-align: center;
 
+        .nights {
+            display: none!important;
+        }
+
         @include mobile {
             align-items: center;
         }
@@ -714,7 +718,6 @@ input[type="checkbox"] {
 
         :last-child {
             font-weight: $text_weight;
-            display: none !important;
         }
 
         .rc-value {

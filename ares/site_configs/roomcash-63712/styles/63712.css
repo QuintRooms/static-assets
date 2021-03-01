@@ -869,6 +869,7 @@ input[type=checkbox] {
 }
 .roomcash-scale-container .cash-text :last-child {
   font-weight: 300;
+  display: none !important;
 }
 .roomcash-scale-container .cash-text .rc-value {
   color: #CC9831;

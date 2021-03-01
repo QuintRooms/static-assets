@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 221));
+        n((n.s = 194));
 })([
     function (e, t, n) {
         var r = n(27)('wks'),
@@ -152,7 +152,7 @@
             o = n(8),
             a = n(10),
             i = n(19)('src'),
-            c = n(78),
+            c = n(76),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -177,7 +177,7 @@
         'number' == typeof __e && (__e = n);
     },
     function (e, t, n) {
-        var r = n(93),
+        var r = n(91),
             o = n(15);
         e.exports = function (e) {
             return r(o(e));
@@ -265,15 +265,15 @@
             d = n(4),
             f = n(3),
             p = n(13),
-            h = n(79),
-            m = n(80),
+            h = n(77),
+            m = n(78),
             y = n(51),
             g = n(52).set,
-            v = n(84)(),
+            v = n(82)(),
             b = n(55),
-            S = n(85),
-            w = n(86),
-            _ = n(87),
+            S = n(83),
+            w = n(84),
+            _ = n(85),
             x = s.TypeError,
             A = s.process,
             k = A && A.versions,
@@ -399,7 +399,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(88)(M.prototype, {
+            }).prototype = n(86)(M.prototype, {
                 then: function (e, t) {
                     var n = T(y(this, M));
                     return (
@@ -425,7 +425,7 @@
             })),
             d(d.G + d.W + d.F * !E, {Promise: M}),
             n(29)(M, 'Promise'),
-            n(89)('Promise'),
+            n(87)('Promise'),
             (i = n(11).Promise),
             d(d.S + d.F * !E, 'Promise', {
                 reject: function (e) {
@@ -443,7 +443,7 @@
                     d.F *
                         !(
                             E &&
-                            n(90)(function (e) {
+                            n(88)(function (e) {
                                 M.all(e).catch(C);
                             })
                         ),
@@ -905,7 +905,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(102);
+        n(101);
         var r = n(9),
             o = n(8),
             a = n(7),
@@ -985,7 +985,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(98);
+        n(96);
         var r = n(1),
             o = n(42),
             a = n(5),
@@ -1004,31 +1004,6 @@
               c(function () {
                   return i.call(this);
               });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(64),
-            o = n(111),
-            a = n(20),
-            i = n(12);
-        (e.exports = n(77)(
-            Array,
-            'Array',
-            function (e, t) {
-                (this._t = i(e)), (this._i = 0), (this._k = t);
-            },
-            function () {
-                var e = this._t,
-                    t = this._k,
-                    n = this._i++;
-                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
-            },
-            'values'
-        )),
-            (a.Arguments = a.Array),
-            r('keys'),
-            r('values'),
-            r('entries');
     },
     function (e, t, n) {
         e.exports = (function () {
@@ -1406,6 +1381,31 @@
         t.f = {}.propertyIsEnumerable;
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(64),
+            o = n(110),
+            a = n(20),
+            i = n(12);
+        (e.exports = n(111)(
+            Array,
+            'Array',
+            function (e, t) {
+                (this._t = i(e)), (this._i = 0), (this._k = t);
+            },
+            function () {
+                var e = this._t,
+                    t = this._k,
+                    n = this._i++;
+                return !e || n >= e.length ? ((this._t = void 0), o(1)) : o(0, 'keys' == t ? n : 'values' == t ? e[n] : [n, e[n]]);
+            },
+            'values'
+        )),
+            (a.Arguments = a.Array),
+            r('keys'),
+            r('values'),
+            r('entries');
+    },
+    function (e, t, n) {
         var r = n(3),
             o = n(2).document,
             a = r(o) && r(o.createElement);
@@ -1436,7 +1436,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(96),
+            o = n(94),
             a = n(40),
             i = n(39)('IE_PROTO'),
             c = function () {},
@@ -1476,7 +1476,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(76)(!0);
+        var r = n(100)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -1547,8 +1547,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(47), n(33), n(49), n(34), n(66), n(23), n(16), n(24);
-        var i = n(35),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(47), n(33), n(49), n(36), n(66), n(23), n(16), n(24);
+        var i = n(34),
             c = (function () {
                 function e() {
                     !(function (e, t) {
@@ -2181,7 +2181,7 @@
     function (e, t, n) {
         'use strict';
         var r = n(1),
-            o = n(103),
+            o = n(102),
             a = n(31);
         n(32)('search', 1, function (e, t, n, i) {
             return [
@@ -2298,7 +2298,7 @@
     },
     function (e, t, n) {
         for (
-            var r = n(34),
+            var r = n(36),
                 o = n(17),
                 a = n(9),
                 i = n(2),
@@ -2515,7 +2515,7 @@
     function (e, t, n) {
         var r = n(12),
             o = n(21),
-            a = n(94);
+            a = n(92);
         e.exports = function (e) {
             return function (t, n, i) {
                 var c,
@@ -2542,7 +2542,7 @@
             };
     },
     function (e, t, n) {
-        var r = n(36),
+        var r = n(35),
             o = n(28),
             a = n(12),
             i = n(38),
@@ -2797,27 +2797,6 @@
         })();
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(4),
-            o = n(59)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(64)('includes');
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(4),
-            o = n(106);
-        r(r.P + r.F * n(107)('includes'), 'String', {
-            includes: function (e) {
-                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
-    },
-    function (e, t, n) {
         n(56)('asyncIterator');
     },
     function (e, t, n) {
@@ -2827,7 +2806,7 @@
             a = n(5),
             i = n(4),
             c = n(9),
-            s = n(91).KEY,
+            s = n(89).KEY,
             u = n(7),
             l = n(27),
             d = n(29),
@@ -2835,8 +2814,8 @@
             p = n(0),
             h = n(57),
             m = n(56),
-            y = n(92),
-            g = n(95),
+            y = n(90),
+            g = n(93),
             v = n(1),
             b = n(3),
             S = n(30),
@@ -2844,7 +2823,7 @@
             _ = n(38),
             x = n(28),
             A = n(41),
-            k = n(97),
+            k = n(95),
             q = n(62),
             M = n(60),
             L = n(6),
@@ -2948,7 +2927,7 @@
             (q.f = K),
             (L.f = Q),
             (n(61).f = k.f = X),
-            (n(36).f = J),
+            (n(35).f = J),
             (M.f = ee),
             a && !n(18) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
@@ -3028,7 +3007,7 @@
             i = n(1),
             c = n(3),
             s = n(7),
-            u = n(99),
+            u = n(97),
             l = (n(2).Reflect || {}).construct,
             d = s(function () {
                 function e() {}
@@ -3078,6 +3057,27 @@
                     u,
                     l = arguments.length < 3 ? t : arguments[2];
                 return s(t) === l ? t[n] : (i = r.f(t, n)) ? (a(i, 'value') ? i.value : void 0 !== i.get ? i.get.call(l) : void 0) : c((u = o(t))) ? e(u, n, l) : void 0;
+            },
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            o = n(59)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(64)('includes');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            o = n(105);
+        r(r.P + r.F * n(106)('includes'), 'String', {
+            includes: function (e) {
+                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
             },
         });
     },
@@ -3188,90 +3188,6 @@
                 }));
     },
     function (e, t, n) {
-        var r = n(22),
-            o = n(15);
-        e.exports = function (e) {
-            return function (t, n) {
-                var a,
-                    i,
-                    c = String(o(t)),
-                    s = r(n),
-                    u = c.length;
-                return s < 0 || s >= u
-                    ? e
-                        ? ''
-                        : void 0
-                    : (a = c.charCodeAt(s)) < 55296 || a > 56319 || s + 1 === u || (i = c.charCodeAt(s + 1)) < 56320 || i > 57343
-                    ? e
-                        ? c.charAt(s)
-                        : a
-                    : e
-                    ? c.slice(s, s + 2)
-                    : i - 56320 + ((a - 55296) << 10) + 65536;
-            };
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(18),
-            o = n(4),
-            a = n(9),
-            i = n(8),
-            c = n(20),
-            s = n(112),
-            u = n(29),
-            l = n(63),
-            d = n(0)('iterator'),
-            f = !([].keys && 'next' in [].keys()),
-            p = function () {
-                return this;
-            };
-        e.exports = function (e, t, n, h, m, y, g) {
-            s(n, t, h);
-            var v,
-                b,
-                S,
-                w = function (e) {
-                    if (!f && e in k) return k[e];
-                    switch (e) {
-                        case 'keys':
-                        case 'values':
-                            return function () {
-                                return new n(this, e);
-                            };
-                    }
-                    return function () {
-                        return new n(this, e);
-                    };
-                },
-                _ = t + ' Iterator',
-                x = 'values' == m,
-                A = !1,
-                k = e.prototype,
-                q = k[d] || k['@@iterator'] || (m && k[m]),
-                M = q || w(m),
-                L = m ? (x ? w('entries') : M) : void 0,
-                C = ('Array' == t && k.entries) || q;
-            if (
-                (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || i(S, d, p)),
-                x &&
-                    q &&
-                    'values' !== q.name &&
-                    ((A = !0),
-                    (M = function () {
-                        return q.call(this);
-                    })),
-                (r && !g) || (!f && !A && k[d]) || i(k, d, M),
-                (c[t] = M),
-                (c[_] = p),
-                m)
-            )
-                if (((v = {values: x ? M : w('values'), keys: y ? M : w('keys'), entries: L}), g)) for (b in v) b in k || a(k, b, v[b]);
-                else o(o.P + o.F * (f || A), t, v);
-            return v;
-        };
-    },
-    function (e, t, n) {
         e.exports = n(27)('native-function-to-string', Function.toString);
     },
     function (e, t) {
@@ -3282,11 +3198,11 @@
     },
     function (e, t, n) {
         var r = n(25),
-            o = n(81),
-            a = n(82),
+            o = n(79),
+            a = n(80),
             i = n(1),
             c = n(21),
-            s = n(83),
+            s = n(81),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, f) {
@@ -3509,7 +3425,7 @@
     function (e, t, n) {
         var r = n(17),
             o = n(60),
-            a = n(36);
+            a = n(35);
         e.exports = function (e) {
             var t = r(e),
                 n = o.f;
@@ -3604,19 +3520,19 @@
         Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = void 0),
             n(23),
-            n(101),
+            n(99),
             n(75),
             n(33),
             n(16),
             n(46),
-            n(104),
+            n(103),
             n(47),
-            n(68),
-            n(69),
+            n(72),
+            n(73),
             n(74),
             n(24),
-            n(108),
-            n(109);
+            n(107),
+            n(108);
         var r = c(n(45)),
             o = c(n(114)),
             a = c(n(48)),
@@ -3656,7 +3572,7 @@
             }
         }
         var d = new a.default(),
-            f = n(35),
+            f = n(34),
             p = n(67);
         f.extend(p);
         var h = new r.default(),
@@ -4684,11 +4600,13 @@
                                                                     });
                                                             }),
                                                             (o = function () {
-                                                                var e = document.querySelector('meta[name="currency"]');
-                                                                if (e) {
-                                                                    var t = e.content.match(/\((.*)\)/)[1];
-                                                                    (a.selected_currency = t),
-                                                                        document.querySelector('#'.concat(t)).classList.add('active-currency'),
+                                                                var e,
+                                                                    t = document.querySelector('meta[name="currency"]');
+                                                                if (t) {
+                                                                    var n = /\((.*)\)/;
+                                                                    (e = t.content.match(n) ? t.content.match(n)[1] : h.getMetaTagContent('currency')),
+                                                                        (a.selected_currency = e),
+                                                                        document.querySelector('#'.concat(e)).classList.add('active-currency'),
                                                                         (document.querySelector('#currency-label span').textContent = document.querySelector(
                                                                             '.active-currency'
                                                                         ).textContent);
@@ -5957,6 +5875,30 @@
         });
     },
     function (e, t, n) {
+        var r = n(22),
+            o = n(15);
+        e.exports = function (e) {
+            return function (t, n) {
+                var a,
+                    i,
+                    c = String(o(t)),
+                    s = r(n),
+                    u = c.length;
+                return s < 0 || s >= u
+                    ? e
+                        ? ''
+                        : void 0
+                    : (a = c.charCodeAt(s)) < 55296 || a > 56319 || s + 1 === u || (i = c.charCodeAt(s + 1)) < 56320 || i > 57343
+                    ? e
+                        ? c.charAt(s)
+                        : a
+                    : e
+                    ? c.slice(s, s + 2)
+                    : i - 56320 + ((a - 55296) << 10) + 65536;
+            };
+        };
+    },
+    function (e, t, n) {
         'use strict';
         var r = n(44);
         n(4)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
@@ -5970,7 +5912,7 @@
     },
     function (e, t, n) {
         var r = n(4);
-        r(r.P, 'String', {repeat: n(105)});
+        r(r.P, 'String', {repeat: n(104)});
     },
     function (e, t, n) {
         'use strict';
@@ -6727,7 +6669,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }.call(this, n(110)));
+        }.call(this, n(109)));
     },
     function (e, t) {
         var n;
@@ -6744,6 +6686,66 @@
     function (e, t) {
         e.exports = function (e, t) {
             return {value: t, done: !!e};
+        };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(18),
+            o = n(4),
+            a = n(9),
+            i = n(8),
+            c = n(20),
+            s = n(112),
+            u = n(29),
+            l = n(63),
+            d = n(0)('iterator'),
+            f = !([].keys && 'next' in [].keys()),
+            p = function () {
+                return this;
+            };
+        e.exports = function (e, t, n, h, m, y, g) {
+            s(n, t, h);
+            var v,
+                b,
+                S,
+                w = function (e) {
+                    if (!f && e in k) return k[e];
+                    switch (e) {
+                        case 'keys':
+                        case 'values':
+                            return function () {
+                                return new n(this, e);
+                            };
+                    }
+                    return function () {
+                        return new n(this, e);
+                    };
+                },
+                _ = t + ' Iterator',
+                x = 'values' == m,
+                A = !1,
+                k = e.prototype,
+                q = k[d] || k['@@iterator'] || (m && k[m]),
+                M = q || w(m),
+                L = m ? (x ? w('entries') : M) : void 0,
+                C = ('Array' == t && k.entries) || q;
+            if (
+                (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || i(S, d, p)),
+                x &&
+                    q &&
+                    'values' !== q.name &&
+                    ((A = !0),
+                    (M = function () {
+                        return q.call(this);
+                    })),
+                (r && !g) || (!f && !A && k[d]) || i(k, d, M),
+                (c[t] = M),
+                (c[_] = p),
+                m)
+            )
+                if (((v = {values: x ? M : w('values'), keys: y ? M : w('keys'), entries: L}), g)) for (b in v) b in k || a(k, b, v[b]);
+                else o(o.P + o.F * (f || A), t, v);
+            return v;
         };
     },
     function (e, t, n) {
@@ -6811,8 +6813,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(24), n(49), n(34), n(16), n(66), n(46);
-        var i = n(35),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(24), n(49), n(36), n(16), n(66), n(46);
+        var i = n(34),
             c = n(67);
         i.extend(c);
         var s = (function () {
@@ -7134,8 +7136,8 @@
     },
     function (e, t, n) {
         'use strict';
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(70), n(71), n(23), n(33), n(16), n(72), n(73), n(46), n(68), n(69), n(47), n(24);
-        var r = a(n(100)),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(68), n(69), n(23), n(33), n(16), n(70), n(71), n(46), n(72), n(73), n(47), n(24);
+        var r = a(n(98)),
             o = a(n(45));
         function a(e) {
             return e && e.__esModule ? e : {default: e};
@@ -7987,41 +7989,14 @@
     ,
     ,
     ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
     function (e, t, n) {
         'use strict';
-        n(222), n(224);
+        n(195), n(197);
     },
     function (e, t, n) {
         'use strict';
-        n(70), n(71), n(33), n(16), n(72), n(73);
-        var r = a(n(223)),
+        n(68), n(69), n(33), n(16), n(70), n(71);
+        var r = a(n(196)),
             o = a(n(116));
         function a(e) {
             return e && e.__esModule ? e : {default: e};

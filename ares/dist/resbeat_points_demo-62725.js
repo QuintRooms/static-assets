@@ -117,7 +117,6 @@
                         !(function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e),
-                            console.log('Output: BasePortal -> constructor -> config', t),
                             (this.site_id = ''),
                             (this.page_name = p.getPageName()),
                             (this.site_config = t),
@@ -1089,7 +1088,6 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             return (
-                                                                console.log(''.concat(d.path, '/js/json/currencies.json')),
                                                                 (t = function () {
                                                                     fetch(''.concat(d.path, '/js/json/currencies.json'))
                                                                         .then(function (e) {
@@ -1147,20 +1145,22 @@
                                                                         });
                                                                 }),
                                                                 (r = function () {
-                                                                    var e = document.querySelector('meta[name="currency"]');
-                                                                    if (e) {
-                                                                        var t = e.content.match(/\((.*)\)/)[1];
-                                                                        (s.selected_currency = t),
-                                                                            document.querySelector('#'.concat(t)).classList.add('active-currency'),
+                                                                    var e,
+                                                                        t = document.querySelector('meta[name="currency"]');
+                                                                    if (t) {
+                                                                        var n = /\((.*)\)/;
+                                                                        (e = t.content.match(n) ? t.content.match(n)[1] : p.getMetaTagContent('currency')),
+                                                                            (s.selected_currency = e),
+                                                                            document.querySelector('#'.concat(e)).classList.add('active-currency'),
                                                                             (document.querySelector('#currency-label span').textContent = document.querySelector(
                                                                                 '.active-currency'
                                                                             ).textContent);
                                                                     }
                                                                 }),
-                                                                (e.next = 7),
+                                                                (e.next = 6),
                                                                 t()
                                                             );
-                                                        case 7:
+                                                        case 6:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -6542,8 +6542,8 @@
                 I = f('_hidden'),
                 F = f('toPrimitive'),
                 H = {}.propertyIsEnumerable,
-                B = l('symbol-registry'),
-                D = l('symbols'),
+                D = l('symbol-registry'),
+                B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
                 U = 'function' == typeof P && !!q.f,
@@ -6569,7 +6569,7 @@
                           }
                         : T,
                 V = function (e) {
-                    var t = (D[e] = x(P.prototype));
+                    var t = (B[e] = x(P.prototype));
                     return (t._k = e), t;
                 },
                 z =
@@ -6586,7 +6586,7 @@
                         v(e),
                         (t = S(t, !0)),
                         v(n),
-                        r(D, t)
+                        r(B, t)
                             ? (n.enumerable ? (r(e, I) && e[I][t] && (e[I][t] = !1), (n = x(n, {enumerable: w(0, !1)}))) : (r(e, I) || T(e, I, w(1, {})), (e[I][t] = !0)),
                               G(e, t, n))
                             : T(e, t, n)
@@ -6599,20 +6599,20 @@
                 },
                 J = function (e) {
                     var t = H.call(this, (e = S(e, !0)));
-                    return !(this === N && r(D, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(D, e) || (r(this, I) && this[I][e])) || t);
+                    return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, I) && this[I][e])) || t);
                 },
                 K = function (e, t) {
-                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(D, t) || r(Y, t))) {
+                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(B, t) || r(Y, t))) {
                         var n = C(e, t);
-                        return !n || !r(D, t) || (r(e, I) && e[I][t]) || (n.enumerable = !0), n;
+                        return !n || !r(B, t) || (r(e, I) && e[I][t]) || (n.enumerable = !0), n;
                     }
                 },
                 X = function (e) {
-                    for (var t, n = E(b(e)), o = [], s = 0; n.length > s; ) r(D, (t = n[s++])) || t == I || t == c || o.push(t);
+                    for (var t, n = E(b(e)), o = [], s = 0; n.length > s; ) r(B, (t = n[s++])) || t == I || t == c || o.push(t);
                     return o;
                 },
                 ee = function (e) {
-                    for (var t, n = e === N, o = E(n ? Y : b(e)), s = [], i = 0; o.length > i; ) !r(D, (t = o[i++])) || (n && !r(N, t)) || s.push(D[t]);
+                    for (var t, n = e === N, o = E(n ? Y : b(e)), s = [], i = 0; o.length > i; ) !r(B, (t = o[i++])) || (n && !r(N, t)) || s.push(B[t]);
                     return s;
                 };
             U ||
@@ -6645,11 +6645,11 @@
             for (var oe = L(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             i(i.S + i.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(B, (e += '')) ? B[e] : (B[e] = P(e));
+                    return r(D, (e += '')) ? D[e] : (D[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in B) if (B[t] === e) return t;
+                    for (var t in D) if (D[t] === e) return t;
                 },
                 useSetter: function () {
                     $ = !0;

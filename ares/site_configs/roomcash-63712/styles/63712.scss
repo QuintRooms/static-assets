@@ -1323,6 +1323,10 @@ input[type="checkbox"] {
 
 .CheckOutForm, .ConfirmationForm {
 
+    .printReceipt {
+        display: none !important;
+    }
+
     .resConfirmationButton {
         text-align: center;
     }

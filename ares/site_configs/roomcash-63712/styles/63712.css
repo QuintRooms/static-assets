@@ -1351,6 +1351,9 @@ input[type=checkbox] {
 }
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
+.CheckOutForm .printReceipt, .ConfirmationForm .printReceipt {
+  display: none !important;
+}
 .CheckOutForm .resConfirmationButton, .ConfirmationForm .resConfirmationButton {
   text-align: center;
 }

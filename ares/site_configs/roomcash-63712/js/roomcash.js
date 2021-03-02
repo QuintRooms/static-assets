@@ -441,8 +441,8 @@ export default class Roomcash {
             prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
 
             // add tooltip
-            utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
-            utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
+            utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply.', '?', '#fff', '#000');
+            utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', `How much you'll pay when you book today.`, '?', '#fff', '#000');
 
             if (document.querySelector('.SinglePropDetail')) {
                 const book_room = prop.querySelector('.bookRoom');

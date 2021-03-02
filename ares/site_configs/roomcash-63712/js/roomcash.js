@@ -350,6 +350,7 @@ export default class Roomcash {
     async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
             await utilities.waitForSelectorInDOM('.pollingFinished');
+            await utilities.waitForSelectorInDOM('.ArnPriceCell');
         }
         await utilities.waitForSelectorInDOM(insertElement);
         const props = document.querySelectorAll(containerName);

@@ -8399,7 +8399,7 @@
                                                                             u.addToolTip(
                                                                                 '#'.concat(c, ' .roomcash-amount p'),
                                                                                 'beforeend',
-                                                                                'Maximum amount of your RoomCash we can apply',
+                                                                                'Maximum amount of your RoomCash we can apply.',
                                                                                 '?',
                                                                                 '#fff',
                                                                                 '#000'
@@ -8407,7 +8407,7 @@
                                                                             u.addToolTip(
                                                                                 '#'.concat(c, ' .your-cash-amount p'),
                                                                                 'beforeend',
-                                                                                'How much of your cash is needed',
+                                                                                "How much you'll pay when you book today.",
                                                                                 '?',
                                                                                 '#fff',
                                                                                 '#000'

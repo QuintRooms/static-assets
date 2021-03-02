@@ -8115,7 +8115,8 @@
                                         document.querySelector('.WBSupportForm') && (this.buildFooterMenu('.ArnSubPage', 'afterend'), this.buildSupportPage()),
                                         document.querySelector('.WBResendOrCancelForm') &&
                                             (this.buildFooterMenu('.ArnSubPage', 'afterend'),
-                                            this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]));
+                                            this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]),
+                                            this.updateText('.ArnSubPage.WBResendOrCancelForm h1:first-of-type', 'Cancellations and Modifications'));
                                 },
                             },
                             {

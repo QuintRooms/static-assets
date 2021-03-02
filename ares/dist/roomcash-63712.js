@@ -8032,7 +8032,7 @@
                                 '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h, y, g, _, v;
+                    var t, n, o, r, s, l, d, m, f, p, h, y, g, _;
                     return (
                         (t = e),
                         (n = [
@@ -8122,7 +8122,7 @@
                             {
                                 key: 'resizeMap',
                                 value:
-                                    ((v = i(
+                                    ((_ = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8151,7 +8151,7 @@
                                         })
                                     )),
                                     function () {
-                                        return v.apply(this, arguments);
+                                        return _.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8196,7 +8196,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((_ = i(
+                                    ((g = i(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8247,7 +8247,7 @@
                                         })
                                     )),
                                     function () {
-                                        return _.apply(this, arguments);
+                                        return g.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8304,45 +8304,18 @@
                             },
                             {
                                 key: 'getValues',
-                                value:
-                                    ((g = i(
-                                        regeneratorRuntime.mark(function e(t) {
-                                            var n, o, r;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if (t.querySelector('.originalPrice')) {
-                                                                    e.next = 2;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return', void 0);
-                                                            case 2:
-                                                                return (
-                                                                    document.querySelector('.SearchHotels')
-                                                                        ? (n = t.querySelector('.arnUnit').innerHTML)
-                                                                        : document.querySelector('.SinglePropDetail') && (n = t.querySelector('.ArnNightlyRate strong').innerHTML),
-                                                                    (n = n.substring(0, n.indexOf('<span>'))),
-                                                                    (o = t.querySelector('.originalPrice').getAttribute('amount')),
-                                                                    (r = t.querySelector('.originalPrice').getAttribute('percent')),
-                                                                    (o = this.removeCurrency(o, t)),
-                                                                    (n = this.addCurrency(n, t)),
-                                                                    e.abrupt('return', {yc: n, rc: Math.ceil(Number(o)).toFixed(2), rc_width: r})
-                                                                );
-                                                            case 9:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
-                                            );
-                                        })
-                                    )),
-                                    function (e) {
-                                        return g.apply(this, arguments);
-                                    }),
+                                value: function (e) {
+                                    var t;
+                                    if (e.querySelector('.originalPrice')) {
+                                        document.querySelector('.SearchHotels')
+                                            ? (t = e.querySelector('.arnUnit').innerHTML)
+                                            : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
+                                            (t = t.substring(0, t.indexOf('<span>')));
+                                        var n = e.querySelector('.originalPrice').getAttribute('amount'),
+                                            o = e.querySelector('.originalPrice').getAttribute('percent');
+                                        return (n = this.removeCurrency(n, e)), {yc: (t = this.addCurrency(t, e)), rc: Math.ceil(Number(n)).toFixed(2), rc_width: o};
+                                    }
+                                },
                             },
                             {
                                 key: 'addRoomCashBar',

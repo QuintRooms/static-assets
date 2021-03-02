@@ -8313,18 +8313,12 @@
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (!document.querySelector('.SearchHotels')) {
-                                                                    e.next = 3;
-                                                                    break;
-                                                                }
-                                                                return (e.next = 3), u.waitForSelectorInDOM('#'.concat(t.id, ' .ArnRateCell'));
-                                                            case 3:
                                                                 if (t.querySelector('.originalPrice')) {
-                                                                    e.next = 5;
+                                                                    e.next = 2;
                                                                     break;
                                                                 }
                                                                 return e.abrupt('return', void 0);
-                                                            case 5:
+                                                            case 2:
                                                                 return (
                                                                     document.querySelector('.SearchHotels')
                                                                         ? (n = t.querySelector('.arnUnit').innerHTML)
@@ -8336,7 +8330,7 @@
                                                                     (n = this.addCurrency(n, t)),
                                                                     e.abrupt('return', {yc: n, rc: Math.ceil(Number(o)).toFixed(2), rc_width: r})
                                                                 );
-                                                            case 12:
+                                                            case 9:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

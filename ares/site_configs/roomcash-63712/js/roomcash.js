@@ -31,7 +31,7 @@ export default class Roomcash {
                 position: 'afterbegin',
                 html: `
                     <div id="footer">
-                        <div id="footer-title"><hr><span>RoomCash is a QuintRooms company</span><hr></div>
+                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
                         <div id="brand-logos">
                             <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint.png"></a>
                             <a target="_blank" href="https://resbeat.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat.png"></a>
@@ -349,7 +349,7 @@ export default class Roomcash {
     // TODO refactor
     async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
-            await utilities.waitForSelectorInDOM('.ratesLoaded');
+            await utilities.waitForSelectorInDOM('.pollingFinished');
         }
         await utilities.waitForSelectorInDOM(insertElement);
         const props = document.querySelectorAll(containerName);
@@ -620,10 +620,7 @@ export default class Roomcash {
         if (!document.querySelector(element)) return;
 
         const roomcash_value = document.querySelector(element);
-        const split = roomcash_value.textContent.split(' ');
-        const val = Math.ceil(Number(split[0])).toFixed(2);
-        const currency = split[1];
-
-        roomcash_value.textContent = `${val} ${currency}`;
+        const new_val = Math.ceil(Number(roomcash_value.textContent.substring(0, roomcash_value.textContent.indexOf(' ')))).toFixed(2);
+        roomcash_value.textContent = new_val;
     }
 }

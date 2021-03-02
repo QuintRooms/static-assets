@@ -8328,13 +8328,15 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             if (!document.querySelector('.SearchHotels')) {
-                                                                e.next = 3;
+                                                                e.next = 5;
                                                                 break;
                                                             }
                                                             return (e.next = 3), u.waitForSelectorInDOM('.pollingFinished');
                                                         case 3:
-                                                            return (e.next = 5), u.waitForSelectorInDOM(n);
+                                                            return (e.next = 5), u.waitForSelectorInDOM('.ArnPriceCell');
                                                         case 5:
+                                                            return (e.next = 7), u.waitForSelectorInDOM(n);
+                                                        case 7:
                                                             document.querySelectorAll(t).forEach(function (e, t) {
                                                                 var s,
                                                                     i,
@@ -8441,7 +8443,7 @@
                                                                     e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', f);
                                                                 }
                                                             });
-                                                        case 7:
+                                                        case 9:
                                                         case 'end':
                                                             return e.stop();
                                                     }

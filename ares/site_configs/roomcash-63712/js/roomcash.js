@@ -327,7 +327,7 @@ export default class Roomcash {
         return `${value} ${currency}`;
     }
 
-    async getValues(property) {
+    getValues(property) {
         let your_cash;
         if (!property.querySelector('.originalPrice')) return undefined;
 

@@ -327,8 +327,11 @@ export default class Roomcash {
         return `${value} ${currency}`;
     }
 
-    getValues(property) {
+    async getValues(property) {
         let your_cash;
+        if (document.querySelector('.SearchHotels')) {
+            await utilities.waitForSelectorInDOM(`#${property.id} .ArnRateCell`);
+        }
         if (!property.querySelector('.originalPrice')) return undefined;
 
         if (document.querySelector('.SearchHotels')) {

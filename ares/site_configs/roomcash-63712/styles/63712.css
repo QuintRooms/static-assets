@@ -1550,6 +1550,9 @@ body.WBSupportForm .ArnSupportChatTable {
 .WBResendOrCancelForm h1 {
   text-align: center;
 }
+.WBResendOrCancelForm .ResendGuestReceiptEmailAction {
+  display: none;
+}
 .WBResendOrCancelForm .ArnSubPage {
   background: #fff;
   padding: 20px;

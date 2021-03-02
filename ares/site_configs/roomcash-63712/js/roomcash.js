@@ -157,6 +157,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
+            this.updateText('.ArnSubPage.WBResendOrCancelForm h1:first-of-type', 'Cancellations and Modifications');
         }
     }
 

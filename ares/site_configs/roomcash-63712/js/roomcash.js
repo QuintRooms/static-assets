@@ -115,6 +115,7 @@ export default class Roomcash {
             this.updateText('.discount th', 'RoomCash:');
             this.updateText('.dueNowRow th', 'Your Cash:');
             this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:');
+            this.roundUpValue('.dueNowRow td');
         }
 
         // Confirmation Page
@@ -341,7 +342,7 @@ export default class Roomcash {
 
         room_cash = this.removeCurrency(room_cash, property);
         your_cash = this.addCurrency(your_cash, property);
-        return {yc: your_cash, rc: room_cash, rc_width: width};
+        return {yc: your_cash, rc: Math.ceil(Number(room_cash)).toFixed(2), rc_width: width};
     }
 
     // TODO refactor
@@ -612,5 +613,13 @@ export default class Roomcash {
         wrapper.classList.add('header-container');
         header.parentNode.insertBefore(wrapper, header);
         wrapper.appendChild(header);
+    }
+
+    roundUpValue(element) {
+        if (!document.querySelector(element)) return;
+
+        const roomcash_value = document.querySelector(element);
+        const new_val = Math.ceil(Number(roomcash_value.textContent.substring(0, roomcash_value.textContent.indexOf(' ')))).toFixed(2);
+        roomcash_value.textContent = new_val;
     }
 }

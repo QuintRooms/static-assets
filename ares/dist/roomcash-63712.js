@@ -7982,6 +7982,7 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'),
                 n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
             var o = r(n(/*! ../../../js/utilities */ './js/utilities.js'));
@@ -8047,7 +8048,7 @@
                                             {
                                                 element: '.ArnSupportLinks.ArnSupportBottom',
                                                 position: 'afterbegin',
-                                                html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
+                                                html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is a QuintRooms company</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
                                                     .concat(c.path, '/site_configs/')
                                                     .concat(
                                                         this.config.directory_name,
@@ -8331,7 +8332,7 @@
                                                                 e.next = 3;
                                                                 break;
                                                             }
-                                                            return (e.next = 3), u.waitForSelectorInDOM('.pollingFinished');
+                                                            return (e.next = 3), u.waitForSelectorInDOM('.ratesLoaded');
                                                         case 3:
                                                             return (e.next = 5), u.waitForSelectorInDOM(n);
                                                         case 5:
@@ -8730,8 +8731,10 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e),
-                                            n = Math.ceil(Number(t.textContent.substring(0, t.textContent.indexOf(' ')))).toFixed(2);
-                                        t.textContent = n;
+                                            n = t.textContent.split(' '),
+                                            o = Math.ceil(Number(n[0])).toFixed(2),
+                                            r = n[1];
+                                        t.textContent = ''.concat(o, ' ').concat(r);
                                     }
                                 },
                             },

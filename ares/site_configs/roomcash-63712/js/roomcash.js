@@ -115,7 +115,7 @@ export default class Roomcash {
             this.updateText('.discount th', 'RoomCash:');
             this.updateText('.dueNowRow th', 'Your Cash:');
             this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:');
-            this.roundUpValue('.dueNowRow td');
+            this.roundUpValue('.discount td');
         }
 
         // Confirmation Page

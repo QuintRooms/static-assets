@@ -1297,6 +1297,9 @@ input[type=checkbox] {
     text-align: unset;
   }
 }
+.SinglePropDetail .no-roomCash-deal .bookRoomCell {
+  display: block;
+}
 @media (max-width: 600px) {
   .SinglePropDetail .no-roomCash-deal .RateCalendarPopupAnchor {
     text-align: center;

@@ -1253,6 +1253,10 @@ input[type="checkbox"] {
             }
         }
 
+        .bookRoomCell {
+            display: block;
+        }
+
         @include mobile {
             
             .RateCalendarPopupAnchor {

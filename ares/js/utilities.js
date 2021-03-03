@@ -96,6 +96,19 @@ export default class Utilities {
         });
     }
 
+    async waitForSelectorToBeGone(selector) {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                const element = document.querySelector(selector);
+                if (!element) {
+                    resolve();
+                    clearInterval(interval);
+                    return true;
+                }
+            }, 500);
+        });
+    }
+
     /**
      * @description checks every 500 miliseconds for the textContent of the element passed in to equeal the text in the dom after the page loads. This method is used for when an element's textContent is updated multiple times before the page finishes loading and you want to update it again.
      * @param element - the element you are waiting on to load the expected textContent

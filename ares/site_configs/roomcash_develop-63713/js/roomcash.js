@@ -83,9 +83,9 @@ export default class Roomcash {
                     html: `<div id="filter-by">FILTER BY</div>`,
                 },
             ]);
+
             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend');
             this.buildSortSelectMenu();
-
             this.resizeMap();
         }
 
@@ -106,6 +106,11 @@ export default class Roomcash {
             }
             document.querySelector('#moreRatesLink').addEventListener('click', () => {
                 this.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+                if (utilities.matchMediaQuery('max-width: 560px')) {
+                    this.addRoomCashBar('#moreRates .rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
+                } else {
+                    this.addRoomCashBar('#moreRates .rateRow', 'tbody tr', 'afterend');
+                }
             });
         }
 
@@ -115,6 +120,7 @@ export default class Roomcash {
             this.updateText('.discount th', 'RoomCash:');
             this.updateText('.dueNowRow th', 'Your Cash:');
             this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:');
+            this.roundUpValue('.discount td');
         }
 
         // Confirmation Page
@@ -310,7 +316,7 @@ export default class Roomcash {
         return value.substring(0, value.length - 3);
     }
 
-    addCurrency(value, element) {
+    getCurrency(element) {
         let currency;
         if (document.querySelector('.SearchHotels')) {
             currency = element.querySelector('.arnCurrency').textContent;
@@ -319,10 +325,10 @@ export default class Roomcash {
             currency = currency.substring(currency.length - 3);
         }
 
-        if (currency === '$' || currency === 'USD') {
-            return `$${value}`;
+        if (currency === 'USD') {
+            return `$`;
         }
-        return `${value} ${currency}`;
+        return `${currency}`;
     }
 
     getValues(property) {
@@ -332,137 +338,135 @@ export default class Roomcash {
         if (document.querySelector('.SearchHotels')) {
             your_cash = property.querySelector('.arnUnit').innerHTML;
         } else if (document.querySelector('.SinglePropDetail')) {
-            your_cash = property.querySelector('.ArnNightlyRate strong').innerHTML;
+            your_cash = property.querySelector('.ArnNightlyRate').getAttribute('total');
+            your_cash = your_cash.substring(0, your_cash.indexOf(' '));
+            console.log('your cash: ', your_cash);
         }
-
-        your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
+        if (your_cash.includes('<span>')) {
+            your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
+        }
         let room_cash = property.querySelector('.originalPrice').getAttribute('amount');
         const width = property.querySelector('.originalPrice').getAttribute('percent');
 
         room_cash = this.removeCurrency(room_cash, property);
-        your_cash = this.addCurrency(your_cash, property);
-        return {yc: your_cash, rc: room_cash, rc_width: width};
+        const curr = this.getCurrency(property);
+        return {yc: your_cash, rc: Math.ceil(Number(room_cash)).toFixed(2), rc_width: width, currency: curr};
+    }
+
+    buildBar(prop, insertElement, insertPosition, idx) {
+        const values = this.getValues(prop);
+        let html;
+        const rc_id = `${idx}-${Math.floor(Math.random() * 90000) + 10000}`;
+
+        if (prop.querySelector('.ArnLimitedAvail')) {
+            prop.querySelector('.ArnRateCell').style.display = 'unset';
+            prop.querySelector('.ArnRateButton').style.display = 'none';
+            return;
+        }
+        console.log('value: ', values);
+        if (!values) {
+            prop.classList.add('no-roomCash-deal');
+            if (!prop.querySelector('.RateCalendarPopupAnchor')) return;
+
+            const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
+            prop.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rates);
+            return;
+        }
+        if (!values.yc || !values.rc || !values.rc_width || !values.currency) {
+            console.error(`There was an issue with one or more RoomCash values for the following: ${prop}`);
+            return;
+        }
+        if (document.querySelector('.SearchHotels')) {
+            html = `
+            <div class="roomcash-scale-container" id="rc-${rc_id}">
+                <div id="roomcash-bar-container">
+                    <span class="bar"></span>
+                </div>
+            <div class="container-lower">
+                <div class="roomcash-amount">     
+                    <div class="cash-text">
+                        <span class="rc-value">$${values.rc}</span>
+                        <p>RoomCash</p>
+                    </div>
+                </div>
+                <div class="your-cash-amount">      
+                    <div class="cash-text">
+                        <span class="yc-value">${values.currency}${values.yc}</span>
+                        <p>Your Cash</p>
+                    </div>
+                </div>
+                </div>
+            </div>`;
+        } else if (document.querySelector('.SinglePropDetail')) {
+            html = `
+            <tr colspan="2">
+                <td colspan="2">
+                    <div class="prop-detail-lower">
+                        <div class="roomcash-scale-container" id="rc-${rc_id}">
+                            <div class="container-lower">
+                                <div class="roomcash-amount">     
+                                    <div class="cash-text">
+                                        <span class="rc-value">$${values.rc}</span>
+                                        <p>RoomCash</p>
+                                    </div>
+                                </div>
+                                <div class="your-cash-amount">      
+                                    <div class="cash-text">
+                                        <span class="yc-value">${values.currency}${values.yc}</span>
+                                        <p>Your Cash</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="roomcash-bar-container">
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+                        <div class="book"></div>
+                    </div>
+                </td>
+            </tr>`;
+        }
+
+        // const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
+        prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
+
+        // add tooltip
+        utilities.addToolTip(`#rc-${rc_id} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
+        utilities.addToolTip(`#rc-${rc_id} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
+
+        if (document.querySelector('.SinglePropDetail')) {
+            const book_room = prop.querySelector('.bookRoom');
+            const cancel = prop.querySelector('.ArnRateCancelAnchor');
+            prop.querySelector('.book').insertAdjacentElement('afterbegin', book_room);
+            prop.querySelector('.book').insertAdjacentElement('beforeend', cancel);
+            this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
+        }
+
+        // Moves Book button
+        if (!document.querySelector('.SearchHotels')) return;
+        const button = prop.querySelector('.ArnRateButton');
+        prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
+
+        // insert average nightly
+        prop.querySelector('.ArnRateButton').insertAdjacentHTML(
+            'afterend',
+            `
+            <div id="rc-avg-nightly">Avg/Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
+            `
+        );
     }
 
     // TODO refactor
     async addRoomCashBar(containerName, insertElement, insertPosition) {
         if (document.querySelector('.SearchHotels')) {
             await utilities.waitForSelectorInDOM('.pollingFinished');
+            await utilities.waitForSelectorToBeGone('.searchingRates');
         }
         await utilities.waitForSelectorInDOM(insertElement);
         const props = document.querySelectorAll(containerName);
 
         props.forEach((prop, idx) => {
-            const values = this.getValues(prop);
-            let html;
-            let n_nights;
-
-            if (prop.querySelector('.ArnLimitedAvail')) {
-                prop.querySelector('.ArnRateCell').style.display = 'unset';
-                prop.querySelector('.ArnRateButton').style.display = 'none';
-                return;
-            }
-
-            if (!values) {
-                prop.classList.add('no-roomCash-deal');
-                if (!prop.querySelector('.RateCalendarPopupAnchor')) return;
-
-                const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
-                prop.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', daily_rates);
-                return;
-            }
-
-            if (!values.yc || !values.rc || !values.rc_width) return;
-            if (document.querySelector('.SearchHotels')) {
-                n_nights = prop.querySelector('.arnUnit span').textContent.trim();
-                if (n_nights === 'for 1 nights') {
-                    n_nights = n_nights.substring(0, n_nights.length - 1);
-                }
-                html = `
-                <div class="roomcash-scale-container" id="rc-${idx}">
-                    <div id="roomcash-bar-container">
-                        <span class="bar"></span>
-                    </div>
-                <div class="container-lower">
-                    <div class="roomcash-amount">     
-                        <div class="cash-text">
-                            <span class="rc-value">$${values.rc}</span>
-                            <p>RoomCash</p>
-                            <p class="nights">(${n_nights})</p>
-                        </div>
-                    </div>
-                    <div class="your-cash-amount">      
-                        <div class="cash-text">
-                            <span class="yc-value">${values.yc}</span>
-                            <p>Your Cash</p>
-                            <p class="nights">(${n_nights})</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>`;
-            } else if (document.querySelector('.SinglePropDetail')) {
-                n_nights = document.querySelector('.ArnNightlyRate strong span').textContent.trim();
-                if (n_nights === 'for 1 nights') {
-                    n_nights = n_nights.substring(0, n_nights.length - 1);
-                }
-                html = `
-                <tr colspan="2">
-                    <td colspan="2">
-                        <div class="prop-detail-lower">
-                            <div class="roomcash-scale-container" id="rc-${idx}">
-                                <div class="container-lower">
-                                    <div class="roomcash-amount">     
-                                        <div class="cash-text">
-                                            <span class="rc-value">$${values.rc}</span>
-                                            <p>RoomCash</p>
-                                            <p class="nights">(${n_nights})</p>
-                                        </div>
-                                    </div>
-                                    <div class="your-cash-amount">      
-                                        <div class="cash-text">
-                                            <span class="yc-value">${values.yc}</span>
-                                            <p>Your Cash</p>
-                                            <p class="nights">(${n_nights})</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="roomcash-bar-container">
-                                    <span class="bar"></span>
-                                </div>
-                            </div>
-                            <div class="book"></div>
-                        </div>
-                    </td>
-                </tr>`;
-            }
-
-            const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
-            prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
-
-            // add tooltip
-            utilities.addToolTip(`#${selector} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
-            utilities.addToolTip(`#${selector} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
-
-            if (document.querySelector('.SinglePropDetail')) {
-                const book_room = prop.querySelector('.bookRoom');
-                const cancel = prop.querySelector('.ArnRateCancelAnchor');
-                prop.querySelector('.book').insertAdjacentElement('afterbegin', book_room);
-                prop.querySelector('.book').insertAdjacentElement('beforeend', cancel);
-                this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
-            }
-
-            // Moves Book button
-            if (!document.querySelector('.SearchHotels')) return;
-            const button = prop.querySelector('.ArnRateButton');
-            prop.querySelector('.ArnPropName').insertAdjacentElement('beforeend', button);
-
-            // insert average nightly
-            prop.querySelector('.ArnRateButton').insertAdjacentHTML(
-                'afterend',
-                `
-                <div id="rc-avg-nightly">Avg/Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
-                `
-            );
+            this.buildBar(prop, insertElement, insertPosition, idx);
         });
     }
 
@@ -612,5 +616,13 @@ export default class Roomcash {
         wrapper.classList.add('header-container');
         header.parentNode.insertBefore(wrapper, header);
         wrapper.appendChild(header);
+    }
+
+    roundUpValue(element) {
+        if (!document.querySelector(element)) return;
+
+        const roomcash_value = document.querySelector(element);
+        const new_val = Math.ceil(Number(roomcash_value.textContent.substring(0, roomcash_value.textContent.indexOf(' ')))).toFixed(2);
+        roomcash_value.textContent = new_val;
     }
 }

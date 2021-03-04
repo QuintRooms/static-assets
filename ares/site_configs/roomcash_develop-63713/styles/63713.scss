@@ -1166,6 +1166,10 @@ input[type="checkbox"] {
         .ArnProperty {
             padding: 10px 0;
 
+            .bookRoomCell {
+                display: none;
+            }
+
             #moreRates {
                 .ArnNightlyRate {
                     visibility: unset;
@@ -1236,13 +1240,11 @@ input[type="checkbox"] {
     }
 
     .ArnNightlyRate {
-        visibility: hidden;
         margin-bottom: 20px;
     }
 
     .no-roomCash-deal {
         .ArnNightlyRate {
-            visibility: visible;
 
             @include mobile {
                 display: block !important;
@@ -1251,6 +1253,10 @@ input[type="checkbox"] {
                 width: unset;
                 text-align: unset;
             }
+        }
+
+        .bookRoomCell {
+            display: block;
         }
 
         @include mobile {

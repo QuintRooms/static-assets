@@ -2833,7 +2833,7 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e);
                     }
-                    var t, n, o, i, c, u, l, d, m, f, p, h, y, g;
+                    var t, n, o, i, c, u, l, d, m, f, p, h, y, g, v;
                     return (
                         (t = e),
                         (n = [
@@ -2846,7 +2846,7 @@
                             {
                                 key: 'createHTML',
                                 value:
-                                    ((g = r(
+                                    ((v = r(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2867,7 +2867,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return g.apply(this, arguments);
+                                        return v.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2907,7 +2907,7 @@
                             {
                                 key: 'waitForSelectorInDOM',
                                 value:
-                                    ((y = r(
+                                    ((g = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2919,6 +2919,34 @@
                                                                     var n = setInterval(function () {
                                                                         var o = document.querySelector(t);
                                                                         if (o) return e(o), clearInterval(n), o;
+                                                                    }, 500);
+                                                                })
+                                                            );
+                                                        case 1:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e) {
+                                        return g.apply(this, arguments);
+                                    }),
+                            },
+                            {
+                                key: 'waitForSelectorToBeGone',
+                                value:
+                                    ((y = r(
+                                        regeneratorRuntime.mark(function e(t) {
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return e.abrupt(
+                                                                'return',
+                                                                new Promise(function (e) {
+                                                                    var n = setInterval(function () {
+                                                                        if (!document.querySelector(t)) return e(), clearInterval(n), !0;
                                                                     }, 500);
                                                                 })
                                                             );
@@ -3959,6 +3987,19 @@
                     );
                 });
         },
+    './node_modules/core-js/modules/_inherit-if-required.js':
+        /*!**************************************************************!*\
+  !*** ./node_modules/core-js/modules/_inherit-if-required.js ***!
+  \**************************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            var o = n(/*! ./_is-object */ './node_modules/core-js/modules/_is-object.js'),
+                r = n(/*! ./_set-proto */ './node_modules/core-js/modules/_set-proto.js').set;
+            e.exports = function (e, t, n) {
+                var s,
+                    a = t.constructor;
+                return a !== n && 'function' == typeof a && (s = a.prototype) !== n.prototype && o(s) && r && r(e, s), e;
+            };
+        },
     './node_modules/core-js/modules/_invoke.js':
         /*!*************************************************!*\
   !*** ./node_modules/core-js/modules/_invoke.js ***!
@@ -4661,6 +4702,39 @@
                     return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
                 };
         },
+    './node_modules/core-js/modules/_set-proto.js':
+        /*!****************************************************!*\
+  !*** ./node_modules/core-js/modules/_set-proto.js ***!
+  \****************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            var o = n(/*! ./_is-object */ './node_modules/core-js/modules/_is-object.js'),
+                r = n(/*! ./_an-object */ './node_modules/core-js/modules/_an-object.js'),
+                s = function (e, t) {
+                    if ((r(e), !o(t) && null !== t)) throw TypeError(t + ": can't set as prototype!");
+                };
+            e.exports = {
+                set:
+                    Object.setPrototypeOf ||
+                    ('__proto__' in {}
+                        ? (function (e, t, o) {
+                              try {
+                                  (o = n(/*! ./_ctx */ './node_modules/core-js/modules/_ctx.js')(
+                                      Function.call,
+                                      n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js').f(Object.prototype, '__proto__').set,
+                                      2
+                                  ))(e, []),
+                                      (t = !(e instanceof Array));
+                              } catch (e) {
+                                  t = !0;
+                              }
+                              return function (e, n) {
+                                  return s(e, n), t ? (e.__proto__ = n) : o(e, n), e;
+                              };
+                          })({}, !1)
+                        : void 0),
+                check: s,
+            };
+        },
     './node_modules/core-js/modules/_set-species.js':
         /*!******************************************************!*\
   !*** ./node_modules/core-js/modules/_set-species.js ***!
@@ -4793,6 +4867,38 @@
                 for (; s > 0; (s >>>= 1) && (t += t)) 1 & s && (n += t);
                 return n;
             };
+        },
+    './node_modules/core-js/modules/_string-trim.js':
+        /*!******************************************************!*\
+  !*** ./node_modules/core-js/modules/_string-trim.js ***!
+  \******************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            var o = n(/*! ./_export */ './node_modules/core-js/modules/_export.js'),
+                r = n(/*! ./_defined */ './node_modules/core-js/modules/_defined.js'),
+                s = n(/*! ./_fails */ './node_modules/core-js/modules/_fails.js'),
+                a = n(/*! ./_string-ws */ './node_modules/core-js/modules/_string-ws.js'),
+                i = '[' + a + ']',
+                c = RegExp('^' + i + i + '*'),
+                u = RegExp(i + i + '*$'),
+                l = function (e, t, n) {
+                    var r = {},
+                        i = s(function () {
+                            return !!a[e]() || '​' != '​'[e]();
+                        }),
+                        c = (r[e] = i ? t(d) : a[e]);
+                    n && (r[n] = c), o(o.P + o.F * i, 'String', r);
+                },
+                d = (l.trim = function (e, t) {
+                    return (e = String(r(e))), 1 & t && (e = e.replace(c, '')), 2 & t && (e = e.replace(u, '')), e;
+                });
+            e.exports = l;
+        },
+    './node_modules/core-js/modules/_string-ws.js':
+        /*!****************************************************!*\
+  !*** ./node_modules/core-js/modules/_string-ws.js ***!
+  \****************************************************/
+        /*! no static exports found */ function (e, t) {
+            e.exports = '\t\n\v\f\r   ᠎             　\u2028\u2029\ufeff';
         },
     './node_modules/core-js/modules/_task.js':
         /*!***********************************************!*\
@@ -5051,6 +5157,83 @@
                         },
                     }));
         },
+    './node_modules/core-js/modules/es6.number.constructor.js':
+        /*!****************************************************************!*\
+  !*** ./node_modules/core-js/modules/es6.number.constructor.js ***!
+  \****************************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            'use strict';
+            var o = n(/*! ./_global */ './node_modules/core-js/modules/_global.js'),
+                r = n(/*! ./_has */ './node_modules/core-js/modules/_has.js'),
+                s = n(/*! ./_cof */ './node_modules/core-js/modules/_cof.js'),
+                a = n(/*! ./_inherit-if-required */ './node_modules/core-js/modules/_inherit-if-required.js'),
+                i = n(/*! ./_to-primitive */ './node_modules/core-js/modules/_to-primitive.js'),
+                c = n(/*! ./_fails */ './node_modules/core-js/modules/_fails.js'),
+                u = n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f,
+                l = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js').f,
+                d = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js').f,
+                m = n(/*! ./_string-trim */ './node_modules/core-js/modules/_string-trim.js').trim,
+                f = o.Number,
+                p = f,
+                h = f.prototype,
+                y = 'Number' == s(n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js')(h)),
+                g = 'trim' in String.prototype,
+                v = function (e) {
+                    var t = i(e, !1);
+                    if ('string' == typeof t && t.length > 2) {
+                        var n,
+                            o,
+                            r,
+                            s = (t = g ? t.trim() : m(t, 3)).charCodeAt(0);
+                        if (43 === s || 45 === s) {
+                            if (88 === (n = t.charCodeAt(2)) || 120 === n) return NaN;
+                        } else if (48 === s) {
+                            switch (t.charCodeAt(1)) {
+                                case 66:
+                                case 98:
+                                    (o = 2), (r = 49);
+                                    break;
+                                case 79:
+                                case 111:
+                                    (o = 8), (r = 55);
+                                    break;
+                                default:
+                                    return +t;
+                            }
+                            for (var a, c = t.slice(2), u = 0, l = c.length; u < l; u++) if ((a = c.charCodeAt(u)) < 48 || a > r) return NaN;
+                            return parseInt(c, o);
+                        }
+                    }
+                    return +t;
+                };
+            if (!f(' 0o1') || !f('0b1') || f('+0x1')) {
+                f = function (e) {
+                    var t = arguments.length < 1 ? 0 : e,
+                        n = this;
+                    return n instanceof f &&
+                        (y
+                            ? c(function () {
+                                  h.valueOf.call(n);
+                              })
+                            : 'Number' != s(n))
+                        ? a(new p(v(t)), n, f)
+                        : v(t);
+                };
+                for (
+                    var _,
+                        j = n(/*! ./_descriptors */ './node_modules/core-js/modules/_descriptors.js')
+                            ? u(p)
+                            : 'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'.split(
+                                  ','
+                              ),
+                        b = 0;
+                    j.length > b;
+                    b++
+                )
+                    r(p, (_ = j[b])) && !r(f, _) && d(f, _, l(p, _));
+                (f.prototype = h), (h.constructor = f), n(/*! ./_redefine */ './node_modules/core-js/modules/_redefine.js')(o, 'Number', f);
+            }
+        },
     './node_modules/core-js/modules/es6.object.keys.js':
         /*!*********************************************************!*\
   !*** ./node_modules/core-js/modules/es6.object.keys.js ***!
@@ -5149,7 +5332,7 @@
                                             l = t.domain;
                                         try {
                                             i
-                                                ? (r || (2 == e._h && D(e), (e._h = 1)),
+                                                ? (r || (2 == e._h && I(e), (e._h = 1)),
                                                   !0 === i ? (n = o) : (l && l.enter(), (n = i(o)), l && (l.exit(), (a = !0))),
                                                   n === t.promise ? u(w('Promise-chain cycle')) : (s = T(n)) ? s.call(n, c, u) : c(n))
                                                 : u(o);
@@ -5191,17 +5374,17 @@
                 O = function (e) {
                     return 1 !== e._h && 0 === (e._a || e._c).length;
                 },
-                D = function (e) {
+                I = function (e) {
                     g.call(c, function () {
                         var t;
                         q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
-                H = function (e) {
+                D = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
-                I = function (e) {
+                F = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -5212,14 +5395,14 @@
                                 ? v(function () {
                                       var o = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(I, o, 1), u(H, o, 1));
+                                          t.call(e, u(F, o, 1), u(D, o, 1));
                                       } catch (e) {
-                                          H.call(o, e);
+                                          D.call(o, e);
                                       }
                                   })
                                 : ((n._v = e), (n._s = 1), P(n, !1));
                         } catch (e) {
-                            H.call({_w: n, _d: !1}, e);
+                            D.call({_w: n, _d: !1}, e);
                         }
                     }
                 };
@@ -5227,9 +5410,9 @@
                 ((M = function (e) {
                     p(this, M, 'Promise', '_h'), f(e), o.call(this);
                     try {
-                        e(u(I, this, 1), u(H, this, 1));
+                        e(u(F, this, 1), u(D, this, 1));
                     } catch (e) {
-                        H.call(this, e);
+                        D.call(this, e);
                     }
                 }),
                 ((o = function (e) {
@@ -5253,7 +5436,7 @@
                 })),
                 (s = function () {
                     var e = new o();
-                    (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(H, e, 1));
+                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
                 }),
                 (_.f = L = function (e) {
                     return e === M || e === a ? new s(e) : r(e);
@@ -5743,10 +5926,10 @@
                 P = o.Symbol,
                 R = o.JSON,
                 O = R && R.stringify,
-                D = f('_hidden'),
-                H = f('toPrimitive'),
-                I = {}.propertyIsEnumerable,
-                F = l('symbol-registry'),
+                I = f('_hidden'),
+                D = f('toPrimitive'),
+                F = {}.propertyIsEnumerable,
+                H = l('symbol-registry'),
                 B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
@@ -5772,11 +5955,11 @@
                               o && delete N[t], E(e, t, n), o && e !== N && E(N, t, o);
                           }
                         : E,
-                z = function (e) {
+                V = function (e) {
                     var t = (B[e] = x(P.prototype));
                     return (t._k = e), t;
                 },
-                V =
+                z =
                     U && 'symbol' == typeof P.iterator
                         ? function (e) {
                               return 'symbol' == typeof e;
@@ -5791,7 +5974,7 @@
                         (t = S(t, !0)),
                         v(n),
                         r(B, t)
-                            ? (n.enumerable ? (r(e, D) && e[D][t] && (e[D][t] = !1), (n = x(n, {enumerable: w(0, !1)}))) : (r(e, D) || E(e, D, w(1, {})), (e[D][t] = !0)),
+                            ? (n.enumerable ? (r(e, I) && e[I][t] && (e[I][t] = !1), (n = x(n, {enumerable: w(0, !1)}))) : (r(e, I) || E(e, I, w(1, {})), (e[I][t] = !0)),
                               G(e, t, n))
                             : E(e, t, n)
                     );
@@ -5802,17 +5985,17 @@
                     return e;
                 },
                 J = function (e) {
-                    var t = I.call(this, (e = S(e, !0)));
-                    return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, D) && this[D][e])) || t);
+                    var t = F.call(this, (e = S(e, !0)));
+                    return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, I) && this[I][e])) || t);
                 },
                 K = function (e, t) {
                     if (((e = b(e)), (t = S(t, !0)), e !== N || !r(B, t) || r(Y, t))) {
                         var n = L(e, t);
-                        return !n || !r(B, t) || (r(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                        return !n || !r(B, t) || (r(e, I) && e[I][t]) || (n.enumerable = !0), n;
                     }
                 },
                 X = function (e) {
-                    for (var t, n = T(b(e)), o = [], s = 0; n.length > s; ) r(B, (t = n[s++])) || t == D || t == c || o.push(t);
+                    for (var t, n = T(b(e)), o = [], s = 0; n.length > s; ) r(B, (t = n[s++])) || t == I || t == c || o.push(t);
                     return o;
                 },
                 ee = function (e) {
@@ -5825,9 +6008,9 @@
                         if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (n) {
-                                this === N && t.call(Y, n), r(this, D) && r(this[D], e) && (this[D][e] = !1), G(this, e, w(1, n));
+                                this === N && t.call(Y, n), r(this, I) && r(this[I], e) && (this[I][e] = !1), G(this, e, w(1, n));
                             };
-                        return s && W && G(N, e, {configurable: !0, set: t}), z(e);
+                        return s && W && G(N, e, {configurable: !0, set: t}), V(e);
                     }).prototype,
                     'toString',
                     function () {
@@ -5841,7 +6024,7 @@
                 (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && i(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
-                    return z(f(e));
+                    return V(f(e));
                 })),
                 a(a.G + a.W + a.F * !U, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -5849,11 +6032,11 @@
             for (var oe = C(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             a(a.S + a.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(F, (e += '')) ? F[e] : (F[e] = P(e));
+                    return r(H, (e += '')) ? H[e] : (H[e] = P(e));
                 },
                 keyFor: function (e) {
-                    if (!V(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in F) if (F[t] === e) return t;
+                    if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                    for (var t in H) if (H[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -5893,11 +6076,11 @@
                         {
                             stringify: function (e) {
                                 for (var t, n, o = [e], r = 1; arguments.length > r; ) o.push(arguments[r++]);
-                                if (((n = t = o[1]), (_(t) || void 0 !== e) && !V(e)))
+                                if (((n = t = o[1]), (_(t) || void 0 !== e) && !z(e)))
                                     return (
                                         g(t) ||
                                             (t = function (e, t) {
-                                                if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
+                                                if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                             }),
                                         (o[1] = t),
                                         O.apply(R, o)
@@ -5905,7 +6088,7 @@
                             },
                         }
                     ),
-                P.prototype[H] || n(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, H, P.prototype.valueOf),
+                P.prototype[D] || n(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, D, P.prototype.valueOf),
                 d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(o.JSON, 'JSON', !0);
@@ -7899,6 +8082,9 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
+                n(/*! core-js/modules/es7.array.includes */ './node_modules/core-js/modules/es7.array.includes.js'),
+                n(/*! core-js/modules/es6.string.includes */ './node_modules/core-js/modules/es6.string.includes.js'),
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
             var o = r(n(/*! ../../../js/utilities */ './js/utilities.js'));
             function r(e) {
@@ -8007,13 +8193,17 @@
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend'),
                                             document.querySelector('#moreRatesLink').addEventListener('click', function () {
-                                                e.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+                                                e.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
+                                                    u.matchMediaQuery('max-width: 560px')
+                                                        ? e.addRoomCashBar('#moreRates .rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
+                                                        : e.addRoomCashBar('#moreRates .rateRow', 'tbody tr', 'afterend');
                                             })),
                                         document.querySelector('.CheckOutForm') &&
                                             (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash:'),
                                             this.updateText('.dueNowRow th', 'Your Cash:'),
-                                            this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:')),
+                                            this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:'),
+                                            this.roundUpValue('.discount td')),
                                         document.querySelector('.ConfirmationForm') &&
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
@@ -8206,15 +8396,15 @@
                                 },
                             },
                             {
-                                key: 'addCurrency',
-                                value: function (e, t) {
-                                    var n;
-                                    return '$' ===
-                                        (n = document.querySelector('.SearchHotels')
-                                            ? t.querySelector('.arnCurrency').textContent
-                                            : (n = t.querySelector('.ArnNightlyRate').getAttribute('total')).substring(n.length - 3)) || 'USD' === n
-                                        ? '$'.concat(e)
-                                        : ''.concat(e, ' ').concat(n);
+                                key: 'getCurrency',
+                                value: function (e) {
+                                    var t;
+                                    return 'USD' ===
+                                        (t = document.querySelector('.SearchHotels')
+                                            ? e.querySelector('.arnCurrency').textContent
+                                            : (t = e.querySelector('.ArnNightlyRate').getAttribute('total')).substring(t.length - 3))
+                                        ? '$'
+                                        : ''.concat(t);
                                 },
                             },
                             {
@@ -8224,11 +8414,94 @@
                                     if (e.querySelector('.originalPrice')) {
                                         document.querySelector('.SearchHotels')
                                             ? (t = e.querySelector('.arnUnit').innerHTML)
-                                            : document.querySelector('.SinglePropDetail') && (t = e.querySelector('.ArnNightlyRate strong').innerHTML),
-                                            (t = t.substring(0, t.indexOf('<span>')));
+                                            : document.querySelector('.SinglePropDetail') &&
+                                              ((t = (t = e.querySelector('.ArnNightlyRate').getAttribute('total')).substring(0, t.indexOf(' '))), console.log('your cash: ', t)),
+                                            t.includes('<span>') && (t = t.substring(0, t.indexOf('<span>')));
                                         var n = e.querySelector('.originalPrice').getAttribute('amount'),
                                             o = e.querySelector('.originalPrice').getAttribute('percent');
-                                        return (n = this.removeCurrency(n, e)), {yc: (t = this.addCurrency(t, e)), rc: n, rc_width: o};
+                                        n = this.removeCurrency(n, e);
+                                        var r = this.getCurrency(e);
+                                        return {yc: t, rc: Math.ceil(Number(n)).toFixed(2), rc_width: o, currency: r};
+                                    }
+                                },
+                            },
+                            {
+                                key: 'buildBar',
+                                value: function (e, t, n, o) {
+                                    var r,
+                                        s = this.getValues(e),
+                                        a = ''.concat(o, '-').concat(Math.floor(9e4 * Math.random()) + 1e4);
+                                    if (e.querySelector('.ArnLimitedAvail'))
+                                        return (e.querySelector('.ArnRateCell').style.display = 'unset'), void (e.querySelector('.ArnRateButton').style.display = 'none');
+                                    if ((console.log('value: ', s), s))
+                                        if (s.yc && s.rc && s.rc_width && s.currency) {
+                                            if (
+                                                (document.querySelector('.SearchHotels')
+                                                    ? (r = '\n            <div class="roomcash-scale-container" id="rc-'
+                                                          .concat(
+                                                              a,
+                                                              '">\n                <div id="roomcash-bar-container">\n                    <span class="bar"></span>\n                </div>\n            <div class="container-lower">\n                <div class="roomcash-amount">     \n                    <div class="cash-text">\n                        <span class="rc-value">$'
+                                                          )
+                                                          .concat(
+                                                              s.rc,
+                                                              '</span>\n                        <p>RoomCash</p>\n                    </div>\n                </div>\n                <div class="your-cash-amount">      \n                    <div class="cash-text">\n                        <span class="yc-value">'
+                                                          )
+                                                          .concat(s.currency)
+                                                          .concat(
+                                                              s.yc,
+                                                              '</span>\n                        <p>Your Cash</p>\n                    </div>\n                </div>\n                </div>\n            </div>'
+                                                          ))
+                                                    : document.querySelector('.SinglePropDetail') &&
+                                                      (r = '\n            <tr colspan="2">\n                <td colspan="2">\n                    <div class="prop-detail-lower">\n                        <div class="roomcash-scale-container" id="rc-'
+                                                          .concat(
+                                                              a,
+                                                              '">\n                            <div class="container-lower">\n                                <div class="roomcash-amount">     \n                                    <div class="cash-text">\n                                        <span class="rc-value">$'
+                                                          )
+                                                          .concat(
+                                                              s.rc,
+                                                              '</span>\n                                        <p>RoomCash</p>\n                                    </div>\n                                </div>\n                                <div class="your-cash-amount">      \n                                    <div class="cash-text">\n                                        <span class="yc-value">'
+                                                          )
+                                                          .concat(s.currency)
+                                                          .concat(
+                                                              s.yc,
+                                                              '</span>\n                                        <p>Your Cash</p>\n                                    </div>\n                                </div>\n                            </div>\n                            <div id="roomcash-bar-container">\n                                <span class="bar"></span>\n                            </div>\n                        </div>\n                        <div class="book"></div>\n                    </div>\n                </td>\n            </tr>'
+                                                          )),
+                                                e.querySelector(t).insertAdjacentHTML(n, r),
+                                                u.addToolTip(
+                                                    '#rc-'.concat(a, ' .roomcash-amount p'),
+                                                    'beforeend',
+                                                    'Maximum amount of your RoomCash we can apply',
+                                                    '?',
+                                                    '#fff',
+                                                    '#000'
+                                                ),
+                                                u.addToolTip('#rc-'.concat(a, ' .your-cash-amount p'), 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000'),
+                                                document.querySelector('.SinglePropDetail'))
+                                            ) {
+                                                var i = e.querySelector('.bookRoom'),
+                                                    c = e.querySelector('.ArnRateCancelAnchor');
+                                                e.querySelector('.book').insertAdjacentElement('afterbegin', i),
+                                                    e.querySelector('.book').insertAdjacentElement('beforeend', c),
+                                                    this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
+                                            }
+                                            if (document.querySelector('.SearchHotels')) {
+                                                var l = e.querySelector('.ArnRateButton');
+                                                e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', l),
+                                                    e
+                                                        .querySelector('.ArnRateButton')
+                                                        .insertAdjacentHTML(
+                                                            'afterend',
+                                                            '\n            <div id="rc-avg-nightly">Avg/Night: <span>'.concat(
+                                                                e.querySelector('.averageNightly').textContent,
+                                                                '</span></div>\n            '
+                                                            )
+                                                        );
+                                            }
+                                        } else console.error('There was an issue with one or more RoomCash values for the following: '.concat(e));
+                                    else {
+                                        if ((e.classList.add('no-roomCash-deal'), !e.querySelector('.RateCalendarPopupAnchor'))) return;
+                                        var d = e.querySelector('.RateCalendarPopupAnchor');
+                                        e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', d);
                                     }
                                 },
                             },
@@ -8243,120 +8516,19 @@
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
                                                             if (!document.querySelector('.SearchHotels')) {
-                                                                e.next = 3;
+                                                                e.next = 5;
                                                                 break;
                                                             }
                                                             return (e.next = 3), u.waitForSelectorInDOM('.pollingFinished');
                                                         case 3:
-                                                            return (e.next = 5), u.waitForSelectorInDOM(n);
+                                                            return (e.next = 5), u.waitForSelectorToBeGone('.searchingRates');
                                                         case 5:
-                                                            document.querySelectorAll(t).forEach(function (e, t) {
-                                                                var s,
-                                                                    a,
-                                                                    i = r.getValues(e);
-                                                                if (e.querySelector('.ArnLimitedAvail'))
-                                                                    return (
-                                                                        (e.querySelector('.ArnRateCell').style.display = 'unset'),
-                                                                        void (e.querySelector('.ArnRateButton').style.display = 'none')
-                                                                    );
-                                                                if (i) {
-                                                                    if (i.yc && i.rc && i.rc_width) {
-                                                                        document.querySelector('.SearchHotels')
-                                                                            ? ('for 1 nights' === (a = e.querySelector('.arnUnit span').textContent.trim()) &&
-                                                                                  (a = a.substring(0, a.length - 1)),
-                                                                              (s = '\n                <div class="roomcash-scale-container" id="rc-'
-                                                                                  .concat(
-                                                                                      t,
-                                                                                      '">\n                    <div id="roomcash-bar-container">\n                        <span class="bar"></span>\n                    </div>\n                <div class="container-lower">\n                    <div class="roomcash-amount">     \n                        <div class="cash-text">\n                            <span class="rc-value">$'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      i.rc,
-                                                                                      '</span>\n                            <p>RoomCash</p>\n                            <p class="nights">('
-                                                                                  )
-                                                                                  .concat(
-                                                                                      a,
-                                                                                      ')</p>\n                        </div>\n                    </div>\n                    <div class="your-cash-amount">      \n                        <div class="cash-text">\n                            <span class="yc-value">'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      i.yc,
-                                                                                      '</span>\n                            <p>Your Cash</p>\n                            <p class="nights">('
-                                                                                  )
-                                                                                  .concat(
-                                                                                      a,
-                                                                                      ')</p>\n                        </div>\n                    </div>\n                    </div>\n                </div>'
-                                                                                  )))
-                                                                            : document.querySelector('.SinglePropDetail') &&
-                                                                              ('for 1 nights' === (a = document.querySelector('.ArnNightlyRate strong span').textContent.trim()) &&
-                                                                                  (a = a.substring(0, a.length - 1)),
-                                                                              (s = '\n                <tr colspan="2">\n                    <td colspan="2">\n                        <div class="prop-detail-lower">\n                            <div class="roomcash-scale-container" id="rc-'
-                                                                                  .concat(
-                                                                                      t,
-                                                                                      '">\n                                <div class="container-lower">\n                                    <div class="roomcash-amount">     \n                                        <div class="cash-text">\n                                            <span class="rc-value">$'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      i.rc,
-                                                                                      '</span>\n                                            <p>RoomCash</p>\n                                            <p class="nights">('
-                                                                                  )
-                                                                                  .concat(
-                                                                                      a,
-                                                                                      ')</p>\n                                        </div>\n                                    </div>\n                                    <div class="your-cash-amount">      \n                                        <div class="cash-text">\n                                            <span class="yc-value">'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      i.yc,
-                                                                                      '</span>\n                                            <p>Your Cash</p>\n                                            <p class="nights">('
-                                                                                  )
-                                                                                  .concat(
-                                                                                      a,
-                                                                                      ')</p>\n                                        </div>\n                                    </div>\n                                </div>\n                                <div id="roomcash-bar-container">\n                                    <span class="bar"></span>\n                                </div>\n                            </div>\n                            <div class="book"></div>\n                        </div>\n                    </td>\n                </tr>'
-                                                                                  )));
-                                                                        var c = document.querySelector('.SearchHotels') ? ''.concat(e.id) : 'rc-'.concat(t);
-                                                                        if (
-                                                                            (e.querySelector(n).insertAdjacentHTML(o, s),
-                                                                            u.addToolTip(
-                                                                                '#'.concat(c, ' .roomcash-amount p'),
-                                                                                'beforeend',
-                                                                                'Maximum amount of your RoomCash we can apply',
-                                                                                '?',
-                                                                                '#fff',
-                                                                                '#000'
-                                                                            ),
-                                                                            u.addToolTip(
-                                                                                '#'.concat(c, ' .your-cash-amount p'),
-                                                                                'beforeend',
-                                                                                'How much of your cash is needed',
-                                                                                '?',
-                                                                                '#fff',
-                                                                                '#000'
-                                                                            ),
-                                                                            document.querySelector('.SinglePropDetail'))
-                                                                        ) {
-                                                                            var l = e.querySelector('.bookRoom'),
-                                                                                d = e.querySelector('.ArnRateCancelAnchor');
-                                                                            e.querySelector('.book').insertAdjacentElement('afterbegin', l),
-                                                                                e.querySelector('.book').insertAdjacentElement('beforeend', d),
-                                                                                r.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
-                                                                        }
-                                                                        if (document.querySelector('.SearchHotels')) {
-                                                                            var m = e.querySelector('.ArnRateButton');
-                                                                            e.querySelector('.ArnPropName').insertAdjacentElement('beforeend', m),
-                                                                                e
-                                                                                    .querySelector('.ArnRateButton')
-                                                                                    .insertAdjacentHTML(
-                                                                                        'afterend',
-                                                                                        '\n                <div id="rc-avg-nightly">Avg/Night: <span>'.concat(
-                                                                                            e.querySelector('.averageNightly').textContent,
-                                                                                            '</span></div>\n                '
-                                                                                        )
-                                                                                    );
-                                                                        }
-                                                                    }
-                                                                } else {
-                                                                    if ((e.classList.add('no-roomCash-deal'), !e.querySelector('.RateCalendarPopupAnchor'))) return;
-                                                                    var f = e.querySelector('.RateCalendarPopupAnchor');
-                                                                    e.querySelector('.ArnRateCancelAnchor').insertAdjacentElement('afterend', f);
-                                                                }
-                                                            });
+                                                            return (e.next = 7), u.waitForSelectorInDOM(n);
                                                         case 7:
+                                                            document.querySelectorAll(t).forEach(function (e, t) {
+                                                                r.buildBar(e, n, o, t);
+                                                            });
+                                                        case 9:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -8639,6 +8811,16 @@
                                     function () {
                                         return r.apply(this, arguments);
                                     }),
+                            },
+                            {
+                                key: 'roundUpValue',
+                                value: function (e) {
+                                    if (document.querySelector(e)) {
+                                        var t = document.querySelector(e),
+                                            n = Math.ceil(Number(t.textContent.substring(0, t.textContent.indexOf(' ')))).toFixed(2);
+                                        t.textContent = n;
+                                    }
+                                },
                             },
                         ]) && i(t.prototype, n),
                         o && i(t, o),

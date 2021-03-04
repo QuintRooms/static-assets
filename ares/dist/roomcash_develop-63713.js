@@ -8415,7 +8415,7 @@
                                         document.querySelector('.SearchHotels')
                                             ? (t = e.querySelector('.arnUnit').innerHTML)
                                             : document.querySelector('.SinglePropDetail') &&
-                                              ((t = (t = e.querySelector('.ArnNightlyRate').getAttribute('total')).substring(0, t.indexOf(' '))), console.log('your cash: ', t)),
+                                              (t = (t = e.querySelector('.ArnNightlyRate').getAttribute('total')).substring(0, t.indexOf(' '))),
                                             t.includes('<span>') && (t = t.substring(0, t.indexOf('<span>')));
                                         var n = e.querySelector('.originalPrice').getAttribute('amount'),
                                             o = e.querySelector('.originalPrice').getAttribute('percent');
@@ -8433,7 +8433,7 @@
                                         a = ''.concat(o, '-').concat(Math.floor(9e4 * Math.random()) + 1e4);
                                     if (e.querySelector('.ArnLimitedAvail'))
                                         return (e.querySelector('.ArnRateCell').style.display = 'unset'), void (e.querySelector('.ArnRateButton').style.display = 'none');
-                                    if ((console.log('value: ', s), s))
+                                    if (s)
                                         if (s.yc && s.rc && s.rc_width && s.currency) {
                                             if (
                                                 (document.querySelector('.SearchHotels')
@@ -8470,12 +8470,19 @@
                                                 u.addToolTip(
                                                     '#rc-'.concat(a, ' .roomcash-amount p'),
                                                     'beforeend',
-                                                    'Maximum amount of your RoomCash we can apply',
+                                                    'Maximum amount of your RoomCash we can apply.',
                                                     '?',
                                                     '#fff',
                                                     '#000'
                                                 ),
-                                                u.addToolTip('#rc-'.concat(a, ' .your-cash-amount p'), 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000'),
+                                                u.addToolTip(
+                                                    '#rc-'.concat(a, ' .your-cash-amount p'),
+                                                    'beforeend',
+                                                    "How much you'll pay when you book today.",
+                                                    '?',
+                                                    '#fff',
+                                                    '#000'
+                                                ),
                                                 document.querySelector('.SinglePropDetail'))
                                             ) {
                                                 var i = e.querySelector('.bookRoom'),

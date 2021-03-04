@@ -8189,6 +8189,7 @@
                                         document.querySelector('.SinglePropDetail') &&
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
+                                            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend'),
@@ -8487,9 +8488,7 @@
                                             ) {
                                                 var i = e.querySelector('.bookRoom'),
                                                     c = e.querySelector('.ArnRateCancelAnchor');
-                                                e.querySelector('.book').insertAdjacentElement('afterbegin', i),
-                                                    e.querySelector('.book').insertAdjacentElement('beforeend', c),
-                                                    this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
+                                                e.querySelector('.book').insertAdjacentElement('afterbegin', i), e.querySelector('.book').insertAdjacentElement('beforeend', c);
                                             }
                                             if (document.querySelector('.SearchHotels')) {
                                                 var l = e.querySelector('.ArnRateButton');

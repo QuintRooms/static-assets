@@ -1238,9 +1238,6 @@ input[type=checkbox] {
     text-align: unset;
   }
 }
-.SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .bookRoomCell {
-  display: block;
-}
 @media (max-width: 600px) {
   .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .RateCalendarPopupAnchor {
     text-align: center;

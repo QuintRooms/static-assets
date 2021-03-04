@@ -437,11 +437,8 @@ export default class Roomcash {
         if (document.querySelector('.SinglePropDetail')) {
             const book_room = prop.querySelector('.bookRoom');
             const cancel = prop.querySelector('.ArnRateCancelAnchor');
-            // const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
             prop.querySelector('.book').insertAdjacentElement('afterbegin', book_room);
             prop.querySelector('.book').insertAdjacentElement('beforeend', cancel);
-            // prop.querySelector('.book').insertAdjacentElement('beforeend', daily_rates);
-            // this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
         }
 
         // Moves Book button
@@ -624,8 +621,6 @@ export default class Roomcash {
         if (!document.querySelector(element)) return;
 
         const roomcash_value = document.querySelector(element).textContent.split(' ');
-        console.log(roomcash_value);
-        roomcash_value.textContent = `${Math.ceil(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
-        console.log(roomcash_value.textContent);
+        document.querySelector(element).textContent = `${Math.ceil(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
     }
 }

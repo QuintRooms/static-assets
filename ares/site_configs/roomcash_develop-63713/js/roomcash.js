@@ -99,20 +99,22 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
-            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
             if (utilities.matchMediaQuery('max-width: 560px')) {
                 this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
             } else {
                 this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend');
             }
             document.querySelector('#moreRatesLink').addEventListener('click', () => {
-                this.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
                 if (utilities.matchMediaQuery('max-width: 560px')) {
                     this.addRoomCashBar('#moreRates .rateRow', 'tbody tr td.bookRoomCell', 'beforebegin');
                 } else {
                     this.addRoomCashBar('#moreRates .rateRow', 'tbody tr', 'afterend');
                 }
+                if (!document.querySelector('.RateCalendarPopupAnchor')) return;
+                this.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
             });
+            if (!document.querySelector('.RateCalendarPopupAnchor')) return;
+            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
         }
 
         // Checkout Page
@@ -621,8 +623,8 @@ export default class Roomcash {
     roundUpValue(element) {
         if (!document.querySelector(element)) return;
 
-        const roomcash_value = document.querySelector(element);
-        const new_val = Math.ceil(Number(roomcash_value.textContent.substring(0, roomcash_value.textContent.indexOf(' ')))).toFixed(2);
-        roomcash_value.textContent = new_val;
+        const roomcash_value = document.querySelector(element).textContent.split(' ');
+
+        roomcash_value.textContent = `${Math.ceil(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
     }
 }

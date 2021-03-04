@@ -1227,6 +1227,17 @@ input[type=checkbox] {
 .SinglePropDetail .ArnRightListContainer .ArnProperty {
   padding: 10px 0;
 }
+@media (max-width: 600px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal tbody > tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal tbody > tr > td:first-child {
+    width: 100%;
+    padding-right: 0;
+  }
+}
 .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .ArnNightlyRate {
   visibility: unset;
 }
@@ -1286,7 +1297,7 @@ input[type=checkbox] {
 }
 @media (max-width: 560px) {
   .SinglePropDetail .bookRoomCell {
-    display: unset;
+    display: none;
   }
   .SinglePropDetail .bookRoomCell .ArnNightlyRate {
     display: none;

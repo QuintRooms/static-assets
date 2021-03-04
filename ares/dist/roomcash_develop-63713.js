@@ -8832,7 +8832,7 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
-                                        t.textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
+                                        console.log(t), (t.textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1])), console.log(t.textContent);
                                     }
                                 },
                             },

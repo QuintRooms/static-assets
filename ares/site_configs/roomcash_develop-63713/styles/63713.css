@@ -1299,6 +1299,9 @@ input[type=checkbox] {
   .SinglePropDetail .bookRoomCell {
     display: none;
   }
+  .SinglePropDetail .no-roomCash-deal .bookRoomCell {
+    display: block;
+  }
 }
 @media (max-width: 560px) {
   .SinglePropDetail .bookRoomCell {

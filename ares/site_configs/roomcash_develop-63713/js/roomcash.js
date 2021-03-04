@@ -624,7 +624,8 @@ export default class Roomcash {
         if (!document.querySelector(element)) return;
 
         const roomcash_value = document.querySelector(element).textContent.split(' ');
-
+        console.log(roomcash_value);
         roomcash_value.textContent = `${Math.ceil(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
+        console.log(roomcash_value.textContent);
     }
 }

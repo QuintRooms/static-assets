@@ -340,7 +340,6 @@ export default class Roomcash {
         } else if (document.querySelector('.SinglePropDetail')) {
             your_cash = property.querySelector('.ArnNightlyRate').getAttribute('total');
             your_cash = your_cash.substring(0, your_cash.indexOf(' '));
-            console.log('your cash: ', your_cash);
         }
         if (your_cash.includes('<span>')) {
             your_cash = your_cash.substring(0, your_cash.indexOf('<span>'));
@@ -363,7 +362,6 @@ export default class Roomcash {
             prop.querySelector('.ArnRateButton').style.display = 'none';
             return;
         }
-        console.log('value: ', values);
         if (!values) {
             prop.classList.add('no-roomCash-deal');
             if (!prop.querySelector('.RateCalendarPopupAnchor')) return;
@@ -427,12 +425,11 @@ export default class Roomcash {
             </tr>`;
         }
 
-        // const selector = document.querySelector('.SearchHotels') ? `${prop.id}` : `rc-${idx}`;
         prop.querySelector(insertElement).insertAdjacentHTML(insertPosition, html);
 
         // add tooltip
-        utilities.addToolTip(`#rc-${rc_id} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply', '?', '#fff', '#000');
-        utilities.addToolTip(`#rc-${rc_id} .your-cash-amount p`, 'beforeend', 'How much of your cash is needed', '?', '#fff', '#000');
+        utilities.addToolTip(`#rc-${rc_id} .roomcash-amount p`, 'beforeend', 'Maximum amount of your RoomCash we can apply.', '?', '#fff', '#000');
+        utilities.addToolTip(`#rc-${rc_id} .your-cash-amount p`, 'beforeend', `How much you'll pay when you book today.`, '?', '#fff', '#000');
 
         if (document.querySelector('.SinglePropDetail')) {
             const book_room = prop.querySelector('.bookRoom');

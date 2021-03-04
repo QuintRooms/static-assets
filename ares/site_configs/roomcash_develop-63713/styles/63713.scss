@@ -1170,6 +1170,30 @@ input[type="checkbox"] {
                 display: none;
             }
 
+            .no-roomCash-deal {
+                .ArnNightlyRate {
+        
+                    @include mobile {
+                        display: block !important;
+                        margin: 20px 0
+                        ;
+                        width: unset;
+                        text-align: unset;
+                    }
+                }
+        
+                .bookRoomCell {
+                    display: block;
+                }
+        
+                @include mobile {
+                    
+                    .RateCalendarPopupAnchor {
+                        text-align: center;
+                    }
+                }
+            }
+
             #moreRates {
                 .ArnNightlyRate {
                     visibility: unset;
@@ -1242,31 +1266,6 @@ input[type="checkbox"] {
     .ArnNightlyRate {
         margin-bottom: 20px;
     }
-
-    .no-roomCash-deal {
-        .ArnNightlyRate {
-
-            @include mobile {
-                display: block !important;
-                margin: 20px 0
-                ;
-                width: unset;
-                text-align: unset;
-            }
-        }
-
-        .bookRoomCell {
-            display: block;
-        }
-
-        @include mobile {
-            
-            .RateCalendarPopupAnchor {
-                text-align: center;
-            }
-        }
-    }
-
 
     .prop-detail-lower {
         display: flex;

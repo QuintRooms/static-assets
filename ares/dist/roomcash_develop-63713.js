@@ -8082,6 +8082,7 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'),
                 n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
                 n(/*! core-js/modules/es7.array.includes */ './node_modules/core-js/modules/es7.array.includes.js'),
                 n(/*! core-js/modules/es6.string.includes */ './node_modules/core-js/modules/es6.string.includes.js'),
@@ -8142,9 +8143,10 @@
                                 key: 'init',
                                 value: function () {
                                     var e = this;
-                                    document.querySelector('.MemberAuthenticated') &&
-                                        document.querySelector('meta[name="userPoints"]') &&
-                                        (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
+                                    if (
+                                        (document.querySelector('.MemberAuthenticated') &&
+                                            document.querySelector('meta[name="userPoints"]') &&
+                                            (this.user_points = document.querySelector('meta[name="userPoints"]').getAttribute('content')),
                                         this.wrapHeader(),
                                         this.insertContent([
                                             {
@@ -8186,25 +8188,32 @@
                                             this.addRoomCashBar('.ArnProperty', '.ArnPropDescription', 'afterend'),
                                             this.buildSortSelectMenu(),
                                             this.resizeMap()),
-                                        document.querySelector('.SinglePropDetail') &&
+                                        document.querySelector('.SinglePropDetail'))
+                                    ) {
+                                        if (
                                             (this.buildFooterMenu('.PropDetailView', 'afterend'),
                                             this.insertContent([{element: '.ArnRightListContainer', position: 'afterbegin', html: this.sub_header_container}]),
-                                            this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
                                             u.matchMediaQuery('max-width: 560px')
                                                 ? this.addRoomCashBar('.rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
                                                 : this.addRoomCashBar('.rateRow', 'tbody tr', 'afterend'),
                                             document.querySelector('#moreRatesLink').addEventListener('click', function () {
-                                                e.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor'),
-                                                    u.matchMediaQuery('max-width: 560px')
-                                                        ? e.addRoomCashBar('#moreRates .rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
-                                                        : e.addRoomCashBar('#moreRates .rateRow', 'tbody tr', 'afterend');
-                                            })),
-                                        document.querySelector('.CheckOutForm') &&
-                                            (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
-                                            this.updateText('.discount th', 'RoomCash:'),
-                                            this.updateText('.dueNowRow th', 'Your Cash:'),
-                                            this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:'),
-                                            this.roundUpValue('.discount td')),
+                                                u.matchMediaQuery('max-width: 560px')
+                                                    ? e.addRoomCashBar('#moreRates .rateRow', 'tbody tr td.bookRoomCell', 'beforebegin')
+                                                    : e.addRoomCashBar('#moreRates .rateRow', 'tbody tr', 'afterend'),
+                                                    document.querySelector('.RateCalendarPopupAnchor') &&
+                                                        e.moveElements('#moreRates .rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+                                            }),
+                                            !document.querySelector('.RateCalendarPopupAnchor'))
+                                        )
+                                            return;
+                                        this.moveElements('.rateRow', '.ArnRateCancelAnchor', 'afterend', '.RateCalendarPopupAnchor');
+                                    }
+                                    document.querySelector('.CheckOutForm') &&
+                                        (this.buildFooterMenu('#theReservationFormContainer', 'afterend'),
+                                        this.updateText('.discount th', 'RoomCash:'),
+                                        this.updateText('.dueNowRow th', 'Your Cash:'),
+                                        this.updateText('#theRateSummaryInfo div', 'Per room nightly rates:'),
+                                        this.roundUpValue('.discount td')),
                                         document.querySelector('.ConfirmationForm') &&
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
@@ -8822,9 +8831,8 @@
                                 key: 'roundUpValue',
                                 value: function (e) {
                                     if (document.querySelector(e)) {
-                                        var t = document.querySelector(e),
-                                            n = Math.ceil(Number(t.textContent.substring(0, t.textContent.indexOf(' ')))).toFixed(2);
-                                        t.textContent = n;
+                                        var t = document.querySelector(e).textContent.split(' ');
+                                        t.textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
                                     }
                                 },
                             },

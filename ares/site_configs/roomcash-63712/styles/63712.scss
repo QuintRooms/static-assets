@@ -14,7 +14,7 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #000;
 $button_hover_border_color: #CC9831;
 $google_font_name: 'Montserrat';
-$site_name: 'roomcash-63712';
+$site_name: 'roomcash_develop-63713';
 $path: set-path($env);
 $banner_image: #EBEBEB;
 $heading_weight: 700;
@@ -77,6 +77,12 @@ input[type="checkbox"] {
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+
+/* - - - - Development site text - - - - */
+
+#develop-messaging {
+    text-align: center;
+}
 
 /* - - - - - - - - Header - - - - - - - - */
 .header-container {
@@ -1160,9 +1166,41 @@ input[type="checkbox"] {
         .ArnProperty {
             padding: 10px 0;
 
-            #moreRates {
+            .no-roomCash-deal {
+                @include mobile {
+                    tbody > tr {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    tbody > tr > td:first-child {
+                        width: 100%;
+                        padding-right: 0;
+                    }
+                }
+
                 .ArnNightlyRate {
                     visibility: unset;
+                    @include mobile {
+                        display: block !important;
+                        margin: 20px 0
+                        ;
+                        width: unset;
+                        text-align: unset;
+                    }
+                }
+        
+                @include mobile {
+                    
+                    .RateCalendarPopupAnchor {
+                        text-align: center;
+                    }
+                }
+            }
+
+            #moreRates {
+                .ArnNightlyRate {
                     @media (max-width: 560px) {
                         display: block !important;
                         text-align: center;
@@ -1216,9 +1254,18 @@ input[type="checkbox"] {
         display: none !important;
     }
 
+    @include mobile {
+        .bookRoomCell {
+            display: none;
+        }
+        .no-roomCash-deal .bookRoomCell {
+            display: block;
+        }
+    }
+
     @media (max-width: 560px) {
         .bookRoomCell {
-            display: unset;
+            display: none;
             
             .ArnNightlyRate {
                 display: none;
@@ -1227,34 +1274,16 @@ input[type="checkbox"] {
         .bookRoom {
             align-self: end;
         }
+
+        .no-roomCash-deal .bookRoomCell {
+            display: block;
+        }
     }
 
     .ArnNightlyRate {
         visibility: hidden;
         margin-bottom: 20px;
     }
-
-    .no-roomCash-deal {
-        .ArnNightlyRate {
-            visibility: visible;
-
-            @include mobile {
-                display: block !important;
-                margin: 20px 0
-                ;
-                width: unset;
-                text-align: unset;
-            }
-        }
-
-        @include mobile {
-            
-            .RateCalendarPopupAnchor {
-                text-align: center;
-            }
-        }
-    }
-
 
     .prop-detail-lower {
         display: flex;
@@ -1322,10 +1351,6 @@ input[type="checkbox"] {
 /* - - - - - - - - Checkout Page - - - - - - - - */
 
 .CheckOutForm, .ConfirmationForm {
-
-    .printReceipt {
-        display: none !important;
-    }
 
     .resConfirmationButton {
         text-align: center;
@@ -1573,10 +1598,6 @@ body.WBSupportForm {
 .WBResendOrCancelForm {
     h1 {
         text-align: center;
-    }
-
-    .ResendGuestReceiptEmailAction {
-        display: none;
     }
 
     .ArnSubPage {

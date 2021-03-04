@@ -307,6 +307,11 @@ input[type=checkbox] {
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
 /* - - - - - - - Components Start  - - - - - - - */
 /* - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | */
+/* - - - - Development site text - - - - */
+#develop-messaging {
+  text-align: center;
+}
+
 /* - - - - - - - - Header - - - - - - - - */
 .header-container {
   background-color: #000;
@@ -1222,8 +1227,32 @@ input[type=checkbox] {
 .SinglePropDetail .ArnRightListContainer .ArnProperty {
   padding: 10px 0;
 }
-.SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .ArnNightlyRate {
+@media (max-width: 600px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal tbody > tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal tbody > tr > td:first-child {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .ArnNightlyRate {
   visibility: unset;
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .ArnNightlyRate {
+    display: block !important;
+    margin: 20px 0;
+    width: unset;
+    text-align: unset;
+  }
+}
+@media (max-width: 600px) {
+  .SinglePropDetail .ArnRightListContainer .ArnProperty .no-roomCash-deal .RateCalendarPopupAnchor {
+    text-align: center;
+  }
 }
 @media (max-width: 560px) {
   .SinglePropDetail .ArnRightListContainer .ArnProperty #moreRates .ArnNightlyRate {
@@ -1266,9 +1295,17 @@ input[type=checkbox] {
 .SinglePropDetail .percentSavings {
   display: none !important;
 }
+@media (max-width: 600px) {
+  .SinglePropDetail .bookRoomCell {
+    display: none;
+  }
+  .SinglePropDetail .no-roomCash-deal .bookRoomCell {
+    display: block;
+  }
+}
 @media (max-width: 560px) {
   .SinglePropDetail .bookRoomCell {
-    display: unset;
+    display: none;
   }
   .SinglePropDetail .bookRoomCell .ArnNightlyRate {
     display: none;
@@ -1276,26 +1313,13 @@ input[type=checkbox] {
   .SinglePropDetail .bookRoom {
     align-self: end;
   }
+  .SinglePropDetail .no-roomCash-deal .bookRoomCell {
+    display: block;
+  }
 }
 .SinglePropDetail .ArnNightlyRate {
   visibility: hidden;
   margin-bottom: 20px;
-}
-.SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
-  visibility: visible;
-}
-@media (max-width: 600px) {
-  .SinglePropDetail .no-roomCash-deal .ArnNightlyRate {
-    display: block !important;
-    margin: 20px 0;
-    width: unset;
-    text-align: unset;
-  }
-}
-@media (max-width: 600px) {
-  .SinglePropDetail .no-roomCash-deal .RateCalendarPopupAnchor {
-    text-align: center;
-  }
 }
 .SinglePropDetail .prop-detail-lower {
   display: flex;
@@ -1351,9 +1375,6 @@ input[type=checkbox] {
 }
 
 /* - - - - - - - - Checkout Page - - - - - - - - */
-.CheckOutForm .printReceipt, .ConfirmationForm .printReceipt {
-  display: none !important;
-}
 .CheckOutForm .resConfirmationButton, .ConfirmationForm .resConfirmationButton {
   text-align: center;
 }
@@ -1549,9 +1570,6 @@ body.WBSupportForm .ArnSupportChatTable {
 /* - - - - - - - - Cancel/modify Page - - - - - - - - */
 .WBResendOrCancelForm h1 {
   text-align: center;
-}
-.WBResendOrCancelForm .ResendGuestReceiptEmailAction {
-  display: none;
 }
 .WBResendOrCancelForm .ArnSubPage {
   background: #fff;

@@ -437,11 +437,8 @@ export default class Roomcash {
         if (document.querySelector('.SinglePropDetail')) {
             const book_room = prop.querySelector('.bookRoom');
             const cancel = prop.querySelector('.ArnRateCancelAnchor');
-            // const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
             prop.querySelector('.book').insertAdjacentElement('afterbegin', book_room);
             prop.querySelector('.book').insertAdjacentElement('beforeend', cancel);
-            // prop.querySelector('.book').insertAdjacentElement('beforeend', daily_rates);
-            // this.moveElements('.rateRow', '.book', 'beforeend', '.RateCalendarPopupAnchor');
         }
 
         // Moves Book button

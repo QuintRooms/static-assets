@@ -1295,6 +1295,11 @@ input[type=checkbox] {
 .SinglePropDetail .percentSavings {
   display: none !important;
 }
+@media (max-width: 600px) {
+  .SinglePropDetail .bookRoomCell {
+    display: none;
+  }
+}
 @media (max-width: 560px) {
   .SinglePropDetail .bookRoomCell {
     display: none;
@@ -1304,6 +1309,9 @@ input[type=checkbox] {
   }
   .SinglePropDetail .bookRoom {
     align-self: end;
+  }
+  .SinglePropDetail .no-roomCash-deal .bookRoomCell {
+    display: block;
   }
 }
 .SinglePropDetail .ArnNightlyRate {

@@ -1254,6 +1254,12 @@ input[type="checkbox"] {
         display: none !important;
     }
 
+    @include mobile {
+        .bookRoomCell {
+            display: none;
+        }
+    }
+
     @media (max-width: 560px) {
         .bookRoomCell {
             display: none;
@@ -1264,6 +1270,10 @@ input[type="checkbox"] {
         }
         .bookRoom {
             align-self: end;
+        }
+
+        .no-roomCash-deal .bookRoomCell {
+            display: block;
         }
     }
 

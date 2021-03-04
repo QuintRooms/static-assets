@@ -620,8 +620,9 @@ export default class Roomcash {
         wrapper.appendChild(header);
     }
 
-    roundUpValue(element) {
-        if (!document.querySelector(element)) return;
+    async roundUpValue(element) {
+        console.log('running');
+        await utilities.waitForSelectorInDOM(element);
 
         const roomcash_value = document.querySelector(element).textContent.split(' ');
         console.log(roomcash_value);

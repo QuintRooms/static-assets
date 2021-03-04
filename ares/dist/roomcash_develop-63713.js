@@ -8135,7 +8135,7 @@
                                 '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h, y, g, v;
+                    var t, n, o, r, s, l, d, m, f, p, h, y, g, v, _;
                     return (
                         (t = e),
                         (n = [
@@ -8237,7 +8237,7 @@
                             {
                                 key: 'resizeMap',
                                 value:
-                                    ((v = a(
+                                    ((_ = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8266,7 +8266,7 @@
                                         })
                                     )),
                                     function () {
-                                        return v.apply(this, arguments);
+                                        return _.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8311,7 +8311,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((g = a(
+                                    ((v = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8362,7 +8362,7 @@
                                         })
                                     )),
                                     function () {
-                                        return g.apply(this, arguments);
+                                        return v.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8523,7 +8523,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((y = a(
+                                    ((g = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8551,7 +8551,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return y.apply(this, arguments);
+                                        return g.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8563,7 +8563,7 @@
                             {
                                 key: 'setUpListener',
                                 value:
-                                    ((h = a(
+                                    ((y = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             var o,
                                                 r = this;
@@ -8584,13 +8584,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSortSelectMenu',
                                 value:
-                                    ((p = a(
+                                    ((h = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(
@@ -8632,13 +8632,13 @@
                                         })
                                     )),
                                     function () {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveCurrency',
                                 value:
-                                    ((f = a(
+                                    ((p = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8657,13 +8657,13 @@
                                         })
                                     )),
                                     function () {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateText',
                                 value:
-                                    ((m = a(
+                                    ((f = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8680,13 +8680,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return m.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateAttribute',
                                 value:
-                                    ((d = a(
+                                    ((m = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8703,13 +8703,13 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return d.apply(this, arguments);
+                                        return m.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSupportPage',
                                 value:
-                                    ((l = a(
+                                    ((d = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -8766,13 +8766,13 @@
                                         })
                                     )),
                                     function () {
-                                        return l.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveElements',
                                 value:
-                                    ((s = a(
+                                    ((l = a(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8797,13 +8797,13 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return s.apply(this, arguments);
+                                        return l.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'wrapHeader',
                                 value:
-                                    ((r = a(
+                                    ((s = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8824,17 +8824,35 @@
                                         })
                                     )),
                                     function () {
-                                        return r.apply(this, arguments);
+                                        return s.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'roundUpValue',
-                                value: function (e) {
-                                    if (document.querySelector(e)) {
-                                        var t = document.querySelector(e).textContent.split(' ');
-                                        console.log(t), (t.textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1])), console.log(t.textContent);
-                                    }
-                                },
+                                value:
+                                    ((r = a(
+                                        regeneratorRuntime.mark(function e(t) {
+                                            var n;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return console.log('running'), (e.next = 3), u.waitForSelectorInDOM(t);
+                                                        case 3:
+                                                            (n = document.querySelector(t).textContent.split(' ')),
+                                                                console.log(n),
+                                                                (n.textContent = ''.concat(Math.ceil(Number(n[0]).toFixed(2)), ' ').concat(n[1])),
+                                                                console.log(n.textContent);
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e) {
+                                        return r.apply(this, arguments);
+                                    }),
                             },
                         ]) && i(t.prototype, n),
                         o && i(t, o),

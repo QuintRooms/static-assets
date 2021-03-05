@@ -8228,7 +8228,16 @@
                                                     ),
                                                 },
                                             ])),
-                                        document.querySelector('.WBSupportForm') && (this.buildFooterMenu('.ArnSubPage', 'afterend'), this.buildSupportPage()),
+                                        document.querySelector('.WBSupportForm') &&
+                                            (this.buildFooterMenu('.ArnSubPage', 'afterend'),
+                                            this.buildSupportPage(),
+                                            this.createInputMaskToBypassArnValidation(
+                                                '#theReservationConfirmationNumberAjax',
+                                                'confirmation-number-mask',
+                                                'text',
+                                                'Confirmation Number',
+                                                '#theReservationConfirmationNumberAjax input'
+                                            )),
                                         document.querySelector('.WBResendOrCancelForm') &&
                                             (this.buildFooterMenu('.ArnSubPage', 'afterend'),
                                             this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]));
@@ -8833,6 +8842,33 @@
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
                                         document.querySelector(e).textContent = ''.concat(Math.round(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
+                                    }
+                                },
+                            },
+                            {
+                                key: 'createInputMaskToBypassArnValidation',
+                                value: function (e, t, n, o, r) {
+                                    var s = document.querySelector(e);
+                                    if (s) {
+                                        var a = s.querySelector('input');
+                                        s.insertAdjacentHTML(
+                                            'beforeBegin',
+                                            '<input type="'
+                                                .concat(n, '" placeholder="')
+                                                .concat(o, '" class="')
+                                                .concat(t, '" required><style>')
+                                                .concat(e, ' input, ')
+                                                .concat(e, ' label {position:absolute;left:-100000px;}</style>')
+                                        );
+                                        var i = document.querySelector('.'.concat(t));
+                                        i.addEventListener('blur', function () {
+                                            a.value = i.value;
+                                            var e = setInterval(function () {
+                                                document.querySelector('#'.concat(a.id)) ||
+                                                    ((a = document.querySelector(r)), u.removeMaskedElementFromTabIndex(r), clearInterval(e));
+                                            }, 500);
+                                            a.focus(), a.blur();
+                                        });
                                     }
                                 },
                             },

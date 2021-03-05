@@ -153,6 +153,13 @@ export default class Roomcash {
         if (document.querySelector('.WBSupportForm')) {
             this.buildFooterMenu('.ArnSubPage', 'afterend');
             this.buildSupportPage();
+            this.createInputMaskToBypassArnValidation(
+                '#theReservationConfirmationNumberAjax',
+                'confirmation-number-mask',
+                'text',
+                'Confirmation Number',
+                '#theReservationConfirmationNumberAjax input'
+            );
         }
 
         // Cancel Modify Page
@@ -626,5 +633,36 @@ export default class Roomcash {
 
         const roomcash_value = document.querySelector(element).textContent.split(' ');
         document.querySelector(element).textContent = `${Math.round(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
+    }
+
+    createInputMaskToBypassArnValidation(selector, input_mask_class, input_mask_type, input_mask_placeholder_value, original_input_selector) {
+        const arn_input_container = document.querySelector(selector);
+
+        if (!arn_input_container) return;
+
+        let arn_input = arn_input_container.querySelector('input');
+
+        arn_input_container.insertAdjacentHTML(
+            'beforeBegin',
+            `<input type="${input_mask_type}" placeholder="${input_mask_placeholder_value}" class="${input_mask_class}" required><style>${selector} input, ${selector} label {position:absolute;left:-100000px;}</style>`
+        );
+
+        const new_input = document.querySelector(`.${input_mask_class}`);
+
+        new_input.addEventListener('blur', () => {
+            arn_input.value = new_input.value;
+
+            const interval = setInterval(() => {
+                if (!document.querySelector(`#${arn_input.id}`)) {
+                    arn_input = document.querySelector(original_input_selector);
+                    utilities.removeMaskedElementFromTabIndex(original_input_selector);
+
+                    clearInterval(interval);
+                }
+            }, 500);
+
+            arn_input.focus();
+            arn_input.blur();
+        });
     }
 }

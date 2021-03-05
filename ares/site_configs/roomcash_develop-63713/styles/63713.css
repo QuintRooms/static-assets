@@ -868,7 +868,7 @@ input[type=checkbox] {
     align-items: center;
   }
 }
-.roomcash-scale-container .cash-text .tooltip {
+.roomcash-scale-container .cash-text .tooltip, .roomcash-scale-container .cash-text .tooltip span {
   font-family: "Montserrat" !important;
 }
 .roomcash-scale-container .cash-text p {

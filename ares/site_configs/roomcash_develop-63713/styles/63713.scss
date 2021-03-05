@@ -713,7 +713,7 @@ input[type="checkbox"] {
             align-items: center;
         }
 
-        .tooltip {
+        .tooltip, .tooltip span {
             font-family: $google_font_name !important;
         }
         

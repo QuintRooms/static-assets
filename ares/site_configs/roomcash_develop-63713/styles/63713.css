@@ -1355,10 +1355,10 @@ input[type=checkbox] {
   text-align: center;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount .tooltip:hover span {
-  top: -5em !important;
+  top: -9.5em !important;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .your-cash-amount .tooltip:hover span {
-  top: -4em !important;
+  top: -8.5em !important;
 }
 @media (max-width: 800px) {
   .SinglePropDetail .prop-detail-lower .roomcash-scale-container {

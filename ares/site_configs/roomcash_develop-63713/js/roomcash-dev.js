@@ -269,11 +269,12 @@ export default class Roomcash {
         commands.insertAdjacentHTML(
             'afterbegin',
             `
-            <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>
-            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>
+            <a id="mobile-account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a>
+            <a target="_blank" href="https://roomcash.com/how-it-works">HOW IT WORKS</a>
             <a target="_blank" href="https://roomcash.com/faqs">FAQ</a>
-            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
-            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
+            <a href="https://roomcash.com/daily-deals">DAILY DEALS</a>
+            <a target="_blank" href="https://roomcash.com/partnerships">PARTNERSHIPS</a>
+            <a href="https://roomcash.com/signout">SIGN OUT</a>
             `
         );
 
@@ -290,6 +291,9 @@ export default class Roomcash {
                 </div>
                 <div id="account-container" class="header-link">
                     <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>
+                </div>
+                <div id="sign-out-container" class="header-link">
+                    <span><a id="sign-out-link" href="https://roomcash.com/signout">SIGN OUT</a></span>
                 </div>
             </div>
         `
@@ -621,6 +625,6 @@ export default class Roomcash {
         if (!document.querySelector(element)) return;
 
         const roomcash_value = document.querySelector(element).textContent.split(' ');
-        document.querySelector(element).textContent = `${Math.ceil(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
+        document.querySelector(element).textContent = `${Math.round(Number(roomcash_value[0]).toFixed(2))} ${roomcash_value[1]}`;
     }
 }

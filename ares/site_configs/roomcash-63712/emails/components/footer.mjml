@@ -38,3 +38,20 @@
         </mj-text>
     </mj-column>
 </mj-section>
+<mj-section background-color="#000">
+    <mj-column padding-top="10px" padding-bottom="10px">
+        <mj-text color="#ccc" align="center">
+            Quint Rooms
+        </mj-text>
+    </mj-column>
+    <mj-column padding-top="10px" padding-bottom="10px">
+        <mj-text color="#ccc" align="center">
+            4029 S Capital of Texas Hwy #111, Austin, TX 78704
+        </mj-text>
+    </mj-column>
+    <mj-column padding-top="10px" padding-bottom="10px">
+        <mj-text color="#ccc" align="center">
+            +1 (512) 691-9555
+        </mj-text>
+    </mj-column>
+</mj-section>

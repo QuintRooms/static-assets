@@ -38,3 +38,31 @@
         </mj-text>
     </mj-column>
 </mj-section>
+<mj-section padding-left="15px" background-color="#000">
+    <mj-column padding-top="10px" padding-bottom="5px">
+        <mj-text color="#ccc" align="left" font-weight="600">
+            RoomCash
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section padding-left="15px" background-color="#000">
+    <mj-column padding-top="5px" padding-bottom="5px">
+        <mj-text color="#ccc" align="left">
+            4029 S Capital of Texas Hwy #111, Austin, TX 78704
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section padding-left="15px" background-color="#000">
+    <mj-column padding-top="5px" padding-bottom="5px">
+        <mj-text color="#ccc" align="left">
+            <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a> 
+        </mj-text>
+    </mj-column>
+</mj-section>
+<mj-section padding-left="15px" padding-bottom="20px" background-color="#000">
+    <mj-column padding-top="5px">
+        <mj-text color="#ccc" align="left">
+            +1 (512) 691-9555
+        </mj-text>
+    </mj-column>
+</mj-section>

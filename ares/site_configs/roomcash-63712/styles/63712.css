@@ -352,7 +352,7 @@ input[type=checkbox] {
     color: #fff !important;
   }
   .header-container header #commands.active {
-    transform: translateY(145px);
+    transform: translateY(170px);
     background-color: #000;
     border-top: 2px solid #CC9831;
   }
@@ -401,10 +401,10 @@ input[type=checkbox] {
 .header-container header #admin-container #account-container {
   margin: 0 10px;
 }
-.header-container header #admin-container #account-container, .header-container header #admin-container #search-container {
+.header-container header #admin-container #account-container, .header-container header #admin-container #search-container, .header-container header #admin-container #sign-out-container {
   cursor: pointer;
 }
-.header-container header #admin-container #account-container:hover, .header-container header #admin-container #search-container:hover {
+.header-container header #admin-container #account-container:hover, .header-container header #admin-container #search-container:hover, .header-container header #admin-container #sign-out-container:hover {
   border-bottom: 4px solid #CC9831;
 }
 .header-container header #admin-container #balance-container {
@@ -1355,10 +1355,10 @@ input[type=checkbox] {
   text-align: center;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .roomcash-amount .tooltip:hover span {
-  top: -5em !important;
+  top: -9.5em !important;
 }
 .SinglePropDetail .prop-detail-lower .roomcash-scale-container .your-cash-amount .tooltip:hover span {
-  top: -4em !important;
+  top: -8.5em !important;
 }
 @media (max-width: 800px) {
   .SinglePropDetail .prop-detail-lower .roomcash-scale-container {

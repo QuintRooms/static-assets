@@ -130,7 +130,7 @@ input[type="checkbox"] {
     
             #commands.active {
                 // transform: translateY(195px);
-                transform: translateY(145px);
+                transform: translateY(170px);
                 background-color: #000;
                 border-top: 2px solid #CC9831;
     
@@ -186,7 +186,7 @@ input[type="checkbox"] {
                 margin: 0 10px;
             }
     
-            #account-container, #search-container {
+            #account-container, #search-container, #sign-out-container {
                 cursor: pointer;
                 
                 &:hover {
@@ -1320,7 +1320,7 @@ input[type="checkbox"] {
     
                 .tooltip {
                     &:hover span {
-                        top: -5em !important;
+                        top: -9.5em !important;
                     }
                 }
             }
@@ -1328,7 +1328,7 @@ input[type="checkbox"] {
             .your-cash-amount {
                 .tooltip {
                     &:hover span {
-                        top: -4em !important;
+                        top: -8.5em !important;
                     }
                 }
             }

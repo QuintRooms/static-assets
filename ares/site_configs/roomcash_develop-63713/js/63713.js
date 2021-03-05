@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './63713-config';
-import Roomcash from './roomcash';
+import Roomcash from './roomcash-dev';
 import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();

@@ -5984,11 +5984,11 @@
                     for (var n, o = y((t = b(t))), r = 0, s = o.length; s > r; ) Q(e, (n = o[r++]), t[n]);
                     return e;
                 },
-                J = function (e) {
+                K = function (e) {
                     var t = F.call(this, (e = S(e, !0)));
                     return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, I) && this[I][e])) || t);
                 },
-                K = function (e, t) {
+                J = function (e, t) {
                     if (((e = b(e)), (t = S(t, !0)), e !== N || !r(B, t) || r(Y, t))) {
                         var n = L(e, t);
                         return !n || !r(B, t) || (r(e, I) && e[I][t]) || (n.enumerable = !0), n;
@@ -6017,12 +6017,12 @@
                         return this._k;
                     }
                 ),
-                (A.f = K),
+                (A.f = J),
                 (q.f = Q),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
-                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
+                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = K),
                 (M.f = ee),
-                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && i(N, 'propertyIsEnumerable', J, !0),
+                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && i(N, 'propertyIsEnumerable', K, !0),
                 (p.f = function (e) {
                     return V(f(e));
                 })),
@@ -6051,7 +6051,7 @@
                     },
                     defineProperty: Q,
                     defineProperties: Z,
-                    getOwnPropertyDescriptor: K,
+                    getOwnPropertyDescriptor: J,
                     getOwnPropertyNames: X,
                     getOwnPropertySymbols: ee,
                 });
@@ -7910,7 +7910,7 @@
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
             var o = a(n(/*! ../../../js/build */ './js/build.js')),
                 r = a(n(/*! ./63713-config */ './site_configs/roomcash_develop-63713/js/63713-config.js')),
-                s = a(n(/*! ./roomcash */ './site_configs/roomcash_develop-63713/js/roomcash.js'));
+                s = a(n(/*! ./roomcash-dev */ './site_configs/roomcash_develop-63713/js/roomcash-dev.js'));
             function a(e) {
                 return e && e.__esModule ? e : {default: e};
             }
@@ -8072,10 +8072,10 @@
                 );
             })(o.default))();
         },
-    './site_configs/roomcash_develop-63713/js/roomcash.js':
-        /*!************************************************************!*\
-  !*** ./site_configs/roomcash_develop-63713/js/roomcash.js ***!
-  \************************************************************/
+    './site_configs/roomcash_develop-63713/js/roomcash-dev.js':
+        /*!****************************************************************!*\
+  !*** ./site_configs/roomcash_develop-63713/js/roomcash-dev.js ***!
+  \****************************************************************/
         /*! no static exports found */ function (e, t, n) {
             'use strict';
             Object.defineProperty(t, '__esModule', {value: !0}),
@@ -8339,7 +8339,7 @@
                                                                         ),
                                                                     n.insertAdjacentHTML(
                                                                         'afterbegin',
-                                                                        '\n            <a id="mobile-account-link" href="https://roomcash.com/dashboard">My Account</a>\n            <a target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n            '
+                                                                        '\n            <a id="mobile-account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a>\n            <a target="_blank" href="https://roomcash.com/how-it-works">HOW IT WORKS</a>\n            <a target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n            <a href="https://roomcash.com/daily-deals">DAILY DEALS</a>\n            <a target="_blank" href="https://roomcash.com/partnerships">PARTNERSHIPS</a>\n            <a href="https://roomcash.com/signout">SIGN OUT</a>\n            '
                                                                     ),
                                                                     t.insertAdjacentHTML(
                                                                         'beforeend',
@@ -8348,7 +8348,7 @@
                                                                             .concat(this.config.directory_name, '/img/points-icon.png">\n                    <span id="balance">$')
                                                                             .concat(
                                                                                 this.user_points,
-                                                                                '</span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>\n                </div>\n            </div>\n        '
+                                                                                '</span>\n                </div>\n                <div id="search-container" class="header-link">\n                    <span><a href="https://hotels.roomcash.com">SEARCH HOTELS</a></span>\n                </div>\n                <div id="account-container" class="header-link">\n                    <span><a id="account-link" href="https://roomcash.com/dashboard">MY ACCOUNT</a></span>\n                </div>\n                <div id="sign-out-container" class="header-link">\n                    <span><a id="sign-out-link" href="https://roomcash.com/signout">SIGN OUT</a></span>\n                </div>\n            </div>\n        '
                                                                             )
                                                                     );
                                                             case 10:
@@ -8832,7 +8832,7 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
-                                        document.querySelector(e).textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
+                                        document.querySelector(e).textContent = ''.concat(Math.round(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
                                     }
                                 },
                             },

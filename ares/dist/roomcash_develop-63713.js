@@ -8719,7 +8719,7 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
-                                        document.querySelector(e).textContent = ''.concat(Math.round(Number(t[0]).toFixed(2)), '.00 ').concat(t[1]);
+                                        document.querySelector(e).textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), '.00 ').concat(t[1]);
                                     }
                                 },
                             },

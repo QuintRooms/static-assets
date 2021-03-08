@@ -8789,7 +8789,7 @@
                             (this.insert_element = o),
                             (this.insert_position = r),
                             (this.roomcash_id = ''.concat(this.index, '-').concat(Math.floor(9e4 * Math.random()) + 1e4)),
-                            (this.values = {roomcash_value: '', your_cash_value: '', currency: '', width: ''}),
+                            (this.values = null),
                             this.init();
                     }
                     var t, n, o;
@@ -8828,7 +8828,7 @@
                                                     );
                                             }
                                             this.setRoomCashWidth(this.values.width);
-                                        } else console.error('There was an issue with one or more RoomCash values for the following property: '.concat(this.property.id));
+                                        } else console.error('There was an issue with one or more RoomCash values for the following property: ', this.values);
                                     else {
                                         if ((this.property.classList.add('no-roomCash-deal'), !this.property.querySelector('.RateCalendarPopupAnchor'))) return;
                                         var r = this.property.querySelector('.RateCalendarPopupAnchor');
@@ -8872,10 +8872,12 @@
                                             e.includes('<span>') && (e = e.substring(0, e.indexOf('<span>')));
                                         var t = this.property.querySelector('.originalPrice').getAttribute('amount');
                                         (t = this.removeCurrency(t, this.property)),
-                                            (this.values.your_cash_value = e),
-                                            (this.values.roomcash_value = Math.ceil(Number(t)).toFixed(2)),
-                                            (this.values.currency = this.getCurrency(this.property)),
-                                            (this.values.width = this.property.querySelector('.originalPrice').getAttribute('percent')),
+                                            (this.values = {
+                                                roomcash_value: Math.ceil(Number(t)).toFixed(2),
+                                                your_cash_value: e,
+                                                currency: this.getCurrency(this.property),
+                                                width: this.property.querySelector('.originalPrice').getAttribute('percent'),
+                                            }),
                                             console.log(this.values);
                                     }
                                 },

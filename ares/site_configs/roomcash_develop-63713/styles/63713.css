@@ -845,7 +845,7 @@ input[type=checkbox] {
   border-radius: 25px;
   width: 100%;
   background-color: #CC9831;
-  background-image: -webkit-linear-gradient(134deg, #1C8747 70%, #CC9831 30%);
+  background-image: -webkit-linear-gradient(134deg, #1C8747 82%, #CC9831 18%);
 }
 .roomcash-scale-container #roomcash-bar-container {
   height: 10px;

@@ -9,12 +9,7 @@ export default class RoomcashGraphic {
         this.insert_element = insertElement;
         this.insert_position = insertPosition;
         this.roomcash_id = `${this.index}-${Math.floor(Math.random() * 90000) + 10000}`;
-        this.values = {
-            roomcash_value: '',
-            your_cash_value: '',
-            currency: '',
-            width: '',
-        };
+        this.values = null;
         this.init();
     }
 
@@ -35,7 +30,7 @@ export default class RoomcashGraphic {
             return;
         }
         if (!this.values.your_cash_value || !this.values.roomcash_value || !this.values.width || !this.values.currency) {
-            console.error(`There was an issue with one or more RoomCash values for the following property: ${this.property.id}`);
+            console.error('There was an issue with one or more RoomCash values for the following property: ', this.values);
             return;
         }
         const html = this.getRoomcashGraphicHTML();
@@ -115,10 +110,12 @@ export default class RoomcashGraphic {
         let room_cash = this.property.querySelector('.originalPrice').getAttribute('amount');
         room_cash = this.removeCurrency(room_cash, this.property);
 
-        this.values.your_cash_value = your_cash;
-        this.values.roomcash_value = Math.ceil(Number(room_cash)).toFixed(2);
-        this.values.currency = this.getCurrency(this.property);
-        this.values.width = this.property.querySelector('.originalPrice').getAttribute('percent');
+        this.values = {
+            roomcash_value: Math.ceil(Number(room_cash)).toFixed(2),
+            your_cash_value: your_cash,
+            currency: this.getCurrency(this.property),
+            width: this.property.querySelector('.originalPrice').getAttribute('percent'),
+        };
         console.log(this.values);
     }
 

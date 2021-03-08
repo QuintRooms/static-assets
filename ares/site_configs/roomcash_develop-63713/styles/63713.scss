@@ -1101,6 +1101,15 @@ input[type="checkbox"] {
             text-align: right;
             margin-top: 5px;
 
+            #strike-through-rate {
+                font-size: 13px;
+                text-decoration: line-through;
+                margin-right: 10px;
+
+                @include mobile {
+                    display: block;
+                }
+            }
 
             @include mobile {
                 text-align: center;

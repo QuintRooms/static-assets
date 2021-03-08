@@ -15,54 +15,58 @@ export default class RoomcashGraphic {
             currency: '',
             width: '',
         };
-        this.init(this.property);
+        this.init();
     }
 
-    init(prop) {
+    init() {
         this.getValues();
 
-        if (prop.querySelector('.ArnLimitedAvail')) {
-            prop.querySelector('.ArnRateCell').style.display = 'unset';
-            prop.querySelector('.ArnRateButton').style.display = 'none';
+        if (this.property.querySelector('.ArnLimitedAvail')) {
+            this.property.querySelector('.ArnRateCell').style.display = 'unset';
+            this.property.querySelector('.ArnRateButton').style.display = 'none';
             return;
         }
         if (!this.values) {
-            prop.classList.add('no-roomCash-deal');
-            if (!prop.querySelector('.RateCalendarPopupAnchor')) return;
+            this.property.classList.add('no-roomCash-deal');
+            if (!this.property.querySelector('.RateCalendarPopupAnchor')) return;
 
-            const daily_rates = prop.querySelector('.RateCalendarPopupAnchor');
+            const daily_rates = this.property.querySelector('.RateCalendarPopupAnchor');
             this.insertElement('.ArnRateCancelAnchor', 'afterend', daily_rates);
             return;
         }
-        if (!this.values.yc || !this.values.rc || !this.values.rc_width || !this.values.currency) {
-            console.error(`There was an issue with one or more RoomCash values for the following: ${prop}`);
+        if (!this.values.your_cash_value || !this.values.roomcash_value || !this.values.width || !this.values.currency) {
+            console.error(`There was an issue with one or more RoomCash values for the following property: ${this.property.id}`);
             return;
         }
-
         const html = this.getRoomcashGraphicHTML();
         // Add RoomCash bar
-        this.insertElement(this.insert_position, this.insert_position, html);
+        this.insertHTML(this.insert_element, this.insert_position, html);
         this.addTooltips(this.roomcash_id);
 
         if (document.querySelector('.SinglePropDetail')) {
-            const book_room = prop.querySelector('.bookRoom');
-            const cancel = prop.querySelector('.ArnRateCancelAnchor');
+            const book_room = this.property.querySelector('.bookRoom');
+            const cancel = this.property.querySelector('.ArnRateCancelAnchor');
             this.insertElement('.book', 'afterbegin', book_room);
             this.insertElement('.book', 'beforeend', cancel);
         }
 
         if (document.querySelector('.SearchHotels')) {
-            const button = prop.querySelector('.ArnRateButton');
+            const button = this.property.querySelector('.ArnRateButton');
             this.insertElement('.ArnPropName', 'beforeend', button);
             // insert average nightly
             this.insertHTML(
                 '.ArnRateButton',
                 'afterend',
                 `
-            <div id="rc-avg-nightly">Avg/Night: <span>${prop.querySelector('.averageNightly').textContent}</span></div>
+            <div id="rc-avg-nightly">
+                <span id="strike-through-rate">${this.property.querySelector('.originalPrice').textContent}</span>
+                <span>Avg/Night:${this.property.querySelector('.averageNightly').textContent}</span>
+            </div>
             `
             );
         }
+
+        this.setRoomCashWidth(this.values.width);
     }
 
     removeCurrency(value, element) {
@@ -115,6 +119,7 @@ export default class RoomcashGraphic {
         this.values.roomcash_value = Math.ceil(Number(room_cash)).toFixed(2);
         this.values.currency = this.getCurrency(this.property);
         this.values.width = this.property.querySelector('.originalPrice').getAttribute('percent');
+        console.log(this.values);
     }
 
     getRoomcashGraphicHTML() {
@@ -182,5 +187,14 @@ export default class RoomcashGraphic {
     insertHTML(insertEl, position, content) {
         if (!this.property.querySelector(insertEl)) return;
         this.property.querySelector(insertEl).insertAdjacentHTML(position, content);
+    }
+
+    setRoomCashWidth(width) {
+        console.log(width);
+        if (!width || parseInt(width, 10) < 18) return;
+
+        const your_cash_width = 100 - parseInt(width, 10);
+
+        this.property.querySelector('.bar').style.backgroundImage = `-webkit-linear-gradient(134deg, #1C8747 ${your_cash_width}%, #CC9831 ${width}%)`;
     }
 }

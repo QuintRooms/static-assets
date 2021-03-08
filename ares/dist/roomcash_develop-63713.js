@@ -8719,7 +8719,7 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
-                                        document.querySelector(e).textContent = ''.concat(Math.round(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
+                                        document.querySelector(e).textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), '.00 ').concat(t[1]);
                                     }
                                 },
                             },
@@ -8828,7 +8828,7 @@
                                                     );
                                             }
                                             this.setRoomCashWidth(this.values.width);
-                                        } else console.error('There was an issue with one or more RoomCash values for the following property: ', this.values);
+                                        } else console.error('There was an issue with one or more RoomCash values for the following property: ', this.property);
                                     else {
                                         if ((this.property.classList.add('no-roomCash-deal'), !this.property.querySelector('.RateCalendarPopupAnchor'))) return;
                                         var r = this.property.querySelector('.RateCalendarPopupAnchor');
@@ -8877,8 +8877,7 @@
                                                 your_cash_value: e,
                                                 currency: this.getCurrency(this.property),
                                                 width: this.property.querySelector('.originalPrice').getAttribute('percent'),
-                                            }),
-                                            console.log(this.values);
+                                            });
                                     }
                                 },
                             },
@@ -8938,7 +8937,7 @@
                             {
                                 key: 'setRoomCashWidth',
                                 value: function (e) {
-                                    if ((console.log(e), e && !(parseInt(e, 10) < 18))) {
+                                    if (e && !(parseInt(e, 10) < 18)) {
                                         var t = 100 - parseInt(e, 10);
                                         this.property.querySelector('.bar').style.backgroundImage = '-webkit-linear-gradient(134deg, #1C8747 '
                                             .concat(t, '%, #CC9831 ')

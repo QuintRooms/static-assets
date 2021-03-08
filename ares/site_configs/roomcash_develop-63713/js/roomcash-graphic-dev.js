@@ -30,7 +30,7 @@ export default class RoomcashGraphic {
             return;
         }
         if (!this.values.your_cash_value || !this.values.roomcash_value || !this.values.width || !this.values.currency) {
-            console.error('There was an issue with one or more RoomCash values for the following property: ', this.values);
+            console.error('There was an issue with one or more RoomCash values for the following property: ', this.property);
             return;
         }
         const html = this.getRoomcashGraphicHTML();
@@ -116,7 +116,6 @@ export default class RoomcashGraphic {
             currency: this.getCurrency(this.property),
             width: this.property.querySelector('.originalPrice').getAttribute('percent'),
         };
-        console.log(this.values);
     }
 
     getRoomcashGraphicHTML() {
@@ -187,7 +186,6 @@ export default class RoomcashGraphic {
     }
 
     setRoomCashWidth(width) {
-        console.log(width);
         if (!width || parseInt(width, 10) < 18) return;
 
         const your_cash_width = 100 - parseInt(width, 10);

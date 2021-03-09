@@ -17,12 +17,6 @@ export default class Roomcash {
                 <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>
                 <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>
         </span>`;
-        document.observe('arn:pollingRates', () => {
-            console.log('PollingRates');
-        });
-        document.observe('arn:ratesUpdated', () => {
-            console.log('ratesUpdated');
-        });
         this.init();
     }
 

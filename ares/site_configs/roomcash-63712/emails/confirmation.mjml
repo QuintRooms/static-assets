@@ -44,7 +44,7 @@
 
         /* - - - - RoomCash Balance - - - - */
         <mj-section padding-right="0" padding-left="0" padding-top="20px" padding-bottom="20px" background-color="#000">
-            <mj-column width="50%" background-color="#000">
+            <mj-column width="30%" background-color="#000">
                 <mj-text align="center" color="#CC9831"  padding-bottom="10px" padding-top="10px">
                         <div style="margin-bottom: 10px;">RoomCash Earned</div>
                         <img style="margin-right:10px" width="20" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
@@ -52,14 +52,14 @@
                         <!-- <span style="margin:10px 5px; font-size: 28px;">$[value_earned]</span> -->
                 </mj-text>
             </mj-column>
-            <!-- <mj-column width="33%" background-color="#000">
+            <mj-column width="33%" background-color="#000">
                 <mj-text align="center" color="#CC9831"  padding-bottom="10px" padding-top="10px">
                     <div style="margin-bottom: 10px;">RoomCash Reserves</div>
                     <img style="width:8%;" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
                     <span style="margin:10px 5px; font-size: 28px;">$[balance]</span>
                 </mj-text>
-            </mj-column> -->
-            <mj-column width="50%" padding-top="30px" padding-bottom="30px">
+            </mj-column>
+            <mj-column width="30%" padding-top="10px">
                 <!-- <mj-include path="./site_configs/roomcash-63712/emails/components/button-small.mjml" /> -->
                 <mj-button href={{portal_url}} font-weight="400" font-size="12px" border-radius="0" background-color="#CC9831" color="#fff">
                     SPEND MY ROOMCASH

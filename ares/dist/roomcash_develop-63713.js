@@ -8134,12 +8134,6 @@
                             (this.user_points = null),
                             (this.sub_header_container =
                                 '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
-                            document.observe('arn:pollingRates', function () {
-                                console.log('PollingRates');
-                            }),
-                            document.observe('arn:ratesUpdated', function () {
-                                console.log('ratesUpdated');
-                            }),
                             this.init();
                     }
                     var t, n, o, r, i, a, m, f, p, h, y, g, v, _;

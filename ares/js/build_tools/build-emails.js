@@ -13,8 +13,9 @@ async function buildEmail(context, inputPath, fileName) {
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
     const {html} = mjml2html(conf_template);
     const template = handlebars.compile(html.toString());
+    console.log(context);
     const data = template(context);
-    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${fileName}.html`, data, {encoding: 'utf8'}, (err) => {
+    fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${fileName}.html`, data, (err) => {
         if (err) {
             return console.log(err);
         }
@@ -68,7 +69,14 @@ function buildSiteObject(siteConfig, siteStyles) {
         logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${logo}`,
         theme: theme_color,
         text: theme_color === '#fff' ? '#666' : '#F5FFFA',
+        portal_url: extractValue(siteConfig, 'email_portal_link:', ',').slice(1, -1),
     };
+
+    // if site is RoomCash, base64 encode the portal url
+    if (site_details.site_id === '63713' || site_details.site_id === '63712') {
+        const encoded_portal_link_param = Buffer.from('https://hotels.roomcash.com/v6?&siteid=63712&type=property').toString('base64');
+        site_details.portal_url = `${site_details.portal_url}${encoded_portal_link_param}`;
+    }
     createFiles(site_details);
 }
 

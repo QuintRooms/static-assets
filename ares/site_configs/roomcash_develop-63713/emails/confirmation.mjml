@@ -60,7 +60,10 @@
                 </mj-text>
             </mj-column> -->
             <mj-column width="50%" padding-top="30px" padding-bottom="30px">
-                <mj-include path="./site_configs/roomcash-63712/emails/components/button-small.mjml" />
+                <!-- <mj-include path="./site_configs/roomcash-63712/emails/components/button-small.mjml" /> -->
+                <mj-button href={{portal_url}} font-weight="400" font-size="12px" border-radius="0" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+                </mj-button>
             </mj-column>
         </mj-section>
 

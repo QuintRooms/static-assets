@@ -79,6 +79,7 @@ export default function siteConfig() {
         has_group_booking_banner: false,
         group_booking_form_url: '',
         has_custom_emails: true,
+        email_portal_link: `https://roomcash.com/redirect/booking-portal?redirect=`,
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

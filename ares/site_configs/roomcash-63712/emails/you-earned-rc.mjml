@@ -27,7 +27,10 @@
                 <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px">
                     <span>Ready to make exclusive savings on your next trip?</span>
                 </mj-text>
-                <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
+                <!-- <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" /> -->
+                <mj-button href={{portal_url}} font-weight="600" font-size="18px" border-radius="0" padding-top="20px" padding-bottom="30px" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+                </mj-button>
             </mj-column>
         </mj-section>
 

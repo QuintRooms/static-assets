@@ -7886,6 +7886,7 @@
                         has_group_booking_banner: !1,
                         group_booking_form_url: '',
                         has_custom_emails: !0,
+                        email_portal_link: 'https://roomcash.com/redirect/booking-portal?redirect=',
                         has_landing_page: !1,
                         hide_search_on_landing_page: !0,
                         landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],

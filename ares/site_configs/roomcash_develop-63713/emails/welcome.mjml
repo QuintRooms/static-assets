@@ -90,7 +90,9 @@
                 <mj-text font-size="15px" align="center" font-weight="600" color="#CC9831">
                     <span>See where your RoomCash can take you!</span>
                 </mj-text>
-                <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" />
+                <mj-button href={{portal_url}} font-weight="600" font-size="18px" border-radius="0" padding-top="20px" padding-bottom="30px" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+                </mj-button>
             </mj-column>
         </mj-section>
 

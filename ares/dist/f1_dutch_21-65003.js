@@ -1602,12 +1602,18 @@
                                                         for (;;)
                                                             switch ((e.prev = e.next)) {
                                                                 case 0:
-                                                                    return (e.next = 2), t.waitForSelectorInDOM('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'));
+                                                                    return (e.next = 2), t.waitForSelectorInDOM('.pollingFinished');
                                                                 case 2:
+                                                                    if (document.querySelector('#theArnProperty'.concat(n.prop_id))) {
+                                                                        e.next = 4;
+                                                                        break;
+                                                                    }
+                                                                    return e.abrupt('return');
+                                                                case 4:
                                                                     document
                                                                         .querySelector('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'))
                                                                         .setAttribute('src', n.image_url);
-                                                                case 4:
+                                                                case 6:
                                                                 case 'end':
                                                                     return e.stop();
                                                             }

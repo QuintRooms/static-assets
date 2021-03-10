@@ -72,5 +72,11 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        prop_image_replacement: [
+            {
+                prop_id: '663849',
+                image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
+            },
+        ],
     };
 }

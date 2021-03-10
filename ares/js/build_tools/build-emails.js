@@ -13,7 +13,6 @@ async function buildEmail(context, inputPath, fileName) {
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
     const {html} = mjml2html(conf_template);
     const template = handlebars.compile(html.toString());
-    console.log(context);
     const data = template(context);
     fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${fileName}.html`, data, (err) => {
         if (err) {

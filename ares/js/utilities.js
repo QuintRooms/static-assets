@@ -516,7 +516,8 @@ export default class Utilities {
         if (!document.querySelector('.SearchHotels')) return;
 
         array.forEach(async (obj) => {
-            await this.waitForSelectorInDOM(`#theArnProperty${obj.prop_id} .ArnPropThumb img`);
+            await this.waitForSelectorInDOM('.pollingFinished');
+            if (!document.querySelector(`#theArnProperty${obj.prop_id}`)) return;
             const property_thumb = document.querySelector(`#theArnProperty${obj.prop_id} .ArnPropThumb img`);
             property_thumb.setAttribute('src', obj.image_url);
         });

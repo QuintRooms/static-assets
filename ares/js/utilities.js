@@ -512,6 +512,14 @@ export default class Utilities {
         );
     }
 
+    /**
+     *@description Updates property thumbnail images on the search results page when images are poor. 
+     *@param array - takes an array of objects that each contain the property ID to change the image on and the url of the image it should change to.
+     *@example utilities.replacePropThumbImage({
+                prop_id: '663849',
+                image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
+            });
+     */
     replacePropThumbImage(array) {
         if (!document.querySelector('.SearchHotels')) return;
 

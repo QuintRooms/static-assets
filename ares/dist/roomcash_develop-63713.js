@@ -8165,7 +8165,7 @@
                                                         '/img/resbeat.png"></a>\n                            <a target="_blank" href="https://www.hotelsforhope.com/" target="_blank"><img src="'
                                                     )
                                                     .concat(l.path, '/site_configs/')
-                                                    .concat(this.config.directory_name, '/img/h4h.png"></a>\n                        </div>\n                    </div>'),
+                                                    .concat(this.config.directory_name, '/img/quintrooms.png"></a>\n                        </div>\n                    </div>'),
                                             },
                                         ]),
                                         document.querySelector('.MemberAuthenticated') && this.buildHeaderLinks(),

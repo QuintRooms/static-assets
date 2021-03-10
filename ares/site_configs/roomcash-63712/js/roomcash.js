@@ -31,7 +31,7 @@ export default class Roomcash {
                 position: 'afterbegin',
                 html: `
                     <div id="footer">
-                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>
+                        <div id="footer-title"><hr><span>RoomCash is a QuintRooms company</span><hr></div>
                         <div id="brand-logos">
                             <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/quint.png"></a>
                             <a target="_blank" href="https://resbeat.com/" target="_blank"><img src="${env_path.path}/site_configs/${this.config.directory_name}/img/resbeat.png"></a>

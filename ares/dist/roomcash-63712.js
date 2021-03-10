@@ -8081,7 +8081,7 @@
                                             {
                                                 element: '.ArnSupportLinks.ArnSupportBottom',
                                                 position: 'afterbegin',
-                                                html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is Part of QuintEvents</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
+                                                html: '\n                    <div id="footer">\n                        <div id="footer-title"><hr><span>RoomCash is a QuintRooms company</span><hr></div>\n                        <div id="brand-logos">\n                            <a target="_blank" href="https://quintevents.com/" target="_blank"><img src="'
                                                     .concat(c.path, '/site_configs/')
                                                     .concat(
                                                         this.config.directory_name,

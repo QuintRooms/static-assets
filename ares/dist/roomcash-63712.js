@@ -3478,6 +3478,38 @@
                                         return i.apply(this, arguments);
                                     }),
                             },
+                            {
+                                key: 'replacePropThumbImage',
+                                value: function (e) {
+                                    var t = this;
+                                    document.querySelector('.SearchHotels') &&
+                                        e.forEach(
+                                            (function () {
+                                                var e = r(
+                                                    regeneratorRuntime.mark(function e(n) {
+                                                        return regeneratorRuntime.wrap(function (e) {
+                                                            for (;;)
+                                                                switch ((e.prev = e.next)) {
+                                                                    case 0:
+                                                                        return (e.next = 2), t.waitForSelectorInDOM('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'));
+                                                                    case 2:
+                                                                        document
+                                                                            .querySelector('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'))
+                                                                            .setAttribute('src', n.image_url);
+                                                                    case 4:
+                                                                    case 'end':
+                                                                        return e.stop();
+                                                                }
+                                                        }, e);
+                                                    })
+                                                );
+                                                return function (t) {
+                                                    return e.apply(this, arguments);
+                                                };
+                                            })()
+                                        );
+                                },
+                            },
                         ]) && s(t.prototype, n),
                         o && s(t, o),
                         e
@@ -8770,7 +8802,7 @@
                                 value: function (e) {
                                     if (document.querySelector(e)) {
                                         var t = document.querySelector(e).textContent.split(' ');
-                                        document.querySelector(e).textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), ' ').concat(t[1]);
+                                        document.querySelector(e).textContent = ''.concat(Math.ceil(Number(t[0]).toFixed(2)), '.00 ').concat(t[1]);
                                     }
                                 },
                             },

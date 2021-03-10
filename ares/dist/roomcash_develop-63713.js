@@ -3478,6 +3478,38 @@
                                         return a.apply(this, arguments);
                                     }),
                             },
+                            {
+                                key: 'replacePropThumbImage',
+                                value: function (e) {
+                                    var t = this;
+                                    document.querySelector('.SearchHotels') &&
+                                        e.forEach(
+                                            (function () {
+                                                var e = r(
+                                                    regeneratorRuntime.mark(function e(n) {
+                                                        return regeneratorRuntime.wrap(function (e) {
+                                                            for (;;)
+                                                                switch ((e.prev = e.next)) {
+                                                                    case 0:
+                                                                        return (e.next = 2), t.waitForSelectorInDOM('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'));
+                                                                    case 2:
+                                                                        document
+                                                                            .querySelector('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'))
+                                                                            .setAttribute('src', n.image_url);
+                                                                    case 4:
+                                                                    case 'end':
+                                                                        return e.stop();
+                                                                }
+                                                        }, e);
+                                                    })
+                                                );
+                                                return function (t) {
+                                                    return e.apply(this, arguments);
+                                                };
+                                            })()
+                                        );
+                                },
+                            },
                         ]) && s(t.prototype, n),
                         o && s(t, o),
                         e

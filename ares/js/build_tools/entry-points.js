@@ -23,7 +23,7 @@ module.exports = () => {
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
-            // // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
+            // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template

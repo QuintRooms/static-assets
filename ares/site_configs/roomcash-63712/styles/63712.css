@@ -1176,6 +1176,16 @@ input[type=checkbox] {
   text-align: right;
   margin-top: 5px;
 }
+.SearchHotels .ArnProperty #rc-avg-nightly #strike-through-rate {
+  font-size: 13px;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+@media (max-width: 600px) {
+  .SearchHotels .ArnProperty #rc-avg-nightly #strike-through-rate {
+    display: block;
+  }
+}
 @media (max-width: 600px) {
   .SearchHotels .ArnProperty #rc-avg-nightly {
     text-align: center;
@@ -1408,6 +1418,9 @@ input[type=checkbox] {
 }
 
 /* - - - - - - - - Confirmation Page - - - - - - - - */
+.FinalConfirmation #theReservationFormContainer .taxFeeRow th a {
+  color: #000;
+}
 .FinalConfirmation #theReservationFormContainer .discount th {
   color: #CC9831;
 }

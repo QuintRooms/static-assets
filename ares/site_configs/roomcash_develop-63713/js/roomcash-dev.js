@@ -62,6 +62,7 @@ export default class Roomcash {
         if (document.querySelector('.SearchHotels')) {
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
             this.moveCurrency();
+            this.addToBalance(50);
             this.insertContent([
                 {
                     element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',
@@ -520,7 +521,8 @@ export default class Roomcash {
      *@description Adds the given number to the current balance total displayed in the header.
      *@param Number - the amount to add to the balance.
      */
-    addToBalance(roomCashEarned) {
+    async addToBalance(roomCashEarned) {
+        await utilities.waitForSelectorInDOM('#balance');
         const balance = document.querySelector('#balance');
         const current_balance = balance.textContent.substring(1).replace(',', '');
         const currency = balance.textContent.substring(0, 1);

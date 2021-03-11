@@ -43,6 +43,7 @@ module.exports = () => {
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
+            // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees
@@ -61,7 +62,6 @@ module.exports = () => {
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
-            // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
         };
 

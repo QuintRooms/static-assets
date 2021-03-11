@@ -1407,6 +1407,11 @@ input[type="checkbox"] {
 .FinalConfirmation {
 
     #theReservationFormContainer {
+
+        .taxFeeRow th a {
+            color: #000;
+        }
+
         .discount th {
             color: $primary_color;
         }

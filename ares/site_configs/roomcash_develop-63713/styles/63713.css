@@ -1418,6 +1418,9 @@ input[type=checkbox] {
 }
 
 /* - - - - - - - - Confirmation Page - - - - - - - - */
+.FinalConfirmation #theReservationFormContainer .taxFeeRow th a {
+  color: #000;
+}
 .FinalConfirmation #theReservationFormContainer .discount th {
   color: #CC9831;
 }

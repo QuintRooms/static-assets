@@ -1101,7 +1101,16 @@ input[type="checkbox"] {
             text-align: right;
             margin-top: 5px;
 
+            #strike-through-rate {
+                font-size: 13px;
+                text-decoration: line-through;
+                margin-right: 10px;
 
+                @include mobile {
+                    display: block;
+                }
+            }
+            
             @include mobile {
                 text-align: center;
             }
@@ -1398,6 +1407,11 @@ input[type="checkbox"] {
 .FinalConfirmation {
 
     #theReservationFormContainer {
+
+        .taxFeeRow th a {
+            color: #000;
+        }
+
         .discount th {
             color: $primary_color;
         }

@@ -3491,12 +3491,18 @@
                                                             for (;;)
                                                                 switch ((e.prev = e.next)) {
                                                                     case 0:
-                                                                        return (e.next = 2), t.waitForSelectorInDOM('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'));
+                                                                        return (e.next = 2), t.waitForSelectorInDOM('.pollingFinished');
                                                                     case 2:
+                                                                        if (document.querySelector('#theArnProperty'.concat(n.prop_id))) {
+                                                                            e.next = 4;
+                                                                            break;
+                                                                        }
+                                                                        return e.abrupt('return');
+                                                                    case 4:
                                                                         document
                                                                             .querySelector('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'))
                                                                             .setAttribute('src', n.image_url);
-                                                                    case 4:
+                                                                    case 6:
                                                                     case 'end':
                                                                         return e.stop();
                                                                 }
@@ -8043,6 +8049,7 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'),
                 n(/*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'),
                 n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
                 n(/*! core-js/modules/es7.array.includes */ './node_modules/core-js/modules/es7.array.includes.js'),
@@ -8096,7 +8103,7 @@
                                 '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, s, l, d, m, f, p, h, y, g, v;
+                    var t, n, o, r, s, l, d, m, f, p, h, y, g, v, _;
                     return (
                         (t = e),
                         (n = [
@@ -8179,6 +8186,7 @@
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
                                             this.updateText('.balanceDueRow th', 'Your Cash'),
+                                            this.addToBalance(50),
                                             this.insertContent([
                                                 {
                                                     element: '.GuestForms',
@@ -8207,7 +8215,7 @@
                             {
                                 key: 'resizeMap',
                                 value:
-                                    ((v = a(
+                                    ((_ = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8236,7 +8244,7 @@
                                         })
                                     )),
                                     function () {
-                                        return v.apply(this, arguments);
+                                        return _.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8281,7 +8289,7 @@
                             {
                                 key: 'buildHeaderLinks',
                                 value:
-                                    ((g = a(
+                                    ((v = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -8332,7 +8340,7 @@
                                         })
                                     )),
                                     function () {
-                                        return g.apply(this, arguments);
+                                        return v.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8493,7 +8501,7 @@
                             {
                                 key: 'addRoomCashBar',
                                 value:
-                                    ((y = a(
+                                    ((g = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             var r = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8521,7 +8529,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return y.apply(this, arguments);
+                                        return g.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8533,7 +8541,7 @@
                             {
                                 key: 'setUpListener',
                                 value:
-                                    ((h = a(
+                                    ((y = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             var o,
                                                 r = this;
@@ -8554,13 +8562,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return h.apply(this, arguments);
+                                        return y.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSortSelectMenu',
                                 value:
-                                    ((p = a(
+                                    ((h = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(
@@ -8602,13 +8610,13 @@
                                         })
                                     )),
                                     function () {
-                                        return p.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveCurrency',
                                 value:
-                                    ((f = a(
+                                    ((p = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8627,13 +8635,13 @@
                                         })
                                     )),
                                     function () {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateText',
                                 value:
-                                    ((m = a(
+                                    ((f = a(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8650,13 +8658,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return m.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateAttribute',
                                 value:
-                                    ((d = a(
+                                    ((m = a(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8673,13 +8681,13 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return d.apply(this, arguments);
+                                        return m.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'buildSupportPage',
                                 value:
-                                    ((l = a(
+                                    ((d = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -8736,13 +8744,13 @@
                                         })
                                     )),
                                     function () {
-                                        return l.apply(this, arguments);
+                                        return d.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'moveElements',
                                 value:
-                                    ((s = a(
+                                    ((l = a(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8767,13 +8775,13 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return s.apply(this, arguments);
+                                        return l.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'wrapHeader',
                                 value:
-                                    ((r = a(
+                                    ((s = a(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -8794,7 +8802,7 @@
                                         })
                                     )),
                                     function () {
-                                        return r.apply(this, arguments);
+                                        return s.apply(this, arguments);
                                     }),
                             },
                             {
@@ -8832,6 +8840,34 @@
                                         });
                                     }
                                 },
+                            },
+                            {
+                                key: 'addToBalance',
+                                value:
+                                    ((r = a(
+                                        regeneratorRuntime.mark(function e(t) {
+                                            var n, o, r, s;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), u.waitForSelectorInDOM('#balance');
+                                                        case 2:
+                                                            (n = document.querySelector('#balance')),
+                                                                (o = n.textContent.substring(1).replace(',', '')),
+                                                                (r = n.textContent.substring(0, 1)),
+                                                                (s = parseInt(o, 10) + t),
+                                                                (n.textContent = ''.concat(r).concat(s.toLocaleString()));
+                                                        case 7:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
+                                        })
+                                    )),
+                                    function (e) {
+                                        return r.apply(this, arguments);
+                                    }),
                             },
                         ]) && i(t.prototype, n),
                         o && i(t, o),

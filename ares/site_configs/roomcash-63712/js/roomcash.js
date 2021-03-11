@@ -131,6 +131,7 @@ export default class Roomcash {
             this.buildFooterMenu('#theBookingPage', 'afterend');
             this.updateText('.discount th', 'RoomCash');
             this.updateText('.balanceDueRow th', 'Your Cash');
+            this.addToBalance(50);
             this.insertContent([
                 {
                     element: '.GuestForms',
@@ -664,5 +665,18 @@ export default class Roomcash {
             arn_input.focus();
             arn_input.blur();
         });
+    }
+
+    /**
+     *@description Adds the given number to the current balance total displayed in the header.
+     *@param Number - the amount to add to the balance.
+     */
+    async addToBalance(roomCashEarned) {
+        await utilities.waitForSelectorInDOM('#balance');
+        const balance = document.querySelector('#balance');
+        const current_balance = balance.textContent.substring(1).replace(',', '');
+        const currency = balance.textContent.substring(0, 1);
+        const new_balance = parseInt(current_balance, 10) + roomCashEarned;
+        balance.textContent = `${currency}${new_balance.toLocaleString()}`;
     }
 }

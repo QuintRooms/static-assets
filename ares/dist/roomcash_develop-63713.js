@@ -8219,7 +8219,6 @@
                                         document.querySelector('.SearchHotels') &&
                                             (this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend'),
                                             this.moveCurrency(),
-                                            this.addToBalance(50),
                                             this.insertContent([
                                                 {element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer', position: 'beforeend', html: '<hr>'},
                                                 {element: '.SearchHotels .sort-wrapper', position: 'afterend', html: '<hr>'},

@@ -62,7 +62,6 @@ export default class Roomcash {
         if (document.querySelector('.SearchHotels')) {
             this.buildFooterMenu('.ArnSearchContainerMainDiv', 'afterend');
             this.moveCurrency();
-            this.addToBalance(50);
             this.insertContent([
                 {
                     element: '.SearchHotels .ArnQuadSearchContainer.ArnPrimarySearchContainer',

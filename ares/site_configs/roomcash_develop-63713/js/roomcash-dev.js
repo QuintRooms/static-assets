@@ -132,6 +132,7 @@ export default class Roomcash {
             this.buildFooterMenu('#theBookingPage', 'afterend');
             this.updateText('.discount th', 'RoomCash');
             this.updateText('.balanceDueRow th', 'Your Cash');
+            this.addToBalance(50);
             this.insertContent([
                 {
                     element: '.GuestForms',
@@ -513,5 +514,12 @@ export default class Roomcash {
             arn_input.focus();
             arn_input.blur();
         });
+    }
+
+    addToBalance(roomCashEarned) {
+        const balance = document.querySelector('#balance');
+        const current_balance = balance.textContent;
+        const new_balance = parseFloat(current_balance) + roomCashEarned;
+        balance.textContent = new_balance.toString();
     }
 }

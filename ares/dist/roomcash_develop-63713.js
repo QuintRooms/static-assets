@@ -3491,12 +3491,18 @@
                                                             for (;;)
                                                                 switch ((e.prev = e.next)) {
                                                                     case 0:
-                                                                        return (e.next = 2), t.waitForSelectorInDOM('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'));
+                                                                        return (e.next = 2), t.waitForSelectorInDOM('.pollingFinished');
                                                                     case 2:
+                                                                        if (document.querySelector('#theArnProperty'.concat(n.prop_id))) {
+                                                                            e.next = 4;
+                                                                            break;
+                                                                        }
+                                                                        return e.abrupt('return');
+                                                                    case 4:
                                                                         document
                                                                             .querySelector('#theArnProperty'.concat(n.prop_id, ' .ArnPropThumb img'))
                                                                             .setAttribute('src', n.image_url);
-                                                                    case 4:
+                                                                    case 6:
                                                                     case 'end':
                                                                         return e.stop();
                                                                 }
@@ -8115,6 +8121,7 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'),
                 n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
                 n(/*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'),
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
@@ -8251,6 +8258,7 @@
                                             (this.buildFooterMenu('#theBookingPage', 'afterend'),
                                             this.updateText('.discount th', 'RoomCash'),
                                             this.updateText('.balanceDueRow th', 'Your Cash'),
+                                            this.addToBalance(50),
                                             this.insertContent([
                                                 {
                                                     element: '.GuestForms',
@@ -8775,6 +8783,16 @@
                                             i.focus(), i.blur();
                                         });
                                     }
+                                },
+                            },
+                            {
+                                key: 'addToBalance',
+                                value: function (e) {
+                                    var t = document.querySelector('#balance'),
+                                        n = t.textContent.substring(1).replace(',', ''),
+                                        o = t.textContent.substring(0, 1),
+                                        r = parseInt(n, 10) + e;
+                                    t.textContent = ''.concat(o).concat(r.toLocaleString());
                                 },
                             },
                         ]) && u(t.prototype, n),

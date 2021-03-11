@@ -516,10 +516,15 @@ export default class Roomcash {
         });
     }
 
+    /**
+     *@description Adds the given number to the current balance total displayed in the header.
+     *@param Number - the amount to add to the balance.
+     */
     addToBalance(roomCashEarned) {
         const balance = document.querySelector('#balance');
-        const current_balance = balance.textContent;
-        const new_balance = parseFloat(current_balance) + roomCashEarned;
-        balance.textContent = new_balance.toString();
+        const current_balance = balance.textContent.substring(1).replace(',', '');
+        const currency = balance.textContent.substring(0, 1);
+        const new_balance = parseInt(current_balance, 10) + roomCashEarned;
+        balance.textContent = `${currency}${new_balance.toLocaleString()}`;
     }
 }

@@ -9,6 +9,7 @@ module.exports = () => {
             // 'akon_21-60284': './src/60284.js', // A-Kon 2021
             // 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
+            // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
@@ -68,7 +69,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
         };
     }
 

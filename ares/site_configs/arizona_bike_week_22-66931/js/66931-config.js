@@ -15,10 +15,9 @@ export default function siteConfig() {
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
-            // TODO update with dates and group ID
-            event_id: 11111,
+            event_id: 47375,
             event_name: 'Arizona Bike Week 2022',
-            event_dates: '',
+            event_dates: '4/6/2022 - 4/11/2022',
             redirect_date: '',
             redirect_url: '',
             is_lrg: false,
@@ -42,12 +41,12 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         has_social_sharing: true,
-        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'http://www.azbikeweek.com/',
         },
-        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {

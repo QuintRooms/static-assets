@@ -235,7 +235,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><h1>Your Room Is Booked!</h1>
-                        <span>BOOKING NUMBER:[CONFIRMATIONNUMBER,FALLBACK=]</span></div>
+                            <span>BOOKING NUMBER: {{CONFIRMATIONNUMBER}}</span></div>
     
                 </td>
               </tr>
@@ -387,7 +387,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><mj-raw>
-                        <h2>[Hotel,fallback=]</h2>
+                        <h2></h2>
                     </mj-raw></div>
     
                 </td>
@@ -429,7 +429,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><mj-raw>
-                        <p style="font-weight: 500; font-size: 14px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
+                        <p style="font-weight: 500; font-size: 14px;">{{HotelAddress1}} {{HotelCity}}, {{HotelState}} {{HotelZip}}</p>
                     </mj-raw></div>
     
                 </td>
@@ -553,7 +553,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guest Name:</b> [GuestName,fallback=]</span></div>
+      ><span><b>Guest Name:</b> {{GuestName}}</span></div>
     
                 </td>
               </tr>
@@ -565,7 +565,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check In:</b> [CheckInDate,fallback=] - [CheckInTime,fallback=]</span></div>
+      ><span><b>Check In:</b> {{CheckInDate}} - {{CheckInTime}}</span></div>
     
                 </td>
               </tr>
@@ -577,7 +577,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Check Out:</b> [CheckOutDate,fallback=] - [CheckOutTime,fallback=]</span></div>
+      ><span><b>Check Out:</b> {{CheckOutDate}} - {{CheckOutTime}}</span></div>
     
                 </td>
               </tr>
@@ -589,7 +589,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Guests:</b> [Guests,fallback=]</span></div>
+      ><span><b>Guests:</b> {{Guests}}</span></div>
     
                 </td>
               </tr>
@@ -601,7 +601,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rooms:</b> [Rooms,fallback=]</span></div>
+      ><span><b>Rooms:</b> {{Rooms}}</span></div>
     
                 </td>
               </tr>
@@ -641,7 +641,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Total for Stay:</b> [CurrencySymbol, fallback=][Total,fallback=]</span></div>
+      ><span><b>Total for Stay:</b> {{CurrencySymbol}}{{Total}}</span></div>
     
                 </td>
               </tr>
@@ -653,7 +653,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Tax Amount:</b> [CurrencySymbol, fallback=][TaxAmount,fallback=]</span></div>
+      ><span><b>Tax Amount:</b> {{CurrencySymbol}}{{TaxAmount}}</span></div>
     
                 </td>
               </tr>
@@ -665,7 +665,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Deposit Charged:</b> 	[CurrencySymbol, fallback=][DepositCharged,fallback=]</span></div>
+      ><span><b>Deposit Charged:</b> 	{{CurrencySymbol}}{{DepositCharged}}</span></div>
     
                 </td>
               </tr>
@@ -677,7 +677,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Balance Due:</b> [CurrencySymbol, fallback=][BalanceDue,fallback=]</span></div>
+      ><span><b>Balance Due:</b> {{CurrencySymbol}}{{BalanceDue}}</span></div>
     
                 </td>
               </tr>
@@ -689,7 +689,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rate Per Night:</b> [RoomRates,fallback=]</span></div>
+      ><span><b>Rate Per Night:</b> {{RoomRates}}</span></div>
     
                 </td>
               </tr>
@@ -1108,7 +1108,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Room Description</h5>
-                    <span>[RoomDescriptionLong,fallback=]</span></div>
+                    <span>{{RoomDescriptionLong}}</span></div>
     
                 </td>
               </tr>
@@ -1121,7 +1121,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Deposit Policy</h5>
-                    <span>[DepositPolicyLong,fallback=]</span></div>
+                    <span>{{DepositPolicyLong}}</span></div>
     
                 </td>
               </tr>
@@ -1134,7 +1134,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Terms</h5>
-                    <span>[PaymentTermsLong,fallback=]</span></div>
+                    <span>{{PaymentTermsLong}}</span></div>
     
                 </td>
               </tr>
@@ -1147,7 +1147,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Cancellation Policy</h5>
-                    <span>[CancellationPolicyLong,fallback=]</span></div>
+                    <span>{{CancellationPolicyLong}}</span></div>
     
                 </td>
               </tr>
@@ -1160,7 +1160,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Property Policy</h5>
-                    <span>[PropertyPolicy,fallback=]</span></div>
+                    <span>{{PropertyPolicy}}</span></div>
     
                 </td>
               </tr>
@@ -1173,7 +1173,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Extra Fees Policy</h5>
-                    <span>[ExtraFeesPolicy,fallback=]</span></div>
+                    <span>{{ExtraFeesPolicy}}</span></div>
     
                 </td>
               </tr>
@@ -1186,7 +1186,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Policy</h5>
-                    <span>[PaymentPolicy,fallback=]</span></div>
+                    <span>{{PaymentPolicy}}</span></div>
     
                 </td>
               </tr>
@@ -1199,7 +1199,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Check In Support Policy</h5>
-                    <span>[CheckInSupportPolicy,fallback=]</span></div>
+                    <span>{{CheckInSupportPolicy}}</span></div>
     
                 </td>
               </tr>
@@ -1212,7 +1212,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Important Guest Information</h5>
-                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
+                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=60279">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
     
                 </td>
               </tr>
@@ -1226,7 +1226,7 @@
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Reservation Information</h5>
                     <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
-                        [Hotel,fallback=] at [HotelPhone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span></div>
+                        {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=60279">click here.</a></span></div>
     
                 </td>
               </tr>

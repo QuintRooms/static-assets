@@ -9,6 +9,41 @@ const ares = `${process.cwd()}`;
 let site_id;
 let site_name;
 
+/**
+ *@description Checks if name of the site being built has already been added to site_names.json
+ *@returns Boolean
+ */
+function siteNameExists() {
+    const site_names = fs.readFileSync(`${ares}/js/json/site_names.json`, 'utf8');
+    if (site_names.includes(`"${site_id}": "${site_name}"`)) return true;
+}
+
+/**
+ *@description Adds the site id and site name as a key/value to site_names.json
+ */
+function addEmailSiteName() {
+    if (siteNameExists()) return;
+    try {
+        fs.readFile(`${ares}/js/json/site_names.json`, 'utf8', (err, data) => {
+            if (err) throw err;
+            const site_names = data.substring(1, data.indexOf('}') - 1);
+            const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
+
+            fs.writeFile(`${ares}/js/json/site_names.json`, site_names_updated, (error) => {
+                if (error) throw error;
+                console.log(`\n"${site_id}": "${site_name}" added to site_names.json\n`);
+            });
+        });
+    } catch (error) {
+        console.log(`Cannot add "${site_id}": "${site_name}" to site_names.json. \nerror: `, error);
+    }
+}
+/**
+ *@description creates a confirmation.html file for each site inside an /emails directory within that site's directory that uses site specific colors and logos.
+ *@param Object - "Context" - site specific object containing logo, primary color, secondary color, text color, theme and has_custom_email boolean.
+ *@param String - "inputPath" - path of the mjml file to build from (custom email or default confirmation email)
+ *@param String - "fileName" - file name of email (confirmation, welcome, cancellation etc)
+ */
 async function buildEmail(context, inputPath, fileName) {
     addEmailSiteName();
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
@@ -22,6 +57,10 @@ async function buildEmail(context, inputPath, fileName) {
     });
 }
 
+/**
+ *@description creates a JSON file within a site's /emails directory based off of the site config object and calls the buildEmail function with args based off if the site has a custom email or default confirmation email
+ *@param object - site specifc config object
+ */
 function createFiles(siteObj) {
     const data = JSON.stringify(siteObj);
     fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${site_id}.json`, data);
@@ -42,18 +81,30 @@ function createFiles(siteObj) {
     }
 }
 
+/**
+ *@description will extract a portion of a string. A helper function to grab config values from the site config js or scss config
+ *@param String - The string that the desired value is located in
+ *@param String - Starting character to slice from
+ *@param String - Ending character to slice to
+ *@return String
+ */
 function extractValue(string, startChar, endChar) {
     const value = string.substring(string.indexOf(startChar), string.indexOf(endChar, string.indexOf(startChar)) + 1);
     return value.slice(value.indexOf(':') + 2, value.indexOf(endChar));
 }
 
+/**
+ *@description Creates an object with site specific values from a site config js file and site styles scss file. These values are commonly needed in emails (brand colors, logos, background/hero images, text color, theme, site url for outbound href for logos etc )
+ *@param String - site config javascript file
+ *@param String - site styles scss file
+ */
 function buildSiteObject(siteConfig, siteStyles) {
     let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
 
     try {
         logo = logo[1].replace(`\``, '');
     } catch (e) {
-        // TODO update to account for images that don't have the path '/img/logo.'. F1 has logos located in /clients/f1/img
+        // TODO update to account for images that don't have the path '/img/logo.'. F1 has logos located in /clients/f1/images/logo
         console.log('\x1b[41m%s\x1b[0m', `This breaks when /img/logo.png does not exist. Add a logo to ${site_name}-${site_id}. Error: ${e}`);
     }
 
@@ -79,35 +130,16 @@ function buildSiteObject(siteConfig, siteStyles) {
     createFiles(site_details);
 }
 
+/**
+ *@description Creates global string variables of the site config js file and the site styles scss file
+ *@param String - the name of the site currently being built by Webpack. Has the format 'site_name-site_id'
+ */
 function defineVars(site) {
     site_id = site.slice(-5);
     site_name = site;
     const site_config = fs.readFileSync(`${ares}/site_configs/${site_name}/js/${site_id}-config.js`, 'utf8');
     const site_styles = fs.readFileSync(`${ares}/site_configs/${site_name}/styles/${site_id}.scss`, 'utf8');
     buildSiteObject(site_config, site_styles);
-}
-
-function siteNameExists() {
-    const site_names = fs.readFileSync(`${ares}/js/json/site_names.json`, 'utf8');
-    if (site_names.includes(`"${site_id}": "${site_name}"`)) return true;
-}
-
-function addEmailSiteName() {
-    if (siteNameExists()) return;
-    try {
-        fs.readFile(`${ares}/js/json/site_names.json`, 'utf8', (err, data) => {
-            if (err) throw err;
-            const site_names = data.substring(1, data.indexOf('}') - 1);
-            const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
-
-            fs.writeFile(`${ares}/js/json/site_names.json`, site_names_updated, (error) => {
-                if (error) throw error;
-                console.log(`\n"${site_id}": "${site_name}" added to site_names.json\n`);
-            });
-        });
-    } catch (error) {
-        console.log(`Cannot add "${site_id}": "${site_name}" to site_names.json. \nerror: `, error);
-    }
 }
 
 module.exports = defineVars;

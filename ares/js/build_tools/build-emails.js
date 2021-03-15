@@ -104,8 +104,8 @@ function buildSiteObject(siteConfig, siteStyles) {
     try {
         logo = logo[1].replace(`\``, '');
     } catch (e) {
-        // TODO update to account for images that don't have the path '/img/logo.'. F1 has logos located in /clients/f1/images/logo
-        console.log('\x1b[41m%s\x1b[0m', `This breaks when /img/logo.png does not exist. Add a logo to ${site_name}-${site_id}. Error: ${e}`);
+        console.log('\x1b[41m%s\x1b[0m', `/img/logo.png does not exist. Add a logo to ${site_name}-${site_id}. Error: ${e}`);
+        return;
     }
 
     const theme_color = extractValue(siteConfig, 'theme:', ',').slice(1, -1) === 'light' ? '#fff' : '#000';

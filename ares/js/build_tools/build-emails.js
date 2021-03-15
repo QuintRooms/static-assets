@@ -10,6 +10,7 @@ let site_id;
 let site_name;
 
 async function buildEmail(context, inputPath, fileName) {
+    addEmailSiteName();
     const conf_template = fs.readFileSync(`${ares}/${inputPath}`, 'utf8');
     const {html} = mjml2html(conf_template);
     const template = handlebars.compile(html.toString());
@@ -84,6 +85,29 @@ function defineVars(site) {
     const site_config = fs.readFileSync(`${ares}/site_configs/${site_name}/js/${site_id}-config.js`, 'utf8');
     const site_styles = fs.readFileSync(`${ares}/site_configs/${site_name}/styles/${site_id}.scss`, 'utf8');
     buildSiteObject(site_config, site_styles);
+}
+
+function siteNameExists() {
+    const site_names = fs.readFileSync(`${ares}/js/json/site_names.json`, 'utf8');
+    if (site_names.includes(`"${site_id}": "${site_name}"`)) return true;
+}
+
+function addEmailSiteName() {
+    if (siteNameExists()) return;
+    try {
+        fs.readFile(`${ares}/js/json/site_names.json`, 'utf8', (err, data) => {
+            if (err) throw err;
+            const site_names = data.substring(1, data.length - 2);
+            const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
+
+            fs.writeFile(`${ares}/js/json/site_names.json`, site_names_updated, (error) => {
+                if (error) throw error;
+                console.log(`\n"${site_id}": "${site_name}" added to site_names.json\n`);
+            });
+        });
+    } catch (error) {
+        console.log(`Cannot add "${site_id}": "${site_name}" to site_names.json. \nerror: `, error);
+    }
 }
 
 module.exports = defineVars;

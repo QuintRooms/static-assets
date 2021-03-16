@@ -172,6 +172,7 @@ const affiliates = {
     17481: "Breeder's Cup",
     17489: 'College Football Playoff Championship',
     17493: 'Hall Of Fame Marathon',
+    17544: 'Kerrville Triathlon Festival',
 };
 
 Object.keys(affiliates).forEach((key) => {

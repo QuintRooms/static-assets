@@ -93,6 +93,18 @@ export default function siteConfig() {
             //     end_date: '04/12/2021', // M/D/YYYY
             //     portal_url: 'http://events.hotelsforhope.com/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021',
             // },
+            // {
+            //     name: '2021 Las Vegas Auction',
+            //     display_date: 'June 16 - 21, 2021',
+            //     end_date: '06/22/2021', // M/D/YYYY
+            //     portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
+            // },
+            // {
+            //     name: '2021 Houston Auction',
+            //     display_date: 'September 09 - 14, 2021',
+            //     end_date: '09/15/2021', // M/D/YYYY
+            //     portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
+            // },
         ],
     };
 }

@@ -26,7 +26,7 @@ function addEmailSiteName() {
     try {
         fs.readFile(`${ares}/js/json/site_names.json`, 'utf8', (err, data) => {
             if (err) throw err;
-            const site_names = data.substring(1, data.indexOf('}') - 1);
+            const site_names = data.substring(1, data.indexOf('}') - 2);
             const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
 
             fs.writeFile(`${ares}/js/json/site_names.json`, site_names_updated, (error) => {
@@ -99,7 +99,13 @@ function extractValue(string, startChar, endChar) {
  *@param String - site styles scss file
  */
 function buildSiteObject(siteConfig, siteStyles) {
-    let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    let logo;
+    if (siteConfig.includes('email_logo_file_location')) {
+        logo = extractValue(siteConfig, 'email_logo_file_location:', ',').split('img/');
+        console.log('LOGO: ', logo);
+    } else {
+        logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    }
 
     try {
         logo = logo[1].replace(`\``, '');

@@ -1,27 +1,28 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-
-const site_id = 60302;
-const directory_name = `f1_bahrain_20-${site_id}`;
+const site_id = 68719;
+const directory_name = `bj_template_21-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 16980,
+        affiliate_id: 16659,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
         distance_unit: 'useMiles',
+        map_size: '12',
+        radius: '50',
         lodging: {
-            event_id: 11111,
-            event_name: 'Bahrain Grand Prix',
-            event_dates: '11/27/2020 - 11/29/2020',
-            redirect_date: '11/29/2020',
-            redirect_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=oldSiteRedirect',
+            event_id: 1111,
+            event_name: 'Barrett-Jackson Auction 2021',
+            event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {
@@ -31,32 +32,31 @@ export default function siteConfig() {
             percent_off_text: 'off',
             show_percent_savings: false,
         },
-        exclusive_rate_text: 'Exclusive Rate',
+        exclusive_rate_text: 'Exclusive Rates',
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
-        show_tax_inclusive_rates: true,
-        dayjs_date_format: 'D/M/YYYY',
+        show_tax_inclusive_rates: false,
+        dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: false,
         show_property_type: false,
-        show_language_select: true,
-        show_currency_select: true,
+        show_language_select: false,
+        show_currency_select: false,
         show_date_prompt: false,
         has_social_sharing: true,
-        fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
-        email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.jpg`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
+            logo_outbound_url: 'https://www.barrett-jackson.com/',
         },
-        map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
-        google_font_url: '',
+        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: false,
-                image_url: '',
-                outbound_url: '',
+                is_active: true,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/leftbanner.jpg`,
+                outbound_url: 'https://www.grandcanyon.org/',
             },
             between_property_ad: {
                 is_active: false,
@@ -73,5 +73,8 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        confirmation_email_from: 'Hotels for Hope',
+        has_group_booking_banner: false,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Scottsdale',
     };
 }

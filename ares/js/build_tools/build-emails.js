@@ -99,7 +99,13 @@ function extractValue(string, startChar, endChar) {
  *@param String - site styles scss file
  */
 function buildSiteObject(siteConfig, siteStyles) {
-    let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    let logo;
+    if (siteConfig.includes('email_logo_file_location')) {
+        logo = extractValue(siteConfig, 'email_logo_file_location:', ',').split('img/');
+        console.log('LOGO: ', logo);
+    } else {
+        logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    }
 
     try {
         logo = logo[1].replace(`\``, '');

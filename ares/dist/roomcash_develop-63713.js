@@ -8820,9 +8820,12 @@
                                 key: 'updateErrorText',
                                 value: function () {
                                     var e = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
-                                    e.textContent.includes('with promotional code') &&
-                                        (e.textContent =
-                                            'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our support form. Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.');
+                                    e &&
+                                        e.textContent.includes('with promotional code') &&
+                                        (e.textContent = 'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our <a href="'.concat(
+                                            document.querySelector('.ARN_ServiceLinks.supportLink').href,
+                                            '">support form.</a> Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.'
+                                        ));
                                 },
                             },
                         ]) && u(t.prototype, n),

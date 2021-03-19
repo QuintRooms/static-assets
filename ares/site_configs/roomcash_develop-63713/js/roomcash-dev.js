@@ -530,6 +530,9 @@ export default class Roomcash {
         balance.textContent = `${currency}${new_balance.toLocaleString()}`;
     }
 
+    /**
+     *@description Updates the error message text when the confirmation number entered, does not exist.
+     */
     updateErrorText() {
         const error = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
         if (error.textContent.includes('with promotional code')) {

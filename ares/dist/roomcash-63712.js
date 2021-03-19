@@ -386,7 +386,7 @@
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
             },
-            F = function (e) {
+            H = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -397,7 +397,7 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(F, r, 1), u(D, r, 1));
+                                      t.call(e, u(H, r, 1), u(D, r, 1));
                                   } catch (e) {
                                       D.call(r, e);
                                   }
@@ -412,7 +412,7 @@
             ((q = function (e) {
                 p(this, q, 'Promise', '_h'), h(e), r.call(this);
                 try {
-                    e(u(F, this, 1), u(D, this, 1));
+                    e(u(H, this, 1), u(D, this, 1));
                 } catch (e) {
                     D.call(this, e);
                 }
@@ -438,7 +438,7 @@
             })),
             (a = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
+                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(D, e, 1));
             }),
             (b.f = E = function (e) {
                 return e === q || e === i ? new a(e) : o(e);
@@ -3186,8 +3186,8 @@
             I = O && O.stringify,
             j = h('_hidden'),
             D = h('toPrimitive'),
-            F = {}.propertyIsEnumerable,
-            H = l('symbol-registry'),
+            H = {}.propertyIsEnumerable,
+            F = l('symbol-registry'),
             B = l('symbols'),
             Y = l('op-symbols'),
             N = Object.prototype,
@@ -3242,7 +3242,7 @@
                 return e;
             },
             K = function (e) {
-                var t = F.call(this, (e = _(e, !0)));
+                var t = H.call(this, (e = _(e, !0)));
                 return !(this === N && o(B, e) && !o(Y, e)) && (!(t || !o(this, e) || !o(B, e) || (o(this, j) && this[j][e])) || t);
             },
             J = function (e, t) {
@@ -3289,11 +3289,11 @@
         for (var re = L(h.store), oe = 0; re.length > oe; ) m(re[oe++]);
         i(i.S + i.F * !U, 'Symbol', {
             for: function (e) {
-                return o(H, (e += '')) ? H[e] : (H[e] = P(e));
+                return o(F, (e += '')) ? F[e] : (F[e] = P(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in H) if (H[t] === e) return t;
+                for (var t in F) if (F[t] === e) return t;
             },
             useSetter: function () {
                 W = !0;
@@ -8126,7 +8126,7 @@
                                 var e = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
                                 e &&
                                     e.textContent.includes('with promotional code') &&
-                                    (e.textContent = 'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our <a href="'.concat(
+                                    (e.innerHTML = 'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our <a href="'.concat(
                                         document.querySelector('.ARN_ServiceLinks.supportLink').href,
                                         '">support form.</a> Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.'
                                     ));

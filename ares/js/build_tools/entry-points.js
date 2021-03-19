@@ -16,6 +16,7 @@ module.exports = () => {
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
             // 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
+            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
@@ -60,7 +61,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

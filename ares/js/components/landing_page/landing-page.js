@@ -87,7 +87,6 @@ export default class LandingPage {
             }
             if (utilities.checkForPastDate(event.end_date)) return;
 
-            // add in grid-template-columns method here
             if (i === 0) container.insertAdjacentHTML('beforeEnd', `<h1>Upcoming Events</h1><div class="events"></div>`);
 
             document.querySelector('.events').insertAdjacentHTML(

@@ -1853,7 +1853,7 @@
                                         .querySelector('.ArnSupportBottom')
                                         .insertAdjacentHTML(
                                             'beforeend',
-                                            '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                            '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
                                         );
                                 },
                             },
@@ -5422,7 +5422,7 @@
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
-                H = function (e) {
+                F = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -5433,7 +5433,7 @@
                                 ? v(function () {
                                       var o = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(H, o, 1), u(D, o, 1));
+                                          t.call(e, u(F, o, 1), u(D, o, 1));
                                       } catch (e) {
                                           D.call(o, e);
                                       }
@@ -5448,7 +5448,7 @@
                 ((M = function (e) {
                     p(this, M, 'Promise', '_h'), f(e), o.call(this);
                     try {
-                        e(u(H, this, 1), u(D, this, 1));
+                        e(u(F, this, 1), u(D, this, 1));
                     } catch (e) {
                         D.call(this, e);
                     }
@@ -5474,7 +5474,7 @@
                 })),
                 (s = function () {
                     var e = new o();
-                    (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(D, e, 1));
+                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
                 }),
                 (_.f = L = function (e) {
                     return e === M || e === a ? new s(e) : r(e);
@@ -5966,8 +5966,8 @@
                 O = R && R.stringify,
                 I = f('_hidden'),
                 D = f('toPrimitive'),
-                H = {}.propertyIsEnumerable,
-                F = l('symbol-registry'),
+                F = {}.propertyIsEnumerable,
+                H = l('symbol-registry'),
                 B = l('symbols'),
                 Y = l('op-symbols'),
                 N = Object.prototype,
@@ -6023,7 +6023,7 @@
                     return e;
                 },
                 K = function (e) {
-                    var t = H.call(this, (e = S(e, !0)));
+                    var t = F.call(this, (e = S(e, !0)));
                     return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, I) && this[I][e])) || t);
                 },
                 J = function (e, t) {
@@ -6070,11 +6070,11 @@
             for (var oe = C(f.store), re = 0; oe.length > re; ) h(oe[re++]);
             a(a.S + a.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(F, (e += '')) ? F[e] : (F[e] = P(e));
+                    return r(H, (e += '')) ? H[e] : (H[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in F) if (F[t] === e) return t;
+                    for (var t in H) if (H[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -8121,6 +8121,8 @@
                 (t.default = void 0),
                 n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es7.array.includes */ './node_modules/core-js/modules/es7.array.includes.js'),
+                n(/*! core-js/modules/es6.string.includes */ './node_modules/core-js/modules/es6.string.includes.js'),
                 n(/*! core-js/modules/es6.regexp.replace */ './node_modules/core-js/modules/es6.regexp.replace.js'),
                 n(/*! core-js/modules/es6.number.constructor */ './node_modules/core-js/modules/es6.number.constructor.js'),
                 n(/*! core-js/modules/es6.regexp.split */ './node_modules/core-js/modules/es6.regexp.split.js'),
@@ -8281,7 +8283,8 @@
                                             )),
                                         document.querySelector('.WBResendOrCancelForm') &&
                                             (this.buildFooterMenu('.ArnSubPage', 'afterend'),
-                                            this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]));
+                                            this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]),
+                                            this.updateErrorText());
                                 },
                             },
                             {
@@ -8812,6 +8815,15 @@
                                     function (e) {
                                         return r.apply(this, arguments);
                                     }),
+                            },
+                            {
+                                key: 'updateErrorText',
+                                value: function () {
+                                    var e = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
+                                    e.textContent.includes('with promotional code') &&
+                                        (e.textContent =
+                                            'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our support form. Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.');
+                                },
                             },
                         ]) && u(t.prototype, n),
                         o && u(t, o),

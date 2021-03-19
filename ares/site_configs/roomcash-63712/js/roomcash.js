@@ -174,6 +174,7 @@ export default class Roomcash {
                     html: this.sub_header_container,
                 },
             ]);
+            this.updateErrorText();
         }
     }
 
@@ -527,5 +528,16 @@ export default class Roomcash {
         const currency = balance.textContent.substring(0, 1);
         const new_balance = parseInt(current_balance, 10) + roomCashEarned;
         balance.textContent = `${currency}${new_balance.toLocaleString()}`;
+    }
+
+    /**
+     *@description Updates the error message text when the confirmation number entered, does not exist.
+     */
+    updateErrorText() {
+        const error = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
+        if (error.textContent.includes('with promotional code')) {
+            error.textContent =
+                'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our support form. Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.';
+        }
     }
 }

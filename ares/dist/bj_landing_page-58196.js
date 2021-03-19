@@ -3059,9 +3059,9 @@
                     : function (e) {
                           return e instanceof R;
                       },
-            Z = function (e, t, n) {
+            J = function (e, t, n) {
                 return (
-                    e === N && Z(B, t, n),
+                    e === N && J(B, t, n),
                     v(e),
                     (t = _(t, !0)),
                     v(n),
@@ -3070,9 +3070,9 @@
                         : P(e, t, n)
                 );
             },
-            J = function (e, t) {
+            Z = function (e, t) {
                 v(e);
-                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
+                for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) J(e, (n = r[o++]), t[n]);
                 return e;
             },
             Q = function (e) {
@@ -3109,7 +3109,7 @@
                 }
             ),
             (M.f = K),
-            (q.f = Z),
+            (q.f = J),
             (n(54).f = A.f = X),
             (n(37).f = Q),
             (L.f = ee),
@@ -3138,10 +3138,10 @@
         }),
             a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? k(e) : J(k(e), t);
+                    return void 0 === t ? k(e) : Z(k(e), t);
                 },
-                defineProperty: Z,
-                defineProperties: J,
+                defineProperty: J,
+                defineProperties: Z,
                 getOwnPropertyDescriptor: K,
                 getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
@@ -5169,7 +5169,7 @@
                                     .querySelector('.ArnSupportBottom')
                                     .insertAdjacentHTML(
                                         'beforeend',
-                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
                                     );
                             },
                         },
@@ -7354,6 +7354,12 @@
                             display_date: 'March 20 - 27, 2021',
                             end_date: '3/28/2021',
                             portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
+                        },
+                        {
+                            name: '2021 Las Vegas Auction',
+                            display_date: 'June 16 - 21, 2021',
+                            end_date: '06/22/2021',
+                            portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
                         },
                     ],
                 };

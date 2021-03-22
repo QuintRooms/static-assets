@@ -1177,9 +1177,10 @@ input[type=checkbox] {
   margin-top: 5px;
 }
 .SearchHotels .ArnProperty #rc-avg-nightly #strike-through-rate {
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: line-through;
   margin-right: 10px;
+  color: #CC9831;
 }
 @media (max-width: 600px) {
   .SearchHotels .ArnProperty #rc-avg-nightly #strike-through-rate {

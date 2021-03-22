@@ -1102,9 +1102,10 @@ input[type="checkbox"] {
             margin-top: 5px;
 
             #strike-through-rate {
-                font-size: 13px;
+                font-size: 14px;
                 text-decoration: line-through;
                 margin-right: 10px;
+                color: #CC9831;
 
                 @include mobile {
                     display: block;

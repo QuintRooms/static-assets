@@ -63,7 +63,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'bonnaroo_21-64868': './src/64868.js', // bonnaroo 21
+            // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

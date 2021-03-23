@@ -1,0 +1,20 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #7a41ff;
+$secondary_color: rgba(0,161,236,.93);
+$primary_text_color: #fff;
+$secondary_text_color: #7a41ff;
+$border_color: #7a41ff;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #7a41ff;
+$button_hover_border_color: #7a41ff;
+$google_font_name: 'Montserrat';
+$site_name: 'bonnaroo_21-64868';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0,161,236,.93), #7a41ff);
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';

@@ -7357,7 +7357,7 @@
                         },
                         {
                             name: '2021 Las Vegas Auction',
-                            display_date: 'June 16 - 21, 2021',
+                            display_date: 'June 17 - 19, 2021',
                             end_date: '06/22/2021',
                             portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
                         },

@@ -12,6 +12,7 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
@@ -63,6 +64,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

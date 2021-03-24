@@ -12,6 +12,7 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020

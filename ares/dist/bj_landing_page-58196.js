@@ -7367,8 +7367,8 @@
                         },
                         {
                             name: '2021 Houston Auction',
-                            display_date: 'September 09 - 14, 2021',
-                            end_date: '09/15/2021',
+                            display_date: 'September 16 - 18, 2021',
+                            end_date: '09/19/2021',
                             portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
                         },
                     ],

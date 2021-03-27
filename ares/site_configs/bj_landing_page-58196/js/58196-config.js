@@ -99,12 +99,12 @@ export default function siteConfig() {
                 end_date: '06/22/2021', // M/D/YYYY
                 portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
             },
-            // {
-            //     name: '2021 Houston Auction',
-            //     display_date: 'September 09 - 14, 2021',
-            //     end_date: '09/15/2021', // M/D/YYYY
-            //     portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
-            // },
+            {
+                name: '2021 Houston Auction',
+                display_date: 'September 09 - 14, 2021',
+                end_date: '09/15/2021', // M/D/YYYY
+                portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
+            },
         ],
     };
 }

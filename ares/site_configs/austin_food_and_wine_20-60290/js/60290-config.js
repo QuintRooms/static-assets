@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41292,
             event_name: 'Austin Food & Wine Festival',
             event_dates: '11/13/2020 - 11/15/2020',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

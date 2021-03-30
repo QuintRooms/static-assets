@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 44347,
             event_name: 'Pro Football Hall of Fame - Canton',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

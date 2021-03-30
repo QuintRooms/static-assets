@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41304,
             event_name: 'Shaky Knees Music Festival',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

@@ -41,11 +41,9 @@ class ChildPortal extends BasePortal {
             <a href="https://roomsteals.com/terms" target="_blank">Terms &amp; Conditions</a>
             <span>|</span>
             <a href="https://hotels.roomsteals.com/v6/privacy-policy" target="_blank">Privacy Policy</a>
-            <span>|</span>
-            <a href="https://roomsteals.getrewardful.com/signup" target="_blank">Affiliate Program</a>
         </span>
         <span>
-            &copy; 2020. All Rights Reserved. <br>
+            &copy; 2021. All Rights Reserved. <br>
             RoomSteals.com
         </span>
     </footer>`,

@@ -19,6 +19,8 @@ export default function siteConfig() {
             event_name: 'Arizona Bike Week 2020',
             event_dates: '10/7/2020 - 10/11/2020',
             is_lrg: false,
+            redirect_date: '10/11/2020',
+            redirect_url: 'http://events.hotelsforhope.com/group-event?id=44940&utm_source=oldSiteRedirect',
         },
         cug: {
             is_cug: false,

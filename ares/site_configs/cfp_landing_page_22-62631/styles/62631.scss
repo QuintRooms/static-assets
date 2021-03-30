@@ -1,0 +1,77 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: center;
+$logo_max_width: 330px;
+$background_color: #fff;
+$secondary_background_color: #f0f0f0;
+$primary_color: #c9920e;
+$secondary_color: #000;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #c9920e;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #c9920e;
+$button_hover_border_color: #c9920e;
+$google_font_name: 'Graphik-Regular';
+$site_name: 'cfp_landing_page_22-62631';
+$path: set-path($env);
+$banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
+$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/indy_stadium.jpg), url(#{$path}/site_configs/#{$site_name}/img/banner-email3.jpg);
+$header-images: '';
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/landing_page/landing-page.scss';
+
+/* Fonts */
+@font-face {
+    font-family: 'Graphik-Bold';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-Bold.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-Regular.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-RegularItalic';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UnitedSansReg-Heavy';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
+    font-style: normal;
+}
+
+.ArnSupportLinks.ArnSupportBottom {
+    background-color: #000 !important;
+}
+
+.event-2 {
+    .display-date {
+        visibility: hidden;
+    }
+
+    .view-hotels {
+        margin-top: 20px;
+    }
+}
+
+.event-container {
+    h2 {
+        font-size: 24px;
+    }
+
+    .view-hotels {
+        background-color: #c9920e;
+        padding: 15px;
+        border-radius: 16px;
+    }
+}
+

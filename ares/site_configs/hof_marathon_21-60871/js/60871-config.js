@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 42001,
             event_name: 'Pro Football Hall of Fame Marathon',
             event_dates: '05/01/2021 - 05/02/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

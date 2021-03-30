@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --passWithNoTests --coverage",
-    "local": "NODE_ENV=local webpack --mode none",
-    "dev": "npm run compile-css && NODE_ENV=develop webpack --mode development",
-    "prod": "npm run compile-css && node js/build_tools/production-checklist.js && NODE_ENV=production webpack --mode production && node js/build_tools/generate-email-configs.js",
+    "local": "cross-env NODE_ENV=local webpack --mode none",
+    "dev": "npm run compile-css && cross-env NODE_ENV=develop webpack --mode development",
+    "prod": "npm run compile-css && node js/build_tools/production-checklist.js && cross-env NODE_ENV=production webpack --mode production && node js/build_tools/generate-email-configs.js",
     "email": "node js/build_tools/generate-email-configs.js",
     "compile-css": "npm run compile-styles && npm run compile-resbeat && npm run compile-dark",
     "compile-styles": "node-sass ./styles/sass/base-styles/styles.scss ./styles/styles.css",
     "compile-resbeat": "node-sass ./styles/sass/base-styles/resbeat.scss ./styles/resbeat.css",
     "compile-dark": "node-sass ./styles/sass/base-styles/dark.scss ./styles/dark.css",
-    "build-site": "node js/build_tools/site-build.js"
+    "build-site": "node js/build_tools/site-build.js",
+    "convert-mjml": "npm run mjml confirmation.mjml -o emails/templates_html/confirmation.mjml"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,8 @@
     "bottleneck": "^2.19.5",
     "dayjs": "^1.8.25",
     "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "mjml": "^4.8.1",
     "promise-polyfill": "8.1.3",
     "url-polyfill": "^1.1.8",
     "whatwg-fetch": "^3.0.0"
@@ -34,6 +37,7 @@
     "autoprefixer": "^9.8.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.6.0",
     "dotenv-webpack": "^1.8.0",
     "fs-extra": "^9.0.1",

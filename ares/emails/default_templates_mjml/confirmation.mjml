@@ -1,0 +1,244 @@
+<mjml>
+  <mj-head>
+    <mj-title>{{client_name}}Booking Confirmation</mj-title>
+    <mj-attributes>
+      <mj-all padding-top="0" padding-bottom="0" font-family="sans-serif" color={{text}}>
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color={{theme}}>
+    <!-- Header -->
+    <mj-section>
+      <mj-column width="50%" padding-top="30px" padding-bottom="30px">
+        <mj-image css-class="logo" src={{logo}} alt="Logo" title="Logo" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper>
+      <!-- Room is Booked -->
+      <mj-section padding-bottom="30px">
+        <mj-column width="100%">
+          <mj-text align="center">
+            <h1>Your Room Is Booked!</h1>
+            <span>BOOKING NUMBER: \{{CONFIRMATIONNUMBER}}</span>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Image -->
+      <mj-section padding-bottom="10px">
+        <mj-column width="100%">
+          <mj-image src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" css-class="banner" />
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <!-- Hotel Address -->
+    <mj-section>
+      <mj-column width="100%">
+        <mj-text align="center">
+          <mj-raw>
+            <h2>{{Hotel}}</h2>
+          </mj-raw>
+        </mj-text>
+      </mj-column>
+      <mj-column width="100%" padding-bottom="30px">
+        <mj-text align="center">
+          <mj-raw>
+            <p style="font-weight: 500; font-size: 14px;">\{{HotelAddress1}} \{{HotelCity}}, \{{HotelState}} \{{HotelZip}}</p>
+          </mj-raw>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Reservation Details -->
+    <mj-section padding-left="35px" padding-right="35px" padding-bottom="35px" padding-top="35px" background-color="#F4F4F4">
+      <mj-column width="100%" padding-bottom="20px">
+        <mj-text align="center" color="#666" margin-top="0">
+          <h2 style="margin-top: 0;">RESERVATION DETAILS</h2>
+        </mj-text>
+        <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+      </mj-column>
+      <mj-column width="50%" padding-top="10px">
+        <mj-text padding-bottom="10px" padding-top="5px" color="#666">
+          <span><b>Guest Name:</b> \{{GuestName}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Check In:</b> \{{CheckInDate}} - \{{CheckInTime}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Check Out:</b> \{{CheckOutDate}} - \{{CheckOutTime}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Guests:</b> \{{Guests}}</span>
+        </mj-text>
+        <mj-text color="#666">
+          <span><b>Rooms:</b> \{{Rooms}}</span>
+        </mj-text>
+      </mj-column>
+      <mj-column width="50%" padding-top="10px">
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Total for Stay:</b> \{{CurrencySymbol}}\{{Total}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Tax Amount:</b> \{{CurrencySymbol}}\{{TaxAmount}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Deposit Charged:</b> \{{CurrencySymbol}}\{{DepositCharged}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Balance Due:</b> \{{CurrencySymbol}}\{{BalanceDue}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Rate Per Night:</b> \{{RoomRates}}</span>
+        </mj-text>
+      </mj-column>
+      <mj-column width="100%" padding-top="20px">
+        <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+      </mj-column>
+    </mj-section>
+
+    <!-- Need Help With This Reservation? -->
+    <mj-section>
+      <mj-column width="100%" padding-top="20px">
+        <mj-text align="center">
+          <h1>Need Help With This Reservation?</h1>
+        </mj-text>
+      </mj-column>
+      <mj-column width="100%">
+        <mj-text align="center">
+          <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding-top="20px">
+      <!-- Email Contact -->
+      <mj-column width="50%" padding-bottom="20px">
+        <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
+        <mj-text align="center">
+          <h4>Email Quint Rooms</h4>
+          <!--email_off-->
+          <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
+          <!--/email_off-->
+        </mj-text>
+      </mj-column>
+      <!-- Phone Contact -->
+      <mj-column width="50%" padding-bottom="20px">
+        <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
+        <mj-text align="center">
+          <h4>Call Quint Rooms</h4>
+          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+        </mj-text>
+      </mj-column>
+      <mj-column width="100%" padding-top="20px">
+        <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+      </mj-column>
+    </mj-section>
+
+    <!-- Fees and Policies -->
+    <mj-section>
+      <mj-column width="100%">
+        <mj-raw>\{{#RoomDescriptionLong}}</mj-raw>
+        <mj-text>
+          <h5>Room Description</h5>
+          <span>\{{RoomDescriptionLong}}</span>
+        </mj-text>
+        <mj-raw>\{{/RoomDescriptionLong}}</mj-raw>
+        <mj-raw>\{{#DepositPolicyLong}}</mj-raw>
+        <mj-text>
+          <h5>Deposit Policy</h5>
+          <span>\{{DepositPolicyLong}}</span>
+        </mj-text>
+        <mj-raw>\{{/DepositPolicyLong}}</mj-raw>
+        <mj-raw>\{{#PaymentTermsLong}}</mj-raw>
+        <mj-text>
+          <h5>Payment Terms</h5>
+          <span>\{{PaymentTermsLong}}</span>
+        </mj-text>
+        <mj-raw>\{{/PaymentTermsLong}}</mj-raw>
+        <mj-raw>\{{#CancellationPolicyLong}}</mj-raw>
+        <mj-text>
+          <h5>Cancellation Policy</h5>
+          <span>\{{CancellationPolicyLong}}</span>
+        </mj-text>
+        <mj-raw>\{{/CancellationPolicyLong}}</mj-raw>
+        <mj-raw>\{{#PropertyPolicy}}</mj-raw>
+        <mj-text>
+          <h5>Property Policy</h5>
+          <span>\{{PropertyPolicy}}</span>
+        </mj-text>
+        <mj-raw>\{{/PropertyPolicy}}</mj-raw>
+        <mj-raw>\{{#ExtraFeesPolicy}}</mj-raw>
+        <mj-text>
+          <h5>Extra Fees Policy</h5>
+          <span>\{{ExtraFeesPolicy}}</span>
+        </mj-text>
+        <mj-raw>\{{/ExtraFeesPolicy}}</mj-raw>
+        <mj-raw>\{{#PaymentPolicy}}</mj-raw>
+        <mj-text>
+          <h5>Payment Policy</h5>
+          <span>\{{PaymentPolicy}}</span>
+        </mj-text>
+        <mj-raw>\{{/PaymentPolicy}}</mj-raw>
+        <mj-raw>\{{#CheckInSupportPolicy}}</mj-raw>
+        <mj-text>
+          <h5>Check In Support Policy</h5>
+          <span>\{{CheckInSupportPolicy}}</span>
+        </mj-text>
+        <mj-raw>\{{/CheckInSupportPolicy}}</mj-raw>
+        <mj-text>
+          <h5>Important Guest Information</h5>
+          <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid={{site_id}}">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+        </mj-text>
+        <mj-text>
+          <h5>Reservation Information</h5>
+          <!--email_off-->
+          <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
+            \{{Hotel}} at \{{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
+          <!--/email_off-->
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section>
+      <mj-column width="100%" padding-top="20px">
+        <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+      </mj-column>
+      <mj-column width="50%" padding-bottom="30px">
+        <mj-text padding-bottom="5px">
+          <h4>QuintRooms</h4>
+        </mj-text>
+        <mj-text padding-bottom="5px">
+          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.hotelsforhope.com</a>
+        </mj-text>
+        <mj-text padding-bottom="5px">
+          <div>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
+        </mj-text>
+        <mj-text padding-bottom="5px">
+          <!--email_off-->
+          <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@quintrooms.com</a>
+          <!--/email_off-->
+        </mj-text>
+        <mj-text padding-bottom="5px">
+          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+        </mj-text>
+        <mj-text padding-bottom="5px">
+          <span style="display:none !important">
+            <unsubscribe>Unsubscribe</unsubscribe>
+          </span>
+        </mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/hotels4hope" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/hotels4hope/" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://twitter.com/hotels4hope" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/hotels-for-hope" />
+        </mj-social>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

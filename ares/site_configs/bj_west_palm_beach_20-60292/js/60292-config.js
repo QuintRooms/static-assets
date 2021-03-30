@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 41299,
             event_name: 'Barrett-Jackson West Palm Beach 2020',
             event_dates: '10/15/2020 - 10/17/2020',
+            redirect_date: '09/12/2020',
+            redirect_url: 'https://events.hotelsforhope.com/v6/?siteid=64189&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

@@ -1,0 +1,40 @@
+<mjml>
+    <mj-include path="./site_configs/roomcash-63712/emails/components/head.mjml" />
+    <mj-body background-color=#fff>
+        <mj-raw>
+            <span id="preheader" style="display:none!important;">We've topped up your RoomCash Reserves.</span>
+        </mj-raw>
+        /* - - - - Header - - - - */
+        <mj-include path="./site_configs/roomcash-63712/emails/components/header.mjml" />
+
+        /* - - - - Hero Image - - - -*/
+        <mj-hero width="100%" padding="0px" padding-right="0">
+            <mj-image editable="true" href="https://roomcash.com/dashboard" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/happy-people-hero-crop.jpg" alt="" />
+        </mj-hero>
+
+        /* - - - - Name Section - - - - */
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text align="center" color="#000">
+                    <h1 style="letter-spacing:3px; font-size: 28px;">Good news, [first_name]!</h1>
+                </mj-text>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" >
+                    <span>You’ve earned another $[value_earned] RoomCash!</span>
+                </mj-text>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#000" padding-top="20px">
+                    <span>We’ve already added this to your RoomCash Reserves, so your new balance is: $[balance].</span>
+                </mj-text>
+                <mj-text align="center" font-weight="600" font-size="14px" color="#CC9831" padding-top="20px">
+                    <span>Ready to make exclusive savings on your next trip?</span>
+                </mj-text>
+                <!-- <mj-include path="./site_configs/roomcash-63712/emails/components/button.mjml" /> -->
+                <mj-button href={{portal_url}} font-weight="600" font-size="18px" border-radius="0" padding-top="20px" padding-bottom="30px" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+                </mj-button>
+            </mj-column>
+        </mj-section>
+
+        /* - - - - footer - - - - */
+        <mj-include path="./site_configs/roomcash-63712/emails/components/footer.mjml" />
+    </mj-body>
+</mjml>

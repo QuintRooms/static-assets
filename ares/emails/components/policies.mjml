@@ -1,0 +1,45 @@
+<mj-section padding-top="20px" padding-bottom="20px">
+    <mj-column width="100%">
+        <mj-text padding-top="20px" padding-bottom="10px">
+            <h5>Room Description</h5>
+            <span>[RoomDescriptionLong,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Deposit Policy</h5>
+            <span>[DepositPolicyLong,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Payment Terms</h5>
+            <span>[PaymentTermsLong,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Cancellation Policy</h5>
+            <span>[CancellationPolicyLong,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Property Policy</h5>
+            <span>[PropertyPolicy,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Extra Fees Policy</h5>
+            <span>[ExtraFeesPolicy,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Payment Policy</h5>
+            <span>[PaymentPolicy,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Check In Support Policy</h5>
+            <span>[CheckInSupportPolicy,fallback=]</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Important Guest Information</h5>
+            <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=[siteid,fallback=39560]">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+        </mj-text>
+        <mj-text padding-top="10px" padding-bottom="10px">
+            <h5>Reservation Information</h5>
+            <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
+                [Hotel,fallback=] at [HotelPhone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=[siteID,fallback=60831]">click here.</a></span>
+        </mj-text>
+    </mj-column>
+</mj-section>

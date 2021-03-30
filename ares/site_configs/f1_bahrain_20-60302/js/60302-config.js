@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 11111,
             event_name: 'Bahrain Grand Prix',
             event_dates: '11/27/2020 - 11/29/2020',
+            redirect_date: '11/29/2020',
+            redirect_url: 'https://bookrooms.formula1.com/group-event?id=45300&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {
@@ -42,8 +44,9 @@ export default function siteConfig() {
         show_date_prompt: false,
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
+        email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.jpg`,
         header: {
-            logo_file_location: `${env_path.path}/clients/formula_1/images/logo.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,

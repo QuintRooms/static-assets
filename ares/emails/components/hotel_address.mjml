@@ -1,0 +1,19 @@
+<mj-section>
+    <mj-column width="100%">
+        <mj-text align="center">
+            <mj-raw>
+                <h2>[Hotel,fallback=]</h2>
+            </mj-raw>
+        </mj-text>
+    </mj-column>
+</mj-section>
+        
+<mj-section>
+    <mj-column width="100%" padding-bottom="30px">
+        <mj-text align="center">
+            <mj-raw>
+                <p style="font-weight: 500; font-size: 14px;">[HotelAddress1,fallback=] [HotelCity,fallback=], [HotelState,fallback=] [HotelZip,fallback=]</p>
+            </mj-raw>
+        </mj-text>
+    </mj-column>
+</mj-section>

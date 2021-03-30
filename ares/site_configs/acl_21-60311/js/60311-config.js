@@ -22,6 +22,8 @@ export default function siteConfig() {
             event_id: 43056,
             event_name: 'Austin City Limits Music Festival',
             event_dates: '10/1/2021 - 10/3/2021 & 10/8/2021 - 10/10/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 41307,
             event_name: 'Tortuga Music Festival',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

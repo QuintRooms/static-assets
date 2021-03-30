@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 35879,
             event_name: 'Lollapalooza',
             event_dates: '7/30/2020 - 8/2/2020',
+            redirect_date: '8/2/2020',
+            redirect_url: 'https://lollapalooza.hotelsforhope.com/group-event?id=41812&utm_source=oldSiteRedirect',
             is_lrg: true,
         },
         cug: {

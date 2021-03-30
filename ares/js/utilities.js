@@ -96,6 +96,19 @@ export default class Utilities {
         });
     }
 
+    async waitForSelectorToBeGone(selector) {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                const element = document.querySelector(selector);
+                if (!element) {
+                    resolve();
+                    clearInterval(interval);
+                    return true;
+                }
+            }, 500);
+        });
+    }
+
     /**
      * @description checks every 500 miliseconds for the textContent of the element passed in to equeal the text in the dom after the page loads. This method is used for when an element's textContent is updated multiple times before the page finishes loading and you want to update it again.
      * @param element - the element you are waiting on to load the expected textContent
@@ -465,5 +478,56 @@ export default class Utilities {
 
         check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
         check_out_input.setAttribute('value', dayjs().add(1, 'day').format('MM/DD/YYYY'));
+    }
+
+    /**
+     *@description Adds a styled tool tip to a specified element.
+     *@param string - Element to insert on
+     *@param string - Position to insert on element
+     *@param string - Text content for tool tip
+     *@param string - Tool tip - usually a '?' or 'i'
+     *@param string - Color of tool tip
+     *@param string - Background color of tool tip
+     */
+    async addToolTip(insertElement, insertPosition, tipContent, toolTip, color, backgroundColor) {
+        await this.waitForSelectorInDOM(insertElement);
+
+        document.querySelector(insertElement).insertAdjacentHTML(
+            insertPosition,
+            `
+                <style>
+                .tooltip-wrapper > span b {
+                    color: ${color};
+                    background: ${backgroundColor};
+                }
+                </style>
+                    <span class="tooltip-wrapper">
+                        <span>
+                            <b class="tooltip">${toolTip}
+                                <span>${tipContent}</span>
+                            </b>
+                        </span>
+                    </span>
+            `
+        );
+    }
+
+    /**
+     *@description Updates property thumbnail images on the search results page when images are poor. 
+     *@param array - takes an array of objects that each contain the property ID to change the image on and the url of the image it should change to.
+     *@example utilities.replacePropThumbImage({
+                prop_id: '663849',
+                image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
+            });
+     */
+    replacePropThumbImage(array) {
+        if (!document.querySelector('.SearchHotels')) return;
+
+        array.forEach(async (obj) => {
+            await this.waitForSelectorInDOM('.pollingFinished');
+            if (!document.querySelector(`#theArnProperty${obj.prop_id}`)) return;
+            const property_thumb = document.querySelector(`#theArnProperty${obj.prop_id} .ArnPropThumb img`);
+            property_thumb.setAttribute('src', obj.image_url);
+        });
     }
 }

@@ -16,12 +16,15 @@
     <meta content="<?php echo $site_id; ?>" name="siteId" />
     <meta content="SOTX" name="cid" />
     <meta content="hXWCT6jOVdK4WGgw" name="sessionId" />
+    <meta name="userPoints" content="200">
+    <meta content="4657970" name="userId">
     <meta content="58m 14s" name="expiresIn" />
     <meta content="920" name="masterId" />
     <meta content="false" name="isTestMode" />
     <meta content="" name="keywords" />
     <meta content="2021-02-24" name="checkIn" />
     <meta content="2021-02-28" name="checkOut" />
+    <meta content="Matthew" name="firstName">
     <meta content="2" name="numberOfAdults" />
     <meta content="0" name="numberOfKids" />
     <meta content="1" name="numberOfRooms" />
@@ -116,7 +119,7 @@
     <link rel="stylesheet" type="text/css" href="/v6?_s=EbtaxS99rdV3WJtx" />
 </head>
 
-<body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 events-hotelsforhope-com PublicSite MemberTypeNone property19311 WBSearchLongLat ConfirmationForm supplier16Confirm FinalConfirmation" id="theBody">
+<body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 events-hotelsforhope-com PublicSite MemberTypeNone property19311 WBSearchLongLat ConfirmationForm MemberAuthenticated supplier16Confirm FinalConfirmation" id="theBody">
     <!--[if IE]><script>Element.addClassName(document.body, "IE")</script><![endif]-->
     <script>
     if (navigator.userAgent.toLowerCase().indexOf("applewebkit") != -1) { Element.addClassName(document.body, "WK"); }

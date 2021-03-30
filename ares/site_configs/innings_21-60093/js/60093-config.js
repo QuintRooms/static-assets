@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 40966,
             event_name: 'Innings Fest',
             event_dates: '2/27/2021 - 2/28/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

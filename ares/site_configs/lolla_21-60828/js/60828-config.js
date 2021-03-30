@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 41751,
             event_name: 'Lollapalooza',
             event_dates: '7/29/2021 - 8/2/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {

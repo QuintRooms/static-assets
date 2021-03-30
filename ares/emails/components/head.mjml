@@ -1,0 +1,10 @@
+<mj-title>{{client_name}}Booking Confirmation</mj-title>
+<mj-attributes>
+    <mj-all padding-top="0" padding-bottom="0" font-family="sans-serif" color={{text}}>
+    <mj-style>
+        .res-container * {
+            background-color: #F4F4F4 !important;
+            border: 0;
+        }
+    </mj-style>
+</mj-attributes>

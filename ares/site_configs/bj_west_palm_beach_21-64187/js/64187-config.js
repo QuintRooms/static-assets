@@ -21,6 +21,8 @@ export default function siteConfig() {
             event_id: 41299,
             event_name: 'Barrett-Jackson West Palm Beach 2021',
             event_dates: '04/07/2021 - 04/12/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

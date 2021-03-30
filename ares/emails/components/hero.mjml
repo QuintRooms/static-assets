@@ -1,0 +1,17 @@
+<!-- Room is Booked -->
+<mj-section padding-bottom="30px" padding-top="30px">
+    <mj-column width="100%">
+        <mj-text align="center">
+            <h1>Your Room Is Booked!</h1>
+            <span editable="true">BOOKING NUMBER:[CONFIRMATIONNUMBER,FALLBACK=]</span>
+        </mj-text>
+    </mj-column>
+</mj-section>
+
+<!-- Image -->
+<mj-section padding-bottom="10px">
+    <mj-column width="100%">
+            <mj-image alt="hotel room bed" src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" css-class="banner" />
+    </mj-column>
+</mj-section>
+

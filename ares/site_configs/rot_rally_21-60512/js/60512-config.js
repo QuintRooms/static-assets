@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 41596,
             event_name: 'Republic of Texas Rally 2021',
             event_dates: '06/10/2021 - 06/13/2021',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

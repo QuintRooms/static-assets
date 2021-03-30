@@ -1,0 +1,240 @@
+<mjml>
+    <mj-include path="./site_configs/roomcash-63712/emails/components/head.mjml" />
+    <mj-body background-color=#fff>
+        /* - - - - Header - - - - */
+        <mj-include path="./site_configs/roomcash-63712/emails/components/header.mjml" />
+        
+
+        /* - - - - Hero Image - - - -*/
+        <mj-hero width="100%" padding="0px" padding-right="0">
+            <mj-image href="https://roomcash.com/dashboard" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/emails/img/conf-couple-hero.jpg" alt="" />
+        </mj-hero>
+
+        /* - - - - Your room is booked - - - */
+        <mj-section padding-bottom="30px" padding-top="10px">
+            <mj-column width="100%">
+                <mj-text align="center">
+                    <h1 style="letter-spacing:3px; font-size: 28px;">Your Room Is Booked, [first_name]!</h1>
+                    <span editable="true" style="font-weight:600; font-size:14px; color:#000;">BOOKING NUMBER:[confirmation_number]</span>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        
+        /* - - - - Hotel Address - - - - */
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text align="center">
+                    <mj-raw>
+                        <h2>[hotel,fallback=]</h2>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+                
+        <mj-section>
+            <mj-column width="100%" padding-bottom="30px">
+                <mj-text align="center">
+                    <mj-raw>
+                        <p style="font-weight:600; font-size:14px; color:#000;">[hotel_address,fallback=] [hotel_city,fallback=], [hotel_state,fallback=] [hotel_zip,fallback=]</p>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+
+        /* - - - - RoomCash Balance - - - - */
+        <mj-section padding-right="0" padding-left="0" padding-top="20px" padding-bottom="20px" background-color="#000">
+            <mj-column width="30%" background-color="#000">
+                <mj-text align="center" color="#CC9831"  padding-bottom="10px" padding-top="10px">
+                        <div style="margin-bottom: 10px;">RoomCash Earned</div>
+                        <img style="margin-right:10px" width="20" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
+                        <span style="margin:10px 5px; font-size: 28px;">$50</span>
+                        <!-- <span style="margin:10px 5px; font-size: 28px;">$[value_earned]</span> -->
+                </mj-text>
+            </mj-column>
+            <mj-column width="33%" background-color="#000">
+                <mj-text align="center" color="#CC9831"  padding-bottom="10px" padding-top="10px">
+                    <div style="margin-bottom: 10px;">RoomCash Reserves</div>
+                    <img style="margin-right:10px" width="20" src="https://dev-static.hotelsforhope.com/ares/site_configs/roomcash-63712/img/points-icon.png">
+                    <span style="margin:10px 5px; font-size: 28px;">$[balance]</span>
+                </mj-text>
+            </mj-column>
+            <mj-column width="30%" padding-top="10px">
+                <!-- <mj-include path="./site_configs/roomcash-63712/emails/components/button-small.mjml" /> -->
+                <mj-button href={{portal_url}} font-weight="400" font-size="12px" border-radius="0" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+                </mj-button>
+            </mj-column>
+        </mj-section>
+
+        /* - - - - Reservation Detail - - - - */
+        <mj-wrapper css-class="res-container" background-color="#F4F4F4" padding-top="30px" padding-bottom="30px" padding-right="30px" padding-left="30px">
+            <mj-section padding-bottom="20px">
+                <mj-column width="100%">
+                    <mj-text align="center" color="#666">
+                        <h2 style="margin-top: 0;">RESERVATION DETAILS</h2>
+                    </mj-text>
+                </mj-column>
+            </mj-section>
+
+            <mj-section>
+                <mj-column width="100%">
+                    <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+                </mj-column>
+            </mj-section>
+
+            <mj-section padding-top="30px" padding-bottom="30px">
+
+                <mj-column width="50%">
+                    <mj-text padding-bottom="10px" color="#666">
+                        <span style="line-height:1.4"><b>Guest Name:</b> [guest_name,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                        <span style="line-height:1.4"><b>Check In:</b> [check_in_date,fallback=] - [check_in_time,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                        <span style="line-height:1.4"><b>Check Out:</b> [check_out_date,fallback=] - [check_out_time,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                        <span style="line-height:1.4"><b>Guests:</b> [guests,fallback=]</span>
+                    </mj-text>
+                    <mj-text color="#666">
+                        <span style="line-height:1.4"><b>Rooms:</b> [rooms,fallback=]</span>
+                    </mj-text>
+                </mj-column>
+
+                <mj-column width="50%">
+                    <mj-text color="#666" padding-bottom="10px">
+                            <span style="line-height:1.4"><b>Total for Stay:</b> [currency_symbol, fallback=][total,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                            <span style="line-height:1.4"><b>Tax Amount:</b> [currency_symbol, fallback=][tax_amount,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                            <span style="line-height:1.4"><b>Deposit Charged:</b> 	[currency_symbol, fallback=][deposit_charged,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                            <span style="line-height:1.4"><b>Balance Due:</b> [currency_symbol, fallback=][balance_due,fallback=]</span>
+                    </mj-text>
+                    <mj-text padding-bottom="10px" color="#666">
+                            <span style="line-height:1.4"><b>Rate Per Night:</b> [room_rates,fallback=]</span>
+                    </mj-text>
+                </mj-column>
+
+            </mj-section>
+
+            <mj-section>
+                <mj-column width="100%">
+                    <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+                </mj-column>
+            </mj-section>
+            
+        </mj-wrapper>
+
+        
+        /* - - - -  Contact - - - - */
+        <mj-section padding-top="20px" padding-bottom="20px">
+            <mj-column width="100%">
+                <mj-text align="center">
+                    <h1>Need Help With This Reservation?</h1>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <mj-section>
+            <mj-column width="100%">
+                <mj-text align="center">
+                    <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <mj-section  padding-top="20px">
+            <!-- Email Contact -->
+            <mj-column width="50%" padding-bottom="20px">
+                <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
+                <mj-text align="center">
+                    <h4>Email RoomCash</h4>
+                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@roomcash.com</a> 
+                </mj-text>
+            </mj-column>
+            <!-- Phone Contact -->
+            <mj-column width="50%" padding-bottom="20px">
+                <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
+                <mj-text align="center">
+                    <h4>Call RoomCash</h4>
+                    <a style="color:inherit;" href="tel:1.866.584.0204">1.512.767.1360</a>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+                
+        <mj-section>
+            <mj-column width="100%" padding-top="20px">
+                <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
+            </mj-column>
+        </mj-section>
+        /* - - - - Policies - - - - */
+        <mj-section padding-top="20px" padding-bottom="20px">
+            <mj-column width="100%">
+                <mj-raw>[if:room_description]</mj-raw>
+                <mj-text padding-top="20px" padding-bottom="10px" align="center">
+                    <h5>Room Description</h5>
+                    <span style="line-height:1.4">[room_description,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:deposit_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Deposit Policy</h5>
+                    <span style="line-height:1.4">[deposit_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:payment_terms]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Payment Terms</h5>
+                    <span style="line-height:1.4">[payment_terms,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:cancellation_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Cancellation Policy</h5>
+                    <span style="line-height:1.4">[cancellation_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:property_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Property Policy</h5>
+                    <span style="line-height:1.4">[property_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:extra_fees_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Extra Fees Policy</h5>
+                    <span style="line-height:1.4">[extra_fees_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:payment_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Payment Policy</h5>
+                    <span style="line-height:1.4">[payment_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-raw>[if:check_in_support_policy]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Check In Support Policy</h5>
+                    <span style="line-height:1.4">[check_in_support_policy,fallback=]</span>
+                </mj-text>
+                <mj-raw>[endif]</mj-raw>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Important Guest Information</h5>
+                    <span style="line-height:1.4">All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=63712">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+                </mj-text>
+                <mj-text padding-top="10px" padding-bottom="10px" align="center">
+                    <h5>Reservation Information</h5>
+                    <span style="line-height:1.4">For further assistance or if you have questions about your reservation, contact RoomCash at 1.512.767.1360 or <a style="color:inherit;" href="mailto:reservations@roomcash.com"> reservations@roomcash.com</a>. To speak to the hotel directly, contact 
+                        [hotel,fallback=] at [hotel_phone,fallback=].To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=63712">click here.</a></span>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-include path="./site_configs/roomcash-63712/emails/components/footer.mjml" />
+    </mj-body>
+</mjml>

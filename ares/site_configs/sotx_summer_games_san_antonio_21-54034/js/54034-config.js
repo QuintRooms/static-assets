@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: '44289',
             event_name: '2021 Special olympics of Texas',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

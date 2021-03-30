@@ -23,19 +23,6 @@
     @include append-header-images();
 }
 
-@function setUpEventColumns($images) {
-    @if (length($images) == 1) {
-        @return 1fr;
-    }
-    @if (length($images) == 2) {
-        @return 1fr 1fr;
-    }
-
-    @else {
-        @return 1fr 1fr 1fr;
-    }
-}
-
 .ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type, .ArnSupportBottom .dvd:nth-of-type(2) {
     display: none;
 }
@@ -56,7 +43,7 @@
 
 .events {
     display: grid;
-    grid-template-columns: setUpEventColumns($bg-images);
+    // grid-template-columns: setUpEventColumns($bg-images);
     grid-gap: 15px;
     max-width: 75vw;
 }

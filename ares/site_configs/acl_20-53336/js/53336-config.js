@@ -22,6 +22,8 @@ export default function siteConfig() {
             event_id: 32970,
             event_name: 'Austin City Limits Music Festival',
             event_dates: '10/2/2020 - 10/4/2020 & 10/9/2020 - 10/11/2020',
+            redirect_date: '12/11/2020',
+            redirect_url: 'http://events.hotelsforhope.com/group-event?id=43056&utm_source=old-site-redirect',
             is_lrg: true,
         },
         cug: {

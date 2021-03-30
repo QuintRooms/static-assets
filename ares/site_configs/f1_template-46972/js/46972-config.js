@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 11111,
             event_name: 'F1 Template',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {

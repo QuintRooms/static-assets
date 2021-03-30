@@ -20,6 +20,8 @@ export default function siteConfig() {
             event_id: 11111,
             event_name: 'F1 Dutch Grand Prix',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {
@@ -30,7 +32,7 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Host Hotel',
+        host_hotel_text: 'Breakfast Included',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: true,
         dayjs_date_format: 'D/M/YYYY',
@@ -70,5 +72,11 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        prop_image_replacement: [
+            {
+                prop_id: '663849',
+                image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
+            },
+        ],
     };
 }

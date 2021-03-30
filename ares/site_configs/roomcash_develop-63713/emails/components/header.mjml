@@ -1,0 +1,5 @@
+<mj-section border-bottom="10px solid #CC9831" background-color="#000">
+    <mj-column>
+        <mj-image editable="true" css-class="logo" href="https://roomcash.com/dashboard" width="200px" src={{logo}} alt="Logo" title="Logo" />
+    </mj-column>
+</mj-section>

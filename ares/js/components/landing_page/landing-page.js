@@ -49,6 +49,26 @@ export default class LandingPage {
         i += 1;
     }
 
+    async setGridSize() {
+        await utilities.waitForSelectorInDOM('.events');
+        const events = document.querySelectorAll('.event-container');
+        const grid = document.querySelector('.events');
+
+        switch (events.length) {
+            case 1:
+                grid.style.gridTemplateColumns = '1fr';
+                break;
+            case 2:
+                grid.style.gridTemplateColumns = '1fr 1fr';
+                break;
+            case 3:
+                grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+                break;
+            default:
+                grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+        }
+    }
+
     /**
      *@description Generates the events in HTML
      *@return void
@@ -66,6 +86,7 @@ export default class LandingPage {
                 return;
             }
             if (utilities.checkForPastDate(event.end_date)) return;
+
             if (i === 0) container.insertAdjacentHTML('beforeEnd', `<h1>Upcoming Events</h1><div class="events"></div>`);
 
             document.querySelector('.events').insertAdjacentHTML(
@@ -82,6 +103,7 @@ export default class LandingPage {
             );
             i += 1;
         });
+        this.setGridSize();
         this.addUtmTrackingToUrls(window.location.href);
     }
 
@@ -97,7 +119,7 @@ export default class LandingPage {
         const medium = search_params.get('utm_medium');
         if (source === null || medium === null) return;
 
-        const events = document.querySelectorAll('.event-container');
+        const events = document.querySelectorAll('.event-container, .header-container');
         if (!events.length) {
             return new Error('No events exist!');
         }

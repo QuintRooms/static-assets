@@ -24,6 +24,8 @@ export default function siteConfig() {
             event_id: false,
             event_name: 'Hotels for Hope',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {
@@ -82,5 +84,15 @@ export default function siteConfig() {
         confirmation_email_from: 'Hotels for Hope',
         has_group_booking_banner: false,
         group_booking_form_url: '',
+        has_landing_page: false,
+        hide_search_on_landing_page: true,
+        landing_page_events: [
+            {
+                name: '',
+                display_date: '', // August 5-8, 2021
+                end_date: '', // M/D/YYYY
+                portal_url: '',
+            },
+        ],
     };
 }

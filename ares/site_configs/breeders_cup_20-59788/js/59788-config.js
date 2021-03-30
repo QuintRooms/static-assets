@@ -18,6 +18,8 @@ export default function siteConfig() {
             event_id: 40940,
             event_name: "Breeder's Cup",
             event_dates: '11/06/2020 - 11/07/2020',
+            redirect_date: '11/07/2020',
+            redirect_url: 'https://hotels.resbeat.com/v6/?siteid=51474&utm_source=internal&utm_source=oldSiteRedirect',
             is_lrg: false,
         },
         cug: {

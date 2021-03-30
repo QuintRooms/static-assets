@@ -75,23 +75,35 @@ export default function siteConfig() {
         has_landing_page: true,
         hide_search_on_landing_page: true,
         landing_page_events: [
-            {
-                name: 'Fall Auction 2020 Scottsdale',
-                display_date: 'October 22 - 24, 2020',
-                end_date: '10/25/2020', // M/D/YYYY
-                portal_url: 'https://events.hotelsforhope.com/group-event?id=43435',
-            },
+            // {
+            //     name: 'Fall Auction 2020 Scottsdale',
+            //     display_date: 'October 22 - 24, 2020',
+            //     end_date: '10/25/2020', // M/D/YYYY
+            //     portal_url: 'https://events.hotelsforhope.com/group-event?id=43435',
+            // },
             {
                 name: '2021 Scottsdale Auction',
                 display_date: 'March 20 - 27, 2021',
-                end_date: '1/25/2021', // M/D/YYYY
+                end_date: '3/28/2021', // M/D/YYYY
                 portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
             },
+            // {
+            //     name: '2021 West Palm Beach Auction',
+            //     display_date: 'April 08 - 10, 2021',
+            //     end_date: '04/12/2021', // M/D/YYYY
+            //     portal_url: 'http://events.hotelsforhope.com/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021',
+            // },
             {
-                name: '2021 West Palm Beach Auction',
-                display_date: 'April 08 - 10, 2021',
-                end_date: '04/12/2021', // M/D/YYYY
-                portal_url: 'http://events.hotelsforhope.com/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021',
+                name: '2021 Las Vegas Auction',
+                display_date: 'June 17 - 19, 2021',
+                end_date: '06/22/2021', // M/D/YYYY
+                portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
+            },
+            {
+                name: '2021 Houston Auction',
+                display_date: 'September 16 - 18, 2021',
+                end_date: '09/19/2021', // M/D/YYYY
+                portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
             },
         ],
     };

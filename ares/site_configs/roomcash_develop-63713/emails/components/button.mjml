@@ -1,0 +1,3 @@
+<mj-button href={{portal_url}} font-weight="600" font-size="18px" border-radius="0" padding-top="20px" padding-bottom="30px" background-color="#CC9831" color="#fff">
+                    SPEND MY ROOMCASH
+</mj-button>

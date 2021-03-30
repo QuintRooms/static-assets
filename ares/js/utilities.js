@@ -359,7 +359,7 @@ export default class Utilities {
             })
             .catch((err) => {
                 html = err.toString();
-                console.error(`Could not fetch text from ${url}`, err.toString());
+                // console.error(`Could not fetch text from ${url}`, err.toString());
             });
 
         return html;

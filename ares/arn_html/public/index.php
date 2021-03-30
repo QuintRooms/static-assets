@@ -13,7 +13,8 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="<?php echo $site_id; ?>" name="siteId" />
+    <meta content="12345" name="siteId" />
+    <!-- <meta content="<?php echo $site_id; ?>" name="siteId" /> -->
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="i9OeMFOgz_0aLKzN" name="sessionId" />
     <meta content="59m 58s" name="expiresIn" />
@@ -126,6 +127,7 @@
     <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/calendar/scripts/yui3CalendarB.js"></script>
     <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/calendar/scripts/yui3CalendarLocale.js"></script>
     <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/map/leaflet.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places"></script>
 </head>
 
 <body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 h4hperkstest CanManageOrgs CanManageProfiles CanLogin HandlesPermissionRequests events-hotelsforhope-com MemberAuthenticated PrivateSite MemberTypeWholesale RootBody RootTypeCity" id="theBody">

@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import '@babel/polyfill';
 import 'url-polyfill';
 import Utilities from './utilities';
+import Autocomplete from './components/autocomplete/autocomplete';
 import Algolia from './components/algolia';
 import Path from './build_tools/path';
 import renderLucidBanner from './components/lucid_banner/lucid-banner';
@@ -17,7 +18,6 @@ const algolia = new Algolia();
 
 export default class BasePortal {
     constructor(config) {
-        console.log('Output: BasePortal -> constructor -> config', config);
         this.site_id = '';
         this.page_name = utilities.getPageName();
         this.site_config = config;
@@ -119,7 +119,11 @@ export default class BasePortal {
 
             // root page methods
             if (document.querySelector('.RootBody')) {
-                algolia.init(this.site_config, this.page_name, utilities);
+                if (this.site_config.use_google_autocomplete) {
+                    new Autocomplete(this.site_config, this.page_name);
+                } else {
+                    algolia.init(this.site_config, this.page_name, utilities);
+                }
                 this.buildCurrencyDropdown();
                 utilities.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search');
                 utilities.createHTML(
@@ -149,7 +153,11 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
-                algolia.init(this.site_config, this.page_name, utilities);
+                if (this.site_config.use_google_autocomplete) {
+                    new Autocomplete(this.site_config, this.page_name);
+                } else {
+                    algolia.init(this.site_config, this.page_name, utilities);
+                }
                 this.showOriginalPrice('.ArnProperty', '.arnPrice');
             }
 

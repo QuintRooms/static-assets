@@ -13,6 +13,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
             event_id: 41555,
@@ -33,8 +34,8 @@ export default function siteConfig() {
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
-        show_stars: false,
-        show_property_type: false,
+        show_stars: true,
+        show_property_type: true,
         show_language_select: false,
         show_currency_select: false,
         show_date_prompt: false,

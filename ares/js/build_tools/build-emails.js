@@ -26,7 +26,8 @@ function addEmailSiteName() {
     try {
         fs.readFile(`${ares}/js/json/site-names.json`, 'utf8', (err, data) => {
             if (err) throw err;
-            const site_names = data.substring(1, data.indexOf('}') - 2);
+            const trimmed_data = data.trim();
+            const site_names = trimmed_data.substring(1, trimmed_data.length - 2);
             const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
 
             fs.writeFile(`${ares}/js/json/site-names.json`, site_names_updated, (error) => {

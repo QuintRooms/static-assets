@@ -122,7 +122,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(53),
+            o = n(55),
             a = n(27),
             i = Object.defineProperty;
         t.f = n(4)
@@ -250,7 +250,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(54),
+        var r = n(56),
             o = n(40);
         e.exports =
             Object.keys ||
@@ -287,10 +287,10 @@
             h = n(15),
             p = n(89),
             m = n(90),
-            y = n(60),
-            g = n(61).set,
+            y = n(62),
+            g = n(63).set,
             v = n(94)(),
-            b = n(62),
+            b = n(64),
             S = n(95),
             w = n(96),
             _ = n(97),
@@ -881,7 +881,7 @@
                     r = a.length;
                 for (
                     t.style.display = 'none',
-                        n(57).appendChild(t),
+                        n(59).appendChild(t),
                         t.src = 'javascript:',
                         (e = t.contentWindow.document).open(),
                         e.write('<script>document.F=Object</script>'),
@@ -906,7 +906,7 @@
             a = n(16),
             i = n(27),
             c = n(8),
-            s = n(53),
+            s = n(55),
             u = Object.getOwnPropertyDescriptor;
         t.f = n(4)
             ? u
@@ -1076,8 +1076,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(47), n(43), n(48), n(37), n(69), n(23), n(14), n(25);
-        var i = n(49),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(47), n(43), n(50), n(37), n(69), n(23), n(14), n(25);
+        var i = n(51),
             c = (function () {
                 function e() {
                     !(function (e, t) {
@@ -1775,7 +1775,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(65),
+        var r = n(66),
             o = n(113),
             a = n(24),
             i = n(16);
@@ -1820,7 +1820,7 @@
         t.f = {}.propertyIsEnumerable;
     },
     function (e, t, n) {
-        var r = n(54),
+        var r = n(56),
             o = n(40).concat('length', 'prototype');
         t.f =
             Object.getOwnPropertyNames ||
@@ -1984,6 +1984,27 @@
                     })
                 );
             }
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(6),
+            o = n(57)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(66)('includes');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(6),
+            o = n(108);
+        r(r.P + r.F * n(109)('includes'), 'String', {
+            includes: function (e) {
+                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
+            },
         });
     },
     function (e, t, n) {
@@ -2426,7 +2447,7 @@
         var r = n(2),
             o = n(11),
             a = n(17),
-            i = n(52),
+            i = n(54),
             c = n(7).f;
         e.exports = function (e) {
             var t = o.Symbol || (o.Symbol = a ? {} : r.Symbol || {});
@@ -2453,7 +2474,7 @@
     function (e, t, n) {
         var r = n(8),
             o = n(16),
-            a = n(55)(!1),
+            a = n(57)(!1),
             i = n(39)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
@@ -2533,8 +2554,8 @@
             o,
             a,
             i = n(19),
-            c = n(58),
-            s = n(57),
+            c = n(60),
+            s = n(59),
             u = n(38),
             l = n(2),
             d = l.process,
@@ -2637,33 +2658,12 @@
         });
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(6),
-            o = n(55)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(65)('includes');
-    },
-    function (e, t, n) {
         var r = n(0)('unscopables'),
             o = Array.prototype;
         null == o[r] && n(10)(o, r, {}),
             (e.exports = function (e) {
                 o[r][e] = !0;
             });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(6),
-            o = n(108);
-        r(r.P + r.F * n(109)('includes'), 'String', {
-            includes: function (e) {
-                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
     },
     function (e, t, n) {
         var r = n(3),
@@ -2678,7 +2678,7 @@
         'use strict';
         var r = n(67),
             o = n(1),
-            a = n(60),
+            a = n(62),
             i = n(45),
             c = n(21),
             s = n(34),
@@ -3147,7 +3147,7 @@
         })(r.default))();
     },
     function (e, t, n) {
-        n(51)('asyncIterator');
+        n(53)('asyncIterator');
     },
     function (e, t, n) {
         'use strict';
@@ -3162,8 +3162,8 @@
             d = n(29),
             f = n(18),
             h = n(0),
-            p = n(52),
-            m = n(51),
+            p = n(54),
+            m = n(53),
             y = n(78),
             g = n(81),
             v = n(1),
@@ -3175,7 +3175,7 @@
             A = n(31),
             k = n(83),
             M = n(32),
-            q = n(56),
+            q = n(58),
             C = n(7),
             L = n(20),
             E = M.f,
@@ -3397,7 +3397,7 @@
     },
     function (e, t, n) {
         var r = n(20),
-            o = n(56),
+            o = n(58),
             a = n(41);
         e.exports = function (e) {
             var t = r(e),
@@ -3510,7 +3510,7 @@
         'use strict';
         var r = n(15),
             o = n(3),
-            a = n(58),
+            a = n(60),
             i = [].slice,
             c = {},
             s = function (e, t, n) {
@@ -3534,7 +3534,7 @@
     },
     function (e, t, n) {
         var r = n(32),
-            o = n(59),
+            o = n(61),
             a = n(8),
             i = n(6),
             c = n(3),
@@ -3557,18 +3557,18 @@
             n(104),
             n(43),
             n(14),
-            n(63),
+            n(65),
             n(106),
             n(47),
-            n(64),
-            n(66),
+            n(48),
+            n(49),
             n(68),
             n(25),
             n(110),
             n(111);
         var r = c(n(36)),
             o = c(n(117)),
-            a = c(n(50)),
+            a = c(n(52)),
             i = c(n(118));
         function c(e) {
             return e && e.__esModule ? e : {default: e};
@@ -3605,7 +3605,7 @@
             }
         }
         var d = new a.default(),
-            f = n(49),
+            f = n(51),
             h = n(70);
         f.extend(h);
         var p = new r.default(),
@@ -5335,7 +5335,7 @@
                                     .querySelector('.ArnSupportBottom')
                                     .insertAdjacentHTML(
                                         'beforeend',
-                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/h4h/pb-h4h.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
                                     );
                             },
                         },
@@ -5940,7 +5940,7 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(61).set,
+            o = n(63).set,
             a = r.MutationObserver || r.WebKitMutationObserver,
             i = r.process,
             c = r.Promise,
@@ -6005,7 +6005,7 @@
     function (e, t, n) {
         var r = n(1),
             o = n(3),
-            a = n(62);
+            a = n(64);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = a.f(e);
@@ -6937,7 +6937,7 @@
             c = n(24),
             s = n(115),
             u = n(29),
-            l = n(59),
+            l = n(61),
             d = n(0)('iterator'),
             f = !([].keys && 'next' in [].keys()),
             h = function () {
@@ -7053,8 +7053,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(25), n(48), n(37), n(14), n(69), n(63);
-        var i = n(49),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(25), n(50), n(37), n(14), n(69), n(65);
+        var i = n(51),
             c = n(70);
         i.extend(c);
         var s = (function () {
@@ -7426,14 +7426,14 @@
                     landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],
                 };
             });
-        var o = new ((r = n(50)) && r.__esModule ? r : {default: r}).default(),
+        var o = new ((r = n(52)) && r.__esModule ? r : {default: r}).default(),
             a = 'roomcash-'.concat(63712);
     },
     function (e, t, n) {
         'use strict';
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(14), n(47), n(71), n(68), n(25);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(23), n(14), n(48), n(49), n(47), n(71), n(68), n(25);
         var r = i(n(36)),
-            o = i(n(50)),
+            o = i(n(52)),
             a = i(n(125));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
@@ -7588,7 +7588,8 @@
                                         )),
                                     document.querySelector('.WBResendOrCancelForm') &&
                                         (this.buildFooterMenu('.ArnSubPage', 'afterend'),
-                                        this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]));
+                                        this.insertContent([{element: '.ArnSubPage.WBResendOrCancelForm', position: 'beforebegin', html: this.sub_header_container}]),
+                                        this.updateErrorText());
                             },
                         },
                         {
@@ -8119,6 +8120,18 @@
                                     return o.apply(this, arguments);
                                 }),
                         },
+                        {
+                            key: 'updateErrorText',
+                            value: function () {
+                                var e = document.querySelector('#theWBResendOrCancelFormBody.hasErrors .errors li');
+                                e &&
+                                    e.textContent.includes('with promotional code') &&
+                                    (e.innerHTML = 'Sorry - this reservation cannot be automatically canceled online. Please check the cancellation terms on your confirmation email; you may be outside of the allowable cancellation time. If not, please contact our customer service team at (512) 767 1360 or via our <a href="'.concat(
+                                        document.querySelector('.ARN_ServiceLinks.supportLink').href,
+                                        '">support form.</a> Our team is available M-F 8:00 AM - 5:30 PM CST to help. If you require urgent assistance outside our standard hours, please leave us a voicemail, and a member of the team will respond promptly.'
+                                    ));
+                            },
+                        },
                     ]) && u(t.prototype, n),
                     r && u(t, r),
                     e
@@ -8192,7 +8205,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(71), n(64), n(66), n(48), n(37), n(14);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(71), n(48), n(49), n(50), n(37), n(14);
         var a = new ((r = n(36)) && r.__esModule ? r : {default: r}).default(),
             i = (function () {
                 function e(t, n, r, o) {

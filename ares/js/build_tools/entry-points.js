@@ -12,10 +12,14 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+            // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
+            // 'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
             // 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
             // 'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
+            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
@@ -40,7 +44,7 @@ module.exports = () => {
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
-            'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
+            // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -60,6 +64,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

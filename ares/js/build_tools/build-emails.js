@@ -10,32 +10,33 @@ let site_id;
 let site_name;
 
 /**
- *@description Checks if name of the site being built has already been added to site_names.json
+ *@description Checks if name of the site being built has already been added to site-names.json
  *@returns Boolean
  */
 function siteNameExists() {
-    const site_names = fs.readFileSync(`${ares}/js/json/site_names.json`, 'utf8');
+    const site_names = fs.readFileSync(`${ares}/js/json/site-names.json`, 'utf8');
     if (site_names.includes(`"${site_id}": "${site_name}"`)) return true;
 }
 
 /**
- *@description Adds the site id and site name as a key/value to site_names.json
+ *@description Adds the site id and site name as a key/value to site-names.json
  */
 function addEmailSiteName() {
     if (siteNameExists()) return;
     try {
-        fs.readFile(`${ares}/js/json/site_names.json`, 'utf8', (err, data) => {
+        fs.readFile(`${ares}/js/json/site-names.json`, 'utf8', (err, data) => {
             if (err) throw err;
-            const site_names = data.substring(1, data.indexOf('}') - 1);
+            const trimmed_data = data.trim();
+            const site_names = trimmed_data.substring(1, trimmed_data.length - 2);
             const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
 
-            fs.writeFile(`${ares}/js/json/site_names.json`, site_names_updated, (error) => {
+            fs.writeFile(`${ares}/js/json/site-names.json`, site_names_updated, (error) => {
                 if (error) throw error;
-                console.log(`\n"${site_id}": "${site_name}" added to site_names.json\n`);
+                console.log(`\n"${site_id}": "${site_name}" added to site-names.json\n`);
             });
         });
     } catch (error) {
-        console.log(`Cannot add "${site_id}": "${site_name}" to site_names.json. \nerror: `, error);
+        console.log(`Cannot add "${site_id}": "${site_name}" to site-names.json. \nerror: `, error);
     }
 }
 /**
@@ -99,7 +100,13 @@ function extractValue(string, startChar, endChar) {
  *@param String - site styles scss file
  */
 function buildSiteObject(siteConfig, siteStyles) {
-    let logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    let logo;
+    if (siteConfig.includes('email_logo_file_location')) {
+        logo = extractValue(siteConfig, 'email_logo_file_location:', ',').split('img/');
+        console.log('LOGO: ', logo);
+    } else {
+        logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
+    }
 
     try {
         logo = logo[1].replace(`\``, '');

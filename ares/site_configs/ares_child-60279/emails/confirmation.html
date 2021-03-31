@@ -929,7 +929,9 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><h4>Email Hotels For Hope</h4>
-                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a></div>
+                    <!--email_off-->
+                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a> 
+                    <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -1099,7 +1101,7 @@
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
-          
+          {{#RoomDescriptionLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1108,11 +1110,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Room Description</h5>
-                    <span>{{RoomDescriptionLong}}</span></div>
+                        <span>{{RoomDescriptionLong}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/RoomDescriptionLong}}{{#DepositPolicyLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1121,11 +1123,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Deposit Policy</h5>
-                    <span>{{DepositPolicyLong}}</span></div>
+                        <span>{{DepositPolicyLong}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/DepositPolicyLong}}{{#PaymentTermsLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1134,11 +1136,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Terms</h5>
-                    <span>{{PaymentTermsLong}}</span></div>
+                        <span>{{PaymentTermsLong}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/PaymentTermsLong}}{{#CancellationPolicyLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1147,11 +1149,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Cancellation Policy</h5>
-                    <span>{{CancellationPolicyLong}}</span></div>
+                        <span>{{CancellationPolicyLong}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/CancellationPolicyLong}}{{#PropertyPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1160,11 +1162,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Property Policy</h5>
-                    <span>{{PropertyPolicy}}</span></div>
+                        <span>{{PropertyPolicy}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/PropertyPolicy}}{{#ExtraFeesPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1173,11 +1175,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Extra Fees Policy</h5>
-                    <span>{{ExtraFeesPolicy}}</span></div>
+                        <span>{{ExtraFeesPolicy}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/ExtraFeesPolicy}}{{#PaymentPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1186,11 +1188,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Policy</h5>
-                    <span>{{PaymentPolicy}}</span></div>
+                        <span>{{PaymentPolicy}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/PaymentPolicy}}{{#CheckInSupportPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1199,11 +1201,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Check In Support Policy</h5>
-                    <span>{{CheckInSupportPolicy}}</span></div>
+                        <span>{{CheckInSupportPolicy}}</span></div>
     
                 </td>
               </tr>
-            
+            {{/CheckInSupportPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1225,8 +1227,10 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Reservation Information</h5>
+                    <!--email_off-->
                     <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
-                        {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=60279">click here.</a></span></div>
+                        {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=60279">click here.</a></span>
+                    <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -1373,7 +1377,9 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
-      ><a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a></div>
+      ><!--email_off-->
+                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>
+                <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -1397,7 +1403,9 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
-      ><unsubscribe>Unsubscribe</unsubscribe></div>
+      ><span style="display:none !important">
+                        <unsubscribe>Unsubscribe</unsubscribe>
+                    </span></div>
     
                 </td>
               </tr>

@@ -19,7 +19,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: 11111,
-            event_name: 'F1 Miami Grand Prix 2022',
+            event_name: 'Miami Grand Prix',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -46,7 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/clients/formula_1/images/logo.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
@@ -73,7 +73,7 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        // has_group_booking_banner: true,
-        // group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
+        has_group_booking_banner: true,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
     };
 }

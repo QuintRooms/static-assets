@@ -896,9 +896,6 @@ div.autocomplete ul li.selected {
   -webkit-appearance: none;
   border-radius: 0; }
 
-.SearchHotels .algolia-places {
-  margin: 4px 0; }
-
 .ap-icon-pin {
   display: none; }
 
@@ -2977,28 +2974,13 @@ input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
   display: none; }
 
-.algolia-places {
-  width: 100%; }
+.SearchHotels #address-input {
+  width: 100%;
+  margin: 7px 0; }
 
-.ap-input {
-  height: initial;
-  border-radius: 0px; }
-
-.ap-name {
-  color: #333; }
-
-.ap-address {
-  color: #aaaaaa; }
-
-.ap-input-icon {
-  right: 6px;
-  top: 9px;
-  background-color: #fff;
-  padding: 8px;
-  height: 7px; }
-
-.RootBody .ap-input-icon {
-  top: 15px; }
+.RootBody input#city {
+  position: absolute;
+  left: -10000px; }
 
 /* autocomplete styles end */
 /* Image slideshow start */

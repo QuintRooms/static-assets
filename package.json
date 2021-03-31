@@ -19,7 +19,9 @@
     "homepage": "https://github.com/Hotels4Hope/static-assets#readme",
     "devDependencies": {
         "@babel/core": "^7.12.3",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
         "@babel/preset-env": "^7.12.1",
+        "babel-eslint": "^10.1.0",
         "babel-jest": "^26.6.3",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.1.0",

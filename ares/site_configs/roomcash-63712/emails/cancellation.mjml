@@ -17,7 +17,7 @@
                     <span>We’ve received your cancellation request for the below reservation and can confirm that this has now been canceled. Please find further detail below.</span>
                 </mj-text>
                 <mj-text color="#000" padding-top="10px" padding-bottom="30px" padding-left="10px" padding-right="10px">
-                    <span>The $[value] RoomCash you spent on this reservation has also been credited to your RoomCash Reserves, so your new RoomCash balance is $[balance].</span>
+                    <span>The RoomCash you spent on this reservation has also been credited to your RoomCash Reserves, so your new RoomCash balance is $[balance].</span>
                 </mj-text>
             </mj-column>
         </mj-section>

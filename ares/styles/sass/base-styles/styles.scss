@@ -1148,9 +1148,9 @@ div.autocomplete ul li.selected {
     border-radius: 0;
 }
 
-.SearchHotels .algolia-places {
-    margin: 4px 0;
-}
+// .SearchHotels .algolia-places {
+//     margin: 4px 0;
+// }
 
 .ap-icon-pin {
     display: none;
@@ -3853,34 +3853,44 @@ input[type='search']::-webkit-search-results-decoration {
     display: none;
 }
 
-.algolia-places {
+.SearchHotels #address-input {
     width: 100%;
+    margin: 7px 0;
 }
 
-.ap-input {
-    height: initial;
-    border-radius: 0px;
+.RootBody input#city {
+    position: absolute;
+    left: -10000px;
 }
 
-.ap-name {
-    color: #333;
-}
+// .algolia-places {
+//     width: 100%;
+// }
 
-.ap-address {
-    color: #aaaaaa;
-}
+// .ap-input {
+//     height: initial;
+//     border-radius: 0px;
+// }
 
-.ap-input-icon {
-    right: 6px;
-    top: 9px;
-    background-color: #fff;
-    padding: 8px;
-    height: 7px;
-}
+// .ap-name {
+//     color: #333;
+// }
 
-.RootBody .ap-input-icon {
-    top: 15px;
-}
+// .ap-address {
+//     color: #aaaaaa;
+// }
+
+// .ap-input-icon {
+//     right: 6px;
+//     top: 9px;
+//     background-color: #fff;
+//     padding: 8px;
+//     height: 7px;
+// }
+
+// .RootBody .ap-input-icon {
+//     top: 15px;
+// }
 
 /* autocomplete styles end */
 

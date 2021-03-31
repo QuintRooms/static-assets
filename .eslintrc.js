@@ -1,29 +1,30 @@
 module.exports = {
-    'env': {
-        'browser': true,
-        'es6': true,
-        'jquery': true,
-        "jest/globals": true
+    env: {
+        browser: true,
+        es6: true,
+        jquery: true,
+        'jest/globals': true,
     },
-    'extends': ['airbnb-base', 'plugin:prettier/recommended'],
-    'plugins': ['prettier', 'more-naming-conventions', 'jest'],
-    'rules': {
-        'prettier/prettier': ['error']
+    extends: ['airbnb-base', 'plugin:prettier/recommended'],
+    plugins: ['prettier', 'more-naming-conventions', 'jest'],
+    rules: {
+        'prettier/prettier': ['error'],
     },
-    'parserOptions': {
-        'ecmaVersion': 2018,
-        'sourceType': 'module'
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
     },
-    'rules': {
+    parser: 'babel-eslint',
+    rules: {
         'more-naming-conventions/snake-case-variables': 'error',
         'no-unused-vars': [
             'error',
             {
-                'vars': 'local',
-                'args': 'none',
+                vars: 'local',
+                args: 'none',
             },
         ],
-        'camelcase': 'off',
+        camelcase: 'off',
         'guard-for-in': 'off',
         'class-methods-use-this': 'off', // remove this and fix 'this' errors
         'consistent-return': 'off',
@@ -33,21 +34,21 @@ module.exports = {
         'no-param-reassign': [
             'error',
             {
-                'props': false,
+                props: false,
             },
         ],
         'no-unused-expressions': [
             'error',
             {
-                'allowShortCircuit': true,
-                'allowTernary': true,
+                allowShortCircuit: true,
+                allowTernary: true,
             },
         ],
     },
-    'globals': {
-        'L': 'readonly',
-        'ArnMapDispatcher': 'readonly',
-        'places': 'readonly'
+    globals: {
+        L: 'readonly',
+        ArnMapDispatcher: 'readonly',
+        places: 'readonly',
     },
-    'ignorePatterns': ['ares/node_modules/*', 'ares/dist/*', 'portals/dist/*', 'portals/dist/*', 'node_modules/*']
+    ignorePatterns: ['ares/node_modules/*', 'ares/dist/*', 'portals/dist/*', 'portals/dist/*', 'node_modules/*'],
 };

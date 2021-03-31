@@ -851,6 +851,16 @@ body.WBSupportForm {
     display: none !important;
 }
 
+.SearchHotels #address-input {
+    width: 100%;
+    margin: 7px 0;
+}
+
+.RootBody input#city {
+    position: absolute;
+    left: -10000px;
+}
+
 /* - - - - - Resbeat Retail Referral Registration Start - - - - */
 
 .WBValidatedRegistrationFormContainer {

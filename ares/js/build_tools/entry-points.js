@@ -23,6 +23,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
+            // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
@@ -64,7 +65,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo

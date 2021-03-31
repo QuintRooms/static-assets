@@ -7827,8 +7827,8 @@
                 E = c.Promise,
                 q = 'process' == l(k),
                 L = function () {},
-                C = (o = v.f),
-                R = !!(function () {
+                R = (o = v.f),
+                C = !!(function () {
                     try {
                         var e = E.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
@@ -7934,7 +7934,7 @@
                         }
                     }
                 };
-            R ||
+            C ||
                 ((E = function (e) {
                     f(this, E, 'Promise', '_h'), h(e), r.call(this);
                     try {
@@ -7947,7 +7947,7 @@
                     (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
                 }).prototype = n(/*! ./_redefine-all */ './node_modules/core-js/modules/_redefine-all.js')(E.prototype, {
                     then: function (e, t) {
-                        var n = C(_(this, E));
+                        var n = R(_(this, E));
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
@@ -7966,20 +7966,20 @@
                     var e = new r();
                     (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
                 }),
-                (v.f = C = function (e) {
+                (v.f = R = function (e) {
                     return e === E || e === i ? new s(e) : o(e);
                 })),
-                d(d.G + d.W + d.F * !R, {Promise: E}),
+                d(d.G + d.W + d.F * !C, {Promise: E}),
                 n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(E, 'Promise'),
                 n(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = n(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
-                d(d.S + d.F * !R, 'Promise', {
+                d(d.S + d.F * !C, 'Promise', {
                     reject: function (e) {
-                        var t = C(this);
+                        var t = R(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
-                d(d.S + d.F * (a || !R), 'Promise', {
+                d(d.S + d.F * (a || !C), 'Promise', {
                     resolve: function (e) {
                         return w(a && this === i ? E : this, e);
                     },
@@ -7988,7 +7988,7 @@
                     d.S +
                         d.F *
                             !(
-                                R &&
+                                C &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
                                     E.all(e).catch(L);
                                 })
@@ -7997,7 +7997,7 @@
                     {
                         all: function (e) {
                             var t = this,
-                                n = C(t),
+                                n = R(t),
                                 r = n.resolve,
                                 o = n.reject,
                                 s = b(function () {
@@ -8019,7 +8019,7 @@
                         },
                         race: function (e) {
                             var t = this,
-                                n = C(t),
+                                n = R(t),
                                 r = n.reject,
                                 o = b(function () {
                                     p(e, !1, function (e) {
@@ -8203,9 +8203,9 @@
                             if (h) {
                                 var L = [k].concat(A, x, m);
                                 void 0 !== q && L.push(q);
-                                var C = String(t.apply(void 0, L));
-                            } else C = p(k, m, x, A, q, t);
-                            x >= w && ((j += m.slice(w, x) + C), (w = x + k.length));
+                                var R = String(t.apply(void 0, L));
+                            } else R = p(k, m, x, A, q, t);
+                            x >= w && ((j += m.slice(w, x) + R), (w = x + k.length));
                         }
                         return j + m.slice(w);
                     },
@@ -8469,8 +8469,8 @@
                 E = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
                 q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 L = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
-                C = A.f,
-                R = q.f,
+                R = A.f,
+                C = q.f,
                 P = x.f,
                 T = r.Symbol,
                 M = r.JSON,
@@ -8491,19 +8491,19 @@
                         return (
                             7 !=
                             k(
-                                R({}, 'a', {
+                                C({}, 'a', {
                                     get: function () {
-                                        return R(this, 'a', {value: 7}).a;
+                                        return C(this, 'a', {value: 7}).a;
                                     },
                                 })
                             ).a
                         );
                     })
                         ? function (e, t, n) {
-                              var r = C(N, t);
-                              r && delete N[t], R(e, t, n), r && e !== N && R(N, t, r);
+                              var r = R(N, t);
+                              r && delete N[t], C(e, t, n), r && e !== N && C(N, t, r);
                           }
-                        : R,
+                        : C,
                 z = function (e) {
                     var t = (B[e] = k(T.prototype));
                     return (t._k = e), t;
@@ -8523,9 +8523,9 @@
                         (t = w(t, !0)),
                         g(n),
                         o(B, t)
-                            ? (n.enumerable ? (o(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: S(0, !1)}))) : (o(e, I) || R(e, I, S(1, {})), (e[I][t] = !0)),
+                            ? (n.enumerable ? (o(e, I) && e[I][t] && (e[I][t] = !1), (n = k(n, {enumerable: S(0, !1)}))) : (o(e, I) || C(e, I, S(1, {})), (e[I][t] = !0)),
                               W(e, t, n))
-                            : R(e, t, n)
+                            : C(e, t, n)
                     );
                 },
                 Q = function (e, t) {
@@ -8539,7 +8539,7 @@
                 },
                 Z = function (e, t) {
                     if (((e = j(e)), (t = w(t, !0)), e !== N || !o(B, t) || o(Y, t))) {
-                        var n = C(e, t);
+                        var n = R(e, t);
                         return !n || !o(B, t) || (o(e, I) && e[I][t]) || (n.enumerable = !0), n;
                     }
                 },
@@ -10435,8 +10435,6 @@
                         root_page_header_text: 'Start Your Search',
                         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                         is_resbeat_client: !1,
-                        has_group_booking_banner: !0,
-                        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
                     };
                 });
             var o = new ((r = n(/*! ../../../js/build_tools/path */ './js/build_tools/path.js')) && r.__esModule ? r : {default: r}).default(),

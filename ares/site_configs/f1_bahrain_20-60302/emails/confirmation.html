@@ -235,7 +235,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><h1>Your Room Is Booked!</h1>
-                            <span>BOOKING NUMBER: {{CONFIRMATIONNUMBER}}</span></div>
+            <span>BOOKING NUMBER: {{CONFIRMATIONNUMBER}}</span></div>
     
                 </td>
               </tr>
@@ -387,8 +387,8 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><mj-raw>
-                        <h2></h2>
-                    </mj-raw></div>
+            <h2>{{Hotel}}</h2>
+          </mj-raw></div>
     
                 </td>
               </tr>
@@ -429,8 +429,8 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
       ><mj-raw>
-                        <p style="font-weight: 500; font-size: 14px;">{{HotelAddress1}} {{HotelCity}}, {{HotelState}} {{HotelZip}}</p>
-                    </mj-raw></div>
+            <p style="font-weight: 500; font-size: 14px;">{{HotelAddress1}} {{HotelCity}}, {{HotelState}} {{HotelZip}}</p>
+          </mj-raw></div>
     
                 </td>
               </tr>
@@ -665,7 +665,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Deposit Charged:</b> 	{{CurrencySymbol}}{{DepositCharged}}</span></div>
+      ><span><b>Deposit Charged:</b> {{CurrencySymbol}}{{DepositCharged}}</span></div>
     
                 </td>
               </tr>
@@ -928,10 +928,10 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
-      ><h4>Email Hotels For Hope</h4>
-                    <!--email_off-->
-                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a> 
-                    <!--/email_off--></div>
+      ><h4>Email Quint Rooms</h4>
+          <!--email_off-->
+          <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
+          <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -997,8 +997,8 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#666;"
-      ><h4>Call Hotels For Hope</h4>
-                    <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a></div>
+      ><h4>Call Quint Rooms</h4>
+          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a></div>
     
                 </td>
               </tr>
@@ -1101,7 +1101,7 @@
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
-          [if:RoomDescriptionLong]
+          {{#RoomDescriptionLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1110,11 +1110,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Room Description</h5>
-                        <span>{{RoomDescriptionLong}}</span></div>
+          <span>{{RoomDescriptionLong}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:DepositPolicyLong]
+            {{/RoomDescriptionLong}}{{#DepositPolicyLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1123,11 +1123,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Deposit Policy</h5>
-                        <span>{{DepositPolicyLong}}</span></div>
+          <span>{{DepositPolicyLong}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:PaymentTermsLong]
+            {{/DepositPolicyLong}}{{#PaymentTermsLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1136,11 +1136,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Terms</h5>
-                        <span>{{PaymentTermsLong}}</span></div>
+          <span>{{PaymentTermsLong}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:CancellationPolicyLong]
+            {{/PaymentTermsLong}}{{#CancellationPolicyLong}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1149,11 +1149,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Cancellation Policy</h5>
-                        <span>{{CancellationPolicyLong}}</span></div>
+          <span>{{CancellationPolicyLong}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:PropertyPolicy]
+            {{/CancellationPolicyLong}}{{#PropertyPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1162,11 +1162,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Property Policy</h5>
-                        <span>{{PropertyPolicy}}</span></div>
+          <span>{{PropertyPolicy}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:ExtraFeesPolicy]
+            {{/PropertyPolicy}}{{#ExtraFeesPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1175,11 +1175,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Extra Fees Policy</h5>
-                        <span>{{ExtraFeesPolicy}}</span></div>
+          <span>{{ExtraFeesPolicy}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:PaymentPolicy]
+            {{/ExtraFeesPolicy}}{{#PaymentPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1188,11 +1188,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Payment Policy</h5>
-                        <span>{{PaymentPolicy}}</span></div>
+          <span>{{PaymentPolicy}}</span></div>
     
                 </td>
               </tr>
-            [endif][if:CheckInSupportPolicy]
+            {{/PaymentPolicy}}{{#CheckInSupportPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1201,11 +1201,11 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Check In Support Policy</h5>
-                    <span>{{CheckInSupportPolicy}}</span></div>
+          <span>{{CheckInSupportPolicy}}</span></div>
     
                 </td>
               </tr>
-            [endif
+            {{/CheckInSupportPolicy}}
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
@@ -1214,7 +1214,7 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Important Guest Information</h5>
-                    <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a  style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=60302">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
+          <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid=60302">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span></div>
     
                 </td>
               </tr>
@@ -1227,10 +1227,10 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h5>Reservation Information</h5>
-                    <!--email_off-->
-                    <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com"> reservations@hotelsforhope.com</a>. To speak to the hotel directly, contact 
-                        {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=60302">click here.</a></span>
-                    <!--/email_off--></div>
+          <!--email_off-->
+          <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
+            {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid=60302">click here.</a></span>
+          <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -1341,7 +1341,7 @@
                   
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
-      ><h4>Hotels For Hope</h4></div>
+      ><h4>QuintRooms</h4></div>
     
                 </td>
               </tr>
@@ -1378,8 +1378,8 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><!--email_off-->
-                    <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a>
-                <!--/email_off--></div>
+          <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@quintrooms.com</a>
+          <!--/email_off--></div>
     
                 </td>
               </tr>
@@ -1404,8 +1404,8 @@
       <div
          style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><span style="display:none !important">
-                        <unsubscribe>Unsubscribe</unsubscribe>
-                    </span></div>
+            <unsubscribe>Unsubscribe</unsubscribe>
+          </span></div>
     
                 </td>
               </tr>

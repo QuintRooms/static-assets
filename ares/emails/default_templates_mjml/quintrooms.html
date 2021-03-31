@@ -172,7 +172,7 @@
                                         <td align="center" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                           <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;">
                                             <h1>Your Room Is Booked!</h1>
-                                            <span>BOOKING NUMBER: {{CONFIRMATIONNUMBER}}</span>
+                                            <span>BOOKING NUMBER: {{confirmation_number}}</span>
                                           </div>
                                         </td>
                                       </tr>
@@ -257,7 +257,7 @@
                               <td align="center" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                 <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;">
                                   <mj-raw>
-                                    <h2>{{Hotel}}</h2>
+                                    <h2>{{hotel}}</h2>
                                   </mj-raw>
                                 </div>
                               </td>
@@ -281,7 +281,7 @@
                               <td align="center" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                 <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:center;color:#000000;">
                                   <mj-raw>
-                                    <p style="font-weight: 500; font-size: 14px;">{{HotelAddress1}} {{HotelCity}}, {{HotelState}} {{HotelZip}}</p>
+                                    <p style="font-weight: 500; font-size: 14px;">{{hotel_address}} {{hotel_city}}, {{hotel_state}} {{hotel_zip}}</p>
                                   </mj-raw>
                                 </div>
                               </td>
@@ -347,27 +347,27 @@
                           <tbody>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:5px;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Guest Name:</b> {{GuestName}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Guest Name:</b> {{guest_name}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Check In:</b> {{CheckInDate}} - {{CheckInTime}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Check In:</b> {{check_in_date}} - {{check_in_time}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Check Out:</b> {{CheckOutDate}} - {{CheckOutTime}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Check Out:</b> {{check_out_date}} - {{check_out_time}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Guests:</b> {{Guests}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Guests:</b> {{guests}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Rooms:</b> {{Rooms}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Rooms:</b> {{rooms}}</span></div>
                               </td>
                             </tr>
                           </tbody>
@@ -387,27 +387,27 @@
                           <tbody>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Total for Stay:</b> {{CurrencySymbol}}{{Total}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Total for Stay:</b> {{currency_symbol}}{{total}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Tax Amount:</b> {{CurrencySymbol}}{{TaxAmount}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Tax Amount:</b> {{currency_symbol}}{{tax_amount}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Deposit Charged:</b> {{CurrencySymbol}}{{DepositCharged}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Deposit Charged:</b> {{currency_symbol}}{{deposit_charged}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Balance Due:</b> {{CurrencySymbol}}{{BalanceDue}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Balance Due:</b> {{currency_symbol}}{{balance_due}}</span></div>
                               </td>
                             </tr>
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">
-                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Rate Per Night:</b> {{RoomRates}}</span></div>
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"><span><b>Rate Per Night:</b> {{room_rates}}</span></div>
                               </td>
                             </tr>
                           </tbody>
@@ -631,79 +631,79 @@
                       <td style="vertical-align:top;padding-top:0;padding-bottom:0;">
                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
                           <tbody>
-                            {{#RoomDescriptionLong}}
+                            {{#room_description}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Room Description</h5>
-                                    <span>{{RoomDescriptionLong}}</span>
+                                    <span>{{room_description}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/RoomDescriptionLong}}{{#DepositPolicyLong}}
+                            {{/room_description}}{{#deposit_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Deposit Policy</h5>
-                                    <span>{{DepositPolicyLong}}</span>
+                                    <span>{{deposit_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/DepositPolicyLong}}{{#PaymentTermsLong}}
+                            {{/deposit_policy}}{{#payment_terms}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Payment Terms</h5>
-                                    <span>{{PaymentTermsLong}}</span>
+                                    <span>{{payment_terms}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/PaymentTermsLong}}{{#CancellationPolicyLong}}
+                            {{/payment_terms}}{{#cancellation_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Cancellation Policy</h5>
-                                    <span>{{CancellationPolicyLong}}</span>
+                                    <span>{{cancellation_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/CancellationPolicyLong}}{{#PropertyPolicy}}
+                            {{/cancellation_policy}}{{#property_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Property Policy</h5>
-                                    <span>{{PropertyPolicy}}</span>
+                                    <span>{{property_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/PropertyPolicy}}{{#ExtraFeesPolicy}}
+                            {{/property_policy}}{{#extra_fees_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Extra Fees Policy</h5>
-                                    <span>{{ExtraFeesPolicy}}</span>
+                                    <span>{{extra_fees_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/ExtraFeesPolicy}}{{#PaymentPolicy}}
+                            {{/extra_fees_policy}}{{#payment_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Payment Policy</h5>
-                                    <span>{{PaymentPolicy}}</span>
+                                    <span>{{payment_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/PaymentPolicy}}{{#CheckInSupportPolicy}}
+                            {{/payment_policy}}{{#check_in_support_policy}}
                               <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                   <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                     <h5>Check In Support Policy</h5>
-                                    <span>{{CheckInSupportPolicy}}</span>
+                                    <span>{{check_in_support_policy}}</span>
                                   </div>
                                 </td>
                               </tr>
-                            {{/CheckInSupportPolicy}}
+                            {{/check_in_support_policy}}
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                 <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
@@ -717,7 +717,7 @@
                                 <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                   <h5>Reservation Information</h5>
                                   <!--email_off-->
-                                  <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
+                                  <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact {{hotel}} at {{hotel_phone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
                                   <!--/email_off-->
                                 </div>
                               </td>

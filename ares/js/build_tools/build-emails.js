@@ -24,19 +24,17 @@ function siteNameExists() {
 function addEmailSiteName() {
     if (siteNameExists()) return;
     try {
-        fs.readFile(`${ares}/js/json/site-names.json`, 'utf8', (err, data) => {
-            if (err) throw err;
-            const trimmed_data = data.trim();
-            const site_names = trimmed_data.substring(1, trimmed_data.length - 2);
-            const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
+        const data = fs.readFileSync(`${ares}/js/json/site-names.json`, 'utf8');
 
-            fs.writeFile(`${ares}/js/json/site-names.json`, site_names_updated, (error) => {
-                if (error) throw error;
-                console.log(`\n"${site_id}": "${site_name}" added to site-names.json\n`);
-            });
-        });
+        const trimmed_data = data.trim();
+        const site_names = trimmed_data.substring(1, trimmed_data.length - 2);
+        const site_names_updated = `{${site_names},\n    "${site_id}": "${site_name}"\n}`;
+
+        fs.writeFileSync(`${ares}/js/json/site-names.json`, site_names_updated);
+
+        console.log(`\n"${site_id}": "${site_name}" added to site-names.json\n`);
     } catch (error) {
-        console.log(`Cannot add "${site_id}": "${site_name}" to site-names.json. \nerror: `, error);
+        console.log(`Cannot add "${site_name}" to site-names.json. \nerror: `, error);
     }
 }
 /**

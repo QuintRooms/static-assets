@@ -22,7 +22,7 @@
         <mj-column width="100%">
           <mj-text align="center">
             <h1>Your Room Is Booked!</h1>
-            <span>BOOKING NUMBER: {{CONFIRMATIONNUMBER}}</span>
+            <span>BOOKING NUMBER: {{confirmation_number}}</span>
           </mj-text>
         </mj-column>
       </mj-section>
@@ -40,14 +40,14 @@
       <mj-column width="100%">
         <mj-text align="center">
           <mj-raw>
-            <h2>{{Hotel}}</h2>
+            <h2>{{hotel}}</h2>
           </mj-raw>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-bottom="30px">
         <mj-text align="center">
           <mj-raw>
-            <p style="font-weight: 500; font-size: 14px;">{{HotelAddress1}} {{HotelCity}}, {{HotelState}} {{HotelZip}}</p>
+            <p style="font-weight: 500; font-size: 14px;">{{hotel_address}} {{hotel_city}}, {{hotel_state}} {{hotel_zip}}</p>
           </mj-raw>
         </mj-text>
       </mj-column>
@@ -63,36 +63,36 @@
       </mj-column>
       <mj-column width="50%" padding-top="10px">
         <mj-text padding-bottom="10px" padding-top="5px" color="#666">
-          <span><b>Guest Name:</b> {{GuestName}}</span>
+          <span><b>Guest Name:</b> {{guest_name}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Check In:</b> {{CheckInDate}} - {{CheckInTime}}</span>
+          <span><b>Check In:</b> {{check_in_date}} - {{check_in_time}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Check Out:</b> {{CheckOutDate}} - {{CheckOutTime}}</span>
+          <span><b>Check Out:</b> {{check_out_date}} - {{check_out_time}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Guests:</b> {{Guests}}</span>
+          <span><b>Guests:</b> {{guests}}</span>
         </mj-text>
         <mj-text color="#666">
-          <span><b>Rooms:</b> {{Rooms}}</span>
+          <span><b>Rooms:</b> {{rooms}}</span>
         </mj-text>
       </mj-column>
       <mj-column width="50%" padding-top="10px">
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Total for Stay:</b> {{CurrencySymbol}}{{Total}}</span>
+          <span><b>Total for Stay:</b> {{currency_symbol}}{{total}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Tax Amount:</b> {{CurrencySymbol}}{{TaxAmount}}</span>
+          <span><b>Tax Amount:</b> {{currency_symbol}}{{tax_amount}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Deposit Charged:</b> {{CurrencySymbol}}{{DepositCharged}}</span>
+          <span><b>Deposit Charged:</b> {{currency_symbol}}{{deposit_charged}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Balance Due:</b> {{CurrencySymbol}}{{BalanceDue}}</span>
+          <span><b>Balance Due:</b> {{currency_symbol}}{{balance_due}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Rate Per Night:</b> {{RoomRates}}</span>
+          <span><b>Rate Per Night:</b> {{room_rates}}</span>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-top="20px">
@@ -140,54 +140,54 @@
     <!-- Fees and Policies -->
     <mj-section>
       <mj-column width="100%">
-        <mj-raw>{{#RoomDescriptionLong}}</mj-raw>
+        <mj-raw>{{#room_description}}</mj-raw>
         <mj-text>
           <h5>Room Description</h5>
-          <span>{{RoomDescriptionLong}}</span>
+          <span>{{room_description}}</span>
         </mj-text>
-        <mj-raw>{{/RoomDescriptionLong}}</mj-raw>
-        <mj-raw>{{#DepositPolicyLong}}</mj-raw>
+        <mj-raw>{{/room_description}}</mj-raw>
+        <mj-raw>{{#deposit_policy}}</mj-raw>
         <mj-text>
           <h5>Deposit Policy</h5>
-          <span>{{DepositPolicyLong}}</span>
+          <span>{{deposit_policy}}</span>
         </mj-text>
-        <mj-raw>{{/DepositPolicyLong}}</mj-raw>
-        <mj-raw>{{#PaymentTermsLong}}</mj-raw>
+        <mj-raw>{{/deposit_policy}}</mj-raw>
+        <mj-raw>{{#payment_terms}}</mj-raw>
         <mj-text>
           <h5>Payment Terms</h5>
-          <span>{{PaymentTermsLong}}</span>
+          <span>{{payment_terms}}</span>
         </mj-text>
-        <mj-raw>{{/PaymentTermsLong}}</mj-raw>
-        <mj-raw>{{#CancellationPolicyLong}}</mj-raw>
+        <mj-raw>{{/payment_terms}}</mj-raw>
+        <mj-raw>{{#cancellation_policy}}</mj-raw>
         <mj-text>
           <h5>Cancellation Policy</h5>
-          <span>{{CancellationPolicyLong}}</span>
+          <span>{{cancellation_policy}}</span>
         </mj-text>
-        <mj-raw>{{/CancellationPolicyLong}}</mj-raw>
-        <mj-raw>{{#PropertyPolicy}}</mj-raw>
+        <mj-raw>{{/cancellation_policy}}</mj-raw>
+        <mj-raw>{{#property_policy}}</mj-raw>
         <mj-text>
           <h5>Property Policy</h5>
-          <span>{{PropertyPolicy}}</span>
+          <span>{{property_policy}}</span>
         </mj-text>
-        <mj-raw>{{/PropertyPolicy}}</mj-raw>
-        <mj-raw>{{#ExtraFeesPolicy}}</mj-raw>
+        <mj-raw>{{/property_policy}}</mj-raw>
+        <mj-raw>{{#extra_fees_policy}}</mj-raw>
         <mj-text>
           <h5>Extra Fees Policy</h5>
-          <span>{{ExtraFeesPolicy}}</span>
+          <span>{{extra_fees_policy}}</span>
         </mj-text>
-        <mj-raw>{{/ExtraFeesPolicy}}</mj-raw>
-        <mj-raw>{{#PaymentPolicy}}</mj-raw>
+        <mj-raw>{{/extra_fees_policy}}</mj-raw>
+        <mj-raw>{{#payment_policy}}</mj-raw>
         <mj-text>
           <h5>Payment Policy</h5>
-          <span>{{PaymentPolicy}}</span>
+          <span>{{payment_policy}}</span>
         </mj-text>
-        <mj-raw>{{/PaymentPolicy}}</mj-raw>
-        <mj-raw>{{#CheckInSupportPolicy}}</mj-raw>
+        <mj-raw>{{/payment_policy}}</mj-raw>
+        <mj-raw>{{#check_in_support_policy}}</mj-raw>
         <mj-text>
           <h5>Check In Support Policy</h5>
-          <span>{{CheckInSupportPolicy}}</span>
+          <span>{{check_in_support_policy}}</span>
         </mj-text>
-        <mj-raw>{{/CheckInSupportPolicy}}</mj-raw>
+        <mj-raw>{{/check_in_support_policy}}</mj-raw>
         <mj-text>
           <h5>Important Guest Information</h5>
           <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid={{site_id}}">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
@@ -196,7 +196,7 @@
           <h5>Reservation Information</h5>
           <!--email_off-->
           <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
-            {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
+            {{hotel}} at {{hotel_phone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
           <!--/email_off-->
         </mj-text>
       </mj-column>

@@ -7,6 +7,7 @@ import Algolia from './components/algolia';
 import Path from './build_tools/path';
 import renderLucidBanner from './components/lucid_banner/lucid-banner';
 
+const {domain} = process.env;
 const env_path = new Path();
 const dayjs = require('dayjs');
 const custom_parse_format = require('dayjs/plugin/customParseFormat');
@@ -277,7 +278,7 @@ export default class BasePortal {
             this.showMoreAmenities();
             this.appendMemberTokenForCug();
             this.hideRemainingRooms();
-            this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/terms.html', '.ArnSubPage.ArnTermsConditions');
+            this.replaceHTMLWithFile(`https://${env_path.path}/html/terms.html`, '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
             this.updateSupportPageText();
@@ -758,7 +759,7 @@ export default class BasePortal {
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
             utilities.updateHTML(
                 `.cardNumber label`,
-                '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                `<div class="creditcards"><img src="https://${env_path.path}/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>`
             );
         });
 
@@ -1330,7 +1331,7 @@ export default class BasePortal {
             property.querySelector('.arnPrice').insertAdjacentHTML(
                 'afterEnd',
                 `
-                <a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>
+                <a href="https://events.${domain}/v6/low-rate-guarantee?siteid=${this.site_id}&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>
             `
             );
         });
@@ -1340,7 +1341,7 @@ export default class BasePortal {
         if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
 
         try {
-            const html = await fetch('https://static.hotelsforhope.com/components/lrg-form/lrg-form.html').then((response) => response.text());
+            const html = await fetch(`https://${domain}/components/lrg-form/lrg-form.html`).then((response) => response.text());
 
             document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
         } catch (error) {
@@ -1459,7 +1460,7 @@ export default class BasePortal {
             <meta property="og:type" content="website" >
             <meta property="og:title" content="${event_name}" >
             <meta property="og:description" content="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" >
-            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id=${event_id}">`
+            <meta property="og:image" content="https://events.${domain}/group-event?id=${event_id}">`
         );
     }
 
@@ -1477,7 +1478,7 @@ export default class BasePortal {
             `<div class="social-share-buttons-container">
                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D${event_id}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" data-url="https://events.${domain}/group-event?id=${event_id}" data-via="Hotels4Hope" data-show-count="false">Tweet</a>
                 </div>`
         );
     }
@@ -1686,7 +1687,7 @@ export default class BasePortal {
         document.querySelector('.ArnSupportBottom').insertAdjacentHTML(
             'beforeend',
             `<div class="pb-container">
-            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>
+            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://${env_path.path}/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>
             </div>`
         );
     }
@@ -1697,7 +1698,7 @@ export default class BasePortal {
         document.querySelector('.open-modal').textContent = 'Policies & Fees';
         document.querySelector(
             'span.confirmationAgreement'
-        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
 
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I');
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my');
@@ -1725,7 +1726,7 @@ export default class BasePortal {
         const user_email = window.arnCustomerEmailAddress;
         let email_from = this.site_config.confirmation_email_from;
 
-        if (email_from === undefined || email_from === null || email_from === '') email_from = 'reservations@hotelsforhope.com';
+        if (email_from === undefined || email_from === null || email_from === '') email_from = `reservations@${domain}`;
 
         const support_info = document.querySelector('.supportInfo');
 
@@ -1734,7 +1735,7 @@ export default class BasePortal {
         support_info.insertAdjacentHTML(
             'afterEnd',
             `<div class="confirmation-messaging">
-                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>${email_from}</strong></a> at <strong>${user_email}</strong> shortly.</p>
+                <p>You will receive a confirmation email from <a href="mailto:reservations@${domain}"><strong>${email_from}</strong></a> at <strong>${user_email}</strong> shortly.</p>
             </div>
             `
         );

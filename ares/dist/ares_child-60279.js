@@ -135,7 +135,8 @@
                                 key: 'init',
                                 value: function () {
                                     var e = this;
-                                    this.site_config || console.error('No site config found.'),
+                                    console.log('domain: ', 'static.hotelsforhope.com'),
+                                        this.site_config || console.error('No site config found.'),
                                         this.initializeARNRatesReadyEvent(),
                                         h.ieForEachPolyfill(),
                                         this.getSiteID().then(
@@ -2408,7 +2409,7 @@
         /*! no static exports found */ function (e, t, n) {
             'use strict';
             e.exports = function () {
-                return {path: 'https://dev-static.hotelsforhope.com/ares'};
+                return {path: 'https://dev-'.concat('static.hotelsforhope.com', '/ares')};
             };
         },
     './js/components/algolia.js':

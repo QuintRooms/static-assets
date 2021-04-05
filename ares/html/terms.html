@@ -446,13 +446,5 @@ APPLICABLE FEDERAL AND STATE LAWS GOVERNING COPYRIGHTS, TRADEMARKS AND SERVICE M
     www.dca.ca.gov for additional information.
 </p>
 <p>
-    Copyright © <span id="year"></span> QuintRooms. All Rights Reserved.
+    Copyright © <span id="year"><script>document.write(new Date().getFullYear())</script></span> QuintRooms. All Rights Reserved.
 </p>
-<script>
-    function updateYear(element) {
-        if (!element || !document.querySelector(element)) return
-        document.querySelector(element).innerHTML = new Date().getFullYear()
-    }
-
-    updateYear('#year');
-</script>

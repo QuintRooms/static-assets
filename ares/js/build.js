@@ -118,6 +118,10 @@ export default class BasePortal {
                 this.addMessagingToConfirmationPage();
             }
 
+            if (this.page_name === 'terms-conditions') {
+                this.setCurrentYearOnElement('#year');
+            }
+
             // root page methods
             if (document.querySelector('.RootBody')) {
                 if (this.site_config.use_google_autocomplete) {
@@ -2106,5 +2110,10 @@ export default class BasePortal {
         }
         console.log(data_vars);
         // Send data to url
+    }
+
+    setCurrentYearOnElement(element) {
+        if (!element || !document.querySelector(element)) return;
+        document.querySelector(element).textContent = new Date().getFullYear();
     }
 }

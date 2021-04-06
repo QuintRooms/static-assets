@@ -282,7 +282,7 @@ export default class BasePortal {
             this.showMoreAmenities();
             this.appendMemberTokenForCug();
             this.hideRemainingRooms();
-            this.replaceHTMLWithFile(`https://${env_path.path}/html/terms.html`, '.ArnSubPage.ArnTermsConditions');
+            this.replaceHTMLWithFile(`${env_path.path}/html/terms.html`, '.ArnSubPage.ArnTermsConditions');
             this.addLinkToLoginFromRegisterPage();
             this.setCheckDatesToReadOnlyOnMobile();
             this.updateSupportPageText();
@@ -763,7 +763,7 @@ export default class BasePortal {
             utilities.createHTML('<legend>Credit Card Info</legend>', `.RoomNumber-${reservation_count} .guestBillingAddress`, 'beforeBegin');
             utilities.updateHTML(
                 `.cardNumber label`,
-                `<div class="creditcards"><img src="https://${env_path.path}/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>`
+                `<div class="creditcards"><img src="${env_path.path}/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>`
             );
         });
 
@@ -1691,7 +1691,7 @@ export default class BasePortal {
         document.querySelector('.ArnSupportBottom').insertAdjacentHTML(
             'beforeend',
             `<div class="pb-container">
-            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://${env_path.path}/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>
+            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="${env_path.path}/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>
             </div>`
         );
     }

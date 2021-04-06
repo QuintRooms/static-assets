@@ -1,6 +1,6 @@
 const {domain} = process.env;
 
-module.exports = () => {
+export default () => {
     let path = '';
 
     if (process.env.NODE_ENV === 'production') {

@@ -124,7 +124,7 @@ function buildSiteObject(siteConfig, siteStyles) {
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
         has_custom_emails: extractValue(siteConfig, 'has_custom_emails:', ',') === 'true',
-        logo: `https://dev-static${domain}/ares/site_configs/${site_name}/img/${logo}`,
+        logo: `https://dev-static.${domain}/ares/site_configs/${site_name}/img/${logo}`,
         theme: theme_color,
         text: theme_color === '#fff' ? '#666' : '#F5FFFA',
     };

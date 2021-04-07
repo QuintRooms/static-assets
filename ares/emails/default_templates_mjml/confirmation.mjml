@@ -129,7 +129,7 @@
         <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
         <mj-text align="center">
           <h4>Call Quint Rooms</h4>
-          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+          <a style="color:inherit;" href="tel:+ 1 512-691-9555">+1 512-691-9555</a>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-top="20px">
@@ -195,7 +195,7 @@
         <mj-text>
           <h5>Reservation Information</h5>
           <!--email_off-->
-          <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
+          <span>For further assistance or if you have questions about your reservation, contact QuintRooms at + 1 512-691-9555 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
             \{{Hotel}} at \{{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
           <!--/email_off-->
         </mj-text>
@@ -212,7 +212,7 @@
           <h4>QuintRooms</h4>
         </mj-text>
         <mj-text padding-bottom="5px">
-          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.hotelsforhope.com</a>
+          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.quintrooms.com</a>
         </mj-text>
         <mj-text padding-bottom="5px">
           <div>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
@@ -223,7 +223,7 @@
           <!--/email_off-->
         </mj-text>
         <mj-text padding-bottom="5px">
-          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+          <a style="color:inherit;" href="tel:+ 1 512-691-9555">+ 1 512-691-9555</a>
         </mj-text>
         <mj-text padding-bottom="5px">
           <span style="display:none !important">

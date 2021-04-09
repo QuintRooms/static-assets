@@ -234,7 +234,6 @@
                                                                                 h.updateHTML('#theCharges legend', 'Rate Info'),
                                                                                 h.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
                                                                                 h.updateHTML('#theHotel legend', 'Reservation Summary'),
-                                                                                e.formatCheckoutForm(),
                                                                                 e.setupReservationSummaryContainer(),
                                                                                 h.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
                                                                                 e.fixCheckoutInputTabOrder(),

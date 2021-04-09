@@ -7702,16 +7702,16 @@
                             portal_url: 'https://events.hotelsforhope.com/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled',
                         },
                         {
-                            name: '2021 Las Vegas Auction',
-                            display_date: 'June 17 - 19, 2021',
-                            end_date: '06/22/2021',
-                            portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
-                        },
-                        {
                             name: '2021 Houston Auction',
                             display_date: 'September 16 - 18, 2021',
                             end_date: '09/19/2021',
                             portal_url: 'http://events.hotelsforhope.com/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021',
+                        },
+                        {
+                            name: '2021 Las Vegas Auction',
+                            display_date: 'June 17 - 19, 2021',
+                            end_date: '06/22/2021',
+                            portal_url: 'https://events.hotelsforhope.com/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021',
                         },
                     ],
                 };

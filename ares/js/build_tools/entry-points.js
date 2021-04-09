@@ -31,11 +31,13 @@ module.exports = () => {
             // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
+            // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
+            // 'hof_enshrinement_friends_fam_21-66018': './src/66018.js', // hof enshrinement_friends_fam_21
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
@@ -66,7 +68,6 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

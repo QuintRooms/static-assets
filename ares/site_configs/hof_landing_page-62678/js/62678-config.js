@@ -81,13 +81,13 @@ export default function siteConfig() {
                 end_date: '8/8/2021', // M/D/YYYY
                 portal_url: 'https://book.hofhotels.com/group-event?id=42991&utm_campaign=Pro%20Football%20HOF%20Enshrinement%202021',
             },
-            // {
-            //     is_city_search_header_link: false,
-            //     name: 'HBCU Classic',
-            //     display_date: 'September 5th, 2021', // August 5-8, 2021
-            //     end_date: '9/5/2021', // M/D/YYYY
-            //     portal_url: 'https://events.hotelsforhope.com/group-event?id=49131&utm_campaign=Pro%20Football%20HOF%HBCU&20classic%202021',
-            // },
+            {
+                is_city_search_header_link: false,
+                name: '',
+                display_date: 'September 5th, 2021', // August 5-8, 2021
+                end_date: '9/5/2021', // M/D/YYYY
+                portal_url: 'https://events.hotelsforhope.com/group-event?id=49131&utm_campaign=Pro%20Football%20HOF%HBCU&20classic%202021',
+            },
             {
                 is_city_search_header_link: true,
                 name: 'Search Canton, OH',

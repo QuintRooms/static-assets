@@ -89,6 +89,6 @@ export default function siteConfig() {
                 portal_url: '',
             },
         ],
-        uses_hybrid_compensation_model: true,
+        uses_hybrid_compensation_model: false,
     };
 }

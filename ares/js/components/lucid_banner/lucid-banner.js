@@ -21,7 +21,7 @@ export default async function renderLucidBanner(event, link) {
                     <span id="mobile">Need 10+ rooms?</span>     
                 </div>
                 <div class="lucid-button">
-                    <a id="lucid-link" target="_blank" href="${link}">Contact Us</a>
+                    <a id="lucid-link" target="_blank" href="${link}">Book 10+ Rooms</a>
                 </div>
             </div>
             <style>

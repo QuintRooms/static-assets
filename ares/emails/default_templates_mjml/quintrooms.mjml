@@ -140,54 +140,72 @@
     <!-- Fees and Policies -->
     <mj-section>
       <mj-column width="100%">
-        <mj-raw>{{#room_description}}</mj-raw>
+        <mj-raw>
+          [if:room_description]
+        </mj-raw>
         <mj-text>
           <h5>Room Description</h5>
           <span>{{room_description}}</span>
         </mj-text>
-        <mj-raw>{{/room_description}}</mj-raw>
-        <mj-raw>{{#deposit_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:deposit_policy]
+        </mj-raw>
         <mj-text>
           <h5>Deposit Policy</h5>
           <span>{{deposit_policy}}</span>
         </mj-text>
-        <mj-raw>{{/deposit_policy}}</mj-raw>
-        <mj-raw>{{#payment_terms}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:payment_terms]
+        </mj-raw>
         <mj-text>
           <h5>Payment Terms</h5>
           <span>{{payment_terms}}</span>
         </mj-text>
-        <mj-raw>{{/payment_terms}}</mj-raw>
-        <mj-raw>{{#cancellation_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:cancellation_policy]
+        </mj-raw>
         <mj-text>
           <h5>Cancellation Policy</h5>
           <span>{{cancellation_policy}}</span>
         </mj-text>
-        <mj-raw>{{/cancellation_policy}}</mj-raw>
-        <mj-raw>{{#property_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:payment_terms]
+        </mj-raw>
         <mj-text>
           <h5>Property Policy</h5>
           <span>{{property_policy}}</span>
         </mj-text>
-        <mj-raw>{{/property_policy}}</mj-raw>
-        <mj-raw>{{#extra_fees_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:extra_fees_policy]
+        </mj-raw>
         <mj-text>
           <h5>Extra Fees Policy</h5>
           <span>{{extra_fees_policy}}</span>
         </mj-text>
-        <mj-raw>{{/extra_fees_policy}}</mj-raw>
-        <mj-raw>{{#payment_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:payment_policy]
+        </mj-raw>
         <mj-text>
           <h5>Payment Policy</h5>
           <span>{{payment_policy}}</span>
         </mj-text>
-        <mj-raw>{{/payment_policy}}</mj-raw>
-        <mj-raw>{{#check_in_support_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+          [if:check_in_support_policy]
+        </mj-raw>
         <mj-text>
           <h5>Check In Support Policy</h5>
           <span>{{check_in_support_policy}}</span>
         </mj-text>
-        <mj-raw>{{/check_in_support_policy}}</mj-raw>
+        <mj-raw>
+          [endif]
+        </mj-raw>
         <mj-text>
           <h5>Important Guest Information</h5>
           <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid={{site_id}}">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>

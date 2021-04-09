@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: 1111,
-            event_name: 'Barrett-Jackson las Vegas 2021',
+            event_name: 'Barrett-Jackson Las Vegas 2021',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

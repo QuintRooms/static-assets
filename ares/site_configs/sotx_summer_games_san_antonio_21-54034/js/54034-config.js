@@ -16,7 +16,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '44289',
-            event_name: '2021 Special olympics of Texas',
+            event_name: '2021 Special Olympics of Texas',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

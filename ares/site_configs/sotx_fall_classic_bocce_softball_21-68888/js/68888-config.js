@@ -1,14 +1,14 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 11111;
-const directory_name = `template-${site_id}`;
+const site_id = 68888;
+const directory_name = `sotx_fall_classic_bocce_softball_21-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
+        affiliate_id: 14851,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
@@ -16,8 +16,8 @@ export default function siteConfig() {
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: '',
+            event_id: 48917,
+            event_name: 'Special Olympics of Texas - Bocce and Softball',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

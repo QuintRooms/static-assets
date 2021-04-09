@@ -630,81 +630,63 @@
                     <tr>
                       <td style="vertical-align:top;padding-top:0;padding-bottom:0;">
                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
-                          <tbody>
-                            {{#room_description}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Room Description</h5>
-                                    <span>{{room_description}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/room_description}}{{#deposit_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Deposit Policy</h5>
-                                    <span>{{deposit_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/deposit_policy}}{{#payment_terms}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Payment Terms</h5>
-                                    <span>{{payment_terms}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/payment_terms}}{{#cancellation_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Cancellation Policy</h5>
-                                    <span>{{cancellation_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/cancellation_policy}}{{#property_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Property Policy</h5>
-                                    <span>{{property_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/property_policy}}{{#extra_fees_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Extra Fees Policy</h5>
-                                    <span>{{extra_fees_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/extra_fees_policy}}{{#payment_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Payment Policy</h5>
-                                    <span>{{payment_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/payment_policy}}{{#check_in_support_policy}}
-                              <tr>
-                                <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
-                                  <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
-                                    <h5>Check In Support Policy</h5>
-                                    <span>{{check_in_support_policy}}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            {{/check_in_support_policy}}
-                            <tr>
+                          <tbody> [if:room_description] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Room Description</h5>
+                                  <span>{{room_description}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:deposit_policy] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Deposit Policy</h5>
+                                  <span>{{deposit_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:payment_terms] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Payment Terms</h5>
+                                  <span>{{payment_terms}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:cancellation_policy] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Cancellation Policy</h5>
+                                  <span>{{cancellation_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:payment_terms] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Property Policy</h5>
+                                  <span>{{property_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:extra_fees_policy] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Extra Fees Policy</h5>
+                                  <span>{{extra_fees_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:payment_policy] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Payment Policy</h5>
+                                  <span>{{payment_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] [if:check_in_support_policy] <tr>
+                              <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
+                                <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
+                                  <h5>Check In Support Policy</h5>
+                                  <span>{{check_in_support_policy}}</span>
+                                </div>
+                              </td>
+                            </tr> [endif] <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;">
                                 <div style="font-family:sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;">
                                   <h5>Important Guest Information</h5>

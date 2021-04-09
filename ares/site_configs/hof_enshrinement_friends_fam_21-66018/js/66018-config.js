@@ -15,6 +15,8 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         use_google_autocomplete: false,
         distance_unit: 'useMiles',
+        map_size: '12',
+        radius: '50',
         lodging: {
             event_id: '',
             event_name: 'Pro Football Hall of Fame',
@@ -48,7 +50,7 @@ export default function siteConfig() {
             logo_outbound_url: 'https://www.profootballhof.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        theme: 'light',
+        theme: 'dark',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {

@@ -66,7 +66,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
-            // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo

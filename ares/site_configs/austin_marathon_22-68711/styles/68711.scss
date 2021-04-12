@@ -21,8 +21,8 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 @font-face {
     font-family: 'Futura-Bold';
-    src: url('https://static.hotelsforhope.com/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),
-        url('https://static.hotelsforhope.com/ares/site_configs/austin_marathon_21-59243/fonts/FuturaStd-Bold.ttf') format('truetype');
+    src: url('https://static.#{domain}/portals/child-portals/noLRG/53763/fonts/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://static.#{domain}/ares/site_configs/austin_marathon_21-59243/fonts/FuturaStd-Bold.ttf') format('truetype');
 }
 
 .event-dates {

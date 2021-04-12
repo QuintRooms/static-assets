@@ -6,6 +6,7 @@ import f1Styles from './f1';
 f1Styles(document.querySelector('meta[name="siteId"]').content);
 
 const utilities = new Utilities();
+const {domain} = process.env;
 
 function populateRaces(obj, year) {
     const races_list = document.querySelector(`.races-${year}`);
@@ -75,7 +76,7 @@ function showMoreOnMobile() {
 }
 
 function addHref() {
-    document.querySelector('.footer-nav ul li:last-child a').href = 'https://events.hotelsforhope.com/v6/support?siteId=46973';
+    document.querySelector('.footer-nav ul li:last-child a').href = `https://events.${domain}/v6/support?siteId=46973`;
 }
 
 function updateTitle(text) {
@@ -85,7 +86,7 @@ function updateTitle(text) {
 function changeLogoHtml() {
     document.querySelector('.logo').outerHTML = `
         <span class="logo">
-            <img src="https://static.hotelsforhope.com/ares/clients/formula_1/images/logo.png" alt="F1 Rooms Logo">
+            <img src="https://static.${domain}/ares/clients/formula_1/images/logo.png" alt="F1 Rooms Logo">
         </span>
         `;
 }

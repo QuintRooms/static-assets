@@ -4,11 +4,11 @@
         @return $path;
     }
     @if ($env == 'develop') {
-        $path: 'https://dev-static.hotelsforhope.com/ares';
+        $path: 'https://dev-static.#{$domain}/ares';
         @return $path;
     }
     @if ($env == 'production') {
-        $path: 'https://static.hotelsforhope.com/ares';
+        $path: 'https://static.#{$domain}.com/ares';
         @return $path;
     }
 }

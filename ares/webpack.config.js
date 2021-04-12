@@ -45,7 +45,7 @@ module.exports = () => {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: false,
-                                additionalData: `$env: ${process.env.NODE_ENV};`,
+                                additionalData: `$env: ${process.env.NODE_ENV};\n $domain: '${process.env.domain}';`,
                             },
                         },
                     ],

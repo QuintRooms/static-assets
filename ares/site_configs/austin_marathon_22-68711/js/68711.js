@@ -17,7 +17,7 @@ new ChildPortal();
 async function addHeaderContent() {
     await utilities.waitForSelectorInDOM('header');
     const header = document.querySelector('header');
-    header.insertAdjacentHTML('beforeend', '<span class="event-dates">Feb 11-13, 2022 - Downtown Austin, TX</span>');
+    header.insertAdjacentHTML('beforeend', '<span class="event-dates">Feb 18-20, 2022 - Downtown Austin, TX</span>');
 }
 
 addHeaderContent();

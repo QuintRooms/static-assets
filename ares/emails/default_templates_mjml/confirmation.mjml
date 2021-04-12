@@ -30,7 +30,7 @@
       <!-- Image -->
       <mj-section padding-bottom="10px">
         <mj-column width="100%">
-          <mj-image src="https://static.hotelsforhope.com/images/stock_photos/hotel-bed.jpg" css-class="banner" />
+          <mj-image src="https://static.hotelsforhope.com/ares/emails/img/conf_image.jpg" css-class="banner" />
         </mj-column>
       </mj-section>
     </mj-wrapper>
@@ -109,7 +109,7 @@
       </mj-column>
       <mj-column width="100%">
         <mj-text align="center">
-          <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST to help with your reservation. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
+          <span>Our customer service team is available M-F 8:00 AM - 5:30 PM CST. If you require urgent assistance outside our standard hours, please leave us a voicemail and a member of the team will respond promptly.</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -118,9 +118,9 @@
       <mj-column width="50%" padding-bottom="20px">
         <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
         <mj-text align="center">
-          <h4>Email Quint Rooms</h4>
+          <h4>Email QuintRooms</h4>
           <!--email_off-->
-          <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
+          <a style="color:inherit; text-decoration: none;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
           <!--/email_off-->
         </mj-text>
       </mj-column>
@@ -128,8 +128,8 @@
       <mj-column width="50%" padding-bottom="20px">
         <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
         <mj-text align="center">
-          <h4>Call Quint Rooms</h4>
-          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+          <h4>Call QuintRooms</h4>
+          <a style="color:inherit; text-decoration: none;" href="tel:+ 1 512-691-9555">1.512.691.9555</a>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-top="20px">
@@ -142,61 +142,60 @@
       <mj-column width="100%">
         <mj-raw>\{{#RoomDescriptionLong}}</mj-raw>
         <mj-text>
-          <h5>Room Description</h5>
+          <h4>Room Description</h4>
           <span>\{{RoomDescriptionLong}}</span>
         </mj-text>
         <mj-raw>\{{/RoomDescriptionLong}}</mj-raw>
         <mj-raw>\{{#DepositPolicyLong}}</mj-raw>
         <mj-text>
-          <h5>Deposit Policy</h5>
+          <h4>Deposit Policy</h4>
           <span>\{{DepositPolicyLong}}</span>
         </mj-text>
         <mj-raw>\{{/DepositPolicyLong}}</mj-raw>
         <mj-raw>\{{#PaymentTermsLong}}</mj-raw>
         <mj-text>
-          <h5>Payment Terms</h5>
+          <h4>Payment Terms</h4>
           <span>\{{PaymentTermsLong}}</span>
         </mj-text>
         <mj-raw>\{{/PaymentTermsLong}}</mj-raw>
         <mj-raw>\{{#CancellationPolicyLong}}</mj-raw>
         <mj-text>
-          <h5>Cancellation Policy</h5>
+          <h4>Cancellation Policy</h4>
           <span>\{{CancellationPolicyLong}}</span>
         </mj-text>
         <mj-raw>\{{/CancellationPolicyLong}}</mj-raw>
         <mj-raw>\{{#PropertyPolicy}}</mj-raw>
         <mj-text>
-          <h5>Property Policy</h5>
+          <h4>Property Policy</h4>
           <span>\{{PropertyPolicy}}</span>
         </mj-text>
         <mj-raw>\{{/PropertyPolicy}}</mj-raw>
         <mj-raw>\{{#ExtraFeesPolicy}}</mj-raw>
         <mj-text>
-          <h5>Extra Fees Policy</h5>
+          <h4>Extra Fees Policy</h4>
           <span>\{{ExtraFeesPolicy}}</span>
         </mj-text>
         <mj-raw>\{{/ExtraFeesPolicy}}</mj-raw>
         <mj-raw>\{{#PaymentPolicy}}</mj-raw>
         <mj-text>
-          <h5>Payment Policy</h5>
+          <h4>Payment Policy</h4>
           <span>\{{PaymentPolicy}}</span>
         </mj-text>
         <mj-raw>\{{/PaymentPolicy}}</mj-raw>
         <mj-raw>\{{#CheckInSupportPolicy}}</mj-raw>
         <mj-text>
-          <h5>Check In Support Policy</h5>
+          <h4>Check In Support Policy</h4>
           <span>\{{CheckInSupportPolicy}}</span>
         </mj-text>
         <mj-raw>\{{/CheckInSupportPolicy}}</mj-raw>
         <mj-text>
-          <h5>Important Guest Information</h5>
-          <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guest will pay hotel directly. All other <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid={{site_id}}">terms and conditions</a> you agreed to upon making this reservation can be found at Terms and Conditions.</span>
+          <h4>Important Guest Information</h4>
+          <span>All rates, unless stated otherwise, are based on single or double occupancy. Guest will be responsible for additional fees such as additional guests, incidentals, resort fees, and additional room nights. If these charges exist, guests will pay the hotel directly. All the other terms and conditions you agreed to upon making this reservation can be found <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/terms-and-conditions?siteid={{site_id}}">here</a></span>
         </mj-text>
         <mj-text>
-          <h5>Reservation Information</h5>
+          <h4>Reservation Information</h4>
           <!--email_off-->
-          <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
-            \{{Hotel}} at \{{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
+          <span>If you have any questions about your reservation or require further assistance, contact QuintRooms at <a style="color:inherit; text-decoration: none;" href="tel:+ 1 512-691-9555">1.512.691.9555</a> or  <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact the \{{Hotel}} at \{{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
           <!--/email_off-->
         </mj-text>
       </mj-column>
@@ -212,7 +211,7 @@
           <h4>QuintRooms</h4>
         </mj-text>
         <mj-text padding-bottom="5px">
-          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.hotelsforhope.com</a>
+          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.quintrooms.com</a>
         </mj-text>
         <mj-text padding-bottom="5px">
           <div>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
@@ -223,7 +222,7 @@
           <!--/email_off-->
         </mj-text>
         <mj-text padding-bottom="5px">
-          <a style="color:inherit;" href="tel:1.866.584.0204">1.866.584.0204</a>
+          <a style="color:inherit;" href="tel:+ 1 512-691-9555">+ 1 512-691-9555</a>
         </mj-text>
         <mj-text padding-bottom="5px">
           <span style="display:none !important">
@@ -233,10 +232,10 @@
       </mj-column>
       <mj-column width="50%">
         <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/hotels4hope" />
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/hotels4hope/" />
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://twitter.com/hotels4hope" />
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/hotels-for-hope" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/quintrooms" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/quint-rooms" />
         </mj-social>
       </mj-column>
     </mj-section>

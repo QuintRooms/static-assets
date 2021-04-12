@@ -104,7 +104,7 @@ export default class BasePortal {
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                 utilities.updateHTML('#theHotel legend', 'Reservation Summary');
-                this.formatCheckoutForm();
+                // this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 // utilities.emailVerificationSetup();
@@ -289,6 +289,7 @@ export default class BasePortal {
             this.removeLrgFooterLink();
             this.hideBookButtonForNoAvailability();
             this.addGroupBookingBannerBelowHeader(this.site_config.lodging.event_name, this.site_config.group_booking_form_url);
+            this.applyHybridCompensationModelUpdates();
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
@@ -2115,5 +2116,15 @@ export default class BasePortal {
     setCurrentYearOnElement(element) {
         if (!element || !document.querySelector(element)) return;
         document.querySelector(element).textContent = new Date().getFullYear();
+    }
+
+    applyHybridCompensationModelUpdates() {
+        if (!this.site_config.uses_hybrid_compensation_model) return;
+
+        if (this.page_name === 'checkout') {
+            utilities.replaceSpecificText('.dueNowRow th', /(^|)Due(?=\s|$)/gi, 'Deposit Due');
+            utilities.replaceSpecificText('.balanceDueRow th', /(^|)Balance(?=\s|$)/gi, 'Future Balance');
+            utilities.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance');
+        }
     }
 }

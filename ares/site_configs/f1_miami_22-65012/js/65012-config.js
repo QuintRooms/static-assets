@@ -14,7 +14,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        use_google_maps: false,
+        use_google_autocomplete: false,
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
@@ -73,7 +73,9 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        has_custom_emails: true,
         // has_group_booking_banner: true,
         // group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
+        uses_hybrid_compensation_model: true,
     };
 }

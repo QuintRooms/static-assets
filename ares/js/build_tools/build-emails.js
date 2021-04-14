@@ -4,8 +4,10 @@ const handlebars = require('handlebars');
 const mjml2html = require('mjml');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const fsx = require('fs-extra');
+require('dotenv').config();
 
 const ares = `${process.cwd()}`;
+const {domain} = process.env;
 let site_id;
 let site_name;
 
@@ -122,7 +124,7 @@ function buildSiteObject(siteConfig, siteStyles) {
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
         has_custom_emails: extractValue(siteConfig, 'has_custom_emails:', ',') === 'true',
-        logo: `https://dev-static.hotelsforhope.com/ares/site_configs/${site_name}/img/${logo}`,
+        logo: `https://dev-static.${domain}/ares/site_configs/${site_name}/img/${logo}`,
         theme: theme_color,
         text: theme_color === '#fff' ? '#666' : '#F5FFFA',
     };

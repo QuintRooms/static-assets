@@ -15,8 +15,8 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
             event_id: 40435,
-            event_name: 'Austin Marathon 2021',
-            event_dates: '2/12/2021 - 2/14/2021',
+            event_name: 'Austin Marathon 2022',
+            event_dates: '2/18/2022 - 2/20/2022',
             redirect_date: '',
             redirect_url: '',
             is_lrg: false,

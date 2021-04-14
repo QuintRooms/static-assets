@@ -47,7 +47,9 @@ module.exports = () => {
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
+            // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
+            // 'railbird_21-68375': './src/68375.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -56,6 +58,8 @@ module.exports = () => {
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees
             // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // Special Olympics Of Texas Summer Games San Antonio 2021
+            // 'sotx_fall_classic_bocce_softball_21-68888': './src/68888.js', // sotx fall_classic_bocce_softball_21
+            // 'sotx_fall_classic_golf_swimming_21-68887': './src/68887.js', // sotx fall_classic_golf_swimming_21
             // 'tortuga_20-60336': './src/60336.js', // Tortuga 2020
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
@@ -68,12 +72,9 @@ module.exports = () => {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'sotx_fall_classic_bocce_softball_21-68888': './src/68888.js', // sotx fall_classic_bocce_softball_21
-            // 'sotx_fall_classic_golf_swimming_21-68887': './src/68887.js', // sotx fall_classic_golf_swimming_21
         };
 
         // local environment

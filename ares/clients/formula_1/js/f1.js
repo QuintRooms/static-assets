@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
-
+const {domain} = process.env;
 const env_path = new Path();
 
 export default async function f1Styles(siteId) {
@@ -21,7 +21,7 @@ export default async function f1Styles(siteId) {
                 <a href="#races-container" id="races">Races</a>
             </li>
             <li>
-                <a href="https://events.hotelsforhope.com/v6/support?siteId=46972" id="contactUs">Contact Us</a>
+                <a href="https://events.${domain}/v6/support?siteId=46972" id="contactUs">Contact Us</a>
             </li>
         </ul>
         <div class="navbar-hamburger">
@@ -36,7 +36,7 @@ export default async function f1Styles(siteId) {
             <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
         </li>
         <li>
-            <a href="https://events.hotelsforhope.com/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+            <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
         </li>
     </ul>
     <div class="navbar-hamburger">
@@ -58,8 +58,8 @@ export default async function f1Styles(siteId) {
 
         const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
         id === '46451' || id === '45246'
-            ? (mobile_contact_url.href = 'href="https://events.hotelsforhope.com/v6/support?siteId=46973"')
-            : (mobile_contact_url.href = `href="https://events.hotelsforhope.com/v6/support?siteId=${id}"`);
+            ? (mobile_contact_url.href = `href="https://events.${domain}/v6/support?siteId=46973"`)
+            : (mobile_contact_url.href = `href="https://events.${domain}/v6/support?siteId=${id}"`);
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 

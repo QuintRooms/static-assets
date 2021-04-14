@@ -3,7 +3,7 @@ import Utilities from './utilities';
 import Path from './build_tools/path';
 
 const env_path = new Path();
-
+const {domain} = process.env;
 const utilities = new Utilities();
 
 export default class Resbeat extends BasePortal {
@@ -70,7 +70,7 @@ export default class Resbeat extends BasePortal {
             utilities.removeMaskedElementFromTabIndex('#theReservationConfirmationNumberAjax input');
         }
 
-        this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/booking-guide.html', '#booking-guide').then(async () => {
+        this.replaceHTMLWithFile(`https://static.${domain}/ares/html/booking-guide.html`, '#booking-guide').then(async () => {
             if (document.querySelector('#booking-guide')) {
                 await utilities.waitForSelectorInDOM('#faq-link');
 
@@ -79,7 +79,7 @@ export default class Resbeat extends BasePortal {
             }
         });
 
-        this.replaceHTMLWithFile('https://static.hotelsforhope.com/ares/html/resbeat-faq.html', '.ArnSubPage.WBFaq');
+        this.replaceHTMLWithFile(`https://static.${domain}/ares/html/resbeat-faq.html`, '.ArnSubPage.WBFaq');
 
         utilities.updateHTML(
             '.ArnSupportChatTable',
@@ -515,11 +515,11 @@ export default class Resbeat extends BasePortal {
     }
 
     setLoginRedirectUrl() {
-        const domain = window.location.host;
+        const domain_window = window.location.host;
 
-        if (domain.includes('events.hotelsforhope')) return `https://${domain}/v6/login?siteId=${this.site_config.site_id}`;
+        if (domain_window.includes('events.hotelsforhope')) return `https://${domain_window}/v6/login?siteId=${this.site_config.site_id}`;
 
-        return `https://${domain}/v6/login`;
+        return `https://${domain_window}/v6/login`;
     }
 
     getLoginRedirectUrl() {

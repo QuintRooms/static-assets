@@ -27,25 +27,25 @@ $header-images: '';
 /* Fonts */
 @font-face {
     font-family: 'Graphik-Bold';
-    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-Bold.otf') format('truetype');
+    src: url('https://dev-static.#{domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Bold.otf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Graphik-Regular';
-    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-Regular.otf') format('truetype');
+    src: url('https://dev-static.#{domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Regular.otf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Graphik-RegularItalic';
-    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
+    src: url('https://dev-static.#{domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'UnitedSansReg-Heavy';
-    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
+    src: url('https://dev-static.#{domain}/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
     font-style: normal;
 }
 

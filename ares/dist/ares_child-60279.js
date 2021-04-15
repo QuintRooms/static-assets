@@ -188,8 +188,7 @@
                                                                             ),
                                                                             y.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                             'property-detail' === e.page_name &&
-                                                                                (e.addSupportWidget(),
-                                                                                e.addImageSlideshow(),
+                                                                                (e.addImageSlideshow(),
                                                                                 e.updateAmenitiesLegendTag(),
                                                                                 y.updateHTML('.SinglePropDetail .Map a', 'Map'),
                                                                                 y.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
@@ -477,8 +476,9 @@
                                                                                 e.site_config.group_booking_form_url
                                                                             ),
                                                                             e.applyHybridCompensationModelUpdates(),
+                                                                            e.addSupportWidget(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 49:
+                                                                    case 50:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }

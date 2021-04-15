@@ -301,3 +301,13 @@ header {
 .MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
     border-top-color: $primary_color;
 }
+
+.contact-float a {
+    background-color: $primary_color;
+    color: $primary_text_color;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
+@keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}

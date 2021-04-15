@@ -3520,8 +3520,3 @@ input[type='search']::-webkit-search-results-decoration {
     justify-content: center;
     align-items: center;
     border: thick double #fff; }
-    .contact-float a:hover {
-      -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-      -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-      -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-      animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1); }

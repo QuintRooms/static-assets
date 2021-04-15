@@ -292,6 +292,12 @@ header {
   background-color: #ba2024;
   color: #fff;
 }
+.contact-float a:hover {
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
 
 @-webkit-keyframes pulse {
   to {

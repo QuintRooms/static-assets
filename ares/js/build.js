@@ -290,6 +290,7 @@ export default class BasePortal {
             this.hideBookButtonForNoAvailability();
             this.addGroupBookingBannerBelowHeader(this.site_config.lodging.event_name, this.site_config.group_booking_form_url);
             this.applyHybridCompensationModelUpdates();
+            // this.addSupportWidget();
             if (document.querySelector('.WBConfirmedBooking')) {
                 this.cancelConfirmUpdate();
             }
@@ -2126,5 +2127,13 @@ export default class BasePortal {
             utilities.replaceSpecificText('.balanceDueRow th', /(^|)Balance(?=\s|$)/gi, 'Future Balance');
             utilities.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance');
         }
+    }
+
+    addSupportWidget() {
+        const support_link = document.querySelector('.supportLink').href;
+        const html = `<div class="contact-float">
+        <a href="${support_link}" target="_blank" class="floating-support-icon">Contact Us</a>
+    </div>`;
+        document.body.insertAdjacentHTML('beforeend', html);
     }
 }

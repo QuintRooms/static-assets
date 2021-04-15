@@ -188,7 +188,8 @@
                                                                             ),
                                                                             y.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                             'property-detail' === e.page_name &&
-                                                                                (e.addImageSlideshow(),
+                                                                                (e.addSupportWidget(),
+                                                                                e.addImageSlideshow(),
                                                                                 e.updateAmenitiesLegendTag(),
                                                                                 y.updateHTML('.SinglePropDetail .Map a', 'Map'),
                                                                                 y.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
@@ -453,7 +454,6 @@
                                                                                 })()
                                                                             ),
                                                                             e.applyDarkTheme(),
-                                                                            e.addSupportWidget(),
                                                                             e.updatePropThumbToFeaturedImage(),
                                                                             e.setInputToRequired('input#city'),
                                                                             e.setInputToRequired('input#theCheckIn'),
@@ -478,7 +478,7 @@
                                                                             ),
                                                                             e.applyHybridCompensationModelUpdates(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 50:
+                                                                    case 49:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -2420,10 +2420,12 @@
                             {
                                 key: 'addSupportWidget',
                                 value: function () {
-                                    document.body.insertAdjacentHTML(
-                                        'beforeend',
-                                        '<div class="contact-float">\n        <a href="" target="_blank" class="floating-support-icon">Contact Us</a>\n    </div>'
-                                    );
+                                    var e = document.querySelector('.supportLink').href,
+                                        t = '<div class="contact-float">\n        <a href="'.concat(
+                                            e,
+                                            '" target="_blank" class="floating-support-icon">Contact Us</a>\n    </div>'
+                                        );
+                                    document.body.insertAdjacentHTML('beforeend', t);
                                 },
                             },
                         ]) && d(t.prototype, n),

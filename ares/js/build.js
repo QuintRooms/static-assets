@@ -2131,6 +2131,7 @@ export default class BasePortal {
 
     addSupportWidget() {
         const support_link = document.querySelector('.supportLink').href;
+        if (!support_link) return;
         const html = `<div class="contact-float">
         <a href="${support_link}" target="_blank" class="floating-support-icon">Contact Us</a>
     </div>`;

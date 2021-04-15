@@ -292,31 +292,33 @@ header {
   background-color: #ba2024;
   color: #fff;
 }
-.contact-float a:hover {
-  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-}
 
+@media screen and (min-width: 1100px) {
+  .contact-float a:hover {
+    -webkit-animation: pulse 1.25s infinite linear;
+    -moz-animation: pulse 1.25s infinite linear;
+    -ms-animation: pulse 1.25s infinite linear;
+    animation: pulse 1.25s infinite linear;
+  }
+}
 @-webkit-keyframes pulse {
   to {
-    box-shadow: 0 0 0 25px #ba2024;
+    box-shadow: 0 0 0 20px #ba2024;
   }
 }
 @-moz-keyframes pulse {
   to {
-    box-shadow: 0 0 0 25px #ba2024;
+    box-shadow: 0 0 0 20px #ba2024;
   }
 }
 @-ms-keyframes pulse {
   to {
-    box-shadow: 0 0 0 25px #ba2024;
+    box-shadow: 0 0 0 20px #ba2024;
   }
 }
 @keyframes pulse {
   to {
-    box-shadow: 0 0 0 25px #ba2024;
+    box-shadow: 0 0 0 20px #ba2024;
   }
 }
 .event-dates {

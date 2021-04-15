@@ -305,16 +305,18 @@ header {
 .contact-float a {
     background-color: $primary_color;
     color: $primary_text_color;
+}
 
-    &:hover {
-        -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-        -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-        -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-        animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+@media screen and (min-width: 1100px) {
+    .contact-float a:hover {
+        -webkit-animation: pulse 1.25s infinite linear;
+        -moz-animation: pulse 1.25s infinite linear;
+        -ms-animation: pulse 1.25s infinite linear;
+        animation: pulse 1.25s infinite linear;
     }
 }
 
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
-@keyframes pulse {to {box-shadow: 0 0 0 25px $primary_color;}}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 20px $primary_color;}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 20px $primary_color;}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 20px $primary_color;}}
+@keyframes pulse {to {box-shadow: 0 0 0 20px $primary_color;}}

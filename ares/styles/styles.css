@@ -3506,13 +3506,13 @@ input[type='search']::-webkit-search-results-decoration {
 
 .contact-float {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   z-index: 100; }
   .contact-float a {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     cursor: pointer;
     text-decoration: none;
@@ -3522,12 +3522,14 @@ input[type='search']::-webkit-search-results-decoration {
     border: thick double #fff; }
     .contact-float a:hover {
       text-decoration: underline; }
+  .contact-float img {
+    width: 75%; }
 
 @media screen and (max-width: 1100px) {
   .contact-float {
     position: fixed;
     bottom: 220px;
-    right: -50px;
+    right: -55px;
     z-index: 100;
     transform: rotate(270deg); }
     .contact-float a {

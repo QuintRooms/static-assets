@@ -2420,12 +2420,19 @@
                             {
                                 key: 'addSupportWidget',
                                 value: function () {
-                                    var e = document.querySelector('.supportLink').href,
-                                        t = '<div class="contact-float">\n        <a href="'.concat(
-                                            e,
-                                            '" target="_blank" class="floating-support-icon">Contact Us</a>\n    </div>'
-                                        );
-                                    document.body.insertAdjacentHTML('beforeend', t);
+                                    var e = document.querySelector('.supportLink').href;
+                                    if (e) {
+                                        var t = window.matchMedia('(max-width: 1100px)'),
+                                            n = '<div class="contact-float">\n        <a href="'
+                                                .concat(e, '" target="_blank" class="floating-support-icon"><img src="')
+                                                .concat(f.path, '/emails/icons/phone.png"/></a>\n    </div>');
+                                        t.matches &&
+                                            (n = '<div class="contact-float">\n            <a href="'.concat(
+                                                e,
+                                                '" target="_blank" class="floating-support-icon">Contact Us</a>\n        </div>'
+                                            )),
+                                            document.body.insertAdjacentHTML('beforeend', n);
+                                    }
                                 },
                             },
                         ]) && d(t.prototype, n),

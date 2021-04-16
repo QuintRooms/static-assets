@@ -2132,9 +2132,16 @@ export default class BasePortal {
     addSupportWidget() {
         const support_link = document.querySelector('.supportLink').href;
         if (!support_link) return;
-        const html = `<div class="contact-float">
-        <a href="${support_link}" target="_blank" class="floating-support-icon">Contact Us</a>
+        const mq = window.matchMedia('(max-width: 1100px)');
+        let html = `<div class="contact-float">
+        <a href="${support_link}" target="_blank" class="floating-support-icon"><img src="${env_path.path}/emails/icons/phone.png"/></a>
     </div>`;
+
+        if (mq.matches) {
+            html = `<div class="contact-float">
+            <a href="${support_link}" target="_blank" class="floating-support-icon">Contact Us</a>
+        </div>`;
+        }
         document.body.insertAdjacentHTML('beforeend', html);
     }
 }

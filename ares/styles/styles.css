@@ -3503,3 +3503,37 @@ input[type='search']::-webkit-search-results-decoration {
   left: 31px;
   position: absolute;
   width: 0; }
+
+.contact-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100; }
+  .contact-float a {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thick double #fff; }
+    .contact-float a:hover {
+      text-decoration: underline; }
+  .contact-float img {
+    width: 75%; }
+
+@media screen and (max-width: 1100px) {
+  .contact-float {
+    position: fixed;
+    bottom: 220px;
+    right: -55px;
+    z-index: 100;
+    transform: rotate(270deg); }
+    .contact-float a {
+      position: relative;
+      width: 150px;
+      height: 50px;
+      border-radius: unset; } }

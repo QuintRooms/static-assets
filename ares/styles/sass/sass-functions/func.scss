@@ -8,7 +8,7 @@
         @return $path;
     }
     @if ($env == 'production') {
-        $path: 'https://static.#{$domain}.com/ares';
+        $path: 'https://static.#{$domain}/ares';
         @return $path;
     }
 }

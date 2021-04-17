@@ -3028,11 +3028,11 @@
                           r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
                       }
                     : P,
-            z = function (e) {
+            V = function (e) {
                 var t = (F[e] = k(R.prototype));
                 return (t._k = e), t;
             },
-            V =
+            z =
                 U && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
@@ -3082,7 +3082,7 @@
                         t = function (n) {
                             this === N && t.call(B, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), G(this, e, x(1, n));
                         };
-                    return i && W && G(N, e, {configurable: !0, set: t}), z(e);
+                    return i && W && G(N, e, {configurable: !0, set: t}), V(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -3096,7 +3096,7 @@
             (L.f = ee),
             i && !n(17) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
-                return z(p(e));
+                return V(p(e));
             })),
             a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -3107,7 +3107,7 @@
                 return o(H, (e += '')) ? H[e] : (H[e] = R(e));
             },
             keyFor: function (e) {
-                if (!V(e)) throw TypeError(e + ' is not a symbol!');
+                if (!z(e)) throw TypeError(e + ' is not a symbol!');
                 for (var t in H) if (H[t] === e) return t;
             },
             useSetter: function () {
@@ -3148,11 +3148,11 @@
                     {
                         stringify: function (e) {
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
-                            if (((n = t = r[1]), (S(t) || void 0 !== e) && !V(e)))
+                            if (((n = t = r[1]), (S(t) || void 0 !== e) && !z(e)))
                                 return (
                                     g(t) ||
                                         (t = function (e, t) {
-                                            if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
+                                            if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
                                     D.apply(O, r)
@@ -3549,7 +3549,6 @@
                                                                             y.updateHTML('#theCharges legend', 'Rate Info'),
                                                                             y.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
                                                                             y.updateHTML('#theHotel legend', 'Reservation Summary'),
-                                                                            e.formatCheckoutForm(),
                                                                             e.setupReservationSummaryContainer(),
                                                                             y.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
                                                                             e.fixCheckoutInputTabOrder(),
@@ -7282,6 +7281,7 @@
                                     nights: {key: 'nights', value: e.nights},
                                     rooms: {key: 'rooms', value: this.getDropdownValue('#rooms')},
                                     adults: {key: 'adults', value: this.getDropdownValue('#adults')},
+                                    children: {key: 'children', value: this.getDropdownValue('#kids')},
                                     currency: {key: 'currency', value: u.getMetaTagContent('currency') ? u.getMetaTagContent('currency') : 'USD'},
                                     amenities: {key: 'amenities', value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                     propertyClasses: {key: 'propertyclasses', value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
@@ -7681,12 +7681,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r;
         Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = function () {
                 return {
                     site_id: 52342,
-                    directory_name: i,
+                    directory_name: o,
                     affiliate_id: 16827,
                     master_id: 2143,
                     site_type: 'cug',
@@ -7711,9 +7710,9 @@
                     show_currency_select: !0,
                     show_date_prompt: !1,
                     has_social_sharing: !0,
-                    fav_icon_url: 'https://develop.roomsteals.com/favicon-32x32.png',
-                    header: {logo_file_location: 'https://develop.roomsteals.com/images/logo/Logo_Dark.svg', logo_outbound_url: 'https://roomsteals.com/home/'},
-                    map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    fav_icon_url: 'https://roomsteals.com/favicon-32x32.png',
+                    header: {logo_file_location: 'https://roomsteals.com/images/logo/Logo_Dark.svg', logo_outbound_url: 'https://roomsteals.com/home/'},
+                    map_marker_image_url: 'https://roomsteals.com/favicon-32x32.png',
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:500,700',
                     ads: {
@@ -7728,8 +7727,9 @@
                     confirmation_email_from: 'Room Steals',
                 };
             });
-        var o = new ((r = n(67)) && r.__esModule ? r : {default: r}).default(),
-            i = 'room_steals-'.concat(52342);
+        var r;
+        (r = n(67)) && r.__esModule;
+        var o = 'room_steals-'.concat(52342);
     },
     function (e, t, n) {},
 ]);

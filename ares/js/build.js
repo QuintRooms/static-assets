@@ -107,7 +107,7 @@ export default class BasePortal {
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                 utilities.updateHTML('#theHotel legend', 'Reservation Summary');
-                this.formatCheckoutForm();
+                // this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 // utilities.emailVerificationSetup();

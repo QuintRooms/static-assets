@@ -7681,12 +7681,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r;
         Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = function () {
                 return {
                     site_id: 52342,
-                    directory_name: i,
+                    directory_name: o,
                     affiliate_id: 16827,
                     master_id: 2143,
                     site_type: 'cug',
@@ -7711,9 +7710,9 @@
                     show_currency_select: !0,
                     show_date_prompt: !1,
                     has_social_sharing: !0,
-                    fav_icon_url: 'https://develop.roomsteals.com/favicon-32x32.png',
-                    header: {logo_file_location: 'https://develop.roomsteals.com/images/logo/Logo_Dark.svg', logo_outbound_url: 'https://roomsteals.com/home/'},
-                    map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
+                    fav_icon_url: 'https://roomsteals.com/favicon-32x32.png',
+                    header: {logo_file_location: 'https://roomsteals.com/images/logo/Logo_Dark.svg', logo_outbound_url: 'https://roomsteals.com/home/'},
+                    map_marker_image_url: 'https://roomsteals.com/favicon-32x32.png',
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:500,700',
                     ads: {
@@ -7728,8 +7727,9 @@
                     confirmation_email_from: 'Room Steals',
                 };
             });
-        var o = new ((r = n(67)) && r.__esModule ? r : {default: r}).default(),
-            i = 'room_steals-'.concat(52342);
+        var r;
+        (r = n(67)) && r.__esModule;
+        var o = 'room_steals-'.concat(52342);
     },
     function (e, t, n) {},
 ]);

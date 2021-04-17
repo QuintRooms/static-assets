@@ -358,6 +358,10 @@ export default class Autocomplete {
                 key: 'adults',
                 value: this.getDropdownValue('#adults'),
             },
+            kids: {
+                key: 'children',
+                value: this.getDropdownValue('select#kids'),
+            },
             currency: {
                 key: 'currency',
                 value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',

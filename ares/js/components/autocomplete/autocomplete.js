@@ -358,7 +358,7 @@ export default class Autocomplete {
                 key: 'adults',
                 value: this.getDropdownValue('#adults'),
             },
-            kids: {
+            children: {
                 key: 'children',
                 value: this.getDropdownValue('#kids'),
             },

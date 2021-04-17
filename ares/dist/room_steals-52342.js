@@ -7281,7 +7281,7 @@
                                     nights: {key: 'nights', value: e.nights},
                                     rooms: {key: 'rooms', value: this.getDropdownValue('#rooms')},
                                     adults: {key: 'adults', value: this.getDropdownValue('#adults')},
-                                    kids: {key: 'children', value: this.getDropdownValue('select#kids')},
+                                    kids: {key: 'children', value: this.getDropdownValue('#kids')},
                                     currency: {key: 'currency', value: u.getMetaTagContent('currency') ? u.getMetaTagContent('currency') : 'USD'},
                                     amenities: {key: 'amenities', value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                     propertyClasses: {key: 'propertyclasses', value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},

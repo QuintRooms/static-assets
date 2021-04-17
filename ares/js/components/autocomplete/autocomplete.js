@@ -360,7 +360,7 @@ export default class Autocomplete {
             },
             kids: {
                 key: 'children',
-                value: this.getDropdownValue('select#kids'),
+                value: this.getDropdownValue('#kids'),
             },
             currency: {
                 key: 'currency',

@@ -295,6 +295,10 @@ export default class Algolia {
                     key: 'adults',
                     value: setDropdownIndex('select#adults'),
                 },
+                kids: {
+                    key: 'children',
+                    value: setDropdownIndex('select#kids'),
+                },
                 currency: {
                     key: 'currency',
                     value: utilities.getMetaTagContent('currency') ? utilities.getMetaTagContent('currency') : 'USD',
@@ -366,6 +370,7 @@ export default class Algolia {
                     },
                 });
             }
+
             window.location.href = decodeURIComponent(built_url);
         });
 
@@ -388,7 +393,9 @@ export default class Algolia {
         remove_city_search_for_event();
         setDropdownIndex('select#rooms');
         setDropdownIndex('select#adults');
+        setDropdownIndex('select#kids');
         setInputToRequired('input#theCheckIn');
+
         jQuery('#theBody').on('arnMapLoadedEvent', () => {
             if (search_params.has('locationlabel') || search_params.has('points')) return;
             hideArnSearchElements('img.arn-green-marker-icon');

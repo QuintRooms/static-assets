@@ -13,7 +13,7 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="<?php echo $site_id; ?>" name="siteId" />
+    <meta content="<?php echo getenv('site_id'); ?>" name="siteId" />
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="DVDzt5wty523T0tH" name="sessionId" />
     <meta content="47m 45s" name="expiresIn" />
@@ -84,7 +84,7 @@
     tagBodyMobile();
     Event.observe(window, "resize", tagBodyMobile);
     </script>
-    <!-- 
+    <!--
 Booking Engine by Alliance Reservations Network http://www.alliancereservations.com
 -->
     <div id="ajaxStatus" style="display:none;">Loading...</div>
@@ -105,7 +105,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
     });
     /*]]>*/
     </script>
-    
+
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
 
     <div class="subHeaderContainer">

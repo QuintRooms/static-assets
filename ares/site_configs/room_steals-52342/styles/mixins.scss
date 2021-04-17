@@ -1,0 +1,27 @@
+@mixin cta(){
+    padding: 24px;
+    background: $orange;
+    font-size: $cta_font_size;
+    font-weight: $cta_font_weight;
+    line-height: $cta_line_height;
+    letter-spacing: $letter_spacing;
+    color: $cta_text_color;
+    border-radius: $border_radius;
+    cursor: pointer;
+    border: none !important;
+    outline: none;
+}
+
+@mixin search_inputs(){
+    background: #fff;
+    border-radius: $border_radius !important;
+    border: none !important;
+    padding: 18px 18px 18px 24px !important;
+    color: #14142B !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    letter-spacing: .3px !important;
+    line-height: $cta_line_height !important;
+    outline: none;
+
+}

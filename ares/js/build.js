@@ -92,7 +92,10 @@ export default class BasePortal {
 
             // checkout page methods
             if (this.page_name === 'checkout') {
-                utilities.createModal([document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
+                if (this.site_id !== '52342') {
+                    utilities.createModal([document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
+                }
+
                 utilities.updateAttribute('#theEmailAddressAjax input', 'email', 'type');
                 // Shows numpad on ios
                 utilities.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode');
@@ -104,7 +107,7 @@ export default class BasePortal {
                 utilities.updateHTML('#theCharges legend', 'Rate Info');
                 utilities.updateHTML('.taxFeeRow th', '<span>Taxes:</span>');
                 utilities.updateHTML('#theHotel legend', 'Reservation Summary');
-                // this.formatCheckoutForm();
+                this.formatCheckoutForm();
                 this.setupReservationSummaryContainer();
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 // utilities.emailVerificationSetup();
@@ -208,6 +211,7 @@ export default class BasePortal {
                         this.showFullStayAndNightlyRates(nights, currency);
                     });
                 });
+
                 this.createStarIcons();
                 this.addHRToProperties();
                 this.showLoaderOnResultsUpdate();
@@ -792,10 +796,10 @@ export default class BasePortal {
 
         utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
-        style_element.insertAdjacentHTML(
-            'beforeend',
-            `<link href="${env_path.path}/site_configs/${this.site_config.directory_name}/styles/${this.site_config.site_id}.css" rel="stylesheet">`
-        );
+        // style_element.insertAdjacentHTML(
+        //     'beforeend',
+        //     `<link href="${env_path.path}/site_configs/${this.site_config.directory_name}/styles/${this.site_config.site_id}.css" rel="stylesheet">`
+        // );
     }
 
     applyDarkTheme() {
@@ -961,9 +965,12 @@ export default class BasePortal {
             if (!dropdown) return;
 
             dropdown.addEventListener('click', (e) => {
+                console.log(e);
+                console.log('after event listener');
                 this.selected_currency = e.target.id;
+                console.log(this.selected_currency);
                 if (!this.selected_currency) return;
-
+                console.log('after early return: !this.selected_currency');
                 document.querySelector('.active-currency').classList.remove('active-currency');
                 document.querySelector(`#${e.target.id}`).classList.add('active-currency');
 
@@ -1699,7 +1706,7 @@ export default class BasePortal {
     }
 
     updateConfirmationCheckBoxes() {
-        if (this.page_name !== 'checkout') return;
+        if (this.page_name !== 'checkout' || this.site_id === '52342') return;
 
         document.querySelector('.open-modal').textContent = 'Policies & Fees';
         document.querySelector(

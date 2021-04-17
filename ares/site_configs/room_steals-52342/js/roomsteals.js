@@ -32,7 +32,7 @@ export default class RoomSteals {
      */
     async getMemberMetaData() {
         const member_meta_tag = await document.querySelector('meta[name="memberMetaTag"]');
-
+        console.log(member_meta_tag);
         if (!member_meta_tag) return;
 
         this.member_meta_data = JSON.parse(member_meta_tag.getAttribute('content'));
@@ -144,7 +144,7 @@ export default class RoomSteals {
         if (this.is_room_steals_trial_user !== true) return;
 
         let property_container = '';
-        let btn = '';
+        let prop = '';
 
         if (document.querySelector('.SearchHotels')) {
             property_container = document.querySelectorAll('.ArnContainer');
@@ -158,9 +158,9 @@ export default class RoomSteals {
             const savings_el = property.querySelector('.originalPrice');
 
             if (document.querySelector('.SearchHotels')) {
-                btn = property.querySelector('.ArnRateButton');
+                prop = property.querySelector('.ArnPropName');
             } else if (document.querySelector('.SinglePropDetail')) {
-                btn = property.querySelector('.bookRoom');
+                prop = property.querySelector('.bookRoom');
             }
 
             if (!savings_el) return;
@@ -173,65 +173,10 @@ export default class RoomSteals {
             if (adjusted_savings > 500) {
                 adjusted_savings = adjusted_savings.toString().slice(0, -2);
                 if (!property.querySelector('.savings-tag')) {
-                    btn.insertAdjacentHTML(
-                        'afterEnd',
-                        `<div class="savings-tag">With the $59 subscription, you'd still save <strong>$${adjusted_savings}</strong> on this reservation!</div>
-                        <style>
-                        /* Savings Tag */
-                            .savings-tag {
-                                max-width: 250px;
-                                text-align: center;
-                                width: 100%;
-                                margin-top: 8px;
-                                letter-spacing: -.2px;
-                                margin-left: auto;
-                                font-size: 13px;
-                                padding: 4px;
-                                background: #faaf18;
-                                color: #333;
-                            }
-
-                            .SinglePropDetail .bookRoom, .SinglePropDetail .holdRoom{
-                                max-width: 165px;
-                            }
-
-                            .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2){
-                                width: 25%;
-                            }
-                            
-                            .SinglePropDetail .savings-tag{
-                                margin-bottom: 8px;
-                            }
-
-                            @media screen and (max-width: 600px) {
-                                .ArnRateCell{
-                                    display: grid !important;
-                                }
-
-                                .savings-tag {
-                                    grid-column-start: 2;
-                                    grid-row-start: 2;
-                                    margin-top: 0;
-                                }
-
-                                .ArnRateButton{
-                                    grid-column-start: 2;
-                                    grid-row-start: 1;
-                                    margin-left: auto;
-                                }
-                            }
-
-                            @media screen and (max-width: 560px){
-                                .SinglePropDetail .ArnContentGeneralInfo.ArnRateList>tbody>tr>td:nth-child(2){
-                                    width: 100%;
-                                }
-                            }
-                            @media screen and (max-width: 412px){
-                                .SinglePropDetail .bookRoomCell{
-                                    grid-template-rows: 1fr .5fr .25fr;
-                                }
-                            }
-                        </style>`
+                    prop.insertAdjacentHTML(
+                        'beforeEnd',
+                        `<div class="savings-tag">With the $59 subscription, you'd still <strong>save $${adjusted_savings}</strong> on this reservation!</div>
+                      `
                     );
                 }
             }
@@ -272,9 +217,9 @@ if ((document.querySelector('.MemberAuthenticated') && document.querySelector('.
                         });
 
                         if (document.querySelector('.SearchHotels')) {
-                            jQuery(document).on('ratesReadyEvent', () => {
-                                roomsteals.showCustomerSavings();
-                            });
+                            // jQuery(document).on('ratesReadyEvent', () => {
+                            roomsteals.showCustomerSavings();
+                            // });
                         }
 
                         if (document.querySelector('.SinglePropDetail')) {

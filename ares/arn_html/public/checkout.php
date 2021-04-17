@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+
 <head>
     <title>InterContinental Stephen F. Austin</title>
     <meta content="Online reservations at the guaranteed lowest rates!" name="description" />
@@ -13,7 +14,9 @@
     <meta content="USD" name="currency" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta content="events.hotelsforhope.com" name="cname" />
-    <meta content="<?php echo $site_id; ?>" name="siteId" />
+    <meta
+        content="<?php echo getenv('site_id'); ?>"
+        name="siteId" />
     <meta content="GROUP-EVENT-EMAIL" name="cid" />
     <meta content="DVDzt5wty523T0tH" name="sessionId" />
     <meta content="13m 23s" name="expiresIn" />
@@ -32,75 +35,82 @@
     <meta content="Kaplan" name="lastName" />
     <meta content="45444" name="zipCode" />
     <meta content="Wholesale" name="memberType" />
-    <meta content='{"MemberId":4825782,"Rewards":0,"Points":0,"RedemptionMultiplier":1.0,"EarnMultiplier":1.0,"Names":[{"FirstName":"Jason","LastName":"Kaplan","BirthDate":null,"Email":"jason.kaplan@hotelsforhope.com","Address1":null,"Address2":null,"City":null,"State":null,"Country":null,"Postal":null,"Longitude":null,"Latitude":null,"HomePhone":null,"Referral":null,"ReferralId":"RST-3513","RegistrationCode":null,"Password":null,"IsActive":true,"DeleteMember":false,"ReactivateMember":false,"UpdateMemberUsername":false,"CreditCards":null,"FullName":"Jason Kaplan"}],"DebugData":null,"Error":null,"CurrentToken":null,"TransactionResponse":null,"MetaTag":null,"MemberUsername":"RT-52342-RST-3513","MemberProvider":"ReserveTravel","IsArnProvider":true,"AdditionalInfo":"{\"partner\":\"roomsteals.com\",\"id\":\"RST-3513\",\"name\":\"Jason Kaplan\",\"email\":\"jason.kaplan@hotelsforhope.com\"}","MemberType":"Wholesale"}' name="memberMetaTag" />
-    <meta content="1Bt7Ob8EWkwdzXP7Shpzlwx%2fxQk7tBTfhf4YP2vzUOsUEKmhwAZB3xYMOL%2bIgP%2bi4ChjovMVFkQP15VFEeWRhzNHn6rzatLs%2fhLRJx%2bx0BvExl8XXOc%2bfBRnIc6yYKfDcGiRERcOI3typ3Q38dczmjZLiOBSC0ZdzwLVeXL%2freA93Y7BvaeKBoOtkDNy7cL6UH5Oap2VE%2b%2fybC1wLqTpWvzpBWrcTsjfGCz5xBJ3fF%2blaNRJeAVwpSIrd5h5GdGX86i9H5DIfcDoWZaFPlnkEas%2fVxFUPguQPvYQ9WdzTcYRE%2fQyuujno4xrbwNRIymO2dQUdjgDx4J0XWH6RorIPy42icI5soSQ3Jdm0TaEGfOaoaNMEfxJpsYZROBbyKCFEPHvhHqk1NjWQSEWitaulfzz0sOk65JDSEhDBA9naX4Fzy75tgSkv5LjtLQT3FzPXRdNDsa82SLrAK9uoyfUqSYHBT7%2bzanBwd7rDP6nKsPtvM%2bNmE5jj7EfPhBvf3YqSfT0E2BiPwNLG1MZtC%2bsJQj55ly6pM1XZdx1Fl4QiELbjaTNwR%2fzsmkP4XsZMRRuoCXACElCDfNywrUomocjAAK7I%2bDWV4fksGjUtWTYQE6PY4TQqU9LhwGbVyVzzHt3NaYkyY3pN3oKKlqzf7cvyGqZ2iq8y67NZ9%2ftmUxUDy27jlKc5NJRn1wrb5aSOCPNAf5xAP6uU6cQ3nxX%2bWjw6j2wxbhpDdIaQmR%2bIWARjzLmEq%2bTvdtlIjet%2f0BQic%2bazzJt57QCPVSjqaCixF%2b%2bBQ%3d%3d" name="memberToken" />
+    <meta
+        content='{"MemberId":4825782,"Rewards":0,"Points":0,"RedemptionMultiplier":1.0,"EarnMultiplier":1.0,"Names":[{"FirstName":"Jason","LastName":"Kaplan","BirthDate":null,"Email":"jason.kaplan@hotelsforhope.com","Address1":null,"Address2":null,"City":null,"State":null,"Country":null,"Postal":null,"Longitude":null,"Latitude":null,"HomePhone":null,"Referral":null,"ReferralId":"RST-3513","RegistrationCode":null,"Password":null,"IsActive":true,"DeleteMember":false,"ReactivateMember":false,"UpdateMemberUsername":false,"CreditCards":null,"FullName":"Jason Kaplan"}],"DebugData":null,"Error":null,"CurrentToken":null,"TransactionResponse":null,"MetaTag":null,"MemberUsername":"RT-52342-RST-3513","MemberProvider":"ReserveTravel","IsArnProvider":true,"AdditionalInfo":"{\"partner\":\"roomsteals.com\",\"id\":\"RST-3513\",\"name\":\"Jason Kaplan\",\"email\":\"jason.kaplan@hotelsforhope.com\"}","MemberType":"Wholesale"}'
+        name="memberMetaTag" />
+    <meta
+        content="1Bt7Ob8EWkwdzXP7Shpzlwx%2fxQk7tBTfhf4YP2vzUOsUEKmhwAZB3xYMOL%2bIgP%2bi4ChjovMVFkQP15VFEeWRhzNHn6rzatLs%2fhLRJx%2bx0BvExl8XXOc%2bfBRnIc6yYKfDcGiRERcOI3typ3Q38dczmjZLiOBSC0ZdzwLVeXL%2freA93Y7BvaeKBoOtkDNy7cL6UH5Oap2VE%2b%2fybC1wLqTpWvzpBWrcTsjfGCz5xBJ3fF%2blaNRJeAVwpSIrd5h5GdGX86i9H5DIfcDoWZaFPlnkEas%2fVxFUPguQPvYQ9WdzTcYRE%2fQyuujno4xrbwNRIymO2dQUdjgDx4J0XWH6RorIPy42icI5soSQ3Jdm0TaEGfOaoaNMEfxJpsYZROBbyKCFEPHvhHqk1NjWQSEWitaulfzz0sOk65JDSEhDBA9naX4Fzy75tgSkv5LjtLQT3FzPXRdNDsa82SLrAK9uoyfUqSYHBT7%2bzanBwd7rDP6nKsPtvM%2bNmE5jj7EfPhBvf3YqSfT0E2BiPwNLG1MZtC%2bsJQj55ly6pM1XZdx1Fl4QiELbjaTNwR%2fzsmkP4XsZMRRuoCXACElCDfNywrUomocjAAK7I%2bDWV4fksGjUtWTYQE6PY4TQqU9LhwGbVyVzzHt3NaYkyY3pN3oKKlqzf7cvyGqZ2iq8y67NZ9%2ftmUxUDy27jlKc5NJRn1wrb5aSOCPNAf5xAP6uU6cQ3nxX%2bWjw6j2wxbhpDdIaQmR%2bIWARjzLmEq%2bTvdtlIjet%2f0BQic%2bazzJt57QCPVSjqaCixF%2b%2bBQ%3d%3d"
+        name="memberToken" />
     <meta content="Wholesale" name="memberBookingType" />
     <style>
-    .PropFullDescription {
-        display: none;
-    }
+        .PropFullDescription {
+            display: none;
+        }
 
-    .SinglePropDetail .reportProblemLink {
-        text-align: right;
-        margin-top: 8px;
-    }
+        .SinglePropDetail .reportProblemLink {
+            text-align: right;
+            margin-top: 8px;
+        }
 
-    .CheckOutForm .reportProblemLink {
-        text-align: right;
-    }
+        .CheckOutForm .reportProblemLink {
+            text-align: right;
+        }
 
-    #Properties .reportProblemLink {
-        margin-bottom: 15px;
-    }
+        #Properties .reportProblemLink {
+            margin-bottom: 15px;
+        }
 
-    .opaque {
-        -moz-opacity: .50;
-        filter: alpha(opacity=50);
-        opacity: .50;
-    }
+        .opaque {
+            -moz-opacity: .50;
+            filter: alpha(opacity=50);
+            opacity: .50;
+        }
 
-    .propId {
-        display: none;
-    }
+        .propId {
+            display: none;
+        }
 
-    .SimpleSearch .rowTwo {
-        display: none;
-    }
+        .SimpleSearch .rowTwo {
+            display: none;
+        }
 
-    .favoriteProps {
-        display: inline;
-    }
+        .favoriteProps {
+            display: inline;
+        }
 
-    .RootPage .favoriteProps {
-        display: none;
-    }
+        .RootPage .favoriteProps {
+            display: none;
+        }
 
-    .addFavHotel {
-        display: inline;
-    }
+        .addFavHotel {
+            display: inline;
+        }
 
-    .removeFavHotel {
-        display: inline;
-    }
+        .removeFavHotel {
+            display: inline;
+        }
 
-    .eguestAccessAd {
-        margin-left: 30px
-    }
+        .eguestAccessAd {
+            margin-left: 30px
+        }
 
-    .ArnGoDestinationSearch {
-        display: none;
-    }
+        .ArnGoDestinationSearch {
+            display: none;
+        }
 
-    .S30 .conditionalPolicies {
-        display: block !important;
-    }
+        .S30 .conditionalPolicies {
+            display: block !important;
+        }
     </style>
     <meta property="og:site_name" content="Hotels for Hope">
     <meta property="og:url" content="https://events.hotelsforhope.com/v6/?siteid=39624&theme=standard">
     <meta property="og:title" content="Hotels for Hope">
-    <meta property="og:description" content="Discounted Rates for Hotels for Hope members. Accommodations at the lowest rates!">
-    <meta name="description" content="Discounted Rates for Hotels for Hope members. Accommodations at the lowest rates!">
-    <link rel="stylesheet" type="text/css" href="https://media.travsrv.com/appSkins/64/v6/themes/global/checkout.css?8255+11615" />
+    <meta property="og:description"
+        content="Discounted Rates for Hotels for Hope members. Accommodations at the lowest rates!">
+    <meta name="description"
+        content="Discounted Rates for Hotels for Hope members. Accommodations at the lowest rates!">
+    <link rel="stylesheet" type="text/css"
+        href="https://media.travsrv.com/appSkins/64/v6/themes/global/checkout.css?8255+11615" />
     <meta name="robots" content="noindex" />
     <meta name="dueNowUSD" content="2187.82" />
     <meta name="originalPriceUSD" content="2637.18" />
@@ -115,80 +125,128 @@
     <meta name="bookingCurrency" content="USD" />
     <meta name="roomsAvailable" content="2147483647" />
     <meta content="354" name="aLocationId" />
-    <script type="text/javascript" src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/first-included.js?8255+11615"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js?8255+11615"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js?8255+11615"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/builder.js?8255+11615"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/effects.js?8255+11615"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/controls.js?8255+11615"></script>
-    <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/globalScripts.js?8255+11615"></script>
-    <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/translations/en_US.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/first-included.js?8255+11615"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js?8255+11615">
+    </script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/builder.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/effects.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/controls.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://media.travsrv.com/appSkins/64/v6/themes/global/globalScripts.js?8255+11615"></script>
+    <script type="text/javascript"
+        src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/translations/en_US.js?8255+11615"></script>
     <script src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/first-included.js?8255+11615"></script>
-    <script src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/sequence.jquery-min.js?8255+11615"></script>
+    <script src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/sequence.jquery-min.js?8255+11615">
+    </script>
     <script src="https://media.travsrv.com/appSkins/51820/v6/themes/standard/sequence.js?8255+11615"></script>
     <script type="text/javascript" src="https://media.travsrv.com/appSkins/64/v6/themes/global/html2canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="/v6?_s=yoG_aq3NaC5m-Sdo" />
 </head>
 
-<body onkeydown="onKeyDown(event)" class="CheckoutMode-WBCheckoutForm3 h4hperkstest CanManageOrgs CanManageProfiles CanLogin HandlesPermissionRequests events-hotelsforhope-com MemberAuthenticated PrivateSite MemberTypeWholesale property20498 WBSearchCity CheckOutForm supplier61 discountRate" id="theBody">
+<body onkeydown="onKeyDown(event)"
+    class="CheckoutMode-WBCheckoutForm3 h4hperkstest CanManageOrgs CanManageProfiles CanLogin HandlesPermissionRequests events-hotelsforhope-com MemberAuthenticated PrivateSite MemberTypeWholesale property20498 WBSearchCity CheckOutForm supplier61 discountRate"
+    id="theBody">
     <!--[if IE]><script>Element.addClassName(document.body, "IE")</script><![endif]-->
     <script>
-    if (navigator.userAgent.toLowerCase().indexOf("applewebkit") != -1) { Element.addClassName(document.body, "WK"); }
+        if (navigator.userAgent.toLowerCase().indexOf("applewebkit") != -1) {
+            Element.addClassName(document.body, "WK");
+        }
     </script>
     <script>
-    function tagBodyMobile() {
-        if (document.viewport.getWidth() < 805)
-            $(document.body).addClassName("mobile");
-        else $(document.body).removeClassName("mobile");
-    }
-    tagBodyMobile();
-    Event.observe(window, "resize", tagBodyMobile);
+        function tagBodyMobile() {
+            if (document.viewport.getWidth() < 805)
+                $(document.body).addClassName("mobile");
+            else $(document.body).removeClassName("mobile");
+        }
+        tagBodyMobile();
+        Event.observe(window, "resize", tagBodyMobile);
     </script>
-    <!-- 
+    <!--
 Booking Engine by Alliance Reservations Network http://www.alliancereservations.com
 -->
     <div id="ajaxStatus" style="display:none;">Loading...</div>
     <script type="text/javascript">
-    /*<![CDATA[*/
-    Element.observe(window, "load", function() {
-        Ajax.Responders.register({
-            onCreate: function(request) {
-                if ($("ajaxStatus"))
-                    $("ajaxStatus").show();
+        /*<![CDATA[*/
+        Element.observe(window, "load", function() {
+            Ajax.Responders.register({
+                onCreate: function(request) {
+                    if ($("ajaxStatus"))
+                        $("ajaxStatus").show();
 
-            },
-            onComplete: function(request) {
-                if ($("ajaxStatus"))
-                    $("ajaxStatus").hide();
-            }
+                },
+                onComplete: function(request) {
+                    if ($("ajaxStatus"))
+                        $("ajaxStatus").hide();
+                }
+            });
         });
-    });
-    /*]]>*/
+        /*]]>*/
     </script>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
 
     <div class="subHeaderContainer">
-        <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/search.png" class="searchIcon"></span><span class="translateMe">Search</span></a></div>
+        <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img
+                        src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/search.png"
+                        class="searchIcon"></span><span class="translateMe">Search</span></a></div>
     </div>
-    <div class="ArnSupportLinks ArnSupportTop"><a class="ARN_ServiceLinks searchLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;5">Search</a><span class="dvd"> | </span><a class="ARN_ServiceLinks lowRateLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;6">Low Rate Guarantee</a><span class="dvd"> | </span><a class="ARN_ServiceLinks faqLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;7">FAQ</a><span class="dvd"> | </span><a class="ARN_ServiceLinks termsLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;8">Terms &amp; Conditions</a><span class="dvd"> | </span><a class="ARN_ServiceLinks privacyLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;9">Privacy Policy</a><span class="dvd"> | </span><a class="ARN_ServiceLinks supportLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;10">Support</a><span class="dvd"> | </span><a class="ARN_ServiceLinks cancelLink" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;11">Cancel/Modify</a></div>
+    <div class="ArnSupportLinks ArnSupportTop"><a class="ARN_ServiceLinks searchLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;5">Search</a><span
+            class="dvd"> | </span><a class="ARN_ServiceLinks lowRateLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;6">Low
+            Rate Guarantee</a><span class="dvd"> | </span><a class="ARN_ServiceLinks faqLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;7">FAQ</a><span
+            class="dvd"> | </span><a class="ARN_ServiceLinks termsLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;8">Terms
+            &amp; Conditions</a><span class="dvd"> | </span><a class="ARN_ServiceLinks privacyLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;9">Privacy
+            Policy</a><span class="dvd"> | </span><a class="ARN_ServiceLinks supportLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;10">Support</a><span
+            class="dvd"> | </span><a class="ARN_ServiceLinks cancelLink"
+            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;11">Cancel/Modify</a>
+    </div>
     <script type="text/javascript">
-    /*<![CDATA[*/
-    setTimeout(function() { new Ajax.Request('https://events.hotelsforhope.com/v6/details', { 'parameters': ['_s=DVDzt5wty523T0tH', '_k=q6jRkeDl', 'siteId=' + 39624, 'theme=standard', '12'].join('&') }) }, 100) /*]]>*/
+        /*<![CDATA[*/
+        setTimeout(function() {
+            new Ajax.Request('https://events.hotelsforhope.com/v6/details', {
+                'parameters': ['_s=DVDzt5wty523T0tH', '_k=q6jRkeDl', 'siteId=' + 39624,
+                    'theme=standard', '12'
+                ].join('&')
+            })
+        }, 100) /*]]>*/
     </script>
-    <div id="theBookingPage" class="ArnSubPage OnSale"><span style="display:none;">customize with bookingConfirmationTopInclude.html in theme directory</span><span style="display:none;">customize with detailInfoSubHeader.html in theme directory</span>
-        <form accept-charset="utf-8" method="post" action="https://events.hotelsforhope.com/v6/details" id="theReservationForm" autocomplete="off">
+    <div id="theBookingPage" class="ArnSubPage OnSale"><span style="display:none;">customize with
+            bookingConfirmationTopInclude.html in theme directory</span><span style="display:none;">customize with
+            detailInfoSubHeader.html in theme directory</span>
+        <form accept-charset="utf-8" method="post" action="https://events.hotelsforhope.com/v6/details"
+            id="theReservationForm" autocomplete="off">
             <div id="theReservationFormContainer">
                 <table>
                     <tr>
-                        <td class="GuestForms" valign="top"><span style="display:none;">customize with detailInfoBeforeGuests.html in theme directory</span>
+                        <td class="GuestForms" valign="top"><span style="display:none;">customize with
+                                detailInfoBeforeGuests.html in theme directory</span>
                             <div id="C64volenmwex2prx2so1o0ukqo" class="SSForm DSFormContainer">
                                 <div id="theDSFormBody" class="SSFormBody">
                                     <div class="DSFormFields">
-                                        <div id="theAgentAjax" class="FormFields textInputView"><label for="id13">Agent</label><input id="id13" class="formField text" name="14" type="text" /></div>
-                                        <div id="theCustom1Ajax" class="FormFields textInputView"><label for="id15">Custom1</label><input id="id15" class="formField text" name="16" type="text" /></div>
-                                        <div id="theCustom2Ajax" class="FormFields textInputView"><label for="id17">Custom2</label><input id="id17" class="formField text" name="18" type="text" /></div>
-                                        <div id="theMarketingOptInAjax" class="FormFields checkboxView"><input class="formField checkbox" name="19" type="checkbox" /><input name="21" type="hidden" class="hidden" /><label for="id20">Opt in to receive communication from the event and its partners.</label></div>
+                                        <div id="theAgentAjax" class="FormFields textInputView"><label
+                                                for="id13">Agent</label><input id="id13" class="formField text"
+                                                name="14" type="text" /></div>
+                                        <div id="theCustom1Ajax" class="FormFields textInputView"><label
+                                                for="id15">Custom1</label><input id="id15" class="formField text"
+                                                name="16" type="text" /></div>
+                                        <div id="theCustom2Ajax" class="FormFields textInputView"><label
+                                                for="id17">Custom2</label><input id="id17" class="formField text"
+                                                name="18" type="text" /></div>
+                                        <div id="theMarketingOptInAjax" class="FormFields checkboxView"><input
+                                                class="formField checkbox" name="19" type="checkbox" /><input name="21"
+                                                type="hidden" class="hidden" /><label for="id20">Opt in to receive
+                                                communication from the event and its partners.</label></div>
                                     </div>
                                     <div class="DSFormActions FormActions"></div>
                                 </div>
@@ -199,57 +257,88 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div class="Required"><label>Guest First Name:</label><input maxlength="40" value="Jason" name="22" type="text" class="text" /></div>
+                                                <div class="Required"><label>Guest First Name:</label><input
+                                                        maxlength="40" value="Jason" name="22" type="text"
+                                                        class="text" /></div>
                                             </td>
                                             <td>
-                                                <div class="Required"><label>Guest Last Name:</label><input maxlength="45" value="Kaplan" name="23" type="text" class="text" /></div>
+                                                <div class="Required"><label>Guest Last Name:</label><input
+                                                        maxlength="45" value="Kaplan" name="23" type="text"
+                                                        class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theEmailAddressAjax" class="FormFields Required"><label>Email Address:</label><input maxlength="100" value="jason.kaplan@hotelsforhope.com" name="24" type="text" class="text" /></div>
+                                <div id="theEmailAddressAjax" class="FormFields Required"><label>Email
+                                        Address:</label><input maxlength="100" value="jason.kaplan@hotelsforhope.com"
+                                        name="24" type="text" class="text" /></div>
                                 <div id="theAdditionalEmailsLink">
-                                    <div id="theAdditionalEmails1"></div><a onclick="new Ajax.Updater('theAdditionalEmails1','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','25',$('theReservationForm').serialize()].join('&amp;')})" href="javascript:void(0)">Add additional email to be notified of this reservation</a>
+                                    <div id="theAdditionalEmails1"></div><a
+                                        onclick="new Ajax.Updater('theAdditionalEmails1','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','25',$('theReservationForm').serialize()].join('&amp;')})"
+                                        href="javascript:void(0)">Add additional email to be notified of this
+                                        reservation</a>
                                 </div>
-                                <div class="FormFields Required" id="thePhoneNumberFieldsAjax"><label>Phone Number (Country / Area Code / Local Number):</label>
+                                <div class="FormFields Required" id="thePhoneNumberFieldsAjax"><label>Phone Number
+                                        (Country / Area Code / Local Number):</label>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div id="theCountryCodeAjax" class="FormFields"><input id="theCountryCode" value="1" name="26" type="text" class="text" /></div>
+                                                <div id="theCountryCodeAjax" class="FormFields"><input
+                                                        id="theCountryCode" value="1" name="26" type="text"
+                                                        class="text" /></div>
                                             </td>
                                             <td>
-                                                <div id="theAreaCodeAjax" class="FormFields"><input maxlength="15" id="theAreaCode" value="" name="27" type="text" class="text" /></div>
+                                                <div id="theAreaCodeAjax" class="FormFields"><input maxlength="15"
+                                                        id="theAreaCode" value="" name="27" type="text" class="text" />
+                                                </div>
                                             </td>
                                             <td>
-                                                <div id="thePhoneNumberAjax" class="FormFields"><input maxlength="50" id="thePhoneNumber" value="" name="28" type="text" class="text" /></div>
+                                                <div id="thePhoneNumberAjax" class="FormFields"><input maxlength="50"
+                                                        id="thePhoneNumber" value="" name="28" type="text"
+                                                        class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theSmokingRoomAjax" class="FormFields"><input name="29" type="checkbox" class="checkbox" /><input name="30" type="hidden" class="hidden" /><label>Smoking Room</label></div>
-                                <div id="theSpecialRequestsAjax" class="FormFields"><label>Note to Hotel Staff: (optional)</label><textarea maxlength="50" name="31"></textarea></div>
-                                <div id="C31acfpd8d4kraodc289g14jez" class="SSForm WBGuestFormExtraFieldsSubFormContainer">
+                                <div id="theSmokingRoomAjax" class="FormFields"><input name="29" type="checkbox"
+                                        class="checkbox" /><input name="30" type="hidden"
+                                        class="hidden" /><label>Smoking Room</label></div>
+                                <div id="theSpecialRequestsAjax" class="FormFields"><label>Note to Hotel Staff:
+                                        (optional)</label><textarea maxlength="50" name="31"></textarea></div>
+                                <div id="C31acfpd8d4kraodc289g14jez"
+                                    class="SSForm WBGuestFormExtraFieldsSubFormContainer">
                                     <div id="theWBGuestFormExtraFieldsSubFormBody" class="SSFormBody">
                                         <div class="WBGuestFormExtraFieldsSubFormFields">
-                                            <div id="theRewardNumberAjax" class="FormFields selectView"><label for="id32">Reward Number</label><input id="id32" class="formField text" name="33" type="text" /></div>
+                                            <div id="theRewardNumberAjax" class="FormFields selectView"><label
+                                                    for="id32">Reward Number</label><input id="id32"
+                                                    class="formField text" name="33" type="text" /></div>
                                         </div>
                                         <div class="WBGuestFormExtraFieldsSubFormActions FormActions"></div>
                                     </div>
                                 </div>
-                                <div id="theBillingAddressAjax1" class="FormFields guestBillingAddress Required"><label>Billing Address: (street address only)</label><input maxlength="100" value="123 test" name="34" type="text" class="text" /></div>
+                                <div id="theBillingAddressAjax1" class="FormFields guestBillingAddress Required">
+                                    <label>Billing Address: (street address only)</label><input maxlength="100"
+                                        value="123 test" name="34" type="text" class="text" />
+                                </div>
                                 <div id="theCityZipAjax1" class="FormFields guestCityZip Required">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div><label>Billing Postal Code: </label><input id="theZipCode1" maxlength="10" value="45444" name="35" type="text" class="text" /></div>
+                                                <div><label>Billing Postal Code: </label><input id="theZipCode1"
+                                                        maxlength="10" value="45444" name="35" type="text"
+                                                        class="text" /></div>
                                             </td>
                                             <td id="theCityAjax1">
-                                                <div><label>Billing City:</label><input id="theCity1" maxlength="50" value="test" name="36" type="text" class="text" /></div>
+                                                <div><label>Billing City:</label><input id="theCity1" maxlength="50"
+                                                        value="test" name="36" type="text" class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theCountryAjax1" class="FormFields guestCountryList Required"><label>Country:</label><select id="theCountryList1" class="countryList" onchange="new Ajax.Updater('theStateAjax1','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=q6jRkeDl','siteId='+39624,'theme=standard','37',$('theCountryList1').serialize()].join('&amp;')})" name="38">
+                                <div id="theCountryAjax1" class="FormFields guestCountryList Required">
+                                    <label>Country:</label><select id="theCountryList1" class="countryList"
+                                        onchange="new Ajax.Updater('theStateAjax1','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=q6jRkeDl','siteId='+39624,'theme=standard','37',$('theCountryList1').serialize()].join('&amp;')})"
+                                        name="38">
                                         <option value="39" selected="selected">United States</option>
                                         <option value="40">Afghanistan</option>
                                         <option value="41">Albania</option>
@@ -487,8 +576,10 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <option value="273">Yemen</option>
                                         <option value="274">Zambia</option>
                                         <option value="275">Zimbabwe</option>
-                                    </select></div>
-                                <div id="theStateAjax1" class="FormFields guestStateList Required"><label>State: </label><select class="stateList" name="276">
+                                    </select>
+                                </div>
+                                <div id="theStateAjax1" class="FormFields guestStateList Required"><label>State:
+                                    </label><select class="stateList" name="276">
                                         <option value="277"></option>
                                         <option value="278">Alabama</option>
                                         <option value="279">Alaska</option>
@@ -544,22 +635,31 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <option value="329">Wisconsin</option>
                                         <option value="330">Wyoming</option>
                                     </select></div>
-                                <div id="theCreditCardNumberAjax" class="FormFields cardNumber Required"><label>Credit Card Number:</label><input maxlength="16" id="theCreditCardNumber" class="cardNumberField text" value="" name="331" type="text" /></div>
+                                <div id="theCreditCardNumberAjax" class="FormFields cardNumber Required"><label>Credit
+                                        Card Number:</label><input maxlength="16" id="theCreditCardNumber"
+                                        class="cardNumberField text" value="" name="331" type="text" /></div>
                                 <div class="cvvInfo">
-                                    <p>To protect you against fraudulent purchases please enter the card's security code as shown.</p><img alt="" src="https://media.travsrv.com/appSkins/64/v6/images/cvvCode.gif" />
+                                    <p>To protect you against fraudulent purchases please enter the card's security code
+                                        as shown.</p><img alt=""
+                                        src="https://media.travsrv.com/appSkins/64/v6/images/cvvCode.gif" />
                                 </div>
                                 <table border="0" cellspacing="0" cellpadding="0" class="cvvTable">
                                     <tr>
                                         <td>
-                                            <div id="theCardVerificationAjax" class="FormFields cardVerification Required"><label>Security Code:</label><input id="theCvvCode" maxlength="4" name="332" type="text" class="text" /></div>
+                                            <div id="theCardVerificationAjax"
+                                                class="FormFields cardVerification Required"><label>Security
+                                                    Code:</label><input id="theCvvCode" maxlength="4" name="332"
+                                                    type="text" class="text" /></div>
                                         </td>
                                     </tr>
                                 </table>
-                                <div id="theCardExpirationFieldsAjax" class="FormFields Required"><label>Card Expiration:</label>
+                                <div id="theCardExpirationFieldsAjax" class="FormFields Required"><label>Card
+                                        Expiration:</label>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div id="theExpirationMonthAjax" class="guestExpiresMonth"><select class="cardMonth" name="333">
+                                                <div id="theExpirationMonthAjax" class="guestExpiresMonth"><select
+                                                        class="cardMonth" name="333">
                                                         <option value="334" selected="selected">Month</option>
                                                         <option value="335">01</option>
                                                         <option value="336">02</option>
@@ -576,7 +676,8 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     </select></div>
                                             </td>
                                             <td>
-                                                <div id="theExpirationYearAjax" class="guestExpiresYear"><select class="cardYear" name="347">
+                                                <div id="theExpirationYearAjax" class="guestExpiresYear"><select
+                                                        class="cardYear" name="347">
                                                         <option value="348" selected="selected">Year</option>
                                                         <option value="349">2020</option>
                                                         <option value="350">2021</option>
@@ -597,66 +698,102 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theCreditCardBillingNameAjax1" class="FormFields Required"><label>Name On Card: (exactly as printed on credit card)</label><input maxlength="55" id="theCreditCardBillingName" value="Jason Kaplan" name="363" type="text" class="text" /></div>
+                                <div id="theCreditCardBillingNameAjax1" class="FormFields Required"><label>Name On Card:
+                                        (exactly as printed on credit card)</label><input maxlength="55"
+                                        id="theCreditCardBillingName" value="Jason Kaplan" name="363" type="text"
+                                        class="text" /></div>
                             </fieldset>
                             <fieldset id="theRoomTwoAjax" class="RoomNumber-2 WBGuestFormFields">
                                 <legend>Step 3: Enter Room Two Info</legend>
-                                <div id="theCopyInfoAjax" class="FormFields"><input style="width:15px;" onclick="new Ajax.Updater('theRoomTwoAjax','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','364',$('theReservationForm').serialize()].join('&amp;'),'onComplete':function(){$('theRoomTwoAjax').fire('arn:guestUpdated')}})" name="365" type="checkbox" class="checkbox" /><input name="366" type="hidden" class="hidden" /><label style="display:inline;">Same as Last Guest?</label></div>
+                                <div id="theCopyInfoAjax" class="FormFields"><input style="width:15px;"
+                                        onclick="new Ajax.Updater('theRoomTwoAjax','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','364',$('theReservationForm').serialize()].join('&amp;'),'onComplete':function(){$('theRoomTwoAjax').fire('arn:guestUpdated')}})"
+                                        name="365" type="checkbox" class="checkbox" /><input name="366" type="hidden"
+                                        class="hidden" /><label style="display:inline;">Same as Last Guest?</label>
+                                </div>
                                 <div id="theGuestNameAjax2" class="FormFields ArnGuestNames">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div class="Required"><label>Guest First Name:</label><input maxlength="40" name="367" type="text" class="text" /></div>
+                                                <div class="Required"><label>Guest First Name:</label><input
+                                                        maxlength="40" name="367" type="text" class="text" /></div>
                                             </td>
                                             <td>
-                                                <div class="Required"><label>Guest Last Name:</label><input maxlength="45" name="368" type="text" class="text" /></div>
+                                                <div class="Required"><label>Guest Last Name:</label><input
+                                                        maxlength="45" name="368" type="text" class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theEmailAddressAjax" class="FormFields Required"><label>Email Address:</label><input maxlength="100" value="jason.kaplan@hotelsforhope.com" name="369" type="text" class="text" /></div>
+                                <div id="theEmailAddressAjax" class="FormFields Required"><label>Email
+                                        Address:</label><input maxlength="100" value="jason.kaplan@hotelsforhope.com"
+                                        name="369" type="text" class="text" /></div>
                                 <div id="theAdditionalEmailsLink">
-                                    <div id="theAdditionalEmails2"></div><a onclick="new Ajax.Updater('theAdditionalEmails2','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','370',$('theReservationForm').serialize()].join('&amp;')})" href="javascript:void(0)">Add additional email to be notified of this reservation</a>
+                                    <div id="theAdditionalEmails2"></div><a
+                                        onclick="new Ajax.Updater('theAdditionalEmails2','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['siteId='+39624,'theme=standard','370',$('theReservationForm').serialize()].join('&amp;')})"
+                                        href="javascript:void(0)">Add additional email to be notified of this
+                                        reservation</a>
                                 </div>
-                                <div class="FormFields Required" id="thePhoneNumberFieldsAjax"><label>Phone Number (Country / Area Code / Local Number):</label>
+                                <div class="FormFields Required" id="thePhoneNumberFieldsAjax"><label>Phone Number
+                                        (Country / Area Code / Local Number):</label>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div id="theCountryCodeAjax" class="FormFields"><input id="theCountryCode" value="1" name="371" type="text" class="text" /></div>
+                                                <div id="theCountryCodeAjax" class="FormFields"><input
+                                                        id="theCountryCode" value="1" name="371" type="text"
+                                                        class="text" /></div>
                                             </td>
                                             <td>
-                                                <div id="theAreaCodeAjax" class="FormFields"><input maxlength="15" id="theAreaCode" value="" name="372" type="text" class="text" /></div>
+                                                <div id="theAreaCodeAjax" class="FormFields"><input maxlength="15"
+                                                        id="theAreaCode" value="" name="372" type="text" class="text" />
+                                                </div>
                                             </td>
                                             <td>
-                                                <div id="thePhoneNumberAjax" class="FormFields"><input maxlength="50" id="thePhoneNumber" value="" name="373" type="text" class="text" /></div>
+                                                <div id="thePhoneNumberAjax" class="FormFields"><input maxlength="50"
+                                                        id="thePhoneNumber" value="" name="373" type="text"
+                                                        class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theSmokingRoomAjax" class="FormFields"><input name="374" type="checkbox" class="checkbox" /><input name="375" type="hidden" class="hidden" /><label>Smoking Room</label></div>
-                                <div id="theSpecialRequestsAjax" class="FormFields"><label>Note to Hotel Staff: (optional)</label><textarea maxlength="50" name="376"></textarea></div>
-                                <div id="Cebumcswj42wdkxb3yzuxfxefo" class="SSForm WBGuestFormExtraFieldsSubFormContainer">
+                                <div id="theSmokingRoomAjax" class="FormFields"><input name="374" type="checkbox"
+                                        class="checkbox" /><input name="375" type="hidden"
+                                        class="hidden" /><label>Smoking Room</label></div>
+                                <div id="theSpecialRequestsAjax" class="FormFields"><label>Note to Hotel Staff:
+                                        (optional)</label><textarea maxlength="50" name="376"></textarea></div>
+                                <div id="Cebumcswj42wdkxb3yzuxfxefo"
+                                    class="SSForm WBGuestFormExtraFieldsSubFormContainer">
                                     <div id="theWBGuestFormExtraFieldsSubFormBody" class="SSFormBody">
                                         <div class="WBGuestFormExtraFieldsSubFormFields">
-                                            <div id="theRewardNumberAjax" class="FormFields selectView"><label for="id377">Reward Number</label><input id="id377" class="formField text" name="378" type="text" /></div>
+                                            <div id="theRewardNumberAjax" class="FormFields selectView"><label
+                                                    for="id377">Reward Number</label><input id="id377"
+                                                    class="formField text" name="378" type="text" /></div>
                                         </div>
                                         <div class="WBGuestFormExtraFieldsSubFormActions FormActions"></div>
                                     </div>
                                 </div>
-                                <div id="theBillingAddressAjax2" class="FormFields guestBillingAddress Required"><label>Billing Address: (street address only)</label><input maxlength="100" value="123 test" name="379" type="text" class="text" /></div>
+                                <div id="theBillingAddressAjax2" class="FormFields guestBillingAddress Required">
+                                    <label>Billing Address: (street address only)</label><input maxlength="100"
+                                        value="123 test" name="379" type="text" class="text" />
+                                </div>
                                 <div id="theCityZipAjax2" class="FormFields guestCityZip Required">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div><label>Billing Postal Code: </label><input id="theZipCode2" maxlength="10" value="45444" name="380" type="text" class="text" /></div>
+                                                <div><label>Billing Postal Code: </label><input id="theZipCode2"
+                                                        maxlength="10" value="45444" name="380" type="text"
+                                                        class="text" /></div>
                                             </td>
                                             <td id="theCityAjax2">
-                                                <div><label>Billing City:</label><input id="theCity2" maxlength="50" value="test" name="381" type="text" class="text" /></div>
+                                                <div><label>Billing City:</label><input id="theCity2" maxlength="50"
+                                                        value="test" name="381" type="text" class="text" /></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theCountryAjax2" class="FormFields guestCountryList Required"><label>Country:</label><select id="theCountryList2" class="countryList" onchange="new Ajax.Updater('theStateAjax2','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=q6jRkeDl','siteId='+39624,'theme=standard','382',$('theCountryList2').serialize()].join('&amp;')})" name="383">
+                                <div id="theCountryAjax2" class="FormFields guestCountryList Required">
+                                    <label>Country:</label><select id="theCountryList2" class="countryList"
+                                        onchange="new Ajax.Updater('theStateAjax2','https://events.hotelsforhope.com/v6/details',{'evalScripts':true,'parameters':['_s=DVDzt5wty523T0tH','_k=q6jRkeDl','siteId='+39624,'theme=standard','382',$('theCountryList2').serialize()].join('&amp;')})"
+                                        name="383">
                                         <option value="384" selected="selected">United States</option>
                                         <option value="385">Afghanistan</option>
                                         <option value="386">Albania</option>
@@ -894,8 +1031,10 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <option value="618">Yemen</option>
                                         <option value="619">Zambia</option>
                                         <option value="620">Zimbabwe</option>
-                                    </select></div>
-                                <div id="theStateAjax2" class="FormFields guestStateList Required"><label>State: </label><select class="stateList" name="621">
+                                    </select>
+                                </div>
+                                <div id="theStateAjax2" class="FormFields guestStateList Required"><label>State:
+                                    </label><select class="stateList" name="621">
                                         <option value="622"></option>
                                         <option value="623">Alabama</option>
                                         <option value="624">Alaska</option>
@@ -951,22 +1090,31 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <option value="674">Wisconsin</option>
                                         <option value="675">Wyoming</option>
                                     </select></div>
-                                <div id="theCreditCardNumberAjax" class="FormFields cardNumber Required"><label>Credit Card Number:</label><input maxlength="16" id="theCreditCardNumber" class="cardNumberField text" value="" name="676" type="text" /></div>
+                                <div id="theCreditCardNumberAjax" class="FormFields cardNumber Required"><label>Credit
+                                        Card Number:</label><input maxlength="16" id="theCreditCardNumber"
+                                        class="cardNumberField text" value="" name="676" type="text" /></div>
                                 <div class="cvvInfo">
-                                    <p>To protect you against fraudulent purchases please enter the card's security code as shown.</p><img alt="" src="https://media.travsrv.com/appSkins/64/v6/images/cvvCode.gif" />
+                                    <p>To protect you against fraudulent purchases please enter the card's security code
+                                        as shown.</p><img alt=""
+                                        src="https://media.travsrv.com/appSkins/64/v6/images/cvvCode.gif" />
                                 </div>
                                 <table border="0" cellspacing="0" cellpadding="0" class="cvvTable">
                                     <tr>
                                         <td>
-                                            <div id="theCardVerificationAjax" class="FormFields cardVerification Required"><label>Security Code:</label><input id="theCvvCode" maxlength="4" name="677" type="text" class="text" /></div>
+                                            <div id="theCardVerificationAjax"
+                                                class="FormFields cardVerification Required"><label>Security
+                                                    Code:</label><input id="theCvvCode" maxlength="4" name="677"
+                                                    type="text" class="text" /></div>
                                         </td>
                                     </tr>
                                 </table>
-                                <div id="theCardExpirationFieldsAjax" class="FormFields Required"><label>Card Expiration:</label>
+                                <div id="theCardExpirationFieldsAjax" class="FormFields Required"><label>Card
+                                        Expiration:</label>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td>
-                                                <div id="theExpirationMonthAjax" class="guestExpiresMonth"><select class="cardMonth" name="678">
+                                                <div id="theExpirationMonthAjax" class="guestExpiresMonth"><select
+                                                        class="cardMonth" name="678">
                                                         <option value="679" selected="selected">Month</option>
                                                         <option value="680">01</option>
                                                         <option value="681">02</option>
@@ -983,7 +1131,8 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     </select></div>
                                             </td>
                                             <td>
-                                                <div id="theExpirationYearAjax" class="guestExpiresYear"><select class="cardYear" name="692">
+                                                <div id="theExpirationYearAjax" class="guestExpiresYear"><select
+                                                        class="cardYear" name="692">
                                                         <option value="693" selected="selected">Year</option>
                                                         <option value="694">2020</option>
                                                         <option value="695">2021</option>
@@ -1004,31 +1153,55 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </tr>
                                     </table>
                                 </div>
-                                <div id="theCreditCardBillingNameAjax2" class="FormFields Required"><label>Name On Card: (exactly as printed on credit card)</label><input maxlength="55" id="theCreditCardBillingName" value="Jason Kaplan" name="708" type="text" class="text" /></div>
-                            </fieldset><input id="changeToUSD" style="display:none" name="709" value="Change to USD" type="submit" class="submit" /><span style="display:none;">customize with detailInfoBeforeConfirmation.html in theme directory</span><a name="confirmation"></a>
+                                <div id="theCreditCardBillingNameAjax2" class="FormFields Required"><label>Name On Card:
+                                        (exactly as printed on credit card)</label><input maxlength="55"
+                                        id="theCreditCardBillingName" value="Jason Kaplan" name="708" type="text"
+                                        class="text" /></div>
+                            </fieldset><input id="changeToUSD" style="display:none" name="709" value="Change to USD"
+                                type="submit" class="submit" /><span style="display:none;">customize with
+                                detailInfoBeforeConfirmation.html in theme directory</span><a name="confirmation"></a>
                             <fieldset id="theConfirmationContainer" class="ArnBox">
                                 <legend>Confirm Your Reservation</legend>
                                 <div id="theConfirmationPoliciesAjax">
                                     <h4>Deposit Policy on Balance Due:</h4>
                                     <ul id="theDepositPolicies"></ul>
                                     <ul id="theGuaranteePolicies">
-                                        <li>In order to obtain this discounted rate, prepayment is required at time of booking.</li>
+                                        <li>In order to obtain this discounted rate, prepayment is required at time of
+                                            booking.</li>
                                     </ul>
                                     <h4>Cancellation Policy:</h4>
                                     <ul>
-                                        <li id="theCancelPolicy">The following cancellation policy applies to each individual room. Any cancellations after booking will result in a penalty of 20.00 USD. Cancellations after Tuesday, November 03, 2020 will result in a penalty of 360.54 USD. No refunds will be given in the event of no-show or day of check-in cancellation. There are no modifications allowed for this reservation. The above penalties include a non-refundable 20.00 USD per room reservation service recovery fee.</li>
+                                        <li id="theCancelPolicy">The following cancellation policy applies to each
+                                            individual room. Any cancellations after booking will result in a penalty of
+                                            20.00 USD. Cancellations after Tuesday, November 03, 2020 will result in a
+                                            penalty of 360.54 USD. No refunds will be given in the event of no-show or
+                                            day of check-in cancellation. There are no modifications allowed for this
+                                            reservation. The above penalties include a non-refundable 20.00 USD per room
+                                            reservation service recovery fee.</li>
                                     </ul>
                                 </div>
                                 <div id="theConfirmCheckboxesAjax">
-                                    <p class="confirmationWarning"><input id="confirmCheckBox" name="710" type="checkbox" class="checkbox" /><input name="711" type="hidden" class="hidden" /><span class="confirmationAgreement">By checking this box you agree to the policies above and the terms and conditions found on this website.</span></p>
-                                    <p class="confirmationWarning confirmedDueNowCharge"><input name="712" type="checkbox" class="checkbox" /><input name="713" type="hidden" class="hidden" /><span class="confirmationAgreement">You understand and accept you will be charged 2187.82 USD immediately to make this reservation. This charge will show up on your credit card statement as Hotel Accommodations in USD.</span></p>
+                                    <p class="confirmationWarning"><input id="confirmCheckBox" name="710"
+                                            type="checkbox" class="checkbox" /><input name="711" type="hidden"
+                                            class="hidden" /><span class="confirmationAgreement">By checking this box
+                                            you agree to the policies above and the terms and conditions found on this
+                                            website.</span></p>
+                                    <p class="confirmationWarning confirmedDueNowCharge"><input name="712"
+                                            type="checkbox" class="checkbox" /><input name="713" type="hidden"
+                                            class="hidden" /><span class="confirmationAgreement">You understand and
+                                            accept you will be charged 2187.82 USD immediately to make this reservation.
+                                            This charge will show up on your credit card statement as Hotel
+                                            Accommodations in USD.</span></p>
                                 </div>
-                                <div class="resConfirmationButton"><input id="theConfirmationButton" onclick="$('theBody').addClassName('confirmationProcessing');this.value = &quot;Processing Your Request...&quot;;this.style.color = &quot;#666&quot;;this.onclick = function(){ return false; }" name="714" style="cursor:hand;cursor:pointer;" value="Confirm Reservations" type="submit" class="submit" /></div>
+                                <div class="resConfirmationButton"><input id="theConfirmationButton"
+                                        onclick="$('theBody').addClassName('confirmationProcessing');this.value = &quot;Processing Your Request...&quot;;this.style.color = &quot;#666&quot;;this.onclick = function(){ return false; }"
+                                        name="714" style="cursor:hand;cursor:pointer;" value="Confirm Reservations"
+                                        type="submit" class="submit" /></div>
                                 <div class="resCommands"></div>
                                 <div id="theHorsePowerStickers">
                                     <script type="text/javascript">
-                                    /*<![CDATA[*/
-                                    externalLinks() /*]]>*/
+                                        /*<![CDATA[*/
+                                        externalLinks() /*]]>*/
                                     </script>
                                 </div>
                             </fieldset>
@@ -1036,10 +1209,16 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                         <td id="theAjaxPaymentPolicies" class="PaymentPolicies" valign="top">
                             <fieldset id="theHotel" class="ArnBox 4StarsHotel">
                                 <legend>Your Reservation Summary</legend>
+                                <img alt="The Driskill Hotel" id="mainHotelImage"
+                                    src="//s3.amazonaws.com/media.travsrv.com/4781052/1137308409_largeSquare.jpg">
                                 <div class="theHotelName">InterContinental Stephen F. Austin</div>
                                 <div id="theHotelAddress">701 Congress Avenue Austin, TX 78701</div>
-                                <div class="ArnTripAdvisorDetails HasReviews" style="display:none"><img alt="" src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png" />
-                                    <div class="reviewCount"><a id="theArnAnchor20498" onclick="window.open(this.href,'_blank','');return false" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;715#reviews">1549 User Reviews</a></div>
+                                <div class="ArnTripAdvisorDetails HasReviews" style="display:none"><img alt=""
+                                        src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png" />
+                                    <div class="reviewCount"><a id="theArnAnchor20498"
+                                            onclick="window.open(this.href,'_blank','');return false"
+                                            href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;715#reviews">1549
+                                            User Reviews</a></div>
                                     <div class="ratingCount">4.5</div>
                                 </div>
                                 <table border="0" cellspacing="0" cellpadding="0" class="checkOutSummaryTable">
@@ -1069,44 +1248,60 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                 <legend>Step 1: Review Your Rooms</legend>
                                 <div id="theRateSummaryInfo">
                                     <p id="theRateSummary">
-                                        <p id="theNightlyRates">
-                                            <div>Per room nightly rates (x 2 rooms)</div>
-                                            <table class="ArnRateCalendar" border="0" cellspacing="0" cellpadding="0">
-                                                <tr class="ArnRateEven">
-                                                    <th>Average Nightly Rate</th>
-                                                    <td class="ArnNightlyRateCal">309.62 USD</td>
-                                                </tr>
-                                                <tr class="ArnRateOdd">
-                                                    <th>Friday, November 6, 2020 </th>
-                                                    <td class="ArnNightlyRateCal"><span class="originalPrice">414.54 USD</span><span class="discount">350.94 USD</span></td>
-                                                </tr>
-                                                <tr class="ArnRateEven">
-                                                    <th>Saturday, November 7, 2020 </th>
-                                                    <td class="ArnNightlyRateCal"><span class="originalPrice">414.54 USD</span><span class="discount">350.94 USD</span></td>
-                                                </tr>
-                                                <tr class="ArnRateOdd">
-                                                    <th>Sunday, November 8, 2020 </th>
-                                                    <td class="ArnNightlyRateCal"><span class="originalPrice">290.56 USD</span><span class="discount">226.96 USD</span></td>
-                                                </tr>
-                                            </table>
-                                        </p>
+                                    <p id="theNightlyRates">
+                                    <div>Per room nightly rates (x 2 rooms)</div>
+                                    <table class="ArnRateCalendar" border="0" cellspacing="0" cellpadding="0">
+                                        <tr class="ArnRateEven">
+                                            <th>Average Nightly Rate</th>
+                                            <td class="ArnNightlyRateCal">309.62 USD</td>
+                                        </tr>
+                                        <tr class="ArnRateOdd">
+                                            <th>Friday, November 6, 2020 </th>
+                                            <td class="ArnNightlyRateCal"><span class="originalPrice">414.54
+                                                    USD</span><span class="discount">350.94 USD</span></td>
+                                        </tr>
+                                        <tr class="ArnRateEven">
+                                            <th>Saturday, November 7, 2020 </th>
+                                            <td class="ArnNightlyRateCal"><span class="originalPrice">414.54
+                                                    USD</span><span class="discount">350.94 USD</span></td>
+                                        </tr>
+                                        <tr class="ArnRateOdd">
+                                            <th>Sunday, November 8, 2020 </th>
+                                            <td class="ArnNightlyRateCal"><span class="originalPrice">290.56
+                                                    USD</span><span class="discount">226.96 USD</span></td>
+                                        </tr>
+                                    </table>
+                                    </p>
                                     </p>
                                 </div>
-                                <table id="theRateTotals" class="totalsTable" border="0" cellspacing="0" cellpadding="0">
+                                <table id="theRateTotals" class="totalsTable" border="0" cellspacing="0"
+                                    cellpadding="0">
                                     <tr class="discountRow">
                                         <th nowrap="nowrap">Room Cost: (2 rooms)</th>
-                                        <td><span class="originalPrice">2239.28 USD</span><span class="discount">1857.68 USD</span></td>
+                                        <td><span class="originalPrice">2239.28 USD</span><span class="discount">1857.68
+                                                USD</span></td>
                                     </tr>
                                     <tr class="taxFeeRow">
-                                        <th nowrap="nowrap"><a onclick="$('theFeeLabel').toggle()" href="javascript:void(0)">Taxes</a>:</th>
+                                        <th nowrap="nowrap"><a onclick="$('theFeeLabel').toggle()"
+                                                href="javascript:void(0)">Taxes</a>:</th>
                                         <td>330.14 USD</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" id="theFeeLabel" style="text-align: left; display:none;width: 380px;padding: 5px;">This amount is assessed to recover the amount we pay to the property in connection with your reservation for sales and use, occupancy, room tax, excise tax, bed tax, value added and other similar taxes. This fee may also include a mark-up fee with a percentage similar to the percentages charged for the tax rates on this reservation on the difference between the net rate provided by the property and the retail rate charged as defined in a rate compliance agreement with the hotel or brand representatives directly as an added service fee.</td>
+                                        <td colspan="2" id="theFeeLabel"
+                                            style="text-align: left; display:none;width: 380px;padding: 5px;">This
+                                            amount is assessed to recover the amount we pay to the property in
+                                            connection with your reservation for sales and use, occupancy, room tax,
+                                            excise tax, bed tax, value added and other similar taxes. This fee may also
+                                            include a mark-up fee with a percentage similar to the percentages charged
+                                            for the tax rates on this reservation on the difference between the net rate
+                                            provided by the property and the retail rate charged as defined in a rate
+                                            compliance agreement with the hotel or brand representatives directly as an
+                                            added service fee.</td>
                                     </tr>
                                     <tr class="totalRow">
                                         <th>Total:</th>
-                                        <td><span class="originalPrice">2637.18 USD</span><span class="discount">2187.82 USD</span></td>
+                                        <td><span class="originalPrice">2637.18 USD</span><span class="discount">2187.82
+                                                USD</span></td>
                                     </tr>
                                     <tr class="discount">
                                         <th nowrap="nowrap">Savings:</th>
@@ -1123,10 +1318,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <td style="border-bottom: 0px;">2187.82 USD</td>
                                     </tr>
                                 </table>
-                                <div class="reportProblemLink"><a onclick="window.open(this.href,'_blank','');return false" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;716">Report a Problem with this Listing</a></div>
+                                <div class="reportProblemLink"><a
+                                        onclick="window.open(this.href,'_blank','');return false"
+                                        href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;716">Report
+                                        a Problem with this Listing</a></div>
                                 <div id="theRateDescription">
                                     <p><strong>Rate: </strong>Traditional Room, 1 Queen Bed</p>
-                                    <p><strong>Room: </strong>Traditional Room, 1 Queen Bed 1 Queen Bed Breakfast for 2. Rate for 2 people per room</p>
+                                    <p><strong>Room: </strong>Traditional Room, 1 Queen Bed 1 Queen Bed Breakfast for 2.
+                                        Rate for 2 people per room</p>
                                 </div>
                             </fieldset>
                             <div id="theStayPolicies">
@@ -1134,58 +1333,94 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                 <ul>
                                     <li>You'll be asked to pay the following charges at the property:</li>
                                     <li>Deposit: USD 80.00 per stay</li>
-                                    <li>We have included all charges provided to us by the property. However, charges can vary, for example, based on length of stay or the room you book.</li>
-                                    <li>* The property has connecting/adjoining rooms, which are subject to availability and can be requested by contacting the property using the number on the booking confirmation.</li>
-                                    <li class="cardStatement">In order to obtain this discounted rate, prepayment is required at time of booking. Payment will appear on your credit card under Hotel Accommodations in US Dollars. </li>
+                                    <li>We have included all charges provided to us by the property. However, charges
+                                        can vary, for example, based on length of stay or the room you book.</li>
+                                    <li>* The property has connecting/adjoining rooms, which are subject to availability
+                                        and can be requested by contacting the property using the number on the booking
+                                        confirmation.</li>
+                                    <li class="cardStatement">In order to obtain this discounted rate, prepayment is
+                                        required at time of booking. Payment will appear on your credit card under Hotel
+                                        Accommodations in US Dollars. </li>
                                 </ul>
                                 <h4>Property Policies:</h4>
                                 <ul>
                                     <li>Check-In Time: 3 PM</li>
                                     <li>Check-Out Time: 12 PM</li>
                                     <li>Extra-person charges may apply and vary depending on property policy.</li>
-                                    <li>Government-issued photo identification and a credit card are required at check-in for incidental charges.</li>
-                                    <li>Special requests are subject to availability upon check-in and may incur additional charges. Special requests cannot be guaranteed. Please note that cultural norms and guest policies may differ by country and by property. The policies listed are provided by the property.</li>
+                                    <li>Government-issued photo identification and a credit card are required at
+                                        check-in for incidental charges.</li>
+                                    <li>Special requests are subject to availability upon check-in and may incur
+                                        additional charges. Special requests cannot be guaranteed. Please note that
+                                        cultural norms and guest policies may differ by country and by property. The
+                                        policies listed are provided by the property.</li>
                                 </ul>
                                 <h4>Extra Person Fees/Incidental Fees:</h4>
                                 <ul>
-                                    <li>This price is based on the number of adults you specified in your search. The hotel may charge additional fees when more than two adults stay in a single room, per the hotel's individual policy. Any additional fees will be charged by the hotel directly at the time of checkout. For more details on fees associated with more than two adults staying in a single room, please contact the hotel directly. Guest will be responsible for additional fees such as additional guests, security deposit, incidentals, resort fees, and additional room nights. Guest will pay hotel directly for these charges if they exist.</li>
+                                    <li>This price is based on the number of adults you specified in your search. The
+                                        hotel may charge additional fees when more than two adults stay in a single
+                                        room, per the hotel's individual policy. Any additional fees will be charged by
+                                        the hotel directly at the time of checkout. For more details on fees associated
+                                        with more than two adults staying in a single room, please contact the hotel
+                                        directly. Guest will be responsible for additional fees such as additional
+                                        guests, security deposit, incidentals, resort fees, and additional room nights.
+                                        Guest will pay hotel directly for these charges if they exist.</li>
                                 </ul>
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div><input name="_s" value="DVDzt5wty523T0tH" type="hidden" class="hidden" /><input name="_k" value="q6jRkeDl" type="hidden" class="hidden" /><input name="siteId" value="39624" type="hidden" class="hidden" /><input name="theme" value="standard" type="hidden" class="hidden" /></div>
+            <div><input name="_s" value="DVDzt5wty523T0tH" type="hidden" class="hidden" /><input name="_k"
+                    value="q6jRkeDl" type="hidden" class="hidden" /><input name="siteId" value="39624" type="hidden"
+                    class="hidden" /><input name="theme" value="standard" type="hidden" class="hidden" /></div>
         </form>
-        <div style="display:none" id="memberCommands"><a id="beMember" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;717">Be Member</a><a id="beWholesale" href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;718">Be Wholesale</a></div>
+        <div style="display:none" id="memberCommands"><a id="beMember"
+                href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;717">Be
+                Member</a><a id="beWholesale"
+                href="https://events.hotelsforhope.com/v6/details?_s=DVDzt5wty523T0tH&amp;_k=q6jRkeDl&amp;siteId=39624&amp;theme=standard&amp;718">Be
+                Wholesale</a></div>
     </div>
     <script type="text/javascript">
-    /*<![CDATA[*/
-    var roomCount = $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").length;
-    if (roomCount > 1)
-        $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").each(function(each, index) { each.update("Room " + (index + 1) + " Payment Details"); });
-    else $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").each(function(each) { each.update("Payment Details"); });
+        /*<![CDATA[*/
+        var roomCount = $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").length;
+        if (roomCount > 1)
+            $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").each(function(each, index) {
+                each.update("Room " + (index + 1) + " Payment Details");
+            });
+        else $$(".WBGuestFormFields:not(.WBGuestFormConfirmed) legend").each(function(each) {
+            each.update("Payment Details");
+        });
 
-    $$(".cvvInfo").each(function(each) { each.insert({ before: each.next() }); });
-    $$("#theCreditCardNumberAjax").each(function(each) {
-        each.insert({ before: "<div class=paymentMethods><span class=paymethodLabel>We accept the following payment methods</span><img src=//media.travsrv.com/appSkins/64/v6/themes/global/images/paymentmethods.png></div>" });
-    });
+        $$(".cvvInfo").each(function(each) {
+            each.insert({
+                before: each.next()
+            });
+        });
+        $$("#theCreditCardNumberAjax").each(function(each) {
+            each.insert({
+                before: "<div class=paymentMethods><span class=paymethodLabel>We accept the following payment methods</span><img src=//media.travsrv.com/appSkins/64/v6/themes/global/images/paymentmethods.png></div>"
+            });
+        });
 
-    function resizeIt() {
-        var guestFormsM = $$(".mobile .GuestForms");
-        var policiesM = $$(".mobile .PaymentPolicies");
-        var guestForms = $$(".GuestForms");
-        var policies = $$(".PaymentPolicies");
-        if (guestFormsM.length > 0 && policiesM.length > 0) {
-            if (guestFormsM.first().next() == policiesM.first())
-                guestFormsM.first().insert({ before: policiesM.first() });
-        } else if (guestForms.length > 0 && policies.length > 0) {
-            if (policies.first().next() == guestForms.first())
-                policies.first().insert({ before: guestForms.first() });
+        function resizeIt() {
+            var guestFormsM = $$(".mobile .GuestForms");
+            var policiesM = $$(".mobile .PaymentPolicies");
+            var guestForms = $$(".GuestForms");
+            var policies = $$(".PaymentPolicies");
+            if (guestFormsM.length > 0 && policiesM.length > 0) {
+                if (guestFormsM.first().next() == policiesM.first())
+                    guestFormsM.first().insert({
+                        before: policiesM.first()
+                    });
+            } else if (guestForms.length > 0 && policies.length > 0) {
+                if (policies.first().next() == guestForms.first())
+                    policies.first().insert({
+                        before: guestForms.first()
+                    });
+            }
         }
-    }
-    resizeIt();
-    Event.observe(window, "resize", resizeIt); /*]]>*/
+        resizeIt();
+        Event.observe(window, "resize", resizeIt); /*]]>*/
     </script>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
@@ -1193,19 +1428,34 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
     <script>
     </script>
     <script type="text/javascript">
-    /*<![CDATA[*/
-    $$("a").each(function(link) { if (link.href) link.href = link.href.replace("~sessionid~", "DVDzt5wty523T0tH") }); /*]]>*/
+        /*<![CDATA[*/
+        $$("a").each(function(link) {
+            if (link.href) link.href = link.href.replace("~sessionid~", "DVDzt5wty523T0tH")
+        }); /*]]>*/
     </script><noscript>
         <style>
-            body {background-color: white; background-image: none;}
-                .ArnSearchContainerMainDiv, .ArnHeader, .ArnSupportLinks, .ArnFooter, .ArnSubPage {display:none;}
-            </style>
-        <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100; position: absolute; top: 0px; left: 0px;background-color:white;margin:auto auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled, please re-enable JavaScript.</h1>
+            body {
+                background-color: white;
+                background-image: none;
+            }
+
+            .ArnSearchContainerMainDiv,
+            .ArnHeader,
+            .ArnSupportLinks,
+            .ArnFooter,
+            .ArnSubPage {
+                display: none;
+            }
+        </style>
+        <h1 style="text-align: center;font-size:80px;font-family: Lucida Grande" ,Arial; width: 100; height:100;
+            position: absolute; top: 0px; left: 0px;background-color:white;margin:auto
+            auto;line-height:1.2em;padding-top: 100px;">This site will not function correctly with JavaScript disabled,
+            please re-enable JavaScript.</h1>
     </noscript>
     <span style="display:none">add footer-site.js to theme directory for sitewide global javascript</span>
     <script>
-    /*<![CDATA[*/
-    (function() {})() /*]]>*/
+        /*<![CDATA[*/
+        (function() {})() /*]]>*/
     </script>
 </body>
 

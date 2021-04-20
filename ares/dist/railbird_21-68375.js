@@ -4289,7 +4289,17 @@
                             key: 'applyConfigStyles',
                             value: function () {
                                 var e = document.querySelector('#h4h-styles');
-                                this.site_config && e && y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd');
+                                this.site_config &&
+                                    e &&
+                                    (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    '52342' !== this.site_config.site_id &&
+                                        e.insertAdjacentHTML(
+                                            'beforeend',
+                                            '<link href="'
+                                                .concat(p.path, '/site_configs/')
+                                                .concat(this.site_config.directory_name, '/styles/')
+                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                        ));
                             },
                         },
                         {
@@ -7709,7 +7719,7 @@
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
-                    header: {logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png'), logo_outbound_url: 'https://www.railbirdfest.com/'},
+                    header: {logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png?v2'), logo_outbound_url: 'https://www.railbirdfest.com/'},
                     map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                     theme: 'light',
                     google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',

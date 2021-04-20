@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 121));
+        n((n.s = 68));
 })([
     function (e, t, n) {
         var r = n(25)('wks'),
@@ -158,7 +158,7 @@
             o = n(9),
             i = n(8),
             a = n(18)('src'),
-            c = n(70),
+            c = n(72),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -183,7 +183,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(73),
+        var r = n(75),
             o = n(15);
         e.exports = function (e) {
             return r(o(e));
@@ -262,15 +262,15 @@
             d = n(5),
             f = n(3),
             p = n(12),
-            h = n(83),
-            m = n(84),
+            h = n(85),
+            m = n(86),
             y = n(59),
             g = n(60).set,
-            v = n(88)(),
+            v = n(90)(),
             b = n(61),
-            S = n(89),
-            w = n(90),
-            _ = n(91),
+            S = n(91),
+            w = n(92),
+            _ = n(93),
             x = s.TypeError,
             k = s.process,
             A = k && k.versions,
@@ -311,7 +311,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && D(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && Y(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -333,7 +333,7 @@
                         n,
                         r,
                         o = e._v,
-                        i = Y(e);
+                        i = D(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -343,17 +343,17 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = q || Y(e) ? 2 : 1)),
+                            (e._h = q || D(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            Y = function (e) {
+            D = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            D = function (e) {
+            Y = function (e) {
                 g.call(s, function () {
                     var t;
                     q ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -396,7 +396,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(92)(L.prototype, {
+            }).prototype = n(94)(L.prototype, {
                 then: function (e, t) {
                     var n = E(y(this, L));
                     return (
@@ -422,7 +422,7 @@
             })),
             d(d.G + d.W + d.F * !P, {Promise: L}),
             n(28)(L, 'Promise'),
-            n(93)('Promise'),
+            n(95)('Promise'),
             (a = n(11).Promise),
             d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
@@ -440,7 +440,7 @@
                     d.F *
                         !(
                             P &&
-                            n(94)(function (e) {
+                            n(96)(function (e) {
                                 L.all(e).catch(C);
                             })
                         ),
@@ -905,7 +905,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(97);
+        n(99);
         var r = n(10),
             o = n(9),
             i = n(7),
@@ -1389,7 +1389,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(76),
+            o = n(78),
             i = n(37),
             a = n(36)('IE_PROTO'),
             c = function () {},
@@ -1420,7 +1420,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(78);
+        n(80);
         var r = n(1),
             o = n(41),
             i = n(4),
@@ -1451,7 +1451,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(96)(!0);
+        var r = n(98)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -1492,7 +1492,7 @@
     function (e, t, n) {
         'use strict';
         var r = n(1),
-            o = n(99),
+            o = n(101),
             i = n(31);
         n(32)('search', 1, function (e, t, n, a) {
             return [
@@ -2247,10 +2247,10 @@
     function (e, t, n) {
         'use strict';
         var r = n(63),
-            o = n(110),
+            o = n(112),
             i = n(23),
             a = n(13);
-        (e.exports = n(111)(
+        (e.exports = n(113)(
             Array,
             'Array',
             function (e, t) {
@@ -2515,7 +2515,7 @@
     function (e, t, n) {
         var r = n(13),
             o = n(20),
-            i = n(74);
+            i = n(76);
         e.exports = function (e) {
             return function (t, n, a) {
                 var c,
@@ -2850,7 +2850,7 @@
     function (e, t, n) {
         var r = n(29),
             o = n(19);
-        n(113)('keys', function () {
+        n(115)('keys', function () {
             return function (e) {
                 return o(r(e));
             };
@@ -2864,6 +2864,104 @@
         };
     },
     function (e, t, n) {
+        'use strict';
+        n(69), n(120);
+    },
+    function (e, t, n) {
+        'use strict';
+        n(70), n(71), n(40), n(16), n(81), n(83);
+        var r = o(n(84));
+        function o(e) {
+            return e && e.__esModule ? e : {default: e};
+        }
+        function i(e) {
+            return (i =
+                'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+                    ? function (e) {
+                          return typeof e;
+                      }
+                    : function (e) {
+                          return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
+                      })(e);
+        }
+        function a(e, t) {
+            return (a =
+                Object.setPrototypeOf ||
+                function (e, t) {
+                    return (e.__proto__ = t), e;
+                })(e, t);
+        }
+        function c(e) {
+            var t = (function () {
+                if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
+                if (Reflect.construct.sham) return !1;
+                if ('function' == typeof Proxy) return !0;
+                try {
+                    return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+                } catch (e) {
+                    return !1;
+                }
+            })();
+            return function () {
+                var n,
+                    r = d(e);
+                if (t) {
+                    var o = d(this).constructor;
+                    n = Reflect.construct(r, arguments, o);
+                } else n = r.apply(this, arguments);
+                return s(this, n);
+            };
+        }
+        function s(e, t) {
+            return !t || ('object' !== i(t) && 'function' != typeof t) ? u(e) : t;
+        }
+        function u(e) {
+            if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return e;
+        }
+        function l(e, t, n) {
+            return (l =
+                'undefined' != typeof Reflect && Reflect.get
+                    ? Reflect.get
+                    : function (e, t, n) {
+                          var r = (function (e, t) {
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = d(e)); );
+                              return e;
+                          })(e, t);
+                          if (r) {
+                              var o = Object.getOwnPropertyDescriptor(r, t);
+                              return o.get ? o.get.call(n) : o.value;
+                          }
+                      })(e, t, n || e);
+        }
+        function d(e) {
+            return (d = Object.setPrototypeOf
+                ? Object.getPrototypeOf
+                : function (e) {
+                      return e.__proto__ || Object.getPrototypeOf(e);
+                  })(e);
+        }
+        var f = new (o(n(119)).default)();
+        new ((function (e) {
+            !(function (e, t) {
+                if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
+                (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && a(e, t);
+            })(n, e);
+            var t = c(n);
+            function n() {
+                var e, r;
+                return (
+                    (function (e, t) {
+                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                    })(this, n),
+                    l(((e = u((r = t.call(this, f)))), d(n.prototype)), 'init', e).call(e),
+                    r
+                );
+            }
+            return n;
+        })(r.default))();
+    },
+    function (e, t, n) {
         n(48)('asyncIterator');
     },
     function (e, t, n) {
@@ -2873,7 +2971,7 @@
             i = n(4),
             a = n(5),
             c = n(10),
-            s = n(71).KEY,
+            s = n(73).KEY,
             u = n(7),
             l = n(25),
             d = n(28),
@@ -2881,8 +2979,8 @@
             p = n(0),
             h = n(49),
             m = n(48),
-            y = n(72),
-            g = n(75),
+            y = n(74),
+            g = n(77),
             v = n(1),
             b = n(3),
             S = n(29),
@@ -2890,7 +2988,7 @@
             _ = n(35),
             x = n(26),
             k = n(39),
-            A = n(77),
+            A = n(79),
             M = n(56),
             L = n(53),
             q = n(6),
@@ -2900,8 +2998,8 @@
             T = A.f,
             R = r.Symbol,
             O = r.JSON,
-            Y = O && O.stringify,
-            D = p('_hidden'),
+            D = O && O.stringify,
+            Y = p('_hidden'),
             j = p('toPrimitive'),
             I = {}.propertyIsEnumerable,
             H = l('symbol-registry'),
@@ -2949,7 +3047,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, Y) || P(e, Y, x(1, {})), (e[Y][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -2960,16 +3058,16 @@
             },
             Q = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
-                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
+                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, Y) && this[Y][e])) || t);
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(B, t))) {
                     var n = E(e, t);
-                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, Y) && e[Y][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == Y || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -2982,7 +3080,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(B, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), V(e);
                 }).prototype,
@@ -3044,7 +3142,7 @@
                             (!U ||
                                 u(function () {
                                     var e = R();
-                                    return '[null]' != Y([e]) || '{}' != Y({a: e}) || '{}' != Y(Object(e));
+                                    return '[null]' != D([e]) || '{}' != D({a: e}) || '{}' != D(Object(e));
                                 })),
                     'JSON',
                     {
@@ -3057,7 +3155,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    Y.apply(O, r)
+                                    D.apply(O, r)
                                 );
                         },
                     }
@@ -3186,7 +3284,7 @@
             a = n(1),
             c = n(3),
             s = n(7),
-            u = n(80),
+            u = n(82),
             l = (n(2).Reflect || {}).construct,
             d = s(function () {
                 function e() {}
@@ -3270,24 +3368,24 @@
         Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = void 0),
             n(22),
-            n(95),
-            n(98),
+            n(97),
+            n(100),
             n(40),
             n(16),
             n(44),
-            n(100),
-            n(62),
             n(102),
-            n(103),
-            n(106),
+            n(62),
+            n(104),
+            n(105),
+            n(108),
             n(24),
-            n(107),
-            n(108);
+            n(109),
+            n(110);
         var r = s(n(45)),
-            o = s(n(114)),
-            i = s(n(115)),
+            o = s(n(116)),
+            i = s(n(117)),
             a = s(n(67)),
-            c = s(n(116));
+            c = s(n(118));
         function s(e) {
             return e && e.__esModule ? e : {default: e};
         }
@@ -3433,13 +3531,14 @@
                                                                             ),
                                                                             e.showOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                         'checkout' === e.page_name &&
-                                                                            (y.createModal(
-                                                                                [document.querySelector('#theStayPolicies')],
-                                                                                'Policies & Fees',
-                                                                                'checkout',
-                                                                                '#theConfirmationContainer',
-                                                                                'afterBegin'
-                                                                            ),
+                                                                            ('52342' !== e.site_id &&
+                                                                                y.createModal(
+                                                                                    [document.querySelector('#theStayPolicies')],
+                                                                                    'Policies & Fees',
+                                                                                    'checkout',
+                                                                                    '#theConfirmationContainer',
+                                                                                    'afterBegin'
+                                                                                ),
                                                                             y.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
                                                                             y.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
                                                                             y.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
@@ -4190,16 +4289,7 @@
                             key: 'applyConfigStyles',
                             value: function () {
                                 var e = document.querySelector('#h4h-styles');
-                                this.site_config &&
-                                    e &&
-                                    (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                    e.insertAdjacentHTML(
-                                        'beforeend',
-                                        '<link href="'
-                                            .concat(p.path, '/site_configs/')
-                                            .concat(this.site_config.directory_name, '/styles/')
-                                            .concat(this.site_config.site_id, '.css" rel="stylesheet">')
-                                    ));
+                                this.site_config && e && y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd');
                             },
                         },
                         {
@@ -4346,9 +4436,13 @@
                                                                     t = document.querySelector('.dropdown');
                                                                 t &&
                                                                     t.addEventListener('click', function (t) {
-                                                                        (i.selected_currency = t.target.id),
+                                                                        console.log(t),
+                                                                            console.log('after event listener'),
+                                                                            (i.selected_currency = t.target.id),
+                                                                            console.log(i.selected_currency),
                                                                             i.selected_currency &&
-                                                                                (document.querySelector('.active-currency').classList.remove('active-currency'),
+                                                                                (console.log('after early return: !this.selected_currency'),
+                                                                                document.querySelector('.active-currency').classList.remove('active-currency'),
                                                                                 document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
                                                                                 (document.querySelector('#currency-label span').textContent = document.querySelector(
                                                                                     '.active-currency'
@@ -5072,6 +5166,7 @@
                             key: 'updateConfirmationCheckBoxes',
                             value: function () {
                                 'checkout' === this.page_name &&
+                                    '52342' !== this.site_id &&
                                     ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
                                     (document.querySelector(
                                         'span.confirmationAgreement'
@@ -5615,6 +5710,24 @@
                                     y.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance'));
                             },
                         },
+                        {
+                            key: 'addSupportWidget',
+                            value: function () {
+                                var e = document.querySelector('.supportLink').href;
+                                if (e) {
+                                    var t = window.matchMedia('(max-width: 1100px)'),
+                                        n = '<div class="contact-float">\n        <a href="'
+                                            .concat(e, '" target="_blank" class="floating-support-icon"><img src="')
+                                            .concat(p.path, '/emails/icons/phone.png"/></a>\n    </div>');
+                                    t.matches &&
+                                        (n = '<div class="contact-float">\n            <a href="'.concat(
+                                            e,
+                                            '" target="_blank" class="floating-support-icon">Contact Us</a>\n        </div>'
+                                        )),
+                                        document.body.insertAdjacentHTML('beforeend', n);
+                                }
+                            },
+                        },
                     ]) && d(t.prototype, n),
                     r && d(t, r),
                     e
@@ -5630,11 +5743,11 @@
     },
     function (e, t, n) {
         var r = n(27),
-            o = n(85),
-            i = n(86),
+            o = n(87),
+            i = n(88),
             a = n(1),
             c = n(20),
-            s = n(87),
+            s = n(89),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, f) {
@@ -5897,7 +6010,7 @@
     },
     function (e, t, n) {
         var r = n(5);
-        r(r.P, 'String', {repeat: n(101)});
+        r(r.P, 'String', {repeat: n(103)});
     },
     function (e, t, n) {
         'use strict';
@@ -5926,8 +6039,8 @@
     function (e, t, n) {
         'use strict';
         var r = n(5),
-            o = n(104);
-        r(r.P + r.F * n(105)('includes'), 'String', {
+            o = n(106);
+        r(r.P + r.F * n(107)('includes'), 'String', {
             includes: function (e) {
                 return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
             },
@@ -6764,7 +6877,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }.call(this, n(109)));
+        }.call(this, n(111)));
     },
     function (e, t) {
         var n;
@@ -6790,7 +6903,7 @@
             i = n(10),
             a = n(9),
             c = n(23),
-            s = n(112),
+            s = n(114),
             u = n(28),
             l = n(58),
             d = n(0)('iterator'),
@@ -7168,6 +7281,7 @@
                                     nights: {key: 'nights', value: e.nights},
                                     rooms: {key: 'rooms', value: this.getDropdownValue('#rooms')},
                                     adults: {key: 'adults', value: this.getDropdownValue('#adults')},
+                                    children: {key: 'children', value: this.getDropdownValue('#kids')},
                                     currency: {key: 'currency', value: u.getMetaTagContent('currency') ? u.getMetaTagContent('currency') : 'USD'},
                                     amenities: {key: 'amenities', value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                     propertyClasses: {key: 'propertyclasses', value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
@@ -7397,6 +7511,7 @@
                                         nights: {key: 'nights', value: p},
                                         rooms: {key: 'rooms', value: y('select#rooms')},
                                         adults: {key: 'adults', value: y('select#adults')},
+                                        kids: {key: 'children', value: y('select#kids')},
                                         currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
                                         amenities: {key: 'amenities', value: v('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                         stars: {key: 'propertyclasses', value: v('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
@@ -7464,6 +7579,7 @@
                                     }),
                                 y('select#rooms'),
                                 y('select#adults'),
+                                y('select#kids'),
                                 (c = 'input#theCheckIn'),
                                 document.querySelector(c) && (document.querySelector(c).required = !0),
                                 jQuery('#theBody').on('arnMapLoadedEvent', function () {
@@ -7562,108 +7678,6 @@
                 })
             )).apply(this, arguments);
         }
-    },
-    ,
-    ,
-    ,
-    ,
-    function (e, t, n) {
-        'use strict';
-        n(122), n(124);
-    },
-    function (e, t, n) {
-        'use strict';
-        n(68), n(69), n(40), n(16), n(79), n(81);
-        var r = o(n(82));
-        function o(e) {
-            return e && e.__esModule ? e : {default: e};
-        }
-        function i(e) {
-            return (i =
-                'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-                    ? function (e) {
-                          return typeof e;
-                      }
-                    : function (e) {
-                          return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
-                      })(e);
-        }
-        function a(e, t) {
-            return (a =
-                Object.setPrototypeOf ||
-                function (e, t) {
-                    return (e.__proto__ = t), e;
-                })(e, t);
-        }
-        function c(e) {
-            var t = (function () {
-                if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
-                if (Reflect.construct.sham) return !1;
-                if ('function' == typeof Proxy) return !0;
-                try {
-                    return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
-                } catch (e) {
-                    return !1;
-                }
-            })();
-            return function () {
-                var n,
-                    r = d(e);
-                if (t) {
-                    var o = d(this).constructor;
-                    n = Reflect.construct(r, arguments, o);
-                } else n = r.apply(this, arguments);
-                return s(this, n);
-            };
-        }
-        function s(e, t) {
-            return !t || ('object' !== i(t) && 'function' != typeof t) ? u(e) : t;
-        }
-        function u(e) {
-            if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            return e;
-        }
-        function l(e, t, n) {
-            return (l =
-                'undefined' != typeof Reflect && Reflect.get
-                    ? Reflect.get
-                    : function (e, t, n) {
-                          var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = d(e)); );
-                              return e;
-                          })(e, t);
-                          if (r) {
-                              var o = Object.getOwnPropertyDescriptor(r, t);
-                              return o.get ? o.get.call(n) : o.value;
-                          }
-                      })(e, t, n || e);
-        }
-        function d(e) {
-            return (d = Object.setPrototypeOf
-                ? Object.getPrototypeOf
-                : function (e) {
-                      return e.__proto__ || Object.getPrototypeOf(e);
-                  })(e);
-        }
-        var f = new (o(n(123)).default)();
-        new ((function (e) {
-            !(function (e, t) {
-                if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && a(e, t);
-            })(n, e);
-            var t = c(n);
-            function n() {
-                var e, r;
-                return (
-                    (function (e, t) {
-                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                    })(this, n),
-                    l(((e = u((r = t.call(this, f)))), d(n.prototype)), 'init', e).call(e),
-                    r
-                );
-            }
-            return n;
-        })(r.default))();
     },
     function (e, t, n) {
         'use strict';

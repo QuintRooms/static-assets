@@ -4289,7 +4289,17 @@
                             key: 'applyConfigStyles',
                             value: function () {
                                 var e = document.querySelector('#h4h-styles');
-                                this.site_config && e && y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd');
+                                this.site_config &&
+                                    e &&
+                                    (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    '52342' !== this.site_config.site_id &&
+                                        e.insertAdjacentHTML(
+                                            'beforeend',
+                                            '<link href="'
+                                                .concat(p.path, '/site_configs/')
+                                                .concat(this.site_config.directory_name, '/styles/')
+                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                        ));
                             },
                         },
                         {

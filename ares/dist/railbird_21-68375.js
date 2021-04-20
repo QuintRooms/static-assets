@@ -7719,7 +7719,7 @@
                     show_date_prompt: !1,
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
-                    email_logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/email-logo.png'),
+                    email_logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo-black.png'),
                     header: {logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png?v2'), logo_outbound_url: 'https://www.railbirdfest.com/'},
                     map_marker_image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                     theme: 'light',
